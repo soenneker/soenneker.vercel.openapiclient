@@ -14,6 +14,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The frameworkPublishable property</summary>
+        public bool? FrameworkPublishable { get; set; }
         /// <summary>The length property</summary>
         public double? Length { get; set; }
         /// <summary>The name property</summary>
@@ -49,6 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "frameworkPublishable", n => { FrameworkPublishable = n.GetBoolValue(); } },
                 { "length", n => { Length = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -60,6 +63,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("frameworkPublishable", FrameworkPublishable);
             writer.WriteDoubleValue("length", Length);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
