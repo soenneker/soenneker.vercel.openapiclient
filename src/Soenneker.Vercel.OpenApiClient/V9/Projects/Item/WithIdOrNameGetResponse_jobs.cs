@@ -17,18 +17,18 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         /// <summary>The lint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Lint { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_jobs_lint? Lint { get; set; }
 #nullable restore
 #else
-        public List<string> Lint { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_jobs_lint Lint { get; set; }
 #endif
         /// <summary>The typecheck property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Typecheck { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_jobs_typecheck? Typecheck { get; set; }
 #nullable restore
 #else
-        public List<string> Typecheck { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_jobs_typecheck Typecheck { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_jobs"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "lint", n => { Lint = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "typecheck", n => { Typecheck = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "lint", n => { Lint = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_jobs_lint>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_jobs_lint.CreateFromDiscriminatorValue); } },
+                { "typecheck", n => { Typecheck = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_jobs_typecheck>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_jobs_typecheck.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("lint", Lint);
-            writer.WriteCollectionOfPrimitiveValues<string>("typecheck", Typecheck);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_jobs_lint>("lint", Lint);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_jobs_typecheck>("typecheck", Typecheck);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

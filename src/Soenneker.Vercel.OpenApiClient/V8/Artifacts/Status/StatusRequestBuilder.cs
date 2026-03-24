@@ -35,39 +35,39 @@ namespace Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status
         /// <summary>
         /// Check the status of Remote Caching for this principal. Returns a JSON-encoded status indicating if Remote Caching is enabled, disabled, or disabled due to usage limits.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponse?> GetAsStatusGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusGetResponse?> GetAsStatusGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponse> GetAsStatusGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusGetResponse> GetAsStatusGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Check the status of Remote Caching for this principal. Returns a JSON-encoded status indicating if Remote Caching is enabled, disabled, or disabled due to usage limits.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("This method is obsolete. Use GetAsStatusGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Check the status of Remote Caching for this principal. Returns a JSON-encoded status indicating if Remote Caching is enabled, disabled, or disabled due to usage limits.
@@ -96,6 +96,81 @@ namespace Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status
         public global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember2"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class StatusGetResponse : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember1? StatusGetResponseMember1 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember1 StatusGetResponseMember1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember2? StatusGetResponseMember2 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember2 StatusGetResponseMember2 { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusGetResponse"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusGetResponse();
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.StatusGetResponseMember1 = new global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember1();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.StatusGetResponseMember2 = new global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember2();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(StatusGetResponseMember1 != null)
+                {
+                    return StatusGetResponseMember1.GetFieldDeserializers();
+                }
+                else if(StatusGetResponseMember2 != null)
+                {
+                    return StatusGetResponseMember2.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(StatusGetResponseMember1 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember1>(null, StatusGetResponseMember1);
+                }
+                else if(StatusGetResponseMember2 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember2>(null, StatusGetResponseMember2);
+                }
+            }
         }
         /// <summary>
         /// Check the status of Remote Caching for this principal. Returns a JSON-encoded status indicating if Remote Caching is enabled, disabled, or disabled due to usage limits.
@@ -131,6 +206,81 @@ namespace Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StatusRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusRequestBuilderGetQueryParameters>
         {
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember2"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class StatusResponse : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember1? StatusGetResponseMember1 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember1 StatusGetResponseMember1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember2? StatusGetResponseMember2 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember2 StatusGetResponseMember2 { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusResponse"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusRequestBuilder.StatusResponse();
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.StatusGetResponseMember1 = new global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember1();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.StatusGetResponseMember2 = new global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember2();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(StatusGetResponseMember1 != null)
+                {
+                    return StatusGetResponseMember1.GetFieldDeserializers();
+                }
+                else if(StatusGetResponseMember2 != null)
+                {
+                    return StatusGetResponseMember2.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(StatusGetResponseMember1 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember1>(null, StatusGetResponseMember1);
+                }
+                else if(StatusGetResponseMember2 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Status.StatusGetResponseMember2>(null, StatusGetResponseMember2);
+                }
+            }
         }
     }
 }

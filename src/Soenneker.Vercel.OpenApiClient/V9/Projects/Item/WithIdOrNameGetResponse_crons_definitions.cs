@@ -14,6 +14,14 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>A human-readable description of what this cron job does.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
         /// <summary>The hostname that should be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +30,8 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
 #else
         public string Host { get; set; }
 #endif
+        /// <summary>Whether the host was inferred from the production deployment URL rather than explicitly provided.</summary>
+        public bool? HostInferred { get; set; }
         /// <summary>The path that should be called for the cronjob.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +75,9 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "host", n => { Host = n.GetStringValue(); } },
+                { "hostInferred", n => { HostInferred = n.GetBoolValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "schedule", n => { Schedule = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_crons_definitions_source>(); } },
@@ -78,7 +90,9 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("host", Host);
+            writer.WriteBoolValue("hostInferred", HostInferred);
             writer.WriteStringValue("path", Path);
             writer.WriteStringValue("schedule", Schedule);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_crons_definitions_source>("source", Source);

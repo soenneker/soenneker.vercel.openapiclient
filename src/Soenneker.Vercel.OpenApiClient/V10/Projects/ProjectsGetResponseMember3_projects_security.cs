@@ -58,6 +58,8 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
 #else
         public global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_security_managedRules ManagedRules { get; set; }
 #endif
+        /// <summary>The securityPlus property</summary>
+        public bool? SecurityPlus { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_security"/> and sets the default values.
         /// </summary>
@@ -96,6 +98,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
                 { "ja4Enabled", n => { Ja4Enabled = n.GetBoolValue(); } },
                 { "log_headers", n => { LogHeaders = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_security.ProjectsGetResponseMember3_projects_security_log_headers>(global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_security.ProjectsGetResponseMember3_projects_security_log_headers.CreateFromDiscriminatorValue); } },
                 { "managedRules", n => { ManagedRules = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_security_managedRules>(global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_security_managedRules.CreateFromDiscriminatorValue); } },
+                { "securityPlus", n => { SecurityPlus = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -118,6 +121,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             writer.WriteBoolValue("ja4Enabled", Ja4Enabled);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_security.ProjectsGetResponseMember3_projects_security_log_headers>("log_headers", LogHeaders);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_security_managedRules>("managedRules", ManagedRules);
+            writer.WriteBoolValue("securityPlus", SecurityPlus);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
