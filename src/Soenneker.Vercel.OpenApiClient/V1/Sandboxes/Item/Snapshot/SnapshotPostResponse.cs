@@ -23,7 +23,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Snapshot
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.Sandbox Sandbox { get; set; }
 #endif
-        /// <summary>This object contains information related to a Snapshot of a Vercel Sandbox.</summary>
+        /// <summary>This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.Snapshot? Snapshot { get; set; }

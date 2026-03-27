@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// This object contains information related to a Snapshot of a Vercel Sandbox.
+    /// This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Snapshot : IAdditionalDataHolder, IParsable
@@ -37,13 +37,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The size of the snapshot in bytes.</summary>
         public double? SizeBytes { get; set; }
-        /// <summary>The unique identifier of the sandbox from which the snapshot was created.</summary>
+        /// <summary>The unique identifier of the session from which the snapshot was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceSandboxId { get; set; }
+        public string? SourceSessionId { get; set; }
 #nullable restore
 #else
-        public string SourceSandboxId { get; set; }
+        public string SourceSessionId { get; set; }
 #endif
         /// <summary>The status of the snapshot.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.Snapshot_status? Status { get; set; }
@@ -79,7 +79,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "sizeBytes", n => { SizeBytes = n.GetDoubleValue(); } },
-                { "sourceSandboxId", n => { SourceSandboxId = n.GetStringValue(); } },
+                { "sourceSessionId", n => { SourceSessionId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Snapshot_status>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
             };
@@ -96,7 +96,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("region", Region);
             writer.WriteDoubleValue("sizeBytes", SizeBytes);
-            writer.WriteStringValue("sourceSandboxId", SourceSandboxId);
+            writer.WriteStringValue("sourceSessionId", SourceSessionId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Snapshot_status>("status", Status);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

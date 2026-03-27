@@ -15,7 +15,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Snapshots.Item
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>This object contains information related to a Snapshot of a Vercel Sandbox.</summary>
+        /// <summary>This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.Snapshot? Snapshot { get; set; }
