@@ -40,6 +40,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags
 #else
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutResponse_environments Environments { get; set; }
 #endif
+        /// <summary>The experiment property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutResponse_experiment? Experiment { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutResponse_experiment Experiment { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,6 +129,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags
                 { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "environments", n => { Environments = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutResponse_environments>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutResponse_environments.CreateFromDiscriminatorValue); } },
+                { "experiment", n => { Experiment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutResponse_experiment>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutResponse_experiment.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutResponse_kind>(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
@@ -145,6 +154,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags
             writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutResponse_environments>("environments", Environments);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutResponse_experiment>("experiment", Experiment);
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutResponse_kind>("kind", Kind);
             writer.WriteStringValue("ownerId", OwnerId);

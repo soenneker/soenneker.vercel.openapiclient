@@ -798,7 +798,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_linkMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_linkMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_linkMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_linkMember4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_linkMember5"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_linkMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_linkMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_linkMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_linkMember4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_linkMember5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_linkMember6"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithIdOrNamePatchResponse_link : IComposedTypeWrapper, IParsable
@@ -843,6 +843,14 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
 #else
             public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_linkMember5 WithIdOrNamePatchResponseLinkMember5 { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_linkMember6"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_linkMember6? WithIdOrNamePatchResponseLinkMember6 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_linkMember6 WithIdOrNamePatchResponseLinkMember6 { get; set; }
+#endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
@@ -873,6 +881,10 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
                 {
                     result.WithIdOrNamePatchResponseLinkMember5 = new global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_linkMember5();
                 }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.WithIdOrNamePatchResponseLinkMember6 = new global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_linkMember6();
+                }
                 return result;
             }
             /// <summary>
@@ -900,6 +912,10 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
                 else if(WithIdOrNamePatchResponseLinkMember5 != null)
                 {
                     return WithIdOrNamePatchResponseLinkMember5.GetFieldDeserializers();
+                }
+                else if(WithIdOrNamePatchResponseLinkMember6 != null)
+                {
+                    return WithIdOrNamePatchResponseLinkMember6.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -929,6 +945,10 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
                 else if(WithIdOrNamePatchResponseLinkMember5 != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_linkMember5>(null, WithIdOrNamePatchResponseLinkMember5);
+                }
+                else if(WithIdOrNamePatchResponseLinkMember6 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_linkMember6>(null, WithIdOrNamePatchResponseLinkMember6);
                 }
             }
         }

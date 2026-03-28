@@ -8,9 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
     public enum DeploymentsPostResponse_gitSourceMember13_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "github-limited")]
+        [EnumMember(Value = "github-custom-host")]
         #pragma warning disable CS1591
-        GithubLimited,
+        GithubCustomHost,
         #pragma warning restore CS1591
     }
 }

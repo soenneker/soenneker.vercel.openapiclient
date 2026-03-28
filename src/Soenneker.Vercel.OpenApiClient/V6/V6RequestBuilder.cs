@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.V6.Deployments;
 using Soenneker.Vercel.OpenApiClient.V6.Domains;
+using Soenneker.Vercel.OpenApiClient.V6.User;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -25,6 +26,11 @@ namespace Soenneker.Vercel.OpenApiClient.V6
         public global::Soenneker.Vercel.OpenApiClient.V6.Domains.DomainsRequestBuilder Domains
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V6.Domains.DomainsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The user property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V6.User.UserRequestBuilder User
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V6.User.UserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V6.V6RequestBuilder"/> and sets the default values.

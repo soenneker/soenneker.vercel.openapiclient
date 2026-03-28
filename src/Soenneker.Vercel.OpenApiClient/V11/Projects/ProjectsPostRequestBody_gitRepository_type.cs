@@ -23,5 +23,9 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
         #pragma warning disable CS1591
         Bitbucket,
         #pragma warning restore CS1591
+        [EnumMember(Value = "vercel")]
+        #pragma warning disable CS1591
+        Vercel,
+        #pragma warning restore CS1591
     }
 }

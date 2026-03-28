@@ -14,14 +14,6 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The host property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Host { get; set; }
-#nullable restore
-#else
-        public string Host { get; set; }
-#endif
         /// <summary>The org property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,7 +75,6 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "host", n => { Host = n.GetStringValue(); } },
                 { "org", n => { Org = n.GetStringValue(); } },
                 { "ref", n => { Ref = n.GetStringValue(); } },
                 { "repo", n => { Repo = n.GetStringValue(); } },
@@ -99,7 +90,6 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("host", Host);
             writer.WriteStringValue("org", Org);
             writer.WriteStringValue("ref", Ref);
             writer.WriteStringValue("repo", Repo);

@@ -205,6 +205,14 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
 #else
         public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_staticIps StaticIps { get; set; }
 #endif
+        /// <summary>Tracing configuration for this project</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_tracing? Tracing { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_tracing Tracing { get; set; }
+#endif
         /// <summary>Restricts access to deployments based on the incoming request IP address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -270,6 +278,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
                 { "sourceFilesOutsideRootDirectory", n => { SourceFilesOutsideRootDirectory = n.GetBoolValue(); } },
                 { "ssoProtection", n => { SsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_ssoProtection>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_ssoProtection.CreateFromDiscriminatorValue); } },
                 { "staticIps", n => { StaticIps = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_staticIps>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_staticIps.CreateFromDiscriminatorValue); } },
+                { "tracing", n => { Tracing = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_tracing>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_tracing.CreateFromDiscriminatorValue); } },
                 { "trustedIps", n => { TrustedIps = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_trustedIps>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_trustedIps.CreateFromDiscriminatorValue); } },
             };
         }
@@ -319,6 +328,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
             writer.WriteBoolValue("sourceFilesOutsideRootDirectory", SourceFilesOutsideRootDirectory);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_ssoProtection>("ssoProtection", SsoProtection);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_staticIps>("staticIps", StaticIps);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_tracing>("tracing", Tracing);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_trustedIps>("trustedIps", TrustedIps);
         }
     }

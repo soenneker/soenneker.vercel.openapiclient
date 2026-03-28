@@ -8,9 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
     public enum IdOrUrlGetResponseMember2_gitSourceMember15_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "bitbucket")]
+        [EnumMember(Value = "gitlab")]
         #pragma warning disable CS1591
-        Bitbucket,
+        Gitlab,
         #pragma warning restore CS1591
     }
 }

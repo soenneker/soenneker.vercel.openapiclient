@@ -8,9 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
     public enum DeploymentsPostResponse_gitSourceMember14_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "gitlab")]
+        [EnumMember(Value = "github-limited")]
         #pragma warning disable CS1591
-        Gitlab,
+        GithubLimited,
         #pragma warning restore CS1591
     }
 }

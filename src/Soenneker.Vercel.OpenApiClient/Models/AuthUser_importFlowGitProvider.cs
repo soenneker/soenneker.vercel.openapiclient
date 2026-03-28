@@ -8,6 +8,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum AuthUser_importFlowGitProvider
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "vercel")]
+        #pragma warning disable CS1591
+        Vercel,
+        #pragma warning restore CS1591
         [EnumMember(Value = "gitlab")]
         #pragma warning disable CS1591
         Gitlab,

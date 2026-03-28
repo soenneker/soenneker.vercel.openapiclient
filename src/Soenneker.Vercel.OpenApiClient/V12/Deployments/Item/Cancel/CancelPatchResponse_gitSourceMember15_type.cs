@@ -8,9 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel
     public enum CancelPatchResponse_gitSourceMember15_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "bitbucket")]
+        [EnumMember(Value = "gitlab")]
         #pragma warning disable CS1591
-        Bitbucket,
+        Gitlab,
         #pragma warning restore CS1591
     }
 }

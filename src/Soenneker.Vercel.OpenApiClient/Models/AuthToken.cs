@@ -63,6 +63,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Prefix { get; set; }
 #endif
+        /// <summary>Timestamp (in milliseconds) of when the token was revoked.</summary>
+        public double? RevokedAt { get; set; }
         /// <summary>The access scopes granted to the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,6 +123,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "origin", n => { Origin = n.GetStringValue(); } },
                 { "prefix", n => { Prefix = n.GetStringValue(); } },
+                { "revokedAt", n => { RevokedAt = n.GetDoubleValue(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthToken.AuthToken_scopes>(global::Soenneker.Vercel.OpenApiClient.Models.AuthToken.AuthToken_scopes.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "suffix", n => { Suffix = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -142,6 +145,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("origin", Origin);
             writer.WriteStringValue("prefix", Prefix);
+            writer.WriteDoubleValue("revokedAt", RevokedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthToken.AuthToken_scopes>("scopes", Scopes);
             writer.WriteStringValue("suffix", Suffix);
             writer.WriteStringValue("type", Type);

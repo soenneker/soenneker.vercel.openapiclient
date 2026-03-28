@@ -15,6 +15,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Billing.Buy
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Resources that were changed as part of this intent. Tracks all logical changes including the primary change and any side effects.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResources>? ChangedResources { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResources> ChangedResources { get; set; }
+#endif
         /// <summary>Optional metadata associated with the intent to update the Orb subscription with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,6 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Billing.Buy
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "changedResources", n => { ChangedResources = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResources>(global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResources.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_metadata>(global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_metadata.CreateFromDiscriminatorValue); } },
                 { "orbPriceId", n => { OrbPriceId = n.GetStringValue(); } },
                 { "pendingSubscriptionChangeId", n => { PendingSubscriptionChangeId = n.GetStringValue(); } },
@@ -85,11 +94,127 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Billing.Buy
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResources>("changedResources", ChangedResources);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_metadata>("metadata", Metadata);
             writer.WriteStringValue("orbPriceId", OrbPriceId);
             writer.WriteStringValue("pendingSubscriptionChangeId", PendingSubscriptionChangeId);
             writer.WriteStringValue("productId", ProductId);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember4"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResources : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember1? BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember1 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember1 BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember2? BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember2 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember2 BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember2 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember3? BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember3 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember3 BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember3 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember4? BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember4 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember4 BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember4 { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResources"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResources CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResources();
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember1 = new global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember1();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember2 = new global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember2();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember3 = new global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember3();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember4 = new global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember4();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember1 != null)
+                {
+                    return BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember1.GetFieldDeserializers();
+                }
+                else if(BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember2 != null)
+                {
+                    return BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember2.GetFieldDeserializers();
+                }
+                else if(BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember3 != null)
+                {
+                    return BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember3.GetFieldDeserializers();
+                }
+                else if(BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember4 != null)
+                {
+                    return BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember4.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember1 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember1>(null, BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember1);
+                }
+                else if(BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember2 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember2>(null, BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember2);
+                }
+                else if(BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember3 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember3>(null, BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember3);
+                }
+                else if(BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember4 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember3_orbSubscriptionIntent_configurationMember3_output_changedResourcesMember4>(null, BuyPostResponseMember3OrbSubscriptionIntentConfigurationMember3OutputChangedResourcesMember4);
+                }
+            }
         }
     }
 }

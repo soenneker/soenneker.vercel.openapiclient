@@ -8,6 +8,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum AuthToken_scopesMember2_origin
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "app")]
+        #pragma warning disable CS1591
+        App,
+        #pragma warning restore CS1591
         [EnumMember(Value = "saml")]
         #pragma warning disable CS1591
         Saml,
@@ -63,10 +67,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "chatgpt")]
         #pragma warning disable CS1591
         Chatgpt,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "app")]
-        #pragma warning disable CS1591
-        App,
         #pragma warning restore CS1591
         [EnumMember(Value = "emu")]
         #pragma warning disable CS1591

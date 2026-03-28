@@ -7,21 +7,20 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
 {
-    /// <summary>
-    /// Allows custom git sources (local folder mounted to the container) in test mode
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class IdOrUrlGetResponseMember2_gitSourceMember10 : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The gitUrl property</summary>
+        /// <summary>The org property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitUrl { get; set; }
+        public string? Org { get; set; }
 #nullable restore
 #else
-        public string GitUrl { get; set; }
+        public string Org { get; set; }
 #endif
         /// <summary>The ref property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,6 +30,16 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
 #else
         public string Ref { get; set; }
 #endif
+        /// <summary>The repo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Repo { get; set; }
+#nullable restore
+#else
+        public string Repo { get; set; }
+#endif
+        /// <summary>The repoPushedAt property</summary>
+        public double? RepoPushedAt { get; set; }
         /// <summary>The sha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,8 +75,10 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "gitUrl", n => { GitUrl = n.GetStringValue(); } },
+                { "org", n => { Org = n.GetStringValue(); } },
                 { "ref", n => { Ref = n.GetStringValue(); } },
+                { "repo", n => { Repo = n.GetStringValue(); } },
+                { "repoPushedAt", n => { RepoPushedAt = n.GetDoubleValue(); } },
                 { "sha", n => { Sha = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember10_type>(); } },
             };
@@ -79,8 +90,10 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("gitUrl", GitUrl);
+            writer.WriteStringValue("org", Org);
             writer.WriteStringValue("ref", Ref);
+            writer.WriteStringValue("repo", Repo);
+            writer.WriteDoubleValue("repoPushedAt", RepoPushedAt);
             writer.WriteStringValue("sha", Sha);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember10_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

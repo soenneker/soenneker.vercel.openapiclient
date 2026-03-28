@@ -14,8 +14,14 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The projectId property</summary>
-        public double? ProjectId { get; set; }
+        /// <summary>The org property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Org { get; set; }
+#nullable restore
+#else
+        public string Org { get; set; }
+#endif
         /// <summary>The ref property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,6 +30,16 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
 #else
         public string Ref { get; set; }
 #endif
+        /// <summary>The repo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Repo { get; set; }
+#nullable restore
+#else
+        public string Repo { get; set; }
+#endif
+        /// <summary>The repoId property</summary>
+        public double? RepoId { get; set; }
         /// <summary>The sha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,8 +75,10 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "projectId", n => { ProjectId = n.GetDoubleValue(); } },
+                { "org", n => { Org = n.GetStringValue(); } },
                 { "ref", n => { Ref = n.GetStringValue(); } },
+                { "repo", n => { Repo = n.GetStringValue(); } },
+                { "repoId", n => { RepoId = n.GetDoubleValue(); } },
                 { "sha", n => { Sha = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember14_type>(); } },
             };
@@ -72,8 +90,10 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("projectId", ProjectId);
+            writer.WriteStringValue("org", Org);
             writer.WriteStringValue("ref", Ref);
+            writer.WriteStringValue("repo", Repo);
+            writer.WriteDoubleValue("repoId", RepoId);
             writer.WriteStringValue("sha", Sha);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember14_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
