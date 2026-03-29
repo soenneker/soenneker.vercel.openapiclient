@@ -22,6 +22,8 @@ namespace Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel
 #else
         public string Org { get; set; }
 #endif
+        /// <summary>The prId property</summary>
+        public double? PrId { get; set; }
         /// <summary>The ref property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "org", n => { Org = n.GetStringValue(); } },
+                { "prId", n => { PrId = n.GetDoubleValue(); } },
                 { "ref", n => { Ref = n.GetStringValue(); } },
                 { "repo", n => { Repo = n.GetStringValue(); } },
                 { "repoPushedAt", n => { RepoPushedAt = n.GetDoubleValue(); } },
@@ -91,6 +94,7 @@ namespace Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("org", Org);
+            writer.WriteDoubleValue("prId", PrId);
             writer.WriteStringValue("ref", Ref);
             writer.WriteStringValue("repo", Repo);
             writer.WriteDoubleValue("repoPushedAt", RepoPushedAt);

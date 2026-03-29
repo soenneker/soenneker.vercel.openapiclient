@@ -470,6 +470,14 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
 #else
         public string Tier { get; set; }
 #endif
+        /// <summary>The tracing property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_tracing? Tracing { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_tracing Tracing { get; set; }
+#endif
         /// <summary>The transferCompletedAt property</summary>
         public double? TransferCompletedAt { get; set; }
         /// <summary>The transferredFromAccountId property</summary>
@@ -623,6 +631,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
                 { "staticIps", n => { StaticIps = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_staticIps>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_staticIps.CreateFromDiscriminatorValue); } },
                 { "targets", n => { Targets = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_targets>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_targets.CreateFromDiscriminatorValue); } },
                 { "tier", n => { Tier = n.GetStringValue(); } },
+                { "tracing", n => { Tracing = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_tracing>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_tracing.CreateFromDiscriminatorValue); } },
                 { "transferCompletedAt", n => { TransferCompletedAt = n.GetDoubleValue(); } },
                 { "transferStartedAt", n => { TransferStartedAt = n.GetDoubleValue(); } },
                 { "transferToAccountId", n => { TransferToAccountId = n.GetStringValue(); } },
@@ -720,6 +729,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_staticIps>("staticIps", StaticIps);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_targets>("targets", Targets);
             writer.WriteStringValue("tier", Tier);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_tracing>("tracing", Tracing);
             writer.WriteDoubleValue("transferCompletedAt", TransferCompletedAt);
             writer.WriteStringValue("transferredFromAccountId", TransferredFromAccountId);
             writer.WriteDoubleValue("transferStartedAt", TransferStartedAt);

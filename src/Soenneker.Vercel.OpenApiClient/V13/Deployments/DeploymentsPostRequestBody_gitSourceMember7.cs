@@ -14,14 +14,6 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The owner property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Owner { get; set; }
-#nullable restore
-#else
-        public string Owner { get; set; }
-#endif
         /// <summary>The ref property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +21,14 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
 #nullable restore
 #else
         public string Ref { get; set; }
+#endif
+        /// <summary>The repoUuid property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RepoUuid { get; set; }
+#nullable restore
+#else
+        public string RepoUuid { get; set; }
 #endif
         /// <summary>The sha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,16 +38,16 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
 #else
         public string Sha { get; set; }
 #endif
-        /// <summary>The slug property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Slug { get; set; }
-#nullable restore
-#else
-        public string Slug { get; set; }
-#endif
         /// <summary>The type property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember7_type? Type { get; set; }
+        /// <summary>The workspaceUuid property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WorkspaceUuid { get; set; }
+#nullable restore
+#else
+        public string WorkspaceUuid { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember7"/> and sets the default values.
         /// </summary>
@@ -73,11 +73,11 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "owner", n => { Owner = n.GetStringValue(); } },
                 { "ref", n => { Ref = n.GetStringValue(); } },
+                { "repoUuid", n => { RepoUuid = n.GetStringValue(); } },
                 { "sha", n => { Sha = n.GetStringValue(); } },
-                { "slug", n => { Slug = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember7_type>(); } },
+                { "workspaceUuid", n => { WorkspaceUuid = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -87,11 +87,11 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("owner", Owner);
             writer.WriteStringValue("ref", Ref);
+            writer.WriteStringValue("repoUuid", RepoUuid);
             writer.WriteStringValue("sha", Sha);
-            writer.WriteStringValue("slug", Slug);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember7_type>("type", Type);
+            writer.WriteStringValue("workspaceUuid", WorkspaceUuid);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

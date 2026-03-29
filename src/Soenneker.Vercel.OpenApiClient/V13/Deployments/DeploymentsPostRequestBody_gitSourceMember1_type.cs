@@ -8,9 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
     public enum DeploymentsPostRequestBody_gitSourceMember1_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "github")]
+        [EnumMember(Value = "vercel")]
         #pragma warning disable CS1591
-        Github,
+        Vercel,
         #pragma warning restore CS1591
     }
 }

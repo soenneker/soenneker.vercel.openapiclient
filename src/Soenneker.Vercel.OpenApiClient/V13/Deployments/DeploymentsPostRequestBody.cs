@@ -230,7 +230,7 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember7"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember8"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeploymentsPostRequestBody_gitSource : IComposedTypeWrapper, IParsable
@@ -291,6 +291,14 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
 #else
             public global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember7 DeploymentsPostRequestBodyGitSourceMember7 { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember8"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember8? DeploymentsPostRequestBodyGitSourceMember8 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember8 DeploymentsPostRequestBodyGitSourceMember8 { get; set; }
+#endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
@@ -307,6 +315,7 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
                 result.DeploymentsPostRequestBodyGitSourceMember5 = new global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember5();
                 result.DeploymentsPostRequestBodyGitSourceMember6 = new global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember6();
                 result.DeploymentsPostRequestBodyGitSourceMember7 = new global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember7();
+                result.DeploymentsPostRequestBodyGitSourceMember8 = new global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember8();
                 return result;
             }
             /// <summary>
@@ -315,9 +324,9 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if(DeploymentsPostRequestBodyGitSourceMember1 != null || DeploymentsPostRequestBodyGitSourceMember2 != null || DeploymentsPostRequestBodyGitSourceMember3 != null || DeploymentsPostRequestBodyGitSourceMember4 != null || DeploymentsPostRequestBodyGitSourceMember5 != null || DeploymentsPostRequestBodyGitSourceMember6 != null || DeploymentsPostRequestBodyGitSourceMember7 != null)
+                if(DeploymentsPostRequestBodyGitSourceMember1 != null || DeploymentsPostRequestBodyGitSourceMember2 != null || DeploymentsPostRequestBodyGitSourceMember3 != null || DeploymentsPostRequestBodyGitSourceMember4 != null || DeploymentsPostRequestBodyGitSourceMember5 != null || DeploymentsPostRequestBodyGitSourceMember6 != null || DeploymentsPostRequestBodyGitSourceMember7 != null || DeploymentsPostRequestBodyGitSourceMember8 != null)
                 {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(DeploymentsPostRequestBodyGitSourceMember1, DeploymentsPostRequestBodyGitSourceMember2, DeploymentsPostRequestBodyGitSourceMember3, DeploymentsPostRequestBodyGitSourceMember4, DeploymentsPostRequestBodyGitSourceMember5, DeploymentsPostRequestBodyGitSourceMember6, DeploymentsPostRequestBodyGitSourceMember7);
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(DeploymentsPostRequestBodyGitSourceMember1, DeploymentsPostRequestBodyGitSourceMember2, DeploymentsPostRequestBodyGitSourceMember3, DeploymentsPostRequestBodyGitSourceMember4, DeploymentsPostRequestBodyGitSourceMember5, DeploymentsPostRequestBodyGitSourceMember6, DeploymentsPostRequestBodyGitSourceMember7, DeploymentsPostRequestBodyGitSourceMember8);
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -328,7 +337,7 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
             public virtual void Serialize(ISerializationWriter writer)
             {
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember1>(null, DeploymentsPostRequestBodyGitSourceMember1, DeploymentsPostRequestBodyGitSourceMember2, DeploymentsPostRequestBodyGitSourceMember3, DeploymentsPostRequestBodyGitSourceMember4, DeploymentsPostRequestBodyGitSourceMember5, DeploymentsPostRequestBodyGitSourceMember6, DeploymentsPostRequestBodyGitSourceMember7);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody_gitSourceMember1>(null, DeploymentsPostRequestBodyGitSourceMember1, DeploymentsPostRequestBodyGitSourceMember2, DeploymentsPostRequestBodyGitSourceMember3, DeploymentsPostRequestBodyGitSourceMember4, DeploymentsPostRequestBodyGitSourceMember5, DeploymentsPostRequestBodyGitSourceMember6, DeploymentsPostRequestBodyGitSourceMember7, DeploymentsPostRequestBodyGitSourceMember8);
             }
         }
     }

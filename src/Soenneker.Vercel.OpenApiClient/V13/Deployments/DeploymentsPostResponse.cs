@@ -1048,7 +1048,7 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember9"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember17"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember9"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeploymentsPostResponse_gitSource : IComposedTypeWrapper, IParsable
@@ -1116,6 +1116,14 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
 #nullable restore
 #else
             public global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember16 DeploymentsPostResponseGitSourceMember16 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember17"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember17? DeploymentsPostResponseGitSourceMember17 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember17 DeploymentsPostResponseGitSourceMember17 { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1225,6 +1233,10 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
+                    result.DeploymentsPostResponseGitSourceMember17 = new global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember17();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.DeploymentsPostResponseGitSourceMember2 = new global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember2();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -1294,6 +1306,10 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
                 else if(DeploymentsPostResponseGitSourceMember16 != null)
                 {
                     return DeploymentsPostResponseGitSourceMember16.GetFieldDeserializers();
+                }
+                else if(DeploymentsPostResponseGitSourceMember17 != null)
+                {
+                    return DeploymentsPostResponseGitSourceMember17.GetFieldDeserializers();
                 }
                 else if(DeploymentsPostResponseGitSourceMember2 != null)
                 {
@@ -1367,6 +1383,10 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
                 else if(DeploymentsPostResponseGitSourceMember16 != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember16>(null, DeploymentsPostResponseGitSourceMember16);
+                }
+                else if(DeploymentsPostResponseGitSourceMember17 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_gitSourceMember17>(null, DeploymentsPostResponseGitSourceMember17);
                 }
                 else if(DeploymentsPostResponseGitSourceMember2 != null)
                 {

@@ -527,7 +527,7 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember9"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember17"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember9"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IdOrUrlGetResponseMember2_gitSource : IComposedTypeWrapper, IParsable
@@ -595,6 +595,14 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
 #nullable restore
 #else
             public global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember16 IdOrUrlGetResponseMember2GitSourceMember16 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember17"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember17? IdOrUrlGetResponseMember2GitSourceMember17 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember17 IdOrUrlGetResponseMember2GitSourceMember17 { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -704,6 +712,10 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
+                    result.IdOrUrlGetResponseMember2GitSourceMember17 = new global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember17();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.IdOrUrlGetResponseMember2GitSourceMember2 = new global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember2();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -773,6 +785,10 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
                 else if(IdOrUrlGetResponseMember2GitSourceMember16 != null)
                 {
                     return IdOrUrlGetResponseMember2GitSourceMember16.GetFieldDeserializers();
+                }
+                else if(IdOrUrlGetResponseMember2GitSourceMember17 != null)
+                {
+                    return IdOrUrlGetResponseMember2GitSourceMember17.GetFieldDeserializers();
                 }
                 else if(IdOrUrlGetResponseMember2GitSourceMember2 != null)
                 {
@@ -846,6 +862,10 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
                 else if(IdOrUrlGetResponseMember2GitSourceMember16 != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember16>(null, IdOrUrlGetResponseMember2GitSourceMember16);
+                }
+                else if(IdOrUrlGetResponseMember2GitSourceMember17 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2_gitSourceMember17>(null, IdOrUrlGetResponseMember2GitSourceMember17);
                 }
                 else if(IdOrUrlGetResponseMember2GitSourceMember2 != null)
                 {

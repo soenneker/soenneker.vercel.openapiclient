@@ -1048,7 +1048,7 @@ namespace Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember9"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember17"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember9"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CancelPatchResponse_gitSource : IComposedTypeWrapper, IParsable
@@ -1116,6 +1116,14 @@ namespace Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel
 #nullable restore
 #else
             public global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember16 CancelPatchResponseGitSourceMember16 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember17"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember17? CancelPatchResponseGitSourceMember17 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember17 CancelPatchResponseGitSourceMember17 { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1225,6 +1233,10 @@ namespace Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
+                    result.CancelPatchResponseGitSourceMember17 = new global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember17();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.CancelPatchResponseGitSourceMember2 = new global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember2();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -1294,6 +1306,10 @@ namespace Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel
                 else if(CancelPatchResponseGitSourceMember16 != null)
                 {
                     return CancelPatchResponseGitSourceMember16.GetFieldDeserializers();
+                }
+                else if(CancelPatchResponseGitSourceMember17 != null)
+                {
+                    return CancelPatchResponseGitSourceMember17.GetFieldDeserializers();
                 }
                 else if(CancelPatchResponseGitSourceMember2 != null)
                 {
@@ -1367,6 +1383,10 @@ namespace Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel
                 else if(CancelPatchResponseGitSourceMember16 != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember16>(null, CancelPatchResponseGitSourceMember16);
+                }
+                else if(CancelPatchResponseGitSourceMember17 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_gitSourceMember17>(null, CancelPatchResponseGitSourceMember17);
                 }
                 else if(CancelPatchResponseGitSourceMember2 != null)
                 {
