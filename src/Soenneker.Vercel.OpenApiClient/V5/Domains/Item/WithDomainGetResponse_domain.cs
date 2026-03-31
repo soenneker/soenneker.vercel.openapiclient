@@ -68,8 +68,6 @@ namespace Soenneker.Vercel.OpenApiClient.V5.Domains.Item
 #else
         public List<string> Nameservers { get; set; }
 #endif
-        /// <summary>Whether or not the domain is registered with Name.com. If set to `true`, the domain is registered with Name.com.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.WithDomainGetResponse_domain_registrar? Registrar { get; set; }
         /// <summary>Indicates whether the domain is set to automatically renew.</summary>
         public bool? Renew { get; set; }
         /// <summary>The type of service the domain is handled by. `external` if the DNS is externally handled, `zeit.world` if handled with Vercel, or `na` if the service is not available.</summary>
@@ -132,7 +130,6 @@ namespace Soenneker.Vercel.OpenApiClient.V5.Domains.Item
                 { "intendedNameservers", n => { IntendedNameservers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nameservers", n => { Nameservers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "registrar", n => { Registrar = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.WithDomainGetResponse_domain_registrar>(); } },
                 { "renew", n => { Renew = n.GetBoolValue(); } },
                 { "serviceType", n => { ServiceType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.WithDomainGetResponse_domain_serviceType>(); } },
                 { "suffix", n => { Suffix = n.GetBoolValue(); } },
@@ -159,7 +156,6 @@ namespace Soenneker.Vercel.OpenApiClient.V5.Domains.Item
             writer.WriteCollectionOfPrimitiveValues<string>("intendedNameservers", IntendedNameservers);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("nameservers", Nameservers);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.WithDomainGetResponse_domain_registrar>("registrar", Registrar);
             writer.WriteBoolValue("renew", Renew);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.WithDomainGetResponse_domain_serviceType>("serviceType", ServiceType);
             writer.WriteBoolValue("suffix", Suffix);
