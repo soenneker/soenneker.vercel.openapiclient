@@ -23,6 +23,14 @@ namespace Soenneker.Vercel.OpenApiClient.V6.Deployments
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Team roles at time of deployment</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution_vercelUser_teamRoles?>? TeamRoles { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution_vercelUser_teamRoles?> TeamRoles { get; set; }
+#endif
         /// <summary>Vercel username</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.V6.Deployments
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "teamRoles", n => { TeamRoles = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution_vercelUser_teamRoles>()?.AsList(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
             };
         }
@@ -68,6 +77,7 @@ namespace Soenneker.Vercel.OpenApiClient.V6.Deployments
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution_vercelUser_teamRoles>("teamRoles", TeamRoles);
             writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);
         }

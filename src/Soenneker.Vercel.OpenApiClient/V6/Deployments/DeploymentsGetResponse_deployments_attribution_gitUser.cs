@@ -23,6 +23,8 @@ namespace Soenneker.Vercel.OpenApiClient.V6.Deployments
 #else
         public global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution_gitUser.DeploymentsGetResponse_deployments_attribution_gitUser_id Id { get; set; }
 #endif
+        /// <summary>Is the git user a bot</summary>
+        public bool? IsBot { get; set; }
         /// <summary>Git provider username/login</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +33,8 @@ namespace Soenneker.Vercel.OpenApiClient.V6.Deployments
 #else
         public string Login { get; set; }
 #endif
+        /// <summary>User type</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution_gitUser_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution_gitUser"/> and sets the default values.
         /// </summary>
@@ -57,7 +61,9 @@ namespace Soenneker.Vercel.OpenApiClient.V6.Deployments
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution_gitUser.DeploymentsGetResponse_deployments_attribution_gitUser_id>(global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution_gitUser.DeploymentsGetResponse_deployments_attribution_gitUser_id.CreateFromDiscriminatorValue); } },
+                { "isBot", n => { IsBot = n.GetBoolValue(); } },
                 { "login", n => { Login = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution_gitUser_type>(); } },
             };
         }
         /// <summary>
@@ -68,7 +74,9 @@ namespace Soenneker.Vercel.OpenApiClient.V6.Deployments
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution_gitUser.DeploymentsGetResponse_deployments_attribution_gitUser_id>("id", Id);
+            writer.WriteBoolValue("isBot", IsBot);
             writer.WriteStringValue("login", Login);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution_gitUser_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
