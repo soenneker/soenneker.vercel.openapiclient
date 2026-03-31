@@ -1167,6 +1167,14 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> PrivateCloudAccount { get; set; }
 #endif
+        /// <summary>The privateLinkEndpoint property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?>? PrivateLinkEndpoint { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> PrivateLinkEndpoint { get; set; }
+#endif
         /// <summary>The productionAliasProtectionBypass property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2048,6 +2056,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
                 { "postgresStoreTokenSet", n => { PostgresStoreTokenSet = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "previewDeploymentSuffix", n => { PreviewDeploymentSuffix = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "privateCloudAccount", n => { PrivateCloudAccount = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
+                { "privateLinkEndpoint", n => { PrivateLinkEndpoint = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "proTrialOnboarding", n => { ProTrialOnboarding = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "productionAliasProtectionBypass", n => { ProductionAliasProtectionBypass = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "project", n => { Project = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
@@ -2290,6 +2299,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("postgresStoreTokenSet", PostgresStoreTokenSet);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("previewDeploymentSuffix", PreviewDeploymentSuffix);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("privateCloudAccount", PrivateCloudAccount);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("privateLinkEndpoint", PrivateLinkEndpoint);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("productionAliasProtectionBypass", ProductionAliasProtectionBypass);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("project", Project);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("projectAccessGroup", ProjectAccessGroup);

@@ -7,6 +7,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum NamedSandbox_status
     {
+        [EnumMember(Value = "stopping")]
+        #pragma warning disable CS1591
+        Stopping,
+        #pragma warning restore CS1591
         [EnumMember(Value = "running")]
         #pragma warning disable CS1591
         Running,

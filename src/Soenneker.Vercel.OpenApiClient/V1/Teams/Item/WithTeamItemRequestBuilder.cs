@@ -7,6 +7,7 @@ using Soenneker.Vercel.OpenApiClient.V1.Teams.Item.DsyncRoles;
 using Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags;
 using Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Invites;
 using Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Members;
+using Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends;
 using Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Request;
 using System.Collections.Generic;
 using System.IO;
@@ -40,6 +41,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item
         public global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Members.MembersRequestBuilder Members
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Members.MembersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The microfrontends property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.MicrofrontendsRequestBuilder Microfrontends
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.MicrofrontendsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Request.RequestRequestBuilder Request

@@ -1648,6 +1648,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Events.Types
         #pragma warning disable CS1591
         V0ChatCreated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "v0-chat-ai-usage")]
+        #pragma warning disable CS1591
+        V0ChatAiUsage,
+        #pragma warning restore CS1591
         [EnumMember(Value = "v0-chat-message-sent")]
         #pragma warning disable CS1591
         V0ChatMessageSent,

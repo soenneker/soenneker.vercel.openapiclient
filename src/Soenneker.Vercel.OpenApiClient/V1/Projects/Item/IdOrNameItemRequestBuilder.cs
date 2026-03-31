@@ -7,6 +7,7 @@ using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Env;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Members;
+using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Pause;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Promote;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.ProtectionBypass;
@@ -51,6 +52,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Members.MembersRequestBuilder Members
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Members.MembersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The microfrontends property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsRequestBuilder Microfrontends
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pause property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Pause.PauseRequestBuilder Pause
