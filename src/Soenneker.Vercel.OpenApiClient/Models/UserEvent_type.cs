@@ -1035,6 +1035,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ProjectGitLfsToggled,
         #pragma warning restore CS1591
+        [EnumMember(Value = "project-consolidated-git-commit-status-updated")]
+        #pragma warning disable CS1591
+        ProjectConsolidatedGitCommitStatusUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project-ignored-build-step-updated")]
         #pragma warning disable CS1591
         ProjectIgnoredBuildStepUpdated,

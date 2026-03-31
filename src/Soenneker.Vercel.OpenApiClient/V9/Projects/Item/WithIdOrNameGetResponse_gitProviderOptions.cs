@@ -14,6 +14,14 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Configuration for consolidated git commit status reporting. When enabled, Vercel will post a single consolidated commit status instead of individual statuses for each deployment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_gitProviderOptions_consolidatedGitCommitStatus? ConsolidatedGitCommitStatus { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_gitProviderOptions_consolidatedGitCommitStatus ConsolidatedGitCommitStatus { get; set; }
+#endif
         /// <summary>Whether the Vercel bot should automatically create GitHub deployments https://docs.github.com/en/rest/deployments/deployments#about-deployments NOTE: repository-dispatch events should be used instead</summary>
         public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_gitProviderOptions_createDeployments? CreateDeployments { get; set; }
         /// <summary>Whether the Vercel bot should not automatically create GitHub repository-dispatch events on deployment events. https://vercel.com/docs/git/vercel-for-github#repository-dispatch-events</summary>
@@ -45,6 +53,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "consolidatedGitCommitStatus", n => { ConsolidatedGitCommitStatus = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_gitProviderOptions_consolidatedGitCommitStatus>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_gitProviderOptions_consolidatedGitCommitStatus.CreateFromDiscriminatorValue); } },
                 { "createDeployments", n => { CreateDeployments = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_gitProviderOptions_createDeployments>(); } },
                 { "disableRepositoryDispatchEvents", n => { DisableRepositoryDispatchEvents = n.GetBoolValue(); } },
                 { "requireVerifiedCommits", n => { RequireVerifiedCommits = n.GetBoolValue(); } },
@@ -57,6 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_gitProviderOptions_consolidatedGitCommitStatus>("consolidatedGitCommitStatus", ConsolidatedGitCommitStatus);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_gitProviderOptions_createDeployments>("createDeployments", CreateDeployments);
             writer.WriteBoolValue("disableRepositoryDispatchEvents", DisableRepositoryDispatchEvents);
             writer.WriteBoolValue("requireVerifiedCommits", RequireVerifiedCommits);

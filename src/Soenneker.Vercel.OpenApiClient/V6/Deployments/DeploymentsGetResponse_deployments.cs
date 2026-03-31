@@ -30,6 +30,14 @@ namespace Soenneker.Vercel.OpenApiClient.V6.Deployments
 #else
         public global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_aliasError AliasError { get; set; }
 #endif
+        /// <summary>Commit attribution metadata</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution? Attribution { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution Attribution { get; set; }
+#endif
         /// <summary>Timestamp of when the deployment started building at.</summary>
         public double? BuildingAt { get; set; }
         /// <summary>Detailed information about v2 deployment checks. Includes information about blocked workflows in the deployment lifecycle.</summary>
@@ -235,6 +243,7 @@ namespace Soenneker.Vercel.OpenApiClient.V6.Deployments
             {
                 { "aliasAssigned", n => { AliasAssigned = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments.DeploymentsGetResponse_deployments_aliasAssigned>(global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments.DeploymentsGetResponse_deployments_aliasAssigned.CreateFromDiscriminatorValue); } },
                 { "aliasError", n => { AliasError = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_aliasError>(global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_aliasError.CreateFromDiscriminatorValue); } },
+                { "attribution", n => { Attribution = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution>(global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution.CreateFromDiscriminatorValue); } },
                 { "buildingAt", n => { BuildingAt = n.GetDoubleValue(); } },
                 { "checks", n => { Checks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_checks>(global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_checks.CreateFromDiscriminatorValue); } },
                 { "checksConclusion", n => { ChecksConclusion = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_checksConclusion>(); } },
@@ -284,6 +293,7 @@ namespace Soenneker.Vercel.OpenApiClient.V6.Deployments
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments.DeploymentsGetResponse_deployments_aliasAssigned>("aliasAssigned", AliasAssigned);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_aliasError>("aliasError", AliasError);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution>("attribution", Attribution);
             writer.WriteDoubleValue("buildingAt", BuildingAt);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_checks>("checks", Checks);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_checksConclusion>("checksConclusion", ChecksConclusion);
