@@ -14,6 +14,8 @@ namespace Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The claimedAt property</summary>
+        public double? ClaimedAt { get; set; }
         /// <summary>The completedAt property</summary>
         public double? CompletedAt { get; set; }
         /// <summary>The skippedAt property</summary>
@@ -55,6 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "claimedAt", n => { ClaimedAt = n.GetDoubleValue(); } },
                 { "completedAt", n => { CompletedAt = n.GetDoubleValue(); } },
                 { "skippedAt", n => { SkippedAt = n.GetDoubleValue(); } },
                 { "skippedBy", n => { SkippedBy = n.GetStringValue(); } },
@@ -69,6 +72,7 @@ namespace Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("claimedAt", ClaimedAt);
             writer.WriteDoubleValue("completedAt", CompletedAt);
             writer.WriteDoubleValue("skippedAt", SkippedAt);
             writer.WriteStringValue("skippedBy", SkippedBy);

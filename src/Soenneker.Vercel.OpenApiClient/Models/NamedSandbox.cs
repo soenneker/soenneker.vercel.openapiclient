@@ -77,6 +77,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Runtime { get; set; }
 #endif
+        /// <summary>Default snapshot expiration time in milliseconds. 0 means no expiration.</summary>
+        public double? SnapshotExpiration { get; set; }
         /// <summary>The status of the current sandbox.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_status? Status { get; set; }
         /// <summary>The time when the sandbox status was last updated, in milliseconds since the epoch.</summary>
@@ -138,6 +140,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "persistent", n => { Persistent = n.GetBoolValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "runtime", n => { Runtime = n.GetStringValue(); } },
+                { "snapshotExpiration", n => { SnapshotExpiration = n.GetDoubleValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_status>(); } },
                 { "statusUpdatedAt", n => { StatusUpdatedAt = n.GetDoubleValue(); } },
                 { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_tags>(global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_tags.CreateFromDiscriminatorValue); } },
@@ -167,6 +170,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("persistent", Persistent);
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("runtime", Runtime);
+            writer.WriteDoubleValue("snapshotExpiration", SnapshotExpiration);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_status>("status", Status);
             writer.WriteDoubleValue("statusUpdatedAt", StatusUpdatedAt);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_tags>("tags", Tags);

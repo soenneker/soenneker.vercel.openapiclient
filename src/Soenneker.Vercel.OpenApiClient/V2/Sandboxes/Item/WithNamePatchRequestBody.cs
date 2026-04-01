@@ -40,6 +40,8 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item
 #endif
         /// <summary>The runtime environment for the sandbox. Determines the pre-installed language runtimes and tools available.</summary>
         public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_runtime? Runtime { get; set; }
+        /// <summary>Default snapshot expiration time in milliseconds. Set to 0 to disable expiration. When set, this value is used as the default expiration for all snapshots created for this sandbox.</summary>
+        public int? SnapshotExpiration { get; set; }
         /// <summary>Key-value tags to associate with the sandbox. Replaces existing tags. Set to empty object to clear. Maximum 5 tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,6 +75,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item
                 { "persistent", n => { Persistent = n.GetBoolValue(); } },
                 { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_resources>(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_resources.CreateFromDiscriminatorValue); } },
                 { "runtime", n => { Runtime = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_runtime>(); } },
+                { "snapshotExpiration", n => { SnapshotExpiration = n.GetIntValue(); } },
                 { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_tags>(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_tags.CreateFromDiscriminatorValue); } },
                 { "timeout", n => { Timeout = n.GetIntValue(); } },
             };
@@ -89,6 +92,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item
             writer.WriteBoolValue("persistent", Persistent);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_resources>("resources", Resources);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_runtime>("runtime", Runtime);
+            writer.WriteIntValue("snapshotExpiration", SnapshotExpiration);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_tags>("tags", Tags);
             writer.WriteIntValue("timeout", Timeout);
         }
