@@ -14,14 +14,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The functionDefaultMemoryType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? FunctionDefaultMemoryType { get; set; }
-#nullable restore
-#else
-        public string FunctionDefaultMemoryType { get; set; }
-#endif
+        /// <summary>The functionDefaultTimeout property</summary>
+        public double? FunctionDefaultTimeout { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember159_previous"/> and sets the default values.
         /// </summary>
@@ -47,7 +41,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "functionDefaultMemoryType", n => { FunctionDefaultMemoryType = n.GetStringValue(); } },
+                { "functionDefaultTimeout", n => { FunctionDefaultTimeout = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("functionDefaultMemoryType", FunctionDefaultMemoryType);
+            writer.WriteDoubleValue("functionDefaultTimeout", FunctionDefaultTimeout);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

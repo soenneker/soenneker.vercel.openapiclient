@@ -15,29 +15,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The gitProvider property</summary>
+        /// <summary>The prevProjectWebAnalytics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitProvider { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember209_prevProjectWebAnalytics? PrevProjectWebAnalytics { get; set; }
 #nullable restore
 #else
-        public string GitProvider { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember209_prevProjectWebAnalytics PrevProjectWebAnalytics { get; set; }
 #endif
-        /// <summary>The gitProviderGroupDescriptor property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitProviderGroupDescriptor { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string GitProviderGroupDescriptor { get; set; }
+        public string ProjectId { get; set; }
 #endif
-        /// <summary>The gitScope property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitScope { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public string GitScope { get; set; }
+        public string ProjectName { get; set; }
+#endif
+        /// <summary>The projectWebAnalytics property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember209_projectWebAnalytics? ProjectWebAnalytics { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember209_projectWebAnalytics ProjectWebAnalytics { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember209"/> and sets the default values.
@@ -64,9 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "gitProvider", n => { GitProvider = n.GetStringValue(); } },
-                { "gitProviderGroupDescriptor", n => { GitProviderGroupDescriptor = n.GetStringValue(); } },
-                { "gitScope", n => { GitScope = n.GetStringValue(); } },
+                { "prevProjectWebAnalytics", n => { PrevProjectWebAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember209_prevProjectWebAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember209_prevProjectWebAnalytics.CreateFromDiscriminatorValue); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "projectWebAnalytics", n => { ProjectWebAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember209_projectWebAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember209_projectWebAnalytics.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,9 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("gitProvider", GitProvider);
-            writer.WriteStringValue("gitProviderGroupDescriptor", GitProviderGroupDescriptor);
-            writer.WriteStringValue("gitScope", GitScope);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember209_prevProjectWebAnalytics>("prevProjectWebAnalytics", PrevProjectWebAnalytics);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember209_projectWebAnalytics>("projectWebAnalytics", ProjectWebAnalytics);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

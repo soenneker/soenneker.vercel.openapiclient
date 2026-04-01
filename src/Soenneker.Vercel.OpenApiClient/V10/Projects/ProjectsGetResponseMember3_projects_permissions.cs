@@ -1087,6 +1087,14 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> OptionsAllowlist { get; set; }
 #endif
+        /// <summary>The organization property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?>? Organization { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> Organization { get; set; }
+#endif
         /// <summary>The organizationDomain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2046,6 +2054,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
                 { "onDemandConcurrency", n => { OnDemandConcurrency = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "openTelemetryEndpoint", n => { OpenTelemetryEndpoint = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "optionsAllowlist", n => { OptionsAllowlist = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
+                { "organization", n => { Organization = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "organizationDomain", n => { OrganizationDomain = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "ownEvent", n => { OwnEvent = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "passwordProtection", n => { PasswordProtection = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
@@ -2289,6 +2298,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("onDemandConcurrency", OnDemandConcurrency);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("openTelemetryEndpoint", OpenTelemetryEndpoint);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("optionsAllowlist", OptionsAllowlist);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("organization", Organization);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("organizationDomain", OrganizationDomain);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("ownEvent", OwnEvent);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("passwordProtection", PasswordProtection);

@@ -11,10 +11,6 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item
         #pragma warning disable CS1591
         System,
         #pragma warning restore CS1591
-        [EnumMember(Value = "secret")]
-        #pragma warning disable CS1591
-        Secret,
-        #pragma warning restore CS1591
         [EnumMember(Value = "encrypted")]
         #pragma warning disable CS1591
         Encrypted,

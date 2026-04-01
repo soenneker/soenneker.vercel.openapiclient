@@ -843,6 +843,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         PreviewDeploymentSuffixUpdate,
         #pragma warning restore CS1591
+        [EnumMember(Value = "privatelink-endpoint-created")]
+        #pragma warning disable CS1591
+        PrivatelinkEndpointCreated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "production-branch-updated")]
         #pragma warning disable CS1591
         ProductionBranchUpdated,
