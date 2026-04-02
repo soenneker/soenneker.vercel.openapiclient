@@ -22,14 +22,6 @@ namespace Soenneker.Vercel.OpenApiClient.V3.User.Tokens
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The ID of the project to scope this token to</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +42,6 @@ namespace Soenneker.Vercel.OpenApiClient.V3.User.Tokens
             {
                 { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,7 +53,6 @@ namespace Soenneker.Vercel.OpenApiClient.V3.User.Tokens
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("expiresAt", ExpiresAt);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("projectId", ProjectId);
         }
     }
 }

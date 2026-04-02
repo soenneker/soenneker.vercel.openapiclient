@@ -15,53 +15,53 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The directoryType property</summary>
+        /// <summary>The bitbucketUsername property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DirectoryType { get; set; }
+        public string? BitbucketUsername { get; set; }
 #nullable restore
 #else
-        public string DirectoryType { get; set; }
+        public string BitbucketUsername { get; set; }
 #endif
-        /// <summary>The origin property</summary>
+        /// <summary>The githubUsername property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Origin { get; set; }
+        public string? GithubUsername { get; set; }
 #nullable restore
 #else
-        public string Origin { get; set; }
+        public string GithubUsername { get; set; }
 #endif
-        /// <summary>The previousRole property</summary>
+        /// <summary>The gitlabUsername property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousRole { get; set; }
+        public string? GitlabUsername { get; set; }
 #nullable restore
 #else
-        public string PreviousRole { get; set; }
+        public string GitlabUsername { get; set; }
 #endif
-        /// <summary>The role property</summary>
+        /// <summary>The gitUsername property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Role { get; set; }
+        public string? GitUsername { get; set; }
 #nullable restore
 #else
-        public string Role { get; set; }
+        public string GitUsername { get; set; }
 #endif
-        /// <summary>The updatedUid property</summary>
+        /// <summary>The requestedTeamName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedUid { get; set; }
+        public string? RequestedTeamName { get; set; }
 #nullable restore
 #else
-        public string UpdatedUid { get; set; }
+        public string RequestedTeamName { get; set; }
 #endif
-        /// <summary>The updatedUser property</summary>
+        /// <summary>The requestedUserName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember253_updatedUser? UpdatedUser { get; set; }
+        public string? RequestedUserName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember253_updatedUser UpdatedUser { get; set; }
+        public string RequestedUserName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember253"/> and sets the default values.
@@ -88,12 +88,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "directoryType", n => { DirectoryType = n.GetStringValue(); } },
-                { "origin", n => { Origin = n.GetStringValue(); } },
-                { "previousRole", n => { PreviousRole = n.GetStringValue(); } },
-                { "role", n => { Role = n.GetStringValue(); } },
-                { "updatedUid", n => { UpdatedUid = n.GetStringValue(); } },
-                { "updatedUser", n => { UpdatedUser = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember253_updatedUser>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember253_updatedUser.CreateFromDiscriminatorValue); } },
+                { "bitbucketUsername", n => { BitbucketUsername = n.GetStringValue(); } },
+                { "gitUsername", n => { GitUsername = n.GetStringValue(); } },
+                { "githubUsername", n => { GithubUsername = n.GetStringValue(); } },
+                { "gitlabUsername", n => { GitlabUsername = n.GetStringValue(); } },
+                { "requestedTeamName", n => { RequestedTeamName = n.GetStringValue(); } },
+                { "requestedUserName", n => { RequestedUserName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -103,12 +103,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("directoryType", DirectoryType);
-            writer.WriteStringValue("origin", Origin);
-            writer.WriteStringValue("previousRole", PreviousRole);
-            writer.WriteStringValue("role", Role);
-            writer.WriteStringValue("updatedUid", UpdatedUid);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember253_updatedUser>("updatedUser", UpdatedUser);
+            writer.WriteStringValue("bitbucketUsername", BitbucketUsername);
+            writer.WriteStringValue("githubUsername", GithubUsername);
+            writer.WriteStringValue("gitlabUsername", GitlabUsername);
+            writer.WriteStringValue("gitUsername", GitUsername);
+            writer.WriteStringValue("requestedTeamName", RequestedTeamName);
+            writer.WriteStringValue("requestedUserName", RequestedUserName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

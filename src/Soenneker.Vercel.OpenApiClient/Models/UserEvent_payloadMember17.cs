@@ -23,21 +23,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Alias { get; set; }
 #endif
-        /// <summary>The aliasId property</summary>
+        /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AliasId { get; set; }
+        public string? Email { get; set; }
 #nullable restore
 #else
-        public string AliasId { get; set; }
-#endif
-        /// <summary>The projectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectName { get; set; }
-#nullable restore
-#else
-        public string ProjectName { get; set; }
+        public string Email { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember17"/> and sets the default values.
@@ -65,8 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "alias", n => { Alias = n.GetStringValue(); } },
-                { "aliasId", n => { AliasId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -77,8 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("alias", Alias);
-            writer.WriteStringValue("aliasId", AliasId);
-            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("email", Email);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

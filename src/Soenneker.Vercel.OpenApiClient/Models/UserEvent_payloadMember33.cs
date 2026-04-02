@@ -25,16 +25,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string InvoiceId { get; set; }
 #endif
-        /// <summary>The newInvoiceId property</summary>
+        /// <summary>The lineItemCount property</summary>
+        public double? LineItemCount { get; set; }
+        /// <summary>The refundReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewInvoiceId { get; set; }
+        public string? RefundReason { get; set; }
 #nullable restore
 #else
-        public string NewInvoiceId { get; set; }
+        public string RefundReason { get; set; }
 #endif
-        /// <summary>The settlementMethod property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember33_settlementMethod? SettlementMethod { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember33"/> and sets the default values.
         /// </summary>
@@ -62,8 +62,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
                 { "invoiceId", n => { InvoiceId = n.GetStringValue(); } },
-                { "newInvoiceId", n => { NewInvoiceId = n.GetStringValue(); } },
-                { "settlementMethod", n => { SettlementMethod = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember33_settlementMethod>(); } },
+                { "lineItemCount", n => { LineItemCount = n.GetDoubleValue(); } },
+                { "refundReason", n => { RefundReason = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,8 +75,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("amount", Amount);
             writer.WriteStringValue("invoiceId", InvoiceId);
-            writer.WriteStringValue("newInvoiceId", NewInvoiceId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember33_settlementMethod>("settlementMethod", SettlementMethod);
+            writer.WriteDoubleValue("lineItemCount", LineItemCount);
+            writer.WriteStringValue("refundReason", RefundReason);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

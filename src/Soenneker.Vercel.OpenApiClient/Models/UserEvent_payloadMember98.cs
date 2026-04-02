@@ -31,13 +31,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string EdgeConfigSlug { get; set; }
 #endif
-        /// <summary>ids of deleted tokens</summary>
+        /// <summary>The edgeConfigTokenId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EdgeConfigTokenIds { get; set; }
+        public string? EdgeConfigTokenId { get; set; }
 #nullable restore
 #else
-        public List<string> EdgeConfigTokenIds { get; set; }
+        public string EdgeConfigTokenId { get; set; }
+#endif
+        /// <summary>The label property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Label { get; set; }
+#nullable restore
+#else
+        public string Label { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember98"/> and sets the default values.
@@ -66,7 +74,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
                 { "edgeConfigSlug", n => { EdgeConfigSlug = n.GetStringValue(); } },
-                { "edgeConfigTokenIds", n => { EdgeConfigTokenIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "edgeConfigTokenId", n => { EdgeConfigTokenId = n.GetStringValue(); } },
+                { "label", n => { Label = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,7 +87,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("edgeConfigId", EdgeConfigId);
             writer.WriteStringValue("edgeConfigSlug", EdgeConfigSlug);
-            writer.WriteCollectionOfPrimitiveValues<string>("edgeConfigTokenIds", EdgeConfigTokenIds);
+            writer.WriteStringValue("edgeConfigTokenId", EdgeConfigTokenId);
+            writer.WriteStringValue("label", Label);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

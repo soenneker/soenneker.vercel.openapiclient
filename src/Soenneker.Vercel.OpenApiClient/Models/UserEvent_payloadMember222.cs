@@ -23,29 +23,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The gitlabEmail property</summary>
+        /// <summary>The githubLogin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitlabEmail { get; set; }
+        public string? GithubLogin { get; set; }
 #nullable restore
 #else
-        public string GitlabEmail { get; set; }
-#endif
-        /// <summary>The gitlabLogin property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GitlabLogin { get; set; }
-#nullable restore
-#else
-        public string GitlabLogin { get; set; }
-#endif
-        /// <summary>The gitlabName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GitlabName { get; set; }
-#nullable restore
-#else
-        public string GitlabName { get; set; }
+        public string GithubLogin { get; set; }
 #endif
         /// <summary>The zeitAccount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,9 +73,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "gitlabEmail", n => { GitlabEmail = n.GetStringValue(); } },
-                { "gitlabLogin", n => { GitlabLogin = n.GetStringValue(); } },
-                { "gitlabName", n => { GitlabName = n.GetStringValue(); } },
+                { "githubLogin", n => { GithubLogin = n.GetStringValue(); } },
                 { "zeitAccount", n => { ZeitAccount = n.GetStringValue(); } },
                 { "zeitAccountType", n => { ZeitAccountType = n.GetStringValue(); } },
             };
@@ -104,9 +86,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
-            writer.WriteStringValue("gitlabEmail", GitlabEmail);
-            writer.WriteStringValue("gitlabLogin", GitlabLogin);
-            writer.WriteStringValue("gitlabName", GitlabName);
+            writer.WriteStringValue("githubLogin", GithubLogin);
             writer.WriteStringValue("zeitAccount", ZeitAccount);
             writer.WriteStringValue("zeitAccountType", ZeitAccountType);
             writer.WriteAdditionalData(AdditionalData);

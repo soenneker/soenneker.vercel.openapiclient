@@ -23,6 +23,14 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Team roles at time of deployment</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? TeamRoles { get; set; }
+#nullable restore
+#else
+        public List<string> TeamRoles { get; set; }
+#endif
         /// <summary>Vercel username</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "teamRoles", n => { TeamRoles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
             };
         }
@@ -68,6 +77,7 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfPrimitiveValues<string>("teamRoles", TeamRoles);
             writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);
         }

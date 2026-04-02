@@ -23,21 +23,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Alias { get; set; }
 #endif
-        /// <summary>The userId property</summary>
+        /// <summary>The deploymentUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId { get; set; }
+        public string? DeploymentUrl { get; set; }
 #nullable restore
 #else
-        public string UserId { get; set; }
-#endif
-        /// <summary>The username property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Username { get; set; }
-#nullable restore
-#else
-        public string Username { get; set; }
+        public string DeploymentUrl { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember20"/> and sets the default values.
@@ -65,8 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "alias", n => { Alias = n.GetStringValue(); } },
-                { "userId", n => { UserId = n.GetStringValue(); } },
-                { "username", n => { Username = n.GetStringValue(); } },
+                { "deploymentUrl", n => { DeploymentUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -77,8 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("alias", Alias);
-            writer.WriteStringValue("userId", UserId);
-            writer.WriteStringValue("username", Username);
+            writer.WriteStringValue("deploymentUrl", DeploymentUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

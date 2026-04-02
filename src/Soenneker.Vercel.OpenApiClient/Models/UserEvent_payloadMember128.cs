@@ -15,45 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The blockReason property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BlockReason { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public string BlockReason { get; set; }
-#endif
-        /// <summary>The cause property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Cause { get; set; }
-#nullable restore
-#else
-        public string Cause { get; set; }
-#endif
-        /// <summary>The ownerId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OwnerId { get; set; }
-#nullable restore
-#else
-        public string OwnerId { get; set; }
-#endif
-        /// <summary>The siftRoute property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember128_siftRoute? SiftRoute { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember128_siftRoute SiftRoute { get; set; }
-#endif
-        /// <summary>The source property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Source { get; set; }
-#nullable restore
-#else
-        public string Source { get; set; }
+        public string ProjectName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember128"/> and sets the default values.
@@ -80,11 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "blockReason", n => { BlockReason = n.GetStringValue(); } },
-                { "cause", n => { Cause = n.GetStringValue(); } },
-                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "siftRoute", n => { SiftRoute = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember128_siftRoute>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember128_siftRoute.CreateFromDiscriminatorValue); } },
-                { "source", n => { Source = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -94,11 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("blockReason", BlockReason);
-            writer.WriteStringValue("cause", Cause);
-            writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember128_siftRoute>("siftRoute", SiftRoute);
-            writer.WriteStringValue("source", Source);
+            writer.WriteStringValue("projectName", ProjectName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

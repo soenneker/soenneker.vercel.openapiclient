@@ -15,25 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
-        public double? Amount { get; set; }
-        /// <summary>The invoiceId property</summary>
+        /// <summary>The avatar property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvoiceId { get; set; }
+        public string? Avatar { get; set; }
 #nullable restore
 #else
-        public string InvoiceId { get; set; }
-#endif
-        /// <summary>The lineItemCount property</summary>
-        public double? LineItemCount { get; set; }
-        /// <summary>The refundReason property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RefundReason { get; set; }
-#nullable restore
-#else
-        public string RefundReason { get; set; }
+        public string Avatar { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember32"/> and sets the default values.
@@ -60,10 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetDoubleValue(); } },
-                { "invoiceId", n => { InvoiceId = n.GetStringValue(); } },
-                { "lineItemCount", n => { LineItemCount = n.GetDoubleValue(); } },
-                { "refundReason", n => { RefundReason = n.GetStringValue(); } },
+                { "avatar", n => { Avatar = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -73,10 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("amount", Amount);
-            writer.WriteStringValue("invoiceId", InvoiceId);
-            writer.WriteDoubleValue("lineItemCount", LineItemCount);
-            writer.WriteStringValue("refundReason", RefundReason);
+            writer.WriteStringValue("avatar", Avatar);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,29 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The buildQueueConfiguration property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember154_buildQueueConfiguration? BuildQueueConfiguration { get; set; }
-        /// <summary>The elasticConcurrencyEnabled property</summary>
-        public bool? ElasticConcurrencyEnabled { get; set; }
-        /// <summary>The oldBuildQueueConfiguration property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember154_oldBuildQueueConfiguration? OldBuildQueueConfiguration { get; set; }
-        /// <summary>The oldElasticConcurrencyEnabled property</summary>
-        public bool? OldElasticConcurrencyEnabled { get; set; }
-        /// <summary>The projectId property</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string Name { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The ownerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public string? OwnerId { get; set; }
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public string OwnerId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember154"/> and sets the default values.
@@ -64,12 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "buildQueueConfiguration", n => { BuildQueueConfiguration = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember154_buildQueueConfiguration>(); } },
-                { "elasticConcurrencyEnabled", n => { ElasticConcurrencyEnabled = n.GetBoolValue(); } },
-                { "oldBuildQueueConfiguration", n => { OldBuildQueueConfiguration = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember154_oldBuildQueueConfiguration>(); } },
-                { "oldElasticConcurrencyEnabled", n => { OldElasticConcurrencyEnabled = n.GetBoolValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -79,12 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember154_buildQueueConfiguration>("buildQueueConfiguration", BuildQueueConfiguration);
-            writer.WriteBoolValue("elasticConcurrencyEnabled", ElasticConcurrencyEnabled);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember154_oldBuildQueueConfiguration>("oldBuildQueueConfiguration", OldBuildQueueConfiguration);
-            writer.WriteBoolValue("oldElasticConcurrencyEnabled", OldElasticConcurrencyEnabled);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

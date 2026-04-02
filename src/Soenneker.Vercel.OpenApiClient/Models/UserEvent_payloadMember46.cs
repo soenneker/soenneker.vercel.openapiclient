@@ -15,21 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dst property</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Dst { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Dst { get; set; }
+        public string Id { get; set; }
 #endif
-        /// <summary>The src property</summary>
+        /// <summary>The newTeam property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Src { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember46_newTeam? NewTeam { get; set; }
 #nullable restore
 #else
-        public string Src { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember46_newTeam NewTeam { get; set; }
+#endif
+        /// <summary>The oldTeam property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember46_oldTeam? OldTeam { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember46_oldTeam OldTeam { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember46"/> and sets the default values.
@@ -56,8 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dst", n => { Dst = n.GetStringValue(); } },
-                { "src", n => { Src = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "newTeam", n => { NewTeam = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember46_newTeam>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember46_newTeam.CreateFromDiscriminatorValue); } },
+                { "oldTeam", n => { OldTeam = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember46_oldTeam>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember46_oldTeam.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("dst", Dst);
-            writer.WriteStringValue("src", Src);
+            writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember46_newTeam>("newTeam", NewTeam);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember46_oldTeam>("oldTeam", OldTeam);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

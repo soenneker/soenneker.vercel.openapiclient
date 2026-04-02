@@ -20,6 +20,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.Configuration.Item
         public double? CompletedAt { get; set; }
         /// <summary>A timestamp that tells you when the configuration was created</summary>
         public double? CreatedAt { get; set; }
+        /// <summary>Record when the customer initited deletion, independent of whether `deleteRequestedAt` gets set.</summary>
+        public double? CustomerDeleteRequestedAt { get; set; }
         /// <summary>A timestamp that tells you when the configuration was deleted.</summary>
         public double? DeletedAt { get; set; }
         /// <summary>A timestamp that tells you when the configuration deletion has been started for cases when the deletion needs to be settled/approved by partners, such as when marketplace invoices have been paid.</summary>
@@ -156,6 +158,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.Configuration.Item
                 { "canConfigureOpenTelemetry", n => { CanConfigureOpenTelemetry = n.GetBoolValue(); } },
                 { "completedAt", n => { CompletedAt = n.GetDoubleValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
+                { "customerDeleteRequestedAt", n => { CustomerDeleteRequestedAt = n.GetDoubleValue(); } },
                 { "deleteRequestedAt", n => { DeleteRequestedAt = n.GetDoubleValue(); } },
                 { "deletedAt", n => { DeletedAt = n.GetDoubleValue(); } },
                 { "disabledAt", n => { DisabledAt = n.GetDoubleValue(); } },
@@ -189,6 +192,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.Configuration.Item
             writer.WriteBoolValue("canConfigureOpenTelemetry", CanConfigureOpenTelemetry);
             writer.WriteDoubleValue("completedAt", CompletedAt);
             writer.WriteDoubleValue("createdAt", CreatedAt);
+            writer.WriteDoubleValue("customerDeleteRequestedAt", CustomerDeleteRequestedAt);
             writer.WriteDoubleValue("deletedAt", DeletedAt);
             writer.WriteDoubleValue("deleteRequestedAt", DeleteRequestedAt);
             writer.WriteDoubleValue("disabledAt", DisabledAt);

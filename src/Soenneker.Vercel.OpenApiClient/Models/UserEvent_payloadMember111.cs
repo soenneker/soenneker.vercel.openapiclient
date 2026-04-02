@@ -15,8 +15,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>The action property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember111_action? Action { get; set; }
+        /// <summary>The active property</summary>
+        public bool? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The projectId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get; set; }
+#nullable restore
+#else
+        public string ProjectId { get; set; }
+#endif
+        /// <summary>The rulesetName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RulesetName { get; set; }
+#nullable restore
+#else
+        public string RulesetName { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember111"/> and sets the default values.
         /// </summary>
@@ -43,6 +61,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember111_action>(); } },
+                { "active", n => { Active = n.GetBoolValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "rulesetName", n => { RulesetName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -53,6 +74,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember111_action>("action", Action);
+            writer.WriteBoolValue("active", Active);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("rulesetName", RulesetName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

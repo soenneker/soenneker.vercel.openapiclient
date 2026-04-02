@@ -15,30 +15,78 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The projectId property</summary>
+        /// <summary>The env property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? Env { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string Env { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The factors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122.UserEvent_payloadMember122_factors? Factors { get; set; }
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122.UserEvent_payloadMember122_factors Factors { get; set; }
 #endif
-        /// <summary>The toDeploymentId property</summary>
+        /// <summary>The geolocation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToDeploymentId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_geolocation? Geolocation { get; set; }
 #nullable restore
 #else
-        public string ToDeploymentId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_geolocation Geolocation { get; set; }
 #endif
+        /// <summary>The os property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Os { get; set; }
+#nullable restore
+#else
+        public string Os { get; set; }
+#endif
+        /// <summary>The ssoType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SsoType { get; set; }
+#nullable restore
+#else
+        public string SsoType { get; set; }
+#endif
+        /// <summary>The userAgent property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserAgent { get; set; }
+#nullable restore
+#else
+        public string UserAgent { get; set; }
+#endif
+        /// <summary>The username property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Username { get; set; }
+#nullable restore
+#else
+        public string Username { get; set; }
+#endif
+        /// <summary>The viaApple property</summary>
+        public bool? ViaApple { get; set; }
+        /// <summary>The viaBitbucket property</summary>
+        public bool? ViaBitbucket { get; set; }
+        /// <summary>The viaGithub property</summary>
+        public bool? ViaGithub { get; set; }
+        /// <summary>The viaGitlab property</summary>
+        public bool? ViaGitlab { get; set; }
+        /// <summary>The viaGoogle property</summary>
+        public bool? ViaGoogle { get; set; }
+        /// <summary>The viaOTP property</summary>
+        public bool? ViaOTP { get; set; }
+        /// <summary>The viaPasskey property</summary>
+        public bool? ViaPasskey { get; set; }
+        /// <summary>The viaSamlSso property</summary>
+        public bool? ViaSamlSso { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122"/> and sets the default values.
         /// </summary>
@@ -64,9 +112,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "toDeploymentId", n => { ToDeploymentId = n.GetStringValue(); } },
+                { "env", n => { Env = n.GetStringValue(); } },
+                { "factors", n => { Factors = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122.UserEvent_payloadMember122_factors>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122.UserEvent_payloadMember122_factors.CreateFromDiscriminatorValue); } },
+                { "geolocation", n => { Geolocation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_geolocation>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_geolocation.CreateFromDiscriminatorValue); } },
+                { "os", n => { Os = n.GetStringValue(); } },
+                { "ssoType", n => { SsoType = n.GetStringValue(); } },
+                { "userAgent", n => { UserAgent = n.GetStringValue(); } },
+                { "username", n => { Username = n.GetStringValue(); } },
+                { "viaApple", n => { ViaApple = n.GetBoolValue(); } },
+                { "viaBitbucket", n => { ViaBitbucket = n.GetBoolValue(); } },
+                { "viaGithub", n => { ViaGithub = n.GetBoolValue(); } },
+                { "viaGitlab", n => { ViaGitlab = n.GetBoolValue(); } },
+                { "viaGoogle", n => { ViaGoogle = n.GetBoolValue(); } },
+                { "viaOTP", n => { ViaOTP = n.GetBoolValue(); } },
+                { "viaPasskey", n => { ViaPasskey = n.GetBoolValue(); } },
+                { "viaSamlSso", n => { ViaSamlSso = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -76,10 +136,89 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("toDeploymentId", ToDeploymentId);
+            writer.WriteStringValue("env", Env);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122.UserEvent_payloadMember122_factors>("factors", Factors);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_geolocation>("geolocation", Geolocation);
+            writer.WriteStringValue("os", Os);
+            writer.WriteStringValue("ssoType", SsoType);
+            writer.WriteStringValue("userAgent", UserAgent);
+            writer.WriteStringValue("username", Username);
+            writer.WriteBoolValue("viaApple", ViaApple);
+            writer.WriteBoolValue("viaBitbucket", ViaBitbucket);
+            writer.WriteBoolValue("viaGithub", ViaGithub);
+            writer.WriteBoolValue("viaGitlab", ViaGitlab);
+            writer.WriteBoolValue("viaGoogle", ViaGoogle);
+            writer.WriteBoolValue("viaOTP", ViaOTP);
+            writer.WriteBoolValue("viaPasskey", ViaPasskey);
+            writer.WriteBoolValue("viaSamlSso", ViaSamlSso);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes List&lt;global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_factorsMember1&gt;, List&lt;global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_factorsMember2&gt;
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class UserEvent_payloadMember122_factors : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_factorsMember1&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_factorsMember1>? UserEventPayloadMember122FactorsMember1 { get; set; }
+#nullable restore
+#else
+            public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_factorsMember1> UserEventPayloadMember122FactorsMember1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_factorsMember2&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_factorsMember2>? UserEventPayloadMember122FactorsMember2 { get; set; }
+#nullable restore
+#else
+            public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_factorsMember2> UserEventPayloadMember122FactorsMember2 { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122.UserEvent_payloadMember122_factors"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122.UserEvent_payloadMember122_factors CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122.UserEvent_payloadMember122_factors();
+                if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_factorsMember1>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_factorsMember1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_factorsMember1> userEventPayloadMember122FactorsMember1Value)
+                {
+                    result.UserEventPayloadMember122FactorsMember1 = userEventPayloadMember122FactorsMember1Value;
+                }
+                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_factorsMember2>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_factorsMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_factorsMember2> userEventPayloadMember122FactorsMember2Value)
+                {
+                    result.UserEventPayloadMember122FactorsMember2 = userEventPayloadMember122FactorsMember2Value;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(UserEventPayloadMember122FactorsMember1 != null)
+                {
+                    writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_factorsMember1>(null, UserEventPayloadMember122FactorsMember1);
+                }
+                else if(UserEventPayloadMember122FactorsMember2 != null)
+                {
+                    writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember122_factorsMember2>(null, UserEventPayloadMember122FactorsMember2);
+                }
+            }
         }
     }
 }

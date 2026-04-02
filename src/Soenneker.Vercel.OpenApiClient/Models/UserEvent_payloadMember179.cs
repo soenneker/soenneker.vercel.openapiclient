@@ -15,22 +15,40 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The projects property</summary>
+        /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember179_projects>? Projects { get; set; }
+        public string? Domain { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember179_projects> Projects { get; set; }
+        public string Domain { get; set; }
 #endif
-        /// <summary>The uid property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uid { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string Uid { get; set; }
+        public string ProjectId { get; set; }
 #endif
+        /// <summary>The projectName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectName { get; set; }
+#nullable restore
+#else
+        public string ProjectName { get; set; }
+#endif
+        /// <summary>The redirect property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Redirect { get; set; }
+#nullable restore
+#else
+        public string Redirect { get; set; }
+#endif
+        /// <summary>The redirectStatusCode property</summary>
+        public double? RedirectStatusCode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember179"/> and sets the default values.
         /// </summary>
@@ -56,8 +74,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "projects", n => { Projects = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember179_projects>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember179_projects.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "uid", n => { Uid = n.GetStringValue(); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "redirect", n => { Redirect = n.GetStringValue(); } },
+                { "redirectStatusCode", n => { RedirectStatusCode = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +88,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember179_projects>("projects", Projects);
-            writer.WriteStringValue("uid", Uid);
+            writer.WriteStringValue("domain", Domain);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("redirect", Redirect);
+            writer.WriteDoubleValue("redirectStatusCode", RedirectStatusCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

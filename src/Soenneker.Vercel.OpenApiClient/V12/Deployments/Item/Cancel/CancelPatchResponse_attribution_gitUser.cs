@@ -31,6 +31,14 @@ namespace Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel
 #else
         public string Login { get; set; }
 #endif
+        /// <summary>User type</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_attribution_gitUser"/> and sets the default values.
         /// </summary>
@@ -58,6 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel
             {
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_attribution_gitUser.CancelPatchResponse_attribution_gitUser_id>(global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_attribution_gitUser.CancelPatchResponse_attribution_gitUser_id.CreateFromDiscriminatorValue); } },
                 { "login", n => { Login = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,6 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel.CancelPatchResponse_attribution_gitUser.CancelPatchResponse_attribution_gitUser_id>("id", Id);
             writer.WriteStringValue("login", Login);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>

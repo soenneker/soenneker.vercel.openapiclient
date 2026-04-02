@@ -64,6 +64,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Events.Types
         #pragma warning disable CS1591
         PasswordProtectionEnabled,
         #pragma warning restore CS1591
+        [EnumMember(Value = "aliases-assigned")]
+        #pragma warning disable CS1591
+        AliasesAssigned,
+        #pragma warning restore CS1591
         [EnumMember(Value = "alias-chown")]
         #pragma warning disable CS1591
         AliasChown,

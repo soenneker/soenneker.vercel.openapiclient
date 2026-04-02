@@ -15,13 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The configuration property</summary>
+        /// <summary>The cn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember49_configuration? Configuration { get; set; }
+        public string? Cn { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember49_configuration Configuration { get; set; }
+        public string Cn { get; set; }
+#endif
+        /// <summary>The cns property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Cns { get; set; }
+#nullable restore
+#else
+        public List<string> Cns { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember49"/> and sets the default values.
@@ -48,7 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember49_configuration>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember49_configuration.CreateFromDiscriminatorValue); } },
+                { "cn", n => { Cn = n.GetStringValue(); } },
+                { "cns", n => { Cns = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember49_configuration>("configuration", Configuration);
+            writer.WriteStringValue("cn", Cn);
+            writer.WriteCollectionOfPrimitiveValues<string>("cns", Cns);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

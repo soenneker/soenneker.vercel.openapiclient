@@ -15,21 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The oldPasswordProtection property</summary>
+        /// <summary>The oldOptionsAllowlist property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191.UserEvent_payloadMember191_oldPasswordProtection? OldPasswordProtection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_oldOptionsAllowlist? OldOptionsAllowlist { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191.UserEvent_payloadMember191_oldPasswordProtection OldPasswordProtection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_oldOptionsAllowlist OldOptionsAllowlist { get; set; }
 #endif
-        /// <summary>The passwordProtection property</summary>
+        /// <summary>The optionsAllowlist property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191.UserEvent_payloadMember191_passwordProtection? PasswordProtection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_optionsAllowlist? OptionsAllowlist { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191.UserEvent_payloadMember191_passwordProtection PasswordProtection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_optionsAllowlist OptionsAllowlist { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,8 +72,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "oldPasswordProtection", n => { OldPasswordProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191.UserEvent_payloadMember191_oldPasswordProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191.UserEvent_payloadMember191_oldPasswordProtection.CreateFromDiscriminatorValue); } },
-                { "passwordProtection", n => { PasswordProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191.UserEvent_payloadMember191_passwordProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191.UserEvent_payloadMember191_passwordProtection.CreateFromDiscriminatorValue); } },
+                { "oldOptionsAllowlist", n => { OldOptionsAllowlist = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_oldOptionsAllowlist>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_oldOptionsAllowlist.CreateFromDiscriminatorValue); } },
+                { "optionsAllowlist", n => { OptionsAllowlist = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_optionsAllowlist>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_optionsAllowlist.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
@@ -85,153 +85,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191.UserEvent_payloadMember191_oldPasswordProtection>("oldPasswordProtection", OldPasswordProtection);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191.UserEvent_payloadMember191_passwordProtection>("passwordProtection", PasswordProtection);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_oldOptionsAllowlist>("oldOptionsAllowlist", OldOptionsAllowlist);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_optionsAllowlist>("optionsAllowlist", OptionsAllowlist);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_oldPasswordProtectionMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class UserEvent_payloadMember191_oldPasswordProtection : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_oldPasswordProtectionMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_oldPasswordProtectionMember1? UserEventPayloadMember191OldPasswordProtectionMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_oldPasswordProtectionMember1 UserEventPayloadMember191OldPasswordProtectionMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191.UserEvent_payloadMember191_oldPasswordProtection"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191.UserEvent_payloadMember191_oldPasswordProtection CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191.UserEvent_payloadMember191_oldPasswordProtection();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UserEventPayloadMember191OldPasswordProtectionMember1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_oldPasswordProtectionMember1();
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(UserEventPayloadMember191OldPasswordProtectionMember1 != null)
-                {
-                    return UserEventPayloadMember191OldPasswordProtectionMember1.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(UserEventPayloadMember191OldPasswordProtectionMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_oldPasswordProtectionMember1>(null, UserEventPayloadMember191OldPasswordProtectionMember1);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_passwordProtectionMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class UserEvent_payloadMember191_passwordProtection : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_passwordProtectionMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_passwordProtectionMember1? UserEventPayloadMember191PasswordProtectionMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_passwordProtectionMember1 UserEventPayloadMember191PasswordProtectionMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191.UserEvent_payloadMember191_passwordProtection"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191.UserEvent_payloadMember191_passwordProtection CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191.UserEvent_payloadMember191_passwordProtection();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UserEventPayloadMember191PasswordProtectionMember1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_passwordProtectionMember1();
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(UserEventPayloadMember191PasswordProtectionMember1 != null)
-                {
-                    return UserEventPayloadMember191PasswordProtectionMember1.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(UserEventPayloadMember191PasswordProtectionMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember191_passwordProtectionMember1>(null, UserEventPayloadMember191PasswordProtectionMember1);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-            }
         }
     }
 }

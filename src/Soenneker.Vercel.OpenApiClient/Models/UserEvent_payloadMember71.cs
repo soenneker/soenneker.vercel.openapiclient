@@ -15,53 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The configurationId property</summary>
+        /// <summary>The deployment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfigurationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember71_deployment? Deployment { get; set; }
 #nullable restore
 #else
-        public string ConfigurationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember71_deployment Deployment { get; set; }
 #endif
-        /// <summary>The integrationId property</summary>
+        /// <summary>The deploymentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationId { get; set; }
+        public string? DeploymentId { get; set; }
 #nullable restore
 #else
-        public string IntegrationId { get; set; }
+        public string DeploymentId { get; set; }
 #endif
-        /// <summary>The integrationName property</summary>
+        /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationName { get; set; }
+        public string? Url { get; set; }
 #nullable restore
 #else
-        public string IntegrationName { get; set; }
-#endif
-        /// <summary>The integrationSlug property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IntegrationSlug { get; set; }
-#nullable restore
-#else
-        public string IntegrationSlug { get; set; }
-#endif
-        /// <summary>The ownerId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OwnerId { get; set; }
-#nullable restore
-#else
-        public string OwnerId { get; set; }
-#endif
-        /// <summary>The projectIds property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? ProjectIds { get; set; }
-#nullable restore
-#else
-        public List<string> ProjectIds { get; set; }
+        public string Url { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember71"/> and sets the default values.
@@ -88,12 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configurationId", n => { ConfigurationId = n.GetStringValue(); } },
-                { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
-                { "integrationName", n => { IntegrationName = n.GetStringValue(); } },
-                { "integrationSlug", n => { IntegrationSlug = n.GetStringValue(); } },
-                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "projectIds", n => { ProjectIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "deployment", n => { Deployment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember71_deployment>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember71_deployment.CreateFromDiscriminatorValue); } },
+                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -103,12 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("configurationId", ConfigurationId);
-            writer.WriteStringValue("integrationId", IntegrationId);
-            writer.WriteStringValue("integrationName", IntegrationName);
-            writer.WriteStringValue("integrationSlug", IntegrationSlug);
-            writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteCollectionOfPrimitiveValues<string>("projectIds", ProjectIds);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember71_deployment>("deployment", Deployment);
+            writer.WriteStringValue("deploymentId", DeploymentId);
+            writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
