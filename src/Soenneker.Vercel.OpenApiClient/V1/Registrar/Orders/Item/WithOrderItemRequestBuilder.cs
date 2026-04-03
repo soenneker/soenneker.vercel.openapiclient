@@ -46,11 +46,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item.WithOrderGetResponse?> GetAsWithOrderGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item.WithOrderItemRequestBuilder.WithOrderItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item.WithOrderGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item.WithOrderItemRequestBuilder.WithOrderItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item.WithOrderGetResponse> GetAsWithOrderGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item.WithOrderItemRequestBuilder.WithOrderItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item.WithOrderGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item.WithOrderItemRequestBuilder.WithOrderItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -63,38 +63,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item
                 { "500", global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item.WithOrderGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item.WithOrderGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Get information about a domain order by its ID
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item.WithOrderResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.HttpApiDecodeError">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.NotFound">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError">When receiving a 500 status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsWithOrderGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item.WithOrderResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item.WithOrderItemRequestBuilder.WithOrderItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item.WithOrderResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item.WithOrderItemRequestBuilder.WithOrderItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Vercel.OpenApiClient.Models.HttpApiDecodeError.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Vercel.OpenApiClient.Models.NotFound.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item.WithOrderResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item.WithOrderResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get information about a domain order by its ID
@@ -139,14 +107,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithOrderItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Orders.Item.WithOrderItemRequestBuilder.WithOrderItemRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

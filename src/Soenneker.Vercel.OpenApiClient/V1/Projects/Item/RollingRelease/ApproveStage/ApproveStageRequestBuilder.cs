@@ -41,37 +41,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Approve
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStagePostResponse?> PostAsApproveStagePostResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStagePostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStageRequestBuilder.ApproveStageRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStagePostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStagePostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStageRequestBuilder.ApproveStageRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStagePostResponse> PostAsApproveStagePostResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStagePostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStageRequestBuilder.ApproveStageRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStagePostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStagePostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStageRequestBuilder.ApproveStageRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStagePostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStagePostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Advance a rollout to the next stage. This is only needed when rolling releases is configured to require manual approval.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStageResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsApproveStagePostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStageResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStagePostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStageRequestBuilder.ApproveStageRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStageResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStagePostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStageRequestBuilder.ApproveStageRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStageResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStageResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Advance a rollout to the next stage. This is only needed when rolling releases is configured to require manual approval.
@@ -130,14 +109,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Approve
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ApproveStageRequestBuilderPostRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.ApproveStage.ApproveStageRequestBuilder.ApproveStageRequestBuilderPostQueryParameters>
-        {
         }
     }
 }

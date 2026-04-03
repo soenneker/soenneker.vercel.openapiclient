@@ -41,37 +41,16 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsPostResponse?> PostAsDomainsPostResponseAsync(global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsPostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsPostResponse> PostAsDomainsPostResponseAsync(global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsPostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Add a domain to the project by passing its domain name and by specifying the project by either passing the project `id` or `name` in the URL. If the domain is not yet verified to be used on this project, the request will return `verified = false`, and the domain will need to be verified according to the `verification` challenge via `POST /projects/:idOrName/domains/:domain/verify`. If the domain already exists on the project, the request will fail with a `400` status code.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsDomainsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add a domain to the project by passing its domain name and by specifying the project by either passing the project `id` or `name` in the URL. If the domain is not yet verified to be used on this project, the request will return `verified = false`, and the domain will need to be verified according to the `verification` challenge via `POST /projects/:idOrName/domains/:domain/verify`. If the domain already exists on the project, the request will fail with a `400` status code.
@@ -130,14 +109,6 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DomainsRequestBuilderPostRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderPostQueryParameters>
-        {
         }
     }
 }

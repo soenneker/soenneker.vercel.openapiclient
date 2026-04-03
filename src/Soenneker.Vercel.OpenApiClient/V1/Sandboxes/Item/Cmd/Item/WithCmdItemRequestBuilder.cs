@@ -46,34 +46,15 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.WithCmdGetResponse?> GetAsWithCmdGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.WithCmdItemRequestBuilder.WithCmdItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.WithCmdGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.WithCmdItemRequestBuilder.WithCmdItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.WithCmdGetResponse> GetAsWithCmdGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.WithCmdItemRequestBuilder.WithCmdItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.WithCmdGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.WithCmdItemRequestBuilder.WithCmdItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.WithCmdGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.WithCmdGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves the current status and details of a command executed in a sandbox. Use the `wait` parameter to block until the command finishes execution.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.WithCmdResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithCmdGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.WithCmdResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.WithCmdItemRequestBuilder.WithCmdItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.WithCmdResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.WithCmdItemRequestBuilder.WithCmdItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.WithCmdResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.WithCmdResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the current status and details of a command executed in a sandbox. Use the `wait` parameter to block until the command finishes execution.
@@ -130,27 +111,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item
             public string TeamId { get; set; }
 #endif
             /// <summary>If set to \&quot;true\&quot;, the request will block until the command finishes execution. Useful for synchronously waiting for command completion.</summary>
-            [Obsolete("This property is deprecated, use WaitAsGetWaitQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("wait")]
-            public string? Wait { get; set; }
-#nullable restore
-#else
-            [QueryParameter("wait")]
-            public string Wait { get; set; }
-#endif
-            /// <summary>If set to \&quot;true\&quot;, the request will block until the command finishes execution. Useful for synchronously waiting for command completion.</summary>
-            [QueryParameter("wait")]
-            public global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.GetWaitQueryParameterType? WaitAsGetWaitQueryParameterType { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithCmdItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.WithCmdItemRequestBuilder.WithCmdItemRequestBuilderGetQueryParameters>
-        {
+            public global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.GetWaitQueryParameterType? Wait { get; set; }
         }
     }
 }

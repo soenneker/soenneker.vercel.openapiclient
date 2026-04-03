@@ -40,34 +40,15 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Ex
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigGetResponse?> GetAsEdgeConfigGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigGetResponse> GetAsEdgeConfigGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// When the user enabled Edge Config syncing, then this endpoint can be used by the partner to fetch the contents of the Edge Config.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsEdgeConfigGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// When the user enabled Edge Config syncing, then this endpoint can be used by the partner to fetch the contents of the Edge Config.
@@ -77,34 +58,15 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Ex
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigHeadResponse?> HeadAsEdgeConfigHeadResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigHeadResponse?> HeadAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigHeadResponse> HeadAsEdgeConfigHeadResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigHeadResponse> HeadAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToHeadRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigHeadResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigHeadResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// When the user enabled Edge Config syncing, then this endpoint can be used by the partner to fetch the contents of the Edge Config.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use HeadAsEdgeConfigHeadResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigResponse?> HeadAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigResponse> HeadAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToHeadRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// When the user enabled Edge Config syncing, then this endpoint can be used by the partner to push their configuration data into the relevant Edge Config.
@@ -115,37 +77,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Ex
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigPutResponse?> PutAsEdgeConfigPutResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigPutResponse?> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigPutResponse> PutAsEdgeConfigPutResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigPutResponse> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigPutResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigPutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// When the user enabled Edge Config syncing, then this endpoint can be used by the partner to push their configuration data into the relevant Edge Config.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PutAsEdgeConfigPutResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigResponse?> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigResponse> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// When the user enabled Edge Config syncing, then this endpoint can be used by the partner to fetch the contents of the Edge Config.
@@ -215,30 +156,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Ex
         public global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EdgeConfigRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EdgeConfigRequestBuilderHeadRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EdgeConfigRequestBuilderPutRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

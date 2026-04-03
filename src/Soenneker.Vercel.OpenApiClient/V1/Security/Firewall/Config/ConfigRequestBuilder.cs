@@ -54,37 +54,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchResponse?> PatchAsConfigPatchResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchResponse> PatchAsConfigPatchResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Process updates to modify the existing firewall config for a project
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsConfigPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Set the firewall configuration to provided rules and settings. Creates or overwrite the existing firewall configuration.
@@ -95,37 +74,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutResponse?> PutAsConfigPutResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutResponse?> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutResponse> PutAsConfigPutResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutResponse> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Set the firewall configuration to provided rules and settings. Creates or overwrite the existing firewall configuration.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PutAsConfigPutResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigResponse?> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigResponse> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Process updates to modify the existing firewall config for a project
@@ -532,14 +490,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ConfigRequestBuilderPatchRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPatchQueryParameters>
-        {
-        }
-        /// <summary>
         /// Set the firewall configuration to provided rules and settings. Creates or overwrite the existing firewall configuration.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -574,14 +524,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ConfigRequestBuilderPutRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPutQueryParameters>
-        {
         }
     }
 }

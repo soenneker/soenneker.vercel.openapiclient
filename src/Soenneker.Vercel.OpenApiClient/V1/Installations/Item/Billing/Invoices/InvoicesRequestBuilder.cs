@@ -54,37 +54,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.InvoicesPostResponse?> PostAsInvoicesPostResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.InvoicesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.InvoicesPostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.InvoicesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.InvoicesPostResponse> PostAsInvoicesPostResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.InvoicesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.InvoicesPostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.InvoicesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.InvoicesPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.InvoicesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel&apos;s billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.&lt;br/&gt; &lt;br/&gt; Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. &lt;br/&gt; There are several limitations to the invoice submission:&lt;br/&gt; &lt;br/&gt; 1. A resource can only be billed once per the billing period and the billing plan.&lt;br/&gt; 2. The billing plan used to bill the resource must have been active for this resource during the billing period.&lt;br/&gt; 3. The billing plan used must be a subscription plan.&lt;br/&gt; 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.&lt;br/&gt;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.InvoicesResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsInvoicesPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.InvoicesResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.InvoicesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.InvoicesResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.InvoicesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.InvoicesResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.InvoicesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel&apos;s billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.&lt;br/&gt; &lt;br/&gt; Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. &lt;br/&gt; There are several limitations to the invoice submission:&lt;br/&gt; &lt;br/&gt; 1. A resource can only be billed once per the billing period and the billing plan.&lt;br/&gt; 2. The billing plan used to bill the resource must have been active for this resource during the billing period.&lt;br/&gt; 3. The billing plan used must be a subscription plan.&lt;br/&gt; 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.&lt;br/&gt;
@@ -116,14 +95,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices
         public global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.InvoicesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.InvoicesRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class InvoicesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

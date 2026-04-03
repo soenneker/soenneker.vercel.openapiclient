@@ -40,34 +40,15 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunGetResponse?> GetAsWithCheckRunGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunItemRequestBuilder.WithCheckRunItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunItemRequestBuilder.WithCheckRunItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunGetResponse> GetAsWithCheckRunGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunItemRequestBuilder.WithCheckRunItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunItemRequestBuilder.WithCheckRunItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Return a detailed response for a single check run.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithCheckRunGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunItemRequestBuilder.WithCheckRunItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunItemRequestBuilder.WithCheckRunItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update an existing check run for a deployment.
@@ -78,37 +59,16 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunPatchResponse?> PatchAsWithCheckRunPatchResponseAsync(global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunItemRequestBuilder.WithCheckRunItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunPatchResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunItemRequestBuilder.WithCheckRunItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunPatchResponse> PatchAsWithCheckRunPatchResponseAsync(global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunItemRequestBuilder.WithCheckRunItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunPatchResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunItemRequestBuilder.WithCheckRunItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunPatchResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Update an existing check run for a deployment.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsWithCheckRunPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunItemRequestBuilder.WithCheckRunItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunItemRequestBuilder.WithCheckRunItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Return a detailed response for a single check run.
@@ -188,14 +148,6 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithCheckRunItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunItemRequestBuilder.WithCheckRunItemRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
         /// Update an existing check run for a deployment.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -221,14 +173,6 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithCheckRunItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunItemRequestBuilder.WithCheckRunItemRequestBuilderPatchQueryParameters>
-        {
         }
     }
 }

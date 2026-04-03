@@ -66,37 +66,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesDeleteResponse?> DeleteAsRoutesDeleteResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesDeleteResponse?> DeleteAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesDeleteResponse> DeleteAsRoutesDeleteResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesDeleteResponse> DeleteAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesDeleteResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesDeleteResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Delete one or more routing rules from a project by ID. Stages a new version with the routes removed.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use DeleteAsRoutesDeleteResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesResponse?> DeleteAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesResponse> DeleteAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the routing rules for a project. Supports searching by name/ID/pattern, filtering by route type, and diffing staged changes against production.
@@ -106,34 +85,15 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesGetResponse?> GetAsRoutesGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesGetResponse> GetAsRoutesGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Get the routing rules for a project. Supports searching by name/ID/pattern, filtering by route type, and diffing staged changes against production.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsRoutesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add a single routing rule to a project at a specified position. Defaults to the end of the list if no position is provided. The route is enabled by default. Stages a new version with the added route.
@@ -144,37 +104,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPostResponse?> PostAsRoutesPostResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPostResponse> PostAsRoutesPostResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Add a single routing rule to a project at a specified position. Defaults to the end of the list if no position is provided. The route is enabled by default. Stages a new version with the added route.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsRoutesPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Stage routing rules for a project. Set `overwrite` to true to replace all existing rules, or omit it to merge with existing rules by ID. Returns the new staged version.
@@ -185,37 +124,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPutResponse?> PutAsRoutesPutResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPutResponse?> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPutResponse> PutAsRoutesPutResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPutResponse> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPutResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Stage routing rules for a project. Set `overwrite` to true to replace all existing rules, or omit it to merge with existing rules by ID. Returns the new staged version.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PutAsRoutesPutResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesResponse?> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesResponse> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete one or more routing rules from a project by ID. Stages a new version with the routes removed.
@@ -454,14 +372,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RoutesRequestBuilderDeleteRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderDeleteQueryParameters>
-        {
-        }
-        /// <summary>
         /// Get the routing rules for a project. Supports searching by name/ID/pattern, filtering by route type, and diffing staged changes against production.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -469,18 +379,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes
         {
             [QueryParameter("diff")]
             public bool? Diff { get; set; }
-            [Obsolete("This property is deprecated, use FilterAsGetFilterQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("filter")]
-            public string? Filter { get; set; }
-#nullable restore
-#else
-            [QueryParameter("filter")]
-            public string Filter { get; set; }
-#endif
-            [QueryParameter("filter")]
-            public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.GetFilterQueryParameterType? FilterAsGetFilterQueryParameterType { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.GetFilterQueryParameterType? Filter { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("q")]
@@ -521,14 +421,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RoutesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
         /// Add a single routing rule to a project at a specified position. Defaults to the end of the list if no position is provided. The route is enabled by default. Stages a new version with the added route.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -556,14 +448,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RoutesRequestBuilderPostRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderPostQueryParameters>
-        {
-        }
-        /// <summary>
         /// Stage routing rules for a project. Set `overwrite` to true to replace all existing rules, or omit it to merge with existing rules by ID. Returns the new staged version.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -589,129 +473,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RoutesRequestBuilderPutRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesRequestBuilderPutQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember4"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RoutesResponse : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember1? RoutesGetResponseMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember1 RoutesGetResponseMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember2? RoutesGetResponseMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember2 RoutesGetResponseMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember3? RoutesGetResponseMember3 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember3 RoutesGetResponseMember3 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember4? RoutesGetResponseMember4 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember4 RoutesGetResponseMember4 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesResponse"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesRequestBuilder.RoutesResponse();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.RoutesGetResponseMember1 = new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.RoutesGetResponseMember2 = new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember2();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.RoutesGetResponseMember3 = new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember3();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.RoutesGetResponseMember4 = new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember4();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(RoutesGetResponseMember1 != null)
-                {
-                    return RoutesGetResponseMember1.GetFieldDeserializers();
-                }
-                else if(RoutesGetResponseMember2 != null)
-                {
-                    return RoutesGetResponseMember2.GetFieldDeserializers();
-                }
-                else if(RoutesGetResponseMember3 != null)
-                {
-                    return RoutesGetResponseMember3.GetFieldDeserializers();
-                }
-                else if(RoutesGetResponseMember4 != null)
-                {
-                    return RoutesGetResponseMember4.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(RoutesGetResponseMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember1>(null, RoutesGetResponseMember1);
-                }
-                else if(RoutesGetResponseMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember2>(null, RoutesGetResponseMember2);
-                }
-                else if(RoutesGetResponseMember3 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember3>(null, RoutesGetResponseMember3);
-                }
-                else if(RoutesGetResponseMember4 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesGetResponseMember4>(null, RoutesGetResponseMember4);
-                }
-            }
         }
     }
 }

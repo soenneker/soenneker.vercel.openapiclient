@@ -46,11 +46,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferGetResponse?> GetAsTransferGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferRequestBuilder.TransferRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferRequestBuilder.TransferRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferGetResponse> GetAsTransferGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferRequestBuilder.TransferRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferRequestBuilder.TransferRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -65,38 +65,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the transfer status for a domain
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.HttpApiDecodeError">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.NotFound">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError">When receiving a 500 status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsTransferGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferRequestBuilder.TransferRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferRequestBuilder.TransferRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Vercel.OpenApiClient.Models.HttpApiDecodeError.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Vercel.OpenApiClient.Models.NotFound.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
         /// Transfer a domain in from another registrar
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferPostResponse"/></returns>
@@ -108,11 +76,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferPostResponse?> PostAsTransferPostResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferRequestBuilder.TransferRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferPostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferRequestBuilder.TransferRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferPostResponse> PostAsTransferPostResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferRequestBuilder.TransferRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferPostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferRequestBuilder.TransferRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -124,36 +92,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer
                 { "500", global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Transfer a domain in from another registrar
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError">When receiving a 500 status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsTransferPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferRequestBuilder.TransferRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferRequestBuilder.TransferRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the transfer status for a domain
@@ -222,14 +160,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TransferRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferRequestBuilder.TransferRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
         /// Transfer a domain in from another registrar
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -244,14 +174,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TransferRequestBuilderPostRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer.TransferRequestBuilder.TransferRequestBuilderPostQueryParameters>
-        {
         }
     }
 }

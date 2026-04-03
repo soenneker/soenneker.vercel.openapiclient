@@ -53,34 +53,15 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsGetResponse?> GetAsDomainsGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsGetResponse> GetAsDomainsGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieve the domains associated with a given project by passing either the project `id` or `name` in the URL.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsDomainsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the domains associated with a given project by passing either the project `id` or `name` in the URL.
@@ -215,33 +196,11 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains
             [QueryParameter("limit")]
             public double? Limit { get; set; }
             /// <summary>Domains sort order by createdAt</summary>
-            [Obsolete("This property is deprecated, use OrderAsGetOrderQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("order")]
-            public string? Order { get; set; }
-#nullable restore
-#else
-            [QueryParameter("order")]
-            public string Order { get; set; }
-#endif
-            /// <summary>Domains sort order by createdAt</summary>
-            [QueryParameter("order")]
-            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.GetOrderQueryParameterType? OrderAsGetOrderQueryParameterType { get; set; }
-            /// <summary>Filters only production domains when set to `true`.</summary>
-            [Obsolete("This property is deprecated, use ProductionAsGetProductionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("production")]
-            public string? Production { get; set; }
-#nullable restore
-#else
-            [QueryParameter("production")]
-            public string Production { get; set; }
-#endif
+            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.GetOrderQueryParameterType? Order { get; set; }
             /// <summary>Filters only production domains when set to `true`.</summary>
             [QueryParameter("production")]
-            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.GetProductionQueryParameterType? ProductionAsGetProductionQueryParameterType { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.GetProductionQueryParameterType? Production { get; set; }
             /// <summary>Filters domains based on their redirect target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -253,19 +212,8 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains
             public string Redirect { get; set; }
 #endif
             /// <summary>Excludes redirect project domains when \&quot;false\&quot;. Includes redirect project domains when \&quot;true\&quot; (default).</summary>
-            [Obsolete("This property is deprecated, use RedirectsAsGetRedirectsQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("redirects")]
-            public string? Redirects { get; set; }
-#nullable restore
-#else
-            [QueryParameter("redirects")]
-            public string Redirects { get; set; }
-#endif
-            /// <summary>Excludes redirect project domains when \&quot;false\&quot;. Includes redirect project domains when \&quot;true\&quot; (default).</summary>
-            [QueryParameter("redirects")]
-            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.GetRedirectsQueryParameterType? RedirectsAsGetRedirectsQueryParameterType { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.GetRedirectsQueryParameterType? Redirects { get; set; }
             /// <summary>Get domains created after this JavaScript timestamp.</summary>
             [QueryParameter("since")]
             public double? Since { get; set; }
@@ -280,19 +228,8 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains
             public string Slug { get; set; }
 #endif
             /// <summary>Filters on the target of the domain. Can be either \&quot;production\&quot;, \&quot;preview\&quot;</summary>
-            [Obsolete("This property is deprecated, use TargetAsGetTargetQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("target")]
-            public string? Target { get; set; }
-#nullable restore
-#else
-            [QueryParameter("target")]
-            public string Target { get; set; }
-#endif
-            /// <summary>Filters on the target of the domain. Can be either \&quot;production\&quot;, \&quot;preview\&quot;</summary>
-            [QueryParameter("target")]
-            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.GetTargetQueryParameterType? TargetAsGetTargetQueryParameterType { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.GetTargetQueryParameterType? Target { get; set; }
             /// <summary>The Team identifier to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -307,102 +244,8 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains
             [QueryParameter("until")]
             public double? Until { get; set; }
             /// <summary>Filters domains based on their verification status.</summary>
-            [Obsolete("This property is deprecated, use VerifiedAsGetVerifiedQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("verified")]
-            public string? Verified { get; set; }
-#nullable restore
-#else
-            [QueryParameter("verified")]
-            public string Verified { get; set; }
-#endif
-            /// <summary>Filters domains based on their verification status.</summary>
-            [QueryParameter("verified")]
-            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.GetVerifiedQueryParameterType? VerifiedAsGetVerifiedQueryParameterType { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DomainsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember2"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DomainsResponse : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember1? DomainsGetResponseMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember1 DomainsGetResponseMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember2? DomainsGetResponseMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember2 DomainsGetResponseMember2 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsResponse"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsResponse();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.DomainsGetResponseMember1 = new global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.DomainsGetResponseMember2 = new global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember2();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(DomainsGetResponseMember1 != null)
-                {
-                    return DomainsGetResponseMember1.GetFieldDeserializers();
-                }
-                else if(DomainsGetResponseMember2 != null)
-                {
-                    return DomainsGetResponseMember2.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(DomainsGetResponseMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember1>(null, DomainsGetResponseMember1);
-                }
-                else if(DomainsGetResponseMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember2>(null, DomainsGetResponseMember2);
-                }
-            }
+            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.GetVerifiedQueryParameterType? Verified { get; set; }
         }
     }
 }

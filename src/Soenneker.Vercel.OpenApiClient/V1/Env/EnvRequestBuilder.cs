@@ -54,37 +54,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Env
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvDeleteResponse?> DeleteAsEnvDeleteResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvDeleteResponse?> DeleteAsync(global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvDeleteResponse> DeleteAsEnvDeleteResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvDeleteResponse> DeleteAsync(global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvDeleteResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvDeleteResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Deletes one or many Shared Environment Variables for a given team.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use DeleteAsEnvDeleteResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse?> DeleteAsync(global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse> DeleteAsync(global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists all Shared Environment Variables for a team, taking into account optional filters.
@@ -94,34 +73,15 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Env
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvGetResponse?> GetAsEnvGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvGetResponse> GetAsEnvGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Lists all Shared Environment Variables for a team, taking into account optional filters.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsEnvGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a given Shared Environment Variable for a Team.
@@ -132,37 +92,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Env
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPatchResponse?> PatchAsEnvPatchResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPatchResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPatchResponse> PatchAsEnvPatchResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPatchResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPatchResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Updates a given Shared Environment Variable for a Team.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsEnvPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates shared environment variable(s) for a team.
@@ -173,37 +112,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Env
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPostResponse?> PostAsEnvPostResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPostResponse> PostAsEnvPostResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates shared environment variable(s) for a team.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsEnvPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes one or many Shared Environment Variables for a given team.
@@ -327,14 +245,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Env
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EnvRequestBuilderDeleteRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderDeleteQueryParameters>
-        {
-        }
-        /// <summary>
         /// Lists all Shared Environment Variables for a team, taking into account optional filters.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -427,14 +337,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Env
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EnvRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
         /// Updates a given Shared Environment Variable for a Team.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -462,14 +364,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Env
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EnvRequestBuilderPatchRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderPatchQueryParameters>
-        {
-        }
-        /// <summary>
         /// Creates shared environment variable(s) for a team.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -495,14 +389,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Env
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EnvRequestBuilderPostRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>
-        {
         }
     }
 }

@@ -40,34 +40,15 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlDeleteResponse?> DeleteAsIdOrUrlDeleteResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlDeleteResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlDeleteResponse> DeleteAsIdOrUrlDeleteResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlDeleteResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlDeleteResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlDeleteResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// This API allows you to delete a deployment, either by supplying its `id` in the URL or the `url` of the deployment as a query parameter. You can obtain the ID, for example, by listing all deployments.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use DeleteAsIdOrUrlDeleteResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves information for a deployment either by supplying its ID (`id` property) or Hostname (`url` property). Additional details will be included when the authenticated user or team is an owner of the deployment.
@@ -77,34 +58,15 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlGetResponse?> GetAsIdOrUrlGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlGetResponse> GetAsIdOrUrlGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves information for a deployment either by supplying its ID (`id` property) or Hostname (`url` property). Additional details will be included when the authenticated user or team is an owner of the deployment.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsIdOrUrlGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This API allows you to delete a deployment, either by supplying its `id` in the URL or the `url` of the deployment as a query parameter. You can obtain the ID, for example, by listing all deployments.
@@ -266,14 +228,6 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class IdOrUrlItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlItemRequestBuilderDeleteQueryParameters>
-        {
-        }
-        /// <summary>
         /// Retrieves information for a deployment either by supplying its ID (`id` property) or Hostname (`url` property). Additional details will be included when the authenticated user or team is an owner of the deployment.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -309,89 +263,6 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
             [QueryParameter("withGitRepoInfo")]
             public string WithGitRepoInfo { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class IdOrUrlItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlItemRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class IdOrUrlResponse : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember1? IdOrUrlGetResponseMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember1 IdOrUrlGetResponseMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2? IdOrUrlGetResponseMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2 IdOrUrlGetResponseMember2 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlResponse"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlResponse CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder.IdOrUrlResponse();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.IdOrUrlGetResponseMember1 = new global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.IdOrUrlGetResponseMember2 = new global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(IdOrUrlGetResponseMember1 != null)
-                {
-                    return IdOrUrlGetResponseMember1.GetFieldDeserializers();
-                }
-                else if(IdOrUrlGetResponseMember2 != null)
-                {
-                    return IdOrUrlGetResponseMember2.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(IdOrUrlGetResponseMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember1>(null, IdOrUrlGetResponseMember1);
-                }
-                else if(IdOrUrlGetResponseMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlGetResponseMember2>(null, IdOrUrlGetResponseMember2);
-                }
-            }
         }
     }
 }

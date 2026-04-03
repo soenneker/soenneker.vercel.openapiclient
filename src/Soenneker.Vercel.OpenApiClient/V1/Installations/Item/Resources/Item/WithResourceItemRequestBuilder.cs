@@ -69,34 +69,15 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceGetResponse?> GetAsWithResourceGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceGetResponse> GetAsWithResourceGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Get a resource by its partner ID.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithResourceGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This endpoint updates an existing resource in the installation. All parameters are optional, allowing partial updates.
@@ -107,37 +88,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePatchResponse?> PatchAsWithResourcePatchResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePatchResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePatchResponse> PatchAsWithResourcePatchResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePatchResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePatchResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// This endpoint updates an existing resource in the installation. All parameters are optional, allowing partial updates.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsWithResourcePatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This endpoint imports (upserts) a resource to Vercel&apos;s installation. This may be needed if resources can be independently created on the partner&apos;s side and need to be synchronized to Vercel.
@@ -148,37 +108,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePutResponse?> PutAsWithResourcePutResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePutResponse?> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePutResponse> PutAsWithResourcePutResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePutResponse> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePutResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// This endpoint imports (upserts) a resource to Vercel&apos;s installation. This may be needed if resources can be independently created on the partner&apos;s side and need to be synchronized to Vercel.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PutAsWithResourcePutResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceResponse?> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceResponse> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourcePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a resource owned by the selected installation ID.
@@ -269,38 +208,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item
         public global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.WithResourceItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithResourceItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithResourceItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithResourceItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithResourceItemRequestBuilderPutRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

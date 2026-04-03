@@ -46,11 +46,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode.AuthCodeGetResponse?> GetAsAuthCodeGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode.AuthCodeRequestBuilder.AuthCodeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode.AuthCodeGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode.AuthCodeRequestBuilder.AuthCodeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode.AuthCodeGetResponse> GetAsAuthCodeGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode.AuthCodeRequestBuilder.AuthCodeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode.AuthCodeGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode.AuthCodeRequestBuilder.AuthCodeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -63,38 +63,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode
                 { "500", global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode.AuthCodeGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode.AuthCodeGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Get the auth code for a domain. This is required to transfer a domain from Vercel to another registrar.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode.AuthCodeResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.DomainNotFound">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.DomainCannotBeTransferedOutUntil">When receiving a 409 status code</exception>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError">When receiving a 500 status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsAuthCodeGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode.AuthCodeResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode.AuthCodeRequestBuilder.AuthCodeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode.AuthCodeResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode.AuthCodeRequestBuilder.AuthCodeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Vercel.OpenApiClient.Models.DomainNotFound.CreateFromDiscriminatorValue },
-                { "409", global::Soenneker.Vercel.OpenApiClient.Models.DomainCannotBeTransferedOutUntil.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode.AuthCodeResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode.AuthCodeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the auth code for a domain. This is required to transfer a domain from Vercel to another registrar.
@@ -139,14 +107,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AuthCodeRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AuthCode.AuthCodeRequestBuilder.AuthCodeRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

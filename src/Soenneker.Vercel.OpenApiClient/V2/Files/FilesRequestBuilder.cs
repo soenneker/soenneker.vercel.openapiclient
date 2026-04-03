@@ -41,37 +41,16 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Files
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesPostResponse?> PostAsFilesPostResponseAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesRequestBuilder.FilesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesPostResponse?> PostAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesRequestBuilder.FilesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesPostResponse> PostAsFilesPostResponseAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesRequestBuilder.FilesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesPostResponse> PostAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesRequestBuilder.FilesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Before you create a deployment you need to upload the required files for that deployment. To do it, you need to first upload each file to this endpoint. Once that&apos;s completed, you can create a new deployment with the uploaded files. The file content must be placed inside the body of the request. In the case of a successful response you&apos;ll receive a status code 200 with an empty body.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesResponse"/></returns>
-        /// <param name="body">Binary request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsFilesPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesResponse?> PostAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesRequestBuilder.FilesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesResponse> PostAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesRequestBuilder.FilesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Before you create a deployment you need to upload the required files for that deployment. To do it, you need to first upload each file to this endpoint. Once that&apos;s completed, you can create a new deployment with the uploaded files. The file content must be placed inside the body of the request. In the case of a successful response you&apos;ll receive a status code 200 with an empty body.
@@ -130,14 +109,6 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Files
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class FilesRequestBuilderPostRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesRequestBuilder.FilesRequestBuilderPostQueryParameters>
-        {
         }
     }
 }

@@ -1,5 +1,5 @@
 {
-  "descriptionHash": "81CE4B22787F7DC4974EE7AF85201B1742DC3A68049F2366569DDD3E64F2DD50555FFDA460BA45B7CD7DD748FA756A70F7B97485C5AD7508378B72EAC5654D0F",
+  "descriptionHash": "0C71D3A22278ABB0FD2A51F0C032D726F974AA4671F0962A83B6D0DB0A3F46ECF27913CB2AAB8A4BA0DC6BA9D0C1599818877F416753592781DB9F3DEB94D91A",
   "descriptionLocation": "../../openapi.json",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.30.0",
@@ -8,7 +8,7 @@
   "clientNamespaceName": "Soenneker.Vercel.OpenApiClient",
   "language": "CSharp",
   "usesBackingStore": false,
-  "excludeBackwardCompatible": false,
+  "excludeBackwardCompatible": true,
   "includeAdditionalData": true,
   "disableSSLValidation": false,
   "serializers": [

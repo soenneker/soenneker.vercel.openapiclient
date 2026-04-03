@@ -47,37 +47,16 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainDeleteResponse?> DeleteAsWithDomainDeleteResponseAsync(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainDeleteResponse?> DeleteAsync(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainDeleteResponse> DeleteAsWithDomainDeleteResponseAsync(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainDeleteResponse> DeleteAsync(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainDeleteResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainDeleteResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use DeleteAsWithDomainDeleteResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainResponse?> DeleteAsync(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainResponse> DeleteAsync(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get project domain by project id/name and domain name.
@@ -87,34 +66,15 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainGetResponse?> GetAsWithDomainGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainGetResponse> GetAsWithDomainGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Get project domain by project id/name and domain name.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithDomainGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update a project domain&apos;s configuration, including the name, git branch and redirect of the domain.
@@ -125,37 +85,16 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainPatchResponse?> PatchAsWithDomainPatchResponseAsync(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainPatchResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainPatchResponse> PatchAsWithDomainPatchResponseAsync(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainPatchResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainPatchResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Update a project domain&apos;s configuration, including the name, git branch and redirect of the domain.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsWithDomainPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL.
@@ -257,14 +196,6 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithDomainItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderDeleteQueryParameters>
-        {
-        }
-        /// <summary>
         /// Get project domain by project id/name and domain name.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -292,14 +223,6 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithDomainItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
         /// Update a project domain&apos;s configuration, including the name, git branch and redirect of the domain.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -325,14 +248,6 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithDomainItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderPatchQueryParameters>
-        {
         }
     }
 }

@@ -53,34 +53,15 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsGetResponse?> GetAsProjectsGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsGetResponse> GetAsProjectsGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Allows to retrieve the list of projects of the authenticated user or team. The list will be paginated and the provided query parameters allow filtering the returned projects.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsProjectsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Allows to retrieve the list of projects of the authenticated user or team. The list will be paginated and the provided query parameters allow filtering the returned projects.
@@ -218,19 +199,8 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             public string BuildMachineTypes { get; set; }
 #endif
             /// <summary>Filter results by build queue configuration. SKIP_NAMESPACE_QUEUE includes projects without a configuration set.</summary>
-            [Obsolete("This property is deprecated, use BuildQueueConfigurationAsGetBuildQueueConfigurationQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("buildQueueConfiguration")]
-            public string? BuildQueueConfiguration { get; set; }
-#nullable restore
-#else
-            [QueryParameter("buildQueueConfiguration")]
-            public string BuildQueueConfiguration { get; set; }
-#endif
-            /// <summary>Filter results by build queue configuration. SKIP_NAMESPACE_QUEUE includes projects without a configuration set.</summary>
-            [QueryParameter("buildQueueConfiguration")]
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.GetBuildQueueConfigurationQueryParameterType? BuildQueueConfigurationAsGetBuildQueueConfigurationQueryParameterType { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.GetBuildQueueConfigurationQueryParameterType? BuildQueueConfiguration { get; set; }
             [QueryParameter("deprecated")]
             public bool? Deprecated { get; set; }
             /// <summary>Filter results by connected Edge Config ID</summary>
@@ -254,19 +224,8 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             public string EdgeConfigTokenId { get; set; }
 #endif
             /// <summary>Filter results by projects with elastic concurrency enabled</summary>
-            [Obsolete("This property is deprecated, use ElasticConcurrencyEnabledAsGetElasticConcurrencyEnabledQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("elasticConcurrencyEnabled")]
-            public string? ElasticConcurrencyEnabled { get; set; }
-#nullable restore
-#else
-            [QueryParameter("elasticConcurrencyEnabled")]
-            public string ElasticConcurrencyEnabled { get; set; }
-#endif
-            /// <summary>Filter results by projects with elastic concurrency enabled</summary>
-            [QueryParameter("elasticConcurrencyEnabled")]
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.GetElasticConcurrencyEnabledQueryParameterType? ElasticConcurrencyEnabledAsGetElasticConcurrencyEnabledQueryParameterType { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.GetElasticConcurrencyEnabledQueryParameterType? ElasticConcurrencyEnabled { get; set; }
             /// <summary>Filter results by excluding those projects that belong to a repo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -288,19 +247,8 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             public string From { get; set; }
 #endif
             /// <summary>Specifies whether PRs from Git forks should require a team member&apos;s authorization before it can be deployed</summary>
-            [Obsolete("This property is deprecated, use GitForkProtectionAsGetGitForkProtectionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("gitForkProtection")]
-            public string? GitForkProtection { get; set; }
-#nullable restore
-#else
-            [QueryParameter("gitForkProtection")]
-            public string GitForkProtection { get; set; }
-#endif
-            /// <summary>Specifies whether PRs from Git forks should require a team member&apos;s authorization before it can be deployed</summary>
-            [QueryParameter("gitForkProtection")]
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.GetGitForkProtectionQueryParameterType? GitForkProtectionAsGetGitForkProtectionQueryParameterType { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.GetGitForkProtectionQueryParameterType? GitForkProtection { get; set; }
             /// <summary>Limit the number of projects returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -362,19 +310,8 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             public string Slug { get; set; }
 #endif
             /// <summary>Filter results by projects with Static IPs enabled</summary>
-            [Obsolete("This property is deprecated, use StaticIpsEnabledAsGetStaticIpsEnabledQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("staticIpsEnabled")]
-            public string? StaticIpsEnabled { get; set; }
-#nullable restore
-#else
-            [QueryParameter("staticIpsEnabled")]
-            public string StaticIpsEnabled { get; set; }
-#endif
-            /// <summary>Filter results by projects with Static IPs enabled</summary>
-            [QueryParameter("staticIpsEnabled")]
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.GetStaticIpsEnabledQueryParameterType? StaticIpsEnabledAsGetStaticIpsEnabledQueryParameterType { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.GetStaticIpsEnabledQueryParameterType? StaticIpsEnabled { get; set; }
             /// <summary>The Team identifier to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -385,105 +322,6 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ProjectsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3"/>, List&lt;global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember1&gt;
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ProjectsResponse : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember1&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember1>? ProjectsGetResponseMember1 { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember1> ProjectsGetResponseMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2? ProjectsGetResponseMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2 ProjectsGetResponseMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3? ProjectsGetResponseMember3 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3 ProjectsGetResponseMember3 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsResponse"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsResponse();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ProjectsGetResponseMember2 = new global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ProjectsGetResponseMember3 = new global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3();
-                }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember1>(global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember1> projectsGetResponseMember1Value)
-                {
-                    result.ProjectsGetResponseMember1 = projectsGetResponseMember1Value;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ProjectsGetResponseMember2 != null)
-                {
-                    return ProjectsGetResponseMember2.GetFieldDeserializers();
-                }
-                else if(ProjectsGetResponseMember3 != null)
-                {
-                    return ProjectsGetResponseMember3.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(ProjectsGetResponseMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2>(null, ProjectsGetResponseMember2);
-                }
-                else if(ProjectsGetResponseMember3 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3>(null, ProjectsGetResponseMember3);
-                }
-                else if(ProjectsGetResponseMember1 != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember1>(null, ProjectsGetResponseMember1);
-                }
-            }
         }
     }
 }

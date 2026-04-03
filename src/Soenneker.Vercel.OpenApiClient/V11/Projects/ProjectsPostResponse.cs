@@ -130,6 +130,14 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
 #else
         public global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_defaultResourceConfig DefaultResourceConfig { get; set; }
 #endif
+        /// <summary>The delegatedProtection property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_delegatedProtection? DelegatedProtection { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_delegatedProtection DelegatedProtection { get; set; }
+#endif
         /// <summary>Retention policies for deployments. These are enforced at the project level, but we also maintain an instance of this at the team level as a default policy that gets applied to new projects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -564,6 +572,7 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
                 { "customerSupportCodeVisibility", n => { CustomerSupportCodeVisibility = n.GetBoolValue(); } },
                 { "dataCache", n => { DataCache = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_dataCache>(global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_dataCache.CreateFromDiscriminatorValue); } },
                 { "defaultResourceConfig", n => { DefaultResourceConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_defaultResourceConfig>(global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_defaultResourceConfig.CreateFromDiscriminatorValue); } },
+                { "delegatedProtection", n => { DelegatedProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_delegatedProtection>(global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_delegatedProtection.CreateFromDiscriminatorValue); } },
                 { "deploymentExpiration", n => { DeploymentExpiration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_deploymentExpiration>(global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_deploymentExpiration.CreateFromDiscriminatorValue); } },
                 { "devCommand", n => { DevCommand = n.GetStringValue(); } },
                 { "directoryListing", n => { DirectoryListing = n.GetBoolValue(); } },
@@ -661,6 +670,7 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
             writer.WriteBoolValue("customerSupportCodeVisibility", CustomerSupportCodeVisibility);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_dataCache>("dataCache", DataCache);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_defaultResourceConfig>("defaultResourceConfig", DefaultResourceConfig);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_delegatedProtection>("delegatedProtection", DelegatedProtection);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_deploymentExpiration>("deploymentExpiration", DeploymentExpiration);
             writer.WriteStringValue("devCommand", DevCommand);
             writer.WriteBoolValue("directoryListing", DirectoryListing);

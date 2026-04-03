@@ -77,37 +77,16 @@ namespace Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashPutResponse?> PutAsWithHashPutResponseAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashItemRequestBuilder.WithHashItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashPutResponse?> PutAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashItemRequestBuilder.WithHashItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashPutResponse> PutAsWithHashPutResponseAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashItemRequestBuilder.WithHashItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashPutResponse> PutAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashItemRequestBuilder.WithHashItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashPutResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashPutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Uploads a cache artifact identified by the `hash` specified on the path. The cache artifact can then be downloaded with the provided `hash`.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashResponse"/></returns>
-        /// <param name="body">Binary request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PutAsWithHashPutResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashResponse?> PutAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashItemRequestBuilder.WithHashItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashResponse> PutAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashItemRequestBuilder.WithHashItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Downloads a cache artifact indentified by its `hash` specified on the request path. The artifact is downloaded as an octet-stream. The client should verify the content-length header and response body.
@@ -205,14 +184,6 @@ namespace Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithHashItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashItemRequestBuilder.WithHashItemRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
         /// Check that a cache artifact with the given `hash` exists. This request returns response headers only and is equivalent to a `GET` request to this endpoint where the response contains no body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -240,14 +211,6 @@ namespace Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithHashItemRequestBuilderHeadRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashItemRequestBuilder.WithHashItemRequestBuilderHeadQueryParameters>
-        {
-        }
-        /// <summary>
         /// Uploads a cache artifact identified by the `hash` specified on the path. The cache artifact can then be downloaded with the provided `hash`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -273,14 +236,6 @@ namespace Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithHashItemRequestBuilderPutRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashItemRequestBuilder.WithHashItemRequestBuilderPutQueryParameters>
-        {
         }
     }
 }

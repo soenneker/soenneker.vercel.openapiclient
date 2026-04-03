@@ -54,37 +54,16 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsPostResponse?> PostAsRecordsPostResponseAsync(global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsPostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsPostResponse> PostAsRecordsPostResponseAsync(global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsPostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a DNS record for a domain.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsRecordsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a DNS record for a domain.
@@ -347,89 +326,6 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RecordsRequestBuilderPostRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderPostQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsPostResponseMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsPostResponseMember2"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RecordsResponse : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsPostResponseMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsPostResponseMember1? RecordsPostResponseMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsPostResponseMember1 RecordsPostResponseMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsPostResponseMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsPostResponseMember2? RecordsPostResponseMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsPostResponseMember2 RecordsPostResponseMember2 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsResponse"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsRequestBuilder.RecordsResponse();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.RecordsPostResponseMember1 = new global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsPostResponseMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.RecordsPostResponseMember2 = new global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsPostResponseMember2();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(RecordsPostResponseMember1 != null)
-                {
-                    return RecordsPostResponseMember1.GetFieldDeserializers();
-                }
-                else if(RecordsPostResponseMember2 != null)
-                {
-                    return RecordsPostResponseMember2.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(RecordsPostResponseMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsPostResponseMember1>(null, RecordsPostResponseMember1);
-                }
-                else if(RecordsPostResponseMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Domains.Item.Records.RecordsPostResponseMember2>(null, RecordsPostResponseMember2);
-                }
-            }
         }
     }
 }

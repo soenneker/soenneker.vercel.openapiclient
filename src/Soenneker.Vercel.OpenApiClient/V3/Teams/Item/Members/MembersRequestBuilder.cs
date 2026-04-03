@@ -40,34 +40,15 @@ namespace Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersGetResponse?> GetAsMembersGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersGetResponse> GetAsMembersGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Get a paginated list of team members for the provided team.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsMembersGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a paginated list of team members for the provided team.
@@ -127,19 +108,8 @@ namespace Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members
             [QueryParameter("limit")]
             public double? Limit { get; set; }
             /// <summary>Only return members with the specified team role.</summary>
-            [Obsolete("This property is deprecated, use RoleAsGetRoleQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("role")]
-            public string? Role { get; set; }
-#nullable restore
-#else
-            [QueryParameter("role")]
-            public string Role { get; set; }
-#endif
-            /// <summary>Only return members with the specified team role.</summary>
-            [QueryParameter("role")]
-            public global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.GetRoleQueryParameterType? RoleAsGetRoleQueryParameterType { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.GetRoleQueryParameterType? Role { get; set; }
             /// <summary>Search team members by their name, username, and email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -166,14 +136,6 @@ namespace Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members
             /// <summary>Timestamp in milliseconds to only include members added until then.</summary>
             [QueryParameter("until")]
             public double? Until { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class MembersRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

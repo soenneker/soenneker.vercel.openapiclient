@@ -45,11 +45,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price.PriceGetResponse?> GetAsPriceGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price.PriceRequestBuilder.PriceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price.PriceGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price.PriceRequestBuilder.PriceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price.PriceGetResponse> GetAsPriceGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price.PriceRequestBuilder.PriceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price.PriceGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price.PriceRequestBuilder.PriceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -61,36 +61,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price
                 { "500", global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price.PriceGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price.PriceGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Get price data for a specific TLD. This only reflects base prices for the given TLD. Premium domains may have different prices. Use the [Get price data for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/get-price-data-for-a-domain) endpoint to get the price data for a specific domain.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price.PriceResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.NotAuthorizedForScope">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError">When receiving a 500 status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsPriceGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price.PriceResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price.PriceRequestBuilder.PriceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price.PriceResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price.PriceRequestBuilder.PriceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.Vercel.OpenApiClient.Models.Unauthorized.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Vercel.OpenApiClient.Models.NotAuthorizedForScope.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price.PriceResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price.PriceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get price data for a specific TLD. This only reflects base prices for the given TLD. Premium domains may have different prices. Use the [Get price data for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/get-price-data-for-a-domain) endpoint to get the price data for a specific domain.
@@ -145,14 +115,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price
             [QueryParameter("years")]
             public string Years { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PriceRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Tlds.Item.Price.PriceRequestBuilder.PriceRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

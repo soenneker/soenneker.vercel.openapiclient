@@ -59,34 +59,15 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesGetResponse?> GetAsSandboxesGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesGetResponse> GetAsSandboxesGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a paginated list of sandboxes belonging to a specific project. Results can be filtered by creation time using the `since` and `until` parameters.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsSandboxesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new sandbox environment for executing code in an isolated virtual machine. A sandbox can be initialized from various sources including Git repositories, tarballs, or existing snapshots. Once created, you can execute commands, read/write files, and manage the sandbox lifecycle.
@@ -97,37 +78,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostResponse?> PostAsSandboxesPostResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostResponse> PostAsSandboxesPostResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a new sandbox environment for executing code in an isolated virtual machine. A sandbox can be initialized from various sources including Git repositories, tarballs, or existing snapshots. Once created, you can execute commands, read/write files, and manage the sandbox lifecycle.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsSandboxesPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a paginated list of sandboxes belonging to a specific project. Results can be filtered by creation time using the `since` and `until` parameters.
@@ -226,14 +186,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes
             public double? Until { get; set; }
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SandboxesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
         /// Creates a new sandbox environment for executing code in an isolated virtual machine. A sandbox can be initialized from various sources including Git repositories, tarballs, or existing snapshots. Once created, you can execute commands, read/write files, and manage the sandbox lifecycle.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -259,14 +211,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SandboxesRequestBuilderPostRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderPostQueryParameters>
-        {
         }
     }
 }

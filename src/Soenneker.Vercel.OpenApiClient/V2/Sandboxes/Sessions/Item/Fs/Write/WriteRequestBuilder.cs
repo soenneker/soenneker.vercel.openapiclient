@@ -40,34 +40,15 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write.WritePostResponse?> PostAsWritePostResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write.WriteRequestBuilder.WriteRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write.WritePostResponse?> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write.WriteRequestBuilder.WriteRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write.WritePostResponse> PostAsWritePostResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write.WriteRequestBuilder.WriteRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write.WritePostResponse> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write.WriteRequestBuilder.WriteRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write.WritePostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write.WritePostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Uploads and extracts files to a session&apos;s filesystem. Files must be uploaded as a gzipped tarball (`.tar.gz`) with the `Content-Type` header set to `application/gzip`. The tarball contents are extracted to the session&apos;s working directory, or to a custom directory specified via the `x-cwd` header.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write.WriteResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsWritePostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write.WriteResponse?> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write.WriteRequestBuilder.WriteRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write.WriteResponse> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write.WriteRequestBuilder.WriteRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write.WriteResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write.WriteResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Uploads and extracts files to a session&apos;s filesystem. Files must be uploaded as a gzipped tarball (`.tar.gz`) with the `Content-Type` header set to `application/gzip`. The tarball contents are extracted to the session&apos;s working directory, or to a custom directory specified via the `x-cwd` header.
@@ -123,14 +104,6 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WriteRequestBuilderPostRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Write.WriteRequestBuilder.WriteRequestBuilderPostQueryParameters>
-        {
         }
     }
 }

@@ -40,34 +40,15 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupDeleteResponse?> DeleteAsWithGroupDeleteResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupItemRequestBuilder.WithGroupItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupDeleteResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupItemRequestBuilder.WithGroupItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupDeleteResponse> DeleteAsWithGroupDeleteResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupItemRequestBuilder.WithGroupItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupDeleteResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupItemRequestBuilder.WithGroupItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupDeleteResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupDeleteResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Deletes a microfrontends group from the team associated with the group ID.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use DeleteAsWithGroupDeleteResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupItemRequestBuilder.WithGroupItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupItemRequestBuilder.WithGroupItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the name (and slug) of a microfrontends group.
@@ -78,37 +59,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupPatchResponse?> PatchAsWithGroupPatchResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupItemRequestBuilder.WithGroupItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupPatchResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupItemRequestBuilder.WithGroupItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupPatchResponse> PatchAsWithGroupPatchResponseAsync(global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupItemRequestBuilder.WithGroupItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupPatchResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupItemRequestBuilder.WithGroupItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupPatchResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Updates the name (and slug) of a microfrontends group.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsWithGroupPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupItemRequestBuilder.WithGroupItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupItemRequestBuilder.WithGroupItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a microfrontends group from the team associated with the group ID.
@@ -178,14 +138,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithGroupItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupItemRequestBuilder.WithGroupItemRequestBuilderDeleteQueryParameters>
-        {
-        }
-        /// <summary>
         /// Updates the name (and slug) of a microfrontends group.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -201,14 +153,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item
             [QueryParameter("slug")]
             public string Slug { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithGroupItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item.WithGroupItemRequestBuilder.WithGroupItemRequestBuilderPatchQueryParameters>
-        {
         }
     }
 }

@@ -40,34 +40,15 @@ namespace Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsGetResponse?> GetAsRecordsGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsGetResponse> GetAsRecordsGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a list of DNS records created for a domain name. By default it returns 20 records if no limit is provided. The rest can be retrieved using the pagination options.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsRecordsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of DNS records created for a domain name. By default it returns 20 records if no limit is provided. The rest can be retrieved using the pagination options.
@@ -244,105 +225,6 @@ namespace Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records
             [QueryParameter("until")]
             public string Until { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RecordsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsGetResponseMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsGetResponseMember2"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RecordsResponse : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsGetResponseMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsGetResponseMember1? RecordsGetResponseMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsGetResponseMember1 RecordsGetResponseMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsGetResponseMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsGetResponseMember2? RecordsGetResponseMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsGetResponseMember2 RecordsGetResponseMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsResponse"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsRequestBuilder.RecordsResponse();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.RecordsGetResponseMember1 = new global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsGetResponseMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.RecordsGetResponseMember2 = new global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsGetResponseMember2();
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(RecordsGetResponseMember1 != null)
-                {
-                    return RecordsGetResponseMember1.GetFieldDeserializers();
-                }
-                else if(RecordsGetResponseMember2 != null)
-                {
-                    return RecordsGetResponseMember2.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(RecordsGetResponseMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsGetResponseMember1>(null, RecordsGetResponseMember1);
-                }
-                else if(RecordsGetResponseMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V5.Domains.Item.Records.RecordsGetResponseMember2>(null, RecordsGetResponseMember2);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-            }
         }
     }
 }

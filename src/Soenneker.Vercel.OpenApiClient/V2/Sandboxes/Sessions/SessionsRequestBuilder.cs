@@ -53,34 +53,15 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.SessionsGetResponse?> GetAsSessionsGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.SessionsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.SessionsGetResponse> GetAsSessionsGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.SessionsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.SessionsGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.SessionsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a paginated list of sessions belonging to a specific sandbox. Results are sorted by creation time and paginated using an opaque cursor.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.SessionsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsSessionsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.SessionsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.SessionsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.SessionsResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.SessionsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a paginated list of sessions belonging to a specific sandbox. Results are sorted by creation time and paginated using an opaque cursor.
@@ -160,19 +141,8 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions
             public string Slug { get; set; }
 #endif
             /// <summary>Sort direction for results by creation time.</summary>
-            [Obsolete("This property is deprecated, use SortOrderAsGetSortOrderQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sortOrder")]
-            public string? SortOrder { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sortOrder")]
-            public string SortOrder { get; set; }
-#endif
-            /// <summary>Sort direction for results by creation time.</summary>
-            [QueryParameter("sortOrder")]
-            public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.GetSortOrderQueryParameterType? SortOrderAsGetSortOrderQueryParameterType { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.GetSortOrderQueryParameterType? SortOrder { get; set; }
             /// <summary>The Team identifier to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -183,14 +153,6 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SessionsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

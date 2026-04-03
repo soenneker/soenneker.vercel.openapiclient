@@ -40,34 +40,15 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.FlagsGetResponse?> GetAsFlagsGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.FlagsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.FlagsGetResponse> GetAsFlagsGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.FlagsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.FlagsGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.FlagsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieve all feature flags for a team across all projects. The list can be filtered by state and supports pagination.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.FlagsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsFlagsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.FlagsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.FlagsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.FlagsResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.FlagsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve all feature flags for a team across all projects. The list can be filtered by state and supports pagination.
@@ -114,19 +95,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags
             public string Cursor { get; set; }
 #endif
             /// <summary>The kind of flags to retrieve.</summary>
-            [Obsolete("This property is deprecated, use KindAsGetKindQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("kind")]
-            public string? Kind { get; set; }
-#nullable restore
-#else
-            [QueryParameter("kind")]
-            public string Kind { get; set; }
-#endif
-            /// <summary>The kind of flags to retrieve.</summary>
-            [QueryParameter("kind")]
-            public global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.GetKindQueryParameterType? KindAsGetKindQueryParameterType { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.GetKindQueryParameterType? Kind { get; set; }
             /// <summary>Maximum number of flags to return.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
@@ -151,30 +121,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags
             public string Slug { get; set; }
 #endif
             /// <summary>The state of the flags to retrieve. Defaults to `active`.</summary>
-            [Obsolete("This property is deprecated, use StateAsGetStateQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("state")]
-            public string? State { get; set; }
-#nullable restore
-#else
-            [QueryParameter("state")]
-            public string State { get; set; }
-#endif
-            /// <summary>The state of the flags to retrieve. Defaults to `active`.</summary>
-            [QueryParameter("state")]
-            public global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.GetStateQueryParameterType? StateAsGetStateQueryParameterType { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.GetStateQueryParameterType? State { get; set; }
             /// <summary>Whether to include metadata in the response</summary>
             [QueryParameter("withMetadata")]
             public bool? WithMetadata { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class FlagsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

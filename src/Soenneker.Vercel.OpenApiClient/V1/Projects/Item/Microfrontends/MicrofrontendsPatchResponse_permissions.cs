@@ -1239,6 +1239,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> ProjectCheckRun { get; set; }
 #endif
+        /// <summary>The projectDelegatedProtection property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?>? ProjectDelegatedProtection { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> ProjectDelegatedProtection { get; set; }
+#endif
         /// <summary>The projectDeploymentExpiration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2074,6 +2082,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
                 { "projectAnalyticsUsage", n => { ProjectAnalyticsUsage = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "projectCheck", n => { ProjectCheck = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "projectCheckRun", n => { ProjectCheckRun = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
+                { "projectDelegatedProtection", n => { ProjectDelegatedProtection = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "projectDeploymentExpiration", n => { ProjectDeploymentExpiration = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "projectDeploymentHook", n => { ProjectDeploymentHook = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "projectDeploymentProtectionStrict", n => { ProjectDeploymentProtectionStrict = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
@@ -2317,6 +2326,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("projectAnalyticsUsage", ProjectAnalyticsUsage);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("projectCheck", ProjectCheck);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("projectCheckRun", ProjectCheckRun);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("projectDelegatedProtection", ProjectDelegatedProtection);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("projectDeploymentExpiration", ProjectDeploymentExpiration);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("projectDeploymentHook", ProjectDeploymentHook);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("projectDeploymentProtectionStrict", ProjectDeploymentProtectionStrict);
