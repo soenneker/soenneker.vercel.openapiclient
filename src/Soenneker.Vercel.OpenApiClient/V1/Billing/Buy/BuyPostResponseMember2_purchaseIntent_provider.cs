@@ -30,6 +30,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Billing.Buy
 #else
         public string ResourceId { get; set; }
 #endif
+        /// <summary>Whether a Stripe Shared Payment Token was used for this purchase. Only applicable when type is stripe_invoice_immediate.</summary>
+        public bool? StripeSharedPaymentTokenUsed { get; set; }
         /// <summary>The type of the purchase provider</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember2_purchaseIntent_provider_type? Type { get; set; }
         /// <summary>
@@ -59,6 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Billing.Buy
             {
                 { "currencyConversionRate", n => { CurrencyConversionRate = n.GetStringValue(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
+                { "stripeSharedPaymentTokenUsed", n => { StripeSharedPaymentTokenUsed = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember2_purchaseIntent_provider_type>(); } },
             };
         }
@@ -71,6 +74,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Billing.Buy
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("currencyConversionRate", CurrencyConversionRate);
             writer.WriteStringValue("resourceId", ResourceId);
+            writer.WriteBoolValue("stripeSharedPaymentTokenUsed", StripeSharedPaymentTokenUsed);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Billing.Buy.BuyPostResponseMember2_purchaseIntent_provider_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

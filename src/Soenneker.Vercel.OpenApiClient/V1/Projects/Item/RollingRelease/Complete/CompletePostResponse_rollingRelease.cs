@@ -69,6 +69,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Complet
         public double? StartedAt { get; set; }
         /// <summary>The current state of the rolling release</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Complete.CompletePostResponse_rollingRelease_state? State { get; set; }
+        /// <summary>When set to `PAUSED`, the rollout is frozen at the current percentage until continued.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Complete.CompletePostResponse_rollingRelease_substate? Substate { get; set; }
         /// <summary>Unix timestamp in milliseconds when the rolling release was last updated</summary>
         public double? UpdatedAt { get; set; }
         /// <summary>
@@ -105,6 +107,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Complet
                 { "stages", n => { Stages = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Complete.CompletePostResponse_rollingRelease_stages>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Complete.CompletePostResponse_rollingRelease_stages.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "startedAt", n => { StartedAt = n.GetDoubleValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Complete.CompletePostResponse_rollingRelease_state>(); } },
+                { "substate", n => { Substate = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Complete.CompletePostResponse_rollingRelease_substate>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
             };
         }
@@ -124,6 +127,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Complet
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Complete.CompletePostResponse_rollingRelease_stages>("stages", Stages);
             writer.WriteDoubleValue("startedAt", StartedAt);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Complete.CompletePostResponse_rollingRelease_state>("state", State);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Complete.CompletePostResponse_rollingRelease_substate>("substate", Substate);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

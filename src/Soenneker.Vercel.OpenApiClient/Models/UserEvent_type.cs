@@ -1163,6 +1163,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ProjectRollingReleaseTimer,
         #pragma warning restore CS1591
+        [EnumMember(Value = "project-rolling-release-paused")]
+        #pragma warning disable CS1591
+        ProjectRollingReleasePaused,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-rolling-release-continued")]
+        #pragma warning disable CS1591
+        ProjectRollingReleaseContinued,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project-routes-version-promoted")]
         #pragma warning disable CS1591
         ProjectRoutesVersionPromoted,

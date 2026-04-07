@@ -38,6 +38,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Ite
 #else
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.Versions.VersionsGetResponse_versions_data_experiment Experiment { get; set; }
 #endif
+        /// <summary>The permanent property</summary>
+        public bool? Permanent { get; set; }
         /// <summary>The seed property</summary>
         public double? Seed { get; set; }
         /// <summary>The state property</summary>
@@ -78,6 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Ite
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "environments", n => { Environments = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.Versions.VersionsGetResponse_versions_data_environments>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.Versions.VersionsGetResponse_versions_data_environments.CreateFromDiscriminatorValue); } },
                 { "experiment", n => { Experiment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.Versions.VersionsGetResponse_versions_data_experiment>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.Versions.VersionsGetResponse_versions_data_experiment.CreateFromDiscriminatorValue); } },
+                { "permanent", n => { Permanent = n.GetBoolValue(); } },
                 { "seed", n => { Seed = n.GetDoubleValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.Versions.VersionsGetResponse_versions_data_state>(); } },
                 { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.Versions.VersionsGetResponse_versions_data_variants>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.Versions.VersionsGetResponse_versions_data_variants.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -93,6 +96,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Ite
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.Versions.VersionsGetResponse_versions_data_environments>("environments", Environments);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.Versions.VersionsGetResponse_versions_data_experiment>("experiment", Experiment);
+            writer.WriteBoolValue("permanent", Permanent);
             writer.WriteDoubleValue("seed", Seed);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.Versions.VersionsGetResponse_versions_data_state>("state", State);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.Versions.VersionsGetResponse_versions_data_variants>("variants", Variants);

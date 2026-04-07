@@ -74,6 +74,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string OwnerId { get; set; }
 #endif
+        /// <summary>The permanent property</summary>
+        public bool? Permanent { get; set; }
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,6 +144,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_kind>(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_metadata>(global::Soenneker.Vercel.OpenApiClient.Models.Flag_metadata.CreateFromDiscriminatorValue); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
+                { "permanent", n => { Permanent = n.GetBoolValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "revision", n => { Revision = n.GetDoubleValue(); } },
                 { "seed", n => { Seed = n.GetDoubleValue(); } },
@@ -168,6 +171,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_kind>("kind", Kind);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_metadata>("metadata", Metadata);
             writer.WriteStringValue("ownerId", OwnerId);
+            writer.WriteBoolValue("permanent", Permanent);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteDoubleValue("revision", Revision);
             writer.WriteDoubleValue("seed", Seed);

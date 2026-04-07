@@ -136,13 +136,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ReadWriteProjectFlagsProduction,
         #pragma warning restore CS1591
-        [EnumMember(Value = "read:project-oidc-token")]
-        #pragma warning disable CS1591
-        ReadProjectOidcToken,
-        #pragma warning restore CS1591
         [EnumMember(Value = "read-write:domain-registrar")]
         #pragma warning disable CS1591
         ReadWriteDomainRegistrar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "read:sandbox")]
+        #pragma warning disable CS1591
+        ReadSandbox,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "read-write:sandbox")]
+        #pragma warning disable CS1591
+        ReadWriteSandbox,
         #pragma warning restore CS1591
     }
 }

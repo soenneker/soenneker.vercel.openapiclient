@@ -44,6 +44,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Ite
 #else
         public string Message { get; set; }
 #endif
+        /// <summary>Whether this flag is marked as permanent, indicating it should not be removed</summary>
+        public bool? Permanent { get; set; }
         /// <summary>A random seed to prevent split points in different flags from having the same targets</summary>
         public double? Seed { get; set; }
         /// <summary>The state property</summary>
@@ -78,6 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Ite
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "environments", n => { Environments = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchRequestBody_environments>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchRequestBody_environments.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
+                { "permanent", n => { Permanent = n.GetBoolValue(); } },
                 { "seed", n => { Seed = n.GetDoubleValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchRequestBody_state>(); } },
                 { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchRequestBody_variants>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchRequestBody_variants.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -94,6 +97,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Ite
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchRequestBody_environments>("environments", Environments);
             writer.WriteStringValue("message", Message);
+            writer.WriteBoolValue("permanent", Permanent);
             writer.WriteDoubleValue("seed", Seed);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchRequestBody_state>("state", State);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchRequestBody_variants>("variants", Variants);

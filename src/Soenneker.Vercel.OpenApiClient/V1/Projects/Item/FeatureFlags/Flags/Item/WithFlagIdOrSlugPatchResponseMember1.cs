@@ -66,6 +66,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Ite
 #else
         public string OwnerId { get; set; }
 #endif
+        /// <summary>The permanent property</summary>
+        public bool? Permanent { get; set; }
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -133,6 +135,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Ite
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchResponseMember1_kind>(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
+                { "permanent", n => { Permanent = n.GetBoolValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "revision", n => { Revision = n.GetDoubleValue(); } },
                 { "seed", n => { Seed = n.GetDoubleValue(); } },
@@ -158,6 +161,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Ite
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchResponseMember1_kind>("kind", Kind);
             writer.WriteStringValue("ownerId", OwnerId);
+            writer.WriteBoolValue("permanent", Permanent);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteDoubleValue("revision", Revision);
             writer.WriteDoubleValue("seed", Seed);
