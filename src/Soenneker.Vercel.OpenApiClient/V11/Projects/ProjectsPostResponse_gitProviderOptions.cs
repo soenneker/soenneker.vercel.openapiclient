@@ -26,6 +26,8 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
         public global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_gitProviderOptions_createDeployments? CreateDeployments { get; set; }
         /// <summary>Whether the Vercel bot should not automatically create GitHub repository-dispatch events on deployment events. https://vercel.com/docs/git/vercel-for-github#repository-dispatch-events</summary>
         public bool? DisableRepositoryDispatchEvents { get; set; }
+        /// <summary>Whether Vercel should post commit statuses for this project. When omitted, commit statuses remain enabled.</summary>
+        public bool? GitCommitStatus { get; set; }
         /// <summary>Whether the project requires commits to be signed before deployments will be created.</summary>
         public bool? RequireVerifiedCommits { get; set; }
         /// <summary>
@@ -56,6 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
                 { "consolidatedGitCommitStatus", n => { ConsolidatedGitCommitStatus = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_gitProviderOptions_consolidatedGitCommitStatus>(global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_gitProviderOptions_consolidatedGitCommitStatus.CreateFromDiscriminatorValue); } },
                 { "createDeployments", n => { CreateDeployments = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_gitProviderOptions_createDeployments>(); } },
                 { "disableRepositoryDispatchEvents", n => { DisableRepositoryDispatchEvents = n.GetBoolValue(); } },
+                { "gitCommitStatus", n => { GitCommitStatus = n.GetBoolValue(); } },
                 { "requireVerifiedCommits", n => { RequireVerifiedCommits = n.GetBoolValue(); } },
             };
         }
@@ -69,6 +72,7 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_gitProviderOptions_consolidatedGitCommitStatus>("consolidatedGitCommitStatus", ConsolidatedGitCommitStatus);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_gitProviderOptions_createDeployments>("createDeployments", CreateDeployments);
             writer.WriteBoolValue("disableRepositoryDispatchEvents", DisableRepositoryDispatchEvents);
+            writer.WriteBoolValue("gitCommitStatus", GitCommitStatus);
             writer.WriteBoolValue("requireVerifiedCommits", RequireVerifiedCommits);
             writer.WriteAdditionalData(AdditionalData);
         }

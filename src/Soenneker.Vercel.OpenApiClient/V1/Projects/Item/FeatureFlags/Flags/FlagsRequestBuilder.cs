@@ -34,7 +34,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FlagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName%2Did}/feature-flags/flags{?cursor*,limit*,search*,slug*,state*,teamId*,withMetadata*}", pathParameters)
+        public FlagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName%2Did}/feature-flags/flags{?cursor*,limit*,search*,slug*,state*,tags*,teamId*,withMetadata*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FlagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName%2Did}/feature-flags/flags{?cursor*,limit*,search*,slug*,state*,teamId*,withMetadata*}", rawUrl)
+        public FlagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/projects/{idOrName%2Did}/feature-flags/flags{?cursor*,limit*,search*,slug*,state*,tags*,teamId*,withMetadata*}", rawUrl)
         {
         }
         /// <summary>
@@ -175,6 +175,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags
             /// <summary>The state of the flags to retrieve. Defaults to `active`.</summary>
             [QueryParameter("state")]
             public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.GetStateQueryParameterType? State { get; set; }
+            /// <summary>Filter flags by tag. Repeat the parameter for multiple tags (all must match).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tags")]
+            public string[]? Tags { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tags")]
+            public string[] Tags { get; set; }
+#endif
             /// <summary>The Team identifier to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

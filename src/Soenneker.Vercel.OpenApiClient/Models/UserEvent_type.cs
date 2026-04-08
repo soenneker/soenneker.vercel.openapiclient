@@ -943,6 +943,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ProjectCronJobsToggled,
         #pragma warning restore CS1591
+        [EnumMember(Value = "project-delegated-protection-enabled")]
+        #pragma warning disable CS1591
+        ProjectDelegatedProtectionEnabled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project-delete")]
         #pragma warning disable CS1591
         ProjectDelete,
@@ -1038,6 +1042,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "project-git-require-verified-commits-toggled")]
         #pragma warning disable CS1591
         ProjectGitRequireVerifiedCommitsToggled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-git-commit-status-toggled")]
+        #pragma warning disable CS1591
+        ProjectGitCommitStatusToggled,
         #pragma warning restore CS1591
         [EnumMember(Value = "project-git-lfs-toggled")]
         #pragma warning disable CS1591

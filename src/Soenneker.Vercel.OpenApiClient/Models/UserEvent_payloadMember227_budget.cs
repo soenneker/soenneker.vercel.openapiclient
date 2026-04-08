@@ -7,70 +7,21 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Represents a budget for tracking and notifying teams on their spending.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class UserEvent_payloadMember227_budget : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Date time when budget is created</summary>
-        public double? CreatedAt { get; set; }
-        /// <summary>Budget amount (USD / dollars)</summary>
-        public double? FixedBudget { get; set; }
-        /// <summary>Sort key that needs to be unique per teamId</summary>
+        /// <summary>Represents a budget for tracking and notifying teams on their spending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember227_budget_budgetItem? BudgetItem { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember227_budget_budgetItem BudgetItem { get; set; }
 #endif
-        /// <summary>Is the budget currently active for a customer</summary>
-        public bool? IsActive { get; set; }
-        /// <summary>Array of 50, 75, 100 to keep track of notifications sent out</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<double?>? NotifiedAt { get; set; }
-#nullable restore
-#else
-        public List<double?> NotifiedAt { get; set; }
-#endif
-        /// <summary>Should all projects be paused if budget is exceeded</summary>
-        public bool? PauseProjects { get; set; }
-        /// <summary>Array of the last 3 months of spend data</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<double?>? PreviousSpend { get; set; }
-#nullable restore
-#else
-        public List<double?> PreviousSpend { get; set; }
-#endif
-        /// <summary>The acive pricing plan the team is billed with</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember227_budget_pricingPlan? PricingPlan { get; set; }
-        /// <summary>Partition key</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TeamId { get; set; }
-#nullable restore
-#else
-        public string TeamId { get; set; }
-#endif
-        /// <summary>The budget type</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember227_budget_type? Type { get; set; }
-        /// <summary>Date time when budget is updated last</summary>
-        public double? UpdatedAt { get; set; }
-        /// <summary>Webhook id that corresponds to a webhook in Cosmos webhook collection</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WebhookId { get; set; }
-#nullable restore
-#else
-        public string WebhookId { get; set; }
-#endif
-        /// <summary>Keep track if the webhook has been called for the month</summary>
-        public bool? WebhookNotified { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember227_budget"/> and sets the default values.
         /// </summary>
@@ -96,19 +47,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
-                { "fixedBudget", n => { FixedBudget = n.GetDoubleValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "isActive", n => { IsActive = n.GetBoolValue(); } },
-                { "notifiedAt", n => { NotifiedAt = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
-                { "pauseProjects", n => { PauseProjects = n.GetBoolValue(); } },
-                { "previousSpend", n => { PreviousSpend = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
-                { "pricingPlan", n => { PricingPlan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember227_budget_pricingPlan>(); } },
-                { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember227_budget_type>(); } },
-                { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
-                { "webhookId", n => { WebhookId = n.GetStringValue(); } },
-                { "webhookNotified", n => { WebhookNotified = n.GetBoolValue(); } },
+                { "budgetItem", n => { BudgetItem = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember227_budget_budgetItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember227_budget_budgetItem.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -118,19 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("createdAt", CreatedAt);
-            writer.WriteDoubleValue("fixedBudget", FixedBudget);
-            writer.WriteStringValue("id", Id);
-            writer.WriteBoolValue("isActive", IsActive);
-            writer.WriteCollectionOfPrimitiveValues<double?>("notifiedAt", NotifiedAt);
-            writer.WriteBoolValue("pauseProjects", PauseProjects);
-            writer.WriteCollectionOfPrimitiveValues<double?>("previousSpend", PreviousSpend);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember227_budget_pricingPlan>("pricingPlan", PricingPlan);
-            writer.WriteStringValue("teamId", TeamId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember227_budget_type>("type", Type);
-            writer.WriteDoubleValue("updatedAt", UpdatedAt);
-            writer.WriteStringValue("webhookId", WebhookId);
-            writer.WriteBoolValue("webhookNotified", WebhookNotified);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember227_budget_budgetItem>("budgetItem", BudgetItem);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -32,6 +32,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct.DirectPostResponse_store_product_metadataSchema_type? Type { get; set; }
+        /// <summary>The uiOrder property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? UiOrder { get; set; }
+#nullable restore
+#else
+        public List<string> UiOrder { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct.DirectPostResponse_store_product_metadataSchema"/> and sets the default values.
         /// </summary>
@@ -60,6 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct.DirectPostResponse_store_product_metadataSchema_properties>(global::Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct.DirectPostResponse_store_product_metadataSchema_properties.CreateFromDiscriminatorValue); } },
                 { "required", n => { Required = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct.DirectPostResponse_store_product_metadataSchema_type>(); } },
+                { "ui:order", n => { UiOrder = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -72,6 +81,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct.DirectPostResponse_store_product_metadataSchema_properties>("properties", Properties);
             writer.WriteCollectionOfPrimitiveValues<string>("required", Required);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct.DirectPostResponse_store_product_metadataSchema_type>("type", Type);
+            writer.WriteCollectionOfPrimitiveValues<string>("ui:order", UiOrder);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

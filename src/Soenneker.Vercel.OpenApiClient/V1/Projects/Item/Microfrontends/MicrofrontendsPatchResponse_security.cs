@@ -60,6 +60,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
 #endif
         /// <summary>The securityPlus property</summary>
         public bool? SecurityPlus { get; set; }
+        /// <summary>The securityPlusMetadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_security_securityPlusMetadata? SecurityPlusMetadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_security_securityPlusMetadata SecurityPlusMetadata { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_security"/> and sets the default values.
         /// </summary>
@@ -99,6 +107,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
                 { "log_headers", n => { LogHeaders = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_security.MicrofrontendsPatchResponse_security_log_headers>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_security.MicrofrontendsPatchResponse_security_log_headers.CreateFromDiscriminatorValue); } },
                 { "managedRules", n => { ManagedRules = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_security_managedRules>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_security_managedRules.CreateFromDiscriminatorValue); } },
                 { "securityPlus", n => { SecurityPlus = n.GetBoolValue(); } },
+                { "securityPlusMetadata", n => { SecurityPlusMetadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_security_securityPlusMetadata>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_security_securityPlusMetadata.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -122,6 +131,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_security.MicrofrontendsPatchResponse_security_log_headers>("log_headers", LogHeaders);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_security_managedRules>("managedRules", ManagedRules);
             writer.WriteBoolValue("securityPlus", SecurityPlus);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_security_securityPlusMetadata>("securityPlusMetadata", SecurityPlusMetadata);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>

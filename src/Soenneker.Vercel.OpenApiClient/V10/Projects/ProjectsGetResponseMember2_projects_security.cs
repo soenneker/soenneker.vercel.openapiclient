@@ -76,6 +76,14 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
 #endif
         /// <summary>The securityPlus property</summary>
         public bool? SecurityPlus { get; set; }
+        /// <summary>The securityPlusMetadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2_projects_security_securityPlusMetadata? SecurityPlusMetadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2_projects_security_securityPlusMetadata SecurityPlusMetadata { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2_projects_security"/> and sets the default values.
         /// </summary>
@@ -117,6 +125,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
                 { "managedRules", n => { ManagedRules = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2_projects_security_managedRules>(global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2_projects_security_managedRules.CreateFromDiscriminatorValue); } },
                 { "requestLogsKey", n => { RequestLogsKey = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "securityPlus", n => { SecurityPlus = n.GetBoolValue(); } },
+                { "securityPlusMetadata", n => { SecurityPlusMetadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2_projects_security_securityPlusMetadata>(global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2_projects_security_securityPlusMetadata.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -142,6 +151,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2_projects_security_managedRules>("managedRules", ManagedRules);
             writer.WriteCollectionOfPrimitiveValues<string>("requestLogsKey", RequestLogsKey);
             writer.WriteBoolValue("securityPlus", SecurityPlus);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2_projects_security_securityPlusMetadata>("securityPlusMetadata", SecurityPlusMetadata);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
