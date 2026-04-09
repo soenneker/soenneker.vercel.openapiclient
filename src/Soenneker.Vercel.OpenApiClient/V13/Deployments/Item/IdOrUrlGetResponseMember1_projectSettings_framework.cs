@@ -268,5 +268,9 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
         #pragma warning disable CS1591
         Services,
         #pragma warning restore CS1591
+        [EnumMember(Value = "mastra")]
+        #pragma warning disable CS1591
+        Mastra,
+        #pragma warning restore CS1591
     }
 }

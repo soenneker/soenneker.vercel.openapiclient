@@ -268,5 +268,9 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
         #pragma warning disable CS1591
         Go,
         #pragma warning restore CS1591
+        [EnumMember(Value = "mastra")]
+        #pragma warning disable CS1591
+        Mastra,
+        #pragma warning restore CS1591
     }
 }

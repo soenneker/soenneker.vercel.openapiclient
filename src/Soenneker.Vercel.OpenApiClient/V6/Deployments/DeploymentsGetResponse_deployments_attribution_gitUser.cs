@@ -31,6 +31,14 @@ namespace Soenneker.Vercel.OpenApiClient.V6.Deployments
 #else
         public string Login { get; set; }
 #endif
+        /// <summary>The git provider (github, gitlab, bitbucket)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Provider { get; set; }
+#nullable restore
+#else
+        public string Provider { get; set; }
+#endif
         /// <summary>User type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +74,7 @@ namespace Soenneker.Vercel.OpenApiClient.V6.Deployments
             {
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution_gitUser.DeploymentsGetResponse_deployments_attribution_gitUser_id>(global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution_gitUser.DeploymentsGetResponse_deployments_attribution_gitUser_id.CreateFromDiscriminatorValue); } },
                 { "login", n => { Login = n.GetStringValue(); } },
+                { "provider", n => { Provider = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -78,6 +87,7 @@ namespace Soenneker.Vercel.OpenApiClient.V6.Deployments
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_attribution_gitUser.DeploymentsGetResponse_deployments_attribution_gitUser_id>("id", Id);
             writer.WriteStringValue("login", Login);
+            writer.WriteStringValue("provider", Provider);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

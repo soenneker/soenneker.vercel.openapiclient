@@ -15,6 +15,8 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The resumed property</summary>
+        public bool? Resumed { get; set; }
         /// <summary>The routes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "resumed", n => { Resumed = n.GetBoolValue(); } },
                 { "routes", n => { Routes = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SandboxPublicRoute>(global::Soenneker.Vercel.OpenApiClient.Models.SandboxPublicRoute.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sandbox", n => { Sandbox = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox>(global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox.CreateFromDiscriminatorValue); } },
                 { "session", n => { Session = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Session>(global::Soenneker.Vercel.OpenApiClient.Models.Session.CreateFromDiscriminatorValue); } },
@@ -76,6 +79,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("resumed", Resumed);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SandboxPublicRoute>("routes", Routes);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox>("sandbox", Sandbox);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Session>("session", Session);
