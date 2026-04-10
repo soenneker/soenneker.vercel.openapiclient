@@ -8,16 +8,16 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes
 {
     /// <summary>
-    /// Controls where the route is inserted. Defaults to \&quot;end\&quot; if omitted.
+    /// Controls where the route is inserted. Defaults to &quot;end&quot; if omitted.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RoutesPostRequestBody_position : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>\&quot;after\&quot;/\&quot;before\&quot; require referenceId.</summary>
+        /// <summary>&quot;after&quot;/&quot;before&quot; require referenceId.</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.RoutesPostRequestBody_position_placement? Placement { get; set; }
-        /// <summary>Route ID to insert after/before. Required for \&quot;after\&quot;/\&quot;before\&quot;.</summary>
+        /// <summary>Route ID to insert after/before. Required for &quot;after&quot;/&quot;before&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReferenceId { get; set; }

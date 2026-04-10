@@ -13,34 +13,40 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEvent_payloadMember235 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The access property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember235_access? Access { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The computeUnitsMax property</summary>
-        public double? ComputeUnitsMax { get; set; }
-        /// <summary>The computeUnitsMin property</summary>
-        public double? ComputeUnitsMin { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The destinationTeamId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? DestinationTeamId { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string DestinationTeamId { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The destinationTeamName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? DestinationTeamName { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string DestinationTeamName { get; set; }
 #endif
-        /// <summary>The suspendTimeoutSeconds property</summary>
-        public double? SuspendTimeoutSeconds { get; set; }
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember235_type? Type { get; set; }
+        /// <summary>The store property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember235_store? Store { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember235_store Store { get; set; }
+#endif
+        /// <summary>The transferRequestCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TransferRequestCode { get; set; }
+#nullable restore
+#else
+        public string TransferRequestCode { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember235"/> and sets the default values.
         /// </summary>
@@ -66,13 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access", n => { Access = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember235_access>(); } },
-                { "computeUnitsMax", n => { ComputeUnitsMax = n.GetDoubleValue(); } },
-                { "computeUnitsMin", n => { ComputeUnitsMin = n.GetDoubleValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "suspendTimeoutSeconds", n => { SuspendTimeoutSeconds = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember235_type>(); } },
+                { "destinationTeamId", n => { DestinationTeamId = n.GetStringValue(); } },
+                { "destinationTeamName", n => { DestinationTeamName = n.GetStringValue(); } },
+                { "store", n => { Store = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember235_store>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember235_store.CreateFromDiscriminatorValue); } },
+                { "transferRequestCode", n => { TransferRequestCode = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -82,13 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember235_access>("access", Access);
-            writer.WriteDoubleValue("computeUnitsMax", ComputeUnitsMax);
-            writer.WriteDoubleValue("computeUnitsMin", ComputeUnitsMin);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("name", Name);
-            writer.WriteDoubleValue("suspendTimeoutSeconds", SuspendTimeoutSeconds);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember235_type>("type", Type);
+            writer.WriteStringValue("destinationTeamId", DestinationTeamId);
+            writer.WriteStringValue("destinationTeamName", DestinationTeamName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember235_store>("store", Store);
+            writer.WriteStringValue("transferRequestCode", TransferRequestCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

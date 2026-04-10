@@ -11,14 +11,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.
         #pragma warning disable CS1591
         Pending,
         #pragma warning restore CS1591
-        [EnumMember(Value = "paid")]
-        #pragma warning disable CS1591
-        Paid,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "notpaid")]
-        #pragma warning disable CS1591
-        Notpaid,
-        #pragma warning restore CS1591
         [EnumMember(Value = "draft")]
         #pragma warning disable CS1591
         Draft,
@@ -30,6 +22,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Invoices.
         [EnumMember(Value = "invoiced")]
         #pragma warning disable CS1591
         Invoiced,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "paid")]
+        #pragma warning disable CS1591
+        Paid,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "notpaid")]
+        #pragma warning disable CS1591
+        Notpaid,
         #pragma warning restore CS1591
         [EnumMember(Value = "overdue")]
         #pragma warning disable CS1591

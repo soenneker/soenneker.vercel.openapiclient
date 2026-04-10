@@ -31,6 +31,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> Cns { get; set; }
 #endif
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember49"/> and sets the default values.
         /// </summary>
@@ -58,6 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "cn", n => { Cn = n.GetStringValue(); } },
                 { "cns", n => { Cns = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,6 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cn", Cn);
             writer.WriteCollectionOfPrimitiveValues<string>("cns", Cns);
+            writer.WriteStringValue("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

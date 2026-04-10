@@ -18,7 +18,7 @@ namespace Soenneker.Vercel.OpenApiClient.V3.User.Tokens
     public partial class TokensRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v3.user.tokens.item collection</summary>
-        /// <param name="position">The identifier of the token to invalidate. The special value \&quot;current\&quot; may be supplied, which invalidates the token that the HTTP request was authenticated with.</param>
+        /// <param name="position">The identifier of the token to invalidate. The special value &quot;current&quot; may be supplied, which invalidates the token that the HTTP request was authenticated with.</param>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V3.User.Tokens.Item.WithTokenItemRequestBuilder"/></returns>
         public global::Soenneker.Vercel.OpenApiClient.V3.User.Tokens.Item.WithTokenItemRequestBuilder this[string position]
         {

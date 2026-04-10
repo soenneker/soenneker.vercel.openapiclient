@@ -36,6 +36,14 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item
 #else
         public global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultExpirationSettings DefaultExpirationSettings { get; set; }
 #endif
+        /// <summary>The defaultProjectJobs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_defaultProjectJobs? DefaultProjectJobs { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_defaultProjectJobs DefaultProjectJobs { get; set; }
+#endif
         /// <summary>A short text that describes the team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,6 +154,14 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item
 #else
         public global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_strictDeploymentProtectionSettings StrictDeploymentProtectionSettings { get; set; }
 #endif
+        /// <summary>When enabled, creating shareable links requires Owner role.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_strictShareableLinks? StrictShareableLinks { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_strictShareableLinks StrictShareableLinks { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -167,6 +183,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item
                 { "avatar", n => { Avatar = n.GetStringValue(); } },
                 { "defaultDeploymentProtection", n => { DefaultDeploymentProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultDeploymentProtection>(global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultDeploymentProtection.CreateFromDiscriminatorValue); } },
                 { "defaultExpirationSettings", n => { DefaultExpirationSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultExpirationSettings>(global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultExpirationSettings.CreateFromDiscriminatorValue); } },
+                { "defaultProjectJobs", n => { DefaultProjectJobs = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_defaultProjectJobs>(global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_defaultProjectJobs.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "emailDomain", n => { EmailDomain = n.GetStringValue(); } },
                 { "enablePreviewFeedback", n => { EnablePreviewFeedback = n.GetStringValue(); } },
@@ -183,6 +200,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item
                 { "sensitiveEnvironmentVariablePolicy", n => { SensitiveEnvironmentVariablePolicy = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "strictDeploymentProtectionSettings", n => { StrictDeploymentProtectionSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_strictDeploymentProtectionSettings>(global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_strictDeploymentProtectionSettings.CreateFromDiscriminatorValue); } },
+                { "strictShareableLinks", n => { StrictShareableLinks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_strictShareableLinks>(global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_strictShareableLinks.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -195,6 +213,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item
             writer.WriteStringValue("avatar", Avatar);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultDeploymentProtection>("defaultDeploymentProtection", DefaultDeploymentProtection);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultExpirationSettings>("defaultExpirationSettings", DefaultExpirationSettings);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_defaultProjectJobs>("defaultProjectJobs", DefaultProjectJobs);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("emailDomain", EmailDomain);
             writer.WriteStringValue("enablePreviewFeedback", EnablePreviewFeedback);
@@ -211,6 +230,78 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item
             writer.WriteStringValue("sensitiveEnvironmentVariablePolicy", SensitiveEnvironmentVariablePolicy);
             writer.WriteStringValue("slug", Slug);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_strictDeploymentProtectionSettings>("strictDeploymentProtectionSettings", StrictDeploymentProtectionSettings);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_strictShareableLinks>("strictShareableLinks", StrictShareableLinks);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultProjectJobsMember1"/>, <see cref="string"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithTeamPatchRequestBody_defaultProjectJobs : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? String { get; set; }
+#nullable restore
+#else
+            public string String { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultProjectJobsMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultProjectJobsMember1? WithTeamPatchRequestBodyDefaultProjectJobsMember1 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultProjectJobsMember1 WithTeamPatchRequestBodyDefaultProjectJobsMember1 { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_defaultProjectJobs"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_defaultProjectJobs CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_defaultProjectJobs();
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.WithTeamPatchRequestBodyDefaultProjectJobsMember1 = new global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultProjectJobsMember1();
+                }
+                else if(parseNode.GetStringValue() is string stringValue)
+                {
+                    result.String = stringValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(WithTeamPatchRequestBodyDefaultProjectJobsMember1 != null)
+                {
+                    return WithTeamPatchRequestBodyDefaultProjectJobsMember1.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(WithTeamPatchRequestBodyDefaultProjectJobsMember1 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultProjectJobsMember1>(null, WithTeamPatchRequestBodyDefaultProjectJobsMember1);
+                }
+                else if(String != null)
+                {
+                    writer.WriteStringValue(null, String);
+                }
+            }
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_nsnbConfigMember1"/>, <see cref="string"/>

@@ -23,8 +23,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Domain { get; set; }
 #endif
-        /// <summary>The zone property</summary>
-        public bool? Zone { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember84"/> and sets the default values.
         /// </summary>
@@ -51,7 +49,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "domain", n => { Domain = n.GetStringValue(); } },
-                { "zone", n => { Zone = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -62,7 +59,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("domain", Domain);
-            writer.WriteBoolValue("zone", Zone);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

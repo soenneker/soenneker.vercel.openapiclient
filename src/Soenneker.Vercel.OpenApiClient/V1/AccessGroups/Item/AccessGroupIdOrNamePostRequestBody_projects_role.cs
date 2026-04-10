@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.V1.AccessGroups.Item
 {
-    /// <summary>The project role that will be added to this Access Group. \&quot;null\&quot; will remove this project level role.</summary>
+    /// <summary>The project role that will be added to this Access Group. &quot;null&quot; will remove this project level role.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AccessGroupIdOrNamePostRequestBody_projects_role
     {

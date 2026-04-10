@@ -20,7 +20,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AccessGroups
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>The project role that will be added to this Access Group. \&quot;null\&quot; will remove this project level role.</summary>
+        /// <summary>The project role that will be added to this Access Group. &quot;null&quot; will remove this project level role.</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.AccessGroups.AccessGroupsPostRequestBody_projects_role? Role { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

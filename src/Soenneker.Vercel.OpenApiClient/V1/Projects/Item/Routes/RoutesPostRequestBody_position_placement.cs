@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes
 {
-    /// <summary>\&quot;after\&quot;/\&quot;before\&quot; require referenceId.</summary>
+    /// <summary>&quot;after&quot;/&quot;before&quot; require referenceId.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum RoutesPostRequestBody_position_placement
     {

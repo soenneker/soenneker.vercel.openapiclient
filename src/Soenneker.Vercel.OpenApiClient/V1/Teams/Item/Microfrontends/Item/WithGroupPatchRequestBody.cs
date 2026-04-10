@@ -14,7 +14,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The new fallback environment for the microfrontends group. Must be \&quot;SAME_ENV\&quot;, \&quot;PRODUCTION\&quot;, or a valid custom environment slug from the default app.</summary>
+        /// <summary>The new fallback environment for the microfrontends group. Must be &quot;SAME_ENV&quot;, &quot;PRODUCTION&quot;, or a valid custom environment slug from the default app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FallbackEnvironment { get; set; }

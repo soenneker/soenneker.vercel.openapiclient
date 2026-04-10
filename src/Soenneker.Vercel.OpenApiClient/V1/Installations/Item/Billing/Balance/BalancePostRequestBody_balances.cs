@@ -13,7 +13,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Balance
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BalancePostRequestBody_balances : IParsable
     {
-        /// <summary>A human-readable description of the credits the user currently has, e.g. \&quot;2,000 Tokens\&quot;</summary>
+        /// <summary>A human-readable description of the credits the user currently has, e.g. &quot;2,000 Tokens&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Credit { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.Balance
 #endif
         /// <summary>The dollar value of the credit balance, in USD and provided in cents, which is used to trigger automatic purchase thresholds.</summary>
         public double? CurrencyValueInCents { get; set; }
-        /// <summary>The name of the credits, for display purposes, e.g. \&quot;Tokens\&quot;</summary>
+        /// <summary>The name of the credits, for display purposes, e.g. &quot;Tokens&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NameLabel { get; set; }

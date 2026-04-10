@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.NetworkPolicy
 {
     /// <summary>
-    /// Network access policy for the sandbox.\n    Controls which external hosts the sandbox can communicate with.\n    Use \&quot;allow-all\&quot; mode to allow all traffic, \&quot;deny-all\&quot; to block all traffic or \&quot;custom\&quot; to provide specific rules.
+    /// Network access policy for the sandbox.    Controls which external hosts the sandbox can communicate with.    Use &quot;allow-all&quot; mode to allow all traffic, &quot;deny-all&quot; to block all traffic or &quot;custom&quot; to provide specific rules.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NetworkPolicyPostRequestBody : IParsable
@@ -21,7 +21,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.NetworkPolicy
 #else
         public List<string> AllowedCIDRs { get; set; }
 #endif
-        /// <summary>List of domain names the sandbox is allowed to connect to. Only applies when mode is \&quot;custom\&quot;. Supports wildcard patterns (e.g., \&quot;*.example.com\&quot; matches all subdomains).</summary>
+        /// <summary>List of domain names the sandbox is allowed to connect to. Only applies when mode is &quot;custom&quot;. Supports wildcard patterns (e.g., &quot;*.example.com&quot; matches all subdomains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedDomains { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.NetworkPolicy
 #else
         public List<string> DeniedCIDRs { get; set; }
 #endif
-        /// <summary>The network access policy mode. Use \&quot;allow-all\&quot; to permit all outbound traffic. Use \&quot;deny-all\&quot; to block all outbound traffic. Use \&quot;custom\&quot; to specify explicit allow/deny rules.</summary>
+        /// <summary>The network access policy mode. Use &quot;allow-all&quot; to permit all outbound traffic. Use &quot;deny-all&quot; to block all outbound traffic. Use &quot;custom&quot; to specify explicit allow/deny rules.</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.NetworkPolicy.NetworkPolicyPostRequestBody_mode? Mode { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

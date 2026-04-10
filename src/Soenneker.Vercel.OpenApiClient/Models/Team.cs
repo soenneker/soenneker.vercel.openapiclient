@@ -57,6 +57,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultExpirationSettings DefaultExpirationSettings { get; set; }
 #endif
+        /// <summary>Default job configuration applied to new projects created in this team.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultProjectJobs? DefaultProjectJobs { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultProjectJobs DefaultProjectJobs { get; set; }
+#endif
         /// <summary>Default roles for the team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -205,6 +213,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.Team_strictDeploymentProtectionSettings StrictDeploymentProtectionSettings { get; set; }
 #endif
+        /// <summary>When enabled, creating shareable links requires Owner role.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.Team_strictShareableLinks? StrictShareableLinks { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.Team_strictShareableLinks StrictShareableLinks { get; set; }
+#endif
         /// <summary>Timestamp (in milliseconds) of when the Team was last updated.</summary>
         public double? UpdatedAt { get; set; }
         /// <summary>
@@ -238,6 +254,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "creatorId", n => { CreatorId = n.GetStringValue(); } },
                 { "defaultDeploymentProtection", n => { DefaultDeploymentProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultDeploymentProtection>(global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultDeploymentProtection.CreateFromDiscriminatorValue); } },
                 { "defaultExpirationSettings", n => { DefaultExpirationSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultExpirationSettings>(global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultExpirationSettings.CreateFromDiscriminatorValue); } },
+                { "defaultProjectJobs", n => { DefaultProjectJobs = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultProjectJobs>(global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultProjectJobs.CreateFromDiscriminatorValue); } },
                 { "defaultRoles", n => { DefaultRoles = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultRoles>(global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultRoles.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "disableHardAutoBlocks", n => { DisableHardAutoBlocks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team.Team_disableHardAutoBlocks>(global::Soenneker.Vercel.OpenApiClient.Models.Team.Team_disableHardAutoBlocks.CreateFromDiscriminatorValue); } },
@@ -261,6 +278,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "stagingPrefix", n => { StagingPrefix = n.GetStringValue(); } },
                 { "strictDeploymentProtectionSettings", n => { StrictDeploymentProtectionSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_strictDeploymentProtectionSettings>(global::Soenneker.Vercel.OpenApiClient.Models.Team_strictDeploymentProtectionSettings.CreateFromDiscriminatorValue); } },
+                { "strictShareableLinks", n => { StrictShareableLinks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_strictShareableLinks>(global::Soenneker.Vercel.OpenApiClient.Models.Team_strictShareableLinks.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
             };
         }
@@ -277,6 +295,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("creatorId", CreatorId);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultDeploymentProtection>("defaultDeploymentProtection", DefaultDeploymentProtection);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultExpirationSettings>("defaultExpirationSettings", DefaultExpirationSettings);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultProjectJobs>("defaultProjectJobs", DefaultProjectJobs);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultRoles>("defaultRoles", DefaultRoles);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team.Team_disableHardAutoBlocks>("disableHardAutoBlocks", DisableHardAutoBlocks);
@@ -300,6 +319,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("slug", Slug);
             writer.WriteStringValue("stagingPrefix", StagingPrefix);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_strictDeploymentProtectionSettings>("strictDeploymentProtectionSettings", StrictDeploymentProtectionSettings);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_strictShareableLinks>("strictShareableLinks", StrictShareableLinks);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

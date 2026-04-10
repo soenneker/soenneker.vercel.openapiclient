@@ -15,26 +15,28 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The max property</summary>
-        public double? Max { get; set; }
-        /// <summary>The min property</summary>
-        public double? Min { get; set; }
-        /// <summary>The scalingRules property</summary>
+        /// <summary>The enabled property</summary>
+        public bool? Enabled { get; set; }
+        /// <summary>The firstEnabledAt property</summary>
+        public double? FirstEnabledAt { get; set; }
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_scalingRules? ScalingRules { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_scalingRules ScalingRules { get; set; }
+        public string ProjectId { get; set; }
 #endif
-        /// <summary>The url property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string ProjectName { get; set; }
 #endif
+        /// <summary>The updatedAt property</summary>
+        public double? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221"/> and sets the default values.
         /// </summary>
@@ -60,10 +62,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "max", n => { Max = n.GetDoubleValue(); } },
-                { "min", n => { Min = n.GetDoubleValue(); } },
-                { "scalingRules", n => { ScalingRules = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_scalingRules>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_scalingRules.CreateFromDiscriminatorValue); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "firstEnabledAt", n => { FirstEnabledAt = n.GetDoubleValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -73,10 +76,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("max", Max);
-            writer.WriteDoubleValue("min", Min);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_scalingRules>("scalingRules", ScalingRules);
-            writer.WriteStringValue("url", Url);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteDoubleValue("firstEnabledAt", FirstEnabledAt);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,14 +15,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The convertedFromTrial property</summary>
+        public bool? ConvertedFromTrial { get; set; }
+        /// <summary>The invoiceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? InvoiceId { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string InvoiceId { get; set; }
 #endif
+        /// <summary>The plan property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember262_plan? Plan { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember262"/> and sets the default values.
         /// </summary>
@@ -48,7 +52,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "convertedFromTrial", n => { ConvertedFromTrial = n.GetBoolValue(); } },
+                { "invoiceId", n => { InvoiceId = n.GetStringValue(); } },
+                { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember262_plan>(); } },
             };
         }
         /// <summary>
@@ -58,7 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("convertedFromTrial", ConvertedFromTrial);
+            writer.WriteStringValue("invoiceId", InvoiceId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember262_plan>("plan", Plan);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

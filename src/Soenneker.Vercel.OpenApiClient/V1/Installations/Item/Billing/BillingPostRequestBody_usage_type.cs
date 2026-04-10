@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing
 {
-    /// <summary>\n              Type of the metric.\n              - total: measured total value, such as Database size\n              - interval: usage during the period, such as i/o or number of queries.\n              - rate: rate of usage, such as queries per second.\n            </summary>
+    /// <summary>              Type of the metric.              - total: measured total value, such as Database size              - interval: usage during the period, such as i/o or number of queries.              - rate: rate of usage, such as queries per second.            </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BillingPostRequestBody_usage_type
     {

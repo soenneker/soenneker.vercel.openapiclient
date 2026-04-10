@@ -34,7 +34,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Env
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/env{?exclude%2Dids*,exclude%2DprojectId*,exclude_ids*,exclude_projectId*,ids*,projectId*,search*,slug*,teamId*}", pathParameters)
+        public EnvRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/env{?%27exclude%2Dids%27*,%27exclude%2DprojectId%27*,exclude_ids*,exclude_projectId*,ids*,projectId*,search*,slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Env
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/env{?exclude%2Dids*,exclude%2DprojectId*,exclude_ids*,exclude_projectId*,ids*,projectId*,search*,slug*,teamId*}", rawUrl)
+        public EnvRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/env{?%27exclude%2Dids%27*,%27exclude%2DprojectId%27*,exclude_ids*,exclude_projectId*,ids*,projectId*,search*,slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>
@@ -269,21 +269,21 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Env
             /// <summary>Filter SharedEnvVariables based on comma separated ids</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("exclude%2Dids")]
+            [QueryParameter("%27exclude%2Dids%27")]
             public string? ExcludeIds { get; set; }
 #nullable restore
 #else
-            [QueryParameter("exclude%2Dids")]
+            [QueryParameter("%27exclude%2Dids%27")]
             public string ExcludeIds { get; set; }
 #endif
             /// <summary>Filter SharedEnvVariables that belong to a project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("exclude%2DprojectId")]
+            [QueryParameter("%27exclude%2DprojectId%27")]
             public string? ExcludeProjectId { get; set; }
 #nullable restore
 #else
-            [QueryParameter("exclude%2DprojectId")]
+            [QueryParameter("%27exclude%2DprojectId%27")]
             public string ExcludeProjectId { get; set; }
 #endif
             /// <summary>Filter SharedEnvVariables based on comma separated ids</summary>

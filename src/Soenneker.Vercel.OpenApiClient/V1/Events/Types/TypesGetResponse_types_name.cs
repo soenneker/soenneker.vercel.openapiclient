@@ -32,6 +32,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Events.Types
         #pragma warning disable CS1591
         Deployment,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-api-key-created")]
+        #pragma warning disable CS1591
+        AiGatewayApiKeyCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-api-key-deleted")]
+        #pragma warning disable CS1591
+        AiGatewayApiKeyDeleted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "access-group-created")]
         #pragma warning disable CS1591
         AccessGroupCreated,
@@ -948,6 +956,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Events.Types
         #pragma warning disable CS1591
         ProjectDelegatedProtectionEnabled,
         #pragma warning restore CS1591
+        [EnumMember(Value = "project-delegated-protection-updated")]
+        #pragma warning disable CS1591
+        ProjectDelegatedProtectionUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project-delete")]
         #pragma warning disable CS1591
         ProjectDelete,
@@ -1439,6 +1451,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Events.Types
         [EnumMember(Value = "strict-deployment-protection-settings")]
         #pragma warning disable CS1591
         StrictDeploymentProtectionSettings,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "strict-shareable-links")]
+        #pragma warning disable CS1591
+        StrictShareableLinks,
         #pragma warning restore CS1591
         [EnumMember(Value = "team-domain-verification-created")]
         #pragma warning disable CS1591

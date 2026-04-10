@@ -20,7 +20,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing
 #else
         public global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.BillingPostRequestBody.BillingPostRequestBody_billing Billing { get; set; }
 #endif
-        /// <summary>End of Day, the UTC datetime for when the end of the billing/usage day is in UTC time. This tells us which day the usage data is for, and also allows for your \&quot;end of day\&quot; to be different from UTC 00:00:00. eod must be within the period dates, and cannot be older than 24h earlier from our server&apos;s current time.</summary>
+        /// <summary>End of Day, the UTC datetime for when the end of the billing/usage day is in UTC time. This tells us which day the usage data is for, and also allows for your &quot;end of day&quot; to be different from UTC 00:00:00. eod must be within the period dates, and cannot be older than 24h earlier from our server&apos;s current time.</summary>
         public DateTimeOffset? Eod { get; set; }
         /// <summary>Period for the billing cycle. The period end date cannot be older than 24 hours earlier than our current server&apos;s time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -15,13 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The bio property</summary>
+        /// <summary>The newName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Bio { get; set; }
+        public string? NewName { get; set; }
 #nullable restore
 #else
-        public string Bio { get; set; }
+        public string NewName { get; set; }
+#endif
+        /// <summary>The oldName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OldName { get; set; }
+#nullable restore
+#else
+        public string OldName { get; set; }
+#endif
+        /// <summary>The uid property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Uid { get; set; }
+#nullable restore
+#else
+        public string Uid { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember220"/> and sets the default values.
@@ -48,7 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bio", n => { Bio = n.GetStringValue(); } },
+                { "newName", n => { NewName = n.GetStringValue(); } },
+                { "oldName", n => { OldName = n.GetStringValue(); } },
+                { "uid", n => { Uid = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -58,7 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("bio", Bio);
+            writer.WriteStringValue("newName", NewName);
+            writer.WriteStringValue("oldName", OldName);
+            writer.WriteStringValue("uid", Uid);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

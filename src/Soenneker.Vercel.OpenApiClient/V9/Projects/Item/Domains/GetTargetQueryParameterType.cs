@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains
 {
-    /// <summary>Filters on the target of the domain. Can be either \&quot;production\&quot;, \&quot;preview\&quot;</summary>
+    /// <summary>Filters on the target of the domain. Can be either &quot;production&quot;, &quot;preview&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetTargetQueryParameterType
     {

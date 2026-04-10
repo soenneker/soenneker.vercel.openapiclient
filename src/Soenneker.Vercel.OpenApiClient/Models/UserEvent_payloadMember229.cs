@@ -15,21 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents a budget for tracking and notifying teams on their spending.</summary>
+        /// <summary>The budget property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember229_budget? Budget { get; set; }
 #nullable restore
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember229_budget Budget { get; set; }
-#endif
-        /// <summary>The webhookUrl property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WebhookUrl { get; set; }
-#nullable restore
-#else
-        public string WebhookUrl { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember229"/> and sets the default values.
@@ -57,7 +49,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "budget", n => { Budget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember229_budget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember229_budget.CreateFromDiscriminatorValue); } },
-                { "webhookUrl", n => { WebhookUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,7 +59,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember229_budget>("budget", Budget);
-            writer.WriteStringValue("webhookUrl", WebhookUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

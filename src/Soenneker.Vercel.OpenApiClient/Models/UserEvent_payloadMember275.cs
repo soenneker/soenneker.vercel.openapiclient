@@ -13,24 +13,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEvent_payloadMember275 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>The actorId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ActorId { get; set; }
+#nullable restore
+#else
+        public string ActorId { get; set; }
+#endif
+        /// <summary>The actorType property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember275_actorType? ActorType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The next property</summary>
+        /// <summary>The reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember275_next? Next { get; set; }
+        public string? Reason { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember275_next Next { get; set; }
+        public string Reason { get; set; }
 #endif
-        /// <summary>The previous property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember275_previous? Previous { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember275_previous Previous { get; set; }
-#endif
+        /// <summary>The recoveryCodes property</summary>
+        public double? RecoveryCodes { get; set; }
+        /// <summary>The totp property</summary>
+        public bool? Totp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember275"/> and sets the default values.
         /// </summary>
@@ -56,8 +62,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember275_next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember275_next.CreateFromDiscriminatorValue); } },
-                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember275_previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember275_previous.CreateFromDiscriminatorValue); } },
+                { "actorId", n => { ActorId = n.GetStringValue(); } },
+                { "actorType", n => { ActorType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember275_actorType>(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "recoveryCodes", n => { RecoveryCodes = n.GetDoubleValue(); } },
+                { "totp", n => { Totp = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +76,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember275_next>("next", Next);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember275_previous>("previous", Previous);
+            writer.WriteStringValue("actorId", ActorId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember275_actorType>("actorType", ActorType);
+            writer.WriteStringValue("reason", Reason);
+            writer.WriteDoubleValue("recoveryCodes", RecoveryCodes);
+            writer.WriteBoolValue("totp", Totp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

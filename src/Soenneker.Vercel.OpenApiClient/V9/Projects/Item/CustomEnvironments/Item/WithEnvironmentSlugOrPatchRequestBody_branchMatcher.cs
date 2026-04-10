@@ -23,7 +23,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.CustomEnvironments.Ite
 #else
         public string Pattern { get; set; }
 #endif
-        /// <summary>Type of matcher. One of \&quot;equals\&quot;, \&quot;startsWith\&quot;, or \&quot;endsWith\&quot;.</summary>
+        /// <summary>Type of matcher. One of &quot;equals&quot;, &quot;startsWith&quot;, or &quot;endsWith&quot;.</summary>
         public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.CustomEnvironments.Item.WithEnvironmentSlugOrPatchRequestBody_branchMatcher_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.CustomEnvironments.Item.WithEnvironmentSlugOrPatchRequestBody_branchMatcher"/> and sets the default values.

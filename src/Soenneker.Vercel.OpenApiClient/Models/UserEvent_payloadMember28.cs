@@ -31,13 +31,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string AppName { get; set; }
 #endif
-        /// <summary>The secretLastFourChars property</summary>
+        /// <summary>The permissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecretLastFourChars { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28_permissions?>? Permissions { get; set; }
 #nullable restore
 #else
-        public string SecretLastFourChars { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28_permissions?> Permissions { get; set; }
+#endif
+        /// <summary>The resources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28_resources? Resources { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28_resources Resources { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28"/> and sets the default values.
@@ -66,7 +74,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "appId", n => { AppId = n.GetStringValue(); } },
                 { "appName", n => { AppName = n.GetStringValue(); } },
-                { "secretLastFourChars", n => { SecretLastFourChars = n.GetStringValue(); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28_permissions>()?.AsList(); } },
+                { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28_resources>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28_resources.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -78,7 +87,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("appId", AppId);
             writer.WriteStringValue("appName", AppName);
-            writer.WriteStringValue("secretLastFourChars", SecretLastFourChars);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28_permissions>("permissions", Permissions);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28_resources>("resources", Resources);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -188,7 +188,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProjectsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter results by build machine types. Accepts comma-separated values. Use \&quot;default\&quot; for projects without a build machine type set.</summary>
+            /// <summary>Filter results by build machine types. Accepts comma-separated values. Use &quot;default&quot; for projects without a build machine type set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("buildMachineTypes")]

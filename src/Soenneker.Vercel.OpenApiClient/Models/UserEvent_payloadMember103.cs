@@ -15,85 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The customEnvironmentSlugs property</summary>
+        /// <summary>The nextRule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CustomEnvironmentSlugs { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_nextRule? NextRule { get; set; }
 #nullable restore
 #else
-        public List<string> CustomEnvironmentSlugs { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_nextRule NextRule { get; set; }
 #endif
-        /// <summary>The edgeConfigId property</summary>
+        /// <summary>The previousRule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeConfigId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_previousRule? PreviousRule { get; set; }
 #nullable restore
 #else
-        public string EdgeConfigId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_previousRule PreviousRule { get; set; }
 #endif
-        /// <summary>The edgeConfigTokenId property</summary>
+        /// <summary>The team property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeConfigTokenId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_team? Team { get; set; }
 #nullable restore
 #else
-        public string EdgeConfigTokenId { get; set; }
-#endif
-        /// <summary>The gitBranch property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GitBranch { get; set; }
-#nullable restore
-#else
-        public string GitBranch { get; set; }
-#endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
-        /// <summary>The key property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Key { get; set; }
-#nullable restore
-#else
-        public string Key { get; set; }
-#endif
-        /// <summary>The projectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
-#endif
-        /// <summary>The projectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectName { get; set; }
-#nullable restore
-#else
-        public string ProjectName { get; set; }
-#endif
-        /// <summary>The source property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Source { get; set; }
-#nullable restore
-#else
-        public string Source { get; set; }
-#endif
-        /// <summary>The target property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103.UserEvent_payloadMember103_target? Target { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103.UserEvent_payloadMember103_target Target { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_team Team { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103"/> and sets the default values.
@@ -120,16 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "customEnvironmentSlugs", n => { CustomEnvironmentSlugs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
-                { "edgeConfigTokenId", n => { EdgeConfigTokenId = n.GetStringValue(); } },
-                { "gitBranch", n => { GitBranch = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "key", n => { Key = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetStringValue(); } },
-                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103.UserEvent_payloadMember103_target>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103.UserEvent_payloadMember103_target.CreateFromDiscriminatorValue); } },
+                { "nextRule", n => { NextRule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_nextRule>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_nextRule.CreateFromDiscriminatorValue); } },
+                { "previousRule", n => { PreviousRule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_previousRule>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_previousRule.CreateFromDiscriminatorValue); } },
+                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_team.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -139,84 +76,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("customEnvironmentSlugs", CustomEnvironmentSlugs);
-            writer.WriteStringValue("edgeConfigId", EdgeConfigId);
-            writer.WriteStringValue("edgeConfigTokenId", EdgeConfigTokenId);
-            writer.WriteStringValue("gitBranch", GitBranch);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("key", Key);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("source", Source);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103.UserEvent_payloadMember103_target>("target", Target);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_nextRule>("nextRule", NextRule);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_previousRule>("previousRule", PreviousRule);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_team>("team", Team);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="string"/>, List&lt;string&gt;
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class UserEvent_payloadMember103_target : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<string>? String { get; set; }
-#nullable restore
-#else
-            public List<string> String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? UserEventPayloadMember103TargetString { get; set; }
-#nullable restore
-#else
-            public string UserEventPayloadMember103TargetString { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103.UserEvent_payloadMember103_target"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103.UserEvent_payloadMember103_target CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103.UserEvent_payloadMember103_target();
-                if(parseNode.GetStringValue() is string userEventPayloadMember103TargetStringValue)
-                {
-                    result.UserEventPayloadMember103TargetString = userEventPayloadMember103TargetStringValue;
-                }
-                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
-                {
-                    result.String = stringValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(UserEventPayloadMember103TargetString != null)
-                {
-                    writer.WriteStringValue(null, UserEventPayloadMember103TargetString);
-                }
-                else if(String != null)
-                {
-                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
-                }
-            }
         }
     }
 }

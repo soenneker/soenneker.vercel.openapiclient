@@ -1607,6 +1607,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> SensitiveEnvironmentVariablePolicy { get; set; }
 #endif
+        /// <summary>The shareableLinkStrict property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?>? ShareableLinkStrict { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> ShareableLinkStrict { get; set; }
+#endif
         /// <summary>The sharedEnvVarConnection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1870,14 +1878,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
 #nullable restore
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> VercelRun { get; set; }
-#endif
-        /// <summary>The vercelRunExec property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?>? VercelRunExec { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> VercelRunExec { get; set; }
 #endif
         /// <summary>The vpcPeeringConnection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -2151,6 +2151,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
                 { "secret", n => { Secret = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "securityPlusConfiguration", n => { SecurityPlusConfiguration = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "sensitiveEnvironmentVariablePolicy", n => { SensitiveEnvironmentVariablePolicy = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
+                { "shareableLinkStrict", n => { ShareableLinkStrict = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "sharedEnvVarConnection", n => { SharedEnvVarConnection = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "sharedEnvVars", n => { SharedEnvVars = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "sharedEnvVarsProduction", n => { SharedEnvVarsProduction = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
@@ -2184,7 +2185,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
                 { "vercelAppInstallation", n => { VercelAppInstallation = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "vercelAppInstallationRequest", n => { VercelAppInstallationRequest = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "vercelRun", n => { VercelRun = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
-                { "vercelRunExec", n => { VercelRunExec = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "vpcPeeringConnection", n => { VpcPeeringConnection = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "webAnalytics", n => { WebAnalytics = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "webAnalyticsPlan", n => { WebAnalyticsPlan = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
@@ -2399,6 +2399,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("secret", Secret);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("securityPlusConfiguration", SecurityPlusConfiguration);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("sensitiveEnvironmentVariablePolicy", SensitiveEnvironmentVariablePolicy);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("shareableLinkStrict", ShareableLinkStrict);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("sharedEnvVarConnection", SharedEnvVarConnection);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("sharedEnvVars", SharedEnvVars);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("sharedEnvVarsProduction", SharedEnvVarsProduction);
@@ -2432,7 +2433,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("vercelAppInstallation", VercelAppInstallation);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("vercelAppInstallationRequest", VercelAppInstallationRequest);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("vercelRun", VercelRun);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("vercelRunExec", VercelRunExec);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("vpcPeeringConnection", VpcPeeringConnection);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("webAnalytics", WebAnalytics);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("webAnalyticsPlan", WebAnalyticsPlan);

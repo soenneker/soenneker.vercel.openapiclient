@@ -15,15 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The autoExposeSystemEnvs property</summary>
-        public bool? AutoExposeSystemEnvs { get; set; }
-        /// <summary>The projectName property</summary>
+        /// <summary>The attackModeActiveUntil property</summary>
+        public double? AttackModeActiveUntil { get; set; }
+        /// <summary>The attackModeEnabled property</summary>
+        public bool? AttackModeEnabled { get; set; }
+        /// <summary>The prevAttackModeActiveUntil property</summary>
+        public double? PrevAttackModeActiveUntil { get; set; }
+        /// <summary>The prevAttackModeEnabled property</summary>
+        public bool? PrevAttackModeEnabled { get; set; }
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public string ProjectId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember31"/> and sets the default values.
@@ -50,8 +56,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "autoExposeSystemEnvs", n => { AutoExposeSystemEnvs = n.GetBoolValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "attackModeActiveUntil", n => { AttackModeActiveUntil = n.GetDoubleValue(); } },
+                { "attackModeEnabled", n => { AttackModeEnabled = n.GetBoolValue(); } },
+                { "prevAttackModeActiveUntil", n => { PrevAttackModeActiveUntil = n.GetDoubleValue(); } },
+                { "prevAttackModeEnabled", n => { PrevAttackModeEnabled = n.GetBoolValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,8 +70,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("autoExposeSystemEnvs", AutoExposeSystemEnvs);
-            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteDoubleValue("attackModeActiveUntil", AttackModeActiveUntil);
+            writer.WriteBoolValue("attackModeEnabled", AttackModeEnabled);
+            writer.WriteDoubleValue("prevAttackModeActiveUntil", PrevAttackModeActiveUntil);
+            writer.WriteBoolValue("prevAttackModeEnabled", PrevAttackModeEnabled);
+            writer.WriteStringValue("projectId", ProjectId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

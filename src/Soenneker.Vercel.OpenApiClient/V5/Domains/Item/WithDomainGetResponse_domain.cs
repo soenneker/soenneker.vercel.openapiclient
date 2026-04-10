@@ -34,7 +34,7 @@ namespace Soenneker.Vercel.OpenApiClient.V5.Domains.Item
 #else
         public List<string> CustomNameservers { get; set; }
 #endif
-        /// <summary>Timestamp in milliseconds at which the domain is set to expire. `null` if not bought with Vercel.</summary>
+        /// <summary>Timestamp in milliseconds at which the domain is set to expire. null if not bought with Vercel.</summary>
         public double? ExpiresAt { get; set; }
         /// <summary>The unique identifier of the domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

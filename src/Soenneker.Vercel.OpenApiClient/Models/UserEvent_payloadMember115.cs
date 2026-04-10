@@ -23,14 +23,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ConfigurationId { get; set; }
 #endif
-        /// <summary>The confirmedScopes property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? ConfirmedScopes { get; set; }
-#nullable restore
-#else
-        public List<string> ConfirmedScopes { get; set; }
-#endif
         /// <summary>The integrationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,21 +47,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string IntegrationSlug { get; set; }
 #endif
-        /// <summary>The ownerId property</summary>
+        /// <summary>The newOwner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember115_newOwner? NewOwner { get; set; }
 #nullable restore
 #else
-        public string OwnerId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember115_newOwner NewOwner { get; set; }
 #endif
-        /// <summary>The projectIds property</summary>
+        /// <summary>The userId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ProjectIds { get; set; }
+        public string? UserId { get; set; }
 #nullable restore
 #else
-        public List<string> ProjectIds { get; set; }
+        public string UserId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember115"/> and sets the default values.
@@ -97,12 +89,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "configurationId", n => { ConfigurationId = n.GetStringValue(); } },
-                { "confirmedScopes", n => { ConfirmedScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
                 { "integrationName", n => { IntegrationName = n.GetStringValue(); } },
                 { "integrationSlug", n => { IntegrationSlug = n.GetStringValue(); } },
-                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "projectIds", n => { ProjectIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "newOwner", n => { NewOwner = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember115_newOwner>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember115_newOwner.CreateFromDiscriminatorValue); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -113,12 +104,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("configurationId", ConfigurationId);
-            writer.WriteCollectionOfPrimitiveValues<string>("confirmedScopes", ConfirmedScopes);
             writer.WriteStringValue("integrationId", IntegrationId);
             writer.WriteStringValue("integrationName", IntegrationName);
             writer.WriteStringValue("integrationSlug", IntegrationSlug);
-            writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteCollectionOfPrimitiveValues<string>("projectIds", ProjectIds);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember115_newOwner>("newOwner", NewOwner);
+            writer.WriteStringValue("userId", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

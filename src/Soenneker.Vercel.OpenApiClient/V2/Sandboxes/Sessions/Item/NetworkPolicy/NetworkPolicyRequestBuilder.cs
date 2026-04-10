@@ -36,7 +36,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.NetworkPolic
         /// Replaces the network access policy of a running session. Use this to control which external hosts the session can communicate with. This is a full replacement. Any previously configured network rules will be overwritten.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.NetworkPolicy.NetworkPolicyPostResponse"/></returns>
-        /// <param name="body">Network access policy for the sandbox.\n    Controls which external hosts the sandbox can communicate with.\n    Use \&quot;allow-all\&quot; mode to allow all traffic, \&quot;deny-all\&quot; to block all traffic or \&quot;custom\&quot; to provide specific rules.</param>
+        /// <param name="body">Network access policy for the sandbox.    Controls which external hosts the sandbox can communicate with.    Use &quot;allow-all&quot; mode to allow all traffic, &quot;deny-all&quot; to block all traffic or &quot;custom&quot; to provide specific rules.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.NetworkPolic
         /// Replaces the network access policy of a running session. Use this to control which external hosts the session can communicate with. This is a full replacement. Any previously configured network rules will be overwritten.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Network access policy for the sandbox.\n    Controls which external hosts the sandbox can communicate with.\n    Use \&quot;allow-all\&quot; mode to allow all traffic, \&quot;deny-all\&quot; to block all traffic or \&quot;custom\&quot; to provide specific rules.</param>
+        /// <param name="body">Network access policy for the sandbox.    Controls which external hosts the sandbox can communicate with.    Use &quot;allow-all&quot; mode to allow all traffic, &quot;deny-all&quot; to block all traffic or &quot;custom&quot; to provide specific rules.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -15,8 +15,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enabled property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember265_enabled? Enabled { get; set; }
+        /// <summary>The consent property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember265_consent? Consent { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember265"/> and sets the default values.
         /// </summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enabled", n => { Enabled = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember265_enabled>(); } },
+                { "consent", n => { Consent = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember265_consent>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember265_enabled>("enabled", Enabled);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember265_consent>("consent", Consent);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

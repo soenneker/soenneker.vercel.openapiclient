@@ -15,47 +15,53 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The domain property</summary>
+        /// <summary>The configurationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get; set; }
+        public string? ConfigurationId { get; set; }
 #nullable restore
 #else
-        public string Domain { get; set; }
+        public string ConfigurationId { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The integrationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? IntegrationId { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string IntegrationId { get; set; }
 #endif
-        /// <summary>The mxPriority property</summary>
-        public double? MxPriority { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The integrationName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? IntegrationName { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string IntegrationName { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The integrationSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? IntegrationSlug { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string IntegrationSlug { get; set; }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>The ownerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public string? OwnerId { get; set; }
 #nullable restore
 #else
-        public string Value { get; set; }
+        public string OwnerId { get; set; }
+#endif
+        /// <summary>The projectIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ProjectIds { get; set; }
+#nullable restore
+#else
+        public List<string> ProjectIds { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember73"/> and sets the default values.
@@ -82,12 +88,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "domain", n => { Domain = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "mxPriority", n => { MxPriority = n.GetDoubleValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
+                { "configurationId", n => { ConfigurationId = n.GetStringValue(); } },
+                { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
+                { "integrationName", n => { IntegrationName = n.GetStringValue(); } },
+                { "integrationSlug", n => { IntegrationSlug = n.GetStringValue(); } },
+                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
+                { "projectIds", n => { ProjectIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -97,12 +103,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("domain", Domain);
-            writer.WriteStringValue("id", Id);
-            writer.WriteDoubleValue("mxPriority", MxPriority);
-            writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("type", Type);
-            writer.WriteStringValue("value", Value);
+            writer.WriteStringValue("configurationId", ConfigurationId);
+            writer.WriteStringValue("integrationId", IntegrationId);
+            writer.WriteStringValue("integrationName", IntegrationName);
+            writer.WriteStringValue("integrationSlug", IntegrationSlug);
+            writer.WriteStringValue("ownerId", OwnerId);
+            writer.WriteCollectionOfPrimitiveValues<string>("projectIds", ProjectIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

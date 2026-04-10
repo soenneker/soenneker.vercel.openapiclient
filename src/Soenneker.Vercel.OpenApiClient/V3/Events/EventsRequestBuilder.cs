@@ -137,7 +137,7 @@ namespace Soenneker.Vercel.OpenApiClient.V3.Events
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-            /// <summary>Comma-delimited list of event \&quot;types\&quot; to filter the results by.</summary>
+            /// <summary>Comma-delimited list of event &quot;types&quot; to filter the results by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("types")]

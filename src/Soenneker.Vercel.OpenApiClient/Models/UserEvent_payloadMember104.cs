@@ -15,41 +15,39 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>whether or not this env varible applies to custom environments</summary>
-        public bool? ApplyToAllCustomEnvironments { get; set; }
-        /// <summary>A user provided comment that describes what this Shared Env Var is for.</summary>
+        /// <summary>The customEnvironmentSlugs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment { get; set; }
+        public List<string>? CustomEnvironmentSlugs { get; set; }
 #nullable restore
 #else
-        public string Comment { get; set; }
+        public List<string> CustomEnvironmentSlugs { get; set; }
 #endif
-        /// <summary>The date when the Shared Env Var was created.</summary>
-        public DateTimeOffset? Created { get; set; }
-        /// <summary>Timestamp for when the Shared Env Var was created.</summary>
-        public double? CreatedAt { get; set; }
-        /// <summary>The unique identifier of the user who created the Shared Env Var.</summary>
+        /// <summary>The edgeConfigId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedBy { get; set; }
+        public string? EdgeConfigId { get; set; }
 #nullable restore
 #else
-        public string CreatedBy { get; set; }
+        public string EdgeConfigId { get; set; }
 #endif
-        /// <summary>whether or not this env variable is decrypted</summary>
-        public bool? Decrypted { get; set; }
-        /// <summary>Timestamp for when the Shared Env Var was (soft) deleted.</summary>
-        public double? DeletedAt { get; set; }
-        /// <summary>The unique identifier of the user who deleted the Shared Env Var.</summary>
+        /// <summary>The edgeConfigTokenId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedBy { get; set; }
+        public string? EdgeConfigTokenId { get; set; }
 #nullable restore
 #else
-        public string DeletedBy { get; set; }
+        public string EdgeConfigTokenId { get; set; }
 #endif
-        /// <summary>The unique identifier of the Shared Env Var.</summary>
+        /// <summary>The gitBranch property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GitBranch { get; set; }
+#nullable restore
+#else
+        public string GitBranch { get; set; }
+#endif
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -57,7 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The name of the Shared Env Var.</summary>
+        /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get; set; }
@@ -65,65 +63,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Key { get; set; }
 #endif
-        /// <summary>The last editor full name or username.</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastEditedByDisplayName { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string LastEditedByDisplayName { get; set; }
+        public string ProjectId { get; set; }
 #endif
-        /// <summary>The unique identifier of the owner (team) the Shared Env Var was created for.</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerId { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public string OwnerId { get; set; }
+        public string ProjectName { get; set; }
 #endif
-        /// <summary>The unique identifiers of the projects which the Shared Env Var is linked to.</summary>
+        /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ProjectId { get; set; }
+        public string? Source { get; set; }
 #nullable restore
 #else
-        public List<string> ProjectId { get; set; }
+        public string Source { get; set; }
 #endif
-        /// <summary>The projectNames property</summary>
+        /// <summary>The target property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ProjectNames { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember104.UserEvent_payloadMember104_target? Target { get; set; }
 #nullable restore
 #else
-        public List<string> ProjectNames { get; set; }
-#endif
-        /// <summary>environments this env variable targets</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember104_target?>? Target { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember104_target?> Target { get; set; }
-#endif
-        /// <summary>The type of this cosmos doc instance, if blank, assume secret.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember104_type? Type { get; set; }
-        /// <summary>Timestamp for when the Shared Env Var was last updated.</summary>
-        public double? UpdatedAt { get; set; }
-        /// <summary>The unique identifier of the user who last updated the Shared Env Var.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UpdatedBy { get; set; }
-#nullable restore
-#else
-        public string UpdatedBy { get; set; }
-#endif
-        /// <summary>The value of the Shared Env Var.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Value { get; set; }
-#nullable restore
-#else
-        public string Value { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember104.UserEvent_payloadMember104_target Target { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember104"/> and sets the default values.
@@ -150,25 +120,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "applyToAllCustomEnvironments", n => { ApplyToAllCustomEnvironments = n.GetBoolValue(); } },
-                { "comment", n => { Comment = n.GetStringValue(); } },
-                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
-                { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
-                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
-                { "decrypted", n => { Decrypted = n.GetBoolValue(); } },
-                { "deletedAt", n => { DeletedAt = n.GetDoubleValue(); } },
-                { "deletedBy", n => { DeletedBy = n.GetStringValue(); } },
+                { "customEnvironmentSlugs", n => { CustomEnvironmentSlugs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
+                { "edgeConfigTokenId", n => { EdgeConfigTokenId = n.GetStringValue(); } },
+                { "gitBranch", n => { GitBranch = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
-                { "lastEditedByDisplayName", n => { LastEditedByDisplayName = n.GetStringValue(); } },
-                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "projectNames", n => { ProjectNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "target", n => { Target = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember104_target>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember104_type>(); } },
-                { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
-                { "updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "source", n => { Source = n.GetStringValue(); } },
+                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember104.UserEvent_payloadMember104_target>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember104.UserEvent_payloadMember104_target.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -178,26 +139,84 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("applyToAllCustomEnvironments", ApplyToAllCustomEnvironments);
-            writer.WriteStringValue("comment", Comment);
-            writer.WriteDateTimeOffsetValue("created", Created);
-            writer.WriteDoubleValue("createdAt", CreatedAt);
-            writer.WriteStringValue("createdBy", CreatedBy);
-            writer.WriteBoolValue("decrypted", Decrypted);
-            writer.WriteDoubleValue("deletedAt", DeletedAt);
-            writer.WriteStringValue("deletedBy", DeletedBy);
+            writer.WriteCollectionOfPrimitiveValues<string>("customEnvironmentSlugs", CustomEnvironmentSlugs);
+            writer.WriteStringValue("edgeConfigId", EdgeConfigId);
+            writer.WriteStringValue("edgeConfigTokenId", EdgeConfigTokenId);
+            writer.WriteStringValue("gitBranch", GitBranch);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("key", Key);
-            writer.WriteStringValue("lastEditedByDisplayName", LastEditedByDisplayName);
-            writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteCollectionOfPrimitiveValues<string>("projectId", ProjectId);
-            writer.WriteCollectionOfPrimitiveValues<string>("projectNames", ProjectNames);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember104_target>("target", Target);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember104_type>("type", Type);
-            writer.WriteDoubleValue("updatedAt", UpdatedAt);
-            writer.WriteStringValue("updatedBy", UpdatedBy);
-            writer.WriteStringValue("value", Value);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("source", Source);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember104.UserEvent_payloadMember104_target>("target", Target);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="string"/>, List&lt;string&gt;
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class UserEvent_payloadMember104_target : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<string>? String { get; set; }
+#nullable restore
+#else
+            public List<string> String { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? UserEventPayloadMember104TargetString { get; set; }
+#nullable restore
+#else
+            public string UserEventPayloadMember104TargetString { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember104.UserEvent_payloadMember104_target"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember104.UserEvent_payloadMember104_target CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember104.UserEvent_payloadMember104_target();
+                if(parseNode.GetStringValue() is string userEventPayloadMember104TargetStringValue)
+                {
+                    result.UserEventPayloadMember104TargetString = userEventPayloadMember104TargetStringValue;
+                }
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+                {
+                    result.String = stringValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(UserEventPayloadMember104TargetString != null)
+                {
+                    writer.WriteStringValue(null, UserEventPayloadMember104TargetString);
+                }
+                else if(String != null)
+                {
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
+                }
+            }
         }
     }
 }

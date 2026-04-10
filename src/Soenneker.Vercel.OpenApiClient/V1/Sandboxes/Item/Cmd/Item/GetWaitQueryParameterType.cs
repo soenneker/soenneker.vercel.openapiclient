@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item
 {
-    /// <summary>If set to \&quot;true\&quot;, the request will block until the command finishes execution. Useful for synchronously waiting for command completion.</summary>
+    /// <summary>If set to &quot;true&quot;, the request will block until the command finishes execution. Useful for synchronously waiting for command completion.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetWaitQueryParameterType
     {

@@ -14,14 +14,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The skewProtectionAllowedDomains property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? SkewProtectionAllowedDomains { get; set; }
-#nullable restore
-#else
-        public List<string> SkewProtectionAllowedDomains { get; set; }
-#endif
+        /// <summary>The skewProtectionBoundaryAt property</summary>
+        public double? SkewProtectionBoundaryAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember207_next"/> and sets the default values.
         /// </summary>
@@ -47,7 +41,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "skewProtectionAllowedDomains", n => { SkewProtectionAllowedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "skewProtectionBoundaryAt", n => { SkewProtectionBoundaryAt = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("skewProtectionAllowedDomains", SkewProtectionAllowedDomains);
+            writer.WriteDoubleValue("skewProtectionBoundaryAt", SkewProtectionBoundaryAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -110,7 +110,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-            /// <summary>If set to \&quot;true\&quot;, the request will block until the command finishes execution. Useful for synchronously waiting for command completion.</summary>
+            /// <summary>If set to &quot;true&quot;, the request will block until the command finishes execution. Useful for synchronously waiting for command completion.</summary>
             [QueryParameter("wait")]
             public global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.Cmd.Item.GetWaitQueryParameterType? Wait { get; set; }
         }

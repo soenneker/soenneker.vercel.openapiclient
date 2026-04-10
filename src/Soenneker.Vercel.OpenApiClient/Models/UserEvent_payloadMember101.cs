@@ -15,21 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The previousRule property</summary>
+        /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember101_previousRule? PreviousRule { get; set; }
+        public string? Email { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember101_previousRule PreviousRule { get; set; }
+        public string Email { get; set; }
 #endif
-        /// <summary>The team property</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember101_team? Team { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember101_team Team { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember101"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "previousRule", n => { PreviousRule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember101_previousRule>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember101_previousRule.CreateFromDiscriminatorValue); } },
-                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember101_team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember101_team.CreateFromDiscriminatorValue); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember101_previousRule>("previousRule", PreviousRule);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember101_team>("team", Team);
+            writer.WriteStringValue("email", Email);
+            writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

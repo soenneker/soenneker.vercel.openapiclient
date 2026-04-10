@@ -16,7 +16,7 @@ namespace Soenneker.Vercel.OpenApiClient.V5.User.Tokens
     public partial class TokensRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v5.user.tokens.item collection</summary>
-        /// <param name="position">The identifier of the token to retrieve. The special value \&quot;current\&quot; may be supplied, which returns the metadata for the token that the current HTTP request is authenticated with.</param>
+        /// <param name="position">The identifier of the token to retrieve. The special value &quot;current&quot; may be supplied, which returns the metadata for the token that the current HTTP request is authenticated with.</param>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V5.User.Tokens.Item.WithTokenItemRequestBuilder"/></returns>
         public global::Soenneker.Vercel.OpenApiClient.V5.User.Tokens.Item.WithTokenItemRequestBuilder this[string position]
         {

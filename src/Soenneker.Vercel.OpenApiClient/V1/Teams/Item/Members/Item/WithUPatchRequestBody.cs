@@ -40,6 +40,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Members.Item
 #else
         public string Role { get; set; }
 #endif
+        /// <summary>The team permissions to set for the member. Permissions must be compatible with the team roles assigned to the member.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Members.Item.WithUPatchRequestBody_teamPermissions?>? TeamPermissions { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Members.Item.WithUPatchRequestBody_teamPermissions?> TeamPermissions { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Members.Item.WithUPatchRequestBody"/> and sets the default values.
         /// </summary>
@@ -70,6 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Members.Item
                 { "joinedFrom", n => { JoinedFrom = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Members.Item.WithUPatchRequestBody_joinedFrom>(global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Members.Item.WithUPatchRequestBody_joinedFrom.CreateFromDiscriminatorValue); } },
                 { "projects", n => { Projects = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Members.Item.WithUPatchRequestBody_projects>(global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Members.Item.WithUPatchRequestBody_projects.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "role", n => { Role = n.GetStringValue(); } },
+                { "teamPermissions", n => { TeamPermissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Members.Item.WithUPatchRequestBody_teamPermissions>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -83,6 +92,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Members.Item
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Members.Item.WithUPatchRequestBody_joinedFrom>("joinedFrom", JoinedFrom);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Members.Item.WithUPatchRequestBody_projects>("projects", Projects);
             writer.WriteStringValue("role", Role);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Members.Item.WithUPatchRequestBody_teamPermissions>("teamPermissions", TeamPermissions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

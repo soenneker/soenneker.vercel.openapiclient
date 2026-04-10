@@ -15,8 +15,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The buildsEnabled property</summary>
-        public bool? BuildsEnabled { get; set; }
         /// <summary>The configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,22 +22,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember51_configuration Configuration { get; set; }
-#endif
-        /// <summary>The project property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember51_project? Project { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember51_project Project { get; set; }
-#endif
-        /// <summary>The team property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember51_team? Team { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember51_team Team { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember51"/> and sets the default values.
@@ -66,10 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "buildsEnabled", n => { BuildsEnabled = n.GetBoolValue(); } },
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember51_configuration>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember51_configuration.CreateFromDiscriminatorValue); } },
-                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember51_project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember51_project.CreateFromDiscriminatorValue); } },
-                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember51_team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember51_team.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -79,10 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("buildsEnabled", BuildsEnabled);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember51_configuration>("configuration", Configuration);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember51_project>("project", Project);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember51_team>("team", Team);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -34,9 +34,9 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing
 #else
         public string ResourceId { get; set; }
 #endif
-        /// <summary>\n              Type of the metric.\n              - total: measured total value, such as Database size\n              - interval: usage during the period, such as i/o or number of queries.\n              - rate: rate of usage, such as queries per second.\n            </summary>
+        /// <summary>              Type of the metric.              - total: measured total value, such as Database size              - interval: usage during the period, such as i/o or number of queries.              - rate: rate of usage, such as queries per second.            </summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.BillingPostRequestBody_usage_type? Type { get; set; }
-        /// <summary>Metric units. Example: \&quot;GB\&quot;</summary>
+        /// <summary>Metric units. Example: &quot;GB&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Units { get; set; }

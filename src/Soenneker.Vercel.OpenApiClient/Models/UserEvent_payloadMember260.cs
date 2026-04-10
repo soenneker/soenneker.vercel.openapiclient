@@ -15,18 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The convertedFromTrial property</summary>
-        public bool? ConvertedFromTrial { get; set; }
-        /// <summary>The invoiceId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? InvoiceId { get; set; }
-#nullable restore
-#else
-        public string InvoiceId { get; set; }
-#endif
-        /// <summary>The plan property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember260_plan? Plan { get; set; }
+        /// <summary>The nextConcurrentBuilds property</summary>
+        public double? NextConcurrentBuilds { get; set; }
+        /// <summary>The previousConcurrentBuilds property</summary>
+        public double? PreviousConcurrentBuilds { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember260"/> and sets the default values.
         /// </summary>
@@ -52,9 +44,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "convertedFromTrial", n => { ConvertedFromTrial = n.GetBoolValue(); } },
-                { "invoiceId", n => { InvoiceId = n.GetStringValue(); } },
-                { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember260_plan>(); } },
+                { "nextConcurrentBuilds", n => { NextConcurrentBuilds = n.GetDoubleValue(); } },
+                { "previousConcurrentBuilds", n => { PreviousConcurrentBuilds = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -64,9 +55,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("convertedFromTrial", ConvertedFromTrial);
-            writer.WriteStringValue("invoiceId", InvoiceId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember260_plan>("plan", Plan);
+            writer.WriteDoubleValue("nextConcurrentBuilds", NextConcurrentBuilds);
+            writer.WriteDoubleValue("previousConcurrentBuilds", PreviousConcurrentBuilds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

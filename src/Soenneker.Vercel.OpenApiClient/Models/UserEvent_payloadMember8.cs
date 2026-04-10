@@ -23,69 +23,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The entitlementsAdded property</summary>
+        /// <summary>The next_role property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember8_next_role? NextRole { get; set; }
+        /// <summary>The previous_role property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember8_previous_role? PreviousRole { get; set; }
+        /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EntitlementsAdded { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember8_project? Project { get; set; }
 #nullable restore
 #else
-        public List<string> EntitlementsAdded { get; set; }
-#endif
-        /// <summary>The entitlementsRemoved property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? EntitlementsRemoved { get; set; }
-#nullable restore
-#else
-        public List<string> EntitlementsRemoved { get; set; }
-#endif
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>The previousName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PreviousName { get; set; }
-#nullable restore
-#else
-        public string PreviousName { get; set; }
-#endif
-        /// <summary>The previousTeamPermissions property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? PreviousTeamPermissions { get; set; }
-#nullable restore
-#else
-        public List<string> PreviousTeamPermissions { get; set; }
-#endif
-        /// <summary>The previousTeamRoles property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? PreviousTeamRoles { get; set; }
-#nullable restore
-#else
-        public List<string> PreviousTeamRoles { get; set; }
-#endif
-        /// <summary>The teamPermissions property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? TeamPermissions { get; set; }
-#nullable restore
-#else
-        public List<string> TeamPermissions { get; set; }
-#endif
-        /// <summary>The teamRoles property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? TeamRoles { get; set; }
-#nullable restore
-#else
-        public List<string> TeamRoles { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember8_project Project { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember8"/> and sets the default values.
@@ -113,14 +61,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accessGroup", n => { AccessGroup = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember8_accessGroup>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember8_accessGroup.CreateFromDiscriminatorValue); } },
-                { "entitlementsAdded", n => { EntitlementsAdded = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "entitlementsRemoved", n => { EntitlementsRemoved = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "previousName", n => { PreviousName = n.GetStringValue(); } },
-                { "previousTeamPermissions", n => { PreviousTeamPermissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "previousTeamRoles", n => { PreviousTeamRoles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "teamPermissions", n => { TeamPermissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "teamRoles", n => { TeamRoles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "next_role", n => { NextRole = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember8_next_role>(); } },
+                { "previous_role", n => { PreviousRole = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember8_previous_role>(); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember8_project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember8_project.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -131,14 +74,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember8_accessGroup>("accessGroup", AccessGroup);
-            writer.WriteCollectionOfPrimitiveValues<string>("entitlementsAdded", EntitlementsAdded);
-            writer.WriteCollectionOfPrimitiveValues<string>("entitlementsRemoved", EntitlementsRemoved);
-            writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("previousName", PreviousName);
-            writer.WriteCollectionOfPrimitiveValues<string>("previousTeamPermissions", PreviousTeamPermissions);
-            writer.WriteCollectionOfPrimitiveValues<string>("previousTeamRoles", PreviousTeamRoles);
-            writer.WriteCollectionOfPrimitiveValues<string>("teamPermissions", TeamPermissions);
-            writer.WriteCollectionOfPrimitiveValues<string>("teamRoles", TeamRoles);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember8_next_role>("next_role", NextRole);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember8_previous_role>("previous_role", PreviousRole);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember8_project>("project", Project);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

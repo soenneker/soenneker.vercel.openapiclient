@@ -211,7 +211,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains
             [QueryParameter("redirect")]
             public string Redirect { get; set; }
 #endif
-            /// <summary>Excludes redirect project domains when \&quot;false\&quot;. Includes redirect project domains when \&quot;true\&quot; (default).</summary>
+            /// <summary>Excludes redirect project domains when &quot;false&quot;. Includes redirect project domains when &quot;true&quot; (default).</summary>
             [QueryParameter("redirects")]
             public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.GetRedirectsQueryParameterType? Redirects { get; set; }
             /// <summary>Get domains created after this JavaScript timestamp.</summary>
@@ -227,7 +227,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains
             [QueryParameter("slug")]
             public string Slug { get; set; }
 #endif
-            /// <summary>Filters on the target of the domain. Can be either \&quot;production\&quot;, \&quot;preview\&quot;</summary>
+            /// <summary>Filters on the target of the domain. Can be either &quot;production&quot;, &quot;preview&quot;</summary>
             [QueryParameter("target")]
             public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.GetTargetQueryParameterType? Target { get; set; }
             /// <summary>The Team identifier to perform the request on behalf of.</summary>

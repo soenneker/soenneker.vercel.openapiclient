@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.CustomEnvironments
 {
-    /// <summary>Type of matcher. One of \&quot;equals\&quot;, \&quot;startsWith\&quot;, or \&quot;endsWith\&quot;.</summary>
+    /// <summary>Type of matcher. One of &quot;equals&quot;, &quot;startsWith&quot;, or &quot;endsWith&quot;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CustomEnvironmentsPostRequestBody_branchMatcher_type
     {

@@ -23,13 +23,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The author property</summary>
+        /// <summary>The entitlements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Author { get; set; }
+        public List<string>? Entitlements { get; set; }
 #nullable restore
 #else
-        public string Author { get; set; }
+        public List<string> Entitlements { get; set; }
+#endif
+        /// <summary>The teamPermissions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? TeamPermissions { get; set; }
+#nullable restore
+#else
+        public List<string> TeamPermissions { get; set; }
+#endif
+        /// <summary>The teamRoles property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? TeamRoles { get; set; }
+#nullable restore
+#else
+        public List<string> TeamRoles { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember6"/> and sets the default values.
@@ -57,7 +73,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accessGroup", n => { AccessGroup = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember6_accessGroup>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember6_accessGroup.CreateFromDiscriminatorValue); } },
-                { "author", n => { Author = n.GetStringValue(); } },
+                { "entitlements", n => { Entitlements = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "teamPermissions", n => { TeamPermissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "teamRoles", n => { TeamRoles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -68,7 +86,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember6_accessGroup>("accessGroup", AccessGroup);
-            writer.WriteStringValue("author", Author);
+            writer.WriteCollectionOfPrimitiveValues<string>("entitlements", Entitlements);
+            writer.WriteCollectionOfPrimitiveValues<string>("teamPermissions", TeamPermissions);
+            writer.WriteCollectionOfPrimitiveValues<string>("teamRoles", TeamRoles);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains
 {
-    /// <summary>Excludes redirect project domains when \&quot;false\&quot;. Includes redirect project domains when \&quot;true\&quot; (default).</summary>
+    /// <summary>Excludes redirect project domains when &quot;false&quot;. Includes redirect project domains when &quot;true&quot; (default).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetRedirectsQueryParameterType
     {

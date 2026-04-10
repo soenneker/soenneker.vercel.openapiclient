@@ -13,18 +13,32 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEvent_payloadMember10 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The currency property</summary>
+        /// <summary>The accessGroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember10_accessGroup? AccessGroup { get; set; }
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember10_accessGroup AccessGroup { get; set; }
 #endif
-        /// <summary>The price property</summary>
-        public double? Price { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The directoryType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DirectoryType { get; set; }
+#nullable restore
+#else
+        public string DirectoryType { get; set; }
+#endif
+        /// <summary>The user property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember10_user? User { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember10_user User { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember10"/> and sets the default values.
         /// </summary>
@@ -50,8 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "currency", n => { Currency = n.GetStringValue(); } },
-                { "price", n => { Price = n.GetDoubleValue(); } },
+                { "accessGroup", n => { AccessGroup = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember10_accessGroup>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember10_accessGroup.CreateFromDiscriminatorValue); } },
+                { "directoryType", n => { DirectoryType = n.GetStringValue(); } },
+                { "user", n => { User = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember10_user>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember10_user.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,8 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("currency", Currency);
-            writer.WriteDoubleValue("price", Price);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember10_accessGroup>("accessGroup", AccessGroup);
+            writer.WriteStringValue("directoryType", DirectoryType);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember10_user>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
