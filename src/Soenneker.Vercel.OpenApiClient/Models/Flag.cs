@@ -58,6 +58,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The kind property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.Flag_kind? Kind { get; set; }
+        /// <summary>The maintainerIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? MaintainerIds { get; set; }
+#nullable restore
+#else
+        public List<string> MaintainerIds { get; set; }
+#endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,6 +158,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "experiment", n => { Experiment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment>(global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_kind>(); } },
+                { "maintainerIds", n => { MaintainerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_metadata>(global::Soenneker.Vercel.OpenApiClient.Models.Flag_metadata.CreateFromDiscriminatorValue); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "permanent", n => { Permanent = n.GetBoolValue(); } },
@@ -178,6 +187,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment>("experiment", Experiment);
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_kind>("kind", Kind);
+            writer.WriteCollectionOfPrimitiveValues<string>("maintainerIds", MaintainerIds);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_metadata>("metadata", Metadata);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteBoolValue("permanent", Permanent);

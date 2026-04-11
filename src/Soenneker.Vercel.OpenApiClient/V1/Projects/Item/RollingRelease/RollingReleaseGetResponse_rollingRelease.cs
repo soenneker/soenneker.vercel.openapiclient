@@ -33,6 +33,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease
 #else
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.RollingReleaseGetResponse_rollingRelease_canaryDeployment CanaryDeployment { get; set; }
 #endif
+        /// <summary>When set (for example while {@link substate} is `PAUSED`), the canary traffic percentage persisted on the rollout document — use for dashboard display when linear shift is active.</summary>
+        public double? CurrentCanaryPercentage { get; set; }
         /// <summary>The current deployment receiving production traffic</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,6 +103,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease
                 { "activeStage", n => { ActiveStage = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.RollingReleaseGetResponse_rollingRelease_activeStage>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.RollingReleaseGetResponse_rollingRelease_activeStage.CreateFromDiscriminatorValue); } },
                 { "advancementType", n => { AdvancementType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.RollingReleaseGetResponse_rollingRelease_advancementType>(); } },
                 { "canaryDeployment", n => { CanaryDeployment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.RollingReleaseGetResponse_rollingRelease_canaryDeployment>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.RollingReleaseGetResponse_rollingRelease_canaryDeployment.CreateFromDiscriminatorValue); } },
+                { "currentCanaryPercentage", n => { CurrentCanaryPercentage = n.GetDoubleValue(); } },
                 { "currentDeployment", n => { CurrentDeployment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.RollingReleaseGetResponse_rollingRelease_currentDeployment>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.RollingReleaseGetResponse_rollingRelease_currentDeployment.CreateFromDiscriminatorValue); } },
                 { "nextStage", n => { NextStage = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.RollingReleaseGetResponse_rollingRelease_nextStage>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.RollingReleaseGetResponse_rollingRelease_nextStage.CreateFromDiscriminatorValue); } },
                 { "queuedDeploymentId", n => { QueuedDeploymentId = n.GetStringValue(); } },
@@ -121,6 +124,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.RollingReleaseGetResponse_rollingRelease_activeStage>("activeStage", ActiveStage);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.RollingReleaseGetResponse_rollingRelease_advancementType>("advancementType", AdvancementType);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.RollingReleaseGetResponse_rollingRelease_canaryDeployment>("canaryDeployment", CanaryDeployment);
+            writer.WriteDoubleValue("currentCanaryPercentage", CurrentCanaryPercentage);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.RollingReleaseGetResponse_rollingRelease_currentDeployment>("currentDeployment", CurrentDeployment);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.RollingReleaseGetResponse_rollingRelease_nextStage>("nextStage", NextStage);
             writer.WriteStringValue("queuedDeploymentId", QueuedDeploymentId);

@@ -36,6 +36,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Ite
 #else
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchRequestBody_environments Environments { get; set; }
 #endif
+        /// <summary>The user ids of the maintainers of the flag</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? MaintainerIds { get; set; }
+#nullable restore
+#else
+        public List<string> MaintainerIds { get; set; }
+#endif
         /// <summary>Additional message for this version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +95,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Ite
                 { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "environments", n => { Environments = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchRequestBody_environments>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchRequestBody_environments.CreateFromDiscriminatorValue); } },
+                { "maintainerIds", n => { MaintainerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "permanent", n => { Permanent = n.GetBoolValue(); } },
                 { "seed", n => { Seed = n.GetDoubleValue(); } },
@@ -105,6 +114,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Ite
             writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchRequestBody_environments>("environments", Environments);
+            writer.WriteCollectionOfPrimitiveValues<string>("maintainerIds", MaintainerIds);
             writer.WriteStringValue("message", Message);
             writer.WriteBoolValue("permanent", Permanent);
             writer.WriteDoubleValue("seed", Seed);

@@ -30,6 +30,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags
 #endif
         /// <summary>The kind of flag</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutRequestBody_kind? Kind { get; set; }
+        /// <summary>The user ids of the maintainers of the flag</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? MaintainerIds { get; set; }
+#nullable restore
+#else
+        public List<string> MaintainerIds { get; set; }
+#endif
         /// <summary>Whether this flag is marked as permanent, indicating it should not be removed</summary>
         public bool? Permanent { get; set; }
         /// <summary>A random seed to prevent split points in different flags from having the same targets</summary>
@@ -81,6 +89,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "environments", n => { Environments = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutRequestBody_environments>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutRequestBody_environments.CreateFromDiscriminatorValue); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutRequestBody_kind>(); } },
+                { "maintainerIds", n => { MaintainerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "permanent", n => { Permanent = n.GetBoolValue(); } },
                 { "seed", n => { Seed = n.GetDoubleValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
@@ -99,6 +108,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutRequestBody_environments>("environments", Environments);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutRequestBody_kind>("kind", Kind);
+            writer.WriteCollectionOfPrimitiveValues<string>("maintainerIds", MaintainerIds);
             writer.WriteBoolValue("permanent", Permanent);
             writer.WriteDoubleValue("seed", Seed);
             writer.WriteStringValue("slug", Slug);

@@ -58,6 +58,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Ite
 #endif
         /// <summary>The kind property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchResponseMember1_kind? Kind { get; set; }
+        /// <summary>The maintainerIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? MaintainerIds { get; set; }
+#nullable restore
+#else
+        public List<string> MaintainerIds { get; set; }
+#endif
         /// <summary>The ownerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,6 +150,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Ite
                 { "experiment", n => { Experiment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchResponseMember1_experiment>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchResponseMember1_experiment.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchResponseMember1_kind>(); } },
+                { "maintainerIds", n => { MaintainerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "permanent", n => { Permanent = n.GetBoolValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
@@ -169,6 +178,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Ite
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchResponseMember1_experiment>("experiment", Experiment);
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchResponseMember1_kind>("kind", Kind);
+            writer.WriteCollectionOfPrimitiveValues<string>("maintainerIds", MaintainerIds);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteBoolValue("permanent", Permanent);
             writer.WriteStringValue("projectId", ProjectId);

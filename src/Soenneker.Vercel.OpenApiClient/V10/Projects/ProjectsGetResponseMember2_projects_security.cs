@@ -66,6 +66,8 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
 #else
         public global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2_projects_security_managedRules ManagedRules { get; set; }
 #endif
+        /// <summary>Whether Page Integrity is enabled for this project. Used by the metadata service to gate DynamoDB lookups against the page-integrity-inventory table.</summary>
+        public bool? PageIntegrityEnabled { get; set; }
         /// <summary>The requestLogsKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,6 +125,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
                 { "ja4Enabled", n => { Ja4Enabled = n.GetBoolValue(); } },
                 { "log_headers", n => { LogHeaders = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2_projects_security.ProjectsGetResponseMember2_projects_security_log_headers>(global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2_projects_security.ProjectsGetResponseMember2_projects_security_log_headers.CreateFromDiscriminatorValue); } },
                 { "managedRules", n => { ManagedRules = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2_projects_security_managedRules>(global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2_projects_security_managedRules.CreateFromDiscriminatorValue); } },
+                { "pageIntegrityEnabled", n => { PageIntegrityEnabled = n.GetBoolValue(); } },
                 { "requestLogsKey", n => { RequestLogsKey = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "securityPlus", n => { SecurityPlus = n.GetBoolValue(); } },
                 { "securityPlusMetadata", n => { SecurityPlusMetadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2_projects_security_securityPlusMetadata>(global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2_projects_security_securityPlusMetadata.CreateFromDiscriminatorValue); } },
@@ -149,6 +152,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             writer.WriteBoolValue("ja4Enabled", Ja4Enabled);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2_projects_security.ProjectsGetResponseMember2_projects_security_log_headers>("log_headers", LogHeaders);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2_projects_security_managedRules>("managedRules", ManagedRules);
+            writer.WriteBoolValue("pageIntegrityEnabled", PageIntegrityEnabled);
             writer.WriteCollectionOfPrimitiveValues<string>("requestLogsKey", RequestLogsKey);
             writer.WriteBoolValue("securityPlus", SecurityPlus);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2_projects_security_securityPlusMetadata>("securityPlusMetadata", SecurityPlusMetadata);
