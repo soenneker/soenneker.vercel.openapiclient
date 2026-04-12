@@ -14,6 +14,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The allocationPercent property</summary>
+        public double? AllocationPercent { get; set; }
         /// <summary>The allocationUnit property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment_allocationUnit? AllocationUnit { get; set; }
         /// <summary>The controlVariantId property</summary>
@@ -24,8 +26,28 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ControlVariantId { get; set; }
 #endif
+        /// <summary>The decision property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Decision { get; set; }
+#nullable restore
+#else
+        public string Decision { get; set; }
+#endif
+        /// <summary>The decisionReason property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DecisionReason { get; set; }
+#nullable restore
+#else
+        public string DecisionReason { get; set; }
+#endif
         /// <summary>The device property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment_device? Device { get; set; }
+        /// <summary>The duration property</summary>
+        public double? Duration { get; set; }
+        /// <summary>The durationUnit property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment_durationUnit? DurationUnit { get; set; }
         /// <summary>The endedAt property</summary>
         public double? EndedAt { get; set; }
         /// <summary>The guardrailMetrics property</summary>
@@ -117,9 +139,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allocationPercent", n => { AllocationPercent = n.GetDoubleValue(); } },
                 { "allocationUnit", n => { AllocationUnit = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment_allocationUnit>(); } },
                 { "controlVariantId", n => { ControlVariantId = n.GetStringValue(); } },
+                { "decision", n => { Decision = n.GetStringValue(); } },
+                { "decisionReason", n => { DecisionReason = n.GetStringValue(); } },
                 { "device", n => { Device = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment_device>(); } },
+                { "duration", n => { Duration = n.GetDoubleValue(); } },
+                { "durationUnit", n => { DurationUnit = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment_durationUnit>(); } },
                 { "endedAt", n => { EndedAt = n.GetDoubleValue(); } },
                 { "guardrailMetrics", n => { GuardrailMetrics = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment_guardrailMetrics>(global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment_guardrailMetrics.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hypothesis", n => { Hypothesis = n.GetStringValue(); } },
@@ -141,9 +168,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("allocationPercent", AllocationPercent);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment_allocationUnit>("allocationUnit", AllocationUnit);
             writer.WriteStringValue("controlVariantId", ControlVariantId);
+            writer.WriteStringValue("decision", Decision);
+            writer.WriteStringValue("decisionReason", DecisionReason);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment_device>("device", Device);
+            writer.WriteDoubleValue("duration", Duration);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment_durationUnit>("durationUnit", DurationUnit);
             writer.WriteDoubleValue("endedAt", EndedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment_guardrailMetrics>("guardrailMetrics", GuardrailMetrics);
             writer.WriteStringValue("hypothesis", Hypothesis);
