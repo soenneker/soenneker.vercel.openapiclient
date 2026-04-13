@@ -143,6 +143,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Webhooks
         #pragma warning disable CS1591
         FirewallCustomRuleAnomaly,
         #pragma warning restore CS1591
+        [EnumMember(Value = "function.archival-required")]
+        #pragma warning disable CS1591
+        FunctionArchivalRequired,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "function.removal-required")]
+        #pragma warning disable CS1591
+        FunctionRemovalRequired,
+        #pragma warning restore CS1591
         [EnumMember(Value = "alerts.triggered")]
         #pragma warning disable CS1591
         AlertsTriggered,

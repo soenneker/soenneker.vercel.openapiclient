@@ -15,7 +15,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents a budget for tracking and notifying teams on their spending.</summary>
+        /// <summary>The budget property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember230_budget? Budget { get; set; }

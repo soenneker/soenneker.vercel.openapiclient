@@ -23,14 +23,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember231_budget Budget { get; set; }
 #endif
-        /// <summary>The webhookUrl property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WebhookUrl { get; set; }
-#nullable restore
-#else
-        public string WebhookUrl { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember231"/> and sets the default values.
         /// </summary>
@@ -57,7 +49,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "budget", n => { Budget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember231_budget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember231_budget.CreateFromDiscriminatorValue); } },
-                { "webhookUrl", n => { WebhookUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,7 +59,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember231_budget>("budget", Budget);
-            writer.WriteStringValue("webhookUrl", WebhookUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

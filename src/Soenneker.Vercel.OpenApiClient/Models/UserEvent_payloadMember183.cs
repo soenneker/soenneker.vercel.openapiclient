@@ -23,32 +23,38 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Domain { get; set; }
 #endif
-        /// <summary>The projectId property</summary>
+        /// <summary>The newProjectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? NewProjectId { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string NewProjectId { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The newProjectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public string? NewProjectName { get; set; }
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public string NewProjectName { get; set; }
 #endif
-        /// <summary>The redirect property</summary>
+        /// <summary>The oldProjectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Redirect { get; set; }
+        public string? OldProjectId { get; set; }
 #nullable restore
 #else
-        public string Redirect { get; set; }
+        public string OldProjectId { get; set; }
 #endif
-        /// <summary>The redirectStatusCode property</summary>
-        public double? RedirectStatusCode { get; set; }
+        /// <summary>The oldProjectName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OldProjectName { get; set; }
+#nullable restore
+#else
+        public string OldProjectName { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember183"/> and sets the default values.
         /// </summary>
@@ -75,10 +81,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "domain", n => { Domain = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "redirect", n => { Redirect = n.GetStringValue(); } },
-                { "redirectStatusCode", n => { RedirectStatusCode = n.GetDoubleValue(); } },
+                { "newProjectId", n => { NewProjectId = n.GetStringValue(); } },
+                { "newProjectName", n => { NewProjectName = n.GetStringValue(); } },
+                { "oldProjectId", n => { OldProjectId = n.GetStringValue(); } },
+                { "oldProjectName", n => { OldProjectName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -89,10 +95,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("domain", Domain);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("redirect", Redirect);
-            writer.WriteDoubleValue("redirectStatusCode", RedirectStatusCode);
+            writer.WriteStringValue("newProjectId", NewProjectId);
+            writer.WriteStringValue("newProjectName", NewProjectName);
+            writer.WriteStringValue("oldProjectId", OldProjectId);
+            writer.WriteStringValue("oldProjectName", OldProjectName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

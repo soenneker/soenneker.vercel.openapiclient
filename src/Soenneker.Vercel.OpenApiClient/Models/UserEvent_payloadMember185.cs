@@ -15,53 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The configuredBy property</summary>
+        /// <summary>The projects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfiguredBy { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember185_projects>? Projects { get; set; }
 #nullable restore
 #else
-        public string ConfiguredBy { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember185_projects> Projects { get; set; }
 #endif
-        /// <summary>The domain property</summary>
+        /// <summary>The uid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get; set; }
+        public string? Uid { get; set; }
 #nullable restore
 #else
-        public string Domain { get; set; }
-#endif
-        /// <summary>The prevConfiguredBy property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PrevConfiguredBy { get; set; }
-#nullable restore
-#else
-        public string PrevConfiguredBy { get; set; }
-#endif
-        /// <summary>The projectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
-#endif
-        /// <summary>The projectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectName { get; set; }
-#nullable restore
-#else
-        public string ProjectName { get; set; }
-#endif
-        /// <summary>The target property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Target { get; set; }
-#nullable restore
-#else
-        public string Target { get; set; }
+        public string Uid { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember185"/> and sets the default values.
@@ -88,12 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuredBy", n => { ConfiguredBy = n.GetStringValue(); } },
-                { "domain", n => { Domain = n.GetStringValue(); } },
-                { "prevConfiguredBy", n => { PrevConfiguredBy = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "target", n => { Target = n.GetStringValue(); } },
+                { "projects", n => { Projects = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember185_projects>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember185_projects.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "uid", n => { Uid = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -103,12 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("configuredBy", ConfiguredBy);
-            writer.WriteStringValue("domain", Domain);
-            writer.WriteStringValue("prevConfiguredBy", PrevConfiguredBy);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("target", Target);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember185_projects>("projects", Projects);
+            writer.WriteStringValue("uid", Uid);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

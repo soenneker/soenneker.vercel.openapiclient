@@ -859,6 +859,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         PrivatelinkEndpointCreated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "privatelink-endpoint-deleted")]
+        #pragma warning disable CS1591
+        PrivatelinkEndpointDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "privatelink-endpoint-updated")]
+        #pragma warning disable CS1591
+        PrivatelinkEndpointUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "production-branch-updated")]
         #pragma warning disable CS1591
         ProductionBranchUpdated,
