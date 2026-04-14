@@ -15,6 +15,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The customNameservers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? CustomNameservers { get; set; }
+#nullable restore
+#else
+        public List<string> CustomNameservers { get; set; }
+#endif
         /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +30,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string Domain { get; set; }
+#endif
+        /// <summary>The prevCustomNameservers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? PrevCustomNameservers { get; set; }
+#nullable restore
+#else
+        public List<string> PrevCustomNameservers { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember84"/> and sets the default values.
@@ -48,7 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "customNameservers", n => { CustomNameservers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
+                { "prevCustomNameservers", n => { PrevCustomNameservers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("customNameservers", CustomNameservers);
             writer.WriteStringValue("domain", Domain);
+            writer.WriteCollectionOfPrimitiveValues<string>("prevCustomNameservers", PrevCustomNameservers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

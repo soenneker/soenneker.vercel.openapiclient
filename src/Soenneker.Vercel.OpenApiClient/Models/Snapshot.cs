@@ -27,6 +27,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The last time the snapshot was used (e.g. to resume or create a sandbox), in milliseconds since the epoch. Falls back to `createdAt` for older snapshots that predate this field.</summary>
+        public double? LastUsedAt { get; set; }
         /// <summary>The region where the snapshot is stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,6 +79,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "lastUsedAt", n => { LastUsedAt = n.GetDoubleValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "sizeBytes", n => { SizeBytes = n.GetDoubleValue(); } },
                 { "sourceSessionId", n => { SourceSessionId = n.GetStringValue(); } },
@@ -94,6 +97,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteDoubleValue("expiresAt", ExpiresAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteDoubleValue("lastUsedAt", LastUsedAt);
             writer.WriteStringValue("region", Region);
             writer.WriteDoubleValue("sizeBytes", SizeBytes);
             writer.WriteStringValue("sourceSessionId", SourceSessionId);

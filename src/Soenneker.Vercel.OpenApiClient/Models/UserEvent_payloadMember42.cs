@@ -15,17 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The bulkRedirectsLimit property</summary>
-        public double? BulkRedirectsLimit { get; set; }
-        /// <summary>The prevBulkRedirectsLimit property</summary>
-        public double? PrevBulkRedirectsLimit { get; set; }
-        /// <summary>The project property</summary>
+        /// <summary>The productAliases property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember42_project? Project { get; set; }
+        public List<string>? ProductAliases { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember42_project Project { get; set; }
+        public List<string> ProductAliases { get; set; }
+#endif
+        /// <summary>The subscriptionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SubscriptionId { get; set; }
+#nullable restore
+#else
+        public string SubscriptionId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember42"/> and sets the default values.
@@ -52,9 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bulkRedirectsLimit", n => { BulkRedirectsLimit = n.GetDoubleValue(); } },
-                { "prevBulkRedirectsLimit", n => { PrevBulkRedirectsLimit = n.GetDoubleValue(); } },
-                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember42_project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember42_project.CreateFromDiscriminatorValue); } },
+                { "productAliases", n => { ProductAliases = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -64,9 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("bulkRedirectsLimit", BulkRedirectsLimit);
-            writer.WriteDoubleValue("prevBulkRedirectsLimit", PrevBulkRedirectsLimit);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember42_project>("project", Project);
+            writer.WriteCollectionOfPrimitiveValues<string>("productAliases", ProductAliases);
+            writer.WriteStringValue("subscriptionId", SubscriptionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

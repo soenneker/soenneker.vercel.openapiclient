@@ -15,78 +15,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The alias property</summary>
+        /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Alias { get; set; }
+        public string? Currency { get; set; }
 #nullable restore
 #else
-        public string Alias { get; set; }
+        public string Currency { get; set; }
 #endif
-        /// <summary>The aliasId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AliasId { get; set; }
-#nullable restore
-#else
-        public string AliasId { get; set; }
-#endif
-        /// <summary>The aliasUpdatedAt property</summary>
-        public double? AliasUpdatedAt { get; set; }
-        /// <summary>The deployment property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember12_deployment? Deployment { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember12_deployment Deployment { get; set; }
-#endif
-        /// <summary>The deploymentId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DeploymentId { get; set; }
-#nullable restore
-#else
-        public string DeploymentId { get; set; }
-#endif
-        /// <summary>The deploymentUrl property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DeploymentUrl { get; set; }
-#nullable restore
-#else
-        public string DeploymentUrl { get; set; }
-#endif
-        /// <summary>The oldDeploymentId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OldDeploymentId { get; set; }
-#nullable restore
-#else
-        public string OldDeploymentId { get; set; }
-#endif
-        /// <summary>The redirect property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Redirect { get; set; }
-#nullable restore
-#else
-        public string Redirect { get; set; }
-#endif
-        /// <summary>The redirectStatusCode property</summary>
-        public double? RedirectStatusCode { get; set; }
-        /// <summary>The ruleCount property</summary>
-        public double? RuleCount { get; set; }
-        /// <summary>The system property</summary>
-        public bool? System { get; set; }
-        /// <summary>The target property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Target { get; set; }
-#nullable restore
-#else
-        public string Target { get; set; }
-#endif
+        /// <summary>The price property</summary>
+        public double? Price { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember12"/> and sets the default values.
         /// </summary>
@@ -112,18 +50,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alias", n => { Alias = n.GetStringValue(); } },
-                { "aliasId", n => { AliasId = n.GetStringValue(); } },
-                { "aliasUpdatedAt", n => { AliasUpdatedAt = n.GetDoubleValue(); } },
-                { "deployment", n => { Deployment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember12_deployment>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember12_deployment.CreateFromDiscriminatorValue); } },
-                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
-                { "deploymentUrl", n => { DeploymentUrl = n.GetStringValue(); } },
-                { "oldDeploymentId", n => { OldDeploymentId = n.GetStringValue(); } },
-                { "redirect", n => { Redirect = n.GetStringValue(); } },
-                { "redirectStatusCode", n => { RedirectStatusCode = n.GetDoubleValue(); } },
-                { "ruleCount", n => { RuleCount = n.GetDoubleValue(); } },
-                { "system", n => { System = n.GetBoolValue(); } },
-                { "target", n => { Target = n.GetStringValue(); } },
+                { "currency", n => { Currency = n.GetStringValue(); } },
+                { "price", n => { Price = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -133,18 +61,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("alias", Alias);
-            writer.WriteStringValue("aliasId", AliasId);
-            writer.WriteDoubleValue("aliasUpdatedAt", AliasUpdatedAt);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember12_deployment>("deployment", Deployment);
-            writer.WriteStringValue("deploymentId", DeploymentId);
-            writer.WriteStringValue("deploymentUrl", DeploymentUrl);
-            writer.WriteStringValue("oldDeploymentId", OldDeploymentId);
-            writer.WriteStringValue("redirect", Redirect);
-            writer.WriteDoubleValue("redirectStatusCode", RedirectStatusCode);
-            writer.WriteDoubleValue("ruleCount", RuleCount);
-            writer.WriteBoolValue("system", System);
-            writer.WriteStringValue("target", Target);
+            writer.WriteStringValue("currency", Currency);
+            writer.WriteDoubleValue("price", Price);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

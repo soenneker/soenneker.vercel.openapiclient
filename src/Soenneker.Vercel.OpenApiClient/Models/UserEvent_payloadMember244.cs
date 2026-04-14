@@ -15,10 +15,32 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The next property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember244_next? Next { get; set; }
-        /// <summary>The previous property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember244_previous? Previous { get; set; }
+        /// <summary>The amount property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Amount { get; set; }
+#nullable restore
+#else
+        public string Amount { get; set; }
+#endif
+        /// <summary>The currency property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Currency { get; set; }
+#nullable restore
+#else
+        public string Currency { get; set; }
+#endif
+        /// <summary>The expiresAt property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExpiresAt { get; set; }
+#nullable restore
+#else
+        public string ExpiresAt { get; set; }
+#endif
+        /// <summary>The trialCreditsIssuedAt property</summary>
+        public double? TrialCreditsIssuedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember244"/> and sets the default values.
         /// </summary>
@@ -44,8 +66,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "next", n => { Next = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember244_next>(); } },
-                { "previous", n => { Previous = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember244_previous>(); } },
+                { "amount", n => { Amount = n.GetStringValue(); } },
+                { "currency", n => { Currency = n.GetStringValue(); } },
+                { "expiresAt", n => { ExpiresAt = n.GetStringValue(); } },
+                { "trialCreditsIssuedAt", n => { TrialCreditsIssuedAt = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -55,8 +79,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember244_next>("next", Next);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember244_previous>("previous", Previous);
+            writer.WriteStringValue("amount", Amount);
+            writer.WriteStringValue("currency", Currency);
+            writer.WriteStringValue("expiresAt", ExpiresAt);
+            writer.WriteDoubleValue("trialCreditsIssuedAt", TrialCreditsIssuedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

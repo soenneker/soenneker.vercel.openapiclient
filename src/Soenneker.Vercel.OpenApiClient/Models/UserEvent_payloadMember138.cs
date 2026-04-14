@@ -15,21 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The privateLinkEndpoint property</summary>
+        /// <summary>The previewDeploymentSuffix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember138_privateLinkEndpoint? PrivateLinkEndpoint { get; set; }
+        public string? PreviewDeploymentSuffix { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember138_privateLinkEndpoint PrivateLinkEndpoint { get; set; }
+        public string PreviewDeploymentSuffix { get; set; }
 #endif
-        /// <summary>The projectId property</summary>
+        /// <summary>The previousPreviewDeploymentSuffix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? PreviousPreviewDeploymentSuffix { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string PreviousPreviewDeploymentSuffix { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember138"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "privateLinkEndpoint", n => { PrivateLinkEndpoint = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember138_privateLinkEndpoint>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember138_privateLinkEndpoint.CreateFromDiscriminatorValue); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "previewDeploymentSuffix", n => { PreviewDeploymentSuffix = n.GetStringValue(); } },
+                { "previousPreviewDeploymentSuffix", n => { PreviousPreviewDeploymentSuffix = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember138_privateLinkEndpoint>("privateLinkEndpoint", PrivateLinkEndpoint);
-            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("previewDeploymentSuffix", PreviewDeploymentSuffix);
+            writer.WriteStringValue("previousPreviewDeploymentSuffix", PreviousPreviewDeploymentSuffix);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

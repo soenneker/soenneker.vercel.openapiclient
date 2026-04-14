@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "3DA6D9296BDAD741729359DE2CA686343E463B6EA248CE3437EEC887B951A5CCA5F37402CB009E8C4FDE91CDE592CCBF505D8F4E13C212A228E026E5B18709ED",
+  "descriptionHash": "C39866F609EA4A5BA6F3C482B8D250DD752B97F765A3A9F128306110B699DE9895EE73E86D40313CDE0AB8A94C9A4D778388D94E5BEC4C2B31EA64A7D7F1F6A7",
   "descriptionLocation": "../../openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.31.0",
+  "kiotaVersion": "1.31.1",
   "clientClassName": "VercelOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Vercel.OpenApiClient",

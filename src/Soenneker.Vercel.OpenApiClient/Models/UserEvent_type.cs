@@ -39,6 +39,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayApiKeyDeleted,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-byok-credential-created")]
+        #pragma warning disable CS1591
+        AiGatewayByokCredentialCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-byok-credential-deleted")]
+        #pragma warning disable CS1591
+        AiGatewayByokCredentialDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-byok-credential-updated")]
+        #pragma warning disable CS1591
+        AiGatewayByokCredentialUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "access-group-created")]
         #pragma warning disable CS1591
         AccessGroupCreated,

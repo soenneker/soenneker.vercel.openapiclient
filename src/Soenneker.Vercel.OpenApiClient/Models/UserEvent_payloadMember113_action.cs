@@ -8,13 +8,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UserEvent_payloadMember113_action
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "enable")]
+        [EnumMember(Value = "log")]
         #pragma warning disable CS1591
-        Enable,
+        Log,
         #pragma warning restore CS1591
-        [EnumMember(Value = "disable")]
+        [EnumMember(Value = "challenge")]
         #pragma warning disable CS1591
-        Disable,
+        Challenge,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "deny")]
+        #pragma warning disable CS1591
+        Deny,
         #pragma warning restore CS1591
     }
 }
