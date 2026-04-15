@@ -14,8 +14,38 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The skewProtectionBoundaryAt property</summary>
-        public double? SkewProtectionBoundaryAt { get; set; }
+        /// <summary>The expiration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Expiration { get; set; }
+#nullable restore
+#else
+        public string Expiration { get; set; }
+#endif
+        /// <summary>The expirationCanceled property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExpirationCanceled { get; set; }
+#nullable restore
+#else
+        public string ExpirationCanceled { get; set; }
+#endif
+        /// <summary>The expirationErrored property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExpirationErrored { get; set; }
+#nullable restore
+#else
+        public string ExpirationErrored { get; set; }
+#endif
+        /// <summary>The expirationProduction property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExpirationProduction { get; set; }
+#nullable restore
+#else
+        public string ExpirationProduction { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember209_next"/> and sets the default values.
         /// </summary>
@@ -41,7 +71,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "skewProtectionBoundaryAt", n => { SkewProtectionBoundaryAt = n.GetDoubleValue(); } },
+                { "expiration", n => { Expiration = n.GetStringValue(); } },
+                { "expirationCanceled", n => { ExpirationCanceled = n.GetStringValue(); } },
+                { "expirationErrored", n => { ExpirationErrored = n.GetStringValue(); } },
+                { "expirationProduction", n => { ExpirationProduction = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -51,7 +84,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("skewProtectionBoundaryAt", SkewProtectionBoundaryAt);
+            writer.WriteStringValue("expiration", Expiration);
+            writer.WriteStringValue("expirationCanceled", ExpirationCanceled);
+            writer.WriteStringValue("expirationErrored", ExpirationErrored);
+            writer.WriteStringValue("expirationProduction", ExpirationProduction);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

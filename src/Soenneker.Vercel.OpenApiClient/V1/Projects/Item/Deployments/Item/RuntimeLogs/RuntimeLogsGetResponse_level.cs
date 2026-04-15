@@ -8,17 +8,29 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Deployments.Item.Runti
     public enum RuntimeLogsGetResponse_level
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "error")]
+        [EnumMember(Value = "trace")]
         #pragma warning disable CS1591
-        Error,
+        Trace,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "debug")]
+        #pragma warning disable CS1591
+        Debug,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "info")]
+        #pragma warning disable CS1591
+        Info,
         #pragma warning restore CS1591
         [EnumMember(Value = "warning")]
         #pragma warning disable CS1591
         Warning,
         #pragma warning restore CS1591
-        [EnumMember(Value = "info")]
+        [EnumMember(Value = "error")]
         #pragma warning disable CS1591
-        Info,
+        Error,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "fatal")]
+        #pragma warning disable CS1591
+        Fatal,
         #pragma warning restore CS1591
     }
 }

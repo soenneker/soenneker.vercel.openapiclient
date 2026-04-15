@@ -12,6 +12,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.Configuration.Item.Prod
         #pragma warning disable CS1591
         Checks,
         #pragma warning restore CS1591
+        [EnumMember(Value = "experimentation")]
+        #pragma warning disable CS1591
+        Experimentation,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai")]
         #pragma warning disable CS1591
         Ai,
@@ -23,10 +27,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.Configuration.Item.Prod
         [EnumMember(Value = "storage")]
         #pragma warning disable CS1591
         Storage,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "experimentation")]
-        #pragma warning disable CS1591
-        Experimentation,
         #pragma warning restore CS1591
         [EnumMember(Value = "messaging")]
         #pragma warning disable CS1591

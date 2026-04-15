@@ -111,5 +111,13 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config
         #pragma warning disable CS1591
         Bot_category,
         #pragma warning restore CS1591
+        [EnumMember(Value = "bot_status")]
+        #pragma warning disable CS1591
+        Bot_status,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "bot_protection")]
+        #pragma warning disable CS1591
+        Bot_protection,
+        #pragma warning restore CS1591
     }
 }

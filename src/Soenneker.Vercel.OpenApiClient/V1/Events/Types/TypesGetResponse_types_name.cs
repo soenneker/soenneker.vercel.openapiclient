@@ -980,6 +980,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Events.Types
         #pragma warning disable CS1591
         ProjectDelegatedProtectionUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "project-delegated-protection-disabled")]
+        #pragma warning disable CS1591
+        ProjectDelegatedProtectionDisabled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project-delete")]
         #pragma warning disable CS1591
         ProjectDelete,
@@ -1015,6 +1019,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Events.Types
         [EnumMember(Value = "project-custom-environment-deleted")]
         #pragma warning disable CS1591
         ProjectCustomEnvironmentDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-functions-beta-updated")]
+        #pragma warning disable CS1591
+        ProjectFunctionsBetaUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "project-functions-fluid-disabled")]
         #pragma warning disable CS1591

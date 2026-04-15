@@ -68,6 +68,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Webhooks
         #pragma warning disable CS1591
         DeploymentCreated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "deployment.build-requested")]
+        #pragma warning disable CS1591
+        DeploymentBuildRequested,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deployment.cleanup")]
         #pragma warning disable CS1591
         DeploymentCleanup,

@@ -15,8 +15,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The gitCommitStatus property</summary>
-        public bool? GitCommitStatus { get; set; }
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,6 +31,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get; set; }
 #endif
+        /// <summary>The requireVerifiedCommits property</summary>
+        public bool? RequireVerifiedCommits { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember178"/> and sets the default values.
         /// </summary>
@@ -58,9 +58,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "gitCommitStatus", n => { GitCommitStatus = n.GetBoolValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "requireVerifiedCommits", n => { RequireVerifiedCommits = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -70,9 +70,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("gitCommitStatus", GitCommitStatus);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteBoolValue("requireVerifiedCommits", RequireVerifiedCommits);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

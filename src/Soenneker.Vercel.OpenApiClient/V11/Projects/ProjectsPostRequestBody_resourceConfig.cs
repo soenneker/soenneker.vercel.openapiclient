@@ -29,6 +29,8 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
 #endif
         /// <summary>The elasticConcurrencyEnabled property</summary>
         public bool? ElasticConcurrencyEnabled { get; set; }
+        /// <summary>The enableFunctionsBeta property</summary>
+        public bool? EnableFunctionsBeta { get; set; }
         /// <summary>The fluid property</summary>
         public bool? Fluid { get; set; }
         /// <summary>The functionDefaultMemoryType property</summary>
@@ -70,6 +72,7 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
                 { "buildMachineType", n => { BuildMachineType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostRequestBody_resourceConfig_buildMachineType>(); } },
                 { "buildQueue", n => { BuildQueue = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostRequestBody_resourceConfig_buildQueue>(global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostRequestBody_resourceConfig_buildQueue.CreateFromDiscriminatorValue); } },
                 { "elasticConcurrencyEnabled", n => { ElasticConcurrencyEnabled = n.GetBoolValue(); } },
+                { "enableFunctionsBeta", n => { EnableFunctionsBeta = n.GetBoolValue(); } },
                 { "fluid", n => { Fluid = n.GetBoolValue(); } },
                 { "functionDefaultMemoryType", n => { FunctionDefaultMemoryType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostRequestBody_resourceConfig_functionDefaultMemoryType>(); } },
                 { "functionDefaultRegions", n => { FunctionDefaultRegions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -90,6 +93,7 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostRequestBody_resourceConfig_buildMachineType>("buildMachineType", BuildMachineType);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostRequestBody_resourceConfig_buildQueue>("buildQueue", BuildQueue);
             writer.WriteBoolValue("elasticConcurrencyEnabled", ElasticConcurrencyEnabled);
+            writer.WriteBoolValue("enableFunctionsBeta", EnableFunctionsBeta);
             writer.WriteBoolValue("fluid", Fluid);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostRequestBody_resourceConfig_functionDefaultMemoryType>("functionDefaultMemoryType", FunctionDefaultMemoryType);
             writer.WriteCollectionOfPrimitiveValues<string>("functionDefaultRegions", FunctionDefaultRegions);
