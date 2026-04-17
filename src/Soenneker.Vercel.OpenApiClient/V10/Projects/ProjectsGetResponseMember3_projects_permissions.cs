@@ -335,6 +335,14 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> ConnexClient { get; set; }
 #endif
+        /// <summary>The connexClientProject property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?>? ConnexClientProject { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> ConnexClientProject { get; set; }
+#endif
         /// <summary>The connexToken property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1799,6 +1807,14 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> TrustedIps { get; set; }
 #endif
+        /// <summary>The trustedSources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?>? TrustedSources { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> TrustedSources { get; set; }
+#endif
         /// <summary>The usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1992,6 +2008,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
                 { "connectConfiguration", n => { ConnectConfiguration = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "connectConfigurationLink", n => { ConnectConfigurationLink = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "connexClient", n => { ConnexClient = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
+                { "connexClientProject", n => { ConnexClientProject = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "connexToken", n => { ConnexToken = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "dataCacheBillingSettings", n => { DataCacheBillingSettings = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "dataCacheNamespace", n => { DataCacheNamespace = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
@@ -2175,6 +2192,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
                 { "token", n => { Token = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "toolbarComment", n => { ToolbarComment = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "trustedIps", n => { TrustedIps = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
+                { "trustedSources", n => { TrustedSources = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "usage", n => { Usage = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "usageCycle", n => { UsageCycle = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "user", n => { User = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
@@ -2240,6 +2258,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("connectConfiguration", ConnectConfiguration);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("connectConfigurationLink", ConnectConfigurationLink);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("connexClient", ConnexClient);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("connexClientProject", ConnexClientProject);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("connexToken", ConnexToken);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("dataCacheBillingSettings", DataCacheBillingSettings);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("dataCacheNamespace", DataCacheNamespace);
@@ -2423,6 +2442,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("token", Token);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("toolbarComment", ToolbarComment);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("trustedIps", TrustedIps);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("trustedSources", TrustedSources);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("usage", Usage);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("usageCycle", UsageCycle);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("user", User);

@@ -506,6 +506,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
 #else
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse.MicrofrontendsPatchResponse_trustedIps TrustedIps { get; set; }
 #endif
+        /// <summary>The trustedSources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_trustedSources? TrustedSources { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_trustedSources TrustedSources { get; set; }
+#endif
         /// <summary>The updatedAt property</summary>
         public double? UpdatedAt { get; set; }
         /// <summary>The usageStatus property</summary>
@@ -637,6 +645,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
                 { "transferToAccountId", n => { TransferToAccountId = n.GetStringValue(); } },
                 { "transferredFromAccountId", n => { TransferredFromAccountId = n.GetStringValue(); } },
                 { "trustedIps", n => { TrustedIps = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse.MicrofrontendsPatchResponse_trustedIps>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse.MicrofrontendsPatchResponse_trustedIps.CreateFromDiscriminatorValue); } },
+                { "trustedSources", n => { TrustedSources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_trustedSources>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_trustedSources.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "usageStatus", n => { UsageStatus = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_usageStatus>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_usageStatus.CreateFromDiscriminatorValue); } },
                 { "v0", n => { V0 = n.GetBoolValue(); } },
@@ -735,6 +744,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
             writer.WriteDoubleValue("transferStartedAt", TransferStartedAt);
             writer.WriteStringValue("transferToAccountId", TransferToAccountId);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse.MicrofrontendsPatchResponse_trustedIps>("trustedIps", TrustedIps);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_trustedSources>("trustedSources", TrustedSources);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_usageStatus>("usageStatus", UsageStatus);
             writer.WriteBoolValue("v0", V0);

@@ -50,6 +50,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct
         public bool? Transferable { get; set; }
         /// <summary>The v0 property</summary>
         public bool? V0 { get; set; }
+        /// <summary>The v0Flavors property</summary>
+        public bool? V0Flavors { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct.DirectPostResponse_store_product_capabilities"/> and sets the default values.
         /// </summary>
@@ -90,6 +92,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct
                 { "sso", n => { Sso = n.GetBoolValue(); } },
                 { "transferable", n => { Transferable = n.GetBoolValue(); } },
                 { "v0", n => { V0 = n.GetBoolValue(); } },
+                { "v0Flavors", n => { V0Flavors = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -114,6 +117,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct
             writer.WriteBoolValue("sso", Sso);
             writer.WriteBoolValue("transferable", Transferable);
             writer.WriteBoolValue("v0", V0);
+            writer.WriteBoolValue("v0Flavors", V0Flavors);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>

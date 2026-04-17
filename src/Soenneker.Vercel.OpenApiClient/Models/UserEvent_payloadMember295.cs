@@ -15,55 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>optional since entries prior to 2025-10-13 do not contain app information</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember295_app? App { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember295_app App { get; set; }
+        public string Id { get; set; }
 #endif
-        /// <summary>the app&apos;s name at the time the event was published (it could have changed since then)</summary>
+        /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppName { get; set; }
+        public string? Url { get; set; }
 #nullable restore
 #else
-        public string AppName { get; set; }
-#endif
-        /// <summary>access_token TTL</summary>
-        public double? AtTTL { get; set; }
-        /// <summary>The authMethod property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember295_authMethod? AuthMethod { get; set; }
-        /// <summary>The grantType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember295_grantType? GrantType { get; set; }
-        /// <summary>optional since entries prior to 2025-10-13 do not contain this field</summary>
-        public bool? IncludesRefreshToken { get; set; }
-        /// <summary>optional since entries prior to 2025-10-13 do not contain this field</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PublicId { get; set; }
-#nullable restore
-#else
-        public string PublicId { get; set; }
-#endif
-        /// <summary>refresh_token TTL</summary>
-        public double? RtTTL { get; set; }
-        /// <summary>The scope property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Scope { get; set; }
-#nullable restore
-#else
-        public string Scope { get; set; }
-#endif
-        /// <summary>optional since entries prior to 2025-10-13 do not contain this field</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SessionId { get; set; }
-#nullable restore
-#else
-        public string SessionId { get; set; }
+        public string Url { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember295"/> and sets the default values.
@@ -90,16 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "app", n => { App = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember295_app>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember295_app.CreateFromDiscriminatorValue); } },
-                { "appName", n => { AppName = n.GetStringValue(); } },
-                { "atTTL", n => { AtTTL = n.GetDoubleValue(); } },
-                { "authMethod", n => { AuthMethod = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember295_authMethod>(); } },
-                { "grantType", n => { GrantType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember295_grantType>(); } },
-                { "includesRefreshToken", n => { IncludesRefreshToken = n.GetBoolValue(); } },
-                { "publicId", n => { PublicId = n.GetStringValue(); } },
-                { "rtTTL", n => { RtTTL = n.GetDoubleValue(); } },
-                { "scope", n => { Scope = n.GetStringValue(); } },
-                { "sessionId", n => { SessionId = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -109,16 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember295_app>("app", App);
-            writer.WriteStringValue("appName", AppName);
-            writer.WriteDoubleValue("atTTL", AtTTL);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember295_authMethod>("authMethod", AuthMethod);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember295_grantType>("grantType", GrantType);
-            writer.WriteBoolValue("includesRefreshToken", IncludesRefreshToken);
-            writer.WriteStringValue("publicId", PublicId);
-            writer.WriteDoubleValue("rtTTL", RtTTL);
-            writer.WriteStringValue("scope", Scope);
-            writer.WriteStringValue("sessionId", SessionId);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -851,6 +851,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         OwnerSoftUnblocked,
         #pragma warning restore CS1591
+        [EnumMember(Value = "page-integrity-config-updated")]
+        #pragma warning disable CS1591
+        PageIntegrityConfigUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "page-integrity-header-approved")]
+        #pragma warning disable CS1591
+        PageIntegrityHeaderApproved,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "page-integrity-resource-approved")]
+        #pragma warning disable CS1591
+        PageIntegrityResourceApproved,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "page-integrity-resource-rejected")]
+        #pragma warning disable CS1591
+        PageIntegrityResourceRejected,
+        #pragma warning restore CS1591
         [EnumMember(Value = "passkey-created")]
         #pragma warning disable CS1591
         PasskeyCreated,
@@ -1218,6 +1234,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "project-rolling-release-continued")]
         #pragma warning disable CS1591
         ProjectRollingReleaseContinued,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-rolling-release-suggested-actions-generated")]
+        #pragma warning disable CS1591
+        ProjectRollingReleaseSuggestedActionsGenerated,
         #pragma warning restore CS1591
         [EnumMember(Value = "project-routes-version-promoted")]
         #pragma warning disable CS1591
@@ -1678,6 +1698,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "alert-rule-deleted")]
         #pragma warning disable CS1591
         AlertRuleDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "vulnerability-banner-dismissed")]
+        #pragma warning disable CS1591
+        VulnerabilityBannerDismissed,
         #pragma warning restore CS1591
         [EnumMember(Value = "vpc-peering-connection-accepted")]
         #pragma warning disable CS1591

@@ -264,6 +264,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects
         #pragma warning disable CS1591
         Rust,
         #pragma warning restore CS1591
+        [EnumMember(Value = "axum")]
+        #pragma warning disable CS1591
+        Axum,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "actix-web")]
+        #pragma warning disable CS1591
+        ActixWeb,
+        #pragma warning restore CS1591
         [EnumMember(Value = "go")]
         #pragma warning disable CS1591
         Go,

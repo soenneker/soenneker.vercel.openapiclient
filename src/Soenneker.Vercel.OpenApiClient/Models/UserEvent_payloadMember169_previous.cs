@@ -14,8 +14,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The functionZeroConfigFailover property</summary>
-        public bool? FunctionZeroConfigFailover { get; set; }
+        /// <summary>The functionDefaultTimeout property</summary>
+        public double? FunctionDefaultTimeout { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember169_previous"/> and sets the default values.
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "functionZeroConfigFailover", n => { FunctionZeroConfigFailover = n.GetBoolValue(); } },
+                { "functionDefaultTimeout", n => { FunctionDefaultTimeout = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("functionZeroConfigFailover", FunctionZeroConfigFailover);
+            writer.WriteDoubleValue("functionDefaultTimeout", FunctionDefaultTimeout);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

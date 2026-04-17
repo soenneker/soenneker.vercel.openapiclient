@@ -120,6 +120,14 @@ namespace Soenneker.Vercel.OpenApiClient.V6.Deployments
 #endif
         /// <summary>Deployment can be used for instant rollback</summary>
         public bool? IsRollbackCandidate { get; set; }
+        /// <summary>The manualProvisioning property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_manualProvisioning? ManualProvisioning { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_manualProvisioning ManualProvisioning { get; set; }
+#endif
         /// <summary>Metadata information from the Git provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -261,6 +269,7 @@ namespace Soenneker.Vercel.OpenApiClient.V6.Deployments
                 { "expiration", n => { Expiration = n.GetDoubleValue(); } },
                 { "inspectorUrl", n => { InspectorUrl = n.GetStringValue(); } },
                 { "isRollbackCandidate", n => { IsRollbackCandidate = n.GetBoolValue(); } },
+                { "manualProvisioning", n => { ManualProvisioning = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_manualProvisioning>(global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_manualProvisioning.CreateFromDiscriminatorValue); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_meta>(global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_meta.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "oomReport", n => { OomReport = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_oomReport>(); } },
@@ -311,6 +320,7 @@ namespace Soenneker.Vercel.OpenApiClient.V6.Deployments
             writer.WriteDoubleValue("expiration", Expiration);
             writer.WriteStringValue("inspectorUrl", InspectorUrl);
             writer.WriteBoolValue("isRollbackCandidate", IsRollbackCandidate);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_manualProvisioning>("manualProvisioning", ManualProvisioning);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_meta>("meta", Meta);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V6.Deployments.DeploymentsGetResponse_deployments_oomReport>("oomReport", OomReport);

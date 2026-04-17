@@ -15,29 +15,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The gitProvider property</summary>
+        /// <summary>The next property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitProvider { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember218_next? Next { get; set; }
 #nullable restore
 #else
-        public string GitProvider { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember218_next Next { get; set; }
 #endif
-        /// <summary>The gitProviderGroupDescriptor property</summary>
+        /// <summary>The previous property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitProviderGroupDescriptor { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember218_previous? Previous { get; set; }
 #nullable restore
 #else
-        public string GitProviderGroupDescriptor { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember218_previous Previous { get; set; }
 #endif
-        /// <summary>The gitScope property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitScope { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string GitScope { get; set; }
+        public string ProjectId { get; set; }
+#endif
+        /// <summary>The projectName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectName { get; set; }
+#nullable restore
+#else
+        public string ProjectName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember218"/> and sets the default values.
@@ -64,9 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "gitProvider", n => { GitProvider = n.GetStringValue(); } },
-                { "gitProviderGroupDescriptor", n => { GitProviderGroupDescriptor = n.GetStringValue(); } },
-                { "gitScope", n => { GitScope = n.GetStringValue(); } },
+                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember218_next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember218_next.CreateFromDiscriminatorValue); } },
+                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember218_previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember218_previous.CreateFromDiscriminatorValue); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("gitProvider", GitProvider);
-            writer.WriteStringValue("gitProviderGroupDescriptor", GitProviderGroupDescriptor);
-            writer.WriteStringValue("gitScope", GitScope);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember218_next>("next", Next);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember218_previous>("previous", Previous);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

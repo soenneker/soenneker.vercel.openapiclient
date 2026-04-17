@@ -76,5 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members
         #pragma warning disable CS1591
         NsnbRedeploy,
         #pragma warning restore CS1591
+        [EnumMember(Value = "nsnb-redeploy-attribution-card")]
+        #pragma warning disable CS1591
+        NsnbRedeployAttributionCard,
+        #pragma warning restore CS1591
     }
 }

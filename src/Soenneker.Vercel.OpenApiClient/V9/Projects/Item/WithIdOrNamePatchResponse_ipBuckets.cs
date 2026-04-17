@@ -22,6 +22,8 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
 #else
         public string Bucket { get; set; }
 #endif
+        /// <summary>The default property</summary>
+        public bool? Default { get; set; }
         /// <summary>The supportUntil property</summary>
         public double? SupportUntil { get; set; }
         /// <summary>
@@ -50,6 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bucket", n => { Bucket = n.GetStringValue(); } },
+                { "default", n => { Default = n.GetBoolValue(); } },
                 { "supportUntil", n => { SupportUntil = n.GetDoubleValue(); } },
             };
         }
@@ -61,6 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bucket", Bucket);
+            writer.WriteBoolValue("default", Default);
             writer.WriteDoubleValue("supportUntil", SupportUntil);
             writer.WriteAdditionalData(AdditionalData);
         }

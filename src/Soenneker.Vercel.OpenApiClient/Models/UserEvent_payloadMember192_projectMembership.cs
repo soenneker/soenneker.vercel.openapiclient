@@ -16,8 +16,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The createdAt property</summary>
         public double? CreatedAt { get; set; }
-        /// <summary>The previousRole property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember192_projectMembership_previousRole? PreviousRole { get; set; }
         /// <summary>The role property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember192_projectMembership_role? Role { get; set; }
         /// <summary>The uid property</summary>
@@ -62,7 +60,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
-                { "previousRole", n => { PreviousRole = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember192_projectMembership_previousRole>(); } },
                 { "role", n => { Role = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember192_projectMembership_role>(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
@@ -76,7 +73,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("createdAt", CreatedAt);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember192_projectMembership_previousRole>("previousRole", PreviousRole);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember192_projectMembership_role>("role", Role);
             writer.WriteStringValue("uid", Uid);
             writer.WriteStringValue("username", Username);

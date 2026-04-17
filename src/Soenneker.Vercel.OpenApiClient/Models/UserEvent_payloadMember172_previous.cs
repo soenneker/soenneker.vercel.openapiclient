@@ -14,24 +14,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The gitProvider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember172_previous_gitProvider? GitProvider { get; set; }
-        /// <summary>The gitRepoId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GitRepoId { get; set; }
-#nullable restore
-#else
-        public string GitRepoId { get; set; }
-#endif
-        /// <summary>The gitRepositoryName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GitRepositoryName { get; set; }
-#nullable restore
-#else
-        public string GitRepositoryName { get; set; }
-#endif
+        /// <summary>The functionZeroConfigFailover property</summary>
+        public bool? FunctionZeroConfigFailover { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember172_previous"/> and sets the default values.
         /// </summary>
@@ -57,9 +41,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "gitProvider", n => { GitProvider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember172_previous_gitProvider>(); } },
-                { "gitRepoId", n => { GitRepoId = n.GetStringValue(); } },
-                { "gitRepositoryName", n => { GitRepositoryName = n.GetStringValue(); } },
+                { "functionZeroConfigFailover", n => { FunctionZeroConfigFailover = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -69,9 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember172_previous_gitProvider>("gitProvider", GitProvider);
-            writer.WriteStringValue("gitRepoId", GitRepoId);
-            writer.WriteStringValue("gitRepositoryName", GitRepositoryName);
+            writer.WriteBoolValue("functionZeroConfigFailover", FunctionZeroConfigFailover);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

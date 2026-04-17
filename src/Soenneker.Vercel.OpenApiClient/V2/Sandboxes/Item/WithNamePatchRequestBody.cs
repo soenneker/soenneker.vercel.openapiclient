@@ -12,6 +12,14 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item
     public partial class WithNamePatchRequestBody : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The snapshot ID to set as the current snapshot. Must be active and belong to the same project.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CurrentSnapshotId { get; set; }
+#nullable restore
+#else
+        public string CurrentSnapshotId { get; set; }
+#endif
         /// <summary>Default environment variables for the sandbox. Set to empty object to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,6 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "currentSnapshotId", n => { CurrentSnapshotId = n.GetStringValue(); } },
                 { "env", n => { Env = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_env>(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_env.CreateFromDiscriminatorValue); } },
                 { "networkPolicy", n => { NetworkPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_networkPolicy>(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_networkPolicy.CreateFromDiscriminatorValue); } },
                 { "persistent", n => { Persistent = n.GetBoolValue(); } },
@@ -87,6 +96,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("currentSnapshotId", CurrentSnapshotId);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_env>("env", Env);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_networkPolicy>("networkPolicy", NetworkPolicy);
             writer.WriteBoolValue("persistent", Persistent);

@@ -15,26 +15,32 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
-        /// <summary>The environment property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember249_environment? Environment { get; set; }
-        /// <summary>The projectId property</summary>
+        /// <summary>The amount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? Amount { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string Amount { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public string? Currency { get; set; }
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public string Currency { get; set; }
 #endif
+        /// <summary>The expiresAt property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExpiresAt { get; set; }
+#nullable restore
+#else
+        public string ExpiresAt { get; set; }
+#endif
+        /// <summary>The trialCreditsIssuedAt property</summary>
+        public double? TrialCreditsIssuedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember249"/> and sets the default values.
         /// </summary>
@@ -60,10 +66,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "environment", n => { Environment = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember249_environment>(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "amount", n => { Amount = n.GetStringValue(); } },
+                { "currency", n => { Currency = n.GetStringValue(); } },
+                { "expiresAt", n => { ExpiresAt = n.GetStringValue(); } },
+                { "trialCreditsIssuedAt", n => { TrialCreditsIssuedAt = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -73,10 +79,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember249_environment>("environment", Environment);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("amount", Amount);
+            writer.WriteStringValue("currency", Currency);
+            writer.WriteStringValue("expiresAt", ExpiresAt);
+            writer.WriteDoubleValue("trialCreditsIssuedAt", TrialCreditsIssuedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

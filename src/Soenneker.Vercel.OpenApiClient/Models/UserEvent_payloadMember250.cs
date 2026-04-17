@@ -15,10 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enabled property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_enabled? Enabled { get; set; }
-        /// <summary>The environment property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_environment? Environment { get; set; }
+        /// <summary>The next property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_next? Next { get; set; }
+        /// <summary>The previous property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_previous? Previous { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250"/> and sets the default values.
         /// </summary>
@@ -44,8 +44,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enabled", n => { Enabled = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_enabled>(); } },
-                { "environment", n => { Environment = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_environment>(); } },
+                { "next", n => { Next = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_next>(); } },
+                { "previous", n => { Previous = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_previous>(); } },
             };
         }
         /// <summary>
@@ -55,8 +55,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_enabled>("enabled", Enabled);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_environment>("environment", Environment);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_next>("next", Next);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_previous>("previous", Previous);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,53 +15,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The email property</summary>
+        /// <summary>The max property</summary>
+        public double? Max { get; set; }
+        /// <summary>The min property</summary>
+        public double? Min { get; set; }
+        /// <summary>The scalingRules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember230_scalingRules? ScalingRules { get; set; }
 #nullable restore
 #else
-        public string Email { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember230_scalingRules ScalingRules { get; set; }
 #endif
-        /// <summary>The gitlabEmail property</summary>
+        /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitlabEmail { get; set; }
+        public string? Url { get; set; }
 #nullable restore
 #else
-        public string GitlabEmail { get; set; }
-#endif
-        /// <summary>The gitlabLogin property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GitlabLogin { get; set; }
-#nullable restore
-#else
-        public string GitlabLogin { get; set; }
-#endif
-        /// <summary>The gitlabName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GitlabName { get; set; }
-#nullable restore
-#else
-        public string GitlabName { get; set; }
-#endif
-        /// <summary>The zeitAccount property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ZeitAccount { get; set; }
-#nullable restore
-#else
-        public string ZeitAccount { get; set; }
-#endif
-        /// <summary>The zeitAccountType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ZeitAccountType { get; set; }
-#nullable restore
-#else
-        public string ZeitAccountType { get; set; }
+        public string Url { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember230"/> and sets the default values.
@@ -88,12 +60,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "gitlabEmail", n => { GitlabEmail = n.GetStringValue(); } },
-                { "gitlabLogin", n => { GitlabLogin = n.GetStringValue(); } },
-                { "gitlabName", n => { GitlabName = n.GetStringValue(); } },
-                { "zeitAccount", n => { ZeitAccount = n.GetStringValue(); } },
-                { "zeitAccountType", n => { ZeitAccountType = n.GetStringValue(); } },
+                { "max", n => { Max = n.GetDoubleValue(); } },
+                { "min", n => { Min = n.GetDoubleValue(); } },
+                { "scalingRules", n => { ScalingRules = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember230_scalingRules>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember230_scalingRules.CreateFromDiscriminatorValue); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -103,12 +73,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("email", Email);
-            writer.WriteStringValue("gitlabEmail", GitlabEmail);
-            writer.WriteStringValue("gitlabLogin", GitlabLogin);
-            writer.WriteStringValue("gitlabName", GitlabName);
-            writer.WriteStringValue("zeitAccount", ZeitAccount);
-            writer.WriteStringValue("zeitAccountType", ZeitAccountType);
+            writer.WriteDoubleValue("max", Max);
+            writer.WriteDoubleValue("min", Min);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember230_scalingRules>("scalingRules", ScalingRules);
+            writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

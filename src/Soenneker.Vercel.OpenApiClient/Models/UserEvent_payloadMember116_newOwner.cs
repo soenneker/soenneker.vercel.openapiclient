@@ -202,6 +202,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public bool? IsEnterpriseManaged { get; set; }
         /// <summary>The isZeitPub property</summary>
         public bool? IsZeitPub { get; set; }
+        /// <summary>On a personal account, points to the managed account created during EMU account separation. Set by the split utility when an existing team member is converted into a separate managed account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LinkedManagedAccountId { get; set; }
+#nullable restore
+#else
+        public string LinkedManagedAccountId { get; set; }
+#endif
+        /// <summary>On a managed account, points back to the personal account it was split from during EMU account separation. When set together with `isEnterpriseManaged`, the managed account&apos;s email is excluded from global secondary-key indexing so it doesn&apos;t conflict with the personal account&apos;s email.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LinkedPersonalAccountId { get; set; }
+#nullable restore
+#else
+        public string LinkedPersonalAccountId { get; set; }
+#endif
         /// <summary>The maxActiveSlots property</summary>
         public double? MaxActiveSlots { get; set; }
         /// <summary>Introduced 2022-04-19 Number of maximum trials to allocate to a user. When undefined, defaults to MAX_TRIALS in utils/api-teams/user-has-trial-available.ts. This is set to trialTeamIds + 1 by services/api-backoffice/src/handlers/add-additional-trial.ts.</summary>
@@ -496,6 +512,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "isDomainReseller", n => { IsDomainReseller = n.GetBoolValue(); } },
                 { "isEnterpriseManaged", n => { IsEnterpriseManaged = n.GetBoolValue(); } },
                 { "isZeitPub", n => { IsZeitPub = n.GetBoolValue(); } },
+                { "linkedManagedAccountId", n => { LinkedManagedAccountId = n.GetStringValue(); } },
+                { "linkedPersonalAccountId", n => { LinkedPersonalAccountId = n.GetStringValue(); } },
                 { "maxActiveSlots", n => { MaxActiveSlots = n.GetDoubleValue(); } },
                 { "maxTrials", n => { MaxTrials = n.GetDoubleValue(); } },
                 { "mfaConfiguration", n => { MfaConfiguration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember116_newOwner_mfaConfiguration>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember116_newOwner_mfaConfiguration.CreateFromDiscriminatorValue); } },
@@ -580,6 +598,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("isDomainReseller", IsDomainReseller);
             writer.WriteBoolValue("isEnterpriseManaged", IsEnterpriseManaged);
             writer.WriteBoolValue("isZeitPub", IsZeitPub);
+            writer.WriteStringValue("linkedManagedAccountId", LinkedManagedAccountId);
+            writer.WriteStringValue("linkedPersonalAccountId", LinkedPersonalAccountId);
             writer.WriteDoubleValue("maxActiveSlots", MaxActiveSlots);
             writer.WriteDoubleValue("maxTrials", MaxTrials);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember116_newOwner_mfaConfiguration>("mfaConfiguration", MfaConfiguration);

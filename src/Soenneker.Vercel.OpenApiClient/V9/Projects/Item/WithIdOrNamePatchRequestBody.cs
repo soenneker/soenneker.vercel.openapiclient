@@ -221,6 +221,14 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
 #else
         public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_trustedIps TrustedIps { get; set; }
 #endif
+        /// <summary>Deployment Protection Trusted Sources</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_trustedSources? TrustedSources { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_trustedSources TrustedSources { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -280,6 +288,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
                 { "staticIps", n => { StaticIps = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_staticIps>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_staticIps.CreateFromDiscriminatorValue); } },
                 { "tracing", n => { Tracing = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_tracing>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_tracing.CreateFromDiscriminatorValue); } },
                 { "trustedIps", n => { TrustedIps = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_trustedIps>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_trustedIps.CreateFromDiscriminatorValue); } },
+                { "trustedSources", n => { TrustedSources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_trustedSources>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_trustedSources.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -330,6 +339,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_staticIps>("staticIps", StaticIps);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_tracing>("tracing", Tracing);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_trustedIps>("trustedIps", TrustedIps);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_trustedSources>("trustedSources", TrustedSources);
         }
     }
 }

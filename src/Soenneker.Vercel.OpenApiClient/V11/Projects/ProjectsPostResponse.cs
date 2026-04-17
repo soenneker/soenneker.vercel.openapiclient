@@ -506,6 +506,14 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
 #else
         public global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse.ProjectsPostResponse_trustedIps TrustedIps { get; set; }
 #endif
+        /// <summary>The trustedSources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_trustedSources? TrustedSources { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_trustedSources TrustedSources { get; set; }
+#endif
         /// <summary>The updatedAt property</summary>
         public double? UpdatedAt { get; set; }
         /// <summary>The usageStatus property</summary>
@@ -637,6 +645,7 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
                 { "transferToAccountId", n => { TransferToAccountId = n.GetStringValue(); } },
                 { "transferredFromAccountId", n => { TransferredFromAccountId = n.GetStringValue(); } },
                 { "trustedIps", n => { TrustedIps = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse.ProjectsPostResponse_trustedIps>(global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse.ProjectsPostResponse_trustedIps.CreateFromDiscriminatorValue); } },
+                { "trustedSources", n => { TrustedSources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_trustedSources>(global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_trustedSources.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "usageStatus", n => { UsageStatus = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_usageStatus>(global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_usageStatus.CreateFromDiscriminatorValue); } },
                 { "v0", n => { V0 = n.GetBoolValue(); } },
@@ -735,6 +744,7 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
             writer.WriteDoubleValue("transferStartedAt", TransferStartedAt);
             writer.WriteStringValue("transferToAccountId", TransferToAccountId);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse.ProjectsPostResponse_trustedIps>("trustedIps", TrustedIps);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_trustedSources>("trustedSources", TrustedSources);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_usageStatus>("usageStatus", UsageStatus);
             writer.WriteBoolValue("v0", V0);

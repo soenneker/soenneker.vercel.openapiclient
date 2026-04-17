@@ -22,6 +22,14 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
 #else
         public string Aud { get; set; }
 #endif
+        /// <summary>The custom_environment_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomEnvironmentId { get; set; }
+#nullable restore
+#else
+        public string CustomEnvironmentId { get; set; }
+#endif
         /// <summary>The environment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,6 +128,7 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "aud", n => { Aud = n.GetStringValue(); } },
+                { "custom_environment_id", n => { CustomEnvironmentId = n.GetStringValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "iss", n => { Iss = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
@@ -139,6 +148,7 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("aud", Aud);
+            writer.WriteStringValue("custom_environment_id", CustomEnvironmentId);
             writer.WriteStringValue("environment", Environment);
             writer.WriteStringValue("iss", Iss);
             writer.WriteStringValue("owner", Owner);

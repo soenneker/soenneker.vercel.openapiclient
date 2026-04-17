@@ -19,5 +19,9 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
         #pragma warning disable CS1591
         StatusUpdatedAt,
         #pragma warning restore CS1591
+        [EnumMember(Value = "currentSnapshotId")]
+        #pragma warning disable CS1591
+        CurrentSnapshotId,
+        #pragma warning restore CS1591
     }
 }
