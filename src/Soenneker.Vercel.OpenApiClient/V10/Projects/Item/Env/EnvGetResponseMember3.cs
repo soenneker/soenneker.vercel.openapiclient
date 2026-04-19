@@ -23,6 +23,8 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs> Envs { get; set; }
 #endif
+        /// <summary>The hiddenProductionEnvCount property</summary>
+        public double? HiddenProductionEnvCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3"/> and sets the default values.
         /// </summary>
@@ -49,6 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "envs", n => { Envs = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs>(global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "hiddenProductionEnvCount", n => { HiddenProductionEnvCount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -59,6 +62,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs>("envs", Envs);
+            writer.WriteDoubleValue("hiddenProductionEnvCount", HiddenProductionEnvCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
