@@ -79,6 +79,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Default snapshot expiration time in milliseconds. 0 means no expiration.</summary>
         public double? SnapshotExpiration { get; set; }
+        /// <summary>Keep-last snapshot configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_snapshotKeepLast? SnapshotKeepLast { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_snapshotKeepLast SnapshotKeepLast { get; set; }
+#endif
         /// <summary>The status of the current sandbox.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_status? Status { get; set; }
         /// <summary>The time when the sandbox status was last updated, in milliseconds since the epoch.</summary>
@@ -141,6 +149,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "runtime", n => { Runtime = n.GetStringValue(); } },
                 { "snapshotExpiration", n => { SnapshotExpiration = n.GetDoubleValue(); } },
+                { "snapshotKeepLast", n => { SnapshotKeepLast = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_snapshotKeepLast>(global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_snapshotKeepLast.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_status>(); } },
                 { "statusUpdatedAt", n => { StatusUpdatedAt = n.GetDoubleValue(); } },
                 { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_tags>(global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_tags.CreateFromDiscriminatorValue); } },
@@ -171,6 +180,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("runtime", Runtime);
             writer.WriteDoubleValue("snapshotExpiration", SnapshotExpiration);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_snapshotKeepLast>("snapshotKeepLast", SnapshotKeepLast);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_status>("status", Status);
             writer.WriteDoubleValue("statusUpdatedAt", StatusUpdatedAt);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_tags>("tags", Tags);

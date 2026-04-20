@@ -1683,6 +1683,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         UserPrimaryEmailUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "user-token-created")]
+        #pragma warning disable CS1591
+        UserTokenCreated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "username")]
         #pragma warning disable CS1591
         Username,

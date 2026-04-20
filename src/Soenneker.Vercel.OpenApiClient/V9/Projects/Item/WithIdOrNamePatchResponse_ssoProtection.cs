@@ -14,6 +14,8 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The april2026SecurityIncidentMigrationAppliedFrom property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_ssoProtection_april2026SecurityIncidentMigrationAppliedFrom? April2026SecurityIncidentMigrationAppliedFrom { get; set; }
         /// <summary>The cve55182MigrationAppliedFrom property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_ssoProtection_cve55182MigrationAppliedFrom? Cve55182MigrationAppliedFrom { get; set; }
         /// <summary>The deploymentType property</summary>
@@ -43,6 +45,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "april2026SecurityIncidentMigrationAppliedFrom", n => { April2026SecurityIncidentMigrationAppliedFrom = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_ssoProtection_april2026SecurityIncidentMigrationAppliedFrom>(); } },
                 { "cve55182MigrationAppliedFrom", n => { Cve55182MigrationAppliedFrom = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_ssoProtection_cve55182MigrationAppliedFrom>(); } },
                 { "deploymentType", n => { DeploymentType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_ssoProtection_deploymentType>(); } },
             };
@@ -54,6 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_ssoProtection_april2026SecurityIncidentMigrationAppliedFrom>("april2026SecurityIncidentMigrationAppliedFrom", April2026SecurityIncidentMigrationAppliedFrom);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_ssoProtection_cve55182MigrationAppliedFrom>("cve55182MigrationAppliedFrom", Cve55182MigrationAppliedFrom);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_ssoProtection_deploymentType>("deploymentType", DeploymentType);
             writer.WriteAdditionalData(AdditionalData);

@@ -55,6 +55,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The ipAddress property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IpAddress { get; set; }
+#nullable restore
+#else
+        public string IpAddress { get; set; }
+#endif
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,6 +133,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "edgeConfigTokenId", n => { EdgeConfigTokenId = n.GetStringValue(); } },
                 { "gitBranch", n => { GitBranch = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
@@ -144,6 +153,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("edgeConfigTokenId", EdgeConfigTokenId);
             writer.WriteStringValue("gitBranch", GitBranch);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteStringValue("key", Key);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);

@@ -57,6 +57,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The ipAddress property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IpAddress { get; set; }
+#nullable restore
+#else
+        public string IpAddress { get; set; }
+#endif
         /// <summary>The name of the Shared Env Var.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -159,6 +167,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "deletedAt", n => { DeletedAt = n.GetDoubleValue(); } },
                 { "deletedBy", n => { DeletedBy = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "lastEditedByDisplayName", n => { LastEditedByDisplayName = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
@@ -187,6 +196,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("deletedAt", DeletedAt);
             writer.WriteStringValue("deletedBy", DeletedBy);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteStringValue("key", Key);
             writer.WriteStringValue("lastEditedByDisplayName", LastEditedByDisplayName);
             writer.WriteStringValue("ownerId", OwnerId);
