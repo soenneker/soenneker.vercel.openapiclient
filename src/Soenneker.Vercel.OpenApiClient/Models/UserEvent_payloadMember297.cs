@@ -15,22 +15,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The model property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Model { get; set; }
-#nullable restore
-#else
-        public string Model { get; set; }
-#endif
-        /// <summary>The useCase property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UseCase { get; set; }
-#nullable restore
-#else
-        public string UseCase { get; set; }
-#endif
+        /// <summary>The tier property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember297_tier? Tier { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember297"/> and sets the default values.
         /// </summary>
@@ -56,8 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "model", n => { Model = n.GetStringValue(); } },
-                { "useCase", n => { UseCase = n.GetStringValue(); } },
+                { "tier", n => { Tier = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember297_tier>(); } },
             };
         }
         /// <summary>
@@ -67,8 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("model", Model);
-            writer.WriteStringValue("useCase", UseCase);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember297_tier>("tier", Tier);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
 {
     /// <summary>
-    /// Present when deployment was created with VERCEL_MANUAL_PROVISIONING=true. The deployment stays in INITIALIZING until /continue is called.
+    /// Present when deployment was created with manual provisioning enabled, either explicitly or via the experimental BYOC git flow. The deployment stays in INITIALIZING until /continue is called.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeploymentsPostResponse_manualProvisioning : IAdditionalDataHolder, IParsable

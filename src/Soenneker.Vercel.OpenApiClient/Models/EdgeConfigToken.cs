@@ -41,6 +41,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Label { get; set; }
 #endif
+        /// <summary>A partially-masked representation of the token, safe to display in UIs. The format is the first 4 characters of the token followed by a fixed 8-character `*` mask (e.g. `550e8400-e29b-41d4-a716-446655440000` → `550e********`). The mask length is intentionally fixed (not proportional to the original token length) to avoid leaking the token length.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PartialToken { get; set; }
+#nullable restore
+#else
+        public string PartialToken { get; set; }
+#endif
         /// <summary>The token property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -78,6 +86,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
+                { "partialToken", n => { PartialToken = n.GetStringValue(); } },
                 { "token", n => { Token = n.GetStringValue(); } },
             };
         }
@@ -92,6 +101,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("edgeConfigId", EdgeConfigId);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("label", Label);
+            writer.WriteStringValue("partialToken", PartialToken);
             writer.WriteStringValue("token", Token);
             writer.WriteAdditionalData(AdditionalData);
         }

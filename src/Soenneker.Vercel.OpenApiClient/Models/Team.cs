@@ -15,6 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Timestamp (ms) after which API keys created at or before this time are considered invalid for this team.</summary>
+        public double? ApiKeysInvalidatedAt { get; set; }
+        /// <summary>Timestamp (ms) after which Vercel App tokens created at or before this time are considered invalid for this team.</summary>
+        public double? AppTokensInvalidatedAt { get; set; }
         /// <summary>The ID of the file used as avatar for this Team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,6 +117,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Timestamp (ms) after which integration tokens created at or before this time are considered invalid for this team.</summary>
+        public double? IntegrationTokensInvalidatedAt { get; set; }
         /// <summary>Code that can be used to join this Team. Only visible to Team owners.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,6 +159,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.Team_nsnbConfig NsnbConfig { get; set; }
 #endif
+        /// <summary>Timestamp (ms) after which personal access tokens created at or before this time are considered invalid for this team.</summary>
+        public double? PersonalAccessTokensInvalidatedAt { get; set; }
         /// <summary>Whether the team is a platform team.</summary>
         public bool? Platform { get; set; }
         /// <summary>The hostname that is current set as preview deployment suffix.</summary>
@@ -248,6 +256,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "apiKeysInvalidatedAt", n => { ApiKeysInvalidatedAt = n.GetDoubleValue(); } },
+                { "appTokensInvalidatedAt", n => { AppTokensInvalidatedAt = n.GetDoubleValue(); } },
                 { "avatar", n => { Avatar = n.GetStringValue(); } },
                 { "connect", n => { Connect = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_connect>(global::Soenneker.Vercel.OpenApiClient.Models.Team_connect.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
@@ -264,11 +274,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "hideIpAddresses", n => { HideIpAddresses = n.GetBoolValue(); } },
                 { "hideIpAddressesInLogDrains", n => { HideIpAddressesInLogDrains = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "integrationTokensInvalidatedAt", n => { IntegrationTokensInvalidatedAt = n.GetDoubleValue(); } },
                 { "inviteCode", n => { InviteCode = n.GetStringValue(); } },
                 { "ipBuckets", n => { IpBuckets = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.Team_ipBuckets>(global::Soenneker.Vercel.OpenApiClient.Models.Team_ipBuckets.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "membership", n => { Membership = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_membership>(global::Soenneker.Vercel.OpenApiClient.Models.Team_membership.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nsnbConfig", n => { NsnbConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_nsnbConfig>(global::Soenneker.Vercel.OpenApiClient.Models.Team_nsnbConfig.CreateFromDiscriminatorValue); } },
+                { "personalAccessTokensInvalidatedAt", n => { PersonalAccessTokensInvalidatedAt = n.GetDoubleValue(); } },
                 { "platform", n => { Platform = n.GetBoolValue(); } },
                 { "previewDeploymentSuffix", n => { PreviewDeploymentSuffix = n.GetStringValue(); } },
                 { "remoteCaching", n => { RemoteCaching = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_remoteCaching>(global::Soenneker.Vercel.OpenApiClient.Models.Team_remoteCaching.CreateFromDiscriminatorValue); } },
@@ -289,6 +301,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("apiKeysInvalidatedAt", ApiKeysInvalidatedAt);
+            writer.WriteDoubleValue("appTokensInvalidatedAt", AppTokensInvalidatedAt);
             writer.WriteStringValue("avatar", Avatar);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_connect>("connect", Connect);
             writer.WriteDoubleValue("createdAt", CreatedAt);
@@ -305,11 +319,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("hideIpAddresses", HideIpAddresses);
             writer.WriteBoolValue("hideIpAddressesInLogDrains", HideIpAddressesInLogDrains);
             writer.WriteStringValue("id", Id);
+            writer.WriteDoubleValue("integrationTokensInvalidatedAt", IntegrationTokensInvalidatedAt);
             writer.WriteStringValue("inviteCode", InviteCode);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.Team_ipBuckets>("ipBuckets", IpBuckets);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_membership>("membership", Membership);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_nsnbConfig>("nsnbConfig", NsnbConfig);
+            writer.WriteDoubleValue("personalAccessTokensInvalidatedAt", PersonalAccessTokensInvalidatedAt);
             writer.WriteBoolValue("platform", Platform);
             writer.WriteStringValue("previewDeploymentSuffix", PreviewDeploymentSuffix);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_remoteCaching>("remoteCaching", RemoteCaching);

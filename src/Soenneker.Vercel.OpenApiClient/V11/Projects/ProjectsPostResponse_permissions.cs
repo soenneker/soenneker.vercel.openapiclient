@@ -1671,6 +1671,22 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> SpaceRun { get; set; }
 #endif
+        /// <summary>The storeIsSensitive property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?>? StoreIsSensitive { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> StoreIsSensitive { get; set; }
+#endif
+        /// <summary>The storeTokenSetSensitive property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?>? StoreTokenSetSensitive { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> StoreTokenSetSensitive { get; set; }
+#endif
         /// <summary>The storeTransfer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1782,6 +1798,14 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
 #nullable restore
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> TeamOwnMembershipDisconnectSAML { get; set; }
+#endif
+        /// <summary>The teamTokenInvalidation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?>? TeamTokenInvalidation { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> TeamTokenInvalidation { get; set; }
 #endif
         /// <summary>The token property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -2175,6 +2199,8 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
                 { "skewProtection", n => { SkewProtection = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "space", n => { Space = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "spaceRun", n => { SpaceRun = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
+                { "storeIsSensitive", n => { StoreIsSensitive = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
+                { "storeTokenSetSensitive", n => { StoreTokenSetSensitive = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "storeTransfer", n => { StoreTransfer = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "supportCase", n => { SupportCase = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "supportCaseComment", n => { SupportCaseComment = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
@@ -2189,6 +2215,7 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
                 { "teamMicrofrontends", n => { TeamMicrofrontends = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "teamOwnMembership", n => { TeamOwnMembership = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "teamOwnMembershipDisconnectSAML", n => { TeamOwnMembershipDisconnectSAML = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
+                { "teamTokenInvalidation", n => { TeamTokenInvalidation = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "token", n => { Token = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "toolbarComment", n => { ToolbarComment = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "trustedIps", n => { TrustedIps = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
@@ -2425,6 +2452,8 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("skewProtection", SkewProtection);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("space", Space);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("spaceRun", SpaceRun);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("storeIsSensitive", StoreIsSensitive);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("storeTokenSetSensitive", StoreTokenSetSensitive);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("storeTransfer", StoreTransfer);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("supportCase", SupportCase);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("supportCaseComment", SupportCaseComment);
@@ -2439,6 +2468,7 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("teamMicrofrontends", TeamMicrofrontends);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("teamOwnMembership", TeamOwnMembership);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("teamOwnMembershipDisconnectSAML", TeamOwnMembershipDisconnectSAML);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("teamTokenInvalidation", TeamTokenInvalidation);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("token", Token);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("toolbarComment", ToolbarComment);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("trustedIps", TrustedIps);

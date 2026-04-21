@@ -14,6 +14,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The autoSensitive property</summary>
+        public bool? AutoSensitive { get; set; }
         /// <summary>The billable property</summary>
         public bool? Billable { get; set; }
         /// <summary>The connectedImportResource property</summary>
@@ -77,6 +79,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "autoSensitive", n => { AutoSensitive = n.GetBoolValue(); } },
                 { "billable", n => { Billable = n.GetBoolValue(); } },
                 { "connectedImportResource", n => { ConnectedImportResource = n.GetBoolValue(); } },
                 { "databaseUI", n => { DatabaseUI = n.GetBoolValue(); } },
@@ -102,6 +105,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("autoSensitive", AutoSensitive);
             writer.WriteBoolValue("billable", Billable);
             writer.WriteBoolValue("connectedImportResource", ConnectedImportResource);
             writer.WriteBoolValue("databaseUI", DatabaseUI);

@@ -1295,6 +1295,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ProjectTrustedIps,
         #pragma warning restore CS1591
+        [EnumMember(Value = "project-trusted-sources")]
+        #pragma warning disable CS1591
+        ProjectTrustedSources,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project-unpaused")]
         #pragma warning disable CS1591
         ProjectUnpaused,
@@ -1471,6 +1475,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         StorageAccessTokenSet,
         #pragma warning restore CS1591
+        [EnumMember(Value = "storage-set-sensitive")]
+        #pragma warning disable CS1591
+        StorageSetSensitive,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai-code-review")]
         #pragma warning disable CS1591
         AiCodeReview,
@@ -1634,6 +1642,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "team-ip-blocking-rules-removed")]
         #pragma warning disable CS1591
         TeamIpBlockingRulesRemoved,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "team-tokens-invalidated")]
+        #pragma warning disable CS1591
+        TeamTokensInvalidated,
         #pragma warning restore CS1591
         [EnumMember(Value = "audit-log-export-requested")]
         #pragma warning disable CS1591

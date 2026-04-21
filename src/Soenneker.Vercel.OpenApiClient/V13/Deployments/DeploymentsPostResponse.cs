@@ -307,7 +307,7 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_lambdas> Lambdas { get; set; }
 #endif
-        /// <summary>Present when deployment was created with VERCEL_MANUAL_PROVISIONING=true. The deployment stays in INITIALIZING until /continue is called.</summary>
+        /// <summary>Present when deployment was created with manual provisioning enabled, either explicitly or via the experimental BYOC git flow. The deployment stays in INITIALIZING until /continue is called.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse_manualProvisioning? ManualProvisioning { get; set; }

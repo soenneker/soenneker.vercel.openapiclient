@@ -12,6 +12,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.Tokens
     public partial class TokensDeleteRequestBody : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The ids property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Ids { get; set; }
+#nullable restore
+#else
+        public List<string> Ids { get; set; }
+#endif
         /// <summary>The tokens property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +46,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.Tokens
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tokens", n => { Tokens = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -48,6 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.Tokens
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("ids", Ids);
             writer.WriteCollectionOfPrimitiveValues<string>("tokens", Tokens);
         }
     }
