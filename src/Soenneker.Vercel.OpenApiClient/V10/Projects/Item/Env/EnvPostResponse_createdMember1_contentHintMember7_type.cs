@@ -8,9 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env
     public enum EnvPostResponse_createdMember1_contentHintMember7_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "postgres-url-non-pooling")]
+        [EnumMember(Value = "postgres-url")]
         #pragma warning disable CS1591
-        PostgresUrlNonPooling,
+        PostgresUrl,
         #pragma warning restore CS1591
     }
 }

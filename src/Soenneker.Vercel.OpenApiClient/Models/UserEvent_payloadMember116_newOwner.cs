@@ -200,6 +200,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public bool? IsDomainReseller { get; set; }
         /// <summary>Indicates that the underlying user entity is a managed user for the enterprise it&apos;s associated with The intention is that this field is only set to true for users that are provisioned by the enterprise which means that the domain associated with the user&apos;s email is the same domain associated with the team Allowing us to query information about the user&apos;s team at login time through the domain verification service</summary>
         public bool? IsEnterpriseManaged { get; set; }
+        /// <summary>Whether MFA is enforced for this user. Set to true when the user has a</summary>
+        public bool? IsMFAEnforced { get; set; }
         /// <summary>The isZeitPub property</summary>
         public bool? IsZeitPub { get; set; }
         /// <summary>On a personal account, points to the managed account created during EMU account separation. Set by the split utility when an existing team member is converted into a separate managed account.</summary>
@@ -511,6 +513,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "importFlowGitProvider", n => { ImportFlowGitProvider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember116_newOwner_importFlowGitProvider>(); } },
                 { "isDomainReseller", n => { IsDomainReseller = n.GetBoolValue(); } },
                 { "isEnterpriseManaged", n => { IsEnterpriseManaged = n.GetBoolValue(); } },
+                { "isMFAEnforced", n => { IsMFAEnforced = n.GetBoolValue(); } },
                 { "isZeitPub", n => { IsZeitPub = n.GetBoolValue(); } },
                 { "linkedManagedAccountId", n => { LinkedManagedAccountId = n.GetStringValue(); } },
                 { "linkedPersonalAccountId", n => { LinkedPersonalAccountId = n.GetStringValue(); } },
@@ -597,6 +600,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember116_newOwner_importFlowGitProvider>("importFlowGitProvider", ImportFlowGitProvider);
             writer.WriteBoolValue("isDomainReseller", IsDomainReseller);
             writer.WriteBoolValue("isEnterpriseManaged", IsEnterpriseManaged);
+            writer.WriteBoolValue("isMFAEnforced", IsMFAEnforced);
             writer.WriteBoolValue("isZeitPub", IsZeitPub);
             writer.WriteStringValue("linkedManagedAccountId", LinkedManagedAccountId);
             writer.WriteStringValue("linkedPersonalAccountId", LinkedPersonalAccountId);

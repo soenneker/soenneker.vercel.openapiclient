@@ -8,9 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item
     public enum EnvDeleteResponseMember2_contentHintMember14_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "integration-store-secret")]
+        [EnumMember(Value = "postgres-url-no-ssl")]
         #pragma warning disable CS1591
-        IntegrationStoreSecret,
+        PostgresUrlNoSsl,
         #pragma warning restore CS1591
     }
 }

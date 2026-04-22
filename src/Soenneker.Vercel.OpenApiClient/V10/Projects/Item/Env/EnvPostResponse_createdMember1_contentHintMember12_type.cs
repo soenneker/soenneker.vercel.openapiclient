@@ -8,9 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env
     public enum EnvPostResponse_createdMember1_contentHintMember12_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "postgres-database")]
+        [EnumMember(Value = "postgres-password")]
         #pragma warning disable CS1591
-        PostgresDatabase,
+        PostgresPassword,
         #pragma warning restore CS1591
     }
 }

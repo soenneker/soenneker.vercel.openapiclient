@@ -14,13 +14,37 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The projectId property</summary>
+        /// <summary>The integrationConfigurationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? IntegrationConfigurationId { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string IntegrationConfigurationId { get; set; }
+#endif
+        /// <summary>The integrationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IntegrationId { get; set; }
+#nullable restore
+#else
+        public string IntegrationId { get; set; }
+#endif
+        /// <summary>The integrationProductId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IntegrationProductId { get; set; }
+#nullable restore
+#else
+        public string IntegrationProductId { get; set; }
+#endif
+        /// <summary>The storeId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StoreId { get; set; }
+#nullable restore
+#else
+        public string StoreId { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvPatchResponse_contentHintMember15_type? Type { get; set; }
@@ -49,7 +73,10 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "integrationConfigurationId", n => { IntegrationConfigurationId = n.GetStringValue(); } },
+                { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
+                { "integrationProductId", n => { IntegrationProductId = n.GetStringValue(); } },
+                { "storeId", n => { StoreId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvPatchResponse_contentHintMember15_type>(); } },
             };
         }
@@ -60,7 +87,10 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("integrationConfigurationId", IntegrationConfigurationId);
+            writer.WriteStringValue("integrationId", IntegrationId);
+            writer.WriteStringValue("integrationProductId", IntegrationProductId);
+            writer.WriteStringValue("storeId", StoreId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvPatchResponse_contentHintMember15_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
