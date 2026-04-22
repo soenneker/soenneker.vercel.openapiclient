@@ -1,16 +1,15 @@
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Vercel.OpenApiClient.Tests;
 
-[Collection("Collection")]
-public sealed class VercelOpenApiClientTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public sealed class VercelOpenApiClientTests : HostedUnitTest
 {
-    public VercelOpenApiClientTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public VercelOpenApiClientTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
