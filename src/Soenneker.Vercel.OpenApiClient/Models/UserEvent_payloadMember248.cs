@@ -13,16 +13,34 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEvent_payloadMember248 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>The access property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember248_access? Access { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The slug property</summary>
+        /// <summary>The computeUnitsMax property</summary>
+        public double? ComputeUnitsMax { get; set; }
+        /// <summary>The computeUnitsMin property</summary>
+        public double? ComputeUnitsMin { get; set; }
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Slug { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Slug { get; set; }
+        public string Id { get; set; }
 #endif
+        /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>The suspendTimeoutSeconds property</summary>
+        public double? SuspendTimeoutSeconds { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember248_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember248"/> and sets the default values.
         /// </summary>
@@ -48,7 +66,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "slug", n => { Slug = n.GetStringValue(); } },
+                { "access", n => { Access = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember248_access>(); } },
+                { "computeUnitsMax", n => { ComputeUnitsMax = n.GetDoubleValue(); } },
+                { "computeUnitsMin", n => { ComputeUnitsMin = n.GetDoubleValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "suspendTimeoutSeconds", n => { SuspendTimeoutSeconds = n.GetDoubleValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember248_type>(); } },
             };
         }
         /// <summary>
@@ -58,7 +82,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("slug", Slug);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember248_access>("access", Access);
+            writer.WriteDoubleValue("computeUnitsMax", ComputeUnitsMax);
+            writer.WriteDoubleValue("computeUnitsMin", ComputeUnitsMin);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("name", Name);
+            writer.WriteDoubleValue("suspendTimeoutSeconds", SuspendTimeoutSeconds);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember248_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

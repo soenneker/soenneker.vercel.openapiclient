@@ -23,6 +23,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The publicId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PublicId { get; set; }
+#nullable restore
+#else
+        public string PublicId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember273"/> and sets the default values.
         /// </summary>
@@ -49,6 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "publicId", n => { PublicId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -59,6 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("publicId", PublicId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

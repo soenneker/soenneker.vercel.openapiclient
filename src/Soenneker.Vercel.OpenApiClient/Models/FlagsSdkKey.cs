@@ -66,6 +66,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Label { get; set; }
 #endif
+        /// <summary>Partially-masked representation of the SDK key value, safe to display in UIs. The value is the `vf_&lt;type&gt;_` prefix followed by the first 3 characters of the secret portion and a fixed 8-character `*` mask (e.g. `vf_server_abc********`).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PartialKeyValue { get; set; }
+#nullable restore
+#else
+        public string PartialKeyValue { get; set; }
+#endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -119,6 +127,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "hashKey", n => { HashKey = n.GetStringValue(); } },
                 { "keyValue", n => { KeyValue = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
+                { "partialKeyValue", n => { PartialKeyValue = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "tokenValue", n => { TokenValue = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagsSdkKey_type>(); } },
@@ -140,6 +149,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("hashKey", HashKey);
             writer.WriteStringValue("keyValue", KeyValue);
             writer.WriteStringValue("label", Label);
+            writer.WriteStringValue("partialKeyValue", PartialKeyValue);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("tokenValue", TokenValue);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagsSdkKey_type>("type", Type);

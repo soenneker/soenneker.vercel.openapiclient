@@ -15,8 +15,54 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enforced property</summary>
-        public bool? Enforced { get; set; }
+        /// <summary>The entitlements property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Entitlements { get; set; }
+#nullable restore
+#else
+        public List<string> Entitlements { get; set; }
+#endif
+        /// <summary>The origin property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Origin { get; set; }
+#nullable restore
+#else
+        public string Origin { get; set; }
+#endif
+        /// <summary>The role property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Role { get; set; }
+#nullable restore
+#else
+        public string Role { get; set; }
+#endif
+        /// <summary>The teamPermissions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? TeamPermissions { get; set; }
+#nullable restore
+#else
+        public List<string> TeamPermissions { get; set; }
+#endif
+        /// <summary>The teamRoles property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? TeamRoles { get; set; }
+#nullable restore
+#else
+        public List<string> TeamRoles { get; set; }
+#endif
+        /// <summary>The uid property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Uid { get; set; }
+#nullable restore
+#else
+        public string Uid { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember268"/> and sets the default values.
         /// </summary>
@@ -42,7 +88,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enforced", n => { Enforced = n.GetBoolValue(); } },
+                { "entitlements", n => { Entitlements = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "origin", n => { Origin = n.GetStringValue(); } },
+                { "role", n => { Role = n.GetStringValue(); } },
+                { "teamPermissions", n => { TeamPermissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "teamRoles", n => { TeamRoles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "uid", n => { Uid = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -52,7 +103,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("enforced", Enforced);
+            writer.WriteCollectionOfPrimitiveValues<string>("entitlements", Entitlements);
+            writer.WriteStringValue("origin", Origin);
+            writer.WriteStringValue("role", Role);
+            writer.WriteCollectionOfPrimitiveValues<string>("teamPermissions", TeamPermissions);
+            writer.WriteCollectionOfPrimitiveValues<string>("teamRoles", TeamRoles);
+            writer.WriteStringValue("uid", Uid);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

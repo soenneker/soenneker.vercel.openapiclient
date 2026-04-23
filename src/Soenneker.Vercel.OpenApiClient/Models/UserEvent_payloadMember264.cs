@@ -15,29 +15,53 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The entitlement property</summary>
+        /// <summary>The bitbucketUsername property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Entitlement { get; set; }
+        public string? BitbucketUsername { get; set; }
 #nullable restore
 #else
-        public string Entitlement { get; set; }
+        public string BitbucketUsername { get; set; }
 #endif
-        /// <summary>The previousCanceledAt property</summary>
+        /// <summary>The githubUsername property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousCanceledAt { get; set; }
+        public string? GithubUsername { get; set; }
 #nullable restore
 #else
-        public string PreviousCanceledAt { get; set; }
+        public string GithubUsername { get; set; }
 #endif
-        /// <summary>The user property</summary>
+        /// <summary>The gitlabUsername property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember264_user? User { get; set; }
+        public string? GitlabUsername { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember264_user User { get; set; }
+        public string GitlabUsername { get; set; }
+#endif
+        /// <summary>The gitUsername property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GitUsername { get; set; }
+#nullable restore
+#else
+        public string GitUsername { get; set; }
+#endif
+        /// <summary>The teamName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TeamName { get; set; }
+#nullable restore
+#else
+        public string TeamName { get; set; }
+#endif
+        /// <summary>The username property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Username { get; set; }
+#nullable restore
+#else
+        public string Username { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember264"/> and sets the default values.
@@ -64,9 +88,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "entitlement", n => { Entitlement = n.GetStringValue(); } },
-                { "previousCanceledAt", n => { PreviousCanceledAt = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember264_user>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember264_user.CreateFromDiscriminatorValue); } },
+                { "bitbucketUsername", n => { BitbucketUsername = n.GetStringValue(); } },
+                { "gitUsername", n => { GitUsername = n.GetStringValue(); } },
+                { "githubUsername", n => { GithubUsername = n.GetStringValue(); } },
+                { "gitlabUsername", n => { GitlabUsername = n.GetStringValue(); } },
+                { "teamName", n => { TeamName = n.GetStringValue(); } },
+                { "username", n => { Username = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +103,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("entitlement", Entitlement);
-            writer.WriteStringValue("previousCanceledAt", PreviousCanceledAt);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember264_user>("user", User);
+            writer.WriteStringValue("bitbucketUsername", BitbucketUsername);
+            writer.WriteStringValue("githubUsername", GithubUsername);
+            writer.WriteStringValue("gitlabUsername", GitlabUsername);
+            writer.WriteStringValue("gitUsername", GitUsername);
+            writer.WriteStringValue("teamName", TeamName);
+            writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

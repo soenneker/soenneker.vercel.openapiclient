@@ -28,7 +28,7 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
         public bool? DisableRepositoryDispatchEvents { get; set; }
         /// <summary>Whether Vercel should post commit statuses for this project. When omitted, commit statuses remain enabled.</summary>
         public bool? GitCommitStatus { get; set; }
-        /// <summary>Whether the project requires commits to be signed before deployments will be created.</summary>
+        /// <summary>Whether the project requires commits to be signed &amp; verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`.</summary>
         public bool? RequireVerifiedCommits { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_gitProviderOptions"/> and sets the default values.

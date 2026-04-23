@@ -720,6 +720,26 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Events.Types
         #pragma warning disable CS1591
         FlagsSettings,
         #pragma warning restore CS1591
+        [EnumMember(Value = "flag-created")]
+        #pragma warning disable CS1591
+        FlagCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "flag-updated")]
+        #pragma warning disable CS1591
+        FlagUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "flag-deleted")]
+        #pragma warning disable CS1591
+        FlagDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "flag-archived")]
+        #pragma warning disable CS1591
+        FlagArchived,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "flag-unarchived")]
+        #pragma warning disable CS1591
+        FlagUnarchived,
+        #pragma warning restore CS1591
         [EnumMember(Value = "flags-explorer-subscription")]
         #pragma warning disable CS1591
         FlagsExplorerSubscription,
@@ -727,6 +747,18 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Events.Types
         [EnumMember(Value = "flags-sdk-key")]
         #pragma warning disable CS1591
         FlagsSdkKey,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "flags-sdk-key-added")]
+        #pragma warning disable CS1591
+        FlagsSdkKeyAdded,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "flags-sdk-key-deleted")]
+        #pragma warning disable CS1591
+        FlagsSdkKeyDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "flags-sdk-key-read")]
+        #pragma warning disable CS1591
+        FlagsSdkKeyRead,
         #pragma warning restore CS1591
         [EnumMember(Value = "instant-rollback-created")]
         #pragma warning disable CS1591
@@ -863,6 +895,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Events.Types
         [EnumMember(Value = "page-integrity-resource-approved")]
         #pragma warning disable CS1591
         PageIntegrityResourceApproved,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "page-integrity-resource-deleted")]
+        #pragma warning disable CS1591
+        PageIntegrityResourceDeleted,
         #pragma warning restore CS1591
         [EnumMember(Value = "page-integrity-resource-rejected")]
         #pragma warning disable CS1591
@@ -1099,6 +1135,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Events.Types
         [EnumMember(Value = "project-git-require-verified-commits-toggled")]
         #pragma warning disable CS1591
         ProjectGitRequireVerifiedCommitsToggled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "team-git-require-verified-commits-toggled")]
+        #pragma warning disable CS1591
+        TeamGitRequireVerifiedCommitsToggled,
         #pragma warning restore CS1591
         [EnumMember(Value = "project-git-commit-status-toggled")]
         #pragma warning disable CS1591
@@ -1591,6 +1631,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Events.Types
         [EnumMember(Value = "team-mfa-enforcement-updated")]
         #pragma warning disable CS1591
         TeamMfaEnforcementUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "team-invite-link-created")]
+        #pragma warning disable CS1591
+        TeamInviteLinkCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "team-invite-link-deleted")]
+        #pragma warning disable CS1591
+        TeamInviteLinkDeleted,
         #pragma warning restore CS1591
         [EnumMember(Value = "concurrent-builds-update")]
         #pragma warning disable CS1591

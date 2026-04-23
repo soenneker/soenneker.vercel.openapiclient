@@ -15,10 +15,58 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enabled property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember256_enabled? Enabled { get; set; }
-        /// <summary>The environment property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember256_environment? Environment { get; set; }
+        /// <summary>The by property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? By { get; set; }
+#nullable restore
+#else
+        public string By { get; set; }
+#endif
+        /// <summary>The byUid property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ByUid { get; set; }
+#nullable restore
+#else
+        public string ByUid { get; set; }
+#endif
+        /// <summary>The reasons property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember256_reasons>? Reasons { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember256_reasons> Reasons { get; set; }
+#endif
+        /// <summary>The removedMemberCount property</summary>
+        public double? RemovedMemberCount { get; set; }
+        /// <summary>The removedUsers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember256_removedUsers? RemovedUsers { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember256_removedUsers RemovedUsers { get; set; }
+#endif
+        /// <summary>The slug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Slug { get; set; }
+#nullable restore
+#else
+        public string Slug { get; set; }
+#endif
+        /// <summary>The teamId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TeamId { get; set; }
+#nullable restore
+#else
+        public string TeamId { get; set; }
+#endif
+        /// <summary>The timestamp property</summary>
+        public double? Timestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember256"/> and sets the default values.
         /// </summary>
@@ -44,8 +92,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enabled", n => { Enabled = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember256_enabled>(); } },
-                { "environment", n => { Environment = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember256_environment>(); } },
+                { "by", n => { By = n.GetStringValue(); } },
+                { "byUid", n => { ByUid = n.GetStringValue(); } },
+                { "reasons", n => { Reasons = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember256_reasons>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember256_reasons.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "removedMemberCount", n => { RemovedMemberCount = n.GetDoubleValue(); } },
+                { "removedUsers", n => { RemovedUsers = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember256_removedUsers>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember256_removedUsers.CreateFromDiscriminatorValue); } },
+                { "slug", n => { Slug = n.GetStringValue(); } },
+                { "teamId", n => { TeamId = n.GetStringValue(); } },
+                { "timestamp", n => { Timestamp = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -55,8 +109,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember256_enabled>("enabled", Enabled);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember256_environment>("environment", Environment);
+            writer.WriteStringValue("by", By);
+            writer.WriteStringValue("byUid", ByUid);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember256_reasons>("reasons", Reasons);
+            writer.WriteDoubleValue("removedMemberCount", RemovedMemberCount);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember256_removedUsers>("removedUsers", RemovedUsers);
+            writer.WriteStringValue("slug", Slug);
+            writer.WriteStringValue("teamId", TeamId);
+            writer.WriteDoubleValue("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

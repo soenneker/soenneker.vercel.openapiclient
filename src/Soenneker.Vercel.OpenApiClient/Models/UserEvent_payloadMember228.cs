@@ -15,30 +15,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The newName property</summary>
+        /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewName { get; set; }
+        public string? Email { get; set; }
 #nullable restore
 #else
-        public string NewName { get; set; }
+        public string Email { get; set; }
 #endif
-        /// <summary>The oldName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OldName { get; set; }
-#nullable restore
-#else
-        public string OldName { get; set; }
-#endif
-        /// <summary>The uid property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Uid { get; set; }
-#nullable restore
-#else
-        public string Uid { get; set; }
-#endif
+        /// <summary>The verified property</summary>
+        public bool? Verified { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember228"/> and sets the default values.
         /// </summary>
@@ -64,9 +50,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "newName", n => { NewName = n.GetStringValue(); } },
-                { "oldName", n => { OldName = n.GetStringValue(); } },
-                { "uid", n => { Uid = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "verified", n => { Verified = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +61,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("newName", NewName);
-            writer.WriteStringValue("oldName", OldName);
-            writer.WriteStringValue("uid", Uid);
+            writer.WriteStringValue("email", Email);
+            writer.WriteBoolValue("verified", Verified);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

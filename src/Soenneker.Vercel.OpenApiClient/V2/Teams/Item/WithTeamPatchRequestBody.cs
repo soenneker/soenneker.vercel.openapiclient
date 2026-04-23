@@ -114,6 +114,8 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item
 #else
         public global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_remoteCaching RemoteCaching { get; set; }
 #endif
+        /// <summary>When enabled, all projects in the team require commits to be signed and verified by the git provider before deployments will be created.</summary>
+        public bool? RequireVerifiedCommits { get; set; }
         /// <summary>Resource configuration for the team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -195,6 +197,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item
                 { "previewDeploymentSuffix", n => { PreviewDeploymentSuffix = n.GetStringValue(); } },
                 { "regenerateInviteCode", n => { RegenerateInviteCode = n.GetBoolValue(); } },
                 { "remoteCaching", n => { RemoteCaching = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_remoteCaching>(global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_remoteCaching.CreateFromDiscriminatorValue); } },
+                { "requireVerifiedCommits", n => { RequireVerifiedCommits = n.GetBoolValue(); } },
                 { "resourceConfig", n => { ResourceConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_resourceConfig>(global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_resourceConfig.CreateFromDiscriminatorValue); } },
                 { "saml", n => { Saml = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_saml>(global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_saml.CreateFromDiscriminatorValue); } },
                 { "sensitiveEnvironmentVariablePolicy", n => { SensitiveEnvironmentVariablePolicy = n.GetStringValue(); } },
@@ -225,6 +228,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item
             writer.WriteStringValue("previewDeploymentSuffix", PreviewDeploymentSuffix);
             writer.WriteBoolValue("regenerateInviteCode", RegenerateInviteCode);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_remoteCaching>("remoteCaching", RemoteCaching);
+            writer.WriteBoolValue("requireVerifiedCommits", RequireVerifiedCommits);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_resourceConfig>("resourceConfig", ResourceConfig);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_saml>("saml", Saml);
             writer.WriteStringValue("sensitiveEnvironmentVariablePolicy", SensitiveEnvironmentVariablePolicy);

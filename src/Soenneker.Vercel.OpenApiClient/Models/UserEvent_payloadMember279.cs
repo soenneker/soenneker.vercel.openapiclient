@@ -15,22 +15,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The domain property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Domain { get; set; }
-#nullable restore
-#else
-        public string Domain { get; set; }
-#endif
-        /// <summary>The ips property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Ips { get; set; }
-#nullable restore
-#else
-        public List<string> Ips { get; set; }
-#endif
+        /// <summary>The consent property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember279_consent? Consent { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember279"/> and sets the default values.
         /// </summary>
@@ -56,8 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "domain", n => { Domain = n.GetStringValue(); } },
-                { "ips", n => { Ips = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "consent", n => { Consent = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember279_consent>(); } },
             };
         }
         /// <summary>
@@ -67,8 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("domain", Domain);
-            writer.WriteCollectionOfPrimitiveValues<string>("ips", Ips);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember279_consent>("consent", Consent);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

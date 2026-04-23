@@ -15,16 +15,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The instances property</summary>
-        public double? Instances { get; set; }
-        /// <summary>The url property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string ProjectId { get; set; }
 #endif
+        /// <summary>The reasonCode property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember224_reasonCode? ReasonCode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember224"/> and sets the default values.
         /// </summary>
@@ -50,8 +50,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "instances", n => { Instances = n.GetDoubleValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "reasonCode", n => { ReasonCode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember224_reasonCode>(); } },
             };
         }
         /// <summary>
@@ -61,8 +61,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("instances", Instances);
-            writer.WriteStringValue("url", Url);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember224_reasonCode>("reasonCode", ReasonCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

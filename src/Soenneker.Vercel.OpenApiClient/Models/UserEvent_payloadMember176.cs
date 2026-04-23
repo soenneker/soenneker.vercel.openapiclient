@@ -15,23 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The gitProvider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember176_gitProvider? GitProvider { get; set; }
-        /// <summary>The gitRepoId property</summary>
+        /// <summary>The newProjectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitRepoId { get; set; }
+        public string? NewProjectName { get; set; }
 #nullable restore
 #else
-        public string GitRepoId { get; set; }
-#endif
-        /// <summary>The gitRepositoryName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GitRepositoryName { get; set; }
-#nullable restore
-#else
-        public string GitRepositoryName { get; set; }
+        public string NewProjectName { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,9 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "gitProvider", n => { GitProvider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember176_gitProvider>(); } },
-                { "gitRepoId", n => { GitRepoId = n.GetStringValue(); } },
-                { "gitRepositoryName", n => { GitRepositoryName = n.GetStringValue(); } },
+                { "newProjectName", n => { NewProjectName = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
@@ -88,9 +76,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember176_gitProvider>("gitProvider", GitProvider);
-            writer.WriteStringValue("gitRepoId", GitRepoId);
-            writer.WriteStringValue("gitRepositoryName", GitRepositoryName);
+            writer.WriteStringValue("newProjectName", NewProjectName);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteAdditionalData(AdditionalData);

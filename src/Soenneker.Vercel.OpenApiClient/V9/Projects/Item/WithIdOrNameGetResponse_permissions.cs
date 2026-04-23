@@ -1759,6 +1759,14 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> TeamInviteCode { get; set; }
 #endif
+        /// <summary>The teamInviteLink property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?>? TeamInviteLink { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> TeamInviteLink { get; set; }
+#endif
         /// <summary>The teamJoin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2210,6 +2218,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
                 { "teamGitExclusivity", n => { TeamGitExclusivity = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "teamInvite", n => { TeamInvite = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "teamInviteCode", n => { TeamInviteCode = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
+                { "teamInviteLink", n => { TeamInviteLink = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "teamJoin", n => { TeamJoin = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "teamMemberMfaStatus", n => { TeamMemberMfaStatus = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "teamMicrofrontends", n => { TeamMicrofrontends = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
@@ -2463,6 +2472,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("teamGitExclusivity", TeamGitExclusivity);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("teamInvite", TeamInvite);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("teamInviteCode", TeamInviteCode);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("teamInviteLink", TeamInviteLink);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("teamJoin", TeamJoin);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("teamMemberMfaStatus", TeamMemberMfaStatus);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("teamMicrofrontends", TeamMicrofrontends);

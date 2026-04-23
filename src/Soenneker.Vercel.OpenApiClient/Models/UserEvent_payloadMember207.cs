@@ -13,24 +13,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEvent_payloadMember207 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The action property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Action { get; set; }
-#nullable restore
-#else
-        public string Action { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The projectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
-#endif
+        /// <summary>The consent property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember207_consent? Consent { get; set; }
         /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,14 +24,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string ProjectName { get; set; }
-#endif
-        /// <summary>The targetDeploymentId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TargetDeploymentId { get; set; }
-#nullable restore
-#else
-        public string TargetDeploymentId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember207"/> and sets the default values.
@@ -72,10 +50,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "consent", n => { Consent = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember207_consent>(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "targetDeploymentId", n => { TargetDeploymentId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,10 +61,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("action", Action);
-            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember207_consent>("consent", Consent);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("targetDeploymentId", TargetDeploymentId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
