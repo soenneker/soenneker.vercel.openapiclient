@@ -8,9 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
     public enum ProjectsGetResponseMember2_projects_env_contentHintMember13_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "postgres-url-no-ssl")]
+        [EnumMember(Value = "postgres-database")]
         #pragma warning disable CS1591
-        PostgresUrlNoSsl,
+        PostgresDatabase,
         #pragma warning restore CS1591
     }
 }

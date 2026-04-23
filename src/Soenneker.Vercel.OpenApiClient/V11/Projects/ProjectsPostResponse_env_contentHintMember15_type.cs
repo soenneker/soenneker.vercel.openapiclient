@@ -8,9 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
     public enum ProjectsPostResponse_env_contentHintMember15_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "flags-connection-string")]
+        [EnumMember(Value = "integration-store-secret")]
         #pragma warning disable CS1591
-        FlagsConnectionString,
+        IntegrationStoreSecret,
         #pragma warning restore CS1591
     }
 }

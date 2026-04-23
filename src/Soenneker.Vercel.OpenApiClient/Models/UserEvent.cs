@@ -6275,7 +6275,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_principalMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_principalMember2"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_principalMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_principalMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_principalMember3"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserEvent_principal : IComposedTypeWrapper, IParsable
@@ -6296,6 +6296,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
             public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_principalMember2 UserEventPrincipalMember2 { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_principalMember3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_principalMember3? UserEventPrincipalMember3 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_principalMember3 UserEventPrincipalMember3 { get; set; }
+#endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
@@ -6314,6 +6322,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 {
                     result.UserEventPrincipalMember2 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_principalMember2();
                 }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UserEventPrincipalMember3 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_principalMember3();
+                }
                 return result;
             }
             /// <summary>
@@ -6329,6 +6341,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 else if(UserEventPrincipalMember2 != null)
                 {
                     return UserEventPrincipalMember2.GetFieldDeserializers();
+                }
+                else if(UserEventPrincipalMember3 != null)
+                {
+                    return UserEventPrincipalMember3.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -6347,10 +6363,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 {
                     writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_principalMember2>(null, UserEventPrincipalMember2);
                 }
+                else if(UserEventPrincipalMember3 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_principalMember3>(null, UserEventPrincipalMember3);
+                }
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember2"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember3"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserEvent_via : IComposedTypeWrapper, IParsable
@@ -6371,6 +6391,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
             public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember2 UserEventViaMember2 { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember3? UserEventViaMember3 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember3 UserEventViaMember3 { get; set; }
+#endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
@@ -6389,6 +6417,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 {
                     result.UserEventViaMember2 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember2();
                 }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UserEventViaMember3 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember3();
+                }
                 return result;
             }
             /// <summary>
@@ -6404,6 +6436,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 else if(UserEventViaMember2 != null)
                 {
                     return UserEventViaMember2.GetFieldDeserializers();
+                }
+                else if(UserEventViaMember3 != null)
+                {
+                    return UserEventViaMember3.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -6421,6 +6457,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 else if(UserEventViaMember2 != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember2>(null, UserEventViaMember2);
+                }
+                else if(UserEventViaMember3 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember3>(null, UserEventViaMember3);
                 }
             }
         }

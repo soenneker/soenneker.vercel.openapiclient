@@ -8,9 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item
     public enum EnvDeleteResponseMember2_contentHintMember10_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "postgres-host")]
+        [EnumMember(Value = "postgres-user")]
         #pragma warning disable CS1591
-        PostgresHost,
+        PostgresUser,
         #pragma warning restore CS1591
     }
 }

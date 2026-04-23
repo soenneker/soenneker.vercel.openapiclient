@@ -8,9 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
     public enum ProjectsGetResponseMember2_projects_env_contentHintMember8_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "postgres-prisma-url")]
+        [EnumMember(Value = "postgres-url-non-pooling")]
         #pragma warning disable CS1591
-        PostgresPrismaUrl,
+        PostgresUrlNonPooling,
         #pragma warning restore CS1591
     }
 }

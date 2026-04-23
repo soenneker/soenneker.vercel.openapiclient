@@ -8,9 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects
     public enum ProjectsGetResponse_projects_env_contentHintMember11_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "postgres-password")]
+        [EnumMember(Value = "postgres-host")]
         #pragma warning disable CS1591
-        PostgresPassword,
+        PostgresHost,
         #pragma warning restore CS1591
     }
 }
