@@ -667,6 +667,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         EnvVariableReadV0EnvPull,
         #pragma warning restore CS1591
+        [EnumMember(Value = "env-variable-rotated")]
+        #pragma warning disable CS1591
+        EnvVariableRotated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "shared-env-variable-create")]
         #pragma warning disable CS1591
         SharedEnvVariableCreate,
@@ -1487,6 +1491,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         StorageUpdateProjectConnection,
         #pragma warning restore CS1591
+        [EnumMember(Value = "storage-upgrade-project-connection-to-oidc")]
+        #pragma warning disable CS1591
+        StorageUpgradeProjectConnectionToOidc,
+        #pragma warning restore CS1591
         [EnumMember(Value = "storage-delete")]
         #pragma warning disable CS1591
         StorageDelete,
@@ -1515,9 +1523,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         StorageAccessTokenSet,
         #pragma warning restore CS1591
-        [EnumMember(Value = "storage-set-sensitive")]
+        [EnumMember(Value = "storage-set-locked")]
         #pragma warning disable CS1591
-        StorageSetSensitive,
+        StorageSetLocked,
         #pragma warning restore CS1591
         [EnumMember(Value = "ai-code-review")]
         #pragma warning disable CS1591

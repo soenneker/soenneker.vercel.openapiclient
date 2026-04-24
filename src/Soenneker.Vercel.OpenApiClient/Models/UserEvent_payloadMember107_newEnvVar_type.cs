@@ -7,10 +7,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UserEvent_payloadMember107_newEnvVar_type
     {
-        [EnumMember(Value = "sensitive")]
-        #pragma warning disable CS1591
-        Sensitive,
-        #pragma warning restore CS1591
         [EnumMember(Value = "system")]
         #pragma warning disable CS1591
         System,
@@ -22,6 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "plain")]
         #pragma warning disable CS1591
         Plain,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sensitive")]
+        #pragma warning disable CS1591
+        Sensitive,
         #pragma warning restore CS1591
     }
 }

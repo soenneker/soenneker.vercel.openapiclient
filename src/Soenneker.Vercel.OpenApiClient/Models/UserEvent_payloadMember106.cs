@@ -37,6 +37,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string CreatedBy { get; set; }
 #endif
+        /// <summary>The custom environment IDs that this Shared Env Var is scoped to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? CustomEnvironmentIds { get; set; }
+#nullable restore
+#else
+        public List<string> CustomEnvironmentIds { get; set; }
+#endif
         /// <summary>whether or not this env variable is decrypted</summary>
         public bool? Decrypted { get; set; }
         /// <summary>Timestamp for when the Shared Env Var was (soft) deleted.</summary>
@@ -163,6 +171,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
+                { "customEnvironmentIds", n => { CustomEnvironmentIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "decrypted", n => { Decrypted = n.GetBoolValue(); } },
                 { "deletedAt", n => { DeletedAt = n.GetDoubleValue(); } },
                 { "deletedBy", n => { DeletedBy = n.GetStringValue(); } },
@@ -192,6 +201,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteStringValue("createdBy", CreatedBy);
+            writer.WriteCollectionOfPrimitiveValues<string>("customEnvironmentIds", CustomEnvironmentIds);
             writer.WriteBoolValue("decrypted", Decrypted);
             writer.WriteDoubleValue("deletedAt", DeletedAt);
             writer.WriteStringValue("deletedBy", DeletedBy);

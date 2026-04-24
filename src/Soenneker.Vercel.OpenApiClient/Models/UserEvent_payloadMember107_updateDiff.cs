@@ -32,6 +32,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Key { get; set; }
 #endif
+        /// <summary>The newCustomEnvironmentIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? NewCustomEnvironmentIds { get; set; }
+#nullable restore
+#else
+        public List<string> NewCustomEnvironmentIds { get; set; }
+#endif
         /// <summary>The newKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +71,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string NewType { get; set; }
+#endif
+        /// <summary>The oldCustomEnvironmentIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? OldCustomEnvironmentIds { get; set; }
+#nullable restore
+#else
+        public List<string> OldCustomEnvironmentIds { get; set; }
 #endif
         /// <summary>The oldProjects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,10 +132,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "changedValue", n => { ChangedValue = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
+                { "newCustomEnvironmentIds", n => { NewCustomEnvironmentIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "newKey", n => { NewKey = n.GetStringValue(); } },
                 { "newProjects", n => { NewProjects = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember107_updateDiff_newProjects>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember107_updateDiff_newProjects.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "newTarget", n => { NewTarget = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember107_updateDiff_newTarget>()?.AsList(); } },
                 { "newType", n => { NewType = n.GetStringValue(); } },
+                { "oldCustomEnvironmentIds", n => { OldCustomEnvironmentIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "oldProjects", n => { OldProjects = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember107_updateDiff_oldProjects>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember107_updateDiff_oldProjects.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "oldTarget", n => { OldTarget = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember107_updateDiff_oldTarget>()?.AsList(); } },
                 { "oldType", n => { OldType = n.GetStringValue(); } },
@@ -135,10 +153,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("changedValue", ChangedValue);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("key", Key);
+            writer.WriteCollectionOfPrimitiveValues<string>("newCustomEnvironmentIds", NewCustomEnvironmentIds);
             writer.WriteStringValue("newKey", NewKey);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember107_updateDiff_newProjects>("newProjects", NewProjects);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember107_updateDiff_newTarget>("newTarget", NewTarget);
             writer.WriteStringValue("newType", NewType);
+            writer.WriteCollectionOfPrimitiveValues<string>("oldCustomEnvironmentIds", OldCustomEnvironmentIds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember107_updateDiff_oldProjects>("oldProjects", OldProjects);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember107_updateDiff_oldTarget>("oldTarget", OldTarget);
             writer.WriteStringValue("oldType", OldType);

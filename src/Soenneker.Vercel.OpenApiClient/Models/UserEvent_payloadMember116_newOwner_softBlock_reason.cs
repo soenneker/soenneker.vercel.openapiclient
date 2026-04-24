@@ -8,6 +8,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UserEvent_payloadMember116_newOwner_softBlock_reason
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "ENTERPRISE_UNPAID_INVOICE")]
+        #pragma warning disable CS1591
+        ENTERPRISE_UNPAID_INVOICE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SUBSCRIPTION_CANCELED")]
         #pragma warning disable CS1591
         SUBSCRIPTION_CANCELED,

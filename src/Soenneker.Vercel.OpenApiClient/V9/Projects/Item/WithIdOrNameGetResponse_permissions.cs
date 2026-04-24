@@ -1671,13 +1671,13 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> SpaceRun { get; set; }
 #endif
-        /// <summary>The storeIsSensitive property</summary>
+        /// <summary>The storeIsLocked property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?>? StoreIsSensitive { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?>? StoreIsLocked { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> StoreIsSensitive { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> StoreIsLocked { get; set; }
 #endif
         /// <summary>The storeTokenSetSensitive property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -2207,7 +2207,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
                 { "skewProtection", n => { SkewProtection = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "space", n => { Space = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "spaceRun", n => { SpaceRun = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
-                { "storeIsSensitive", n => { StoreIsSensitive = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
+                { "storeIsLocked", n => { StoreIsLocked = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "storeTokenSetSensitive", n => { StoreTokenSetSensitive = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "storeTransfer", n => { StoreTransfer = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "supportCase", n => { SupportCase = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
@@ -2461,7 +2461,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("skewProtection", SkewProtection);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("space", Space);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("spaceRun", SpaceRun);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("storeIsSensitive", StoreIsSensitive);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("storeIsLocked", StoreIsLocked);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("storeTokenSetSensitive", StoreTokenSetSensitive);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("storeTransfer", StoreTransfer);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("supportCase", SupportCase);

@@ -29,6 +29,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The locked property</summary>
+        public bool? Locked { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,8 +39,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The sensitive property</summary>
-        public bool? Sensitive { get; set; }
         /// <summary>The suspendTimeoutSeconds property</summary>
         public double? SuspendTimeoutSeconds { get; set; }
         /// <summary>The type property</summary>
@@ -72,8 +72,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "computeUnitsMax", n => { ComputeUnitsMax = n.GetDoubleValue(); } },
                 { "computeUnitsMin", n => { ComputeUnitsMin = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "locked", n => { Locked = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "sensitive", n => { Sensitive = n.GetBoolValue(); } },
                 { "suspendTimeoutSeconds", n => { SuspendTimeoutSeconds = n.GetDoubleValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_type>(); } },
             };
@@ -89,8 +89,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("computeUnitsMax", ComputeUnitsMax);
             writer.WriteDoubleValue("computeUnitsMin", ComputeUnitsMin);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("locked", Locked);
             writer.WriteStringValue("name", Name);
-            writer.WriteBoolValue("sensitive", Sensitive);
             writer.WriteDoubleValue("suspendTimeoutSeconds", SuspendTimeoutSeconds);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
