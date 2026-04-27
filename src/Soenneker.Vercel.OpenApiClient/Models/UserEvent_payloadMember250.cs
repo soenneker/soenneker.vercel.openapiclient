@@ -13,36 +13,24 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEvent_payloadMember250 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The access property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_access? Access { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The computeUnitsMax property</summary>
-        public double? ComputeUnitsMax { get; set; }
-        /// <summary>The computeUnitsMin property</summary>
-        public double? ComputeUnitsMin { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The ownerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? OwnerId { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string OwnerId { get; set; }
 #endif
-        /// <summary>The locked property</summary>
-        public bool? Locked { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The store property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_store? Store { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_store Store { get; set; }
 #endif
-        /// <summary>The suspendTimeoutSeconds property</summary>
-        public double? SuspendTimeoutSeconds { get; set; }
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250"/> and sets the default values.
         /// </summary>
@@ -68,14 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access", n => { Access = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_access>(); } },
-                { "computeUnitsMax", n => { ComputeUnitsMax = n.GetDoubleValue(); } },
-                { "computeUnitsMin", n => { ComputeUnitsMin = n.GetDoubleValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "locked", n => { Locked = n.GetBoolValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "suspendTimeoutSeconds", n => { SuspendTimeoutSeconds = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_type>(); } },
+                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
+                { "store", n => { Store = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_store>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_store.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -85,14 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_access>("access", Access);
-            writer.WriteDoubleValue("computeUnitsMax", ComputeUnitsMax);
-            writer.WriteDoubleValue("computeUnitsMin", ComputeUnitsMin);
-            writer.WriteStringValue("id", Id);
-            writer.WriteBoolValue("locked", Locked);
-            writer.WriteStringValue("name", Name);
-            writer.WriteDoubleValue("suspendTimeoutSeconds", SuspendTimeoutSeconds);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_type>("type", Type);
+            writer.WriteStringValue("ownerId", OwnerId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember250_store>("store", Store);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

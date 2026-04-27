@@ -31,8 +31,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get; set; }
 #endif
-        /// <summary>The publicSource property</summary>
-        public bool? PublicSource { get; set; }
+        /// <summary>The protectedSourcemaps property</summary>
+        public bool? ProtectedSourcemaps { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember215"/> and sets the default values.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "publicSource", n => { PublicSource = n.GetBoolValue(); } },
+                { "protectedSourcemaps", n => { ProtectedSourcemaps = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteBoolValue("publicSource", PublicSource);
+            writer.WriteBoolValue("protectedSourcemaps", ProtectedSourcemaps);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

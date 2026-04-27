@@ -15,21 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The next property</summary>
+        /// <summary>The consolidatedGitCommitStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember188_next? Next { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember188_consolidatedGitCommitStatus? ConsolidatedGitCommitStatus { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember188_next Next { get; set; }
-#endif
-        /// <summary>The previous property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember188_previous? Previous { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember188_previous Previous { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember188_consolidatedGitCommitStatus ConsolidatedGitCommitStatus { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,8 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember188_next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember188_next.CreateFromDiscriminatorValue); } },
-                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember188_previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember188_previous.CreateFromDiscriminatorValue); } },
+                { "consolidatedGitCommitStatus", n => { ConsolidatedGitCommitStatus = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember188_consolidatedGitCommitStatus>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember188_consolidatedGitCommitStatus.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
@@ -85,8 +76,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember188_next>("next", Next);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember188_previous>("previous", Previous);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember188_consolidatedGitCommitStatus>("consolidatedGitCommitStatus", ConsolidatedGitCommitStatus);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteAdditionalData(AdditionalData);

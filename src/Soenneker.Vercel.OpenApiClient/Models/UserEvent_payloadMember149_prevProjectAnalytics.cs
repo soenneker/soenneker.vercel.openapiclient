@@ -14,6 +14,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The canceledAt property</summary>
+        public double? CanceledAt { get; set; }
+        /// <summary>The disabledAt property</summary>
+        public double? DisabledAt { get; set; }
+        /// <summary>The enabledAt property</summary>
+        public double? EnabledAt { get; set; }
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
+        /// <summary>The paidAt property</summary>
+        public double? PaidAt { get; set; }
+        /// <summary>The sampleRatePercent property</summary>
+        public double? SampleRatePercent { get; set; }
+        /// <summary>The spendLimitInDollars property</summary>
+        public double? SpendLimitInDollars { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember149_prevProjectAnalytics"/> and sets the default values.
         /// </summary>
@@ -39,6 +59,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "canceledAt", n => { CanceledAt = n.GetDoubleValue(); } },
+                { "disabledAt", n => { DisabledAt = n.GetDoubleValue(); } },
+                { "enabledAt", n => { EnabledAt = n.GetDoubleValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "paidAt", n => { PaidAt = n.GetDoubleValue(); } },
+                { "sampleRatePercent", n => { SampleRatePercent = n.GetDoubleValue(); } },
+                { "spendLimitInDollars", n => { SpendLimitInDollars = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +75,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("canceledAt", CanceledAt);
+            writer.WriteDoubleValue("disabledAt", DisabledAt);
+            writer.WriteDoubleValue("enabledAt", EnabledAt);
+            writer.WriteStringValue("id", Id);
+            writer.WriteDoubleValue("paidAt", PaidAt);
+            writer.WriteDoubleValue("sampleRatePercent", SampleRatePercent);
+            writer.WriteDoubleValue("spendLimitInDollars", SpendLimitInDollars);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

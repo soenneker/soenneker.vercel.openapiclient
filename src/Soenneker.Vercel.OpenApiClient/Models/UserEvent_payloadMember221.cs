@@ -15,21 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The next property</summary>
+        /// <summary>The oldSsoProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_next? Next { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221.UserEvent_payloadMember221_oldSsoProtection? OldSsoProtection { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_next Next { get; set; }
-#endif
-        /// <summary>The previous property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_previous? Previous { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_previous Previous { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221.UserEvent_payloadMember221_oldSsoProtection OldSsoProtection { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,6 +38,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string ProjectName { get; set; }
+#endif
+        /// <summary>The ssoProtection property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221.UserEvent_payloadMember221_ssoProtection? SsoProtection { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221.UserEvent_payloadMember221_ssoProtection SsoProtection { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221"/> and sets the default values.
@@ -72,10 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_next.CreateFromDiscriminatorValue); } },
-                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_previous.CreateFromDiscriminatorValue); } },
+                { "oldSsoProtection", n => { OldSsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221.UserEvent_payloadMember221_oldSsoProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221.UserEvent_payloadMember221_oldSsoProtection.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "ssoProtection", n => { SsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221.UserEvent_payloadMember221_ssoProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221.UserEvent_payloadMember221_ssoProtection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -85,11 +85,153 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_next>("next", Next);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_previous>("previous", Previous);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221.UserEvent_payloadMember221_oldSsoProtection>("oldSsoProtection", OldSsoProtection);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221.UserEvent_payloadMember221_ssoProtection>("ssoProtection", SsoProtection);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_oldSsoProtectionMember1"/>, <see cref="string"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class UserEvent_payloadMember221_oldSsoProtection : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? String { get; set; }
+#nullable restore
+#else
+            public string String { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_oldSsoProtectionMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_oldSsoProtectionMember1? UserEventPayloadMember221OldSsoProtectionMember1 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_oldSsoProtectionMember1 UserEventPayloadMember221OldSsoProtectionMember1 { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221.UserEvent_payloadMember221_oldSsoProtection"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221.UserEvent_payloadMember221_oldSsoProtection CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221.UserEvent_payloadMember221_oldSsoProtection();
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UserEventPayloadMember221OldSsoProtectionMember1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_oldSsoProtectionMember1();
+                }
+                else if(parseNode.GetStringValue() is string stringValue)
+                {
+                    result.String = stringValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(UserEventPayloadMember221OldSsoProtectionMember1 != null)
+                {
+                    return UserEventPayloadMember221OldSsoProtectionMember1.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(UserEventPayloadMember221OldSsoProtectionMember1 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_oldSsoProtectionMember1>(null, UserEventPayloadMember221OldSsoProtectionMember1);
+                }
+                else if(String != null)
+                {
+                    writer.WriteStringValue(null, String);
+                }
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_ssoProtectionMember1"/>, <see cref="string"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class UserEvent_payloadMember221_ssoProtection : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? String { get; set; }
+#nullable restore
+#else
+            public string String { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_ssoProtectionMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_ssoProtectionMember1? UserEventPayloadMember221SsoProtectionMember1 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_ssoProtectionMember1 UserEventPayloadMember221SsoProtectionMember1 { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221.UserEvent_payloadMember221_ssoProtection"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221.UserEvent_payloadMember221_ssoProtection CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221.UserEvent_payloadMember221_ssoProtection();
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UserEventPayloadMember221SsoProtectionMember1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_ssoProtectionMember1();
+                }
+                else if(parseNode.GetStringValue() is string stringValue)
+                {
+                    result.String = stringValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(UserEventPayloadMember221SsoProtectionMember1 != null)
+                {
+                    return UserEventPayloadMember221SsoProtectionMember1.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(UserEventPayloadMember221SsoProtectionMember1 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember221_ssoProtectionMember1>(null, UserEventPayloadMember221SsoProtectionMember1);
+                }
+                else if(String != null)
+                {
+                    writer.WriteStringValue(null, String);
+                }
+            }
         }
     }
 }

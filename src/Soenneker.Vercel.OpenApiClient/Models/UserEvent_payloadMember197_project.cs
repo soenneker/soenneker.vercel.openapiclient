@@ -22,6 +22,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The invitedUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InvitedUserId { get; set; }
+#nullable restore
+#else
+        public string InvitedUserId { get; set; }
+#endif
+        /// <summary>The invitedUserName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InvitedUserName { get; set; }
+#nullable restore
+#else
+        public string InvitedUserName { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +46,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The role property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember197_project_role? Role { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember197_project"/> and sets the default values.
         /// </summary>
@@ -56,7 +74,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "invitedUserId", n => { InvitedUserId = n.GetStringValue(); } },
+                { "invitedUserName", n => { InvitedUserName = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember197_project_role>(); } },
             };
         }
         /// <summary>
@@ -67,7 +88,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("invitedUserId", InvitedUserId);
+            writer.WriteStringValue("invitedUserName", InvitedUserName);
             writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember197_project_role>("role", Role);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

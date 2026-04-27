@@ -1755,6 +1755,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         UserTokenCreated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "user-token-deleted")]
+        #pragma warning disable CS1591
+        UserTokenDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "user-tokens-deleted")]
+        #pragma warning disable CS1591
+        UserTokensDeleted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "username")]
         #pragma warning disable CS1591
         Username,
