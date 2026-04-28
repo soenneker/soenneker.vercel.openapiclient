@@ -1807,6 +1807,14 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> TeamOwnMembershipDisconnectSAML { get; set; }
 #endif
+        /// <summary>The teamSudo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?>? TeamSudo { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> TeamSudo { get; set; }
+#endif
         /// <summary>The teamTokenInvalidation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2224,6 +2232,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
                 { "teamMicrofrontends", n => { TeamMicrofrontends = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "teamOwnMembership", n => { TeamOwnMembership = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "teamOwnMembershipDisconnectSAML", n => { TeamOwnMembershipDisconnectSAML = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
+                { "teamSudo", n => { TeamSudo = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "teamTokenInvalidation", n => { TeamTokenInvalidation = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "token", n => { Token = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "toolbarComment", n => { ToolbarComment = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
@@ -2478,6 +2487,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("teamMicrofrontends", TeamMicrofrontends);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("teamOwnMembership", TeamOwnMembership);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("teamOwnMembershipDisconnectSAML", TeamOwnMembershipDisconnectSAML);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("teamSudo", TeamSudo);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("teamTokenInvalidation", TeamTokenInvalidation);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("token", Token);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("toolbarComment", ToolbarComment);

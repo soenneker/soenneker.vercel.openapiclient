@@ -9,11 +9,9 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithCheckRunPatchRequestBody : IAdditionalDataHolder, IParsable
+    public partial class WithCheckRunPatchRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The completedAt property</summary>
         public double? CompletedAt { get; set; }
         /// <summary>The conclusion property</summary>
@@ -52,13 +50,6 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunPatchRequestBody_status? Status { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunPatchRequestBody"/> and sets the default values.
-        /// </summary>
-        public WithCheckRunPatchRequestBody()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -100,7 +91,6 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item
             writer.WriteStringValue("externalUrl", ExternalUrl);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunPatchRequestBody_output>("output", Output);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item.WithCheckRunPatchRequestBody_status>("status", Status);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

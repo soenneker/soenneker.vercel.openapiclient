@@ -23,6 +23,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> Entitlements { get; set; }
 #endif
+        /// <summary>The invitedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember269_invitedBy? InvitedBy { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember269_invitedBy InvitedBy { get; set; }
+#endif
         /// <summary>The origin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,6 +97,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "entitlements", n => { Entitlements = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "invitedBy", n => { InvitedBy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember269_invitedBy>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember269_invitedBy.CreateFromDiscriminatorValue); } },
                 { "origin", n => { Origin = n.GetStringValue(); } },
                 { "role", n => { Role = n.GetStringValue(); } },
                 { "teamPermissions", n => { TeamPermissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -104,6 +113,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("entitlements", Entitlements);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember269_invitedBy>("invitedBy", InvitedBy);
             writer.WriteStringValue("origin", Origin);
             writer.WriteStringValue("role", Role);
             writer.WriteCollectionOfPrimitiveValues<string>("teamPermissions", TeamPermissions);

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes.Item.NetworkPolicy
 {
-    /// <summary>The network access policy mode. Use &quot;allow-all&quot; to permit all outbound traffic. Use &quot;deny-all&quot; to block all outbound traffic. Use &quot;custom&quot; to specify explicit allow/deny rules.</summary>
+    /// <summary>The network access policy mode. Use \&quot;allow-all\&quot; to permit all outbound traffic. Use \&quot;deny-all\&quot; to block all outbound traffic. Use \&quot;custom\&quot; to specify explicit allow/deny rules.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum NetworkPolicyPostRequestBody_mode
     {
