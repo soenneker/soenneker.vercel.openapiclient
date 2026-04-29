@@ -15,37 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The destinationAccountName property</summary>
+        /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationAccountName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember203_project? Project { get; set; }
 #nullable restore
 #else
-        public string DestinationAccountName { get; set; }
-#endif
-        /// <summary>The newProjectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? NewProjectName { get; set; }
-#nullable restore
-#else
-        public string NewProjectName { get; set; }
-#endif
-        /// <summary>The previousProjectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PreviousProjectName { get; set; }
-#nullable restore
-#else
-        public string PreviousProjectName { get; set; }
-#endif
-        /// <summary>The transferId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TransferId { get; set; }
-#nullable restore
-#else
-        public string TransferId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember203_project Project { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember203"/> and sets the default values.
@@ -72,10 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "destinationAccountName", n => { DestinationAccountName = n.GetStringValue(); } },
-                { "newProjectName", n => { NewProjectName = n.GetStringValue(); } },
-                { "previousProjectName", n => { PreviousProjectName = n.GetStringValue(); } },
-                { "transferId", n => { TransferId = n.GetStringValue(); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember203_project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember203_project.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -85,10 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("destinationAccountName", DestinationAccountName);
-            writer.WriteStringValue("newProjectName", NewProjectName);
-            writer.WriteStringValue("previousProjectName", PreviousProjectName);
-            writer.WriteStringValue("transferId", TransferId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember203_project>("project", Project);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

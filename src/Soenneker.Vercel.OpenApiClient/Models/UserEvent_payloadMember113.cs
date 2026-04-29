@@ -13,27 +13,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEvent_payloadMember113 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The action property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember113_action? Action { get; set; }
-        /// <summary>The active property</summary>
-        public bool? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The projectId property</summary>
+        /// <summary>The newEnvVar property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember113_newEnvVar? NewEnvVar { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember113_newEnvVar NewEnvVar { get; set; }
 #endif
-        /// <summary>The rulesetName property</summary>
+        /// <summary>The oldEnvVar property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RulesetName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember113_oldEnvVar? OldEnvVar { get; set; }
 #nullable restore
 #else
-        public string RulesetName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember113_oldEnvVar OldEnvVar { get; set; }
+#endif
+        /// <summary>The updateDiff property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember113_updateDiff? UpdateDiff { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember113_updateDiff UpdateDiff { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember113"/> and sets the default values.
@@ -60,10 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember113_action>(); } },
-                { "active", n => { Active = n.GetBoolValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "rulesetName", n => { RulesetName = n.GetStringValue(); } },
+                { "newEnvVar", n => { NewEnvVar = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember113_newEnvVar>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember113_newEnvVar.CreateFromDiscriminatorValue); } },
+                { "oldEnvVar", n => { OldEnvVar = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember113_oldEnvVar>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember113_oldEnvVar.CreateFromDiscriminatorValue); } },
+                { "updateDiff", n => { UpdateDiff = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember113_updateDiff>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember113_updateDiff.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -73,10 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember113_action>("action", Action);
-            writer.WriteBoolValue("active", Active);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("rulesetName", RulesetName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember113_newEnvVar>("newEnvVar", NewEnvVar);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember113_oldEnvVar>("oldEnvVar", OldEnvVar);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember113_updateDiff>("updateDiff", UpdateDiff);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,45 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The domain property</summary>
+        /// <summary>The job property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76.UserEvent_payloadMember76_job? Job { get; set; }
 #nullable restore
 #else
-        public string Domain { get; set; }
-#endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
-        /// <summary>The value property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Value { get; set; }
-#nullable restore
-#else
-        public string Value { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76.UserEvent_payloadMember76_job Job { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76"/> and sets the default values.
@@ -80,11 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "domain", n => { Domain = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
+                { "job", n => { Job = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76.UserEvent_payloadMember76_job>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76.UserEvent_payloadMember76_job.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -94,12 +58,203 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("domain", Domain);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("type", Type);
-            writer.WriteStringValue("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76.UserEvent_payloadMember76_job>("job", Job);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember8"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class UserEvent_payloadMember76_job : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember1? UserEventPayloadMember76JobMember1 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember1 UserEventPayloadMember76JobMember1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember2? UserEventPayloadMember76JobMember2 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember2 UserEventPayloadMember76JobMember2 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember3? UserEventPayloadMember76JobMember3 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember3 UserEventPayloadMember76JobMember3 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember4? UserEventPayloadMember76JobMember4 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember4 UserEventPayloadMember76JobMember4 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember5"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember5? UserEventPayloadMember76JobMember5 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember5 UserEventPayloadMember76JobMember5 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember6"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember6? UserEventPayloadMember76JobMember6 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember6 UserEventPayloadMember76JobMember6 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember7"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember7? UserEventPayloadMember76JobMember7 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember7 UserEventPayloadMember76JobMember7 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember8"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember8? UserEventPayloadMember76JobMember8 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember8 UserEventPayloadMember76JobMember8 { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76.UserEvent_payloadMember76_job"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76.UserEvent_payloadMember76_job CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76.UserEvent_payloadMember76_job();
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UserEventPayloadMember76JobMember1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember1();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UserEventPayloadMember76JobMember2 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember2();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UserEventPayloadMember76JobMember3 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember3();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UserEventPayloadMember76JobMember4 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember4();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UserEventPayloadMember76JobMember5 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember5();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UserEventPayloadMember76JobMember6 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember6();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UserEventPayloadMember76JobMember7 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember7();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UserEventPayloadMember76JobMember8 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember8();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(UserEventPayloadMember76JobMember1 != null)
+                {
+                    return UserEventPayloadMember76JobMember1.GetFieldDeserializers();
+                }
+                else if(UserEventPayloadMember76JobMember2 != null)
+                {
+                    return UserEventPayloadMember76JobMember2.GetFieldDeserializers();
+                }
+                else if(UserEventPayloadMember76JobMember3 != null)
+                {
+                    return UserEventPayloadMember76JobMember3.GetFieldDeserializers();
+                }
+                else if(UserEventPayloadMember76JobMember4 != null)
+                {
+                    return UserEventPayloadMember76JobMember4.GetFieldDeserializers();
+                }
+                else if(UserEventPayloadMember76JobMember5 != null)
+                {
+                    return UserEventPayloadMember76JobMember5.GetFieldDeserializers();
+                }
+                else if(UserEventPayloadMember76JobMember6 != null)
+                {
+                    return UserEventPayloadMember76JobMember6.GetFieldDeserializers();
+                }
+                else if(UserEventPayloadMember76JobMember7 != null)
+                {
+                    return UserEventPayloadMember76JobMember7.GetFieldDeserializers();
+                }
+                else if(UserEventPayloadMember76JobMember8 != null)
+                {
+                    return UserEventPayloadMember76JobMember8.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(UserEventPayloadMember76JobMember1 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember1>(null, UserEventPayloadMember76JobMember1);
+                }
+                else if(UserEventPayloadMember76JobMember2 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember2>(null, UserEventPayloadMember76JobMember2);
+                }
+                else if(UserEventPayloadMember76JobMember3 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember3>(null, UserEventPayloadMember76JobMember3);
+                }
+                else if(UserEventPayloadMember76JobMember4 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember4>(null, UserEventPayloadMember76JobMember4);
+                }
+                else if(UserEventPayloadMember76JobMember5 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember5>(null, UserEventPayloadMember76JobMember5);
+                }
+                else if(UserEventPayloadMember76JobMember6 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember6>(null, UserEventPayloadMember76JobMember6);
+                }
+                else if(UserEventPayloadMember76JobMember7 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember7>(null, UserEventPayloadMember76JobMember7);
+                }
+                else if(UserEventPayloadMember76JobMember8 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember76_jobMember8>(null, UserEventPayloadMember76JobMember8);
+                }
+            }
         }
     }
 }

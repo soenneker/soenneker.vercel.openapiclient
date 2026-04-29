@@ -15,26 +15,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The exportId property</summary>
+        /// <summary>Represents configuration for remote caching</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExportId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember287_remoteCaching? RemoteCaching { get; set; }
 #nullable restore
 #else
-        public string ExportId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember287_remoteCaching RemoteCaching { get; set; }
 #endif
-        /// <summary>The format property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Format { get; set; }
-#nullable restore
-#else
-        public string Format { get; set; }
-#endif
-        /// <summary>The from property</summary>
-        public double? From { get; set; }
-        /// <summary>The to property</summary>
-        public double? To { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember287"/> and sets the default values.
         /// </summary>
@@ -60,10 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "exportId", n => { ExportId = n.GetStringValue(); } },
-                { "format", n => { Format = n.GetStringValue(); } },
-                { "from", n => { From = n.GetDoubleValue(); } },
-                { "to", n => { To = n.GetDoubleValue(); } },
+                { "remoteCaching", n => { RemoteCaching = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember287_remoteCaching>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember287_remoteCaching.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -73,10 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("exportId", ExportId);
-            writer.WriteStringValue("format", Format);
-            writer.WriteDoubleValue("from", From);
-            writer.WriteDoubleValue("to", To);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember287_remoteCaching>("remoteCaching", RemoteCaching);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

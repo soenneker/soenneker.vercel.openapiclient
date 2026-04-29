@@ -15,22 +15,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The next property</summary>
+        /// <summary>The exportId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember293_next? Next { get; set; }
+        public string? ExportId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember293_next Next { get; set; }
+        public string ExportId { get; set; }
 #endif
-        /// <summary>The previous property</summary>
+        /// <summary>The format property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember293_previous? Previous { get; set; }
+        public string? Format { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember293_previous Previous { get; set; }
+        public string Format { get; set; }
 #endif
+        /// <summary>The from property</summary>
+        public double? From { get; set; }
+        /// <summary>The to property</summary>
+        public double? To { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember293"/> and sets the default values.
         /// </summary>
@@ -56,8 +60,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember293_next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember293_next.CreateFromDiscriminatorValue); } },
-                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember293_previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember293_previous.CreateFromDiscriminatorValue); } },
+                { "exportId", n => { ExportId = n.GetStringValue(); } },
+                { "format", n => { Format = n.GetStringValue(); } },
+                { "from", n => { From = n.GetDoubleValue(); } },
+                { "to", n => { To = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +73,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember293_next>("next", Next);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember293_previous>("previous", Previous);
+            writer.WriteStringValue("exportId", ExportId);
+            writer.WriteStringValue("format", Format);
+            writer.WriteDoubleValue("from", From);
+            writer.WriteDoubleValue("to", To);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

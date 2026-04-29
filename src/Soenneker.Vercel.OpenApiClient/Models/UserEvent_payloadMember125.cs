@@ -15,29 +15,61 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The projectId property</summary>
+        /// <summary>The billingPlanId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? BillingPlanId { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string BillingPlanId { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The billingPlanName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public string? BillingPlanName { get; set; }
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public string BillingPlanName { get; set; }
 #endif
-        /// <summary>The toDeploymentId property</summary>
+        /// <summary>The configurationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToDeploymentId { get; set; }
+        public string? ConfigurationId { get; set; }
 #nullable restore
 #else
-        public string ToDeploymentId { get; set; }
+        public string ConfigurationId { get; set; }
+#endif
+        /// <summary>The integrationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IntegrationId { get; set; }
+#nullable restore
+#else
+        public string IntegrationId { get; set; }
+#endif
+        /// <summary>The integrationName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IntegrationName { get; set; }
+#nullable restore
+#else
+        public string IntegrationName { get; set; }
+#endif
+        /// <summary>The integrationSlug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IntegrationSlug { get; set; }
+#nullable restore
+#else
+        public string IntegrationSlug { get; set; }
+#endif
+        /// <summary>The ownerId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OwnerId { get; set; }
+#nullable restore
+#else
+        public string OwnerId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember125"/> and sets the default values.
@@ -64,9 +96,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "toDeploymentId", n => { ToDeploymentId = n.GetStringValue(); } },
+                { "billingPlanId", n => { BillingPlanId = n.GetStringValue(); } },
+                { "billingPlanName", n => { BillingPlanName = n.GetStringValue(); } },
+                { "configurationId", n => { ConfigurationId = n.GetStringValue(); } },
+                { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
+                { "integrationName", n => { IntegrationName = n.GetStringValue(); } },
+                { "integrationSlug", n => { IntegrationSlug = n.GetStringValue(); } },
+                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +112,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("toDeploymentId", ToDeploymentId);
+            writer.WriteStringValue("billingPlanId", BillingPlanId);
+            writer.WriteStringValue("billingPlanName", BillingPlanName);
+            writer.WriteStringValue("configurationId", ConfigurationId);
+            writer.WriteStringValue("integrationId", IntegrationId);
+            writer.WriteStringValue("integrationName", IntegrationName);
+            writer.WriteStringValue("integrationSlug", IntegrationSlug);
+            writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

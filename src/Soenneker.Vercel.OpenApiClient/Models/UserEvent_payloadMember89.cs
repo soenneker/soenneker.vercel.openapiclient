@@ -15,21 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The destinationId property</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationId { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string DestinationId { get; set; }
-#endif
-        /// <summary>The destinationName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DestinationName { get; set; }
-#nullable restore
-#else
-        public string DestinationName { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,6 +30,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string Name { get; set; }
+#endif
+        /// <summary>The nameservers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Nameservers { get; set; }
+#nullable restore
+#else
+        public List<string> Nameservers { get; set; }
+#endif
+        /// <summary>The previousServiceType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviousServiceType { get; set; }
+#nullable restore
+#else
+        public string PreviousServiceType { get; set; }
+#endif
+        /// <summary>The serviceType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ServiceType { get; set; }
+#nullable restore
+#else
+        public string ServiceType { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember89"/> and sets the default values.
@@ -64,9 +80,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "destinationId", n => { DestinationId = n.GetStringValue(); } },
-                { "destinationName", n => { DestinationName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "nameservers", n => { Nameservers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "previousServiceType", n => { PreviousServiceType = n.GetStringValue(); } },
+                { "serviceType", n => { ServiceType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +94,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("destinationId", DestinationId);
-            writer.WriteStringValue("destinationName", DestinationName);
+            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteCollectionOfPrimitiveValues<string>("nameservers", Nameservers);
+            writer.WriteStringValue("previousServiceType", PreviousServiceType);
+            writer.WriteStringValue("serviceType", ServiceType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

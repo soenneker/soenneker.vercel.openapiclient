@@ -14,6 +14,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.Installations.Item.Reso
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The envVarEnvironments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Installations.Item.Resources.Item.Connections.ConnectionsPostRequestBody_envVarEnvironments?>? EnvVarEnvironments { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Installations.Item.Resources.Item.Connections.ConnectionsPostRequestBody_envVarEnvironments?> EnvVarEnvironments { get; set; }
+#endif
+        /// <summary>The makeEnvVarsSensitive property</summary>
+        public bool? MakeEnvVarsSensitive { get; set; }
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +57,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.Installations.Item.Reso
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "envVarEnvironments", n => { EnvVarEnvironments = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Installations.Item.Resources.Item.Connections.ConnectionsPostRequestBody_envVarEnvironments>()?.AsList(); } },
+                { "makeEnvVarsSensitive", n => { MakeEnvVarsSensitive = n.GetBoolValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
             };
         }
@@ -57,6 +69,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.Installations.Item.Reso
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Installations.Item.Resources.Item.Connections.ConnectionsPostRequestBody_envVarEnvironments>("envVarEnvironments", EnvVarEnvironments);
+            writer.WriteBoolValue("makeEnvVarsSensitive", MakeEnvVarsSensitive);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -31,8 +31,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get; set; }
 #endif
-        /// <summary>The protectedSourcemaps property</summary>
-        public bool? ProtectedSourcemaps { get; set; }
+        /// <summary>The targetDeploymentId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TargetDeploymentId { get; set; }
+#nullable restore
+#else
+        public string TargetDeploymentId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember215"/> and sets the default values.
         /// </summary>
@@ -60,7 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "protectedSourcemaps", n => { ProtectedSourcemaps = n.GetBoolValue(); } },
+                { "targetDeploymentId", n => { TargetDeploymentId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -72,7 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteBoolValue("protectedSourcemaps", ProtectedSourcemaps);
+            writer.WriteStringValue("targetDeploymentId", TargetDeploymentId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

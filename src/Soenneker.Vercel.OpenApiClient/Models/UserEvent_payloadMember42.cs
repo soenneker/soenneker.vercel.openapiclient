@@ -15,22 +15,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The productAliases property</summary>
+        /// <summary>The amount property</summary>
+        public double? Amount { get; set; }
+        /// <summary>The invoiceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ProductAliases { get; set; }
+        public string? InvoiceId { get; set; }
 #nullable restore
 #else
-        public List<string> ProductAliases { get; set; }
+        public string InvoiceId { get; set; }
 #endif
-        /// <summary>The subscriptionId property</summary>
+        /// <summary>The newInvoiceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionId { get; set; }
+        public string? NewInvoiceId { get; set; }
 #nullable restore
 #else
-        public string SubscriptionId { get; set; }
+        public string NewInvoiceId { get; set; }
 #endif
+        /// <summary>The settlementMethod property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember42_settlementMethod? SettlementMethod { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember42"/> and sets the default values.
         /// </summary>
@@ -56,8 +60,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "productAliases", n => { ProductAliases = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
+                { "amount", n => { Amount = n.GetDoubleValue(); } },
+                { "invoiceId", n => { InvoiceId = n.GetStringValue(); } },
+                { "newInvoiceId", n => { NewInvoiceId = n.GetStringValue(); } },
+                { "settlementMethod", n => { SettlementMethod = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember42_settlementMethod>(); } },
             };
         }
         /// <summary>
@@ -67,8 +73,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("productAliases", ProductAliases);
-            writer.WriteStringValue("subscriptionId", SubscriptionId);
+            writer.WriteDoubleValue("amount", Amount);
+            writer.WriteStringValue("invoiceId", InvoiceId);
+            writer.WriteStringValue("newInvoiceId", NewInvoiceId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember42_settlementMethod>("settlementMethod", SettlementMethod);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

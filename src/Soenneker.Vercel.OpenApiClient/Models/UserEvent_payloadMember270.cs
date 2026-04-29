@@ -47,21 +47,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string GitUsername { get; set; }
 #endif
-        /// <summary>The requestedTeamName property</summary>
+        /// <summary>The teamId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestedTeamName { get; set; }
+        public string? TeamId { get; set; }
 #nullable restore
 #else
-        public string RequestedTeamName { get; set; }
+        public string TeamId { get; set; }
 #endif
-        /// <summary>The requestedUserName property</summary>
+        /// <summary>The teamName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestedUserName { get; set; }
+        public string? TeamName { get; set; }
 #nullable restore
 #else
-        public string RequestedUserName { get; set; }
+        public string TeamName { get; set; }
+#endif
+        /// <summary>The updatedUid property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UpdatedUid { get; set; }
+#nullable restore
+#else
+        public string UpdatedUid { get; set; }
+#endif
+        /// <summary>The username property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Username { get; set; }
+#nullable restore
+#else
+        public string Username { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember270"/> and sets the default values.
@@ -92,8 +108,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "gitUsername", n => { GitUsername = n.GetStringValue(); } },
                 { "githubUsername", n => { GithubUsername = n.GetStringValue(); } },
                 { "gitlabUsername", n => { GitlabUsername = n.GetStringValue(); } },
-                { "requestedTeamName", n => { RequestedTeamName = n.GetStringValue(); } },
-                { "requestedUserName", n => { RequestedUserName = n.GetStringValue(); } },
+                { "teamId", n => { TeamId = n.GetStringValue(); } },
+                { "teamName", n => { TeamName = n.GetStringValue(); } },
+                { "updatedUid", n => { UpdatedUid = n.GetStringValue(); } },
+                { "username", n => { Username = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -107,8 +125,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("githubUsername", GithubUsername);
             writer.WriteStringValue("gitlabUsername", GitlabUsername);
             writer.WriteStringValue("gitUsername", GitUsername);
-            writer.WriteStringValue("requestedTeamName", RequestedTeamName);
-            writer.WriteStringValue("requestedUserName", RequestedUserName);
+            writer.WriteStringValue("teamId", TeamId);
+            writer.WriteStringValue("teamName", TeamName);
+            writer.WriteStringValue("updatedUid", UpdatedUid);
+            writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

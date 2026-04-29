@@ -15,6 +15,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The directoryType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DirectoryType { get; set; }
+#nullable restore
+#else
+        public string DirectoryType { get; set; }
+#endif
         /// <summary>The entitlements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,53 +31,45 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> Entitlements { get; set; }
 #endif
-        /// <summary>The invitedBy property</summary>
+        /// <summary>The invitationRole property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember269_invitedBy? InvitedBy { get; set; }
+        public string? InvitationRole { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember269_invitedBy InvitedBy { get; set; }
+        public string InvitationRole { get; set; }
 #endif
-        /// <summary>The origin property</summary>
+        /// <summary>The invitedEmail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Origin { get; set; }
+        public string? InvitedEmail { get; set; }
 #nullable restore
 #else
-        public string Origin { get; set; }
+        public string InvitedEmail { get; set; }
 #endif
-        /// <summary>The role property</summary>
+        /// <summary>The invitedUid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Role { get; set; }
+        public string? InvitedUid { get; set; }
 #nullable restore
 #else
-        public string Role { get; set; }
+        public string InvitedUid { get; set; }
 #endif
-        /// <summary>The teamPermissions property</summary>
+        /// <summary>The invitedUser property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TeamPermissions { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember269_invitedUser? InvitedUser { get; set; }
 #nullable restore
 #else
-        public List<string> TeamPermissions { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember269_invitedUser InvitedUser { get; set; }
 #endif
-        /// <summary>The teamRoles property</summary>
+        /// <summary>The ssoType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TeamRoles { get; set; }
+        public string? SsoType { get; set; }
 #nullable restore
 #else
-        public List<string> TeamRoles { get; set; }
-#endif
-        /// <summary>The uid property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Uid { get; set; }
-#nullable restore
-#else
-        public string Uid { get; set; }
+        public string SsoType { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember269"/> and sets the default values.
@@ -96,13 +96,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "directoryType", n => { DirectoryType = n.GetStringValue(); } },
                 { "entitlements", n => { Entitlements = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "invitedBy", n => { InvitedBy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember269_invitedBy>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember269_invitedBy.CreateFromDiscriminatorValue); } },
-                { "origin", n => { Origin = n.GetStringValue(); } },
-                { "role", n => { Role = n.GetStringValue(); } },
-                { "teamPermissions", n => { TeamPermissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "teamRoles", n => { TeamRoles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "uid", n => { Uid = n.GetStringValue(); } },
+                { "invitationRole", n => { InvitationRole = n.GetStringValue(); } },
+                { "invitedEmail", n => { InvitedEmail = n.GetStringValue(); } },
+                { "invitedUid", n => { InvitedUid = n.GetStringValue(); } },
+                { "invitedUser", n => { InvitedUser = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember269_invitedUser>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember269_invitedUser.CreateFromDiscriminatorValue); } },
+                { "ssoType", n => { SsoType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -112,13 +112,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("directoryType", DirectoryType);
             writer.WriteCollectionOfPrimitiveValues<string>("entitlements", Entitlements);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember269_invitedBy>("invitedBy", InvitedBy);
-            writer.WriteStringValue("origin", Origin);
-            writer.WriteStringValue("role", Role);
-            writer.WriteCollectionOfPrimitiveValues<string>("teamPermissions", TeamPermissions);
-            writer.WriteCollectionOfPrimitiveValues<string>("teamRoles", TeamRoles);
-            writer.WriteStringValue("uid", Uid);
+            writer.WriteStringValue("invitationRole", InvitationRole);
+            writer.WriteStringValue("invitedEmail", InvitedEmail);
+            writer.WriteStringValue("invitedUid", InvitedUid);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember269_invitedUser>("invitedUser", InvitedUser);
+            writer.WriteStringValue("ssoType", SsoType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

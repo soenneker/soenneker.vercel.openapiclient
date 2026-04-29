@@ -15,30 +15,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The edgeConfigDigest property</summary>
+        /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeConfigDigest { get; set; }
+        public string? Domain { get; set; }
 #nullable restore
 #else
-        public string EdgeConfigDigest { get; set; }
+        public string Domain { get; set; }
 #endif
-        /// <summary>The edgeConfigId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EdgeConfigId { get; set; }
-#nullable restore
-#else
-        public string EdgeConfigId { get; set; }
-#endif
-        /// <summary>The edgeConfigSlug property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EdgeConfigSlug { get; set; }
-#nullable restore
-#else
-        public string EdgeConfigSlug { get; set; }
-#endif
+        /// <summary>The renew property</summary>
+        public bool? Renew { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember96"/> and sets the default values.
         /// </summary>
@@ -64,9 +50,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "edgeConfigDigest", n => { EdgeConfigDigest = n.GetStringValue(); } },
-                { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
-                { "edgeConfigSlug", n => { EdgeConfigSlug = n.GetStringValue(); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
+                { "renew", n => { Renew = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +61,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("edgeConfigDigest", EdgeConfigDigest);
-            writer.WriteStringValue("edgeConfigId", EdgeConfigId);
-            writer.WriteStringValue("edgeConfigSlug", EdgeConfigSlug);
+            writer.WriteStringValue("domain", Domain);
+            writer.WriteBoolValue("renew", Renew);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

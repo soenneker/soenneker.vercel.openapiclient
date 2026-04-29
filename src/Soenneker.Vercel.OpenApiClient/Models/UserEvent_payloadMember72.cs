@@ -15,21 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The gitCommitterName property</summary>
+        /// <summary>The hookName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitCommitterName { get; set; }
+        public string? HookName { get; set; }
 #nullable restore
 #else
-        public string GitCommitterName { get; set; }
+        public string HookName { get; set; }
 #endif
-        /// <summary>The gitUserPlatform property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitUserPlatform { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string GitUserPlatform { get; set; }
+        public string ProjectId { get; set; }
 #endif
         /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,21 +39,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get; set; }
 #endif
-        /// <summary>The sha property</summary>
+        /// <summary>The ref property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sha { get; set; }
+        public string? Ref { get; set; }
 #nullable restore
 #else
-        public string Sha { get; set; }
-#endif
-        /// <summary>The source property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Source { get; set; }
-#nullable restore
-#else
-        public string Source { get; set; }
+        public string Ref { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember72"/> and sets the default values.
@@ -80,11 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "gitCommitterName", n => { GitCommitterName = n.GetStringValue(); } },
-                { "gitUserPlatform", n => { GitUserPlatform = n.GetStringValue(); } },
+                { "hookName", n => { HookName = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "sha", n => { Sha = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetStringValue(); } },
+                { "ref", n => { Ref = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -94,11 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("gitCommitterName", GitCommitterName);
-            writer.WriteStringValue("gitUserPlatform", GitUserPlatform);
+            writer.WriteStringValue("hookName", HookName);
+            writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("sha", Sha);
-            writer.WriteStringValue("source", Source);
+            writer.WriteStringValue("ref", Ref);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

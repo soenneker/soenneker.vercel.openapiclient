@@ -15,21 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The previousRule property</summary>
+        /// <summary>The edgeConfigId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_previousRule? PreviousRule { get; set; }
+        public string? EdgeConfigId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_previousRule PreviousRule { get; set; }
+        public string EdgeConfigId { get; set; }
 #endif
-        /// <summary>The team property</summary>
+        /// <summary>The edgeConfigSchema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_team? Team { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_edgeConfigSchema? EdgeConfigSchema { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_team Team { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_edgeConfigSchema EdgeConfigSchema { get; set; }
+#endif
+        /// <summary>The edgeConfigSlug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EdgeConfigSlug { get; set; }
+#nullable restore
+#else
+        public string EdgeConfigSlug { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103"/> and sets the default values.
@@ -56,8 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "previousRule", n => { PreviousRule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_previousRule>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_previousRule.CreateFromDiscriminatorValue); } },
-                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_team.CreateFromDiscriminatorValue); } },
+                { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
+                { "edgeConfigSchema", n => { EdgeConfigSchema = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_edgeConfigSchema>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_edgeConfigSchema.CreateFromDiscriminatorValue); } },
+                { "edgeConfigSlug", n => { EdgeConfigSlug = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_previousRule>("previousRule", PreviousRule);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_team>("team", Team);
+            writer.WriteStringValue("edgeConfigId", EdgeConfigId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember103_edgeConfigSchema>("edgeConfigSchema", EdgeConfigSchema);
+            writer.WriteStringValue("edgeConfigSlug", EdgeConfigSlug);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

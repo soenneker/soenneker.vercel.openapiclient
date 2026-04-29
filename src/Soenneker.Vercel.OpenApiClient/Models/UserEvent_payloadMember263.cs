@@ -15,62 +15,58 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The directoryType property</summary>
+        /// <summary>The by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DirectoryType { get; set; }
+        public string? By { get; set; }
 #nullable restore
 #else
-        public string DirectoryType { get; set; }
+        public string By { get; set; }
 #endif
-        /// <summary>The entitlements property</summary>
+        /// <summary>The byUid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Entitlements { get; set; }
+        public string? ByUid { get; set; }
 #nullable restore
 #else
-        public List<string> Entitlements { get; set; }
+        public string ByUid { get; set; }
 #endif
-        /// <summary>The invitationRole property</summary>
+        /// <summary>The reasons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvitationRole { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember263_reasons>? Reasons { get; set; }
 #nullable restore
 #else
-        public string InvitationRole { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember263_reasons> Reasons { get; set; }
 #endif
-        /// <summary>The invitedEmail property</summary>
+        /// <summary>The removedMemberCount property</summary>
+        public double? RemovedMemberCount { get; set; }
+        /// <summary>The removedUsers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvitedEmail { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember263_removedUsers? RemovedUsers { get; set; }
 #nullable restore
 #else
-        public string InvitedEmail { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember263_removedUsers RemovedUsers { get; set; }
 #endif
-        /// <summary>The invitedUid property</summary>
+        /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvitedUid { get; set; }
+        public string? Slug { get; set; }
 #nullable restore
 #else
-        public string InvitedUid { get; set; }
+        public string Slug { get; set; }
 #endif
-        /// <summary>The invitedUser property</summary>
+        /// <summary>The teamId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember263_invitedUser? InvitedUser { get; set; }
+        public string? TeamId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember263_invitedUser InvitedUser { get; set; }
+        public string TeamId { get; set; }
 #endif
-        /// <summary>The ssoType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SsoType { get; set; }
-#nullable restore
-#else
-        public string SsoType { get; set; }
-#endif
+        /// <summary>The timestamp property</summary>
+        public double? Timestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember263"/> and sets the default values.
         /// </summary>
@@ -96,13 +92,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "directoryType", n => { DirectoryType = n.GetStringValue(); } },
-                { "entitlements", n => { Entitlements = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "invitationRole", n => { InvitationRole = n.GetStringValue(); } },
-                { "invitedEmail", n => { InvitedEmail = n.GetStringValue(); } },
-                { "invitedUid", n => { InvitedUid = n.GetStringValue(); } },
-                { "invitedUser", n => { InvitedUser = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember263_invitedUser>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember263_invitedUser.CreateFromDiscriminatorValue); } },
-                { "ssoType", n => { SsoType = n.GetStringValue(); } },
+                { "by", n => { By = n.GetStringValue(); } },
+                { "byUid", n => { ByUid = n.GetStringValue(); } },
+                { "reasons", n => { Reasons = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember263_reasons>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember263_reasons.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "removedMemberCount", n => { RemovedMemberCount = n.GetDoubleValue(); } },
+                { "removedUsers", n => { RemovedUsers = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember263_removedUsers>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember263_removedUsers.CreateFromDiscriminatorValue); } },
+                { "slug", n => { Slug = n.GetStringValue(); } },
+                { "teamId", n => { TeamId = n.GetStringValue(); } },
+                { "timestamp", n => { Timestamp = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -112,13 +109,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("directoryType", DirectoryType);
-            writer.WriteCollectionOfPrimitiveValues<string>("entitlements", Entitlements);
-            writer.WriteStringValue("invitationRole", InvitationRole);
-            writer.WriteStringValue("invitedEmail", InvitedEmail);
-            writer.WriteStringValue("invitedUid", InvitedUid);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember263_invitedUser>("invitedUser", InvitedUser);
-            writer.WriteStringValue("ssoType", SsoType);
+            writer.WriteStringValue("by", By);
+            writer.WriteStringValue("byUid", ByUid);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember263_reasons>("reasons", Reasons);
+            writer.WriteDoubleValue("removedMemberCount", RemovedMemberCount);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember263_removedUsers>("removedUsers", RemovedUsers);
+            writer.WriteStringValue("slug", Slug);
+            writer.WriteStringValue("teamId", TeamId);
+            writer.WriteDoubleValue("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

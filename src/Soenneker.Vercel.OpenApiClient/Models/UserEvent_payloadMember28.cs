@@ -15,45 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The after property</summary>
+        /// <summary>The alias property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28_after? After { get; set; }
+        public string? Alias { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28_after After { get; set; }
+        public string Alias { get; set; }
 #endif
-        /// <summary>The appId property</summary>
+        /// <summary>The deploymentUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId { get; set; }
+        public string? DeploymentUrl { get; set; }
 #nullable restore
 #else
-        public string AppId { get; set; }
-#endif
-        /// <summary>The appName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AppName { get; set; }
-#nullable restore
-#else
-        public string AppName { get; set; }
-#endif
-        /// <summary>The before property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28_before? Before { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28_before Before { get; set; }
-#endif
-        /// <summary>The installationId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? InstallationId { get; set; }
-#nullable restore
-#else
-        public string InstallationId { get; set; }
+        public string DeploymentUrl { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28"/> and sets the default values.
@@ -80,11 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "after", n => { After = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28_after>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28_after.CreateFromDiscriminatorValue); } },
-                { "appId", n => { AppId = n.GetStringValue(); } },
-                { "appName", n => { AppName = n.GetStringValue(); } },
-                { "before", n => { Before = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28_before>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28_before.CreateFromDiscriminatorValue); } },
-                { "installationId", n => { InstallationId = n.GetStringValue(); } },
+                { "alias", n => { Alias = n.GetStringValue(); } },
+                { "deploymentUrl", n => { DeploymentUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -94,11 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28_after>("after", After);
-            writer.WriteStringValue("appId", AppId);
-            writer.WriteStringValue("appName", AppName);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember28_before>("before", Before);
-            writer.WriteStringValue("installationId", InstallationId);
+            writer.WriteStringValue("alias", Alias);
+            writer.WriteStringValue("deploymentUrl", DeploymentUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

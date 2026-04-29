@@ -31,6 +31,34 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Deployment,
         #pragma warning restore CS1591
+        [EnumMember(Value = "agentic-provisioning-account-linked")]
+        #pragma warning disable CS1591
+        AgenticProvisioningAccountLinked,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "agentic-provisioning-account-relinked")]
+        #pragma warning disable CS1591
+        AgenticProvisioningAccountRelinked,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "agentic-provisioning-team-created")]
+        #pragma warning disable CS1591
+        AgenticProvisioningTeamCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "agentic-provisioning-account-blocked")]
+        #pragma warning disable CS1591
+        AgenticProvisioningAccountBlocked,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "agentic-provisioning-credentials-rotated")]
+        #pragma warning disable CS1591
+        AgenticProvisioningCredentialsRotated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "agentic-provisioning-account-unlinked")]
+        #pragma warning disable CS1591
+        AgenticProvisioningAccountUnlinked,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "agentic-provisioning-plan-changed")]
+        #pragma warning disable CS1591
+        AgenticProvisioningPlanChanged,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-api-key-created")]
         #pragma warning disable CS1591
         AiGatewayApiKeyCreated,

@@ -13,25 +13,27 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEvent_payloadMember41 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The action property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember41_action? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The data property</summary>
+        /// <summary>The amount property</summary>
+        public double? Amount { get; set; }
+        /// <summary>The invoiceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember41_data? Data { get; set; }
+        public string? InvoiceId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember41_data Data { get; set; }
+        public string InvoiceId { get; set; }
 #endif
-        /// <summary>The subscriptionId property</summary>
+        /// <summary>The lineItemCount property</summary>
+        public double? LineItemCount { get; set; }
+        /// <summary>The refundReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionId { get; set; }
+        public string? RefundReason { get; set; }
 #nullable restore
 #else
-        public string SubscriptionId { get; set; }
+        public string RefundReason { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember41"/> and sets the default values.
@@ -58,9 +60,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember41_action>(); } },
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember41_data>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember41_data.CreateFromDiscriminatorValue); } },
-                { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
+                { "amount", n => { Amount = n.GetDoubleValue(); } },
+                { "invoiceId", n => { InvoiceId = n.GetStringValue(); } },
+                { "lineItemCount", n => { LineItemCount = n.GetDoubleValue(); } },
+                { "refundReason", n => { RefundReason = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -70,9 +73,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember41_action>("action", Action);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember41_data>("data", Data);
-            writer.WriteStringValue("subscriptionId", SubscriptionId);
+            writer.WriteDoubleValue("amount", Amount);
+            writer.WriteStringValue("invoiceId", InvoiceId);
+            writer.WriteDoubleValue("lineItemCount", LineItemCount);
+            writer.WriteStringValue("refundReason", RefundReason);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

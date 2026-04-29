@@ -15,29 +15,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The entitlement property</summary>
+        /// <summary>The deletedCount property</summary>
+        public double? DeletedCount { get; set; }
+        /// <summary>The inviteIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Entitlement { get; set; }
+        public List<string>? InviteIds { get; set; }
 #nullable restore
 #else
-        public string Entitlement { get; set; }
-#endif
-        /// <summary>The previousCanceledAt property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PreviousCanceledAt { get; set; }
-#nullable restore
-#else
-        public string PreviousCanceledAt { get; set; }
-#endif
-        /// <summary>The user property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember268_user? User { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember268_user User { get; set; }
+        public List<string> InviteIds { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember268"/> and sets the default values.
@@ -64,9 +50,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "entitlement", n => { Entitlement = n.GetStringValue(); } },
-                { "previousCanceledAt", n => { PreviousCanceledAt = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember268_user>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember268_user.CreateFromDiscriminatorValue); } },
+                { "deletedCount", n => { DeletedCount = n.GetDoubleValue(); } },
+                { "inviteIds", n => { InviteIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -76,9 +61,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("entitlement", Entitlement);
-            writer.WriteStringValue("previousCanceledAt", PreviousCanceledAt);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember268_user>("user", User);
+            writer.WriteDoubleValue("deletedCount", DeletedCount);
+            writer.WriteCollectionOfPrimitiveValues<string>("inviteIds", InviteIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,8 +14,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The functionZeroConfigFailover property</summary>
-        public bool? FunctionZeroConfigFailover { get; set; }
+        /// <summary>The branchMatcher property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember175_next_branchMatcher? BranchMatcher { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember175_next_branchMatcher BranchMatcher { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember175_next"/> and sets the default values.
         /// </summary>
@@ -41,7 +47,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "functionZeroConfigFailover", n => { FunctionZeroConfigFailover = n.GetBoolValue(); } },
+                { "branchMatcher", n => { BranchMatcher = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember175_next_branchMatcher>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember175_next_branchMatcher.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -51,7 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("functionZeroConfigFailover", FunctionZeroConfigFailover);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember175_next_branchMatcher>("branchMatcher", BranchMatcher);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

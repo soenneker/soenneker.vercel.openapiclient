@@ -15,18 +15,54 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The convertedFromTrial property</summary>
-        public bool? ConvertedFromTrial { get; set; }
-        /// <summary>The invoiceId property</summary>
+        /// <summary>The directoryType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvoiceId { get; set; }
+        public string? DirectoryType { get; set; }
 #nullable restore
 #else
-        public string InvoiceId { get; set; }
+        public string DirectoryType { get; set; }
 #endif
-        /// <summary>The plan property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember277_plan? Plan { get; set; }
+        /// <summary>The origin property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Origin { get; set; }
+#nullable restore
+#else
+        public string Origin { get; set; }
+#endif
+        /// <summary>The previousRole property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviousRole { get; set; }
+#nullable restore
+#else
+        public string PreviousRole { get; set; }
+#endif
+        /// <summary>The role property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Role { get; set; }
+#nullable restore
+#else
+        public string Role { get; set; }
+#endif
+        /// <summary>The updatedUid property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UpdatedUid { get; set; }
+#nullable restore
+#else
+        public string UpdatedUid { get; set; }
+#endif
+        /// <summary>The updatedUser property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember277_updatedUser? UpdatedUser { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember277_updatedUser UpdatedUser { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember277"/> and sets the default values.
         /// </summary>
@@ -52,9 +88,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "convertedFromTrial", n => { ConvertedFromTrial = n.GetBoolValue(); } },
-                { "invoiceId", n => { InvoiceId = n.GetStringValue(); } },
-                { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember277_plan>(); } },
+                { "directoryType", n => { DirectoryType = n.GetStringValue(); } },
+                { "origin", n => { Origin = n.GetStringValue(); } },
+                { "previousRole", n => { PreviousRole = n.GetStringValue(); } },
+                { "role", n => { Role = n.GetStringValue(); } },
+                { "updatedUid", n => { UpdatedUid = n.GetStringValue(); } },
+                { "updatedUser", n => { UpdatedUser = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember277_updatedUser>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember277_updatedUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -64,9 +103,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("convertedFromTrial", ConvertedFromTrial);
-            writer.WriteStringValue("invoiceId", InvoiceId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember277_plan>("plan", Plan);
+            writer.WriteStringValue("directoryType", DirectoryType);
+            writer.WriteStringValue("origin", Origin);
+            writer.WriteStringValue("previousRole", PreviousRole);
+            writer.WriteStringValue("role", Role);
+            writer.WriteStringValue("updatedUid", UpdatedUid);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember277_updatedUser>("updatedUser", UpdatedUser);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

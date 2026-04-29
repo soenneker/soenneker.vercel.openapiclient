@@ -64,6 +64,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct
 #else
         public string LatestDeployment { get; set; }
 #endif
+        /// <summary>The makeEnvVarsSensitive property</summary>
+        public bool? MakeEnvVarsSensitive { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,6 +114,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct
                 { "framework", n => { Framework = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct.DirectPostResponse_store_projectsMetadata_framework>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "latestDeployment", n => { LatestDeployment = n.GetStringValue(); } },
+                { "makeEnvVarsSensitive", n => { MakeEnvVarsSensitive = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
             };
@@ -130,6 +133,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct.DirectPostResponse_store_projectsMetadata_framework>("framework", Framework);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("latestDeployment", LatestDeployment);
+            writer.WriteBoolValue("makeEnvVarsSensitive", MakeEnvVarsSensitive);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteAdditionalData(AdditionalData);

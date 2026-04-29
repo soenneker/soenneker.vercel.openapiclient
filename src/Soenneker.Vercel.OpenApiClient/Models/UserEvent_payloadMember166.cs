@@ -15,29 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The buildQueueConfiguration property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember166_buildQueueConfiguration? BuildQueueConfiguration { get; set; }
-        /// <summary>The elasticConcurrencyEnabled property</summary>
-        public bool? ElasticConcurrencyEnabled { get; set; }
-        /// <summary>The oldBuildQueueConfiguration property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember166_oldBuildQueueConfiguration? OldBuildQueueConfiguration { get; set; }
-        /// <summary>The oldElasticConcurrencyEnabled property</summary>
-        public bool? OldElasticConcurrencyEnabled { get; set; }
-        /// <summary>The projectId property</summary>
+        /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember166_project? Project { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember166_project Project { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The team property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember166_team? Team { get; set; }
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember166_team Team { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember166"/> and sets the default values.
@@ -64,12 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "buildQueueConfiguration", n => { BuildQueueConfiguration = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember166_buildQueueConfiguration>(); } },
-                { "elasticConcurrencyEnabled", n => { ElasticConcurrencyEnabled = n.GetBoolValue(); } },
-                { "oldBuildQueueConfiguration", n => { OldBuildQueueConfiguration = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember166_oldBuildQueueConfiguration>(); } },
-                { "oldElasticConcurrencyEnabled", n => { OldElasticConcurrencyEnabled = n.GetBoolValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember166_project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember166_project.CreateFromDiscriminatorValue); } },
+                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember166_team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember166_team.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -79,12 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember166_buildQueueConfiguration>("buildQueueConfiguration", BuildQueueConfiguration);
-            writer.WriteBoolValue("elasticConcurrencyEnabled", ElasticConcurrencyEnabled);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember166_oldBuildQueueConfiguration>("oldBuildQueueConfiguration", OldBuildQueueConfiguration);
-            writer.WriteBoolValue("oldElasticConcurrencyEnabled", OldElasticConcurrencyEnabled);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember166_project>("project", Project);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember166_team>("team", Team);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

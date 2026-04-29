@@ -15,21 +15,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The chatId property</summary>
+        /// <summary>The protectedProjectCount property</summary>
+        public double? ProtectedProjectCount { get; set; }
+        /// <summary>The protectionEnabled property</summary>
+        public bool? ProtectionEnabled { get; set; }
+        /// <summary>The vulnerabilities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChatId { get; set; }
+        public List<string>? Vulnerabilities { get; set; }
 #nullable restore
 #else
-        public string ChatId { get; set; }
-#endif
-        /// <summary>The chatTitle property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ChatTitle { get; set; }
-#nullable restore
-#else
-        public string ChatTitle { get; set; }
+        public List<string> Vulnerabilities { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember305"/> and sets the default values.
@@ -56,8 +52,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "chatId", n => { ChatId = n.GetStringValue(); } },
-                { "chatTitle", n => { ChatTitle = n.GetStringValue(); } },
+                { "protectedProjectCount", n => { ProtectedProjectCount = n.GetDoubleValue(); } },
+                { "protectionEnabled", n => { ProtectionEnabled = n.GetBoolValue(); } },
+                { "vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,8 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("chatId", ChatId);
-            writer.WriteStringValue("chatTitle", ChatTitle);
+            writer.WriteDoubleValue("protectedProjectCount", ProtectedProjectCount);
+            writer.WriteBoolValue("protectionEnabled", ProtectionEnabled);
+            writer.WriteCollectionOfPrimitiveValues<string>("vulnerabilities", Vulnerabilities);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
