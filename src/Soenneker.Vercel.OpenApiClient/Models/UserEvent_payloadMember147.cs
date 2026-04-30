@@ -15,22 +15,24 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The newName property</summary>
+        /// <summary>The headerName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewName { get; set; }
+        public string? HeaderName { get; set; }
 #nullable restore
 #else
-        public string NewName { get; set; }
+        public string HeaderName { get; set; }
 #endif
-        /// <summary>The oldName property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OldName { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string OldName { get; set; }
+        public string ProjectId { get; set; }
 #endif
+        /// <summary>The type property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember147_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember147"/> and sets the default values.
         /// </summary>
@@ -56,8 +58,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "newName", n => { NewName = n.GetStringValue(); } },
-                { "oldName", n => { OldName = n.GetStringValue(); } },
+                { "headerName", n => { HeaderName = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember147_type>(); } },
             };
         }
         /// <summary>
@@ -67,8 +70,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("newName", NewName);
-            writer.WriteStringValue("oldName", OldName);
+            writer.WriteStringValue("headerName", HeaderName);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember147_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

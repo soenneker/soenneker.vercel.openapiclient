@@ -23,21 +23,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string DestinationAccountName { get; set; }
 #endif
-        /// <summary>The newProjectName property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewProjectName { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public string NewProjectName { get; set; }
-#endif
-        /// <summary>The previousProjectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PreviousProjectName { get; set; }
-#nullable restore
-#else
-        public string PreviousProjectName { get; set; }
+        public string ProjectName { get; set; }
 #endif
         /// <summary>The transferId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,8 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "destinationAccountName", n => { DestinationAccountName = n.GetStringValue(); } },
-                { "newProjectName", n => { NewProjectName = n.GetStringValue(); } },
-                { "previousProjectName", n => { PreviousProjectName = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
                 { "transferId", n => { TransferId = n.GetStringValue(); } },
             };
         }
@@ -86,8 +77,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("destinationAccountName", DestinationAccountName);
-            writer.WriteStringValue("newProjectName", NewProjectName);
-            writer.WriteStringValue("previousProjectName", PreviousProjectName);
+            writer.WriteStringValue("projectName", ProjectName);
             writer.WriteStringValue("transferId", TransferId);
             writer.WriteAdditionalData(AdditionalData);
         }

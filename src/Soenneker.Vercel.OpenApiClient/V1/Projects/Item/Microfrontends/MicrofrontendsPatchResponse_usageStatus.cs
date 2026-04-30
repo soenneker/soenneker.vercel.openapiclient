@@ -20,6 +20,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
         public double? ExceededAllowanceUntil { get; set; }
         /// <summary>Billing mode. Always &apos;flat&apos; for flat-rate projects.</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_usageStatus_kind? Kind { get; set; }
+        /// <summary>Whether the project is currently throttled.</summary>
+        public bool? Throttled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_usageStatus"/> and sets the default values.
         /// </summary>
@@ -48,6 +50,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
                 { "bypassThrottleUntil", n => { BypassThrottleUntil = n.GetDoubleValue(); } },
                 { "exceededAllowanceUntil", n => { ExceededAllowanceUntil = n.GetDoubleValue(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_usageStatus_kind>(); } },
+                { "throttled", n => { Throttled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -60,6 +63,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
             writer.WriteDoubleValue("bypassThrottleUntil", BypassThrottleUntil);
             writer.WriteDoubleValue("exceededAllowanceUntil", ExceededAllowanceUntil);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_usageStatus_kind>("kind", Kind);
+            writer.WriteBoolValue("throttled", Throttled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

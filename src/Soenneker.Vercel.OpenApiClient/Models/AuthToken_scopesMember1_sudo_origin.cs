@@ -3,10 +3,14 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>Possible multi-factor origins</summary>
+    /// <summary>Possible step-up auth origins</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AuthToken_scopesMember1_sudo_origin
     {
+        [EnumMember(Value = "otp")]
+        #pragma warning disable CS1591
+        Otp,
+        #pragma warning restore CS1591
         [EnumMember(Value = "totp")]
         #pragma warning disable CS1591
         Totp,

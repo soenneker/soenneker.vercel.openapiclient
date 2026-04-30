@@ -16,7 +16,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The expiresAt property</summary>
         public double? ExpiresAt { get; set; }
-        /// <summary>Possible multi-factor origins</summary>
+        /// <summary>Possible step-up auth origins</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.AuthToken_scopesMember1_sudo_origin? Origin { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthToken_scopesMember1_sudo"/> and sets the default values.

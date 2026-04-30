@@ -803,6 +803,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         IntegrationConfigurationScopeChangeConfirmed,
         #pragma warning restore CS1591
+        [EnumMember(Value = "integration-configuration-transfer-out-success")]
+        #pragma warning disable CS1591
+        IntegrationConfigurationTransferOutSuccess,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "integration-configuration-transfer-in-success")]
+        #pragma warning disable CS1591
+        IntegrationConfigurationTransferInSuccess,
+        #pragma warning restore CS1591
         [EnumMember(Value = "integration-configurations-disabled")]
         #pragma warning disable CS1591
         IntegrationConfigurationsDisabled,
