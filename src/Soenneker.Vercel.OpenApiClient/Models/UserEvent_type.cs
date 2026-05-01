@@ -859,6 +859,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ManualDeploymentPromotionCreated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "marketplace-integration-allowlist-updated")]
+        #pragma warning disable CS1591
+        MarketplaceIntegrationAllowlistUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "microfrontend-group-added")]
         #pragma warning disable CS1591
         MicrofrontendGroupAdded,
