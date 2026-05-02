@@ -237,7 +237,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember9"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember17"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember9"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProjectsGetResponseMember3_projects_env_contentHint : IComposedTypeWrapper, IParsable
@@ -305,6 +305,14 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
 #nullable restore
 #else
             public global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember16 ProjectsGetResponseMember3ProjectsEnvContentHintMember16 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember17"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember17? ProjectsGetResponseMember3ProjectsEnvContentHintMember17 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember17 ProjectsGetResponseMember3ProjectsEnvContentHintMember17 { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -414,6 +422,10 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
+                    result.ProjectsGetResponseMember3ProjectsEnvContentHintMember17 = new global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember17();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.ProjectsGetResponseMember3ProjectsEnvContentHintMember2 = new global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember2();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -483,6 +495,10 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
                 else if(ProjectsGetResponseMember3ProjectsEnvContentHintMember16 != null)
                 {
                     return ProjectsGetResponseMember3ProjectsEnvContentHintMember16.GetFieldDeserializers();
+                }
+                else if(ProjectsGetResponseMember3ProjectsEnvContentHintMember17 != null)
+                {
+                    return ProjectsGetResponseMember3ProjectsEnvContentHintMember17.GetFieldDeserializers();
                 }
                 else if(ProjectsGetResponseMember3ProjectsEnvContentHintMember2 != null)
                 {
@@ -556,6 +572,10 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
                 else if(ProjectsGetResponseMember3ProjectsEnvContentHintMember16 != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember16>(null, ProjectsGetResponseMember3ProjectsEnvContentHintMember16);
+                }
+                else if(ProjectsGetResponseMember3ProjectsEnvContentHintMember17 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_env_contentHintMember17>(null, ProjectsGetResponseMember3ProjectsEnvContentHintMember17);
                 }
                 else if(ProjectsGetResponseMember3ProjectsEnvContentHintMember2 != null)
                 {

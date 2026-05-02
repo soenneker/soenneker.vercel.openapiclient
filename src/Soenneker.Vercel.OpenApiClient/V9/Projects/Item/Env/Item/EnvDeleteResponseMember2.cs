@@ -231,7 +231,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember9"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember17"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember9"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EnvDeleteResponseMember2_contentHint : IComposedTypeWrapper, IParsable
@@ -299,6 +299,14 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item
 #nullable restore
 #else
             public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember16 EnvDeleteResponseMember2ContentHintMember16 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember17"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember17? EnvDeleteResponseMember2ContentHintMember17 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember17 EnvDeleteResponseMember2ContentHintMember17 { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -408,6 +416,10 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
+                    result.EnvDeleteResponseMember2ContentHintMember17 = new global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember17();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.EnvDeleteResponseMember2ContentHintMember2 = new global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember2();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -477,6 +489,10 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item
                 else if(EnvDeleteResponseMember2ContentHintMember16 != null)
                 {
                     return EnvDeleteResponseMember2ContentHintMember16.GetFieldDeserializers();
+                }
+                else if(EnvDeleteResponseMember2ContentHintMember17 != null)
+                {
+                    return EnvDeleteResponseMember2ContentHintMember17.GetFieldDeserializers();
                 }
                 else if(EnvDeleteResponseMember2ContentHintMember2 != null)
                 {
@@ -550,6 +566,10 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item
                 else if(EnvDeleteResponseMember2ContentHintMember16 != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember16>(null, EnvDeleteResponseMember2ContentHintMember16);
+                }
+                else if(EnvDeleteResponseMember2ContentHintMember17 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env.Item.EnvDeleteResponseMember2_contentHintMember17>(null, EnvDeleteResponseMember2ContentHintMember17);
                 }
                 else if(EnvDeleteResponseMember2ContentHintMember2 != null)
                 {

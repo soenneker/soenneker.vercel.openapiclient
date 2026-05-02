@@ -241,7 +241,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember9"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember17"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember9"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EnvGetResponseMember3_envs_contentHint : IComposedTypeWrapper, IParsable
@@ -309,6 +309,14 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env
 #nullable restore
 #else
             public global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember16 EnvGetResponseMember3EnvsContentHintMember16 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember17"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember17? EnvGetResponseMember3EnvsContentHintMember17 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember17 EnvGetResponseMember3EnvsContentHintMember17 { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -418,6 +426,10 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
+                    result.EnvGetResponseMember3EnvsContentHintMember17 = new global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember17();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.EnvGetResponseMember3EnvsContentHintMember2 = new global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember2();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -487,6 +499,10 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env
                 else if(EnvGetResponseMember3EnvsContentHintMember16 != null)
                 {
                     return EnvGetResponseMember3EnvsContentHintMember16.GetFieldDeserializers();
+                }
+                else if(EnvGetResponseMember3EnvsContentHintMember17 != null)
+                {
+                    return EnvGetResponseMember3EnvsContentHintMember17.GetFieldDeserializers();
                 }
                 else if(EnvGetResponseMember3EnvsContentHintMember2 != null)
                 {
@@ -560,6 +576,10 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env
                 else if(EnvGetResponseMember3EnvsContentHintMember16 != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember16>(null, EnvGetResponseMember3EnvsContentHintMember16);
+                }
+                else if(EnvGetResponseMember3EnvsContentHintMember17 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3_envs_contentHintMember17>(null, EnvGetResponseMember3EnvsContentHintMember17);
                 }
                 else if(EnvGetResponseMember3EnvsContentHintMember2 != null)
                 {

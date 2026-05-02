@@ -8,9 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Env.Item
     public enum EnvGetResponseMember1_contentHintMember10_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "postgres-user")]
+        [EnumMember(Value = "postgres-prisma-url")]
         #pragma warning disable CS1591
-        PostgresUser,
+        PostgresPrismaUrl,
         #pragma warning restore CS1591
     }
 }

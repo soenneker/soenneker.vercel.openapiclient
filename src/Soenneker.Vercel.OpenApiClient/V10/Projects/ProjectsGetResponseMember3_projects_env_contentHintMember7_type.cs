@@ -8,9 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
     public enum ProjectsGetResponseMember3_projects_env_contentHintMember7_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "postgres-url")]
+        [EnumMember(Value = "blob-webhook-public-key")]
         #pragma warning disable CS1591
-        PostgresUrl,
+        BlobWebhookPublicKey,
         #pragma warning restore CS1591
     }
 }
