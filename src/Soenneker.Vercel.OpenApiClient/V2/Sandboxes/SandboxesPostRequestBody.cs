@@ -28,13 +28,13 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Network access policy for the sandbox.\n    Controls which external hosts the sandbox can communicate with.\n    Use \&quot;allow-all\&quot; mode to allow all traffic, \&quot;deny-all\&quot; to block all traffic or \&quot;custom\&quot; to provide specific rules.</summary>
+        /// <summary>The networkPolicy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicy? NetworkPolicy { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody.SandboxesPostRequestBody_networkPolicy? NetworkPolicy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicy NetworkPolicy { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody.SandboxesPostRequestBody_networkPolicy NetworkPolicy { get; set; }
 #endif
         /// <summary>Whether the sandbox persists its state across restarts via automatic snapshots. Defaults to true.</summary>
         public bool? Persistent { get; set; }
@@ -111,7 +111,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
             {
                 { "env", n => { Env = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_env>(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_env.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "networkPolicy", n => { NetworkPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicy>(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicy.CreateFromDiscriminatorValue); } },
+                { "networkPolicy", n => { NetworkPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody.SandboxesPostRequestBody_networkPolicy>(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody.SandboxesPostRequestBody_networkPolicy.CreateFromDiscriminatorValue); } },
                 { "persistent", n => { Persistent = n.GetBoolValue(); } },
                 { "ports", n => { Ports = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
@@ -132,7 +132,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_env>("env", Env);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicy>("networkPolicy", NetworkPolicy);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody.SandboxesPostRequestBody_networkPolicy>("networkPolicy", NetworkPolicy);
             writer.WriteBoolValue("persistent", Persistent);
             writer.WriteCollectionOfPrimitiveValues<int?>("ports", Ports);
             writer.WriteStringValue("projectId", ProjectId);
@@ -142,6 +142,81 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody.SandboxesPostRequestBody_source>("source", Source);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_tags>("tags", Tags);
             writer.WriteIntValue("timeout", Timeout);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember2"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class SandboxesPostRequestBody_networkPolicy : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember1? SandboxesPostRequestBodyNetworkPolicyMember1 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember1 SandboxesPostRequestBodyNetworkPolicyMember1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember2? SandboxesPostRequestBodyNetworkPolicyMember2 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember2 SandboxesPostRequestBodyNetworkPolicyMember2 { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody.SandboxesPostRequestBody_networkPolicy"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody.SandboxesPostRequestBody_networkPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody.SandboxesPostRequestBody_networkPolicy();
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.SandboxesPostRequestBodyNetworkPolicyMember1 = new global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember1();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.SandboxesPostRequestBodyNetworkPolicyMember2 = new global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember2();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(SandboxesPostRequestBodyNetworkPolicyMember1 != null)
+                {
+                    return SandboxesPostRequestBodyNetworkPolicyMember1.GetFieldDeserializers();
+                }
+                else if(SandboxesPostRequestBodyNetworkPolicyMember2 != null)
+                {
+                    return SandboxesPostRequestBodyNetworkPolicyMember2.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(SandboxesPostRequestBodyNetworkPolicyMember1 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember1>(null, SandboxesPostRequestBodyNetworkPolicyMember1);
+                }
+                else if(SandboxesPostRequestBodyNetworkPolicyMember2 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember2>(null, SandboxesPostRequestBodyNetworkPolicyMember2);
+                }
+            }
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_sourceMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_sourceMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_sourceMember3"/>
