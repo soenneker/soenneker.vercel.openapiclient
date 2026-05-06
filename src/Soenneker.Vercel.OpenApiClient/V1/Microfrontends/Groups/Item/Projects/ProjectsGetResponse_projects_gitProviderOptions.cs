@@ -24,7 +24,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects
 #endif
         /// <summary>Whether the Vercel bot should automatically create GitHub deployments https://docs.github.com/en/rest/deployments/deployments#about-deployments NOTE: repository-dispatch events should be used instead</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_gitProviderOptions_createDeployments? CreateDeployments { get; set; }
-        /// <summary>Whether the Vercel bot should not automatically create GitHub repository-dispatch events on deployment events. https://vercel.com/docs/git/vercel-for-github#repository-dispatch-events</summary>
+        /// <summary>Whether the Vercel bot should not automatically create GitHub repository-dispatch events on deployment events. https://vercel.com/docs/git/vercel-for-github#repository-dispatch-events - `true`: disable repository-dispatch events for this project (explicit override of the team setting). - `false`: enable repository-dispatch events for this project (explicit override of the team setting). - absent: inherit from `team.disableRepositoryDispatchEvents`.</summary>
         public bool? DisableRepositoryDispatchEvents { get; set; }
         /// <summary>Whether Vercel should post commit statuses for this project. When omitted, commit statuses remain enabled.</summary>
         public bool? GitCommitStatus { get; set; }

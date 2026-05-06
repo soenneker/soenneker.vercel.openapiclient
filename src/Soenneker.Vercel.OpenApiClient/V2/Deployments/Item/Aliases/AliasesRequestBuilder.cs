@@ -51,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.Aliases
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.Aliases.AliasesGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.Aliases.AliasesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new alias for the deployment with the given deployment ID. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
+        /// Creates a new alias for the deployment resolved from the given deployment or alias ID or URL. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.Aliases.AliasesPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.Aliases
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new alias for the deployment with the given deployment ID. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
+        /// Creates a new alias for the deployment resolved from the given deployment or alias ID or URL. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -148,7 +148,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.Aliases
 #endif
         }
         /// <summary>
-        /// Creates a new alias for the deployment with the given deployment ID. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
+        /// Creates a new alias for the deployment resolved from the given deployment or alias ID or URL. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AliasesRequestBuilderPostQueryParameters 

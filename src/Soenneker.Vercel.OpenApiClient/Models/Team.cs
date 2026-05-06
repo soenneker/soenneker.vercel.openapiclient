@@ -93,6 +93,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.Team.Team_disableHardAutoBlocks DisableHardAutoBlocks { get; set; }
 #endif
+        /// <summary>Default for projects in the team. When `true`, projects in this team will not emit GitHub repository-dispatch events on deployment events unless the project explicitly overrides this setting via `project.gitProviderOptions.disableRepositoryDispatchEvents`.</summary>
+        public bool? DisableRepositoryDispatchEvents { get; set; }
         /// <summary>Hostname that&apos;ll be matched with emails on sign-up to automatically join the Team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -270,6 +272,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "defaultRoles", n => { DefaultRoles = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultRoles>(global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultRoles.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "disableHardAutoBlocks", n => { DisableHardAutoBlocks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team.Team_disableHardAutoBlocks>(global::Soenneker.Vercel.OpenApiClient.Models.Team.Team_disableHardAutoBlocks.CreateFromDiscriminatorValue); } },
+                { "disableRepositoryDispatchEvents", n => { DisableRepositoryDispatchEvents = n.GetBoolValue(); } },
                 { "emailDomain", n => { EmailDomain = n.GetStringValue(); } },
                 { "enablePreviewFeedback", n => { EnablePreviewFeedback = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_enablePreviewFeedback>(); } },
                 { "enableProductionFeedback", n => { EnableProductionFeedback = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_enableProductionFeedback>(); } },
@@ -316,6 +319,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultRoles>("defaultRoles", DefaultRoles);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team.Team_disableHardAutoBlocks>("disableHardAutoBlocks", DisableHardAutoBlocks);
+            writer.WriteBoolValue("disableRepositoryDispatchEvents", DisableRepositoryDispatchEvents);
             writer.WriteStringValue("emailDomain", EmailDomain);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_enablePreviewFeedback>("enablePreviewFeedback", EnablePreviewFeedback);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_enableProductionFeedback>("enableProductionFeedback", EnableProductionFeedback);

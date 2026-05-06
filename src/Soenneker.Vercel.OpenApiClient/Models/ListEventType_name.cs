@@ -1183,6 +1183,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         TeamGitRequireVerifiedCommitsToggled,
         #pragma warning restore CS1591
+        [EnumMember(Value = "team-git-repository-dispatch-events-toggled")]
+        #pragma warning disable CS1591
+        TeamGitRepositoryDispatchEventsToggled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project-git-commit-status-toggled")]
         #pragma warning disable CS1591
         ProjectGitCommitStatusToggled,

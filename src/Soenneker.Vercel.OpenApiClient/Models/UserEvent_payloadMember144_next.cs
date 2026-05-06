@@ -26,6 +26,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Mode { get; set; }
 #endif
+        /// <summary>The newResourceBlockingPolicy property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember144_next_newResourceBlockingPolicy? NewResourceBlockingPolicy { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember144_next"/> and sets the default values.
         /// </summary>
@@ -54,6 +56,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "enforcePercentage", n => { EnforcePercentage = n.GetDoubleValue(); } },
                 { "mode", n => { Mode = n.GetStringValue(); } },
+                { "newResourceBlockingPolicy", n => { NewResourceBlockingPolicy = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember144_next_newResourceBlockingPolicy>(); } },
             };
         }
         /// <summary>
@@ -66,6 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteDoubleValue("enforcePercentage", EnforcePercentage);
             writer.WriteStringValue("mode", Mode);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember144_next_newResourceBlockingPolicy>("newResourceBlockingPolicy", NewResourceBlockingPolicy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

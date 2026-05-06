@@ -52,6 +52,8 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>Default for projects in the team. When `true`, projects in this team will not emit GitHub repository-dispatch events on deployment events unless the project explicitly overrides this setting.</summary>
+        public bool? DisableRepositoryDispatchEvents { get; set; }
         /// <summary>The emailDomain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -187,6 +189,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item
                 { "defaultExpirationSettings", n => { DefaultExpirationSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultExpirationSettings>(global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultExpirationSettings.CreateFromDiscriminatorValue); } },
                 { "defaultProjectJobs", n => { DefaultProjectJobs = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_defaultProjectJobs>(global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_defaultProjectJobs.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "disableRepositoryDispatchEvents", n => { DisableRepositoryDispatchEvents = n.GetBoolValue(); } },
                 { "emailDomain", n => { EmailDomain = n.GetStringValue(); } },
                 { "enablePreviewFeedback", n => { EnablePreviewFeedback = n.GetStringValue(); } },
                 { "enableProductionFeedback", n => { EnableProductionFeedback = n.GetStringValue(); } },
@@ -218,6 +221,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultExpirationSettings>("defaultExpirationSettings", DefaultExpirationSettings);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_defaultProjectJobs>("defaultProjectJobs", DefaultProjectJobs);
             writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("disableRepositoryDispatchEvents", DisableRepositoryDispatchEvents);
             writer.WriteStringValue("emailDomain", EmailDomain);
             writer.WriteStringValue("enablePreviewFeedback", EnablePreviewFeedback);
             writer.WriteStringValue("enableProductionFeedback", EnableProductionFeedback);

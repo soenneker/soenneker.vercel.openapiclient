@@ -23,5 +23,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         RecoveryCode,
         #pragma warning restore CS1591
+        [EnumMember(Value = "email-otp")]
+        #pragma warning disable CS1591
+        EmailOtp,
+        #pragma warning restore CS1591
     }
 }

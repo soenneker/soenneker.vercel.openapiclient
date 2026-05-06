@@ -18,6 +18,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? ExpiresAt { get; set; }
         /// <summary>Possible step-up auth origins</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.AuthToken_scopesMember1_sudo_origin? Origin { get; set; }
+        /// <summary>The verifiedAt property</summary>
+        public double? VerifiedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthToken_scopesMember1_sudo"/> and sets the default values.
         /// </summary>
@@ -45,6 +47,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
                 { "origin", n => { Origin = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthToken_scopesMember1_sudo_origin>(); } },
+                { "verifiedAt", n => { VerifiedAt = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -56,6 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("expiresAt", ExpiresAt);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthToken_scopesMember1_sudo_origin>("origin", Origin);
+            writer.WriteDoubleValue("verifiedAt", VerifiedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
