@@ -415,6 +415,14 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> DeploymentCheckReRunFromProductionBranch { get; set; }
 #endif
+        /// <summary>The deploymentPolicy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?>? DeploymentPolicy { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> DeploymentPolicy { get; set; }
+#endif
         /// <summary>The deploymentPreview property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2058,6 +2066,7 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
                 { "deploymentCheck", n => { DeploymentCheck = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "deploymentCheckPreview", n => { DeploymentCheckPreview = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "deploymentCheckReRunFromProductionBranch", n => { DeploymentCheckReRunFromProductionBranch = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
+                { "deploymentPolicy", n => { DeploymentPolicy = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "deploymentPreview", n => { DeploymentPreview = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "deploymentPrivate", n => { DeploymentPrivate = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "deploymentProductionGit", n => { DeploymentProductionGit = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
@@ -2313,6 +2322,7 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("deploymentCheck", DeploymentCheck);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("deploymentCheckPreview", DeploymentCheckPreview);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("deploymentCheckReRunFromProductionBranch", DeploymentCheckReRunFromProductionBranch);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("deploymentPolicy", DeploymentPolicy);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("deploymentPreview", DeploymentPreview);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("deploymentPrivate", DeploymentPrivate);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("deploymentProductionGit", DeploymentProductionGit);

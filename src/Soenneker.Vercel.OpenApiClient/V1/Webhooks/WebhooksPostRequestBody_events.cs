@@ -80,6 +80,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Webhooks
         #pragma warning disable CS1591
         DeploymentError,
         #pragma warning restore CS1591
+        [EnumMember(Value = "deployment.blocked")]
+        #pragma warning disable CS1591
+        DeploymentBlocked,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deployment.canceled")]
         #pragma warning disable CS1591
         DeploymentCanceled,

@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>How the token was issued. Always `&apos;manual&apos;` for explicit PAT creation.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum UserEvent_payloadMember321_origin
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "email")]
         #pragma warning disable CS1591

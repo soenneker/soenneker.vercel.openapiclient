@@ -1599,6 +1599,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         StrictDeploymentProtectionSettings,
         #pragma warning restore CS1591
+        [EnumMember(Value = "team-deployment-policy-updated")]
+        #pragma warning disable CS1591
+        TeamDeploymentPolicyUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "strict-shareable-links")]
         #pragma warning disable CS1591
         StrictShareableLinks,

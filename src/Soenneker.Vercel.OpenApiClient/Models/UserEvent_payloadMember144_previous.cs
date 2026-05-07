@@ -14,6 +14,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The allowUnsafeScriptSrcKeywords property</summary>
+        public bool? AllowUnsafeScriptSrcKeywords { get; set; }
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
         /// <summary>The enforcePercentage property</summary>
@@ -53,6 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allowUnsafeScriptSrcKeywords", n => { AllowUnsafeScriptSrcKeywords = n.GetBoolValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "enforcePercentage", n => { EnforcePercentage = n.GetDoubleValue(); } },
                 { "mode", n => { Mode = n.GetStringValue(); } },
@@ -66,6 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("allowUnsafeScriptSrcKeywords", AllowUnsafeScriptSrcKeywords);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteDoubleValue("enforcePercentage", EnforcePercentage);
             writer.WriteStringValue("mode", Mode);

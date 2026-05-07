@@ -19,6 +19,10 @@ namespace Soenneker.Vercel.OpenApiClient.V12.Deployments.Item.Cancel
         #pragma warning disable CS1591
         ERROR,
         #pragma warning restore CS1591
+        [EnumMember(Value = "BLOCKED")]
+        #pragma warning disable CS1591
+        BLOCKED,
+        #pragma warning restore CS1591
         [EnumMember(Value = "INITIALIZING")]
         #pragma warning disable CS1591
         INITIALIZING,
