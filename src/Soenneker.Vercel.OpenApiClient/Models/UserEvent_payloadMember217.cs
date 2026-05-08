@@ -23,8 +23,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>The reasonCode property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember217_reasonCode? ReasonCode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember217"/> and sets the default values.
         /// </summary>
@@ -51,7 +49,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "reasonCode", n => { ReasonCode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember217_reasonCode>(); } },
             };
         }
         /// <summary>
@@ -62,7 +59,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember217_reasonCode>("reasonCode", ReasonCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

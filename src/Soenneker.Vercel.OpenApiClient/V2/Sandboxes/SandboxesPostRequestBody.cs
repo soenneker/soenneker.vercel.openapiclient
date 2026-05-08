@@ -36,6 +36,14 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
 #else
         public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody.SandboxesPostRequestBody_networkPolicy NetworkPolicy { get; set; }
 #endif
+        /// <summary>List of forwarding rules for network requests. Each rule specifies a domain pattern to match and a proxy URL to forward matching requests to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyForwardRules>? NetworkPolicyForwardRules { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyForwardRules> NetworkPolicyForwardRules { get; set; }
+#endif
         /// <summary>Whether the sandbox persists its state across restarts via automatic snapshots. Defaults to true.</summary>
         public bool? Persistent { get; set; }
         /// <summary>List of ports to expose from the sandbox. Each port will be accessible via a unique URL. Maximum of 15 ports can be exposed.</summary>
@@ -112,6 +120,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
                 { "env", n => { Env = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_env>(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_env.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "networkPolicy", n => { NetworkPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody.SandboxesPostRequestBody_networkPolicy>(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody.SandboxesPostRequestBody_networkPolicy.CreateFromDiscriminatorValue); } },
+                { "__networkPolicyForwardRules", n => { NetworkPolicyForwardRules = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyForwardRules>(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyForwardRules.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "persistent", n => { Persistent = n.GetBoolValue(); } },
                 { "ports", n => { Ports = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
@@ -133,6 +142,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_env>("env", Env);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody.SandboxesPostRequestBody_networkPolicy>("networkPolicy", NetworkPolicy);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyForwardRules>("__networkPolicyForwardRules", NetworkPolicyForwardRules);
             writer.WriteBoolValue("persistent", Persistent);
             writer.WriteCollectionOfPrimitiveValues<int?>("ports", Ports);
             writer.WriteStringValue("projectId", ProjectId);

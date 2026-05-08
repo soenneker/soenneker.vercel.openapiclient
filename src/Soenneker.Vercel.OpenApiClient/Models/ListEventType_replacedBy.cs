@@ -1275,6 +1275,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ProjectPasswordProtection,
         #pragma warning restore CS1591
+        [EnumMember(Value = "project-expiration-locked")]
+        #pragma warning disable CS1591
+        ProjectExpirationLocked,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-expiration-scheduled")]
+        #pragma warning disable CS1591
+        ProjectExpirationScheduled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project-paused")]
         #pragma warning disable CS1591
         ProjectPaused,
@@ -1334,6 +1342,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "project-routes-version-restored")]
         #pragma warning disable CS1591
         ProjectRoutesVersionRestored,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-deployment-policy-updated")]
+        #pragma warning disable CS1591
+        ProjectDeploymentPolicyUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "project-oidc-issuer-mode-updated")]
         #pragma warning disable CS1591

@@ -44,6 +44,14 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item
 #else
         public global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_defaultProjectJobs DefaultProjectJobs { get; set; }
 #endif
+        /// <summary>The deploymentPolicy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_deploymentPolicy? DeploymentPolicy { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_deploymentPolicy DeploymentPolicy { get; set; }
+#endif
         /// <summary>A short text that describes the team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -188,6 +196,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item
                 { "defaultDeploymentProtection", n => { DefaultDeploymentProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultDeploymentProtection>(global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultDeploymentProtection.CreateFromDiscriminatorValue); } },
                 { "defaultExpirationSettings", n => { DefaultExpirationSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultExpirationSettings>(global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultExpirationSettings.CreateFromDiscriminatorValue); } },
                 { "defaultProjectJobs", n => { DefaultProjectJobs = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_defaultProjectJobs>(global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_defaultProjectJobs.CreateFromDiscriminatorValue); } },
+                { "deploymentPolicy", n => { DeploymentPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_deploymentPolicy>(global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_deploymentPolicy.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "disableRepositoryDispatchEvents", n => { DisableRepositoryDispatchEvents = n.GetBoolValue(); } },
                 { "emailDomain", n => { EmailDomain = n.GetStringValue(); } },
@@ -220,6 +229,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultDeploymentProtection>("defaultDeploymentProtection", DefaultDeploymentProtection);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_defaultExpirationSettings>("defaultExpirationSettings", DefaultExpirationSettings);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_defaultProjectJobs>("defaultProjectJobs", DefaultProjectJobs);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_deploymentPolicy>("deploymentPolicy", DeploymentPolicy);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("disableRepositoryDispatchEvents", DisableRepositoryDispatchEvents);
             writer.WriteStringValue("emailDomain", EmailDomain);
@@ -308,6 +318,74 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item
                 else if(String != null)
                 {
                     writer.WriteStringValue(null, String);
+                }
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_deploymentPolicyMember1"/>, <see cref="string"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithTeamPatchRequestBody_deploymentPolicy : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? String { get; set; }
+#nullable restore
+#else
+            public string String { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_deploymentPolicyMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_deploymentPolicyMember1? WithTeamPatchRequestBodyDeploymentPolicyMember1 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_deploymentPolicyMember1 WithTeamPatchRequestBodyDeploymentPolicyMember1 { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_deploymentPolicy"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_deploymentPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var result = new global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody.WithTeamPatchRequestBody_deploymentPolicy();
+                if(parseNode.GetStringValue() is string stringValue)
+                {
+                    result.String = stringValue;
+                }
+                else {
+                    result.WithTeamPatchRequestBodyDeploymentPolicyMember1 = new global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_deploymentPolicyMember1();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(WithTeamPatchRequestBodyDeploymentPolicyMember1 != null)
+                {
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WithTeamPatchRequestBodyDeploymentPolicyMember1);
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(String != null)
+                {
+                    writer.WriteStringValue(null, String);
+                }
+                else {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody_deploymentPolicyMember1>(null, WithTeamPatchRequestBodyDeploymentPolicyMember1);
                 }
             }
         }

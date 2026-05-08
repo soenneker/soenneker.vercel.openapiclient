@@ -180,6 +180,14 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_env> Env { get; set; }
 #endif
+        /// <summary>The expiration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_expiration? Expiration { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_expiration Expiration { get; set; }
+#endif
         /// <summary>The features property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -590,6 +598,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
                 { "enablePreviewFeedback", n => { EnablePreviewFeedback = n.GetBoolValue(); } },
                 { "enableProductionFeedback", n => { EnableProductionFeedback = n.GetBoolValue(); } },
                 { "env", n => { Env = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_env>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_env.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_expiration>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_expiration.CreateFromDiscriminatorValue); } },
                 { "features", n => { Features = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_features>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_features.CreateFromDiscriminatorValue); } },
                 { "flatRateTier", n => { FlatRateTier = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_flatRateTier>(); } },
                 { "framework", n => { Framework = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_framework>(); } },
@@ -689,6 +698,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
             writer.WriteBoolValue("enablePreviewFeedback", EnablePreviewFeedback);
             writer.WriteBoolValue("enableProductionFeedback", EnableProductionFeedback);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_env>("env", Env);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_expiration>("expiration", Expiration);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_features>("features", Features);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_flatRateTier>("flatRateTier", FlatRateTier);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_framework>("framework", Framework);

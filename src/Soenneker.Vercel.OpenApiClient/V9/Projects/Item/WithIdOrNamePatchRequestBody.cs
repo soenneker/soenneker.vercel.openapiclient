@@ -50,6 +50,14 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
 #endif
         /// <summary>Specifies whether customer support can see git source for a deployment</summary>
         public bool? CustomerSupportCodeVisibility { get; set; }
+        /// <summary>The deploymentPolicy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody.WithIdOrNamePatchRequestBody_deploymentPolicy? DeploymentPolicy { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody.WithIdOrNamePatchRequestBody_deploymentPolicy DeploymentPolicy { get; set; }
+#endif
         /// <summary>The dev command for this project. When `null` is used this value will be automatically detected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -254,6 +262,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
                 { "commandForIgnoringBuildStep", n => { CommandForIgnoringBuildStep = n.GetStringValue(); } },
                 { "connectConfigurations", n => { ConnectConfigurations = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_connectConfigurations>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_connectConfigurations.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "customerSupportCodeVisibility", n => { CustomerSupportCodeVisibility = n.GetBoolValue(); } },
+                { "deploymentPolicy", n => { DeploymentPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody.WithIdOrNamePatchRequestBody_deploymentPolicy>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody.WithIdOrNamePatchRequestBody_deploymentPolicy.CreateFromDiscriminatorValue); } },
                 { "devCommand", n => { DevCommand = n.GetStringValue(); } },
                 { "directoryListing", n => { DirectoryListing = n.GetBoolValue(); } },
                 { "dismissedToasts", n => { DismissedToasts = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_dismissedToasts>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_dismissedToasts.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -305,6 +314,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
             writer.WriteStringValue("commandForIgnoringBuildStep", CommandForIgnoringBuildStep);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_connectConfigurations>("connectConfigurations", ConnectConfigurations);
             writer.WriteBoolValue("customerSupportCodeVisibility", CustomerSupportCodeVisibility);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody.WithIdOrNamePatchRequestBody_deploymentPolicy>("deploymentPolicy", DeploymentPolicy);
             writer.WriteStringValue("devCommand", DevCommand);
             writer.WriteBoolValue("directoryListing", DirectoryListing);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_dismissedToasts>("dismissedToasts", DismissedToasts);
@@ -340,6 +350,74 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_tracing>("tracing", Tracing);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_trustedIps>("trustedIps", TrustedIps);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_trustedSources>("trustedSources", TrustedSources);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_deploymentPolicyMember1"/>, <see cref="string"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithIdOrNamePatchRequestBody_deploymentPolicy : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? String { get; set; }
+#nullable restore
+#else
+            public string String { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_deploymentPolicyMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_deploymentPolicyMember1? WithIdOrNamePatchRequestBodyDeploymentPolicyMember1 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_deploymentPolicyMember1 WithIdOrNamePatchRequestBodyDeploymentPolicyMember1 { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody.WithIdOrNamePatchRequestBody_deploymentPolicy"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody.WithIdOrNamePatchRequestBody_deploymentPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var result = new global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody.WithIdOrNamePatchRequestBody_deploymentPolicy();
+                if(parseNode.GetStringValue() is string stringValue)
+                {
+                    result.String = stringValue;
+                }
+                else {
+                    result.WithIdOrNamePatchRequestBodyDeploymentPolicyMember1 = new global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_deploymentPolicyMember1();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(WithIdOrNamePatchRequestBodyDeploymentPolicyMember1 != null)
+                {
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WithIdOrNamePatchRequestBodyDeploymentPolicyMember1);
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(String != null)
+                {
+                    writer.WriteStringValue(null, String);
+                }
+                else {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody_deploymentPolicyMember1>(null, WithIdOrNamePatchRequestBodyDeploymentPolicyMember1);
+                }
+            }
         }
     }
 }

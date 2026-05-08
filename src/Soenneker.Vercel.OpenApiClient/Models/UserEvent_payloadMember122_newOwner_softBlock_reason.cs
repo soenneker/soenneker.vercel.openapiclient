@@ -12,6 +12,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ENTERPRISE_UNPAID_INVOICE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "EXPOSURE_CAP_EXCEEDED")]
+        #pragma warning disable CS1591
+        EXPOSURE_CAP_EXCEEDED,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SUBSCRIPTION_CANCELED")]
         #pragma warning disable CS1591
         SUBSCRIPTION_CANCELED,

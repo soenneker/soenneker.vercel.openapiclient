@@ -37,6 +37,14 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
 #else
         public List<string> DeniedCIDRs { get; set; }
 #endif
+        /// <summary>HTTP header injection rules for outgoing requests matching specific domains. Traffic to matching domains will be intercepted instead of proxied through encrypted connections.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember1_injectionRules>? InjectionRules { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember1_injectionRules> InjectionRules { get; set; }
+#endif
         /// <summary>The network access policy mode. Use \&quot;allow-all\&quot; to permit all outbound traffic. Use \&quot;deny-all\&quot; to block all outbound traffic. Use \&quot;custom\&quot; to specify explicit allow/deny rules.</summary>
         public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember1_mode? Mode { get; set; }
         /// <summary>
@@ -60,6 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
                 { "allowedCIDRs", n => { AllowedCIDRs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "allowedDomains", n => { AllowedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "deniedCIDRs", n => { DeniedCIDRs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "injectionRules", n => { InjectionRules = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember1_injectionRules>(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember1_injectionRules.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember1_mode>(); } },
             };
         }
@@ -73,6 +82,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
             writer.WriteCollectionOfPrimitiveValues<string>("allowedCIDRs", AllowedCIDRs);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedDomains", AllowedDomains);
             writer.WriteCollectionOfPrimitiveValues<string>("deniedCIDRs", DeniedCIDRs);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember1_injectionRules>("injectionRules", InjectionRules);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_networkPolicyMember1_mode>("mode", Mode);
         }
     }

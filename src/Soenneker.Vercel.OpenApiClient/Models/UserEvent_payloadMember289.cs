@@ -15,14 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The inviteCode property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? InviteCode { get; set; }
-#nullable restore
-#else
-        public string InviteCode { get; set; }
-#endif
+        /// <summary>The nextConcurrentBuilds property</summary>
+        public double? NextConcurrentBuilds { get; set; }
+        /// <summary>The previousConcurrentBuilds property</summary>
+        public double? PreviousConcurrentBuilds { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember289"/> and sets the default values.
         /// </summary>
@@ -48,7 +44,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "inviteCode", n => { InviteCode = n.GetStringValue(); } },
+                { "nextConcurrentBuilds", n => { NextConcurrentBuilds = n.GetDoubleValue(); } },
+                { "previousConcurrentBuilds", n => { PreviousConcurrentBuilds = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -58,7 +55,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("inviteCode", InviteCode);
+            writer.WriteDoubleValue("nextConcurrentBuilds", NextConcurrentBuilds);
+            writer.WriteDoubleValue("previousConcurrentBuilds", PreviousConcurrentBuilds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
