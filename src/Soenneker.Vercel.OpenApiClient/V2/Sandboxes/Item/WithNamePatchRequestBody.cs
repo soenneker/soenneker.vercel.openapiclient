@@ -38,6 +38,14 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item
 #endif
         /// <summary>Whether the sandbox persists its state across restarts via automatic snapshots.</summary>
         public bool? Persistent { get; set; }
+        /// <summary>List of ports to expose from the sandbox. Each port will be accessible via a unique URL. Maximum of 15 ports can be exposed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<int?>? Ports { get; set; }
+#nullable restore
+#else
+        public List<int?> Ports { get; set; }
+#endif
         /// <summary>Resources to define the VM</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,6 +90,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item
                 { "env", n => { Env = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_env>(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_env.CreateFromDiscriminatorValue); } },
                 { "networkPolicy", n => { NetworkPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody.WithNamePatchRequestBody_networkPolicy>(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody.WithNamePatchRequestBody_networkPolicy.CreateFromDiscriminatorValue); } },
                 { "persistent", n => { Persistent = n.GetBoolValue(); } },
+                { "ports", n => { Ports = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_resources>(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_resources.CreateFromDiscriminatorValue); } },
                 { "runtime", n => { Runtime = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_runtime>(); } },
                 { "snapshotExpiration", n => { SnapshotExpiration = n.GetIntValue(); } },
@@ -100,6 +109,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_env>("env", Env);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody.WithNamePatchRequestBody_networkPolicy>("networkPolicy", NetworkPolicy);
             writer.WriteBoolValue("persistent", Persistent);
+            writer.WriteCollectionOfPrimitiveValues<int?>("ports", Ports);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_resources>("resources", Resources);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.WithNamePatchRequestBody_runtime>("runtime", Runtime);
             writer.WriteIntValue("snapshotExpiration", SnapshotExpiration);
