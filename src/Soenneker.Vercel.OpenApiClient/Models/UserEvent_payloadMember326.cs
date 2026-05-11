@@ -13,7 +13,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEvent_payloadMember326 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The actorTokenId property</summary>
+        /// <summary>The token&apos;s public ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActorTokenId { get; set; }

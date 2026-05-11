@@ -67,6 +67,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Invite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "token-exchange-oidc")]
+        #pragma warning disable CS1591
+        TokenExchangeOidc,
+        #pragma warning restore CS1591
         [EnumMember(Value = "emu")]
         #pragma warning disable CS1591
         Emu,

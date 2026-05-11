@@ -23,6 +23,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Plan,
         #pragma warning restore CS1591
+        [EnumMember(Value = "domain")]
+        #pragma warning disable CS1591
+        Domain,
+        #pragma warning restore CS1591
         [EnumMember(Value = "flag")]
         #pragma warning disable CS1591
         Flag,
@@ -482,10 +486,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "dns-update")]
         #pragma warning disable CS1591
         DnsUpdate,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "domain")]
-        #pragma warning disable CS1591
-        Domain,
         #pragma warning restore CS1591
         [EnumMember(Value = "domain-buy")]
         #pragma warning disable CS1591
@@ -1282,6 +1282,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "project-expiration-scheduled")]
         #pragma warning disable CS1591
         ProjectExpirationScheduled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-expiration-unlocked")]
+        #pragma warning disable CS1591
+        ProjectExpirationUnlocked,
         #pragma warning restore CS1591
         [EnumMember(Value = "project-paused")]
         #pragma warning disable CS1591

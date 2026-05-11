@@ -20,5 +20,9 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
         #pragma warning disable CS1591
         Standard,
         #pragma warning restore CS1591
+        [EnumMember(Value = "elastic")]
+        #pragma warning disable CS1591
+        Elastic,
+        #pragma warning restore CS1591
     }
 }

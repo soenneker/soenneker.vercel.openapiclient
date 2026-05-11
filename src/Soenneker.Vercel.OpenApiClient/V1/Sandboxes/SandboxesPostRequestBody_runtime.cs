@@ -15,6 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes
         #pragma warning disable CS1591
         Node24,
         #pragma warning restore CS1591
+        [EnumMember(Value = "node26")]
+        #pragma warning disable CS1591
+        Node26,
+        #pragma warning restore CS1591
         [EnumMember(Value = "python3.13")]
         #pragma warning disable CS1591
         Python313,

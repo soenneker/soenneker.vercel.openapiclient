@@ -183,10 +183,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects
         /// <summary>The expiration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_expiration? Expiration { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects.ProjectsGetResponse_projects_expiration? Expiration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_expiration Expiration { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects.ProjectsGetResponse_projects_expiration Expiration { get; set; }
 #endif
         /// <summary>The features property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -598,7 +598,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects
                 { "enablePreviewFeedback", n => { EnablePreviewFeedback = n.GetBoolValue(); } },
                 { "enableProductionFeedback", n => { EnableProductionFeedback = n.GetBoolValue(); } },
                 { "env", n => { Env = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_env>(global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_env.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_expiration>(global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_expiration.CreateFromDiscriminatorValue); } },
+                { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects.ProjectsGetResponse_projects_expiration>(global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects.ProjectsGetResponse_projects_expiration.CreateFromDiscriminatorValue); } },
                 { "features", n => { Features = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_features>(global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_features.CreateFromDiscriminatorValue); } },
                 { "flatRateTier", n => { FlatRateTier = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_flatRateTier>(); } },
                 { "framework", n => { Framework = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_framework>(); } },
@@ -698,7 +698,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects
             writer.WriteBoolValue("enablePreviewFeedback", EnablePreviewFeedback);
             writer.WriteBoolValue("enableProductionFeedback", EnableProductionFeedback);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_env>("env", Env);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_expiration>("expiration", Expiration);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects.ProjectsGetResponse_projects_expiration>("expiration", Expiration);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_features>("features", Features);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_flatRateTier>("flatRateTier", FlatRateTier);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_framework>("framework", Framework);
@@ -761,6 +761,81 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects
             writer.WriteBoolValue("v0Created", V0Created);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_webAnalytics>("webAnalytics", WebAnalytics);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_expirationMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_expirationMember2"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ProjectsGetResponse_projects_expiration : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_expirationMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_expirationMember1? ProjectsGetResponseProjectsExpirationMember1 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_expirationMember1 ProjectsGetResponseProjectsExpirationMember1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_expirationMember2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_expirationMember2? ProjectsGetResponseProjectsExpirationMember2 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_expirationMember2 ProjectsGetResponseProjectsExpirationMember2 { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects.ProjectsGetResponse_projects_expiration"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects.ProjectsGetResponse_projects_expiration CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects.ProjectsGetResponse_projects_expiration();
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.ProjectsGetResponseProjectsExpirationMember1 = new global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_expirationMember1();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.ProjectsGetResponseProjectsExpirationMember2 = new global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_expirationMember2();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(ProjectsGetResponseProjectsExpirationMember1 != null)
+                {
+                    return ProjectsGetResponseProjectsExpirationMember1.GetFieldDeserializers();
+                }
+                else if(ProjectsGetResponseProjectsExpirationMember2 != null)
+                {
+                    return ProjectsGetResponseProjectsExpirationMember2.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(ProjectsGetResponseProjectsExpirationMember1 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_expirationMember1>(null, ProjectsGetResponseProjectsExpirationMember1);
+                }
+                else if(ProjectsGetResponseProjectsExpirationMember2 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_expirationMember2>(null, ProjectsGetResponseProjectsExpirationMember2);
+                }
+            }
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_internalRoutesMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects.ProjectsGetResponse_projects_internalRoutesMember2"/>
