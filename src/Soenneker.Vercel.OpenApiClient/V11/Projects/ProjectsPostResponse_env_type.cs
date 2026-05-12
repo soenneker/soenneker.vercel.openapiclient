@@ -8,10 +8,6 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
     public enum ProjectsPostResponse_env_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "secret")]
-        #pragma warning disable CS1591
-        Secret,
-        #pragma warning restore CS1591
         [EnumMember(Value = "system")]
         #pragma warning disable CS1591
         System,
@@ -27,6 +23,10 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
         [EnumMember(Value = "sensitive")]
         #pragma warning disable CS1591
         Sensitive,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "secret")]
+        #pragma warning disable CS1591
+        Secret,
         #pragma warning restore CS1591
     }
 }

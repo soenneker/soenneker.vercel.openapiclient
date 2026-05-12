@@ -8,6 +8,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects
     public enum ProjectsGetResponse_projects_resourceConfig_buildMachineType
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "standard")]
+        #pragma warning disable CS1591
+        Standard,
+        #pragma warning restore CS1591
         [EnumMember(Value = "enhanced")]
         #pragma warning disable CS1591
         Enhanced,
@@ -15,10 +19,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects
         [EnumMember(Value = "turbo")]
         #pragma warning disable CS1591
         Turbo,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "standard")]
-        #pragma warning disable CS1591
-        Standard,
         #pragma warning restore CS1591
     }
 }

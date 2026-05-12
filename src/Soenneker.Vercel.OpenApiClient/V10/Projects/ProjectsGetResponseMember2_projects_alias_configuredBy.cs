@@ -8,13 +8,13 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
     public enum ProjectsGetResponseMember2_projects_alias_configuredBy
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "A")]
-        #pragma warning disable CS1591
-        A,
-        #pragma warning restore CS1591
         [EnumMember(Value = "CNAME")]
         #pragma warning disable CS1591
         CNAME,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "A")]
+        #pragma warning disable CS1591
+        A,
         #pragma warning restore CS1591
         [EnumMember(Value = "http")]
         #pragma warning disable CS1591

@@ -8,6 +8,14 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
     public enum WithIdOrNameGetResponse_lastAliasRequest_jobStatus
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "pending")]
+        #pragma warning disable CS1591
+        Pending,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "in-progress")]
+        #pragma warning disable CS1591
+        InProgress,
+        #pragma warning restore CS1591
         [EnumMember(Value = "succeeded")]
         #pragma warning disable CS1591
         Succeeded,
@@ -19,14 +27,6 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         [EnumMember(Value = "skipped")]
         #pragma warning disable CS1591
         Skipped,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "pending")]
-        #pragma warning disable CS1591
-        Pending,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "in-progress")]
-        #pragma warning disable CS1591
-        InProgress,
         #pragma warning restore CS1591
     }
 }

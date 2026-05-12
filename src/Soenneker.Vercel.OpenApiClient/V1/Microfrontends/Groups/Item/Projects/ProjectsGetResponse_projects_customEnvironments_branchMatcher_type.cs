@@ -7,10 +7,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ProjectsGetResponse_projects_customEnvironments_branchMatcher_type
     {
-        [EnumMember(Value = "endsWith")]
-        #pragma warning disable CS1591
-        EndsWith,
-        #pragma warning restore CS1591
         [EnumMember(Value = "startsWith")]
         #pragma warning disable CS1591
         StartsWith,
@@ -18,6 +14,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects
         [EnumMember(Value = "equals")]
         #pragma warning disable CS1591
         Equals,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "endsWith")]
+        #pragma warning disable CS1591
+        EndsWith,
         #pragma warning restore CS1591
     }
 }

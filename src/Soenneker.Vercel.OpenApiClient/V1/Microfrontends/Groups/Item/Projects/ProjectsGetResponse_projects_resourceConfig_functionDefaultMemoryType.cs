@@ -8,13 +8,13 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.Item.Projects
     public enum ProjectsGetResponse_projects_resourceConfig_functionDefaultMemoryType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "standard")]
-        #pragma warning disable CS1591
-        Standard,
-        #pragma warning restore CS1591
         [EnumMember(Value = "standard_legacy")]
         #pragma warning disable CS1591
         Standard_legacy,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "standard")]
+        #pragma warning disable CS1591
+        Standard,
         #pragma warning restore CS1591
         [EnumMember(Value = "performance")]
         #pragma warning disable CS1591

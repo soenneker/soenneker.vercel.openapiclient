@@ -1275,6 +1275,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ProjectPasswordProtection,
         #pragma warning restore CS1591
+        [EnumMember(Value = "project-expiration-reached")]
+        #pragma warning disable CS1591
+        ProjectExpirationReached,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project-expiration-locked")]
         #pragma warning disable CS1591
         ProjectExpirationLocked,
@@ -1842,6 +1846,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "alert-rule-deleted")]
         #pragma warning disable CS1591
         AlertRuleDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "custom-alert-created")]
+        #pragma warning disable CS1591
+        CustomAlertCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "custom-alert-deleted")]
+        #pragma warning disable CS1591
+        CustomAlertDeleted,
         #pragma warning restore CS1591
         [EnumMember(Value = "vulnerability-banner-dismissed")]
         #pragma warning disable CS1591

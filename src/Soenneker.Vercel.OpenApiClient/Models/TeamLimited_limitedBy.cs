@@ -16,5 +16,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Scope,
         #pragma warning restore CS1591
+        [EnumMember(Value = "invalidated")]
+        #pragma warning disable CS1591
+        Invalidated,
+        #pragma warning restore CS1591
     }
 }

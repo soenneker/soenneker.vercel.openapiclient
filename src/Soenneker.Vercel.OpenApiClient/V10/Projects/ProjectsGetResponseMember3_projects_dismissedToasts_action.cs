@@ -8,10 +8,6 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
     public enum ProjectsGetResponseMember3_projects_dismissedToasts_action
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "delete")]
-        #pragma warning disable CS1591
-        Delete,
-        #pragma warning restore CS1591
         [EnumMember(Value = "cancel")]
         #pragma warning disable CS1591
         Cancel,
@@ -19,6 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
         [EnumMember(Value = "accept")]
         #pragma warning disable CS1591
         Accept,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "delete")]
+        #pragma warning disable CS1591
+        Delete,
         #pragma warning restore CS1591
     }
 }

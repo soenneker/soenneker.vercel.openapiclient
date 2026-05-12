@@ -8,10 +8,6 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
     public enum WithIdOrNamePatchResponse_security_managedRules_ai_bots_action
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "log")]
-        #pragma warning disable CS1591
-        Log,
-        #pragma warning restore CS1591
         [EnumMember(Value = "deny")]
         #pragma warning disable CS1591
         Deny,
@@ -19,6 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         [EnumMember(Value = "challenge")]
         #pragma warning disable CS1591
         Challenge,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "log")]
+        #pragma warning disable CS1591
+        Log,
         #pragma warning restore CS1591
     }
 }

@@ -8,13 +8,13 @@ namespace Soenneker.Vercel.OpenApiClient.Projects.TransferRequest.Item
     public enum WithCodePutResponse_partnerCalls_result_status
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "errored")]
-        #pragma warning disable CS1591
-        Errored,
-        #pragma warning restore CS1591
         [EnumMember(Value = "fulfilled")]
         #pragma warning disable CS1591
         Fulfilled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "errored")]
+        #pragma warning disable CS1591
+        Errored,
         #pragma warning restore CS1591
     }
 }

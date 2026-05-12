@@ -8,10 +8,6 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
     public enum ProjectsGetResponseMember2_projects_security_managedRules_bot_filter_action
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "log")]
-        #pragma warning disable CS1591
-        Log,
-        #pragma warning restore CS1591
         [EnumMember(Value = "deny")]
         #pragma warning disable CS1591
         Deny,
@@ -19,6 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
         [EnumMember(Value = "challenge")]
         #pragma warning disable CS1591
         Challenge,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "log")]
+        #pragma warning disable CS1591
+        Log,
         #pragma warning restore CS1591
     }
 }

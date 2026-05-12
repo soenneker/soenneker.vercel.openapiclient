@@ -8,14 +8,6 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
     public enum ProjectsGetResponseMember2_projects_security_firewallRoutes_missing_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "path")]
-        #pragma warning disable CS1591
-        Path,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "query")]
-        #pragma warning disable CS1591
-        Query,
-        #pragma warning restore CS1591
         [EnumMember(Value = "host")]
         #pragma warning disable CS1591
         Host,
@@ -24,6 +16,10 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
         #pragma warning disable CS1591
         Method,
         #pragma warning restore CS1591
+        [EnumMember(Value = "path")]
+        #pragma warning disable CS1591
+        Path,
+        #pragma warning restore CS1591
         [EnumMember(Value = "header")]
         #pragma warning disable CS1591
         Header,
@@ -31,6 +27,10 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
         [EnumMember(Value = "cookie")]
         #pragma warning disable CS1591
         Cookie,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "query")]
+        #pragma warning disable CS1591
+        Query,
         #pragma warning restore CS1591
         [EnumMember(Value = "ip_address")]
         #pragma warning disable CS1591

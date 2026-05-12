@@ -8,10 +8,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
     public enum MicrofrontendsPatchResponse_framework
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "services")]
-        #pragma warning disable CS1591
-        Services,
-        #pragma warning restore CS1591
         [EnumMember(Value = "blitzjs")]
         #pragma warning disable CS1591
         Blitzjs,
@@ -200,6 +196,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
         #pragma warning disable CS1591
         Django,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ash")]
+        #pragma warning disable CS1591
+        Ash,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sanity-v3")]
         #pragma warning disable CS1591
         SanityV3,
@@ -275,6 +275,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
         [EnumMember(Value = "go")]
         #pragma warning disable CS1591
         Go,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "services")]
+        #pragma warning disable CS1591
+        Services,
         #pragma warning restore CS1591
         [EnumMember(Value = "mastra")]
         #pragma warning disable CS1591

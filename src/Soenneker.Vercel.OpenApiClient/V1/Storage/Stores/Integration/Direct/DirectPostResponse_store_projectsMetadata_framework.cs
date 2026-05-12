@@ -196,6 +196,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Storage.Stores.Integration.Direct
         #pragma warning disable CS1591
         Django,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ash")]
+        #pragma warning disable CS1591
+        Ash,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sanity-v3")]
         #pragma warning disable CS1591
         SanityV3,

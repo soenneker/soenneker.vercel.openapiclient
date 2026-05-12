@@ -7,13 +7,13 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Complet
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CompletePostResponse_rollingRelease_canaryDeployment_target
     {
-        [EnumMember(Value = "staging")]
-        #pragma warning disable CS1591
-        Staging,
-        #pragma warning restore CS1591
         [EnumMember(Value = "production")]
         #pragma warning disable CS1591
         Production,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "staging")]
+        #pragma warning disable CS1591
+        Staging,
         #pragma warning restore CS1591
     }
 }

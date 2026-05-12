@@ -7,10 +7,6 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithIdOrNamePatchRequestBody_framework
     {
-        [EnumMember(Value = "services")]
-        #pragma warning disable CS1591
-        Services,
-        #pragma warning restore CS1591
         [EnumMember(Value = "blitzjs")]
         #pragma warning disable CS1591
         Blitzjs,
@@ -199,6 +195,10 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         #pragma warning disable CS1591
         Django,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ash")]
+        #pragma warning disable CS1591
+        Ash,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sanity-v3")]
         #pragma warning disable CS1591
         SanityV3,
@@ -274,6 +274,10 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         [EnumMember(Value = "go")]
         #pragma warning disable CS1591
         Go,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "services")]
+        #pragma warning disable CS1591
+        Services,
         #pragma warning restore CS1591
         [EnumMember(Value = "mastra")]
         #pragma warning disable CS1591
