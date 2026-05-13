@@ -24,8 +24,6 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
 #else
         public string LockedBy { get; set; }
 #endif
-        /// <summary>Last version observed at lock time, carried forward unchanged. Lock is terminal and does not produce a new event, so it does not bump the counter — but the field is retained so a later re-schedule increments from a known number.</summary>
-        public double? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3_projects_expirationMember2"/> and sets the default values.
         /// </summary>
@@ -53,7 +51,6 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             {
                 { "lockedAt", n => { LockedAt = n.GetDoubleValue(); } },
                 { "lockedBy", n => { LockedBy = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -65,7 +62,6 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("lockedAt", LockedAt);
             writer.WriteStringValue("lockedBy", LockedBy);
-            writer.WriteDoubleValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

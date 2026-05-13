@@ -28,14 +28,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes
 #else
         public global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody_networkPolicy NetworkPolicy { get; set; }
 #endif
-        /// <summary>List of forwarding rules for network requests. Each rule specifies a domain pattern to match and a proxy URL to forward matching requests to.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody_networkPolicyForwardRules>? NetworkPolicyForwardRules { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody_networkPolicyForwardRules> NetworkPolicyForwardRules { get; set; }
-#endif
         /// <summary>List of ports to expose from the sandbox. Each port will be accessible via a unique URL. Maximum of 15 ports can be exposed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,7 +91,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes
             {
                 { "env", n => { Env = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody_env>(global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody_env.CreateFromDiscriminatorValue); } },
                 { "networkPolicy", n => { NetworkPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody_networkPolicy>(global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody_networkPolicy.CreateFromDiscriminatorValue); } },
-                { "__networkPolicyForwardRules", n => { NetworkPolicyForwardRules = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody_networkPolicyForwardRules>(global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody_networkPolicyForwardRules.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ports", n => { Ports = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody_resources>(global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody_resources.CreateFromDiscriminatorValue); } },
@@ -117,7 +108,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody_env>("env", Env);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody_networkPolicy>("networkPolicy", NetworkPolicy);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody_networkPolicyForwardRules>("__networkPolicyForwardRules", NetworkPolicyForwardRules);
             writer.WriteCollectionOfPrimitiveValues<int?>("ports", Ports);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody_resources>("resources", Resources);

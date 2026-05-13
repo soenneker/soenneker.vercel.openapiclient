@@ -16,8 +16,6 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unix ms timestamp when the project is scheduled to expire.</summary>
         public double? ExpiresAt { get; set; }
-        /// <summary>Version stamped on the in-flight `ExpireProject` event.</summary>
-        public double? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_expirationMember1"/> and sets the default values.
         /// </summary>
@@ -44,7 +42,6 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
-                { "version", n => { Version = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -55,7 +52,6 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("expiresAt", ExpiresAt);
-            writer.WriteDoubleValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
