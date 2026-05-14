@@ -1927,6 +1927,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> V0Chat { get; set; }
 #endif
+        /// <summary>The vcrRepository property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?>? VcrRepository { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction?> VcrRepository { get; set; }
+#endif
         /// <summary>The vercelAppInstallation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2263,6 +2271,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
                 { "userPreference", n => { UserPreference = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "userSudo", n => { UserSudo = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "v0Chat", n => { V0Chat = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
+                { "vcrRepository", n => { VcrRepository = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "vercelAppInstallation", n => { VercelAppInstallation = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "vercelAppInstallationRequest", n => { VercelAppInstallationRequest = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
                 { "vercelRun", n => { VercelRun = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>()?.AsList(); } },
@@ -2520,6 +2529,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("userPreference", UserPreference);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("userSudo", UserSudo);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("v0Chat", V0Chat);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("vcrRepository", VcrRepository);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("vercelAppInstallation", VercelAppInstallation);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("vercelAppInstallationRequest", VercelAppInstallationRequest);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ACLAction>("vercelRun", VercelRun);

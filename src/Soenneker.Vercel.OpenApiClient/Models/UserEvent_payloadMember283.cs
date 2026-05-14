@@ -79,6 +79,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Uid { get; set; }
 #endif
+        /// <summary>The updatedUid property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UpdatedUid { get; set; }
+#nullable restore
+#else
+        public string UpdatedUid { get; set; }
+#endif
+        /// <summary>The updatedUser property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember283_updatedUser? UpdatedUser { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember283_updatedUser UpdatedUser { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember283"/> and sets the default values.
         /// </summary>
@@ -112,6 +128,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "teamRoles", n => { TeamRoles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "teamSlug", n => { TeamSlug = n.GetStringValue(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
+                { "updatedUid", n => { UpdatedUid = n.GetStringValue(); } },
+                { "updatedUser", n => { UpdatedUser = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember283_updatedUser>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember283_updatedUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -129,6 +147,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("teamRoles", TeamRoles);
             writer.WriteStringValue("teamSlug", TeamSlug);
             writer.WriteStringValue("uid", Uid);
+            writer.WriteStringValue("updatedUid", UpdatedUid);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember283_updatedUser>("updatedUser", UpdatedUser);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
