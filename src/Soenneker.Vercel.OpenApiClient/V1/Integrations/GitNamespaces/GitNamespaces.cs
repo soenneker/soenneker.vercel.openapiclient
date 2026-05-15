@@ -60,6 +60,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces
 #else
         public string Slug { get; set; }
 #endif
+        /// <summary>The viewer property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GitNamespaces_viewer? Viewer { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GitNamespaces_viewer Viewer { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GitNamespaces"/> and sets the default values.
         /// </summary>
@@ -93,6 +101,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces
                 { "provider", n => { Provider = n.GetStringValue(); } },
                 { "requireReauth", n => { RequireReauth = n.GetBoolValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
+                { "viewer", n => { Viewer = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GitNamespaces_viewer>(global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GitNamespaces_viewer.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -110,6 +119,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces
             writer.WriteStringValue("provider", Provider);
             writer.WriteBoolValue("requireReauth", RequireReauth);
             writer.WriteStringValue("slug", Slug);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GitNamespaces_viewer>("viewer", Viewer);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>

@@ -21,7 +21,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GitNamespacesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/integrations/git-namespaces{?host*,provider*}", pathParameters)
+        public GitNamespacesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/integrations/git-namespaces{?host*,provider*,viewerMetadata*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GitNamespacesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/integrations/git-namespaces{?host*,provider*}", rawUrl)
+        public GitNamespacesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/integrations/git-namespaces{?host*,provider*,viewerMetadata*}", rawUrl)
         {
         }
         /// <summary>
@@ -97,6 +97,9 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces
 #endif
             [QueryParameter("provider")]
             public global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GetProviderQueryParameterType? Provider { get; set; }
+            /// <summary>When true, includes the viewer object for each namespace.</summary>
+            [QueryParameter("viewerMetadata")]
+            public bool? ViewerMetadata { get; set; }
         }
     }
 }

@@ -1855,6 +1855,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         CustomAlertDeleted,
         #pragma warning restore CS1591
+        [EnumMember(Value = "custom-alert-updated")]
+        #pragma warning disable CS1591
+        CustomAlertUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "vulnerability-banner-dismissed")]
         #pragma warning disable CS1591
         VulnerabilityBannerDismissed,
