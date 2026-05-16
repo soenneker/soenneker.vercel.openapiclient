@@ -146,6 +146,14 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
 #else
         public global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_deploymentExpiration DeploymentExpiration { get; set; }
 #endif
+        /// <summary>Project-level shape. Each rule may be: - an object: overrides the team&apos;s value for that rule - `null`: explicitly clears the override on just that rule (inherit team) - omitted: inherit team To clear all overrides and inherit fully, set the project&apos;s `deploymentPolicy` field itself to `null`. Defined independently from {@link TeamDeploymentPolicy} so the two are not coupled by a shared type — the underlying data lives in separate stores.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_deploymentPolicy? DeploymentPolicy { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_deploymentPolicy DeploymentPolicy { get; set; }
+#endif
         /// <summary>The devCommand property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -590,6 +598,7 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
                 { "defaultResourceConfig", n => { DefaultResourceConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_defaultResourceConfig>(global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_defaultResourceConfig.CreateFromDiscriminatorValue); } },
                 { "delegatedProtection", n => { DelegatedProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_delegatedProtection>(global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_delegatedProtection.CreateFromDiscriminatorValue); } },
                 { "deploymentExpiration", n => { DeploymentExpiration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_deploymentExpiration>(global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_deploymentExpiration.CreateFromDiscriminatorValue); } },
+                { "deploymentPolicy", n => { DeploymentPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_deploymentPolicy>(global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_deploymentPolicy.CreateFromDiscriminatorValue); } },
                 { "devCommand", n => { DevCommand = n.GetStringValue(); } },
                 { "directoryListing", n => { DirectoryListing = n.GetBoolValue(); } },
                 { "dismissedToasts", n => { DismissedToasts = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_dismissedToasts>(global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_dismissedToasts.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -690,6 +699,7 @@ namespace Soenneker.Vercel.OpenApiClient.V11.Projects
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_defaultResourceConfig>("defaultResourceConfig", DefaultResourceConfig);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_delegatedProtection>("delegatedProtection", DelegatedProtection);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_deploymentExpiration>("deploymentExpiration", DeploymentExpiration);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_deploymentPolicy>("deploymentPolicy", DeploymentPolicy);
             writer.WriteStringValue("devCommand", DevCommand);
             writer.WriteBoolValue("directoryListing", DirectoryListing);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V11.Projects.ProjectsPostResponse_dismissedToasts>("dismissedToasts", DismissedToasts);

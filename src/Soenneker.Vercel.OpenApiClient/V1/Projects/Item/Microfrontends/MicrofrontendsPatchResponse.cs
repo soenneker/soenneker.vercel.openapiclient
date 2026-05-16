@@ -146,6 +146,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
 #else
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_deploymentExpiration DeploymentExpiration { get; set; }
 #endif
+        /// <summary>Project-level shape. Each rule may be: - an object: overrides the team&apos;s value for that rule - `null`: explicitly clears the override on just that rule (inherit team) - omitted: inherit team To clear all overrides and inherit fully, set the project&apos;s `deploymentPolicy` field itself to `null`. Defined independently from {@link TeamDeploymentPolicy} so the two are not coupled by a shared type — the underlying data lives in separate stores.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_deploymentPolicy? DeploymentPolicy { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_deploymentPolicy DeploymentPolicy { get; set; }
+#endif
         /// <summary>The devCommand property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -590,6 +598,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
                 { "defaultResourceConfig", n => { DefaultResourceConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_defaultResourceConfig>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_defaultResourceConfig.CreateFromDiscriminatorValue); } },
                 { "delegatedProtection", n => { DelegatedProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_delegatedProtection>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_delegatedProtection.CreateFromDiscriminatorValue); } },
                 { "deploymentExpiration", n => { DeploymentExpiration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_deploymentExpiration>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_deploymentExpiration.CreateFromDiscriminatorValue); } },
+                { "deploymentPolicy", n => { DeploymentPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_deploymentPolicy>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_deploymentPolicy.CreateFromDiscriminatorValue); } },
                 { "devCommand", n => { DevCommand = n.GetStringValue(); } },
                 { "directoryListing", n => { DirectoryListing = n.GetBoolValue(); } },
                 { "dismissedToasts", n => { DismissedToasts = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_dismissedToasts>(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_dismissedToasts.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -690,6 +699,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_defaultResourceConfig>("defaultResourceConfig", DefaultResourceConfig);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_delegatedProtection>("delegatedProtection", DelegatedProtection);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_deploymentExpiration>("deploymentExpiration", DeploymentExpiration);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_deploymentPolicy>("deploymentPolicy", DeploymentPolicy);
             writer.WriteStringValue("devCommand", DevCommand);
             writer.WriteBoolValue("directoryListing", DirectoryListing);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends.MicrofrontendsPatchResponse_dismissedToasts>("dismissedToasts", DismissedToasts);

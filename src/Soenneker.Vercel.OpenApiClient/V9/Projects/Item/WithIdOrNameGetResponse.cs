@@ -146,6 +146,14 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
 #else
         public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_deploymentExpiration DeploymentExpiration { get; set; }
 #endif
+        /// <summary>Project-level shape. Each rule may be: - an object: overrides the team&apos;s value for that rule - `null`: explicitly clears the override on just that rule (inherit team) - omitted: inherit team To clear all overrides and inherit fully, set the project&apos;s `deploymentPolicy` field itself to `null`. Defined independently from {@link TeamDeploymentPolicy} so the two are not coupled by a shared type — the underlying data lives in separate stores.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_deploymentPolicy? DeploymentPolicy { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_deploymentPolicy DeploymentPolicy { get; set; }
+#endif
         /// <summary>The devCommand property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -598,6 +606,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
                 { "defaultResourceConfig", n => { DefaultResourceConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_defaultResourceConfig>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_defaultResourceConfig.CreateFromDiscriminatorValue); } },
                 { "delegatedProtection", n => { DelegatedProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_delegatedProtection>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_delegatedProtection.CreateFromDiscriminatorValue); } },
                 { "deploymentExpiration", n => { DeploymentExpiration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_deploymentExpiration>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_deploymentExpiration.CreateFromDiscriminatorValue); } },
+                { "deploymentPolicy", n => { DeploymentPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_deploymentPolicy>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_deploymentPolicy.CreateFromDiscriminatorValue); } },
                 { "devCommand", n => { DevCommand = n.GetStringValue(); } },
                 { "directoryListing", n => { DirectoryListing = n.GetBoolValue(); } },
                 { "dismissedToasts", n => { DismissedToasts = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_dismissedToasts>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_dismissedToasts.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -699,6 +708,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_defaultResourceConfig>("defaultResourceConfig", DefaultResourceConfig);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_delegatedProtection>("delegatedProtection", DelegatedProtection);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_deploymentExpiration>("deploymentExpiration", DeploymentExpiration);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_deploymentPolicy>("deploymentPolicy", DeploymentPolicy);
             writer.WriteStringValue("devCommand", DevCommand);
             writer.WriteBoolValue("directoryListing", DirectoryListing);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse_dismissedToasts>("dismissedToasts", DismissedToasts);

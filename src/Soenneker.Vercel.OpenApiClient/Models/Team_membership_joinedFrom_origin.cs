@@ -16,18 +16,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Saml,
         #pragma warning restore CS1591
-        [EnumMember(Value = "mail")]
-        #pragma warning disable CS1591
-        Mail,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "import")]
-        #pragma warning disable CS1591
-        Import,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "teams")]
-        #pragma warning disable CS1591
-        Teams,
-        #pragma warning restore CS1591
         [EnumMember(Value = "github")]
         #pragma warning disable CS1591
         Github,
@@ -39,6 +27,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "bitbucket")]
         #pragma warning disable CS1591
         Bitbucket,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "mail")]
+        #pragma warning disable CS1591
+        Mail,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "import")]
+        #pragma warning disable CS1591
+        Import,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "teams")]
+        #pragma warning disable CS1591
+        Teams,
         #pragma warning restore CS1591
         [EnumMember(Value = "dsync")]
         #pragma warning disable CS1591

@@ -7,6 +7,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Approve
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ApproveStagePostResponse_rollingRelease_currentDeployment_source
     {
+        [EnumMember(Value = "git")]
+        #pragma warning disable CS1591
+        Git,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cli")]
+        #pragma warning disable CS1591
+        Cli,
+        #pragma warning restore CS1591
         [EnumMember(Value = "import")]
         #pragma warning disable CS1591
         Import,
@@ -15,17 +23,9 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Approve
         #pragma warning disable CS1591
         ApiTriggerGitDeploy,
         #pragma warning restore CS1591
-        [EnumMember(Value = "cli")]
-        #pragma warning disable CS1591
-        Cli,
-        #pragma warning restore CS1591
         [EnumMember(Value = "clone/repo")]
         #pragma warning disable CS1591
         CloneRepo,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "git")]
-        #pragma warning disable CS1591
-        Git,
         #pragma warning restore CS1591
         [EnumMember(Value = "import/repo")]
         #pragma warning disable CS1591

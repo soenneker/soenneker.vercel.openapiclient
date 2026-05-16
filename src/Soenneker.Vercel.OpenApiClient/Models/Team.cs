@@ -77,6 +77,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultRoles DefaultRoles { get; set; }
 #endif
+        /// <summary>Composable deployment-time policy for the team. Used as the default for every project on the team, with optional per-project overrides on `project.deploymentPolicy`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.Team_deploymentPolicy? DeploymentPolicy { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.Team_deploymentPolicy DeploymentPolicy { get; set; }
+#endif
         /// <summary>A short description of the Team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -270,6 +278,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "defaultExpirationSettings", n => { DefaultExpirationSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultExpirationSettings>(global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultExpirationSettings.CreateFromDiscriminatorValue); } },
                 { "defaultProjectJobs", n => { DefaultProjectJobs = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultProjectJobs>(global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultProjectJobs.CreateFromDiscriminatorValue); } },
                 { "defaultRoles", n => { DefaultRoles = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultRoles>(global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultRoles.CreateFromDiscriminatorValue); } },
+                { "deploymentPolicy", n => { DeploymentPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_deploymentPolicy>(global::Soenneker.Vercel.OpenApiClient.Models.Team_deploymentPolicy.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "disableHardAutoBlocks", n => { DisableHardAutoBlocks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team.Team_disableHardAutoBlocks>(global::Soenneker.Vercel.OpenApiClient.Models.Team.Team_disableHardAutoBlocks.CreateFromDiscriminatorValue); } },
                 { "disableRepositoryDispatchEvents", n => { DisableRepositoryDispatchEvents = n.GetBoolValue(); } },
@@ -317,6 +326,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultExpirationSettings>("defaultExpirationSettings", DefaultExpirationSettings);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultProjectJobs>("defaultProjectJobs", DefaultProjectJobs);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_defaultRoles>("defaultRoles", DefaultRoles);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_deploymentPolicy>("deploymentPolicy", DeploymentPolicy);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team.Team_disableHardAutoBlocks>("disableHardAutoBlocks", DisableHardAutoBlocks);
             writer.WriteBoolValue("disableRepositoryDispatchEvents", DisableRepositoryDispatchEvents);
