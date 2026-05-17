@@ -1599,6 +1599,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiAlertInvestigation,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-omniagent")]
+        #pragma warning disable CS1591
+        AiOmniagent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "vercel-agent-team-trial-credits-applied")]
         #pragma warning disable CS1591
         VercelAgentTeamTrialCreditsApplied,
