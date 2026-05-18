@@ -15,15 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The plan property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember290_plan? Plan { get; set; }
-        /// <summary>The trial property</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember290_trial? Trial { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember290_trial Trial { get; set; }
+        public string Name { get; set; }
+#endif
+        /// <summary>The publicId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PublicId { get; set; }
+#nullable restore
+#else
+        public string PublicId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember290"/> and sets the default values.
@@ -50,8 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember290_plan>(); } },
-                { "trial", n => { Trial = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember290_trial>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember290_trial.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "publicId", n => { PublicId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,8 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember290_plan>("plan", Plan);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember290_trial>("trial", Trial);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("publicId", PublicId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
