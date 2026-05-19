@@ -16,9 +16,17 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item
         #pragma warning disable CS1591
         Cli,
         #pragma warning restore CS1591
-        [EnumMember(Value = "api")]
+        [EnumMember(Value = "rest-api")]
         #pragma warning disable CS1591
-        Api,
+        RestApi,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "deploy-hook")]
+        #pragma warning disable CS1591
+        DeployHook,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "integration")]
+        #pragma warning disable CS1591
+        Integration,
         #pragma warning restore CS1591
     }
 }

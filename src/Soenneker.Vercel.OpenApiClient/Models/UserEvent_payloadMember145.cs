@@ -23,6 +23,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string HeaderName { get; set; }
 #endif
+        /// <summary>The justification property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Justification { get; set; }
+#nullable restore
+#else
+        public string Justification { get; set; }
+#endif
         /// <summary>The previousStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,6 +73,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "headerName", n => { HeaderName = n.GetStringValue(); } },
+                { "justification", n => { Justification = n.GetStringValue(); } },
                 { "previousStatus", n => { PreviousStatus = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
             };
@@ -77,6 +86,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("headerName", HeaderName);
+            writer.WriteStringValue("justification", Justification);
             writer.WriteStringValue("previousStatus", PreviousStatus);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteAdditionalData(AdditionalData);

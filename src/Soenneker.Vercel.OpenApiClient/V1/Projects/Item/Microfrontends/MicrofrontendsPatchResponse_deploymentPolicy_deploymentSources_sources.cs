@@ -3,14 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
 {
-    /// <summary>The mechanism that produced a deployment. - `&apos;git&apos;`: a Git provider webhook or other Git-source-driven deployment - `&apos;cli&apos;`: an upload via the Vercel CLI - `&apos;api&apos;`: a programmatic upload via the REST API</summary>
+    /// <summary>The mechanism that produced a deployment. - `&apos;git&apos;`: a Git provider webhook (GitHub / GitLab / Bitbucket) - `&apos;cli&apos;`: an upload via the Vercel CLI - `&apos;rest-api&apos;`: a first-party REST API upload — a user or team token POSTing directly. Does NOT cover deploy-hook URLs or OAuth2 integration tokens; those are their own sources. - `&apos;deploy-hook&apos;`: a trigger via a project deploy-hook URL. The URL itself is the credential, so the request has no authenticated principal. - `&apos;integration&apos;`: an OAuth2 actor — a Marketplace integration token, a Vercel App token, or a user-delegated OAuth flow where an integration is acting on a user&apos;s behalf. Every deployment classifies to exactly one source; the values are mutually exclusive. See `classify-source` (in the policy package&apos;s consumers) for the canonical classification order. The split between `&apos;rest-api&apos;` and `&apos;integration&apos;` is intentional so a team can permit their own automation while blocking third-party integrators — or vice versa.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MicrofrontendsPatchResponse_deploymentPolicy_deploymentSources_sources
     {
-        [EnumMember(Value = "api")]
-        #pragma warning disable CS1591
-        Api,
-        #pragma warning restore CS1591
         [EnumMember(Value = "git")]
         #pragma warning disable CS1591
         Git,
@@ -18,6 +14,18 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Microfrontends
         [EnumMember(Value = "cli")]
         #pragma warning disable CS1591
         Cli,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "rest-api")]
+        #pragma warning disable CS1591
+        RestApi,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "deploy-hook")]
+        #pragma warning disable CS1591
+        DeployHook,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "integration")]
+        #pragma warning disable CS1591
+        Integration,
         #pragma warning restore CS1591
     }
 }
