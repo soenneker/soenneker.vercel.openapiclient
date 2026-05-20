@@ -399,6 +399,42 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         DisconnectBitbucketApp,
         #pragma warning restore CS1591
+        [EnumMember(Value = "connect-create-connector")]
+        #pragma warning disable CS1591
+        ConnectCreateConnector,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "connect-update-connector")]
+        #pragma warning disable CS1591
+        ConnectUpdateConnector,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "connect-update-trigger-destinations")]
+        #pragma warning disable CS1591
+        ConnectUpdateTriggerDestinations,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "connect-delete-connector")]
+        #pragma warning disable CS1591
+        ConnectDeleteConnector,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "connect-attach-project")]
+        #pragma warning disable CS1591
+        ConnectAttachProject,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "connect-detach-project")]
+        #pragma warning disable CS1591
+        ConnectDetachProject,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "connect-upsert-installation")]
+        #pragma warning disable CS1591
+        ConnectUpsertInstallation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "connect-delete-installation")]
+        #pragma warning disable CS1591
+        ConnectDeleteInstallation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "connect-revoke-all-tokens")]
+        #pragma warning disable CS1591
+        ConnectRevokeAllTokens,
+        #pragma warning restore CS1591
         [EnumMember(Value = "custom-suffix-clear")]
         #pragma warning disable CS1591
         CustomSuffixClear,

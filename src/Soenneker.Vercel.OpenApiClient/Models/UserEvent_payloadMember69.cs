@@ -15,22 +15,60 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The reason property</summary>
+        /// <summary>The clientId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get; set; }
+        public string? ClientId { get; set; }
 #nullable restore
 #else
-        public string Reason { get; set; }
+        public string ClientId { get; set; }
 #endif
-        /// <summary>The suffix property</summary>
+        /// <summary>The clientName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Suffix { get; set; }
+        public string? ClientName { get; set; }
 #nullable restore
 #else
-        public string Suffix { get; set; }
+        public string ClientName { get; set; }
 #endif
+        /// <summary>The clientUid property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientUid { get; set; }
+#nullable restore
+#else
+        public string ClientUid { get; set; }
+#endif
+        /// <summary>The fields property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Fields { get; set; }
+#nullable restore
+#else
+        public List<string> Fields { get; set; }
+#endif
+        /// <summary>The installationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InstallationId { get; set; }
+#nullable restore
+#else
+        public string InstallationId { get; set; }
+#endif
+        /// <summary>The projectId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get; set; }
+#nullable restore
+#else
+        public string ProjectId { get; set; }
+#endif
+        /// <summary>The subjectType property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember69_subjectType? SubjectType { get; set; }
+        /// <summary>The tokensDeleted property</summary>
+        public double? TokensDeleted { get; set; }
+        /// <summary>The triggerDestinationCount property</summary>
+        public double? TriggerDestinationCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember69"/> and sets the default values.
         /// </summary>
@@ -56,8 +94,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "reason", n => { Reason = n.GetStringValue(); } },
-                { "suffix", n => { Suffix = n.GetStringValue(); } },
+                { "clientId", n => { ClientId = n.GetStringValue(); } },
+                { "clientName", n => { ClientName = n.GetStringValue(); } },
+                { "clientUid", n => { ClientUid = n.GetStringValue(); } },
+                { "fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "installationId", n => { InstallationId = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "subjectType", n => { SubjectType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember69_subjectType>(); } },
+                { "tokensDeleted", n => { TokensDeleted = n.GetDoubleValue(); } },
+                { "triggerDestinationCount", n => { TriggerDestinationCount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +112,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("reason", Reason);
-            writer.WriteStringValue("suffix", Suffix);
+            writer.WriteStringValue("clientId", ClientId);
+            writer.WriteStringValue("clientName", ClientName);
+            writer.WriteStringValue("clientUid", ClientUid);
+            writer.WriteCollectionOfPrimitiveValues<string>("fields", Fields);
+            writer.WriteStringValue("installationId", InstallationId);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember69_subjectType>("subjectType", SubjectType);
+            writer.WriteDoubleValue("tokensDeleted", TokensDeleted);
+            writer.WriteDoubleValue("triggerDestinationCount", TriggerDestinationCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
