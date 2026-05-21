@@ -7,10 +7,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Snapshot_status
     {
-        [EnumMember(Value = "failed")]
-        #pragma warning disable CS1591
-        Failed,
-        #pragma warning restore CS1591
         [EnumMember(Value = "created")]
         #pragma warning disable CS1591
         Created,
@@ -18,6 +14,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "deleted")]
         #pragma warning disable CS1591
         Deleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "failed")]
+        #pragma warning disable CS1591
+        Failed,
         #pragma warning restore CS1591
     }
 }

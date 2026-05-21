@@ -20,6 +20,14 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
 #else
         public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_env Env { get; set; }
 #endif
+        /// <summary>Protect the N most recent snapshots with different expiration/deletion behavior.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_keepLastSnapshots? KeepLastSnapshots { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_keepLastSnapshots KeepLastSnapshots { get; set; }
+#endif
         /// <summary>Name for the sandbox. Must be unique per project and URL-safe (alphanumeric, hyphens, underscores).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,6 +118,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "env", n => { Env = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_env>(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_env.CreateFromDiscriminatorValue); } },
+                { "keepLastSnapshots", n => { KeepLastSnapshots = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_keepLastSnapshots>(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_keepLastSnapshots.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "networkPolicy", n => { NetworkPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody.SandboxesPostRequestBody_networkPolicy>(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody.SandboxesPostRequestBody_networkPolicy.CreateFromDiscriminatorValue); } },
                 { "persistent", n => { Persistent = n.GetBoolValue(); } },
@@ -131,6 +140,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_env>("env", Env);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_keepLastSnapshots>("keepLastSnapshots", KeepLastSnapshots);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody.SandboxesPostRequestBody_networkPolicy>("networkPolicy", NetworkPolicy);
             writer.WriteBoolValue("persistent", Persistent);

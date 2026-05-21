@@ -20,7 +20,6 @@ using Soenneker.Vercel.OpenApiClient.V1.Microfrontends;
 using Soenneker.Vercel.OpenApiClient.V1.Observability;
 using Soenneker.Vercel.OpenApiClient.V1.Projects;
 using Soenneker.Vercel.OpenApiClient.V1.Registrar;
-using Soenneker.Vercel.OpenApiClient.V1.Sandboxes;
 using Soenneker.Vercel.OpenApiClient.V1.Security;
 using Soenneker.Vercel.OpenApiClient.V1.Storage;
 using Soenneker.Vercel.OpenApiClient.V1.Teams;
@@ -127,11 +126,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1
         public global::Soenneker.Vercel.OpenApiClient.V1.Registrar.RegistrarRequestBuilder Registrar
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Registrar.RegistrarRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The sandboxes property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesRequestBuilder Sandboxes
-        {
-            get => new global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The security property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Security.SecurityRequestBuilder Security

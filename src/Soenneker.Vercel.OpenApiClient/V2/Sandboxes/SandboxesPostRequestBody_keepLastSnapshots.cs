@@ -5,39 +5,29 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes
+namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
 {
     /// <summary>
-    /// Restore the sandbox filesystem from an existing snapshot.
+    /// Protect the N most recent snapshots with different expiration/deletion behavior.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SandboxesPostRequestBody_sourceMember3 : IParsable
+    public partial class SandboxesPostRequestBody_keepLastSnapshots : IParsable
     {
-        /// <summary>The unique identifier of the snapshot to restore.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SnapshotId { get; set; }
-#nullable restore
-#else
-        public string SnapshotId { get; set; }
-#endif
-        /// <summary>Indicates the source is a snapshot.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Type { get; set; }
-#nullable restore
-#else
-        public UntypedNode Type { get; set; }
-#endif
+        /// <summary>Number of most recent snapshots to keep.</summary>
+        public int? Count { get; set; }
+        /// <summary>Whether to immediately delete evicted snapshots. Defaults to true.</summary>
+        public bool? DeleteEvicted { get; set; }
+        /// <summary>Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration.</summary>
+        public int? Expiration { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody_sourceMember3"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_keepLastSnapshots"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody_sourceMember3 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_keepLastSnapshots CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.V1.Sandboxes.SandboxesPostRequestBody_sourceMember3();
+            return new global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesPostRequestBody_keepLastSnapshots();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,8 +37,9 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "snapshotId", n => { SnapshotId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "count", n => { Count = n.GetIntValue(); } },
+                { "deleteEvicted", n => { DeleteEvicted = n.GetBoolValue(); } },
+                { "expiration", n => { Expiration = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -58,8 +49,9 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Sandboxes
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("snapshotId", SnapshotId);
-            writer.WriteObjectValue<UntypedNode>("type", Type);
+            writer.WriteIntValue("count", Count);
+            writer.WriteBoolValue("deleteEvicted", DeleteEvicted);
+            writer.WriteIntValue("expiration", Expiration);
         }
     }
 }
