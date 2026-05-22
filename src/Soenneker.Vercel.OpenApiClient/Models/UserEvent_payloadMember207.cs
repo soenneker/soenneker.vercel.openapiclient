@@ -15,29 +15,45 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The directoryType property</summary>
+        /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DirectoryType { get; set; }
+        public string? Domain { get; set; }
 #nullable restore
 #else
-        public string DirectoryType { get; set; }
+        public string Domain { get; set; }
 #endif
-        /// <summary>The projects property</summary>
+        /// <summary>The newProjectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember207_projects>? Projects { get; set; }
+        public string? NewProjectId { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember207_projects> Projects { get; set; }
+        public string NewProjectId { get; set; }
 #endif
-        /// <summary>The teamMembership property</summary>
+        /// <summary>The newProjectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember207_teamMembership? TeamMembership { get; set; }
+        public string? NewProjectName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember207_teamMembership TeamMembership { get; set; }
+        public string NewProjectName { get; set; }
+#endif
+        /// <summary>The oldProjectId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OldProjectId { get; set; }
+#nullable restore
+#else
+        public string OldProjectId { get; set; }
+#endif
+        /// <summary>The oldProjectName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OldProjectName { get; set; }
+#nullable restore
+#else
+        public string OldProjectName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember207"/> and sets the default values.
@@ -64,9 +80,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "directoryType", n => { DirectoryType = n.GetStringValue(); } },
-                { "projects", n => { Projects = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember207_projects>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember207_projects.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "teamMembership", n => { TeamMembership = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember207_teamMembership>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember207_teamMembership.CreateFromDiscriminatorValue); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
+                { "newProjectId", n => { NewProjectId = n.GetStringValue(); } },
+                { "newProjectName", n => { NewProjectName = n.GetStringValue(); } },
+                { "oldProjectId", n => { OldProjectId = n.GetStringValue(); } },
+                { "oldProjectName", n => { OldProjectName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +94,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("directoryType", DirectoryType);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember207_projects>("projects", Projects);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember207_teamMembership>("teamMembership", TeamMembership);
+            writer.WriteStringValue("domain", Domain);
+            writer.WriteStringValue("newProjectId", NewProjectId);
+            writer.WriteStringValue("newProjectName", NewProjectName);
+            writer.WriteStringValue("oldProjectId", OldProjectId);
+            writer.WriteStringValue("oldProjectName", OldProjectName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -695,6 +695,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         EnvVariableEdit,
         #pragma warning restore CS1591
+        [EnumMember(Value = "env-variable-masked")]
+        #pragma warning disable CS1591
+        EnvVariableMasked,
+        #pragma warning restore CS1591
         [EnumMember(Value = "env-variable-read")]
         #pragma warning disable CS1591
         EnvVariableRead,

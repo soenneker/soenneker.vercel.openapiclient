@@ -30,6 +30,14 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Drains.Item
 #else
         public global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_analytics Analytics { get; set; }
 #endif
+        /// <summary>The audit_log property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_audit_log? AuditLog { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_audit_log AuditLog { get; set; }
+#endif
         /// <summary>The log property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,6 +89,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Drains.Item
             {
                 { "ai_gateway", n => { AiGateway = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_ai_gateway>(global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_ai_gateway.CreateFromDiscriminatorValue); } },
                 { "analytics", n => { Analytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_analytics>(global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_analytics.CreateFromDiscriminatorValue); } },
+                { "audit_log", n => { AuditLog = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_audit_log>(global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_audit_log.CreateFromDiscriminatorValue); } },
                 { "log", n => { Log = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_log>(global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_log.CreateFromDiscriminatorValue); } },
                 { "speed_insights", n => { SpeedInsights = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_speed_insights>(global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_speed_insights.CreateFromDiscriminatorValue); } },
                 { "trace", n => { Trace = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_trace>(global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_trace.CreateFromDiscriminatorValue); } },
@@ -95,6 +104,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Drains.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_ai_gateway>("ai_gateway", AiGateway);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_analytics>("analytics", Analytics);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_audit_log>("audit_log", AuditLog);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_log>("log", Log);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_speed_insights>("speed_insights", SpeedInsights);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsPatchResponseMember1_schemas_trace>("trace", Trace);

@@ -59,6 +59,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The organizationId for child teams created under an organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ParentId { get; set; }
+#nullable restore
+#else
+        public string ParentId { get; set; }
+#endif
         /// <summary>When &quot;Single Sign-On (SAML)&quot; is configured, this object contains information that allows the client-side to identify whether or not this Team has SAML enforced.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,6 +115,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "limitedBy", n => { LimitedBy = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimited_limitedBy>()?.AsList(); } },
                 { "membership", n => { Membership = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimited_membership>(global::Soenneker.Vercel.OpenApiClient.Models.TeamLimited_membership.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "parentId", n => { ParentId = n.GetStringValue(); } },
                 { "saml", n => { Saml = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimited_saml>(global::Soenneker.Vercel.OpenApiClient.Models.TeamLimited_saml.CreateFromDiscriminatorValue); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
             };
@@ -125,6 +134,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimited_limitedBy>("limitedBy", LimitedBy);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimited_membership>("membership", Membership);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("parentId", ParentId);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimited_saml>("saml", Saml);
             writer.WriteStringValue("slug", Slug);
             writer.WriteAdditionalData(AdditionalData);

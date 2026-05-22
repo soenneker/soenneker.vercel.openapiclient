@@ -31,14 +31,6 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
 #else
         public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_deploymentPolicy_gitSources GitSources { get; set; }
 #endif
-        /// <summary>Controls whether deployments may have their source and logs available publicly (i.e. the deployment&apos;s `public` boolean set to `true`). This rule does NOT control whether the deployment URL itself requires authentication — see deployment protection settings for that. - `allowPublicDeployments: false`: deployments must be created with `public: false`. Public deployments are blocked. - `allowPublicDeployments: true`: equivalent to `enabled: false`; here only so the field is always present on an enabled rule.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_deploymentPolicy_publicDeployments? PublicDeployments { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_deploymentPolicy_publicDeployments PublicDeployments { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_deploymentPolicy"/> and sets the default values.
         /// </summary>
@@ -66,7 +58,6 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
             {
                 { "deploymentSources", n => { DeploymentSources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_deploymentPolicy_deploymentSources>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_deploymentPolicy_deploymentSources.CreateFromDiscriminatorValue); } },
                 { "gitSources", n => { GitSources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_deploymentPolicy_gitSources>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_deploymentPolicy_gitSources.CreateFromDiscriminatorValue); } },
-                { "publicDeployments", n => { PublicDeployments = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_deploymentPolicy_publicDeployments>(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_deploymentPolicy_publicDeployments.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -78,7 +69,6 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_deploymentPolicy_deploymentSources>("deploymentSources", DeploymentSources);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_deploymentPolicy_gitSources>("gitSources", GitSources);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse_deploymentPolicy_publicDeployments>("publicDeployments", PublicDeployments);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,6 +15,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The destinationTeamId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DestinationTeamId { get; set; }
+#nullable restore
+#else
+        public string DestinationTeamId { get; set; }
+#endif
+        /// <summary>The destinationTeamName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DestinationTeamName { get; set; }
+#nullable restore
+#else
+        public string DestinationTeamName { get; set; }
+#endif
         /// <summary>The integration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,22 +38,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember126_integration Integration { get; set; }
-#endif
-        /// <summary>The originTeamId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OriginTeamId { get; set; }
-#nullable restore
-#else
-        public string OriginTeamId { get; set; }
-#endif
-        /// <summary>The originTeamName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OriginTeamName { get; set; }
-#nullable restore
-#else
-        public string OriginTeamName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember126"/> and sets the default values.
@@ -64,9 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "destinationTeamId", n => { DestinationTeamId = n.GetStringValue(); } },
+                { "destinationTeamName", n => { DestinationTeamName = n.GetStringValue(); } },
                 { "integration", n => { Integration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember126_integration>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember126_integration.CreateFromDiscriminatorValue); } },
-                { "originTeamId", n => { OriginTeamId = n.GetStringValue(); } },
-                { "originTeamName", n => { OriginTeamName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("destinationTeamId", DestinationTeamId);
+            writer.WriteStringValue("destinationTeamName", DestinationTeamName);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember126_integration>("integration", Integration);
-            writer.WriteStringValue("originTeamId", OriginTeamId);
-            writer.WriteStringValue("originTeamName", OriginTeamName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

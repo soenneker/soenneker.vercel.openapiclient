@@ -169,6 +169,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.Team_nsnbConfig NsnbConfig { get; set; }
 #endif
+        /// <summary>The organizationId for child teams created under an organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ParentId { get; set; }
+#nullable restore
+#else
+        public string ParentId { get; set; }
+#endif
         /// <summary>Timestamp (ms) after which personal access tokens created at or before this time are considered invalid for this team.</summary>
         public double? PersonalAccessTokensInvalidatedAt { get; set; }
         /// <summary>Whether the team is a platform team.</summary>
@@ -294,6 +302,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "membership", n => { Membership = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_membership>(global::Soenneker.Vercel.OpenApiClient.Models.Team_membership.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nsnbConfig", n => { NsnbConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_nsnbConfig>(global::Soenneker.Vercel.OpenApiClient.Models.Team_nsnbConfig.CreateFromDiscriminatorValue); } },
+                { "parentId", n => { ParentId = n.GetStringValue(); } },
                 { "personalAccessTokensInvalidatedAt", n => { PersonalAccessTokensInvalidatedAt = n.GetDoubleValue(); } },
                 { "platform", n => { Platform = n.GetBoolValue(); } },
                 { "previewDeploymentSuffix", n => { PreviewDeploymentSuffix = n.GetStringValue(); } },
@@ -342,6 +351,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_membership>("membership", Membership);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_nsnbConfig>("nsnbConfig", NsnbConfig);
+            writer.WriteStringValue("parentId", ParentId);
             writer.WriteDoubleValue("personalAccessTokensInvalidatedAt", PersonalAccessTokensInvalidatedAt);
             writer.WriteBoolValue("platform", Platform);
             writer.WriteStringValue("previewDeploymentSuffix", PreviewDeploymentSuffix);
