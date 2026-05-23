@@ -63,14 +63,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember282_invitedUser InvitedUser { get; set; }
 #endif
-        /// <summary>The origin property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Origin { get; set; }
-#nullable restore
-#else
-        public string Origin { get; set; }
-#endif
         /// <summary>The ssoType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -78,14 +70,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string SsoType { get; set; }
-#endif
-        /// <summary>The teamSlug property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TeamSlug { get; set; }
-#nullable restore
-#else
-        public string TeamSlug { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember282"/> and sets the default values.
@@ -118,9 +102,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "invitedEmail", n => { InvitedEmail = n.GetStringValue(); } },
                 { "invitedUid", n => { InvitedUid = n.GetStringValue(); } },
                 { "invitedUser", n => { InvitedUser = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember282_invitedUser>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember282_invitedUser.CreateFromDiscriminatorValue); } },
-                { "origin", n => { Origin = n.GetStringValue(); } },
                 { "ssoType", n => { SsoType = n.GetStringValue(); } },
-                { "teamSlug", n => { TeamSlug = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -136,9 +118,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("invitedEmail", InvitedEmail);
             writer.WriteStringValue("invitedUid", InvitedUid);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember282_invitedUser>("invitedUser", InvitedUser);
-            writer.WriteStringValue("origin", Origin);
             writer.WriteStringValue("ssoType", SsoType);
-            writer.WriteStringValue("teamSlug", TeamSlug);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
