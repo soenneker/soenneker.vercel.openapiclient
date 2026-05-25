@@ -15,6 +15,22 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The invocationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InvocationId { get; set; }
+#nullable restore
+#else
+        public string InvocationId { get; set; }
+#endif
+        /// <summary>The jobDefinitionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? JobDefinitionId { get; set; }
+#nullable restore
+#else
+        public string JobDefinitionId { get; set; }
+#endif
         /// <summary>The origin property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostResponseMember2_sourceMember1_origin? Origin { get; set; }
         /// <summary>The subKind property</summary>
@@ -44,6 +60,8 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "invocationId", n => { InvocationId = n.GetStringValue(); } },
+                { "jobDefinitionId", n => { JobDefinitionId = n.GetStringValue(); } },
                 { "origin", n => { Origin = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostResponseMember2_sourceMember1_origin>(); } },
                 { "subKind", n => { SubKind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostResponseMember2_sourceMember1_subKind>(); } },
             };
@@ -55,6 +73,8 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("invocationId", InvocationId);
+            writer.WriteStringValue("jobDefinitionId", JobDefinitionId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostResponseMember2_sourceMember1_origin>("origin", Origin);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostResponseMember2_sourceMember1_subKind>("subKind", SubKind);
             writer.WriteAdditionalData(AdditionalData);
