@@ -12,10 +12,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Link,
         #pragma warning restore CS1591
-        [EnumMember(Value = "import")]
-        #pragma warning disable CS1591
-        Import,
-        #pragma warning restore CS1591
         [EnumMember(Value = "teams")]
         #pragma warning disable CS1591
         Teams,
@@ -39,6 +35,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "mail")]
         #pragma warning disable CS1591
         Mail,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "import")]
+        #pragma warning disable CS1591
+        Import,
         #pragma warning restore CS1591
         [EnumMember(Value = "dsync")]
         #pragma warning disable CS1591

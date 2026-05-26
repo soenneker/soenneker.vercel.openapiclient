@@ -15,10 +15,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Approve
         #pragma warning disable CS1591
         Cli,
         #pragma warning restore CS1591
-        [EnumMember(Value = "import")]
-        #pragma warning disable CS1591
-        Import,
-        #pragma warning restore CS1591
         [EnumMember(Value = "api-trigger-git-deploy")]
         #pragma warning disable CS1591
         ApiTriggerGitDeploy,
@@ -26,6 +22,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Approve
         [EnumMember(Value = "clone/repo")]
         #pragma warning disable CS1591
         CloneRepo,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "import")]
+        #pragma warning disable CS1591
+        Import,
         #pragma warning restore CS1591
         [EnumMember(Value = "import/repo")]
         #pragma warning disable CS1591

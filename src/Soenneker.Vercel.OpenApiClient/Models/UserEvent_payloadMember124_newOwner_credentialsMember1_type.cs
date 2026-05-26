@@ -8,10 +8,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UserEvent_payloadMember124_newOwner_credentialsMember1_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "vercel")]
-        #pragma warning disable CS1591
-        Vercel,
-        #pragma warning restore CS1591
         [EnumMember(Value = "gitlab")]
         #pragma warning disable CS1591
         Gitlab,
@@ -19,6 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "bitbucket")]
         #pragma warning disable CS1591
         Bitbucket,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "vercel")]
+        #pragma warning disable CS1591
+        Vercel,
         #pragma warning restore CS1591
         [EnumMember(Value = "google")]
         #pragma warning disable CS1591

@@ -27,14 +27,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Domain,
         #pragma warning restore CS1591
-        [EnumMember(Value = "flag")]
-        #pragma warning disable CS1591
-        Flag,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "deployment")]
-        #pragma warning disable CS1591
-        Deployment,
-        #pragma warning restore CS1591
         [EnumMember(Value = "agentic-provisioning-account-linked")]
         #pragma warning disable CS1591
         AgenticProvisioningAccountLinked,
@@ -491,6 +483,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         DeploymentCheckDeleted,
         #pragma warning restore CS1591
+        [EnumMember(Value = "deployment")]
+        #pragma warning disable CS1591
+        Deployment,
+        #pragma warning restore CS1591
         [EnumMember(Value = "authorize-git-deployment")]
         #pragma warning disable CS1591
         AuthorizeGitDeployment,
@@ -783,6 +779,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         FirewallManagedRulesetUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "flag")]
+        #pragma warning disable CS1591
+        Flag,
+        #pragma warning restore CS1591
         [EnumMember(Value = "flags-segment")]
         #pragma warning disable CS1591
         FlagsSegment,
@@ -870,6 +870,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "integration-installation-removed")]
         #pragma warning disable CS1591
         IntegrationInstallationRemoved,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "integration-resource-sql-query-executed")]
+        #pragma warning disable CS1591
+        IntegrationResourceSqlQueryExecuted,
         #pragma warning restore CS1591
         [EnumMember(Value = "integration-scope-changed")]
         #pragma warning disable CS1591

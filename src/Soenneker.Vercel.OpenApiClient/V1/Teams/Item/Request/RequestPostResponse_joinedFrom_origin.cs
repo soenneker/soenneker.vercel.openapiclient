@@ -16,13 +16,13 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Request
         #pragma warning disable CS1591
         Link,
         #pragma warning restore CS1591
-        [EnumMember(Value = "import")]
-        #pragma warning disable CS1591
-        Import,
-        #pragma warning restore CS1591
         [EnumMember(Value = "mail")]
         #pragma warning disable CS1591
         Mail,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "import")]
+        #pragma warning disable CS1591
+        Import,
         #pragma warning restore CS1591
         [EnumMember(Value = "github")]
         #pragma warning disable CS1591

@@ -8,13 +8,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UserEvent_payloadMember279_environment
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "production")]
-        #pragma warning disable CS1591
-        Production,
-        #pragma warning restore CS1591
         [EnumMember(Value = "preview")]
         #pragma warning disable CS1591
         Preview,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "production")]
+        #pragma warning disable CS1591
+        Production,
         #pragma warning restore CS1591
     }
 }

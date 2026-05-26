@@ -88,6 +88,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ReadWriteRemoteCache,
         #pragma warning restore CS1591
+        [EnumMember(Value = "read:kms")]
+        #pragma warning disable CS1591
+        ReadKms,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "read-write:kms")]
+        #pragma warning disable CS1591
+        ReadWriteKms,
+        #pragma warning restore CS1591
         [EnumMember(Value = "read:project")]
         #pragma warning disable CS1591
         ReadProject,
