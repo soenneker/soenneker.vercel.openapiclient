@@ -8,7 +8,6 @@ using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using Soenneker.Vercel.OpenApiClient.Aliases;
 using Soenneker.Vercel.OpenApiClient.Projects;
-using Soenneker.Vercel.OpenApiClient.Sandboxes;
 using Soenneker.Vercel.OpenApiClient.V10;
 using Soenneker.Vercel.OpenApiClient.V11;
 using Soenneker.Vercel.OpenApiClient.V12;
@@ -43,11 +42,6 @@ namespace Soenneker.Vercel.OpenApiClient
         public global::Soenneker.Vercel.OpenApiClient.Projects.ProjectsRequestBuilder Projects
         {
             get => new global::Soenneker.Vercel.OpenApiClient.Projects.ProjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The sandboxes property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Sandboxes.SandboxesRequestBuilder Sandboxes
-        {
-            get => new global::Soenneker.Vercel.OpenApiClient.Sandboxes.SandboxesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The v1 property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.V1RequestBuilder V1

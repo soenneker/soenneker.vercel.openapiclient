@@ -8,6 +8,7 @@ using Soenneker.Vercel.OpenApiClient.V2.Domains;
 using Soenneker.Vercel.OpenApiClient.V2.Files;
 using Soenneker.Vercel.OpenApiClient.V2.Integrations;
 using Soenneker.Vercel.OpenApiClient.V2.Projects;
+using Soenneker.Vercel.OpenApiClient.V2.Sandboxes;
 using Soenneker.Vercel.OpenApiClient.V2.Teams;
 using Soenneker.Vercel.OpenApiClient.V2.User;
 using System.Collections.Generic;
@@ -51,6 +52,11 @@ namespace Soenneker.Vercel.OpenApiClient.V2
         public global::Soenneker.Vercel.OpenApiClient.V2.Projects.ProjectsRequestBuilder Projects
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V2.Projects.ProjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sandboxes property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder Sandboxes
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The teams property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V2.Teams.TeamsRequestBuilder Teams

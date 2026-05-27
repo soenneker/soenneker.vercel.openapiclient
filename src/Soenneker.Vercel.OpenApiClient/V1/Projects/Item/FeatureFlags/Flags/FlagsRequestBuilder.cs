@@ -195,7 +195,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-            /// <summary>Whether to include metadata in the response</summary>
+            /// <summary>Deprecated. Whether to include creator metadata in each flag in the response. Resolve creator identity client-side (e.g. via the team members endpoint) instead; this parameter will be removed in a future release. Use `GET /v1/projects/:id/feature-flags/flags/:flagIdOrSlug?withMetadata=true` for single-flag lookups that need creator metadata.</summary>
+            [Obsolete("")]
             [QueryParameter("withMetadata")]
             public bool? WithMetadata { get; set; }
         }

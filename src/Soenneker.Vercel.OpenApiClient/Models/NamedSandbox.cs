@@ -51,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Memory allocated in MB.</summary>
         public double? Memory { get; set; }
-        /// <summary>Key-value pairs of mount path and volume.</summary>
+        /// <summary>Key-value pairs of mount path and drive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_mounts? Mounts { get; set; }

@@ -15,8 +15,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The disableRepositoryDispatchEvents property</summary>
-        public bool? DisableRepositoryDispatchEvents { get; set; }
+        /// <summary>The requireVerifiedCommits property</summary>
+        public bool? RequireVerifiedCommits { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_payloadMember201"/> and sets the default values.
         /// </summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "disableRepositoryDispatchEvents", n => { DisableRepositoryDispatchEvents = n.GetBoolValue(); } },
+                { "requireVerifiedCommits", n => { RequireVerifiedCommits = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("disableRepositoryDispatchEvents", DisableRepositoryDispatchEvents);
+            writer.WriteBoolValue("requireVerifiedCommits", RequireVerifiedCommits);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

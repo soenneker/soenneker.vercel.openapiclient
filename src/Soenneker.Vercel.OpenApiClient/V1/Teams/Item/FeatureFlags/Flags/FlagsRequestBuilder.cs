@@ -133,7 +133,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.FeatureFlags.Flags
             [QueryParameter("tags")]
             public string[] Tags { get; set; }
 #endif
-            /// <summary>Whether to include metadata in the response</summary>
+            /// <summary>Deprecated. Whether to include creator metadata in each flag in the response. Resolve creator identity client-side (e.g. via the team members endpoint) instead; this parameter will be removed in a future release.</summary>
+            [Obsolete("")]
             [QueryParameter("withMetadata")]
             public bool? WithMetadata { get; set; }
         }

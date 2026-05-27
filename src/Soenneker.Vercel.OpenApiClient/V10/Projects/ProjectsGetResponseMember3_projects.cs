@@ -52,6 +52,14 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
 #endif
         /// <summary>The autoExposeSystemEnvs property</summary>
         public bool? AutoExposeSystemEnvs { get; set; }
+        /// <summary>The avatar property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Avatar { get; set; }
+#nullable restore
+#else
+        public string Avatar { get; set; }
+#endif
         /// <summary>The buildCommand property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -584,6 +592,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
                 { "autoAssignCustomDomains", n => { AutoAssignCustomDomains = n.GetBoolValue(); } },
                 { "autoAssignCustomDomainsUpdatedBy", n => { AutoAssignCustomDomainsUpdatedBy = n.GetStringValue(); } },
                 { "autoExposeSystemEnvs", n => { AutoExposeSystemEnvs = n.GetBoolValue(); } },
+                { "avatar", n => { Avatar = n.GetStringValue(); } },
                 { "buildCommand", n => { BuildCommand = n.GetStringValue(); } },
                 { "commandForIgnoringBuildStep", n => { CommandForIgnoringBuildStep = n.GetStringValue(); } },
                 { "concurrencyBucketName", n => { ConcurrencyBucketName = n.GetStringValue(); } },
@@ -685,6 +694,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             writer.WriteBoolValue("autoAssignCustomDomains", AutoAssignCustomDomains);
             writer.WriteStringValue("autoAssignCustomDomainsUpdatedBy", AutoAssignCustomDomainsUpdatedBy);
             writer.WriteBoolValue("autoExposeSystemEnvs", AutoExposeSystemEnvs);
+            writer.WriteStringValue("avatar", Avatar);
             writer.WriteStringValue("buildCommand", BuildCommand);
             writer.WriteStringValue("commandForIgnoringBuildStep", CommandForIgnoringBuildStep);
             writer.WriteStringValue("concurrencyBucketName", ConcurrencyBucketName);

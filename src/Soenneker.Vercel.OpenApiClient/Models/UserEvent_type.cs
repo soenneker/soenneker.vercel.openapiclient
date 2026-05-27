@@ -1047,6 +1047,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ProjectAutomationBypass,
         #pragma warning restore CS1591
+        [EnumMember(Value = "project-avatar-update")]
+        #pragma warning disable CS1591
+        ProjectAvatarUpdate,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project-affected-projects-deployments-updated")]
         #pragma warning disable CS1591
         ProjectAffectedProjectsDeploymentsUpdated,

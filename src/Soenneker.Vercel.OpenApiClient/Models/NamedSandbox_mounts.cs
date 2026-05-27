@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Key-value pairs of mount path and volume.
+    /// Key-value pairs of mount path and drive.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NamedSandbox_mounts : IAdditionalDataHolder, IParsable

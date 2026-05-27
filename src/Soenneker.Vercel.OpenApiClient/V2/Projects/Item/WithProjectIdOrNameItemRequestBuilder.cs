@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks;
+using Soenneker.Vercel.OpenApiClient.V2.Projects.Item.FeatureFlags;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Projects.Item
         public global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.ChecksRequestBuilder Checks
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.ChecksRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The featureFlags property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.FeatureFlags.FeatureFlagsRequestBuilder FeatureFlags
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.FeatureFlags.FeatureFlagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.WithProjectIdOrNameItemRequestBuilder"/> and sets the default values.
