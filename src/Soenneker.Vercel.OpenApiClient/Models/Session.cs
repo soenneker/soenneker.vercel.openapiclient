@@ -52,10 +52,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The quantity of data transfered to and from the sandbox, in bytes. This value is only available once the sandbox is stopped, and only if it stopped successfully.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.Session_networkTransfer? NetworkTransfer { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SessionNetworkTransfer? NetworkTransfer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.Session_networkTransfer NetworkTransfer { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SessionNetworkTransfer NetworkTransfer { get; set; }
 #endif
         /// <summary>The unique identifier of the project associated with this session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -148,7 +148,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "memory", n => { Memory = n.GetDoubleValue(); } },
                 { "networkPolicy", n => { NetworkPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SandboxNetworkPolicy>(global::Soenneker.Vercel.OpenApiClient.Models.SandboxNetworkPolicy.CreateFromDiscriminatorValue); } },
-                { "networkTransfer", n => { NetworkTransfer = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Session_networkTransfer>(global::Soenneker.Vercel.OpenApiClient.Models.Session_networkTransfer.CreateFromDiscriminatorValue); } },
+                { "networkTransfer", n => { NetworkTransfer = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SessionNetworkTransfer>(global::Soenneker.Vercel.OpenApiClient.Models.SessionNetworkTransfer.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "requestedAt", n => { RequestedAt = n.GetDoubleValue(); } },
@@ -180,7 +180,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("memory", Memory);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SandboxNetworkPolicy>("networkPolicy", NetworkPolicy);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Session_networkTransfer>("networkTransfer", NetworkTransfer);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SessionNetworkTransfer>("networkTransfer", NetworkTransfer);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("region", Region);
             writer.WriteDoubleValue("requestedAt", RequestedAt);

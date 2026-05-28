@@ -59,10 +59,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Metadata about any AWS Route53 Hosted Zones associated with the Network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.Network_hostedZones? HostedZones { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones? HostedZones { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.Network_hostedZones HostedZones { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones HostedZones { get; set; }
 #endif
         /// <summary>The unique identifier of the Network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,18 +83,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Metadata about any AWS Route53 Hosted Zones associated with the Network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.Network_peeringConnections? PeeringConnections { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkPeeringConnections? PeeringConnections { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.Network_peeringConnections PeeringConnections { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkPeeringConnections PeeringConnections { get; set; }
 #endif
         /// <summary>Metadata about any projects associated with the Network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.Network_projects? Projects { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkProjects? Projects { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.Network_projects Projects { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkProjects Projects { get; set; }
 #endif
         /// <summary>The Vercel region in which the Network exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -153,11 +153,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "cidr", n => { Cidr = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "egressIpAddresses", n => { EgressIpAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "hostedZones", n => { HostedZones = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Network_hostedZones>(global::Soenneker.Vercel.OpenApiClient.Models.Network_hostedZones.CreateFromDiscriminatorValue); } },
+                { "hostedZones", n => { HostedZones = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones>(global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "peeringConnections", n => { PeeringConnections = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Network_peeringConnections>(global::Soenneker.Vercel.OpenApiClient.Models.Network_peeringConnections.CreateFromDiscriminatorValue); } },
-                { "projects", n => { Projects = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Network_projects>(global::Soenneker.Vercel.OpenApiClient.Models.Network_projects.CreateFromDiscriminatorValue); } },
+                { "peeringConnections", n => { PeeringConnections = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkPeeringConnections>(global::Soenneker.Vercel.OpenApiClient.Models.NetworkPeeringConnections.CreateFromDiscriminatorValue); } },
+                { "projects", n => { Projects = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkProjects>(global::Soenneker.Vercel.OpenApiClient.Models.NetworkProjects.CreateFromDiscriminatorValue); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Network_status>(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
@@ -177,11 +177,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("cidr", Cidr);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("egressIpAddresses", EgressIpAddresses);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Network_hostedZones>("hostedZones", HostedZones);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones>("hostedZones", HostedZones);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Network_peeringConnections>("peeringConnections", PeeringConnections);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Network_projects>("projects", Projects);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkPeeringConnections>("peeringConnections", PeeringConnections);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkProjects>("projects", Projects);
             writer.WriteStringValue("region", Region);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Network_status>("status", Status);
             writer.WriteStringValue("teamId", TeamId);

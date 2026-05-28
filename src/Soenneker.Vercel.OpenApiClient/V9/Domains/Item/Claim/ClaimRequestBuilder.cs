@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -35,20 +36,20 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Domains.Item.Claim
         /// <summary>
         /// Claim ownership of a domain for the authenticated team by verifying a TXT record. The caller must first add a TXT record to `_vercel.{domain}` (obtained from GET /domains/:domain/verification), then call this endpoint to complete the ownership transfer. If the TXT record is verified, the domain ownership will be transferred to the caller&apos;s team, even if the domain is currently owned by another user or team.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Domains.Item.Claim.ClaimPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ClaimDomainOwnership200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Domains.Item.Claim.ClaimPostResponse?> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Domains.Item.Claim.ClaimRequestBuilder.ClaimRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ClaimDomainOwnership200?> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Domains.Item.Claim.ClaimRequestBuilder.ClaimRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Domains.Item.Claim.ClaimPostResponse> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Domains.Item.Claim.ClaimRequestBuilder.ClaimRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ClaimDomainOwnership200> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Domains.Item.Claim.ClaimRequestBuilder.ClaimRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V9.Domains.Item.Claim.ClaimPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V9.Domains.Item.Claim.ClaimPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ClaimDomainOwnership200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ClaimDomainOwnership200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Claim ownership of a domain for the authenticated team by verifying a TXT record. The caller must first add a TXT record to `_vercel.{domain}` (obtained from GET /domains/:domain/verification), then call this endpoint to complete the ownership transfer. If the TXT record is verified, the domain ownership will be transferred to the caller&apos;s team, even if the domain is currently owned by another user or team.

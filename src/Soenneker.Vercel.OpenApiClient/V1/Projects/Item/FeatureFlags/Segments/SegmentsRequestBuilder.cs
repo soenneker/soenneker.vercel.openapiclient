@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -66,22 +67,22 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments
         /// <summary>
         /// Create a new feature flag segment.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments.SegmentsPutResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments.SegmentsPutResponse?> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments.SegmentsPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201?> PutAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments.SegmentsPutResponse> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments.SegmentsPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201> PutAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments.SegmentsPutResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments.SegmentsPutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all feature flag segments for a project.
@@ -110,11 +111,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments.SegmentsPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments.SegmentsPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateFlagSegment body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

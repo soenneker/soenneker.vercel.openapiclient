@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -41,11 +42,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks.SharedConnectLinks>?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks.SharedConnectLinksPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks.SharedConnectLinksRequestBuilder.SharedConnectLinksRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks.SharedConnectLinks>?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateStaticIps body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks.SharedConnectLinksRequestBuilder.SharedConnectLinksRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks.SharedConnectLinks>> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks.SharedConnectLinksPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks.SharedConnectLinksRequestBuilder.SharedConnectLinksRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks.SharedConnectLinks>> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateStaticIps body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks.SharedConnectLinksRequestBuilder.SharedConnectLinksRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -61,11 +62,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks.SharedConnectLinksPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks.SharedConnectLinksRequestBuilder.SharedConnectLinksRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateStaticIps body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks.SharedConnectLinksRequestBuilder.SharedConnectLinksRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks.SharedConnectLinksPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks.SharedConnectLinksRequestBuilder.SharedConnectLinksRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateStaticIps body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks.SharedConnectLinksRequestBuilder.SharedConnectLinksRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

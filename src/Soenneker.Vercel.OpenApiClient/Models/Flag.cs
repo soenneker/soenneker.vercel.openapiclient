@@ -43,10 +43,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The experiment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment? Experiment { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment? Experiment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment Experiment { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment Experiment { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,10 +69,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.Flag_metadata? Metadata { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FlagMetadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.Flag_metadata Metadata { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FlagMetadata Metadata { get; set; }
 #endif
         /// <summary>The ownerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -155,11 +155,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "environments", n => { Environments = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_environments>(global::Soenneker.Vercel.OpenApiClient.Models.Flag_environments.CreateFromDiscriminatorValue); } },
-                { "experiment", n => { Experiment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment>(global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment.CreateFromDiscriminatorValue); } },
+                { "experiment", n => { Experiment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment>(global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_kind>(); } },
                 { "maintainerIds", n => { MaintainerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_metadata>(global::Soenneker.Vercel.OpenApiClient.Models.Flag_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagMetadata>(global::Soenneker.Vercel.OpenApiClient.Models.FlagMetadata.CreateFromDiscriminatorValue); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "permanent", n => { Permanent = n.GetBoolValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
@@ -184,11 +184,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_environments>("environments", Environments);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_experiment>("experiment", Experiment);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment>("experiment", Experiment);
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_kind>("kind", Kind);
             writer.WriteCollectionOfPrimitiveValues<string>("maintainerIds", MaintainerIds);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagMetadata>("metadata", Metadata);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteBoolValue("permanent", Permanent);
             writer.WriteStringValue("projectId", ProjectId);

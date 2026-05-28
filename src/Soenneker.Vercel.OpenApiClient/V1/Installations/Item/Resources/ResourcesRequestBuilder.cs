@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -48,20 +49,20 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources
         /// <summary>
         /// Get all resources for a given installation ID.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.ResourcesGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.ResourcesGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.ResourcesGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.ResourcesGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.ResourcesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get all resources for a given installation ID.

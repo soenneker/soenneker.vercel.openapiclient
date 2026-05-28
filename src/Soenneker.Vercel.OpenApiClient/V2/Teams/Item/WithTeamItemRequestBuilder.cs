@@ -72,11 +72,11 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.Team?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamItemRequestBuilder.WithTeamItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.Team?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.PatchTeam body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamItemRequestBuilder.WithTeamItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.Team> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamItemRequestBuilder.WithTeamItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.Team> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.PatchTeam body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamItemRequestBuilder.WithTeamItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -110,11 +110,11 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamItemRequestBuilder.WithTeamItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.PatchTeam body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamItemRequestBuilder.WithTeamItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamItemRequestBuilder.WithTeamItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.PatchTeam body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.WithTeamItemRequestBuilder.WithTeamItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

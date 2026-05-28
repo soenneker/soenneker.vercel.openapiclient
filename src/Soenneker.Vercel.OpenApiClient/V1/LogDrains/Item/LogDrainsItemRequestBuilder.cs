@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -52,20 +53,20 @@ namespace Soenneker.Vercel.OpenApiClient.V1.LogDrains.Item
         /// <summary>
         /// Retrieves a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be accessed.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.LogDrains.Item.LogDrainsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurableLogDrain200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.LogDrains.Item.LogDrainsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.LogDrains.Item.LogDrainsItemRequestBuilder.LogDrainsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurableLogDrain200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.LogDrains.Item.LogDrainsItemRequestBuilder.LogDrainsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.LogDrains.Item.LogDrainsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.LogDrains.Item.LogDrainsItemRequestBuilder.LogDrainsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurableLogDrain200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.LogDrains.Item.LogDrainsItemRequestBuilder.LogDrainsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.LogDrains.Item.LogDrainsGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.LogDrains.Item.LogDrainsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurableLogDrain200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurableLogDrain200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be deleted.
@@ -83,6 +84,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.LogDrains.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

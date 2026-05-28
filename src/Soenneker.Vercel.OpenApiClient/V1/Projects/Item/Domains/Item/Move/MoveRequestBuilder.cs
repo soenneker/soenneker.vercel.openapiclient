@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -35,22 +36,22 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains.Item.Move
         /// <summary>
         /// Move one project&apos;s domain to another project. Also allows the move of all redirects pointed to that domain in the same project.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains.Item.Move.MovePostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.MoveProjectDomain200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains.Item.Move.MovePostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains.Item.Move.MovePostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains.Item.Move.MoveRequestBuilder.MoveRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.MoveProjectDomain200?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.MoveProjectDomain body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains.Item.Move.MoveRequestBuilder.MoveRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains.Item.Move.MovePostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains.Item.Move.MovePostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains.Item.Move.MoveRequestBuilder.MoveRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.MoveProjectDomain200> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.MoveProjectDomain body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains.Item.Move.MoveRequestBuilder.MoveRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains.Item.Move.MovePostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains.Item.Move.MovePostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.MoveProjectDomain200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.MoveProjectDomain200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Move one project&apos;s domain to another project. Also allows the move of all redirects pointed to that domain in the same project.
@@ -60,11 +61,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains.Item.Move
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains.Item.Move.MovePostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains.Item.Move.MoveRequestBuilder.MoveRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.MoveProjectDomain body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains.Item.Move.MoveRequestBuilder.MoveRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains.Item.Move.MovePostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains.Item.Move.MoveRequestBuilder.MoveRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.MoveProjectDomain body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains.Item.Move.MoveRequestBuilder.MoveRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

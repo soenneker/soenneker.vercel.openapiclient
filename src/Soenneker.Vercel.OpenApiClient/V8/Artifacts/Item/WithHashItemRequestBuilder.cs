@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -53,40 +54,40 @@ namespace Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item
         /// <summary>
         /// Check that a cache artifact with the given `hash` exists. This request returns response headers only and is equivalent to a `GET` request to this endpoint where the response contains no body.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashHeadResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> HeadAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashItemRequestBuilder.WithHashItemRequestBuilderHeadQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashHeadResponse?> HeadAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashItemRequestBuilder.WithHashItemRequestBuilderHeadQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> HeadAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashItemRequestBuilder.WithHashItemRequestBuilderHeadQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashHeadResponse> HeadAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashItemRequestBuilder.WithHashItemRequestBuilderHeadQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToHeadRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashHeadResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashHeadResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Uploads a cache artifact identified by the `hash` specified on the path. The cache artifact can then be downloaded with the provided `hash`.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashPutResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UploadArtifact202"/></returns>
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashPutResponse?> PutAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashItemRequestBuilder.WithHashItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UploadArtifact202?> PutAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashItemRequestBuilder.WithHashItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashPutResponse> PutAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashItemRequestBuilder.WithHashItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UploadArtifact202> PutAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashItemRequestBuilder.WithHashItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashPutResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item.WithHashPutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UploadArtifact202>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UploadArtifact202.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Downloads a cache artifact indentified by its `hash` specified on the request path. The artifact is downloaded as an octet-stream. The client should verify the content-length header and response body.
@@ -123,6 +124,7 @@ namespace Soenneker.Vercel.OpenApiClient.V8.Artifacts.Item
 #endif
             var requestInfo = new RequestInformation(Method.HEAD, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

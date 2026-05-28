@@ -36,7 +36,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Availability
         /// <summary>
         /// Get availability for a specific domain. If the domain is available, it can be purchased using the [Buy a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-a-domain) endpoint or the [Buy multiple domains](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-multiple-domains) endpoint.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Availability.AvailabilityGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDomainAvailability200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.HttpApiDecodeError">When receiving a 400 status code</exception>
@@ -47,11 +47,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Availability
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Availability.AvailabilityGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Availability.AvailabilityRequestBuilder.AvailabilityRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainAvailability200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Availability.AvailabilityRequestBuilder.AvailabilityRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Availability.AvailabilityGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Availability.AvailabilityRequestBuilder.AvailabilityRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainAvailability200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Availability.AvailabilityRequestBuilder.AvailabilityRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -64,7 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Availability
                 { "429", global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Availability.AvailabilityGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Availability.AvailabilityGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetDomainAvailability200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetDomainAvailability200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get availability for a specific domain. If the domain is available, it can be purchased using the [Buy a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-a-domain) endpoint or the [Buy multiple domains](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-multiple-domains) endpoint.

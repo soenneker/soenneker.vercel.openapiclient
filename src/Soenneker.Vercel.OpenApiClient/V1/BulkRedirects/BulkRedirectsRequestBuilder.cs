@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.Restore;
 using Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.Versions;
 using System.Collections.Generic;
@@ -47,80 +48,80 @@ namespace Soenneker.Vercel.OpenApiClient.V1.BulkRedirects
         /// <summary>
         /// Deletes the provided redirects from the latest version of the projects&apos; bulk redirects. Stages a new change with the new redirects and returns the alias for the new version in the response.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsDeleteResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsDeleteResponse?> DeleteAsync(global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200?> DeleteAsync(global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsDeleteResponse> DeleteAsync(global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200> DeleteAsync(global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsDeleteResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsDeleteResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the version history for a project&apos;s bulk redirects
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetRedirects200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetRedirects200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetRedirects200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetRedirects200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetRedirects200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Edits a single redirect identified by its source path. Stages a new change with the modified redirect and returns the alias for the new version in the response.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsPatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditRedirect200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsPatchResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.EditRedirect200?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.EditRedirect body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsPatchResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.EditRedirect200> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.EditRedirect body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsPatchResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.EditRedirect200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.EditRedirect200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Stages new redirects for a project and returns the new version.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsPutResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.StageRedirects200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsPutResponse?> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.StageRedirects200?> PutAsync(global::Soenneker.Vercel.OpenApiClient.Models.StageRedirects body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsPutResponse> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.StageRedirects200> PutAsync(global::Soenneker.Vercel.OpenApiClient.Models.StageRedirects body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsPutResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsPutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.StageRedirects200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.StageRedirects200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes the provided redirects from the latest version of the projects&apos; bulk redirects. Stages a new change with the new redirects and returns the alias for the new version in the response.
@@ -130,11 +131,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.BulkRedirects
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -171,11 +172,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.BulkRedirects
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.EditRedirect body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.EditRedirect body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -193,11 +194,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.BulkRedirects
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.StageRedirects body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.StageRedirects body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -215,196 +216,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.BulkRedirects
         public global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteResponseMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteResponseMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteResponseMember3"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BulkRedirectsDeleteResponse : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteResponseMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteResponseMember1? BulkRedirectsDeleteResponseMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteResponseMember1 BulkRedirectsDeleteResponseMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteResponseMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteResponseMember2? BulkRedirectsDeleteResponseMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteResponseMember2 BulkRedirectsDeleteResponseMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteResponseMember3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteResponseMember3? BulkRedirectsDeleteResponseMember3 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteResponseMember3 BulkRedirectsDeleteResponseMember3 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsDeleteResponse"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsDeleteResponse CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsDeleteResponse();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.BulkRedirectsDeleteResponseMember1 = new global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteResponseMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.BulkRedirectsDeleteResponseMember2 = new global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteResponseMember2();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.BulkRedirectsDeleteResponseMember3 = new global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteResponseMember3();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(BulkRedirectsDeleteResponseMember1 != null)
-                {
-                    return BulkRedirectsDeleteResponseMember1.GetFieldDeserializers();
-                }
-                else if(BulkRedirectsDeleteResponseMember2 != null)
-                {
-                    return BulkRedirectsDeleteResponseMember2.GetFieldDeserializers();
-                }
-                else if(BulkRedirectsDeleteResponseMember3 != null)
-                {
-                    return BulkRedirectsDeleteResponseMember3.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(BulkRedirectsDeleteResponseMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteResponseMember1>(null, BulkRedirectsDeleteResponseMember1);
-                }
-                else if(BulkRedirectsDeleteResponseMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteResponseMember2>(null, BulkRedirectsDeleteResponseMember2);
-                }
-                else if(BulkRedirectsDeleteResponseMember3 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsDeleteResponseMember3>(null, BulkRedirectsDeleteResponseMember3);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsGetResponseMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsGetResponseMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsGetResponseMember3"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BulkRedirectsGetResponse : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsGetResponseMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsGetResponseMember1? BulkRedirectsGetResponseMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsGetResponseMember1 BulkRedirectsGetResponseMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsGetResponseMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsGetResponseMember2? BulkRedirectsGetResponseMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsGetResponseMember2 BulkRedirectsGetResponseMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsGetResponseMember3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsGetResponseMember3? BulkRedirectsGetResponseMember3 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsGetResponseMember3 BulkRedirectsGetResponseMember3 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsGetResponse"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsRequestBuilder.BulkRedirectsGetResponse();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.BulkRedirectsGetResponseMember1 = new global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsGetResponseMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.BulkRedirectsGetResponseMember2 = new global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsGetResponseMember2();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.BulkRedirectsGetResponseMember3 = new global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsGetResponseMember3();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(BulkRedirectsGetResponseMember1 != null)
-                {
-                    return BulkRedirectsGetResponseMember1.GetFieldDeserializers();
-                }
-                else if(BulkRedirectsGetResponseMember2 != null)
-                {
-                    return BulkRedirectsGetResponseMember2.GetFieldDeserializers();
-                }
-                else if(BulkRedirectsGetResponseMember3 != null)
-                {
-                    return BulkRedirectsGetResponseMember3.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(BulkRedirectsGetResponseMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsGetResponseMember1>(null, BulkRedirectsGetResponseMember1);
-                }
-                else if(BulkRedirectsGetResponseMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsGetResponseMember2>(null, BulkRedirectsGetResponseMember2);
-                }
-                else if(BulkRedirectsGetResponseMember3 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.BulkRedirectsGetResponseMember3>(null, BulkRedirectsGetResponseMember3);
-                }
-            }
         }
         /// <summary>
         /// Deletes the provided redirects from the latest version of the projects&apos; bulk redirects. Stages a new change with the new redirects and returns the alias for the new version in the response.
@@ -448,8 +259,15 @@ namespace Soenneker.Vercel.OpenApiClient.V1.BulkRedirects
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BulkRedirectsRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("diff")]
-            public bool? Diff { get; set; }
+            public string? Diff { get; set; }
+#nullable restore
+#else
+            [QueryParameter("diff")]
+            public string Diff { get; set; }
+#endif
             [QueryParameter("page")]
             public int? Page { get; set; }
             [QueryParameter("per_page")]

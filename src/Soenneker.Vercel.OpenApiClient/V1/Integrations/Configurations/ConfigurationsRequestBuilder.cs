@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -35,20 +36,20 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations
         /// <summary>
         /// Allows to retrieve all configurations for an authenticated integration. When the `project` view is used, configurations generated for the authorization flow will be filtered out of the results.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsRequestBuilder.ConfigurationsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsRequestBuilder.ConfigurationsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsRequestBuilder.ConfigurationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsRequestBuilder.ConfigurationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsRequestBuilder.ConfigurationsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsRequestBuilder.ConfigurationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsRequestBuilder.ConfigurationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsRequestBuilder.ConfigurationsGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsRequestBuilder.ConfigurationsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Allows to retrieve all configurations for an authenticated integration. When the `project` view is used, configurations generated for the authorization flow will be filtered out of the results.
@@ -77,73 +78,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations
         public global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes List&lt;global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsGetResponseMember1&gt;, List&lt;global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsGetResponseMember2&gt;
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ConfigurationsGetResponse : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsGetResponseMember1&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsGetResponseMember1>? ConfigurationsGetResponseMember1 { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsGetResponseMember1> ConfigurationsGetResponseMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsGetResponseMember2&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsGetResponseMember2>? ConfigurationsGetResponseMember2 { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsGetResponseMember2> ConfigurationsGetResponseMember2 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsRequestBuilder.ConfigurationsGetResponse"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsRequestBuilder.ConfigurationsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsRequestBuilder.ConfigurationsGetResponse();
-                if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsGetResponseMember1>(global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsGetResponseMember1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsGetResponseMember1> configurationsGetResponseMember1Value)
-                {
-                    result.ConfigurationsGetResponseMember1 = configurationsGetResponseMember1Value;
-                }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsGetResponseMember2>(global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsGetResponseMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsGetResponseMember2> configurationsGetResponseMember2Value)
-                {
-                    result.ConfigurationsGetResponseMember2 = configurationsGetResponseMember2Value;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(ConfigurationsGetResponseMember1 != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsGetResponseMember1>(null, ConfigurationsGetResponseMember1);
-                }
-                else if(ConfigurationsGetResponseMember2 != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsGetResponseMember2>(null, ConfigurationsGetResponseMember2);
-                }
-            }
         }
         /// <summary>
         /// Allows to retrieve all configurations for an authenticated integration. When the `project` view is used, configurations generated for the authorization flow will be filtered out of the results.

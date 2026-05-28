@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>The network policy mode. - &apos;allow-all&apos;: All traffic is allowed. - &apos;deny-all&apos;: All traffic is blocked. - &apos;custom&apos;: Traffic is controlled by explicit allow/deny rules.</summary>
+    /// <summary>&quot;The network policy mode. - &apos;allow-all&apos;: All traffic is allowed. - &apos;deny-all&apos;: All traffic is blocked. - &apos;custom&apos;: Traffic is controlled by explicit allow/deny rules.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SandboxNetworkPolicy_mode
     {

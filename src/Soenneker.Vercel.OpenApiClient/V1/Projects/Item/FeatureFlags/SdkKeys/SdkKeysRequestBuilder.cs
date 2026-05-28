@@ -49,20 +49,20 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys
         /// <summary>
         /// Gets all SDK keys for a project.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetSdkKeys200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysRequestBuilder.SdkKeysRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetSdkKeys200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysRequestBuilder.SdkKeysRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysRequestBuilder.SdkKeysRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetSdkKeys200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysRequestBuilder.SdkKeysRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetSdkKeys200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetSdkKeys200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates an SDK key.
@@ -73,11 +73,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.FlagsSdkKeyWithSecrets?> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysRequestBuilder.SdkKeysRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.FlagsSdkKeyWithSecrets?> PutAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateSdkKey body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysRequestBuilder.SdkKeysRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.FlagsSdkKeyWithSecrets> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysRequestBuilder.SdkKeysRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.FlagsSdkKeyWithSecrets> PutAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateSdkKey body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysRequestBuilder.SdkKeysRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -111,11 +111,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysRequestBuilder.SdkKeysRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateSdkKey body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysRequestBuilder.SdkKeysRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysRequestBuilder.SdkKeysRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateSdkKey body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysRequestBuilder.SdkKeysRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

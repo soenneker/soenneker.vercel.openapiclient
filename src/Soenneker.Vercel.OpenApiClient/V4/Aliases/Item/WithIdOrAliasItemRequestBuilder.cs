@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -35,20 +36,20 @@ namespace Soenneker.Vercel.OpenApiClient.V4.Aliases.Item
         /// <summary>
         /// Retrieves an Alias for the given host name or alias ID.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V4.Aliases.Item.WithIdOrAliasGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.Item.WithIdOrAliasGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.Item.WithIdOrAliasItemRequestBuilder.WithIdOrAliasItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.Item.WithIdOrAliasItemRequestBuilder.WithIdOrAliasItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.Item.WithIdOrAliasGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.Item.WithIdOrAliasItemRequestBuilder.WithIdOrAliasItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.Item.WithIdOrAliasItemRequestBuilder.WithIdOrAliasItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.Item.WithIdOrAliasGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V4.Aliases.Item.WithIdOrAliasGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves an Alias for the given host name or alias ID.

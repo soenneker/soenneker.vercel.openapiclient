@@ -77,22 +77,22 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Ite
         /// <summary>
         /// Update an existing feature flag. This endpoint supports partial updates, allowing you to modify specific properties like variants, environments, or state without providing the full flag configuration.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugItemRequestBuilder.WithFlagIdOrSlugPatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugItemRequestBuilder.WithFlagIdOrSlugPatchResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugItemRequestBuilder.WithFlagIdOrSlugItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugItemRequestBuilder.WithFlagIdOrSlugItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugItemRequestBuilder.WithFlagIdOrSlugPatchResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugItemRequestBuilder.WithFlagIdOrSlugItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugItemRequestBuilder.WithFlagIdOrSlugItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugItemRequestBuilder.WithFlagIdOrSlugPatchResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugItemRequestBuilder.WithFlagIdOrSlugPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Permanently delete a feature flag from the project. This action cannot be undone. Consider archiving the flag instead if you may need it in the future.
@@ -110,6 +110,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Ite
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -139,11 +140,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugItemRequestBuilder.WithFlagIdOrSlugItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugItemRequestBuilder.WithFlagIdOrSlugItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugItemRequestBuilder.WithFlagIdOrSlugItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugItemRequestBuilder.WithFlagIdOrSlugItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -281,81 +282,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Ite
             /// <summary>Whether to include metadata in the response</summary>
             [QueryParameter("withMetadata")]
             public bool? WithMetadata { get; set; }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.Flag"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchResponseMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithFlagIdOrSlugPatchResponse : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.Flag"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.Models.Flag? Flag { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.Models.Flag Flag { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchResponseMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchResponseMember1? WithFlagIdOrSlugPatchResponseMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchResponseMember1 WithFlagIdOrSlugPatchResponseMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugItemRequestBuilder.WithFlagIdOrSlugPatchResponse"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugItemRequestBuilder.WithFlagIdOrSlugPatchResponse CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugItemRequestBuilder.WithFlagIdOrSlugPatchResponse();
-                if("Flag".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.Flag = new global::Soenneker.Vercel.OpenApiClient.Models.Flag();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.WithFlagIdOrSlugPatchResponseMember1 = new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchResponseMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(Flag != null)
-                {
-                    return Flag.GetFieldDeserializers();
-                }
-                else if(WithFlagIdOrSlugPatchResponseMember1 != null)
-                {
-                    return WithFlagIdOrSlugPatchResponseMember1.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Flag != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag>(null, Flag);
-                }
-                else if(WithFlagIdOrSlugPatchResponseMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item.WithFlagIdOrSlugPatchResponseMember1>(null, WithFlagIdOrSlugPatchResponseMember1);
-                }
-            }
         }
     }
 }

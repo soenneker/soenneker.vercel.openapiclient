@@ -44,10 +44,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Keep-last snapshot configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_keepLastSnapshots? KeepLastSnapshots { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxKeepLastSnapshots? KeepLastSnapshots { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_keepLastSnapshots KeepLastSnapshots { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxKeepLastSnapshots KeepLastSnapshots { get; set; }
 #endif
         /// <summary>Memory allocated in MB.</summary>
         public double? Memory { get; set; }
@@ -70,10 +70,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Network policy configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_networkPolicy? NetworkPolicy { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicy? NetworkPolicy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_networkPolicy NetworkPolicy { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicy NetworkPolicy { get; set; }
 #endif
         /// <summary>Whether the sandbox persists its state across restarts via automatic snapshots.</summary>
         public bool? Persistent { get; set; }
@@ -150,11 +150,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "currentSessionId", n => { CurrentSessionId = n.GetStringValue(); } },
                 { "currentSnapshotId", n => { CurrentSnapshotId = n.GetStringValue(); } },
                 { "cwd", n => { Cwd = n.GetStringValue(); } },
-                { "keepLastSnapshots", n => { KeepLastSnapshots = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_keepLastSnapshots>(global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_keepLastSnapshots.CreateFromDiscriminatorValue); } },
+                { "keepLastSnapshots", n => { KeepLastSnapshots = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxKeepLastSnapshots>(global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxKeepLastSnapshots.CreateFromDiscriminatorValue); } },
                 { "memory", n => { Memory = n.GetDoubleValue(); } },
                 { "mounts", n => { Mounts = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_mounts>(global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_mounts.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "networkPolicy", n => { NetworkPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_networkPolicy>(global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_networkPolicy.CreateFromDiscriminatorValue); } },
+                { "networkPolicy", n => { NetworkPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicy>(global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicy.CreateFromDiscriminatorValue); } },
                 { "persistent", n => { Persistent = n.GetBoolValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "runtime", n => { Runtime = n.GetStringValue(); } },
@@ -182,11 +182,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("currentSessionId", CurrentSessionId);
             writer.WriteStringValue("currentSnapshotId", CurrentSnapshotId);
             writer.WriteStringValue("cwd", Cwd);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_keepLastSnapshots>("keepLastSnapshots", KeepLastSnapshots);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxKeepLastSnapshots>("keepLastSnapshots", KeepLastSnapshots);
             writer.WriteDoubleValue("memory", Memory);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_mounts>("mounts", Mounts);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox_networkPolicy>("networkPolicy", NetworkPolicy);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicy>("networkPolicy", NetworkPolicy);
             writer.WriteBoolValue("persistent", Persistent);
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("runtime", Runtime);

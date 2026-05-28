@@ -44,10 +44,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>data cache settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_dataCache? DataCache { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDataCache? DataCache { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_dataCache DataCache { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDataCache DataCache { get; set; }
 #endif
         /// <summary>The user&apos;s default team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,10 +84,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Feature blocks for the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_featureBlocks? FeatureBlocks { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocks? FeatureBlocks { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_featureBlocks FeatureBlocks { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocks FeatureBlocks { get; set; }
 #endif
         /// <summary>Whether the user has a trial available for a paid plan subscription.</summary>
         public bool? HasTrialAvailable { get; set; }
@@ -102,18 +102,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The importFlowGitNamespace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespace? ImportFlowGitNamespace { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch? ImportFlowGitNamespace { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespace ImportFlowGitNamespace { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch ImportFlowGitNamespace { get; set; }
 #endif
         /// <summary>The importFlowGitNamespaceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespaceId? ImportFlowGitNamespaceId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch? ImportFlowGitNamespaceId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespaceId ImportFlowGitNamespaceId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch ImportFlowGitNamespaceId { get; set; }
 #endif
         /// <summary>The importFlowGitProvider property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_importFlowGitProvider? ImportFlowGitProvider { get; set; }
@@ -138,18 +138,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>remote caching settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_remoteCaching? RemoteCaching { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserRemoteCaching? RemoteCaching { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_remoteCaching RemoteCaching { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserRemoteCaching RemoteCaching { get; set; }
 #endif
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_resourceConfig? ResourceConfig { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig? ResourceConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_resourceConfig ResourceConfig { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig ResourceConfig { get; set; }
 #endif
         /// <summary>When the User account has been &quot;soft blocked&quot;, this property will contain the date when the restriction was enacted, and the identifier for why.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -204,22 +204,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "avatar", n => { Avatar = n.GetStringValue(); } },
                 { "billing", n => { Billing = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_billing>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_billing.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
-                { "dataCache", n => { DataCache = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_dataCache>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_dataCache.CreateFromDiscriminatorValue); } },
+                { "dataCache", n => { DataCache = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDataCache>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDataCache.CreateFromDiscriminatorValue); } },
                 { "defaultTeamId", n => { DefaultTeamId = n.GetStringValue(); } },
                 { "dismissedToasts", n => { DismissedToasts = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_dismissedToasts>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_dismissedToasts.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "favoriteProjectsAndSpaces", n => { FavoriteProjectsAndSpaces = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_favoriteProjectsAndSpaces>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_favoriteProjectsAndSpaces.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "featureBlocks", n => { FeatureBlocks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_featureBlocks>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_featureBlocks.CreateFromDiscriminatorValue); } },
+                { "featureBlocks", n => { FeatureBlocks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocks>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocks.CreateFromDiscriminatorValue); } },
                 { "hasTrialAvailable", n => { HasTrialAvailable = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "importFlowGitNamespace", n => { ImportFlowGitNamespace = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespace>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespace.CreateFromDiscriminatorValue); } },
-                { "importFlowGitNamespaceId", n => { ImportFlowGitNamespaceId = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespaceId>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespaceId.CreateFromDiscriminatorValue); } },
+                { "importFlowGitNamespace", n => { ImportFlowGitNamespace = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>(global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "importFlowGitNamespaceId", n => { ImportFlowGitNamespaceId = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>(global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "importFlowGitProvider", n => { ImportFlowGitProvider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_importFlowGitProvider>(); } },
                 { "isEnterpriseManaged", n => { IsEnterpriseManaged = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "preferredScopesAndGitNamespaces", n => { PreferredScopesAndGitNamespaces = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_preferredScopesAndGitNamespaces>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_preferredScopesAndGitNamespaces.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "remoteCaching", n => { RemoteCaching = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_remoteCaching>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_remoteCaching.CreateFromDiscriminatorValue); } },
-                { "resourceConfig", n => { ResourceConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_resourceConfig>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_resourceConfig.CreateFromDiscriminatorValue); } },
+                { "remoteCaching", n => { RemoteCaching = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserRemoteCaching>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserRemoteCaching.CreateFromDiscriminatorValue); } },
+                { "resourceConfig", n => { ResourceConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig.CreateFromDiscriminatorValue); } },
                 { "softBlock", n => { SoftBlock = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_softBlock>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_softBlock.CreateFromDiscriminatorValue); } },
                 { "stagingPrefix", n => { StagingPrefix = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
@@ -236,148 +236,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("avatar", Avatar);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_billing>("billing", Billing);
             writer.WriteDoubleValue("createdAt", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_dataCache>("dataCache", DataCache);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDataCache>("dataCache", DataCache);
             writer.WriteStringValue("defaultTeamId", DefaultTeamId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_dismissedToasts>("dismissedToasts", DismissedToasts);
             writer.WriteStringValue("email", Email);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_favoriteProjectsAndSpaces>("favoriteProjectsAndSpaces", FavoriteProjectsAndSpaces);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_featureBlocks>("featureBlocks", FeatureBlocks);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocks>("featureBlocks", FeatureBlocks);
             writer.WriteBoolValue("hasTrialAvailable", HasTrialAvailable);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespace>("importFlowGitNamespace", ImportFlowGitNamespace);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespaceId>("importFlowGitNamespaceId", ImportFlowGitNamespaceId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>("importFlowGitNamespace", ImportFlowGitNamespace);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>("importFlowGitNamespaceId", ImportFlowGitNamespaceId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_importFlowGitProvider>("importFlowGitProvider", ImportFlowGitProvider);
             writer.WriteBoolValue("isEnterpriseManaged", IsEnterpriseManaged);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_preferredScopesAndGitNamespaces>("preferredScopesAndGitNamespaces", PreferredScopesAndGitNamespaces);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_remoteCaching>("remoteCaching", RemoteCaching);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_resourceConfig>("resourceConfig", ResourceConfig);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserRemoteCaching>("remoteCaching", RemoteCaching);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig>("resourceConfig", ResourceConfig);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUser_softBlock>("softBlock", SoftBlock);
             writer.WriteStringValue("stagingPrefix", StagingPrefix);
             writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="double"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AuthUser_importFlowGitNamespace : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespace"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespace CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespace();
-                if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="double"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AuthUser_importFlowGitNamespaceId : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespaceId"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespaceId CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespaceId();
-                if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-            }
         }
     }
 }

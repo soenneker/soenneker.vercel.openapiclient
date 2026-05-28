@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Vercel.OpenApiClient.V1.Deployments.Item.Checks;
 using Soenneker.Vercel.OpenApiClient.V1.Deployments.Item.FeatureFlags;
 using Soenneker.Vercel.OpenApiClient.V1.Deployments.Item.Integrations;
 using System.Collections.Generic;
@@ -17,11 +16,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Deployments.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithDeploymentItemRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The checks property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.V1.Deployments.Item.Checks.ChecksRequestBuilder Checks
-        {
-            get => new global::Soenneker.Vercel.OpenApiClient.V1.Deployments.Item.Checks.ChecksRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The featureFlags property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Deployments.Item.FeatureFlags.FeatureFlagsRequestBuilder FeatureFlags
         {

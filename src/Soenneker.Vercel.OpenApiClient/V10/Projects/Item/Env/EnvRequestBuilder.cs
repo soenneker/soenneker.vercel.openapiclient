@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -35,40 +36,40 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env
         /// <summary>
         /// Retrieve the environment variables for a given project by passing either the project `id` or `name` in the URL.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create one or more environment variables for a project by passing its `key`, `value`, `type` and `target` and by specifying the project by either passing the project `id` or `name` in the URL. If you include `upsert=true` as a query parameter, a new environment variable will not be created if it already exists but, the existing variable&apos;s value will be updated.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvPostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvPostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the environment variables for a given project by passing either the project `id` or `name` in the URL.
@@ -97,11 +98,11 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -119,172 +120,6 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env
         public global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EnvGetResponse : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember1? EnvGetResponseMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember1 EnvGetResponseMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember2? EnvGetResponseMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember2 EnvGetResponseMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3? EnvGetResponseMember3 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3 EnvGetResponseMember3 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvGetResponse"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvGetResponse();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.EnvGetResponseMember1 = new global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.EnvGetResponseMember2 = new global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember2();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.EnvGetResponseMember3 = new global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(EnvGetResponseMember1 != null)
-                {
-                    return EnvGetResponseMember1.GetFieldDeserializers();
-                }
-                else if(EnvGetResponseMember2 != null)
-                {
-                    return EnvGetResponseMember2.GetFieldDeserializers();
-                }
-                else if(EnvGetResponseMember3 != null)
-                {
-                    return EnvGetResponseMember3.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(EnvGetResponseMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember1>(null, EnvGetResponseMember1);
-                }
-                else if(EnvGetResponseMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember2>(null, EnvGetResponseMember2);
-                }
-                else if(EnvGetResponseMember3 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvGetResponseMember3>(null, EnvGetResponseMember3);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvPostRequestBodyMember1"/>, List&lt;global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvPostRequestBodyMember2&gt;
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EnvPostRequestBody : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvPostRequestBodyMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvPostRequestBodyMember1? EnvPostRequestBodyMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvPostRequestBodyMember1 EnvPostRequestBodyMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvPostRequestBodyMember2&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvPostRequestBodyMember2>? EnvPostRequestBodyMember2 { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvPostRequestBodyMember2> EnvPostRequestBodyMember2 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvPostRequestBody"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvPostRequestBody();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.EnvPostRequestBodyMember1 = new global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvPostRequestBodyMember1();
-                }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvPostRequestBodyMember2>(global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvPostRequestBodyMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvPostRequestBodyMember2> envPostRequestBodyMember2Value)
-                {
-                    result.EnvPostRequestBodyMember2 = envPostRequestBodyMember2Value;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(EnvPostRequestBodyMember1 != null)
-                {
-                    return EnvPostRequestBodyMember1.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(EnvPostRequestBodyMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvPostRequestBodyMember1>(null, EnvPostRequestBodyMember1);
-                }
-                else if(EnvPostRequestBodyMember2 != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvPostRequestBodyMember2>(null, EnvPostRequestBodyMember2);
-                }
-            }
         }
         /// <summary>
         /// Retrieve the environment variables for a given project by passing either the project `id` or `name` in the URL.

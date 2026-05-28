@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -35,56 +36,56 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config
         /// <summary>
         /// Disable Rolling Releases for a project means that future deployments will not undergo a rolling release. Changing the config never alters a rollout that&apos;s already in-flight—it only affects the next production deployment. If you want to also stop the current rollout, call this endpoint to disable the feature, and then call either the /complete or /abort endpoint.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigDeleteResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteRollingReleaseConfig200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigDeleteResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRollingReleaseConfig200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigDeleteResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRollingReleaseConfig200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigDeleteResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigDeleteResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRollingReleaseConfig200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.DeleteRollingReleaseConfig200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the Rolling Releases configuration for a project. The project-level config is simply a template that will be used for any future rolling release, and not the configuration for any active rolling release.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update (or disable) Rolling Releases for a project. When disabling with the resolve-on-disable feature flag enabled, any active rolling release document is resolved using the disableRolloutAction parameter: &quot;abort&quot; to roll back (default), or &quot;complete&quot; to promote the canary to production. When enabling or updating config, changes only affect the next production deployment and do not alter a rollout that&apos;s already in-flight. Note: Enabling Rolling Releases automatically enables skew protection on the project with the default value if it wasn&apos;t configured already.
+        /// &quot;Update (or disable) Rolling Releases for a project. When disabling with the resolve-on-disable feature flag enabled, any active rolling release document is resolved using the disableRolloutAction parameter: \&quot;abort\&quot; to roll back (default), or \&quot;complete\&quot; to promote the canary to production. When enabling or updating config, changes only affect the next production deployment and do not alter a rollout that&apos;s already in-flight. Note: Enabling Rolling Releases automatically enables skew protection on the project with the default value if it wasn&apos;t configured already.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigPatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateRollingReleaseConfig200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigPatchResponse?> PatchAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateRollingReleaseConfig200?> PatchAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigPatchResponse> PatchAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateRollingReleaseConfig200> PatchAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPatchRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigPatchResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UpdateRollingReleaseConfig200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UpdateRollingReleaseConfig200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Disable Rolling Releases for a project means that future deployments will not undergo a rolling release. Changing the config never alters a rollout that&apos;s already in-flight—it only affects the next production deployment. If you want to also stop the current rollout, call this endpoint to disable the feature, and then call either the /complete or /abort endpoint.
@@ -125,7 +126,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config
             return requestInfo;
         }
         /// <summary>
-        /// Update (or disable) Rolling Releases for a project. When disabling with the resolve-on-disable feature flag enabled, any active rolling release document is resolved using the disableRolloutAction parameter: &quot;abort&quot; to roll back (default), or &quot;complete&quot; to promote the canary to production. When enabling or updating config, changes only affect the next production deployment and do not alter a rollout that&apos;s already in-flight. Note: Enabling Rolling Releases automatically enables skew protection on the project with the default value if it wasn&apos;t configured already.
+        /// &quot;Update (or disable) Rolling Releases for a project. When disabling with the resolve-on-disable feature flag enabled, any active rolling release document is resolved using the disableRolloutAction parameter: \&quot;abort\&quot; to roll back (default), or \&quot;complete\&quot; to promote the canary to production. When enabling or updating config, changes only affect the next production deployment and do not alter a rollout that&apos;s already in-flight. Note: Enabling Rolling Releases automatically enables skew protection on the project with the default value if it wasn&apos;t configured already.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,81 +152,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigPatchResponseMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigPatchResponseMember2"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ConfigPatchResponse : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigPatchResponseMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigPatchResponseMember1? ConfigPatchResponseMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigPatchResponseMember1 ConfigPatchResponseMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigPatchResponseMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigPatchResponseMember2? ConfigPatchResponseMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigPatchResponseMember2 ConfigPatchResponseMember2 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigPatchResponse"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigPatchResponse CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigRequestBuilder.ConfigPatchResponse();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConfigPatchResponseMember1 = new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigPatchResponseMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConfigPatchResponseMember2 = new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigPatchResponseMember2();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ConfigPatchResponseMember1 != null)
-                {
-                    return ConfigPatchResponseMember1.GetFieldDeserializers();
-                }
-                else if(ConfigPatchResponseMember2 != null)
-                {
-                    return ConfigPatchResponseMember2.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(ConfigPatchResponseMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigPatchResponseMember1>(null, ConfigPatchResponseMember1);
-                }
-                else if(ConfigPatchResponseMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config.ConfigPatchResponseMember2>(null, ConfigPatchResponseMember2);
-                }
-            }
         }
         /// <summary>
         /// Disable Rolling Releases for a project means that future deployments will not undergo a rolling release. Changing the config never alters a rollout that&apos;s already in-flight—it only affects the next production deployment. If you want to also stop the current rollout, call this endpoint to disable the feature, and then call either the /complete or /abort endpoint.
@@ -282,7 +208,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config
 #endif
         }
         /// <summary>
-        /// Update (or disable) Rolling Releases for a project. When disabling with the resolve-on-disable feature flag enabled, any active rolling release document is resolved using the disableRolloutAction parameter: &quot;abort&quot; to roll back (default), or &quot;complete&quot; to promote the canary to production. When enabling or updating config, changes only affect the next production deployment and do not alter a rollout that&apos;s already in-flight. Note: Enabling Rolling Releases automatically enables skew protection on the project with the default value if it wasn&apos;t configured already.
+        /// &quot;Update (or disable) Rolling Releases for a project. When disabling with the resolve-on-disable feature flag enabled, any active rolling release document is resolved using the disableRolloutAction parameter: \&quot;abort\&quot; to roll back (default), or \&quot;complete\&quot; to promote the canary to production. When enabling or updating config, changes only affect the next production deployment and do not alter a rollout that&apos;s already in-flight. Note: Enabling Rolling Releases automatically enables skew protection on the project with the default value if it wasn&apos;t configured already.&quot;
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConfigRequestBuilderPatchQueryParameters 

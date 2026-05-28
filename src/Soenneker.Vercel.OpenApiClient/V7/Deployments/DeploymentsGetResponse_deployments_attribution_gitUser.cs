@@ -92,13 +92,11 @@ namespace Soenneker.Vercel.OpenApiClient.V7.Deployments
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="double"/>, <see cref="string"/>
+        /// Composed type wrapper for classes <see cref="string"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeploymentsGetResponse_deployments_attribution_gitUser_id : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,11 +115,7 @@ namespace Soenneker.Vercel.OpenApiClient.V7.Deployments
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.V7.Deployments.DeploymentsGetResponse_deployments_attribution_gitUser.DeploymentsGetResponse_deployments_attribution_gitUser_id();
-                if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
+                if(parseNode.GetStringValue() is string stringValue)
                 {
                     result.String = stringValue;
                 }
@@ -142,11 +136,7 @@ namespace Soenneker.Vercel.OpenApiClient.V7.Deployments
             public virtual void Serialize(ISerializationWriter writer)
             {
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else if(String != null)
+                if(String != null)
                 {
                     writer.WriteStringValue(null, String);
                 }

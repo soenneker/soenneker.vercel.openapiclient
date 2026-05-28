@@ -186,7 +186,7 @@ namespace Soenneker.Vercel.OpenApiClient.V7.Deployments
         public double? Ready { get; set; }
         /// <summary>In which state is the deployment.</summary>
         public global::Soenneker.Vercel.OpenApiClient.V7.Deployments.DeploymentsGetResponse_deployments_readyState? ReadyState { get; set; }
-        /// <summary>Substate of deployment when readyState is &apos;READY&apos; Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of gradually transitioning production traffic - PROMOTED: has seen production traffic</summary>
+        /// <summary>&quot;Substate of deployment when readyState is &apos;READY&apos; Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of gradually transitioning production traffic - PROMOTED: has seen production traffic&quot;</summary>
         public global::Soenneker.Vercel.OpenApiClient.V7.Deployments.DeploymentsGetResponse_deployments_readySubstate? ReadySubstate { get; set; }
         /// <summary>NSNB Blocked metadata</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -345,15 +345,19 @@ namespace Soenneker.Vercel.OpenApiClient.V7.Deployments
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>
+        /// Composed type wrapper for classes <see cref="string"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeploymentsGetResponse_deployments_aliasAssigned : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="bool"/></summary>
-            public bool? Boolean { get; set; }
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? String { get; set; }
+#nullable restore
+#else
+            public string String { get; set; }
+#endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
@@ -364,13 +368,9 @@ namespace Soenneker.Vercel.OpenApiClient.V7.Deployments
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.V7.Deployments.DeploymentsGetResponse_deployments.DeploymentsGetResponse_deployments_aliasAssigned();
-                if(parseNode.GetBoolValue() is bool booleanValue)
+                if(parseNode.GetStringValue() is string stringValue)
                 {
-                    result.Boolean = booleanValue;
-                }
-                else if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
+                    result.String = stringValue;
                 }
                 return result;
             }
@@ -389,13 +389,9 @@ namespace Soenneker.Vercel.OpenApiClient.V7.Deployments
             public virtual void Serialize(ISerializationWriter writer)
             {
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Boolean != null)
+                if(String != null)
                 {
-                    writer.WriteBoolValue(null, Boolean);
-                }
-                else if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
+                    writer.WriteStringValue(null, String);
                 }
             }
         }

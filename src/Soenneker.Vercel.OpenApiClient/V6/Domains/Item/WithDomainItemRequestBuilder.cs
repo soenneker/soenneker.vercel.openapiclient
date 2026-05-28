@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using Soenneker.Vercel.OpenApiClient.V6.Domains.Item.Config;
 using System.Collections.Generic;
 using System.IO;
@@ -41,20 +42,20 @@ namespace Soenneker.Vercel.OpenApiClient.V6.Domains.Item
         /// <summary>
         /// Delete a previously registered domain name from Vercel. Deleting a domain will automatically remove any associated aliases.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V6.Domains.Item.WithDomainDeleteResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteDomain200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V6.Domains.Item.WithDomainDeleteResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V6.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteDomain200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V6.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V6.Domains.Item.WithDomainDeleteResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V6.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteDomain200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V6.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V6.Domains.Item.WithDomainDeleteResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V6.Domains.Item.WithDomainDeleteResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.DeleteDomain200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.DeleteDomain200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a previously registered domain name from Vercel. Deleting a domain will automatically remove any associated aliases.

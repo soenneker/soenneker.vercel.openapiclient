@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using Soenneker.Vercel.OpenApiClient.V10.Projects.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -48,20 +49,20 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
         /// <summary>
         /// Allows to retrieve the list of projects of the authenticated user or team. The list will be paginated and the provided query parameters allow filtering the returned projects.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Allows to retrieve the list of projects of the authenticated user or team. The list will be paginated and the provided query parameters allow filtering the returned projects.
@@ -90,97 +91,6 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
         public global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3"/>, List&lt;global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember1&gt;
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ProjectsGetResponse : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember1&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember1>? ProjectsGetResponseMember1 { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember1> ProjectsGetResponseMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2? ProjectsGetResponseMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2 ProjectsGetResponseMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3? ProjectsGetResponseMember3 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3 ProjectsGetResponseMember3 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsGetResponse"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsGetResponse();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ProjectsGetResponseMember2 = new global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ProjectsGetResponseMember3 = new global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3();
-                }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember1>(global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember1> projectsGetResponseMember1Value)
-                {
-                    result.ProjectsGetResponseMember1 = projectsGetResponseMember1Value;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ProjectsGetResponseMember2 != null)
-                {
-                    return ProjectsGetResponseMember2.GetFieldDeserializers();
-                }
-                else if(ProjectsGetResponseMember3 != null)
-                {
-                    return ProjectsGetResponseMember3.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(ProjectsGetResponseMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember2>(null, ProjectsGetResponseMember2);
-                }
-                else if(ProjectsGetResponseMember3 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember3>(null, ProjectsGetResponseMember3);
-                }
-                else if(ProjectsGetResponseMember1 != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsGetResponseMember1>(null, ProjectsGetResponseMember1);
-                }
-            }
         }
         /// <summary>
         /// Allows to retrieve the list of projects of the authenticated user or team. The list will be paginated and the provided query parameters allow filtering the returned projects.

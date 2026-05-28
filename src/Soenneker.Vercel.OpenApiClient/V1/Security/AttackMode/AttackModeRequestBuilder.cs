@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -35,22 +36,22 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode
         /// <summary>
         /// Update the setting for determining if the project has Attack Challenge mode enabled.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModePostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateAttackChallengeMode200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModePostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModeRequestBuilder.AttackModePostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModeRequestBuilder.AttackModeRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateAttackChallengeMode200?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateAttackChallengeMode body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModeRequestBuilder.AttackModeRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModePostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModeRequestBuilder.AttackModePostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModeRequestBuilder.AttackModeRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateAttackChallengeMode200> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateAttackChallengeMode body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModeRequestBuilder.AttackModeRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModePostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModePostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UpdateAttackChallengeMode200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UpdateAttackChallengeMode200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the setting for determining if the project has Attack Challenge mode enabled.
@@ -60,11 +61,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModeRequestBuilder.AttackModePostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModeRequestBuilder.AttackModeRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateAttackChallengeMode body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModeRequestBuilder.AttackModeRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModeRequestBuilder.AttackModePostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModeRequestBuilder.AttackModeRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateAttackChallengeMode body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModeRequestBuilder.AttackModeRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -82,81 +83,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode
         public global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModeRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModeRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModePostRequestBodyMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModePostRequestBodyMember2"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AttackModePostRequestBody : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModePostRequestBodyMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModePostRequestBodyMember1? AttackModePostRequestBodyMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModePostRequestBodyMember1 AttackModePostRequestBodyMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModePostRequestBodyMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModePostRequestBodyMember2? AttackModePostRequestBodyMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModePostRequestBodyMember2 AttackModePostRequestBodyMember2 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModeRequestBuilder.AttackModePostRequestBody"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModeRequestBuilder.AttackModePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModeRequestBuilder.AttackModePostRequestBody();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.AttackModePostRequestBodyMember1 = new global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModePostRequestBodyMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.AttackModePostRequestBodyMember2 = new global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModePostRequestBodyMember2();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(AttackModePostRequestBodyMember1 != null)
-                {
-                    return AttackModePostRequestBodyMember1.GetFieldDeserializers();
-                }
-                else if(AttackModePostRequestBodyMember2 != null)
-                {
-                    return AttackModePostRequestBodyMember2.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(AttackModePostRequestBodyMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModePostRequestBodyMember1>(null, AttackModePostRequestBodyMember1);
-                }
-                else if(AttackModePostRequestBodyMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Security.AttackMode.AttackModePostRequestBodyMember2>(null, AttackModePostRequestBodyMember2);
-                }
-            }
         }
         /// <summary>
         /// Update the setting for determining if the project has Attack Challenge mode enabled.

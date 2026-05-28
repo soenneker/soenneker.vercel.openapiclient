@@ -104,7 +104,7 @@ namespace Soenneker.Vercel.OpenApiClient.V7.Deployments
             [QueryParameter("branch")]
             public string Branch { get; set; }
 #endif
-            /// <summary>Gets the deployment created after this Date timestamp. (default: current time)</summary>
+            /// <summary>&quot;Gets the deployment created after this Date timestamp. (default: current time)&quot;</summary>
             [Obsolete("")]
             [QueryParameter("from")]
             public double? From { get; set; }
@@ -187,7 +187,7 @@ namespace Soenneker.Vercel.OpenApiClient.V7.Deployments
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-            /// <summary>Gets the deployment created before this Date timestamp. (default: current time)</summary>
+            /// <summary>&quot;Gets the deployment created before this Date timestamp. (default: current time)&quot;</summary>
             [Obsolete("")]
             [QueryParameter("to")]
             public double? To { get; set; }

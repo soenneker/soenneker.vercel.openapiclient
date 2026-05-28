@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -48,20 +49,20 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains
         /// <summary>
         /// Retrieve the domains associated with a given project by passing either the project `id` or `name` in the URL.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the domains associated with a given project by passing either the project `id` or `name` in the URL.
@@ -90,81 +91,6 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains
         public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember2"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DomainsGetResponse : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember1? DomainsGetResponseMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember1 DomainsGetResponseMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember2? DomainsGetResponseMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember2 DomainsGetResponseMember2 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsGetResponse"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsGetResponse();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.DomainsGetResponseMember1 = new global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.DomainsGetResponseMember2 = new global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember2();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(DomainsGetResponseMember1 != null)
-                {
-                    return DomainsGetResponseMember1.GetFieldDeserializers();
-                }
-                else if(DomainsGetResponseMember2 != null)
-                {
-                    return DomainsGetResponseMember2.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(DomainsGetResponseMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember1>(null, DomainsGetResponseMember1);
-                }
-                else if(DomainsGetResponseMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsGetResponseMember2>(null, DomainsGetResponseMember2);
-                }
-            }
         }
         /// <summary>
         /// Retrieve the domains associated with a given project by passing either the project `id` or `name` in the URL.

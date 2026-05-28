@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -41,11 +42,11 @@ namespace Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypass body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypass body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -60,11 +61,11 @@ namespace Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypass body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypass body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -82,101 +83,6 @@ namespace Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass
         public global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchRequestBodyMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchRequestBodyMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchRequestBodyMember3"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ProtectionBypassPatchRequestBody : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchRequestBodyMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchRequestBodyMember1? ProtectionBypassPatchRequestBodyMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchRequestBodyMember1 ProtectionBypassPatchRequestBodyMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchRequestBodyMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchRequestBodyMember2? ProtectionBypassPatchRequestBodyMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchRequestBodyMember2 ProtectionBypassPatchRequestBodyMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchRequestBodyMember3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchRequestBodyMember3? ProtectionBypassPatchRequestBodyMember3 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchRequestBodyMember3 ProtectionBypassPatchRequestBodyMember3 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassPatchRequestBody"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassPatchRequestBody();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ProtectionBypassPatchRequestBodyMember1 = new global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchRequestBodyMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ProtectionBypassPatchRequestBodyMember2 = new global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchRequestBodyMember2();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ProtectionBypassPatchRequestBodyMember3 = new global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchRequestBodyMember3();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ProtectionBypassPatchRequestBodyMember1 != null)
-                {
-                    return ProtectionBypassPatchRequestBodyMember1.GetFieldDeserializers();
-                }
-                else if(ProtectionBypassPatchRequestBodyMember2 != null)
-                {
-                    return ProtectionBypassPatchRequestBodyMember2.GetFieldDeserializers();
-                }
-                else if(ProtectionBypassPatchRequestBodyMember3 != null)
-                {
-                    return ProtectionBypassPatchRequestBodyMember3.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(ProtectionBypassPatchRequestBodyMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchRequestBodyMember1>(null, ProtectionBypassPatchRequestBodyMember1);
-                }
-                else if(ProtectionBypassPatchRequestBodyMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchRequestBodyMember2>(null, ProtectionBypassPatchRequestBodyMember2);
-                }
-                else if(ProtectionBypassPatchRequestBodyMember3 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchRequestBodyMember3>(null, ProtectionBypassPatchRequestBodyMember3);
-                }
-            }
         }
         /// <summary>
         /// Update the protection bypass for the alias or deployment URL (used for user access &amp; comment access for deployments). Used as shareable links and user scoped access for Vercel Authentication and also to allow external (logged in) people to comment on previews for Preview Comments (next-live-mode).

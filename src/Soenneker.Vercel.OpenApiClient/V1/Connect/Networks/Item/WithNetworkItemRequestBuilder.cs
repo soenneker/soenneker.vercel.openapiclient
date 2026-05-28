@@ -77,11 +77,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.Network?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.Item.WithNetworkPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.Item.WithNetworkItemRequestBuilder.WithNetworkItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.Network?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateNetwork body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.Item.WithNetworkItemRequestBuilder.WithNetworkItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.Network> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.Item.WithNetworkPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.Item.WithNetworkItemRequestBuilder.WithNetworkItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.Network> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateNetwork body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.Item.WithNetworkItemRequestBuilder.WithNetworkItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -104,6 +104,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -133,11 +134,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.Item.WithNetworkPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.Item.WithNetworkItemRequestBuilder.WithNetworkItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateNetwork body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.Item.WithNetworkItemRequestBuilder.WithNetworkItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.Item.WithNetworkPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.Item.WithNetworkItemRequestBuilder.WithNetworkItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateNetwork body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.Item.WithNetworkItemRequestBuilder.WithNetworkItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

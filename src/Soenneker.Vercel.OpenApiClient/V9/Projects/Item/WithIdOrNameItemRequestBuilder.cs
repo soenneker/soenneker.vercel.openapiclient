@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using Soenneker.Vercel.OpenApiClient.V9.Projects.Item.CustomEnvironments;
 using Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains;
 using Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Env;
@@ -70,40 +71,40 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         /// <summary>
         /// Get the information for a specific project by passing either the project `id` or `name` in the URL.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProject200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameItemRequestBuilder.WithIdOrNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameItemRequestBuilder.WithIdOrNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameItemRequestBuilder.WithIdOrNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameItemRequestBuilder.WithIdOrNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetProject200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the fields of a project using either its `name` or `id`.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameItemRequestBuilder.WithIdOrNameItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameItemRequestBuilder.WithIdOrNameItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameItemRequestBuilder.WithIdOrNameItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameItemRequestBuilder.WithIdOrNameItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a specific project by passing either the project `id` or `name` in the URL.
@@ -121,6 +122,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -150,11 +152,11 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameItemRequestBuilder.WithIdOrNameItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameItemRequestBuilder.WithIdOrNameItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNamePatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameItemRequestBuilder.WithIdOrNameItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.WithIdOrNameItemRequestBuilder.WithIdOrNameItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

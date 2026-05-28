@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -48,40 +49,40 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags
         /// <summary>
         /// Retrieve feature flags for a project. The list can be filtered by state and supports pagination.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListFlags200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListFlags200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListFlags200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ListFlags200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ListFlags200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new feature flag for a project. The flag must have a unique slug within the project and specify its kind (boolean, string, number, or json).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutResponse?> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201?> PutAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutResponse> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201> PutAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve feature flags for a project. The list can be filtered by state and supports pagination.
@@ -110,11 +111,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsRequestBuilder.FlagsRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

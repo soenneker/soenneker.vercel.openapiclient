@@ -595,13 +595,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         DrainDisabled,
         #pragma warning restore CS1591
-        [EnumMember(Value = "drain-enabled")]
-        #pragma warning disable CS1591
-        DrainEnabled,
-        #pragma warning restore CS1591
         [EnumMember(Value = "drain-updated")]
         #pragma warning disable CS1591
         DrainUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "drain-enabled")]
+        #pragma warning disable CS1591
+        DrainEnabled,
         #pragma warning restore CS1591
         [EnumMember(Value = "edge-cache-dangerously-delete-by-src-images")]
         #pragma warning disable CS1591
@@ -1858,6 +1858,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "user-mfa-recovery-codes-regenerated")]
         #pragma warning disable CS1591
         UserMfaRecoveryCodesRegenerated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "user-mfa-setup-skipped")]
+        #pragma warning disable CS1591
+        UserMfaSetupSkipped,
         #pragma warning restore CS1591
         [EnumMember(Value = "user-mfa-totp-verification-started")]
         #pragma warning disable CS1591

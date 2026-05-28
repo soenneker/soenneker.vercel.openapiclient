@@ -74,11 +74,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Networks
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.Network?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.NetworksPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.NetworksRequestBuilder.NetworksRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.Network?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateNetwork body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.NetworksRequestBuilder.NetworksRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.Network> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.NetworksPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.NetworksRequestBuilder.NetworksRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.Network> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateNetwork body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.NetworksRequestBuilder.NetworksRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -112,11 +112,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Networks
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.NetworksPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.NetworksRequestBuilder.NetworksRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateNetwork body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.NetworksRequestBuilder.NetworksRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.NetworksPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.NetworksRequestBuilder.NetworksRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateNetwork body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.NetworksRequestBuilder.NetworksRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

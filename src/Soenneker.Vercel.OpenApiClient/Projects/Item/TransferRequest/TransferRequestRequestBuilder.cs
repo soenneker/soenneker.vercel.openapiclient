@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -33,38 +34,38 @@ namespace Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest
         {
         }
         /// <summary>
-        /// Initiates a project transfer request from one team to another. &lt;br/&gt; Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. &lt;br/&gt; Users can also accept the project transfer request using the claim URL: `https://vercel.com/claim-deployment?code=&lt;code&gt;&amp;returnUrl=&lt;returnUrl&gt;`. &lt;br/&gt; The `code` parameter specifies the project transfer request code generated using this endpoint. &lt;br/&gt; The `returnUrl` parameter redirects users to a specific page of the application if the claim URL is invalid or expired.
+        /// &quot;Initiates a project transfer request from one team to another. &lt;br/&gt; Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. &lt;br/&gt; Users can also accept the project transfer request using the claim URL: `https://vercel.com/claim-deployment?code=&lt;code&gt;&amp;returnUrl=&lt;returnUrl&gt;`. &lt;br/&gt; The `code` parameter specifies the project transfer request code generated using this endpoint. &lt;br/&gt; The `returnUrl` parameter redirects users to a specific page of the application if the claim URL is invalid or expired.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest.TransferRequestPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectTransferRequest200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest.TransferRequestPostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest.TransferRequestPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest.TransferRequestRequestBuilder.TransferRequestRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectTransferRequest200?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectTransferRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest.TransferRequestRequestBuilder.TransferRequestRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest.TransferRequestPostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest.TransferRequestPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest.TransferRequestRequestBuilder.TransferRequestRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectTransferRequest200> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectTransferRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest.TransferRequestRequestBuilder.TransferRequestRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest.TransferRequestPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest.TransferRequestPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectTransferRequest200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectTransferRequest200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Initiates a project transfer request from one team to another. &lt;br/&gt; Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. &lt;br/&gt; Users can also accept the project transfer request using the claim URL: `https://vercel.com/claim-deployment?code=&lt;code&gt;&amp;returnUrl=&lt;returnUrl&gt;`. &lt;br/&gt; The `code` parameter specifies the project transfer request code generated using this endpoint. &lt;br/&gt; The `returnUrl` parameter redirects users to a specific page of the application if the claim URL is invalid or expired.
+        /// &quot;Initiates a project transfer request from one team to another. &lt;br/&gt; Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. &lt;br/&gt; Users can also accept the project transfer request using the claim URL: `https://vercel.com/claim-deployment?code=&lt;code&gt;&amp;returnUrl=&lt;returnUrl&gt;`. &lt;br/&gt; The `code` parameter specifies the project transfer request code generated using this endpoint. &lt;br/&gt; The `returnUrl` parameter redirects users to a specific page of the application if the claim URL is invalid or expired.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest.TransferRequestPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest.TransferRequestRequestBuilder.TransferRequestRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectTransferRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest.TransferRequestRequestBuilder.TransferRequestRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest.TransferRequestPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest.TransferRequestRequestBuilder.TransferRequestRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectTransferRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest.TransferRequestRequestBuilder.TransferRequestRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -84,7 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest
             return new global::Soenneker.Vercel.OpenApiClient.Projects.Item.TransferRequest.TransferRequestRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Initiates a project transfer request from one team to another. &lt;br/&gt; Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. &lt;br/&gt; Users can also accept the project transfer request using the claim URL: `https://vercel.com/claim-deployment?code=&lt;code&gt;&amp;returnUrl=&lt;returnUrl&gt;`. &lt;br/&gt; The `code` parameter specifies the project transfer request code generated using this endpoint. &lt;br/&gt; The `returnUrl` parameter redirects users to a specific page of the application if the claim URL is invalid or expired.
+        /// &quot;Initiates a project transfer request from one team to another. &lt;br/&gt; Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. &lt;br/&gt; Users can also accept the project transfer request using the claim URL: `https://vercel.com/claim-deployment?code=&lt;code&gt;&amp;returnUrl=&lt;returnUrl&gt;`. &lt;br/&gt; The `code` parameter specifies the project transfer request code generated using this endpoint. &lt;br/&gt; The `returnUrl` parameter redirects users to a specific page of the application if the claim URL is invalid or expired.&quot;
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TransferRequestRequestBuilderPostQueryParameters 

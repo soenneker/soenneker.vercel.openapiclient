@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -54,11 +55,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfig body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfig body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -68,22 +69,22 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config
         /// <summary>
         /// Set the firewall configuration to provided rules and settings. Creates or overwrite the existing firewall configuration.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutResponse?> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200?> PutAsync(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutResponse> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200> PutAsync(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Process updates to modify the existing firewall config for a project
@@ -93,11 +94,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfig body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfig body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -115,11 +116,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -137,321 +138,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config
         public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember9"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ConfigPatchRequestBody : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember1? ConfigPatchRequestBodyMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember1 ConfigPatchRequestBodyMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember10"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember10? ConfigPatchRequestBodyMember10 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember10 ConfigPatchRequestBodyMember10 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember11"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember11? ConfigPatchRequestBodyMember11 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember11 ConfigPatchRequestBodyMember11 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember12"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember12? ConfigPatchRequestBodyMember12 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember12 ConfigPatchRequestBodyMember12 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember13"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember13? ConfigPatchRequestBodyMember13 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember13 ConfigPatchRequestBodyMember13 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember14"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember14? ConfigPatchRequestBodyMember14 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember14 ConfigPatchRequestBodyMember14 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember2? ConfigPatchRequestBodyMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember2 ConfigPatchRequestBodyMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember3? ConfigPatchRequestBodyMember3 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember3 ConfigPatchRequestBodyMember3 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember4? ConfigPatchRequestBodyMember4 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember4 ConfigPatchRequestBodyMember4 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember5"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember5? ConfigPatchRequestBodyMember5 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember5 ConfigPatchRequestBodyMember5 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember6"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember6? ConfigPatchRequestBodyMember6 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember6 ConfigPatchRequestBodyMember6 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember7"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember7? ConfigPatchRequestBodyMember7 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember7 ConfigPatchRequestBodyMember7 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember8"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember8? ConfigPatchRequestBodyMember8 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember8 ConfigPatchRequestBodyMember8 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember9"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember9? ConfigPatchRequestBodyMember9 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember9 ConfigPatchRequestBodyMember9 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigPatchRequestBody"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigRequestBuilder.ConfigPatchRequestBody();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConfigPatchRequestBodyMember1 = new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConfigPatchRequestBodyMember10 = new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember10();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConfigPatchRequestBodyMember11 = new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember11();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConfigPatchRequestBodyMember12 = new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember12();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConfigPatchRequestBodyMember13 = new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember13();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConfigPatchRequestBodyMember14 = new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember14();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConfigPatchRequestBodyMember2 = new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember2();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConfigPatchRequestBodyMember3 = new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember3();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConfigPatchRequestBodyMember4 = new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember4();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConfigPatchRequestBodyMember5 = new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember5();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConfigPatchRequestBodyMember6 = new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember6();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConfigPatchRequestBodyMember7 = new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember7();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConfigPatchRequestBodyMember8 = new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember8();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConfigPatchRequestBodyMember9 = new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember9();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ConfigPatchRequestBodyMember1 != null)
-                {
-                    return ConfigPatchRequestBodyMember1.GetFieldDeserializers();
-                }
-                else if(ConfigPatchRequestBodyMember10 != null)
-                {
-                    return ConfigPatchRequestBodyMember10.GetFieldDeserializers();
-                }
-                else if(ConfigPatchRequestBodyMember11 != null)
-                {
-                    return ConfigPatchRequestBodyMember11.GetFieldDeserializers();
-                }
-                else if(ConfigPatchRequestBodyMember12 != null)
-                {
-                    return ConfigPatchRequestBodyMember12.GetFieldDeserializers();
-                }
-                else if(ConfigPatchRequestBodyMember13 != null)
-                {
-                    return ConfigPatchRequestBodyMember13.GetFieldDeserializers();
-                }
-                else if(ConfigPatchRequestBodyMember14 != null)
-                {
-                    return ConfigPatchRequestBodyMember14.GetFieldDeserializers();
-                }
-                else if(ConfigPatchRequestBodyMember2 != null)
-                {
-                    return ConfigPatchRequestBodyMember2.GetFieldDeserializers();
-                }
-                else if(ConfigPatchRequestBodyMember3 != null)
-                {
-                    return ConfigPatchRequestBodyMember3.GetFieldDeserializers();
-                }
-                else if(ConfigPatchRequestBodyMember4 != null)
-                {
-                    return ConfigPatchRequestBodyMember4.GetFieldDeserializers();
-                }
-                else if(ConfigPatchRequestBodyMember5 != null)
-                {
-                    return ConfigPatchRequestBodyMember5.GetFieldDeserializers();
-                }
-                else if(ConfigPatchRequestBodyMember6 != null)
-                {
-                    return ConfigPatchRequestBodyMember6.GetFieldDeserializers();
-                }
-                else if(ConfigPatchRequestBodyMember7 != null)
-                {
-                    return ConfigPatchRequestBodyMember7.GetFieldDeserializers();
-                }
-                else if(ConfigPatchRequestBodyMember8 != null)
-                {
-                    return ConfigPatchRequestBodyMember8.GetFieldDeserializers();
-                }
-                else if(ConfigPatchRequestBodyMember9 != null)
-                {
-                    return ConfigPatchRequestBodyMember9.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(ConfigPatchRequestBodyMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember1>(null, ConfigPatchRequestBodyMember1);
-                }
-                else if(ConfigPatchRequestBodyMember10 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember10>(null, ConfigPatchRequestBodyMember10);
-                }
-                else if(ConfigPatchRequestBodyMember11 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember11>(null, ConfigPatchRequestBodyMember11);
-                }
-                else if(ConfigPatchRequestBodyMember12 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember12>(null, ConfigPatchRequestBodyMember12);
-                }
-                else if(ConfigPatchRequestBodyMember13 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember13>(null, ConfigPatchRequestBodyMember13);
-                }
-                else if(ConfigPatchRequestBodyMember14 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember14>(null, ConfigPatchRequestBodyMember14);
-                }
-                else if(ConfigPatchRequestBodyMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember2>(null, ConfigPatchRequestBodyMember2);
-                }
-                else if(ConfigPatchRequestBodyMember3 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember3>(null, ConfigPatchRequestBodyMember3);
-                }
-                else if(ConfigPatchRequestBodyMember4 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember4>(null, ConfigPatchRequestBodyMember4);
-                }
-                else if(ConfigPatchRequestBodyMember5 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember5>(null, ConfigPatchRequestBodyMember5);
-                }
-                else if(ConfigPatchRequestBodyMember6 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember6>(null, ConfigPatchRequestBodyMember6);
-                }
-                else if(ConfigPatchRequestBodyMember7 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember7>(null, ConfigPatchRequestBodyMember7);
-                }
-                else if(ConfigPatchRequestBodyMember8 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember8>(null, ConfigPatchRequestBodyMember8);
-                }
-                else if(ConfigPatchRequestBodyMember9 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.ConfigPatchRequestBodyMember9>(null, ConfigPatchRequestBodyMember9);
-                }
-            }
         }
         /// <summary>
         /// Process updates to modify the existing firewall config for a project

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -48,40 +49,40 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns
         /// <summary>
         /// List all check runs for a deployment.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new check run for a deployment.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsPostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun200?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsPostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun200> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all check runs for a deployment.
@@ -110,11 +111,11 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -132,81 +133,6 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns
         public global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostResponseMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostResponseMember2"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CheckRunsPostResponse : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostResponseMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostResponseMember1? CheckRunsPostResponseMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostResponseMember1 CheckRunsPostResponseMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostResponseMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostResponseMember2? CheckRunsPostResponseMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostResponseMember2 CheckRunsPostResponseMember2 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsPostResponse"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsPostResponse();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CheckRunsPostResponseMember1 = new global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostResponseMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CheckRunsPostResponseMember2 = new global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostResponseMember2();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(CheckRunsPostResponseMember1 != null)
-                {
-                    return CheckRunsPostResponseMember1.GetFieldDeserializers();
-                }
-                else if(CheckRunsPostResponseMember2 != null)
-                {
-                    return CheckRunsPostResponseMember2.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(CheckRunsPostResponseMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostResponseMember1>(null, CheckRunsPostResponseMember1);
-                }
-                else if(CheckRunsPostResponseMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V2.Deployments.Item.CheckRuns.CheckRunsPostResponseMember2>(null, CheckRunsPostResponseMember2);
-                }
-            }
         }
         /// <summary>
         /// List all check runs for a deployment.

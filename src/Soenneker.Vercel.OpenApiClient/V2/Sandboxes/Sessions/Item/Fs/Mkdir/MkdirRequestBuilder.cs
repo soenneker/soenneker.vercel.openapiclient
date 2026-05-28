@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -41,11 +42,11 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Mkdir
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Mkdir.MkdirPostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Mkdir.MkdirPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Mkdir.MkdirRequestBuilder.MkdirRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Mkdir.MkdirPostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateSessionDirectory body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Mkdir.MkdirRequestBuilder.MkdirRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Mkdir.MkdirPostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Mkdir.MkdirPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Mkdir.MkdirRequestBuilder.MkdirRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Mkdir.MkdirPostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateSessionDirectory body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Mkdir.MkdirRequestBuilder.MkdirRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -60,11 +61,11 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Mkdir
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Mkdir.MkdirPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Mkdir.MkdirRequestBuilder.MkdirRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateSessionDirectory body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Mkdir.MkdirRequestBuilder.MkdirRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Mkdir.MkdirPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Mkdir.MkdirRequestBuilder.MkdirRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateSessionDirectory body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Fs.Mkdir.MkdirRequestBuilder.MkdirRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

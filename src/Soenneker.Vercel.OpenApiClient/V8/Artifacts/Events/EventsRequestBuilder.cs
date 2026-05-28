@@ -35,22 +35,22 @@ namespace Soenneker.Vercel.OpenApiClient.V8.Artifacts.Events
         /// <summary>
         /// Records an artifacts cache usage event. The body of this request is an array of cache usage events. The supported event types are `HIT` and `MISS`. The source is either `LOCAL` the cache event was on the users filesystem cache or `REMOTE` if the cache event is for a remote cache. When the event is a `HIT` the request also accepts a number `duration` which is the time taken to generate the artifact in the cache.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Events.EventsPostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(List<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Events.Events> body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Events.EventsRequestBuilder.EventsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Events.EventsPostResponse?> PostAsync(List<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Events.Events> body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Events.EventsRequestBuilder.EventsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(List<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Events.Events> body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Events.EventsRequestBuilder.EventsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Events.EventsPostResponse> PostAsync(List<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Events.Events> body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Events.EventsRequestBuilder.EventsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Events.EventsPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.Events.EventsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Records an artifacts cache usage event. The body of this request is an array of cache usage events. The supported event types are `HIT` and `MISS`. The source is either `LOCAL` the cache event was on the users filesystem cache or `REMOTE` if the cache event is for a remote cache. When the event is a `HIT` the request also accepts a number `duration` which is the time taken to generate the artifact in the cache.
@@ -70,6 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.V8.Artifacts.Events
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

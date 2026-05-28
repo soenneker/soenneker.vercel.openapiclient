@@ -27,10 +27,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.Segment_data? Data { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SegmentData? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.Segment_data Data { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SegmentData Data { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,10 +67,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.Segment_metadata? Metadata { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SegmentMetadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.Segment_metadata Metadata { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SegmentMetadata Metadata { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,12 +135,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Segment_data>(global::Soenneker.Vercel.OpenApiClient.Models.Segment_data.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentData>(global::Soenneker.Vercel.OpenApiClient.Models.SegmentData.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "hint", n => { Hint = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Segment_metadata>(global::Soenneker.Vercel.OpenApiClient.Models.Segment_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentMetadata>(global::Soenneker.Vercel.OpenApiClient.Models.SegmentMetadata.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "typeName", n => { TypeName = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Segment_typeName>(); } },
@@ -158,12 +158,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteStringValue("createdBy", CreatedBy);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Segment_data>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentData>("data", Data);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("hint", Hint);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("label", Label);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Segment_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentMetadata>("metadata", Metadata);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("slug", Slug);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Segment_typeName>("typeName", TypeName);

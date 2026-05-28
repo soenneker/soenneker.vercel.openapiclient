@@ -72,34 +72,18 @@ namespace Soenneker.Vercel.OpenApiClient.V4.Aliases
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes List&lt;global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember1&gt;, List&lt;global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember2&gt;, List&lt;global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember3&gt;
+        /// Composed type wrapper for classes <see cref="string"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AliasesGetResponse_aliases_microfrontends_applications : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember1&gt;</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember1>? AliasesGetResponseAliasesMicrofrontendsApplicationsMember1 { get; set; }
+            public string? String { get; set; }
 #nullable restore
 #else
-            public List<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember1> AliasesGetResponseAliasesMicrofrontendsApplicationsMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember2&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember2>? AliasesGetResponseAliasesMicrofrontendsApplicationsMember2 { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember2> AliasesGetResponseAliasesMicrofrontendsApplicationsMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember3&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember3>? AliasesGetResponseAliasesMicrofrontendsApplicationsMember3 { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember3> AliasesGetResponseAliasesMicrofrontendsApplicationsMember3 { get; set; }
+            public string String { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -111,17 +95,9 @@ namespace Soenneker.Vercel.OpenApiClient.V4.Aliases
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends.AliasesGetResponse_aliases_microfrontends_applications();
-                if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember1>(global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember1> aliasesGetResponseAliasesMicrofrontendsApplicationsMember1Value)
+                if(parseNode.GetStringValue() is string stringValue)
                 {
-                    result.AliasesGetResponseAliasesMicrofrontendsApplicationsMember1 = aliasesGetResponseAliasesMicrofrontendsApplicationsMember1Value;
-                }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember2>(global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember2> aliasesGetResponseAliasesMicrofrontendsApplicationsMember2Value)
-                {
-                    result.AliasesGetResponseAliasesMicrofrontendsApplicationsMember2 = aliasesGetResponseAliasesMicrofrontendsApplicationsMember2Value;
-                }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember3>(global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember3.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember3> aliasesGetResponseAliasesMicrofrontendsApplicationsMember3Value)
-                {
-                    result.AliasesGetResponseAliasesMicrofrontendsApplicationsMember3 = aliasesGetResponseAliasesMicrofrontendsApplicationsMember3Value;
+                    result.String = stringValue;
                 }
                 return result;
             }
@@ -140,17 +116,9 @@ namespace Soenneker.Vercel.OpenApiClient.V4.Aliases
             public virtual void Serialize(ISerializationWriter writer)
             {
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(AliasesGetResponseAliasesMicrofrontendsApplicationsMember1 != null)
+                if(String != null)
                 {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember1>(null, AliasesGetResponseAliasesMicrofrontendsApplicationsMember1);
-                }
-                else if(AliasesGetResponseAliasesMicrofrontendsApplicationsMember2 != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember2>(null, AliasesGetResponseAliasesMicrofrontendsApplicationsMember2);
-                }
-                else if(AliasesGetResponseAliasesMicrofrontendsApplicationsMember3 != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesGetResponse_aliases_microfrontends_applicationsMember3>(null, AliasesGetResponseAliasesMicrofrontendsApplicationsMember3);
+                    writer.WriteStringValue(null, String);
                 }
             }
         }

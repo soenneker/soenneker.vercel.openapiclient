@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -33,38 +34,38 @@ namespace Soenneker.Vercel.OpenApiClient.V3.Domains.Item
         {
         }
         /// <summary>
-        /// Update or move apex domain. Note: This endpoint is no longer used for updating auto-renew or nameservers. For this, please use the endpoints [Update auto-renew for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-auto-renew-for-a-domain) and [Update nameservers for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-nameservers-for-a-domain).
+        /// &quot;Update or move apex domain. Note: This endpoint is no longer used for updating auto-renew or nameservers. For this, please use the endpoints [Update auto-renew for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-auto-renew-for-a-domain) and [Update nameservers for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-nameservers-for-a-domain).&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainPatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchDomain200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainPatchResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.PatchDomain200?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.PatchDomain body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainPatchResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.PatchDomain200> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.PatchDomain body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainPatchResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.PatchDomain200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.PatchDomain200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update or move apex domain. Note: This endpoint is no longer used for updating auto-renew or nameservers. For this, please use the endpoints [Update auto-renew for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-auto-renew-for-a-domain) and [Update nameservers for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-nameservers-for-a-domain).
+        /// &quot;Update or move apex domain. Note: This endpoint is no longer used for updating auto-renew or nameservers. For this, please use the endpoints [Update auto-renew for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-auto-renew-for-a-domain) and [Update nameservers for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-nameservers-for-a-domain).&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.PatchDomain body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainPatchRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.PatchDomain body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -84,7 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.V3.Domains.Item
             return new global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Update or move apex domain. Note: This endpoint is no longer used for updating auto-renew or nameservers. For this, please use the endpoints [Update auto-renew for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-auto-renew-for-a-domain) and [Update nameservers for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-nameservers-for-a-domain).
+        /// &quot;Update or move apex domain. Note: This endpoint is no longer used for updating auto-renew or nameservers. For this, please use the endpoints [Update auto-renew for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-auto-renew-for-a-domain) and [Update nameservers for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-nameservers-for-a-domain).&quot;
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithDomainItemRequestBuilderPatchQueryParameters 
@@ -109,176 +110,6 @@ namespace Soenneker.Vercel.OpenApiClient.V3.Domains.Item
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchRequestBodyMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchRequestBodyMember2"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithDomainPatchRequestBody : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchRequestBodyMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchRequestBodyMember1? WithDomainPatchRequestBodyMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchRequestBodyMember1 WithDomainPatchRequestBodyMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchRequestBodyMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchRequestBodyMember2? WithDomainPatchRequestBodyMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchRequestBodyMember2 WithDomainPatchRequestBodyMember2 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainPatchRequestBody"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainPatchRequestBody();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.WithDomainPatchRequestBodyMember1 = new global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchRequestBodyMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.WithDomainPatchRequestBodyMember2 = new global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchRequestBodyMember2();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(WithDomainPatchRequestBodyMember1 != null)
-                {
-                    return WithDomainPatchRequestBodyMember1.GetFieldDeserializers();
-                }
-                else if(WithDomainPatchRequestBodyMember2 != null)
-                {
-                    return WithDomainPatchRequestBodyMember2.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(WithDomainPatchRequestBodyMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchRequestBodyMember1>(null, WithDomainPatchRequestBodyMember1);
-                }
-                else if(WithDomainPatchRequestBodyMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchRequestBodyMember2>(null, WithDomainPatchRequestBodyMember2);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchResponseMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchResponseMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchResponseMember3"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithDomainPatchResponse : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchResponseMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchResponseMember1? WithDomainPatchResponseMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchResponseMember1 WithDomainPatchResponseMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchResponseMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchResponseMember2? WithDomainPatchResponseMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchResponseMember2 WithDomainPatchResponseMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchResponseMember3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchResponseMember3? WithDomainPatchResponseMember3 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchResponseMember3 WithDomainPatchResponseMember3 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainPatchResponse"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainPatchResponse CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainItemRequestBuilder.WithDomainPatchResponse();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.WithDomainPatchResponseMember1 = new global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchResponseMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.WithDomainPatchResponseMember2 = new global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchResponseMember2();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.WithDomainPatchResponseMember3 = new global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchResponseMember3();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(WithDomainPatchResponseMember1 != null)
-                {
-                    return WithDomainPatchResponseMember1.GetFieldDeserializers();
-                }
-                else if(WithDomainPatchResponseMember2 != null)
-                {
-                    return WithDomainPatchResponseMember2.GetFieldDeserializers();
-                }
-                else if(WithDomainPatchResponseMember3 != null)
-                {
-                    return WithDomainPatchResponseMember3.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(WithDomainPatchResponseMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchResponseMember1>(null, WithDomainPatchResponseMember1);
-                }
-                else if(WithDomainPatchResponseMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchResponseMember2>(null, WithDomainPatchResponseMember2);
-                }
-                else if(WithDomainPatchResponseMember3 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.V3.Domains.Item.WithDomainPatchResponseMember3>(null, WithDomainPatchResponseMember3);
-                }
-            }
         }
     }
 }

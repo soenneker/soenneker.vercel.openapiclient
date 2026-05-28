@@ -3,8 +3,9 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.Backups;
-using Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.Item_Escaped;
+using Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.Item_by_id;
 using Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.Items;
 using Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.Schema;
 using Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.Token;
@@ -27,10 +28,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.Backups.BackupsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The item property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.Item_Escaped.Item_EscapedRequestBuilder Item
+        /// <summary>The item_by_id property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.Item_by_id.Item_by_idRequestBuilder Item_by_id
         {
-            get => new global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.Item_Escaped.Item_EscapedRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.Item_by_id.Item_by_idRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The items property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.Items.ItemsRequestBuilder Items
@@ -88,40 +89,40 @@ namespace Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item
         /// <summary>
         /// Returns an Edge Config.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfig200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigItemRequestBuilder.WithEdgeConfigItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfig200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigItemRequestBuilder.WithEdgeConfigItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigItemRequestBuilder.WithEdgeConfigItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfig200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigItemRequestBuilder.WithEdgeConfigItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfig200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfig200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates an Edge Config.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigPutResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateEdgeConfig200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigPutResponse?> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigItemRequestBuilder.WithEdgeConfigItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateEdgeConfig200?> PutAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateEdgeConfig body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigItemRequestBuilder.WithEdgeConfigItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigPutResponse> PutAsync(global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigItemRequestBuilder.WithEdgeConfigItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateEdgeConfig200> PutAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateEdgeConfig body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigItemRequestBuilder.WithEdgeConfigItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigPutResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigPutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UpdateEdgeConfig200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UpdateEdgeConfig200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete an Edge Config by id.
@@ -139,6 +140,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -168,11 +170,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigItemRequestBuilder.WithEdgeConfigItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateEdgeConfig body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigItemRequestBuilder.WithEdgeConfigItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigItemRequestBuilder.WithEdgeConfigItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateEdgeConfig body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.Item.WithEdgeConfigItemRequestBuilder.WithEdgeConfigItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

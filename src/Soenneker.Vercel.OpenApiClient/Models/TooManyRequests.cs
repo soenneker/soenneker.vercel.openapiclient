@@ -18,10 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The limit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests_limit? Limit { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequestsLimit? Limit { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests_limit Limit { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequestsLimit Limit { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
@@ -36,10 +36,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The retryAfter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests_retryAfter? RetryAfter { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequestsRetryAfter? RetryAfter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests_retryAfter RetryAfter { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequestsRetryAfter RetryAfter { get; set; }
 #endif
         /// <summary>The status property</summary>
         public double? Status { get; set; }
@@ -62,9 +62,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests_code>(); } },
-                { "limit", n => { Limit = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests_limit>(global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests_limit.CreateFromDiscriminatorValue); } },
+                { "limit", n => { Limit = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequestsLimit>(global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequestsLimit.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "retryAfter", n => { RetryAfter = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests_retryAfter>(global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests_retryAfter.CreateFromDiscriminatorValue); } },
+                { "retryAfter", n => { RetryAfter = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequestsRetryAfter>(global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequestsRetryAfter.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetDoubleValue(); } },
             };
         }
@@ -76,9 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests_code>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests_limit>("limit", Limit);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequestsLimit>("limit", Limit);
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests_retryAfter>("retryAfter", RetryAfter);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequestsRetryAfter>("retryAfter", RetryAfter);
             writer.WriteDoubleValue("status", Status);
         }
     }

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using Soenneker.Vercel.OpenApiClient.V13.Deployments.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -19,14 +20,14 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
     {
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v13.deployments.item collection</summary>
         /// <param name="position">The unique identifier or hostname of the deployment.</param>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder"/></returns>
-        public global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.WithIdOrUrlItemRequestBuilder"/></returns>
+        public global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.WithIdOrUrlItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("idOrUrl%2Did", position);
-                return new global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.IdOrUrlItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("idOrUrl", position);
+                return new global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.WithIdOrUrlItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -48,22 +49,22 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
         /// <summary>
         /// Create a new deployment with all the required and intended data. If the deployment is not a git deployment, all files must be provided with the request, either referenced or inlined. Additionally, a deployment id can be specified to redeploy a previous deployment.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsRequestBuilder.DeploymentsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsRequestBuilder.DeploymentsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsRequestBuilder.DeploymentsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsRequestBuilder.DeploymentsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new deployment with all the required and intended data. If the deployment is not a git deployment, all files must be provided with the request, either referenced or inlined. Additionally, a deployment id can be specified to redeploy a previous deployment.
@@ -73,11 +74,11 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsRequestBuilder.DeploymentsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsRequestBuilder.DeploymentsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsRequestBuilder.DeploymentsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.DeploymentsRequestBuilder.DeploymentsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

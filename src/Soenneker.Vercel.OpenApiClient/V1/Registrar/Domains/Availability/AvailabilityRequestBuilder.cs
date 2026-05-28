@@ -36,7 +36,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability
         /// <summary>
         /// Get availability for multiple domains. If the domains are available, they can be purchased using the [Buy a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-a-domain) endpoint or the [Buy multiple domains](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-multiple-domains) endpoint.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability.AvailabilityPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetBulkAvailability200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,11 +47,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability.AvailabilityPostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability.AvailabilityPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability.AvailabilityRequestBuilder.AvailabilityRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetBulkAvailability200?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.GetBulkAvailability body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability.AvailabilityRequestBuilder.AvailabilityRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability.AvailabilityPostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability.AvailabilityPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability.AvailabilityRequestBuilder.AvailabilityRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetBulkAvailability200> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.GetBulkAvailability body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability.AvailabilityRequestBuilder.AvailabilityRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -64,7 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability
                 { "429", global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Vercel.OpenApiClient.Models.InternalServerError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability.AvailabilityPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability.AvailabilityPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetBulkAvailability200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetBulkAvailability200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get availability for multiple domains. If the domains are available, they can be purchased using the [Buy a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-a-domain) endpoint or the [Buy multiple domains](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-multiple-domains) endpoint.
@@ -74,11 +74,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability.AvailabilityPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability.AvailabilityRequestBuilder.AvailabilityRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.GetBulkAvailability body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability.AvailabilityRequestBuilder.AvailabilityRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability.AvailabilityPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability.AvailabilityRequestBuilder.AvailabilityRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.GetBulkAvailability body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability.AvailabilityRequestBuilder.AvailabilityRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

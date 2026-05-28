@@ -24,10 +24,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The path to the property where the issue occurred</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Path { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.PropertyKey>? Path { get; set; }
 #nullable restore
 #else
-        public List<string> Path { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.PropertyKey> Path { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,7 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "path", n => { Path = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "path", n => { Path = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PropertyKey>(global::Soenneker.Vercel.OpenApiClient.Models.PropertyKey.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("message", Message);
-            writer.WriteCollectionOfPrimitiveValues<string>("path", Path);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PropertyKey>("path", Path);
         }
     }
 }

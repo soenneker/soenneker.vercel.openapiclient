@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -35,22 +36,22 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Files
         /// <summary>
         /// Before you create a deployment you need to upload the required files for that deployment. To do it, you need to first upload each file to this endpoint. Once that&apos;s completed, you can create a new deployment with the uploaded files. The file content must be placed inside the body of the request. In the case of a successful response you&apos;ll receive a status code 200 with an empty body.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UploadFile200"/></returns>
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesPostResponse?> PostAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesRequestBuilder.FilesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UploadFile200?> PostAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesRequestBuilder.FilesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesPostResponse> PostAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesRequestBuilder.FilesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UploadFile200> PostAsync(Stream body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesRequestBuilder.FilesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V2.Files.FilesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UploadFile200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UploadFile200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Before you create a deployment you need to upload the required files for that deployment. To do it, you need to first upload each file to this endpoint. Once that&apos;s completed, you can create a new deployment with the uploaded files. The file content must be placed inside the body of the request. In the case of a successful response you&apos;ll receive a status code 200 with an empty body.

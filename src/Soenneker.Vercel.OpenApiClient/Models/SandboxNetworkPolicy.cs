@@ -47,7 +47,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.SandboxInjectionRule> InjectionRules { get; set; }
 #endif
-        /// <summary>The network policy mode. - &apos;allow-all&apos;: All traffic is allowed. - &apos;deny-all&apos;: All traffic is blocked. - &apos;custom&apos;: Traffic is controlled by explicit allow/deny rules.</summary>
+        /// <summary>&quot;The network policy mode. - &apos;allow-all&apos;: All traffic is allowed. - &apos;deny-all&apos;: All traffic is blocked. - &apos;custom&apos;: Traffic is controlled by explicit allow/deny rules.&quot;</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.SandboxNetworkPolicy_mode? Mode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SandboxNetworkPolicy"/> and sets the default values.
