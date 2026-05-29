@@ -15,14 +15,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The nextRule property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember112_nextRule? NextRule { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember112_nextRule NextRule { get; set; }
-#endif
         /// <summary>The previousRule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,7 +56,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "nextRule", n => { NextRule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember112_nextRule>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember112_nextRule.CreateFromDiscriminatorValue); } },
                 { "previousRule", n => { PreviousRule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember112_previousRule>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember112_previousRule.CreateFromDiscriminatorValue); } },
                 { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember112_team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember112_team.CreateFromDiscriminatorValue); } },
             };
@@ -76,7 +67,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember112_nextRule>("nextRule", NextRule);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember112_previousRule>("previousRule", PreviousRule);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember112_team>("team", Team);
             writer.WriteAdditionalData(AdditionalData);

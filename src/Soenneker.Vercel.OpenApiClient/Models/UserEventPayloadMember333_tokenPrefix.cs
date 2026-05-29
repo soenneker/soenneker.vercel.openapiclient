@@ -3,13 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>optional since entries prior to 2026-04-23 do not contain this field</summary>
+    /// <summary>The token prefix used when showing a safe checksum-style fingerprint.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UserEventPayloadMember333_tokenPrefix
     {
-        [EnumMember(Value = "vca_")]
+        [EnumMember(Value = "vcp_")]
         #pragma warning disable CS1591
-        Vca_,
+        Vcp_,
         #pragma warning restore CS1591
     }
 }

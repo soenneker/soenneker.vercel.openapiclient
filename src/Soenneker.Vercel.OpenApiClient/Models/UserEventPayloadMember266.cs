@@ -15,8 +15,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The storeType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember266_storeType? StoreType { get; set; }
+        /// <summary>The store property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember266_store? Store { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember266_store Store { get; set; }
+#endif
+        /// <summary>The transferRequestCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TransferRequestCode { get; set; }
+#nullable restore
+#else
+        public string TransferRequestCode { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember266"/> and sets the default values.
         /// </summary>
@@ -42,7 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "storeType", n => { StoreType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember266_storeType>(); } },
+                { "store", n => { Store = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember266_store>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember266_store.CreateFromDiscriminatorValue); } },
+                { "transferRequestCode", n => { TransferRequestCode = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -52,7 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember266_storeType>("storeType", StoreType);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember266_store>("store", Store);
+            writer.WriteStringValue("transferRequestCode", TransferRequestCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

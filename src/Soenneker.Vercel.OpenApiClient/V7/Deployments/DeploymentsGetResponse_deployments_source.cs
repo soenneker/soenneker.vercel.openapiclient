@@ -39,5 +39,9 @@ namespace Soenneker.Vercel.OpenApiClient.V7.Deployments
         #pragma warning disable CS1591
         V0Web,
         #pragma warning restore CS1591
+        [EnumMember(Value = "drop")]
+        #pragma warning disable CS1591
+        Drop,
+        #pragma warning restore CS1591
     }
 }

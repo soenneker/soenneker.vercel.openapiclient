@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Restricts inbound Git deployments to an allowlist of orgs and/or repos. `enabled: true` with an empty `sources` list is treated as deny-all.&quot;
+    /// &quot;`enabled: true` with empty `sources` is deny-all.&quot;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetProject200_deploymentPolicy_gitSources : IAdditionalDataHolder, IParsable
@@ -24,14 +24,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_gitSources.GetProject200_deploymentPolicy_gitSources_environments> Environments { get; set; }
-#endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
 #endif
         /// <summary>The sources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,7 +60,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "environments", n => { Environments = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_gitSources.GetProject200_deploymentPolicy_gitSources_environments>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_gitSources.GetProject200_deploymentPolicy_gitSources_environments.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
                 { "sources", n => { Sources = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_gitSources.GetProject200_deploymentPolicy_gitSources_sources>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_gitSources.GetProject200_deploymentPolicy_gitSources_sources.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -81,7 +72,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_gitSources.GetProject200_deploymentPolicy_gitSources_environments>("environments", Environments);
-            writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_gitSources.GetProject200_deploymentPolicy_gitSources_sources>("sources", Sources);
             writer.WriteAdditionalData(AdditionalData);
         }

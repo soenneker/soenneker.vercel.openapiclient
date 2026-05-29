@@ -15,86 +15,64 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The entitlements property</summary>
+        /// <summary>The bitbucketUsername property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Entitlements { get; set; }
+        public string? BitbucketUsername { get; set; }
 #nullable restore
 #else
-        public List<string> Entitlements { get; set; }
+        public string BitbucketUsername { get; set; }
 #endif
-        /// <summary>The invitedBy property</summary>
+        /// <summary>The githubUsername property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291_invitedBy? InvitedBy { get; set; }
+        public string? GithubUsername { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291_invitedBy InvitedBy { get; set; }
+        public string GithubUsername { get; set; }
 #endif
-        /// <summary>The origin property</summary>
+        /// <summary>The gitlabUsername property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Origin { get; set; }
+        public string? GitlabUsername { get; set; }
 #nullable restore
 #else
-        public string Origin { get; set; }
+        public string GitlabUsername { get; set; }
 #endif
-        /// <summary>The role property</summary>
+        /// <summary>The gitUsername property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Role { get; set; }
+        public string? GitUsername { get; set; }
 #nullable restore
 #else
-        public string Role { get; set; }
+        public string GitUsername { get; set; }
 #endif
-        /// <summary>The teamPermissions property</summary>
+        /// <summary>The requestedTeamName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TeamPermissions { get; set; }
+        public string? RequestedTeamName { get; set; }
 #nullable restore
 #else
-        public List<string> TeamPermissions { get; set; }
+        public string RequestedTeamName { get; set; }
 #endif
-        /// <summary>The teamRoles property</summary>
+        /// <summary>The requestedTeamSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TeamRoles { get; set; }
+        public string? RequestedTeamSlug { get; set; }
 #nullable restore
 #else
-        public List<string> TeamRoles { get; set; }
+        public string RequestedTeamSlug { get; set; }
 #endif
-        /// <summary>The teamSlug property</summary>
+        /// <summary>The requestedUserName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamSlug { get; set; }
+        public string? RequestedUserName { get; set; }
 #nullable restore
 #else
-        public string TeamSlug { get; set; }
+        public string RequestedUserName { get; set; }
 #endif
-        /// <summary>The uid property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Uid { get; set; }
-#nullable restore
-#else
-        public string Uid { get; set; }
-#endif
-        /// <summary>The updatedUid property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UpdatedUid { get; set; }
-#nullable restore
-#else
-        public string UpdatedUid { get; set; }
-#endif
-        /// <summary>The updatedUser property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291_updatedUser? UpdatedUser { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291_updatedUser UpdatedUser { get; set; }
-#endif
+        /// <summary>The source property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291_source? Source { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291"/> and sets the default values.
         /// </summary>
@@ -120,16 +98,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "entitlements", n => { Entitlements = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "invitedBy", n => { InvitedBy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291_invitedBy>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291_invitedBy.CreateFromDiscriminatorValue); } },
-                { "origin", n => { Origin = n.GetStringValue(); } },
-                { "role", n => { Role = n.GetStringValue(); } },
-                { "teamPermissions", n => { TeamPermissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "teamRoles", n => { TeamRoles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "teamSlug", n => { TeamSlug = n.GetStringValue(); } },
-                { "uid", n => { Uid = n.GetStringValue(); } },
-                { "updatedUid", n => { UpdatedUid = n.GetStringValue(); } },
-                { "updatedUser", n => { UpdatedUser = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291_updatedUser>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291_updatedUser.CreateFromDiscriminatorValue); } },
+                { "bitbucketUsername", n => { BitbucketUsername = n.GetStringValue(); } },
+                { "gitUsername", n => { GitUsername = n.GetStringValue(); } },
+                { "githubUsername", n => { GithubUsername = n.GetStringValue(); } },
+                { "gitlabUsername", n => { GitlabUsername = n.GetStringValue(); } },
+                { "requestedTeamName", n => { RequestedTeamName = n.GetStringValue(); } },
+                { "requestedTeamSlug", n => { RequestedTeamSlug = n.GetStringValue(); } },
+                { "requestedUserName", n => { RequestedUserName = n.GetStringValue(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291_source>(); } },
             };
         }
         /// <summary>
@@ -139,16 +115,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("entitlements", Entitlements);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291_invitedBy>("invitedBy", InvitedBy);
-            writer.WriteStringValue("origin", Origin);
-            writer.WriteStringValue("role", Role);
-            writer.WriteCollectionOfPrimitiveValues<string>("teamPermissions", TeamPermissions);
-            writer.WriteCollectionOfPrimitiveValues<string>("teamRoles", TeamRoles);
-            writer.WriteStringValue("teamSlug", TeamSlug);
-            writer.WriteStringValue("uid", Uid);
-            writer.WriteStringValue("updatedUid", UpdatedUid);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291_updatedUser>("updatedUser", UpdatedUser);
+            writer.WriteStringValue("bitbucketUsername", BitbucketUsername);
+            writer.WriteStringValue("githubUsername", GithubUsername);
+            writer.WriteStringValue("gitlabUsername", GitlabUsername);
+            writer.WriteStringValue("gitUsername", GitUsername);
+            writer.WriteStringValue("requestedTeamName", RequestedTeamName);
+            writer.WriteStringValue("requestedTeamSlug", RequestedTeamSlug);
+            writer.WriteStringValue("requestedUserName", RequestedUserName);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291_source>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

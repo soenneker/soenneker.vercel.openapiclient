@@ -15,29 +15,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The gitProvider property</summary>
+        /// <summary>The instances property</summary>
+        public double? Instances { get; set; }
+        /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitProvider { get; set; }
+        public string? Url { get; set; }
 #nullable restore
 #else
-        public string GitProvider { get; set; }
-#endif
-        /// <summary>The gitProviderGroupDescriptor property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GitProviderGroupDescriptor { get; set; }
-#nullable restore
-#else
-        public string GitProviderGroupDescriptor { get; set; }
-#endif
-        /// <summary>The gitScope property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GitScope { get; set; }
-#nullable restore
-#else
-        public string GitScope { get; set; }
+        public string Url { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember248"/> and sets the default values.
@@ -64,9 +50,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "gitProvider", n => { GitProvider = n.GetStringValue(); } },
-                { "gitProviderGroupDescriptor", n => { GitProviderGroupDescriptor = n.GetStringValue(); } },
-                { "gitScope", n => { GitScope = n.GetStringValue(); } },
+                { "instances", n => { Instances = n.GetDoubleValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +61,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("gitProvider", GitProvider);
-            writer.WriteStringValue("gitProviderGroupDescriptor", GitProviderGroupDescriptor);
-            writer.WriteStringValue("gitScope", GitScope);
+            writer.WriteDoubleValue("instances", Instances);
+            writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

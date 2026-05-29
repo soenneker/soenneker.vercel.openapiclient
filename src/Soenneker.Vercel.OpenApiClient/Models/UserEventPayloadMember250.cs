@@ -23,8 +23,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The verified property</summary>
-        public bool? Verified { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember250"/> and sets the default values.
         /// </summary>
@@ -51,7 +49,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "verified", n => { Verified = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -62,7 +59,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
-            writer.WriteBoolValue("verified", Verified);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

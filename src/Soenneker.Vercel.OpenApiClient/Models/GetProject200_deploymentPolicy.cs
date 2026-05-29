@@ -8,28 +8,28 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Project-level shape. Each rule may be: - an object: overrides the team&apos;s value for that rule - `null`: explicitly clears the override on just that rule (inherit team) - omitted: inherit team To clear all overrides and inherit fully, set the project&apos;s `deploymentPolicy` field itself to `null`. Defined independently from {@link TeamDeploymentPolicy} so the two are not coupled by a shared type — the underlying data lives in separate stores.&quot;
+    /// Project shape. `null` on a rule list clears the project&apos;s override for that rule type (fall back to team for every env); omitting is equivalent. Setting `deploymentPolicy` itself to `null` clears every override at once. Kept structurally distinct from {@link TeamDeploymentPolicy} so the two storage locations don&apos;t share a type by accident.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetProject200_deploymentPolicy : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;Restricts which deployment sources are allowed. A deployment passes if its source is in `sources`. Multiple entries are evaluated as OR. `enabled: true` with an empty `sources` list is treated as deny-all.&quot;</summary>
+        /// <summary>The deploymentSources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_deploymentSources? DeploymentSources { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_deploymentSources>? DeploymentSources { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_deploymentSources DeploymentSources { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_deploymentSources> DeploymentSources { get; set; }
 #endif
-        /// <summary>&quot;Restricts inbound Git deployments to an allowlist of orgs and/or repos. `enabled: true` with an empty `sources` list is treated as deny-all.&quot;</summary>
+        /// <summary>The gitSources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_gitSources? GitSources { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_gitSources>? GitSources { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_gitSources GitSources { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_gitSources> GitSources { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deploymentSources", n => { DeploymentSources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_deploymentSources>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_deploymentSources.CreateFromDiscriminatorValue); } },
-                { "gitSources", n => { GitSources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_gitSources>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_gitSources.CreateFromDiscriminatorValue); } },
+                { "deploymentSources", n => { DeploymentSources = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_deploymentSources>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_deploymentSources.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "gitSources", n => { GitSources = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_gitSources>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_gitSources.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_deploymentSources>("deploymentSources", DeploymentSources);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_gitSources>("gitSources", GitSources);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_deploymentSources>("deploymentSources", DeploymentSources);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_deploymentPolicy_gitSources>("gitSources", GitSources);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

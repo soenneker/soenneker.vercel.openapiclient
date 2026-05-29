@@ -15,40 +15,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The domain property</summary>
+        /// <summary>The directoryType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get; set; }
+        public string? DirectoryType { get; set; }
 #nullable restore
 #else
-        public string Domain { get; set; }
+        public string DirectoryType { get; set; }
 #endif
-        /// <summary>The projectId property</summary>
+        /// <summary>The projects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember211_projects>? Projects { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember211_projects> Projects { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The teamMembership property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember211_teamMembership? TeamMembership { get; set; }
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember211_teamMembership TeamMembership { get; set; }
 #endif
-        /// <summary>The redirect property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Redirect { get; set; }
-#nullable restore
-#else
-        public string Redirect { get; set; }
-#endif
-        /// <summary>The redirectStatusCode property</summary>
-        public double? RedirectStatusCode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember211"/> and sets the default values.
         /// </summary>
@@ -74,11 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "domain", n => { Domain = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "redirect", n => { Redirect = n.GetStringValue(); } },
-                { "redirectStatusCode", n => { RedirectStatusCode = n.GetDoubleValue(); } },
+                { "directoryType", n => { DirectoryType = n.GetStringValue(); } },
+                { "projects", n => { Projects = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember211_projects>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember211_projects.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "teamMembership", n => { TeamMembership = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember211_teamMembership>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember211_teamMembership.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -88,11 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("domain", Domain);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("redirect", Redirect);
-            writer.WriteDoubleValue("redirectStatusCode", RedirectStatusCode);
+            writer.WriteStringValue("directoryType", DirectoryType);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember211_projects>("projects", Projects);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember211_teamMembership>("teamMembership", TeamMembership);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

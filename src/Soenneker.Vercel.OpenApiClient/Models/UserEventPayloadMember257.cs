@@ -15,78 +15,54 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The env property</summary>
+        /// <summary>The bitbucketEmail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Env { get; set; }
+        public string? BitbucketEmail { get; set; }
 #nullable restore
 #else
-        public string Env { get; set; }
+        public string BitbucketEmail { get; set; }
 #endif
-        /// <summary>The factors property</summary>
+        /// <summary>The bitbucketLogin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember257_factors>? Factors { get; set; }
+        public string? BitbucketLogin { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember257_factors> Factors { get; set; }
+        public string BitbucketLogin { get; set; }
 #endif
-        /// <summary>The geolocation property</summary>
+        /// <summary>The bitbucketName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember257_geolocation? Geolocation { get; set; }
+        public string? BitbucketName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember257_geolocation Geolocation { get; set; }
+        public string BitbucketName { get; set; }
 #endif
-        /// <summary>The os property</summary>
+        /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Os { get; set; }
+        public string? Email { get; set; }
 #nullable restore
 #else
-        public string Os { get; set; }
+        public string Email { get; set; }
 #endif
-        /// <summary>The ssoType property</summary>
+        /// <summary>The zeitAccount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SsoType { get; set; }
+        public string? ZeitAccount { get; set; }
 #nullable restore
 #else
-        public string SsoType { get; set; }
+        public string ZeitAccount { get; set; }
 #endif
-        /// <summary>The userAgent property</summary>
+        /// <summary>The zeitAccountType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserAgent { get; set; }
+        public string? ZeitAccountType { get; set; }
 #nullable restore
 #else
-        public string UserAgent { get; set; }
+        public string ZeitAccountType { get; set; }
 #endif
-        /// <summary>The username property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Username { get; set; }
-#nullable restore
-#else
-        public string Username { get; set; }
-#endif
-        /// <summary>The viaApple property</summary>
-        public bool? ViaApple { get; set; }
-        /// <summary>The viaBitbucket property</summary>
-        public bool? ViaBitbucket { get; set; }
-        /// <summary>The viaGithub property</summary>
-        public bool? ViaGithub { get; set; }
-        /// <summary>The viaGitlab property</summary>
-        public bool? ViaGitlab { get; set; }
-        /// <summary>The viaGoogle property</summary>
-        public bool? ViaGoogle { get; set; }
-        /// <summary>The viaOTP property</summary>
-        public bool? ViaOTP { get; set; }
-        /// <summary>The viaPasskey property</summary>
-        public bool? ViaPasskey { get; set; }
-        /// <summary>The viaSamlSso property</summary>
-        public bool? ViaSamlSso { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember257"/> and sets the default values.
         /// </summary>
@@ -112,21 +88,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "env", n => { Env = n.GetStringValue(); } },
-                { "factors", n => { Factors = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember257_factors>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember257_factors.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "geolocation", n => { Geolocation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember257_geolocation>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember257_geolocation.CreateFromDiscriminatorValue); } },
-                { "os", n => { Os = n.GetStringValue(); } },
-                { "ssoType", n => { SsoType = n.GetStringValue(); } },
-                { "userAgent", n => { UserAgent = n.GetStringValue(); } },
-                { "username", n => { Username = n.GetStringValue(); } },
-                { "viaApple", n => { ViaApple = n.GetBoolValue(); } },
-                { "viaBitbucket", n => { ViaBitbucket = n.GetBoolValue(); } },
-                { "viaGithub", n => { ViaGithub = n.GetBoolValue(); } },
-                { "viaGitlab", n => { ViaGitlab = n.GetBoolValue(); } },
-                { "viaGoogle", n => { ViaGoogle = n.GetBoolValue(); } },
-                { "viaOTP", n => { ViaOTP = n.GetBoolValue(); } },
-                { "viaPasskey", n => { ViaPasskey = n.GetBoolValue(); } },
-                { "viaSamlSso", n => { ViaSamlSso = n.GetBoolValue(); } },
+                { "bitbucketEmail", n => { BitbucketEmail = n.GetStringValue(); } },
+                { "bitbucketLogin", n => { BitbucketLogin = n.GetStringValue(); } },
+                { "bitbucketName", n => { BitbucketName = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "zeitAccount", n => { ZeitAccount = n.GetStringValue(); } },
+                { "zeitAccountType", n => { ZeitAccountType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -136,21 +103,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("env", Env);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember257_factors>("factors", Factors);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember257_geolocation>("geolocation", Geolocation);
-            writer.WriteStringValue("os", Os);
-            writer.WriteStringValue("ssoType", SsoType);
-            writer.WriteStringValue("userAgent", UserAgent);
-            writer.WriteStringValue("username", Username);
-            writer.WriteBoolValue("viaApple", ViaApple);
-            writer.WriteBoolValue("viaBitbucket", ViaBitbucket);
-            writer.WriteBoolValue("viaGithub", ViaGithub);
-            writer.WriteBoolValue("viaGitlab", ViaGitlab);
-            writer.WriteBoolValue("viaGoogle", ViaGoogle);
-            writer.WriteBoolValue("viaOTP", ViaOTP);
-            writer.WriteBoolValue("viaPasskey", ViaPasskey);
-            writer.WriteBoolValue("viaSamlSso", ViaSamlSso);
+            writer.WriteStringValue("bitbucketEmail", BitbucketEmail);
+            writer.WriteStringValue("bitbucketLogin", BitbucketLogin);
+            writer.WriteStringValue("bitbucketName", BitbucketName);
+            writer.WriteStringValue("email", Email);
+            writer.WriteStringValue("zeitAccount", ZeitAccount);
+            writer.WriteStringValue("zeitAccountType", ZeitAccountType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

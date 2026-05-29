@@ -15,13 +15,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The customAlertTitle property</summary>
+        /// <summary>The protectedProjectCount property</summary>
+        public double? ProtectedProjectCount { get; set; }
+        /// <summary>The protectionEnabled property</summary>
+        public bool? ProtectionEnabled { get; set; }
+        /// <summary>The vulnerabilities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomAlertTitle { get; set; }
+        public List<string>? Vulnerabilities { get; set; }
 #nullable restore
 #else
-        public string CustomAlertTitle { get; set; }
+        public List<string> Vulnerabilities { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember322"/> and sets the default values.
@@ -48,7 +52,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "customAlertTitle", n => { CustomAlertTitle = n.GetStringValue(); } },
+                { "protectedProjectCount", n => { ProtectedProjectCount = n.GetDoubleValue(); } },
+                { "protectionEnabled", n => { ProtectionEnabled = n.GetBoolValue(); } },
+                { "vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("customAlertTitle", CustomAlertTitle);
+            writer.WriteDoubleValue("protectedProjectCount", ProtectedProjectCount);
+            writer.WriteBoolValue("protectionEnabled", ProtectionEnabled);
+            writer.WriteCollectionOfPrimitiveValues<string>("vulnerabilities", Vulnerabilities);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

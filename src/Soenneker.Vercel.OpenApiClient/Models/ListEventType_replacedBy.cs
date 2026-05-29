@@ -503,6 +503,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         DeploymentDelete,
         #pragma warning restore CS1591
+        [EnumMember(Value = "deployment-policy-blocked")]
+        #pragma warning disable CS1591
+        DeploymentPolicyBlocked,
+        #pragma warning restore CS1591
         [EnumMember(Value = "disabled-integration-installation-removed")]
         #pragma warning disable CS1591
         DisabledIntegrationInstallationRemoved,
@@ -1114,18 +1118,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "project-cron-jobs-toggled")]
         #pragma warning disable CS1591
         ProjectCronJobsToggled,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "project-delegated-protection-enabled")]
-        #pragma warning disable CS1591
-        ProjectDelegatedProtectionEnabled,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "project-delegated-protection-updated")]
-        #pragma warning disable CS1591
-        ProjectDelegatedProtectionUpdated,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "project-delegated-protection-disabled")]
-        #pragma warning disable CS1591
-        ProjectDelegatedProtectionDisabled,
         #pragma warning restore CS1591
         [EnumMember(Value = "project-delete")]
         #pragma warning disable CS1591

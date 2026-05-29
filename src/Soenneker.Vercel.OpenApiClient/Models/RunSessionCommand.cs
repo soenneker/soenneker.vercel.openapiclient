@@ -46,8 +46,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Execute the command with root (superuser) privileges.</summary>
         public bool? Sudo { get; set; }
-        /// <summary>Maximum duration in milliseconds to wait for the command to finish. When elapsed, the process is killed with SIGKILL. Requires `wait` to be true.</summary>
-        public int? Timeout { get; set; }
         /// <summary>If true, returns an ND-JSON stream that emits the command status when started and again when finished. Useful for synchronously waiting for command completion.</summary>
         public bool? Wait { get; set; }
         /// <summary>
@@ -73,7 +71,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "cwd", n => { Cwd = n.GetStringValue(); } },
                 { "env", n => { Env = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommand_env>(global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommand_env.CreateFromDiscriminatorValue); } },
                 { "sudo", n => { Sudo = n.GetBoolValue(); } },
-                { "timeout", n => { Timeout = n.GetIntValue(); } },
                 { "wait", n => { Wait = n.GetBoolValue(); } },
             };
         }
@@ -89,7 +86,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("cwd", Cwd);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommand_env>("env", Env);
             writer.WriteBoolValue("sudo", Sudo);
-            writer.WriteIntValue("timeout", Timeout);
             writer.WriteBoolValue("wait", Wait);
         }
     }

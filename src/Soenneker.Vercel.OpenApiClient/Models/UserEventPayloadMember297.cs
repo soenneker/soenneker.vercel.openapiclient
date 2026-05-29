@@ -15,10 +15,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The nextConcurrentBuilds property</summary>
-        public double? NextConcurrentBuilds { get; set; }
-        /// <summary>The previousConcurrentBuilds property</summary>
-        public double? PreviousConcurrentBuilds { get; set; }
+        /// <summary>The plan property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember297_plan? Plan { get; set; }
+        /// <summary>The trial property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember297_trial? Trial { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember297_trial Trial { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember297"/> and sets the default values.
         /// </summary>
@@ -44,8 +50,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "nextConcurrentBuilds", n => { NextConcurrentBuilds = n.GetDoubleValue(); } },
-                { "previousConcurrentBuilds", n => { PreviousConcurrentBuilds = n.GetDoubleValue(); } },
+                { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember297_plan>(); } },
+                { "trial", n => { Trial = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember297_trial>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember297_trial.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -55,8 +61,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("nextConcurrentBuilds", NextConcurrentBuilds);
-            writer.WriteDoubleValue("previousConcurrentBuilds", PreviousConcurrentBuilds);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember297_plan>("plan", Plan);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember297_trial>("trial", Trial);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,78 +15,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The env property</summary>
+        /// <summary>The integrationName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Env { get; set; }
+        public string? IntegrationName { get; set; }
 #nullable restore
 #else
-        public string Env { get; set; }
+        public string IntegrationName { get; set; }
 #endif
-        /// <summary>The factors property</summary>
+        /// <summary>The logDrainUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch? Factors { get; set; }
+        public string? LogDrainUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch Factors { get; set; }
+        public string LogDrainUrl { get; set; }
 #endif
-        /// <summary>The geolocation property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember136_geolocation? Geolocation { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember136_geolocation Geolocation { get; set; }
-#endif
-        /// <summary>The os property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Os { get; set; }
-#nullable restore
-#else
-        public string Os { get; set; }
-#endif
-        /// <summary>The ssoType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SsoType { get; set; }
-#nullable restore
-#else
-        public string SsoType { get; set; }
-#endif
-        /// <summary>The userAgent property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserAgent { get; set; }
-#nullable restore
-#else
-        public string UserAgent { get; set; }
-#endif
-        /// <summary>The username property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Username { get; set; }
-#nullable restore
-#else
-        public string Username { get; set; }
-#endif
-        /// <summary>The viaApple property</summary>
-        public bool? ViaApple { get; set; }
-        /// <summary>The viaBitbucket property</summary>
-        public bool? ViaBitbucket { get; set; }
-        /// <summary>The viaGithub property</summary>
-        public bool? ViaGithub { get; set; }
-        /// <summary>The viaGitlab property</summary>
-        public bool? ViaGitlab { get; set; }
-        /// <summary>The viaGoogle property</summary>
-        public bool? ViaGoogle { get; set; }
-        /// <summary>The viaOTP property</summary>
-        public bool? ViaOTP { get; set; }
-        /// <summary>The viaPasskey property</summary>
-        public bool? ViaPasskey { get; set; }
-        /// <summary>The viaSamlSso property</summary>
-        public bool? ViaSamlSso { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember136"/> and sets the default values.
         /// </summary>
@@ -112,21 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "env", n => { Env = n.GetStringValue(); } },
-                { "factors", n => { Factors = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>(global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "geolocation", n => { Geolocation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember136_geolocation>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember136_geolocation.CreateFromDiscriminatorValue); } },
-                { "os", n => { Os = n.GetStringValue(); } },
-                { "ssoType", n => { SsoType = n.GetStringValue(); } },
-                { "userAgent", n => { UserAgent = n.GetStringValue(); } },
-                { "username", n => { Username = n.GetStringValue(); } },
-                { "viaApple", n => { ViaApple = n.GetBoolValue(); } },
-                { "viaBitbucket", n => { ViaBitbucket = n.GetBoolValue(); } },
-                { "viaGithub", n => { ViaGithub = n.GetBoolValue(); } },
-                { "viaGitlab", n => { ViaGitlab = n.GetBoolValue(); } },
-                { "viaGoogle", n => { ViaGoogle = n.GetBoolValue(); } },
-                { "viaOTP", n => { ViaOTP = n.GetBoolValue(); } },
-                { "viaPasskey", n => { ViaPasskey = n.GetBoolValue(); } },
-                { "viaSamlSso", n => { ViaSamlSso = n.GetBoolValue(); } },
+                { "integrationName", n => { IntegrationName = n.GetStringValue(); } },
+                { "logDrainUrl", n => { LogDrainUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -136,21 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("env", Env);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>("factors", Factors);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember136_geolocation>("geolocation", Geolocation);
-            writer.WriteStringValue("os", Os);
-            writer.WriteStringValue("ssoType", SsoType);
-            writer.WriteStringValue("userAgent", UserAgent);
-            writer.WriteStringValue("username", Username);
-            writer.WriteBoolValue("viaApple", ViaApple);
-            writer.WriteBoolValue("viaBitbucket", ViaBitbucket);
-            writer.WriteBoolValue("viaGithub", ViaGithub);
-            writer.WriteBoolValue("viaGitlab", ViaGitlab);
-            writer.WriteBoolValue("viaGoogle", ViaGoogle);
-            writer.WriteBoolValue("viaOTP", ViaOTP);
-            writer.WriteBoolValue("viaPasskey", ViaPasskey);
-            writer.WriteBoolValue("viaSamlSso", ViaSamlSso);
+            writer.WriteStringValue("integrationName", IntegrationName);
+            writer.WriteStringValue("logDrainUrl", LogDrainUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

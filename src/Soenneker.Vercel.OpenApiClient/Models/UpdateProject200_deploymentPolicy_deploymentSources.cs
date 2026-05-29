@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Restricts which deployment sources are allowed. A deployment passes if its source is in `sources`. Multiple entries are evaluated as OR. `enabled: true` with an empty `sources` list is treated as deny-all.&quot;
+    /// &quot;`enabled: true` with empty `sources` is deny-all.&quot;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateProject200_deploymentPolicy_deploymentSources : IAdditionalDataHolder, IParsable
@@ -24,14 +24,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200_deploymentPolicy_deploymentSources.UpdateProject200_deploymentPolicy_deploymentSources_environments> Environments { get; set; }
-#endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
 #endif
         /// <summary>The sources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,7 +60,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "environments", n => { Environments = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200_deploymentPolicy_deploymentSources.UpdateProject200_deploymentPolicy_deploymentSources_environments>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200_deploymentPolicy_deploymentSources.UpdateProject200_deploymentPolicy_deploymentSources_environments.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
                 { "sources", n => { Sources = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200_deploymentPolicy_deploymentSources_sources>()?.AsList(); } },
             };
         }
@@ -81,7 +72,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200_deploymentPolicy_deploymentSources.UpdateProject200_deploymentPolicy_deploymentSources_environments>("environments", Environments);
-            writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200_deploymentPolicy_deploymentSources_sources>("sources", Sources);
             writer.WriteAdditionalData(AdditionalData);
         }

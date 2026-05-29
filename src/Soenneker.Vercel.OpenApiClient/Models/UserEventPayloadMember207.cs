@@ -15,21 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The next property</summary>
+        /// <summary>The configuredBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember207_next? Next { get; set; }
+        public string? ConfiguredBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember207_next Next { get; set; }
+        public string ConfiguredBy { get; set; }
 #endif
-        /// <summary>The previous property</summary>
+        /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember207_previous? Previous { get; set; }
+        public string? Domain { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember207_previous Previous { get; set; }
+        public string Domain { get; set; }
+#endif
+        /// <summary>The gitBranch property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GitBranch { get; set; }
+#nullable restore
+#else
+        public string GitBranch { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,6 +54,24 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string ProjectName { get; set; }
+#endif
+        /// <summary>The redirect property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Redirect { get; set; }
+#nullable restore
+#else
+        public string Redirect { get; set; }
+#endif
+        /// <summary>The redirectStatusCode property</summary>
+        public double? RedirectStatusCode { get; set; }
+        /// <summary>The target property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Target { get; set; }
+#nullable restore
+#else
+        public string Target { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember207"/> and sets the default values.
@@ -72,10 +98,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember207_next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember207_next.CreateFromDiscriminatorValue); } },
-                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember207_previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember207_previous.CreateFromDiscriminatorValue); } },
+                { "configuredBy", n => { ConfiguredBy = n.GetStringValue(); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
+                { "gitBranch", n => { GitBranch = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "redirect", n => { Redirect = n.GetStringValue(); } },
+                { "redirectStatusCode", n => { RedirectStatusCode = n.GetDoubleValue(); } },
+                { "target", n => { Target = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,10 +115,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember207_next>("next", Next);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember207_previous>("previous", Previous);
+            writer.WriteStringValue("configuredBy", ConfiguredBy);
+            writer.WriteStringValue("domain", Domain);
+            writer.WriteStringValue("gitBranch", GitBranch);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("redirect", Redirect);
+            writer.WriteDoubleValue("redirectStatusCode", RedirectStatusCode);
+            writer.WriteStringValue("target", Target);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,9 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UserEventPayloadMember152_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "header")]
+        [EnumMember(Value = "script")]
         #pragma warning disable CS1591
-        Header,
+        Script,
         #pragma warning restore CS1591
     }
 }

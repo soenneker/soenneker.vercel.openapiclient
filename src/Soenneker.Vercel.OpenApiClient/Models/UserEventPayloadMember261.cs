@@ -15,42 +15,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The analyticsId property</summary>
+        /// <summary>The budget property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AnalyticsId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember261_budget? Budget { get; set; }
 #nullable restore
 #else
-        public string AnalyticsId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember261_budget Budget { get; set; }
 #endif
-        /// <summary>The previous property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember261_previous? Previous { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember261_previous Previous { get; set; }
-#endif
-        /// <summary>The projectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
-#endif
-        /// <summary>The projectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectName { get; set; }
-#nullable restore
-#else
-        public string ProjectName { get; set; }
-#endif
-        /// <summary>The sampleRatePercent property</summary>
-        public double? SampleRatePercent { get; set; }
-        /// <summary>The spendLimitInDollars property</summary>
-        public double? SpendLimitInDollars { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember261"/> and sets the default values.
         /// </summary>
@@ -76,12 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "analyticsId", n => { AnalyticsId = n.GetStringValue(); } },
-                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember261_previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember261_previous.CreateFromDiscriminatorValue); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "sampleRatePercent", n => { SampleRatePercent = n.GetDoubleValue(); } },
-                { "spendLimitInDollars", n => { SpendLimitInDollars = n.GetDoubleValue(); } },
+                { "budget", n => { Budget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember261_budget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember261_budget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -91,12 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("analyticsId", AnalyticsId);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember261_previous>("previous", Previous);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteDoubleValue("sampleRatePercent", SampleRatePercent);
-            writer.WriteDoubleValue("spendLimitInDollars", SpendLimitInDollars);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember261_budget>("budget", Budget);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

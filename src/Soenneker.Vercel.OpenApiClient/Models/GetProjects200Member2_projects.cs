@@ -138,14 +138,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_defaultResourceConfig DefaultResourceConfig { get; set; }
 #endif
-        /// <summary>The delegatedProtection property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_delegatedProtection? DelegatedProtection { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_delegatedProtection DelegatedProtection { get; set; }
-#endif
         /// <summary>Retention policies for deployments. These are enforced at the project level, but we also maintain an instance of this at the team level as a default policy that gets applied to new projects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,7 +146,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_deploymentExpiration DeploymentExpiration { get; set; }
 #endif
-        /// <summary>&quot;Project-level shape. Each rule may be: - an object: overrides the team&apos;s value for that rule - `null`: explicitly clears the override on just that rule (inherit team) - omitted: inherit team To clear all overrides and inherit fully, set the project&apos;s `deploymentPolicy` field itself to `null`. Defined independently from {@link TeamDeploymentPolicy} so the two are not coupled by a shared type — the underlying data lives in separate stores.&quot;</summary>
+        /// <summary>Project shape. `null` on a rule list clears the project&apos;s override for that rule type (fall back to team for every env); omitting is equivalent. Setting `deploymentPolicy` itself to `null` clears every override at once. Kept structurally distinct from {@link TeamDeploymentPolicy} so the two storage locations don&apos;t share a type by accident.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_deploymentPolicy? DeploymentPolicy { get; set; }
@@ -605,7 +597,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "customerSupportCodeVisibility", n => { CustomerSupportCodeVisibility = n.GetBoolValue(); } },
                 { "dataCache", n => { DataCache = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_dataCache>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_dataCache.CreateFromDiscriminatorValue); } },
                 { "defaultResourceConfig", n => { DefaultResourceConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_defaultResourceConfig>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_defaultResourceConfig.CreateFromDiscriminatorValue); } },
-                { "delegatedProtection", n => { DelegatedProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_delegatedProtection>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_delegatedProtection.CreateFromDiscriminatorValue); } },
                 { "deploymentExpiration", n => { DeploymentExpiration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_deploymentExpiration>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_deploymentExpiration.CreateFromDiscriminatorValue); } },
                 { "deploymentPolicy", n => { DeploymentPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_deploymentPolicy>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_deploymentPolicy.CreateFromDiscriminatorValue); } },
                 { "devCommand", n => { DevCommand = n.GetStringValue(); } },
@@ -707,7 +698,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("customerSupportCodeVisibility", CustomerSupportCodeVisibility);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_dataCache>("dataCache", DataCache);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_defaultResourceConfig>("defaultResourceConfig", DefaultResourceConfig);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_delegatedProtection>("delegatedProtection", DelegatedProtection);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_deploymentExpiration>("deploymentExpiration", DeploymentExpiration);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member2_projects_deploymentPolicy>("deploymentPolicy", DeploymentPolicy);
             writer.WriteStringValue("devCommand", DevCommand);

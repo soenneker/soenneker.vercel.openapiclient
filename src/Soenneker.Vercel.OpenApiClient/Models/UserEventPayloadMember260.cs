@@ -15,54 +15,42 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The email property</summary>
+        /// <summary>The analyticsId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? AnalyticsId { get; set; }
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string AnalyticsId { get; set; }
 #endif
-        /// <summary>The gitlabEmail property</summary>
+        /// <summary>The previous property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitlabEmail { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember260_previous? Previous { get; set; }
 #nullable restore
 #else
-        public string GitlabEmail { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember260_previous Previous { get; set; }
 #endif
-        /// <summary>The gitlabLogin property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitlabLogin { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string GitlabLogin { get; set; }
+        public string ProjectId { get; set; }
 #endif
-        /// <summary>The gitlabName property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitlabName { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public string GitlabName { get; set; }
+        public string ProjectName { get; set; }
 #endif
-        /// <summary>The zeitAccount property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ZeitAccount { get; set; }
-#nullable restore
-#else
-        public string ZeitAccount { get; set; }
-#endif
-        /// <summary>The zeitAccountType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ZeitAccountType { get; set; }
-#nullable restore
-#else
-        public string ZeitAccountType { get; set; }
-#endif
+        /// <summary>The sampleRatePercent property</summary>
+        public double? SampleRatePercent { get; set; }
+        /// <summary>The spendLimitInDollars property</summary>
+        public double? SpendLimitInDollars { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember260"/> and sets the default values.
         /// </summary>
@@ -88,12 +76,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "gitlabEmail", n => { GitlabEmail = n.GetStringValue(); } },
-                { "gitlabLogin", n => { GitlabLogin = n.GetStringValue(); } },
-                { "gitlabName", n => { GitlabName = n.GetStringValue(); } },
-                { "zeitAccount", n => { ZeitAccount = n.GetStringValue(); } },
-                { "zeitAccountType", n => { ZeitAccountType = n.GetStringValue(); } },
+                { "analyticsId", n => { AnalyticsId = n.GetStringValue(); } },
+                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember260_previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember260_previous.CreateFromDiscriminatorValue); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "sampleRatePercent", n => { SampleRatePercent = n.GetDoubleValue(); } },
+                { "spendLimitInDollars", n => { SpendLimitInDollars = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -103,12 +91,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("email", Email);
-            writer.WriteStringValue("gitlabEmail", GitlabEmail);
-            writer.WriteStringValue("gitlabLogin", GitlabLogin);
-            writer.WriteStringValue("gitlabName", GitlabName);
-            writer.WriteStringValue("zeitAccount", ZeitAccount);
-            writer.WriteStringValue("zeitAccountType", ZeitAccountType);
+            writer.WriteStringValue("analyticsId", AnalyticsId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember260_previous>("previous", Previous);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteDoubleValue("sampleRatePercent", SampleRatePercent);
+            writer.WriteDoubleValue("spendLimitInDollars", SpendLimitInDollars);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
