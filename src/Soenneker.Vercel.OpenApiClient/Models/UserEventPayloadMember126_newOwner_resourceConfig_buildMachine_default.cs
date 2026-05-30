@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>Default build machine type for new deployments. This must be used in combination with the buildEntitlements field. It is respected over Vercel&apos;s notion of the default build machine, and was originally implemented to allow Teams to &quot;downgrade&quot;. - Hobby customers cannot set this, because they only have access to one machine type - Pro customers get Turbo machines by default, so this field is effectively for downgrading - ENT customers cannot set this (yet), because their default is based on their contract. https://linear.app/vercel/project/self-serve-build-machines-for-enterprise-customers-0cbc357e26d2/overview</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum UserEventPayloadMember126_newOwner_resourceConfig_buildMachine_default
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "enhanced")]
         #pragma warning disable CS1591

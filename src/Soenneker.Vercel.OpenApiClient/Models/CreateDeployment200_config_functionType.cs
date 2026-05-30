@@ -8,13 +8,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum CreateDeployment200_config_functionType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "standard")]
-        #pragma warning disable CS1591
-        Standard,
-        #pragma warning restore CS1591
         [EnumMember(Value = "fluid")]
         #pragma warning disable CS1591
         Fluid,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "standard")]
+        #pragma warning disable CS1591
+        Standard,
         #pragma warning restore CS1591
     }
 }

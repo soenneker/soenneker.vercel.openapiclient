@@ -7,25 +7,16 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Build machine configuration recorded on a team or user `resourceConfig`. This is deliberately separate from the build machine config recorded on a deployment (`DeploymentBuildMachine` in `@api/deployments-types`). A team/user only expresses its default machine for new deployments; the per-build fields (`purchaseType`, `defaultPurchaseType`, `machineSelectionType`, `cores`, `memory`) are recorded on the deployment record when a build actually runs and never belong on a team/user document.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class UserEventPayloadMember126_newOwner_resourceConfig_buildMachine : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The cores property</summary>
-        public double? Cores { get; set; }
-        /// <summary>The default property</summary>
+        /// <summary>Default build machine type for new deployments. This must be used in combination with the buildEntitlements field. It is respected over Vercel&apos;s notion of the default build machine, and was originally implemented to allow Teams to &quot;downgrade&quot;. - Hobby customers cannot set this, because they only have access to one machine type - Pro customers get Turbo machines by default, so this field is effectively for downgrading - ENT customers cannot set this (yet), because their default is based on their contract. https://linear.app/vercel/project/self-serve-build-machines-for-enterprise-customers-0cbc357e26d2/overview</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember126_newOwner_resourceConfig_buildMachine_default? Default { get; set; }
-        /// <summary>The defaultPurchaseType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember126_newOwner_resourceConfig_buildMachine_defaultPurchaseType? DefaultPurchaseType { get; set; }
-        /// <summary>The machineSelectionType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember126_newOwner_resourceConfig_buildMachine_machineSelectionType? MachineSelectionType { get; set; }
-        /// <summary>The memory property</summary>
-        public double? Memory { get; set; }
-        /// <summary>The purchaseType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember126_newOwner_resourceConfig_buildMachine_purchaseType? PurchaseType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember126_newOwner_resourceConfig_buildMachine"/> and sets the default values.
         /// </summary>
@@ -51,12 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cores", n => { Cores = n.GetDoubleValue(); } },
                 { "default", n => { Default = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember126_newOwner_resourceConfig_buildMachine_default>(); } },
-                { "defaultPurchaseType", n => { DefaultPurchaseType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember126_newOwner_resourceConfig_buildMachine_defaultPurchaseType>(); } },
-                { "machineSelectionType", n => { MachineSelectionType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember126_newOwner_resourceConfig_buildMachine_machineSelectionType>(); } },
-                { "memory", n => { Memory = n.GetDoubleValue(); } },
-                { "purchaseType", n => { PurchaseType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember126_newOwner_resourceConfig_buildMachine_purchaseType>(); } },
             };
         }
         /// <summary>
@@ -66,12 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("cores", Cores);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember126_newOwner_resourceConfig_buildMachine_default>("default", Default);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember126_newOwner_resourceConfig_buildMachine_defaultPurchaseType>("defaultPurchaseType", DefaultPurchaseType);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember126_newOwner_resourceConfig_buildMachine_machineSelectionType>("machineSelectionType", MachineSelectionType);
-            writer.WriteDoubleValue("memory", Memory);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember126_newOwner_resourceConfig_buildMachine_purchaseType>("purchaseType", PurchaseType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

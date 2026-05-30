@@ -7,6 +7,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreateDeployment200_config_resourceConfig_buildMachine_purchaseType
     {
+        [EnumMember(Value = "standard")]
+        #pragma warning disable CS1591
+        Standard,
+        #pragma warning restore CS1591
         [EnumMember(Value = "enhanced")]
         #pragma warning disable CS1591
         Enhanced,
@@ -14,10 +18,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "turbo")]
         #pragma warning disable CS1591
         Turbo,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "standard")]
-        #pragma warning disable CS1591
-        Standard,
         #pragma warning restore CS1591
     }
 }

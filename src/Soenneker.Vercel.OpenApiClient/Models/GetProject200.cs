@@ -364,6 +364,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string PassiveConnectConfigurationId { get; set; }
 #endif
+        /// <summary>The passport property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_passport? Passport { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_passport Passport { get; set; }
+#endif
         /// <summary>The passwordProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -643,6 +651,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "optionsAllowlist", n => { OptionsAllowlist = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_optionsAllowlist>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_optionsAllowlist.CreateFromDiscriminatorValue); } },
                 { "outputDirectory", n => { OutputDirectory = n.GetStringValue(); } },
                 { "passiveConnectConfigurationId", n => { PassiveConnectConfigurationId = n.GetStringValue(); } },
+                { "passport", n => { Passport = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_passport>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_passport.CreateFromDiscriminatorValue); } },
                 { "passwordProtection", n => { PasswordProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_passwordProtection>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_passwordProtection.CreateFromDiscriminatorValue); } },
                 { "paused", n => { Paused = n.GetBoolValue(); } },
                 { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_permissions>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_permissions.CreateFromDiscriminatorValue); } },
@@ -745,6 +754,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_optionsAllowlist>("optionsAllowlist", OptionsAllowlist);
             writer.WriteStringValue("outputDirectory", OutputDirectory);
             writer.WriteStringValue("passiveConnectConfigurationId", PassiveConnectConfigurationId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_passport>("passport", Passport);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_passwordProtection>("passwordProtection", PasswordProtection);
             writer.WriteBoolValue("paused", Paused);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200_permissions>("permissions", Permissions);

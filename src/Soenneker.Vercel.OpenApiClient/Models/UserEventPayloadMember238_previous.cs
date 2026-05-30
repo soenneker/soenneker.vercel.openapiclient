@@ -14,8 +14,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The skewProtectionBoundaryAt property</summary>
-        public double? SkewProtectionBoundaryAt { get; set; }
+        /// <summary>The passport property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember238_previous_passport? Passport { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember238_previous_passport Passport { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember238_previous"/> and sets the default values.
         /// </summary>
@@ -41,7 +47,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "skewProtectionBoundaryAt", n => { SkewProtectionBoundaryAt = n.GetDoubleValue(); } },
+                { "passport", n => { Passport = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember238_previous_passport>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember238_previous_passport.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -51,7 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("skewProtectionBoundaryAt", SkewProtectionBoundaryAt);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember238_previous_passport>("passport", Passport);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

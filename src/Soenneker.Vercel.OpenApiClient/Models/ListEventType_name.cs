@@ -1419,6 +1419,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ProjectDeploymentRetentionUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "project-passport-updated")]
+        #pragma warning disable CS1591
+        ProjectPassportUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project-skew-protection-threshold-updated")]
         #pragma warning disable CS1591
         ProjectSkewProtectionThresholdUpdated,

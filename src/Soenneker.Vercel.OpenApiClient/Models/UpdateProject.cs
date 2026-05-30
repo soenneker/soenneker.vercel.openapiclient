@@ -132,6 +132,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string OutputDirectory { get; set; }
 #endif
+        /// <summary>Passport configuration for the project.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_passport? Passport { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_passport Passport { get; set; }
+#endif
         /// <summary>Allows to protect project deployments with a password</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -285,6 +293,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "oidcTokenConfig", n => { OidcTokenConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_oidcTokenConfig>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_oidcTokenConfig.CreateFromDiscriminatorValue); } },
                 { "optionsAllowlist", n => { OptionsAllowlist = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_optionsAllowlist>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_optionsAllowlist.CreateFromDiscriminatorValue); } },
                 { "outputDirectory", n => { OutputDirectory = n.GetStringValue(); } },
+                { "passport", n => { Passport = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_passport>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_passport.CreateFromDiscriminatorValue); } },
                 { "passwordProtection", n => { PasswordProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_passwordProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_passwordProtection.CreateFromDiscriminatorValue); } },
                 { "previewDeploymentSuffix", n => { PreviewDeploymentSuffix = n.GetStringValue(); } },
                 { "previewDeploymentsDisabled", n => { PreviewDeploymentsDisabled = n.GetBoolValue(); } },
@@ -337,6 +346,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_oidcTokenConfig>("oidcTokenConfig", OidcTokenConfig);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_optionsAllowlist>("optionsAllowlist", OptionsAllowlist);
             writer.WriteStringValue("outputDirectory", OutputDirectory);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_passport>("passport", Passport);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_passwordProtection>("passwordProtection", PasswordProtection);
             writer.WriteBoolValue("previewDeploymentsDisabled", PreviewDeploymentsDisabled);
             writer.WriteStringValue("previewDeploymentSuffix", PreviewDeploymentSuffix);

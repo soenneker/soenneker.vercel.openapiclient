@@ -44,14 +44,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildMachine? BuildMachine { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildMachine BuildMachine { get; set; }
-#endif
-        /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildQueue? BuildQueue { get; set; }
 #nullable restore
 #else
@@ -152,7 +144,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "awsAccountType", n => { AwsAccountType = n.GetStringValue(); } },
                 { "blobStores", n => { BlobStores = n.GetDoubleValue(); } },
                 { "buildEntitlements", n => { BuildEntitlements = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildEntitlements>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildEntitlements.CreateFromDiscriminatorValue); } },
-                { "buildMachine", n => { BuildMachine = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildMachine>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildMachine.CreateFromDiscriminatorValue); } },
                 { "buildQueue", n => { BuildQueue = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildQueue>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildQueue.CreateFromDiscriminatorValue); } },
                 { "bulkRedirectsFreeLimitOverride", n => { BulkRedirectsFreeLimitOverride = n.GetDoubleValue(); } },
                 { "cfZoneName", n => { CfZoneName = n.GetStringValue(); } },
@@ -188,7 +179,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("awsAccountType", AwsAccountType);
             writer.WriteDoubleValue("blobStores", BlobStores);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildEntitlements>("buildEntitlements", BuildEntitlements);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildMachine>("buildMachine", BuildMachine);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigBuildQueue>("buildQueue", BuildQueue);
             writer.WriteDoubleValue("bulkRedirectsFreeLimitOverride", BulkRedirectsFreeLimitOverride);
             writer.WriteStringValue("cfZoneName", CfZoneName);
