@@ -131,10 +131,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Specifies whether Zero Config Failover is enabled for this project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch? ServerlessFunctionZeroConfigFailover { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject_serverlessFunctionZeroConfigFailover? ServerlessFunctionZeroConfigFailover { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch ServerlessFunctionZeroConfigFailover { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject_serverlessFunctionZeroConfigFailover ServerlessFunctionZeroConfigFailover { get; set; }
 #endif
         /// <summary>Opts-out of the message prompting a CLI user to connect a Git repository in `vercel link`.</summary>
         [Obsolete("")]
@@ -184,7 +184,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "resourceConfig", n => { ResourceConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject_resourceConfig>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProject_resourceConfig.CreateFromDiscriminatorValue); } },
                 { "rootDirectory", n => { RootDirectory = n.GetStringValue(); } },
                 { "serverlessFunctionRegion", n => { ServerlessFunctionRegion = n.GetStringValue(); } },
-                { "serverlessFunctionZeroConfigFailover", n => { ServerlessFunctionZeroConfigFailover = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>(global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "serverlessFunctionZeroConfigFailover", n => { ServerlessFunctionZeroConfigFailover = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject_serverlessFunctionZeroConfigFailover>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProject_serverlessFunctionZeroConfigFailover.CreateFromDiscriminatorValue); } },
                 { "skipGitConnectDuringLink", n => { SkipGitConnectDuringLink = n.GetBoolValue(); } },
                 { "ssoProtection", n => { SsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject_ssoProtection>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProject_ssoProtection.CreateFromDiscriminatorValue); } },
             };
@@ -215,7 +215,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject_resourceConfig>("resourceConfig", ResourceConfig);
             writer.WriteStringValue("rootDirectory", RootDirectory);
             writer.WriteStringValue("serverlessFunctionRegion", ServerlessFunctionRegion);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>("serverlessFunctionZeroConfigFailover", ServerlessFunctionZeroConfigFailover);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject_serverlessFunctionZeroConfigFailover>("serverlessFunctionZeroConfigFailover", ServerlessFunctionZeroConfigFailover);
             writer.WriteBoolValue("skipGitConnectDuringLink", SkipGitConnectDuringLink);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject_ssoProtection>("ssoProtection", SsoProtection);
         }

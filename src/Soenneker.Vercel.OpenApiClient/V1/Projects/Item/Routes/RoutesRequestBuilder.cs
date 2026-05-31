@@ -263,15 +263,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RoutesRequestBuilderGetQueryParameters 
         {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("diff")]
-            public string? Diff { get; set; }
-#nullable restore
-#else
-            [QueryParameter("diff")]
-            public string Diff { get; set; }
-#endif
+            public bool? Diff { get; set; }
             [QueryParameter("filter")]
             public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes.GetFilterQueryParameterType? Filter { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -29,10 +29,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch? Value { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigMember2_value_conditionGroup_conditions.UpdateFirewallConfigMember2_value_conditionGroup_conditions_value? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch Value { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigMember2_value_conditionGroup_conditions.UpdateFirewallConfigMember2_value_conditionGroup_conditions_value Value { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,7 +56,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "neg", n => { Neg = n.GetBoolValue(); } },
                 { "op", n => { Op = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigMember2_value_conditionGroup_conditions_op>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigMember2_value_conditionGroup_conditions_type>(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>(global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigMember2_value_conditionGroup_conditions.UpdateFirewallConfigMember2_value_conditionGroup_conditions_value>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigMember2_value_conditionGroup_conditions.UpdateFirewallConfigMember2_value_conditionGroup_conditions_value.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -70,7 +70,84 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("neg", Neg);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigMember2_value_conditionGroup_conditions_op>("op", Op);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigMember2_value_conditionGroup_conditions_type>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigMember2_value_conditionGroup_conditions.UpdateFirewallConfigMember2_value_conditionGroup_conditions_value>("value", Value);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="double"/>, <see cref="string"/>, List&lt;string&gt;
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class UpdateFirewallConfigMember2_value_conditionGroup_conditions_value : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="double"/></summary>
+            public double? Double { get; set; }
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<string>? String { get; set; }
+#nullable restore
+#else
+            public List<string> String { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? UpdateFirewallConfigMember2ValueConditionGroupConditionsValueString { get; set; }
+#nullable restore
+#else
+            public string UpdateFirewallConfigMember2ValueConditionGroupConditionsValueString { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigMember2_value_conditionGroup_conditions.UpdateFirewallConfigMember2_value_conditionGroup_conditions_value"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigMember2_value_conditionGroup_conditions.UpdateFirewallConfigMember2_value_conditionGroup_conditions_value CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigMember2_value_conditionGroup_conditions.UpdateFirewallConfigMember2_value_conditionGroup_conditions_value();
+                if(parseNode.GetDoubleValue() is double doubleValue)
+                {
+                    result.Double = doubleValue;
+                }
+                else if(parseNode.GetStringValue() is string updateFirewallConfigMember2ValueConditionGroupConditionsValueStringValue)
+                {
+                    result.UpdateFirewallConfigMember2ValueConditionGroupConditionsValueString = updateFirewallConfigMember2ValueConditionGroupConditionsValueStringValue;
+                }
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+                {
+                    result.String = stringValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(Double != null)
+                {
+                    writer.WriteDoubleValue(null, Double);
+                }
+                else if(UpdateFirewallConfigMember2ValueConditionGroupConditionsValueString != null)
+                {
+                    writer.WriteStringValue(null, UpdateFirewallConfigMember2ValueConditionGroupConditionsValueString);
+                }
+                else if(String != null)
+                {
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
+                }
+            }
         }
     }
 }

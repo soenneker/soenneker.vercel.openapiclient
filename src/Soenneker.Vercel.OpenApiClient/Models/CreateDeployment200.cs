@@ -28,10 +28,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The aliasAssignedAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch? AliasAssignedAt { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200.CreateDeployment200_aliasAssignedAt? AliasAssignedAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch AliasAssignedAt { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200.CreateDeployment200_aliasAssignedAt AliasAssignedAt { get; set; }
 #endif
         /// <summary>An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -544,7 +544,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "alias", n => { Alias = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "aliasAssigned", n => { AliasAssigned = n.GetBoolValue(); } },
-                { "aliasAssignedAt", n => { AliasAssignedAt = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>(global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "aliasAssignedAt", n => { AliasAssignedAt = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200.CreateDeployment200_aliasAssignedAt>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200.CreateDeployment200_aliasAssignedAt.CreateFromDiscriminatorValue); } },
                 { "aliasError", n => { AliasError = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_aliasError>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_aliasError.CreateFromDiscriminatorValue); } },
                 { "aliasFinal", n => { AliasFinal = n.GetStringValue(); } },
                 { "aliasWarning", n => { AliasWarning = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_aliasWarning>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_aliasWarning.CreateFromDiscriminatorValue); } },
@@ -642,7 +642,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("alias", Alias);
             writer.WriteBoolValue("aliasAssigned", AliasAssigned);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>("aliasAssignedAt", AliasAssignedAt);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200.CreateDeployment200_aliasAssignedAt>("aliasAssignedAt", AliasAssignedAt);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_aliasError>("aliasError", AliasError);
             writer.WriteStringValue("aliasFinal", AliasFinal);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_aliasWarning>("aliasWarning", AliasWarning);
@@ -730,6 +730,61 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("userConfiguredDeploymentId", UserConfiguredDeploymentId);
             writer.WriteDoubleValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class CreateDeployment200_aliasAssignedAt : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="bool"/></summary>
+            public bool? Boolean { get; set; }
+            /// <summary>Composed type representation for type <see cref="double"/></summary>
+            public double? Double { get; set; }
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200.CreateDeployment200_aliasAssignedAt"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200.CreateDeployment200_aliasAssignedAt CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200.CreateDeployment200_aliasAssignedAt();
+                if(parseNode.GetBoolValue() is bool booleanValue)
+                {
+                    result.Boolean = booleanValue;
+                }
+                else if(parseNode.GetDoubleValue() is double doubleValue)
+                {
+                    result.Double = doubleValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(Boolean != null)
+                {
+                    writer.WriteBoolValue(null, Boolean);
+                }
+                else if(Double != null)
+                {
+                    writer.WriteDoubleValue(null, Double);
+                }
+            }
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_customEnvironmentMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_customEnvironmentMember2"/>

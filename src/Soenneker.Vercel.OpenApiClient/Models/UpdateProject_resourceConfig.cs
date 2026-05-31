@@ -48,10 +48,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Specifies whether Zero Config Failover is enabled for this project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch? FunctionZeroConfigFailover { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_resourceConfig_functionZeroConfigFailover? FunctionZeroConfigFailover { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch FunctionZeroConfigFailover { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_resourceConfig_functionZeroConfigFailover FunctionZeroConfigFailover { get; set; }
 #endif
         /// <summary>The isNSNBDisabled property</summary>
         public bool? IsNSNBDisabled { get; set; }
@@ -83,7 +83,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "functionDefaultMemoryType", n => { FunctionDefaultMemoryType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_resourceConfig_functionDefaultMemoryType>(); } },
                 { "functionDefaultRegions", n => { FunctionDefaultRegions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "functionDefaultTimeout", n => { FunctionDefaultTimeout = n.GetDoubleValue(); } },
-                { "functionZeroConfigFailover", n => { FunctionZeroConfigFailover = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>(global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "functionZeroConfigFailover", n => { FunctionZeroConfigFailover = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_resourceConfig_functionZeroConfigFailover>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_resourceConfig_functionZeroConfigFailover.CreateFromDiscriminatorValue); } },
                 { "isNSNBDisabled", n => { IsNSNBDisabled = n.GetBoolValue(); } },
             };
         }
@@ -104,7 +104,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_resourceConfig_functionDefaultMemoryType>("functionDefaultMemoryType", FunctionDefaultMemoryType);
             writer.WriteCollectionOfPrimitiveValues<string>("functionDefaultRegions", FunctionDefaultRegions);
             writer.WriteDoubleValue("functionDefaultTimeout", FunctionDefaultTimeout);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>("functionZeroConfigFailover", FunctionZeroConfigFailover);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject_resourceConfig_functionZeroConfigFailover>("functionZeroConfigFailover", FunctionZeroConfigFailover);
             writer.WriteBoolValue("isNSNBDisabled", IsNSNBDisabled);
         }
     }

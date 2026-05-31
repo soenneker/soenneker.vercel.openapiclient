@@ -25,10 +25,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The unique target project identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch? ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.MoveProjectDomain_projectId? ProjectId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.MoveProjectDomain_projectId ProjectId { get; set; }
 #endif
         /// <summary>Target destination domain for redirect</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,7 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "gitBranch", n => { GitBranch = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>(global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "projectId", n => { ProjectId = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.MoveProjectDomain_projectId>(global::Soenneker.Vercel.OpenApiClient.Models.MoveProjectDomain_projectId.CreateFromDiscriminatorValue); } },
                 { "redirect", n => { Redirect = n.GetStringValue(); } },
                 { "redirectStatusCode", n => { RedirectStatusCode = n.GetIntValue(); } },
             };
@@ -79,7 +79,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("gitBranch", GitBranch);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>("projectId", ProjectId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.MoveProjectDomain_projectId>("projectId", ProjectId);
             writer.WriteStringValue("redirect", Redirect);
             writer.WriteIntValue("redirectStatusCode", RedirectStatusCode);
             writer.WriteAdditionalData(AdditionalData);

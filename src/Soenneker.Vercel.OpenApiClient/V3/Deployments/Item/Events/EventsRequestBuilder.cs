@@ -123,15 +123,8 @@ namespace Soenneker.Vercel.OpenApiClient.V3.Deployments.Item.Events
             public string Slug { get; set; }
 #endif
             /// <summary>HTTP status code range to filter events by.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("statusCode")]
-            public string? StatusCode { get; set; }
-#nullable restore
-#else
-            [QueryParameter("statusCode")]
-            public string StatusCode { get; set; }
-#endif
+            public double? StatusCode { get; set; }
             /// <summary>The Team identifier to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

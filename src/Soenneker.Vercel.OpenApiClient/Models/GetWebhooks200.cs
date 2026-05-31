@@ -39,11 +39,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetWebhooks200();
-            if("GetWebhooks200_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("GetWebhooks200_Branch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GetWebhooks200Branch1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetWebhooks200_Branch1();
             }
-            else if("GetWebhooks200_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("GetWebhooks200_Branch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GetWebhooks200Branch2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetWebhooks200_Branch2();
             }

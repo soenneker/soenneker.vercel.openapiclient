@@ -125,10 +125,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The target property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch? Target { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200_env.UpdateProject200_env_target? Target { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch Target { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200_env.UpdateProject200_env_target Target { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200_env_type? Type { get; set; }
@@ -198,7 +198,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "legacyValue", n => { LegacyValue = n.GetStringValue(); } },
                 { "sunsetSecretId", n => { SunsetSecretId = n.GetStringValue(); } },
-                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>(global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200_env.UpdateProject200_env_target>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200_env.UpdateProject200_env_target.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200_env_type>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
@@ -228,7 +228,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("key", Key);
             writer.WriteStringValue("legacyValue", LegacyValue);
             writer.WriteStringValue("sunsetSecretId", SunsetSecretId);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>("target", Target);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200_env.UpdateProject200_env_target>("target", Target);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200_env_type>("type", Type);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedBy", UpdatedBy);
@@ -608,6 +608,73 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 else if(UpdateProject200EnvContentHintMember9 != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200_env_contentHintMember9>(null, UpdateProject200EnvContentHintMember9);
+                }
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="string"/>, List&lt;string&gt;
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class UpdateProject200_env_target : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<string>? String { get; set; }
+#nullable restore
+#else
+            public List<string> String { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? UpdateProject200EnvTargetString { get; set; }
+#nullable restore
+#else
+            public string UpdateProject200EnvTargetString { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200_env.UpdateProject200_env_target"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200_env.UpdateProject200_env_target CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200_env.UpdateProject200_env_target();
+                if(parseNode.GetStringValue() is string updateProject200EnvTargetStringValue)
+                {
+                    result.UpdateProject200EnvTargetString = updateProject200EnvTargetStringValue;
+                }
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+                {
+                    result.String = stringValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(UpdateProject200EnvTargetString != null)
+                {
+                    writer.WriteStringValue(null, UpdateProject200EnvTargetString);
+                }
+                else if(String != null)
+                {
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
                 }
             }
         }

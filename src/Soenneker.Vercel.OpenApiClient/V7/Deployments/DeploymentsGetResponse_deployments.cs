@@ -345,19 +345,15 @@ namespace Soenneker.Vercel.OpenApiClient.V7.Deployments
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="string"/>
+        /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeploymentsGetResponse_deployments_aliasAssigned : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
+            /// <summary>Composed type representation for type <see cref="bool"/></summary>
+            public bool? Boolean { get; set; }
+            /// <summary>Composed type representation for type <see cref="double"/></summary>
+            public double? Double { get; set; }
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
@@ -368,9 +364,13 @@ namespace Soenneker.Vercel.OpenApiClient.V7.Deployments
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.V7.Deployments.DeploymentsGetResponse_deployments.DeploymentsGetResponse_deployments_aliasAssigned();
-                if(parseNode.GetStringValue() is string stringValue)
+                if(parseNode.GetBoolValue() is bool booleanValue)
                 {
-                    result.String = stringValue;
+                    result.Boolean = booleanValue;
+                }
+                else if(parseNode.GetDoubleValue() is double doubleValue)
+                {
+                    result.Double = doubleValue;
                 }
                 return result;
             }
@@ -389,9 +389,13 @@ namespace Soenneker.Vercel.OpenApiClient.V7.Deployments
             public virtual void Serialize(ISerializationWriter writer)
             {
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
+                if(Boolean != null)
                 {
-                    writer.WriteStringValue(null, String);
+                    writer.WriteBoolValue(null, Boolean);
+                }
+                else if(Double != null)
+                {
+                    writer.WriteDoubleValue(null, Double);
                 }
             }
         }

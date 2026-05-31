@@ -22,10 +22,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The gitUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch? GitUserId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_seatBlock.CreateDeployment200_seatBlock_gitUserId? GitUserId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch GitUserId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_seatBlock.CreateDeployment200_seatBlock_gitUserId GitUserId { get; set; }
 #endif
         /// <summary>Determines if the user was verified during the block. In the git integration case, the commit sender was the author.</summary>
         public bool? IsVerified { get; set; }
@@ -64,7 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "blockCode", n => { BlockCode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_seatBlock_blockCode>(); } },
                 { "gitProvider", n => { GitProvider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_seatBlock_gitProvider>(); } },
-                { "gitUserId", n => { GitUserId = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>(global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "gitUserId", n => { GitUserId = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_seatBlock.CreateDeployment200_seatBlock_gitUserId>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_seatBlock.CreateDeployment200_seatBlock_gitUserId.CreateFromDiscriminatorValue); } },
                 { "isVerified", n => { IsVerified = n.GetBoolValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
             };
@@ -78,10 +78,71 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_seatBlock_blockCode>("blockCode", BlockCode);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_seatBlock_gitProvider>("gitProvider", GitProvider);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>("gitUserId", GitUserId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_seatBlock.CreateDeployment200_seatBlock_gitUserId>("gitUserId", GitUserId);
             writer.WriteBoolValue("isVerified", IsVerified);
             writer.WriteStringValue("userId", UserId);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="double"/>, <see cref="string"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class CreateDeployment200_seatBlock_gitUserId : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="double"/></summary>
+            public double? Double { get; set; }
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? String { get; set; }
+#nullable restore
+#else
+            public string String { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_seatBlock.CreateDeployment200_seatBlock_gitUserId"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_seatBlock.CreateDeployment200_seatBlock_gitUserId CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200_seatBlock.CreateDeployment200_seatBlock_gitUserId();
+                if(parseNode.GetDoubleValue() is double doubleValue)
+                {
+                    result.Double = doubleValue;
+                }
+                else if(parseNode.GetStringValue() is string stringValue)
+                {
+                    result.String = stringValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(Double != null)
+                {
+                    writer.WriteDoubleValue(null, Double);
+                }
+                else if(String != null)
+                {
+                    writer.WriteStringValue(null, String);
+                }
+            }
         }
     }
 }

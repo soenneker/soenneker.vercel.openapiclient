@@ -17,10 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The drains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch? Drains { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1.GetAllLogDrains200Member1_drains? Drains { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch Drains { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1.GetAllLogDrains200Member1_drains Drains { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "drains", n => { Drains = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>(global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "drains", n => { Drains = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1.GetAllLogDrains200Member1_drains>(global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1.GetAllLogDrains200Member1_drains.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,8 +57,75 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>("drains", Drains);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1.GetAllLogDrains200Member1_drains>("drains", Drains);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes List&lt;global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1_drainsMember1&gt;, List&lt;global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1_drainsMember2&gt;
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class GetAllLogDrains200Member1_drains : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1_drainsMember1&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1_drainsMember1>? GetAllLogDrains200Member1DrainsMember1 { get; set; }
+#nullable restore
+#else
+            public List<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1_drainsMember1> GetAllLogDrains200Member1DrainsMember1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1_drainsMember2&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1_drainsMember2>? GetAllLogDrains200Member1DrainsMember2 { get; set; }
+#nullable restore
+#else
+            public List<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1_drainsMember2> GetAllLogDrains200Member1DrainsMember2 { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1.GetAllLogDrains200Member1_drains"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1.GetAllLogDrains200Member1_drains CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1.GetAllLogDrains200Member1_drains();
+                if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1_drainsMember1>(global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1_drainsMember1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1_drainsMember1> getAllLogDrains200Member1DrainsMember1Value)
+                {
+                    result.GetAllLogDrains200Member1DrainsMember1 = getAllLogDrains200Member1DrainsMember1Value;
+                }
+                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1_drainsMember2>(global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1_drainsMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1_drainsMember2> getAllLogDrains200Member1DrainsMember2Value)
+                {
+                    result.GetAllLogDrains200Member1DrainsMember2 = getAllLogDrains200Member1DrainsMember2Value;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(GetAllLogDrains200Member1DrainsMember1 != null)
+                {
+                    writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1_drainsMember1>(null, GetAllLogDrains200Member1DrainsMember1);
+                }
+                else if(GetAllLogDrains200Member1DrainsMember2 != null)
+                {
+                    writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200Member1_drainsMember2>(null, GetAllLogDrains200Member1DrainsMember2);
+                }
+            }
         }
     }
 }

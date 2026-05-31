@@ -45,10 +45,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The log_headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch? LogHeaders { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200_security.UpdateMicrofrontends200_security_log_headers? LogHeaders { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch LogHeaders { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200_security.UpdateMicrofrontends200_security_log_headers LogHeaders { get; set; }
 #endif
         /// <summary>The managedRules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +106,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "firewallUpdatedAt", n => { FirewallUpdatedAt = n.GetDoubleValue(); } },
                 { "ja3Enabled", n => { Ja3Enabled = n.GetBoolValue(); } },
                 { "ja4Enabled", n => { Ja4Enabled = n.GetBoolValue(); } },
-                { "log_headers", n => { LogHeaders = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>(global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "log_headers", n => { LogHeaders = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200_security.UpdateMicrofrontends200_security_log_headers>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200_security.UpdateMicrofrontends200_security_log_headers.CreateFromDiscriminatorValue); } },
                 { "managedRules", n => { ManagedRules = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200_security_managedRules>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200_security_managedRules.CreateFromDiscriminatorValue); } },
                 { "pageIntegrityEnabled", n => { PageIntegrityEnabled = n.GetBoolValue(); } },
                 { "securityPlus", n => { SecurityPlus = n.GetBoolValue(); } },
@@ -131,12 +131,79 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("firewallUpdatedAt", FirewallUpdatedAt);
             writer.WriteBoolValue("ja3Enabled", Ja3Enabled);
             writer.WriteBoolValue("ja4Enabled", Ja4Enabled);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>("log_headers", LogHeaders);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200_security.UpdateMicrofrontends200_security_log_headers>("log_headers", LogHeaders);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200_security_managedRules>("managedRules", ManagedRules);
             writer.WriteBoolValue("pageIntegrityEnabled", PageIntegrityEnabled);
             writer.WriteBoolValue("securityPlus", SecurityPlus);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200_security_securityPlusMetadata>("securityPlusMetadata", SecurityPlusMetadata);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="string"/>, List&lt;string&gt;
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class UpdateMicrofrontends200_security_log_headers : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<string>? String { get; set; }
+#nullable restore
+#else
+            public List<string> String { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? UpdateMicrofrontends200SecurityLogHeadersString { get; set; }
+#nullable restore
+#else
+            public string UpdateMicrofrontends200SecurityLogHeadersString { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200_security.UpdateMicrofrontends200_security_log_headers"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200_security.UpdateMicrofrontends200_security_log_headers CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200_security.UpdateMicrofrontends200_security_log_headers();
+                if(parseNode.GetStringValue() is string updateMicrofrontends200SecurityLogHeadersStringValue)
+                {
+                    result.UpdateMicrofrontends200SecurityLogHeadersString = updateMicrofrontends200SecurityLogHeadersStringValue;
+                }
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+                {
+                    result.String = stringValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(UpdateMicrofrontends200SecurityLogHeadersString != null)
+                {
+                    writer.WriteStringValue(null, UpdateMicrofrontends200SecurityLogHeadersString);
+                }
+                else if(String != null)
+                {
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
+                }
+            }
         }
     }
 }

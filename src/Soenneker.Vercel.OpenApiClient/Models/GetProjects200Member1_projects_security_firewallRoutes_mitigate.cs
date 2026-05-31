@@ -27,10 +27,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The log_headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch? LogHeaders { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member1_projects_security_firewallRoutes_mitigate.GetProjects200Member1_projects_security_firewallRoutes_mitigate_log_headers? LogHeaders { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch LogHeaders { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member1_projects_security_firewallRoutes_mitigate.GetProjects200Member1_projects_security_firewallRoutes_mitigate_log_headers LogHeaders { get; set; }
 #endif
         /// <summary>The rule_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member1_projects_security_firewallRoutes_mitigate_action>(); } },
                 { "erl", n => { Erl = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member1_projects_security_firewallRoutes_mitigate_erl>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member1_projects_security_firewallRoutes_mitigate_erl.CreateFromDiscriminatorValue); } },
-                { "log_headers", n => { LogHeaders = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>(global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "log_headers", n => { LogHeaders = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member1_projects_security_firewallRoutes_mitigate.GetProjects200Member1_projects_security_firewallRoutes_mitigate_log_headers>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member1_projects_security_firewallRoutes_mitigate.GetProjects200Member1_projects_security_firewallRoutes_mitigate_log_headers.CreateFromDiscriminatorValue); } },
                 { "rule_id", n => { RuleId = n.GetStringValue(); } },
                 { "ttl", n => { Ttl = n.GetDoubleValue(); } },
             };
@@ -83,10 +83,77 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member1_projects_security_firewallRoutes_mitigate_action>("action", Action);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member1_projects_security_firewallRoutes_mitigate_erl>("erl", Erl);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>("log_headers", LogHeaders);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member1_projects_security_firewallRoutes_mitigate.GetProjects200Member1_projects_security_firewallRoutes_mitigate_log_headers>("log_headers", LogHeaders);
             writer.WriteStringValue("rule_id", RuleId);
             writer.WriteDoubleValue("ttl", Ttl);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="string"/>, List&lt;string&gt;
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class GetProjects200Member1_projects_security_firewallRoutes_mitigate_log_headers : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? GetProjects200Member1ProjectsSecurityFirewallRoutesMitigateLogHeadersString { get; set; }
+#nullable restore
+#else
+            public string GetProjects200Member1ProjectsSecurityFirewallRoutesMitigateLogHeadersString { get; set; }
+#endif
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<string>? String { get; set; }
+#nullable restore
+#else
+            public List<string> String { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member1_projects_security_firewallRoutes_mitigate.GetProjects200Member1_projects_security_firewallRoutes_mitigate_log_headers"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member1_projects_security_firewallRoutes_mitigate.GetProjects200Member1_projects_security_firewallRoutes_mitigate_log_headers CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Member1_projects_security_firewallRoutes_mitigate.GetProjects200Member1_projects_security_firewallRoutes_mitigate_log_headers();
+                if(parseNode.GetStringValue() is string getProjects200Member1ProjectsSecurityFirewallRoutesMitigateLogHeadersStringValue)
+                {
+                    result.GetProjects200Member1ProjectsSecurityFirewallRoutesMitigateLogHeadersString = getProjects200Member1ProjectsSecurityFirewallRoutesMitigateLogHeadersStringValue;
+                }
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+                {
+                    result.String = stringValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(GetProjects200Member1ProjectsSecurityFirewallRoutesMitigateLogHeadersString != null)
+                {
+                    writer.WriteStringValue(null, GetProjects200Member1ProjectsSecurityFirewallRoutesMitigateLogHeadersString);
+                }
+                else if(String != null)
+                {
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
+                }
+            }
         }
     }
 }

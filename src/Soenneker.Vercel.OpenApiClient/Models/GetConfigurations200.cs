@@ -39,11 +39,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200();
-            if("GetConfigurations200_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("GetConfigurations200_Branch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GetConfigurations200Branch1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200_Branch1();
             }
-            else if("GetConfigurations200_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("GetConfigurations200_Branch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GetConfigurations200Branch2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200_Branch2();
             }

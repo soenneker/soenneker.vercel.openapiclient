@@ -26,10 +26,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The factors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch? Factors { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137.UserEventPayloadMember137_factors? Factors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch Factors { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137.UserEventPayloadMember137_factors Factors { get; set; }
 #endif
         /// <summary>The geolocation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,7 +113,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "env", n => { Env = n.GetStringValue(); } },
-                { "factors", n => { Factors = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>(global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "factors", n => { Factors = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137.UserEventPayloadMember137_factors>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137.UserEventPayloadMember137_factors.CreateFromDiscriminatorValue); } },
                 { "geolocation", n => { Geolocation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137_geolocation>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137_geolocation.CreateFromDiscriminatorValue); } },
                 { "os", n => { Os = n.GetStringValue(); } },
                 { "ssoType", n => { SsoType = n.GetStringValue(); } },
@@ -137,7 +137,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("env", Env);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>("factors", Factors);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137.UserEventPayloadMember137_factors>("factors", Factors);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137_geolocation>("geolocation", Geolocation);
             writer.WriteStringValue("os", Os);
             writer.WriteStringValue("ssoType", SsoType);
@@ -152,6 +152,73 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("viaPasskey", ViaPasskey);
             writer.WriteBoolValue("viaSamlSso", ViaSamlSso);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes List&lt;global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137_factorsMember1&gt;, List&lt;global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137_factorsMember2&gt;
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class UserEventPayloadMember137_factors : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137_factorsMember1&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137_factorsMember1>? UserEventPayloadMember137FactorsMember1 { get; set; }
+#nullable restore
+#else
+            public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137_factorsMember1> UserEventPayloadMember137FactorsMember1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type List&lt;global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137_factorsMember2&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137_factorsMember2>? UserEventPayloadMember137FactorsMember2 { get; set; }
+#nullable restore
+#else
+            public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137_factorsMember2> UserEventPayloadMember137FactorsMember2 { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137.UserEventPayloadMember137_factors"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137.UserEventPayloadMember137_factors CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137.UserEventPayloadMember137_factors();
+                if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137_factorsMember1>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137_factorsMember1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137_factorsMember1> userEventPayloadMember137FactorsMember1Value)
+                {
+                    result.UserEventPayloadMember137FactorsMember1 = userEventPayloadMember137FactorsMember1Value;
+                }
+                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137_factorsMember2>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137_factorsMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137_factorsMember2> userEventPayloadMember137FactorsMember2Value)
+                {
+                    result.UserEventPayloadMember137FactorsMember2 = userEventPayloadMember137FactorsMember2Value;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(UserEventPayloadMember137FactorsMember1 != null)
+                {
+                    writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137_factorsMember1>(null, UserEventPayloadMember137FactorsMember1);
+                }
+                else if(UserEventPayloadMember137FactorsMember2 != null)
+                {
+                    writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137_factorsMember2>(null, UserEventPayloadMember137FactorsMember2);
+                }
+            }
         }
     }
 }

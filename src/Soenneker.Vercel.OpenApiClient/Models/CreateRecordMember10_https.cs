@@ -21,13 +21,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Params { get; set; }
 #endif
         /// <summary>The priority property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch? Priority { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch Priority { get; set; }
-#endif
+        public double? Priority { get; set; }
         /// <summary>The target property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,7 +49,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "params", n => { Params = n.GetStringValue(); } },
-                { "priority", n => { Priority = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>(global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "priority", n => { Priority = n.GetDoubleValue(); } },
                 { "target", n => { Target = n.GetStringValue(); } },
             };
         }
@@ -67,7 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("params", Params);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>("priority", Priority);
+            writer.WriteDoubleValue("priority", Priority);
             writer.WriteStringValue("target", Target);
         }
     }

@@ -35,10 +35,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The logHeaders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch? LogHeaders { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig.PutFirewallConfig_logHeaders? LogHeaders { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch LogHeaders { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig.PutFirewallConfig_logHeaders LogHeaders { get; set; }
 #endif
         /// <summary>The managedRules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "crs", n => { Crs = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig_crs>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig_crs.CreateFromDiscriminatorValue); } },
                 { "firewallEnabled", n => { FirewallEnabled = n.GetBoolValue(); } },
                 { "ips", n => { Ips = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig_ips>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig_ips.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "logHeaders", n => { LogHeaders = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>(global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "logHeaders", n => { LogHeaders = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig.PutFirewallConfig_logHeaders>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig.PutFirewallConfig_logHeaders.CreateFromDiscriminatorValue); } },
                 { "managedRules", n => { ManagedRules = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig_managedRules>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig_managedRules.CreateFromDiscriminatorValue); } },
                 { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig_rules>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig_rules.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -94,9 +94,76 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig_crs>("crs", Crs);
             writer.WriteBoolValue("firewallEnabled", FirewallEnabled);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig_ips>("ips", Ips);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UnionBranch>("logHeaders", LogHeaders);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig.PutFirewallConfig_logHeaders>("logHeaders", LogHeaders);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig_managedRules>("managedRules", ManagedRules);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig_rules>("rules", Rules);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="string"/>, List&lt;string&gt;
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class PutFirewallConfig_logHeaders : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? PutFirewallConfigLogHeadersString { get; set; }
+#nullable restore
+#else
+            public string PutFirewallConfigLogHeadersString { get; set; }
+#endif
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<string>? String { get; set; }
+#nullable restore
+#else
+            public List<string> String { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig.PutFirewallConfig_logHeaders"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig.PutFirewallConfig_logHeaders CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig.PutFirewallConfig_logHeaders();
+                if(parseNode.GetStringValue() is string putFirewallConfigLogHeadersStringValue)
+                {
+                    result.PutFirewallConfigLogHeadersString = putFirewallConfigLogHeadersStringValue;
+                }
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+                {
+                    result.String = stringValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(PutFirewallConfigLogHeadersString != null)
+                {
+                    writer.WriteStringValue(null, PutFirewallConfigLogHeadersString);
+                }
+                else if(String != null)
+                {
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
+                }
+            }
         }
     }
 }

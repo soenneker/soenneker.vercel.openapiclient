@@ -259,15 +259,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.BulkRedirects
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BulkRedirectsRequestBuilderGetQueryParameters 
         {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("diff")]
-            public string? Diff { get; set; }
-#nullable restore
-#else
-            [QueryParameter("diff")]
-            public string Diff { get; set; }
-#endif
+            public bool? Diff { get; set; }
             [QueryParameter("page")]
             public int? Page { get; set; }
             [QueryParameter("per_page")]
