@@ -31,6 +31,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Cwd { get; set; }
 #endif
+        /// <summary>Duration of the command execution in milliseconds.</summary>
+        public double? DurationMs { get; set; }
         /// <summary>If the command did finish, the exit code.</summary>
         public double? ExitCode { get; set; }
         /// <summary>The ID of the command.</summary>
@@ -86,6 +88,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "args", n => { Args = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "cwd", n => { Cwd = n.GetStringValue(); } },
+                { "durationMs", n => { DurationMs = n.GetDoubleValue(); } },
                 { "exitCode", n => { ExitCode = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -102,6 +105,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("args", Args);
             writer.WriteStringValue("cwd", Cwd);
+            writer.WriteDoubleValue("durationMs", DurationMs);
             writer.WriteDoubleValue("exitCode", ExitCode);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);

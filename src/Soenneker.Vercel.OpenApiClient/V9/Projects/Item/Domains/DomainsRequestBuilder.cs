@@ -49,20 +49,20 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains
         /// <summary>
         /// Retrieve the domains associated with a given project by passing either the project `id` or `name` in the URL.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.DomainsRequestBuilder.DomainsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the domains associated with a given project by passing either the project `id` or `name` in the URL.
@@ -123,10 +123,10 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains
             public double? Limit { get; set; }
             /// <summary>Domains sort order by createdAt</summary>
             [QueryParameter("order")]
-            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.GetOrderQueryParameterType? Order { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomainsOrderParameter? Order { get; set; }
             /// <summary>Filters only production domains when set to `true`.</summary>
             [QueryParameter("production")]
-            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.GetProductionQueryParameterType? Production { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomainsProductionParameter? Production { get; set; }
             /// <summary>Filters domains based on their redirect target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -139,7 +139,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains
 #endif
             /// <summary>Excludes redirect project domains when &quot;false&quot;. Includes redirect project domains when &quot;true&quot; (default).</summary>
             [QueryParameter("redirects")]
-            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.GetRedirectsQueryParameterType? Redirects { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomainsRedirectsParameter? Redirects { get; set; }
             /// <summary>Get domains created after this JavaScript timestamp.</summary>
             [QueryParameter("since")]
             public double? Since { get; set; }
@@ -155,7 +155,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains
 #endif
             /// <summary>Filters on the target of the domain. Can be either &quot;production&quot;, &quot;preview&quot;</summary>
             [QueryParameter("target")]
-            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.GetTargetQueryParameterType? Target { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomainsTargetParameter? Target { get; set; }
             /// <summary>The Team identifier to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -171,7 +171,7 @@ namespace Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains
             public double? Until { get; set; }
             /// <summary>Filters domains based on their verification status.</summary>
             [QueryParameter("verified")]
-            public global::Soenneker.Vercel.OpenApiClient.V9.Projects.Item.Domains.GetVerifiedQueryParameterType? Verified { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomainsVerifiedParameter? Verified { get; set; }
         }
     }
 }

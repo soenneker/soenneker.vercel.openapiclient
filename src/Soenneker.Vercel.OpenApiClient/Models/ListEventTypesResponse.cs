@@ -18,10 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The categories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypesResponse_categories>? Categories { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypesResponseCategoriesItem>? Categories { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypesResponse_categories> Categories { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypesResponseCategoriesItem> Categories { get; set; }
 #endif
         /// <summary>The types property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "categories", n => { Categories = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypesResponse_categories>(global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypesResponse_categories.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "categories", n => { Categories = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypesResponseCategoriesItem>(global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypesResponseCategoriesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "types", n => { Types = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ListEventType>(global::Soenneker.Vercel.OpenApiClient.Models.ListEventType.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypesResponse_categories>("categories", Categories);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypesResponseCategoriesItem>("categories", Categories);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ListEventType>("types", Types);
             writer.WriteAdditionalData(AdditionalData);
         }

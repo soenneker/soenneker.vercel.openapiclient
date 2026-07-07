@@ -36,22 +36,22 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.NetworkPolic
         /// <summary>
         /// Replaces the network access policy of a running session. Use this to control which external hosts the session can communicate with. This is a full replacement. Any previously configured network rules will be overwritten.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.NetworkPolicy.NetworkPolicyPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicy200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.NetworkPolicy.NetworkPolicyPostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicy body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.NetworkPolicy.NetworkPolicyRequestBuilder.NetworkPolicyRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicy200Response?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.NetworkPolicy.NetworkPolicyRequestBuilder.NetworkPolicyRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.NetworkPolicy.NetworkPolicyPostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicy body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.NetworkPolicy.NetworkPolicyRequestBuilder.NetworkPolicyRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicy200Response> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.NetworkPolicy.NetworkPolicyRequestBuilder.NetworkPolicyRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.NetworkPolicy.NetworkPolicyPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.NetworkPolicy.NetworkPolicyPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicy200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicy200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Replaces the network access policy of a running session. Use this to control which external hosts the session can communicate with. This is a full replacement. Any previously configured network rules will be overwritten.
@@ -61,11 +61,11 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.NetworkPolic
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicy body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.NetworkPolicy.NetworkPolicyRequestBuilder.NetworkPolicyRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.NetworkPolicy.NetworkPolicyRequestBuilder.NetworkPolicyRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicy body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.NetworkPolicy.NetworkPolicyRequestBuilder.NetworkPolicyRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSessionNetworkPolicyRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.NetworkPolicy.NetworkPolicyRequestBuilder.NetworkPolicyRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

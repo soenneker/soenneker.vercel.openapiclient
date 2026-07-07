@@ -59,24 +59,61 @@ namespace Soenneker.Vercel.OpenApiClient.V8.Artifacts
         {
         }
         /// <summary>
+        /// Deletes all cache artifacts stored for the authenticated team or user, clearing the Remote Cache. Subsequent builds will re-populate the cache.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteAllArtifacts200Response"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteAllArtifacts200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.ArtifactsRequestBuilder.ArtifactsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteAllArtifacts200Response> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.ArtifactsRequestBuilder.ArtifactsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.DeleteAllArtifacts200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.DeleteAllArtifacts200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Query information about an array of artifacts.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.ArtifactsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ArtifactQuery200ResponseResponseJson"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.ArtifactsPostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.ArtifactQuery body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.ArtifactsRequestBuilder.ArtifactsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ArtifactQuery200ResponseResponseJson?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.ArtifactQueryRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.ArtifactsRequestBuilder.ArtifactsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.ArtifactsPostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.ArtifactQuery body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.ArtifactsRequestBuilder.ArtifactsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ArtifactQuery200ResponseResponseJson> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.ArtifactQueryRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.ArtifactsRequestBuilder.ArtifactsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.ArtifactsPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.ArtifactsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ArtifactQuery200ResponseResponseJson>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ArtifactQuery200ResponseResponseJson.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Deletes all cache artifacts stored for the authenticated team or user, clearing the Remote Cache. Subsequent builds will re-populate the cache.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.ArtifactsRequestBuilder.ArtifactsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.ArtifactsRequestBuilder.ArtifactsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
         }
         /// <summary>
         /// Query information about an array of artifacts.
@@ -86,11 +123,11 @@ namespace Soenneker.Vercel.OpenApiClient.V8.Artifacts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.ArtifactQuery body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.ArtifactsRequestBuilder.ArtifactsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.ArtifactQueryRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.ArtifactsRequestBuilder.ArtifactsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.ArtifactQuery body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.ArtifactsRequestBuilder.ArtifactsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.ArtifactQueryRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.ArtifactsRequestBuilder.ArtifactsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -108,6 +145,33 @@ namespace Soenneker.Vercel.OpenApiClient.V8.Artifacts
         public global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.ArtifactsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V8.Artifacts.ArtifactsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Deletes all cache artifacts stored for the authenticated team or user, clearing the Remote Cache. Subsequent builds will re-populate the cache.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ArtifactsRequestBuilderDeleteQueryParameters 
+        {
+            /// <summary>The Team slug to perform the request on behalf of.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("slug")]
+            public string? Slug { get; set; }
+#nullable restore
+#else
+            [QueryParameter("slug")]
+            public string Slug { get; set; }
+#endif
+            /// <summary>The Team identifier to perform the request on behalf of.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("teamId")]
+            public string? TeamId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("teamId")]
+            public string TeamId { get; set; }
+#endif
         }
         /// <summary>
         /// Query information about an array of artifacts.

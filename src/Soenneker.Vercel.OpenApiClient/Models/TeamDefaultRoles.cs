@@ -18,18 +18,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The teamPermissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRoles_teamPermissions?>? TeamPermissions { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRolesTeamPermissionsItem?>? TeamPermissions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRoles_teamPermissions?> TeamPermissions { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRolesTeamPermissionsItem?> TeamPermissions { get; set; }
 #endif
         /// <summary>The teamRoles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRoles_teamRoles?>? TeamRoles { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRolesTeamRolesItem?>? TeamRoles { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRoles_teamRoles?> TeamRoles { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRolesTeamRolesItem?> TeamRoles { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRoles"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "teamPermissions", n => { TeamPermissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRoles_teamPermissions>()?.AsList(); } },
-                { "teamRoles", n => { TeamRoles = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRoles_teamRoles>()?.AsList(); } },
+                { "teamPermissions", n => { TeamPermissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRolesTeamPermissionsItem>()?.AsList(); } },
+                { "teamRoles", n => { TeamRoles = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRolesTeamRolesItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRoles_teamPermissions>("teamPermissions", TeamPermissions);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRoles_teamRoles>("teamRoles", TeamRoles);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRolesTeamPermissionsItem>("teamPermissions", TeamPermissions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRolesTeamRolesItem>("teamRoles", TeamRoles);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

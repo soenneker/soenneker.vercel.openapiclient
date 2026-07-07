@@ -36,22 +36,22 @@ namespace Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass
         /// <summary>
         /// Update the protection bypass for the alias or deployment URL (used for user access &amp; comment access for deployments). Used as shareable links and user scoped access for Vercel Authentication and also to allow external (logged in) people to comment on previews for Preview Comments (next-live-mode).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypass200ResponseResponseJson"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypass body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypass200ResponseResponseJson?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypass body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypass200ResponseResponseJson> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypass200ResponseResponseJson>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypass200ResponseResponseJson.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the protection bypass for the alias or deployment URL (used for user access &amp; comment access for deployments). Used as shareable links and user scoped access for Vercel Authentication and also to allow external (logged in) people to comment on previews for Preview Comments (next-live-mode).
@@ -61,11 +61,11 @@ namespace Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypass body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypass body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.PatchUrlProtectionBypassRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.Aliases.Item.ProtectionBypass.ProtectionBypassRequestBuilder.ProtectionBypassRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

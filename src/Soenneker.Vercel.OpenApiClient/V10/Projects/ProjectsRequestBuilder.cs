@@ -49,20 +49,20 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
         /// <summary>
         /// Allows to retrieve the list of projects of the authenticated user or team. The list will be paginated and the provided query parameters allow filtering the returned projects.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Allows to retrieve the list of projects of the authenticated user or team. The list will be paginated and the provided query parameters allow filtering the returned projects.
@@ -110,7 +110,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
 #endif
             /// <summary>Filter results by build queue configuration. SKIP_NAMESPACE_QUEUE includes projects without a configuration set.</summary>
             [QueryParameter("buildQueueConfiguration")]
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.GetBuildQueueConfigurationQueryParameterType? BuildQueueConfiguration { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsBuildQueueConfigurationParameter? BuildQueueConfiguration { get; set; }
             [QueryParameter("deprecated")]
             public bool? Deprecated { get; set; }
             /// <summary>Filter results by connected Edge Config ID</summary>
@@ -135,7 +135,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
 #endif
             /// <summary>Filter results by projects with elastic concurrency enabled</summary>
             [QueryParameter("elasticConcurrencyEnabled")]
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.GetElasticConcurrencyEnabledQueryParameterType? ElasticConcurrencyEnabled { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsElasticConcurrencyEnabledParameter? ElasticConcurrencyEnabled { get; set; }
             /// <summary>Filter results by excluding those projects that belong to a repo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -158,7 +158,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
 #endif
             /// <summary>Specifies whether PRs from Git forks should require a team member&apos;s authorization before it can be deployed</summary>
             [QueryParameter("gitForkProtection")]
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.GetGitForkProtectionQueryParameterType? GitForkProtection { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsGitForkProtectionParameter? GitForkProtection { get; set; }
             /// <summary>Limit the number of projects returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -221,7 +221,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
 #endif
             /// <summary>Filter results by projects with Static IPs enabled</summary>
             [QueryParameter("staticIpsEnabled")]
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.GetStaticIpsEnabledQueryParameterType? StaticIpsEnabled { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsStaticIpsEnabledParameter? StaticIpsEnabled { get; set; }
             /// <summary>The Team identifier to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -18,18 +18,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The passwordProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtection_passwordProtection? PasswordProtection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionPasswordProtection? PasswordProtection { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtection_passwordProtection PasswordProtection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionPasswordProtection PasswordProtection { get; set; }
 #endif
         /// <summary>The ssoProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtection_ssoProtection? SsoProtection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionSsoProtection? SsoProtection { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtection_ssoProtection SsoProtection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionSsoProtection SsoProtection { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtection"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "passwordProtection", n => { PasswordProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtection_passwordProtection>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtection_passwordProtection.CreateFromDiscriminatorValue); } },
-                { "ssoProtection", n => { SsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtection_ssoProtection>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtection_ssoProtection.CreateFromDiscriminatorValue); } },
+                { "passwordProtection", n => { PasswordProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionPasswordProtection>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionPasswordProtection.CreateFromDiscriminatorValue); } },
+                { "ssoProtection", n => { SsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionSsoProtection>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionSsoProtection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtection_passwordProtection>("passwordProtection", PasswordProtection);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtection_ssoProtection>("ssoProtection", SsoProtection);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionPasswordProtection>("passwordProtection", PasswordProtection);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtectionSsoProtection>("ssoProtection", SsoProtection);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

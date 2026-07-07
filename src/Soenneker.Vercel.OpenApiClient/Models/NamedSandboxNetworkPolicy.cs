@@ -40,7 +40,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public List<string> DeniedCIDRs { get; set; }
 #endif
         /// <summary>The mode property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicy_mode? Mode { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicyMode? Mode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicy"/> and sets the default values.
         /// </summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "allowedCIDRs", n => { AllowedCIDRs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "allowedDomains", n => { AllowedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "deniedCIDRs", n => { DeniedCIDRs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicy_mode>(); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicyMode>(); } },
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("allowedCIDRs", AllowedCIDRs);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedDomains", AllowedDomains);
             writer.WriteCollectionOfPrimitiveValues<string>("deniedCIDRs", DeniedCIDRs);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicy_mode>("mode", Mode);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicyMode>("mode", Mode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember100"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember101"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember102"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember103"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember104"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember105"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember106"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember107"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember108"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember109"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember110"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember111"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember112"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember113"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember114"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember115"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember116"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember117"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember118"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember119"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember120"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember121"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember122"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember123"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember124"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember125"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember126"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember127"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember128"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember129"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember130"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember131"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember132"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember133"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember134"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember135"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember136"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember138"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember139"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember140"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember141"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember142"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember143"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember144"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember145"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember146"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember147"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember148"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember149"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember150"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember151"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember152"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember153"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember154"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember155"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember156"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember157"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember158"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember159"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember160"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember161"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember162"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember163"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember164"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember165"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember166"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember167"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember168"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember169"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember17"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember170"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember171"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember172"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember173"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember174"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember175"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember176"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember177"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember178"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember179"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember18"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember180"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember181"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember182"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember183"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember184"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember185"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember186"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember187"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember188"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember189"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember19"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember190"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember191"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember192"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember193"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember194"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember195"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember196"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember197"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember198"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember199"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember20"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember200"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember201"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember202"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember203"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember204"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember205"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember206"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember207"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember208"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember209"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember21"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember210"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember211"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember212"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember213"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember214"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember215"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember216"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember217"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember218"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember219"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember22"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember220"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember221"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember222"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember223"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember224"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember225"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember226"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember227"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember228"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember229"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember23"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember230"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember231"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember232"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember233"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember234"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember235"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember236"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember237"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember238"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember239"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember24"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember240"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember241"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember242"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember243"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember244"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember245"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember246"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember247"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember248"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember249"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember25"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember250"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember251"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember252"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember253"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember254"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember255"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember256"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember257"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember258"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember259"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember26"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember260"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember261"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember262"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember263"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember264"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember265"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember266"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember267"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember268"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember269"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember27"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember270"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember271"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember272"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember273"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember274"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember275"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember276"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember277"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember278"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember279"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember28"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember280"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember281"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember282"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember283"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember284"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember285"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember286"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember287"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember288"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember289"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember29"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember290"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember292"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember293"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember294"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember295"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember296"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember297"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember298"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember299"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember30"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember300"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember301"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember302"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember303"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember304"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember305"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember306"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember307"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember308"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember309"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember31"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember310"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember311"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember312"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember313"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember314"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember315"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember316"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember317"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember318"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember319"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember32"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember320"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember321"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember322"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember323"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember324"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember325"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember326"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember327"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember328"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember329"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember33"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember330"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember331"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember332"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember333"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember334"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember335"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember336"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember34"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember35"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember36"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember37"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember38"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember39"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember40"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember41"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember42"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember43"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember44"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember45"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember46"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember47"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember48"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember49"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember50"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember51"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember52"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember53"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember54"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember55"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember56"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember57"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember58"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember59"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember60"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember61"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember62"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember63"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember64"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember65"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember66"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember67"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember68"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember69"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember70"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember71"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember72"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember73"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember74"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember75"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember76"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember77"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember78"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember79"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember80"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember81"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember82"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember83"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember84"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember85"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember86"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember87"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember88"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember89"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember9"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember90"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember91"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember92"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember93"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember94"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember95"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember96"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember97"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember98"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember99"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf101"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf102"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf103"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf104"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf105"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf106"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf107"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf108"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf109"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf111"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf113"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf114"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf115"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf116"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf118"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf121"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf122"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf123"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf124"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf127"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf128"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf129"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf130"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf133"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf134"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf135"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf136"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf138"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf142"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf143"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf144"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf145"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf147"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf148"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf149"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf151"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf156"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf157"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf161"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf162"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf164"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf167"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf168"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf17"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf171"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf173"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf177"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf178"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf180"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf182"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf183"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf185"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf186"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf187"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf188"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf189"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf19"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf190"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf193"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf194"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf195"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf196"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf197"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf198"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf199"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf200"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf201"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf202"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf204"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf205"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf206"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf207"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf208"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf209"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf21"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf211"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf212"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf213"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf214"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf215"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf217"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf22"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf220"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf221"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf222"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf223"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf224"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf225"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf227"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf228"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf23"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf230"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf232"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf233"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf234"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf235"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf236"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf237"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf238"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf239"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf240"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf241"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf243"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf244"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf245"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf246"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf247"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf248"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf249"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf25"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf250"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf252"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf253"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf254"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf255"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf256"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf257"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf258"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf259"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf26"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf260"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf261"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf262"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf264"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf265"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf266"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf267"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf268"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf269"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf270"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf271"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf272"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf274"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf275"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf276"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf277"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf278"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf279"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf28"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf281"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf282"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf283"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf285"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf287"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf289"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf290"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf291"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf292"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf294"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf295"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf297"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf298"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf299"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf300"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf302"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf304"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf305"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf306"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf307"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf308"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf31"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf310"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf311"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf312"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf313"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf314"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf315"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf316"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf317"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf318"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf319"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf32"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf321"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf322"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf323"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf324"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf325"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf326"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf328"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf329"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf33"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf332"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf334"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf336"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf337"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf338"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf339"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf34"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf340"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf341"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf342"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf343"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf344"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf345"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf346"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf347"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf348"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf349"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf35"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf350"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf351"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf353"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf355"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf357"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf358"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf36"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf360"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf361"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf363"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf364"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf365"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf366"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf367"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf370"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf371"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf372"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf38"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf40"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf41"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf42"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf45"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf46"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf47"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf49"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf50"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf52"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf54"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf55"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf56"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf57"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf58"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf59"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf60"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf62"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf63"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf65"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf66"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf67"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf68"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf70"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf71"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf73"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf74"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf75"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf76"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf77"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf78"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf79"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf80"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf81"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf82"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf83"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf86"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf87"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf88"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf89"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf9"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf90"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf91"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf95"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf97"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayload : IComposedTypeWrapper, IParsable
@@ -21,2685 +21,2973 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember1 UserEventPayloadMember1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember10"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf10"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember10? UserEventPayloadMember10 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf10? UserEventPayloadOneOf10 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember10 UserEventPayloadMember10 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf10 UserEventPayloadOneOf10 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember100"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember100? UserEventPayloadMember100 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100? UserEventPayloadOneOf100 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember100 UserEventPayloadMember100 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100 UserEventPayloadOneOf100 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember101"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf101"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember101? UserEventPayloadMember101 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf101? UserEventPayloadOneOf101 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember101 UserEventPayloadMember101 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf101 UserEventPayloadOneOf101 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember102"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf102"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember102? UserEventPayloadMember102 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf102? UserEventPayloadOneOf102 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember102 UserEventPayloadMember102 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf102 UserEventPayloadOneOf102 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember103"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf103"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember103? UserEventPayloadMember103 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf103? UserEventPayloadOneOf103 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember103 UserEventPayloadMember103 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf103 UserEventPayloadOneOf103 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember104"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf104"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember104? UserEventPayloadMember104 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf104? UserEventPayloadOneOf104 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember104 UserEventPayloadMember104 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf104 UserEventPayloadOneOf104 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember105"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf105"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember105? UserEventPayloadMember105 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf105? UserEventPayloadOneOf105 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember105 UserEventPayloadMember105 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf105 UserEventPayloadOneOf105 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember106"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf106"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember106? UserEventPayloadMember106 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf106? UserEventPayloadOneOf106 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember106 UserEventPayloadMember106 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf106 UserEventPayloadOneOf106 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember107"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf107"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember107? UserEventPayloadMember107 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf107? UserEventPayloadOneOf107 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember107 UserEventPayloadMember107 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf107 UserEventPayloadOneOf107 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember108"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf108"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember108? UserEventPayloadMember108 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf108? UserEventPayloadOneOf108 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember108 UserEventPayloadMember108 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf108 UserEventPayloadOneOf108 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember109"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf109"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember109? UserEventPayloadMember109 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf109? UserEventPayloadOneOf109 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember109 UserEventPayloadMember109 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf109 UserEventPayloadOneOf109 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember11"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf11"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember11? UserEventPayloadMember11 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf11? UserEventPayloadOneOf11 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember11 UserEventPayloadMember11 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf11 UserEventPayloadOneOf11 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember110"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember110? UserEventPayloadMember110 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110? UserEventPayloadOneOf110 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember110 UserEventPayloadMember110 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110 UserEventPayloadOneOf110 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember111"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf111"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember111? UserEventPayloadMember111 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf111? UserEventPayloadOneOf111 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember111 UserEventPayloadMember111 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf111 UserEventPayloadOneOf111 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember112"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember112? UserEventPayloadMember112 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112? UserEventPayloadOneOf112 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember112 UserEventPayloadMember112 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112 UserEventPayloadOneOf112 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember113"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf113"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember113? UserEventPayloadMember113 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf113? UserEventPayloadOneOf113 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember113 UserEventPayloadMember113 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf113 UserEventPayloadOneOf113 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember114"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf114"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember114? UserEventPayloadMember114 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf114? UserEventPayloadOneOf114 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember114 UserEventPayloadMember114 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf114 UserEventPayloadOneOf114 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember115"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf115"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember115? UserEventPayloadMember115 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf115? UserEventPayloadOneOf115 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember115 UserEventPayloadMember115 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf115 UserEventPayloadOneOf115 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember116"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf116"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember116? UserEventPayloadMember116 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf116? UserEventPayloadOneOf116 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember116 UserEventPayloadMember116 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf116 UserEventPayloadOneOf116 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember117"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember117? UserEventPayloadMember117 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117? UserEventPayloadOneOf117 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember117 UserEventPayloadMember117 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117 UserEventPayloadOneOf117 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember118"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf118"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember118? UserEventPayloadMember118 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf118? UserEventPayloadOneOf118 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember118 UserEventPayloadMember118 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf118 UserEventPayloadOneOf118 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember119"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember119? UserEventPayloadMember119 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119? UserEventPayloadOneOf119 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember119 UserEventPayloadMember119 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119 UserEventPayloadOneOf119 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember12"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember12? UserEventPayloadMember12 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12? UserEventPayloadOneOf12 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember12 UserEventPayloadMember12 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12 UserEventPayloadOneOf12 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember120"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember120? UserEventPayloadMember120 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120? UserEventPayloadOneOf120 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember120 UserEventPayloadMember120 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120 UserEventPayloadOneOf120 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember121"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf121"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember121? UserEventPayloadMember121 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf121? UserEventPayloadOneOf121 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember121 UserEventPayloadMember121 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf121 UserEventPayloadOneOf121 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember122"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf122"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember122? UserEventPayloadMember122 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf122? UserEventPayloadOneOf122 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember122 UserEventPayloadMember122 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf122 UserEventPayloadOneOf122 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember123"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf123"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember123? UserEventPayloadMember123 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf123? UserEventPayloadOneOf123 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember123 UserEventPayloadMember123 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf123 UserEventPayloadOneOf123 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember124"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf124"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember124? UserEventPayloadMember124 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf124? UserEventPayloadOneOf124 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember124 UserEventPayloadMember124 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf124 UserEventPayloadOneOf124 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember125"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember125? UserEventPayloadMember125 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125? UserEventPayloadOneOf125 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember125 UserEventPayloadMember125 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125 UserEventPayloadOneOf125 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember126"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember126? UserEventPayloadMember126 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126? UserEventPayloadOneOf126 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember126 UserEventPayloadMember126 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126 UserEventPayloadOneOf126 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember127"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf127"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember127? UserEventPayloadMember127 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf127? UserEventPayloadOneOf127 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember127 UserEventPayloadMember127 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf127 UserEventPayloadOneOf127 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember128"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf128"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember128? UserEventPayloadMember128 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf128? UserEventPayloadOneOf128 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember128 UserEventPayloadMember128 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf128 UserEventPayloadOneOf128 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember129"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf129"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember129? UserEventPayloadMember129 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf129? UserEventPayloadOneOf129 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember129 UserEventPayloadMember129 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf129 UserEventPayloadOneOf129 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember13"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf13"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember13? UserEventPayloadMember13 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf13? UserEventPayloadOneOf13 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember13 UserEventPayloadMember13 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf13 UserEventPayloadOneOf13 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember130"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf130"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember130? UserEventPayloadMember130 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf130? UserEventPayloadOneOf130 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember130 UserEventPayloadMember130 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf130 UserEventPayloadOneOf130 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember131"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember131? UserEventPayloadMember131 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131? UserEventPayloadOneOf131 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember131 UserEventPayloadMember131 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131 UserEventPayloadOneOf131 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember132"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember132? UserEventPayloadMember132 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132? UserEventPayloadOneOf132 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember132 UserEventPayloadMember132 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132 UserEventPayloadOneOf132 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember133"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf133"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember133? UserEventPayloadMember133 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf133? UserEventPayloadOneOf133 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember133 UserEventPayloadMember133 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf133 UserEventPayloadOneOf133 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember134"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf134"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember134? UserEventPayloadMember134 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf134? UserEventPayloadOneOf134 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember134 UserEventPayloadMember134 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf134 UserEventPayloadOneOf134 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember135"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf135"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember135? UserEventPayloadMember135 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf135? UserEventPayloadOneOf135 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember135 UserEventPayloadMember135 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf135 UserEventPayloadOneOf135 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember136"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf136"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember136? UserEventPayloadMember136 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf136? UserEventPayloadOneOf136 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember136 UserEventPayloadMember136 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf136 UserEventPayloadOneOf136 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137? UserEventPayloadMember137 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137? UserEventPayloadOneOf137 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137 UserEventPayloadMember137 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137 UserEventPayloadOneOf137 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember138"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf138"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember138? UserEventPayloadMember138 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf138? UserEventPayloadOneOf138 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember138 UserEventPayloadMember138 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf138 UserEventPayloadOneOf138 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember139"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember139? UserEventPayloadMember139 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139? UserEventPayloadOneOf139 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember139 UserEventPayloadMember139 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139 UserEventPayloadOneOf139 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember14"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf14"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember14? UserEventPayloadMember14 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf14? UserEventPayloadOneOf14 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember14 UserEventPayloadMember14 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf14 UserEventPayloadOneOf14 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember140"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember140? UserEventPayloadMember140 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140? UserEventPayloadOneOf140 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember140 UserEventPayloadMember140 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140 UserEventPayloadOneOf140 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember141"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember141? UserEventPayloadMember141 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141? UserEventPayloadOneOf141 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember141 UserEventPayloadMember141 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141 UserEventPayloadOneOf141 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember142"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf142"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember142? UserEventPayloadMember142 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf142? UserEventPayloadOneOf142 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember142 UserEventPayloadMember142 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf142 UserEventPayloadOneOf142 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember143"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf143"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember143? UserEventPayloadMember143 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf143? UserEventPayloadOneOf143 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember143 UserEventPayloadMember143 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf143 UserEventPayloadOneOf143 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember144"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf144"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember144? UserEventPayloadMember144 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf144? UserEventPayloadOneOf144 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember144 UserEventPayloadMember144 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf144 UserEventPayloadOneOf144 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember145"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf145"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember145? UserEventPayloadMember145 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf145? UserEventPayloadOneOf145 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember145 UserEventPayloadMember145 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf145 UserEventPayloadOneOf145 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember146"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember146? UserEventPayloadMember146 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146? UserEventPayloadOneOf146 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember146 UserEventPayloadMember146 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146 UserEventPayloadOneOf146 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember147"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf147"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember147? UserEventPayloadMember147 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf147? UserEventPayloadOneOf147 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember147 UserEventPayloadMember147 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf147 UserEventPayloadOneOf147 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember148"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf148"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember148? UserEventPayloadMember148 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf148? UserEventPayloadOneOf148 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember148 UserEventPayloadMember148 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf148 UserEventPayloadOneOf148 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember149"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf149"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember149? UserEventPayloadMember149 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf149? UserEventPayloadOneOf149 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember149 UserEventPayloadMember149 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf149 UserEventPayloadOneOf149 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember15"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf15"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember15? UserEventPayloadMember15 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf15? UserEventPayloadOneOf15 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember15 UserEventPayloadMember15 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf15 UserEventPayloadOneOf15 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember150"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember150? UserEventPayloadMember150 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150? UserEventPayloadOneOf150 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember150 UserEventPayloadMember150 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150 UserEventPayloadOneOf150 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember151"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf151"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember151? UserEventPayloadMember151 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf151? UserEventPayloadOneOf151 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember151 UserEventPayloadMember151 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf151 UserEventPayloadOneOf151 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember152"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember152? UserEventPayloadMember152 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152? UserEventPayloadOneOf152 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember152 UserEventPayloadMember152 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152 UserEventPayloadOneOf152 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember153"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember153? UserEventPayloadMember153 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153? UserEventPayloadOneOf153 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember153 UserEventPayloadMember153 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153 UserEventPayloadOneOf153 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember154"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember154? UserEventPayloadMember154 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154? UserEventPayloadOneOf154 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember154 UserEventPayloadMember154 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154 UserEventPayloadOneOf154 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember155"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember155? UserEventPayloadMember155 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155? UserEventPayloadOneOf155 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember155 UserEventPayloadMember155 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155 UserEventPayloadOneOf155 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember156"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf156"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember156? UserEventPayloadMember156 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf156? UserEventPayloadOneOf156 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember156 UserEventPayloadMember156 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf156 UserEventPayloadOneOf156 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember157"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf157"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember157? UserEventPayloadMember157 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf157? UserEventPayloadOneOf157 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember157 UserEventPayloadMember157 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf157 UserEventPayloadOneOf157 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember158"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember158? UserEventPayloadMember158 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158? UserEventPayloadOneOf158 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember158 UserEventPayloadMember158 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158 UserEventPayloadOneOf158 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember159"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember159? UserEventPayloadMember159 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159? UserEventPayloadOneOf159 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember159 UserEventPayloadMember159 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159 UserEventPayloadOneOf159 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember16"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember16? UserEventPayloadMember16 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16? UserEventPayloadOneOf16 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember16 UserEventPayloadMember16 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16 UserEventPayloadOneOf16 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember160"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember160? UserEventPayloadMember160 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160? UserEventPayloadOneOf160 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember160 UserEventPayloadMember160 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160 UserEventPayloadOneOf160 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember161"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf161"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember161? UserEventPayloadMember161 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf161? UserEventPayloadOneOf161 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember161 UserEventPayloadMember161 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf161 UserEventPayloadOneOf161 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember162"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf162"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember162? UserEventPayloadMember162 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf162? UserEventPayloadOneOf162 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember162 UserEventPayloadMember162 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf162 UserEventPayloadOneOf162 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember163"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember163? UserEventPayloadMember163 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163? UserEventPayloadOneOf163 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember163 UserEventPayloadMember163 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163 UserEventPayloadOneOf163 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember164"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf164"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember164? UserEventPayloadMember164 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf164? UserEventPayloadOneOf164 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember164 UserEventPayloadMember164 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf164 UserEventPayloadOneOf164 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember165"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember165? UserEventPayloadMember165 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165? UserEventPayloadOneOf165 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember165 UserEventPayloadMember165 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165 UserEventPayloadOneOf165 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember166"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember166? UserEventPayloadMember166 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166? UserEventPayloadOneOf166 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember166 UserEventPayloadMember166 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166 UserEventPayloadOneOf166 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember167"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf167"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember167? UserEventPayloadMember167 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf167? UserEventPayloadOneOf167 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember167 UserEventPayloadMember167 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf167 UserEventPayloadOneOf167 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember168"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf168"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember168? UserEventPayloadMember168 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf168? UserEventPayloadOneOf168 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember168 UserEventPayloadMember168 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf168 UserEventPayloadOneOf168 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember169"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember169? UserEventPayloadMember169 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169? UserEventPayloadOneOf169 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember169 UserEventPayloadMember169 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169 UserEventPayloadOneOf169 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember17"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf17"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember17? UserEventPayloadMember17 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf17? UserEventPayloadOneOf17 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember17 UserEventPayloadMember17 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf17 UserEventPayloadOneOf17 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember170"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember170? UserEventPayloadMember170 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170? UserEventPayloadOneOf170 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember170 UserEventPayloadMember170 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170 UserEventPayloadOneOf170 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember171"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf171"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember171? UserEventPayloadMember171 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf171? UserEventPayloadOneOf171 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember171 UserEventPayloadMember171 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf171 UserEventPayloadOneOf171 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember172"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember172? UserEventPayloadMember172 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172? UserEventPayloadOneOf172 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember172 UserEventPayloadMember172 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172 UserEventPayloadOneOf172 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember173"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf173"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember173? UserEventPayloadMember173 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf173? UserEventPayloadOneOf173 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember173 UserEventPayloadMember173 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf173 UserEventPayloadOneOf173 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember174"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember174? UserEventPayloadMember174 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174? UserEventPayloadOneOf174 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember174 UserEventPayloadMember174 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174 UserEventPayloadOneOf174 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember175"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember175? UserEventPayloadMember175 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175? UserEventPayloadOneOf175 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember175 UserEventPayloadMember175 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175 UserEventPayloadOneOf175 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember176"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember176? UserEventPayloadMember176 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176? UserEventPayloadOneOf176 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember176 UserEventPayloadMember176 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176 UserEventPayloadOneOf176 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember177"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf177"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember177? UserEventPayloadMember177 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf177? UserEventPayloadOneOf177 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember177 UserEventPayloadMember177 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf177 UserEventPayloadOneOf177 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember178"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf178"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember178? UserEventPayloadMember178 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf178? UserEventPayloadOneOf178 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember178 UserEventPayloadMember178 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf178 UserEventPayloadOneOf178 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember179"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember179? UserEventPayloadMember179 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179? UserEventPayloadOneOf179 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember179 UserEventPayloadMember179 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179 UserEventPayloadOneOf179 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember18"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember18? UserEventPayloadMember18 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18? UserEventPayloadOneOf18 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember18 UserEventPayloadMember18 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18 UserEventPayloadOneOf18 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember180"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf180"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember180? UserEventPayloadMember180 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf180? UserEventPayloadOneOf180 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember180 UserEventPayloadMember180 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf180 UserEventPayloadOneOf180 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember181"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember181? UserEventPayloadMember181 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181? UserEventPayloadOneOf181 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember181 UserEventPayloadMember181 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181 UserEventPayloadOneOf181 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember182"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf182"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember182? UserEventPayloadMember182 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf182? UserEventPayloadOneOf182 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember182 UserEventPayloadMember182 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf182 UserEventPayloadOneOf182 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember183"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf183"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember183? UserEventPayloadMember183 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf183? UserEventPayloadOneOf183 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember183 UserEventPayloadMember183 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf183 UserEventPayloadOneOf183 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember184"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember184? UserEventPayloadMember184 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184? UserEventPayloadOneOf184 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember184 UserEventPayloadMember184 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184 UserEventPayloadOneOf184 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember185"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf185"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember185? UserEventPayloadMember185 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf185? UserEventPayloadOneOf185 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember185 UserEventPayloadMember185 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf185 UserEventPayloadOneOf185 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember186"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf186"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember186? UserEventPayloadMember186 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf186? UserEventPayloadOneOf186 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember186 UserEventPayloadMember186 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf186 UserEventPayloadOneOf186 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember187"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf187"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember187? UserEventPayloadMember187 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf187? UserEventPayloadOneOf187 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember187 UserEventPayloadMember187 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf187 UserEventPayloadOneOf187 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember188"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf188"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember188? UserEventPayloadMember188 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf188? UserEventPayloadOneOf188 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember188 UserEventPayloadMember188 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf188 UserEventPayloadOneOf188 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember189"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf189"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember189? UserEventPayloadMember189 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf189? UserEventPayloadOneOf189 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember189 UserEventPayloadMember189 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf189 UserEventPayloadOneOf189 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember19"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf19"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember19? UserEventPayloadMember19 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf19? UserEventPayloadOneOf19 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember19 UserEventPayloadMember19 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf19 UserEventPayloadOneOf19 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember190"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf190"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember190? UserEventPayloadMember190 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf190? UserEventPayloadOneOf190 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember190 UserEventPayloadMember190 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf190 UserEventPayloadOneOf190 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember191"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember191? UserEventPayloadMember191 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191? UserEventPayloadOneOf191 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember191 UserEventPayloadMember191 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191 UserEventPayloadOneOf191 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember192"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember192? UserEventPayloadMember192 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192? UserEventPayloadOneOf192 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember192 UserEventPayloadMember192 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192 UserEventPayloadOneOf192 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember193"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf193"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember193? UserEventPayloadMember193 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf193? UserEventPayloadOneOf193 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember193 UserEventPayloadMember193 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf193 UserEventPayloadOneOf193 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember194"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf194"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember194? UserEventPayloadMember194 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf194? UserEventPayloadOneOf194 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember194 UserEventPayloadMember194 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf194 UserEventPayloadOneOf194 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember195"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf195"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember195? UserEventPayloadMember195 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf195? UserEventPayloadOneOf195 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember195 UserEventPayloadMember195 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf195 UserEventPayloadOneOf195 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember196"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf196"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember196? UserEventPayloadMember196 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf196? UserEventPayloadOneOf196 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember196 UserEventPayloadMember196 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf196 UserEventPayloadOneOf196 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember197"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf197"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember197? UserEventPayloadMember197 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf197? UserEventPayloadOneOf197 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember197 UserEventPayloadMember197 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf197 UserEventPayloadOneOf197 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember198"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf198"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember198? UserEventPayloadMember198 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf198? UserEventPayloadOneOf198 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember198 UserEventPayloadMember198 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf198 UserEventPayloadOneOf198 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember199"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf199"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember199? UserEventPayloadMember199 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf199? UserEventPayloadOneOf199 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember199 UserEventPayloadMember199 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf199 UserEventPayloadOneOf199 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember2? UserEventPayloadMember2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf2? UserEventPayloadOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember2 UserEventPayloadMember2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf2 UserEventPayloadOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember20"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember20? UserEventPayloadMember20 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20? UserEventPayloadOneOf20 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember20 UserEventPayloadMember20 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20 UserEventPayloadOneOf20 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember200"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf200"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember200? UserEventPayloadMember200 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf200? UserEventPayloadOneOf200 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember200 UserEventPayloadMember200 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf200 UserEventPayloadOneOf200 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember201"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf201"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember201? UserEventPayloadMember201 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf201? UserEventPayloadOneOf201 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember201 UserEventPayloadMember201 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf201 UserEventPayloadOneOf201 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember202"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf202"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember202? UserEventPayloadMember202 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf202? UserEventPayloadOneOf202 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember202 UserEventPayloadMember202 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf202 UserEventPayloadOneOf202 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember203"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember203? UserEventPayloadMember203 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203? UserEventPayloadOneOf203 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember203 UserEventPayloadMember203 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203 UserEventPayloadOneOf203 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember204"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf204"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember204? UserEventPayloadMember204 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf204? UserEventPayloadOneOf204 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember204 UserEventPayloadMember204 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf204 UserEventPayloadOneOf204 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember205"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf205"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember205? UserEventPayloadMember205 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf205? UserEventPayloadOneOf205 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember205 UserEventPayloadMember205 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf205 UserEventPayloadOneOf205 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember206"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf206"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember206? UserEventPayloadMember206 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf206? UserEventPayloadOneOf206 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember206 UserEventPayloadMember206 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf206 UserEventPayloadOneOf206 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember207"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf207"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember207? UserEventPayloadMember207 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf207? UserEventPayloadOneOf207 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember207 UserEventPayloadMember207 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf207 UserEventPayloadOneOf207 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember208"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf208"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember208? UserEventPayloadMember208 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf208? UserEventPayloadOneOf208 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember208 UserEventPayloadMember208 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf208 UserEventPayloadOneOf208 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember209"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf209"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember209? UserEventPayloadMember209 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf209? UserEventPayloadOneOf209 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember209 UserEventPayloadMember209 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf209 UserEventPayloadOneOf209 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember21"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf21"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember21? UserEventPayloadMember21 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf21? UserEventPayloadOneOf21 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember21 UserEventPayloadMember21 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf21 UserEventPayloadOneOf21 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember210"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember210? UserEventPayloadMember210 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210? UserEventPayloadOneOf210 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember210 UserEventPayloadMember210 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210 UserEventPayloadOneOf210 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember211"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf211"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember211? UserEventPayloadMember211 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf211? UserEventPayloadOneOf211 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember211 UserEventPayloadMember211 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf211 UserEventPayloadOneOf211 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember212"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf212"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember212? UserEventPayloadMember212 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf212? UserEventPayloadOneOf212 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember212 UserEventPayloadMember212 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf212 UserEventPayloadOneOf212 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember213"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf213"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember213? UserEventPayloadMember213 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf213? UserEventPayloadOneOf213 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember213 UserEventPayloadMember213 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf213 UserEventPayloadOneOf213 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember214"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf214"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember214? UserEventPayloadMember214 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf214? UserEventPayloadOneOf214 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember214 UserEventPayloadMember214 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf214 UserEventPayloadOneOf214 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember215"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf215"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember215? UserEventPayloadMember215 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf215? UserEventPayloadOneOf215 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember215 UserEventPayloadMember215 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf215 UserEventPayloadOneOf215 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember216"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember216? UserEventPayloadMember216 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216? UserEventPayloadOneOf216 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember216 UserEventPayloadMember216 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216 UserEventPayloadOneOf216 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember217"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf217"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember217? UserEventPayloadMember217 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf217? UserEventPayloadOneOf217 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember217 UserEventPayloadMember217 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf217 UserEventPayloadOneOf217 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember218"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember218? UserEventPayloadMember218 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218? UserEventPayloadOneOf218 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember218 UserEventPayloadMember218 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218 UserEventPayloadOneOf218 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember219"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember219? UserEventPayloadMember219 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219? UserEventPayloadOneOf219 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember219 UserEventPayloadMember219 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219 UserEventPayloadOneOf219 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember22"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf22"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember22? UserEventPayloadMember22 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf22? UserEventPayloadOneOf22 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember22 UserEventPayloadMember22 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf22 UserEventPayloadOneOf22 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember220"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf220"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember220? UserEventPayloadMember220 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf220? UserEventPayloadOneOf220 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember220 UserEventPayloadMember220 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf220 UserEventPayloadOneOf220 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember221"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf221"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember221? UserEventPayloadMember221 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf221? UserEventPayloadOneOf221 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember221 UserEventPayloadMember221 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf221 UserEventPayloadOneOf221 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember222"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf222"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember222? UserEventPayloadMember222 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf222? UserEventPayloadOneOf222 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember222 UserEventPayloadMember222 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf222 UserEventPayloadOneOf222 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember223"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf223"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember223? UserEventPayloadMember223 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf223? UserEventPayloadOneOf223 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember223 UserEventPayloadMember223 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf223 UserEventPayloadOneOf223 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember224"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf224"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember224? UserEventPayloadMember224 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf224? UserEventPayloadOneOf224 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember224 UserEventPayloadMember224 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf224 UserEventPayloadOneOf224 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember225"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf225"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember225? UserEventPayloadMember225 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf225? UserEventPayloadOneOf225 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember225 UserEventPayloadMember225 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf225 UserEventPayloadOneOf225 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember226"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember226? UserEventPayloadMember226 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226? UserEventPayloadOneOf226 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember226 UserEventPayloadMember226 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226 UserEventPayloadOneOf226 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember227"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf227"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember227? UserEventPayloadMember227 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf227? UserEventPayloadOneOf227 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember227 UserEventPayloadMember227 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf227 UserEventPayloadOneOf227 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember228"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf228"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember228? UserEventPayloadMember228 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf228? UserEventPayloadOneOf228 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember228 UserEventPayloadMember228 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf228 UserEventPayloadOneOf228 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember229"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember229? UserEventPayloadMember229 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229? UserEventPayloadOneOf229 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember229 UserEventPayloadMember229 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229 UserEventPayloadOneOf229 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember23"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf23"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember23? UserEventPayloadMember23 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf23? UserEventPayloadOneOf23 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember23 UserEventPayloadMember23 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf23 UserEventPayloadOneOf23 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember230"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf230"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember230? UserEventPayloadMember230 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf230? UserEventPayloadOneOf230 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember230 UserEventPayloadMember230 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf230 UserEventPayloadOneOf230 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember231"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember231? UserEventPayloadMember231 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231? UserEventPayloadOneOf231 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember231 UserEventPayloadMember231 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231 UserEventPayloadOneOf231 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember232"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf232"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember232? UserEventPayloadMember232 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf232? UserEventPayloadOneOf232 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember232 UserEventPayloadMember232 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf232 UserEventPayloadOneOf232 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember233"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf233"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember233? UserEventPayloadMember233 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf233? UserEventPayloadOneOf233 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember233 UserEventPayloadMember233 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf233 UserEventPayloadOneOf233 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember234"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf234"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember234? UserEventPayloadMember234 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf234? UserEventPayloadOneOf234 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember234 UserEventPayloadMember234 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf234 UserEventPayloadOneOf234 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember235"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf235"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember235? UserEventPayloadMember235 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf235? UserEventPayloadOneOf235 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember235 UserEventPayloadMember235 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf235 UserEventPayloadOneOf235 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember236"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf236"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember236? UserEventPayloadMember236 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf236? UserEventPayloadOneOf236 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember236 UserEventPayloadMember236 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf236 UserEventPayloadOneOf236 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember237"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf237"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember237? UserEventPayloadMember237 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf237? UserEventPayloadOneOf237 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember237 UserEventPayloadMember237 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf237 UserEventPayloadOneOf237 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember238"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf238"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember238? UserEventPayloadMember238 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf238? UserEventPayloadOneOf238 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember238 UserEventPayloadMember238 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf238 UserEventPayloadOneOf238 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember239"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf239"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember239? UserEventPayloadMember239 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf239? UserEventPayloadOneOf239 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember239 UserEventPayloadMember239 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf239 UserEventPayloadOneOf239 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember24"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember24? UserEventPayloadMember24 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24? UserEventPayloadOneOf24 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember24 UserEventPayloadMember24 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24 UserEventPayloadOneOf24 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember240"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf240"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember240? UserEventPayloadMember240 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf240? UserEventPayloadOneOf240 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember240 UserEventPayloadMember240 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf240 UserEventPayloadOneOf240 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember241"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf241"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember241? UserEventPayloadMember241 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf241? UserEventPayloadOneOf241 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember241 UserEventPayloadMember241 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf241 UserEventPayloadOneOf241 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember242"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember242? UserEventPayloadMember242 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242? UserEventPayloadOneOf242 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember242 UserEventPayloadMember242 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242 UserEventPayloadOneOf242 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember243"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf243"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember243? UserEventPayloadMember243 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf243? UserEventPayloadOneOf243 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember243 UserEventPayloadMember243 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf243 UserEventPayloadOneOf243 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember244"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf244"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember244? UserEventPayloadMember244 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf244? UserEventPayloadOneOf244 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember244 UserEventPayloadMember244 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf244 UserEventPayloadOneOf244 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember245"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf245"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember245? UserEventPayloadMember245 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf245? UserEventPayloadOneOf245 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember245 UserEventPayloadMember245 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf245 UserEventPayloadOneOf245 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember246"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf246"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember246? UserEventPayloadMember246 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf246? UserEventPayloadOneOf246 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember246 UserEventPayloadMember246 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf246 UserEventPayloadOneOf246 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember247"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf247"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember247? UserEventPayloadMember247 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf247? UserEventPayloadOneOf247 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember247 UserEventPayloadMember247 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf247 UserEventPayloadOneOf247 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember248"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf248"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember248? UserEventPayloadMember248 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf248? UserEventPayloadOneOf248 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember248 UserEventPayloadMember248 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf248 UserEventPayloadOneOf248 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember249"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf249"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember249? UserEventPayloadMember249 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf249? UserEventPayloadOneOf249 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember249 UserEventPayloadMember249 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf249 UserEventPayloadOneOf249 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember25"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf25"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember25? UserEventPayloadMember25 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf25? UserEventPayloadOneOf25 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember25 UserEventPayloadMember25 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf25 UserEventPayloadOneOf25 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember250"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf250"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember250? UserEventPayloadMember250 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf250? UserEventPayloadOneOf250 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember250 UserEventPayloadMember250 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf250 UserEventPayloadOneOf250 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember251"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember251? UserEventPayloadMember251 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251? UserEventPayloadOneOf251 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember251 UserEventPayloadMember251 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251 UserEventPayloadOneOf251 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember252"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf252"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember252? UserEventPayloadMember252 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf252? UserEventPayloadOneOf252 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember252 UserEventPayloadMember252 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf252 UserEventPayloadOneOf252 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember253"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf253"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember253? UserEventPayloadMember253 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf253? UserEventPayloadOneOf253 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember253 UserEventPayloadMember253 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf253 UserEventPayloadOneOf253 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember254"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf254"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember254? UserEventPayloadMember254 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf254? UserEventPayloadOneOf254 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember254 UserEventPayloadMember254 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf254 UserEventPayloadOneOf254 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember255"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf255"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember255? UserEventPayloadMember255 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf255? UserEventPayloadOneOf255 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember255 UserEventPayloadMember255 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf255 UserEventPayloadOneOf255 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember256"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf256"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember256? UserEventPayloadMember256 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf256? UserEventPayloadOneOf256 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember256 UserEventPayloadMember256 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf256 UserEventPayloadOneOf256 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember257"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf257"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember257? UserEventPayloadMember257 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf257? UserEventPayloadOneOf257 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember257 UserEventPayloadMember257 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf257 UserEventPayloadOneOf257 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember258"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf258"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember258? UserEventPayloadMember258 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf258? UserEventPayloadOneOf258 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember258 UserEventPayloadMember258 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf258 UserEventPayloadOneOf258 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember259"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf259"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember259? UserEventPayloadMember259 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf259? UserEventPayloadOneOf259 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember259 UserEventPayloadMember259 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf259 UserEventPayloadOneOf259 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember26"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf26"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember26? UserEventPayloadMember26 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf26? UserEventPayloadOneOf26 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember26 UserEventPayloadMember26 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf26 UserEventPayloadOneOf26 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember260"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf260"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember260? UserEventPayloadMember260 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf260? UserEventPayloadOneOf260 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember260 UserEventPayloadMember260 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf260 UserEventPayloadOneOf260 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember261"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf261"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember261? UserEventPayloadMember261 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf261? UserEventPayloadOneOf261 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember261 UserEventPayloadMember261 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf261 UserEventPayloadOneOf261 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember262"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf262"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember262? UserEventPayloadMember262 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf262? UserEventPayloadOneOf262 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember262 UserEventPayloadMember262 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf262 UserEventPayloadOneOf262 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember263"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember263? UserEventPayloadMember263 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263? UserEventPayloadOneOf263 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember263 UserEventPayloadMember263 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263 UserEventPayloadOneOf263 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember264"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf264"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember264? UserEventPayloadMember264 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf264? UserEventPayloadOneOf264 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember264 UserEventPayloadMember264 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf264 UserEventPayloadOneOf264 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember265"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf265"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember265? UserEventPayloadMember265 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf265? UserEventPayloadOneOf265 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember265 UserEventPayloadMember265 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf265 UserEventPayloadOneOf265 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember266"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf266"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember266? UserEventPayloadMember266 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf266? UserEventPayloadOneOf266 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember266 UserEventPayloadMember266 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf266 UserEventPayloadOneOf266 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember267"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf267"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember267? UserEventPayloadMember267 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf267? UserEventPayloadOneOf267 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember267 UserEventPayloadMember267 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf267 UserEventPayloadOneOf267 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember268"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf268"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember268? UserEventPayloadMember268 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf268? UserEventPayloadOneOf268 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember268 UserEventPayloadMember268 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf268 UserEventPayloadOneOf268 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember269"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf269"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember269? UserEventPayloadMember269 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf269? UserEventPayloadOneOf269 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember269 UserEventPayloadMember269 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf269 UserEventPayloadOneOf269 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember27"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember27? UserEventPayloadMember27 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27? UserEventPayloadOneOf27 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember27 UserEventPayloadMember27 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27 UserEventPayloadOneOf27 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember270"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf270"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember270? UserEventPayloadMember270 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf270? UserEventPayloadOneOf270 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember270 UserEventPayloadMember270 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf270 UserEventPayloadOneOf270 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember271"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf271"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember271? UserEventPayloadMember271 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf271? UserEventPayloadOneOf271 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember271 UserEventPayloadMember271 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf271 UserEventPayloadOneOf271 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember272"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf272"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember272? UserEventPayloadMember272 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf272? UserEventPayloadOneOf272 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember272 UserEventPayloadMember272 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf272 UserEventPayloadOneOf272 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember273"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember273? UserEventPayloadMember273 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273? UserEventPayloadOneOf273 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember273 UserEventPayloadMember273 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273 UserEventPayloadOneOf273 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember274"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf274"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember274? UserEventPayloadMember274 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf274? UserEventPayloadOneOf274 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember274 UserEventPayloadMember274 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf274 UserEventPayloadOneOf274 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember275"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf275"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember275? UserEventPayloadMember275 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf275? UserEventPayloadOneOf275 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember275 UserEventPayloadMember275 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf275 UserEventPayloadOneOf275 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember276"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf276"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember276? UserEventPayloadMember276 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf276? UserEventPayloadOneOf276 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember276 UserEventPayloadMember276 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf276 UserEventPayloadOneOf276 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember277"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf277"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember277? UserEventPayloadMember277 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf277? UserEventPayloadOneOf277 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember277 UserEventPayloadMember277 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf277 UserEventPayloadOneOf277 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember278"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf278"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember278? UserEventPayloadMember278 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf278? UserEventPayloadOneOf278 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember278 UserEventPayloadMember278 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf278 UserEventPayloadOneOf278 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember279"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf279"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember279? UserEventPayloadMember279 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf279? UserEventPayloadOneOf279 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember279 UserEventPayloadMember279 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf279 UserEventPayloadOneOf279 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember28"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf28"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember28? UserEventPayloadMember28 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf28? UserEventPayloadOneOf28 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember28 UserEventPayloadMember28 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf28 UserEventPayloadOneOf28 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember280"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember280? UserEventPayloadMember280 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280? UserEventPayloadOneOf280 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember280 UserEventPayloadMember280 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280 UserEventPayloadOneOf280 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember281"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf281"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember281? UserEventPayloadMember281 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf281? UserEventPayloadOneOf281 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember281 UserEventPayloadMember281 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf281 UserEventPayloadOneOf281 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember282"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf282"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember282? UserEventPayloadMember282 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf282? UserEventPayloadOneOf282 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember282 UserEventPayloadMember282 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf282 UserEventPayloadOneOf282 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember283"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf283"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember283? UserEventPayloadMember283 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf283? UserEventPayloadOneOf283 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember283 UserEventPayloadMember283 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf283 UserEventPayloadOneOf283 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember284"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember284? UserEventPayloadMember284 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284? UserEventPayloadOneOf284 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember284 UserEventPayloadMember284 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284 UserEventPayloadOneOf284 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember285"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf285"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember285? UserEventPayloadMember285 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf285? UserEventPayloadOneOf285 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember285 UserEventPayloadMember285 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf285 UserEventPayloadOneOf285 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember286"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember286? UserEventPayloadMember286 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286? UserEventPayloadOneOf286 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember286 UserEventPayloadMember286 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286 UserEventPayloadOneOf286 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember287"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf287"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember287? UserEventPayloadMember287 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf287? UserEventPayloadOneOf287 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember287 UserEventPayloadMember287 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf287 UserEventPayloadOneOf287 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember288"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember288? UserEventPayloadMember288 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288? UserEventPayloadOneOf288 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember288 UserEventPayloadMember288 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288 UserEventPayloadOneOf288 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember289"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf289"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember289? UserEventPayloadMember289 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf289? UserEventPayloadOneOf289 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember289 UserEventPayloadMember289 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf289 UserEventPayloadOneOf289 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember29"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember29? UserEventPayloadMember29 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29? UserEventPayloadOneOf29 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember29 UserEventPayloadMember29 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29 UserEventPayloadOneOf29 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember290"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf290"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember290? UserEventPayloadMember290 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf290? UserEventPayloadOneOf290 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember290 UserEventPayloadMember290 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf290 UserEventPayloadOneOf290 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf291"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291? UserEventPayloadMember291 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf291? UserEventPayloadOneOf291 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291 UserEventPayloadMember291 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf291 UserEventPayloadOneOf291 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember292"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf292"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember292? UserEventPayloadMember292 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf292? UserEventPayloadOneOf292 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember292 UserEventPayloadMember292 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf292 UserEventPayloadOneOf292 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember293"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember293? UserEventPayloadMember293 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293? UserEventPayloadOneOf293 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember293 UserEventPayloadMember293 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293 UserEventPayloadOneOf293 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember294"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf294"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember294? UserEventPayloadMember294 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf294? UserEventPayloadOneOf294 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember294 UserEventPayloadMember294 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf294 UserEventPayloadOneOf294 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember295"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf295"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember295? UserEventPayloadMember295 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf295? UserEventPayloadOneOf295 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember295 UserEventPayloadMember295 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf295 UserEventPayloadOneOf295 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember296"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember296? UserEventPayloadMember296 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296? UserEventPayloadOneOf296 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember296 UserEventPayloadMember296 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296 UserEventPayloadOneOf296 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember297"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf297"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember297? UserEventPayloadMember297 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf297? UserEventPayloadOneOf297 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember297 UserEventPayloadMember297 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf297 UserEventPayloadOneOf297 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember298"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf298"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember298? UserEventPayloadMember298 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf298? UserEventPayloadOneOf298 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember298 UserEventPayloadMember298 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf298 UserEventPayloadOneOf298 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember299"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf299"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember299? UserEventPayloadMember299 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf299? UserEventPayloadOneOf299 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember299 UserEventPayloadMember299 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf299 UserEventPayloadOneOf299 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember3? UserEventPayloadMember3 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf3? UserEventPayloadOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember3 UserEventPayloadMember3 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf3 UserEventPayloadOneOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember30"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember30? UserEventPayloadMember30 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30? UserEventPayloadOneOf30 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember30 UserEventPayloadMember30 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30 UserEventPayloadOneOf30 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember300"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf300"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember300? UserEventPayloadMember300 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf300? UserEventPayloadOneOf300 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember300 UserEventPayloadMember300 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf300 UserEventPayloadOneOf300 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember301"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember301? UserEventPayloadMember301 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301? UserEventPayloadOneOf301 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember301 UserEventPayloadMember301 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301 UserEventPayloadOneOf301 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember302"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf302"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember302? UserEventPayloadMember302 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf302? UserEventPayloadOneOf302 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember302 UserEventPayloadMember302 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf302 UserEventPayloadOneOf302 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember303"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember303? UserEventPayloadMember303 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303? UserEventPayloadOneOf303 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember303 UserEventPayloadMember303 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303 UserEventPayloadOneOf303 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember304"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf304"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember304? UserEventPayloadMember304 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf304? UserEventPayloadOneOf304 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember304 UserEventPayloadMember304 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf304 UserEventPayloadOneOf304 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember305"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf305"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember305? UserEventPayloadMember305 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf305? UserEventPayloadOneOf305 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember305 UserEventPayloadMember305 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf305 UserEventPayloadOneOf305 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember306"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf306"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember306? UserEventPayloadMember306 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf306? UserEventPayloadOneOf306 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember306 UserEventPayloadMember306 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf306 UserEventPayloadOneOf306 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember307"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf307"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember307? UserEventPayloadMember307 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf307? UserEventPayloadOneOf307 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember307 UserEventPayloadMember307 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf307 UserEventPayloadOneOf307 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember308"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf308"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember308? UserEventPayloadMember308 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf308? UserEventPayloadOneOf308 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember308 UserEventPayloadMember308 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf308 UserEventPayloadOneOf308 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember309"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember309? UserEventPayloadMember309 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309? UserEventPayloadOneOf309 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember309 UserEventPayloadMember309 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309 UserEventPayloadOneOf309 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember31"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf31"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember31? UserEventPayloadMember31 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf31? UserEventPayloadOneOf31 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember31 UserEventPayloadMember31 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf31 UserEventPayloadOneOf31 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember310"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf310"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember310? UserEventPayloadMember310 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf310? UserEventPayloadOneOf310 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember310 UserEventPayloadMember310 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf310 UserEventPayloadOneOf310 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember311"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf311"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember311? UserEventPayloadMember311 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf311? UserEventPayloadOneOf311 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember311 UserEventPayloadMember311 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf311 UserEventPayloadOneOf311 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember312"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf312"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember312? UserEventPayloadMember312 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf312? UserEventPayloadOneOf312 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember312 UserEventPayloadMember312 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf312 UserEventPayloadOneOf312 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember313"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf313"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember313? UserEventPayloadMember313 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf313? UserEventPayloadOneOf313 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember313 UserEventPayloadMember313 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf313 UserEventPayloadOneOf313 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember314"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf314"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember314? UserEventPayloadMember314 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf314? UserEventPayloadOneOf314 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember314 UserEventPayloadMember314 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf314 UserEventPayloadOneOf314 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember315"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf315"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember315? UserEventPayloadMember315 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf315? UserEventPayloadOneOf315 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember315 UserEventPayloadMember315 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf315 UserEventPayloadOneOf315 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember316"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf316"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember316? UserEventPayloadMember316 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf316? UserEventPayloadOneOf316 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember316 UserEventPayloadMember316 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf316 UserEventPayloadOneOf316 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember317"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf317"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember317? UserEventPayloadMember317 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf317? UserEventPayloadOneOf317 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember317 UserEventPayloadMember317 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf317 UserEventPayloadOneOf317 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember318"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf318"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember318? UserEventPayloadMember318 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf318? UserEventPayloadOneOf318 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember318 UserEventPayloadMember318 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf318 UserEventPayloadOneOf318 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember319"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf319"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember319? UserEventPayloadMember319 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf319? UserEventPayloadOneOf319 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember319 UserEventPayloadMember319 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf319 UserEventPayloadOneOf319 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember32"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf32"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember32? UserEventPayloadMember32 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf32? UserEventPayloadOneOf32 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember32 UserEventPayloadMember32 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf32 UserEventPayloadOneOf32 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember320"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember320? UserEventPayloadMember320 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320? UserEventPayloadOneOf320 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember320 UserEventPayloadMember320 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320 UserEventPayloadOneOf320 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember321"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf321"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember321? UserEventPayloadMember321 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf321? UserEventPayloadOneOf321 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember321 UserEventPayloadMember321 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf321 UserEventPayloadOneOf321 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember322"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf322"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember322? UserEventPayloadMember322 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf322? UserEventPayloadOneOf322 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember322 UserEventPayloadMember322 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf322 UserEventPayloadOneOf322 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember323"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf323"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember323? UserEventPayloadMember323 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf323? UserEventPayloadOneOf323 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember323 UserEventPayloadMember323 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf323 UserEventPayloadOneOf323 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember324"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf324"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember324? UserEventPayloadMember324 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf324? UserEventPayloadOneOf324 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember324 UserEventPayloadMember324 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf324 UserEventPayloadOneOf324 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember325"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf325"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember325? UserEventPayloadMember325 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf325? UserEventPayloadOneOf325 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember325 UserEventPayloadMember325 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf325 UserEventPayloadOneOf325 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember326"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf326"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember326? UserEventPayloadMember326 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf326? UserEventPayloadOneOf326 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember326 UserEventPayloadMember326 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf326 UserEventPayloadOneOf326 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember327"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember327? UserEventPayloadMember327 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327? UserEventPayloadOneOf327 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember327 UserEventPayloadMember327 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327 UserEventPayloadOneOf327 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember328"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf328"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember328? UserEventPayloadMember328 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf328? UserEventPayloadOneOf328 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember328 UserEventPayloadMember328 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf328 UserEventPayloadOneOf328 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember329"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf329"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember329? UserEventPayloadMember329 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf329? UserEventPayloadOneOf329 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember329 UserEventPayloadMember329 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf329 UserEventPayloadOneOf329 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember33"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf33"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember33? UserEventPayloadMember33 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf33? UserEventPayloadOneOf33 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember33 UserEventPayloadMember33 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf33 UserEventPayloadOneOf33 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember330"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember330? UserEventPayloadMember330 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330? UserEventPayloadOneOf330 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember330 UserEventPayloadMember330 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330 UserEventPayloadOneOf330 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember331"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember331? UserEventPayloadMember331 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331? UserEventPayloadOneOf331 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember331 UserEventPayloadMember331 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331 UserEventPayloadOneOf331 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember332"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf332"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember332? UserEventPayloadMember332 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf332? UserEventPayloadOneOf332 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember332 UserEventPayloadMember332 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf332 UserEventPayloadOneOf332 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember333"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember333? UserEventPayloadMember333 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333? UserEventPayloadOneOf333 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember333 UserEventPayloadMember333 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333 UserEventPayloadOneOf333 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember334"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf334"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember334? UserEventPayloadMember334 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf334? UserEventPayloadOneOf334 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember334 UserEventPayloadMember334 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf334 UserEventPayloadOneOf334 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember335"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember335? UserEventPayloadMember335 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335? UserEventPayloadOneOf335 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember335 UserEventPayloadMember335 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335 UserEventPayloadOneOf335 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember336"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf336"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember336? UserEventPayloadMember336 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf336? UserEventPayloadOneOf336 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember336 UserEventPayloadMember336 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf336 UserEventPayloadOneOf336 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember34"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf337"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember34? UserEventPayloadMember34 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf337? UserEventPayloadOneOf337 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember34 UserEventPayloadMember34 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf337 UserEventPayloadOneOf337 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember35"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf338"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember35? UserEventPayloadMember35 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf338? UserEventPayloadOneOf338 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember35 UserEventPayloadMember35 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf338 UserEventPayloadOneOf338 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember36"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf339"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember36? UserEventPayloadMember36 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf339? UserEventPayloadOneOf339 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember36 UserEventPayloadMember36 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf339 UserEventPayloadOneOf339 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember37"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf34"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember37? UserEventPayloadMember37 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf34? UserEventPayloadOneOf34 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember37 UserEventPayloadMember37 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf34 UserEventPayloadOneOf34 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember38"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf340"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember38? UserEventPayloadMember38 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf340? UserEventPayloadOneOf340 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember38 UserEventPayloadMember38 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf340 UserEventPayloadOneOf340 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember39"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf341"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember39? UserEventPayloadMember39 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf341? UserEventPayloadOneOf341 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember39 UserEventPayloadMember39 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf341 UserEventPayloadOneOf341 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember4"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf342"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember4? UserEventPayloadMember4 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf342? UserEventPayloadOneOf342 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember4 UserEventPayloadMember4 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf342 UserEventPayloadOneOf342 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember40"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf343"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember40? UserEventPayloadMember40 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf343? UserEventPayloadOneOf343 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember40 UserEventPayloadMember40 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf343 UserEventPayloadOneOf343 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember41"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf344"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember41? UserEventPayloadMember41 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf344? UserEventPayloadOneOf344 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember41 UserEventPayloadMember41 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf344 UserEventPayloadOneOf344 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember42"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf345"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember42? UserEventPayloadMember42 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf345? UserEventPayloadOneOf345 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember42 UserEventPayloadMember42 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf345 UserEventPayloadOneOf345 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember43"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf346"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember43? UserEventPayloadMember43 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf346? UserEventPayloadOneOf346 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember43 UserEventPayloadMember43 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf346 UserEventPayloadOneOf346 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember44"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf347"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember44? UserEventPayloadMember44 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf347? UserEventPayloadOneOf347 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember44 UserEventPayloadMember44 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf347 UserEventPayloadOneOf347 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember45"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf348"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember45? UserEventPayloadMember45 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf348? UserEventPayloadOneOf348 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember45 UserEventPayloadMember45 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf348 UserEventPayloadOneOf348 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember46"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf349"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember46? UserEventPayloadMember46 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf349? UserEventPayloadOneOf349 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember46 UserEventPayloadMember46 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf349 UserEventPayloadOneOf349 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember47"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf35"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember47? UserEventPayloadMember47 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf35? UserEventPayloadOneOf35 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember47 UserEventPayloadMember47 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf35 UserEventPayloadOneOf35 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember48"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf350"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember48? UserEventPayloadMember48 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf350? UserEventPayloadOneOf350 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember48 UserEventPayloadMember48 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf350 UserEventPayloadOneOf350 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember49"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf351"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember49? UserEventPayloadMember49 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf351? UserEventPayloadOneOf351 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember49 UserEventPayloadMember49 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf351 UserEventPayloadOneOf351 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember5"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember5? UserEventPayloadMember5 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352? UserEventPayloadOneOf352 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember5 UserEventPayloadMember5 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352 UserEventPayloadOneOf352 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember50"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf353"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember50? UserEventPayloadMember50 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf353? UserEventPayloadOneOf353 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember50 UserEventPayloadMember50 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf353 UserEventPayloadOneOf353 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember51"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember51? UserEventPayloadMember51 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354? UserEventPayloadOneOf354 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember51 UserEventPayloadMember51 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354 UserEventPayloadOneOf354 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember52"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf355"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember52? UserEventPayloadMember52 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf355? UserEventPayloadOneOf355 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember52 UserEventPayloadMember52 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf355 UserEventPayloadOneOf355 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember53"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember53? UserEventPayloadMember53 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356? UserEventPayloadOneOf356 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember53 UserEventPayloadMember53 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356 UserEventPayloadOneOf356 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember54"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf357"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember54? UserEventPayloadMember54 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf357? UserEventPayloadOneOf357 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember54 UserEventPayloadMember54 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf357 UserEventPayloadOneOf357 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember55"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf358"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember55? UserEventPayloadMember55 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf358? UserEventPayloadOneOf358 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember55 UserEventPayloadMember55 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf358 UserEventPayloadOneOf358 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember56"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember56? UserEventPayloadMember56 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359? UserEventPayloadOneOf359 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember56 UserEventPayloadMember56 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359 UserEventPayloadOneOf359 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember57"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf36"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember57? UserEventPayloadMember57 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf36? UserEventPayloadOneOf36 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember57 UserEventPayloadMember57 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf36 UserEventPayloadOneOf36 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember58"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf360"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember58? UserEventPayloadMember58 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf360? UserEventPayloadOneOf360 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember58 UserEventPayloadMember58 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf360 UserEventPayloadOneOf360 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember59"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf361"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember59? UserEventPayloadMember59 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf361? UserEventPayloadOneOf361 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember59 UserEventPayloadMember59 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf361 UserEventPayloadOneOf361 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember6"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember6? UserEventPayloadMember6 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362? UserEventPayloadOneOf362 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember6 UserEventPayloadMember6 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362 UserEventPayloadOneOf362 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember60"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf363"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember60? UserEventPayloadMember60 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf363? UserEventPayloadOneOf363 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember60 UserEventPayloadMember60 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf363 UserEventPayloadOneOf363 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember61"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf364"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember61? UserEventPayloadMember61 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf364? UserEventPayloadOneOf364 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember61 UserEventPayloadMember61 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf364 UserEventPayloadOneOf364 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember62"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf365"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember62? UserEventPayloadMember62 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf365? UserEventPayloadOneOf365 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember62 UserEventPayloadMember62 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf365 UserEventPayloadOneOf365 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember63"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf366"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember63? UserEventPayloadMember63 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf366? UserEventPayloadOneOf366 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember63 UserEventPayloadMember63 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf366 UserEventPayloadOneOf366 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember64"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf367"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember64? UserEventPayloadMember64 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf367? UserEventPayloadOneOf367 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember64 UserEventPayloadMember64 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf367 UserEventPayloadOneOf367 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember65"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember65? UserEventPayloadMember65 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368? UserEventPayloadOneOf368 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember65 UserEventPayloadMember65 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368 UserEventPayloadOneOf368 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember66"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember66? UserEventPayloadMember66 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369? UserEventPayloadOneOf369 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember66 UserEventPayloadMember66 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369 UserEventPayloadOneOf369 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember67"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember67? UserEventPayloadMember67 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37? UserEventPayloadOneOf37 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember67 UserEventPayloadMember67 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37 UserEventPayloadOneOf37 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember68"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf370"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember68? UserEventPayloadMember68 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf370? UserEventPayloadOneOf370 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember68 UserEventPayloadMember68 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf370 UserEventPayloadOneOf370 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember69"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf371"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember69? UserEventPayloadMember69 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf371? UserEventPayloadOneOf371 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember69 UserEventPayloadMember69 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf371 UserEventPayloadOneOf371 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember7"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf372"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember7? UserEventPayloadMember7 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf372? UserEventPayloadOneOf372 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember7 UserEventPayloadMember7 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf372 UserEventPayloadOneOf372 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember70"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf38"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember70? UserEventPayloadMember70 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf38? UserEventPayloadOneOf38 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember70 UserEventPayloadMember70 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf38 UserEventPayloadOneOf38 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember71"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember71? UserEventPayloadMember71 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39? UserEventPayloadOneOf39 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember71 UserEventPayloadMember71 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39 UserEventPayloadOneOf39 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember72"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember72? UserEventPayloadMember72 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf4? UserEventPayloadOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember72 UserEventPayloadMember72 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf4 UserEventPayloadOneOf4 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember73"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf40"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember73? UserEventPayloadMember73 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf40? UserEventPayloadOneOf40 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember73 UserEventPayloadMember73 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf40 UserEventPayloadOneOf40 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember74"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf41"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember74? UserEventPayloadMember74 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf41? UserEventPayloadOneOf41 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember74 UserEventPayloadMember74 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf41 UserEventPayloadOneOf41 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember75"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf42"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember75? UserEventPayloadMember75 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf42? UserEventPayloadOneOf42 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember75 UserEventPayloadMember75 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf42 UserEventPayloadOneOf42 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember76"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember76? UserEventPayloadMember76 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43? UserEventPayloadOneOf43 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember76 UserEventPayloadMember76 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43 UserEventPayloadOneOf43 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember77"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember77? UserEventPayloadMember77 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44? UserEventPayloadOneOf44 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember77 UserEventPayloadMember77 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44 UserEventPayloadOneOf44 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember78"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf45"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember78? UserEventPayloadMember78 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf45? UserEventPayloadOneOf45 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember78 UserEventPayloadMember78 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf45 UserEventPayloadOneOf45 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember79"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf46"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember79? UserEventPayloadMember79 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf46? UserEventPayloadOneOf46 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember79 UserEventPayloadMember79 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf46 UserEventPayloadOneOf46 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember8"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf47"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember8? UserEventPayloadMember8 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf47? UserEventPayloadOneOf47 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember8 UserEventPayloadMember8 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf47 UserEventPayloadOneOf47 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember80"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember80? UserEventPayloadMember80 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48? UserEventPayloadOneOf48 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember80 UserEventPayloadMember80 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48 UserEventPayloadOneOf48 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember81"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf49"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember81? UserEventPayloadMember81 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf49? UserEventPayloadOneOf49 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember81 UserEventPayloadMember81 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf49 UserEventPayloadOneOf49 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember82"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember82? UserEventPayloadMember82 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf5? UserEventPayloadOneOf5 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember82 UserEventPayloadMember82 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf5 UserEventPayloadOneOf5 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember83"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf50"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember83? UserEventPayloadMember83 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf50? UserEventPayloadOneOf50 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember83 UserEventPayloadMember83 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf50 UserEventPayloadOneOf50 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember84"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember84? UserEventPayloadMember84 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51? UserEventPayloadOneOf51 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember84 UserEventPayloadMember84 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51 UserEventPayloadOneOf51 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember85"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf52"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember85? UserEventPayloadMember85 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf52? UserEventPayloadOneOf52 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember85 UserEventPayloadMember85 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf52 UserEventPayloadOneOf52 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember86"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember86? UserEventPayloadMember86 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53? UserEventPayloadOneOf53 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember86 UserEventPayloadMember86 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53 UserEventPayloadOneOf53 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember87"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf54"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember87? UserEventPayloadMember87 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf54? UserEventPayloadOneOf54 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember87 UserEventPayloadMember87 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf54 UserEventPayloadOneOf54 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember88"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf55"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember88? UserEventPayloadMember88 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf55? UserEventPayloadOneOf55 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember88 UserEventPayloadMember88 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf55 UserEventPayloadOneOf55 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember89"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf56"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember89? UserEventPayloadMember89 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf56? UserEventPayloadOneOf56 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember89 UserEventPayloadMember89 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf56 UserEventPayloadOneOf56 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember9"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf57"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember9? UserEventPayloadMember9 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf57? UserEventPayloadOneOf57 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember9 UserEventPayloadMember9 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf57 UserEventPayloadOneOf57 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember90"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf58"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember90? UserEventPayloadMember90 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf58? UserEventPayloadOneOf58 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember90 UserEventPayloadMember90 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf58 UserEventPayloadOneOf58 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember91"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf59"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember91? UserEventPayloadMember91 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf59? UserEventPayloadOneOf59 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember91 UserEventPayloadMember91 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf59 UserEventPayloadOneOf59 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember92"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf6"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember92? UserEventPayloadMember92 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf6? UserEventPayloadOneOf6 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember92 UserEventPayloadMember92 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf6 UserEventPayloadOneOf6 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember93"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf60"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember93? UserEventPayloadMember93 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf60? UserEventPayloadOneOf60 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember93 UserEventPayloadMember93 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf60 UserEventPayloadOneOf60 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember94"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember94? UserEventPayloadMember94 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61? UserEventPayloadOneOf61 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember94 UserEventPayloadMember94 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61 UserEventPayloadOneOf61 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember95"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf62"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember95? UserEventPayloadMember95 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf62? UserEventPayloadOneOf62 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember95 UserEventPayloadMember95 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf62 UserEventPayloadOneOf62 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember96"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf63"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember96? UserEventPayloadMember96 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf63? UserEventPayloadOneOf63 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember96 UserEventPayloadMember96 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf63 UserEventPayloadOneOf63 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember97"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember97? UserEventPayloadMember97 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64? UserEventPayloadOneOf64 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember97 UserEventPayloadMember97 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64 UserEventPayloadOneOf64 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember98"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf65"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember98? UserEventPayloadMember98 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf65? UserEventPayloadOneOf65 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember98 UserEventPayloadMember98 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf65 UserEventPayloadOneOf65 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember99"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf66"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember99? UserEventPayloadMember99 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf66? UserEventPayloadOneOf66 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember99 UserEventPayloadMember99 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf66 UserEventPayloadOneOf66 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf67"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf67? UserEventPayloadOneOf67 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf67 UserEventPayloadOneOf67 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf68"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf68? UserEventPayloadOneOf68 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf68 UserEventPayloadOneOf68 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69? UserEventPayloadOneOf69 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69 UserEventPayloadOneOf69 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf7"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf7? UserEventPayloadOneOf7 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf7 UserEventPayloadOneOf7 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf70"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf70? UserEventPayloadOneOf70 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf70 UserEventPayloadOneOf70 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf71"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf71? UserEventPayloadOneOf71 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf71 UserEventPayloadOneOf71 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72? UserEventPayloadOneOf72 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72 UserEventPayloadOneOf72 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf73"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf73? UserEventPayloadOneOf73 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf73 UserEventPayloadOneOf73 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf74"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf74? UserEventPayloadOneOf74 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf74 UserEventPayloadOneOf74 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf75"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf75? UserEventPayloadOneOf75 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf75 UserEventPayloadOneOf75 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf76"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf76? UserEventPayloadOneOf76 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf76 UserEventPayloadOneOf76 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf77"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf77? UserEventPayloadOneOf77 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf77 UserEventPayloadOneOf77 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf78"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf78? UserEventPayloadOneOf78 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf78 UserEventPayloadOneOf78 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf79"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf79? UserEventPayloadOneOf79 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf79 UserEventPayloadOneOf79 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf8"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf8? UserEventPayloadOneOf8 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf8 UserEventPayloadOneOf8 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf80"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf80? UserEventPayloadOneOf80 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf80 UserEventPayloadOneOf80 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf81"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf81? UserEventPayloadOneOf81 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf81 UserEventPayloadOneOf81 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf82"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf82? UserEventPayloadOneOf82 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf82 UserEventPayloadOneOf82 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf83"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf83? UserEventPayloadOneOf83 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf83 UserEventPayloadOneOf83 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84? UserEventPayloadOneOf84 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84 UserEventPayloadOneOf84 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85? UserEventPayloadOneOf85 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85 UserEventPayloadOneOf85 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf86"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf86? UserEventPayloadOneOf86 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf86 UserEventPayloadOneOf86 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf87"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf87? UserEventPayloadOneOf87 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf87 UserEventPayloadOneOf87 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf88"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf88? UserEventPayloadOneOf88 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf88 UserEventPayloadOneOf88 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf89"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf89? UserEventPayloadOneOf89 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf89 UserEventPayloadOneOf89 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf9"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf9? UserEventPayloadOneOf9 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf9 UserEventPayloadOneOf9 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf90"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf90? UserEventPayloadOneOf90 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf90 UserEventPayloadOneOf90 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf91"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf91? UserEventPayloadOneOf91 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf91 UserEventPayloadOneOf91 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92? UserEventPayloadOneOf92 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92 UserEventPayloadOneOf92 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93? UserEventPayloadOneOf93 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93 UserEventPayloadOneOf93 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94? UserEventPayloadOneOf94 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94 UserEventPayloadOneOf94 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf95"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf95? UserEventPayloadOneOf95 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf95 UserEventPayloadOneOf95 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96? UserEventPayloadOneOf96 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96 UserEventPayloadOneOf96 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf97"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf97? UserEventPayloadOneOf97 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf97 UserEventPayloadOneOf97 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98? UserEventPayloadOneOf98 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98 UserEventPayloadOneOf98 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99? UserEventPayloadOneOf99 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99 UserEventPayloadOneOf99 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -2711,1349 +2999,1489 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayload();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("UserEventPayloadOneOf10".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember1();
+                result.UserEventPayloadOneOf10 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf10();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf100".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember10 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember10();
+                result.UserEventPayloadOneOf100 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf101".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember100 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember100();
+                result.UserEventPayloadOneOf101 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf101();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf102".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember101 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember101();
+                result.UserEventPayloadOneOf102 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf102();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf103".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember102 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember102();
+                result.UserEventPayloadOneOf103 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf103();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf104".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember103 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember103();
+                result.UserEventPayloadOneOf104 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf104();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf105".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember104 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember104();
+                result.UserEventPayloadOneOf105 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf105();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf106".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember105 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember105();
+                result.UserEventPayloadOneOf106 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf106();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf107".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember106 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember106();
+                result.UserEventPayloadOneOf107 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf107();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf108".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember107 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember107();
+                result.UserEventPayloadOneOf108 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf108();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf109".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember108 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember108();
+                result.UserEventPayloadOneOf109 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf109();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf11".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember109 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember109();
+                result.UserEventPayloadOneOf11 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf11();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf110".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember11 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember11();
+                result.UserEventPayloadOneOf110 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf111".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember110 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember110();
+                result.UserEventPayloadOneOf111 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf111();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf112".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember111 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember111();
+                result.UserEventPayloadOneOf112 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf113".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember112 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember112();
+                result.UserEventPayloadOneOf113 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf113();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf114".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember113 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember113();
+                result.UserEventPayloadOneOf114 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf114();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf115".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember114 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember114();
+                result.UserEventPayloadOneOf115 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf115();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf116".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember115 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember115();
+                result.UserEventPayloadOneOf116 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf116();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf117".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember116 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember116();
+                result.UserEventPayloadOneOf117 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf118".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember117 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember117();
+                result.UserEventPayloadOneOf118 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf118();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf119".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember118 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember118();
+                result.UserEventPayloadOneOf119 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf12".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember119 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember119();
+                result.UserEventPayloadOneOf12 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf120".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember12 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember12();
+                result.UserEventPayloadOneOf120 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf121".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember120 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember120();
+                result.UserEventPayloadOneOf121 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf121();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf122".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember121 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember121();
+                result.UserEventPayloadOneOf122 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf122();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf123".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember122 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember122();
+                result.UserEventPayloadOneOf123 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf123();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf124".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember123 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember123();
+                result.UserEventPayloadOneOf124 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf124();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf125".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember124 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember124();
+                result.UserEventPayloadOneOf125 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf126".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember125 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember125();
+                result.UserEventPayloadOneOf126 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf127".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember126 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember126();
+                result.UserEventPayloadOneOf127 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf127();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf128".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember127 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember127();
+                result.UserEventPayloadOneOf128 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf128();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf129".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember128 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember128();
+                result.UserEventPayloadOneOf129 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf129();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf13".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember129 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember129();
+                result.UserEventPayloadOneOf13 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf13();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf130".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember13 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember13();
+                result.UserEventPayloadOneOf130 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf130();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf131".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember130 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember130();
+                result.UserEventPayloadOneOf131 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf132".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember131 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember131();
+                result.UserEventPayloadOneOf132 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf133".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember132 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember132();
+                result.UserEventPayloadOneOf133 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf133();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf134".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember133 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember133();
+                result.UserEventPayloadOneOf134 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf134();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf135".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember134 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember134();
+                result.UserEventPayloadOneOf135 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf135();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf136".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember135 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember135();
+                result.UserEventPayloadOneOf136 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf136();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf137".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember136 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember136();
+                result.UserEventPayloadOneOf137 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf138".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember137 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137();
+                result.UserEventPayloadOneOf138 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf138();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf139".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember138 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember138();
+                result.UserEventPayloadOneOf139 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf14".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember139 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember139();
+                result.UserEventPayloadOneOf14 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf14();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf140".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember14 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember14();
+                result.UserEventPayloadOneOf140 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf141".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember140 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember140();
+                result.UserEventPayloadOneOf141 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf142".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember141 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember141();
+                result.UserEventPayloadOneOf142 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf142();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf143".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember142 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember142();
+                result.UserEventPayloadOneOf143 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf143();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf144".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember143 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember143();
+                result.UserEventPayloadOneOf144 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf144();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf145".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember144 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember144();
+                result.UserEventPayloadOneOf145 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf145();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf146".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember145 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember145();
+                result.UserEventPayloadOneOf146 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf147".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember146 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember146();
+                result.UserEventPayloadOneOf147 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf147();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf148".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember147 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember147();
+                result.UserEventPayloadOneOf148 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf148();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf149".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember148 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember148();
+                result.UserEventPayloadOneOf149 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf149();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf15".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember149 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember149();
+                result.UserEventPayloadOneOf15 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf15();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf150".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember15 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember15();
+                result.UserEventPayloadOneOf150 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf151".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember150 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember150();
+                result.UserEventPayloadOneOf151 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf151();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf152".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember151 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember151();
+                result.UserEventPayloadOneOf152 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf153".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember152 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember152();
+                result.UserEventPayloadOneOf153 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf154".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember153 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember153();
+                result.UserEventPayloadOneOf154 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf155".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember154 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember154();
+                result.UserEventPayloadOneOf155 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf156".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember155 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember155();
+                result.UserEventPayloadOneOf156 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf156();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf157".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember156 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember156();
+                result.UserEventPayloadOneOf157 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf157();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf158".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember157 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember157();
+                result.UserEventPayloadOneOf158 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf159".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember158 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember158();
+                result.UserEventPayloadOneOf159 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf16".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember159 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember159();
+                result.UserEventPayloadOneOf16 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf160".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember16 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember16();
+                result.UserEventPayloadOneOf160 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf161".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember160 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember160();
+                result.UserEventPayloadOneOf161 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf161();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf162".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember161 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember161();
+                result.UserEventPayloadOneOf162 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf162();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf163".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember162 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember162();
+                result.UserEventPayloadOneOf163 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf164".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember163 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember163();
+                result.UserEventPayloadOneOf164 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf164();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf165".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember164 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember164();
+                result.UserEventPayloadOneOf165 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf166".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember165 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember165();
+                result.UserEventPayloadOneOf166 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf167".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember166 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember166();
+                result.UserEventPayloadOneOf167 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf167();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf168".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember167 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember167();
+                result.UserEventPayloadOneOf168 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf168();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf169".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember168 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember168();
+                result.UserEventPayloadOneOf169 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf17".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember169 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember169();
+                result.UserEventPayloadOneOf17 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf17();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf170".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember17 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember17();
+                result.UserEventPayloadOneOf170 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf171".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember170 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember170();
+                result.UserEventPayloadOneOf171 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf171();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf172".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember171 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember171();
+                result.UserEventPayloadOneOf172 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf173".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember172 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember172();
+                result.UserEventPayloadOneOf173 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf173();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf174".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember173 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember173();
+                result.UserEventPayloadOneOf174 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf175".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember174 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember174();
+                result.UserEventPayloadOneOf175 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf176".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember175 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember175();
+                result.UserEventPayloadOneOf176 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf177".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember176 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember176();
+                result.UserEventPayloadOneOf177 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf177();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf178".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember177 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember177();
+                result.UserEventPayloadOneOf178 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf178();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf179".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember178 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember178();
+                result.UserEventPayloadOneOf179 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf18".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember179 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember179();
+                result.UserEventPayloadOneOf18 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf180".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember18 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember18();
+                result.UserEventPayloadOneOf180 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf180();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf181".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember180 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember180();
+                result.UserEventPayloadOneOf181 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf182".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember181 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember181();
+                result.UserEventPayloadOneOf182 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf182();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf183".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember182 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember182();
+                result.UserEventPayloadOneOf183 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf183();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf184".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember183 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember183();
+                result.UserEventPayloadOneOf184 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf185".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember184 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember184();
+                result.UserEventPayloadOneOf185 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf185();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf186".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember185 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember185();
+                result.UserEventPayloadOneOf186 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf186();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf187".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember186 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember186();
+                result.UserEventPayloadOneOf187 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf187();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf188".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember187 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember187();
+                result.UserEventPayloadOneOf188 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf188();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf189".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember188 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember188();
+                result.UserEventPayloadOneOf189 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf189();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf19".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember189 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember189();
+                result.UserEventPayloadOneOf19 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf19();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf190".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember19 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember19();
+                result.UserEventPayloadOneOf190 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf190();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf191".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember190 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember190();
+                result.UserEventPayloadOneOf191 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf192".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember191 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember191();
+                result.UserEventPayloadOneOf192 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf193".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember192 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember192();
+                result.UserEventPayloadOneOf193 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf193();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf194".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember193 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember193();
+                result.UserEventPayloadOneOf194 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf194();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf195".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember194 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember194();
+                result.UserEventPayloadOneOf195 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf195();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf196".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember195 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember195();
+                result.UserEventPayloadOneOf196 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf196();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf197".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember196 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember196();
+                result.UserEventPayloadOneOf197 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf197();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf198".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember197 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember197();
+                result.UserEventPayloadOneOf198 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf198();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf199".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember198 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember198();
+                result.UserEventPayloadOneOf199 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf199();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember199 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember199();
+                result.UserEventPayloadOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf2();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf20".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember2 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember2();
+                result.UserEventPayloadOneOf20 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf200".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember20 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember20();
+                result.UserEventPayloadOneOf200 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf200();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf201".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember200 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember200();
+                result.UserEventPayloadOneOf201 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf201();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf202".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember201 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember201();
+                result.UserEventPayloadOneOf202 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf202();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf203".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember202 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember202();
+                result.UserEventPayloadOneOf203 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf204".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember203 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember203();
+                result.UserEventPayloadOneOf204 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf204();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf205".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember204 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember204();
+                result.UserEventPayloadOneOf205 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf205();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf206".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember205 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember205();
+                result.UserEventPayloadOneOf206 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf206();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf207".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember206 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember206();
+                result.UserEventPayloadOneOf207 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf207();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf208".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember207 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember207();
+                result.UserEventPayloadOneOf208 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf208();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf209".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember208 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember208();
+                result.UserEventPayloadOneOf209 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf209();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf21".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember209 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember209();
+                result.UserEventPayloadOneOf21 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf21();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf210".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember21 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember21();
+                result.UserEventPayloadOneOf210 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf211".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember210 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember210();
+                result.UserEventPayloadOneOf211 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf211();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf212".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember211 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember211();
+                result.UserEventPayloadOneOf212 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf212();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf213".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember212 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember212();
+                result.UserEventPayloadOneOf213 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf213();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf214".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember213 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember213();
+                result.UserEventPayloadOneOf214 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf214();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf215".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember214 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember214();
+                result.UserEventPayloadOneOf215 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf215();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf216".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember215 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember215();
+                result.UserEventPayloadOneOf216 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf217".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember216 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember216();
+                result.UserEventPayloadOneOf217 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf217();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf218".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember217 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember217();
+                result.UserEventPayloadOneOf218 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf219".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember218 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember218();
+                result.UserEventPayloadOneOf219 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf22".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember219 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember219();
+                result.UserEventPayloadOneOf22 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf22();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf220".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember22 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember22();
+                result.UserEventPayloadOneOf220 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf220();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf221".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember220 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember220();
+                result.UserEventPayloadOneOf221 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf221();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf222".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember221 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember221();
+                result.UserEventPayloadOneOf222 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf222();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf223".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember222 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember222();
+                result.UserEventPayloadOneOf223 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf223();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf224".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember223 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember223();
+                result.UserEventPayloadOneOf224 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf224();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf225".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember224 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember224();
+                result.UserEventPayloadOneOf225 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf225();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf226".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember225 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember225();
+                result.UserEventPayloadOneOf226 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf227".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember226 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember226();
+                result.UserEventPayloadOneOf227 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf227();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf228".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember227 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember227();
+                result.UserEventPayloadOneOf228 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf228();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf229".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember228 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember228();
+                result.UserEventPayloadOneOf229 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf23".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember229 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember229();
+                result.UserEventPayloadOneOf23 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf23();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf230".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember23 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember23();
+                result.UserEventPayloadOneOf230 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf230();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf231".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember230 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember230();
+                result.UserEventPayloadOneOf231 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf232".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember231 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember231();
+                result.UserEventPayloadOneOf232 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf232();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf233".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember232 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember232();
+                result.UserEventPayloadOneOf233 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf233();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf234".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember233 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember233();
+                result.UserEventPayloadOneOf234 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf234();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf235".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember234 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember234();
+                result.UserEventPayloadOneOf235 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf235();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf236".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember235 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember235();
+                result.UserEventPayloadOneOf236 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf236();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf237".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember236 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember236();
+                result.UserEventPayloadOneOf237 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf237();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf238".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember237 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember237();
+                result.UserEventPayloadOneOf238 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf238();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf239".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember238 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember238();
+                result.UserEventPayloadOneOf239 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf239();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf24".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember239 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember239();
+                result.UserEventPayloadOneOf24 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf240".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember24 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember24();
+                result.UserEventPayloadOneOf240 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf240();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf241".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember240 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember240();
+                result.UserEventPayloadOneOf241 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf241();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf242".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember241 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember241();
+                result.UserEventPayloadOneOf242 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf243".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember242 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember242();
+                result.UserEventPayloadOneOf243 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf243();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf244".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember243 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember243();
+                result.UserEventPayloadOneOf244 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf244();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf245".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember244 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember244();
+                result.UserEventPayloadOneOf245 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf245();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf246".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember245 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember245();
+                result.UserEventPayloadOneOf246 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf246();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf247".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember246 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember246();
+                result.UserEventPayloadOneOf247 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf247();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf248".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember247 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember247();
+                result.UserEventPayloadOneOf248 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf248();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf249".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember248 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember248();
+                result.UserEventPayloadOneOf249 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf249();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf25".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember249 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember249();
+                result.UserEventPayloadOneOf25 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf25();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf250".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember25 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember25();
+                result.UserEventPayloadOneOf250 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf250();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf251".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember250 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember250();
+                result.UserEventPayloadOneOf251 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf252".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember251 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember251();
+                result.UserEventPayloadOneOf252 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf252();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf253".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember252 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember252();
+                result.UserEventPayloadOneOf253 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf253();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf254".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember253 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember253();
+                result.UserEventPayloadOneOf254 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf254();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf255".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember254 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember254();
+                result.UserEventPayloadOneOf255 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf255();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf256".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember255 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember255();
+                result.UserEventPayloadOneOf256 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf256();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf257".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember256 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember256();
+                result.UserEventPayloadOneOf257 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf257();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf258".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember257 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember257();
+                result.UserEventPayloadOneOf258 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf258();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf259".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember258 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember258();
+                result.UserEventPayloadOneOf259 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf259();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf26".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember259 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember259();
+                result.UserEventPayloadOneOf26 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf26();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf260".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember26 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember26();
+                result.UserEventPayloadOneOf260 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf260();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf261".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember260 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember260();
+                result.UserEventPayloadOneOf261 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf261();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf262".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember261 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember261();
+                result.UserEventPayloadOneOf262 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf262();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf263".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember262 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember262();
+                result.UserEventPayloadOneOf263 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf264".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember263 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember263();
+                result.UserEventPayloadOneOf264 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf264();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf265".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember264 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember264();
+                result.UserEventPayloadOneOf265 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf265();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf266".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember265 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember265();
+                result.UserEventPayloadOneOf266 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf266();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf267".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember266 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember266();
+                result.UserEventPayloadOneOf267 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf267();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf268".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember267 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember267();
+                result.UserEventPayloadOneOf268 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf268();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf269".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember268 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember268();
+                result.UserEventPayloadOneOf269 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf269();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf27".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember269 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember269();
+                result.UserEventPayloadOneOf27 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf270".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember27 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember27();
+                result.UserEventPayloadOneOf270 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf270();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf271".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember270 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember270();
+                result.UserEventPayloadOneOf271 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf271();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf272".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember271 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember271();
+                result.UserEventPayloadOneOf272 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf272();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf273".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember272 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember272();
+                result.UserEventPayloadOneOf273 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf274".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember273 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember273();
+                result.UserEventPayloadOneOf274 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf274();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf275".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember274 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember274();
+                result.UserEventPayloadOneOf275 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf275();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf276".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember275 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember275();
+                result.UserEventPayloadOneOf276 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf276();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf277".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember276 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember276();
+                result.UserEventPayloadOneOf277 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf277();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf278".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember277 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember277();
+                result.UserEventPayloadOneOf278 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf278();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf279".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember278 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember278();
+                result.UserEventPayloadOneOf279 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf279();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf28".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember279 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember279();
+                result.UserEventPayloadOneOf28 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf28();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf280".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember28 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember28();
+                result.UserEventPayloadOneOf280 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf281".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember280 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember280();
+                result.UserEventPayloadOneOf281 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf281();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf282".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember281 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember281();
+                result.UserEventPayloadOneOf282 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf282();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf283".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember282 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember282();
+                result.UserEventPayloadOneOf283 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf283();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf284".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember283 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember283();
+                result.UserEventPayloadOneOf284 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf285".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember284 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember284();
+                result.UserEventPayloadOneOf285 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf285();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf286".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember285 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember285();
+                result.UserEventPayloadOneOf286 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf287".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember286 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember286();
+                result.UserEventPayloadOneOf287 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf287();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf288".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember287 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember287();
+                result.UserEventPayloadOneOf288 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf289".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember288 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember288();
+                result.UserEventPayloadOneOf289 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf289();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf29".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember289 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember289();
+                result.UserEventPayloadOneOf29 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf290".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember29 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember29();
+                result.UserEventPayloadOneOf290 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf290();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf291".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember290 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember290();
+                result.UserEventPayloadOneOf291 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf291();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf292".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember291 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291();
+                result.UserEventPayloadOneOf292 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf292();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf293".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember292 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember292();
+                result.UserEventPayloadOneOf293 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf294".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember293 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember293();
+                result.UserEventPayloadOneOf294 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf294();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf295".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember294 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember294();
+                result.UserEventPayloadOneOf295 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf295();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf296".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember295 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember295();
+                result.UserEventPayloadOneOf296 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf297".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember296 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember296();
+                result.UserEventPayloadOneOf297 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf297();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf298".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember297 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember297();
+                result.UserEventPayloadOneOf298 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf298();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf299".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember298 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember298();
+                result.UserEventPayloadOneOf299 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf299();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember299 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember299();
+                result.UserEventPayloadOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf3();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf30".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember3 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember3();
+                result.UserEventPayloadOneOf30 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf300".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember30 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember30();
+                result.UserEventPayloadOneOf300 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf300();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf301".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember300 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember300();
+                result.UserEventPayloadOneOf301 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf302".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember301 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember301();
+                result.UserEventPayloadOneOf302 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf302();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf303".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember302 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember302();
+                result.UserEventPayloadOneOf303 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf304".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember303 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember303();
+                result.UserEventPayloadOneOf304 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf304();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf305".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember304 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember304();
+                result.UserEventPayloadOneOf305 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf305();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf306".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember305 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember305();
+                result.UserEventPayloadOneOf306 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf306();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf307".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember306 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember306();
+                result.UserEventPayloadOneOf307 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf307();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf308".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember307 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember307();
+                result.UserEventPayloadOneOf308 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf308();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf309".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember308 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember308();
+                result.UserEventPayloadOneOf309 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf31".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember309 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember309();
+                result.UserEventPayloadOneOf31 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf31();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf310".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember31 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember31();
+                result.UserEventPayloadOneOf310 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf310();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf311".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember310 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember310();
+                result.UserEventPayloadOneOf311 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf311();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf312".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember311 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember311();
+                result.UserEventPayloadOneOf312 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf312();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf313".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember312 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember312();
+                result.UserEventPayloadOneOf313 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf313();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf314".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember313 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember313();
+                result.UserEventPayloadOneOf314 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf314();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf315".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember314 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember314();
+                result.UserEventPayloadOneOf315 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf315();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf316".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember315 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember315();
+                result.UserEventPayloadOneOf316 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf316();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf317".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember316 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember316();
+                result.UserEventPayloadOneOf317 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf317();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf318".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember317 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember317();
+                result.UserEventPayloadOneOf318 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf318();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf319".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember318 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember318();
+                result.UserEventPayloadOneOf319 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf319();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf32".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember319 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember319();
+                result.UserEventPayloadOneOf32 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf32();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf320".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember32 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember32();
+                result.UserEventPayloadOneOf320 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf321".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember320 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember320();
+                result.UserEventPayloadOneOf321 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf321();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf322".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember321 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember321();
+                result.UserEventPayloadOneOf322 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf322();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf323".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember322 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember322();
+                result.UserEventPayloadOneOf323 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf323();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf324".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember323 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember323();
+                result.UserEventPayloadOneOf324 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf324();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf325".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember324 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember324();
+                result.UserEventPayloadOneOf325 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf325();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf326".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember325 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember325();
+                result.UserEventPayloadOneOf326 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf326();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf327".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember326 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember326();
+                result.UserEventPayloadOneOf327 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf328".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember327 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember327();
+                result.UserEventPayloadOneOf328 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf328();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf329".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember328 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember328();
+                result.UserEventPayloadOneOf329 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf329();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf33".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember329 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember329();
+                result.UserEventPayloadOneOf33 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf33();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf330".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember33 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember33();
+                result.UserEventPayloadOneOf330 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf331".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember330 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember330();
+                result.UserEventPayloadOneOf331 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf332".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember331 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember331();
+                result.UserEventPayloadOneOf332 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf332();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf333".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember332 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember332();
+                result.UserEventPayloadOneOf333 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf334".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember333 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember333();
+                result.UserEventPayloadOneOf334 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf334();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf335".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember334 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember334();
+                result.UserEventPayloadOneOf335 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf336".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember335 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember335();
+                result.UserEventPayloadOneOf336 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf336();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf337".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember336 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember336();
+                result.UserEventPayloadOneOf337 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf337();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf338".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember34 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember34();
+                result.UserEventPayloadOneOf338 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf338();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf339".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember35 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember35();
+                result.UserEventPayloadOneOf339 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf339();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf34".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember36 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember36();
+                result.UserEventPayloadOneOf34 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf34();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf340".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember37 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember37();
+                result.UserEventPayloadOneOf340 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf340();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf341".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember38 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember38();
+                result.UserEventPayloadOneOf341 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf341();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf342".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember39 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember39();
+                result.UserEventPayloadOneOf342 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf342();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf343".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember4 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember4();
+                result.UserEventPayloadOneOf343 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf343();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf344".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember40 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember40();
+                result.UserEventPayloadOneOf344 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf344();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf345".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember41 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember41();
+                result.UserEventPayloadOneOf345 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf345();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf346".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember42 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember42();
+                result.UserEventPayloadOneOf346 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf346();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf347".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember43 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember43();
+                result.UserEventPayloadOneOf347 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf347();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf348".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember44 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember44();
+                result.UserEventPayloadOneOf348 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf348();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf349".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember45 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember45();
+                result.UserEventPayloadOneOf349 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf349();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf35".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember46 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember46();
+                result.UserEventPayloadOneOf35 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf35();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf350".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember47 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember47();
+                result.UserEventPayloadOneOf350 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf350();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf351".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember48 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember48();
+                result.UserEventPayloadOneOf351 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf351();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf352".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember49 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember49();
+                result.UserEventPayloadOneOf352 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf353".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember5 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember5();
+                result.UserEventPayloadOneOf353 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf353();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf354".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember50 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember50();
+                result.UserEventPayloadOneOf354 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf355".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember51 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember51();
+                result.UserEventPayloadOneOf355 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf355();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf356".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember52 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember52();
+                result.UserEventPayloadOneOf356 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf357".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember53 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember53();
+                result.UserEventPayloadOneOf357 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf357();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf358".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember54 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember54();
+                result.UserEventPayloadOneOf358 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf358();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf359".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember55 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember55();
+                result.UserEventPayloadOneOf359 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf36".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember56 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember56();
+                result.UserEventPayloadOneOf36 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf36();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf360".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember57 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember57();
+                result.UserEventPayloadOneOf360 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf360();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf361".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember58 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember58();
+                result.UserEventPayloadOneOf361 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf361();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf362".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember59 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember59();
+                result.UserEventPayloadOneOf362 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf363".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember6 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember6();
+                result.UserEventPayloadOneOf363 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf363();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf364".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember60 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember60();
+                result.UserEventPayloadOneOf364 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf364();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf365".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember61 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember61();
+                result.UserEventPayloadOneOf365 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf365();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf366".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember62 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember62();
+                result.UserEventPayloadOneOf366 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf366();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf367".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember63 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember63();
+                result.UserEventPayloadOneOf367 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf367();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf368".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember64 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember64();
+                result.UserEventPayloadOneOf368 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf369".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember65 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember65();
+                result.UserEventPayloadOneOf369 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf37".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember66 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember66();
+                result.UserEventPayloadOneOf37 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf370".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember67 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember67();
+                result.UserEventPayloadOneOf370 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf370();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf371".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember68 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember68();
+                result.UserEventPayloadOneOf371 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf371();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf372".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember69 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember69();
+                result.UserEventPayloadOneOf372 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf372();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf38".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember7 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember7();
+                result.UserEventPayloadOneOf38 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf38();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf39".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember70 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember70();
+                result.UserEventPayloadOneOf39 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember71 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember71();
+                result.UserEventPayloadOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf4();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf40".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember72 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember72();
+                result.UserEventPayloadOneOf40 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf40();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf41".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember73 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember73();
+                result.UserEventPayloadOneOf41 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf41();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf42".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember74 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember74();
+                result.UserEventPayloadOneOf42 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf42();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf43".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember75 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember75();
+                result.UserEventPayloadOneOf43 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf44".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember76 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember76();
+                result.UserEventPayloadOneOf44 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf45".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember77 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember77();
+                result.UserEventPayloadOneOf45 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf45();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf46".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember78 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember78();
+                result.UserEventPayloadOneOf46 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf46();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf47".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember79 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember79();
+                result.UserEventPayloadOneOf47 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf47();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf48".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember8 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember8();
+                result.UserEventPayloadOneOf48 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf49".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember80 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember80();
+                result.UserEventPayloadOneOf49 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf49();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember81 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember81();
+                result.UserEventPayloadOneOf5 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf5();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf50".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember82 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember82();
+                result.UserEventPayloadOneOf50 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf50();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf51".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember83 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember83();
+                result.UserEventPayloadOneOf51 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf52".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember84 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember84();
+                result.UserEventPayloadOneOf52 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf52();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf53".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember85 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember85();
+                result.UserEventPayloadOneOf53 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf54".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember86 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember86();
+                result.UserEventPayloadOneOf54 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf54();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf55".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember87 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember87();
+                result.UserEventPayloadOneOf55 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf55();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf56".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember88 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember88();
+                result.UserEventPayloadOneOf56 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf56();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf57".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember89 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember89();
+                result.UserEventPayloadOneOf57 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf57();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf58".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember9 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember9();
+                result.UserEventPayloadOneOf58 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf58();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf59".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember90 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember90();
+                result.UserEventPayloadOneOf59 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf59();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf6".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember91 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember91();
+                result.UserEventPayloadOneOf6 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf6();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf60".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember92 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember92();
+                result.UserEventPayloadOneOf60 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf60();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf61".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember93 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember93();
+                result.UserEventPayloadOneOf61 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf62".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember94 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember94();
+                result.UserEventPayloadOneOf62 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf62();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf63".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember95 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember95();
+                result.UserEventPayloadOneOf63 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf63();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf64".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember96 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember96();
+                result.UserEventPayloadOneOf64 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf65".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember97 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember97();
+                result.UserEventPayloadOneOf65 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf65();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf66".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember98 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember98();
+                result.UserEventPayloadOneOf66 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf66();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UserEventPayloadOneOf67".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserEventPayloadMember99 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember99();
+                result.UserEventPayloadOneOf67 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf67();
+            }
+            else if("UserEventPayloadOneOf68".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf68 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf68();
+            }
+            else if("UserEventPayloadOneOf69".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf69 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69();
+            }
+            else if("UserEventPayloadOneOf7".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf7 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf7();
+            }
+            else if("UserEventPayloadOneOf70".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf70 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf70();
+            }
+            else if("UserEventPayloadOneOf71".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf71 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf71();
+            }
+            else if("UserEventPayloadOneOf72".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf72 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72();
+            }
+            else if("UserEventPayloadOneOf73".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf73 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf73();
+            }
+            else if("UserEventPayloadOneOf74".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf74 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf74();
+            }
+            else if("UserEventPayloadOneOf75".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf75 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf75();
+            }
+            else if("UserEventPayloadOneOf76".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf76 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf76();
+            }
+            else if("UserEventPayloadOneOf77".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf77 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf77();
+            }
+            else if("UserEventPayloadOneOf78".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf78 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf78();
+            }
+            else if("UserEventPayloadOneOf79".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf79 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf79();
+            }
+            else if("UserEventPayloadOneOf8".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf8 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf8();
+            }
+            else if("UserEventPayloadOneOf80".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf80 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf80();
+            }
+            else if("UserEventPayloadOneOf81".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf81 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf81();
+            }
+            else if("UserEventPayloadOneOf82".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf82 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf82();
+            }
+            else if("UserEventPayloadOneOf83".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf83 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf83();
+            }
+            else if("UserEventPayloadOneOf84".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf84 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84();
+            }
+            else if("UserEventPayloadOneOf85".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf85 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85();
+            }
+            else if("UserEventPayloadOneOf86".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf86 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf86();
+            }
+            else if("UserEventPayloadOneOf87".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf87 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf87();
+            }
+            else if("UserEventPayloadOneOf88".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf88 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf88();
+            }
+            else if("UserEventPayloadOneOf89".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf89 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf89();
+            }
+            else if("UserEventPayloadOneOf9".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf9 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf9();
+            }
+            else if("UserEventPayloadOneOf90".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf90 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf90();
+            }
+            else if("UserEventPayloadOneOf91".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf91 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf91();
+            }
+            else if("UserEventPayloadOneOf92".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf92 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92();
+            }
+            else if("UserEventPayloadOneOf93".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf93 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93();
+            }
+            else if("UserEventPayloadOneOf94".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf94 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94();
+            }
+            else if("UserEventPayloadOneOf95".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf95 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf95();
+            }
+            else if("UserEventPayloadOneOf96".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf96 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96();
+            }
+            else if("UserEventPayloadOneOf97".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf97 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf97();
+            }
+            else if("UserEventPayloadOneOf98".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf98 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98();
+            }
+            else if("UserEventPayloadOneOf99".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf99 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99();
             }
             return result;
         }
@@ -4067,1345 +4495,1489 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 return UserEventPayloadMember1.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember10 != null)
+            else if(UserEventPayloadOneOf10 != null)
             {
-                return UserEventPayloadMember10.GetFieldDeserializers();
+                return UserEventPayloadOneOf10.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember100 != null)
+            else if(UserEventPayloadOneOf100 != null)
             {
-                return UserEventPayloadMember100.GetFieldDeserializers();
+                return UserEventPayloadOneOf100.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember101 != null)
+            else if(UserEventPayloadOneOf101 != null)
             {
-                return UserEventPayloadMember101.GetFieldDeserializers();
+                return UserEventPayloadOneOf101.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember102 != null)
+            else if(UserEventPayloadOneOf102 != null)
             {
-                return UserEventPayloadMember102.GetFieldDeserializers();
+                return UserEventPayloadOneOf102.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember103 != null)
+            else if(UserEventPayloadOneOf103 != null)
             {
-                return UserEventPayloadMember103.GetFieldDeserializers();
+                return UserEventPayloadOneOf103.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember104 != null)
+            else if(UserEventPayloadOneOf104 != null)
             {
-                return UserEventPayloadMember104.GetFieldDeserializers();
+                return UserEventPayloadOneOf104.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember105 != null)
+            else if(UserEventPayloadOneOf105 != null)
             {
-                return UserEventPayloadMember105.GetFieldDeserializers();
+                return UserEventPayloadOneOf105.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember106 != null)
+            else if(UserEventPayloadOneOf106 != null)
             {
-                return UserEventPayloadMember106.GetFieldDeserializers();
+                return UserEventPayloadOneOf106.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember107 != null)
+            else if(UserEventPayloadOneOf107 != null)
             {
-                return UserEventPayloadMember107.GetFieldDeserializers();
+                return UserEventPayloadOneOf107.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember108 != null)
+            else if(UserEventPayloadOneOf108 != null)
             {
-                return UserEventPayloadMember108.GetFieldDeserializers();
+                return UserEventPayloadOneOf108.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember109 != null)
+            else if(UserEventPayloadOneOf109 != null)
             {
-                return UserEventPayloadMember109.GetFieldDeserializers();
+                return UserEventPayloadOneOf109.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember11 != null)
+            else if(UserEventPayloadOneOf11 != null)
             {
-                return UserEventPayloadMember11.GetFieldDeserializers();
+                return UserEventPayloadOneOf11.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember110 != null)
+            else if(UserEventPayloadOneOf110 != null)
             {
-                return UserEventPayloadMember110.GetFieldDeserializers();
+                return UserEventPayloadOneOf110.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember111 != null)
+            else if(UserEventPayloadOneOf111 != null)
             {
-                return UserEventPayloadMember111.GetFieldDeserializers();
+                return UserEventPayloadOneOf111.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember112 != null)
+            else if(UserEventPayloadOneOf112 != null)
             {
-                return UserEventPayloadMember112.GetFieldDeserializers();
+                return UserEventPayloadOneOf112.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember113 != null)
+            else if(UserEventPayloadOneOf113 != null)
             {
-                return UserEventPayloadMember113.GetFieldDeserializers();
+                return UserEventPayloadOneOf113.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember114 != null)
+            else if(UserEventPayloadOneOf114 != null)
             {
-                return UserEventPayloadMember114.GetFieldDeserializers();
+                return UserEventPayloadOneOf114.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember115 != null)
+            else if(UserEventPayloadOneOf115 != null)
             {
-                return UserEventPayloadMember115.GetFieldDeserializers();
+                return UserEventPayloadOneOf115.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember116 != null)
+            else if(UserEventPayloadOneOf116 != null)
             {
-                return UserEventPayloadMember116.GetFieldDeserializers();
+                return UserEventPayloadOneOf116.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember117 != null)
+            else if(UserEventPayloadOneOf117 != null)
             {
-                return UserEventPayloadMember117.GetFieldDeserializers();
+                return UserEventPayloadOneOf117.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember118 != null)
+            else if(UserEventPayloadOneOf118 != null)
             {
-                return UserEventPayloadMember118.GetFieldDeserializers();
+                return UserEventPayloadOneOf118.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember119 != null)
+            else if(UserEventPayloadOneOf119 != null)
             {
-                return UserEventPayloadMember119.GetFieldDeserializers();
+                return UserEventPayloadOneOf119.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember12 != null)
+            else if(UserEventPayloadOneOf12 != null)
             {
-                return UserEventPayloadMember12.GetFieldDeserializers();
+                return UserEventPayloadOneOf12.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember120 != null)
+            else if(UserEventPayloadOneOf120 != null)
             {
-                return UserEventPayloadMember120.GetFieldDeserializers();
+                return UserEventPayloadOneOf120.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember121 != null)
+            else if(UserEventPayloadOneOf121 != null)
             {
-                return UserEventPayloadMember121.GetFieldDeserializers();
+                return UserEventPayloadOneOf121.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember122 != null)
+            else if(UserEventPayloadOneOf122 != null)
             {
-                return UserEventPayloadMember122.GetFieldDeserializers();
+                return UserEventPayloadOneOf122.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember123 != null)
+            else if(UserEventPayloadOneOf123 != null)
             {
-                return UserEventPayloadMember123.GetFieldDeserializers();
+                return UserEventPayloadOneOf123.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember124 != null)
+            else if(UserEventPayloadOneOf124 != null)
             {
-                return UserEventPayloadMember124.GetFieldDeserializers();
+                return UserEventPayloadOneOf124.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember125 != null)
+            else if(UserEventPayloadOneOf125 != null)
             {
-                return UserEventPayloadMember125.GetFieldDeserializers();
+                return UserEventPayloadOneOf125.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember126 != null)
+            else if(UserEventPayloadOneOf126 != null)
             {
-                return UserEventPayloadMember126.GetFieldDeserializers();
+                return UserEventPayloadOneOf126.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember127 != null)
+            else if(UserEventPayloadOneOf127 != null)
             {
-                return UserEventPayloadMember127.GetFieldDeserializers();
+                return UserEventPayloadOneOf127.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember128 != null)
+            else if(UserEventPayloadOneOf128 != null)
             {
-                return UserEventPayloadMember128.GetFieldDeserializers();
+                return UserEventPayloadOneOf128.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember129 != null)
+            else if(UserEventPayloadOneOf129 != null)
             {
-                return UserEventPayloadMember129.GetFieldDeserializers();
+                return UserEventPayloadOneOf129.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember13 != null)
+            else if(UserEventPayloadOneOf13 != null)
             {
-                return UserEventPayloadMember13.GetFieldDeserializers();
+                return UserEventPayloadOneOf13.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember130 != null)
+            else if(UserEventPayloadOneOf130 != null)
             {
-                return UserEventPayloadMember130.GetFieldDeserializers();
+                return UserEventPayloadOneOf130.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember131 != null)
+            else if(UserEventPayloadOneOf131 != null)
             {
-                return UserEventPayloadMember131.GetFieldDeserializers();
+                return UserEventPayloadOneOf131.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember132 != null)
+            else if(UserEventPayloadOneOf132 != null)
             {
-                return UserEventPayloadMember132.GetFieldDeserializers();
+                return UserEventPayloadOneOf132.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember133 != null)
+            else if(UserEventPayloadOneOf133 != null)
             {
-                return UserEventPayloadMember133.GetFieldDeserializers();
+                return UserEventPayloadOneOf133.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember134 != null)
+            else if(UserEventPayloadOneOf134 != null)
             {
-                return UserEventPayloadMember134.GetFieldDeserializers();
+                return UserEventPayloadOneOf134.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember135 != null)
+            else if(UserEventPayloadOneOf135 != null)
             {
-                return UserEventPayloadMember135.GetFieldDeserializers();
+                return UserEventPayloadOneOf135.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember136 != null)
+            else if(UserEventPayloadOneOf136 != null)
             {
-                return UserEventPayloadMember136.GetFieldDeserializers();
+                return UserEventPayloadOneOf136.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember137 != null)
+            else if(UserEventPayloadOneOf137 != null)
             {
-                return UserEventPayloadMember137.GetFieldDeserializers();
+                return UserEventPayloadOneOf137.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember138 != null)
+            else if(UserEventPayloadOneOf138 != null)
             {
-                return UserEventPayloadMember138.GetFieldDeserializers();
+                return UserEventPayloadOneOf138.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember139 != null)
+            else if(UserEventPayloadOneOf139 != null)
             {
-                return UserEventPayloadMember139.GetFieldDeserializers();
+                return UserEventPayloadOneOf139.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember14 != null)
+            else if(UserEventPayloadOneOf14 != null)
             {
-                return UserEventPayloadMember14.GetFieldDeserializers();
+                return UserEventPayloadOneOf14.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember140 != null)
+            else if(UserEventPayloadOneOf140 != null)
             {
-                return UserEventPayloadMember140.GetFieldDeserializers();
+                return UserEventPayloadOneOf140.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember141 != null)
+            else if(UserEventPayloadOneOf141 != null)
             {
-                return UserEventPayloadMember141.GetFieldDeserializers();
+                return UserEventPayloadOneOf141.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember142 != null)
+            else if(UserEventPayloadOneOf142 != null)
             {
-                return UserEventPayloadMember142.GetFieldDeserializers();
+                return UserEventPayloadOneOf142.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember143 != null)
+            else if(UserEventPayloadOneOf143 != null)
             {
-                return UserEventPayloadMember143.GetFieldDeserializers();
+                return UserEventPayloadOneOf143.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember144 != null)
+            else if(UserEventPayloadOneOf144 != null)
             {
-                return UserEventPayloadMember144.GetFieldDeserializers();
+                return UserEventPayloadOneOf144.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember145 != null)
+            else if(UserEventPayloadOneOf145 != null)
             {
-                return UserEventPayloadMember145.GetFieldDeserializers();
+                return UserEventPayloadOneOf145.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember146 != null)
+            else if(UserEventPayloadOneOf146 != null)
             {
-                return UserEventPayloadMember146.GetFieldDeserializers();
+                return UserEventPayloadOneOf146.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember147 != null)
+            else if(UserEventPayloadOneOf147 != null)
             {
-                return UserEventPayloadMember147.GetFieldDeserializers();
+                return UserEventPayloadOneOf147.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember148 != null)
+            else if(UserEventPayloadOneOf148 != null)
             {
-                return UserEventPayloadMember148.GetFieldDeserializers();
+                return UserEventPayloadOneOf148.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember149 != null)
+            else if(UserEventPayloadOneOf149 != null)
             {
-                return UserEventPayloadMember149.GetFieldDeserializers();
+                return UserEventPayloadOneOf149.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember15 != null)
+            else if(UserEventPayloadOneOf15 != null)
             {
-                return UserEventPayloadMember15.GetFieldDeserializers();
+                return UserEventPayloadOneOf15.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember150 != null)
+            else if(UserEventPayloadOneOf150 != null)
             {
-                return UserEventPayloadMember150.GetFieldDeserializers();
+                return UserEventPayloadOneOf150.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember151 != null)
+            else if(UserEventPayloadOneOf151 != null)
             {
-                return UserEventPayloadMember151.GetFieldDeserializers();
+                return UserEventPayloadOneOf151.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember152 != null)
+            else if(UserEventPayloadOneOf152 != null)
             {
-                return UserEventPayloadMember152.GetFieldDeserializers();
+                return UserEventPayloadOneOf152.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember153 != null)
+            else if(UserEventPayloadOneOf153 != null)
             {
-                return UserEventPayloadMember153.GetFieldDeserializers();
+                return UserEventPayloadOneOf153.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember154 != null)
+            else if(UserEventPayloadOneOf154 != null)
             {
-                return UserEventPayloadMember154.GetFieldDeserializers();
+                return UserEventPayloadOneOf154.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember155 != null)
+            else if(UserEventPayloadOneOf155 != null)
             {
-                return UserEventPayloadMember155.GetFieldDeserializers();
+                return UserEventPayloadOneOf155.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember156 != null)
+            else if(UserEventPayloadOneOf156 != null)
             {
-                return UserEventPayloadMember156.GetFieldDeserializers();
+                return UserEventPayloadOneOf156.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember157 != null)
+            else if(UserEventPayloadOneOf157 != null)
             {
-                return UserEventPayloadMember157.GetFieldDeserializers();
+                return UserEventPayloadOneOf157.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember158 != null)
+            else if(UserEventPayloadOneOf158 != null)
             {
-                return UserEventPayloadMember158.GetFieldDeserializers();
+                return UserEventPayloadOneOf158.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember159 != null)
+            else if(UserEventPayloadOneOf159 != null)
             {
-                return UserEventPayloadMember159.GetFieldDeserializers();
+                return UserEventPayloadOneOf159.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember16 != null)
+            else if(UserEventPayloadOneOf16 != null)
             {
-                return UserEventPayloadMember16.GetFieldDeserializers();
+                return UserEventPayloadOneOf16.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember160 != null)
+            else if(UserEventPayloadOneOf160 != null)
             {
-                return UserEventPayloadMember160.GetFieldDeserializers();
+                return UserEventPayloadOneOf160.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember161 != null)
+            else if(UserEventPayloadOneOf161 != null)
             {
-                return UserEventPayloadMember161.GetFieldDeserializers();
+                return UserEventPayloadOneOf161.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember162 != null)
+            else if(UserEventPayloadOneOf162 != null)
             {
-                return UserEventPayloadMember162.GetFieldDeserializers();
+                return UserEventPayloadOneOf162.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember163 != null)
+            else if(UserEventPayloadOneOf163 != null)
             {
-                return UserEventPayloadMember163.GetFieldDeserializers();
+                return UserEventPayloadOneOf163.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember164 != null)
+            else if(UserEventPayloadOneOf164 != null)
             {
-                return UserEventPayloadMember164.GetFieldDeserializers();
+                return UserEventPayloadOneOf164.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember165 != null)
+            else if(UserEventPayloadOneOf165 != null)
             {
-                return UserEventPayloadMember165.GetFieldDeserializers();
+                return UserEventPayloadOneOf165.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember166 != null)
+            else if(UserEventPayloadOneOf166 != null)
             {
-                return UserEventPayloadMember166.GetFieldDeserializers();
+                return UserEventPayloadOneOf166.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember167 != null)
+            else if(UserEventPayloadOneOf167 != null)
             {
-                return UserEventPayloadMember167.GetFieldDeserializers();
+                return UserEventPayloadOneOf167.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember168 != null)
+            else if(UserEventPayloadOneOf168 != null)
             {
-                return UserEventPayloadMember168.GetFieldDeserializers();
+                return UserEventPayloadOneOf168.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember169 != null)
+            else if(UserEventPayloadOneOf169 != null)
             {
-                return UserEventPayloadMember169.GetFieldDeserializers();
+                return UserEventPayloadOneOf169.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember17 != null)
+            else if(UserEventPayloadOneOf17 != null)
             {
-                return UserEventPayloadMember17.GetFieldDeserializers();
+                return UserEventPayloadOneOf17.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember170 != null)
+            else if(UserEventPayloadOneOf170 != null)
             {
-                return UserEventPayloadMember170.GetFieldDeserializers();
+                return UserEventPayloadOneOf170.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember171 != null)
+            else if(UserEventPayloadOneOf171 != null)
             {
-                return UserEventPayloadMember171.GetFieldDeserializers();
+                return UserEventPayloadOneOf171.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember172 != null)
+            else if(UserEventPayloadOneOf172 != null)
             {
-                return UserEventPayloadMember172.GetFieldDeserializers();
+                return UserEventPayloadOneOf172.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember173 != null)
+            else if(UserEventPayloadOneOf173 != null)
             {
-                return UserEventPayloadMember173.GetFieldDeserializers();
+                return UserEventPayloadOneOf173.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember174 != null)
+            else if(UserEventPayloadOneOf174 != null)
             {
-                return UserEventPayloadMember174.GetFieldDeserializers();
+                return UserEventPayloadOneOf174.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember175 != null)
+            else if(UserEventPayloadOneOf175 != null)
             {
-                return UserEventPayloadMember175.GetFieldDeserializers();
+                return UserEventPayloadOneOf175.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember176 != null)
+            else if(UserEventPayloadOneOf176 != null)
             {
-                return UserEventPayloadMember176.GetFieldDeserializers();
+                return UserEventPayloadOneOf176.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember177 != null)
+            else if(UserEventPayloadOneOf177 != null)
             {
-                return UserEventPayloadMember177.GetFieldDeserializers();
+                return UserEventPayloadOneOf177.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember178 != null)
+            else if(UserEventPayloadOneOf178 != null)
             {
-                return UserEventPayloadMember178.GetFieldDeserializers();
+                return UserEventPayloadOneOf178.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember179 != null)
+            else if(UserEventPayloadOneOf179 != null)
             {
-                return UserEventPayloadMember179.GetFieldDeserializers();
+                return UserEventPayloadOneOf179.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember18 != null)
+            else if(UserEventPayloadOneOf18 != null)
             {
-                return UserEventPayloadMember18.GetFieldDeserializers();
+                return UserEventPayloadOneOf18.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember180 != null)
+            else if(UserEventPayloadOneOf180 != null)
             {
-                return UserEventPayloadMember180.GetFieldDeserializers();
+                return UserEventPayloadOneOf180.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember181 != null)
+            else if(UserEventPayloadOneOf181 != null)
             {
-                return UserEventPayloadMember181.GetFieldDeserializers();
+                return UserEventPayloadOneOf181.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember182 != null)
+            else if(UserEventPayloadOneOf182 != null)
             {
-                return UserEventPayloadMember182.GetFieldDeserializers();
+                return UserEventPayloadOneOf182.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember183 != null)
+            else if(UserEventPayloadOneOf183 != null)
             {
-                return UserEventPayloadMember183.GetFieldDeserializers();
+                return UserEventPayloadOneOf183.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember184 != null)
+            else if(UserEventPayloadOneOf184 != null)
             {
-                return UserEventPayloadMember184.GetFieldDeserializers();
+                return UserEventPayloadOneOf184.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember185 != null)
+            else if(UserEventPayloadOneOf185 != null)
             {
-                return UserEventPayloadMember185.GetFieldDeserializers();
+                return UserEventPayloadOneOf185.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember186 != null)
+            else if(UserEventPayloadOneOf186 != null)
             {
-                return UserEventPayloadMember186.GetFieldDeserializers();
+                return UserEventPayloadOneOf186.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember187 != null)
+            else if(UserEventPayloadOneOf187 != null)
             {
-                return UserEventPayloadMember187.GetFieldDeserializers();
+                return UserEventPayloadOneOf187.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember188 != null)
+            else if(UserEventPayloadOneOf188 != null)
             {
-                return UserEventPayloadMember188.GetFieldDeserializers();
+                return UserEventPayloadOneOf188.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember189 != null)
+            else if(UserEventPayloadOneOf189 != null)
             {
-                return UserEventPayloadMember189.GetFieldDeserializers();
+                return UserEventPayloadOneOf189.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember19 != null)
+            else if(UserEventPayloadOneOf19 != null)
             {
-                return UserEventPayloadMember19.GetFieldDeserializers();
+                return UserEventPayloadOneOf19.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember190 != null)
+            else if(UserEventPayloadOneOf190 != null)
             {
-                return UserEventPayloadMember190.GetFieldDeserializers();
+                return UserEventPayloadOneOf190.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember191 != null)
+            else if(UserEventPayloadOneOf191 != null)
             {
-                return UserEventPayloadMember191.GetFieldDeserializers();
+                return UserEventPayloadOneOf191.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember192 != null)
+            else if(UserEventPayloadOneOf192 != null)
             {
-                return UserEventPayloadMember192.GetFieldDeserializers();
+                return UserEventPayloadOneOf192.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember193 != null)
+            else if(UserEventPayloadOneOf193 != null)
             {
-                return UserEventPayloadMember193.GetFieldDeserializers();
+                return UserEventPayloadOneOf193.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember194 != null)
+            else if(UserEventPayloadOneOf194 != null)
             {
-                return UserEventPayloadMember194.GetFieldDeserializers();
+                return UserEventPayloadOneOf194.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember195 != null)
+            else if(UserEventPayloadOneOf195 != null)
             {
-                return UserEventPayloadMember195.GetFieldDeserializers();
+                return UserEventPayloadOneOf195.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember196 != null)
+            else if(UserEventPayloadOneOf196 != null)
             {
-                return UserEventPayloadMember196.GetFieldDeserializers();
+                return UserEventPayloadOneOf196.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember197 != null)
+            else if(UserEventPayloadOneOf197 != null)
             {
-                return UserEventPayloadMember197.GetFieldDeserializers();
+                return UserEventPayloadOneOf197.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember198 != null)
+            else if(UserEventPayloadOneOf198 != null)
             {
-                return UserEventPayloadMember198.GetFieldDeserializers();
+                return UserEventPayloadOneOf198.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember199 != null)
+            else if(UserEventPayloadOneOf199 != null)
             {
-                return UserEventPayloadMember199.GetFieldDeserializers();
+                return UserEventPayloadOneOf199.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember2 != null)
+            else if(UserEventPayloadOneOf2 != null)
             {
-                return UserEventPayloadMember2.GetFieldDeserializers();
+                return UserEventPayloadOneOf2.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember20 != null)
+            else if(UserEventPayloadOneOf20 != null)
             {
-                return UserEventPayloadMember20.GetFieldDeserializers();
+                return UserEventPayloadOneOf20.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember200 != null)
+            else if(UserEventPayloadOneOf200 != null)
             {
-                return UserEventPayloadMember200.GetFieldDeserializers();
+                return UserEventPayloadOneOf200.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember201 != null)
+            else if(UserEventPayloadOneOf201 != null)
             {
-                return UserEventPayloadMember201.GetFieldDeserializers();
+                return UserEventPayloadOneOf201.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember202 != null)
+            else if(UserEventPayloadOneOf202 != null)
             {
-                return UserEventPayloadMember202.GetFieldDeserializers();
+                return UserEventPayloadOneOf202.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember203 != null)
+            else if(UserEventPayloadOneOf203 != null)
             {
-                return UserEventPayloadMember203.GetFieldDeserializers();
+                return UserEventPayloadOneOf203.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember204 != null)
+            else if(UserEventPayloadOneOf204 != null)
             {
-                return UserEventPayloadMember204.GetFieldDeserializers();
+                return UserEventPayloadOneOf204.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember205 != null)
+            else if(UserEventPayloadOneOf205 != null)
             {
-                return UserEventPayloadMember205.GetFieldDeserializers();
+                return UserEventPayloadOneOf205.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember206 != null)
+            else if(UserEventPayloadOneOf206 != null)
             {
-                return UserEventPayloadMember206.GetFieldDeserializers();
+                return UserEventPayloadOneOf206.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember207 != null)
+            else if(UserEventPayloadOneOf207 != null)
             {
-                return UserEventPayloadMember207.GetFieldDeserializers();
+                return UserEventPayloadOneOf207.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember208 != null)
+            else if(UserEventPayloadOneOf208 != null)
             {
-                return UserEventPayloadMember208.GetFieldDeserializers();
+                return UserEventPayloadOneOf208.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember209 != null)
+            else if(UserEventPayloadOneOf209 != null)
             {
-                return UserEventPayloadMember209.GetFieldDeserializers();
+                return UserEventPayloadOneOf209.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember21 != null)
+            else if(UserEventPayloadOneOf21 != null)
             {
-                return UserEventPayloadMember21.GetFieldDeserializers();
+                return UserEventPayloadOneOf21.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember210 != null)
+            else if(UserEventPayloadOneOf210 != null)
             {
-                return UserEventPayloadMember210.GetFieldDeserializers();
+                return UserEventPayloadOneOf210.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember211 != null)
+            else if(UserEventPayloadOneOf211 != null)
             {
-                return UserEventPayloadMember211.GetFieldDeserializers();
+                return UserEventPayloadOneOf211.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember212 != null)
+            else if(UserEventPayloadOneOf212 != null)
             {
-                return UserEventPayloadMember212.GetFieldDeserializers();
+                return UserEventPayloadOneOf212.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember213 != null)
+            else if(UserEventPayloadOneOf213 != null)
             {
-                return UserEventPayloadMember213.GetFieldDeserializers();
+                return UserEventPayloadOneOf213.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember214 != null)
+            else if(UserEventPayloadOneOf214 != null)
             {
-                return UserEventPayloadMember214.GetFieldDeserializers();
+                return UserEventPayloadOneOf214.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember215 != null)
+            else if(UserEventPayloadOneOf215 != null)
             {
-                return UserEventPayloadMember215.GetFieldDeserializers();
+                return UserEventPayloadOneOf215.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember216 != null)
+            else if(UserEventPayloadOneOf216 != null)
             {
-                return UserEventPayloadMember216.GetFieldDeserializers();
+                return UserEventPayloadOneOf216.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember217 != null)
+            else if(UserEventPayloadOneOf217 != null)
             {
-                return UserEventPayloadMember217.GetFieldDeserializers();
+                return UserEventPayloadOneOf217.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember218 != null)
+            else if(UserEventPayloadOneOf218 != null)
             {
-                return UserEventPayloadMember218.GetFieldDeserializers();
+                return UserEventPayloadOneOf218.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember219 != null)
+            else if(UserEventPayloadOneOf219 != null)
             {
-                return UserEventPayloadMember219.GetFieldDeserializers();
+                return UserEventPayloadOneOf219.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember22 != null)
+            else if(UserEventPayloadOneOf22 != null)
             {
-                return UserEventPayloadMember22.GetFieldDeserializers();
+                return UserEventPayloadOneOf22.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember220 != null)
+            else if(UserEventPayloadOneOf220 != null)
             {
-                return UserEventPayloadMember220.GetFieldDeserializers();
+                return UserEventPayloadOneOf220.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember221 != null)
+            else if(UserEventPayloadOneOf221 != null)
             {
-                return UserEventPayloadMember221.GetFieldDeserializers();
+                return UserEventPayloadOneOf221.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember222 != null)
+            else if(UserEventPayloadOneOf222 != null)
             {
-                return UserEventPayloadMember222.GetFieldDeserializers();
+                return UserEventPayloadOneOf222.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember223 != null)
+            else if(UserEventPayloadOneOf223 != null)
             {
-                return UserEventPayloadMember223.GetFieldDeserializers();
+                return UserEventPayloadOneOf223.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember224 != null)
+            else if(UserEventPayloadOneOf224 != null)
             {
-                return UserEventPayloadMember224.GetFieldDeserializers();
+                return UserEventPayloadOneOf224.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember225 != null)
+            else if(UserEventPayloadOneOf225 != null)
             {
-                return UserEventPayloadMember225.GetFieldDeserializers();
+                return UserEventPayloadOneOf225.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember226 != null)
+            else if(UserEventPayloadOneOf226 != null)
             {
-                return UserEventPayloadMember226.GetFieldDeserializers();
+                return UserEventPayloadOneOf226.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember227 != null)
+            else if(UserEventPayloadOneOf227 != null)
             {
-                return UserEventPayloadMember227.GetFieldDeserializers();
+                return UserEventPayloadOneOf227.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember228 != null)
+            else if(UserEventPayloadOneOf228 != null)
             {
-                return UserEventPayloadMember228.GetFieldDeserializers();
+                return UserEventPayloadOneOf228.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember229 != null)
+            else if(UserEventPayloadOneOf229 != null)
             {
-                return UserEventPayloadMember229.GetFieldDeserializers();
+                return UserEventPayloadOneOf229.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember23 != null)
+            else if(UserEventPayloadOneOf23 != null)
             {
-                return UserEventPayloadMember23.GetFieldDeserializers();
+                return UserEventPayloadOneOf23.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember230 != null)
+            else if(UserEventPayloadOneOf230 != null)
             {
-                return UserEventPayloadMember230.GetFieldDeserializers();
+                return UserEventPayloadOneOf230.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember231 != null)
+            else if(UserEventPayloadOneOf231 != null)
             {
-                return UserEventPayloadMember231.GetFieldDeserializers();
+                return UserEventPayloadOneOf231.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember232 != null)
+            else if(UserEventPayloadOneOf232 != null)
             {
-                return UserEventPayloadMember232.GetFieldDeserializers();
+                return UserEventPayloadOneOf232.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember233 != null)
+            else if(UserEventPayloadOneOf233 != null)
             {
-                return UserEventPayloadMember233.GetFieldDeserializers();
+                return UserEventPayloadOneOf233.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember234 != null)
+            else if(UserEventPayloadOneOf234 != null)
             {
-                return UserEventPayloadMember234.GetFieldDeserializers();
+                return UserEventPayloadOneOf234.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember235 != null)
+            else if(UserEventPayloadOneOf235 != null)
             {
-                return UserEventPayloadMember235.GetFieldDeserializers();
+                return UserEventPayloadOneOf235.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember236 != null)
+            else if(UserEventPayloadOneOf236 != null)
             {
-                return UserEventPayloadMember236.GetFieldDeserializers();
+                return UserEventPayloadOneOf236.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember237 != null)
+            else if(UserEventPayloadOneOf237 != null)
             {
-                return UserEventPayloadMember237.GetFieldDeserializers();
+                return UserEventPayloadOneOf237.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember238 != null)
+            else if(UserEventPayloadOneOf238 != null)
             {
-                return UserEventPayloadMember238.GetFieldDeserializers();
+                return UserEventPayloadOneOf238.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember239 != null)
+            else if(UserEventPayloadOneOf239 != null)
             {
-                return UserEventPayloadMember239.GetFieldDeserializers();
+                return UserEventPayloadOneOf239.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember24 != null)
+            else if(UserEventPayloadOneOf24 != null)
             {
-                return UserEventPayloadMember24.GetFieldDeserializers();
+                return UserEventPayloadOneOf24.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember240 != null)
+            else if(UserEventPayloadOneOf240 != null)
             {
-                return UserEventPayloadMember240.GetFieldDeserializers();
+                return UserEventPayloadOneOf240.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember241 != null)
+            else if(UserEventPayloadOneOf241 != null)
             {
-                return UserEventPayloadMember241.GetFieldDeserializers();
+                return UserEventPayloadOneOf241.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember242 != null)
+            else if(UserEventPayloadOneOf242 != null)
             {
-                return UserEventPayloadMember242.GetFieldDeserializers();
+                return UserEventPayloadOneOf242.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember243 != null)
+            else if(UserEventPayloadOneOf243 != null)
             {
-                return UserEventPayloadMember243.GetFieldDeserializers();
+                return UserEventPayloadOneOf243.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember244 != null)
+            else if(UserEventPayloadOneOf244 != null)
             {
-                return UserEventPayloadMember244.GetFieldDeserializers();
+                return UserEventPayloadOneOf244.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember245 != null)
+            else if(UserEventPayloadOneOf245 != null)
             {
-                return UserEventPayloadMember245.GetFieldDeserializers();
+                return UserEventPayloadOneOf245.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember246 != null)
+            else if(UserEventPayloadOneOf246 != null)
             {
-                return UserEventPayloadMember246.GetFieldDeserializers();
+                return UserEventPayloadOneOf246.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember247 != null)
+            else if(UserEventPayloadOneOf247 != null)
             {
-                return UserEventPayloadMember247.GetFieldDeserializers();
+                return UserEventPayloadOneOf247.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember248 != null)
+            else if(UserEventPayloadOneOf248 != null)
             {
-                return UserEventPayloadMember248.GetFieldDeserializers();
+                return UserEventPayloadOneOf248.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember249 != null)
+            else if(UserEventPayloadOneOf249 != null)
             {
-                return UserEventPayloadMember249.GetFieldDeserializers();
+                return UserEventPayloadOneOf249.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember25 != null)
+            else if(UserEventPayloadOneOf25 != null)
             {
-                return UserEventPayloadMember25.GetFieldDeserializers();
+                return UserEventPayloadOneOf25.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember250 != null)
+            else if(UserEventPayloadOneOf250 != null)
             {
-                return UserEventPayloadMember250.GetFieldDeserializers();
+                return UserEventPayloadOneOf250.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember251 != null)
+            else if(UserEventPayloadOneOf251 != null)
             {
-                return UserEventPayloadMember251.GetFieldDeserializers();
+                return UserEventPayloadOneOf251.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember252 != null)
+            else if(UserEventPayloadOneOf252 != null)
             {
-                return UserEventPayloadMember252.GetFieldDeserializers();
+                return UserEventPayloadOneOf252.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember253 != null)
+            else if(UserEventPayloadOneOf253 != null)
             {
-                return UserEventPayloadMember253.GetFieldDeserializers();
+                return UserEventPayloadOneOf253.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember254 != null)
+            else if(UserEventPayloadOneOf254 != null)
             {
-                return UserEventPayloadMember254.GetFieldDeserializers();
+                return UserEventPayloadOneOf254.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember255 != null)
+            else if(UserEventPayloadOneOf255 != null)
             {
-                return UserEventPayloadMember255.GetFieldDeserializers();
+                return UserEventPayloadOneOf255.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember256 != null)
+            else if(UserEventPayloadOneOf256 != null)
             {
-                return UserEventPayloadMember256.GetFieldDeserializers();
+                return UserEventPayloadOneOf256.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember257 != null)
+            else if(UserEventPayloadOneOf257 != null)
             {
-                return UserEventPayloadMember257.GetFieldDeserializers();
+                return UserEventPayloadOneOf257.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember258 != null)
+            else if(UserEventPayloadOneOf258 != null)
             {
-                return UserEventPayloadMember258.GetFieldDeserializers();
+                return UserEventPayloadOneOf258.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember259 != null)
+            else if(UserEventPayloadOneOf259 != null)
             {
-                return UserEventPayloadMember259.GetFieldDeserializers();
+                return UserEventPayloadOneOf259.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember26 != null)
+            else if(UserEventPayloadOneOf26 != null)
             {
-                return UserEventPayloadMember26.GetFieldDeserializers();
+                return UserEventPayloadOneOf26.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember260 != null)
+            else if(UserEventPayloadOneOf260 != null)
             {
-                return UserEventPayloadMember260.GetFieldDeserializers();
+                return UserEventPayloadOneOf260.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember261 != null)
+            else if(UserEventPayloadOneOf261 != null)
             {
-                return UserEventPayloadMember261.GetFieldDeserializers();
+                return UserEventPayloadOneOf261.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember262 != null)
+            else if(UserEventPayloadOneOf262 != null)
             {
-                return UserEventPayloadMember262.GetFieldDeserializers();
+                return UserEventPayloadOneOf262.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember263 != null)
+            else if(UserEventPayloadOneOf263 != null)
             {
-                return UserEventPayloadMember263.GetFieldDeserializers();
+                return UserEventPayloadOneOf263.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember264 != null)
+            else if(UserEventPayloadOneOf264 != null)
             {
-                return UserEventPayloadMember264.GetFieldDeserializers();
+                return UserEventPayloadOneOf264.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember265 != null)
+            else if(UserEventPayloadOneOf265 != null)
             {
-                return UserEventPayloadMember265.GetFieldDeserializers();
+                return UserEventPayloadOneOf265.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember266 != null)
+            else if(UserEventPayloadOneOf266 != null)
             {
-                return UserEventPayloadMember266.GetFieldDeserializers();
+                return UserEventPayloadOneOf266.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember267 != null)
+            else if(UserEventPayloadOneOf267 != null)
             {
-                return UserEventPayloadMember267.GetFieldDeserializers();
+                return UserEventPayloadOneOf267.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember268 != null)
+            else if(UserEventPayloadOneOf268 != null)
             {
-                return UserEventPayloadMember268.GetFieldDeserializers();
+                return UserEventPayloadOneOf268.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember269 != null)
+            else if(UserEventPayloadOneOf269 != null)
             {
-                return UserEventPayloadMember269.GetFieldDeserializers();
+                return UserEventPayloadOneOf269.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember27 != null)
+            else if(UserEventPayloadOneOf27 != null)
             {
-                return UserEventPayloadMember27.GetFieldDeserializers();
+                return UserEventPayloadOneOf27.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember270 != null)
+            else if(UserEventPayloadOneOf270 != null)
             {
-                return UserEventPayloadMember270.GetFieldDeserializers();
+                return UserEventPayloadOneOf270.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember271 != null)
+            else if(UserEventPayloadOneOf271 != null)
             {
-                return UserEventPayloadMember271.GetFieldDeserializers();
+                return UserEventPayloadOneOf271.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember272 != null)
+            else if(UserEventPayloadOneOf272 != null)
             {
-                return UserEventPayloadMember272.GetFieldDeserializers();
+                return UserEventPayloadOneOf272.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember273 != null)
+            else if(UserEventPayloadOneOf273 != null)
             {
-                return UserEventPayloadMember273.GetFieldDeserializers();
+                return UserEventPayloadOneOf273.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember274 != null)
+            else if(UserEventPayloadOneOf274 != null)
             {
-                return UserEventPayloadMember274.GetFieldDeserializers();
+                return UserEventPayloadOneOf274.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember275 != null)
+            else if(UserEventPayloadOneOf275 != null)
             {
-                return UserEventPayloadMember275.GetFieldDeserializers();
+                return UserEventPayloadOneOf275.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember276 != null)
+            else if(UserEventPayloadOneOf276 != null)
             {
-                return UserEventPayloadMember276.GetFieldDeserializers();
+                return UserEventPayloadOneOf276.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember277 != null)
+            else if(UserEventPayloadOneOf277 != null)
             {
-                return UserEventPayloadMember277.GetFieldDeserializers();
+                return UserEventPayloadOneOf277.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember278 != null)
+            else if(UserEventPayloadOneOf278 != null)
             {
-                return UserEventPayloadMember278.GetFieldDeserializers();
+                return UserEventPayloadOneOf278.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember279 != null)
+            else if(UserEventPayloadOneOf279 != null)
             {
-                return UserEventPayloadMember279.GetFieldDeserializers();
+                return UserEventPayloadOneOf279.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember28 != null)
+            else if(UserEventPayloadOneOf28 != null)
             {
-                return UserEventPayloadMember28.GetFieldDeserializers();
+                return UserEventPayloadOneOf28.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember280 != null)
+            else if(UserEventPayloadOneOf280 != null)
             {
-                return UserEventPayloadMember280.GetFieldDeserializers();
+                return UserEventPayloadOneOf280.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember281 != null)
+            else if(UserEventPayloadOneOf281 != null)
             {
-                return UserEventPayloadMember281.GetFieldDeserializers();
+                return UserEventPayloadOneOf281.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember282 != null)
+            else if(UserEventPayloadOneOf282 != null)
             {
-                return UserEventPayloadMember282.GetFieldDeserializers();
+                return UserEventPayloadOneOf282.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember283 != null)
+            else if(UserEventPayloadOneOf283 != null)
             {
-                return UserEventPayloadMember283.GetFieldDeserializers();
+                return UserEventPayloadOneOf283.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember284 != null)
+            else if(UserEventPayloadOneOf284 != null)
             {
-                return UserEventPayloadMember284.GetFieldDeserializers();
+                return UserEventPayloadOneOf284.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember285 != null)
+            else if(UserEventPayloadOneOf285 != null)
             {
-                return UserEventPayloadMember285.GetFieldDeserializers();
+                return UserEventPayloadOneOf285.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember286 != null)
+            else if(UserEventPayloadOneOf286 != null)
             {
-                return UserEventPayloadMember286.GetFieldDeserializers();
+                return UserEventPayloadOneOf286.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember287 != null)
+            else if(UserEventPayloadOneOf287 != null)
             {
-                return UserEventPayloadMember287.GetFieldDeserializers();
+                return UserEventPayloadOneOf287.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember288 != null)
+            else if(UserEventPayloadOneOf288 != null)
             {
-                return UserEventPayloadMember288.GetFieldDeserializers();
+                return UserEventPayloadOneOf288.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember289 != null)
+            else if(UserEventPayloadOneOf289 != null)
             {
-                return UserEventPayloadMember289.GetFieldDeserializers();
+                return UserEventPayloadOneOf289.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember29 != null)
+            else if(UserEventPayloadOneOf29 != null)
             {
-                return UserEventPayloadMember29.GetFieldDeserializers();
+                return UserEventPayloadOneOf29.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember290 != null)
+            else if(UserEventPayloadOneOf290 != null)
             {
-                return UserEventPayloadMember290.GetFieldDeserializers();
+                return UserEventPayloadOneOf290.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember291 != null)
+            else if(UserEventPayloadOneOf291 != null)
             {
-                return UserEventPayloadMember291.GetFieldDeserializers();
+                return UserEventPayloadOneOf291.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember292 != null)
+            else if(UserEventPayloadOneOf292 != null)
             {
-                return UserEventPayloadMember292.GetFieldDeserializers();
+                return UserEventPayloadOneOf292.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember293 != null)
+            else if(UserEventPayloadOneOf293 != null)
             {
-                return UserEventPayloadMember293.GetFieldDeserializers();
+                return UserEventPayloadOneOf293.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember294 != null)
+            else if(UserEventPayloadOneOf294 != null)
             {
-                return UserEventPayloadMember294.GetFieldDeserializers();
+                return UserEventPayloadOneOf294.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember295 != null)
+            else if(UserEventPayloadOneOf295 != null)
             {
-                return UserEventPayloadMember295.GetFieldDeserializers();
+                return UserEventPayloadOneOf295.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember296 != null)
+            else if(UserEventPayloadOneOf296 != null)
             {
-                return UserEventPayloadMember296.GetFieldDeserializers();
+                return UserEventPayloadOneOf296.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember297 != null)
+            else if(UserEventPayloadOneOf297 != null)
             {
-                return UserEventPayloadMember297.GetFieldDeserializers();
+                return UserEventPayloadOneOf297.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember298 != null)
+            else if(UserEventPayloadOneOf298 != null)
             {
-                return UserEventPayloadMember298.GetFieldDeserializers();
+                return UserEventPayloadOneOf298.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember299 != null)
+            else if(UserEventPayloadOneOf299 != null)
             {
-                return UserEventPayloadMember299.GetFieldDeserializers();
+                return UserEventPayloadOneOf299.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember3 != null)
+            else if(UserEventPayloadOneOf3 != null)
             {
-                return UserEventPayloadMember3.GetFieldDeserializers();
+                return UserEventPayloadOneOf3.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember30 != null)
+            else if(UserEventPayloadOneOf30 != null)
             {
-                return UserEventPayloadMember30.GetFieldDeserializers();
+                return UserEventPayloadOneOf30.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember300 != null)
+            else if(UserEventPayloadOneOf300 != null)
             {
-                return UserEventPayloadMember300.GetFieldDeserializers();
+                return UserEventPayloadOneOf300.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember301 != null)
+            else if(UserEventPayloadOneOf301 != null)
             {
-                return UserEventPayloadMember301.GetFieldDeserializers();
+                return UserEventPayloadOneOf301.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember302 != null)
+            else if(UserEventPayloadOneOf302 != null)
             {
-                return UserEventPayloadMember302.GetFieldDeserializers();
+                return UserEventPayloadOneOf302.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember303 != null)
+            else if(UserEventPayloadOneOf303 != null)
             {
-                return UserEventPayloadMember303.GetFieldDeserializers();
+                return UserEventPayloadOneOf303.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember304 != null)
+            else if(UserEventPayloadOneOf304 != null)
             {
-                return UserEventPayloadMember304.GetFieldDeserializers();
+                return UserEventPayloadOneOf304.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember305 != null)
+            else if(UserEventPayloadOneOf305 != null)
             {
-                return UserEventPayloadMember305.GetFieldDeserializers();
+                return UserEventPayloadOneOf305.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember306 != null)
+            else if(UserEventPayloadOneOf306 != null)
             {
-                return UserEventPayloadMember306.GetFieldDeserializers();
+                return UserEventPayloadOneOf306.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember307 != null)
+            else if(UserEventPayloadOneOf307 != null)
             {
-                return UserEventPayloadMember307.GetFieldDeserializers();
+                return UserEventPayloadOneOf307.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember308 != null)
+            else if(UserEventPayloadOneOf308 != null)
             {
-                return UserEventPayloadMember308.GetFieldDeserializers();
+                return UserEventPayloadOneOf308.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember309 != null)
+            else if(UserEventPayloadOneOf309 != null)
             {
-                return UserEventPayloadMember309.GetFieldDeserializers();
+                return UserEventPayloadOneOf309.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember31 != null)
+            else if(UserEventPayloadOneOf31 != null)
             {
-                return UserEventPayloadMember31.GetFieldDeserializers();
+                return UserEventPayloadOneOf31.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember310 != null)
+            else if(UserEventPayloadOneOf310 != null)
             {
-                return UserEventPayloadMember310.GetFieldDeserializers();
+                return UserEventPayloadOneOf310.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember311 != null)
+            else if(UserEventPayloadOneOf311 != null)
             {
-                return UserEventPayloadMember311.GetFieldDeserializers();
+                return UserEventPayloadOneOf311.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember312 != null)
+            else if(UserEventPayloadOneOf312 != null)
             {
-                return UserEventPayloadMember312.GetFieldDeserializers();
+                return UserEventPayloadOneOf312.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember313 != null)
+            else if(UserEventPayloadOneOf313 != null)
             {
-                return UserEventPayloadMember313.GetFieldDeserializers();
+                return UserEventPayloadOneOf313.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember314 != null)
+            else if(UserEventPayloadOneOf314 != null)
             {
-                return UserEventPayloadMember314.GetFieldDeserializers();
+                return UserEventPayloadOneOf314.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember315 != null)
+            else if(UserEventPayloadOneOf315 != null)
             {
-                return UserEventPayloadMember315.GetFieldDeserializers();
+                return UserEventPayloadOneOf315.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember316 != null)
+            else if(UserEventPayloadOneOf316 != null)
             {
-                return UserEventPayloadMember316.GetFieldDeserializers();
+                return UserEventPayloadOneOf316.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember317 != null)
+            else if(UserEventPayloadOneOf317 != null)
             {
-                return UserEventPayloadMember317.GetFieldDeserializers();
+                return UserEventPayloadOneOf317.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember318 != null)
+            else if(UserEventPayloadOneOf318 != null)
             {
-                return UserEventPayloadMember318.GetFieldDeserializers();
+                return UserEventPayloadOneOf318.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember319 != null)
+            else if(UserEventPayloadOneOf319 != null)
             {
-                return UserEventPayloadMember319.GetFieldDeserializers();
+                return UserEventPayloadOneOf319.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember32 != null)
+            else if(UserEventPayloadOneOf32 != null)
             {
-                return UserEventPayloadMember32.GetFieldDeserializers();
+                return UserEventPayloadOneOf32.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember320 != null)
+            else if(UserEventPayloadOneOf320 != null)
             {
-                return UserEventPayloadMember320.GetFieldDeserializers();
+                return UserEventPayloadOneOf320.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember321 != null)
+            else if(UserEventPayloadOneOf321 != null)
             {
-                return UserEventPayloadMember321.GetFieldDeserializers();
+                return UserEventPayloadOneOf321.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember322 != null)
+            else if(UserEventPayloadOneOf322 != null)
             {
-                return UserEventPayloadMember322.GetFieldDeserializers();
+                return UserEventPayloadOneOf322.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember323 != null)
+            else if(UserEventPayloadOneOf323 != null)
             {
-                return UserEventPayloadMember323.GetFieldDeserializers();
+                return UserEventPayloadOneOf323.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember324 != null)
+            else if(UserEventPayloadOneOf324 != null)
             {
-                return UserEventPayloadMember324.GetFieldDeserializers();
+                return UserEventPayloadOneOf324.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember325 != null)
+            else if(UserEventPayloadOneOf325 != null)
             {
-                return UserEventPayloadMember325.GetFieldDeserializers();
+                return UserEventPayloadOneOf325.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember326 != null)
+            else if(UserEventPayloadOneOf326 != null)
             {
-                return UserEventPayloadMember326.GetFieldDeserializers();
+                return UserEventPayloadOneOf326.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember327 != null)
+            else if(UserEventPayloadOneOf327 != null)
             {
-                return UserEventPayloadMember327.GetFieldDeserializers();
+                return UserEventPayloadOneOf327.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember328 != null)
+            else if(UserEventPayloadOneOf328 != null)
             {
-                return UserEventPayloadMember328.GetFieldDeserializers();
+                return UserEventPayloadOneOf328.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember329 != null)
+            else if(UserEventPayloadOneOf329 != null)
             {
-                return UserEventPayloadMember329.GetFieldDeserializers();
+                return UserEventPayloadOneOf329.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember33 != null)
+            else if(UserEventPayloadOneOf33 != null)
             {
-                return UserEventPayloadMember33.GetFieldDeserializers();
+                return UserEventPayloadOneOf33.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember330 != null)
+            else if(UserEventPayloadOneOf330 != null)
             {
-                return UserEventPayloadMember330.GetFieldDeserializers();
+                return UserEventPayloadOneOf330.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember331 != null)
+            else if(UserEventPayloadOneOf331 != null)
             {
-                return UserEventPayloadMember331.GetFieldDeserializers();
+                return UserEventPayloadOneOf331.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember332 != null)
+            else if(UserEventPayloadOneOf332 != null)
             {
-                return UserEventPayloadMember332.GetFieldDeserializers();
+                return UserEventPayloadOneOf332.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember333 != null)
+            else if(UserEventPayloadOneOf333 != null)
             {
-                return UserEventPayloadMember333.GetFieldDeserializers();
+                return UserEventPayloadOneOf333.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember334 != null)
+            else if(UserEventPayloadOneOf334 != null)
             {
-                return UserEventPayloadMember334.GetFieldDeserializers();
+                return UserEventPayloadOneOf334.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember335 != null)
+            else if(UserEventPayloadOneOf335 != null)
             {
-                return UserEventPayloadMember335.GetFieldDeserializers();
+                return UserEventPayloadOneOf335.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember336 != null)
+            else if(UserEventPayloadOneOf336 != null)
             {
-                return UserEventPayloadMember336.GetFieldDeserializers();
+                return UserEventPayloadOneOf336.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember34 != null)
+            else if(UserEventPayloadOneOf337 != null)
             {
-                return UserEventPayloadMember34.GetFieldDeserializers();
+                return UserEventPayloadOneOf337.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember35 != null)
+            else if(UserEventPayloadOneOf338 != null)
             {
-                return UserEventPayloadMember35.GetFieldDeserializers();
+                return UserEventPayloadOneOf338.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember36 != null)
+            else if(UserEventPayloadOneOf339 != null)
             {
-                return UserEventPayloadMember36.GetFieldDeserializers();
+                return UserEventPayloadOneOf339.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember37 != null)
+            else if(UserEventPayloadOneOf34 != null)
             {
-                return UserEventPayloadMember37.GetFieldDeserializers();
+                return UserEventPayloadOneOf34.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember38 != null)
+            else if(UserEventPayloadOneOf340 != null)
             {
-                return UserEventPayloadMember38.GetFieldDeserializers();
+                return UserEventPayloadOneOf340.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember39 != null)
+            else if(UserEventPayloadOneOf341 != null)
             {
-                return UserEventPayloadMember39.GetFieldDeserializers();
+                return UserEventPayloadOneOf341.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember4 != null)
+            else if(UserEventPayloadOneOf342 != null)
             {
-                return UserEventPayloadMember4.GetFieldDeserializers();
+                return UserEventPayloadOneOf342.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember40 != null)
+            else if(UserEventPayloadOneOf343 != null)
             {
-                return UserEventPayloadMember40.GetFieldDeserializers();
+                return UserEventPayloadOneOf343.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember41 != null)
+            else if(UserEventPayloadOneOf344 != null)
             {
-                return UserEventPayloadMember41.GetFieldDeserializers();
+                return UserEventPayloadOneOf344.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember42 != null)
+            else if(UserEventPayloadOneOf345 != null)
             {
-                return UserEventPayloadMember42.GetFieldDeserializers();
+                return UserEventPayloadOneOf345.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember43 != null)
+            else if(UserEventPayloadOneOf346 != null)
             {
-                return UserEventPayloadMember43.GetFieldDeserializers();
+                return UserEventPayloadOneOf346.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember44 != null)
+            else if(UserEventPayloadOneOf347 != null)
             {
-                return UserEventPayloadMember44.GetFieldDeserializers();
+                return UserEventPayloadOneOf347.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember45 != null)
+            else if(UserEventPayloadOneOf348 != null)
             {
-                return UserEventPayloadMember45.GetFieldDeserializers();
+                return UserEventPayloadOneOf348.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember46 != null)
+            else if(UserEventPayloadOneOf349 != null)
             {
-                return UserEventPayloadMember46.GetFieldDeserializers();
+                return UserEventPayloadOneOf349.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember47 != null)
+            else if(UserEventPayloadOneOf35 != null)
             {
-                return UserEventPayloadMember47.GetFieldDeserializers();
+                return UserEventPayloadOneOf35.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember48 != null)
+            else if(UserEventPayloadOneOf350 != null)
             {
-                return UserEventPayloadMember48.GetFieldDeserializers();
+                return UserEventPayloadOneOf350.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember49 != null)
+            else if(UserEventPayloadOneOf351 != null)
             {
-                return UserEventPayloadMember49.GetFieldDeserializers();
+                return UserEventPayloadOneOf351.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember5 != null)
+            else if(UserEventPayloadOneOf352 != null)
             {
-                return UserEventPayloadMember5.GetFieldDeserializers();
+                return UserEventPayloadOneOf352.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember50 != null)
+            else if(UserEventPayloadOneOf353 != null)
             {
-                return UserEventPayloadMember50.GetFieldDeserializers();
+                return UserEventPayloadOneOf353.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember51 != null)
+            else if(UserEventPayloadOneOf354 != null)
             {
-                return UserEventPayloadMember51.GetFieldDeserializers();
+                return UserEventPayloadOneOf354.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember52 != null)
+            else if(UserEventPayloadOneOf355 != null)
             {
-                return UserEventPayloadMember52.GetFieldDeserializers();
+                return UserEventPayloadOneOf355.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember53 != null)
+            else if(UserEventPayloadOneOf356 != null)
             {
-                return UserEventPayloadMember53.GetFieldDeserializers();
+                return UserEventPayloadOneOf356.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember54 != null)
+            else if(UserEventPayloadOneOf357 != null)
             {
-                return UserEventPayloadMember54.GetFieldDeserializers();
+                return UserEventPayloadOneOf357.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember55 != null)
+            else if(UserEventPayloadOneOf358 != null)
             {
-                return UserEventPayloadMember55.GetFieldDeserializers();
+                return UserEventPayloadOneOf358.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember56 != null)
+            else if(UserEventPayloadOneOf359 != null)
             {
-                return UserEventPayloadMember56.GetFieldDeserializers();
+                return UserEventPayloadOneOf359.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember57 != null)
+            else if(UserEventPayloadOneOf36 != null)
             {
-                return UserEventPayloadMember57.GetFieldDeserializers();
+                return UserEventPayloadOneOf36.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember58 != null)
+            else if(UserEventPayloadOneOf360 != null)
             {
-                return UserEventPayloadMember58.GetFieldDeserializers();
+                return UserEventPayloadOneOf360.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember59 != null)
+            else if(UserEventPayloadOneOf361 != null)
             {
-                return UserEventPayloadMember59.GetFieldDeserializers();
+                return UserEventPayloadOneOf361.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember6 != null)
+            else if(UserEventPayloadOneOf362 != null)
             {
-                return UserEventPayloadMember6.GetFieldDeserializers();
+                return UserEventPayloadOneOf362.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember60 != null)
+            else if(UserEventPayloadOneOf363 != null)
             {
-                return UserEventPayloadMember60.GetFieldDeserializers();
+                return UserEventPayloadOneOf363.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember61 != null)
+            else if(UserEventPayloadOneOf364 != null)
             {
-                return UserEventPayloadMember61.GetFieldDeserializers();
+                return UserEventPayloadOneOf364.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember62 != null)
+            else if(UserEventPayloadOneOf365 != null)
             {
-                return UserEventPayloadMember62.GetFieldDeserializers();
+                return UserEventPayloadOneOf365.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember63 != null)
+            else if(UserEventPayloadOneOf366 != null)
             {
-                return UserEventPayloadMember63.GetFieldDeserializers();
+                return UserEventPayloadOneOf366.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember64 != null)
+            else if(UserEventPayloadOneOf367 != null)
             {
-                return UserEventPayloadMember64.GetFieldDeserializers();
+                return UserEventPayloadOneOf367.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember65 != null)
+            else if(UserEventPayloadOneOf368 != null)
             {
-                return UserEventPayloadMember65.GetFieldDeserializers();
+                return UserEventPayloadOneOf368.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember66 != null)
+            else if(UserEventPayloadOneOf369 != null)
             {
-                return UserEventPayloadMember66.GetFieldDeserializers();
+                return UserEventPayloadOneOf369.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember67 != null)
+            else if(UserEventPayloadOneOf37 != null)
             {
-                return UserEventPayloadMember67.GetFieldDeserializers();
+                return UserEventPayloadOneOf37.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember68 != null)
+            else if(UserEventPayloadOneOf370 != null)
             {
-                return UserEventPayloadMember68.GetFieldDeserializers();
+                return UserEventPayloadOneOf370.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember69 != null)
+            else if(UserEventPayloadOneOf371 != null)
             {
-                return UserEventPayloadMember69.GetFieldDeserializers();
+                return UserEventPayloadOneOf371.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember7 != null)
+            else if(UserEventPayloadOneOf372 != null)
             {
-                return UserEventPayloadMember7.GetFieldDeserializers();
+                return UserEventPayloadOneOf372.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember70 != null)
+            else if(UserEventPayloadOneOf38 != null)
             {
-                return UserEventPayloadMember70.GetFieldDeserializers();
+                return UserEventPayloadOneOf38.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember71 != null)
+            else if(UserEventPayloadOneOf39 != null)
             {
-                return UserEventPayloadMember71.GetFieldDeserializers();
+                return UserEventPayloadOneOf39.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember72 != null)
+            else if(UserEventPayloadOneOf4 != null)
             {
-                return UserEventPayloadMember72.GetFieldDeserializers();
+                return UserEventPayloadOneOf4.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember73 != null)
+            else if(UserEventPayloadOneOf40 != null)
             {
-                return UserEventPayloadMember73.GetFieldDeserializers();
+                return UserEventPayloadOneOf40.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember74 != null)
+            else if(UserEventPayloadOneOf41 != null)
             {
-                return UserEventPayloadMember74.GetFieldDeserializers();
+                return UserEventPayloadOneOf41.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember75 != null)
+            else if(UserEventPayloadOneOf42 != null)
             {
-                return UserEventPayloadMember75.GetFieldDeserializers();
+                return UserEventPayloadOneOf42.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember76 != null)
+            else if(UserEventPayloadOneOf43 != null)
             {
-                return UserEventPayloadMember76.GetFieldDeserializers();
+                return UserEventPayloadOneOf43.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember77 != null)
+            else if(UserEventPayloadOneOf44 != null)
             {
-                return UserEventPayloadMember77.GetFieldDeserializers();
+                return UserEventPayloadOneOf44.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember78 != null)
+            else if(UserEventPayloadOneOf45 != null)
             {
-                return UserEventPayloadMember78.GetFieldDeserializers();
+                return UserEventPayloadOneOf45.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember79 != null)
+            else if(UserEventPayloadOneOf46 != null)
             {
-                return UserEventPayloadMember79.GetFieldDeserializers();
+                return UserEventPayloadOneOf46.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember8 != null)
+            else if(UserEventPayloadOneOf47 != null)
             {
-                return UserEventPayloadMember8.GetFieldDeserializers();
+                return UserEventPayloadOneOf47.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember80 != null)
+            else if(UserEventPayloadOneOf48 != null)
             {
-                return UserEventPayloadMember80.GetFieldDeserializers();
+                return UserEventPayloadOneOf48.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember81 != null)
+            else if(UserEventPayloadOneOf49 != null)
             {
-                return UserEventPayloadMember81.GetFieldDeserializers();
+                return UserEventPayloadOneOf49.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember82 != null)
+            else if(UserEventPayloadOneOf5 != null)
             {
-                return UserEventPayloadMember82.GetFieldDeserializers();
+                return UserEventPayloadOneOf5.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember83 != null)
+            else if(UserEventPayloadOneOf50 != null)
             {
-                return UserEventPayloadMember83.GetFieldDeserializers();
+                return UserEventPayloadOneOf50.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember84 != null)
+            else if(UserEventPayloadOneOf51 != null)
             {
-                return UserEventPayloadMember84.GetFieldDeserializers();
+                return UserEventPayloadOneOf51.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember85 != null)
+            else if(UserEventPayloadOneOf52 != null)
             {
-                return UserEventPayloadMember85.GetFieldDeserializers();
+                return UserEventPayloadOneOf52.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember86 != null)
+            else if(UserEventPayloadOneOf53 != null)
             {
-                return UserEventPayloadMember86.GetFieldDeserializers();
+                return UserEventPayloadOneOf53.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember87 != null)
+            else if(UserEventPayloadOneOf54 != null)
             {
-                return UserEventPayloadMember87.GetFieldDeserializers();
+                return UserEventPayloadOneOf54.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember88 != null)
+            else if(UserEventPayloadOneOf55 != null)
             {
-                return UserEventPayloadMember88.GetFieldDeserializers();
+                return UserEventPayloadOneOf55.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember89 != null)
+            else if(UserEventPayloadOneOf56 != null)
             {
-                return UserEventPayloadMember89.GetFieldDeserializers();
+                return UserEventPayloadOneOf56.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember9 != null)
+            else if(UserEventPayloadOneOf57 != null)
             {
-                return UserEventPayloadMember9.GetFieldDeserializers();
+                return UserEventPayloadOneOf57.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember90 != null)
+            else if(UserEventPayloadOneOf58 != null)
             {
-                return UserEventPayloadMember90.GetFieldDeserializers();
+                return UserEventPayloadOneOf58.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember91 != null)
+            else if(UserEventPayloadOneOf59 != null)
             {
-                return UserEventPayloadMember91.GetFieldDeserializers();
+                return UserEventPayloadOneOf59.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember92 != null)
+            else if(UserEventPayloadOneOf6 != null)
             {
-                return UserEventPayloadMember92.GetFieldDeserializers();
+                return UserEventPayloadOneOf6.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember93 != null)
+            else if(UserEventPayloadOneOf60 != null)
             {
-                return UserEventPayloadMember93.GetFieldDeserializers();
+                return UserEventPayloadOneOf60.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember94 != null)
+            else if(UserEventPayloadOneOf61 != null)
             {
-                return UserEventPayloadMember94.GetFieldDeserializers();
+                return UserEventPayloadOneOf61.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember95 != null)
+            else if(UserEventPayloadOneOf62 != null)
             {
-                return UserEventPayloadMember95.GetFieldDeserializers();
+                return UserEventPayloadOneOf62.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember96 != null)
+            else if(UserEventPayloadOneOf63 != null)
             {
-                return UserEventPayloadMember96.GetFieldDeserializers();
+                return UserEventPayloadOneOf63.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember97 != null)
+            else if(UserEventPayloadOneOf64 != null)
             {
-                return UserEventPayloadMember97.GetFieldDeserializers();
+                return UserEventPayloadOneOf64.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember98 != null)
+            else if(UserEventPayloadOneOf65 != null)
             {
-                return UserEventPayloadMember98.GetFieldDeserializers();
+                return UserEventPayloadOneOf65.GetFieldDeserializers();
             }
-            else if(UserEventPayloadMember99 != null)
+            else if(UserEventPayloadOneOf66 != null)
             {
-                return UserEventPayloadMember99.GetFieldDeserializers();
+                return UserEventPayloadOneOf66.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf67 != null)
+            {
+                return UserEventPayloadOneOf67.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf68 != null)
+            {
+                return UserEventPayloadOneOf68.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf69 != null)
+            {
+                return UserEventPayloadOneOf69.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf7 != null)
+            {
+                return UserEventPayloadOneOf7.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf70 != null)
+            {
+                return UserEventPayloadOneOf70.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf71 != null)
+            {
+                return UserEventPayloadOneOf71.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf72 != null)
+            {
+                return UserEventPayloadOneOf72.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf73 != null)
+            {
+                return UserEventPayloadOneOf73.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf74 != null)
+            {
+                return UserEventPayloadOneOf74.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf75 != null)
+            {
+                return UserEventPayloadOneOf75.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf76 != null)
+            {
+                return UserEventPayloadOneOf76.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf77 != null)
+            {
+                return UserEventPayloadOneOf77.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf78 != null)
+            {
+                return UserEventPayloadOneOf78.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf79 != null)
+            {
+                return UserEventPayloadOneOf79.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf8 != null)
+            {
+                return UserEventPayloadOneOf8.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf80 != null)
+            {
+                return UserEventPayloadOneOf80.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf81 != null)
+            {
+                return UserEventPayloadOneOf81.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf82 != null)
+            {
+                return UserEventPayloadOneOf82.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf83 != null)
+            {
+                return UserEventPayloadOneOf83.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf84 != null)
+            {
+                return UserEventPayloadOneOf84.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf85 != null)
+            {
+                return UserEventPayloadOneOf85.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf86 != null)
+            {
+                return UserEventPayloadOneOf86.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf87 != null)
+            {
+                return UserEventPayloadOneOf87.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf88 != null)
+            {
+                return UserEventPayloadOneOf88.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf89 != null)
+            {
+                return UserEventPayloadOneOf89.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf9 != null)
+            {
+                return UserEventPayloadOneOf9.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf90 != null)
+            {
+                return UserEventPayloadOneOf90.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf91 != null)
+            {
+                return UserEventPayloadOneOf91.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf92 != null)
+            {
+                return UserEventPayloadOneOf92.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf93 != null)
+            {
+                return UserEventPayloadOneOf93.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf94 != null)
+            {
+                return UserEventPayloadOneOf94.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf95 != null)
+            {
+                return UserEventPayloadOneOf95.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf96 != null)
+            {
+                return UserEventPayloadOneOf96.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf97 != null)
+            {
+                return UserEventPayloadOneOf97.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf98 != null)
+            {
+                return UserEventPayloadOneOf98.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf99 != null)
+            {
+                return UserEventPayloadOneOf99.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -5420,1345 +5992,1489 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember1>(null, UserEventPayloadMember1);
             }
-            else if(UserEventPayloadMember10 != null)
+            else if(UserEventPayloadOneOf10 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember10>(null, UserEventPayloadMember10);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf10>(null, UserEventPayloadOneOf10);
             }
-            else if(UserEventPayloadMember100 != null)
+            else if(UserEventPayloadOneOf100 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember100>(null, UserEventPayloadMember100);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100>(null, UserEventPayloadOneOf100);
             }
-            else if(UserEventPayloadMember101 != null)
+            else if(UserEventPayloadOneOf101 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember101>(null, UserEventPayloadMember101);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf101>(null, UserEventPayloadOneOf101);
             }
-            else if(UserEventPayloadMember102 != null)
+            else if(UserEventPayloadOneOf102 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember102>(null, UserEventPayloadMember102);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf102>(null, UserEventPayloadOneOf102);
             }
-            else if(UserEventPayloadMember103 != null)
+            else if(UserEventPayloadOneOf103 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember103>(null, UserEventPayloadMember103);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf103>(null, UserEventPayloadOneOf103);
             }
-            else if(UserEventPayloadMember104 != null)
+            else if(UserEventPayloadOneOf104 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember104>(null, UserEventPayloadMember104);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf104>(null, UserEventPayloadOneOf104);
             }
-            else if(UserEventPayloadMember105 != null)
+            else if(UserEventPayloadOneOf105 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember105>(null, UserEventPayloadMember105);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf105>(null, UserEventPayloadOneOf105);
             }
-            else if(UserEventPayloadMember106 != null)
+            else if(UserEventPayloadOneOf106 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember106>(null, UserEventPayloadMember106);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf106>(null, UserEventPayloadOneOf106);
             }
-            else if(UserEventPayloadMember107 != null)
+            else if(UserEventPayloadOneOf107 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember107>(null, UserEventPayloadMember107);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf107>(null, UserEventPayloadOneOf107);
             }
-            else if(UserEventPayloadMember108 != null)
+            else if(UserEventPayloadOneOf108 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember108>(null, UserEventPayloadMember108);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf108>(null, UserEventPayloadOneOf108);
             }
-            else if(UserEventPayloadMember109 != null)
+            else if(UserEventPayloadOneOf109 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember109>(null, UserEventPayloadMember109);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf109>(null, UserEventPayloadOneOf109);
             }
-            else if(UserEventPayloadMember11 != null)
+            else if(UserEventPayloadOneOf11 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember11>(null, UserEventPayloadMember11);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf11>(null, UserEventPayloadOneOf11);
             }
-            else if(UserEventPayloadMember110 != null)
+            else if(UserEventPayloadOneOf110 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember110>(null, UserEventPayloadMember110);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110>(null, UserEventPayloadOneOf110);
             }
-            else if(UserEventPayloadMember111 != null)
+            else if(UserEventPayloadOneOf111 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember111>(null, UserEventPayloadMember111);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf111>(null, UserEventPayloadOneOf111);
             }
-            else if(UserEventPayloadMember112 != null)
+            else if(UserEventPayloadOneOf112 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember112>(null, UserEventPayloadMember112);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112>(null, UserEventPayloadOneOf112);
             }
-            else if(UserEventPayloadMember113 != null)
+            else if(UserEventPayloadOneOf113 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember113>(null, UserEventPayloadMember113);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf113>(null, UserEventPayloadOneOf113);
             }
-            else if(UserEventPayloadMember114 != null)
+            else if(UserEventPayloadOneOf114 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember114>(null, UserEventPayloadMember114);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf114>(null, UserEventPayloadOneOf114);
             }
-            else if(UserEventPayloadMember115 != null)
+            else if(UserEventPayloadOneOf115 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember115>(null, UserEventPayloadMember115);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf115>(null, UserEventPayloadOneOf115);
             }
-            else if(UserEventPayloadMember116 != null)
+            else if(UserEventPayloadOneOf116 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember116>(null, UserEventPayloadMember116);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf116>(null, UserEventPayloadOneOf116);
             }
-            else if(UserEventPayloadMember117 != null)
+            else if(UserEventPayloadOneOf117 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember117>(null, UserEventPayloadMember117);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117>(null, UserEventPayloadOneOf117);
             }
-            else if(UserEventPayloadMember118 != null)
+            else if(UserEventPayloadOneOf118 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember118>(null, UserEventPayloadMember118);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf118>(null, UserEventPayloadOneOf118);
             }
-            else if(UserEventPayloadMember119 != null)
+            else if(UserEventPayloadOneOf119 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember119>(null, UserEventPayloadMember119);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf119>(null, UserEventPayloadOneOf119);
             }
-            else if(UserEventPayloadMember12 != null)
+            else if(UserEventPayloadOneOf12 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember12>(null, UserEventPayloadMember12);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12>(null, UserEventPayloadOneOf12);
             }
-            else if(UserEventPayloadMember120 != null)
+            else if(UserEventPayloadOneOf120 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember120>(null, UserEventPayloadMember120);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf120>(null, UserEventPayloadOneOf120);
             }
-            else if(UserEventPayloadMember121 != null)
+            else if(UserEventPayloadOneOf121 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember121>(null, UserEventPayloadMember121);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf121>(null, UserEventPayloadOneOf121);
             }
-            else if(UserEventPayloadMember122 != null)
+            else if(UserEventPayloadOneOf122 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember122>(null, UserEventPayloadMember122);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf122>(null, UserEventPayloadOneOf122);
             }
-            else if(UserEventPayloadMember123 != null)
+            else if(UserEventPayloadOneOf123 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember123>(null, UserEventPayloadMember123);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf123>(null, UserEventPayloadOneOf123);
             }
-            else if(UserEventPayloadMember124 != null)
+            else if(UserEventPayloadOneOf124 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember124>(null, UserEventPayloadMember124);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf124>(null, UserEventPayloadOneOf124);
             }
-            else if(UserEventPayloadMember125 != null)
+            else if(UserEventPayloadOneOf125 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember125>(null, UserEventPayloadMember125);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf125>(null, UserEventPayloadOneOf125);
             }
-            else if(UserEventPayloadMember126 != null)
+            else if(UserEventPayloadOneOf126 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember126>(null, UserEventPayloadMember126);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126>(null, UserEventPayloadOneOf126);
             }
-            else if(UserEventPayloadMember127 != null)
+            else if(UserEventPayloadOneOf127 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember127>(null, UserEventPayloadMember127);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf127>(null, UserEventPayloadOneOf127);
             }
-            else if(UserEventPayloadMember128 != null)
+            else if(UserEventPayloadOneOf128 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember128>(null, UserEventPayloadMember128);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf128>(null, UserEventPayloadOneOf128);
             }
-            else if(UserEventPayloadMember129 != null)
+            else if(UserEventPayloadOneOf129 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember129>(null, UserEventPayloadMember129);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf129>(null, UserEventPayloadOneOf129);
             }
-            else if(UserEventPayloadMember13 != null)
+            else if(UserEventPayloadOneOf13 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember13>(null, UserEventPayloadMember13);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf13>(null, UserEventPayloadOneOf13);
             }
-            else if(UserEventPayloadMember130 != null)
+            else if(UserEventPayloadOneOf130 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember130>(null, UserEventPayloadMember130);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf130>(null, UserEventPayloadOneOf130);
             }
-            else if(UserEventPayloadMember131 != null)
+            else if(UserEventPayloadOneOf131 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember131>(null, UserEventPayloadMember131);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131>(null, UserEventPayloadOneOf131);
             }
-            else if(UserEventPayloadMember132 != null)
+            else if(UserEventPayloadOneOf132 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember132>(null, UserEventPayloadMember132);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132>(null, UserEventPayloadOneOf132);
             }
-            else if(UserEventPayloadMember133 != null)
+            else if(UserEventPayloadOneOf133 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember133>(null, UserEventPayloadMember133);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf133>(null, UserEventPayloadOneOf133);
             }
-            else if(UserEventPayloadMember134 != null)
+            else if(UserEventPayloadOneOf134 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember134>(null, UserEventPayloadMember134);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf134>(null, UserEventPayloadOneOf134);
             }
-            else if(UserEventPayloadMember135 != null)
+            else if(UserEventPayloadOneOf135 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember135>(null, UserEventPayloadMember135);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf135>(null, UserEventPayloadOneOf135);
             }
-            else if(UserEventPayloadMember136 != null)
+            else if(UserEventPayloadOneOf136 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember136>(null, UserEventPayloadMember136);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf136>(null, UserEventPayloadOneOf136);
             }
-            else if(UserEventPayloadMember137 != null)
+            else if(UserEventPayloadOneOf137 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember137>(null, UserEventPayloadMember137);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137>(null, UserEventPayloadOneOf137);
             }
-            else if(UserEventPayloadMember138 != null)
+            else if(UserEventPayloadOneOf138 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember138>(null, UserEventPayloadMember138);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf138>(null, UserEventPayloadOneOf138);
             }
-            else if(UserEventPayloadMember139 != null)
+            else if(UserEventPayloadOneOf139 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember139>(null, UserEventPayloadMember139);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139>(null, UserEventPayloadOneOf139);
             }
-            else if(UserEventPayloadMember14 != null)
+            else if(UserEventPayloadOneOf14 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember14>(null, UserEventPayloadMember14);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf14>(null, UserEventPayloadOneOf14);
             }
-            else if(UserEventPayloadMember140 != null)
+            else if(UserEventPayloadOneOf140 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember140>(null, UserEventPayloadMember140);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140>(null, UserEventPayloadOneOf140);
             }
-            else if(UserEventPayloadMember141 != null)
+            else if(UserEventPayloadOneOf141 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember141>(null, UserEventPayloadMember141);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141>(null, UserEventPayloadOneOf141);
             }
-            else if(UserEventPayloadMember142 != null)
+            else if(UserEventPayloadOneOf142 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember142>(null, UserEventPayloadMember142);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf142>(null, UserEventPayloadOneOf142);
             }
-            else if(UserEventPayloadMember143 != null)
+            else if(UserEventPayloadOneOf143 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember143>(null, UserEventPayloadMember143);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf143>(null, UserEventPayloadOneOf143);
             }
-            else if(UserEventPayloadMember144 != null)
+            else if(UserEventPayloadOneOf144 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember144>(null, UserEventPayloadMember144);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf144>(null, UserEventPayloadOneOf144);
             }
-            else if(UserEventPayloadMember145 != null)
+            else if(UserEventPayloadOneOf145 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember145>(null, UserEventPayloadMember145);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf145>(null, UserEventPayloadOneOf145);
             }
-            else if(UserEventPayloadMember146 != null)
+            else if(UserEventPayloadOneOf146 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember146>(null, UserEventPayloadMember146);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf146>(null, UserEventPayloadOneOf146);
             }
-            else if(UserEventPayloadMember147 != null)
+            else if(UserEventPayloadOneOf147 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember147>(null, UserEventPayloadMember147);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf147>(null, UserEventPayloadOneOf147);
             }
-            else if(UserEventPayloadMember148 != null)
+            else if(UserEventPayloadOneOf148 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember148>(null, UserEventPayloadMember148);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf148>(null, UserEventPayloadOneOf148);
             }
-            else if(UserEventPayloadMember149 != null)
+            else if(UserEventPayloadOneOf149 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember149>(null, UserEventPayloadMember149);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf149>(null, UserEventPayloadOneOf149);
             }
-            else if(UserEventPayloadMember15 != null)
+            else if(UserEventPayloadOneOf15 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember15>(null, UserEventPayloadMember15);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf15>(null, UserEventPayloadOneOf15);
             }
-            else if(UserEventPayloadMember150 != null)
+            else if(UserEventPayloadOneOf150 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember150>(null, UserEventPayloadMember150);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150>(null, UserEventPayloadOneOf150);
             }
-            else if(UserEventPayloadMember151 != null)
+            else if(UserEventPayloadOneOf151 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember151>(null, UserEventPayloadMember151);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf151>(null, UserEventPayloadOneOf151);
             }
-            else if(UserEventPayloadMember152 != null)
+            else if(UserEventPayloadOneOf152 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember152>(null, UserEventPayloadMember152);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152>(null, UserEventPayloadOneOf152);
             }
-            else if(UserEventPayloadMember153 != null)
+            else if(UserEventPayloadOneOf153 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember153>(null, UserEventPayloadMember153);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153>(null, UserEventPayloadOneOf153);
             }
-            else if(UserEventPayloadMember154 != null)
+            else if(UserEventPayloadOneOf154 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember154>(null, UserEventPayloadMember154);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154>(null, UserEventPayloadOneOf154);
             }
-            else if(UserEventPayloadMember155 != null)
+            else if(UserEventPayloadOneOf155 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember155>(null, UserEventPayloadMember155);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155>(null, UserEventPayloadOneOf155);
             }
-            else if(UserEventPayloadMember156 != null)
+            else if(UserEventPayloadOneOf156 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember156>(null, UserEventPayloadMember156);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf156>(null, UserEventPayloadOneOf156);
             }
-            else if(UserEventPayloadMember157 != null)
+            else if(UserEventPayloadOneOf157 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember157>(null, UserEventPayloadMember157);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf157>(null, UserEventPayloadOneOf157);
             }
-            else if(UserEventPayloadMember158 != null)
+            else if(UserEventPayloadOneOf158 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember158>(null, UserEventPayloadMember158);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158>(null, UserEventPayloadOneOf158);
             }
-            else if(UserEventPayloadMember159 != null)
+            else if(UserEventPayloadOneOf159 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember159>(null, UserEventPayloadMember159);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159>(null, UserEventPayloadOneOf159);
             }
-            else if(UserEventPayloadMember16 != null)
+            else if(UserEventPayloadOneOf16 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember16>(null, UserEventPayloadMember16);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16>(null, UserEventPayloadOneOf16);
             }
-            else if(UserEventPayloadMember160 != null)
+            else if(UserEventPayloadOneOf160 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember160>(null, UserEventPayloadMember160);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160>(null, UserEventPayloadOneOf160);
             }
-            else if(UserEventPayloadMember161 != null)
+            else if(UserEventPayloadOneOf161 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember161>(null, UserEventPayloadMember161);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf161>(null, UserEventPayloadOneOf161);
             }
-            else if(UserEventPayloadMember162 != null)
+            else if(UserEventPayloadOneOf162 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember162>(null, UserEventPayloadMember162);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf162>(null, UserEventPayloadOneOf162);
             }
-            else if(UserEventPayloadMember163 != null)
+            else if(UserEventPayloadOneOf163 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember163>(null, UserEventPayloadMember163);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163>(null, UserEventPayloadOneOf163);
             }
-            else if(UserEventPayloadMember164 != null)
+            else if(UserEventPayloadOneOf164 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember164>(null, UserEventPayloadMember164);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf164>(null, UserEventPayloadOneOf164);
             }
-            else if(UserEventPayloadMember165 != null)
+            else if(UserEventPayloadOneOf165 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember165>(null, UserEventPayloadMember165);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165>(null, UserEventPayloadOneOf165);
             }
-            else if(UserEventPayloadMember166 != null)
+            else if(UserEventPayloadOneOf166 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember166>(null, UserEventPayloadMember166);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf166>(null, UserEventPayloadOneOf166);
             }
-            else if(UserEventPayloadMember167 != null)
+            else if(UserEventPayloadOneOf167 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember167>(null, UserEventPayloadMember167);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf167>(null, UserEventPayloadOneOf167);
             }
-            else if(UserEventPayloadMember168 != null)
+            else if(UserEventPayloadOneOf168 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember168>(null, UserEventPayloadMember168);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf168>(null, UserEventPayloadOneOf168);
             }
-            else if(UserEventPayloadMember169 != null)
+            else if(UserEventPayloadOneOf169 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember169>(null, UserEventPayloadMember169);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169>(null, UserEventPayloadOneOf169);
             }
-            else if(UserEventPayloadMember17 != null)
+            else if(UserEventPayloadOneOf17 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember17>(null, UserEventPayloadMember17);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf17>(null, UserEventPayloadOneOf17);
             }
-            else if(UserEventPayloadMember170 != null)
+            else if(UserEventPayloadOneOf170 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember170>(null, UserEventPayloadMember170);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170>(null, UserEventPayloadOneOf170);
             }
-            else if(UserEventPayloadMember171 != null)
+            else if(UserEventPayloadOneOf171 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember171>(null, UserEventPayloadMember171);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf171>(null, UserEventPayloadOneOf171);
             }
-            else if(UserEventPayloadMember172 != null)
+            else if(UserEventPayloadOneOf172 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember172>(null, UserEventPayloadMember172);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172>(null, UserEventPayloadOneOf172);
             }
-            else if(UserEventPayloadMember173 != null)
+            else if(UserEventPayloadOneOf173 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember173>(null, UserEventPayloadMember173);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf173>(null, UserEventPayloadOneOf173);
             }
-            else if(UserEventPayloadMember174 != null)
+            else if(UserEventPayloadOneOf174 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember174>(null, UserEventPayloadMember174);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174>(null, UserEventPayloadOneOf174);
             }
-            else if(UserEventPayloadMember175 != null)
+            else if(UserEventPayloadOneOf175 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember175>(null, UserEventPayloadMember175);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf175>(null, UserEventPayloadOneOf175);
             }
-            else if(UserEventPayloadMember176 != null)
+            else if(UserEventPayloadOneOf176 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember176>(null, UserEventPayloadMember176);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176>(null, UserEventPayloadOneOf176);
             }
-            else if(UserEventPayloadMember177 != null)
+            else if(UserEventPayloadOneOf177 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember177>(null, UserEventPayloadMember177);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf177>(null, UserEventPayloadOneOf177);
             }
-            else if(UserEventPayloadMember178 != null)
+            else if(UserEventPayloadOneOf178 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember178>(null, UserEventPayloadMember178);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf178>(null, UserEventPayloadOneOf178);
             }
-            else if(UserEventPayloadMember179 != null)
+            else if(UserEventPayloadOneOf179 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember179>(null, UserEventPayloadMember179);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf179>(null, UserEventPayloadOneOf179);
             }
-            else if(UserEventPayloadMember18 != null)
+            else if(UserEventPayloadOneOf18 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember18>(null, UserEventPayloadMember18);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18>(null, UserEventPayloadOneOf18);
             }
-            else if(UserEventPayloadMember180 != null)
+            else if(UserEventPayloadOneOf180 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember180>(null, UserEventPayloadMember180);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf180>(null, UserEventPayloadOneOf180);
             }
-            else if(UserEventPayloadMember181 != null)
+            else if(UserEventPayloadOneOf181 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember181>(null, UserEventPayloadMember181);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf181>(null, UserEventPayloadOneOf181);
             }
-            else if(UserEventPayloadMember182 != null)
+            else if(UserEventPayloadOneOf182 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember182>(null, UserEventPayloadMember182);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf182>(null, UserEventPayloadOneOf182);
             }
-            else if(UserEventPayloadMember183 != null)
+            else if(UserEventPayloadOneOf183 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember183>(null, UserEventPayloadMember183);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf183>(null, UserEventPayloadOneOf183);
             }
-            else if(UserEventPayloadMember184 != null)
+            else if(UserEventPayloadOneOf184 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember184>(null, UserEventPayloadMember184);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184>(null, UserEventPayloadOneOf184);
             }
-            else if(UserEventPayloadMember185 != null)
+            else if(UserEventPayloadOneOf185 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember185>(null, UserEventPayloadMember185);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf185>(null, UserEventPayloadOneOf185);
             }
-            else if(UserEventPayloadMember186 != null)
+            else if(UserEventPayloadOneOf186 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember186>(null, UserEventPayloadMember186);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf186>(null, UserEventPayloadOneOf186);
             }
-            else if(UserEventPayloadMember187 != null)
+            else if(UserEventPayloadOneOf187 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember187>(null, UserEventPayloadMember187);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf187>(null, UserEventPayloadOneOf187);
             }
-            else if(UserEventPayloadMember188 != null)
+            else if(UserEventPayloadOneOf188 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember188>(null, UserEventPayloadMember188);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf188>(null, UserEventPayloadOneOf188);
             }
-            else if(UserEventPayloadMember189 != null)
+            else if(UserEventPayloadOneOf189 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember189>(null, UserEventPayloadMember189);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf189>(null, UserEventPayloadOneOf189);
             }
-            else if(UserEventPayloadMember19 != null)
+            else if(UserEventPayloadOneOf19 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember19>(null, UserEventPayloadMember19);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf19>(null, UserEventPayloadOneOf19);
             }
-            else if(UserEventPayloadMember190 != null)
+            else if(UserEventPayloadOneOf190 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember190>(null, UserEventPayloadMember190);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf190>(null, UserEventPayloadOneOf190);
             }
-            else if(UserEventPayloadMember191 != null)
+            else if(UserEventPayloadOneOf191 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember191>(null, UserEventPayloadMember191);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf191>(null, UserEventPayloadOneOf191);
             }
-            else if(UserEventPayloadMember192 != null)
+            else if(UserEventPayloadOneOf192 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember192>(null, UserEventPayloadMember192);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192>(null, UserEventPayloadOneOf192);
             }
-            else if(UserEventPayloadMember193 != null)
+            else if(UserEventPayloadOneOf193 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember193>(null, UserEventPayloadMember193);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf193>(null, UserEventPayloadOneOf193);
             }
-            else if(UserEventPayloadMember194 != null)
+            else if(UserEventPayloadOneOf194 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember194>(null, UserEventPayloadMember194);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf194>(null, UserEventPayloadOneOf194);
             }
-            else if(UserEventPayloadMember195 != null)
+            else if(UserEventPayloadOneOf195 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember195>(null, UserEventPayloadMember195);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf195>(null, UserEventPayloadOneOf195);
             }
-            else if(UserEventPayloadMember196 != null)
+            else if(UserEventPayloadOneOf196 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember196>(null, UserEventPayloadMember196);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf196>(null, UserEventPayloadOneOf196);
             }
-            else if(UserEventPayloadMember197 != null)
+            else if(UserEventPayloadOneOf197 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember197>(null, UserEventPayloadMember197);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf197>(null, UserEventPayloadOneOf197);
             }
-            else if(UserEventPayloadMember198 != null)
+            else if(UserEventPayloadOneOf198 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember198>(null, UserEventPayloadMember198);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf198>(null, UserEventPayloadOneOf198);
             }
-            else if(UserEventPayloadMember199 != null)
+            else if(UserEventPayloadOneOf199 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember199>(null, UserEventPayloadMember199);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf199>(null, UserEventPayloadOneOf199);
             }
-            else if(UserEventPayloadMember2 != null)
+            else if(UserEventPayloadOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember2>(null, UserEventPayloadMember2);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf2>(null, UserEventPayloadOneOf2);
             }
-            else if(UserEventPayloadMember20 != null)
+            else if(UserEventPayloadOneOf20 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember20>(null, UserEventPayloadMember20);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20>(null, UserEventPayloadOneOf20);
             }
-            else if(UserEventPayloadMember200 != null)
+            else if(UserEventPayloadOneOf200 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember200>(null, UserEventPayloadMember200);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf200>(null, UserEventPayloadOneOf200);
             }
-            else if(UserEventPayloadMember201 != null)
+            else if(UserEventPayloadOneOf201 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember201>(null, UserEventPayloadMember201);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf201>(null, UserEventPayloadOneOf201);
             }
-            else if(UserEventPayloadMember202 != null)
+            else if(UserEventPayloadOneOf202 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember202>(null, UserEventPayloadMember202);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf202>(null, UserEventPayloadOneOf202);
             }
-            else if(UserEventPayloadMember203 != null)
+            else if(UserEventPayloadOneOf203 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember203>(null, UserEventPayloadMember203);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203>(null, UserEventPayloadOneOf203);
             }
-            else if(UserEventPayloadMember204 != null)
+            else if(UserEventPayloadOneOf204 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember204>(null, UserEventPayloadMember204);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf204>(null, UserEventPayloadOneOf204);
             }
-            else if(UserEventPayloadMember205 != null)
+            else if(UserEventPayloadOneOf205 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember205>(null, UserEventPayloadMember205);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf205>(null, UserEventPayloadOneOf205);
             }
-            else if(UserEventPayloadMember206 != null)
+            else if(UserEventPayloadOneOf206 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember206>(null, UserEventPayloadMember206);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf206>(null, UserEventPayloadOneOf206);
             }
-            else if(UserEventPayloadMember207 != null)
+            else if(UserEventPayloadOneOf207 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember207>(null, UserEventPayloadMember207);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf207>(null, UserEventPayloadOneOf207);
             }
-            else if(UserEventPayloadMember208 != null)
+            else if(UserEventPayloadOneOf208 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember208>(null, UserEventPayloadMember208);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf208>(null, UserEventPayloadOneOf208);
             }
-            else if(UserEventPayloadMember209 != null)
+            else if(UserEventPayloadOneOf209 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember209>(null, UserEventPayloadMember209);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf209>(null, UserEventPayloadOneOf209);
             }
-            else if(UserEventPayloadMember21 != null)
+            else if(UserEventPayloadOneOf21 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember21>(null, UserEventPayloadMember21);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf21>(null, UserEventPayloadOneOf21);
             }
-            else if(UserEventPayloadMember210 != null)
+            else if(UserEventPayloadOneOf210 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember210>(null, UserEventPayloadMember210);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210>(null, UserEventPayloadOneOf210);
             }
-            else if(UserEventPayloadMember211 != null)
+            else if(UserEventPayloadOneOf211 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember211>(null, UserEventPayloadMember211);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf211>(null, UserEventPayloadOneOf211);
             }
-            else if(UserEventPayloadMember212 != null)
+            else if(UserEventPayloadOneOf212 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember212>(null, UserEventPayloadMember212);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf212>(null, UserEventPayloadOneOf212);
             }
-            else if(UserEventPayloadMember213 != null)
+            else if(UserEventPayloadOneOf213 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember213>(null, UserEventPayloadMember213);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf213>(null, UserEventPayloadOneOf213);
             }
-            else if(UserEventPayloadMember214 != null)
+            else if(UserEventPayloadOneOf214 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember214>(null, UserEventPayloadMember214);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf214>(null, UserEventPayloadOneOf214);
             }
-            else if(UserEventPayloadMember215 != null)
+            else if(UserEventPayloadOneOf215 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember215>(null, UserEventPayloadMember215);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf215>(null, UserEventPayloadOneOf215);
             }
-            else if(UserEventPayloadMember216 != null)
+            else if(UserEventPayloadOneOf216 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember216>(null, UserEventPayloadMember216);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216>(null, UserEventPayloadOneOf216);
             }
-            else if(UserEventPayloadMember217 != null)
+            else if(UserEventPayloadOneOf217 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember217>(null, UserEventPayloadMember217);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf217>(null, UserEventPayloadOneOf217);
             }
-            else if(UserEventPayloadMember218 != null)
+            else if(UserEventPayloadOneOf218 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember218>(null, UserEventPayloadMember218);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218>(null, UserEventPayloadOneOf218);
             }
-            else if(UserEventPayloadMember219 != null)
+            else if(UserEventPayloadOneOf219 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember219>(null, UserEventPayloadMember219);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219>(null, UserEventPayloadOneOf219);
             }
-            else if(UserEventPayloadMember22 != null)
+            else if(UserEventPayloadOneOf22 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember22>(null, UserEventPayloadMember22);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf22>(null, UserEventPayloadOneOf22);
             }
-            else if(UserEventPayloadMember220 != null)
+            else if(UserEventPayloadOneOf220 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember220>(null, UserEventPayloadMember220);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf220>(null, UserEventPayloadOneOf220);
             }
-            else if(UserEventPayloadMember221 != null)
+            else if(UserEventPayloadOneOf221 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember221>(null, UserEventPayloadMember221);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf221>(null, UserEventPayloadOneOf221);
             }
-            else if(UserEventPayloadMember222 != null)
+            else if(UserEventPayloadOneOf222 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember222>(null, UserEventPayloadMember222);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf222>(null, UserEventPayloadOneOf222);
             }
-            else if(UserEventPayloadMember223 != null)
+            else if(UserEventPayloadOneOf223 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember223>(null, UserEventPayloadMember223);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf223>(null, UserEventPayloadOneOf223);
             }
-            else if(UserEventPayloadMember224 != null)
+            else if(UserEventPayloadOneOf224 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember224>(null, UserEventPayloadMember224);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf224>(null, UserEventPayloadOneOf224);
             }
-            else if(UserEventPayloadMember225 != null)
+            else if(UserEventPayloadOneOf225 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember225>(null, UserEventPayloadMember225);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf225>(null, UserEventPayloadOneOf225);
             }
-            else if(UserEventPayloadMember226 != null)
+            else if(UserEventPayloadOneOf226 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember226>(null, UserEventPayloadMember226);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf226>(null, UserEventPayloadOneOf226);
             }
-            else if(UserEventPayloadMember227 != null)
+            else if(UserEventPayloadOneOf227 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember227>(null, UserEventPayloadMember227);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf227>(null, UserEventPayloadOneOf227);
             }
-            else if(UserEventPayloadMember228 != null)
+            else if(UserEventPayloadOneOf228 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember228>(null, UserEventPayloadMember228);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf228>(null, UserEventPayloadOneOf228);
             }
-            else if(UserEventPayloadMember229 != null)
+            else if(UserEventPayloadOneOf229 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember229>(null, UserEventPayloadMember229);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229>(null, UserEventPayloadOneOf229);
             }
-            else if(UserEventPayloadMember23 != null)
+            else if(UserEventPayloadOneOf23 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember23>(null, UserEventPayloadMember23);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf23>(null, UserEventPayloadOneOf23);
             }
-            else if(UserEventPayloadMember230 != null)
+            else if(UserEventPayloadOneOf230 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember230>(null, UserEventPayloadMember230);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf230>(null, UserEventPayloadOneOf230);
             }
-            else if(UserEventPayloadMember231 != null)
+            else if(UserEventPayloadOneOf231 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember231>(null, UserEventPayloadMember231);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231>(null, UserEventPayloadOneOf231);
             }
-            else if(UserEventPayloadMember232 != null)
+            else if(UserEventPayloadOneOf232 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember232>(null, UserEventPayloadMember232);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf232>(null, UserEventPayloadOneOf232);
             }
-            else if(UserEventPayloadMember233 != null)
+            else if(UserEventPayloadOneOf233 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember233>(null, UserEventPayloadMember233);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf233>(null, UserEventPayloadOneOf233);
             }
-            else if(UserEventPayloadMember234 != null)
+            else if(UserEventPayloadOneOf234 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember234>(null, UserEventPayloadMember234);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf234>(null, UserEventPayloadOneOf234);
             }
-            else if(UserEventPayloadMember235 != null)
+            else if(UserEventPayloadOneOf235 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember235>(null, UserEventPayloadMember235);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf235>(null, UserEventPayloadOneOf235);
             }
-            else if(UserEventPayloadMember236 != null)
+            else if(UserEventPayloadOneOf236 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember236>(null, UserEventPayloadMember236);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf236>(null, UserEventPayloadOneOf236);
             }
-            else if(UserEventPayloadMember237 != null)
+            else if(UserEventPayloadOneOf237 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember237>(null, UserEventPayloadMember237);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf237>(null, UserEventPayloadOneOf237);
             }
-            else if(UserEventPayloadMember238 != null)
+            else if(UserEventPayloadOneOf238 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember238>(null, UserEventPayloadMember238);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf238>(null, UserEventPayloadOneOf238);
             }
-            else if(UserEventPayloadMember239 != null)
+            else if(UserEventPayloadOneOf239 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember239>(null, UserEventPayloadMember239);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf239>(null, UserEventPayloadOneOf239);
             }
-            else if(UserEventPayloadMember24 != null)
+            else if(UserEventPayloadOneOf24 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember24>(null, UserEventPayloadMember24);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24>(null, UserEventPayloadOneOf24);
             }
-            else if(UserEventPayloadMember240 != null)
+            else if(UserEventPayloadOneOf240 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember240>(null, UserEventPayloadMember240);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf240>(null, UserEventPayloadOneOf240);
             }
-            else if(UserEventPayloadMember241 != null)
+            else if(UserEventPayloadOneOf241 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember241>(null, UserEventPayloadMember241);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf241>(null, UserEventPayloadOneOf241);
             }
-            else if(UserEventPayloadMember242 != null)
+            else if(UserEventPayloadOneOf242 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember242>(null, UserEventPayloadMember242);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242>(null, UserEventPayloadOneOf242);
             }
-            else if(UserEventPayloadMember243 != null)
+            else if(UserEventPayloadOneOf243 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember243>(null, UserEventPayloadMember243);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf243>(null, UserEventPayloadOneOf243);
             }
-            else if(UserEventPayloadMember244 != null)
+            else if(UserEventPayloadOneOf244 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember244>(null, UserEventPayloadMember244);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf244>(null, UserEventPayloadOneOf244);
             }
-            else if(UserEventPayloadMember245 != null)
+            else if(UserEventPayloadOneOf245 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember245>(null, UserEventPayloadMember245);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf245>(null, UserEventPayloadOneOf245);
             }
-            else if(UserEventPayloadMember246 != null)
+            else if(UserEventPayloadOneOf246 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember246>(null, UserEventPayloadMember246);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf246>(null, UserEventPayloadOneOf246);
             }
-            else if(UserEventPayloadMember247 != null)
+            else if(UserEventPayloadOneOf247 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember247>(null, UserEventPayloadMember247);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf247>(null, UserEventPayloadOneOf247);
             }
-            else if(UserEventPayloadMember248 != null)
+            else if(UserEventPayloadOneOf248 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember248>(null, UserEventPayloadMember248);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf248>(null, UserEventPayloadOneOf248);
             }
-            else if(UserEventPayloadMember249 != null)
+            else if(UserEventPayloadOneOf249 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember249>(null, UserEventPayloadMember249);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf249>(null, UserEventPayloadOneOf249);
             }
-            else if(UserEventPayloadMember25 != null)
+            else if(UserEventPayloadOneOf25 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember25>(null, UserEventPayloadMember25);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf25>(null, UserEventPayloadOneOf25);
             }
-            else if(UserEventPayloadMember250 != null)
+            else if(UserEventPayloadOneOf250 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember250>(null, UserEventPayloadMember250);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf250>(null, UserEventPayloadOneOf250);
             }
-            else if(UserEventPayloadMember251 != null)
+            else if(UserEventPayloadOneOf251 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember251>(null, UserEventPayloadMember251);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf251>(null, UserEventPayloadOneOf251);
             }
-            else if(UserEventPayloadMember252 != null)
+            else if(UserEventPayloadOneOf252 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember252>(null, UserEventPayloadMember252);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf252>(null, UserEventPayloadOneOf252);
             }
-            else if(UserEventPayloadMember253 != null)
+            else if(UserEventPayloadOneOf253 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember253>(null, UserEventPayloadMember253);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf253>(null, UserEventPayloadOneOf253);
             }
-            else if(UserEventPayloadMember254 != null)
+            else if(UserEventPayloadOneOf254 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember254>(null, UserEventPayloadMember254);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf254>(null, UserEventPayloadOneOf254);
             }
-            else if(UserEventPayloadMember255 != null)
+            else if(UserEventPayloadOneOf255 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember255>(null, UserEventPayloadMember255);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf255>(null, UserEventPayloadOneOf255);
             }
-            else if(UserEventPayloadMember256 != null)
+            else if(UserEventPayloadOneOf256 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember256>(null, UserEventPayloadMember256);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf256>(null, UserEventPayloadOneOf256);
             }
-            else if(UserEventPayloadMember257 != null)
+            else if(UserEventPayloadOneOf257 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember257>(null, UserEventPayloadMember257);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf257>(null, UserEventPayloadOneOf257);
             }
-            else if(UserEventPayloadMember258 != null)
+            else if(UserEventPayloadOneOf258 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember258>(null, UserEventPayloadMember258);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf258>(null, UserEventPayloadOneOf258);
             }
-            else if(UserEventPayloadMember259 != null)
+            else if(UserEventPayloadOneOf259 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember259>(null, UserEventPayloadMember259);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf259>(null, UserEventPayloadOneOf259);
             }
-            else if(UserEventPayloadMember26 != null)
+            else if(UserEventPayloadOneOf26 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember26>(null, UserEventPayloadMember26);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf26>(null, UserEventPayloadOneOf26);
             }
-            else if(UserEventPayloadMember260 != null)
+            else if(UserEventPayloadOneOf260 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember260>(null, UserEventPayloadMember260);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf260>(null, UserEventPayloadOneOf260);
             }
-            else if(UserEventPayloadMember261 != null)
+            else if(UserEventPayloadOneOf261 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember261>(null, UserEventPayloadMember261);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf261>(null, UserEventPayloadOneOf261);
             }
-            else if(UserEventPayloadMember262 != null)
+            else if(UserEventPayloadOneOf262 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember262>(null, UserEventPayloadMember262);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf262>(null, UserEventPayloadOneOf262);
             }
-            else if(UserEventPayloadMember263 != null)
+            else if(UserEventPayloadOneOf263 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember263>(null, UserEventPayloadMember263);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263>(null, UserEventPayloadOneOf263);
             }
-            else if(UserEventPayloadMember264 != null)
+            else if(UserEventPayloadOneOf264 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember264>(null, UserEventPayloadMember264);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf264>(null, UserEventPayloadOneOf264);
             }
-            else if(UserEventPayloadMember265 != null)
+            else if(UserEventPayloadOneOf265 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember265>(null, UserEventPayloadMember265);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf265>(null, UserEventPayloadOneOf265);
             }
-            else if(UserEventPayloadMember266 != null)
+            else if(UserEventPayloadOneOf266 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember266>(null, UserEventPayloadMember266);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf266>(null, UserEventPayloadOneOf266);
             }
-            else if(UserEventPayloadMember267 != null)
+            else if(UserEventPayloadOneOf267 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember267>(null, UserEventPayloadMember267);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf267>(null, UserEventPayloadOneOf267);
             }
-            else if(UserEventPayloadMember268 != null)
+            else if(UserEventPayloadOneOf268 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember268>(null, UserEventPayloadMember268);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf268>(null, UserEventPayloadOneOf268);
             }
-            else if(UserEventPayloadMember269 != null)
+            else if(UserEventPayloadOneOf269 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember269>(null, UserEventPayloadMember269);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf269>(null, UserEventPayloadOneOf269);
             }
-            else if(UserEventPayloadMember27 != null)
+            else if(UserEventPayloadOneOf27 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember27>(null, UserEventPayloadMember27);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27>(null, UserEventPayloadOneOf27);
             }
-            else if(UserEventPayloadMember270 != null)
+            else if(UserEventPayloadOneOf270 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember270>(null, UserEventPayloadMember270);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf270>(null, UserEventPayloadOneOf270);
             }
-            else if(UserEventPayloadMember271 != null)
+            else if(UserEventPayloadOneOf271 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember271>(null, UserEventPayloadMember271);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf271>(null, UserEventPayloadOneOf271);
             }
-            else if(UserEventPayloadMember272 != null)
+            else if(UserEventPayloadOneOf272 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember272>(null, UserEventPayloadMember272);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf272>(null, UserEventPayloadOneOf272);
             }
-            else if(UserEventPayloadMember273 != null)
+            else if(UserEventPayloadOneOf273 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember273>(null, UserEventPayloadMember273);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf273>(null, UserEventPayloadOneOf273);
             }
-            else if(UserEventPayloadMember274 != null)
+            else if(UserEventPayloadOneOf274 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember274>(null, UserEventPayloadMember274);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf274>(null, UserEventPayloadOneOf274);
             }
-            else if(UserEventPayloadMember275 != null)
+            else if(UserEventPayloadOneOf275 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember275>(null, UserEventPayloadMember275);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf275>(null, UserEventPayloadOneOf275);
             }
-            else if(UserEventPayloadMember276 != null)
+            else if(UserEventPayloadOneOf276 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember276>(null, UserEventPayloadMember276);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf276>(null, UserEventPayloadOneOf276);
             }
-            else if(UserEventPayloadMember277 != null)
+            else if(UserEventPayloadOneOf277 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember277>(null, UserEventPayloadMember277);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf277>(null, UserEventPayloadOneOf277);
             }
-            else if(UserEventPayloadMember278 != null)
+            else if(UserEventPayloadOneOf278 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember278>(null, UserEventPayloadMember278);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf278>(null, UserEventPayloadOneOf278);
             }
-            else if(UserEventPayloadMember279 != null)
+            else if(UserEventPayloadOneOf279 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember279>(null, UserEventPayloadMember279);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf279>(null, UserEventPayloadOneOf279);
             }
-            else if(UserEventPayloadMember28 != null)
+            else if(UserEventPayloadOneOf28 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember28>(null, UserEventPayloadMember28);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf28>(null, UserEventPayloadOneOf28);
             }
-            else if(UserEventPayloadMember280 != null)
+            else if(UserEventPayloadOneOf280 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember280>(null, UserEventPayloadMember280);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf280>(null, UserEventPayloadOneOf280);
             }
-            else if(UserEventPayloadMember281 != null)
+            else if(UserEventPayloadOneOf281 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember281>(null, UserEventPayloadMember281);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf281>(null, UserEventPayloadOneOf281);
             }
-            else if(UserEventPayloadMember282 != null)
+            else if(UserEventPayloadOneOf282 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember282>(null, UserEventPayloadMember282);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf282>(null, UserEventPayloadOneOf282);
             }
-            else if(UserEventPayloadMember283 != null)
+            else if(UserEventPayloadOneOf283 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember283>(null, UserEventPayloadMember283);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf283>(null, UserEventPayloadOneOf283);
             }
-            else if(UserEventPayloadMember284 != null)
+            else if(UserEventPayloadOneOf284 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember284>(null, UserEventPayloadMember284);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf284>(null, UserEventPayloadOneOf284);
             }
-            else if(UserEventPayloadMember285 != null)
+            else if(UserEventPayloadOneOf285 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember285>(null, UserEventPayloadMember285);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf285>(null, UserEventPayloadOneOf285);
             }
-            else if(UserEventPayloadMember286 != null)
+            else if(UserEventPayloadOneOf286 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember286>(null, UserEventPayloadMember286);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf286>(null, UserEventPayloadOneOf286);
             }
-            else if(UserEventPayloadMember287 != null)
+            else if(UserEventPayloadOneOf287 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember287>(null, UserEventPayloadMember287);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf287>(null, UserEventPayloadOneOf287);
             }
-            else if(UserEventPayloadMember288 != null)
+            else if(UserEventPayloadOneOf288 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember288>(null, UserEventPayloadMember288);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf288>(null, UserEventPayloadOneOf288);
             }
-            else if(UserEventPayloadMember289 != null)
+            else if(UserEventPayloadOneOf289 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember289>(null, UserEventPayloadMember289);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf289>(null, UserEventPayloadOneOf289);
             }
-            else if(UserEventPayloadMember29 != null)
+            else if(UserEventPayloadOneOf29 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember29>(null, UserEventPayloadMember29);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29>(null, UserEventPayloadOneOf29);
             }
-            else if(UserEventPayloadMember290 != null)
+            else if(UserEventPayloadOneOf290 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember290>(null, UserEventPayloadMember290);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf290>(null, UserEventPayloadOneOf290);
             }
-            else if(UserEventPayloadMember291 != null)
+            else if(UserEventPayloadOneOf291 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember291>(null, UserEventPayloadMember291);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf291>(null, UserEventPayloadOneOf291);
             }
-            else if(UserEventPayloadMember292 != null)
+            else if(UserEventPayloadOneOf292 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember292>(null, UserEventPayloadMember292);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf292>(null, UserEventPayloadOneOf292);
             }
-            else if(UserEventPayloadMember293 != null)
+            else if(UserEventPayloadOneOf293 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember293>(null, UserEventPayloadMember293);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293>(null, UserEventPayloadOneOf293);
             }
-            else if(UserEventPayloadMember294 != null)
+            else if(UserEventPayloadOneOf294 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember294>(null, UserEventPayloadMember294);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf294>(null, UserEventPayloadOneOf294);
             }
-            else if(UserEventPayloadMember295 != null)
+            else if(UserEventPayloadOneOf295 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember295>(null, UserEventPayloadMember295);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf295>(null, UserEventPayloadOneOf295);
             }
-            else if(UserEventPayloadMember296 != null)
+            else if(UserEventPayloadOneOf296 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember296>(null, UserEventPayloadMember296);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296>(null, UserEventPayloadOneOf296);
             }
-            else if(UserEventPayloadMember297 != null)
+            else if(UserEventPayloadOneOf297 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember297>(null, UserEventPayloadMember297);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf297>(null, UserEventPayloadOneOf297);
             }
-            else if(UserEventPayloadMember298 != null)
+            else if(UserEventPayloadOneOf298 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember298>(null, UserEventPayloadMember298);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf298>(null, UserEventPayloadOneOf298);
             }
-            else if(UserEventPayloadMember299 != null)
+            else if(UserEventPayloadOneOf299 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember299>(null, UserEventPayloadMember299);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf299>(null, UserEventPayloadOneOf299);
             }
-            else if(UserEventPayloadMember3 != null)
+            else if(UserEventPayloadOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember3>(null, UserEventPayloadMember3);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf3>(null, UserEventPayloadOneOf3);
             }
-            else if(UserEventPayloadMember30 != null)
+            else if(UserEventPayloadOneOf30 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember30>(null, UserEventPayloadMember30);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf30>(null, UserEventPayloadOneOf30);
             }
-            else if(UserEventPayloadMember300 != null)
+            else if(UserEventPayloadOneOf300 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember300>(null, UserEventPayloadMember300);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf300>(null, UserEventPayloadOneOf300);
             }
-            else if(UserEventPayloadMember301 != null)
+            else if(UserEventPayloadOneOf301 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember301>(null, UserEventPayloadMember301);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301>(null, UserEventPayloadOneOf301);
             }
-            else if(UserEventPayloadMember302 != null)
+            else if(UserEventPayloadOneOf302 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember302>(null, UserEventPayloadMember302);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf302>(null, UserEventPayloadOneOf302);
             }
-            else if(UserEventPayloadMember303 != null)
+            else if(UserEventPayloadOneOf303 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember303>(null, UserEventPayloadMember303);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303>(null, UserEventPayloadOneOf303);
             }
-            else if(UserEventPayloadMember304 != null)
+            else if(UserEventPayloadOneOf304 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember304>(null, UserEventPayloadMember304);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf304>(null, UserEventPayloadOneOf304);
             }
-            else if(UserEventPayloadMember305 != null)
+            else if(UserEventPayloadOneOf305 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember305>(null, UserEventPayloadMember305);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf305>(null, UserEventPayloadOneOf305);
             }
-            else if(UserEventPayloadMember306 != null)
+            else if(UserEventPayloadOneOf306 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember306>(null, UserEventPayloadMember306);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf306>(null, UserEventPayloadOneOf306);
             }
-            else if(UserEventPayloadMember307 != null)
+            else if(UserEventPayloadOneOf307 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember307>(null, UserEventPayloadMember307);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf307>(null, UserEventPayloadOneOf307);
             }
-            else if(UserEventPayloadMember308 != null)
+            else if(UserEventPayloadOneOf308 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember308>(null, UserEventPayloadMember308);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf308>(null, UserEventPayloadOneOf308);
             }
-            else if(UserEventPayloadMember309 != null)
+            else if(UserEventPayloadOneOf309 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember309>(null, UserEventPayloadMember309);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309>(null, UserEventPayloadOneOf309);
             }
-            else if(UserEventPayloadMember31 != null)
+            else if(UserEventPayloadOneOf31 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember31>(null, UserEventPayloadMember31);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf31>(null, UserEventPayloadOneOf31);
             }
-            else if(UserEventPayloadMember310 != null)
+            else if(UserEventPayloadOneOf310 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember310>(null, UserEventPayloadMember310);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf310>(null, UserEventPayloadOneOf310);
             }
-            else if(UserEventPayloadMember311 != null)
+            else if(UserEventPayloadOneOf311 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember311>(null, UserEventPayloadMember311);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf311>(null, UserEventPayloadOneOf311);
             }
-            else if(UserEventPayloadMember312 != null)
+            else if(UserEventPayloadOneOf312 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember312>(null, UserEventPayloadMember312);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf312>(null, UserEventPayloadOneOf312);
             }
-            else if(UserEventPayloadMember313 != null)
+            else if(UserEventPayloadOneOf313 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember313>(null, UserEventPayloadMember313);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf313>(null, UserEventPayloadOneOf313);
             }
-            else if(UserEventPayloadMember314 != null)
+            else if(UserEventPayloadOneOf314 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember314>(null, UserEventPayloadMember314);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf314>(null, UserEventPayloadOneOf314);
             }
-            else if(UserEventPayloadMember315 != null)
+            else if(UserEventPayloadOneOf315 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember315>(null, UserEventPayloadMember315);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf315>(null, UserEventPayloadOneOf315);
             }
-            else if(UserEventPayloadMember316 != null)
+            else if(UserEventPayloadOneOf316 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember316>(null, UserEventPayloadMember316);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf316>(null, UserEventPayloadOneOf316);
             }
-            else if(UserEventPayloadMember317 != null)
+            else if(UserEventPayloadOneOf317 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember317>(null, UserEventPayloadMember317);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf317>(null, UserEventPayloadOneOf317);
             }
-            else if(UserEventPayloadMember318 != null)
+            else if(UserEventPayloadOneOf318 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember318>(null, UserEventPayloadMember318);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf318>(null, UserEventPayloadOneOf318);
             }
-            else if(UserEventPayloadMember319 != null)
+            else if(UserEventPayloadOneOf319 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember319>(null, UserEventPayloadMember319);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf319>(null, UserEventPayloadOneOf319);
             }
-            else if(UserEventPayloadMember32 != null)
+            else if(UserEventPayloadOneOf32 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember32>(null, UserEventPayloadMember32);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf32>(null, UserEventPayloadOneOf32);
             }
-            else if(UserEventPayloadMember320 != null)
+            else if(UserEventPayloadOneOf320 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember320>(null, UserEventPayloadMember320);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320>(null, UserEventPayloadOneOf320);
             }
-            else if(UserEventPayloadMember321 != null)
+            else if(UserEventPayloadOneOf321 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember321>(null, UserEventPayloadMember321);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf321>(null, UserEventPayloadOneOf321);
             }
-            else if(UserEventPayloadMember322 != null)
+            else if(UserEventPayloadOneOf322 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember322>(null, UserEventPayloadMember322);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf322>(null, UserEventPayloadOneOf322);
             }
-            else if(UserEventPayloadMember323 != null)
+            else if(UserEventPayloadOneOf323 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember323>(null, UserEventPayloadMember323);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf323>(null, UserEventPayloadOneOf323);
             }
-            else if(UserEventPayloadMember324 != null)
+            else if(UserEventPayloadOneOf324 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember324>(null, UserEventPayloadMember324);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf324>(null, UserEventPayloadOneOf324);
             }
-            else if(UserEventPayloadMember325 != null)
+            else if(UserEventPayloadOneOf325 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember325>(null, UserEventPayloadMember325);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf325>(null, UserEventPayloadOneOf325);
             }
-            else if(UserEventPayloadMember326 != null)
+            else if(UserEventPayloadOneOf326 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember326>(null, UserEventPayloadMember326);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf326>(null, UserEventPayloadOneOf326);
             }
-            else if(UserEventPayloadMember327 != null)
+            else if(UserEventPayloadOneOf327 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember327>(null, UserEventPayloadMember327);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327>(null, UserEventPayloadOneOf327);
             }
-            else if(UserEventPayloadMember328 != null)
+            else if(UserEventPayloadOneOf328 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember328>(null, UserEventPayloadMember328);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf328>(null, UserEventPayloadOneOf328);
             }
-            else if(UserEventPayloadMember329 != null)
+            else if(UserEventPayloadOneOf329 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember329>(null, UserEventPayloadMember329);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf329>(null, UserEventPayloadOneOf329);
             }
-            else if(UserEventPayloadMember33 != null)
+            else if(UserEventPayloadOneOf33 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember33>(null, UserEventPayloadMember33);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf33>(null, UserEventPayloadOneOf33);
             }
-            else if(UserEventPayloadMember330 != null)
+            else if(UserEventPayloadOneOf330 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember330>(null, UserEventPayloadMember330);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330>(null, UserEventPayloadOneOf330);
             }
-            else if(UserEventPayloadMember331 != null)
+            else if(UserEventPayloadOneOf331 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember331>(null, UserEventPayloadMember331);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331>(null, UserEventPayloadOneOf331);
             }
-            else if(UserEventPayloadMember332 != null)
+            else if(UserEventPayloadOneOf332 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember332>(null, UserEventPayloadMember332);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf332>(null, UserEventPayloadOneOf332);
             }
-            else if(UserEventPayloadMember333 != null)
+            else if(UserEventPayloadOneOf333 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember333>(null, UserEventPayloadMember333);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf333>(null, UserEventPayloadOneOf333);
             }
-            else if(UserEventPayloadMember334 != null)
+            else if(UserEventPayloadOneOf334 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember334>(null, UserEventPayloadMember334);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf334>(null, UserEventPayloadOneOf334);
             }
-            else if(UserEventPayloadMember335 != null)
+            else if(UserEventPayloadOneOf335 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember335>(null, UserEventPayloadMember335);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf335>(null, UserEventPayloadOneOf335);
             }
-            else if(UserEventPayloadMember336 != null)
+            else if(UserEventPayloadOneOf336 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember336>(null, UserEventPayloadMember336);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf336>(null, UserEventPayloadOneOf336);
             }
-            else if(UserEventPayloadMember34 != null)
+            else if(UserEventPayloadOneOf337 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember34>(null, UserEventPayloadMember34);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf337>(null, UserEventPayloadOneOf337);
             }
-            else if(UserEventPayloadMember35 != null)
+            else if(UserEventPayloadOneOf338 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember35>(null, UserEventPayloadMember35);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf338>(null, UserEventPayloadOneOf338);
             }
-            else if(UserEventPayloadMember36 != null)
+            else if(UserEventPayloadOneOf339 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember36>(null, UserEventPayloadMember36);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf339>(null, UserEventPayloadOneOf339);
             }
-            else if(UserEventPayloadMember37 != null)
+            else if(UserEventPayloadOneOf34 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember37>(null, UserEventPayloadMember37);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf34>(null, UserEventPayloadOneOf34);
             }
-            else if(UserEventPayloadMember38 != null)
+            else if(UserEventPayloadOneOf340 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember38>(null, UserEventPayloadMember38);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf340>(null, UserEventPayloadOneOf340);
             }
-            else if(UserEventPayloadMember39 != null)
+            else if(UserEventPayloadOneOf341 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember39>(null, UserEventPayloadMember39);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf341>(null, UserEventPayloadOneOf341);
             }
-            else if(UserEventPayloadMember4 != null)
+            else if(UserEventPayloadOneOf342 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember4>(null, UserEventPayloadMember4);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf342>(null, UserEventPayloadOneOf342);
             }
-            else if(UserEventPayloadMember40 != null)
+            else if(UserEventPayloadOneOf343 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember40>(null, UserEventPayloadMember40);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf343>(null, UserEventPayloadOneOf343);
             }
-            else if(UserEventPayloadMember41 != null)
+            else if(UserEventPayloadOneOf344 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember41>(null, UserEventPayloadMember41);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf344>(null, UserEventPayloadOneOf344);
             }
-            else if(UserEventPayloadMember42 != null)
+            else if(UserEventPayloadOneOf345 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember42>(null, UserEventPayloadMember42);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf345>(null, UserEventPayloadOneOf345);
             }
-            else if(UserEventPayloadMember43 != null)
+            else if(UserEventPayloadOneOf346 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember43>(null, UserEventPayloadMember43);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf346>(null, UserEventPayloadOneOf346);
             }
-            else if(UserEventPayloadMember44 != null)
+            else if(UserEventPayloadOneOf347 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember44>(null, UserEventPayloadMember44);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf347>(null, UserEventPayloadOneOf347);
             }
-            else if(UserEventPayloadMember45 != null)
+            else if(UserEventPayloadOneOf348 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember45>(null, UserEventPayloadMember45);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf348>(null, UserEventPayloadOneOf348);
             }
-            else if(UserEventPayloadMember46 != null)
+            else if(UserEventPayloadOneOf349 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember46>(null, UserEventPayloadMember46);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf349>(null, UserEventPayloadOneOf349);
             }
-            else if(UserEventPayloadMember47 != null)
+            else if(UserEventPayloadOneOf35 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember47>(null, UserEventPayloadMember47);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf35>(null, UserEventPayloadOneOf35);
             }
-            else if(UserEventPayloadMember48 != null)
+            else if(UserEventPayloadOneOf350 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember48>(null, UserEventPayloadMember48);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf350>(null, UserEventPayloadOneOf350);
             }
-            else if(UserEventPayloadMember49 != null)
+            else if(UserEventPayloadOneOf351 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember49>(null, UserEventPayloadMember49);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf351>(null, UserEventPayloadOneOf351);
             }
-            else if(UserEventPayloadMember5 != null)
+            else if(UserEventPayloadOneOf352 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember5>(null, UserEventPayloadMember5);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf352>(null, UserEventPayloadOneOf352);
             }
-            else if(UserEventPayloadMember50 != null)
+            else if(UserEventPayloadOneOf353 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember50>(null, UserEventPayloadMember50);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf353>(null, UserEventPayloadOneOf353);
             }
-            else if(UserEventPayloadMember51 != null)
+            else if(UserEventPayloadOneOf354 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember51>(null, UserEventPayloadMember51);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf354>(null, UserEventPayloadOneOf354);
             }
-            else if(UserEventPayloadMember52 != null)
+            else if(UserEventPayloadOneOf355 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember52>(null, UserEventPayloadMember52);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf355>(null, UserEventPayloadOneOf355);
             }
-            else if(UserEventPayloadMember53 != null)
+            else if(UserEventPayloadOneOf356 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember53>(null, UserEventPayloadMember53);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356>(null, UserEventPayloadOneOf356);
             }
-            else if(UserEventPayloadMember54 != null)
+            else if(UserEventPayloadOneOf357 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember54>(null, UserEventPayloadMember54);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf357>(null, UserEventPayloadOneOf357);
             }
-            else if(UserEventPayloadMember55 != null)
+            else if(UserEventPayloadOneOf358 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember55>(null, UserEventPayloadMember55);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf358>(null, UserEventPayloadOneOf358);
             }
-            else if(UserEventPayloadMember56 != null)
+            else if(UserEventPayloadOneOf359 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember56>(null, UserEventPayloadMember56);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359>(null, UserEventPayloadOneOf359);
             }
-            else if(UserEventPayloadMember57 != null)
+            else if(UserEventPayloadOneOf36 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember57>(null, UserEventPayloadMember57);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf36>(null, UserEventPayloadOneOf36);
             }
-            else if(UserEventPayloadMember58 != null)
+            else if(UserEventPayloadOneOf360 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember58>(null, UserEventPayloadMember58);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf360>(null, UserEventPayloadOneOf360);
             }
-            else if(UserEventPayloadMember59 != null)
+            else if(UserEventPayloadOneOf361 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember59>(null, UserEventPayloadMember59);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf361>(null, UserEventPayloadOneOf361);
             }
-            else if(UserEventPayloadMember6 != null)
+            else if(UserEventPayloadOneOf362 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember6>(null, UserEventPayloadMember6);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362>(null, UserEventPayloadOneOf362);
             }
-            else if(UserEventPayloadMember60 != null)
+            else if(UserEventPayloadOneOf363 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember60>(null, UserEventPayloadMember60);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf363>(null, UserEventPayloadOneOf363);
             }
-            else if(UserEventPayloadMember61 != null)
+            else if(UserEventPayloadOneOf364 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember61>(null, UserEventPayloadMember61);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf364>(null, UserEventPayloadOneOf364);
             }
-            else if(UserEventPayloadMember62 != null)
+            else if(UserEventPayloadOneOf365 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember62>(null, UserEventPayloadMember62);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf365>(null, UserEventPayloadOneOf365);
             }
-            else if(UserEventPayloadMember63 != null)
+            else if(UserEventPayloadOneOf366 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember63>(null, UserEventPayloadMember63);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf366>(null, UserEventPayloadOneOf366);
             }
-            else if(UserEventPayloadMember64 != null)
+            else if(UserEventPayloadOneOf367 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember64>(null, UserEventPayloadMember64);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf367>(null, UserEventPayloadOneOf367);
             }
-            else if(UserEventPayloadMember65 != null)
+            else if(UserEventPayloadOneOf368 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember65>(null, UserEventPayloadMember65);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368>(null, UserEventPayloadOneOf368);
             }
-            else if(UserEventPayloadMember66 != null)
+            else if(UserEventPayloadOneOf369 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember66>(null, UserEventPayloadMember66);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf369>(null, UserEventPayloadOneOf369);
             }
-            else if(UserEventPayloadMember67 != null)
+            else if(UserEventPayloadOneOf37 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember67>(null, UserEventPayloadMember67);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37>(null, UserEventPayloadOneOf37);
             }
-            else if(UserEventPayloadMember68 != null)
+            else if(UserEventPayloadOneOf370 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember68>(null, UserEventPayloadMember68);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf370>(null, UserEventPayloadOneOf370);
             }
-            else if(UserEventPayloadMember69 != null)
+            else if(UserEventPayloadOneOf371 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember69>(null, UserEventPayloadMember69);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf371>(null, UserEventPayloadOneOf371);
             }
-            else if(UserEventPayloadMember7 != null)
+            else if(UserEventPayloadOneOf372 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember7>(null, UserEventPayloadMember7);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf372>(null, UserEventPayloadOneOf372);
             }
-            else if(UserEventPayloadMember70 != null)
+            else if(UserEventPayloadOneOf38 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember70>(null, UserEventPayloadMember70);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf38>(null, UserEventPayloadOneOf38);
             }
-            else if(UserEventPayloadMember71 != null)
+            else if(UserEventPayloadOneOf39 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember71>(null, UserEventPayloadMember71);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf39>(null, UserEventPayloadOneOf39);
             }
-            else if(UserEventPayloadMember72 != null)
+            else if(UserEventPayloadOneOf4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember72>(null, UserEventPayloadMember72);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf4>(null, UserEventPayloadOneOf4);
             }
-            else if(UserEventPayloadMember73 != null)
+            else if(UserEventPayloadOneOf40 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember73>(null, UserEventPayloadMember73);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf40>(null, UserEventPayloadOneOf40);
             }
-            else if(UserEventPayloadMember74 != null)
+            else if(UserEventPayloadOneOf41 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember74>(null, UserEventPayloadMember74);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf41>(null, UserEventPayloadOneOf41);
             }
-            else if(UserEventPayloadMember75 != null)
+            else if(UserEventPayloadOneOf42 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember75>(null, UserEventPayloadMember75);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf42>(null, UserEventPayloadOneOf42);
             }
-            else if(UserEventPayloadMember76 != null)
+            else if(UserEventPayloadOneOf43 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember76>(null, UserEventPayloadMember76);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf43>(null, UserEventPayloadOneOf43);
             }
-            else if(UserEventPayloadMember77 != null)
+            else if(UserEventPayloadOneOf44 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember77>(null, UserEventPayloadMember77);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44>(null, UserEventPayloadOneOf44);
             }
-            else if(UserEventPayloadMember78 != null)
+            else if(UserEventPayloadOneOf45 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember78>(null, UserEventPayloadMember78);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf45>(null, UserEventPayloadOneOf45);
             }
-            else if(UserEventPayloadMember79 != null)
+            else if(UserEventPayloadOneOf46 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember79>(null, UserEventPayloadMember79);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf46>(null, UserEventPayloadOneOf46);
             }
-            else if(UserEventPayloadMember8 != null)
+            else if(UserEventPayloadOneOf47 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember8>(null, UserEventPayloadMember8);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf47>(null, UserEventPayloadOneOf47);
             }
-            else if(UserEventPayloadMember80 != null)
+            else if(UserEventPayloadOneOf48 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember80>(null, UserEventPayloadMember80);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf48>(null, UserEventPayloadOneOf48);
             }
-            else if(UserEventPayloadMember81 != null)
+            else if(UserEventPayloadOneOf49 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember81>(null, UserEventPayloadMember81);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf49>(null, UserEventPayloadOneOf49);
             }
-            else if(UserEventPayloadMember82 != null)
+            else if(UserEventPayloadOneOf5 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember82>(null, UserEventPayloadMember82);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf5>(null, UserEventPayloadOneOf5);
             }
-            else if(UserEventPayloadMember83 != null)
+            else if(UserEventPayloadOneOf50 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember83>(null, UserEventPayloadMember83);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf50>(null, UserEventPayloadOneOf50);
             }
-            else if(UserEventPayloadMember84 != null)
+            else if(UserEventPayloadOneOf51 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember84>(null, UserEventPayloadMember84);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51>(null, UserEventPayloadOneOf51);
             }
-            else if(UserEventPayloadMember85 != null)
+            else if(UserEventPayloadOneOf52 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember85>(null, UserEventPayloadMember85);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf52>(null, UserEventPayloadOneOf52);
             }
-            else if(UserEventPayloadMember86 != null)
+            else if(UserEventPayloadOneOf53 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember86>(null, UserEventPayloadMember86);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf53>(null, UserEventPayloadOneOf53);
             }
-            else if(UserEventPayloadMember87 != null)
+            else if(UserEventPayloadOneOf54 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember87>(null, UserEventPayloadMember87);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf54>(null, UserEventPayloadOneOf54);
             }
-            else if(UserEventPayloadMember88 != null)
+            else if(UserEventPayloadOneOf55 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember88>(null, UserEventPayloadMember88);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf55>(null, UserEventPayloadOneOf55);
             }
-            else if(UserEventPayloadMember89 != null)
+            else if(UserEventPayloadOneOf56 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember89>(null, UserEventPayloadMember89);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf56>(null, UserEventPayloadOneOf56);
             }
-            else if(UserEventPayloadMember9 != null)
+            else if(UserEventPayloadOneOf57 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember9>(null, UserEventPayloadMember9);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf57>(null, UserEventPayloadOneOf57);
             }
-            else if(UserEventPayloadMember90 != null)
+            else if(UserEventPayloadOneOf58 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember90>(null, UserEventPayloadMember90);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf58>(null, UserEventPayloadOneOf58);
             }
-            else if(UserEventPayloadMember91 != null)
+            else if(UserEventPayloadOneOf59 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember91>(null, UserEventPayloadMember91);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf59>(null, UserEventPayloadOneOf59);
             }
-            else if(UserEventPayloadMember92 != null)
+            else if(UserEventPayloadOneOf6 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember92>(null, UserEventPayloadMember92);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf6>(null, UserEventPayloadOneOf6);
             }
-            else if(UserEventPayloadMember93 != null)
+            else if(UserEventPayloadOneOf60 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember93>(null, UserEventPayloadMember93);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf60>(null, UserEventPayloadOneOf60);
             }
-            else if(UserEventPayloadMember94 != null)
+            else if(UserEventPayloadOneOf61 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember94>(null, UserEventPayloadMember94);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61>(null, UserEventPayloadOneOf61);
             }
-            else if(UserEventPayloadMember95 != null)
+            else if(UserEventPayloadOneOf62 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember95>(null, UserEventPayloadMember95);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf62>(null, UserEventPayloadOneOf62);
             }
-            else if(UserEventPayloadMember96 != null)
+            else if(UserEventPayloadOneOf63 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember96>(null, UserEventPayloadMember96);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf63>(null, UserEventPayloadOneOf63);
             }
-            else if(UserEventPayloadMember97 != null)
+            else if(UserEventPayloadOneOf64 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember97>(null, UserEventPayloadMember97);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64>(null, UserEventPayloadOneOf64);
             }
-            else if(UserEventPayloadMember98 != null)
+            else if(UserEventPayloadOneOf65 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember98>(null, UserEventPayloadMember98);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf65>(null, UserEventPayloadOneOf65);
             }
-            else if(UserEventPayloadMember99 != null)
+            else if(UserEventPayloadOneOf66 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadMember99>(null, UserEventPayloadMember99);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf66>(null, UserEventPayloadOneOf66);
+            }
+            else if(UserEventPayloadOneOf67 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf67>(null, UserEventPayloadOneOf67);
+            }
+            else if(UserEventPayloadOneOf68 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf68>(null, UserEventPayloadOneOf68);
+            }
+            else if(UserEventPayloadOneOf69 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf69>(null, UserEventPayloadOneOf69);
+            }
+            else if(UserEventPayloadOneOf7 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf7>(null, UserEventPayloadOneOf7);
+            }
+            else if(UserEventPayloadOneOf70 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf70>(null, UserEventPayloadOneOf70);
+            }
+            else if(UserEventPayloadOneOf71 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf71>(null, UserEventPayloadOneOf71);
+            }
+            else if(UserEventPayloadOneOf72 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72>(null, UserEventPayloadOneOf72);
+            }
+            else if(UserEventPayloadOneOf73 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf73>(null, UserEventPayloadOneOf73);
+            }
+            else if(UserEventPayloadOneOf74 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf74>(null, UserEventPayloadOneOf74);
+            }
+            else if(UserEventPayloadOneOf75 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf75>(null, UserEventPayloadOneOf75);
+            }
+            else if(UserEventPayloadOneOf76 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf76>(null, UserEventPayloadOneOf76);
+            }
+            else if(UserEventPayloadOneOf77 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf77>(null, UserEventPayloadOneOf77);
+            }
+            else if(UserEventPayloadOneOf78 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf78>(null, UserEventPayloadOneOf78);
+            }
+            else if(UserEventPayloadOneOf79 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf79>(null, UserEventPayloadOneOf79);
+            }
+            else if(UserEventPayloadOneOf8 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf8>(null, UserEventPayloadOneOf8);
+            }
+            else if(UserEventPayloadOneOf80 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf80>(null, UserEventPayloadOneOf80);
+            }
+            else if(UserEventPayloadOneOf81 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf81>(null, UserEventPayloadOneOf81);
+            }
+            else if(UserEventPayloadOneOf82 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf82>(null, UserEventPayloadOneOf82);
+            }
+            else if(UserEventPayloadOneOf83 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf83>(null, UserEventPayloadOneOf83);
+            }
+            else if(UserEventPayloadOneOf84 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84>(null, UserEventPayloadOneOf84);
+            }
+            else if(UserEventPayloadOneOf85 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85>(null, UserEventPayloadOneOf85);
+            }
+            else if(UserEventPayloadOneOf86 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf86>(null, UserEventPayloadOneOf86);
+            }
+            else if(UserEventPayloadOneOf87 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf87>(null, UserEventPayloadOneOf87);
+            }
+            else if(UserEventPayloadOneOf88 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf88>(null, UserEventPayloadOneOf88);
+            }
+            else if(UserEventPayloadOneOf89 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf89>(null, UserEventPayloadOneOf89);
+            }
+            else if(UserEventPayloadOneOf9 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf9>(null, UserEventPayloadOneOf9);
+            }
+            else if(UserEventPayloadOneOf90 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf90>(null, UserEventPayloadOneOf90);
+            }
+            else if(UserEventPayloadOneOf91 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf91>(null, UserEventPayloadOneOf91);
+            }
+            else if(UserEventPayloadOneOf92 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92>(null, UserEventPayloadOneOf92);
+            }
+            else if(UserEventPayloadOneOf93 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93>(null, UserEventPayloadOneOf93);
+            }
+            else if(UserEventPayloadOneOf94 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94>(null, UserEventPayloadOneOf94);
+            }
+            else if(UserEventPayloadOneOf95 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf95>(null, UserEventPayloadOneOf95);
+            }
+            else if(UserEventPayloadOneOf96 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96>(null, UserEventPayloadOneOf96);
+            }
+            else if(UserEventPayloadOneOf97 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf97>(null, UserEventPayloadOneOf97);
+            }
+            else if(UserEventPayloadOneOf98 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98>(null, UserEventPayloadOneOf98);
+            }
+            else if(UserEventPayloadOneOf99 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99>(null, UserEventPayloadOneOf99);
             }
         }
     }

@@ -18,7 +18,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The time when the snapshot was created, in milliseconds since the epoch.</summary>
         public double? CreatedAt { get; set; }
         /// <summary>The method used to create the snapshot.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.Snapshot_creationMethod? CreationMethod { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SnapshotCreationMethod? CreationMethod { get; set; }
         /// <summary>The time when the snapshot will expire, in milliseconds since the epoch. If not set, the snapshot does not have any expiration.</summary>
         public double? ExpiresAt { get; set; }
         /// <summary>The unique identifier of the snapshot.</summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string SourceSessionId { get; set; }
 #endif
         /// <summary>The status of the snapshot.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.Snapshot_status? Status { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SnapshotStatus? Status { get; set; }
         /// <summary>The last time the snapshot was updated, in milliseconds since the epoch.</summary>
         public double? UpdatedAt { get; set; }
         /// <summary>
@@ -87,7 +87,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
-                { "creationMethod", n => { CreationMethod = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Snapshot_creationMethod>(); } },
+                { "creationMethod", n => { CreationMethod = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SnapshotCreationMethod>(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lastUsedAt", n => { LastUsedAt = n.GetDoubleValue(); } },
@@ -95,7 +95,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "sizeBytes", n => { SizeBytes = n.GetDoubleValue(); } },
                 { "sourceSessionId", n => { SourceSessionId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Snapshot_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SnapshotStatus>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
             };
         }
@@ -107,7 +107,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("createdAt", CreatedAt);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Snapshot_creationMethod>("creationMethod", CreationMethod);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SnapshotCreationMethod>("creationMethod", CreationMethod);
             writer.WriteDoubleValue("expiresAt", ExpiresAt);
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("lastUsedAt", LastUsedAt);
@@ -115,7 +115,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("region", Region);
             writer.WriteDoubleValue("sizeBytes", SizeBytes);
             writer.WriteStringValue("sourceSessionId", SourceSessionId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Snapshot_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SnapshotStatus>("status", Status);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

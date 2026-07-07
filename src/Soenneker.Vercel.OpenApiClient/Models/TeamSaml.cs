@@ -24,7 +24,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlConnection Connection { get; set; }
 #endif
         /// <summary>The default redirect URI to use after successful SAML authentication.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml_defaultRedirectUri? DefaultRedirectUri { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlDefaultRedirectUri? DefaultRedirectUri { get; set; }
         /// <summary>Information for the Directory Sync configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,10 +38,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>When &quot;Directory Sync&quot; is configured, this object contains a mapping of which Directory Group (by ID) should be assigned to which Vercel Team &quot;role&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml_roles? Roles { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlRolesProperty? Roles { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml_roles Roles { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlRolesProperty Roles { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml"/> and sets the default values.
@@ -69,10 +69,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "connection", n => { Connection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlConnection>(global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlConnection.CreateFromDiscriminatorValue); } },
-                { "defaultRedirectUri", n => { DefaultRedirectUri = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml_defaultRedirectUri>(); } },
+                { "defaultRedirectUri", n => { DefaultRedirectUri = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlDefaultRedirectUri>(); } },
                 { "directory", n => { Directory = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlDirectory>(global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlDirectory.CreateFromDiscriminatorValue); } },
                 { "enforced", n => { Enforced = n.GetBoolValue(); } },
-                { "roles", n => { Roles = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml_roles>(global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml_roles.CreateFromDiscriminatorValue); } },
+                { "roles", n => { Roles = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlRolesProperty>(global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlRolesProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -83,10 +83,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlConnection>("connection", Connection);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml_defaultRedirectUri>("defaultRedirectUri", DefaultRedirectUri);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlDefaultRedirectUri>("defaultRedirectUri", DefaultRedirectUri);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlDirectory>("directory", Directory);
             writer.WriteBoolValue("enforced", Enforced);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml_roles>("roles", Roles);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlRolesProperty>("roles", Roles);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

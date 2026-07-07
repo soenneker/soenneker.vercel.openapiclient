@@ -106,7 +106,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The time when the sandbox was started, in milliseconds since the epoch.</summary>
         public double? StartedAt { get; set; }
         /// <summary>The status of the sandbox.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.Session_status? Status { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SessionStatus? Status { get; set; }
         /// <summary>The time when the sandbox was stopped, in milliseconds since the epoch.</summary>
         public double? StoppedAt { get; set; }
         /// <summary>The maximum amount of time the sandbox will run for in milliseconds.</summary>
@@ -158,7 +158,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "sourceSandboxName", n => { SourceSandboxName = n.GetStringValue(); } },
                 { "sourceSnapshotId", n => { SourceSnapshotId = n.GetStringValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDoubleValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Session_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SessionStatus>(); } },
                 { "stoppedAt", n => { StoppedAt = n.GetDoubleValue(); } },
                 { "timeout", n => { Timeout = n.GetDoubleValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
@@ -190,7 +190,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("sourceSandboxName", SourceSandboxName);
             writer.WriteStringValue("sourceSnapshotId", SourceSnapshotId);
             writer.WriteDoubleValue("startedAt", StartedAt);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Session_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SessionStatus>("status", Status);
             writer.WriteDoubleValue("stoppedAt", StoppedAt);
             writer.WriteDoubleValue("timeout", Timeout);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);

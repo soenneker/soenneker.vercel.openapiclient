@@ -19,11 +19,13 @@ using Soenneker.Vercel.OpenApiClient.V1.LogDrains;
 using Soenneker.Vercel.OpenApiClient.V1.Microfrontends;
 using Soenneker.Vercel.OpenApiClient.V1.Observability;
 using Soenneker.Vercel.OpenApiClient.V1.Projects;
+using Soenneker.Vercel.OpenApiClient.V1.Query;
 using Soenneker.Vercel.OpenApiClient.V1.Registrar;
 using Soenneker.Vercel.OpenApiClient.V1.Security;
 using Soenneker.Vercel.OpenApiClient.V1.Storage;
 using Soenneker.Vercel.OpenApiClient.V1.Teams;
 using Soenneker.Vercel.OpenApiClient.V1.User;
+using Soenneker.Vercel.OpenApiClient.V1.Vcr;
 using Soenneker.Vercel.OpenApiClient.V1.Webhooks;
 using System.Collections.Generic;
 using System.IO;
@@ -122,6 +124,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Projects.ProjectsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The query property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Query.QueryRequestBuilder Query
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Query.QueryRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The registrar property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Registrar.RegistrarRequestBuilder Registrar
         {
@@ -146,6 +153,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1
         public global::Soenneker.Vercel.OpenApiClient.V1.User.UserRequestBuilder User
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.User.UserRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The vcr property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Vcr.VcrRequestBuilder Vcr
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Vcr.VcrRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The webhooks property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Webhooks.WebhooksRequestBuilder Webhooks

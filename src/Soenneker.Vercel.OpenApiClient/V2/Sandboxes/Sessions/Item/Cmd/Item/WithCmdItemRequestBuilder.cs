@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.Kill;
 using Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.Logs;
 using System.Collections.Generic;
@@ -47,20 +48,20 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item
         /// <summary>
         /// Retrieves the current status and details of a command executed in a session. Use the `wait` parameter to block until the command finishes execution.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.WithCmdGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetSessionCommand200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.WithCmdGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.WithCmdItemRequestBuilder.WithCmdItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetSessionCommand200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.WithCmdItemRequestBuilder.WithCmdItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.WithCmdGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.WithCmdItemRequestBuilder.WithCmdItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetSessionCommand200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.WithCmdItemRequestBuilder.WithCmdItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.WithCmdGetResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.WithCmdGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetSessionCommand200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetSessionCommand200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the current status and details of a command executed in a session. Use the `wait` parameter to block until the command finishes execution.
@@ -118,7 +119,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item
 #endif
             /// <summary>If set to &quot;true&quot;, the request will block until the command finishes execution. Useful for synchronously waiting for command completion.</summary>
             [QueryParameter("wait")]
-            public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.GetWaitQueryParameterType? Wait { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.Models.GetSessionCommandWaitParameter? Wait { get; set; }
         }
     }
 }

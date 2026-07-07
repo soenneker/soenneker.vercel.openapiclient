@@ -61,6 +61,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultExpirationSettings DefaultExpirationSettings { get; set; }
 #endif
+        /// <summary>Default Passport configuration for new projects in this team.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultPassport? DefaultPassport { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultPassport DefaultPassport { get; set; }
+#endif
         /// <summary>Default job configuration applied to new projects created in this team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,15 +104,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The disableHardAutoBlocks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.Team.Team_disableHardAutoBlocks? DisableHardAutoBlocks { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDisableHardAutoBlocks? DisableHardAutoBlocks { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.Team.Team_disableHardAutoBlocks DisableHardAutoBlocks { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDisableHardAutoBlocks DisableHardAutoBlocks { get; set; }
 #endif
         /// <summary>Default for projects in the team. When `true`, projects in this team will not emit GitHub repository-dispatch events on deployment events unless the project explicitly overrides this setting via `project.gitProviderOptions.disableRepositoryDispatchEvents`.</summary>
         public bool? DisableRepositoryDispatchEvents { get; set; }
         /// <summary>Controls who can request access to protected deployments.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.Team_dpAccessRequestsMode? DpAccessRequestsMode { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDpAccessRequestsMode? DpAccessRequestsMode { get; set; }
         /// <summary>Hostname that&apos;ll be matched with emails on sign-up to automatically join the Team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,9 +122,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string EmailDomain { get; set; }
 #endif
         /// <summary>Whether toolbar is enabled on preview deployments</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.Team_enablePreviewFeedback? EnablePreviewFeedback { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamEnablePreviewFeedback? EnablePreviewFeedback { get; set; }
         /// <summary>Whether toolbar is enabled on production deployments</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.Team_enableProductionFeedback? EnableProductionFeedback { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamEnableProductionFeedback? EnableProductionFeedback { get; set; }
         /// <summary>Indicates if IP addresses should be accessible in observability (o11y) tooling</summary>
         public bool? HideIpAddresses { get; set; }
         /// <summary>Indicates if IP addresses should be accessible in log drains</summary>
@@ -142,10 +150,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The ipBuckets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.Team_ipBuckets>? IpBuckets { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamIpBucketsItem>? IpBuckets { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.Team_ipBuckets> IpBuckets { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamIpBucketsItem> IpBuckets { get; set; }
 #endif
         /// <summary>The membership of the authenticated User in relation to the Team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -218,7 +226,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml Saml { get; set; }
 #endif
         /// <summary>Sensitive environment variable policy for this team</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.Team_sensitiveEnvironmentVariablePolicy? SensitiveEnvironmentVariablePolicy { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSensitiveEnvironmentVariablePolicy? SensitiveEnvironmentVariablePolicy { get; set; }
         /// <summary>The Team&apos;s slug, which is unique across the Vercel platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -286,22 +294,23 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "creatorId", n => { CreatorId = n.GetStringValue(); } },
                 { "defaultDeploymentProtection", n => { DefaultDeploymentProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtection>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtection.CreateFromDiscriminatorValue); } },
                 { "defaultExpirationSettings", n => { DefaultExpirationSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultExpirationSettings>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultExpirationSettings.CreateFromDiscriminatorValue); } },
+                { "defaultPassport", n => { DefaultPassport = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultPassport>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultPassport.CreateFromDiscriminatorValue); } },
                 { "defaultProjectJobs", n => { DefaultProjectJobs = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobs>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobs.CreateFromDiscriminatorValue); } },
                 { "defaultRoles", n => { DefaultRoles = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRoles>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRoles.CreateFromDiscriminatorValue); } },
                 { "deploymentPolicy", n => { DeploymentPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicy>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicy.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "disableHardAutoBlocks", n => { DisableHardAutoBlocks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team.Team_disableHardAutoBlocks>(global::Soenneker.Vercel.OpenApiClient.Models.Team.Team_disableHardAutoBlocks.CreateFromDiscriminatorValue); } },
+                { "disableHardAutoBlocks", n => { DisableHardAutoBlocks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDisableHardAutoBlocks>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDisableHardAutoBlocks.CreateFromDiscriminatorValue); } },
                 { "disableRepositoryDispatchEvents", n => { DisableRepositoryDispatchEvents = n.GetBoolValue(); } },
-                { "dpAccessRequestsMode", n => { DpAccessRequestsMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_dpAccessRequestsMode>(); } },
+                { "dpAccessRequestsMode", n => { DpAccessRequestsMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDpAccessRequestsMode>(); } },
                 { "emailDomain", n => { EmailDomain = n.GetStringValue(); } },
-                { "enablePreviewFeedback", n => { EnablePreviewFeedback = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_enablePreviewFeedback>(); } },
-                { "enableProductionFeedback", n => { EnableProductionFeedback = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_enableProductionFeedback>(); } },
+                { "enablePreviewFeedback", n => { EnablePreviewFeedback = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamEnablePreviewFeedback>(); } },
+                { "enableProductionFeedback", n => { EnableProductionFeedback = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamEnableProductionFeedback>(); } },
                 { "hideIpAddresses", n => { HideIpAddresses = n.GetBoolValue(); } },
                 { "hideIpAddressesInLogDrains", n => { HideIpAddressesInLogDrains = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "integrationTokensInvalidatedAt", n => { IntegrationTokensInvalidatedAt = n.GetDoubleValue(); } },
                 { "inviteCode", n => { InviteCode = n.GetStringValue(); } },
-                { "ipBuckets", n => { IpBuckets = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.Team_ipBuckets>(global::Soenneker.Vercel.OpenApiClient.Models.Team_ipBuckets.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "ipBuckets", n => { IpBuckets = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamIpBucketsItem>(global::Soenneker.Vercel.OpenApiClient.Models.TeamIpBucketsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "membership", n => { Membership = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamMembership>(global::Soenneker.Vercel.OpenApiClient.Models.TeamMembership.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nsnbConfig", n => { NsnbConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamNsnbConfig>(global::Soenneker.Vercel.OpenApiClient.Models.TeamNsnbConfig.CreateFromDiscriminatorValue); } },
@@ -313,7 +322,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "requireVerifiedCommits", n => { RequireVerifiedCommits = n.GetBoolValue(); } },
                 { "resourceConfig", n => { ResourceConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfig>(global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfig.CreateFromDiscriminatorValue); } },
                 { "saml", n => { Saml = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml>(global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml.CreateFromDiscriminatorValue); } },
-                { "sensitiveEnvironmentVariablePolicy", n => { SensitiveEnvironmentVariablePolicy = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_sensitiveEnvironmentVariablePolicy>(); } },
+                { "sensitiveEnvironmentVariablePolicy", n => { SensitiveEnvironmentVariablePolicy = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSensitiveEnvironmentVariablePolicy>(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "stagingPrefix", n => { StagingPrefix = n.GetStringValue(); } },
                 { "strictDeploymentProtectionSettings", n => { StrictDeploymentProtectionSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictDeploymentProtectionSettings>(global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictDeploymentProtectionSettings.CreateFromDiscriminatorValue); } },
@@ -336,22 +345,23 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("creatorId", CreatorId);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtection>("defaultDeploymentProtection", DefaultDeploymentProtection);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultExpirationSettings>("defaultExpirationSettings", DefaultExpirationSettings);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultPassport>("defaultPassport", DefaultPassport);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobs>("defaultProjectJobs", DefaultProjectJobs);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultRoles>("defaultRoles", DefaultRoles);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicy>("deploymentPolicy", DeploymentPolicy);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Team.Team_disableHardAutoBlocks>("disableHardAutoBlocks", DisableHardAutoBlocks);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDisableHardAutoBlocks>("disableHardAutoBlocks", DisableHardAutoBlocks);
             writer.WriteBoolValue("disableRepositoryDispatchEvents", DisableRepositoryDispatchEvents);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_dpAccessRequestsMode>("dpAccessRequestsMode", DpAccessRequestsMode);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDpAccessRequestsMode>("dpAccessRequestsMode", DpAccessRequestsMode);
             writer.WriteStringValue("emailDomain", EmailDomain);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_enablePreviewFeedback>("enablePreviewFeedback", EnablePreviewFeedback);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_enableProductionFeedback>("enableProductionFeedback", EnableProductionFeedback);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamEnablePreviewFeedback>("enablePreviewFeedback", EnablePreviewFeedback);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamEnableProductionFeedback>("enableProductionFeedback", EnableProductionFeedback);
             writer.WriteBoolValue("hideIpAddresses", HideIpAddresses);
             writer.WriteBoolValue("hideIpAddressesInLogDrains", HideIpAddressesInLogDrains);
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("integrationTokensInvalidatedAt", IntegrationTokensInvalidatedAt);
             writer.WriteStringValue("inviteCode", InviteCode);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.Team_ipBuckets>("ipBuckets", IpBuckets);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamIpBucketsItem>("ipBuckets", IpBuckets);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamMembership>("membership", Membership);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamNsnbConfig>("nsnbConfig", NsnbConfig);
@@ -363,68 +373,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("requireVerifiedCommits", RequireVerifiedCommits);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfig>("resourceConfig", ResourceConfig);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSaml>("saml", Saml);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Team_sensitiveEnvironmentVariablePolicy>("sensitiveEnvironmentVariablePolicy", SensitiveEnvironmentVariablePolicy);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSensitiveEnvironmentVariablePolicy>("sensitiveEnvironmentVariablePolicy", SensitiveEnvironmentVariablePolicy);
             writer.WriteStringValue("slug", Slug);
             writer.WriteStringValue("stagingPrefix", StagingPrefix);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictDeploymentProtectionSettings>("strictDeploymentProtectionSettings", StrictDeploymentProtectionSettings);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictShareableLinks>("strictShareableLinks", StrictShareableLinks);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Team_disableHardAutoBlocks : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="bool"/></summary>
-            public bool? Boolean { get; set; }
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.Team.Team_disableHardAutoBlocks"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.Models.Team.Team_disableHardAutoBlocks CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.Models.Team.Team_disableHardAutoBlocks();
-                if(parseNode.GetBoolValue() is bool booleanValue)
-                {
-                    result.Boolean = booleanValue;
-                }
-                else if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Boolean != null)
-                {
-                    writer.WriteBoolValue(null, Boolean);
-                }
-                else if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-            }
         }
     }
 }

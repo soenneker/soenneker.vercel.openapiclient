@@ -36,38 +36,38 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
         /// <summary>
         /// This API allows you to delete a deployment, either by supplying its `id` in the URL or the `url` of the deployment as a query parameter. You can obtain the ID, for example, by listing all deployments.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteDeployment200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteDeployment200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteDeployment200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.WithIdOrUrlItemRequestBuilder.WithIdOrUrlItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteDeployment200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.WithIdOrUrlItemRequestBuilder.WithIdOrUrlItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteDeployment200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.WithIdOrUrlItemRequestBuilder.WithIdOrUrlItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteDeployment200Response> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.WithIdOrUrlItemRequestBuilder.WithIdOrUrlItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.DeleteDeployment200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.DeleteDeployment200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.DeleteDeployment200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.DeleteDeployment200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves information for a deployment either by supplying its ID (`id` property) or Hostname (`url` property). Additional details will be included when the authenticated user or team is an owner of the deployment.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.WithIdOrUrlItemRequestBuilder.WithIdOrUrlItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.WithIdOrUrlItemRequestBuilder.WithIdOrUrlItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.WithIdOrUrlItemRequestBuilder.WithIdOrUrlItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V13.Deployments.Item.WithIdOrUrlItemRequestBuilder.WithIdOrUrlItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This API allows you to delete a deployment, either by supplying its `id` in the URL or the `url` of the deployment as a query parameter. You can obtain the ID, for example, by listing all deployments.
@@ -179,7 +179,7 @@ namespace Soenneker.Vercel.OpenApiClient.V13.Deployments.Item
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
-            /// <summary>Whether to add in gitRepo information.</summary>
+            /// <summary>When `true`, the response includes the `gitSource` object with the commit SHA, branch name, and connected repository metadata. Defaults to `false`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("withGitRepoInfo")]

@@ -42,7 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>String indicating the type of file tree entry.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.FileTree_type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FileTreeType? Type { get; set; }
         /// <summary>The unique identifier of the file (only valid for the `file` type)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,7 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "contentType", n => { ContentType = n.GetStringValue(); } },
                 { "mode", n => { Mode = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FileTree_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FileTreeType>(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
             };
         }
@@ -95,7 +95,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("contentType", ContentType);
             writer.WriteDoubleValue("mode", Mode);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FileTree_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FileTreeType>("type", Type);
             writer.WriteStringValue("uid", Uid);
             writer.WriteAdditionalData(AdditionalData);
         }

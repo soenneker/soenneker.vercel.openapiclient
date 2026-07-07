@@ -36,40 +36,40 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env
         /// <summary>
         /// Retrieve the environment variables for a given project by passing either the project `id` or `name` in the URL.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create one or more environment variables for a project by passing its `key`, `value`, `type` and `target` and by specifying the project by either passing the project `id` or `name` in the URL. If you include `upsert=true` as a query parameter, a new environment variable will not be created if it already exists but, the existing variable&apos;s value will be updated.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201Response?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201Response> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the environment variables for a given project by passing either the project `id` or `name` in the URL.
@@ -98,11 +98,11 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnv body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectEnvRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.EnvRequestBuilder.EnvRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -148,9 +148,8 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env
             public string CustomEnvironmentSlug { get; set; }
 #endif
             /// <summary>If true, the environment variable value will be decrypted</summary>
-            [Obsolete("")]
             [QueryParameter("decrypt")]
-            public global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Env.GetDecryptQueryParameterType? Decrypt { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvsDecryptParameter? Decrypt { get; set; }
             /// <summary>If defined, the git branch of the environment variable to filter the results (must have target=preview)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

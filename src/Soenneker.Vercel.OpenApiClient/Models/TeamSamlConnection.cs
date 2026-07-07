@@ -38,7 +38,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Status { get; set; }
 #endif
         /// <summary>&quot;Controls whether directory sync events are processed. - &apos;SETUP&apos;: Directory connected but role mappings not yet configured. Events are acknowledged but not processed. - &apos;ACTIVE&apos;: Fully configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat as &apos;ACTIVE&apos; for backwards compatibility.&quot;</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlConnection_syncState? SyncState { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlConnectionSyncState? SyncState { get; set; }
         /// <summary>The Identity Provider &quot;type&quot;, for example Okta.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,7 +77,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "lastSyncedAt", n => { LastSyncedAt = n.GetDoubleValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
-                { "syncState", n => { SyncState = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlConnection_syncState>(); } },
+                { "syncState", n => { SyncState = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlConnectionSyncState>(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -93,7 +93,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("lastSyncedAt", LastSyncedAt);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlConnection_syncState>("syncState", SyncState);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlConnectionSyncState>("syncState", SyncState);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

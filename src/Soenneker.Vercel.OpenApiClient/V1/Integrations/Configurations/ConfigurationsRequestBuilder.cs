@@ -36,20 +36,20 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations
         /// <summary>
         /// Allows to retrieve all configurations for an authenticated integration. When the `project` view is used, configurations generated for the authorization flow will be filtered out of the results.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsRequestBuilder.ConfigurationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsRequestBuilder.ConfigurationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsRequestBuilder.ConfigurationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.ConfigurationsRequestBuilder.ConfigurationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Allows to retrieve all configurations for an authenticated integration. When the `project` view is used, configurations generated for the authorization flow will be filtered out of the results.
@@ -86,7 +86,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations
         public partial class ConfigurationsRequestBuilderGetQueryParameters 
         {
             [QueryParameter("installationType")]
-            public global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.GetInstallationTypeQueryParameterType? InstallationType { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationsInstallationTypeParameter? InstallationType { get; set; }
             /// <summary>ID of the integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,7 +118,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations
             public string TeamId { get; set; }
 #endif
             [QueryParameter("view")]
-            public global::Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations.GetViewQueryParameterType? View { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationsViewParameter? View { get; set; }
         }
     }
 }

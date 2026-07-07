@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.V1.Domains.Item;
 using Soenneker.Vercel.OpenApiClient.V1.Domains.Records;
 using System.Collections.Generic;
 using System.IO;
@@ -19,6 +20,18 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Domains
         public global::Soenneker.Vercel.OpenApiClient.V1.Domains.Records.RecordsRequestBuilder Records
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Domains.Records.RecordsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v1.domains.item collection</summary>
+        /// <param name="position">The apex domain name.</param>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Domains.Item.WithDomainItemRequestBuilder"/></returns>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Domains.Item.WithDomainItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("domain", position);
+                return new global::Soenneker.Vercel.OpenApiClient.V1.Domains.Item.WithDomainItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Domains.DomainsRequestBuilder"/> and sets the default values.

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item.UpdateDescription;
 using System.Collections.Generic;
 using System.IO;
@@ -41,20 +42,20 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item
         /// <summary>
         /// Allows users to rollback to a deployment.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item.WithDeploymentPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson33"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item.WithDeploymentPostResponse?> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item.WithDeploymentItemRequestBuilder.WithDeploymentItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson33?> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item.WithDeploymentItemRequestBuilder.WithDeploymentItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item.WithDeploymentPostResponse> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item.WithDeploymentItemRequestBuilder.WithDeploymentItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson33> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item.WithDeploymentItemRequestBuilder.WithDeploymentItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item.WithDeploymentPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item.WithDeploymentPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson33>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson33.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Allows users to rollback to a deployment.

@@ -15,7 +15,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class DomainNotFound : ApiException, IParsable
     {
         /// <summary>The code property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.DomainNotFound_code? Code { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DomainNotFoundCode? Code { get; set; }
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
         /// <summary>The message property</summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.DomainNotFound_code>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.DomainNotFoundCode>(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetDoubleValue(); } },
             };
@@ -58,7 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.DomainNotFound_code>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.DomainNotFoundCode>("code", Code);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteDoubleValue("status", Status);
         }

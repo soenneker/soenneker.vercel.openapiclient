@@ -38,10 +38,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The limitedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimited_limitedBy?>? LimitedBy { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedLimitedByItem?>? LimitedBy { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimited_limitedBy?> LimitedBy { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedLimitedByItem?> LimitedBy { get; set; }
 #endif
         /// <summary>The membership of the authenticated User in relation to the Team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,6 +89,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public TeamLimited()
         {
             AdditionalData = new Dictionary<string, object>();
+            Limited = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -112,7 +113,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "limited", n => { Limited = n.GetBoolValue(); } },
-                { "limitedBy", n => { LimitedBy = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimited_limitedBy>()?.AsList(); } },
+                { "limitedBy", n => { LimitedBy = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedLimitedByItem>()?.AsList(); } },
                 { "membership", n => { Membership = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership>(global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parentId", n => { ParentId = n.GetStringValue(); } },
@@ -131,7 +132,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("limited", Limited);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimited_limitedBy>("limitedBy", LimitedBy);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedLimitedByItem>("limitedBy", LimitedBy);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership>("membership", Membership);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parentId", ParentId);

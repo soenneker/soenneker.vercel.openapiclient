@@ -26,10 +26,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The entitlements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership_entitlements>? Entitlements { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipEntitlementsItem>? Entitlements { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership_entitlements> Entitlements { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipEntitlementsItem> Entitlements { get; set; }
 #endif
         /// <summary>The joinedFrom property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,7 +40,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipJoinedFrom JoinedFrom { get; set; }
 #endif
         /// <summary>The role property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership_role? Role { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipRole? Role { get; set; }
         /// <summary>The teamId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,18 +52,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The teamPermissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership_teamPermissions?>? TeamPermissions { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipTeamPermissionsItem?>? TeamPermissions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership_teamPermissions?> TeamPermissions { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipTeamPermissionsItem?> TeamPermissions { get; set; }
 #endif
         /// <summary>The teamRoles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership_teamRoles?>? TeamRoles { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipTeamRolesItem?>? TeamRoles { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership_teamRoles?> TeamRoles { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipTeamRolesItem?> TeamRoles { get; set; }
 #endif
         /// <summary>The uid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,6 +79,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public TeamLimitedMembership()
         {
             AdditionalData = new Dictionary<string, object>();
+            Confirmed = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -102,12 +103,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "confirmed", n => { Confirmed = n.GetBoolValue(); } },
                 { "created", n => { Created = n.GetDoubleValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
-                { "entitlements", n => { Entitlements = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership_entitlements>(global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership_entitlements.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "entitlements", n => { Entitlements = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipEntitlementsItem>(global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipEntitlementsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "joinedFrom", n => { JoinedFrom = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipJoinedFrom>(global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipJoinedFrom.CreateFromDiscriminatorValue); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership_role>(); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipRole>(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "teamPermissions", n => { TeamPermissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership_teamPermissions>()?.AsList(); } },
-                { "teamRoles", n => { TeamRoles = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership_teamRoles>()?.AsList(); } },
+                { "teamPermissions", n => { TeamPermissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipTeamPermissionsItem>()?.AsList(); } },
+                { "teamRoles", n => { TeamRoles = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipTeamRolesItem>()?.AsList(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
             };
         }
@@ -122,12 +123,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("confirmed", Confirmed);
             writer.WriteDoubleValue("created", Created);
             writer.WriteDoubleValue("createdAt", CreatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership_entitlements>("entitlements", Entitlements);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipEntitlementsItem>("entitlements", Entitlements);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipJoinedFrom>("joinedFrom", JoinedFrom);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership_role>("role", Role);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipRole>("role", Role);
             writer.WriteStringValue("teamId", TeamId);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership_teamPermissions>("teamPermissions", TeamPermissions);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership_teamRoles>("teamRoles", TeamRoles);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipTeamPermissionsItem>("teamPermissions", TeamPermissions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipTeamRolesItem>("teamRoles", TeamRoles);
             writer.WriteStringValue("uid", Uid);
             writer.WriteAdditionalData(AdditionalData);
         }

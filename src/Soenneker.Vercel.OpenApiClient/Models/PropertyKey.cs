@@ -8,34 +8,34 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PropertyKey_Branch1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PropertyKey_Branch2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyAnyOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyBranch1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyBranch2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PropertyKey : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PropertyKey_Branch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyAnyOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PropertyKey_Branch1? PropertyKeyBranch1 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyAnyOf3? PropertyKeyAnyOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PropertyKey_Branch1 PropertyKeyBranch1 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyAnyOf3 PropertyKeyAnyOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PropertyKey_Branch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyBranch1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PropertyKey_Branch2? PropertyKeyBranch2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyBranch1? PropertyKeyBranch1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PropertyKey_Branch2 PropertyKeyBranch2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyBranch1 PropertyKeyBranch1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyBranch2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyMember1? PropertyKeyMember1 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyBranch2? PropertyKeyBranch2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyMember1 PropertyKeyMember1 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyBranch2 PropertyKeyBranch2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -46,9 +46,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.PropertyKey();
-            result.PropertyKeyBranch1 = new global::Soenneker.Vercel.OpenApiClient.Models.PropertyKey_Branch1();
-            result.PropertyKeyBranch2 = new global::Soenneker.Vercel.OpenApiClient.Models.PropertyKey_Branch2();
-            result.PropertyKeyMember1 = new global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyMember1();
+            result.PropertyKeyAnyOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyAnyOf3();
+            result.PropertyKeyBranch1 = new global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyBranch1();
+            result.PropertyKeyBranch2 = new global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyBranch2();
             return result;
         }
         /// <summary>
@@ -57,9 +57,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PropertyKeyBranch1 != null || PropertyKeyBranch2 != null || PropertyKeyMember1 != null)
+            if(PropertyKeyAnyOf3 != null || PropertyKeyBranch1 != null || PropertyKeyBranch2 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PropertyKeyBranch1, PropertyKeyBranch2, PropertyKeyMember1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PropertyKeyAnyOf3, PropertyKeyBranch1, PropertyKeyBranch2);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -70,7 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PropertyKey_Branch1>(null, PropertyKeyBranch1, PropertyKeyBranch2, PropertyKeyMember1);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyAnyOf3>(null, PropertyKeyAnyOf3, PropertyKeyBranch1, PropertyKeyBranch2);
         }
     }
 }

@@ -36,20 +36,20 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Env.Item.Unlink.Item
         /// <summary>
         /// Disconnects a shared environment variable for a given project
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UnlinkSharedEnvVariable200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UnlinkSharedEnvVariable200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UnlinkSharedEnvVariable200?> PatchAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.Item.Unlink.Item.WithProjectItemRequestBuilder.WithProjectItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UnlinkSharedEnvVariable200Response?> PatchAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.Item.Unlink.Item.WithProjectItemRequestBuilder.WithProjectItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UnlinkSharedEnvVariable200> PatchAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.Item.Unlink.Item.WithProjectItemRequestBuilder.WithProjectItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UnlinkSharedEnvVariable200Response> PatchAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Env.Item.Unlink.Item.WithProjectItemRequestBuilder.WithProjectItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPatchRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UnlinkSharedEnvVariable200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UnlinkSharedEnvVariable200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UnlinkSharedEnvVariable200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UnlinkSharedEnvVariable200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Disconnects a shared environment variable for a given project

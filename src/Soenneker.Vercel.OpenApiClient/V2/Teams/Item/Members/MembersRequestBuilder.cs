@@ -42,11 +42,11 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item.Members
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMember?> PostAsync(List<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.Members.Members> body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.Members.MembersRequestBuilder.MembersRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMember?> PostAsync(List<global::Soenneker.Vercel.OpenApiClient.Models.InviteUserToTeamRequestRequestBodyItem> body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.Members.MembersRequestBuilder.MembersRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMember> PostAsync(List<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.Members.Members> body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.Members.MembersRequestBuilder.MembersRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMember> PostAsync(List<global::Soenneker.Vercel.OpenApiClient.Models.InviteUserToTeamRequestRequestBodyItem> body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.Members.MembersRequestBuilder.MembersRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -61,11 +61,11 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Teams.Item.Members
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.Members.Members> body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.Members.MembersRequestBuilder.MembersRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Vercel.OpenApiClient.Models.InviteUserToTeamRequestRequestBodyItem> body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.Members.MembersRequestBuilder.MembersRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.Members.Members> body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.Members.MembersRequestBuilder.MembersRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Vercel.OpenApiClient.Models.InviteUserToTeamRequestRequestBodyItem> body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Teams.Item.Members.MembersRequestBuilder.MembersRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

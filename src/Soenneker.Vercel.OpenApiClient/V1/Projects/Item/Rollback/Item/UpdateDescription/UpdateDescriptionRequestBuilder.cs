@@ -36,22 +36,22 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item.UpdateDe
         /// <summary>
         /// Updates the reason for a rollback, without changing the rollback status itself.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item.UpdateDescription.UpdateDescriptionPatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson34"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item.UpdateDescription.UpdateDescriptionPatchResponse?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson34?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item.UpdateDescription.UpdateDescriptionPatchResponse> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson34> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item.UpdateDescription.UpdateDescriptionPatchResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item.UpdateDescription.UpdateDescriptionPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson34>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson34.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the reason for a rollback, without changing the rollback status itself.
@@ -61,11 +61,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback.Item.UpdateDe
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescriptionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

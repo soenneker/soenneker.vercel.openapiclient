@@ -16,7 +16,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The preference property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamNsnbConfig_preference? Preference { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamNsnbConfigPreference? Preference { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TeamNsnbConfig"/> and sets the default values.
         /// </summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "preference", n => { Preference = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamNsnbConfig_preference>(); } },
+                { "preference", n => { Preference = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamNsnbConfigPreference>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamNsnbConfig_preference>("preference", Preference);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamNsnbConfigPreference>("preference", Preference);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

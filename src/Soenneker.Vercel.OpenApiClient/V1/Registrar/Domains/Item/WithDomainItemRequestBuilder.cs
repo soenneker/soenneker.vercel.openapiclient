@@ -7,6 +7,7 @@ using Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.AutoRenew;
 using Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Availability;
 using Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Buy;
 using Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.ContactInfo;
+using Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.ContactVerification;
 using Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Nameservers;
 using Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Price;
 using Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Renew;
@@ -47,6 +48,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item
         public global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.ContactInfo.ContactInfoRequestBuilder ContactInfo
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.ContactInfo.ContactInfoRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The contactVerification property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.ContactVerification.ContactVerificationRequestBuilder ContactVerification
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.ContactVerification.ContactVerificationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The nameservers property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Nameservers.NameserversRequestBuilder Nameservers

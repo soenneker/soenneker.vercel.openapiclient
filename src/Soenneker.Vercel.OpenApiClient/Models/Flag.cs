@@ -35,10 +35,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The environments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.Flag_environments? Environments { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FlagEnvironmentsProperty? Environments { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.Flag_environments Environments { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FlagEnvironmentsProperty Environments { get; set; }
 #endif
         /// <summary>The experiment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,7 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The kind property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.Flag_kind? Kind { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FlagKind? Kind { get; set; }
         /// <summary>The maintainerIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,7 +105,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Slug { get; set; }
 #endif
         /// <summary>The state property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.Flag_state? State { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FlagState? State { get; set; }
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,16 +115,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public List<string> Tags { get; set; }
 #endif
         /// <summary>The typeName property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.Flag_typeName? TypeName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FlagTypeName? TypeName { get; set; }
         /// <summary>The updatedAt property</summary>
         public double? UpdatedAt { get; set; }
         /// <summary>The variants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.Flag_variants>? Variants { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.FlagVariantsItemProperty>? Variants { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.Flag_variants> Variants { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.FlagVariantsItemProperty> Variants { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.Flag"/> and sets the default values.
@@ -154,10 +154,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "environments", n => { Environments = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_environments>(global::Soenneker.Vercel.OpenApiClient.Models.Flag_environments.CreateFromDiscriminatorValue); } },
+                { "environments", n => { Environments = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagEnvironmentsProperty>(global::Soenneker.Vercel.OpenApiClient.Models.FlagEnvironmentsProperty.CreateFromDiscriminatorValue); } },
                 { "experiment", n => { Experiment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment>(global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_kind>(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagKind>(); } },
                 { "maintainerIds", n => { MaintainerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagMetadata>(global::Soenneker.Vercel.OpenApiClient.Models.FlagMetadata.CreateFromDiscriminatorValue); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
@@ -166,11 +166,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "revision", n => { Revision = n.GetDoubleValue(); } },
                 { "seed", n => { Seed = n.GetDoubleValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_state>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagState>(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "typeName", n => { TypeName = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_typeName>(); } },
+                { "typeName", n => { TypeName = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagTypeName>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
-                { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.Flag_variants>(global::Soenneker.Vercel.OpenApiClient.Models.Flag_variants.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FlagVariantsItemProperty>(global::Soenneker.Vercel.OpenApiClient.Models.FlagVariantsItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -183,10 +183,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_environments>("environments", Environments);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagEnvironmentsProperty>("environments", Environments);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment>("experiment", Experiment);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_kind>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagKind>("kind", Kind);
             writer.WriteCollectionOfPrimitiveValues<string>("maintainerIds", MaintainerIds);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagMetadata>("metadata", Metadata);
             writer.WriteStringValue("ownerId", OwnerId);
@@ -195,11 +195,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("revision", Revision);
             writer.WriteDoubleValue("seed", Seed);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_state>("state", State);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagState>("state", State);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag_typeName>("typeName", TypeName);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagTypeName>("typeName", TypeName);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.Flag_variants>("variants", Variants);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FlagVariantsItemProperty>("variants", Variants);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

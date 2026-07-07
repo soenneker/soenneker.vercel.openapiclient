@@ -17,26 +17,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The exclude property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.SegmentData_exclude? Exclude { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataExcludeProperty? Exclude { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.SegmentData_exclude Exclude { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataExcludeProperty Exclude { get; set; }
 #endif
         /// <summary>The include property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.SegmentData_include? Include { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataIncludeProperty? Include { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.SegmentData_include Include { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataIncludeProperty Include { get; set; }
 #endif
         /// <summary>The rules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.SegmentData_rules>? Rules { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItem>? Rules { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.SegmentData_rules> Rules { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItem> Rules { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SegmentData"/> and sets the default values.
@@ -63,9 +63,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "exclude", n => { Exclude = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentData_exclude>(global::Soenneker.Vercel.OpenApiClient.Models.SegmentData_exclude.CreateFromDiscriminatorValue); } },
-                { "include", n => { Include = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentData_include>(global::Soenneker.Vercel.OpenApiClient.Models.SegmentData_include.CreateFromDiscriminatorValue); } },
-                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SegmentData_rules>(global::Soenneker.Vercel.OpenApiClient.Models.SegmentData_rules.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "exclude", n => { Exclude = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataExcludeProperty>(global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataExcludeProperty.CreateFromDiscriminatorValue); } },
+                { "include", n => { Include = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataIncludeProperty>(global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataIncludeProperty.CreateFromDiscriminatorValue); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItem>(global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentData_exclude>("exclude", Exclude);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentData_include>("include", Include);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SegmentData_rules>("rules", Rules);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataExcludeProperty>("exclude", Exclude);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataIncludeProperty>("include", Include);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItem>("rules", Rules);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

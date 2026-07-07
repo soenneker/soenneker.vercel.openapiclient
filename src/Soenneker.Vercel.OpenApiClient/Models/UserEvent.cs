@@ -18,20 +18,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The categories that group this event with related event types. An event can belong to multiple categories (e.g. a firewall event is both Firewall and Security). The first entry is the &quot;primary&quot; category. Use the `/events/types` endpoint to discover the full list of categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_categories?>? Categories { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventCategoriesItem?>? Categories { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_categories?> Categories { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventCategoriesItem?> Categories { get; set; }
 #endif
         /// <summary>Timestamp (in milliseconds) of when the event was generated.</summary>
         public double? CreatedAt { get; set; }
         /// <summary>A list of &quot;entities&quot; within the event `text`. Useful for enhancing the displayed text with additional styling and links.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_entities>? Entities { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventEntitiesItem>? Entities { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_entities> Entities { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventEntitiesItem> Entities { get; set; }
 #endif
         /// <summary>The unique identifier of the Event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Text { get; set; }
 #endif
         /// <summary>The type of the event.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventType? Type { get; set; }
         /// <summary>Metadata for {@link userId}.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,10 +94,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Metadata for {@link viaIds}.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent.UserEvent_via>? Via { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItem>? Via { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent.UserEvent_via> Via { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItem> Via { get; set; }
 #endif
         /// <summary>If the principal delegated its authority (for example, a user delegating to an app), then this array contains the ID of the current actor. For example, if `principalId` is &quot;user123&quot; and `viaIds` is `[&quot;app456&quot;]`, we can say the event was triggered by - &quot;app456 on behalf of user123&quot;, or - &quot;user123 via app4556&quot;. Both are equivalent. Arbitrarily long chains of delegation can be represented. For example, if `principalId` is &quot;user123&quot; and `viaIds` is `[&quot;service1&quot;, &quot;service2&quot;]`, we can say the event was triggered by &quot;user123 via service1 via service2&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,18 +132,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "categories", n => { Categories = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_categories>()?.AsList(); } },
+                { "categories", n => { Categories = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventCategoriesItem>()?.AsList(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
-                { "entities", n => { Entities = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_entities>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_entities.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "entities", n => { Entities = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventEntitiesItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventEntitiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayload>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayload.CreateFromDiscriminatorValue); } },
                 { "principal", n => { Principal = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPrincipal>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPrincipal.CreateFromDiscriminatorValue); } },
                 { "principalId", n => { PrincipalId = n.GetStringValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventType>(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventUser>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventUser.CreateFromDiscriminatorValue); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
-                { "via", n => { Via = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent.UserEvent_via>(global::Soenneker.Vercel.OpenApiClient.Models.UserEvent.UserEvent_via.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "via", n => { Via = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "viaIds", n => { ViaIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -154,115 +154,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_categories>("categories", Categories);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventCategoriesItem>("categories", Categories);
             writer.WriteDoubleValue("createdAt", CreatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_entities>("entities", Entities);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventEntitiesItem>("entities", Entities);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayload>("payload", Payload);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPrincipal>("principal", Principal);
             writer.WriteStringValue("principalId", PrincipalId);
             writer.WriteStringValue("text", Text);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventUser>("user", User);
             writer.WriteStringValue("userId", UserId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent.UserEvent_via>("via", Via);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItem>("via", Via);
             writer.WriteCollectionOfPrimitiveValues<string>("viaIds", ViaIds);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember3"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class UserEvent_via : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember1? UserEventViaMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember1 UserEventViaMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember2? UserEventViaMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember2 UserEventViaMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember3? UserEventViaMember3 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember3 UserEventViaMember3 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEvent.UserEvent_via"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Vercel.OpenApiClient.Models.UserEvent.UserEvent_via CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent.UserEvent_via();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UserEventViaMember1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UserEventViaMember2 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember2();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UserEventViaMember3 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember3();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(UserEventViaMember1 != null)
-                {
-                    return UserEventViaMember1.GetFieldDeserializers();
-                }
-                else if(UserEventViaMember2 != null)
-                {
-                    return UserEventViaMember2.GetFieldDeserializers();
-                }
-                else if(UserEventViaMember3 != null)
-                {
-                    return UserEventViaMember3.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(UserEventViaMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember1>(null, UserEventViaMember1);
-                }
-                else if(UserEventViaMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember2>(null, UserEventViaMember2);
-                }
-                else if(UserEventViaMember3 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEvent_viaMember3>(null, UserEventViaMember3);
-                }
-            }
         }
     }
 }

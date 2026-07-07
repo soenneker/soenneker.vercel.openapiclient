@@ -18,10 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Categories that group this event type with related event types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListEventType_categories?>? Categories { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypeCategoriesItem?>? Categories { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListEventType_categories?> Categories { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypeCategoriesItem?> Categories { get; set; }
 #endif
         /// <summary>Present only when this event type is deprecated.</summary>
         public bool? Deprecated { get; set; }
@@ -34,14 +34,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>The name of the event type.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListEventType_name? Name { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypeName? Name { get; set; }
         /// <summary>Event type names that supersede this deprecated event type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListEventType_replacedBy?>? ReplacedBy { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypeReplacedByItem?>? ReplacedBy { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListEventType_replacedBy?> ReplacedBy { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypeReplacedByItem?> ReplacedBy { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListEventType"/> and sets the default values.
@@ -68,11 +68,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "categories", n => { Categories = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ListEventType_categories>()?.AsList(); } },
+                { "categories", n => { Categories = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypeCategoriesItem>()?.AsList(); } },
                 { "deprecated", n => { Deprecated = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListEventType_name>(); } },
-                { "replacedBy", n => { ReplacedBy = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ListEventType_replacedBy>()?.AsList(); } },
+                { "name", n => { Name = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypeName>(); } },
+                { "replacedBy", n => { ReplacedBy = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypeReplacedByItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -82,11 +82,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ListEventType_categories>("categories", Categories);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypeCategoriesItem>("categories", Categories);
             writer.WriteBoolValue("deprecated", Deprecated);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListEventType_name>("name", Name);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ListEventType_replacedBy>("replacedBy", ReplacedBy);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypeName>("name", Name);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ListEventTypeReplacedByItem>("replacedBy", ReplacedBy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

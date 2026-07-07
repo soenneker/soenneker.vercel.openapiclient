@@ -14,7 +14,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The code property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests_code? Code { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequestsCode? Code { get; set; }
         /// <summary>The limit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,7 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests_code>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequestsCode>(); } },
                 { "limit", n => { Limit = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequestsLimit>(global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequestsLimit.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "retryAfter", n => { RetryAfter = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequestsRetryAfter>(global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequestsRetryAfter.CreateFromDiscriminatorValue); } },
@@ -75,7 +75,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequests_code>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequestsCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequestsLimit>("limit", Limit);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TooManyRequestsRetryAfter>("retryAfter", RetryAfter);

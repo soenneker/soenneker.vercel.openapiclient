@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -35,20 +36,20 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces
         /// <summary>
         /// Lists git namespaces for a supported provider. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider is not provided, it will try to obtain it from the user that authenticated the request.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GitNamespaces&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseResponseJsonItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GitNamespaces>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GitNamespacesRequestBuilder.GitNamespacesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseResponseJsonItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GitNamespacesRequestBuilder.GitNamespacesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GitNamespaces>> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GitNamespacesRequestBuilder.GitNamespacesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseResponseJsonItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GitNamespacesRequestBuilder.GitNamespacesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GitNamespaces>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GitNamespaces.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseResponseJsonItem>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseResponseJsonItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -96,7 +97,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces
             public string Host { get; set; }
 #endif
             [QueryParameter("provider")]
-            public global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GetProviderQueryParameterType? Provider { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.Models.GitNamespacesProviderParameter? Provider { get; set; }
             /// <summary>When true, includes the viewer object for each namespace.</summary>
             [QueryParameter("viewerMetadata")]
             public bool? ViewerMetadata { get; set; }

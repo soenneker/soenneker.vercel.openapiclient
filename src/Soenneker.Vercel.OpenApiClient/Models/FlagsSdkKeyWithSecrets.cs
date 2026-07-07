@@ -84,7 +84,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string TokenValue { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.FlagsSdkKeyWithSecrets_type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FlagsSdkKeyWithSecretsType? Type { get; set; }
         /// <summary>The updatedAt property</summary>
         public double? UpdatedAt { get; set; }
         /// <summary>
@@ -122,7 +122,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "partialKeyValue", n => { PartialKeyValue = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "tokenValue", n => { TokenValue = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagsSdkKeyWithSecrets_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagsSdkKeyWithSecretsType>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
             };
         }
@@ -143,7 +143,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("partialKeyValue", PartialKeyValue);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("tokenValue", TokenValue);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagsSdkKeyWithSecrets_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagsSdkKeyWithSecretsType>("type", Type);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

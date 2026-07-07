@@ -42,58 +42,58 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.Item
         /// <summary>
         /// Delete an existing check and all of its runs.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectCheck200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectCheck200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectCheck200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.Item.WithCheckItemRequestBuilder.WithCheckItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectCheck200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.Item.WithCheckItemRequestBuilder.WithCheckItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectCheck200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.Item.WithCheckItemRequestBuilder.WithCheckItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectCheck200Response> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.Item.WithCheckItemRequestBuilder.WithCheckItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectCheck200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectCheck200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectCheck200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.DeleteProjectCheck200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Return a detailed response for a single check.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectCheck200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectCheck200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectCheck200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.Item.WithCheckItemRequestBuilder.WithCheckItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectCheck200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.Item.WithCheckItemRequestBuilder.WithCheckItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectCheck200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.Item.WithCheckItemRequestBuilder.WithCheckItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectCheck200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.Item.WithCheckItemRequestBuilder.WithCheckItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectCheck200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetProjectCheck200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectCheck200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetProjectCheck200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update an existing check.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.Item.WithCheckItemRequestBuilder.WithCheckItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200Response?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheckRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.Item.WithCheckItemRequestBuilder.WithCheckItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.Item.WithCheckItemRequestBuilder.WithCheckItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200Response> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheckRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.Item.WithCheckItemRequestBuilder.WithCheckItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete an existing check and all of its runs.
@@ -141,11 +141,11 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.Item.WithCheckItemRequestBuilder.WithCheckItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheckRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.Item.WithCheckItemRequestBuilder.WithCheckItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheck body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.Item.WithCheckItemRequestBuilder.WithCheckItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheckRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks.Item.WithCheckItemRequestBuilder.WithCheckItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

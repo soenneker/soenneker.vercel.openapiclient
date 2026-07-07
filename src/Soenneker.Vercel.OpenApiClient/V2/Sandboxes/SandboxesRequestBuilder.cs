@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.Models;
+using Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives;
 using Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item;
 using Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions;
 using Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Snapshots;
@@ -20,6 +21,11 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SandboxesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The drives property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.DrivesRequestBuilder Drives
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.DrivesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The sessions property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.SessionsRequestBuilder Sessions
         {
@@ -61,40 +67,40 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
         /// <summary>
         /// Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxes200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxes200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxes200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxes200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxes200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxes200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxes200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxes200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxes200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxes200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxes200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxes200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxes200?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxes body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxes200Response?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxes200> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxes body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxes200Response> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxes200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxes200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxes200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxes200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix.
@@ -123,11 +129,11 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxes body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxes body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -197,10 +203,10 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
 #endif
             /// <summary>Field to sort by.</summary>
             [QueryParameter("sortBy")]
-            public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.GetSortByQueryParameterType? SortBy { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxesSortByParameter? SortBy { get; set; }
             /// <summary>Sort direction. Defaults to desc.</summary>
             [QueryParameter("sortOrder")]
-            public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.GetSortOrderQueryParameterType? SortOrder { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxesSortOrderParameter? SortOrder { get; set; }
             /// <summary>&quot;Filter sandboxes by tag. Format: \\&quot;key:value\\&quot;. Only one tag filter is supported at a time.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

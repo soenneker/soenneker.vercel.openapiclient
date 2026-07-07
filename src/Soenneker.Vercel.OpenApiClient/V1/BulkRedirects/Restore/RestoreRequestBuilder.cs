@@ -36,22 +36,22 @@ namespace Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.Restore
         /// <summary>
         /// Restores the provided redirects in the staging version to the value in the production version. If no production version exists, removes the redirects from staging.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects200?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.Restore.RestoreRequestBuilder.RestoreRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects200Response?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirectsRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.Restore.RestoreRequestBuilder.RestoreRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects200> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.Restore.RestoreRequestBuilder.RestoreRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects200Response> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirectsRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.Restore.RestoreRequestBuilder.RestoreRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Restores the provided redirects in the staging version to the value in the production version. If no production version exists, removes the redirects from staging.
@@ -61,11 +61,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.Restore
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.Restore.RestoreRequestBuilder.RestoreRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirectsRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.Restore.RestoreRequestBuilder.RestoreRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirects body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.Restore.RestoreRequestBuilder.RestoreRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.RestoreRedirectsRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.BulkRedirects.Restore.RestoreRequestBuilder.RestoreRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

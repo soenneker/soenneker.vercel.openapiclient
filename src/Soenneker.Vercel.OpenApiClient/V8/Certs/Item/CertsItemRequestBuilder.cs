@@ -36,38 +36,38 @@ namespace Soenneker.Vercel.OpenApiClient.V8.Certs.Item
         /// <summary>
         /// Remove cert
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V8.Certs.Item.CertsDeleteResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.RemoveCert200ResponseResponseJson"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Certs.Item.CertsDeleteResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Certs.Item.CertsItemRequestBuilder.CertsItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.RemoveCert200ResponseResponseJson?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Certs.Item.CertsItemRequestBuilder.CertsItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V8.Certs.Item.CertsDeleteResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Certs.Item.CertsItemRequestBuilder.CertsItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.RemoveCert200ResponseResponseJson> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Certs.Item.CertsItemRequestBuilder.CertsItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V8.Certs.Item.CertsDeleteResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V8.Certs.Item.CertsDeleteResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.RemoveCert200ResponseResponseJson>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.RemoveCert200ResponseResponseJson.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get cert by id
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetCertById200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetCertById200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetCertById200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Certs.Item.CertsItemRequestBuilder.CertsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetCertById200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Certs.Item.CertsItemRequestBuilder.CertsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetCertById200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Certs.Item.CertsItemRequestBuilder.CertsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetCertById200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V8.Certs.Item.CertsItemRequestBuilder.CertsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetCertById200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetCertById200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetCertById200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetCertById200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Remove cert

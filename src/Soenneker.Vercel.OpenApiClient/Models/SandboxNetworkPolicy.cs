@@ -48,7 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public List<global::Soenneker.Vercel.OpenApiClient.Models.SandboxInjectionRule> InjectionRules { get; set; }
 #endif
         /// <summary>&quot;The network policy mode. - &apos;allow-all&apos;: All traffic is allowed. - &apos;deny-all&apos;: All traffic is blocked. - &apos;custom&apos;: Traffic is controlled by explicit allow/deny rules.&quot;</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.SandboxNetworkPolicy_mode? Mode { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SandboxNetworkPolicyMode? Mode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SandboxNetworkPolicy"/> and sets the default values.
         /// </summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "allowedDomains", n => { AllowedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "deniedCIDRs", n => { DeniedCIDRs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "injectionRules", n => { InjectionRules = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SandboxInjectionRule>(global::Soenneker.Vercel.OpenApiClient.Models.SandboxInjectionRule.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SandboxNetworkPolicy_mode>(); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SandboxNetworkPolicyMode>(); } },
             };
         }
         /// <summary>
@@ -92,7 +92,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("allowedDomains", AllowedDomains);
             writer.WriteCollectionOfPrimitiveValues<string>("deniedCIDRs", DeniedCIDRs);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SandboxInjectionRule>("injectionRules", InjectionRules);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SandboxNetworkPolicy_mode>("mode", Mode);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SandboxNetworkPolicyMode>("mode", Mode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

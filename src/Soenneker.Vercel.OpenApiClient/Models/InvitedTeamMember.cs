@@ -24,22 +24,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Email { get; set; }
 #endif
         /// <summary>The role used for the invitation</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMember_role? Role { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMemberRole? Role { get; set; }
         /// <summary>The team permissions of the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMember_teamPermissions?>? TeamPermissions { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMemberTeamPermissionsItem?>? TeamPermissions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMember_teamPermissions?> TeamPermissions { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMemberTeamPermissionsItem?> TeamPermissions { get; set; }
 #endif
         /// <summary>The team roles of the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMember_teamRoles?>? TeamRoles { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMemberTeamRolesItem?>? TeamRoles { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMember_teamRoles?> TeamRoles { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMemberTeamRolesItem?> TeamRoles { get; set; }
 #endif
         /// <summary>The ID of the invited user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,9 +83,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMember_role>(); } },
-                { "teamPermissions", n => { TeamPermissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMember_teamPermissions>()?.AsList(); } },
-                { "teamRoles", n => { TeamRoles = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMember_teamRoles>()?.AsList(); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMemberRole>(); } },
+                { "teamPermissions", n => { TeamPermissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMemberTeamPermissionsItem>()?.AsList(); } },
+                { "teamRoles", n => { TeamRoles = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMemberTeamRolesItem>()?.AsList(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
             };
@@ -98,9 +98,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMember_role>("role", Role);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMember_teamPermissions>("teamPermissions", TeamPermissions);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMember_teamRoles>("teamRoles", TeamRoles);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMemberRole>("role", Role);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMemberTeamPermissionsItem>("teamPermissions", TeamPermissions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.InvitedTeamMemberTeamRolesItem>("teamRoles", TeamRoles);
             writer.WriteStringValue("uid", Uid);
             writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);

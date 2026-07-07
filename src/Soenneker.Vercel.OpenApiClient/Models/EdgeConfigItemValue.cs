@@ -8,34 +8,34 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Branch1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Branch2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Branch4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Wrapper"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueBranch1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueBranch2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueBranch4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueWrapper"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EdgeConfigItemValue : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Branch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueBranch1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Branch1? EdgeConfigItemValueBranch1 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueBranch1? EdgeConfigItemValueBranch1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Branch1 EdgeConfigItemValueBranch1 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueBranch1 EdgeConfigItemValueBranch1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Branch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueBranch2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Branch2? EdgeConfigItemValueBranch2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueBranch2? EdgeConfigItemValueBranch2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Branch2 EdgeConfigItemValueBranch2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueBranch2 EdgeConfigItemValueBranch2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Branch4"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueBranch4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Branch4? EdgeConfigItemValueBranch4 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueBranch4? EdgeConfigItemValueBranch4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Branch4 EdgeConfigItemValueBranch4 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueBranch4 EdgeConfigItemValueBranch4 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,13 +45,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueMember1 EdgeConfigItemValueMember1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Wrapper"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueWrapper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Wrapper? EdgeConfigItemValueWrapper { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueWrapper? EdgeConfigItemValueWrapper { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Wrapper EdgeConfigItemValueWrapper { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueWrapper EdgeConfigItemValueWrapper { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -65,23 +65,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue();
             if("EdgeConfigItemValue_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.EdgeConfigItemValueBranch1 = new global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Branch1();
+                result.EdgeConfigItemValueBranch1 = new global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueBranch1();
             }
             else if("EdgeConfigItemValue_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.EdgeConfigItemValueBranch2 = new global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Branch2();
+                result.EdgeConfigItemValueBranch2 = new global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueBranch2();
             }
             else if("EdgeConfigItemValue_4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.EdgeConfigItemValueBranch4 = new global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Branch4();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.EdgeConfigItemValueMember1 = new global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueMember1();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.EdgeConfigItemValueWrapper = new global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Wrapper();
+                result.EdgeConfigItemValueBranch4 = new global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueBranch4();
             }
             return result;
         }
@@ -122,15 +114,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(EdgeConfigItemValueBranch1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Branch1>(null, EdgeConfigItemValueBranch1);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueBranch1>(null, EdgeConfigItemValueBranch1);
             }
             else if(EdgeConfigItemValueBranch2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Branch2>(null, EdgeConfigItemValueBranch2);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueBranch2>(null, EdgeConfigItemValueBranch2);
             }
             else if(EdgeConfigItemValueBranch4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Branch4>(null, EdgeConfigItemValueBranch4);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueBranch4>(null, EdgeConfigItemValueBranch4);
             }
             else if(EdgeConfigItemValueMember1 != null)
             {
@@ -138,7 +130,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             }
             else if(EdgeConfigItemValueWrapper != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue_Wrapper>(null, EdgeConfigItemValueWrapper);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValueWrapper>(null, EdgeConfigItemValueWrapper);
             }
         }
     }

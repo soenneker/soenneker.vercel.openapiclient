@@ -53,40 +53,40 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Drains.Item
         /// <summary>
         /// Get the information for a specific Drain by passing the drain id in the URL.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsItemRequestBuilder.DrainsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsItemRequestBuilder.DrainsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsItemRequestBuilder.DrainsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsItemRequestBuilder.DrainsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the configuration of an existing drain.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsItemRequestBuilder.DrainsItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200Response?> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsItemRequestBuilder.DrainsItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsItemRequestBuilder.DrainsItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200Response> PatchAsync(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsItemRequestBuilder.DrainsItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a specific Drain by passing the drain id in the URL.
@@ -134,11 +134,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Drains.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsItemRequestBuilder.DrainsItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsItemRequestBuilder.DrainsItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsItemRequestBuilder.DrainsItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrainRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Drains.Item.DrainsItemRequestBuilder.DrainsItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

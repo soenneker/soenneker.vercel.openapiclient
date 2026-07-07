@@ -34,6 +34,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The total amount of concurrent builds that can be used.</summary>
         public double? ConcurrentBuilds { get; set; }
+        /// <summary>The maximum number of custom environments allowed per project.</summary>
+        public double? CustomEnvironmentsPerProject { get; set; }
         /// <summary>The maximum number of edge configs an account can create.</summary>
         public double? EdgeConfigs { get; set; }
         /// <summary>The maximum size in kilobytes of an Edge Config. Only specified if a custom limit is set.</summary>
@@ -44,6 +46,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? KvDatabases { get; set; }
         /// <summary>The maximum number of postgres databases an account can create.</summary>
         public double? PostgresDatabases { get; set; }
+        /// <summary>The maximum memory size (in MB) for a serverless function. Only specified if a custom limit is set.</summary>
+        public double? ServerlessFunctionMaxMemorySize { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfig"/> and sets the default values.
         /// </summary>
@@ -73,11 +77,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "buildEntitlements", n => { BuildEntitlements = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfigBuildEntitlements>(global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfigBuildEntitlements.CreateFromDiscriminatorValue); } },
                 { "buildMachine", n => { BuildMachine = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfigBuildMachine>(global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfigBuildMachine.CreateFromDiscriminatorValue); } },
                 { "concurrentBuilds", n => { ConcurrentBuilds = n.GetDoubleValue(); } },
+                { "customEnvironmentsPerProject", n => { CustomEnvironmentsPerProject = n.GetDoubleValue(); } },
                 { "edgeConfigSize", n => { EdgeConfigSize = n.GetDoubleValue(); } },
                 { "edgeConfigs", n => { EdgeConfigs = n.GetDoubleValue(); } },
                 { "elasticConcurrencyEnabled", n => { ElasticConcurrencyEnabled = n.GetBoolValue(); } },
                 { "kvDatabases", n => { KvDatabases = n.GetDoubleValue(); } },
                 { "postgresDatabases", n => { PostgresDatabases = n.GetDoubleValue(); } },
+                { "serverlessFunctionMaxMemorySize", n => { ServerlessFunctionMaxMemorySize = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -91,11 +97,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfigBuildEntitlements>("buildEntitlements", BuildEntitlements);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamResourceConfigBuildMachine>("buildMachine", BuildMachine);
             writer.WriteDoubleValue("concurrentBuilds", ConcurrentBuilds);
+            writer.WriteDoubleValue("customEnvironmentsPerProject", CustomEnvironmentsPerProject);
             writer.WriteDoubleValue("edgeConfigs", EdgeConfigs);
             writer.WriteDoubleValue("edgeConfigSize", EdgeConfigSize);
             writer.WriteBoolValue("elasticConcurrencyEnabled", ElasticConcurrencyEnabled);
             writer.WriteDoubleValue("kvDatabases", KvDatabases);
             writer.WriteDoubleValue("postgresDatabases", PostgresDatabases);
+            writer.WriteDoubleValue("serverlessFunctionMaxMemorySize", ServerlessFunctionMaxMemorySize);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

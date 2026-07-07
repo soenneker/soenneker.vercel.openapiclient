@@ -49,22 +49,22 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Ex
         /// <summary>
         /// Create one or multiple experimentation items
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.Items.ItemsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson29"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.Items.ItemsPostResponse?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson29?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.Items.ItemsPostResponse> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson29> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.Items.ItemsPostResponse>(requestInfo, global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.Items.ItemsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson29>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson29.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create one or multiple experimentation items
@@ -74,11 +74,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Ex
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

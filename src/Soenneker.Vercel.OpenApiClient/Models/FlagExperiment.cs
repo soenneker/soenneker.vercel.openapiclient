@@ -17,7 +17,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The allocationPercent property</summary>
         public double? AllocationPercent { get; set; }
         /// <summary>The allocationUnit property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_allocationUnit? AllocationUnit { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentAllocationUnit? AllocationUnit { get; set; }
         /// <summary>The controlVariantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,20 +43,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string DecisionReason { get; set; }
 #endif
         /// <summary>The device property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_device? Device { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentDevice? Device { get; set; }
         /// <summary>The duration property</summary>
         public double? Duration { get; set; }
         /// <summary>The durationUnit property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_durationUnit? DurationUnit { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentDurationUnit? DurationUnit { get; set; }
         /// <summary>The endedAt property</summary>
         public double? EndedAt { get; set; }
         /// <summary>The guardrailMetrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_guardrailMetrics>? GuardrailMetrics { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentGuardrailMetricsItem>? GuardrailMetrics { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_guardrailMetrics> GuardrailMetrics { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentGuardrailMetricsItem> GuardrailMetrics { get; set; }
 #endif
         /// <summary>The hypothesis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,15 +95,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The primaryMetrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_primaryMetrics>? PrimaryMetrics { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentPrimaryMetricsItem>? PrimaryMetrics { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_primaryMetrics> PrimaryMetrics { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentPrimaryMetricsItem> PrimaryMetrics { get; set; }
 #endif
         /// <summary>The startedAt property</summary>
         public double? StartedAt { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_status? Status { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentStatus? Status { get; set; }
         /// <summary>The stickyRequirement property</summary>
         public bool? StickyRequirement { get; set; }
         /// <summary>The surfaceArea property</summary>
@@ -140,23 +140,23 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allocationPercent", n => { AllocationPercent = n.GetDoubleValue(); } },
-                { "allocationUnit", n => { AllocationUnit = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_allocationUnit>(); } },
+                { "allocationUnit", n => { AllocationUnit = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentAllocationUnit>(); } },
                 { "controlVariantId", n => { ControlVariantId = n.GetStringValue(); } },
                 { "decision", n => { Decision = n.GetStringValue(); } },
                 { "decisionReason", n => { DecisionReason = n.GetStringValue(); } },
-                { "device", n => { Device = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_device>(); } },
+                { "device", n => { Device = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentDevice>(); } },
                 { "duration", n => { Duration = n.GetDoubleValue(); } },
-                { "durationUnit", n => { DurationUnit = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_durationUnit>(); } },
+                { "durationUnit", n => { DurationUnit = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentDurationUnit>(); } },
                 { "endedAt", n => { EndedAt = n.GetDoubleValue(); } },
-                { "guardrailMetrics", n => { GuardrailMetrics = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_guardrailMetrics>(global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_guardrailMetrics.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "guardrailMetrics", n => { GuardrailMetrics = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentGuardrailMetricsItem>(global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentGuardrailMetricsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hypothesis", n => { Hypothesis = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "layer", n => { Layer = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "numVariants", n => { NumVariants = n.GetDoubleValue(); } },
-                { "primaryMetrics", n => { PrimaryMetrics = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_primaryMetrics>(global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_primaryMetrics.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "primaryMetrics", n => { PrimaryMetrics = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentPrimaryMetricsItem>(global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentPrimaryMetricsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "startedAt", n => { StartedAt = n.GetDoubleValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentStatus>(); } },
                 { "stickyRequirement", n => { StickyRequirement = n.GetBoolValue(); } },
                 { "surfaceArea", n => { SurfaceArea = n.GetStringValue(); } },
             };
@@ -169,23 +169,23 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("allocationPercent", AllocationPercent);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_allocationUnit>("allocationUnit", AllocationUnit);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentAllocationUnit>("allocationUnit", AllocationUnit);
             writer.WriteStringValue("controlVariantId", ControlVariantId);
             writer.WriteStringValue("decision", Decision);
             writer.WriteStringValue("decisionReason", DecisionReason);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_device>("device", Device);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentDevice>("device", Device);
             writer.WriteDoubleValue("duration", Duration);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_durationUnit>("durationUnit", DurationUnit);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentDurationUnit>("durationUnit", DurationUnit);
             writer.WriteDoubleValue("endedAt", EndedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_guardrailMetrics>("guardrailMetrics", GuardrailMetrics);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentGuardrailMetricsItem>("guardrailMetrics", GuardrailMetrics);
             writer.WriteStringValue("hypothesis", Hypothesis);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("layer", Layer);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("numVariants", NumVariants);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_primaryMetrics>("primaryMetrics", PrimaryMetrics);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentPrimaryMetricsItem>("primaryMetrics", PrimaryMetrics);
             writer.WriteDoubleValue("startedAt", StartedAt);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperiment_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagExperimentStatus>("status", Status);
             writer.WriteBoolValue("stickyRequirement", StickyRequirement);
             writer.WriteStringValue("surfaceArea", SurfaceArea);
             writer.WriteAdditionalData(AdditionalData);

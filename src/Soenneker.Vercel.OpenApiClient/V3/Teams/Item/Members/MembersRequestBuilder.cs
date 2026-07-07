@@ -36,20 +36,20 @@ namespace Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members
         /// <summary>
         /// Get a paginated list of team members for the provided team.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembers200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a paginated list of team members for the provided team.
@@ -110,7 +110,7 @@ namespace Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members
             public double? Limit { get; set; }
             /// <summary>Only return members with the specified team role.</summary>
             [QueryParameter("role")]
-            public global::Soenneker.Vercel.OpenApiClient.V3.Teams.Item.Members.GetRoleQueryParameterType? Role { get; set; }
+            public global::Soenneker.Vercel.OpenApiClient.Models.GetTeamMembersRoleParameter? Role { get; set; }
             /// <summary>Search team members by their name, username, and email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
