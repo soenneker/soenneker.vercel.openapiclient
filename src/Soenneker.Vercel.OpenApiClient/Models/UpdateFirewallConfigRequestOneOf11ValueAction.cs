@@ -8,17 +8,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UpdateFirewallConfigRequestOneOf11ValueAction
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "log")]
-        #pragma warning disable CS1591
-        Log,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "challenge")]
-        #pragma warning disable CS1591
-        Challenge,
-        #pragma warning restore CS1591
         [EnumMember(Value = "deny")]
         #pragma warning disable CS1591
         Deny,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "log")]
+        #pragma warning disable CS1591
+        Log,
         #pragma warning restore CS1591
     }
 }

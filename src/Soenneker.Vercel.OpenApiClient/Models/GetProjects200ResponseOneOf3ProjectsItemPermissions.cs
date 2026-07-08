@@ -54,6 +54,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayCredits { get; set; }
 #endif
+        /// <summary>The aiGatewayGuardrails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayGuardrails { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayGuardrails { get; set; }
+#endif
         /// <summary>The aiGatewayPrivateModels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2132,6 +2140,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "aiGatewayApiKey", n => { AiGatewayApiKey = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "aiGatewayApiKeyOwnedBySelf", n => { AiGatewayApiKeyOwnedBySelf = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "aiGatewayCredits", n => { AiGatewayCredits = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
+                { "aiGatewayGuardrails", n => { AiGatewayGuardrails = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "aiGatewayPrivateModels", n => { AiGatewayPrivateModels = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "aiGatewayRules", n => { AiGatewayRules = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "aiGatewaySettings", n => { AiGatewaySettings = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
@@ -2402,6 +2411,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewayApiKey", AiGatewayApiKey);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewayApiKeyOwnedBySelf", AiGatewayApiKeyOwnedBySelf);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewayCredits", AiGatewayCredits);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewayGuardrails", AiGatewayGuardrails);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewayPrivateModels", AiGatewayPrivateModels);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewayRules", AiGatewayRules);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewaySettings", AiGatewaySettings);

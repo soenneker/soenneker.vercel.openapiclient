@@ -56,6 +56,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItem> Rules { get; set; }
 #endif
+        /// <summary>The rulesets property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets? Rulesets { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets Rulesets { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -81,6 +89,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "logHeaders", n => { LogHeaders = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestLogHeaders>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestLogHeaders.CreateFromDiscriminatorValue); } },
                 { "managedRules", n => { ManagedRules = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestManagedRules>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestManagedRules.CreateFromDiscriminatorValue); } },
                 { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItem>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "rulesets", n => { Rulesets = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -97,6 +106,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestLogHeaders>("logHeaders", LogHeaders);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestManagedRules>("managedRules", ManagedRules);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesItem>("rules", Rules);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesets>("rulesets", Rulesets);
         }
     }
 }

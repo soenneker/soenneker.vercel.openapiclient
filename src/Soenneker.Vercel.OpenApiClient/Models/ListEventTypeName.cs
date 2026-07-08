@@ -91,6 +91,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayByokCredentialUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-guardrails-updated")]
+        #pragma warning disable CS1591
+        AiGatewayGuardrailsUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-model-allowlist-models-updated")]
         #pragma warning disable CS1591
         AiGatewayModelAllowlistModelsUpdated,
@@ -1030,6 +1034,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "observability-plus-project-enabled")]
         #pragma warning disable CS1591
         ObservabilityPlusProjectEnabled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "organization-create")]
+        #pragma warning disable CS1591
+        OrganizationCreate,
         #pragma warning restore CS1591
         [EnumMember(Value = "organization-team-add")]
         #pragma warning disable CS1591

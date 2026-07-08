@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Reorder a custom rule
+    /// Remove the action for a consumed ruleset (project scope)
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateFirewallConfigRequestOneOf5 : IParsable
@@ -24,7 +24,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The value property</summary>
-        public double? Value { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Value { get; set; }
+#nullable restore
+#else
+        public string Value { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf5Action>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetDoubleValue(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +63,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf5Action>("action", Action);
             writer.WriteStringValue("id", Id);
-            writer.WriteDoubleValue("value", Value);
+            writer.WriteStringValue("value", Value);
         }
     }
 }

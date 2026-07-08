@@ -15,13 +15,39 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The rule property</summary>
+        /// <summary>The moderationPolicyCount property</summary>
+        public double? ModerationPolicyCount { get; set; }
+        /// <summary>The piiRedaction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Rule? Rule { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20PiiRedaction? PiiRedaction { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Rule Rule { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20PiiRedaction PiiRedaction { get; set; }
+#endif
+        /// <summary>The policiesAdded property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? PoliciesAdded { get; set; }
+#nullable restore
+#else
+        public List<string> PoliciesAdded { get; set; }
+#endif
+        /// <summary>The policiesModified property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? PoliciesModified { get; set; }
+#nullable restore
+#else
+        public List<string> PoliciesModified { get; set; }
+#endif
+        /// <summary>The policiesRemoved property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? PoliciesRemoved { get; set; }
+#nullable restore
+#else
+        public List<string> PoliciesRemoved { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20"/> and sets the default values.
@@ -48,7 +74,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "rule", n => { Rule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Rule>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Rule.CreateFromDiscriminatorValue); } },
+                { "moderationPolicyCount", n => { ModerationPolicyCount = n.GetDoubleValue(); } },
+                { "piiRedaction", n => { PiiRedaction = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20PiiRedaction>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20PiiRedaction.CreateFromDiscriminatorValue); } },
+                { "policiesAdded", n => { PoliciesAdded = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "policiesModified", n => { PoliciesModified = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "policiesRemoved", n => { PoliciesRemoved = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +88,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Rule>("rule", Rule);
+            writer.WriteDoubleValue("moderationPolicyCount", ModerationPolicyCount);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20PiiRedaction>("piiRedaction", PiiRedaction);
+            writer.WriteCollectionOfPrimitiveValues<string>("policiesAdded", PoliciesAdded);
+            writer.WriteCollectionOfPrimitiveValues<string>("policiesModified", PoliciesModified);
+            writer.WriteCollectionOfPrimitiveValues<string>("policiesRemoved", PoliciesRemoved);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -75136,6 +75136,12 @@
                                 },
                                 "type": "array"
                               },
+                              "aiGatewayGuardrails": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
                               "aiGatewayRules": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
@@ -88258,6 +88264,7 @@
                                               "cookie",
                                               "environment",
                                               "header",
+                                              "headers",
                                               "host",
                                               "initial_request_path",
                                               "ip_address",
@@ -88344,6 +88351,7 @@
                                               "cookie",
                                               "environment",
                                               "header",
+                                              "headers",
                                               "host",
                                               "initial_request_path",
                                               "ip_address",
@@ -88505,6 +88513,46 @@
                                         "rule_id"
                                       ],
                                       "type": "object"
+                                    },
+                                    "transforms": {
+                                      "items": {
+                                        "properties": {
+                                          "type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "request.headers"
+                                            ]
+                                          },
+                                          "op": {
+                                            "type": "string",
+                                            "enum": [
+                                              "append"
+                                            ]
+                                          },
+                                          "target": {
+                                            "properties": {
+                                              "key": {
+                                                "type": "string"
+                                              }
+                                            },
+                                            "required": [
+                                              "key"
+                                            ],
+                                            "type": "object"
+                                          },
+                                          "args": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "args",
+                                          "op",
+                                          "target",
+                                          "type"
+                                        ],
+                                        "type": "object"
+                                      },
+                                      "type": "array"
                                     }
                                   },
                                   "type": "object"
@@ -92437,6 +92485,7 @@
                                                   "cookie",
                                                   "environment",
                                                   "header",
+                                                  "headers",
                                                   "host",
                                                   "initial_request_path",
                                                   "ip_address",
@@ -92523,6 +92572,7 @@
                                                   "cookie",
                                                   "environment",
                                                   "header",
+                                                  "headers",
                                                   "host",
                                                   "initial_request_path",
                                                   "ip_address",
@@ -92684,6 +92734,46 @@
                                             "rule_id"
                                           ],
                                           "type": "object"
+                                        },
+                                        "transforms": {
+                                          "items": {
+                                            "properties": {
+                                              "type": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "request.headers"
+                                                ]
+                                              },
+                                              "op": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "append"
+                                                ]
+                                              },
+                                              "target": {
+                                                "properties": {
+                                                  "key": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "key"
+                                                ],
+                                                "type": "object"
+                                              },
+                                              "args": {
+                                                "type": "string"
+                                              }
+                                            },
+                                            "required": [
+                                              "args",
+                                              "op",
+                                              "target",
+                                              "type"
+                                            ],
+                                            "type": "object"
+                                          },
+                                          "type": "array"
                                         }
                                       },
                                       "type": "object"
@@ -97259,6 +97349,12 @@
                                     "type": "array"
                                   },
                                   "aiGatewayPrivateModels": {
+                                    "items": {
+                                      "$ref": "#/components/schemas/ACLAction"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "aiGatewayGuardrails": {
                                     "items": {
                                       "$ref": "#/components/schemas/ACLAction"
                                     },
@@ -104524,6 +104620,12 @@
                           "type": "array"
                         },
                         "aiGatewayPrivateModels": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "aiGatewayGuardrails": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -112047,6 +112149,12 @@
                           },
                           "type": "array"
                         },
+                        "aiGatewayGuardrails": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "aiGatewayRules": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -119115,6 +119223,12 @@
                           "type": "array"
                         },
                         "aiGatewayPrivateModels": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "aiGatewayGuardrails": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -127421,6 +127535,12 @@
                           "type": "array"
                         },
                         "aiGatewayPrivateModels": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "aiGatewayGuardrails": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -146983,6 +147103,12 @@
                           },
                           "type": "array"
                         },
+                        "aiGatewayGuardrails": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "aiGatewayRules": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -156471,6 +156597,256 @@
                           },
                           "type": "array"
                         },
+                        "rulesets": {
+                          "oneOf": [
+                            {
+                              "items": {
+                                "properties": {
+                                  "description": {
+                                    "type": "string"
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "active": {
+                                    "type": "boolean",
+                                    "enum": [
+                                      false,
+                                      true
+                                    ]
+                                  },
+                                  "conditionGroup": {
+                                    "items": {
+                                      "properties": {
+                                        "conditions": {
+                                          "items": {
+                                            "properties": {
+                                              "type": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "bot_category",
+                                                  "bot_name",
+                                                  "bot_protection",
+                                                  "bot_status",
+                                                  "cookie",
+                                                  "environment",
+                                                  "geo_as_number",
+                                                  "geo_city",
+                                                  "geo_continent",
+                                                  "geo_country",
+                                                  "geo_country_region",
+                                                  "header",
+                                                  "host",
+                                                  "ip_address",
+                                                  "ja3_digest",
+                                                  "ja4_digest",
+                                                  "method",
+                                                  "path",
+                                                  "protocol",
+                                                  "query",
+                                                  "rate_limit_api_id",
+                                                  "raw_path",
+                                                  "region",
+                                                  "route",
+                                                  "scheme",
+                                                  "server_action",
+                                                  "target_path",
+                                                  "trusted_source",
+                                                  "user_agent"
+                                                ]
+                                              },
+                                              "op": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "eq",
+                                                  "ex",
+                                                  "gt",
+                                                  "gte",
+                                                  "inc",
+                                                  "list",
+                                                  "lt",
+                                                  "lte",
+                                                  "neq",
+                                                  "nex",
+                                                  "ninc",
+                                                  "pre",
+                                                  "re",
+                                                  "sub",
+                                                  "suf"
+                                                ]
+                                              },
+                                              "neg": {
+                                                "type": "boolean",
+                                                "enum": [
+                                                  false,
+                                                  true
+                                                ]
+                                              },
+                                              "key": {
+                                                "type": "string"
+                                              },
+                                              "value": {
+                                                "oneOf": [
+                                                  {
+                                                    "type": "string"
+                                                  },
+                                                  {
+                                                    "type": "number"
+                                                  },
+                                                  {
+                                                    "items": {
+                                                      "type": "string"
+                                                    },
+                                                    "type": "array"
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            "required": [
+                                              "op",
+                                              "type"
+                                            ],
+                                            "type": "object"
+                                          },
+                                          "type": "array"
+                                        }
+                                      },
+                                      "required": [
+                                        "conditions"
+                                      ],
+                                      "type": "object"
+                                    },
+                                    "type": "array"
+                                  }
+                                },
+                                "required": [
+                                  "active",
+                                  "conditionGroup",
+                                  "id",
+                                  "name"
+                                ],
+                                "type": "object"
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "additionalProperties": {
+                                "properties": {
+                                  "action": {
+                                    "type": "string",
+                                    "enum": [
+                                      "bypass",
+                                      "challenge",
+                                      "deny",
+                                      "log",
+                                      "rate_limit",
+                                      "redirect"
+                                    ]
+                                  },
+                                  "rateLimit": {
+                                    "nullable": true,
+                                    "properties": {
+                                      "algo": {
+                                        "type": "string",
+                                        "enum": [
+                                          "fixed_window",
+                                          "token_bucket"
+                                        ]
+                                      },
+                                      "window": {
+                                        "type": "number"
+                                      },
+                                      "limit": {
+                                        "type": "number"
+                                      },
+                                      "keys": {
+                                        "items": {
+                                          "type": "string"
+                                        },
+                                        "type": "array"
+                                      },
+                                      "action": {
+                                        "nullable": true,
+                                        "type": "string",
+                                        "enum": [
+                                          "challenge",
+                                          "deny",
+                                          "log",
+                                          "rate_limit",
+                                          null
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "algo",
+                                      "keys",
+                                      "limit",
+                                      "window"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  "redirect": {
+                                    "nullable": true,
+                                    "properties": {
+                                      "location": {
+                                        "type": "string"
+                                      },
+                                      "permanent": {
+                                        "type": "boolean",
+                                        "enum": [
+                                          false,
+                                          true
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "location",
+                                      "permanent"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  "actionDuration": {
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "bypassSystem": {
+                                    "nullable": true,
+                                    "type": "boolean",
+                                    "enum": [
+                                      false,
+                                      true,
+                                      null
+                                    ]
+                                  },
+                                  "logHeaders": {
+                                    "oneOf": [
+                                      {
+                                        "items": {
+                                          "type": "string"
+                                        },
+                                        "type": "array"
+                                      },
+                                      {
+                                        "type": "string",
+                                        "enum": [
+                                          "*"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "action"
+                                ],
+                                "type": "object"
+                              },
+                              "type": "object"
+                            }
+                          ]
+                        },
                         "changes": {
                           "items": {
                             "type": "object"
@@ -157255,6 +157631,280 @@
                       "additionalProperties": false
                     }
                   },
+                  "rulesets": {
+                    "anyOf": [
+                      {
+                        "type": "array",
+                        "maxItems": 25,
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string",
+                              "maxLength": 160
+                            },
+                            "description": {
+                              "type": "string",
+                              "maxLength": 256
+                            },
+                            "active": {
+                              "type": "boolean"
+                            },
+                            "conditionGroup": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "conditions": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "host",
+                                            "path",
+                                            "method",
+                                            "header",
+                                            "query",
+                                            "cookie",
+                                            "target_path",
+                                            "route",
+                                            "raw_path",
+                                            "ip_address",
+                                            "region",
+                                            "protocol",
+                                            "scheme",
+                                            "environment",
+                                            "user_agent",
+                                            "geo_continent",
+                                            "geo_country",
+                                            "geo_country_region",
+                                            "geo_city",
+                                            "geo_as_number",
+                                            "ja4_digest",
+                                            "ja3_digest",
+                                            "rate_limit_api_id",
+                                            "server_action",
+                                            "bot_name",
+                                            "bot_category",
+                                            "bot_status",
+                                            "bot_protection"
+                                          ]
+                                        },
+                                        "op": {
+                                          "type": "string",
+                                          "enum": [
+                                            "re",
+                                            "eq",
+                                            "neq",
+                                            "ex",
+                                            "nex",
+                                            "inc",
+                                            "ninc",
+                                            "pre",
+                                            "suf",
+                                            "sub",
+                                            "gt",
+                                            "gte",
+                                            "lt",
+                                            "lte",
+                                            "list"
+                                          ]
+                                        },
+                                        "neg": {
+                                          "type": "boolean"
+                                        },
+                                        "key": {
+                                          "type": "string"
+                                        },
+                                        "value": {
+                                          "anyOf": [
+                                            {
+                                              "type": "string"
+                                            },
+                                            {
+                                              "type": "array",
+                                              "items": {
+                                                "type": "string"
+                                              },
+                                              "maxItems": 75
+                                            },
+                                            {
+                                              "type": "number"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "required": [
+                                        "type",
+                                        "op"
+                                      ],
+                                      "additionalProperties": false
+                                    },
+                                    "maxItems": 65
+                                  }
+                                },
+                                "required": [
+                                  "conditions"
+                                ],
+                                "additionalProperties": false
+                              },
+                              "maxItems": 25
+                            },
+                            "valid": {
+                              "type": "boolean"
+                            },
+                            "validationErrors": {
+                              "anyOf": [
+                                {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "type": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "active",
+                            "conditionGroup"
+                          ],
+                          "additionalProperties": false
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "maxProperties": 25,
+                        "additionalProperties": {
+                          "type": "object",
+                          "properties": {
+                            "action": {
+                              "type": "string",
+                              "enum": [
+                                "log",
+                                "challenge",
+                                "deny",
+                                "bypass",
+                                "rate_limit",
+                                "redirect"
+                              ]
+                            },
+                            "rateLimit": {
+                              "anyOf": [
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "algo": {
+                                      "type": "string",
+                                      "enum": [
+                                        "fixed_window",
+                                        "token_bucket"
+                                      ]
+                                    },
+                                    "window": {
+                                      "type": "number"
+                                    },
+                                    "limit": {
+                                      "type": "number"
+                                    },
+                                    "keys": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "action": {
+                                      "anyOf": [
+                                        {
+                                          "type": "string",
+                                          "enum": [
+                                            "log",
+                                            "challenge",
+                                            "deny",
+                                            "rate_limit"
+                                          ]
+                                        },
+                                        {
+                                          "type": "string"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "algo",
+                                    "window",
+                                    "limit",
+                                    "keys"
+                                  ],
+                                  "additionalProperties": false
+                                },
+                                {
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "redirect": {
+                              "anyOf": [
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "location": {
+                                      "type": "string"
+                                    },
+                                    "permanent": {
+                                      "type": "boolean"
+                                    }
+                                  },
+                                  "required": [
+                                    "location",
+                                    "permanent"
+                                  ],
+                                  "additionalProperties": false
+                                },
+                                {
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "actionDuration": {
+                              "type": "string",
+                              "nullable": true
+                            },
+                            "bypassSystem": {
+                              "type": "boolean",
+                              "nullable": true
+                            },
+                            "logHeaders": {
+                              "oneOf": [
+                                {
+                                  "type": "string"
+                                },
+                                {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "required": [
+                            "action"
+                          ],
+                          "additionalProperties": false
+                        }
+                      }
+                    ]
+                  },
                   "ips": {
                     "type": "array",
                     "items": {
@@ -157393,7 +158043,7 @@
               "schema": {
                 "oneOf": [
                   {
-                    "description": "Enable Firewall",
+                    "description": "Add a ruleset",
                     "type": "object",
                     "properties": {
                       "action": {
@@ -157404,6 +158054,516 @@
                       },
                       "id": {
                         "nullable": true
+                      },
+                      "value": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "maxLength": 160
+                          },
+                          "description": {
+                            "type": "string",
+                            "maxLength": 256
+                          },
+                          "active": {
+                            "type": "boolean"
+                          },
+                          "conditionGroup": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "conditions": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "host",
+                                          "path",
+                                          "method",
+                                          "header",
+                                          "query",
+                                          "cookie",
+                                          "target_path",
+                                          "route",
+                                          "raw_path",
+                                          "ip_address",
+                                          "region",
+                                          "protocol",
+                                          "scheme",
+                                          "environment",
+                                          "user_agent",
+                                          "geo_continent",
+                                          "geo_country",
+                                          "geo_country_region",
+                                          "geo_city",
+                                          "geo_as_number",
+                                          "ja4_digest",
+                                          "ja3_digest",
+                                          "rate_limit_api_id",
+                                          "server_action",
+                                          "bot_name",
+                                          "bot_category",
+                                          "bot_status",
+                                          "bot_protection"
+                                        ]
+                                      },
+                                      "op": {
+                                        "type": "string",
+                                        "enum": [
+                                          "re",
+                                          "eq",
+                                          "neq",
+                                          "ex",
+                                          "nex",
+                                          "inc",
+                                          "ninc",
+                                          "pre",
+                                          "suf",
+                                          "sub",
+                                          "gt",
+                                          "gte",
+                                          "lt",
+                                          "lte",
+                                          "list"
+                                        ]
+                                      },
+                                      "neg": {
+                                        "type": "boolean"
+                                      },
+                                      "key": {
+                                        "type": "string"
+                                      },
+                                      "value": {
+                                        "anyOf": [
+                                          {
+                                            "type": "string"
+                                          },
+                                          {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "string"
+                                            },
+                                            "maxItems": 75
+                                          },
+                                          {
+                                            "type": "number"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "type",
+                                      "op"
+                                    ],
+                                    "additionalProperties": false
+                                  },
+                                  "maxItems": 65
+                                }
+                              },
+                              "required": [
+                                "conditions"
+                              ],
+                              "additionalProperties": false
+                            },
+                            "maxItems": 25
+                          },
+                          "valid": {
+                            "type": "boolean"
+                          },
+                          "validationErrors": {
+                            "anyOf": [
+                              {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              {
+                                "type": "string"
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "active",
+                          "conditionGroup"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "description": "Update a ruleset",
+                    "type": "object",
+                    "properties": {
+                      "action": {
+                        "type": "string",
+                        "enum": [
+                          "rules.insert"
+                        ]
+                      },
+                      "id": {
+                        "nullable": true
+                      },
+                      "value": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "maxLength": 160
+                          },
+                          "description": {
+                            "type": "string",
+                            "maxLength": 256
+                          },
+                          "active": {
+                            "type": "boolean"
+                          },
+                          "conditionGroup": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "conditions": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "host",
+                                          "path",
+                                          "method",
+                                          "header",
+                                          "query",
+                                          "cookie",
+                                          "target_path",
+                                          "route",
+                                          "raw_path",
+                                          "ip_address",
+                                          "region",
+                                          "protocol",
+                                          "scheme",
+                                          "environment",
+                                          "user_agent",
+                                          "geo_continent",
+                                          "geo_country",
+                                          "geo_country_region",
+                                          "geo_city",
+                                          "geo_as_number",
+                                          "ja4_digest",
+                                          "ja3_digest",
+                                          "rate_limit_api_id",
+                                          "server_action",
+                                          "bot_name",
+                                          "bot_category",
+                                          "bot_status",
+                                          "bot_protection"
+                                        ]
+                                      },
+                                      "op": {
+                                        "type": "string",
+                                        "enum": [
+                                          "re",
+                                          "eq",
+                                          "neq",
+                                          "ex",
+                                          "nex",
+                                          "inc",
+                                          "ninc",
+                                          "pre",
+                                          "suf",
+                                          "sub",
+                                          "gt",
+                                          "gte",
+                                          "lt",
+                                          "lte",
+                                          "list"
+                                        ]
+                                      },
+                                      "neg": {
+                                        "type": "boolean"
+                                      },
+                                      "key": {
+                                        "type": "string"
+                                      },
+                                      "value": {
+                                        "anyOf": [
+                                          {
+                                            "type": "string"
+                                          },
+                                          {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "string"
+                                            },
+                                            "maxItems": 75
+                                          },
+                                          {
+                                            "type": "number"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "type",
+                                      "op"
+                                    ],
+                                    "additionalProperties": false
+                                  },
+                                  "maxItems": 65
+                                }
+                              },
+                              "required": [
+                                "conditions"
+                              ],
+                              "additionalProperties": false
+                            },
+                            "maxItems": 25
+                          },
+                          "valid": {
+                            "type": "boolean"
+                          },
+                          "validationErrors": {
+                            "anyOf": [
+                              {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              {
+                                "type": "string"
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "active",
+                          "conditionGroup"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "id",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "description": "Remove a ruleset",
+                    "type": "object",
+                    "properties": {
+                      "action": {
+                        "type": "string",
+                        "enum": [
+                          "rules.update"
+                        ]
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "id"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "description": "Set the action for a consumed ruleset (project scope)",
+                    "type": "object",
+                    "properties": {
+                      "action": {
+                        "type": "string",
+                        "enum": [
+                          "rules.remove"
+                        ]
+                      },
+                      "id": {
+                        "type": "string",
+                        "maxLength": 180
+                      },
+                      "value": {
+                        "properties": {
+                          "action": {
+                            "type": "string",
+                            "enum": [
+                              "log",
+                              "challenge",
+                              "deny",
+                              "bypass",
+                              "rate_limit",
+                              "redirect"
+                            ]
+                          },
+                          "rateLimit": {
+                            "anyOf": [
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "algo": {
+                                    "type": "string",
+                                    "enum": [
+                                      "fixed_window",
+                                      "token_bucket"
+                                    ]
+                                  },
+                                  "window": {
+                                    "type": "number"
+                                  },
+                                  "limit": {
+                                    "type": "number"
+                                  },
+                                  "keys": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "action": {
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "enum": [
+                                          "log",
+                                          "challenge",
+                                          "deny",
+                                          "rate_limit"
+                                        ]
+                                      },
+                                      {
+                                        "type": "string"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "algo",
+                                  "window",
+                                  "limit",
+                                  "keys"
+                                ],
+                                "additionalProperties": false
+                              },
+                              {
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          "redirect": {
+                            "anyOf": [
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "location": {
+                                    "type": "string"
+                                  },
+                                  "permanent": {
+                                    "type": "boolean"
+                                  }
+                                },
+                                "required": [
+                                  "location",
+                                  "permanent"
+                                ],
+                                "additionalProperties": false
+                              },
+                              {
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          "actionDuration": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "bypassSystem": {
+                            "type": "boolean",
+                            "nullable": true
+                          },
+                          "logHeaders": {
+                            "oneOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "action"
+                        ],
+                        "additionalProperties": false,
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "id",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "description": "Remove the action for a consumed ruleset (project scope)",
+                    "type": "object",
+                    "properties": {
+                      "action": {
+                        "type": "string",
+                        "enum": [
+                          "rules.priority"
+                        ]
+                      },
+                      "id": {
+                        "type": "string",
+                        "maxLength": 180
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "id"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "description": "Enable Firewall",
+                    "type": "object",
+                    "properties": {
+                      "action": {
+                        "type": "string",
+                        "enum": [
+                          "crs.update"
+                        ]
+                      },
+                      "id": {
+                        "type": "string"
                       },
                       "value": {
                         "type": "boolean"
@@ -157422,14 +158582,13 @@
                       "action": {
                         "type": "string",
                         "enum": [
-                          "rules.insert"
+                          "crs.disable"
                         ]
                       },
                       "id": {
                         "nullable": true
                       },
                       "value": {
-                        "type": "object",
                         "properties": {
                           "name": {
                             "type": "string",
@@ -157597,9 +158756,10 @@
                                                   "rate_limit"
                                                 ]
                                               },
-                                              {}
-                                            ],
-                                            "nullable": true
+                                              {
+                                                "type": "string"
+                                              }
+                                            ]
                                           }
                                         },
                                         "required": [
@@ -157610,9 +158770,10 @@
                                         ],
                                         "additionalProperties": false
                                       },
-                                      {}
-                                    ],
-                                    "nullable": true
+                                      {
+                                        "type": "string"
+                                      }
+                                    ]
                                   },
                                   "redirect": {
                                     "anyOf": [
@@ -157632,9 +158793,10 @@
                                         ],
                                         "additionalProperties": false
                                       },
-                                      {}
-                                    ],
-                                    "nullable": true
+                                      {
+                                        "type": "string"
+                                      }
+                                    ]
                                   },
                                   "actionDuration": {
                                     "type": "string",
@@ -157689,7 +158851,8 @@
                           "conditionGroup",
                           "action"
                         ],
-                        "additionalProperties": false
+                        "additionalProperties": false,
+                        "nullable": true
                       }
                     },
                     "required": [
@@ -157705,11 +158868,11 @@
                       "action": {
                         "type": "string",
                         "enum": [
-                          "rules.update"
+                          "ip.insert"
                         ]
                       },
                       "id": {
-                        "type": "string"
+                        "nullable": true
                       },
                       "value": {
                         "type": "object",
@@ -157880,9 +159043,10 @@
                                                   "rate_limit"
                                                 ]
                                               },
-                                              {}
-                                            ],
-                                            "nullable": true
+                                              {
+                                                "type": "string"
+                                              }
+                                            ]
                                           }
                                         },
                                         "required": [
@@ -157893,9 +159057,10 @@
                                         ],
                                         "additionalProperties": false
                                       },
-                                      {}
-                                    ],
-                                    "nullable": true
+                                      {
+                                        "type": "string"
+                                      }
+                                    ]
                                   },
                                   "redirect": {
                                     "anyOf": [
@@ -157915,9 +159080,10 @@
                                         ],
                                         "additionalProperties": false
                                       },
-                                      {}
-                                    ],
-                                    "nullable": true
+                                      {
+                                        "type": "string"
+                                      }
+                                    ]
                                   },
                                   "actionDuration": {
                                     "type": "string",
@@ -157989,14 +159155,14 @@
                       "action": {
                         "type": "string",
                         "enum": [
-                          "rules.remove"
+                          "ip.update"
                         ]
                       },
                       "id": {
                         "type": "string"
                       },
                       "value": {
-                        "nullable": true
+                        "type": "string"
                       }
                     },
                     "required": [
@@ -158012,14 +159178,14 @@
                       "action": {
                         "type": "string",
                         "enum": [
-                          "rules.priority"
+                          "ip.remove"
                         ]
                       },
                       "id": {
                         "type": "string"
                       },
                       "value": {
-                        "type": "number"
+                        "nullable": true
                       }
                     },
                     "required": [
@@ -158036,7 +159202,7 @@
                       "action": {
                         "type": "string",
                         "enum": [
-                          "crs.update"
+                          "managedRules.update"
                         ]
                       },
                       "id": {
@@ -158088,16 +159254,13 @@
                     "type": "object",
                     "properties": {
                       "action": {
-                        "type": "string",
-                        "enum": [
-                          "crs.disable"
-                        ]
+                        "type": "string"
                       },
                       "id": {
-                        "nullable": true
+                        "type": "string"
                       },
                       "value": {
-                        "nullable": true
+                        "type": "string"
                       }
                     },
                     "required": [
@@ -158110,13 +159273,10 @@
                     "type": "object",
                     "properties": {
                       "action": {
-                        "type": "string",
-                        "enum": [
-                          "ip.insert"
-                        ]
+                        "type": "string"
                       },
                       "id": {
-                        "nullable": true
+                        "type": "string"
                       },
                       "value": {
                         "type": "object",
@@ -158159,10 +159319,7 @@
                     "type": "object",
                     "properties": {
                       "action": {
-                        "type": "string",
-                        "enum": [
-                          "ip.update"
-                        ]
+                        "type": "string"
                       },
                       "id": {
                         "type": "string"
@@ -158209,16 +159366,13 @@
                     "type": "object",
                     "properties": {
                       "action": {
-                        "type": "string",
-                        "enum": [
-                          "ip.remove"
-                        ]
+                        "type": "string"
                       },
                       "id": {
                         "type": "string"
                       },
                       "value": {
-                        "nullable": true
+                        "type": "string"
                       }
                     },
                     "required": [
@@ -158232,10 +159386,7 @@
                     "type": "object",
                     "properties": {
                       "action": {
-                        "type": "string",
-                        "enum": [
-                          "managedRules.update"
-                        ]
+                        "type": "string"
                       },
                       "id": {
                         "type": "string",
@@ -159269,6 +160420,256 @@
                         "type": "object"
                       },
                       "type": "array"
+                    },
+                    "rulesets": {
+                      "oneOf": [
+                        {
+                          "items": {
+                            "properties": {
+                              "description": {
+                                "type": "string"
+                              },
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "active": {
+                                "type": "boolean",
+                                "enum": [
+                                  false,
+                                  true
+                                ]
+                              },
+                              "conditionGroup": {
+                                "items": {
+                                  "properties": {
+                                    "conditions": {
+                                      "items": {
+                                        "properties": {
+                                          "type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "bot_category",
+                                              "bot_name",
+                                              "bot_protection",
+                                              "bot_status",
+                                              "cookie",
+                                              "environment",
+                                              "geo_as_number",
+                                              "geo_city",
+                                              "geo_continent",
+                                              "geo_country",
+                                              "geo_country_region",
+                                              "header",
+                                              "host",
+                                              "ip_address",
+                                              "ja3_digest",
+                                              "ja4_digest",
+                                              "method",
+                                              "path",
+                                              "protocol",
+                                              "query",
+                                              "rate_limit_api_id",
+                                              "raw_path",
+                                              "region",
+                                              "route",
+                                              "scheme",
+                                              "server_action",
+                                              "target_path",
+                                              "trusted_source",
+                                              "user_agent"
+                                            ]
+                                          },
+                                          "op": {
+                                            "type": "string",
+                                            "enum": [
+                                              "eq",
+                                              "ex",
+                                              "gt",
+                                              "gte",
+                                              "inc",
+                                              "list",
+                                              "lt",
+                                              "lte",
+                                              "neq",
+                                              "nex",
+                                              "ninc",
+                                              "pre",
+                                              "re",
+                                              "sub",
+                                              "suf"
+                                            ]
+                                          },
+                                          "neg": {
+                                            "type": "boolean",
+                                            "enum": [
+                                              false,
+                                              true
+                                            ]
+                                          },
+                                          "key": {
+                                            "type": "string"
+                                          },
+                                          "value": {
+                                            "oneOf": [
+                                              {
+                                                "type": "string"
+                                              },
+                                              {
+                                                "type": "number"
+                                              },
+                                              {
+                                                "items": {
+                                                  "type": "string"
+                                                },
+                                                "type": "array"
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "required": [
+                                          "op",
+                                          "type"
+                                        ],
+                                        "type": "object"
+                                      },
+                                      "type": "array"
+                                    }
+                                  },
+                                  "required": [
+                                    "conditions"
+                                  ],
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              }
+                            },
+                            "required": [
+                              "active",
+                              "conditionGroup",
+                              "id",
+                              "name"
+                            ],
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        {
+                          "additionalProperties": {
+                            "properties": {
+                              "action": {
+                                "type": "string",
+                                "enum": [
+                                  "bypass",
+                                  "challenge",
+                                  "deny",
+                                  "log",
+                                  "rate_limit",
+                                  "redirect"
+                                ]
+                              },
+                              "rateLimit": {
+                                "nullable": true,
+                                "properties": {
+                                  "algo": {
+                                    "type": "string",
+                                    "enum": [
+                                      "fixed_window",
+                                      "token_bucket"
+                                    ]
+                                  },
+                                  "window": {
+                                    "type": "number"
+                                  },
+                                  "limit": {
+                                    "type": "number"
+                                  },
+                                  "keys": {
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "action": {
+                                    "nullable": true,
+                                    "type": "string",
+                                    "enum": [
+                                      "challenge",
+                                      "deny",
+                                      "log",
+                                      "rate_limit",
+                                      null
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "algo",
+                                  "keys",
+                                  "limit",
+                                  "window"
+                                ],
+                                "type": "object"
+                              },
+                              "redirect": {
+                                "nullable": true,
+                                "properties": {
+                                  "location": {
+                                    "type": "string"
+                                  },
+                                  "permanent": {
+                                    "type": "boolean",
+                                    "enum": [
+                                      false,
+                                      true
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "location",
+                                  "permanent"
+                                ],
+                                "type": "object"
+                              },
+                              "actionDuration": {
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "bypassSystem": {
+                                "nullable": true,
+                                "type": "boolean",
+                                "enum": [
+                                  false,
+                                  true,
+                                  null
+                                ]
+                              },
+                              "logHeaders": {
+                                "oneOf": [
+                                  {
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array"
+                                  },
+                                  {
+                                    "type": "string",
+                                    "enum": [
+                                      "*"
+                                    ]
+                                  }
+                                ]
+                              }
+                            },
+                            "required": [
+                              "action"
+                            ],
+                            "type": "object"
+                          },
+                          "type": "object"
+                        }
+                      ]
                     },
                     "changes": {
                       "items": {
@@ -169792,6 +171193,12 @@
                               "videoAspectRatio": {
                                 "type": "string"
                               },
+                              "piiRedactionApplied": {
+                                "type": "string"
+                              },
+                              "moderationApplied": {
+                                "type": "string"
+                              },
                               "queueName": {
                                 "type": "string"
                               },
@@ -170380,6 +171787,12 @@
                               "videoAspectRatio": {
                                 "type": "string"
                               },
+                              "piiRedactionApplied": {
+                                "type": "string"
+                              },
+                              "moderationApplied": {
+                                "type": "string"
+                              },
                               "queueName": {
                                 "type": "string"
                               },
@@ -170643,6 +172056,7 @@
                               "microfrontendsResponseReason",
                               "middlewareAction",
                               "middlewareActionTarget",
+                              "moderationApplied",
                               "notificationUrl",
                               "optimizedFormatMimeType",
                               "optimizedQuality",
@@ -170653,6 +172067,7 @@
                               "osName",
                               "pathType",
                               "pathTypeVariant",
+                              "piiRedactionApplied",
                               "projectId",
                               "projectName",
                               "provider",
@@ -171405,6 +172820,12 @@
                               "videoAspectRatio": {
                                 "type": "string"
                               },
+                              "piiRedactionApplied": {
+                                "type": "string"
+                              },
+                              "moderationApplied": {
+                                "type": "string"
+                              },
                               "queueName": {
                                 "type": "string"
                               },
@@ -171993,6 +173414,12 @@
                               "videoAspectRatio": {
                                 "type": "string"
                               },
+                              "piiRedactionApplied": {
+                                "type": "string"
+                              },
+                              "moderationApplied": {
+                                "type": "string"
+                              },
                               "queueName": {
                                 "type": "string"
                               },
@@ -172256,6 +173683,7 @@
                               "microfrontendsResponseReason",
                               "middlewareAction",
                               "middlewareActionTarget",
+                              "moderationApplied",
                               "notificationUrl",
                               "optimizedFormatMimeType",
                               "optimizedQuality",
@@ -172266,6 +173694,7 @@
                               "osName",
                               "pathType",
                               "pathTypeVariant",
+                              "piiRedactionApplied",
                               "projectId",
                               "projectName",
                               "provider",
@@ -172982,6 +174411,12 @@
                         "videoAspectRatio": {
                           "type": "string"
                         },
+                        "piiRedactionApplied": {
+                          "type": "string"
+                        },
+                        "moderationApplied": {
+                          "type": "string"
+                        },
                         "queueName": {
                           "type": "string"
                         },
@@ -173245,6 +174680,7 @@
                         "microfrontendsResponseReason",
                         "middlewareAction",
                         "middlewareActionTarget",
+                        "moderationApplied",
                         "notificationUrl",
                         "optimizedFormatMimeType",
                         "optimizedQuality",
@@ -173255,6 +174691,7 @@
                         "osName",
                         "pathType",
                         "pathTypeVariant",
+                        "piiRedactionApplied",
                         "projectId",
                         "projectName",
                         "provider",
@@ -173902,6 +175339,12 @@
                         "videoAspectRatio": {
                           "type": "string"
                         },
+                        "piiRedactionApplied": {
+                          "type": "string"
+                        },
+                        "moderationApplied": {
+                          "type": "string"
+                        },
                         "queueName": {
                           "type": "string"
                         },
@@ -174165,6 +175608,7 @@
                         "microfrontendsResponseReason",
                         "middlewareAction",
                         "middlewareActionTarget",
+                        "moderationApplied",
                         "notificationUrl",
                         "optimizedFormatMimeType",
                         "optimizedQuality",
@@ -174175,6 +175619,7 @@
                         "osName",
                         "pathType",
                         "pathTypeVariant",
+                        "piiRedactionApplied",
                         "projectId",
                         "projectName",
                         "provider",
@@ -180787,6 +182232,7 @@
               "ai-gateway-byok-credential-created",
               "ai-gateway-byok-credential-deleted",
               "ai-gateway-byok-credential-updated",
+              "ai-gateway-guardrails-updated",
               "ai-gateway-model-allowlist-models-updated",
               "ai-gateway-model-allowlist-toggled",
               "ai-gateway-private-model-created",
@@ -181022,6 +182468,7 @@
               "observability-enabled",
               "observability-plus-project-disabled",
               "observability-plus-project-enabled",
+              "organization-create",
               "organization-team-add",
               "owner-blocked",
               "owner-soft-blocked",
@@ -182136,6 +183583,63 @@
               },
               {
                 "properties": {
+                  "piiRedaction": {
+                    "properties": {
+                      "from": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ]
+                      },
+                      "to": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ]
+                      }
+                    },
+                    "required": [
+                      "from",
+                      "to"
+                    ],
+                    "type": "object"
+                  },
+                  "moderationPolicyCount": {
+                    "type": "number"
+                  },
+                  "policiesAdded": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "policiesRemoved": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "policiesModified": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "moderationPolicyCount",
+                  "piiRedaction",
+                  "policiesAdded",
+                  "policiesModified",
+                  "policiesRemoved"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "rule": {
                     "properties": {
                       "id": {
@@ -182864,6 +184368,7 @@
                         "manage:speed-insights",
                         "manage:web-analytics",
                         "read-write:ai-gateway-api-key",
+                        "read-write:ai-gateway-guardrails",
                         "read-write:ai-gateway-private-models",
                         "read-write:ai-gateway-rules",
                         "read-write:alerts",
@@ -182889,6 +184394,7 @@
                         "read-write:sandbox",
                         "read-write:team-members",
                         "read:access-group",
+                        "read:ai-gateway-guardrails",
                         "read:ai-gateway-private-models",
                         "read:ai-gateway-rules",
                         "read:alerts",
@@ -182965,6 +184471,7 @@
                         "manage:speed-insights",
                         "manage:web-analytics",
                         "read-write:ai-gateway-api-key",
+                        "read-write:ai-gateway-guardrails",
                         "read-write:ai-gateway-private-models",
                         "read-write:ai-gateway-rules",
                         "read-write:alerts",
@@ -182990,6 +184497,7 @@
                         "read-write:sandbox",
                         "read-write:team-members",
                         "read:access-group",
+                        "read:ai-gateway-guardrails",
                         "read:ai-gateway-private-models",
                         "read:ai-gateway-rules",
                         "read:alerts",
@@ -183088,6 +184596,7 @@
                             "manage:speed-insights",
                             "manage:web-analytics",
                             "read-write:ai-gateway-api-key",
+                            "read-write:ai-gateway-guardrails",
                             "read-write:ai-gateway-private-models",
                             "read-write:ai-gateway-rules",
                             "read-write:alerts",
@@ -183113,6 +184622,7 @@
                             "read-write:sandbox",
                             "read-write:team-members",
                             "read:access-group",
+                            "read:ai-gateway-guardrails",
                             "read:ai-gateway-private-models",
                             "read:ai-gateway-rules",
                             "read:alerts",
@@ -183194,6 +184704,7 @@
                             "manage:speed-insights",
                             "manage:web-analytics",
                             "read-write:ai-gateway-api-key",
+                            "read-write:ai-gateway-guardrails",
                             "read-write:ai-gateway-private-models",
                             "read-write:ai-gateway-rules",
                             "read-write:alerts",
@@ -183219,6 +184730,7 @@
                             "read-write:sandbox",
                             "read-write:team-members",
                             "read:access-group",
+                            "read:ai-gateway-guardrails",
                             "read:ai-gateway-private-models",
                             "read:ai-gateway-rules",
                             "read:alerts",
@@ -183313,6 +184825,7 @@
                         "manage:speed-insights",
                         "manage:web-analytics",
                         "read-write:ai-gateway-api-key",
+                        "read-write:ai-gateway-guardrails",
                         "read-write:ai-gateway-private-models",
                         "read-write:ai-gateway-rules",
                         "read-write:alerts",
@@ -183338,6 +184851,7 @@
                         "read-write:sandbox",
                         "read-write:team-members",
                         "read:access-group",
+                        "read:ai-gateway-guardrails",
                         "read:ai-gateway-private-models",
                         "read:ai-gateway-rules",
                         "read:alerts",
@@ -192547,6 +194061,30 @@
                   "organizationId": {
                     "type": "string"
                   },
+                  "rootTeamId": {
+                    "type": "string"
+                  },
+                  "slug": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "organizationId",
+                  "rootTeamId",
+                  "slug"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "organizationId": {
+                    "type": "string"
+                  },
                   "teamId": {
                     "type": "string"
                   },
@@ -192701,6 +194239,13 @@
                           false,
                           true
                         ]
+                      },
+                      "omitScriptNonce": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ]
                       }
                     },
                     "required": [
@@ -192735,6 +194280,13 @@
                         ]
                       },
                       "allowUnsafeScriptSrcKeywords": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ]
+                      },
+                      "omitScriptNonce": {
                         "type": "boolean",
                         "enum": [
                           false,
@@ -200586,6 +202138,7 @@
               "ai-gateway-byok-credential-created",
               "ai-gateway-byok-credential-deleted",
               "ai-gateway-byok-credential-updated",
+              "ai-gateway-guardrails-updated",
               "ai-gateway-model-allowlist-models-updated",
               "ai-gateway-model-allowlist-toggled",
               "ai-gateway-private-model-created",
@@ -200821,6 +202374,7 @@
               "observability-enabled",
               "observability-plus-project-disabled",
               "observability-plus-project-enabled",
+              "organization-create",
               "organization-team-add",
               "owner-blocked",
               "owner-soft-blocked",
@@ -201186,6 +202740,7 @@
                 "ai-gateway-byok-credential-created",
                 "ai-gateway-byok-credential-deleted",
                 "ai-gateway-byok-credential-updated",
+                "ai-gateway-guardrails-updated",
                 "ai-gateway-model-allowlist-models-updated",
                 "ai-gateway-model-allowlist-toggled",
                 "ai-gateway-private-model-created",
@@ -201421,6 +202976,7 @@
                 "observability-enabled",
                 "observability-plus-project-disabled",
                 "observability-plus-project-enabled",
+                "organization-create",
                 "organization-team-add",
                 "owner-blocked",
                 "owner-soft-blocked",

@@ -20,6 +20,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Header,
         #pragma warning restore CS1591
+        [EnumMember(Value = "headers")]
+        #pragma warning disable CS1591
+        Headers,
+        #pragma warning restore CS1591
         [EnumMember(Value = "host")]
         #pragma warning disable CS1591
         Host,

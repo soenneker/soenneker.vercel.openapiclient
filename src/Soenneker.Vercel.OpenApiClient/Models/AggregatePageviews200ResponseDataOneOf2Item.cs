@@ -758,6 +758,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string MiddlewareActionTarget { get; set; }
 #endif
+        /// <summary>The moderationApplied property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModerationApplied { get; set; }
+#nullable restore
+#else
+        public string ModerationApplied { get; set; }
+#endif
         /// <summary>The notificationUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -837,6 +845,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string PathTypeVariant { get; set; }
+#endif
+        /// <summary>The piiRedactionApplied property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PiiRedactionApplied { get; set; }
+#nullable restore
+#else
+        public string PiiRedactionApplied { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1660,6 +1676,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "microfrontendsResponseReason", n => { MicrofrontendsResponseReason = n.GetStringValue(); } },
                 { "middlewareAction", n => { MiddlewareAction = n.GetStringValue(); } },
                 { "middlewareActionTarget", n => { MiddlewareActionTarget = n.GetStringValue(); } },
+                { "moderationApplied", n => { ModerationApplied = n.GetStringValue(); } },
                 { "notificationUrl", n => { NotificationUrl = n.GetStringValue(); } },
                 { "optimizedFormatMimeType", n => { OptimizedFormatMimeType = n.GetStringValue(); } },
                 { "optimizedQuality", n => { OptimizedQuality = n.GetStringValue(); } },
@@ -1670,6 +1687,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "osName", n => { OsName = n.GetStringValue(); } },
                 { "pathType", n => { PathType = n.GetStringValue(); } },
                 { "pathTypeVariant", n => { PathTypeVariant = n.GetStringValue(); } },
+                { "piiRedactionApplied", n => { PiiRedactionApplied = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
@@ -1860,6 +1878,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("microfrontendsResponseReason", MicrofrontendsResponseReason);
             writer.WriteStringValue("middlewareAction", MiddlewareAction);
             writer.WriteStringValue("middlewareActionTarget", MiddlewareActionTarget);
+            writer.WriteStringValue("moderationApplied", ModerationApplied);
             writer.WriteStringValue("notificationUrl", NotificationUrl);
             writer.WriteStringValue("optimizedFormatMimeType", OptimizedFormatMimeType);
             writer.WriteStringValue("optimizedQuality", OptimizedQuality);
@@ -1870,6 +1889,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("osName", OsName);
             writer.WriteStringValue("pathType", PathType);
             writer.WriteStringValue("pathTypeVariant", PathTypeVariant);
+            writer.WriteStringValue("piiRedactionApplied", PiiRedactionApplied);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteStringValue("provider", Provider);

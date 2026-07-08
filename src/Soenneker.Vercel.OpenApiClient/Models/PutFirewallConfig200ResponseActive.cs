@@ -90,6 +90,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesItem> Rules { get; set; }
 #endif
+        /// <summary>The rulesets property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesets? Rulesets { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesets Rulesets { get; set; }
+#endif
         /// <summary>The updatedAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -136,6 +144,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "projectKey", n => { ProjectKey = n.GetStringValue(); } },
                 { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesItem>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "rulesets", n => { Rulesets = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesets>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesets.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetDoubleValue(); } },
             };
@@ -158,6 +167,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteStringValue("projectKey", ProjectKey);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesItem>("rules", Rules);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200ResponseActiveRulesets>("rulesets", Rulesets);
             writer.WriteStringValue("updatedAt", UpdatedAt);
             writer.WriteDoubleValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);

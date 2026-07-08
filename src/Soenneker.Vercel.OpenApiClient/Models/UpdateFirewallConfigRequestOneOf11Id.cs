@@ -8,29 +8,49 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UpdateFirewallConfigRequestOneOf11Id
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "ai_bots")]
+        [EnumMember(Value = "sd")]
         #pragma warning disable CS1591
-        AiBots,
+        Sd,
         #pragma warning restore CS1591
-        [EnumMember(Value = "bot_filter")]
+        [EnumMember(Value = "ma")]
         #pragma warning disable CS1591
-        BotFilter,
+        Ma,
         #pragma warning restore CS1591
-        [EnumMember(Value = "bot_protection")]
+        [EnumMember(Value = "lfi")]
         #pragma warning disable CS1591
-        BotProtection,
+        Lfi,
         #pragma warning restore CS1591
-        [EnumMember(Value = "traffic_sources")]
+        [EnumMember(Value = "rfi")]
         #pragma warning disable CS1591
-        TrafficSources,
+        Rfi,
         #pragma warning restore CS1591
-        [EnumMember(Value = "vercel_ruleset")]
+        [EnumMember(Value = "rce")]
         #pragma warning disable CS1591
-        VercelRuleset,
+        Rce,
         #pragma warning restore CS1591
-        [EnumMember(Value = "owasp")]
+        [EnumMember(Value = "php")]
         #pragma warning disable CS1591
-        Owasp,
+        Php,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "gen")]
+        #pragma warning disable CS1591
+        Gen,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "xss")]
+        #pragma warning disable CS1591
+        Xss,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sqli")]
+        #pragma warning disable CS1591
+        Sqli,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sf")]
+        #pragma warning disable CS1591
+        Sf,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "java")]
+        #pragma warning disable CS1591
+        Java,
         #pragma warning restore CS1591
     }
 }

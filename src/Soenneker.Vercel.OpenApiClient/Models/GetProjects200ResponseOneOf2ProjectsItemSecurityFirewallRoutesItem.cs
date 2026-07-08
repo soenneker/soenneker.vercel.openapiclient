@@ -58,6 +58,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The status property</summary>
         public double? Status { get; set; }
+        /// <summary>The transforms property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemTransformsItem>? Transforms { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemTransformsItem> Transforms { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItem"/> and sets the default values.
         /// </summary>
@@ -90,6 +98,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "mitigate", n => { Mitigate = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMitigate>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMitigate.CreateFromDiscriminatorValue); } },
                 { "src", n => { Src = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemSrc>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemSrc.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetDoubleValue(); } },
+                { "transforms", n => { Transforms = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemTransformsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemTransformsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -106,6 +115,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMitigate>("mitigate", Mitigate);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemSrc>("src", Src);
             writer.WriteDoubleValue("status", Status);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemTransformsItem>("transforms", Transforms);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
