@@ -7,76 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf3"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetDeploymentEvents200ResponseItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class GetDeploymentEvents200ResponseItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created property</summary>
-        public double? Created { get; set; }
-        /// <summary>The date property</summary>
-        public double? Date { get; set; }
-        /// <summary>The deploymentId property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeploymentId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf1? GetDeploymentEvents200ResponseItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public string DeploymentId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf1 GetDeploymentEvents200ResponseItemOneOf1 { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf2? GetDeploymentEvents200ResponseItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf2 GetDeploymentEvents200ResponseItemOneOf2 { get; set; }
 #endif
-        /// <summary>The info property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemInfo? Info { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf3? GetDeploymentEvents200ResponseItemOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemInfo Info { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf3 GetDeploymentEvents200ResponseItemOneOf3 { get; set; }
 #endif
-        /// <summary>The level property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemLevel? Level { get; set; }
-        /// <summary>The payload property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemPayload? Payload { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemPayload Payload { get; set; }
-#endif
-        /// <summary>The serial property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Serial { get; set; }
-#nullable restore
-#else
-        public string Serial { get; set; }
-#endif
-        /// <summary>The text property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Text { get; set; }
-#nullable restore
-#else
-        public string Text { get; set; }
-#endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItem"/> and sets the default values.
-        /// </summary>
-        public GetDeploymentEvents200ResponseItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -85,7 +45,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItem();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItem();
+            if("GetDeploymentEvents200ResponseItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetDeploymentEvents200ResponseItemOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf1();
+            }
+            else if("GetDeploymentEvents200ResponseItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetDeploymentEvents200ResponseItemOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf2();
+            }
+            else if("GetDeploymentEvents200ResponseItemOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetDeploymentEvents200ResponseItemOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf3();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,19 +67,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(GetDeploymentEvents200ResponseItemOneOf1 != null)
             {
-                { "created", n => { Created = n.GetDoubleValue(); } },
-                { "date", n => { Date = n.GetDoubleValue(); } },
-                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemInfo>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemInfo.CreateFromDiscriminatorValue); } },
-                { "level", n => { Level = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemLevel>(); } },
-                { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemPayload>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemPayload.CreateFromDiscriminatorValue); } },
-                { "serial", n => { Serial = n.GetStringValue(); } },
-                { "text", n => { Text = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemType>(); } },
-            };
+                return GetDeploymentEvents200ResponseItemOneOf1.GetFieldDeserializers();
+            }
+            else if(GetDeploymentEvents200ResponseItemOneOf2 != null)
+            {
+                return GetDeploymentEvents200ResponseItemOneOf2.GetFieldDeserializers();
+            }
+            else if(GetDeploymentEvents200ResponseItemOneOf3 != null)
+            {
+                return GetDeploymentEvents200ResponseItemOneOf3.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -114,17 +88,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("created", Created);
-            writer.WriteDoubleValue("date", Date);
-            writer.WriteStringValue("deploymentId", DeploymentId);
-            writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemInfo>("info", Info);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemLevel>("level", Level);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemPayload>("payload", Payload);
-            writer.WriteStringValue("serial", Serial);
-            writer.WriteStringValue("text", Text);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(GetDeploymentEvents200ResponseItemOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf1>(null, GetDeploymentEvents200ResponseItemOneOf1);
+            }
+            else if(GetDeploymentEvents200ResponseItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf2>(null, GetDeploymentEvents200ResponseItemOneOf2);
+            }
+            else if(GetDeploymentEvents200ResponseItemOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEvents200ResponseItemOneOf3>(null, GetDeploymentEvents200ResponseItemOneOf3);
+            }
         }
     }
 }

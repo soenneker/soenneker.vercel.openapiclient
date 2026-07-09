@@ -176,6 +176,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestStrictDeploymentProtectionSettings StrictDeploymentProtectionSettings { get; set; }
 #endif
+        /// <summary>When enabled, adding, changing, or removing project password protection requires Owner role.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestStrictPasswordProtectionSettings? StrictPasswordProtectionSettings { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestStrictPasswordProtectionSettings StrictPasswordProtectionSettings { get; set; }
+#endif
         /// <summary>When enabled, creating shareable links requires Owner role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -227,6 +235,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "sensitiveEnvironmentVariablePolicy", n => { SensitiveEnvironmentVariablePolicy = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "strictDeploymentProtectionSettings", n => { StrictDeploymentProtectionSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestStrictDeploymentProtectionSettings>(global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestStrictDeploymentProtectionSettings.CreateFromDiscriminatorValue); } },
+                { "strictPasswordProtectionSettings", n => { StrictPasswordProtectionSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestStrictPasswordProtectionSettings>(global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestStrictPasswordProtectionSettings.CreateFromDiscriminatorValue); } },
                 { "strictShareableLinks", n => { StrictShareableLinks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestStrictShareableLinks>(global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestStrictShareableLinks.CreateFromDiscriminatorValue); } },
             };
         }
@@ -262,6 +271,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("sensitiveEnvironmentVariablePolicy", SensitiveEnvironmentVariablePolicy);
             writer.WriteStringValue("slug", Slug);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestStrictDeploymentProtectionSettings>("strictDeploymentProtectionSettings", StrictDeploymentProtectionSettings);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestStrictPasswordProtectionSettings>("strictPasswordProtectionSettings", StrictPasswordProtectionSettings);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestStrictShareableLinks>("strictShareableLinks", StrictShareableLinks);
         }
     }

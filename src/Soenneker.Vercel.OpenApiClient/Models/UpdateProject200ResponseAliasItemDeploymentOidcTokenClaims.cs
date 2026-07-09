@@ -46,6 +46,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Iss { get; set; }
 #endif
+        /// <summary>The mfe_group_ids property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? MfeGroupIds { get; set; }
+#nullable restore
+#else
+        public List<string> MfeGroupIds { get; set; }
+#endif
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,6 +139,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "custom_environment_id", n => { CustomEnvironmentId = n.GetStringValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "iss", n => { Iss = n.GetStringValue(); } },
+                { "mfe_group_ids", n => { MfeGroupIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
                 { "owner_id", n => { OwnerId = n.GetStringValue(); } },
                 { "plan", n => { Plan = n.GetStringValue(); } },
@@ -151,6 +160,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("custom_environment_id", CustomEnvironmentId);
             writer.WriteStringValue("environment", Environment);
             writer.WriteStringValue("iss", Iss);
+            writer.WriteCollectionOfPrimitiveValues<string>("mfe_group_ids", MfeGroupIds);
             writer.WriteStringValue("owner", Owner);
             writer.WriteStringValue("owner_id", OwnerId);
             writer.WriteStringValue("plan", Plan);

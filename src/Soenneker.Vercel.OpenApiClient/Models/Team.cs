@@ -251,6 +251,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictDeploymentProtectionSettings StrictDeploymentProtectionSettings { get; set; }
 #endif
+        /// <summary>When enabled, adding, changing, or removing project password protection requires Owner role.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictPasswordProtectionSettings? StrictPasswordProtectionSettings { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictPasswordProtectionSettings StrictPasswordProtectionSettings { get; set; }
+#endif
         /// <summary>When enabled, creating shareable links requires Owner role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -326,6 +334,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "stagingPrefix", n => { StagingPrefix = n.GetStringValue(); } },
                 { "strictDeploymentProtectionSettings", n => { StrictDeploymentProtectionSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictDeploymentProtectionSettings>(global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictDeploymentProtectionSettings.CreateFromDiscriminatorValue); } },
+                { "strictPasswordProtectionSettings", n => { StrictPasswordProtectionSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictPasswordProtectionSettings>(global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictPasswordProtectionSettings.CreateFromDiscriminatorValue); } },
                 { "strictShareableLinks", n => { StrictShareableLinks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictShareableLinks>(global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictShareableLinks.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
             };
@@ -377,6 +386,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("slug", Slug);
             writer.WriteStringValue("stagingPrefix", StagingPrefix);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictDeploymentProtectionSettings>("strictDeploymentProtectionSettings", StrictDeploymentProtectionSettings);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictPasswordProtectionSettings>("strictPasswordProtectionSettings", StrictPasswordProtectionSettings);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictShareableLinks>("strictShareableLinks", StrictShareableLinks);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

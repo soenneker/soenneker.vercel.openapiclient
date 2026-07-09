@@ -1039,6 +1039,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         OrganizationCreate,
         #pragma warning restore CS1591
+        [EnumMember(Value = "organization-slug-update")]
+        #pragma warning disable CS1591
+        OrganizationSlugUpdate,
+        #pragma warning restore CS1591
         [EnumMember(Value = "organization-team-add")]
         #pragma warning disable CS1591
         OrganizationTeamAdd,
@@ -1803,6 +1807,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         StrictDeploymentProtectionSettings,
         #pragma warning restore CS1591
+        [EnumMember(Value = "strict-password-protection-settings")]
+        #pragma warning disable CS1591
+        StrictPasswordProtectionSettings,
+        #pragma warning restore CS1591
         [EnumMember(Value = "strict-shareable-links")]
         #pragma warning disable CS1591
         StrictShareableLinks,
@@ -2018,6 +2026,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "user-emu-account-archived")]
         #pragma warning disable CS1591
         UserEmuAccountArchived,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "user-emu-account-deleted")]
+        #pragma warning disable CS1591
+        UserEmuAccountDeleted,
         #pragma warning restore CS1591
         [EnumMember(Value = "user-emu-account-recovered")]
         #pragma warning disable CS1591

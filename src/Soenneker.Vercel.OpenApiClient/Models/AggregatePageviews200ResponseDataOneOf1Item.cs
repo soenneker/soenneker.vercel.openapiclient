@@ -358,14 +358,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string DeviceType { get; set; }
 #endif
-        /// <summary>The dheCipherSuite property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DheCipherSuite { get; set; }
-#nullable restore
-#else
-        public string DheCipherSuite { get; set; }
-#endif
         /// <summary>The edgeNetworkRegion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1628,7 +1620,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "deepAnalysisCheck", n => { DeepAnalysisCheck = n.GetStringValue(); } },
                 { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
                 { "deviceType", n => { DeviceType = n.GetStringValue(); } },
-                { "dheCipherSuite", n => { DheCipherSuite = n.GetStringValue(); } },
                 { "edgeNetworkRegion", n => { EdgeNetworkRegion = n.GetStringValue(); } },
                 { "edgeType", n => { EdgeType = n.GetStringValue(); } },
                 { "entryId", n => { EntryId = n.GetStringValue(); } },
@@ -1831,7 +1822,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("deepAnalysisCheck", DeepAnalysisCheck);
             writer.WriteStringValue("deploymentId", DeploymentId);
             writer.WriteStringValue("deviceType", DeviceType);
-            writer.WriteStringValue("dheCipherSuite", DheCipherSuite);
             writer.WriteStringValue("edgeNetworkRegion", EdgeNetworkRegion);
             writer.WriteStringValue("edgeType", EdgeType);
             writer.WriteStringValue("entryId", EntryId);

@@ -13563,6 +13563,343 @@
                           "type"
                         ],
                         "type": "object"
+                      },
+                      {
+                        "oneOf": [
+                          {
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "command",
+                                  "delimiter",
+                                  "deployment-state",
+                                  "edge-function-invocation",
+                                  "exit",
+                                  "fatal",
+                                  "metric",
+                                  "middleware",
+                                  "middleware-invocation",
+                                  "report",
+                                  "stderr",
+                                  "stdout"
+                                ]
+                              },
+                              "created": {
+                                "type": "number"
+                              },
+                              "payload": {
+                                "properties": {
+                                  "deploymentId": {
+                                    "type": "string"
+                                  },
+                                  "info": {
+                                    "properties": {
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "name": {
+                                        "type": "string"
+                                      },
+                                      "entrypoint": {
+                                        "type": "string"
+                                      },
+                                      "path": {
+                                        "type": "string"
+                                      },
+                                      "step": {
+                                        "type": "string"
+                                      },
+                                      "readyState": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "name",
+                                      "type"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  "text": {
+                                    "type": "string"
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "date": {
+                                    "type": "number"
+                                  },
+                                  "serial": {
+                                    "type": "string"
+                                  },
+                                  "created": {
+                                    "type": "number"
+                                  },
+                                  "statusCode": {
+                                    "type": "number"
+                                  },
+                                  "requestId": {
+                                    "type": "string"
+                                  },
+                                  "proxy": {
+                                    "properties": {
+                                      "timestamp": {
+                                        "type": "number"
+                                      },
+                                      "method": {
+                                        "type": "string"
+                                      },
+                                      "host": {
+                                        "type": "string"
+                                      },
+                                      "path": {
+                                        "type": "string"
+                                      },
+                                      "statusCode": {
+                                        "type": "number"
+                                      },
+                                      "userAgent": {
+                                        "items": {
+                                          "type": "string"
+                                        },
+                                        "type": "array"
+                                      },
+                                      "referer": {
+                                        "type": "string"
+                                      },
+                                      "clientIp": {
+                                        "type": "string"
+                                      },
+                                      "region": {
+                                        "type": "string"
+                                      },
+                                      "scheme": {
+                                        "type": "string"
+                                      },
+                                      "responseByteSize": {
+                                        "type": "number"
+                                      },
+                                      "cacheId": {
+                                        "type": "string"
+                                      },
+                                      "pathType": {
+                                        "type": "string"
+                                      },
+                                      "pathTypeVariant": {
+                                        "type": "string"
+                                      },
+                                      "vercelId": {
+                                        "type": "string"
+                                      },
+                                      "vercelCache": {
+                                        "type": "string",
+                                        "enum": [
+                                          "BYPASS",
+                                          "HIT",
+                                          "MISS",
+                                          "PRERENDER",
+                                          "REVALIDATED",
+                                          "STALE"
+                                        ]
+                                      },
+                                      "lambdaRegion": {
+                                        "type": "string"
+                                      },
+                                      "wafAction": {
+                                        "type": "string",
+                                        "enum": [
+                                          "bypass",
+                                          "challenge",
+                                          "deny",
+                                          "log",
+                                          "rate_limit"
+                                        ]
+                                      },
+                                      "wafRuleId": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "host",
+                                      "method",
+                                      "path",
+                                      "referer",
+                                      "region",
+                                      "timestamp",
+                                      "userAgent"
+                                    ],
+                                    "type": "object"
+                                  }
+                                },
+                                "required": [
+                                  "date",
+                                  "deploymentId",
+                                  "id",
+                                  "serial"
+                                ],
+                                "type": "object"
+                              }
+                            },
+                            "required": [
+                              "created",
+                              "payload",
+                              "type"
+                            ],
+                            "type": "object"
+                          },
+                          {
+                            "properties": {
+                              "created": {
+                                "type": "number"
+                              },
+                              "date": {
+                                "type": "number"
+                              },
+                              "deploymentId": {
+                                "type": "string"
+                              },
+                              "id": {
+                                "type": "string"
+                              },
+                              "info": {
+                                "properties": {
+                                  "type": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "entrypoint": {
+                                    "type": "string"
+                                  },
+                                  "path": {
+                                    "type": "string"
+                                  },
+                                  "step": {
+                                    "type": "string"
+                                  },
+                                  "readyState": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "name",
+                                  "type"
+                                ],
+                                "type": "object"
+                              },
+                              "serial": {
+                                "type": "string"
+                              },
+                              "text": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "command",
+                                  "delimiter",
+                                  "deployment-state",
+                                  "edge-function-invocation",
+                                  "exit",
+                                  "fatal",
+                                  "metric",
+                                  "middleware",
+                                  "middleware-invocation",
+                                  "report",
+                                  "stderr",
+                                  "stdout"
+                                ]
+                              },
+                              "level": {
+                                "type": "string",
+                                "enum": [
+                                  "error",
+                                  "warning"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "created",
+                              "date",
+                              "deploymentId",
+                              "id",
+                              "info",
+                              "serial",
+                              "type"
+                            ],
+                            "type": "object"
+                          },
+                          {
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "alias-assigned"
+                                ]
+                              },
+                              "deploymentId": {
+                                "type": "string"
+                              },
+                              "date": {
+                                "type": "number"
+                              },
+                              "alias": {
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              },
+                              "aliasError": {
+                                "nullable": true,
+                                "properties": {
+                                  "code": {
+                                    "type": "string"
+                                  },
+                                  "message": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "code",
+                                  "message"
+                                ],
+                                "type": "object"
+                              },
+                              "aliasWarning": {
+                                "nullable": true,
+                                "properties": {
+                                  "code": {
+                                    "type": "string"
+                                  },
+                                  "message": {
+                                    "type": "string"
+                                  },
+                                  "link": {
+                                    "type": "string"
+                                  },
+                                  "action": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "code",
+                                  "message"
+                                ],
+                                "type": "object"
+                              }
+                            },
+                            "required": [
+                              "alias",
+                              "aliasError",
+                              "aliasWarning",
+                              "date",
+                              "deploymentId",
+                              "type"
+                            ],
+                            "type": "object"
+                          }
+                        ]
                       }
                     ],
                     "nullable": true
@@ -13836,9 +14173,345 @@
                         "type"
                       ],
                       "type": "object"
+                    },
+                    {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "command",
+                                "delimiter",
+                                "deployment-state",
+                                "edge-function-invocation",
+                                "exit",
+                                "fatal",
+                                "metric",
+                                "middleware",
+                                "middleware-invocation",
+                                "report",
+                                "stderr",
+                                "stdout"
+                              ]
+                            },
+                            "created": {
+                              "type": "number"
+                            },
+                            "payload": {
+                              "properties": {
+                                "deploymentId": {
+                                  "type": "string"
+                                },
+                                "info": {
+                                  "properties": {
+                                    "type": {
+                                      "type": "string"
+                                    },
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "entrypoint": {
+                                      "type": "string"
+                                    },
+                                    "path": {
+                                      "type": "string"
+                                    },
+                                    "step": {
+                                      "type": "string"
+                                    },
+                                    "readyState": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "name",
+                                    "type"
+                                  ],
+                                  "type": "object"
+                                },
+                                "text": {
+                                  "type": "string"
+                                },
+                                "id": {
+                                  "type": "string"
+                                },
+                                "date": {
+                                  "type": "number"
+                                },
+                                "serial": {
+                                  "type": "string"
+                                },
+                                "created": {
+                                  "type": "number"
+                                },
+                                "statusCode": {
+                                  "type": "number"
+                                },
+                                "requestId": {
+                                  "type": "string"
+                                },
+                                "proxy": {
+                                  "properties": {
+                                    "timestamp": {
+                                      "type": "number"
+                                    },
+                                    "method": {
+                                      "type": "string"
+                                    },
+                                    "host": {
+                                      "type": "string"
+                                    },
+                                    "path": {
+                                      "type": "string"
+                                    },
+                                    "statusCode": {
+                                      "type": "number"
+                                    },
+                                    "userAgent": {
+                                      "items": {
+                                        "type": "string"
+                                      },
+                                      "type": "array"
+                                    },
+                                    "referer": {
+                                      "type": "string"
+                                    },
+                                    "clientIp": {
+                                      "type": "string"
+                                    },
+                                    "region": {
+                                      "type": "string"
+                                    },
+                                    "scheme": {
+                                      "type": "string"
+                                    },
+                                    "responseByteSize": {
+                                      "type": "number"
+                                    },
+                                    "cacheId": {
+                                      "type": "string"
+                                    },
+                                    "pathType": {
+                                      "type": "string"
+                                    },
+                                    "pathTypeVariant": {
+                                      "type": "string"
+                                    },
+                                    "vercelId": {
+                                      "type": "string"
+                                    },
+                                    "vercelCache": {
+                                      "type": "string",
+                                      "enum": [
+                                        "BYPASS",
+                                        "HIT",
+                                        "MISS",
+                                        "PRERENDER",
+                                        "REVALIDATED",
+                                        "STALE"
+                                      ]
+                                    },
+                                    "lambdaRegion": {
+                                      "type": "string"
+                                    },
+                                    "wafAction": {
+                                      "type": "string",
+                                      "enum": [
+                                        "bypass",
+                                        "challenge",
+                                        "deny",
+                                        "log",
+                                        "rate_limit"
+                                      ]
+                                    },
+                                    "wafRuleId": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "host",
+                                    "method",
+                                    "path",
+                                    "referer",
+                                    "region",
+                                    "timestamp",
+                                    "userAgent"
+                                  ],
+                                  "type": "object"
+                                }
+                              },
+                              "required": [
+                                "date",
+                                "deploymentId",
+                                "id",
+                                "serial"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "created",
+                            "payload",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "created": {
+                              "type": "number"
+                            },
+                            "date": {
+                              "type": "number"
+                            },
+                            "deploymentId": {
+                              "type": "string"
+                            },
+                            "id": {
+                              "type": "string"
+                            },
+                            "info": {
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "entrypoint": {
+                                  "type": "string"
+                                },
+                                "path": {
+                                  "type": "string"
+                                },
+                                "step": {
+                                  "type": "string"
+                                },
+                                "readyState": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "name",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            "serial": {
+                              "type": "string"
+                            },
+                            "text": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "command",
+                                "delimiter",
+                                "deployment-state",
+                                "edge-function-invocation",
+                                "exit",
+                                "fatal",
+                                "metric",
+                                "middleware",
+                                "middleware-invocation",
+                                "report",
+                                "stderr",
+                                "stdout"
+                              ]
+                            },
+                            "level": {
+                              "type": "string",
+                              "enum": [
+                                "error",
+                                "warning"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "created",
+                            "date",
+                            "deploymentId",
+                            "id",
+                            "info",
+                            "serial",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "alias-assigned"
+                              ]
+                            },
+                            "deploymentId": {
+                              "type": "string"
+                            },
+                            "date": {
+                              "type": "number"
+                            },
+                            "alias": {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            "aliasError": {
+                              "nullable": true,
+                              "properties": {
+                                "code": {
+                                  "type": "string"
+                                },
+                                "message": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "code",
+                                "message"
+                              ],
+                              "type": "object"
+                            },
+                            "aliasWarning": {
+                              "nullable": true,
+                              "properties": {
+                                "code": {
+                                  "type": "string"
+                                },
+                                "message": {
+                                  "type": "string"
+                                },
+                                "link": {
+                                  "type": "string"
+                                },
+                                "action": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "code",
+                                "message"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "alias",
+                            "aliasError",
+                            "aliasWarning",
+                            "date",
+                            "deploymentId",
+                            "type"
+                          ],
+                          "type": "object"
+                        }
+                      ]
                     }
-                  ],
-                  "nullable": true
+                  ]
                 }
               }
             }
@@ -15846,6 +16519,12 @@
                             },
                             "custom_environment_id": {
                               "type": "string"
+                            },
+                            "mfe_group_ids": {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
                             },
                             "plan": {
                               "type": "string"
@@ -21595,6 +22274,12 @@
                             "custom_environment_id": {
                               "type": "string"
                             },
+                            "mfe_group_ids": {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
                             "plan": {
                               "type": "string"
                             }
@@ -23409,6 +24094,12 @@
                         },
                         "custom_environment_id": {
                           "type": "string"
+                        },
+                        "mfe_group_ids": {
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
                         },
                         "plan": {
                           "type": "string"
@@ -30258,6 +30949,12 @@
                         },
                         "custom_environment_id": {
                           "type": "string"
+                        },
+                        "mfe_group_ids": {
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
                         },
                         "plan": {
                           "type": "string"
@@ -71760,6 +72457,12 @@
                                         "custom_environment_id": {
                                           "type": "string"
                                         },
+                                        "mfe_group_ids": {
+                                          "items": {
+                                            "type": "string"
+                                          },
+                                          "type": "array"
+                                        },
                                         "plan": {
                                           "type": "string"
                                         }
@@ -73403,6 +74106,12 @@
                                     "custom_environment_id": {
                                       "type": "string"
                                     },
+                                    "mfe_group_ids": {
+                                      "items": {
+                                        "type": "string"
+                                      },
+                                      "type": "array"
+                                    },
                                     "plan": {
                                       "type": "string"
                                     }
@@ -74903,6 +75612,12 @@
                                     "custom_environment_id": {
                                       "type": "string"
                                     },
+                                    "mfe_group_ids": {
+                                      "items": {
+                                        "type": "string"
+                                      },
+                                      "type": "array"
+                                    },
                                     "plan": {
                                       "type": "string"
                                     }
@@ -76138,12 +76853,6 @@
                                 },
                                 "type": "array"
                               },
-                              "vercelRun": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
                               "vpcPeeringConnection": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
@@ -76619,6 +77328,12 @@
                                 "type": "array"
                               },
                               "v0Chat": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "vercelRun": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
                                 },
@@ -83606,12 +84321,6 @@
           },
           "404": {
             "description": ""
-          },
-          "409": {
-            "description": ""
-          },
-          "500": {
-            "description": ""
           }
         },
         "parameters": [
@@ -85501,6 +86210,12 @@
                                         "custom_environment_id": {
                                           "type": "string"
                                         },
+                                        "mfe_group_ids": {
+                                          "items": {
+                                            "type": "string"
+                                          },
+                                          "type": "array"
+                                        },
                                         "plan": {
                                           "type": "string"
                                         }
@@ -86563,6 +87278,12 @@
                                     },
                                     "custom_environment_id": {
                                       "type": "string"
+                                    },
+                                    "mfe_group_ids": {
+                                      "items": {
+                                        "type": "string"
+                                      },
+                                      "type": "array"
                                     },
                                     "plan": {
                                       "type": "string"
@@ -87700,6 +88421,12 @@
                                     },
                                     "custom_environment_id": {
                                       "type": "string"
+                                    },
+                                    "mfe_group_ids": {
+                                      "items": {
+                                        "type": "string"
+                                      },
+                                      "type": "array"
                                     },
                                     "plan": {
                                       "type": "string"
@@ -89722,6 +90449,12 @@
                                             "custom_environment_id": {
                                               "type": "string"
                                             },
+                                            "mfe_group_ids": {
+                                              "items": {
+                                                "type": "string"
+                                              },
+                                              "type": "array"
+                                            },
                                             "plan": {
                                               "type": "string"
                                             }
@@ -90784,6 +91517,12 @@
                                         },
                                         "custom_environment_id": {
                                           "type": "string"
+                                        },
+                                        "mfe_group_ids": {
+                                          "items": {
+                                            "type": "string"
+                                          },
+                                          "type": "array"
                                         },
                                         "plan": {
                                           "type": "string"
@@ -91921,6 +92660,12 @@
                                         },
                                         "custom_environment_id": {
                                           "type": "string"
+                                        },
+                                        "mfe_group_ids": {
+                                          "items": {
+                                            "type": "string"
+                                          },
+                                          "type": "array"
                                         },
                                         "plan": {
                                           "type": "string"
@@ -93978,6 +94723,12 @@
                                             "custom_environment_id": {
                                               "type": "string"
                                             },
+                                            "mfe_group_ids": {
+                                              "items": {
+                                                "type": "string"
+                                              },
+                                              "type": "array"
+                                            },
                                             "plan": {
                                               "type": "string"
                                             }
@@ -95621,6 +96372,12 @@
                                         "custom_environment_id": {
                                           "type": "string"
                                         },
+                                        "mfe_group_ids": {
+                                          "items": {
+                                            "type": "string"
+                                          },
+                                          "type": "array"
+                                        },
                                         "plan": {
                                           "type": "string"
                                         }
@@ -97121,6 +97878,12 @@
                                         "custom_environment_id": {
                                           "type": "string"
                                         },
+                                        "mfe_group_ids": {
+                                          "items": {
+                                            "type": "string"
+                                          },
+                                          "type": "array"
+                                        },
                                         "plan": {
                                           "type": "string"
                                         }
@@ -98356,12 +99119,6 @@
                                     },
                                     "type": "array"
                                   },
-                                  "vercelRun": {
-                                    "items": {
-                                      "$ref": "#/components/schemas/ACLAction"
-                                    },
-                                    "type": "array"
-                                  },
                                   "vpcPeeringConnection": {
                                     "items": {
                                       "$ref": "#/components/schemas/ACLAction"
@@ -98837,6 +99594,12 @@
                                     "type": "array"
                                   },
                                   "v0Chat": {
+                                    "items": {
+                                      "$ref": "#/components/schemas/ACLAction"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "vercelRun": {
                                     "items": {
                                       "$ref": "#/components/schemas/ACLAction"
                                     },
@@ -101249,6 +102012,12 @@
                                   "custom_environment_id": {
                                     "type": "string"
                                   },
+                                  "mfe_group_ids": {
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array"
+                                  },
                                   "plan": {
                                     "type": "string"
                                   }
@@ -102892,6 +103661,12 @@
                               "custom_environment_id": {
                                 "type": "string"
                               },
+                              "mfe_group_ids": {
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              },
                               "plan": {
                                 "type": "string"
                               }
@@ -104392,6 +105167,12 @@
                               "custom_environment_id": {
                                 "type": "string"
                               },
+                              "mfe_group_ids": {
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              },
                               "plan": {
                                 "type": "string"
                               }
@@ -105627,12 +106408,6 @@
                           },
                           "type": "array"
                         },
-                        "vercelRun": {
-                          "items": {
-                            "$ref": "#/components/schemas/ACLAction"
-                          },
-                          "type": "array"
-                        },
                         "vpcPeeringConnection": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -106108,6 +106883,12 @@
                           "type": "array"
                         },
                         "v0Chat": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "vercelRun": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -108775,6 +109556,12 @@
                                   "custom_environment_id": {
                                     "type": "string"
                                   },
+                                  "mfe_group_ids": {
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array"
+                                  },
                                   "plan": {
                                     "type": "string"
                                   }
@@ -110416,6 +111203,12 @@
                               "custom_environment_id": {
                                 "type": "string"
                               },
+                              "mfe_group_ids": {
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              },
                               "plan": {
                                 "type": "string"
                               }
@@ -111916,6 +112709,12 @@
                               "custom_environment_id": {
                                 "type": "string"
                               },
+                              "mfe_group_ids": {
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              },
                               "plan": {
                                 "type": "string"
                               }
@@ -113151,12 +113950,6 @@
                           },
                           "type": "array"
                         },
-                        "vercelRun": {
-                          "items": {
-                            "$ref": "#/components/schemas/ACLAction"
-                          },
-                          "type": "array"
-                        },
                         "vpcPeeringConnection": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -113632,6 +114425,12 @@
                           "type": "array"
                         },
                         "v0Chat": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "vercelRun": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -115861,6 +116660,12 @@
                                   "custom_environment_id": {
                                     "type": "string"
                                   },
+                                  "mfe_group_ids": {
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array"
+                                  },
                                   "plan": {
                                     "type": "string"
                                   }
@@ -117495,6 +118300,12 @@
                               "custom_environment_id": {
                                 "type": "string"
                               },
+                              "mfe_group_ids": {
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              },
                               "plan": {
                                 "type": "string"
                               }
@@ -118995,6 +119806,12 @@
                               "custom_environment_id": {
                                 "type": "string"
                               },
+                              "mfe_group_ids": {
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              },
                               "plan": {
                                 "type": "string"
                               }
@@ -120230,12 +121047,6 @@
                           },
                           "type": "array"
                         },
-                        "vercelRun": {
-                          "items": {
-                            "$ref": "#/components/schemas/ACLAction"
-                          },
-                          "type": "array"
-                        },
                         "vpcPeeringConnection": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -120711,6 +121522,12 @@
                           "type": "array"
                         },
                         "v0Chat": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "vercelRun": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -124164,6 +124981,12 @@
                                   "custom_environment_id": {
                                     "type": "string"
                                   },
+                                  "mfe_group_ids": {
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array"
+                                  },
                                   "plan": {
                                     "type": "string"
                                   }
@@ -125807,6 +126630,12 @@
                               "custom_environment_id": {
                                 "type": "string"
                               },
+                              "mfe_group_ids": {
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              },
                               "plan": {
                                 "type": "string"
                               }
@@ -127307,6 +128136,12 @@
                               "custom_environment_id": {
                                 "type": "string"
                               },
+                              "mfe_group_ids": {
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              },
                               "plan": {
                                 "type": "string"
                               }
@@ -128542,12 +129377,6 @@
                           },
                           "type": "array"
                         },
-                        "vercelRun": {
-                          "items": {
-                            "$ref": "#/components/schemas/ACLAction"
-                          },
-                          "type": "array"
-                        },
                         "vpcPeeringConnection": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -129023,6 +129852,12 @@
                           "type": "array"
                         },
                         "v0Chat": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "vercelRun": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -143727,6 +144562,12 @@
                                   "custom_environment_id": {
                                     "type": "string"
                                   },
+                                  "mfe_group_ids": {
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array"
+                                  },
                                   "plan": {
                                     "type": "string"
                                   }
@@ -145370,6 +146211,12 @@
                               "custom_environment_id": {
                                 "type": "string"
                               },
+                              "mfe_group_ids": {
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              },
                               "plan": {
                                 "type": "string"
                               }
@@ -146870,6 +147717,12 @@
                               "custom_environment_id": {
                                 "type": "string"
                               },
+                              "mfe_group_ids": {
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              },
                               "plan": {
                                 "type": "string"
                               }
@@ -148105,12 +148958,6 @@
                           },
                           "type": "array"
                         },
-                        "vercelRun": {
-                          "items": {
-                            "$ref": "#/components/schemas/ACLAction"
-                          },
-                          "type": "array"
-                        },
                         "vpcPeeringConnection": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -148586,6 +149433,12 @@
                           "type": "array"
                         },
                         "v0Chat": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "vercelRun": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -151912,9 +152765,6 @@
           "401": {
             "description": "The request is not authorized."
           },
-          "402": {
-            "description": ""
-          },
           "403": {
             "description": "You do not have permission to access this resource."
           },
@@ -152186,9 +153036,6 @@
           },
           "401": {
             "description": "The request is not authorized."
-          },
-          "402": {
-            "description": ""
           },
           "403": {
             "description": "You do not have permission to access this resource."
@@ -168324,6 +169171,21 @@
                       "enabled"
                     ]
                   },
+                  "strictPasswordProtectionSettings": {
+                    "type": "object",
+                    "description": "When enabled, adding, changing, or removing project password protection requires Owner role.",
+                    "additionalProperties": false,
+                    "properties": {
+                      "enabled": {
+                        "type": "boolean",
+                        "example": true,
+                        "description": "Enable or disable requiring Owner role to change project password protection."
+                      }
+                    },
+                    "required": [
+                      "enabled"
+                    ]
+                  },
                   "nsnbConfig": {
                     "anyOf": [
                       {
@@ -170974,9 +171836,6 @@
                               "botVerified": {
                                 "type": "string"
                               },
-                              "dheCipherSuite": {
-                                "type": "string"
-                              },
                               "botCheckResult": {
                                 "type": "string"
                               },
@@ -171568,9 +172427,6 @@
                               "botVerified": {
                                 "type": "string"
                               },
-                              "dheCipherSuite": {
-                                "type": "string"
-                              },
                               "botCheckResult": {
                                 "type": "string"
                               },
@@ -172006,7 +172862,6 @@
                               "deepAnalysisCheck",
                               "deploymentId",
                               "deviceType",
-                              "dheCipherSuite",
                               "edgeNetworkRegion",
                               "edgeType",
                               "entryId",
@@ -172601,9 +173456,6 @@
                               "botVerified": {
                                 "type": "string"
                               },
-                              "dheCipherSuite": {
-                                "type": "string"
-                              },
                               "botCheckResult": {
                                 "type": "string"
                               },
@@ -173195,9 +174047,6 @@
                               "botVerified": {
                                 "type": "string"
                               },
-                              "dheCipherSuite": {
-                                "type": "string"
-                              },
                               "botCheckResult": {
                                 "type": "string"
                               },
@@ -173633,7 +174482,6 @@
                               "deepAnalysisCheck",
                               "deploymentId",
                               "deviceType",
-                              "dheCipherSuite",
                               "edgeNetworkRegion",
                               "edgeType",
                               "entryId",
@@ -174192,9 +175040,6 @@
                         "botVerified": {
                           "type": "string"
                         },
-                        "dheCipherSuite": {
-                          "type": "string"
-                        },
                         "botCheckResult": {
                           "type": "string"
                         },
@@ -174630,7 +175475,6 @@
                         "deepAnalysisCheck",
                         "deploymentId",
                         "deviceType",
-                        "dheCipherSuite",
                         "edgeNetworkRegion",
                         "edgeType",
                         "entryId",
@@ -175120,9 +175964,6 @@
                         "botVerified": {
                           "type": "string"
                         },
-                        "dheCipherSuite": {
-                          "type": "string"
-                        },
                         "botCheckResult": {
                           "type": "string"
                         },
@@ -175558,7 +176399,6 @@
                         "deepAnalysisCheck",
                         "deploymentId",
                         "deviceType",
-                        "dheCipherSuite",
                         "edgeNetworkRegion",
                         "edgeType",
                         "entryId",
@@ -182469,6 +183309,7 @@
               "observability-plus-project-disabled",
               "observability-plus-project-enabled",
               "organization-create",
+              "organization-slug-update",
               "organization-team-add",
               "owner-blocked",
               "owner-soft-blocked",
@@ -182660,6 +183501,7 @@
               "storage-upgrade-project-connection-to-oidc",
               "storage-view-secret",
               "strict-deployment-protection-settings",
+              "strict-password-protection-settings",
               "strict-shareable-links",
               "subscription-created",
               "subscription-product-added",
@@ -182714,6 +183556,7 @@
               "unlink-login-connection",
               "user-delete",
               "user-emu-account-archived",
+              "user-emu-account-deleted",
               "user-emu-account-recovered",
               "user-mfa-challenge-verified",
               "user-mfa-configuration-updated",
@@ -194085,6 +194928,22 @@
                   "organizationId": {
                     "type": "string"
                   },
+                  "slug": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "organizationId",
+                  "slug"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "organizationId": {
+                    "type": "string"
+                  },
                   "teamId": {
                     "type": "string"
                   },
@@ -202375,6 +203234,7 @@
               "observability-plus-project-disabled",
               "observability-plus-project-enabled",
               "organization-create",
+              "organization-slug-update",
               "organization-team-add",
               "owner-blocked",
               "owner-soft-blocked",
@@ -202566,6 +203426,7 @@
               "storage-upgrade-project-connection-to-oidc",
               "storage-view-secret",
               "strict-deployment-protection-settings",
+              "strict-password-protection-settings",
               "strict-shareable-links",
               "subscription-created",
               "subscription-product-added",
@@ -202620,6 +203481,7 @@
               "unlink-login-connection",
               "user-delete",
               "user-emu-account-archived",
+              "user-emu-account-deleted",
               "user-emu-account-recovered",
               "user-mfa-challenge-verified",
               "user-mfa-configuration-updated",
@@ -202977,6 +203839,7 @@
                 "observability-plus-project-disabled",
                 "observability-plus-project-enabled",
                 "organization-create",
+                "organization-slug-update",
                 "organization-team-add",
                 "owner-blocked",
                 "owner-soft-blocked",
@@ -203168,6 +204031,7 @@
                 "storage-upgrade-project-connection-to-oidc",
                 "storage-view-secret",
                 "strict-deployment-protection-settings",
+                "strict-password-protection-settings",
                 "strict-shareable-links",
                 "subscription-created",
                 "subscription-product-added",
@@ -203222,6 +204086,7 @@
                 "unlink-login-connection",
                 "user-delete",
                 "user-emu-account-archived",
+                "user-emu-account-deleted",
                 "user-emu-account-recovered",
                 "user-mfa-challenge-verified",
                 "user-mfa-configuration-updated",
@@ -206167,6 +207032,26 @@
             ],
             "type": "object",
             "description": "When enabled, creating shareable links requires Owner role."
+          },
+          "strictPasswordProtectionSettings": {
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "enum": [
+                  false,
+                  true
+                ]
+              },
+              "updatedAt": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "enabled",
+              "updatedAt"
+            ],
+            "type": "object",
+            "description": "When enabled, adding, changing, or removing project password protection requires Owner role."
           },
           "nsnbConfig": {
             "properties": {
