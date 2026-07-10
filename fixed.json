@@ -42738,6 +42738,9 @@
           "mode": {
             "type": "string"
           },
+          "enforcementScope": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf174PreviousEnforcementScope"
+          },
           "enforcePercentage": {
             "type": "number"
           },
@@ -42771,6 +42774,9 @@
           },
           "mode": {
             "type": "string"
+          },
+          "enforcementScope": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf174NextEnforcementScope"
           },
           "enforcePercentage": {
             "type": "number"
@@ -94725,6 +94731,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "aiGatewayBudget": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "aiGatewayCredits": {
             "type": "array",
             "items": {
@@ -97699,6 +97711,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "aiGatewayBudget": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "aiGatewayCredits": {
             "type": "array",
             "items": {
@@ -99734,6 +99752,14 @@
         ],
         "type": "object",
         "properties": {
+          "publicPathRules": {
+            "maxItems": 100,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateProjectRequestPassportPublicPathRulesItem"
+            }
+          },
           "connectorId": {
             "type": "string"
           },
@@ -100895,6 +100921,12 @@
             }
           },
           "aiGatewayApiKeyOwnedBySelf": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "aiGatewayBudget": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -103848,6 +103880,12 @@
             }
           },
           "aiGatewayApiKeyOwnedBySelf": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "aiGatewayBudget": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -107763,6 +107801,12 @@
             }
           },
           "aiGatewayApiKeyOwnedBySelf": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "aiGatewayBudget": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -129026,6 +129070,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "aiGatewayBudget": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "aiGatewayCredits": {
             "type": "array",
             "items": {
@@ -133745,6 +133795,24 @@
           },
           "destination": {
             "$ref": "#/components/schemas/UpdateProjectRequestTracingSamplingRulesItemDestination"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateProjectRequestPassportPublicPathRulesItem": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/UpdateProjectRequestPassportPublicPathRulesItemType"
+          },
+          "value": {
+            "maxLength": 2048,
+            "pattern": "^/[^?#\\\\s]*$",
+            "type": "string"
           }
         },
         "additionalProperties": false
@@ -145304,6 +145372,12 @@
             }
           },
           "aiGatewayApiKeyOwnedBySelf": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "aiGatewayBudget": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -167410,6 +167484,7 @@
           "observability-plus-project-disabled",
           "observability-plus-project-enabled",
           "organization-create",
+          "organization-delete",
           "organization-slug-update",
           "organization-team-add",
           "owner-blocked",
@@ -168739,6 +168814,10 @@
             {
               "value": "organization-create",
               "name": "OrganizationCreate"
+            },
+            {
+              "value": "organization-delete",
+              "name": "OrganizationDelete"
             },
             {
               "value": "organization-slug-update",
@@ -170283,6 +170362,7 @@
           "observability-plus-project-disabled",
           "observability-plus-project-enabled",
           "organization-create",
+          "organization-delete",
           "organization-slug-update",
           "organization-team-add",
           "owner-blocked",
@@ -171612,6 +171692,10 @@
             {
               "value": "organization-create",
               "name": "OrganizationCreate"
+            },
+            {
+              "value": "organization-delete",
+              "name": "OrganizationDelete"
             },
             {
               "value": "organization-slug-update",
@@ -173156,6 +173240,7 @@
           "observability-plus-project-disabled",
           "observability-plus-project-enabled",
           "organization-create",
+          "organization-delete",
           "organization-slug-update",
           "organization-team-add",
           "owner-blocked",
@@ -174484,6 +174569,10 @@
             {
               "value": "organization-create",
               "name": "OrganizationCreate"
+            },
+            {
+              "value": "organization-delete",
+              "name": "OrganizationDelete"
             },
             {
               "value": "organization-slug-update",
@@ -185572,6 +185661,28 @@
           ]
         }
       },
+      "UserEventPayloadOneOf174PreviousEnforcementScope": {
+        "enum": [
+          "all",
+          "preview"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf174PreviousEnforcementScope",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "all",
+              "name": "All"
+            },
+            {
+              "value": "preview",
+              "name": "Preview"
+            }
+          ]
+        }
+      },
       "UserEventPayloadOneOf174PreviousNewResourceBlockingPolicy": {
         "enum": [
           "allow",
@@ -185590,6 +185701,28 @@
             {
               "value": "block",
               "name": "Block"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf174NextEnforcementScope": {
+        "enum": [
+          "all",
+          "preview"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf174NextEnforcementScope",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "all",
+              "name": "All"
+            },
+            {
+              "value": "preview",
+              "name": "Preview"
             }
           ]
         }
@@ -192538,6 +192671,7 @@
           "hydrogen",
           "vite",
           "tanstack-start",
+          "tanstack-start-lovable",
           "vitepress",
           "vuepress",
           "parcel",
@@ -192742,6 +192876,10 @@
               "name": "TanstackStart"
             },
             {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
+            },
+            {
               "value": "vitepress",
               "name": "Vitepress"
             },
@@ -192935,6 +193073,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -193211,6 +193350,10 @@
               "name": "TanstackStart"
             },
             {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
+            },
+            {
               "value": "umijs",
               "name": "Umijs"
             },
@@ -193397,6 +193540,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -193673,6 +193817,10 @@
               "name": "TanstackStart"
             },
             {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
+            },
+            {
               "value": "umijs",
               "name": "Umijs"
             },
@@ -193835,6 +193983,7 @@
           "hydrogen",
           "vite",
           "tanstack-start",
+          "tanstack-start-lovable",
           "vitepress",
           "vuepress",
           "parcel",
@@ -194038,6 +194187,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "vitepress",
@@ -194285,6 +194438,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -194561,6 +194715,10 @@
               "name": "TanstackStart"
             },
             {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
+            },
+            {
               "value": "umijs",
               "name": "Umijs"
             },
@@ -194747,6 +194905,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -195021,6 +195180,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",
@@ -195513,6 +195676,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -195787,6 +195951,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",
@@ -210141,6 +210309,7 @@
           "hydrogen",
           "vite",
           "tanstack-start",
+          "tanstack-start-lovable",
           "vitepress",
           "vuepress",
           "parcel",
@@ -210347,6 +210516,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "vitepress",
@@ -210653,6 +210826,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -210927,6 +211101,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",
@@ -211631,6 +211809,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -211905,6 +212084,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",
@@ -212703,6 +212886,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -212977,6 +213161,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",
@@ -214389,6 +214577,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -214663,6 +214852,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",
@@ -215552,6 +215745,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -215826,6 +216020,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",
@@ -216946,6 +217144,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -217220,6 +217419,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",
@@ -218693,6 +218896,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -218967,6 +219171,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",
@@ -220087,6 +220295,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -220361,6 +220570,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",
@@ -222123,6 +222336,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -222397,6 +222611,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",
@@ -224518,6 +224736,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -224792,6 +225011,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",
@@ -226087,6 +226310,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -226361,6 +226585,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",
@@ -229981,6 +230209,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -230257,6 +230486,10 @@
               "name": "TanstackStart"
             },
             {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
+            },
+            {
               "value": "umijs",
               "name": "Umijs"
             },
@@ -230411,6 +230644,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -230685,6 +230919,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",
@@ -235304,6 +235542,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -235578,6 +235817,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",
@@ -238402,6 +238645,28 @@
             {
               "value": "external",
               "name": "External"
+            }
+          ]
+        }
+      },
+      "UpdateProjectRequestPassportPublicPathRulesItemType": {
+        "enum": [
+          "equals",
+          "startsWith"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateProjectRequestPassportPublicPathRulesItemType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "equals",
+              "name": "Equals"
+            },
+            {
+              "value": "startsWith",
+              "name": "StartsWith"
             }
           ]
         }
@@ -242855,6 +243120,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -243129,6 +243395,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",
@@ -244193,6 +244463,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -244467,6 +244738,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",
@@ -245489,6 +245764,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -245763,6 +246039,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",
@@ -248054,6 +248334,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -248328,6 +248609,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",
@@ -249538,6 +249823,7 @@
           "sveltekit",
           "sveltekit-1",
           "tanstack-start",
+          "tanstack-start-lovable",
           "umijs",
           "vite",
           "vitepress",
@@ -249812,6 +250098,10 @@
             {
               "value": "tanstack-start",
               "name": "TanstackStart"
+            },
+            {
+              "value": "tanstack-start-lovable",
+              "name": "TanstackStartLovable"
             },
             {
               "value": "umijs",

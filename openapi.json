@@ -15014,6 +15014,7 @@
                                 "sveltekit",
                                 "sveltekit-1",
                                 "tanstack-start",
+                                "tanstack-start-lovable",
                                 "umijs",
                                 "vite",
                                 "vitepress",
@@ -22589,6 +22590,7 @@
                             "sveltekit",
                             "sveltekit-1",
                             "tanstack-start",
+                            "tanstack-start-lovable",
                             "umijs",
                             "vite",
                             "vitepress",
@@ -29138,6 +29140,7 @@
                           "hydrogen",
                           "vite",
                           "tanstack-start",
+                          "tanstack-start-lovable",
                           "vitepress",
                           "vuepress",
                           "parcel",
@@ -29444,6 +29447,7 @@
                             "sveltekit",
                             "sveltekit-1",
                             "tanstack-start",
+                            "tanstack-start-lovable",
                             "umijs",
                             "vite",
                             "vitepress",
@@ -42404,6 +42408,7 @@
                               "sveltekit",
                               "sveltekit-1",
                               "tanstack-start",
+                              "tanstack-start-lovable",
                               "umijs",
                               "vite",
                               "vitepress",
@@ -42656,6 +42661,7 @@
                                     "sveltekit",
                                     "sveltekit-1",
                                     "tanstack-start",
+                                    "tanstack-start-lovable",
                                     "umijs",
                                     "vite",
                                     "vitepress",
@@ -73686,6 +73692,7 @@
                               "sveltekit",
                               "sveltekit-1",
                               "tanstack-start",
+                              "tanstack-start-lovable",
                               "umijs",
                               "vite",
                               "vitepress",
@@ -73781,6 +73788,7 @@
                                     "sveltekit",
                                     "sveltekit-1",
                                     "tanstack-start",
+                                    "tanstack-start-lovable",
                                     "umijs",
                                     "vite",
                                     "vitepress",
@@ -75834,6 +75842,12 @@
                                 "type": "array"
                               },
                               "aiGatewayApiKeyOwnedBySelf": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "aiGatewayBudget": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
                                 },
@@ -87044,6 +87058,7 @@
                               "sveltekit",
                               "sveltekit-1",
                               "tanstack-start",
+                              "tanstack-start-lovable",
                               "umijs",
                               "vite",
                               "vitepress",
@@ -91283,6 +91298,7 @@
                                   "sveltekit",
                                   "sveltekit-1",
                                   "tanstack-start",
+                                  "tanstack-start-lovable",
                                   "umijs",
                                   "vite",
                                   "vitepress",
@@ -95952,6 +95968,7 @@
                                   "sveltekit",
                                   "sveltekit-1",
                                   "tanstack-start",
+                                  "tanstack-start-lovable",
                                   "umijs",
                                   "vite",
                                   "vitepress",
@@ -96047,6 +96064,7 @@
                                         "sveltekit",
                                         "sveltekit-1",
                                         "tanstack-start",
+                                        "tanstack-start-lovable",
                                         "umijs",
                                         "vite",
                                         "vitepress",
@@ -98100,6 +98118,12 @@
                                     "type": "array"
                                   },
                                   "aiGatewayApiKeyOwnedBySelf": {
+                                    "items": {
+                                      "$ref": "#/components/schemas/ACLAction"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "aiGatewayBudget": {
                                     "items": {
                                       "$ref": "#/components/schemas/ACLAction"
                                     },
@@ -103241,6 +103265,7 @@
                         "sveltekit",
                         "sveltekit-1",
                         "tanstack-start",
+                        "tanstack-start-lovable",
                         "umijs",
                         "vite",
                         "vitepress",
@@ -103336,6 +103361,7 @@
                               "sveltekit",
                               "sveltekit-1",
                               "tanstack-start",
+                              "tanstack-start-lovable",
                               "umijs",
                               "vite",
                               "vitepress",
@@ -105389,6 +105415,12 @@
                           "type": "array"
                         },
                         "aiGatewayApiKeyOwnedBySelf": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "aiGatewayBudget": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -109009,6 +109041,7 @@
                       "hydrogen",
                       "vite",
                       "tanstack-start",
+                      "tanstack-start-lovable",
                       "vitepress",
                       "vuepress",
                       "parcel",
@@ -110783,6 +110816,7 @@
                         "sveltekit",
                         "sveltekit-1",
                         "tanstack-start",
+                        "tanstack-start-lovable",
                         "umijs",
                         "vite",
                         "vitepress",
@@ -110878,6 +110912,7 @@
                               "sveltekit",
                               "sveltekit-1",
                               "tanstack-start",
+                              "tanstack-start-lovable",
                               "umijs",
                               "vite",
                               "vitepress",
@@ -112931,6 +112966,12 @@
                           "type": "array"
                         },
                         "aiGatewayApiKeyOwnedBySelf": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "aiGatewayBudget": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -117880,6 +117921,7 @@
                         "sveltekit",
                         "sveltekit-1",
                         "tanstack-start",
+                        "tanstack-start-lovable",
                         "umijs",
                         "vite",
                         "vitepress",
@@ -117975,6 +118017,7 @@
                               "sveltekit",
                               "sveltekit-1",
                               "tanstack-start",
+                              "tanstack-start-lovable",
                               "umijs",
                               "vite",
                               "vitepress",
@@ -120028,6 +120071,12 @@
                           "type": "array"
                         },
                         "aiGatewayApiKeyOwnedBySelf": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "aiGatewayBudget": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -123598,6 +123647,7 @@
                       "hydrogen",
                       "vite",
                       "tanstack-start",
+                      "tanstack-start-lovable",
                       "vitepress",
                       "vuepress",
                       "parcel",
@@ -123976,9 +124026,34 @@
                   },
                   "passport": {
                     "description": "Passport configuration for the project.",
-                    "type": "object",
-                    "additionalProperties": false,
                     "properties": {
+                      "publicPathRules": {
+                        "type": "array",
+                        "maxItems": 100,
+                        "uniqueItems": true,
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "type",
+                            "value"
+                          ],
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "equals",
+                                "startsWith"
+                              ]
+                            },
+                            "value": {
+                              "type": "string",
+                              "maxLength": 2048,
+                              "pattern": "^/[^?#\\\\s]*$"
+                            }
+                          }
+                        }
+                      },
                       "connectorId": {
                         "type": "string"
                       },
@@ -123993,6 +124068,8 @@
                         ]
                       }
                     },
+                    "type": "object",
+                    "additionalProperties": false,
                     "required": [
                       "connectorId"
                     ],
@@ -126210,6 +126287,7 @@
                         "sveltekit",
                         "sveltekit-1",
                         "tanstack-start",
+                        "tanstack-start-lovable",
                         "umijs",
                         "vite",
                         "vitepress",
@@ -126305,6 +126383,7 @@
                               "sveltekit",
                               "sveltekit-1",
                               "tanstack-start",
+                              "tanstack-start-lovable",
                               "umijs",
                               "vite",
                               "vitepress",
@@ -128358,6 +128437,12 @@
                           "type": "array"
                         },
                         "aiGatewayApiKeyOwnedBySelf": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "aiGatewayBudget": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -145791,6 +145876,7 @@
                         "sveltekit",
                         "sveltekit-1",
                         "tanstack-start",
+                        "tanstack-start-lovable",
                         "umijs",
                         "vite",
                         "vitepress",
@@ -145886,6 +145972,7 @@
                               "sveltekit",
                               "sveltekit-1",
                               "tanstack-start",
+                              "tanstack-start-lovable",
                               "umijs",
                               "vite",
                               "vitepress",
@@ -147939,6 +148026,12 @@
                           "type": "array"
                         },
                         "aiGatewayApiKeyOwnedBySelf": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "aiGatewayBudget": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -162779,6 +162872,7 @@
                                   "sveltekit",
                                   "sveltekit-1",
                                   "tanstack-start",
+                                  "tanstack-start-lovable",
                                   "umijs",
                                   "vite",
                                   "vitepress",
@@ -177285,6 +177379,7 @@
                                     "sveltekit",
                                     "sveltekit-1",
                                     "tanstack-start",
+                                    "tanstack-start-lovable",
                                     "umijs",
                                     "vite",
                                     "vitepress",
@@ -180843,6 +180938,7 @@
                                   "sveltekit",
                                   "sveltekit-1",
                                   "tanstack-start",
+                                  "tanstack-start-lovable",
                                   "umijs",
                                   "vite",
                                   "vitepress",
@@ -183309,6 +183405,7 @@
               "observability-plus-project-disabled",
               "observability-plus-project-enabled",
               "organization-create",
+              "organization-delete",
               "organization-slug-update",
               "organization-team-add",
               "owner-blocked",
@@ -195082,6 +195179,13 @@
                       "mode": {
                         "type": "string"
                       },
+                      "enforcementScope": {
+                        "type": "string",
+                        "enum": [
+                          "all",
+                          "preview"
+                        ]
+                      },
                       "enforcePercentage": {
                         "type": "number"
                       },
@@ -195127,6 +195231,13 @@
                       },
                       "mode": {
                         "type": "string"
+                      },
+                      "enforcementScope": {
+                        "type": "string",
+                        "enum": [
+                          "all",
+                          "preview"
+                        ]
                       },
                       "enforcePercentage": {
                         "type": "number"
@@ -203234,6 +203345,7 @@
               "observability-plus-project-disabled",
               "observability-plus-project-enabled",
               "organization-create",
+              "organization-delete",
               "organization-slug-update",
               "organization-team-add",
               "owner-blocked",
@@ -203839,6 +203951,7 @@
                 "observability-plus-project-disabled",
                 "observability-plus-project-enabled",
                 "organization-create",
+                "organization-delete",
                 "organization-slug-update",
                 "organization-team-add",
                 "owner-blocked",

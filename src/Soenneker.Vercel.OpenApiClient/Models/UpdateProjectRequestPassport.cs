@@ -23,6 +23,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The deploymentType property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPassportDeploymentType? DeploymentType { get; set; }
+        /// <summary>The publicPathRules property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPassportPublicPathRulesItem>? PublicPathRules { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPassportPublicPathRulesItem> PublicPathRules { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,6 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "connectorId", n => { ConnectorId = n.GetStringValue(); } },
                 { "deploymentType", n => { DeploymentType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPassportDeploymentType>(); } },
+                { "publicPathRules", n => { PublicPathRules = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPassportPublicPathRulesItem>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPassportPublicPathRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("connectorId", ConnectorId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPassportDeploymentType>("deploymentType", DeploymentType);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestPassportPublicPathRulesItem>("publicPathRules", PublicPathRules);
         }
     }
 }

@@ -1039,6 +1039,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         OrganizationCreate,
         #pragma warning restore CS1591
+        [EnumMember(Value = "organization-delete")]
+        #pragma warning disable CS1591
+        OrganizationDelete,
+        #pragma warning restore CS1591
         [EnumMember(Value = "organization-slug-update")]
         #pragma warning disable CS1591
         OrganizationSlugUpdate,

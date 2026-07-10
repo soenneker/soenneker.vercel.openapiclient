@@ -267,6 +267,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         TanstackStart,
         #pragma warning restore CS1591
+        [EnumMember(Value = "tanstack-start-lovable")]
+        #pragma warning disable CS1591
+        TanstackStartLovable,
+        #pragma warning restore CS1591
         [EnumMember(Value = "umijs")]
         #pragma warning disable CS1591
         Umijs,

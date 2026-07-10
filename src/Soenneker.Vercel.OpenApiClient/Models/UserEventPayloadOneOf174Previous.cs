@@ -18,6 +18,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public bool? AllowUnsafeScriptSrcKeywords { get; set; }
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
+        /// <summary>The enforcementScope property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174PreviousEnforcementScope? EnforcementScope { get; set; }
         /// <summary>The enforcePercentage property</summary>
         public double? EnforcePercentage { get; set; }
         /// <summary>The mode property</summary>
@@ -60,6 +62,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "allowUnsafeScriptSrcKeywords", n => { AllowUnsafeScriptSrcKeywords = n.GetBoolValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "enforcePercentage", n => { EnforcePercentage = n.GetDoubleValue(); } },
+                { "enforcementScope", n => { EnforcementScope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174PreviousEnforcementScope>(); } },
                 { "mode", n => { Mode = n.GetStringValue(); } },
                 { "newResourceBlockingPolicy", n => { NewResourceBlockingPolicy = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174PreviousNewResourceBlockingPolicy>(); } },
                 { "omitScriptNonce", n => { OmitScriptNonce = n.GetBoolValue(); } },
@@ -74,6 +77,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowUnsafeScriptSrcKeywords", AllowUnsafeScriptSrcKeywords);
             writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174PreviousEnforcementScope>("enforcementScope", EnforcementScope);
             writer.WriteDoubleValue("enforcePercentage", EnforcePercentage);
             writer.WriteStringValue("mode", Mode);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174PreviousNewResourceBlockingPolicy>("newResourceBlockingPolicy", NewResourceBlockingPolicy);
