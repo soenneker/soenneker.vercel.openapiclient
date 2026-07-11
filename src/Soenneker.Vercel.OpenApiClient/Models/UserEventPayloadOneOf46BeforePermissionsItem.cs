@@ -68,6 +68,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ReadWriteColonEdgeConfig,
         #pragma warning restore CS1591
+        [EnumMember(Value = "read-write:firewall")]
+        #pragma warning disable CS1591
+        ReadWriteColonFirewall,
+        #pragma warning restore CS1591
         [EnumMember(Value = "read-write:integration-configuration")]
         #pragma warning disable CS1591
         ReadWriteColonIntegrationConfiguration,
@@ -155,6 +159,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "read:event")]
         #pragma warning disable CS1591
         ReadColonEvent,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "read:firewall")]
+        #pragma warning disable CS1591
+        ReadColonFirewall,
         #pragma warning restore CS1591
         [EnumMember(Value = "read:integration-configuration")]
         #pragma warning disable CS1591

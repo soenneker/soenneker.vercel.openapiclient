@@ -78,6 +78,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The createdAt property</summary>
         public double? CreatedAt { get; set; }
+        /// <summary>The creator property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreator? Creator { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreator Creator { get; set; }
+#endif
         /// <summary>The customerSupportCodeVisibility property</summary>
         public bool? CustomerSupportCodeVisibility { get; set; }
         /// <summary>Retention policies for deployments. These are enforced at the project level, but we also maintain an instance of this at the team level as a default policy that gets applied to new projects.</summary>
@@ -374,6 +382,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "buildCommand", n => { BuildCommand = n.GetStringValue(); } },
                 { "commandForIgnoringBuildStep", n => { CommandForIgnoringBuildStep = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
+                { "creator", n => { Creator = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreator>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreator.CreateFromDiscriminatorValue); } },
                 { "customerSupportCodeVisibility", n => { CustomerSupportCodeVisibility = n.GetBoolValue(); } },
                 { "deploymentExpiration", n => { DeploymentExpiration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemDeploymentExpiration>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemDeploymentExpiration.CreateFromDiscriminatorValue); } },
                 { "devCommand", n => { DevCommand = n.GetStringValue(); } },
@@ -437,6 +446,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("buildCommand", BuildCommand);
             writer.WriteStringValue("commandForIgnoringBuildStep", CommandForIgnoringBuildStep);
             writer.WriteDoubleValue("createdAt", CreatedAt);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemCreator>("creator", Creator);
             writer.WriteBoolValue("customerSupportCodeVisibility", CustomerSupportCodeVisibility);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemDeploymentExpiration>("deploymentExpiration", DeploymentExpiration);
             writer.WriteStringValue("devCommand", DevCommand);

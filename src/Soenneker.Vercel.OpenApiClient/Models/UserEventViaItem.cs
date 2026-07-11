@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf3"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf4"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventViaItem : IComposedTypeWrapper, IParsable
@@ -37,6 +37,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf3 UserEventViaItemOneOf3 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf4? UserEventViaItemOneOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf4 UserEventViaItemOneOf4 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,6 +67,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 result.UserEventViaItemOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf3();
             }
+            else if("UserEventViaItemOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventViaItemOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf4();
+            }
             return result;
         }
         /// <summary>
@@ -78,6 +90,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if(UserEventViaItemOneOf3 != null)
             {
                 return UserEventViaItemOneOf3.GetFieldDeserializers();
+            }
+            else if(UserEventViaItemOneOf4 != null)
+            {
+                return UserEventViaItemOneOf4.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -99,6 +115,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if(UserEventViaItemOneOf3 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf3>(null, UserEventViaItemOneOf3);
+            }
+            else if(UserEventViaItemOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf4>(null, UserEventViaItemOneOf4);
             }
         }
     }

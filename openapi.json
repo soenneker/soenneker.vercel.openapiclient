@@ -72226,6 +72226,170 @@
                           "accountId": {
                             "type": "string"
                           },
+                          "creator": {
+                            "oneOf": [
+                              {
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "user"
+                                    ]
+                                  },
+                                  "via": {
+                                    "nullable": true,
+                                    "oneOf": [
+                                      {
+                                        "properties": {
+                                          "type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "app"
+                                            ]
+                                          },
+                                          "app": {
+                                            "properties": {
+                                              "id": {
+                                                "type": "string"
+                                              }
+                                            },
+                                            "required": [
+                                              "id"
+                                            ],
+                                            "type": "object"
+                                          }
+                                        },
+                                        "required": [
+                                          "app",
+                                          "type"
+                                        ],
+                                        "type": "object",
+                                        "description": "Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal."
+                                      },
+                                      {
+                                        "properties": {
+                                          "type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "integration"
+                                            ]
+                                          },
+                                          "integration": {
+                                            "properties": {
+                                              "integrationId": {
+                                                "type": "string"
+                                              },
+                                              "configurationId": {
+                                                "type": "string"
+                                              }
+                                            },
+                                            "required": [
+                                              "configurationId",
+                                              "integrationId"
+                                            ],
+                                            "type": "object"
+                                          }
+                                        },
+                                        "required": [
+                                          "integration",
+                                          "type"
+                                        ],
+                                        "type": "object",
+                                        "description": "Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal."
+                                      }
+                                    ]
+                                  },
+                                  "user": {
+                                    "properties": {
+                                      "id": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "id"
+                                    ],
+                                    "type": "object"
+                                  }
+                                },
+                                "required": [
+                                  "type",
+                                  "user",
+                                  "via"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "app"
+                                    ]
+                                  },
+                                  "app": {
+                                    "properties": {
+                                      "id": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "id"
+                                    ],
+                                    "type": "object"
+                                  }
+                                },
+                                "required": [
+                                  "app",
+                                  "type"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "integration"
+                                    ]
+                                  },
+                                  "integration": {
+                                    "properties": {
+                                      "integrationId": {
+                                        "type": "string"
+                                      },
+                                      "configurationId": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "configurationId",
+                                      "integrationId"
+                                    ],
+                                    "type": "object"
+                                  }
+                                },
+                                "required": [
+                                  "integration",
+                                  "type"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "system"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ],
+                                "type": "object"
+                              }
+                            ]
+                          },
                           "alias": {
                             "items": {
                               "properties": {
@@ -85987,6 +86151,170 @@
                           "accountId": {
                             "type": "string"
                           },
+                          "creator": {
+                            "oneOf": [
+                              {
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "user"
+                                    ]
+                                  },
+                                  "via": {
+                                    "nullable": true,
+                                    "oneOf": [
+                                      {
+                                        "properties": {
+                                          "type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "app"
+                                            ]
+                                          },
+                                          "app": {
+                                            "properties": {
+                                              "id": {
+                                                "type": "string"
+                                              }
+                                            },
+                                            "required": [
+                                              "id"
+                                            ],
+                                            "type": "object"
+                                          }
+                                        },
+                                        "required": [
+                                          "app",
+                                          "type"
+                                        ],
+                                        "type": "object",
+                                        "description": "Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal."
+                                      },
+                                      {
+                                        "properties": {
+                                          "type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "integration"
+                                            ]
+                                          },
+                                          "integration": {
+                                            "properties": {
+                                              "integrationId": {
+                                                "type": "string"
+                                              },
+                                              "configurationId": {
+                                                "type": "string"
+                                              }
+                                            },
+                                            "required": [
+                                              "configurationId",
+                                              "integrationId"
+                                            ],
+                                            "type": "object"
+                                          }
+                                        },
+                                        "required": [
+                                          "integration",
+                                          "type"
+                                        ],
+                                        "type": "object",
+                                        "description": "Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal."
+                                      }
+                                    ]
+                                  },
+                                  "user": {
+                                    "properties": {
+                                      "id": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "id"
+                                    ],
+                                    "type": "object"
+                                  }
+                                },
+                                "required": [
+                                  "type",
+                                  "user",
+                                  "via"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "app"
+                                    ]
+                                  },
+                                  "app": {
+                                    "properties": {
+                                      "id": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "id"
+                                    ],
+                                    "type": "object"
+                                  }
+                                },
+                                "required": [
+                                  "app",
+                                  "type"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "integration"
+                                    ]
+                                  },
+                                  "integration": {
+                                    "properties": {
+                                      "integrationId": {
+                                        "type": "string"
+                                      },
+                                      "configurationId": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "configurationId",
+                                      "integrationId"
+                                    ],
+                                    "type": "object"
+                                  }
+                                },
+                                "required": [
+                                  "integration",
+                                  "type"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "system"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ],
+                                "type": "object"
+                              }
+                            ]
+                          },
                           "alias": {
                             "items": {
                               "properties": {
@@ -90226,6 +90554,170 @@
                             "properties": {
                               "accountId": {
                                 "type": "string"
+                              },
+                              "creator": {
+                                "oneOf": [
+                                  {
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "user"
+                                        ]
+                                      },
+                                      "via": {
+                                        "nullable": true,
+                                        "oneOf": [
+                                          {
+                                            "properties": {
+                                              "type": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "app"
+                                                ]
+                                              },
+                                              "app": {
+                                                "properties": {
+                                                  "id": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "id"
+                                                ],
+                                                "type": "object"
+                                              }
+                                            },
+                                            "required": [
+                                              "app",
+                                              "type"
+                                            ],
+                                            "type": "object",
+                                            "description": "Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal."
+                                          },
+                                          {
+                                            "properties": {
+                                              "type": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "integration"
+                                                ]
+                                              },
+                                              "integration": {
+                                                "properties": {
+                                                  "integrationId": {
+                                                    "type": "string"
+                                                  },
+                                                  "configurationId": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "configurationId",
+                                                  "integrationId"
+                                                ],
+                                                "type": "object"
+                                              }
+                                            },
+                                            "required": [
+                                              "integration",
+                                              "type"
+                                            ],
+                                            "type": "object",
+                                            "description": "Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal."
+                                          }
+                                        ]
+                                      },
+                                      "user": {
+                                        "properties": {
+                                          "id": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "id"
+                                        ],
+                                        "type": "object"
+                                      }
+                                    },
+                                    "required": [
+                                      "type",
+                                      "user",
+                                      "via"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  {
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "app"
+                                        ]
+                                      },
+                                      "app": {
+                                        "properties": {
+                                          "id": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "id"
+                                        ],
+                                        "type": "object"
+                                      }
+                                    },
+                                    "required": [
+                                      "app",
+                                      "type"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  {
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "integration"
+                                        ]
+                                      },
+                                      "integration": {
+                                        "properties": {
+                                          "integrationId": {
+                                            "type": "string"
+                                          },
+                                          "configurationId": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "configurationId",
+                                          "integrationId"
+                                        ],
+                                        "type": "object"
+                                      }
+                                    },
+                                    "required": [
+                                      "integration",
+                                      "type"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  {
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "system"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "type"
+                                    ],
+                                    "type": "object"
+                                  }
+                                ]
                               },
                               "alias": {
                                 "items": {
@@ -94501,6 +94993,170 @@
                             "properties": {
                               "accountId": {
                                 "type": "string"
+                              },
+                              "creator": {
+                                "oneOf": [
+                                  {
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "user"
+                                        ]
+                                      },
+                                      "via": {
+                                        "nullable": true,
+                                        "oneOf": [
+                                          {
+                                            "properties": {
+                                              "type": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "app"
+                                                ]
+                                              },
+                                              "app": {
+                                                "properties": {
+                                                  "id": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "id"
+                                                ],
+                                                "type": "object"
+                                              }
+                                            },
+                                            "required": [
+                                              "app",
+                                              "type"
+                                            ],
+                                            "type": "object",
+                                            "description": "Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal."
+                                          },
+                                          {
+                                            "properties": {
+                                              "type": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "integration"
+                                                ]
+                                              },
+                                              "integration": {
+                                                "properties": {
+                                                  "integrationId": {
+                                                    "type": "string"
+                                                  },
+                                                  "configurationId": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "configurationId",
+                                                  "integrationId"
+                                                ],
+                                                "type": "object"
+                                              }
+                                            },
+                                            "required": [
+                                              "integration",
+                                              "type"
+                                            ],
+                                            "type": "object",
+                                            "description": "Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal."
+                                          }
+                                        ]
+                                      },
+                                      "user": {
+                                        "properties": {
+                                          "id": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "id"
+                                        ],
+                                        "type": "object"
+                                      }
+                                    },
+                                    "required": [
+                                      "type",
+                                      "user",
+                                      "via"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  {
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "app"
+                                        ]
+                                      },
+                                      "app": {
+                                        "properties": {
+                                          "id": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "id"
+                                        ],
+                                        "type": "object"
+                                      }
+                                    },
+                                    "required": [
+                                      "app",
+                                      "type"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  {
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "integration"
+                                        ]
+                                      },
+                                      "integration": {
+                                        "properties": {
+                                          "integrationId": {
+                                            "type": "string"
+                                          },
+                                          "configurationId": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "configurationId",
+                                          "integrationId"
+                                        ],
+                                        "type": "object"
+                                      }
+                                    },
+                                    "required": [
+                                      "integration",
+                                      "type"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  {
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "system"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "type"
+                                    ],
+                                    "type": "object"
+                                  }
+                                ]
                               },
                               "alias": {
                                 "items": {
@@ -101798,6 +102454,170 @@
                   "properties": {
                     "accountId": {
                       "type": "string"
+                    },
+                    "creator": {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "user"
+                              ]
+                            },
+                            "via": {
+                              "nullable": true,
+                              "oneOf": [
+                                {
+                                  "properties": {
+                                    "type": {
+                                      "type": "string",
+                                      "enum": [
+                                        "app"
+                                      ]
+                                    },
+                                    "app": {
+                                      "properties": {
+                                        "id": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "id"
+                                      ],
+                                      "type": "object"
+                                    }
+                                  },
+                                  "required": [
+                                    "app",
+                                    "type"
+                                  ],
+                                  "type": "object",
+                                  "description": "Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal."
+                                },
+                                {
+                                  "properties": {
+                                    "type": {
+                                      "type": "string",
+                                      "enum": [
+                                        "integration"
+                                      ]
+                                    },
+                                    "integration": {
+                                      "properties": {
+                                        "integrationId": {
+                                          "type": "string"
+                                        },
+                                        "configurationId": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "configurationId",
+                                        "integrationId"
+                                      ],
+                                      "type": "object"
+                                    }
+                                  },
+                                  "required": [
+                                    "integration",
+                                    "type"
+                                  ],
+                                  "type": "object",
+                                  "description": "Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal."
+                                }
+                              ]
+                            },
+                            "user": {
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "user",
+                            "via"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "app"
+                              ]
+                            },
+                            "app": {
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "app",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "integration"
+                              ]
+                            },
+                            "integration": {
+                              "properties": {
+                                "integrationId": {
+                                  "type": "string"
+                                },
+                                "configurationId": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "configurationId",
+                                "integrationId"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "integration",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "system"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "type"
+                          ],
+                          "type": "object"
+                        }
+                      ]
                     },
                     "alias": {
                       "items": {
@@ -109352,6 +110172,170 @@
                     "accountId": {
                       "type": "string"
                     },
+                    "creator": {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "user"
+                              ]
+                            },
+                            "via": {
+                              "nullable": true,
+                              "oneOf": [
+                                {
+                                  "properties": {
+                                    "type": {
+                                      "type": "string",
+                                      "enum": [
+                                        "app"
+                                      ]
+                                    },
+                                    "app": {
+                                      "properties": {
+                                        "id": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "id"
+                                      ],
+                                      "type": "object"
+                                    }
+                                  },
+                                  "required": [
+                                    "app",
+                                    "type"
+                                  ],
+                                  "type": "object",
+                                  "description": "Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal."
+                                },
+                                {
+                                  "properties": {
+                                    "type": {
+                                      "type": "string",
+                                      "enum": [
+                                        "integration"
+                                      ]
+                                    },
+                                    "integration": {
+                                      "properties": {
+                                        "integrationId": {
+                                          "type": "string"
+                                        },
+                                        "configurationId": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "configurationId",
+                                        "integrationId"
+                                      ],
+                                      "type": "object"
+                                    }
+                                  },
+                                  "required": [
+                                    "integration",
+                                    "type"
+                                  ],
+                                  "type": "object",
+                                  "description": "Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal."
+                                }
+                              ]
+                            },
+                            "user": {
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "user",
+                            "via"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "app"
+                              ]
+                            },
+                            "app": {
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "app",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "integration"
+                              ]
+                            },
+                            "integration": {
+                              "properties": {
+                                "integrationId": {
+                                  "type": "string"
+                                },
+                                "configurationId": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "configurationId",
+                                "integrationId"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "integration",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "system"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "type"
+                          ],
+                          "type": "object"
+                        }
+                      ]
+                    },
                     "alias": {
                       "items": {
                         "properties": {
@@ -116463,6 +117447,170 @@
                   "properties": {
                     "accountId": {
                       "type": "string"
+                    },
+                    "creator": {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "user"
+                              ]
+                            },
+                            "via": {
+                              "nullable": true,
+                              "oneOf": [
+                                {
+                                  "properties": {
+                                    "type": {
+                                      "type": "string",
+                                      "enum": [
+                                        "app"
+                                      ]
+                                    },
+                                    "app": {
+                                      "properties": {
+                                        "id": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "id"
+                                      ],
+                                      "type": "object"
+                                    }
+                                  },
+                                  "required": [
+                                    "app",
+                                    "type"
+                                  ],
+                                  "type": "object",
+                                  "description": "Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal."
+                                },
+                                {
+                                  "properties": {
+                                    "type": {
+                                      "type": "string",
+                                      "enum": [
+                                        "integration"
+                                      ]
+                                    },
+                                    "integration": {
+                                      "properties": {
+                                        "integrationId": {
+                                          "type": "string"
+                                        },
+                                        "configurationId": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "configurationId",
+                                        "integrationId"
+                                      ],
+                                      "type": "object"
+                                    }
+                                  },
+                                  "required": [
+                                    "integration",
+                                    "type"
+                                  ],
+                                  "type": "object",
+                                  "description": "Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal."
+                                }
+                              ]
+                            },
+                            "user": {
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "user",
+                            "via"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "app"
+                              ]
+                            },
+                            "app": {
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "app",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "integration"
+                              ]
+                            },
+                            "integration": {
+                              "properties": {
+                                "integrationId": {
+                                  "type": "string"
+                                },
+                                "configurationId": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "configurationId",
+                                "integrationId"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "integration",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "system"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "type"
+                          ],
+                          "type": "object"
+                        }
+                      ]
                     },
                     "alias": {
                       "items": {
@@ -124820,6 +125968,170 @@
                   "properties": {
                     "accountId": {
                       "type": "string"
+                    },
+                    "creator": {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "user"
+                              ]
+                            },
+                            "via": {
+                              "nullable": true,
+                              "oneOf": [
+                                {
+                                  "properties": {
+                                    "type": {
+                                      "type": "string",
+                                      "enum": [
+                                        "app"
+                                      ]
+                                    },
+                                    "app": {
+                                      "properties": {
+                                        "id": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "id"
+                                      ],
+                                      "type": "object"
+                                    }
+                                  },
+                                  "required": [
+                                    "app",
+                                    "type"
+                                  ],
+                                  "type": "object",
+                                  "description": "Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal."
+                                },
+                                {
+                                  "properties": {
+                                    "type": {
+                                      "type": "string",
+                                      "enum": [
+                                        "integration"
+                                      ]
+                                    },
+                                    "integration": {
+                                      "properties": {
+                                        "integrationId": {
+                                          "type": "string"
+                                        },
+                                        "configurationId": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "configurationId",
+                                        "integrationId"
+                                      ],
+                                      "type": "object"
+                                    }
+                                  },
+                                  "required": [
+                                    "integration",
+                                    "type"
+                                  ],
+                                  "type": "object",
+                                  "description": "Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal."
+                                }
+                              ]
+                            },
+                            "user": {
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "user",
+                            "via"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "app"
+                              ]
+                            },
+                            "app": {
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "app",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "integration"
+                              ]
+                            },
+                            "integration": {
+                              "properties": {
+                                "integrationId": {
+                                  "type": "string"
+                                },
+                                "configurationId": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "configurationId",
+                                "integrationId"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "integration",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "system"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "type"
+                          ],
+                          "type": "object"
+                        }
+                      ]
                     },
                     "alias": {
                       "items": {
@@ -144409,6 +145721,170 @@
                   "properties": {
                     "accountId": {
                       "type": "string"
+                    },
+                    "creator": {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "user"
+                              ]
+                            },
+                            "via": {
+                              "nullable": true,
+                              "oneOf": [
+                                {
+                                  "properties": {
+                                    "type": {
+                                      "type": "string",
+                                      "enum": [
+                                        "app"
+                                      ]
+                                    },
+                                    "app": {
+                                      "properties": {
+                                        "id": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "id"
+                                      ],
+                                      "type": "object"
+                                    }
+                                  },
+                                  "required": [
+                                    "app",
+                                    "type"
+                                  ],
+                                  "type": "object",
+                                  "description": "Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal."
+                                },
+                                {
+                                  "properties": {
+                                    "type": {
+                                      "type": "string",
+                                      "enum": [
+                                        "integration"
+                                      ]
+                                    },
+                                    "integration": {
+                                      "properties": {
+                                        "integrationId": {
+                                          "type": "string"
+                                        },
+                                        "configurationId": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "configurationId",
+                                        "integrationId"
+                                      ],
+                                      "type": "object"
+                                    }
+                                  },
+                                  "required": [
+                                    "integration",
+                                    "type"
+                                  ],
+                                  "type": "object",
+                                  "description": "Set when a Vercel App or Integration acts on behalf of a {@link User}. Captures user-consented OAuth delegation that the ACL layer may inspect to evaluate scope restrictions. This is NOT for impersonation or token-exchange provenance — those live on `auth.token`, not on the principal."
+                                }
+                              ]
+                            },
+                            "user": {
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "user",
+                            "via"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "app"
+                              ]
+                            },
+                            "app": {
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "app",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "integration"
+                              ]
+                            },
+                            "integration": {
+                              "properties": {
+                                "integrationId": {
+                                  "type": "string"
+                                },
+                                "configurationId": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "configurationId",
+                                "integrationId"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "integration",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "system"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "type"
+                          ],
+                          "type": "object"
+                        }
+                      ]
                     },
                     "alias": {
                       "items": {
@@ -183422,6 +184898,7 @@
               "passkey-created",
               "passkey-deleted",
               "passkey-updated",
+              "passport-access-granted",
               "password-protection-disabled",
               "password-protection-enabled",
               "payment-method-added",
@@ -183832,6 +185309,32 @@
                   "type": {
                     "type": "string",
                     "enum": [
+                      "external"
+                    ]
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "type"
+                ],
+                "type": "object",
+                "description": "Metadata for {@link principalId}."
+              },
+              {
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
                       "system"
                     ]
                   }
@@ -183897,6 +185400,32 @@
                   },
                   "required": [
                     "clientId",
+                    "name",
+                    "type"
+                  ],
+                  "type": "object",
+                  "description": "Metadata for {@link viaIds}."
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "external"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
                     "name",
                     "type"
                   ],
@@ -185320,6 +186849,7 @@
                         "read-write:drains",
                         "read-write:edge-cache",
                         "read-write:edge-config",
+                        "read-write:firewall",
                         "read-write:integration-configuration",
                         "read-write:integration-resource",
                         "read-write:kms",
@@ -185342,6 +186872,7 @@
                         "read:deployment",
                         "read:domain",
                         "read:event",
+                        "read:firewall",
                         "read:integration-configuration",
                         "read:kms",
                         "read:monitoring",
@@ -185423,6 +186954,7 @@
                         "read-write:drains",
                         "read-write:edge-cache",
                         "read-write:edge-config",
+                        "read-write:firewall",
                         "read-write:integration-configuration",
                         "read-write:integration-resource",
                         "read-write:kms",
@@ -185445,6 +186977,7 @@
                         "read:deployment",
                         "read:domain",
                         "read:event",
+                        "read:firewall",
                         "read:integration-configuration",
                         "read:kms",
                         "read:monitoring",
@@ -185548,6 +187081,7 @@
                             "read-write:drains",
                             "read-write:edge-cache",
                             "read-write:edge-config",
+                            "read-write:firewall",
                             "read-write:integration-configuration",
                             "read-write:integration-resource",
                             "read-write:kms",
@@ -185570,6 +187104,7 @@
                             "read:deployment",
                             "read:domain",
                             "read:event",
+                            "read:firewall",
                             "read:integration-configuration",
                             "read:kms",
                             "read:monitoring",
@@ -185656,6 +187191,7 @@
                             "read-write:drains",
                             "read-write:edge-cache",
                             "read-write:edge-config",
+                            "read-write:firewall",
                             "read-write:integration-configuration",
                             "read-write:integration-resource",
                             "read-write:kms",
@@ -185678,6 +187214,7 @@
                             "read:deployment",
                             "read:domain",
                             "read:event",
+                            "read:firewall",
                             "read:integration-configuration",
                             "read:kms",
                             "read:monitoring",
@@ -185777,6 +187314,7 @@
                         "read-write:drains",
                         "read-write:edge-cache",
                         "read-write:edge-config",
+                        "read-write:firewall",
                         "read-write:integration-configuration",
                         "read-write:integration-resource",
                         "read-write:kms",
@@ -185799,6 +187337,7 @@
                         "read:deployment",
                         "read:domain",
                         "read:event",
+                        "read:firewall",
                         "read:integration-configuration",
                         "read:kms",
                         "read:monitoring",
@@ -195532,6 +197071,63 @@
                   "projectId": {
                     "type": "string"
                   },
+                  "environment": {
+                    "type": "string"
+                  },
+                  "host": {
+                    "type": "string"
+                  },
+                  "connectorId": {
+                    "type": "string"
+                  },
+                  "connectorType": {
+                    "type": "string"
+                  },
+                  "connectorService": {
+                    "type": "string"
+                  },
+                  "externalIssuer": {
+                    "type": "string"
+                  },
+                  "externalSubject": {
+                    "type": "string"
+                  },
+                  "sessionId": {
+                    "type": "string"
+                  },
+                  "emailVerified": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
+                    ]
+                  },
+                  "tenantId": {
+                    "type": "string"
+                  },
+                  "installationId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "connectorId",
+                  "connectorService",
+                  "connectorType",
+                  "environment",
+                  "externalIssuer",
+                  "externalSubject",
+                  "host",
+                  "projectId",
+                  "sessionId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "projectId": {
+                    "type": "string"
+                  },
                   "projectName": {
                     "type": "string"
                   },
@@ -203362,6 +204958,7 @@
               "passkey-created",
               "passkey-deleted",
               "passkey-updated",
+              "passport-access-granted",
               "password-protection-disabled",
               "password-protection-enabled",
               "payment-method-added",
@@ -203968,6 +205565,7 @@
                 "passkey-created",
                 "passkey-deleted",
                 "passkey-updated",
+                "passport-access-granted",
                 "password-protection-disabled",
                 "password-protection-enabled",
                 "payment-method-added",

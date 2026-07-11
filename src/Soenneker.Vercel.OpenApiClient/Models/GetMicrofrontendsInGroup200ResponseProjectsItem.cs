@@ -120,6 +120,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The createdAt property</summary>
         public double? CreatedAt { get; set; }
+        /// <summary>The creator property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreator? Creator { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreator Creator { get; set; }
+#endif
         /// <summary>The crons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -632,6 +640,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "connectConfigurationId", n => { ConnectConfigurationId = n.GetStringValue(); } },
                 { "connectConfigurations", n => { ConnectConfigurations = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemConnectConfigurationsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemConnectConfigurationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
+                { "creator", n => { Creator = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreator>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreator.CreateFromDiscriminatorValue); } },
                 { "crons", n => { Crons = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCrons>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCrons.CreateFromDiscriminatorValue); } },
                 { "customEnvironments", n => { CustomEnvironments = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCustomEnvironmentsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCustomEnvironmentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "customerSupportCodeVisibility", n => { CustomerSupportCodeVisibility = n.GetBoolValue(); } },
@@ -737,6 +746,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("connectConfigurationId", ConnectConfigurationId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemConnectConfigurationsItem>("connectConfigurations", ConnectConfigurations);
             writer.WriteDoubleValue("createdAt", CreatedAt);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCreator>("creator", Creator);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCrons>("crons", Crons);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemCustomEnvironmentsItem>("customEnvironments", CustomEnvironments);
             writer.WriteBoolValue("customerSupportCodeVisibility", CustomerSupportCodeVisibility);

@@ -120,6 +120,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The createdAt property</summary>
         public double? CreatedAt { get; set; }
+        /// <summary>The creator property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCreator? Creator { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCreator Creator { get; set; }
+#endif
         /// <summary>The crons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -640,6 +648,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "connectConfigurationId", n => { ConnectConfigurationId = n.GetStringValue(); } },
                 { "connectConfigurations", n => { ConnectConfigurations = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseConnectConfigurationsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseConnectConfigurationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
+                { "creator", n => { Creator = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCreator>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCreator.CreateFromDiscriminatorValue); } },
                 { "crons", n => { Crons = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCrons>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCrons.CreateFromDiscriminatorValue); } },
                 { "customEnvironments", n => { CustomEnvironments = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCustomEnvironmentsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCustomEnvironmentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "customerSupportCodeVisibility", n => { CustomerSupportCodeVisibility = n.GetBoolValue(); } },
@@ -746,6 +755,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("connectConfigurationId", ConnectConfigurationId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseConnectConfigurationsItem>("connectConfigurations", ConnectConfigurations);
             writer.WriteDoubleValue("createdAt", CreatedAt);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCreator>("creator", Creator);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCrons>("crons", Crons);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseCustomEnvironmentsItem>("customEnvironments", CustomEnvironments);
             writer.WriteBoolValue("customerSupportCodeVisibility", CustomerSupportCodeVisibility);

@@ -1107,6 +1107,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         PasskeyUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "passport-access-granted")]
+        #pragma warning disable CS1591
+        PassportAccessGranted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "password-protection-disabled")]
         #pragma warning disable CS1591
         PasswordProtectionDisabled,

@@ -8,9 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UserEventPrincipalOneOf3Type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "system")]
+        [EnumMember(Value = "external")]
         #pragma warning disable CS1591
-        System,
+        External,
         #pragma warning restore CS1591
     }
 }
