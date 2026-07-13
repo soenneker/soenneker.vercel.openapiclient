@@ -161,6 +161,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig ResourceConfig { get; set; }
 #endif
+        /// <summary>Whether the Enterprise Managed User joined the current team through the Update Account flow and should see its welcome experience.</summary>
+        public bool? ShouldShowEnterpriseManagedWelcome { get; set; }
         /// <summary>When the User account has been &quot;soft blocked&quot;, this property will contain the date when the restriction was enacted, and the identifier for why.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -232,6 +234,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "preferredScopesAndGitNamespaces", n => { PreferredScopesAndGitNamespaces = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserPreferredScopesAndGitNamespacesItem>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserPreferredScopesAndGitNamespacesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "remoteCaching", n => { RemoteCaching = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserRemoteCaching>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserRemoteCaching.CreateFromDiscriminatorValue); } },
                 { "resourceConfig", n => { ResourceConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig.CreateFromDiscriminatorValue); } },
+                { "shouldShowEnterpriseManagedWelcome", n => { ShouldShowEnterpriseManagedWelcome = n.GetBoolValue(); } },
                 { "softBlock", n => { SoftBlock = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlock>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlock.CreateFromDiscriminatorValue); } },
                 { "stagingPrefix", n => { StagingPrefix = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
@@ -266,6 +269,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserPreferredScopesAndGitNamespacesItem>("preferredScopesAndGitNamespaces", PreferredScopesAndGitNamespaces);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserRemoteCaching>("remoteCaching", RemoteCaching);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig>("resourceConfig", ResourceConfig);
+            writer.WriteBoolValue("shouldShowEnterpriseManagedWelcome", ShouldShowEnterpriseManagedWelcome);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlock>("softBlock", SoftBlock);
             writer.WriteStringValue("stagingPrefix", StagingPrefix);
             writer.WriteStringValue("username", Username);

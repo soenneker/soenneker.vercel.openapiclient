@@ -53,7 +53,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SandboxesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/sandboxes{?cursor*,limit*,namePrefix*,project*,slug*,sortBy*,sortOrder*,tags*,teamId*}", pathParameters)
+        public SandboxesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/sandboxes{?cursor*,limit*,namePrefix*,project*,slug*,sortBy*,sortOrder*,status*,tags*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -61,11 +61,11 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SandboxesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/sandboxes{?cursor*,limit*,namePrefix*,project*,slug*,sortBy*,sortOrder*,tags*,teamId*}", rawUrl)
+        public SandboxesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/sandboxes{?cursor*,limit*,namePrefix*,project*,slug*,sortBy*,sortOrder*,status*,tags*,teamId*}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix.
+        /// Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix or status.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxes200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -103,7 +103,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxes200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxes200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix.
+        /// Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix or status.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,7 +153,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
             return new global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix.
+        /// Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix or status.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SandboxesRequestBuilderGetQueryParameters 
@@ -207,6 +207,9 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
             /// <summary>Sort direction. Defaults to desc.</summary>
             [QueryParameter("sortOrder")]
             public global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxesSortOrderParameter? SortOrder { get; set; }
+            /// <summary>Filter named sandboxes by status. Only valid when sortBy is createdAt.</summary>
+            [QueryParameter("status")]
+            public global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxesStatusParameter? Status { get; set; }
             /// <summary>&quot;Filter sandboxes by tag. Format: \\&quot;key:value\\&quot;. Only one tag filter is supported at a time.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

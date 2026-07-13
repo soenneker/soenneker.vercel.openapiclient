@@ -16544,7 +16544,7 @@
           "sandboxes"
         ],
         "summary": "List sandboxes",
-        "description": "Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix.",
+        "description": "Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix or status.",
         "operationId": "ListSandboxes",
         "parameters": [
           {
@@ -16602,6 +16602,14 @@
             "description": "Sort direction. Defaults to desc.",
             "schema": {
               "$ref": "#/components/schemas/ListSandboxesSortOrderParameter"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Filter named sandboxes by status. Only valid when sortBy is createdAt.",
+            "schema": {
+              "$ref": "#/components/schemas/ListSandboxesStatusParameter"
             }
           },
           {
@@ -26885,6 +26893,11 @@
             "type": "boolean",
             "additionalProperties": false,
             "description": "Indicates whether the user is managed by an enterprise."
+          },
+          "shouldShowEnterpriseManagedWelcome": {
+            "type": "boolean",
+            "additionalProperties": false,
+            "description": "Whether the Enterprise Managed User joined the current team through the Update Account flow and should see its welcome experience."
           }
         },
         "description": "Data for the currently authenticated User."
@@ -26943,6 +26956,11 @@
             "type": "boolean",
             "additionalProperties": false,
             "description": "Indicates whether the user is managed by an enterprise."
+          },
+          "shouldShowEnterpriseManagedWelcome": {
+            "type": "boolean",
+            "additionalProperties": false,
+            "description": "Whether the Enterprise Managed User joined the current team through the Update Account flow and should see its welcome experience."
           }
         },
         "description": "A limited form of data for the currently authenticated User, due to the authentication token missing privileges to read the full User data."
@@ -34963,6 +34981,12 @@
         "type": "object",
         "properties": {
           "slug": {
+            "type": "string"
+          },
+          "organizationId": {
+            "type": "string"
+          },
+          "organizationSlug": {
             "type": "string"
           }
         },
@@ -253815,6 +253839,7 @@
       },
       "CreateDeployment200ResponseConfigResourceConfigBuildMachinePurchaseType": {
         "enum": [
+          "basic",
           "enhanced",
           "standard",
           "turbo"
@@ -253827,6 +253852,10 @@
           "name": "CreateDeployment200ResponseConfigResourceConfigBuildMachinePurchaseType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic",
+              "name": "Basic"
+            },
             {
               "value": "enhanced",
               "name": "Enhanced"
@@ -254300,6 +254329,7 @@
       },
       "CancelDeployment200ResponseConfigResourceConfigBuildMachinePurchaseType": {
         "enum": [
+          "basic",
           "enhanced",
           "standard",
           "turbo"
@@ -254312,6 +254342,10 @@
           "name": "CancelDeployment200ResponseConfigResourceConfigBuildMachinePurchaseType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic",
+              "name": "Basic"
+            },
             {
               "value": "enhanced",
               "name": "Enhanced"
@@ -261418,6 +261452,7 @@
       },
       "GetDeployment200ResponseOneOf1ConfigResourceConfigBuildMachinePurchaseType": {
         "enum": [
+          "basic",
           "enhanced",
           "standard",
           "turbo"
@@ -261430,6 +261465,10 @@
           "name": "GetDeployment200ResponseOneOf1ConfigResourceConfigBuildMachinePurchaseType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic",
+              "name": "Basic"
+            },
             {
               "value": "enhanced",
               "name": "Enhanced"
@@ -270862,6 +270901,34 @@
             {
               "value": "desc",
               "name": "Desc"
+            }
+          ]
+        }
+      },
+      "ListSandboxesStatusParameter": {
+        "enum": [
+          "running",
+          "stopping",
+          "stopped"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Filter named sandboxes by status. Only valid when sortBy is createdAt.",
+        "x-ms-enum": {
+          "name": "ListSandboxesStatusParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "running",
+              "name": "Running"
+            },
+            {
+              "value": "stopping",
+              "name": "Stopping"
+            },
+            {
+              "value": "stopped",
+              "name": "Stopped"
             }
           ]
         }

@@ -20763,6 +20763,7 @@
                                       "nullable": true,
                                       "type": "string",
                                       "enum": [
+                                        "basic",
                                         "enhanced",
                                         "standard",
                                         "turbo",
@@ -28339,6 +28340,7 @@
                                   "nullable": true,
                                   "type": "string",
                                   "enum": [
+                                    "basic",
                                     "enhanced",
                                     "standard",
                                     "turbo",
@@ -35196,6 +35198,7 @@
                                   "nullable": true,
                                   "type": "string",
                                   "enum": [
+                                    "basic",
                                     "enhanced",
                                     "standard",
                                     "turbo",
@@ -153359,7 +153362,7 @@
     },
     "/v2/sandboxes": {
       "get": {
-        "description": "Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix.",
+        "description": "Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix or status.",
         "operationId": "listSandboxes",
         "security": [
           {
@@ -153501,6 +153504,21 @@
                 "desc"
               ],
               "default": "desc"
+            }
+          },
+          {
+            "name": "status",
+            "description": "Filter named sandboxes by status. Only valid when sortBy is createdAt.",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "Filter named sandboxes by status. Only valid when sortBy is createdAt.",
+              "type": "string",
+              "enum": [
+                "running",
+                "stopping",
+                "stopped"
+              ]
             }
           },
           {
@@ -201974,6 +201992,12 @@
                 "properties": {
                   "slug": {
                     "type": "string"
+                  },
+                  "organizationId": {
+                    "type": "string"
+                  },
+                  "organizationSlug": {
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -210311,6 +210335,14 @@
               true
             ],
             "description": "Indicates whether the user is managed by an enterprise."
+          },
+          "shouldShowEnterpriseManagedWelcome": {
+            "type": "boolean",
+            "enum": [
+              false,
+              true
+            ],
+            "description": "Whether the Enterprise Managed User joined the current team through the Update Account flow and should see its welcome experience."
           }
         },
         "required": [
@@ -210378,6 +210410,14 @@
               true
             ],
             "description": "Indicates whether the user is managed by an enterprise."
+          },
+          "shouldShowEnterpriseManagedWelcome": {
+            "type": "boolean",
+            "enum": [
+              false,
+              true
+            ],
+            "description": "Whether the Enterprise Managed User joined the current team through the Update Account flow and should see its welcome experience."
           }
         },
         "required": [

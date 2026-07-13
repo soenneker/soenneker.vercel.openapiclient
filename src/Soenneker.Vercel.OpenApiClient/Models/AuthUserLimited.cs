@@ -59,6 +59,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Whether the Enterprise Managed User joined the current team through the Update Account flow and should see its welcome experience.</summary>
+        public bool? ShouldShowEnterpriseManagedWelcome { get; set; }
         /// <summary>Unique username associated with the User account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +102,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "isEnterpriseManaged", n => { IsEnterpriseManaged = n.GetBoolValue(); } },
                 { "limited", n => { Limited = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "shouldShowEnterpriseManagedWelcome", n => { ShouldShowEnterpriseManagedWelcome = n.GetBoolValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
             };
         }
@@ -117,6 +120,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("isEnterpriseManaged", IsEnterpriseManaged);
             writer.WriteBoolValue("limited", Limited);
             writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("shouldShowEnterpriseManagedWelcome", ShouldShowEnterpriseManagedWelcome);
             writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);
         }
