@@ -52,6 +52,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayApiKeyOwnedBySelf,
         #pragma warning restore CS1591
+        [EnumMember(Value = "AiGatewayBudgetManager")]
+        #pragma warning disable CS1591
+        AiGatewayBudgetManager,
+        #pragma warning restore CS1591
         [EnumMember(Value = "V0Builder")]
         #pragma warning disable CS1591
         V0Builder,

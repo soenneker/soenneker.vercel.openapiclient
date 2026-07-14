@@ -72,6 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Token { get; set; }
 #endif
+        /// <summary>The tokenId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TokenId { get; set; }
+#nullable restore
+#else
+        public string TokenId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorToken200Response"/> and sets the default values.
         /// </summary>
@@ -105,6 +113,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
                 { "token", n => { Token = n.GetStringValue(); } },
+                { "tokenId", n => { TokenId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -122,6 +131,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteStringValue("token", Token);
+            writer.WriteStringValue("tokenId", TokenId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

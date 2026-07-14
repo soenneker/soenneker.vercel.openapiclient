@@ -25,6 +25,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string MessageEscaped { get; set; }
 #endif
+        /// <summary>The reason property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Reason { get; set; }
+#nullable restore
+#else
+        public string Reason { get; set; }
+#endif
         /// <summary>The status property</summary>
         public double? Status { get; set; }
         /// <summary>
@@ -47,6 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UnauthorizedCode>(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetDoubleValue(); } },
             };
         }
@@ -59,6 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UnauthorizedCode>("code", Code);
             writer.WriteStringValue("message", MessageEscaped);
+            writer.WriteStringValue("reason", Reason);
             writer.WriteDoubleValue("status", Status);
         }
     }

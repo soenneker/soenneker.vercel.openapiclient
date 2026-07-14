@@ -43,6 +43,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The time at which the currently running sandbox will time out, in milliseconds since the epoch. Only present while a session is running.</summary>
         public double? ExpiresAt { get; set; }
+        /// <summary>Digest-pinned reference of the container image the sandbox was created from, when it was created from an image (&quot;{repository}@{manifestDigest}&quot;).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Image { get; set; }
+#nullable restore
+#else
+        public string Image { get; set; }
+#endif
         /// <summary>Keep-last snapshot configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,6 +161,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "currentSnapshotId", n => { CurrentSnapshotId = n.GetStringValue(); } },
                 { "cwd", n => { Cwd = n.GetStringValue(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
+                { "image", n => { Image = n.GetStringValue(); } },
                 { "keepLastSnapshots", n => { KeepLastSnapshots = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxKeepLastSnapshots>(global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxKeepLastSnapshots.CreateFromDiscriminatorValue); } },
                 { "memory", n => { Memory = n.GetDoubleValue(); } },
                 { "mounts", n => { Mounts = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxMountsProperty>(global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxMountsProperty.CreateFromDiscriminatorValue); } },
@@ -186,6 +195,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("currentSnapshotId", CurrentSnapshotId);
             writer.WriteStringValue("cwd", Cwd);
             writer.WriteDoubleValue("expiresAt", ExpiresAt);
+            writer.WriteStringValue("image", Image);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxKeepLastSnapshots>("keepLastSnapshots", KeepLastSnapshots);
             writer.WriteDoubleValue("memory", Memory);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxMountsProperty>("mounts", Mounts);

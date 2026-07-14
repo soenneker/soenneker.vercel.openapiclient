@@ -23,6 +23,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextManagedTeamsItem> ManagedTeams { get; set; }
 #endif
+        /// <summary>The organization property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization? Organization { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization Organization { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContext"/> and sets the default values.
         /// </summary>
@@ -49,6 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "managedTeams", n => { ManagedTeams = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextManagedTeamsItem>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextManagedTeamsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "organization", n => { Organization = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -59,6 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextManagedTeamsItem>("managedTeams", ManagedTeams);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization>("organization", Organization);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

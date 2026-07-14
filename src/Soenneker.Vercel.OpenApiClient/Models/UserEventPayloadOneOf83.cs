@@ -15,21 +15,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The reason property</summary>
+        /// <summary>The packs property</summary>
+        public double? Packs { get; set; }
+        /// <summary>The prevPacks property</summary>
+        public double? PrevPacks { get; set; }
+        /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf83Project? Project { get; set; }
 #nullable restore
 #else
-        public string Reason { get; set; }
-#endif
-        /// <summary>The suffix property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Suffix { get; set; }
-#nullable restore
-#else
-        public string Suffix { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf83Project Project { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf83"/> and sets the default values.
@@ -56,8 +52,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "reason", n => { Reason = n.GetStringValue(); } },
-                { "suffix", n => { Suffix = n.GetStringValue(); } },
+                { "packs", n => { Packs = n.GetDoubleValue(); } },
+                { "prevPacks", n => { PrevPacks = n.GetDoubleValue(); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf83Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf83Project.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("reason", Reason);
-            writer.WriteStringValue("suffix", Suffix);
+            writer.WriteDoubleValue("packs", Packs);
+            writer.WriteDoubleValue("prevPacks", PrevPacks);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf83Project>("project", Project);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

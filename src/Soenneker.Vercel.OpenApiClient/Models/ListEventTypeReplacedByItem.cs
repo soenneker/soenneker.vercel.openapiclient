@@ -427,6 +427,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         CustomAlertUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "custom-environments-settings-updated")]
+        #pragma warning disable CS1591
+        CustomEnvironmentsSettingsUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "custom-suffix-clear")]
         #pragma warning disable CS1591
         CustomSuffixClear,
@@ -1050,6 +1054,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "organization-team-add")]
         #pragma warning disable CS1591
         OrganizationTeamAdd,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "organization-team-create")]
+        #pragma warning disable CS1591
+        OrganizationTeamCreate,
         #pragma warning restore CS1591
         [EnumMember(Value = "owner-blocked")]
         #pragma warning disable CS1591

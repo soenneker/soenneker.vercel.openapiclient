@@ -12,6 +12,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Cookie,
         #pragma warning restore CS1591
+        [EnumMember(Value = "domain_environment")]
+        #pragma warning disable CS1591
+        DomainEnvironment,
+        #pragma warning restore CS1591
         [EnumMember(Value = "environment")]
         #pragma warning disable CS1591
         Environment,

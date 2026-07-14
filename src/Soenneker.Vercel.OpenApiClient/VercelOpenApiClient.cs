@@ -7,7 +7,9 @@ using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using Soenneker.Vercel.OpenApiClient.Aliases;
+using Soenneker.Vercel.OpenApiClient.ApiKeys;
 using Soenneker.Vercel.OpenApiClient.Projects;
+using Soenneker.Vercel.OpenApiClient.Storage;
 using Soenneker.Vercel.OpenApiClient.V10;
 using Soenneker.Vercel.OpenApiClient.V11;
 using Soenneker.Vercel.OpenApiClient.V12;
@@ -38,10 +40,20 @@ namespace Soenneker.Vercel.OpenApiClient
         {
             get => new global::Soenneker.Vercel.OpenApiClient.Aliases.AliasesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The apiKeys property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.ApiKeys.ApiKeysRequestBuilder ApiKeys
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.ApiKeys.ApiKeysRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The projects property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Projects.ProjectsRequestBuilder Projects
         {
             get => new global::Soenneker.Vercel.OpenApiClient.Projects.ProjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The storage property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Storage.StorageRequestBuilder Storage
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.Storage.StorageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The v1 property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.V1RequestBuilder V1

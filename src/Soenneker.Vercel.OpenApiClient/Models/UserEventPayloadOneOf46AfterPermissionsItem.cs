@@ -168,6 +168,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ReadColonIntegrationConfiguration,
         #pragma warning restore CS1591
+        [EnumMember(Value = "read:integration-resource")]
+        #pragma warning disable CS1591
+        ReadColonIntegrationResource,
+        #pragma warning restore CS1591
         [EnumMember(Value = "read:kms")]
         #pragma warning disable CS1591
         ReadColonKms,
