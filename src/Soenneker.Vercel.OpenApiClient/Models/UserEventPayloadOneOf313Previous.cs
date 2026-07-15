@@ -7,13 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Automatic code review settings
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class UserEventPayloadOneOf313Previous : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether automatic code reviews are enabled</summary>
+        public bool? Enabled { get; set; }
+        /// <summary>Whether to include draft pull requests in automatic reviews</summary>
+        public bool? IncludeDrafts { get; set; }
+        /// <summary>Which repository visibilities get automatic reviews</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf313PreviousScope? Scope { get; set; }
+        /// <summary>&quot;GitHub repos to scope automatic reviews to. Format: \&quot;owner/repo\&quot; (lowercase). Only used when scope=&apos;selected_repos&apos;.&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SelectedRepos { get; set; }
+#nullable restore
+#else
+        public List<string> SelectedRepos { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf313Previous"/> and sets the default values.
         /// </summary>
@@ -39,6 +54,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "includeDrafts", n => { IncludeDrafts = n.GetBoolValue(); } },
+                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf313PreviousScope>(); } },
+                { "selectedRepos", n => { SelectedRepos = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -48,6 +67,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteBoolValue("includeDrafts", IncludeDrafts);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf313PreviousScope>("scope", Scope);
+            writer.WriteCollectionOfPrimitiveValues<string>("selectedRepos", SelectedRepos);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

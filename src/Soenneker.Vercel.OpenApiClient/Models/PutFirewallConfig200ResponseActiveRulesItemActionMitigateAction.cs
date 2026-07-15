@@ -8,6 +8,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum PutFirewallConfig200ResponseActiveRulesItemActionMitigateAction
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "allow")]
+        #pragma warning disable CS1591
+        Allow,
+        #pragma warning restore CS1591
         [EnumMember(Value = "bypass")]
         #pragma warning disable CS1591
         Bypass,

@@ -15,13 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The previewDeploymentSuffix property</summary>
+        /// <summary>The customEnvironmentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviewDeploymentSuffix { get; set; }
+        public string? CustomEnvironmentId { get; set; }
 #nullable restore
 #else
-        public string PreviewDeploymentSuffix { get; set; }
+        public string CustomEnvironmentId { get; set; }
+#endif
+        /// <summary>The customEnvironmentSlug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomEnvironmentSlug { get; set; }
+#nullable restore
+#else
+        public string CustomEnvironmentSlug { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +72,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "previewDeploymentSuffix", n => { PreviewDeploymentSuffix = n.GetStringValue(); } },
+                { "customEnvironmentId", n => { CustomEnvironmentId = n.GetStringValue(); } },
+                { "customEnvironmentSlug", n => { CustomEnvironmentSlug = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
@@ -76,7 +85,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("previewDeploymentSuffix", PreviewDeploymentSuffix);
+            writer.WriteStringValue("customEnvironmentId", CustomEnvironmentId);
+            writer.WriteStringValue("customEnvironmentSlug", CustomEnvironmentSlug);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteAdditionalData(AdditionalData);

@@ -16,6 +16,7 @@ using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Rollback;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Routes;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks;
+using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Token;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Unpause;
 using System.Collections.Generic;
 using System.IO;
@@ -98,6 +99,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks.SharedConnectLinksRequestBuilder SharedConnectLinks
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.SharedConnectLinks.SharedConnectLinksRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The token property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Token.TokenRequestBuilder Token
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Token.TokenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The unpause property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Unpause.UnpauseRequestBuilder Unpause

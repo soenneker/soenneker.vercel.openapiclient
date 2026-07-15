@@ -8,7 +8,9 @@ using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using Soenneker.Vercel.OpenApiClient.Aliases;
 using Soenneker.Vercel.OpenApiClient.ApiKeys;
+using Soenneker.Vercel.OpenApiClient.Domains;
 using Soenneker.Vercel.OpenApiClient.Projects;
+using Soenneker.Vercel.OpenApiClient.SpeedInsights;
 using Soenneker.Vercel.OpenApiClient.Storage;
 using Soenneker.Vercel.OpenApiClient.V10;
 using Soenneker.Vercel.OpenApiClient.V11;
@@ -23,6 +25,7 @@ using Soenneker.Vercel.OpenApiClient.V6;
 using Soenneker.Vercel.OpenApiClient.V7;
 using Soenneker.Vercel.OpenApiClient.V8;
 using Soenneker.Vercel.OpenApiClient.V9;
+using Soenneker.Vercel.OpenApiClient.Web;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -45,10 +48,20 @@ namespace Soenneker.Vercel.OpenApiClient
         {
             get => new global::Soenneker.Vercel.OpenApiClient.ApiKeys.ApiKeysRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The domains property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Domains.DomainsRequestBuilder Domains
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.Domains.DomainsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The projects property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Projects.ProjectsRequestBuilder Projects
         {
             get => new global::Soenneker.Vercel.OpenApiClient.Projects.ProjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The speedInsights property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.SpeedInsights.SpeedInsightsRequestBuilder SpeedInsights
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.SpeedInsights.SpeedInsightsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The storage property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Storage.StorageRequestBuilder Storage
@@ -119,6 +132,11 @@ namespace Soenneker.Vercel.OpenApiClient
         public global::Soenneker.Vercel.OpenApiClient.V9.V9RequestBuilder V9
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V9.V9RequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The web property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Web.WebRequestBuilder Web
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.Web.WebRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.VercelOpenApiClient"/> and sets the default values.

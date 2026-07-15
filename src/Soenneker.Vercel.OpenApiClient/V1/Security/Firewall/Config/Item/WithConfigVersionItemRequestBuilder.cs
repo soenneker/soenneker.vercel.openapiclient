@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.Models;
+using Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.Item.Activate;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,12 +18,17 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithConfigVersionItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The activate property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.Item.Activate.ActivateRequestBuilder Activate
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.Item.Activate.ActivateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.Item.WithConfigVersionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithConfigVersionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/config/{configVersion}?projectId={projectId}{&slug*,teamId*}", pathParameters)
+        public WithConfigVersionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/config/{configVersion}{?slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,8 +36,25 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithConfigVersionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/config/{configVersion}?projectId={projectId}{&slug*,teamId*}", rawUrl)
+        public WithConfigVersionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/config/{configVersion}{?slug*,teamId*}", rawUrl)
         {
+        }
+        /// <summary>
+        /// Promotes a draft WAF config to an active config
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the specified firewall configuration for a project. The deployed configVersion will be `active`
@@ -52,6 +75,25 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Promotes a draft WAF config to an active config
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
         /// Retrieve the specified firewall configuration for a project. The deployed configVersion will be `active`
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -65,7 +107,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.Item.WithConfigVersionItemRequestBuilder.WithConfigVersionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/v1/security/firewall/config/{configVersion}?projectId={projectId}{&slug*,teamId*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

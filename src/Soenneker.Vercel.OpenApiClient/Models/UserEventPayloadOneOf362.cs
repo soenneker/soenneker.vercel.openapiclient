@@ -15,10 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The nextProjectCount property</summary>
-        public double? NextProjectCount { get; set; }
-        /// <summary>The previousProjectCount property</summary>
-        public double? PreviousProjectCount { get; set; }
+        /// <summary>The enabled property</summary>
+        public bool? Enabled { get; set; }
+        /// <summary>The totpVerified property</summary>
+        public bool? TotpVerified { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362"/> and sets the default values.
         /// </summary>
@@ -44,8 +44,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "nextProjectCount", n => { NextProjectCount = n.GetDoubleValue(); } },
-                { "previousProjectCount", n => { PreviousProjectCount = n.GetDoubleValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "totpVerified", n => { TotpVerified = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -55,8 +55,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("nextProjectCount", NextProjectCount);
-            writer.WriteDoubleValue("previousProjectCount", PreviousProjectCount);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteBoolValue("totpVerified", TotpVerified);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

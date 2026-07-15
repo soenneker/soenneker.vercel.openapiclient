@@ -124,5 +124,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         BotProtection,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ruleset")]
+        #pragma warning disable CS1591
+        Ruleset,
+        #pragma warning restore CS1591
     }
 }

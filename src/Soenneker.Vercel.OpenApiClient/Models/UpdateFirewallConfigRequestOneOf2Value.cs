@@ -12,6 +12,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class UpdateFirewallConfigRequestOneOf2Value : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The action property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf2ValueAction? Action { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf2ValueAction Action { get; set; }
+#endif
         /// <summary>The active property</summary>
         public bool? Active { get; set; }
         /// <summary>The conditionGroup property</summary>
@@ -66,6 +74,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf2ValueAction>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf2ValueAction.CreateFromDiscriminatorValue); } },
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "conditionGroup", n => { ConditionGroup = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf2ValueConditionGroupItem>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf2ValueConditionGroupItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -81,6 +90,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf2ValueAction>("action", Action);
             writer.WriteBoolValue("active", Active);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf2ValueConditionGroupItem>("conditionGroup", ConditionGroup);
             writer.WriteStringValue("description", Description);

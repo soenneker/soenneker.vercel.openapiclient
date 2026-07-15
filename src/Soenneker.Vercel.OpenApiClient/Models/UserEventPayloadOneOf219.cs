@@ -15,22 +15,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The next property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219Next? Next { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219Next Next { get; set; }
-#endif
-        /// <summary>The previous property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219Previous? Previous { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219Previous Previous { get; set; }
-#endif
+        /// <summary>The buildQueueConfiguration property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219BuildQueueConfiguration? BuildQueueConfiguration { get; set; }
+        /// <summary>The elasticConcurrencyEnabled property</summary>
+        public bool? ElasticConcurrencyEnabled { get; set; }
+        /// <summary>The oldBuildQueueConfiguration property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219OldBuildQueueConfiguration? OldBuildQueueConfiguration { get; set; }
+        /// <summary>The oldElasticConcurrencyEnabled property</summary>
+        public bool? OldElasticConcurrencyEnabled { get; set; }
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,8 +64,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219Next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219Next.CreateFromDiscriminatorValue); } },
-                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219Previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219Previous.CreateFromDiscriminatorValue); } },
+                { "buildQueueConfiguration", n => { BuildQueueConfiguration = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219BuildQueueConfiguration>(); } },
+                { "elasticConcurrencyEnabled", n => { ElasticConcurrencyEnabled = n.GetBoolValue(); } },
+                { "oldBuildQueueConfiguration", n => { OldBuildQueueConfiguration = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219OldBuildQueueConfiguration>(); } },
+                { "oldElasticConcurrencyEnabled", n => { OldElasticConcurrencyEnabled = n.GetBoolValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
@@ -85,8 +79,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219Next>("next", Next);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219Previous>("previous", Previous);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219BuildQueueConfiguration>("buildQueueConfiguration", BuildQueueConfiguration);
+            writer.WriteBoolValue("elasticConcurrencyEnabled", ElasticConcurrencyEnabled);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219OldBuildQueueConfiguration>("oldBuildQueueConfiguration", OldBuildQueueConfiguration);
+            writer.WriteBoolValue("oldElasticConcurrencyEnabled", OldElasticConcurrencyEnabled);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteAdditionalData(AdditionalData);

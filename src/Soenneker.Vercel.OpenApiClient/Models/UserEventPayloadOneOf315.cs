@@ -15,16 +15,40 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The domain property</summary>
+        /// <summary>The eventId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get; set; }
+        public string? EventId { get; set; }
 #nullable restore
 #else
-        public string Domain { get; set; }
+        public string EventId { get; set; }
 #endif
-        /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
+        /// <summary>The occurredAt property</summary>
+        public double? OccurredAt { get; set; }
+        /// <summary>The sessionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SessionId { get; set; }
+#nullable restore
+#else
+        public string SessionId { get; set; }
+#endif
+        /// <summary>&quot;Currently emitted session kinds: chat, investigation.&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SessionKind { get; set; }
+#nullable restore
+#else
+        public string SessionKind { get; set; }
+#endif
+        /// <summary>&quot;Currently emitted surfaces: dashboard, internal, slack, automation, github.&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Surface { get; set; }
+#nullable restore
+#else
+        public string Surface { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf315"/> and sets the default values.
         /// </summary>
@@ -50,8 +74,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "domain", n => { Domain = n.GetStringValue(); } },
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "eventId", n => { EventId = n.GetStringValue(); } },
+                { "occurredAt", n => { OccurredAt = n.GetDoubleValue(); } },
+                { "sessionId", n => { SessionId = n.GetStringValue(); } },
+                { "sessionKind", n => { SessionKind = n.GetStringValue(); } },
+                { "surface", n => { Surface = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,8 +88,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("domain", Domain);
-            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("eventId", EventId);
+            writer.WriteDoubleValue("occurredAt", OccurredAt);
+            writer.WriteStringValue("sessionId", SessionId);
+            writer.WriteStringValue("sessionKind", SessionKind);
+            writer.WriteStringValue("surface", Surface);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

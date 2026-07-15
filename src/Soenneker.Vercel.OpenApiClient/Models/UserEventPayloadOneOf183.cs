@@ -31,8 +31,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Justification { get; set; }
 #endif
-        /// <summary>The kind property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf183Kind? Kind { get; set; }
         /// <summary>The previousStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,14 +46,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string ProjectId { get; set; }
-#endif
-        /// <summary>The url property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Url { get; set; }
-#nullable restore
-#else
-        public string Url { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf183"/> and sets the default values.
@@ -84,10 +74,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "headerName", n => { HeaderName = n.GetStringValue(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf183Kind>(); } },
                 { "previousStatus", n => { PreviousStatus = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -99,10 +87,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("headerName", HeaderName);
             writer.WriteStringValue("justification", Justification);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf183Kind>("kind", Kind);
             writer.WriteStringValue("previousStatus", PreviousStatus);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

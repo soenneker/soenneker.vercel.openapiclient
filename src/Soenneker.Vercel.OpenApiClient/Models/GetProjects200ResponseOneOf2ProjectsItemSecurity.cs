@@ -76,6 +76,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> RequestLogsKey { get; set; }
 #endif
+        /// <summary>The rulesets property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityRulesets? Rulesets { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityRulesets Rulesets { get; set; }
+#endif
         /// <summary>The securityPlus property</summary>
         public bool? SecurityPlus { get; set; }
         /// <summary>The securityPlusMetadata property</summary>
@@ -127,6 +135,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "managedRules", n => { ManagedRules = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityManagedRules>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityManagedRules.CreateFromDiscriminatorValue); } },
                 { "pageIntegrityEnabled", n => { PageIntegrityEnabled = n.GetBoolValue(); } },
                 { "requestLogsKey", n => { RequestLogsKey = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "rulesets", n => { Rulesets = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityRulesets>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityRulesets.CreateFromDiscriminatorValue); } },
                 { "securityPlus", n => { SecurityPlus = n.GetBoolValue(); } },
                 { "securityPlusMetadata", n => { SecurityPlusMetadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecuritySecurityPlusMetadata>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecuritySecurityPlusMetadata.CreateFromDiscriminatorValue); } },
             };
@@ -154,6 +163,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityManagedRules>("managedRules", ManagedRules);
             writer.WriteBoolValue("pageIntegrityEnabled", PageIntegrityEnabled);
             writer.WriteCollectionOfPrimitiveValues<string>("requestLogsKey", RequestLogsKey);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityRulesets>("rulesets", Rulesets);
             writer.WriteBoolValue("securityPlus", SecurityPlus);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecuritySecurityPlusMetadata>("securityPlusMetadata", SecurityPlusMetadata);
             writer.WriteAdditionalData(AdditionalData);

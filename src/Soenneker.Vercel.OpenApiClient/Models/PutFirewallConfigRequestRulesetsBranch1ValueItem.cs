@@ -12,6 +12,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class PutFirewallConfigRequestRulesetsBranch1ValueItem : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The action property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsBranch1ValueItemAction? Action { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsBranch1ValueItemAction Action { get; set; }
+#endif
         /// <summary>The active property</summary>
         public bool? Active { get; set; }
         /// <summary>The conditionGroup property</summary>
@@ -74,6 +82,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsBranch1ValueItemAction>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsBranch1ValueItemAction.CreateFromDiscriminatorValue); } },
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "conditionGroup", n => { ConditionGroup = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsBranch1ValueItemConditionGroupItem>(global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsBranch1ValueItemConditionGroupItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -90,6 +99,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsBranch1ValueItemAction>("action", Action);
             writer.WriteBoolValue("active", Active);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfigRequestRulesetsBranch1ValueItemConditionGroupItem>("conditionGroup", ConditionGroup);
             writer.WriteStringValue("description", Description);

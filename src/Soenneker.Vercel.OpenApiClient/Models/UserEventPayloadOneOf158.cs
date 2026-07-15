@@ -15,21 +15,45 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The integrationName property</summary>
+        /// <summary>The algorithm property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationName { get; set; }
+        public string? Algorithm { get; set; }
 #nullable restore
 #else
-        public string IntegrationName { get; set; }
+        public string Algorithm { get; set; }
 #endif
-        /// <summary>The logDrainUrl property</summary>
+        /// <summary>The issuerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogDrainUrl { get; set; }
+        public string? IssuerId { get; set; }
 #nullable restore
 #else
-        public string LogDrainUrl { get; set; }
+        public string IssuerId { get; set; }
+#endif
+        /// <summary>The issuerName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IssuerName { get; set; }
+#nullable restore
+#else
+        public string IssuerName { get; set; }
+#endif
+        /// <summary>The managedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ManagedBy { get; set; }
+#nullable restore
+#else
+        public string ManagedBy { get; set; }
+#endif
+        /// <summary>The origin property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Origin { get; set; }
+#nullable restore
+#else
+        public string Origin { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158"/> and sets the default values.
@@ -56,8 +80,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "integrationName", n => { IntegrationName = n.GetStringValue(); } },
-                { "logDrainUrl", n => { LogDrainUrl = n.GetStringValue(); } },
+                { "algorithm", n => { Algorithm = n.GetStringValue(); } },
+                { "issuerId", n => { IssuerId = n.GetStringValue(); } },
+                { "issuerName", n => { IssuerName = n.GetStringValue(); } },
+                { "managedBy", n => { ManagedBy = n.GetStringValue(); } },
+                { "origin", n => { Origin = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +94,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("integrationName", IntegrationName);
-            writer.WriteStringValue("logDrainUrl", LogDrainUrl);
+            writer.WriteStringValue("algorithm", Algorithm);
+            writer.WriteStringValue("issuerId", IssuerId);
+            writer.WriteStringValue("issuerName", IssuerName);
+            writer.WriteStringValue("managedBy", ManagedBy);
+            writer.WriteStringValue("origin", Origin);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

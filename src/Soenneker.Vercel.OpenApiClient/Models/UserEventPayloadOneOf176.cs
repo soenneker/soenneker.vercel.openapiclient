@@ -15,37 +15,23 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The headerName property</summary>
+        /// <summary>The billingPlan property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176BillingPlan? BillingPlan { get; set; }
+        /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeaderName { get; set; }
+        public string? OrganizationId { get; set; }
 #nullable restore
 #else
-        public string HeaderName { get; set; }
+        public string OrganizationId { get; set; }
 #endif
-        /// <summary>The justification property</summary>
+        /// <summary>The teamId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Justification { get; set; }
+        public string? TeamId { get; set; }
 #nullable restore
 #else
-        public string Justification { get; set; }
-#endif
-        /// <summary>The previousStatus property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PreviousStatus { get; set; }
-#nullable restore
-#else
-        public string PreviousStatus { get; set; }
-#endif
-        /// <summary>The projectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
+        public string TeamId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176"/> and sets the default values.
@@ -72,10 +58,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "headerName", n => { HeaderName = n.GetStringValue(); } },
-                { "justification", n => { Justification = n.GetStringValue(); } },
-                { "previousStatus", n => { PreviousStatus = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176BillingPlan>(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
+                { "teamId", n => { TeamId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,10 +70,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("headerName", HeaderName);
-            writer.WriteStringValue("justification", Justification);
-            writer.WriteStringValue("previousStatus", PreviousStatus);
-            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176BillingPlan>("billingPlan", BillingPlan);
+            writer.WriteStringValue("organizationId", OrganizationId);
+            writer.WriteStringValue("teamId", TeamId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

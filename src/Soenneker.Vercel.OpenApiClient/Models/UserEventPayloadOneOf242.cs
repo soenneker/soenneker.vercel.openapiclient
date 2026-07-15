@@ -15,29 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The directoryType property</summary>
+        /// <summary>The consolidatedGitCommitStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DirectoryType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242ConsolidatedGitCommitStatus? ConsolidatedGitCommitStatus { get; set; }
 #nullable restore
 #else
-        public string DirectoryType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242ConsolidatedGitCommitStatus ConsolidatedGitCommitStatus { get; set; }
 #endif
-        /// <summary>The projects property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242ProjectsItem>? Projects { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242ProjectsItem> Projects { get; set; }
+        public string ProjectId { get; set; }
 #endif
-        /// <summary>The teamMembership property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242TeamMembership? TeamMembership { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242TeamMembership TeamMembership { get; set; }
+        public string ProjectName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242"/> and sets the default values.
@@ -64,9 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "directoryType", n => { DirectoryType = n.GetStringValue(); } },
-                { "projects", n => { Projects = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242ProjectsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242ProjectsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "teamMembership", n => { TeamMembership = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242TeamMembership>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242TeamMembership.CreateFromDiscriminatorValue); } },
+                { "consolidatedGitCommitStatus", n => { ConsolidatedGitCommitStatus = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242ConsolidatedGitCommitStatus>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242ConsolidatedGitCommitStatus.CreateFromDiscriminatorValue); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("directoryType", DirectoryType);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242ProjectsItem>("projects", Projects);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242TeamMembership>("teamMembership", TeamMembership);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf242ConsolidatedGitCommitStatus>("consolidatedGitCommitStatus", ConsolidatedGitCommitStatus);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

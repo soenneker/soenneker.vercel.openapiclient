@@ -15,32 +15,38 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>The originTeamId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Amount { get; set; }
+        public string? OriginTeamId { get; set; }
 #nullable restore
 #else
-        public string Amount { get; set; }
+        public string OriginTeamId { get; set; }
 #endif
-        /// <summary>The currency property</summary>
+        /// <summary>The originTeamName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? OriginTeamName { get; set; }
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string OriginTeamName { get; set; }
 #endif
-        /// <summary>The expiresAt property</summary>
+        /// <summary>The store property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpiresAt { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf308Store? Store { get; set; }
 #nullable restore
 #else
-        public string ExpiresAt { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf308Store Store { get; set; }
 #endif
-        /// <summary>The trialCreditsIssuedAt property</summary>
-        public double? TrialCreditsIssuedAt { get; set; }
+        /// <summary>The transferRequestCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TransferRequestCode { get; set; }
+#nullable restore
+#else
+        public string TransferRequestCode { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf308"/> and sets the default values.
         /// </summary>
@@ -66,10 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetStringValue(); } },
-                { "currency", n => { Currency = n.GetStringValue(); } },
-                { "expiresAt", n => { ExpiresAt = n.GetStringValue(); } },
-                { "trialCreditsIssuedAt", n => { TrialCreditsIssuedAt = n.GetDoubleValue(); } },
+                { "originTeamId", n => { OriginTeamId = n.GetStringValue(); } },
+                { "originTeamName", n => { OriginTeamName = n.GetStringValue(); } },
+                { "store", n => { Store = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf308Store>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf308Store.CreateFromDiscriminatorValue); } },
+                { "transferRequestCode", n => { TransferRequestCode = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -79,10 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("amount", Amount);
-            writer.WriteStringValue("currency", Currency);
-            writer.WriteStringValue("expiresAt", ExpiresAt);
-            writer.WriteDoubleValue("trialCreditsIssuedAt", TrialCreditsIssuedAt);
+            writer.WriteStringValue("originTeamId", OriginTeamId);
+            writer.WriteStringValue("originTeamName", OriginTeamName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf308Store>("store", Store);
+            writer.WriteStringValue("transferRequestCode", TransferRequestCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

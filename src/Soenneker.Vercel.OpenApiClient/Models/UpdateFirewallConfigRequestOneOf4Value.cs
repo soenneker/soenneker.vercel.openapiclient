@@ -14,40 +14,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>The action property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4ValueAction? Action { get; set; }
-        /// <summary>The actionDuration property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ActionDuration { get; set; }
-#nullable restore
-#else
-        public string ActionDuration { get; set; }
-#endif
-        /// <summary>The bypassSystem property</summary>
-        public bool? BypassSystem { get; set; }
-        /// <summary>The logHeaders property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4ValueLogHeaders? LogHeaders { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4ValueLogHeaders LogHeaders { get; set; }
-#endif
-        /// <summary>The rateLimit property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4ValueRateLimit? RateLimit { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4ValueRateLimit RateLimit { get; set; }
-#endif
-        /// <summary>The redirect property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4ValueRedirect? Redirect { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4ValueRedirect Redirect { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,11 +33,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4ValueAction>(); } },
-                { "actionDuration", n => { ActionDuration = n.GetStringValue(); } },
-                { "bypassSystem", n => { BypassSystem = n.GetBoolValue(); } },
-                { "logHeaders", n => { LogHeaders = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4ValueLogHeaders>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4ValueLogHeaders.CreateFromDiscriminatorValue); } },
-                { "rateLimit", n => { RateLimit = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4ValueRateLimit>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4ValueRateLimit.CreateFromDiscriminatorValue); } },
-                { "redirect", n => { Redirect = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4ValueRedirect>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4ValueRedirect.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -82,11 +43,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4ValueAction>("action", Action);
-            writer.WriteStringValue("actionDuration", ActionDuration);
-            writer.WriteBoolValue("bypassSystem", BypassSystem);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4ValueLogHeaders>("logHeaders", LogHeaders);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4ValueRateLimit>("rateLimit", RateLimit);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4ValueRedirect>("redirect", Redirect);
         }
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.Models;
+using Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.GenerateRule;
 using Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -18,6 +19,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConfigRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The generateRule property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.GenerateRule.GenerateRuleRequestBuilder GenerateRule
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.GenerateRule.GenerateRuleRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v1.security.firewall.config.item collection</summary>
         /// <param name="position">The deployed configVersion for the firewall configuration</param>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.Item.WithConfigVersionItemRequestBuilder"/></returns>
@@ -35,7 +41,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConfigRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/config?projectId={projectId}{&slug*,teamId*}", pathParameters)
+        public ConfigRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/config{?slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,8 +49,26 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConfigRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/config?projectId={projectId}{&slug*,teamId*}", rawUrl)
+        public ConfigRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/config{?slug*,teamId*}", rawUrl)
         {
+        }
+        /// <summary>
+        /// Lists WAF configs for a project
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200Response"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Process updates to modify the existing firewall config for a project
@@ -87,6 +111,25 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.PutFirewallConfig200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Lists WAF configs for a project
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
         /// Process updates to modify the existing firewall config for a project
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -102,7 +145,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/v1/security/firewall/config?projectId={projectId}{&slug*,teamId*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -124,7 +167,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/v1/security/firewall/config?projectId={projectId}{&slug*,teamId*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

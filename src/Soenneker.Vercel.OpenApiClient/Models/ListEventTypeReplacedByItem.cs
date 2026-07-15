@@ -319,6 +319,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         CertSystemCreate,
         #pragma warning restore CS1591
+        [EnumMember(Value = "compliance-document-downloaded")]
+        #pragma warning disable CS1591
+        ComplianceDocumentDownloaded,
+        #pragma warning restore CS1591
         [EnumMember(Value = "concurrent-builds-update")]
         #pragma warning disable CS1591
         ConcurrentBuildsUpdate,
@@ -923,6 +927,34 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         InvoiceRefunded,
         #pragma warning restore CS1591
+        [EnumMember(Value = "kms-issuer-created")]
+        #pragma warning disable CS1591
+        KmsIssuerCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "kms-issuer-deleted")]
+        #pragma warning disable CS1591
+        KmsIssuerDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "kms-issuer-key-rotated")]
+        #pragma warning disable CS1591
+        KmsIssuerKeyRotated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "kms-issuer-policy-created")]
+        #pragma warning disable CS1591
+        KmsIssuerPolicyCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "kms-issuer-policy-deleted")]
+        #pragma warning disable CS1591
+        KmsIssuerPolicyDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "kms-issuer-policy-updated")]
+        #pragma warning disable CS1591
+        KmsIssuerPolicyUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "kms-issuer-updated")]
+        #pragma warning disable CS1591
+        KmsIssuerUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "log-drain-created")]
         #pragma warning disable CS1591
         LogDrainCreated,
@@ -1058,6 +1090,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "organization-team-create")]
         #pragma warning disable CS1591
         OrganizationTeamCreate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "organization-team-delete")]
+        #pragma warning disable CS1591
+        OrganizationTeamDelete,
         #pragma warning restore CS1591
         [EnumMember(Value = "owner-blocked")]
         #pragma warning disable CS1591

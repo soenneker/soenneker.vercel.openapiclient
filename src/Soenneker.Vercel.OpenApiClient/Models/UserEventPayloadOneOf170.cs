@@ -15,23 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The billingPlan property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170BillingPlan? BillingPlan { get; set; }
-        /// <summary>The organizationId property</summary>
+        /// <summary>The group property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170Group? Group { get; set; }
 #nullable restore
 #else
-        public string OrganizationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170Group Group { get; set; }
 #endif
-        /// <summary>The teamId property</summary>
+        /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170Project? Project { get; set; }
 #nullable restore
 #else
-        public string TeamId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170Project Project { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170"/> and sets the default values.
@@ -58,9 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170BillingPlan>(); } },
-                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "teamId", n => { TeamId = n.GetStringValue(); } },
+                { "group", n => { Group = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170Group>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170Group.CreateFromDiscriminatorValue); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170Project.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -70,9 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170BillingPlan>("billingPlan", BillingPlan);
-            writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteStringValue("teamId", TeamId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170Group>("group", Group);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170Project>("project", Project);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
