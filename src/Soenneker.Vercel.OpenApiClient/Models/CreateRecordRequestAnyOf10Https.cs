@@ -21,7 +21,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Params { get; set; }
 #endif
         /// <summary>The priority property</summary>
-        public double? Priority { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10HttpsPriority? Priority { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10HttpsPriority Priority { get; set; }
+#endif
         /// <summary>The target property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "params", n => { Params = n.GetStringValue(); } },
-                { "priority", n => { Priority = n.GetDoubleValue(); } },
+                { "priority", n => { Priority = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10HttpsPriority>(global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10HttpsPriority.CreateFromDiscriminatorValue); } },
                 { "target", n => { Target = n.GetStringValue(); } },
             };
         }
@@ -61,7 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("params", Params);
-            writer.WriteDoubleValue("priority", Priority);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf10HttpsPriority>("priority", Priority);
             writer.WriteStringValue("target", Target);
         }
     }

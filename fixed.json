@@ -1003,7 +1003,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteAiGatewayRule204Response"
+                  "$ref": "#/components/schemas/DeleteAiGatewayRule204ResponseResponseJson"
                 }
               }
             }
@@ -10757,6 +10757,7 @@
             "name": "namespaceId",
             "in": "query",
             "schema": {
+              "type": "object",
               "oneOf": [
                 {
                   "type": "string"
@@ -10764,8 +10765,7 @@
                 {
                   "type": "number"
                 }
-              ],
-              "nullable": true
+              ]
             }
           },
           {
@@ -12973,6 +12973,82 @@
             "bearerToken": []
           }
         ]
+      }
+    },
+    "/v2/observability/query": {
+      "post": {
+        "description": "",
+        "operationId": "CreateObservabilityQuery",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateObservabilityQueryRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateObservabilityQuery200ResponseResponseJson"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/observability/schema": {
+      "get": {
+        "description": "",
+        "operationId": "GetObservabilitySchema",
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetObservabilitySchema200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/observability/schema/{metricId}": {
+      "get": {
+        "description": "",
+        "operationId": "GetObservabilitySchemaByMetricId",
+        "parameters": [
+          {
+            "name": "metricId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetObservabilitySchemaByMetricId200ResponseResponseJson"
+                }
+              }
+            }
+          }
+        },
+        "security": []
       }
     },
     "/v1/projects/{idOrName}/members": {
@@ -21296,7 +21372,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteRepository202Response"
+                  "$ref": "#/components/schemas/DeleteRepository202ResponseResponseJson"
                 }
               }
             }
@@ -21699,7 +21775,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteRepositoryImage202Response"
+                  "$ref": "#/components/schemas/DeleteRepositoryImage202ResponseResponseJson"
                 }
               }
             }
@@ -23700,6 +23776,7 @@
         "required": [
           "type"
         ],
+        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/FlagJsonValueBranch1"
@@ -23726,7 +23803,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -26254,6 +26330,7 @@
         "required": [
           "type"
         ],
+        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/EdgeConfigItemValueBranch1"
@@ -26280,7 +26357,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -28885,6 +28961,7 @@
         }
       },
       "AuthUserImportFlowGitNamespace": {
+        "type": "object",
         "oneOf": [
           {
             "type": "string"
@@ -28892,10 +28969,10 @@
           {
             "type": "number"
           }
-        ],
-        "nullable": true
+        ]
       },
       "AuthUserImportFlowGitNamespaceId": {
+        "type": "object",
         "oneOf": [
           {
             "type": "string"
@@ -28903,10 +28980,10 @@
           {
             "type": "number"
           }
-        ],
-        "nullable": true
+        ]
       },
       "AuthUserPreferredScopesAndGitNamespacesItemGitNamespaceId": {
+        "type": "object",
         "oneOf": [
           {
             "type": "string"
@@ -28914,8 +28991,7 @@
           {
             "type": "number"
           }
-        ],
-        "nullable": true
+        ]
       },
       "VcrImageLayerOneOf1": {
         "required": [
@@ -38762,6 +38838,7 @@
         }
       },
       "UserEventPayloadOneOf149NewOwnerImportFlowGitNamespace": {
+        "type": "object",
         "oneOf": [
           {
             "type": "string"
@@ -38769,10 +38846,10 @@
           {
             "type": "number"
           }
-        ],
-        "nullable": true
+        ]
       },
       "UserEventPayloadOneOf149NewOwnerImportFlowGitNamespaceId": {
+        "type": "object",
         "oneOf": [
           {
             "type": "string"
@@ -38780,10 +38857,10 @@
           {
             "type": "number"
           }
-        ],
-        "nullable": true
+        ]
       },
       "UserEventPayloadOneOf149NewOwnerPreferredScopesAndGitNamespacesItemGitNamespaceId": {
+        "type": "object",
         "oneOf": [
           {
             "type": "string"
@@ -38791,8 +38868,7 @@
           {
             "type": "number"
           }
-        ],
-        "nullable": true
+        ]
       },
       "UserEventPayloadOneOf149NewOwnerPreventAutoBlocking": {
         "type": "object",
@@ -39028,6 +39104,7 @@
         "required": [
           "type"
         ],
+        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/UserEventPayloadOneOf260PasswordProtectionOneOf1"
@@ -39042,7 +39119,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -39054,6 +39130,7 @@
         "required": [
           "type"
         ],
+        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/UserEventPayloadOneOf260OldPasswordProtectionOneOf1"
@@ -39068,7 +39145,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -39080,6 +39156,7 @@
         "required": [
           "type"
         ],
+        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/UserEventPayloadOneOf280SsoProtectionOneOf1"
@@ -39094,7 +39171,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -39106,6 +39182,7 @@
         "required": [
           "type"
         ],
+        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/UserEventPayloadOneOf280OldSsoProtectionOneOf1"
@@ -39120,7 +39197,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -39982,10 +40058,10 @@
             "type": "number"
           },
           "projectId": {
-            "nullable": true
+            "$ref": "#/components/schemas/UserEventPayloadOneOf92JobOneOf5ProjectId"
           },
           "customEnvId": {
-            "nullable": true
+            "$ref": "#/components/schemas/UserEventPayloadOneOf92JobOneOf5CustomEnvId"
           },
           "repo": {
             "type": "string"
@@ -51336,7 +51412,7 @@
         }
       },
       "DeleteAiGatewayRule204Response": {
-        "nullable": true
+        "type": "object"
       },
       "RecordEventsRequest": {
         "type": "array",
@@ -58248,6 +58324,86 @@
           }
         }
       },
+      "CreateObservabilityQueryRequest": {
+        "required": [
+          "metric",
+          "scope"
+        ],
+        "type": "object",
+        "properties": {
+          "metric": {
+            "type": "string",
+            "description": "Metric id"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/CreateObservabilityQueryRequestScope"
+          },
+          "aggregation": {
+            "type": "string",
+            "description": "\u0022Aggregation function to apply. Some aggregations require a dimension: use \u003Cagg\u003E/\u003Cdimension\u003E, for example unique/visitor_id.\u0022"
+          },
+          "groupBy": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Dimensions to group results by. JSON dimensions support nested refs, for example event_data/checkout_step. Nested keys containing characters that OData cannot parse as an identifier, such as \u0027-\u0027, spaces, quotes, or \u0027/\u0027, must be wrapped in single quotes (escape embedded single quotes by doubling them), for example flags/\u0027enable-comments-view\u0027 or event_data/\u0027some property\u0027\u0027s/value\u0027."
+          },
+          "filter": {
+            "type": "string",
+            "description": "Filter to apply to the query. JSON dimensions support nested refs, for example event_data/checkout_step eq \u0027payment\u0027. Nested keys containing characters that OData cannot parse as an identifier, such as \u0027-\u0027, spaces, quotes, or \u0027/\u0027, must be wrapped in single quotes (escape embedded single quotes by doubling them), for example flags/\u0027enable-comments-view\u0027 eq true or event_data/\u0027some property\u0027\u0027s/value\u0027 eq true."
+          },
+          "limit": {
+            "type": "number",
+            "description": "Maximum number of results"
+          },
+          "orderBy": {
+            "type": "string",
+            "description": "Rollup column to order grouped results by. Use the generated rollup key for the requested metric and aggregation. Defaults to the query engine count rollup."
+          },
+          "orderDirection": {
+            "$ref": "#/components/schemas/CreateObservabilityQueryRequestOrderDirection"
+          },
+          "granularity": {
+            "$ref": "#/components/schemas/CreateObservabilityQueryRequestGranularity"
+          },
+          "startTime": {
+            "type": "string",
+            "description": "Start timestamp"
+          },
+          "endTime": {
+            "type": "string",
+            "description": "End timestamp"
+          },
+          "bucketTimezone": {
+            "type": "string",
+            "description": "IANA timezone (e.g. Europe/Paris) used only to align calendar buckets (1d/1mo) to that zone\u0027s day/month boundaries. startTime/endTime and all output timestamps are always UTC. No effect on sub-day granularities."
+          }
+        }
+      },
+      "CreateObservabilityQuery200Response": {
+        "type": "object"
+      },
+      "GetObservabilitySchema200Response": {
+        "required": [
+          "metrics"
+        ],
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetObservabilitySchema200ResponseMetricsItem"
+            }
+          }
+        }
+      },
+      "GetObservabilitySchemaByMetricId200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GetObservabilitySchemaByMetricId200ResponseItem"
+        }
+      },
       "GetProjectMembers200Response": {
         "required": [
           "type"
@@ -58555,6 +58711,7 @@
         "required": [
           "type"
         ],
+        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/GetProjects200ResponseBranch1"
@@ -58572,7 +58729,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -61489,7 +61645,7 @@
         "type": "object",
         "properties": {
           "rollingRelease": {
-            "nullable": true
+            "$ref": "#/components/schemas/DeleteRollingReleaseConfig200ResponseRollingRelease"
           }
         }
       },
@@ -64023,7 +64179,7 @@
         "additionalProperties": false
       },
       "DeleteRepository202Response": {
-        "nullable": true
+        "type": "object"
       },
       "ListRepositoryTags200Response": {
         "required": [
@@ -64043,7 +64199,7 @@
         }
       },
       "DeleteRepositoryImage202Response": {
-        "nullable": true
+        "type": "object"
       },
       "CreateWebInsightsToggleRequest": {
         "required": [
@@ -70640,6 +70796,9 @@
         "type": "object",
         "description": "Default response schema"
       },
+      "DeleteAiGatewayRule204ResponseResponseJson": {
+        "type": "object"
+      },
       "RecordEventsRequestRequestBody": {
         "type": "array",
         "items": {
@@ -70959,6 +71118,15 @@
       "GetMicrofrontendsGroups200ResponseResponseJson": {
         "type": "object"
       },
+      "CreateObservabilityQuery200ResponseResponseJson": {
+        "type": "object"
+      },
+      "GetObservabilitySchemaByMetricId200ResponseResponseJson": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GetObservabilitySchemaByMetricId200ResponseResponseJsonItem"
+        }
+      },
       "DefaultResponseResponseJson32": {
         "title": "DefaultResponse",
         "type": "object",
@@ -71238,6 +71406,9 @@
           }
         }
       },
+      "DeleteRepository202ResponseResponseJson": {
+        "type": "object"
+      },
       "GetRepositoryTag200Response": {
         "required": [
           "tag"
@@ -71259,6 +71430,9 @@
             "$ref": "#/components/schemas/VcrImageDetail"
           }
         }
+      },
+      "DeleteRepositoryImage202ResponseResponseJson": {
+        "type": "object"
       },
       "DefaultResponseResponseJson38": {
         "title": "DefaultResponse",
@@ -71489,7 +71663,7 @@
         "type": "object",
         "properties": {
           "alias": {
-            "nullable": true
+            "$ref": "#/components/schemas/DeleteRedirects200ResponseOneOf2Alias"
           },
           "version": {
             "$ref": "#/components/schemas/DeleteRedirects200ResponseOneOf2Version"
@@ -72020,6 +72194,7 @@
         ]
       },
       "GetDeploymentEvents200ResponseItem": {
+        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/GetDeploymentEvents200ResponseItemOneOf1"
@@ -72030,8 +72205,7 @@
           {
             "$ref": "#/components/schemas/GetDeploymentEvents200ResponseItemOneOf3"
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetDeploymentEvents200ResponseResponseStreamJsonOneOf1": {
         "required": [
@@ -72840,6 +73014,7 @@
         "example": 987654321
       },
       "CreateDeployment200ResponseAliasAssignedAt": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -72848,8 +73023,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "CreateDeployment200ResponseGitSourceRepoId": {
         "type": "object",
@@ -73189,6 +73363,7 @@
         ]
       },
       "CancelDeployment200ResponseAliasAssignedAt": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -73197,8 +73372,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "CancelDeployment200ResponseGitSourceRepoId": {
         "type": "object",
@@ -76058,6 +76232,7 @@
         }
       },
       "GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemDeploymentAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -76066,8 +76241,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetMicrofrontendsInGroup200ResponseProjectsItemConnectConfigurationsItemEnvId": {
         "type": "object",
@@ -76095,6 +76269,7 @@
         ]
       },
       "GetMicrofrontendsInGroup200ResponseProjectsItemLatestDeploymentsItemAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -76103,10 +76278,10 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetMicrofrontendsInGroup200ResponseProjectsItemTargetsAdditionalPropertiesAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -76115,8 +76290,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetMicrofrontendsInGroup200ResponseProjectsItemSecurityRulesetsAdditionalPropertiesLogHeaders": {
         "type": "object",
@@ -76147,6 +76321,7 @@
         ]
       },
       "GetMicrofrontendsInGroup200ResponseProjectsItemDismissedToastsItemValue": {
+        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemDismissedToastsItemValueBranch1"
@@ -76160,8 +76335,7 @@
           {
             "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemDismissedToastsItemValueBranch4"
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetMicrofrontendsConfig200ResponseConfigApplicationsAdditionalPropertiesDevelopmentLocal": {
         "type": "object",
@@ -76496,6 +76670,7 @@
         "description": "Specifies whether Zero Config Failover is enabled for this project."
       },
       "CreateProject200ResponseAliasItemDeploymentAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -76504,8 +76679,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "CreateProject200ResponseConnectConfigurationsItemEnvId": {
         "type": "object",
@@ -76533,6 +76707,7 @@
         ]
       },
       "CreateProject200ResponseLatestDeploymentsItemAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -76541,10 +76716,10 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "CreateProject200ResponseTargetsAdditionalPropertiesAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -76553,8 +76728,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "CreateProject200ResponseSecurityRulesetsAdditionalPropertiesLogHeaders": {
         "type": "object",
@@ -76585,6 +76759,7 @@
         ]
       },
       "CreateProject200ResponseDismissedToastsItemValue": {
+        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CreateProject200ResponseDismissedToastsItemValueBranch1"
@@ -76598,10 +76773,10 @@
           {
             "$ref": "#/components/schemas/CreateProject200ResponseDismissedToastsItemValueBranch4"
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetProject200ResponseAliasItemDeploymentAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -76610,8 +76785,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetProject200ResponseConnectConfigurationsItemEnvId": {
         "type": "object",
@@ -76639,6 +76813,7 @@
         ]
       },
       "GetProject200ResponseLatestDeploymentsItemAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -76647,10 +76822,10 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetProject200ResponseTargetsAdditionalPropertiesAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -76659,8 +76834,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetProject200ResponseSecurityRulesetsAdditionalPropertiesLogHeaders": {
         "type": "object",
@@ -76691,6 +76865,7 @@
         ]
       },
       "GetProject200ResponseDismissedToastsItemValue": {
+        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/GetProject200ResponseDismissedToastsItemValueBranch1"
@@ -76704,8 +76879,7 @@
           {
             "$ref": "#/components/schemas/GetProject200ResponseDismissedToastsItemValueBranch4"
           }
-        ],
-        "nullable": true
+        ]
       },
       "UpdateProjectRequestResourceConfigFunctionZeroConfigFailover": {
         "type": "object",
@@ -76895,6 +77069,7 @@
         ]
       },
       "UpdateProject200ResponseAliasItemDeploymentAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -76903,8 +77078,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "UpdateProject200ResponseConnectConfigurationsItemEnvId": {
         "type": "object",
@@ -76932,6 +77106,7 @@
         ]
       },
       "UpdateProject200ResponseLatestDeploymentsItemAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -76940,10 +77115,10 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "UpdateProject200ResponseTargetsAdditionalPropertiesAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -76952,8 +77127,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "UpdateProject200ResponseSecurityRulesetsAdditionalPropertiesLogHeaders": {
         "type": "object",
@@ -76984,6 +77158,7 @@
         ]
       },
       "UpdateProject200ResponseDismissedToastsItemValue": {
+        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/UpdateProject200ResponseDismissedToastsItemValueBranch1"
@@ -76997,10 +77172,10 @@
           {
             "$ref": "#/components/schemas/UpdateProject200ResponseDismissedToastsItemValueBranch4"
           }
-        ],
-        "nullable": true
+        ]
       },
       "UploadProjectAvatar200ResponseAliasItemDeploymentAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -77009,8 +77184,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "UploadProjectAvatar200ResponseConnectConfigurationsItemEnvId": {
         "type": "object",
@@ -77038,6 +77212,7 @@
         ]
       },
       "UploadProjectAvatar200ResponseLatestDeploymentsItemAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -77046,10 +77221,10 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "UploadProjectAvatar200ResponseTargetsAdditionalPropertiesAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -77058,8 +77233,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "UploadProjectAvatar200ResponseSecurityRulesetsAdditionalPropertiesLogHeaders": {
         "type": "object",
@@ -77090,6 +77264,7 @@
         ]
       },
       "UploadProjectAvatar200ResponseDismissedToastsItemValue": {
+        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/UploadProjectAvatar200ResponseDismissedToastsItemValueBranch1"
@@ -77103,8 +77278,7 @@
           {
             "$ref": "#/components/schemas/UploadProjectAvatar200ResponseDismissedToastsItemValueBranch4"
           }
-        ],
-        "nullable": true
+        ]
       },
       "UpdateStaticIps200ResponseItemEnvId": {
         "type": "object",
@@ -77825,7 +77999,7 @@
         "type": "object",
         "properties": {
           "rollingRelease": {
-            "nullable": true
+            "$ref": "#/components/schemas/UpdateRollingReleaseConfig200ResponseOneOf1RollingRelease"
           }
         }
       },
@@ -77869,6 +78043,7 @@
         }
       },
       "UpdateMicrofrontends200ResponseAliasItemDeploymentAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -77877,8 +78052,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "UpdateMicrofrontends200ResponseConnectConfigurationsItemEnvId": {
         "type": "object",
@@ -77906,6 +78080,7 @@
         ]
       },
       "UpdateMicrofrontends200ResponseLatestDeploymentsItemAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -77914,10 +78089,10 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "UpdateMicrofrontends200ResponseTargetsAdditionalPropertiesAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -77926,8 +78101,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "UpdateMicrofrontends200ResponseSecurityRulesetsAdditionalPropertiesLogHeaders": {
         "type": "object",
@@ -77958,6 +78132,7 @@
         ]
       },
       "UpdateMicrofrontends200ResponseDismissedToastsItemValue": {
+        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseDismissedToastsItemValueBranch1"
@@ -77971,8 +78146,7 @@
           {
             "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseDismissedToastsItemValueBranch4"
           }
-        ],
-        "nullable": true
+        ]
       },
       "ListPromoteAliases200ResponseOneOf2": {
         "required": [
@@ -79037,6 +79211,7 @@
         ]
       },
       "PutFirewallConfigRequestRulesItemActionMitigateRateLimit": {
+        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/PutFirewallConfigRequestRulesItemActionMitigateRateLimitAnyOf1"
@@ -79044,10 +79219,10 @@
           {
             "type": "object"
           }
-        ],
-        "nullable": true
+        ]
       },
       "PutFirewallConfigRequestRulesItemActionMitigateRedirect": {
+        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/PutFirewallConfigRequestRulesItemActionMitigateRedirectAnyOf1"
@@ -79055,8 +79230,7 @@
           {
             "type": "object"
           }
-        ],
-        "nullable": true
+        ]
       },
       "PutFirewallConfigRequestRulesItemActionMitigateLogHeaders": {
         "type": "object",
@@ -79260,7 +79434,7 @@
             "$ref": "#/components/schemas/UpdateFirewallConfigRequestOneOf1Action"
           },
           "id": {
-            "nullable": true
+            "$ref": "#/components/schemas/UpdateFirewallConfigRequestOneOf1Id"
           },
           "value": {
             "$ref": "#/components/schemas/UpdateFirewallConfigRequestOneOf1Value"
@@ -79281,7 +79455,7 @@
             "$ref": "#/components/schemas/UpdateFirewallConfigRequestOneOf2Action"
           },
           "id": {
-            "nullable": true
+            "$ref": "#/components/schemas/UpdateFirewallConfigRequestOneOf2Id"
           },
           "value": {
             "$ref": "#/components/schemas/UpdateFirewallConfigRequestOneOf2Value"
@@ -79384,7 +79558,7 @@
             "$ref": "#/components/schemas/UpdateFirewallConfigRequestOneOf7Action"
           },
           "id": {
-            "nullable": true
+            "$ref": "#/components/schemas/UpdateFirewallConfigRequestOneOf7Id"
           },
           "value": {
             "$ref": "#/components/schemas/UpdateFirewallConfigRequestOneOf7Value"
@@ -79405,7 +79579,7 @@
             "$ref": "#/components/schemas/UpdateFirewallConfigRequestOneOf8Action"
           },
           "id": {
-            "nullable": true
+            "$ref": "#/components/schemas/UpdateFirewallConfigRequestOneOf8Id"
           },
           "value": {
             "$ref": "#/components/schemas/UpdateFirewallConfigRequestOneOf8Value"
@@ -79449,7 +79623,7 @@
             "type": "string"
           },
           "value": {
-            "nullable": true
+            "$ref": "#/components/schemas/UpdateFirewallConfigRequestOneOf10Value"
           }
         },
         "additionalProperties": false,
@@ -79921,7 +80095,7 @@
             }
           },
           "pagination": {
-            "nullable": true
+            "$ref": "#/components/schemas/AddBypassIp200ResponseOneOf1Pagination"
           }
         }
       },
@@ -80461,6 +80635,7 @@
         "additionalProperties": false
       },
       "GetProjects200ResponseBranch1ValueItemAliasItemDeploymentAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -80469,8 +80644,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetProjects200ResponseBranch1ValueItemEnvItemTarget": {
         "type": "object",
@@ -80487,6 +80661,7 @@
         ]
       },
       "GetProjects200ResponseBranch1ValueItemLatestDeploymentsItemAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -80495,10 +80670,10 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetProjects200ResponseBranch1ValueItemTargetsAdditionalPropertiesAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -80507,8 +80682,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemSrc": {
         "type": "object",
@@ -80942,6 +81116,7 @@
         ]
       },
       "GetDeployments200ResponseDeploymentsItemAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -80949,8 +81124,7 @@
           {
             "$ref": "#/components/schemas/GetDeployments200ResponseDeploymentsItemAliasAssignedOneOf2"
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetDeployments200ResponseDeploymentsItemSeatBlockGitUserId": {
         "type": "object",
@@ -80994,8 +81168,7 @@
             "type": "string"
           },
           "tokenEndpointAuthMethod": {
-            "type": "string",
-            "default": "client_secret_post"
+            "type": "string"
           },
           "responseType": {
             "type": "string"
@@ -81204,7 +81377,6 @@
       "CreateConnectorRequestDataTypeSnowflake": {
         "title": "type:snowflake",
         "required": [
-          "clientName",
           "accountIdentifier"
         ],
         "type": "object",
@@ -81226,9 +81398,6 @@
       },
       "CreateConnectorRequestDataTypeSnowflakeWif": {
         "title": "type:snowflake-wif",
-        "required": [
-          "clientName"
-        ],
         "type": "object",
         "properties": {
           "clientName": {
@@ -81373,6 +81542,7 @@
         "additionalProperties": false
       },
       "GetDeployment200ResponseOneOf1AliasAssignedAt": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -81381,8 +81551,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetDeployment200ResponseOneOf1GitSourceRepoId": {
         "type": "object",
@@ -82932,6 +83101,7 @@
         "description": "Flags defined in the Build Output API, used by this deployment. Primarily used by the Toolbar to know about the used flags."
       },
       "CreateRecordRequestAnyOf7SrvPriority": {
+        "type": "object",
         "anyOf": [
           {
             "maximum": 65535,
@@ -82939,10 +83109,10 @@
             "type": "number",
             "example": 10
           }
-        ],
-        "nullable": true
+        ]
       },
       "CreateRecordRequestAnyOf7SrvWeight": {
+        "type": "object",
         "anyOf": [
           {
             "maximum": 65535,
@@ -82950,10 +83120,10 @@
             "type": "number",
             "example": 10
           }
-        ],
-        "nullable": true
+        ]
       },
       "CreateRecordRequestAnyOf7SrvPort": {
+        "type": "object",
         "anyOf": [
           {
             "maximum": 65535,
@@ -82961,10 +83131,10 @@
             "type": "number",
             "example": 5000
           }
-        ],
-        "nullable": true
+        ]
       },
       "CreateRecordRequestAnyOf10HttpsPriority": {
+        "type": "object",
         "anyOf": [
           {
             "maximum": 65535,
@@ -82972,8 +83142,7 @@
             "type": "number",
             "example": 10
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetOrder200ResponseDomainsItemErrorAnyOf1": {
         "required": [
@@ -83217,7 +83386,7 @@
             "type": "string"
           },
           "value": {
-            "nullable": true
+            "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemOneOf1Value"
           },
           "description": {
             "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemOneOf1Description"
@@ -83536,6 +83705,7 @@
         ]
       },
       "SearchRepo200ResponseOneOf2GitAccountNamespaceId": {
+        "type": "object",
         "oneOf": [
           {
             "type": "string"
@@ -83543,8 +83713,7 @@
           {
             "type": "number"
           }
-        ],
-        "nullable": true
+        ]
       },
       "SearchRepo200ResponseOneOf2ReposItemId": {
         "type": "object",
@@ -84203,6 +84372,7 @@
         }
       },
       "GetProjects200ResponseOneOf2ProjectsItemAliasItemDeploymentAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -84211,8 +84381,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetProjects200ResponseOneOf2ProjectsItemEnvItemTarget": {
         "type": "object",
@@ -84229,6 +84398,7 @@
         ]
       },
       "GetProjects200ResponseOneOf2ProjectsItemLatestDeploymentsItemAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -84237,10 +84407,10 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetProjects200ResponseOneOf2ProjectsItemTargetsAdditionalPropertiesAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -84249,8 +84419,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemSrc": {
         "type": "object",
@@ -84339,6 +84508,7 @@
         ]
       },
       "GetProjects200ResponseOneOf3ProjectsItemAliasItemDeploymentAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -84347,8 +84517,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetProjects200ResponseOneOf3ProjectsItemConnectConfigurationsItemEnvId": {
         "type": "object",
@@ -84376,6 +84545,7 @@
         ]
       },
       "GetProjects200ResponseOneOf3ProjectsItemLatestDeploymentsItemAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -84384,10 +84554,10 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetProjects200ResponseOneOf3ProjectsItemTargetsAdditionalPropertiesAliasAssigned": {
+        "type": "object",
         "oneOf": [
           {
             "type": "number"
@@ -84396,8 +84566,7 @@
             "type": "boolean",
             "additionalProperties": false
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetProjects200ResponseOneOf3ProjectsItemSecurityRulesetsAdditionalPropertiesLogHeaders": {
         "type": "object",
@@ -84428,6 +84597,7 @@
         ]
       },
       "GetProjects200ResponseOneOf3ProjectsItemDismissedToastsItemValue": {
+        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemDismissedToastsItemValueBranch1"
@@ -84441,8 +84611,7 @@
           {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemDismissedToastsItemValueBranch4"
           }
-        ],
-        "nullable": true
+        ]
       },
       "GetProjects200ResponseOneOf3Pagination": {
         "type": "object",
@@ -86728,6 +86897,7 @@
         }
       },
       "PatchEdgeConfigItemsRequestItemsItemOneOf1Description": {
+        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/PatchEdgeConfigItemsRequestItemsItemOneOf1DescriptionBranch1"
@@ -86735,8 +86905,7 @@
           {
             "type": "object"
           }
-        ],
-        "nullable": true
+        ]
       },
       "PatchEdgeConfigItemsRequestItemsItemOneOf1AnyOf1": {
         "required": [
@@ -87813,6 +87982,7 @@
         "description": "Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration."
       },
       "PutFirewallConfigRequestRulesItemActionMitigateRateLimitAnyOf1Action": {
+        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/PutFirewallConfigRequestRulesItemActionMitigateRateLimitAnyOf1ActionBranch1"
@@ -87820,8 +87990,7 @@
           {
             "type": "object"
           }
-        ],
-        "nullable": true
+        ]
       },
       "UpdateFirewallConfigRequestOneOf7ValueActionMitigateRateLimitAnyOf1": {
         "required": [
@@ -88404,6 +88573,12 @@
         "additionalProperties": {
           "type": "number"
         }
+      },
+      "UserEventPayloadOneOf92JobOneOf5ProjectId": {
+        "type": "object"
+      },
+      "UserEventPayloadOneOf92JobOneOf5CustomEnvId": {
+        "type": "object"
       },
       "UserEventPayloadOneOf171ProjectMicrofrontendsOneOf3GroupIdsItem": {
         "type": "object"
@@ -95782,6 +95957,66 @@
           },
           "disabledAt": {
             "type": "number"
+          }
+        }
+      },
+      "CreateObservabilityQueryRequestScope": {
+        "type": "object",
+        "description": "Owner or project scope for the query"
+      },
+      "CreateObservabilityQueryRequestGranularity": {
+        "type": "object",
+        "description": "Time bucket size"
+      },
+      "GetObservabilitySchema200ResponseMetricsItem": {
+        "required": [
+          "description",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "GetObservabilitySchemaByMetricId200ResponseItem": {
+        "required": [
+          "aggregations",
+          "defaultAggregation",
+          "description",
+          "dimensions",
+          "id",
+          "unit"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "dimensions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetObservabilitySchemaByMetricId200ResponseItemDimensionsItem"
+            }
+          },
+          "unit": {
+            "type": "string"
+          },
+          "aggregations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "defaultAggregation": {
+            "type": "string"
           }
         }
       },
@@ -109293,6 +109528,9 @@
         "description": "Project-level rolling release configuration that defines how deployments should be gradually rolled out",
         "nullable": true
       },
+      "DeleteRollingReleaseConfig200ResponseRollingRelease": {
+        "type": "object"
+      },
       "GetRollingRelease200ResponseRollingRelease": {
         "required": [
           "activeStage",
@@ -113432,7 +113670,7 @@
             "default": true
           },
           "validationErrors": {
-            "nullable": true
+            "$ref": "#/components/schemas/GetFirewallConfig200ResponseRulesItemValidationErrors"
           }
         }
       },
@@ -113576,7 +113814,7 @@
             "default": true
           },
           "validationErrors": {
-            "nullable": true
+            "$ref": "#/components/schemas/CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemValidationErrors"
           }
         }
       },
@@ -114365,7 +114603,7 @@
         "type": "object",
         "properties": {
           "ssoUserId": {
-            "nullable": true
+            "$ref": "#/components/schemas/UpdateTeamMemberRequestJoinedFromSsoUserId"
           }
         },
         "additionalProperties": false
@@ -117645,6 +117883,43 @@
           }
         }
       },
+      "GetObservabilitySchemaByMetricId200ResponseResponseJsonItem": {
+        "required": [
+          "aggregations",
+          "defaultAggregation",
+          "description",
+          "dimensions",
+          "id",
+          "unit"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "dimensions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetObservabilitySchemaByMetricId200ResponseItemDimensionsItem"
+            }
+          },
+          "unit": {
+            "type": "string"
+          },
+          "aggregations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "defaultAggregation": {
+            "type": "string"
+          }
+        }
+      },
       "UpdateStaticIps200ResponseResponseJsonItem": {
         "required": [
           "buildsEnabled",
@@ -117815,16 +118090,24 @@
       "GetDeployments200ResponseDeploymentsItem": {
         "required": [
           "created",
+          "createdAt",
           "creator",
           "inspectorUrl",
           "name",
           "projectId",
+          "readyState",
           "type",
           "uid",
           "url"
         ],
         "type": "object",
         "properties": {
+          "createdAt": {
+            "type": "number"
+          },
+          "readyState": {
+            "$ref": "#/components/schemas/GetDeployments200ResponseDeploymentsItemReadyState"
+          },
           "uid": {
             "type": "string",
             "description": "The unique identifier of the deployment.",
@@ -117873,9 +118156,6 @@
           "state": {
             "$ref": "#/components/schemas/GetDeployments200ResponseDeploymentsItemState"
           },
-          "readyState": {
-            "$ref": "#/components/schemas/GetDeployments200ResponseDeploymentsItemReadyState"
-          },
           "type": {
             "$ref": "#/components/schemas/GetDeployments200ResponseDeploymentsItemType"
           },
@@ -117893,11 +118173,6 @@
           },
           "aliasAssigned": {
             "$ref": "#/components/schemas/GetDeployments200ResponseDeploymentsItemAliasAssigned"
-          },
-          "createdAt": {
-            "type": "number",
-            "description": "Timestamp of when the deployment got created.",
-            "example": 1609492210000
           },
           "buildingAt": {
             "type": "number",
@@ -118469,6 +118744,9 @@
             "description": "The staging link for previewing redirects in this version."
           }
         }
+      },
+      "DeleteRedirects200ResponseOneOf2Alias": {
+        "type": "object"
       },
       "DeleteRedirects200ResponseOneOf2Version": {
         "required": [
@@ -123370,6 +123648,9 @@
         "description": "Similar to \u0060contentHints\u0060, but should not be exposed to the user.",
         "nullable": true
       },
+      "UpdateRollingReleaseConfig200ResponseOneOf1RollingRelease": {
+        "type": "object"
+      },
       "UpdateRollingReleaseConfig200ResponseOneOf2RollingRelease": {
         "type": "object",
         "properties": {
@@ -123542,6 +123823,9 @@
         },
         "additionalProperties": false
       },
+      "UpdateFirewallConfigRequestOneOf1Id": {
+        "type": "object"
+      },
       "UpdateFirewallConfigRequestOneOf1Value": {
         "required": [
           "name",
@@ -123579,6 +123863,9 @@
           }
         },
         "additionalProperties": false
+      },
+      "UpdateFirewallConfigRequestOneOf2Id": {
+        "type": "object"
       },
       "UpdateFirewallConfigRequestOneOf2Value": {
         "required": [
@@ -123630,6 +123917,9 @@
         },
         "additionalProperties": false
       },
+      "UpdateFirewallConfigRequestOneOf7Id": {
+        "type": "object"
+      },
       "UpdateFirewallConfigRequestOneOf7Value": {
         "required": [
           "name",
@@ -123669,6 +123959,9 @@
         },
         "additionalProperties": false
       },
+      "UpdateFirewallConfigRequestOneOf8Id": {
+        "type": "object"
+      },
       "UpdateFirewallConfigRequestOneOf8Value": {
         "required": [
           "name",
@@ -123707,6 +124000,9 @@
           }
         },
         "additionalProperties": false
+      },
+      "UpdateFirewallConfigRequestOneOf10Value": {
+        "type": "object"
       },
       "UpdateFirewallConfigRequestOneOf11Value": {
         "required": [
@@ -123860,6 +124156,9 @@
             "additionalProperties": false
           }
         }
+      },
+      "AddBypassIp200ResponseOneOf1Pagination": {
+        "type": "object"
       },
       "AddBypassIp200ResponseOneOf2ResultItem": {
         "required": [
@@ -124968,6 +125267,9 @@
             "type": "string"
           }
         }
+      },
+      "PatchEdgeConfigItemsRequestItemsItemOneOf1Value": {
+        "type": "object"
       },
       "CreateFlagRequestEnvironmentsAdditionalPropertiesRulesItemConditionsItemRhsAnyOf1ItemsItem": {
         "required": [
@@ -134606,6 +134908,24 @@
         },
         "description": "Optional configuration options for the microfrontend."
       },
+      "GetObservabilitySchemaByMetricId200ResponseItemDimensionsItem": {
+        "required": [
+          "label",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
       "StageRoutesRequestRoutesItemRoute": {
         "required": [
           "src"
@@ -142850,7 +143170,7 @@
             "default": true
           },
           "validationErrors": {
-            "nullable": true
+            "$ref": "#/components/schemas/GetSecurityFirewallConfig200ResponseActiveRulesItemValidationErrors"
           }
         }
       },
@@ -142994,7 +143314,7 @@
             "default": true
           },
           "validationErrors": {
-            "nullable": true
+            "$ref": "#/components/schemas/GetSecurityFirewallConfig200ResponseDraftRulesItemValidationErrors"
           }
         }
       },
@@ -143138,7 +143458,7 @@
             "default": true
           },
           "validationErrors": {
-            "nullable": true
+            "$ref": "#/components/schemas/GetSecurityFirewallConfig200ResponseVersionsItemRulesItemValidationErrors"
           }
         }
       },
@@ -143495,7 +143815,7 @@
             "default": true
           },
           "validationErrors": {
-            "nullable": true
+            "$ref": "#/components/schemas/PutFirewallConfig200ResponseActiveRulesItemValidationErrors"
           }
         }
       },
@@ -143756,6 +144076,9 @@
             "$ref": "#/components/schemas/GetFirewallConfig200ResponseRulesItemActionMitigate"
           }
         }
+      },
+      "GetFirewallConfig200ResponseRulesItemValidationErrors": {
+        "type": "object"
       },
       "GetFirewallConfig200ResponseManagedRulesBotProtection": {
         "required": [
@@ -144074,6 +144397,9 @@
             "$ref": "#/components/schemas/CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemActionMitigate"
           }
         }
+      },
+      "CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemValidationErrors": {
+        "type": "object"
       },
       "CreateSecurityFirewallConfigByConfigVersionActivate200ResponseManagedRulesBotProtection": {
         "required": [
@@ -144779,6 +145105,9 @@
           }
         },
         "additionalProperties": false
+      },
+      "UpdateTeamMemberRequestJoinedFromSsoUserId": {
+        "type": "object"
       },
       "PatchTeamRequestSamlRoles": {
         "type": "object",
@@ -146409,7 +146738,7 @@
             "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOptions"
           },
           "output": {
-            "nullable": true
+            "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOutput"
           },
           "type": {
             "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationType"
@@ -160323,6 +160652,9 @@
           }
         }
       },
+      "GetSecurityFirewallConfig200ResponseActiveRulesItemValidationErrors": {
+        "type": "object"
+      },
       "GetSecurityFirewallConfig200ResponseActiveManagedRulesBotProtection": {
         "required": [
           "active"
@@ -160641,6 +160973,9 @@
           }
         }
       },
+      "GetSecurityFirewallConfig200ResponseDraftRulesItemValidationErrors": {
+        "type": "object"
+      },
       "GetSecurityFirewallConfig200ResponseDraftManagedRulesBotProtection": {
         "required": [
           "active"
@@ -160958,6 +161293,9 @@
             "$ref": "#/components/schemas/GetSecurityFirewallConfig200ResponseVersionsItemRulesItemActionMitigate"
           }
         }
+      },
+      "GetSecurityFirewallConfig200ResponseVersionsItemRulesItemValidationErrors": {
+        "type": "object"
       },
       "GetSecurityFirewallConfig200ResponseVersionsItemManagedRulesBotProtection": {
         "required": [
@@ -161341,6 +161679,9 @@
             "$ref": "#/components/schemas/PutFirewallConfig200ResponseActiveRulesItemActionMitigate"
           }
         }
+      },
+      "PutFirewallConfig200ResponseActiveRulesItemValidationErrors": {
+        "type": "object"
       },
       "PutFirewallConfig200ResponseActiveManagedRulesBotProtection": {
         "required": [
@@ -163529,6 +163870,9 @@
           }
         },
         "description": "Purchase configuration specific options"
+      },
+      "BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOutput": {
+        "type": "object"
       },
       "BuyCredits200ResponseOneOf2PurchaseIntentLineItemsItemMetadata": {
         "type": "object",
@@ -201436,6 +201780,29 @@
           ]
         }
       },
+      "CreateObservabilityQueryRequestOrderDirection": {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Direction to order grouped results by. Defaults to desc.",
+        "x-ms-enum": {
+          "name": "CreateObservabilityQueryRequestOrderDirection",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "asc",
+              "name": "Asc"
+            },
+            {
+              "value": "desc",
+              "name": "Desc"
+            }
+          ]
+        }
+      },
       "AddProjectMemberRequestRole": {
         "enum": [
           "ADMIN",
@@ -235692,6 +236059,58 @@
         "type": "boolean",
         "additionalProperties": false
       },
+      "GetDeployments200ResponseDeploymentsItemReadyState": {
+        "enum": [
+          "BLOCKED",
+          "BUILDING",
+          "CANCELED",
+          "DELETED",
+          "ERROR",
+          "INITIALIZING",
+          "QUEUED",
+          "READY"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetDeployments200ResponseDeploymentsItemReadyState",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "BLOCKED",
+              "name": "Blocked"
+            },
+            {
+              "value": "BUILDING",
+              "name": "Building"
+            },
+            {
+              "value": "CANCELED",
+              "name": "Canceled"
+            },
+            {
+              "value": "DELETED",
+              "name": "Deleted"
+            },
+            {
+              "value": "ERROR",
+              "name": "Error"
+            },
+            {
+              "value": "INITIALIZING",
+              "name": "Initializing"
+            },
+            {
+              "value": "QUEUED",
+              "name": "Queued"
+            },
+            {
+              "value": "READY",
+              "name": "Ready"
+            }
+          ]
+        }
+      },
       "GetDeployments200ResponseDeploymentsItemSoftDeletedByRetention": {
         "enum": [
           false,
@@ -235778,60 +236197,6 @@
         "example": "READY",
         "x-ms-enum": {
           "name": "GetDeployments200ResponseDeploymentsItemState",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "BLOCKED",
-              "name": "Blocked"
-            },
-            {
-              "value": "BUILDING",
-              "name": "Building"
-            },
-            {
-              "value": "CANCELED",
-              "name": "Canceled"
-            },
-            {
-              "value": "DELETED",
-              "name": "Deleted"
-            },
-            {
-              "value": "ERROR",
-              "name": "Error"
-            },
-            {
-              "value": "INITIALIZING",
-              "name": "Initializing"
-            },
-            {
-              "value": "QUEUED",
-              "name": "Queued"
-            },
-            {
-              "value": "READY",
-              "name": "Ready"
-            }
-          ]
-        }
-      },
-      "GetDeployments200ResponseDeploymentsItemReadyState": {
-        "enum": [
-          "BLOCKED",
-          "BUILDING",
-          "CANCELED",
-          "DELETED",
-          "ERROR",
-          "INITIALIZING",
-          "QUEUED",
-          "READY"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "In which state is the deployment.",
-        "example": "READY",
-        "x-ms-enum": {
-          "name": "GetDeployments200ResponseDeploymentsItemReadyState",
           "modelAsString": false,
           "values": [
             {

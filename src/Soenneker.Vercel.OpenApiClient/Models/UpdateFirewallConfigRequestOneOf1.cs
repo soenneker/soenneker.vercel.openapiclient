@@ -18,10 +18,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Id { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf1Id? Id { get; set; }
 #nullable restore
 #else
-        public UntypedNode Id { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf1Id Id { get; set; }
 #endif
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,7 +50,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf1Action>(); } },
-                { "id", n => { Id = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf1Id>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf1Id.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf1Value>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf1Value.CreateFromDiscriminatorValue); } },
             };
         }
@@ -62,7 +62,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf1Action>("action", Action);
-            writer.WriteObjectValue<UntypedNode>("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf1Id>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf1Value>("value", Value);
         }
     }

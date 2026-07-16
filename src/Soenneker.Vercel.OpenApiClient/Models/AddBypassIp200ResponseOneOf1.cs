@@ -19,10 +19,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The pagination property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Pagination { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AddBypassIp200ResponseOneOf1Pagination? Pagination { get; set; }
 #nullable restore
 #else
-        public UntypedNode Pagination { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AddBypassIp200ResponseOneOf1Pagination Pagination { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ok", n => { Ok = n.GetBoolValue(); } },
-                { "pagination", n => { Pagination = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AddBypassIp200ResponseOneOf1Pagination>(global::Soenneker.Vercel.OpenApiClient.Models.AddBypassIp200ResponseOneOf1Pagination.CreateFromDiscriminatorValue); } },
                 { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AddBypassIp200ResponseOneOf1ResultItem>(global::Soenneker.Vercel.OpenApiClient.Models.AddBypassIp200ResponseOneOf1ResultItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("ok", Ok);
-            writer.WriteObjectValue<UntypedNode>("pagination", Pagination);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AddBypassIp200ResponseOneOf1Pagination>("pagination", Pagination);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AddBypassIp200ResponseOneOf1ResultItem>("result", Result);
             writer.WriteAdditionalData(AdditionalData);
         }

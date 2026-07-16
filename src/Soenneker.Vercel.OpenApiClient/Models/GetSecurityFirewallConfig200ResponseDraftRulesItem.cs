@@ -61,10 +61,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The validationErrors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? ValidationErrors { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemValidationErrors? ValidationErrors { get; set; }
 #nullable restore
 #else
-        public UntypedNode ValidationErrors { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemValidationErrors ValidationErrors { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItem"/> and sets the default values.
@@ -99,7 +99,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "valid", n => { Valid = n.GetBoolValue(); } },
-                { "validationErrors", n => { ValidationErrors = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "validationErrors", n => { ValidationErrors = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemValidationErrors>(global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemValidationErrors.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("valid", Valid);
-            writer.WriteObjectValue<UntypedNode>("validationErrors", ValidationErrors);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallConfig200ResponseDraftRulesItemValidationErrors>("validationErrors", ValidationErrors);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

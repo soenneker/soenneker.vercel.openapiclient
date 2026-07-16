@@ -48,20 +48,20 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item
         /// <summary>
         /// Schedule a repository for deletion. The repository is marked so it disappears from list/get immediately; subscriber-vcr reclaims every image (manifests, blobs, tags and rows) and finally deletes the repository row asynchronously via the VcrRepositoryRemoved event.
         /// </summary>
-        /// <returns>A <see cref="UntypedNode"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteRepository202ResponseResponseJson"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UntypedNode?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.WithIdOrNameItemRequestBuilder.WithIdOrNameItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRepository202ResponseResponseJson?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.WithIdOrNameItemRequestBuilder.WithIdOrNameItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UntypedNode> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.WithIdOrNameItemRequestBuilder.WithIdOrNameItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRepository202ResponseResponseJson> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.WithIdOrNameItemRequestBuilder.WithIdOrNameItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, UntypedNode.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRepository202ResponseResponseJson>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.DeleteRepository202ResponseResponseJson.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetch a container registry repository for a project by ID or name.

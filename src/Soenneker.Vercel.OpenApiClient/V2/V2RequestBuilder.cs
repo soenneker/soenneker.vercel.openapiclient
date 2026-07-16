@@ -7,6 +7,7 @@ using Soenneker.Vercel.OpenApiClient.V2.Deployments;
 using Soenneker.Vercel.OpenApiClient.V2.Domains;
 using Soenneker.Vercel.OpenApiClient.V2.Files;
 using Soenneker.Vercel.OpenApiClient.V2.Integrations;
+using Soenneker.Vercel.OpenApiClient.V2.Observability;
 using Soenneker.Vercel.OpenApiClient.V2.Projects;
 using Soenneker.Vercel.OpenApiClient.V2.Sandboxes;
 using Soenneker.Vercel.OpenApiClient.V2.Teams;
@@ -47,6 +48,11 @@ namespace Soenneker.Vercel.OpenApiClient.V2
         public global::Soenneker.Vercel.OpenApiClient.V2.Integrations.IntegrationsRequestBuilder Integrations
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V2.Integrations.IntegrationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The observability property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V2.Observability.ObservabilityRequestBuilder Observability
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V2.Observability.ObservabilityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The projects property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V2.Projects.ProjectsRequestBuilder Projects

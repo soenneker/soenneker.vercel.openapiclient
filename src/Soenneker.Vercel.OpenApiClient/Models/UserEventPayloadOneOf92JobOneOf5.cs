@@ -27,10 +27,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The customEnvId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? CustomEnvId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92JobOneOf5CustomEnvId? CustomEnvId { get; set; }
 #nullable restore
 #else
-        public UntypedNode CustomEnvId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92JobOneOf5CustomEnvId CustomEnvId { get; set; }
 #endif
         /// <summary>The customHost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,10 +83,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92JobOneOf5ProjectId? ProjectId { get; set; }
 #nullable restore
 #else
-        public UntypedNode ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92JobOneOf5ProjectId ProjectId { get; set; }
 #endif
         /// <summary>The provider property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92JobOneOf5Provider? Provider { get; set; }
@@ -129,7 +129,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "beforeSha", n => { BeforeSha = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
-                { "customEnvId", n => { CustomEnvId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "customEnvId", n => { CustomEnvId = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92JobOneOf5CustomEnvId>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92JobOneOf5CustomEnvId.CreateFromDiscriminatorValue); } },
                 { "customHost", n => { CustomHost = n.GetStringValue(); } },
                 { "eventful", n => { Eventful = n.GetBoolValue(); } },
                 { "gitComments", n => { GitComments = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92JobOneOf5GitComments>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92JobOneOf5GitComments.CreateFromDiscriminatorValue); } },
@@ -139,7 +139,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "linkedProjectId", n => { LinkedProjectId = n.GetStringValue(); } },
                 { "org", n => { Org = n.GetStringValue(); } },
                 { "prId", n => { PrId = n.GetDoubleValue(); } },
-                { "projectId", n => { ProjectId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "projectId", n => { ProjectId = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92JobOneOf5ProjectId>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92JobOneOf5ProjectId.CreateFromDiscriminatorValue); } },
                 { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92JobOneOf5Provider>(); } },
                 { "repo", n => { Repo = n.GetStringValue(); } },
                 { "repoId", n => { RepoId = n.GetDoubleValue(); } },
@@ -155,7 +155,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("beforeSha", BeforeSha);
             writer.WriteDoubleValue("createdAt", CreatedAt);
-            writer.WriteObjectValue<UntypedNode>("customEnvId", CustomEnvId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92JobOneOf5CustomEnvId>("customEnvId", CustomEnvId);
             writer.WriteStringValue("customHost", CustomHost);
             writer.WriteBoolValue("eventful", Eventful);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92JobOneOf5GitComments>("gitComments", GitComments);
@@ -165,7 +165,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("linkedProjectId", LinkedProjectId);
             writer.WriteStringValue("org", Org);
             writer.WriteDoubleValue("prId", PrId);
-            writer.WriteObjectValue<UntypedNode>("projectId", ProjectId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92JobOneOf5ProjectId>("projectId", ProjectId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf92JobOneOf5Provider>("provider", Provider);
             writer.WriteStringValue("repo", Repo);
             writer.WriteDoubleValue("repoId", RepoId);

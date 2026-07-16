@@ -17,10 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The rollingRelease property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RollingRelease { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteRollingReleaseConfig200ResponseRollingRelease? RollingRelease { get; set; }
 #nullable restore
 #else
-        public UntypedNode RollingRelease { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteRollingReleaseConfig200ResponseRollingRelease RollingRelease { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteRollingReleaseConfig200Response"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "rollingRelease", n => { RollingRelease = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "rollingRelease", n => { RollingRelease = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRollingReleaseConfig200ResponseRollingRelease>(global::Soenneker.Vercel.OpenApiClient.Models.DeleteRollingReleaseConfig200ResponseRollingRelease.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("rollingRelease", RollingRelease);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRollingReleaseConfig200ResponseRollingRelease>("rollingRelease", RollingRelease);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

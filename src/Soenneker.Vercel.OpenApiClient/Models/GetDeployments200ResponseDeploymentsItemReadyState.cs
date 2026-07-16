@@ -3,9 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>In which state is the deployment.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public enum GetDeployments200ResponseDeploymentsItemReadyState
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "BLOCKED")]
         #pragma warning disable CS1591

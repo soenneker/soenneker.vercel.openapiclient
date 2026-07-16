@@ -17,10 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The alias property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Alias { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf2Alias? Alias { get; set; }
 #nullable restore
 #else
-        public UntypedNode Alias { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf2Alias Alias { get; set; }
 #endif
         /// <summary>The version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alias", n => { Alias = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "alias", n => { Alias = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf2Alias>(global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf2Alias.CreateFromDiscriminatorValue); } },
                 { "version", n => { Version = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf2Version>(global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf2Version.CreateFromDiscriminatorValue); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("alias", Alias);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf2Alias>("alias", Alias);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf2Version>("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }

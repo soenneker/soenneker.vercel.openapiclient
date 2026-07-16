@@ -119,13 +119,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthUserAuthorization UserAuthorization { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuth"/> and sets the default values.
-        /// </summary>
-        public CreateConnectorRequestDataTypeOAuth()
-        {
-            TokenEndpointAuthMethod = "client_secret_post";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuth"/></returns>

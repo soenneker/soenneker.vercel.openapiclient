@@ -13,9 +13,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The port property</summary>
-        public double? Port { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7SrvPort? Port { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7SrvPort Port { get; set; }
+#endif
         /// <summary>The priority property</summary>
-        public double? Priority { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7SrvPriority? Priority { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7SrvPriority Priority { get; set; }
+#endif
         /// <summary>The target property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,7 +37,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Target { get; set; }
 #endif
         /// <summary>The weight property</summary>
-        public double? Weight { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7SrvWeight? Weight { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7SrvWeight Weight { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,10 +62,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "port", n => { Port = n.GetDoubleValue(); } },
-                { "priority", n => { Priority = n.GetDoubleValue(); } },
+                { "port", n => { Port = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7SrvPort>(global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7SrvPort.CreateFromDiscriminatorValue); } },
+                { "priority", n => { Priority = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7SrvPriority>(global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7SrvPriority.CreateFromDiscriminatorValue); } },
                 { "target", n => { Target = n.GetStringValue(); } },
-                { "weight", n => { Weight = n.GetDoubleValue(); } },
+                { "weight", n => { Weight = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7SrvWeight>(global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7SrvWeight.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,10 +75,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("port", Port);
-            writer.WriteDoubleValue("priority", Priority);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7SrvPort>("port", Port);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7SrvPriority>("priority", Priority);
             writer.WriteStringValue("target", Target);
-            writer.WriteDoubleValue("weight", Weight);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7SrvWeight>("weight", Weight);
         }
     }
 }

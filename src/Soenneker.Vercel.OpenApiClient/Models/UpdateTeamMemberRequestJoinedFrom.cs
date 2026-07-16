@@ -15,10 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The ssoUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? SsoUserId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateTeamMemberRequestJoinedFromSsoUserId? SsoUserId { get; set; }
 #nullable restore
 #else
-        public UntypedNode SsoUserId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateTeamMemberRequestJoinedFromSsoUserId SsoUserId { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ssoUserId", n => { SsoUserId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "ssoUserId", n => { SsoUserId = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateTeamMemberRequestJoinedFromSsoUserId>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateTeamMemberRequestJoinedFromSsoUserId.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("ssoUserId", SsoUserId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateTeamMemberRequestJoinedFromSsoUserId>("ssoUserId", SsoUserId);
         }
     }
 }

@@ -64,7 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Timestamp of when the deployment got created.</summary>
         public double? Created { get; set; }
-        /// <summary>Timestamp of when the deployment got created.</summary>
+        /// <summary>The createdAt property</summary>
         public double? CreatedAt { get; set; }
         /// <summary>Metadata information of the user who created the deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -184,7 +184,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? ProposedExpiration { get; set; }
         /// <summary>Timestamp of when the deployment got ready.</summary>
         public double? Ready { get; set; }
-        /// <summary>In which state is the deployment.</summary>
+        /// <summary>The readyState property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemReadyState? ReadyState { get; set; }
         /// <summary>&quot;Substate of deployment when readyState is &apos;READY&apos; Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of gradually transitioning production traffic - PROMOTED: has seen production traffic&quot;</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemReadySubstate? ReadySubstate { get; set; }
