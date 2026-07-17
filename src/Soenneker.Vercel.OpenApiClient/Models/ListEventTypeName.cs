@@ -1139,6 +1139,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         PageIntegrityResourceRejected,
         #pragma warning restore CS1591
+        [EnumMember(Value = "page-integrity-script-approval-rule-created")]
+        #pragma warning disable CS1591
+        PageIntegrityScriptApprovalRuleCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "page-integrity-script-approval-rule-deleted")]
+        #pragma warning disable CS1591
+        PageIntegrityScriptApprovalRuleDeleted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "passkey-created")]
         #pragma warning disable CS1591
         PasskeyCreated,
@@ -2162,6 +2170,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "vcr-repository-deleted")]
         #pragma warning disable CS1591
         VcrRepositoryDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "vcr-repository-permission-added")]
+        #pragma warning disable CS1591
+        VcrRepositoryPermissionAdded,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "vcr-repository-permission-removed")]
+        #pragma warning disable CS1591
+        VcrRepositoryPermissionRemoved,
         #pragma warning restore CS1591
         [EnumMember(Value = "vercel-agent-elevated-permissions-approved")]
         #pragma warning disable CS1591

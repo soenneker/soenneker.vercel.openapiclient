@@ -19,15 +19,15 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Images
     public partial class ImagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v1.vcr.repository.item.images.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Images.Item.WithImageItemRequestBuilder"/></returns>
-        public global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Images.Item.WithImageItemRequestBuilder this[string position]
+        /// <param name="position">The internal image id (`image_...`) or the image manifest digest (`sha256:...`).</param>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Images.Item.WithImageIdOrDigestItemRequestBuilder"/></returns>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Images.Item.WithImageIdOrDigestItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("imageId", position);
-                return new global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Images.Item.WithImageItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("imageIdOrDigest", position);
+                return new global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Images.Item.WithImageIdOrDigestItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

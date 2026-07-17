@@ -12229,6 +12229,19 @@
                             ],
                             "additionalProperties": false
                           },
+                          "forwardedClaims": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "description": "Allow-list of extra claims to propagate, keyed by source (idToken). Only claims named here and present in that source are exposed.",
+                            "properties": {
+                              "idToken": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
                           "defaultAudience": {
                             "type": "string"
                           },
@@ -12711,6 +12724,11 @@
                     "externalSubject": {
                       "type": "string"
                     },
+                    "claims": {
+                      "additionalProperties": true,
+                      "type": "object",
+                      "description": "Claims extracted from the provider's tokens per the connector's `ForwardedClaims` allow-list. Currently sourced from the OIDC id_token only."
+                    },
                     "metadata": {
                       "additionalProperties": true,
                       "type": "object",
@@ -12968,6 +12986,11 @@
                           },
                           "externalSubject": {
                             "type": "string"
+                          },
+                          "claims": {
+                            "additionalProperties": true,
+                            "type": "object",
+                            "description": "Claims extracted from the provider's tokens per the connector's `ForwardedClaims` allow-list. Currently sourced from the OIDC id_token only."
                           },
                           "installation": {
                             "properties": {
@@ -182387,9 +182410,9 @@
         ]
       }
     },
-    "/v1/vcr/repository/{idOrName}/images/{imageId}": {
+    "/v1/vcr/repository/{idOrName}/images/{imageIdOrDigest}": {
       "get": {
-        "description": "Fetch an individual image from a repository, including its tags and Dockerfile history entries with discriminated layer details for UI rendering.",
+        "description": "Fetch an individual image from a repository, including its tags and Dockerfile history entries with discriminated layer details for UI rendering. The image may be addressed by its internal id (`image_...`) or by its manifest digest (`sha256:...`).",
         "operationId": "getRepositoryImage",
         "security": [
           {
@@ -182451,12 +182474,14 @@
             }
           },
           {
-            "name": "imageId",
+            "name": "imageIdOrDigest",
+            "description": "The internal image id (`image_...`) or the image manifest digest (`sha256:...`).",
             "in": "path",
             "required": true,
             "schema": {
               "type": "string",
-              "maxLength": 255
+              "maxLength": 255,
+              "description": "The internal image id (`image_...`) or the image manifest digest (`sha256:...`)."
             }
           },
           {
@@ -182478,7 +182503,9 @@
             }
           }
         ]
-      },
+      }
+    },
+    "/v1/vcr/repository/{idOrName}/images/{imageId}": {
       "delete": {
         "description": "Schedule an image for deletion. The image is marked so it disappears from list/get immediately; subscriber-vcr reclaims the manifest, blobs, tags and row asynchronously via the VcrManifestRemoved event.",
         "operationId": "deleteRepositoryImage",
@@ -194586,6 +194613,8 @@
               "page-integrity-resource-approved",
               "page-integrity-resource-deleted",
               "page-integrity-resource-rejected",
+              "page-integrity-script-approval-rule-created",
+              "page-integrity-script-approval-rule-deleted",
               "passkey-created",
               "passkey-deleted",
               "passkey-updated",
@@ -194842,6 +194871,8 @@
               "vcr-image-pushed",
               "vcr-repository-created",
               "vcr-repository-deleted",
+              "vcr-repository-permission-added",
+              "vcr-repository-permission-removed",
               "vercel-agent-elevated-permissions-approved",
               "vercel-agent-elevated-permissions-requested",
               "vercel-agent-session-created",
@@ -206925,6 +206956,31 @@
                 "description": "The payload of the event, if requested."
               },
               {
+                "additionalProperties": true,
+                "type": "object",
+                "description": "The payload of the event, if requested.",
+                "properties": {
+                  "projectId": {
+                    "type": "string"
+                  },
+                  "projectName": {
+                    "type": "string"
+                  },
+                  "pattern": {
+                    "type": "string"
+                  },
+                  "justification": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "justification",
+                  "pattern",
+                  "projectId",
+                  "projectName"
+                ]
+              },
+              {
                 "properties": {
                   "oldName": {
                     "type": "string"
@@ -213481,6 +213537,58 @@
               },
               {
                 "properties": {
+                  "projectId": {
+                    "type": "string"
+                  },
+                  "projectName": {
+                    "type": "string"
+                  },
+                  "repositoryName": {
+                    "type": "string"
+                  },
+                  "sharedWithTeamId": {
+                    "type": "string"
+                  },
+                  "sharedWithTeamSlug": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "projectId",
+                  "projectName",
+                  "repositoryName",
+                  "sharedWithTeamId",
+                  "sharedWithTeamSlug"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "projectId": {
+                    "type": "string"
+                  },
+                  "projectName": {
+                    "type": "string"
+                  },
+                  "repositoryName": {
+                    "type": "string"
+                  },
+                  "sharedWithTeamId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "projectId",
+                  "projectName",
+                  "repositoryName",
+                  "sharedWithTeamId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "ruleName": {
                     "type": "string"
                   }
@@ -214840,6 +214948,8 @@
               "page-integrity-resource-approved",
               "page-integrity-resource-deleted",
               "page-integrity-resource-rejected",
+              "page-integrity-script-approval-rule-created",
+              "page-integrity-script-approval-rule-deleted",
               "passkey-created",
               "passkey-deleted",
               "passkey-updated",
@@ -215096,6 +215206,8 @@
               "vcr-image-pushed",
               "vcr-repository-created",
               "vcr-repository-deleted",
+              "vcr-repository-permission-added",
+              "vcr-repository-permission-removed",
               "vercel-agent-elevated-permissions-approved",
               "vercel-agent-elevated-permissions-requested",
               "vercel-agent-session-created",
@@ -215458,6 +215570,8 @@
                 "page-integrity-resource-approved",
                 "page-integrity-resource-deleted",
                 "page-integrity-resource-rejected",
+                "page-integrity-script-approval-rule-created",
+                "page-integrity-script-approval-rule-deleted",
                 "passkey-created",
                 "passkey-deleted",
                 "passkey-updated",
@@ -215714,6 +215828,8 @@
                 "vcr-image-pushed",
                 "vcr-repository-created",
                 "vcr-repository-deleted",
+                "vcr-repository-permission-added",
+                "vcr-repository-permission-removed",
                 "vercel-agent-elevated-permissions-approved",
                 "vercel-agent-elevated-permissions-requested",
                 "vercel-agent-session-created",

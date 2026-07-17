@@ -60,6 +60,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string DefaultAudience { get; set; }
 #endif
+        /// <summary>Allow-list of extra claims to propagate, keyed by source (idToken). Only claims named here and present in that source are exposed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthForwardedClaims? ForwardedClaims { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthForwardedClaims ForwardedClaims { get; set; }
+#endif
         /// <summary>The jwtBearer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,6 +150,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "clientSecret", n => { ClientSecret = n.GetStringValue(); } },
                 { "codeChallengeMethod", n => { CodeChallengeMethod = n.GetStringValue(); } },
                 { "defaultAudience", n => { DefaultAudience = n.GetStringValue(); } },
+                { "forwardedClaims", n => { ForwardedClaims = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthForwardedClaims>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthForwardedClaims.CreateFromDiscriminatorValue); } },
                 { "jwtBearer", n => { JwtBearer = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthJwtBearer>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthJwtBearer.CreateFromDiscriminatorValue); } },
                 { "pkceRequired", n => { PkceRequired = n.GetBoolValue(); } },
                 { "refreshTokens", n => { RefreshTokens = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthRefreshTokens>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthRefreshTokens.CreateFromDiscriminatorValue); } },
@@ -165,6 +174,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("clientSecret", ClientSecret);
             writer.WriteStringValue("codeChallengeMethod", CodeChallengeMethod);
             writer.WriteStringValue("defaultAudience", DefaultAudience);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthForwardedClaims>("forwardedClaims", ForwardedClaims);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthJwtBearer>("jwtBearer", JwtBearer);
             writer.WriteBoolValue("pkceRequired", PkceRequired);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthRefreshTokens>("refreshTokens", RefreshTokens);

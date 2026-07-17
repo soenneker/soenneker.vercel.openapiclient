@@ -14,6 +14,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Claims extracted from the provider&apos;s tokens per the connector&apos;s `ForwardedClaims` allow-list. Currently sourced from the OIDC id_token only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorToken200ResponseClaims? Claims { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorToken200ResponseClaims Claims { get; set; }
+#endif
         /// <summary>The connector property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,6 +113,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "claims", n => { Claims = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorToken200ResponseClaims>(global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorToken200ResponseClaims.CreateFromDiscriminatorValue); } },
                 { "connector", n => { Connector = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorToken200ResponseConnector>(global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorToken200ResponseConnector.CreateFromDiscriminatorValue); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
                 { "externalSubject", n => { ExternalSubject = n.GetStringValue(); } },
@@ -123,6 +132,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorToken200ResponseClaims>("claims", Claims);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorToken200ResponseConnector>("connector", Connector);
             writer.WriteDoubleValue("expiresAt", ExpiresAt);
             writer.WriteStringValue("externalSubject", ExternalSubject);

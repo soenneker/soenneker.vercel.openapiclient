@@ -15,21 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The newName property</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf292Name? Name { get; set; }
 #nullable restore
 #else
-        public string NewName { get; set; }
-#endif
-        /// <summary>The oldName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OldName { get; set; }
-#nullable restore
-#else
-        public string OldName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf292Name Name { get; set; }
 #endif
         /// <summary>The uid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,8 +56,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "newName", n => { NewName = n.GetStringValue(); } },
-                { "oldName", n => { OldName = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf292Name>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf292Name.CreateFromDiscriminatorValue); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
             };
         }
@@ -76,8 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("newName", NewName);
-            writer.WriteStringValue("oldName", OldName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf292Name>("name", Name);
             writer.WriteStringValue("uid", Uid);
             writer.WriteAdditionalData(AdditionalData);
         }
