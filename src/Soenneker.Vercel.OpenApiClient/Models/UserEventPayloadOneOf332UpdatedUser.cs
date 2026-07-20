@@ -7,32 +7,45 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Represents configuration for remote caching
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserEventPayloadOneOf346RemoteCaching : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class UserEventPayloadOneOf332UpdatedUser : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
+        /// <summary>The email property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Email { get; set; }
+#nullable restore
+#else
+        public string Email { get; set; }
+#endif
+        /// <summary>The username property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Username { get; set; }
+#nullable restore
+#else
+        public string Username { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf346RemoteCaching"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf332UpdatedUser"/> and sets the default values.
         /// </summary>
-        public UserEventPayloadOneOf346RemoteCaching()
+        public UserEventPayloadOneOf332UpdatedUser()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf346RemoteCaching"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf332UpdatedUser"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf346RemoteCaching CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf332UpdatedUser CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf346RemoteCaching();
+            return new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf332UpdatedUser();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -42,7 +55,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "username", n => { Username = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -52,7 +66,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("email", Email);
+            writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

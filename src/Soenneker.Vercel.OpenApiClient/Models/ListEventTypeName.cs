@@ -1931,10 +1931,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         TeamEmailDomainUpdate,
         #pragma warning restore CS1591
-        [EnumMember(Value = "team-emu-account-split")]
-        #pragma warning disable CS1591
-        TeamEmuAccountSplit,
-        #pragma warning restore CS1591
         [EnumMember(Value = "team-emu-updated")]
         #pragma warning disable CS1591
         TeamEmuUpdated,
@@ -2178,6 +2174,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "vcr-repository-permission-removed")]
         #pragma warning disable CS1591
         VcrRepositoryPermissionRemoved,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "vcr-repository-permissions-cleared")]
+        #pragma warning disable CS1591
+        VcrRepositoryPermissionsCleared,
         #pragma warning restore CS1591
         [EnumMember(Value = "vercel-agent-elevated-permissions-approved")]
         #pragma warning disable CS1591

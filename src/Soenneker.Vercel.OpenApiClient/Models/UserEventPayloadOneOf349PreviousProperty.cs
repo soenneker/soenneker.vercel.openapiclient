@@ -9,31 +9,27 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UserEventPayloadOneOf341Trial : IAdditionalDataHolder, IParsable
+    public partial class UserEventPayloadOneOf349PreviousProperty : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The end property</summary>
-        public double? End { get; set; }
-        /// <summary>The start property</summary>
-        public double? Start { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf341Trial"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf349PreviousProperty"/> and sets the default values.
         /// </summary>
-        public UserEventPayloadOneOf341Trial()
+        public UserEventPayloadOneOf349PreviousProperty()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf341Trial"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf349PreviousProperty"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf341Trial CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf349PreviousProperty CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf341Trial();
+            return new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf349PreviousProperty();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -43,8 +39,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "end", n => { End = n.GetDoubleValue(); } },
-                { "start", n => { Start = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +48,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("end", End);
-            writer.WriteDoubleValue("start", Start);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

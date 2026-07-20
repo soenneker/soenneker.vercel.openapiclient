@@ -5,40 +5,40 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum UserEventPayloadOneOf330Role
+    public enum UserEventPayloadOneOf355Provider
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "BILLING")]
+        [EnumMember(Value = "apple")]
         #pragma warning disable CS1591
-        Billing,
+        Apple,
         #pragma warning restore CS1591
-        [EnumMember(Value = "CONTRIBUTOR")]
+        [EnumMember(Value = "bitbucket")]
         #pragma warning disable CS1591
-        Contributor,
+        Bitbucket,
         #pragma warning restore CS1591
-        [EnumMember(Value = "DEVELOPER")]
+        [EnumMember(Value = "chatgpt")]
         #pragma warning disable CS1591
-        Developer,
+        Chatgpt,
         #pragma warning restore CS1591
-        [EnumMember(Value = "MEMBER")]
+        [EnumMember(Value = "github")]
         #pragma warning disable CS1591
-        Member,
+        Github,
         #pragma warning restore CS1591
-        [EnumMember(Value = "OWNER")]
+        [EnumMember(Value = "github-custom-host")]
         #pragma warning disable CS1591
-        Owner,
+        GithubCustomHost,
         #pragma warning restore CS1591
-        [EnumMember(Value = "SECURITY")]
+        [EnumMember(Value = "github-limited")]
         #pragma warning disable CS1591
-        Security,
+        GithubLimited,
         #pragma warning restore CS1591
-        [EnumMember(Value = "VIEWER")]
+        [EnumMember(Value = "gitlab")]
         #pragma warning disable CS1591
-        Viewer,
+        Gitlab,
         #pragma warning restore CS1591
-        [EnumMember(Value = "VIEWER_FOR_PLUS")]
+        [EnumMember(Value = "google")]
         #pragma warning disable CS1591
-        ViewerForPlus,
+        Google,
         #pragma warning restore CS1591
     }
 }

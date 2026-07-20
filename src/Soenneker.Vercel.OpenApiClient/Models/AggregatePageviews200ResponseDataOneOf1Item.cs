@@ -86,6 +86,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string AttributionTarget { get; set; }
 #endif
+        /// <summary>The billableRegion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BillableRegion { get; set; }
+#nullable restore
+#else
+        public string BillableRegion { get; set; }
+#endif
         /// <summary>The blobOperationLevel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -358,6 +366,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string DeviceType { get; set; }
 #endif
+        /// <summary>The direction property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Direction { get; set; }
+#nullable restore
+#else
+        public string Direction { get; set; }
+#endif
         /// <summary>The edgeNetworkRegion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -413,6 +429,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string Environment { get; set; }
+#endif
+        /// <summary>The environmentId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EnvironmentId { get; set; }
+#nullable restore
+#else
+        public string EnvironmentId { get; set; }
 #endif
         /// <summary>The errorCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -758,6 +782,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ModerationApplied { get; set; }
 #endif
+        /// <summary>The networkId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NetworkId { get; set; }
+#nullable restore
+#else
+        public string NetworkId { get; set; }
+#endif
+        /// <summary>The networkTenancy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NetworkTenancy { get; set; }
+#nullable restore
+#else
+        public string NetworkTenancy { get; set; }
+#endif
         /// <summary>The notificationUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -845,6 +885,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string PiiRedactionApplied { get; set; }
+#endif
+        /// <summary>The privatelinkDnsName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrivatelinkDnsName { get; set; }
+#nullable restore
+#else
+        public string PrivatelinkDnsName { get; set; }
+#endif
+        /// <summary>The privatelinkEndpointId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrivatelinkEndpointId { get; set; }
+#nullable restore
+#else
+        public string PrivatelinkEndpointId { get; set; }
+#endif
+        /// <summary>The privatelinkIpAddress property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrivatelinkIpAddress { get; set; }
+#nullable restore
+#else
+        public string PrivatelinkIpAddress { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1400,6 +1464,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ToolCallType { get; set; }
 #endif
+        /// <summary>The trafficSource property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TrafficSource { get; set; }
+#nullable restore
+#else
+        public string TrafficSource { get; set; }
+#endif
         /// <summary>The triggeringTag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1586,6 +1658,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "attributes", n => { Attributes = n.GetStringValue(); } },
                 { "attributionEventName", n => { AttributionEventName = n.GetStringValue(); } },
                 { "attributionTarget", n => { AttributionTarget = n.GetStringValue(); } },
+                { "billableRegion", n => { BillableRegion = n.GetStringValue(); } },
                 { "blobOperationLevel", n => { BlobOperationLevel = n.GetStringValue(); } },
                 { "blobOperationType", n => { BlobOperationType = n.GetStringValue(); } },
                 { "botCategory", n => { BotCategory = n.GetStringValue(); } },
@@ -1620,6 +1693,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "deepAnalysisCheck", n => { DeepAnalysisCheck = n.GetStringValue(); } },
                 { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
                 { "deviceType", n => { DeviceType = n.GetStringValue(); } },
+                { "direction", n => { Direction = n.GetStringValue(); } },
                 { "edgeNetworkRegion", n => { EdgeNetworkRegion = n.GetStringValue(); } },
                 { "edgeType", n => { EdgeType = n.GetStringValue(); } },
                 { "entryId", n => { EntryId = n.GetStringValue(); } },
@@ -1627,6 +1701,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "entryName", n => { EntryName = n.GetStringValue(); } },
                 { "entryRevalidateSeconds", n => { EntryRevalidateSeconds = n.GetStringValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
+                { "environmentId", n => { EnvironmentId = n.GetStringValue(); } },
                 { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
                 { "errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
                 { "eventData", n => { EventData = n.GetStringValue(); } },
@@ -1670,6 +1745,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "middlewareAction", n => { MiddlewareAction = n.GetStringValue(); } },
                 { "middlewareActionTarget", n => { MiddlewareActionTarget = n.GetStringValue(); } },
                 { "moderationApplied", n => { ModerationApplied = n.GetStringValue(); } },
+                { "networkId", n => { NetworkId = n.GetStringValue(); } },
+                { "networkTenancy", n => { NetworkTenancy = n.GetStringValue(); } },
                 { "notificationUrl", n => { NotificationUrl = n.GetStringValue(); } },
                 { "optimizedFormatMimeType", n => { OptimizedFormatMimeType = n.GetStringValue(); } },
                 { "optimizedQuality", n => { OptimizedQuality = n.GetStringValue(); } },
@@ -1681,6 +1758,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "pathType", n => { PathType = n.GetStringValue(); } },
                 { "pathTypeVariant", n => { PathTypeVariant = n.GetStringValue(); } },
                 { "piiRedactionApplied", n => { PiiRedactionApplied = n.GetStringValue(); } },
+                { "privatelinkDnsName", n => { PrivatelinkDnsName = n.GetStringValue(); } },
+                { "privatelinkEndpointId", n => { PrivatelinkEndpointId = n.GetStringValue(); } },
+                { "privatelinkIpAddress", n => { PrivatelinkIpAddress = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
@@ -1751,6 +1831,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "toolCallStatusCode", n => { ToolCallStatusCode = n.GetStringValue(); } },
                 { "toolCallSuccess", n => { ToolCallSuccess = n.GetStringValue(); } },
                 { "toolCallType", n => { ToolCallType = n.GetStringValue(); } },
+                { "trafficSource", n => { TrafficSource = n.GetStringValue(); } },
                 { "triggeringTag", n => { TriggeringTag = n.GetStringValue(); } },
                 { "utmCampaign", n => { UtmCampaign = n.GetStringValue(); } },
                 { "utmContent", n => { UtmContent = n.GetStringValue(); } },
@@ -1788,6 +1869,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("attributes", Attributes);
             writer.WriteStringValue("attributionEventName", AttributionEventName);
             writer.WriteStringValue("attributionTarget", AttributionTarget);
+            writer.WriteStringValue("billableRegion", BillableRegion);
             writer.WriteStringValue("blobOperationLevel", BlobOperationLevel);
             writer.WriteStringValue("blobOperationType", BlobOperationType);
             writer.WriteStringValue("botCategory", BotCategory);
@@ -1822,6 +1904,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("deepAnalysisCheck", DeepAnalysisCheck);
             writer.WriteStringValue("deploymentId", DeploymentId);
             writer.WriteStringValue("deviceType", DeviceType);
+            writer.WriteStringValue("direction", Direction);
             writer.WriteStringValue("edgeNetworkRegion", EdgeNetworkRegion);
             writer.WriteStringValue("edgeType", EdgeType);
             writer.WriteStringValue("entryId", EntryId);
@@ -1829,6 +1912,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("entryName", EntryName);
             writer.WriteStringValue("entryRevalidateSeconds", EntryRevalidateSeconds);
             writer.WriteStringValue("environment", Environment);
+            writer.WriteStringValue("environmentId", EnvironmentId);
             writer.WriteStringValue("errorCode", ErrorCode);
             writer.WriteStringValue("errorMessage", ErrorMessage);
             writer.WriteStringValue("eventData", EventData);
@@ -1872,6 +1956,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("middlewareAction", MiddlewareAction);
             writer.WriteStringValue("middlewareActionTarget", MiddlewareActionTarget);
             writer.WriteStringValue("moderationApplied", ModerationApplied);
+            writer.WriteStringValue("networkId", NetworkId);
+            writer.WriteStringValue("networkTenancy", NetworkTenancy);
             writer.WriteStringValue("notificationUrl", NotificationUrl);
             writer.WriteStringValue("optimizedFormatMimeType", OptimizedFormatMimeType);
             writer.WriteStringValue("optimizedQuality", OptimizedQuality);
@@ -1883,6 +1969,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("pathType", PathType);
             writer.WriteStringValue("pathTypeVariant", PathTypeVariant);
             writer.WriteStringValue("piiRedactionApplied", PiiRedactionApplied);
+            writer.WriteStringValue("privatelinkDnsName", PrivatelinkDnsName);
+            writer.WriteStringValue("privatelinkEndpointId", PrivatelinkEndpointId);
+            writer.WriteStringValue("privatelinkIpAddress", PrivatelinkIpAddress);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteStringValue("provider", Provider);
@@ -1953,6 +2042,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("toolCallStatusCode", ToolCallStatusCode);
             writer.WriteStringValue("toolCallSuccess", ToolCallSuccess);
             writer.WriteStringValue("toolCallType", ToolCallType);
+            writer.WriteStringValue("trafficSource", TrafficSource);
             writer.WriteStringValue("triggeringTag", TriggeringTag);
             writer.WriteStringValue("utmCampaign", UtmCampaign);
             writer.WriteStringValue("utmContent", UtmContent);

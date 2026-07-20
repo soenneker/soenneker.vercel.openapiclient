@@ -5,16 +5,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum UserEventPayloadOneOf345Consent
+    public enum UserEventPayloadOneOf356ActorType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "granted")]
+        [EnumMember(Value = "admin")]
         #pragma warning disable CS1591
-        Granted,
+        Admin,
         #pragma warning restore CS1591
-        [EnumMember(Value = "refused")]
+        [EnumMember(Value = "user")]
         #pragma warning disable CS1591
-        Refused,
+        User,
         #pragma warning restore CS1591
     }
 }

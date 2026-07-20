@@ -158,6 +158,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string RedirectUri { get; set; }
 #endif
+        /// <summary>Time when this connector started requiring reinstallation because an installation-affecting app-token grant changed.</summary>
+        public double? ReinstallAt { get; set; }
         /// <summary>&quot;Best-effort identifier of the third-party service this client represents, independent of `type`. Examples: `&apos;slack&apos;`, `&apos;mcp.linear.app&apos;`, `&apos;auth.example.com&apos;`. Always non-empty on the API response — falls back through `storedClient.service ?? typeDef.service ?? typeDef.type`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -296,6 +298,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "ownerTenantId", n => { OwnerTenantId = n.GetStringValue(); } },
                 { "public", n => { Public = n.GetBoolValue(); } },
                 { "redirectUri", n => { RedirectUri = n.GetStringValue(); } },
+                { "reinstallAt", n => { ReinstallAt = n.GetDoubleValue(); } },
                 { "service", n => { Service = n.GetStringValue(); } },
                 { "supportedSubjectTypes", n => { SupportedSubjectTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "supportsIcon", n => { SupportsIcon = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseSupportsIcon>(); } },
@@ -342,6 +345,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("ownerTenantId", OwnerTenantId);
             writer.WriteBoolValue("public", Public);
             writer.WriteStringValue("redirectUri", RedirectUri);
+            writer.WriteDoubleValue("reinstallAt", ReinstallAt);
             writer.WriteStringValue("service", Service);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedSubjectTypes", SupportedSubjectTypes);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseSupportsIcon>("supportsIcon", SupportsIcon);

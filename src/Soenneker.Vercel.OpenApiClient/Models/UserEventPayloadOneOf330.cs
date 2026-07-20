@@ -15,70 +15,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether the removal was system-initiated rather than human-initiated.</summary>
-        public bool? Automated { get; set; }
-        /// <summary>The bitbucketUsername property</summary>
+        /// <summary>The entitlement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BitbucketUsername { get; set; }
+        public string? Entitlement { get; set; }
 #nullable restore
 #else
-        public string BitbucketUsername { get; set; }
+        public string Entitlement { get; set; }
 #endif
-        /// <summary>The deletedUid property</summary>
+        /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedUid { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330User? User { get; set; }
 #nullable restore
 #else
-        public string DeletedUid { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330User User { get; set; }
 #endif
-        /// <summary>The deletedUser property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330DeletedUser? DeletedUser { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330DeletedUser DeletedUser { get; set; }
-#endif
-        /// <summary>The directoryType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DirectoryType { get; set; }
-#nullable restore
-#else
-        public string DirectoryType { get; set; }
-#endif
-        /// <summary>The githubUsername property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GithubUsername { get; set; }
-#nullable restore
-#else
-        public string GithubUsername { get; set; }
-#endif
-        /// <summary>The gitlabUsername property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GitlabUsername { get; set; }
-#nullable restore
-#else
-        public string GitlabUsername { get; set; }
-#endif
-        /// <summary>The newPlan property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330NewPlan? NewPlan { get; set; }
-        /// <summary>The previousPlan property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330PreviousPlan? PreviousPlan { get; set; }
-        /// <summary>Why the member was removed. When removed due to a plan downgrade, this is a {@link DowngradeReason} from `@api/pubsub-types` (e.g. `trial_expired`, `user_downgrade`).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Reason { get; set; }
-#nullable restore
-#else
-        public string Reason { get; set; }
-#endif
-        /// <summary>The role property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330Role? Role { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330"/> and sets the default values.
         /// </summary>
@@ -104,17 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "automated", n => { Automated = n.GetBoolValue(); } },
-                { "bitbucketUsername", n => { BitbucketUsername = n.GetStringValue(); } },
-                { "deletedUid", n => { DeletedUid = n.GetStringValue(); } },
-                { "deletedUser", n => { DeletedUser = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330DeletedUser>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330DeletedUser.CreateFromDiscriminatorValue); } },
-                { "directoryType", n => { DirectoryType = n.GetStringValue(); } },
-                { "githubUsername", n => { GithubUsername = n.GetStringValue(); } },
-                { "gitlabUsername", n => { GitlabUsername = n.GetStringValue(); } },
-                { "newPlan", n => { NewPlan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330NewPlan>(); } },
-                { "previousPlan", n => { PreviousPlan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330PreviousPlan>(); } },
-                { "reason", n => { Reason = n.GetStringValue(); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330Role>(); } },
+                { "entitlement", n => { Entitlement = n.GetStringValue(); } },
+                { "user", n => { User = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330User>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330User.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -124,17 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("automated", Automated);
-            writer.WriteStringValue("bitbucketUsername", BitbucketUsername);
-            writer.WriteStringValue("deletedUid", DeletedUid);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330DeletedUser>("deletedUser", DeletedUser);
-            writer.WriteStringValue("directoryType", DirectoryType);
-            writer.WriteStringValue("githubUsername", GithubUsername);
-            writer.WriteStringValue("gitlabUsername", GitlabUsername);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330NewPlan>("newPlan", NewPlan);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330PreviousPlan>("previousPlan", PreviousPlan);
-            writer.WriteStringValue("reason", Reason);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330Role>("role", Role);
+            writer.WriteStringValue("entitlement", Entitlement);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf330User>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

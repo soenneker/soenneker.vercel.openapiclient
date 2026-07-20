@@ -15,21 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The next property</summary>
+        /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf350NextProperty? Next { get; set; }
+        public string? Domain { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf350NextProperty Next { get; set; }
+        public string Domain { get; set; }
 #endif
-        /// <summary>The previous property</summary>
+        /// <summary>The ips property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf350PreviousProperty? Previous { get; set; }
+        public List<string>? Ips { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf350PreviousProperty Previous { get; set; }
+        public List<string> Ips { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf350"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf350NextProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf350NextProperty.CreateFromDiscriminatorValue); } },
-                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf350PreviousProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf350PreviousProperty.CreateFromDiscriminatorValue); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
+                { "ips", n => { Ips = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf350NextProperty>("next", Next);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf350PreviousProperty>("previous", Previous);
+            writer.WriteStringValue("domain", Domain);
+            writer.WriteCollectionOfPrimitiveValues<string>("ips", Ips);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

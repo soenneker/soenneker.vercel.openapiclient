@@ -11428,6 +11428,10 @@
                     "deletedAt": {
                       "type": "number"
                     },
+                    "reinstallAt": {
+                      "type": "number",
+                      "description": "Time when this connector started requiring reinstallation because an installation-affecting app-token grant changed."
+                    },
                     "createdBy": {
                       "oneOf": [
                         {
@@ -12763,9 +12767,6 @@
           },
           "429": {
             "description": ""
-          },
-          "504": {
-            "description": ""
           }
         },
         "parameters": [
@@ -13113,9 +13114,6 @@
             "description": ""
           },
           "422": {
-            "description": ""
-          },
-          "504": {
             "description": ""
           }
         },
@@ -13737,11 +13735,7 @@
                                 "required": [
                                   "host",
                                   "method",
-                                  "path",
-                                  "referer",
-                                  "region",
-                                  "timestamp",
-                                  "userAgent"
+                                  "timestamp"
                                 ],
                                 "type": "object"
                               }
@@ -14003,11 +13997,7 @@
                                     "required": [
                                       "host",
                                       "method",
-                                      "path",
-                                      "referer",
-                                      "region",
-                                      "timestamp",
-                                      "userAgent"
+                                      "timestamp"
                                     ],
                                     "type": "object"
                                   }
@@ -14347,11 +14337,7 @@
                               "required": [
                                 "host",
                                 "method",
-                                "path",
-                                "referer",
-                                "region",
-                                "timestamp",
-                                "userAgent"
+                                "timestamp"
                               ],
                               "type": "object"
                             }
@@ -14613,11 +14599,7 @@
                                   "required": [
                                     "host",
                                     "method",
-                                    "path",
-                                    "referer",
-                                    "region",
-                                    "timestamp",
-                                    "userAgent"
+                                    "timestamp"
                                   ],
                                   "type": "object"
                                 }
@@ -183313,6 +183295,33 @@
                               "toolCallStatusCode": {
                                 "type": "string"
                               },
+                              "environmentId": {
+                                "type": "string"
+                              },
+                              "billableRegion": {
+                                "type": "string"
+                              },
+                              "direction": {
+                                "type": "string"
+                              },
+                              "networkTenancy": {
+                                "type": "string"
+                              },
+                              "trafficSource": {
+                                "type": "string"
+                              },
+                              "networkId": {
+                                "type": "string"
+                              },
+                              "privatelinkEndpointId": {
+                                "type": "string"
+                              },
+                              "privatelinkDnsName": {
+                                "type": "string"
+                              },
+                              "privatelinkIpAddress": {
+                                "type": "string"
+                              },
                               "timestamp": {
                                 "type": "string",
                                 "format": "date-time"
@@ -183903,6 +183912,33 @@
                               },
                               "toolCallStatusCode": {
                                 "type": "string"
+                              },
+                              "environmentId": {
+                                "type": "string"
+                              },
+                              "billableRegion": {
+                                "type": "string"
+                              },
+                              "direction": {
+                                "type": "string"
+                              },
+                              "networkTenancy": {
+                                "type": "string"
+                              },
+                              "trafficSource": {
+                                "type": "string"
+                              },
+                              "networkId": {
+                                "type": "string"
+                              },
+                              "privatelinkEndpointId": {
+                                "type": "string"
+                              },
+                              "privatelinkDnsName": {
+                                "type": "string"
+                              },
+                              "privatelinkIpAddress": {
+                                "type": "string"
                               }
                             },
                             "required": [
@@ -183915,6 +183951,7 @@
                               "attributes",
                               "attributionEventName",
                               "attributionTarget",
+                              "billableRegion",
                               "blobOperationLevel",
                               "blobOperationType",
                               "botCategory",
@@ -183949,6 +183986,7 @@
                               "deepAnalysisCheck",
                               "deploymentId",
                               "deviceType",
+                              "direction",
                               "edgeNetworkRegion",
                               "edgeType",
                               "entryId",
@@ -183956,6 +183994,7 @@
                               "entryName",
                               "entryRevalidateSeconds",
                               "environment",
+                              "environmentId",
                               "errorCode",
                               "errorMessage",
                               "eventData",
@@ -183999,6 +184038,8 @@
                               "middlewareAction",
                               "middlewareActionTarget",
                               "moderationApplied",
+                              "networkId",
+                              "networkTenancy",
                               "notificationUrl",
                               "optimizedFormatMimeType",
                               "optimizedQuality",
@@ -184010,6 +184051,9 @@
                               "pathType",
                               "pathTypeVariant",
                               "piiRedactionApplied",
+                              "privatelinkDnsName",
+                              "privatelinkEndpointId",
+                              "privatelinkIpAddress",
                               "projectId",
                               "projectName",
                               "provider",
@@ -184079,6 +184123,7 @@
                               "toolCallStatusCode",
                               "toolCallSuccess",
                               "toolCallType",
+                              "trafficSource",
                               "triggeringTag",
                               "utmCampaign",
                               "utmContent",
@@ -184933,6 +184978,33 @@
                               "toolCallStatusCode": {
                                 "type": "string"
                               },
+                              "environmentId": {
+                                "type": "string"
+                              },
+                              "billableRegion": {
+                                "type": "string"
+                              },
+                              "direction": {
+                                "type": "string"
+                              },
+                              "networkTenancy": {
+                                "type": "string"
+                              },
+                              "trafficSource": {
+                                "type": "string"
+                              },
+                              "networkId": {
+                                "type": "string"
+                              },
+                              "privatelinkEndpointId": {
+                                "type": "string"
+                              },
+                              "privatelinkDnsName": {
+                                "type": "string"
+                              },
+                              "privatelinkIpAddress": {
+                                "type": "string"
+                              },
                               "timestamp": {
                                 "type": "string",
                                 "format": "date-time"
@@ -185523,6 +185595,33 @@
                               },
                               "toolCallStatusCode": {
                                 "type": "string"
+                              },
+                              "environmentId": {
+                                "type": "string"
+                              },
+                              "billableRegion": {
+                                "type": "string"
+                              },
+                              "direction": {
+                                "type": "string"
+                              },
+                              "networkTenancy": {
+                                "type": "string"
+                              },
+                              "trafficSource": {
+                                "type": "string"
+                              },
+                              "networkId": {
+                                "type": "string"
+                              },
+                              "privatelinkEndpointId": {
+                                "type": "string"
+                              },
+                              "privatelinkDnsName": {
+                                "type": "string"
+                              },
+                              "privatelinkIpAddress": {
+                                "type": "string"
                               }
                             },
                             "required": [
@@ -185535,6 +185634,7 @@
                               "attributes",
                               "attributionEventName",
                               "attributionTarget",
+                              "billableRegion",
                               "blobOperationLevel",
                               "blobOperationType",
                               "botCategory",
@@ -185569,6 +185669,7 @@
                               "deepAnalysisCheck",
                               "deploymentId",
                               "deviceType",
+                              "direction",
                               "edgeNetworkRegion",
                               "edgeType",
                               "entryId",
@@ -185576,6 +185677,7 @@
                               "entryName",
                               "entryRevalidateSeconds",
                               "environment",
+                              "environmentId",
                               "errorCode",
                               "errorMessage",
                               "eventData",
@@ -185619,6 +185721,8 @@
                               "middlewareAction",
                               "middlewareActionTarget",
                               "moderationApplied",
+                              "networkId",
+                              "networkTenancy",
                               "notificationUrl",
                               "optimizedFormatMimeType",
                               "optimizedQuality",
@@ -185630,6 +185734,9 @@
                               "pathType",
                               "pathTypeVariant",
                               "piiRedactionApplied",
+                              "privatelinkDnsName",
+                              "privatelinkEndpointId",
+                              "privatelinkIpAddress",
                               "projectId",
                               "projectName",
                               "provider",
@@ -185699,6 +185806,7 @@
                               "toolCallStatusCode",
                               "toolCallSuccess",
                               "toolCallType",
+                              "trafficSource",
                               "triggeringTag",
                               "utmCampaign",
                               "utmContent",
@@ -186516,6 +186624,33 @@
                         },
                         "toolCallStatusCode": {
                           "type": "string"
+                        },
+                        "environmentId": {
+                          "type": "string"
+                        },
+                        "billableRegion": {
+                          "type": "string"
+                        },
+                        "direction": {
+                          "type": "string"
+                        },
+                        "networkTenancy": {
+                          "type": "string"
+                        },
+                        "trafficSource": {
+                          "type": "string"
+                        },
+                        "networkId": {
+                          "type": "string"
+                        },
+                        "privatelinkEndpointId": {
+                          "type": "string"
+                        },
+                        "privatelinkDnsName": {
+                          "type": "string"
+                        },
+                        "privatelinkIpAddress": {
+                          "type": "string"
                         }
                       },
                       "required": [
@@ -186528,6 +186663,7 @@
                         "attributes",
                         "attributionEventName",
                         "attributionTarget",
+                        "billableRegion",
                         "blobOperationLevel",
                         "blobOperationType",
                         "botCategory",
@@ -186562,6 +186698,7 @@
                         "deepAnalysisCheck",
                         "deploymentId",
                         "deviceType",
+                        "direction",
                         "edgeNetworkRegion",
                         "edgeType",
                         "entryId",
@@ -186569,6 +186706,7 @@
                         "entryName",
                         "entryRevalidateSeconds",
                         "environment",
+                        "environmentId",
                         "errorCode",
                         "errorMessage",
                         "eventData",
@@ -186612,6 +186750,8 @@
                         "middlewareAction",
                         "middlewareActionTarget",
                         "moderationApplied",
+                        "networkId",
+                        "networkTenancy",
                         "notificationUrl",
                         "optimizedFormatMimeType",
                         "optimizedQuality",
@@ -186623,6 +186763,9 @@
                         "pathType",
                         "pathTypeVariant",
                         "piiRedactionApplied",
+                        "privatelinkDnsName",
+                        "privatelinkEndpointId",
+                        "privatelinkIpAddress",
                         "projectId",
                         "projectName",
                         "provider",
@@ -186692,6 +186835,7 @@
                         "toolCallStatusCode",
                         "toolCallSuccess",
                         "toolCallType",
+                        "trafficSource",
                         "triggeringTag",
                         "utmCampaign",
                         "utmContent",
@@ -187440,6 +187584,33 @@
                         },
                         "toolCallStatusCode": {
                           "type": "string"
+                        },
+                        "environmentId": {
+                          "type": "string"
+                        },
+                        "billableRegion": {
+                          "type": "string"
+                        },
+                        "direction": {
+                          "type": "string"
+                        },
+                        "networkTenancy": {
+                          "type": "string"
+                        },
+                        "trafficSource": {
+                          "type": "string"
+                        },
+                        "networkId": {
+                          "type": "string"
+                        },
+                        "privatelinkEndpointId": {
+                          "type": "string"
+                        },
+                        "privatelinkDnsName": {
+                          "type": "string"
+                        },
+                        "privatelinkIpAddress": {
+                          "type": "string"
                         }
                       },
                       "required": [
@@ -187452,6 +187623,7 @@
                         "attributes",
                         "attributionEventName",
                         "attributionTarget",
+                        "billableRegion",
                         "blobOperationLevel",
                         "blobOperationType",
                         "botCategory",
@@ -187486,6 +187658,7 @@
                         "deepAnalysisCheck",
                         "deploymentId",
                         "deviceType",
+                        "direction",
                         "edgeNetworkRegion",
                         "edgeType",
                         "entryId",
@@ -187493,6 +187666,7 @@
                         "entryName",
                         "entryRevalidateSeconds",
                         "environment",
+                        "environmentId",
                         "errorCode",
                         "errorMessage",
                         "eventData",
@@ -187536,6 +187710,8 @@
                         "middlewareAction",
                         "middlewareActionTarget",
                         "moderationApplied",
+                        "networkId",
+                        "networkTenancy",
                         "notificationUrl",
                         "optimizedFormatMimeType",
                         "optimizedQuality",
@@ -187547,6 +187723,9 @@
                         "pathType",
                         "pathTypeVariant",
                         "piiRedactionApplied",
+                        "privatelinkDnsName",
+                        "privatelinkEndpointId",
+                        "privatelinkIpAddress",
                         "projectId",
                         "projectName",
                         "provider",
@@ -187616,6 +187795,7 @@
                         "toolCallStatusCode",
                         "toolCallSuccess",
                         "toolCallType",
+                        "trafficSource",
                         "triggeringTag",
                         "utmCampaign",
                         "utmContent",
@@ -194811,7 +194991,6 @@
               "team-domain-verification-deleted",
               "team-domain-verification-verified",
               "team-email-domain-update",
-              "team-emu-account-split",
               "team-emu-updated",
               "team-ended-trial",
               "team-firewall-config-modified",
@@ -194873,6 +195052,7 @@
               "vcr-repository-deleted",
               "vcr-repository-permission-added",
               "vcr-repository-permission-removed",
+              "vcr-repository-permissions-cleared",
               "vercel-agent-elevated-permissions-approved",
               "vercel-agent-elevated-permissions-requested",
               "vercel-agent-session-created",
@@ -212273,22 +212453,6 @@
               },
               {
                 "properties": {
-                  "personalAccountId": {
-                    "type": "string"
-                  },
-                  "managedAccountId": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "managedAccountId",
-                  "personalAccountId"
-                ],
-                "type": "object",
-                "description": "The payload of the event, if requested."
-              },
-              {
-                "properties": {
                   "enabled": {
                     "type": "boolean",
                     "enum": [
@@ -213583,6 +213747,33 @@
                   "projectName",
                   "repositoryName",
                   "sharedWithTeamId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "projectId": {
+                    "type": "string"
+                  },
+                  "projectName": {
+                    "type": "string"
+                  },
+                  "repositoryName": {
+                    "type": "string"
+                  },
+                  "removedTeamIds": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "projectId",
+                  "projectName",
+                  "removedTeamIds",
+                  "repositoryName"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -215146,7 +215337,6 @@
               "team-domain-verification-deleted",
               "team-domain-verification-verified",
               "team-email-domain-update",
-              "team-emu-account-split",
               "team-emu-updated",
               "team-ended-trial",
               "team-firewall-config-modified",
@@ -215208,6 +215398,7 @@
               "vcr-repository-deleted",
               "vcr-repository-permission-added",
               "vcr-repository-permission-removed",
+              "vcr-repository-permissions-cleared",
               "vercel-agent-elevated-permissions-approved",
               "vercel-agent-elevated-permissions-requested",
               "vercel-agent-session-created",
@@ -215768,7 +215959,6 @@
                 "team-domain-verification-deleted",
                 "team-domain-verification-verified",
                 "team-email-domain-update",
-                "team-emu-account-split",
                 "team-emu-updated",
                 "team-ended-trial",
                 "team-firewall-config-modified",
@@ -215830,6 +216020,7 @@
                 "vcr-repository-deleted",
                 "vcr-repository-permission-added",
                 "vcr-repository-permission-removed",
+                "vcr-repository-permissions-cleared",
                 "vercel-agent-elevated-permissions-approved",
                 "vercel-agent-elevated-permissions-requested",
                 "vercel-agent-session-created",
@@ -218124,7 +218315,6 @@
           "createdAt",
           "id",
           "lastUsedAt",
-          "region",
           "sizeBytes",
           "sourceSessionId",
           "status",

@@ -5,16 +5,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum UserEventPayloadOneOf349Scope
+    public enum UserEventPayloadOneOf344Consent
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "dashboard")]
+        [EnumMember(Value = "granted")]
         #pragma warning disable CS1591
-        Dashboard,
+        Granted,
         #pragma warning restore CS1591
-        [EnumMember(Value = "log-drains")]
+        [EnumMember(Value = "refused")]
         #pragma warning disable CS1591
-        LogDrains,
+        Refused,
         #pragma warning restore CS1591
     }
 }

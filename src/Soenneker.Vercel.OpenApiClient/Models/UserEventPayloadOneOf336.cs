@@ -15,24 +15,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The authorized property</summary>
-        public bool? Authorized { get; set; }
-        /// <summary>The email property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Email { get; set; }
-#nullable restore
-#else
-        public string Email { get; set; }
-#endif
-        /// <summary>The reason property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Reason { get; set; }
-#nullable restore
-#else
-        public string Reason { get; set; }
-#endif
+        /// <summary>The enforced property</summary>
+        public bool? Enforced { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf336"/> and sets the default values.
         /// </summary>
@@ -58,9 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "authorized", n => { Authorized = n.GetBoolValue(); } },
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "enforced", n => { Enforced = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -70,9 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("authorized", Authorized);
-            writer.WriteStringValue("email", Email);
-            writer.WriteStringValue("reason", Reason);
+            writer.WriteBoolValue("enforced", Enforced);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
