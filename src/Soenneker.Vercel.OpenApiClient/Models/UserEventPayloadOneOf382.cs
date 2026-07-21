@@ -15,29 +15,51 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The deploymentId property</summary>
+        /// <summary>The chatId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeploymentId { get; set; }
+        public string? ChatId { get; set; }
 #nullable restore
 #else
-        public string DeploymentId { get; set; }
+        public string ChatId { get; set; }
 #endif
-        /// <summary>The projectId property</summary>
+        /// <summary>The events property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382EventsItem>? Events { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382EventsItem> Events { get; set; }
 #endif
-        /// <summary>The runId property</summary>
+        /// <summary>The inputTokens property</summary>
+        public double? InputTokens { get; set; }
+        /// <summary>The messageId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RunId { get; set; }
+        public string? MessageId { get; set; }
 #nullable restore
 #else
-        public string RunId { get; set; }
+        public string MessageId { get; set; }
+#endif
+        /// <summary>The model property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Model { get; set; }
+#nullable restore
+#else
+        public string Model { get; set; }
+#endif
+        /// <summary>The outputTokens property</summary>
+        public double? OutputTokens { get; set; }
+        /// <summary>The timestamp property</summary>
+        public double? Timestamp { get; set; }
+        /// <summary>The useCase property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UseCase { get; set; }
+#nullable restore
+#else
+        public string UseCase { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382"/> and sets the default values.
@@ -64,9 +86,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "runId", n => { RunId = n.GetStringValue(); } },
+                { "chatId", n => { ChatId = n.GetStringValue(); } },
+                { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382EventsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382EventsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "inputTokens", n => { InputTokens = n.GetDoubleValue(); } },
+                { "messageId", n => { MessageId = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "outputTokens", n => { OutputTokens = n.GetDoubleValue(); } },
+                { "timestamp", n => { Timestamp = n.GetDoubleValue(); } },
+                { "useCase", n => { UseCase = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +103,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("deploymentId", DeploymentId);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("runId", RunId);
+            writer.WriteStringValue("chatId", ChatId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf382EventsItem>("events", Events);
+            writer.WriteDoubleValue("inputTokens", InputTokens);
+            writer.WriteStringValue("messageId", MessageId);
+            writer.WriteStringValue("model", Model);
+            writer.WriteDoubleValue("outputTokens", OutputTokens);
+            writer.WriteDoubleValue("timestamp", Timestamp);
+            writer.WriteStringValue("useCase", UseCase);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

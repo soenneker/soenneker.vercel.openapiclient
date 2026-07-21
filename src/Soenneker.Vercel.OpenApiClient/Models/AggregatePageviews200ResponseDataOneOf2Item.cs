@@ -310,6 +310,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ConsumerGroup { get; set; }
 #endif
+        /// <summary>The contentCaptureInputs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ContentCaptureInputs { get; set; }
+#nullable restore
+#else
+        public string ContentCaptureInputs { get; set; }
+#endif
+        /// <summary>The contentCaptureOutputs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ContentCaptureOutputs { get; set; }
+#nullable restore
+#else
+        public string ContentCaptureOutputs { get; set; }
+#endif
+        /// <summary>The contentCaptureStatus property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ContentCaptureStatus { get; set; }
+#nullable restore
+#else
+        public string ContentCaptureStatus { get; set; }
+#endif
         /// <summary>The contentType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1286,6 +1310,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string SdkKeyId { get; set; }
 #endif
+        /// <summary>The servedSpeed property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ServedSpeed { get; set; }
+#nullable restore
+#else
+        public string ServedSpeed { get; set; }
+#endif
         /// <summary>The serverActionName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1684,6 +1716,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "clientUserAgent", n => { ClientUserAgent = n.GetStringValue(); } },
                 { "commitSha", n => { CommitSha = n.GetStringValue(); } },
                 { "consumerGroup", n => { ConsumerGroup = n.GetStringValue(); } },
+                { "contentCaptureInputs", n => { ContentCaptureInputs = n.GetStringValue(); } },
+                { "contentCaptureOutputs", n => { ContentCaptureOutputs = n.GetStringValue(); } },
+                { "contentCaptureStatus", n => { ContentCaptureStatus = n.GetStringValue(); } },
                 { "contentType", n => { ContentType = n.GetStringValue(); } },
                 { "costCurrency", n => { CostCurrency = n.GetStringValue(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
@@ -1806,6 +1841,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "sandboxSessionId", n => { SandboxSessionId = n.GetStringValue(); } },
                 { "sdkKeyEnvironment", n => { SdkKeyEnvironment = n.GetStringValue(); } },
                 { "sdkKeyId", n => { SdkKeyId = n.GetStringValue(); } },
+                { "servedSpeed", n => { ServedSpeed = n.GetStringValue(); } },
                 { "serverActionName", n => { ServerActionName = n.GetStringValue(); } },
                 { "service", n => { Service = n.GetStringValue(); } },
                 { "sessionId", n => { SessionId = n.GetStringValue(); } },
@@ -1894,6 +1930,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("clientUserAgent", ClientUserAgent);
             writer.WriteStringValue("commitSha", CommitSha);
             writer.WriteStringValue("consumerGroup", ConsumerGroup);
+            writer.WriteStringValue("contentCaptureInputs", ContentCaptureInputs);
+            writer.WriteStringValue("contentCaptureOutputs", ContentCaptureOutputs);
+            writer.WriteStringValue("contentCaptureStatus", ContentCaptureStatus);
             writer.WriteStringValue("contentType", ContentType);
             writer.WriteStringValue("costCurrency", CostCurrency);
             writer.WriteStringValue("country", Country);
@@ -2016,6 +2055,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("sandboxSessionId", SandboxSessionId);
             writer.WriteStringValue("sdkKeyEnvironment", SdkKeyEnvironment);
             writer.WriteStringValue("sdkKeyId", SdkKeyId);
+            writer.WriteStringValue("servedSpeed", ServedSpeed);
             writer.WriteStringValue("serverActionName", ServerActionName);
             writer.WriteStringValue("service", Service);
             writer.WriteStringValue("sessionId", SessionId);

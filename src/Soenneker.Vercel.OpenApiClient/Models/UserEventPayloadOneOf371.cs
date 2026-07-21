@@ -15,10 +15,38 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The nextProjectCount property</summary>
-        public double? NextProjectCount { get; set; }
-        /// <summary>The previousProjectCount property</summary>
-        public double? PreviousProjectCount { get; set; }
+        /// <summary>The projectId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get; set; }
+#nullable restore
+#else
+        public string ProjectId { get; set; }
+#endif
+        /// <summary>The projectName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectName { get; set; }
+#nullable restore
+#else
+        public string ProjectName { get; set; }
+#endif
+        /// <summary>The removedTeamIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? RemovedTeamIds { get; set; }
+#nullable restore
+#else
+        public List<string> RemovedTeamIds { get; set; }
+#endif
+        /// <summary>The repositoryName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RepositoryName { get; set; }
+#nullable restore
+#else
+        public string RepositoryName { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf371"/> and sets the default values.
         /// </summary>
@@ -44,8 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "nextProjectCount", n => { NextProjectCount = n.GetDoubleValue(); } },
-                { "previousProjectCount", n => { PreviousProjectCount = n.GetDoubleValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "removedTeamIds", n => { RemovedTeamIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "repositoryName", n => { RepositoryName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,8 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("nextProjectCount", NextProjectCount);
-            writer.WriteDoubleValue("previousProjectCount", PreviousProjectCount);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteCollectionOfPrimitiveValues<string>("removedTeamIds", RemovedTeamIds);
+            writer.WriteStringValue("repositoryName", RepositoryName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

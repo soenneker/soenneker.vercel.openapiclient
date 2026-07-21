@@ -15,10 +15,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The packs property</summary>
-        public double? Packs { get; set; }
-        /// <summary>The prevPacks property</summary>
-        public double? PrevPacks { get; set; }
+        /// <summary>The prevPurchasedAmount property</summary>
+        public double? PrevPurchasedAmount { get; set; }
         /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,6 +25,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84Project Project { get; set; }
 #endif
+        /// <summary>The purchasedAmount property</summary>
+        public double? PurchasedAmount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84"/> and sets the default values.
         /// </summary>
@@ -52,9 +52,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "packs", n => { Packs = n.GetDoubleValue(); } },
-                { "prevPacks", n => { PrevPacks = n.GetDoubleValue(); } },
+                { "prevPurchasedAmount", n => { PrevPurchasedAmount = n.GetDoubleValue(); } },
                 { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84Project.CreateFromDiscriminatorValue); } },
+                { "purchasedAmount", n => { PurchasedAmount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -64,9 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("packs", Packs);
-            writer.WriteDoubleValue("prevPacks", PrevPacks);
+            writer.WriteDoubleValue("prevPurchasedAmount", PrevPurchasedAmount);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84Project>("project", Project);
+            writer.WriteDoubleValue("purchasedAmount", PurchasedAmount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

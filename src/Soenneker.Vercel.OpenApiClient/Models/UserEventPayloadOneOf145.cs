@@ -13,12 +13,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf145 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The action property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf145Action? Action { get; set; }
-        /// <summary>The active property</summary>
-        public bool? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The configChangeCount property</summary>
+        public double? ConfigChangeCount { get; set; }
+        /// <summary>The configChanges property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf145ConfigChangesItemProperty>? ConfigChanges { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf145ConfigChangesItemProperty> ConfigChanges { get; set; }
+#endif
+        /// <summary>The configVersion property</summary>
+        public double? ConfigVersion { get; set; }
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,14 +35,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>The rulesetName property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RulesetName { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public string RulesetName { get; set; }
+        public string ProjectName { get; set; }
 #endif
+        /// <summary>The restore property</summary>
+        public bool? Restore { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf145"/> and sets the default values.
         /// </summary>
@@ -60,10 +70,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf145Action>(); } },
-                { "active", n => { Active = n.GetBoolValue(); } },
+                { "configChangeCount", n => { ConfigChangeCount = n.GetDoubleValue(); } },
+                { "configChanges", n => { ConfigChanges = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf145ConfigChangesItemProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf145ConfigChangesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "configVersion", n => { ConfigVersion = n.GetDoubleValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "rulesetName", n => { RulesetName = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "restore", n => { Restore = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -73,10 +85,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf145Action>("action", Action);
-            writer.WriteBoolValue("active", Active);
+            writer.WriteDoubleValue("configChangeCount", ConfigChangeCount);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf145ConfigChangesItemProperty>("configChanges", ConfigChanges);
+            writer.WriteDoubleValue("configVersion", ConfigVersion);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("rulesetName", RulesetName);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteBoolValue("restore", Restore);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

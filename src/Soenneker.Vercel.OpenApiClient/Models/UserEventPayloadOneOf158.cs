@@ -15,46 +15,80 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The algorithm property</summary>
+        /// <summary>The configurationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Algorithm { get; set; }
+        public string? ConfigurationId { get; set; }
 #nullable restore
 #else
-        public string Algorithm { get; set; }
+        public string ConfigurationId { get; set; }
 #endif
-        /// <summary>The issuerId property</summary>
+        /// <summary>The databaseName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerId { get; set; }
+        public string? DatabaseName { get; set; }
 #nullable restore
 #else
-        public string IssuerId { get; set; }
+        public string DatabaseName { get; set; }
 #endif
-        /// <summary>The issuerName property</summary>
+        /// <summary>The errorCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerName { get; set; }
+        public string? ErrorCode { get; set; }
 #nullable restore
 #else
-        public string IssuerName { get; set; }
+        public string ErrorCode { get; set; }
 #endif
-        /// <summary>The managedBy property</summary>
+        /// <summary>The failedQueryIndex property</summary>
+        public double? FailedQueryIndex { get; set; }
+        /// <summary>The integrationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedBy { get; set; }
+        public string? IntegrationId { get; set; }
 #nullable restore
 #else
-        public string ManagedBy { get; set; }
+        public string IntegrationId { get; set; }
 #endif
-        /// <summary>The origin property</summary>
+        /// <summary>The integrationProductSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Origin { get; set; }
+        public string? IntegrationProductSlug { get; set; }
 #nullable restore
 #else
-        public string Origin { get; set; }
+        public string IntegrationProductSlug { get; set; }
 #endif
+        /// <summary>The integrationSlug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IntegrationSlug { get; set; }
+#nullable restore
+#else
+        public string IntegrationSlug { get; set; }
+#endif
+        /// <summary>The queries property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158QueriesItem>? Queries { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158QueriesItem> Queries { get; set; }
+#endif
+        /// <summary>The queryCount property</summary>
+        public double? QueryCount { get; set; }
+        /// <summary>The queryType property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158QueryType? QueryType { get; set; }
+        /// <summary>The readonly property</summary>
+        public bool? Readonly { get; set; }
+        /// <summary>The resourceId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ResourceId { get; set; }
+#nullable restore
+#else
+        public string ResourceId { get; set; }
+#endif
+        /// <summary>The rolledBack property</summary>
+        public bool? RolledBack { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158"/> and sets the default values.
         /// </summary>
@@ -80,11 +114,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "algorithm", n => { Algorithm = n.GetStringValue(); } },
-                { "issuerId", n => { IssuerId = n.GetStringValue(); } },
-                { "issuerName", n => { IssuerName = n.GetStringValue(); } },
-                { "managedBy", n => { ManagedBy = n.GetStringValue(); } },
-                { "origin", n => { Origin = n.GetStringValue(); } },
+                { "configurationId", n => { ConfigurationId = n.GetStringValue(); } },
+                { "databaseName", n => { DatabaseName = n.GetStringValue(); } },
+                { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
+                { "failedQueryIndex", n => { FailedQueryIndex = n.GetDoubleValue(); } },
+                { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
+                { "integrationProductSlug", n => { IntegrationProductSlug = n.GetStringValue(); } },
+                { "integrationSlug", n => { IntegrationSlug = n.GetStringValue(); } },
+                { "queries", n => { Queries = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158QueriesItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158QueriesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "queryCount", n => { QueryCount = n.GetDoubleValue(); } },
+                { "queryType", n => { QueryType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158QueryType>(); } },
+                { "readonly", n => { Readonly = n.GetBoolValue(); } },
+                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
+                { "rolledBack", n => { RolledBack = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -94,11 +136,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("algorithm", Algorithm);
-            writer.WriteStringValue("issuerId", IssuerId);
-            writer.WriteStringValue("issuerName", IssuerName);
-            writer.WriteStringValue("managedBy", ManagedBy);
-            writer.WriteStringValue("origin", Origin);
+            writer.WriteStringValue("configurationId", ConfigurationId);
+            writer.WriteStringValue("databaseName", DatabaseName);
+            writer.WriteStringValue("errorCode", ErrorCode);
+            writer.WriteDoubleValue("failedQueryIndex", FailedQueryIndex);
+            writer.WriteStringValue("integrationId", IntegrationId);
+            writer.WriteStringValue("integrationProductSlug", IntegrationProductSlug);
+            writer.WriteStringValue("integrationSlug", IntegrationSlug);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158QueriesItem>("queries", Queries);
+            writer.WriteDoubleValue("queryCount", QueryCount);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158QueryType>("queryType", QueryType);
+            writer.WriteBoolValue("readonly", Readonly);
+            writer.WriteStringValue("resourceId", ResourceId);
+            writer.WriteBoolValue("rolledBack", RolledBack);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

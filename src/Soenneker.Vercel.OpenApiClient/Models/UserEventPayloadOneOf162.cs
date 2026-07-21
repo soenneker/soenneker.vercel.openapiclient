@@ -31,21 +31,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string IssuerName { get; set; }
 #endif
-        /// <summary>The kind property</summary>
+        /// <summary>The keyId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kind { get; set; }
+        public string? KeyId { get; set; }
 #nullable restore
 #else
-        public string Kind { get; set; }
-#endif
-        /// <summary>The policyKey property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PolicyKey { get; set; }
-#nullable restore
-#else
-        public string PolicyKey { get; set; }
+        public string KeyId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf162"/> and sets the default values.
@@ -74,8 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "issuerId", n => { IssuerId = n.GetStringValue(); } },
                 { "issuerName", n => { IssuerName = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetStringValue(); } },
-                { "policyKey", n => { PolicyKey = n.GetStringValue(); } },
+                { "keyId", n => { KeyId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -87,8 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("issuerId", IssuerId);
             writer.WriteStringValue("issuerName", IssuerName);
-            writer.WriteStringValue("kind", Kind);
-            writer.WriteStringValue("policyKey", PolicyKey);
+            writer.WriteStringValue("keyId", KeyId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

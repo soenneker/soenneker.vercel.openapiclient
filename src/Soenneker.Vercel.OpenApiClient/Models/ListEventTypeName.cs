@@ -647,6 +647,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         EdgeCacheDangerouslyDeleteByTags,
         #pragma warning restore CS1591
+        [EnumMember(Value = "edge-cache-dangerously-delete-immutable-static")]
+        #pragma warning disable CS1591
+        EdgeCacheDangerouslyDeleteImmutableStatic,
+        #pragma warning restore CS1591
         [EnumMember(Value = "edge-cache-invalidate-by-src-images")]
         #pragma warning disable CS1591
         EdgeCacheInvalidateBySrcImages,
