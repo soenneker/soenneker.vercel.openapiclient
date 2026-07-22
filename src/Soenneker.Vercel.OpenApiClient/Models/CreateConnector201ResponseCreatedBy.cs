@@ -15,7 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The environment property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreatedByEnvironment? Environment { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreatedByEnvironment Environment { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,7 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "environment", n => { Environment = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreatedByEnvironment>(); } },
+                { "environment", n => { Environment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreatedByEnvironment>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreatedByEnvironment.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreatedByType>(); } },
             };
@@ -63,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreatedByEnvironment>("environment", Environment);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreatedByEnvironment>("environment", Environment);
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreatedByType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

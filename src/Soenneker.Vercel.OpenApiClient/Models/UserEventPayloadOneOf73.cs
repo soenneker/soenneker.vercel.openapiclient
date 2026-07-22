@@ -25,8 +25,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf73Configuration Configuration { get; set; }
 #endif
-        /// <summary>The passive property</summary>
-        public bool? Passive { get; set; }
         /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,7 +68,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "buildsEnabled", n => { BuildsEnabled = n.GetBoolValue(); } },
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf73Configuration>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf73Configuration.CreateFromDiscriminatorValue); } },
-                { "passive", n => { Passive = n.GetBoolValue(); } },
                 { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf73Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf73Project.CreateFromDiscriminatorValue); } },
                 { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf73Team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf73Team.CreateFromDiscriminatorValue); } },
             };
@@ -84,7 +81,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("buildsEnabled", BuildsEnabled);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf73Configuration>("configuration", Configuration);
-            writer.WriteBoolValue("passive", Passive);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf73Project>("project", Project);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf73Team>("team", Team);
             writer.WriteAdditionalData(AdditionalData);

@@ -12,7 +12,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class CreateConnectorRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Branding accent color (6-digit hex, e.g. &quot;#000000&quot;).</summary>
+        /// <summary>The accentColor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccentColor { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Branding background color (6-digit hex, e.g. &quot;#000000&quot;).</summary>
+        /// <summary>The backgroundColor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BackgroundColor { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestData Data { get; set; }
 #endif
-        /// <summary>Use these environments when linking to the project specified by the projectId.</summary>
+        /// <summary>Use these built-in environment names or stable custom environment IDs when linking to projectId.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Environments { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> Events { get; set; }
 #endif
-        /// <summary>Branding icon SHA-1 hash already uploaded to the Vercel avatar service.</summary>
+        /// <summary>The icon property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Icon { get; set; }

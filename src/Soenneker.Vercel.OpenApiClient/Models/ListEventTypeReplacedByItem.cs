@@ -319,6 +319,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         CertSystemCreate,
         #pragma warning restore CS1591
+        [EnumMember(Value = "code-owners-config-updated")]
+        #pragma warning disable CS1591
+        CodeOwnersConfigUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "compliance-document-downloaded")]
         #pragma warning disable CS1591
         ComplianceDocumentDownloaded,

@@ -11621,11 +11621,20 @@
                               "type": "string"
                             },
                             "environment": {
-                              "type": "string",
-                              "enum": [
-                                "development",
-                                "preview",
-                                "production"
+                              "oneOf": [
+                                {
+                                  "type": "string"
+                                },
+                                {
+                                  "type": "string",
+                                  "enum": [
+                                    "development",
+                                    "development",
+                                    "preview",
+                                    "preview",
+                                    "production"
+                                  ]
+                                }
                               ]
                             }
                           },
@@ -11672,11 +11681,20 @@
                               "type": "string"
                             },
                             "environment": {
-                              "type": "string",
-                              "enum": [
-                                "development",
-                                "preview",
-                                "production"
+                              "oneOf": [
+                                {
+                                  "type": "string"
+                                },
+                                {
+                                  "type": "string",
+                                  "enum": [
+                                    "development",
+                                    "development",
+                                    "preview",
+                                    "preview",
+                                    "production"
+                                  ]
+                                }
                               ]
                             }
                           },
@@ -11955,6 +11973,24 @@
                                       },
                                       "name": {
                                         "type": "string"
+                                      },
+                                      "customEnvironments": {
+                                        "items": {
+                                          "properties": {
+                                            "id": {
+                                              "type": "string"
+                                            },
+                                            "slug": {
+                                              "type": "string"
+                                            }
+                                          },
+                                          "required": [
+                                            "id",
+                                            "slug"
+                                          ],
+                                          "type": "object"
+                                        },
+                                        "type": "array"
                                       }
                                     },
                                     "required": [
@@ -11965,11 +12001,20 @@
                                   },
                                   "environments": {
                                     "items": {
-                                      "type": "string",
-                                      "enum": [
-                                        "development",
-                                        "preview",
-                                        "production"
+                                      "oneOf": [
+                                        {
+                                          "type": "string"
+                                        },
+                                        {
+                                          "type": "string",
+                                          "enum": [
+                                            "development",
+                                            "development",
+                                            "preview",
+                                            "preview",
+                                            "production"
+                                          ]
+                                        }
                                       ]
                                     },
                                     "type": "array"
@@ -12069,57 +12114,6 @@
                   "data"
                 ],
                 "properties": {
-                  "type": {
-                    "type": "string",
-                    "description": "Known types: api-key, github, linear, oauth, salesforce, slack, snowflake."
-                  },
-                  "service": {
-                    "type": "string",
-                    "description": "Service slug or URL for which the connector is used."
-                  },
-                  "uid": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "projectId": {
-                    "type": "string",
-                    "description": "Link to the specified project when specified. See environments."
-                  },
-                  "environments": {
-                    "type": "array",
-                    "description": "Use these environments when linking to the project specified by the projectId.",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "triggers": {
-                    "description": "Whether the triggers are enabled for this connector.",
-                    "type": "boolean"
-                  },
-                  "events": {
-                    "type": "array",
-                    "description": "The list of the defaults trigger events for this connector.",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "icon": {
-                    "type": "string",
-                    "description": "Branding icon SHA-1 hash already uploaded to the Vercel avatar service.",
-                    "pattern": "^[0-9a-fA-F]{40}$"
-                  },
-                  "backgroundColor": {
-                    "type": "string",
-                    "description": "Branding background color (6-digit hex, e.g. \"#000000\").",
-                    "pattern": "^#[0-9a-fA-F]{6}$"
-                  },
-                  "accentColor": {
-                    "type": "string",
-                    "description": "Branding accent color (6-digit hex, e.g. \"#000000\").",
-                    "pattern": "^#[0-9a-fA-F]{6}$"
-                  },
                   "data": {
                     "anyOf": [
                       {
@@ -12351,7 +12345,7 @@
                               },
                               "scopes": {
                                 "type": "array",
-                                "description": "Default scopes to request when token params specify scopes: [\"*\"].",
+                                "description": "Default scopes to request when token params specify scopes: [\\\"*\\\"].",
                                 "items": {
                                   "type": "string"
                                 }
@@ -12382,7 +12376,7 @@
                               },
                               "scopes": {
                                 "type": "array",
-                                "description": "Default scopes to request when token params specify scopes: [\"*\"].",
+                                "description": "Default scopes to request when token params specify scopes: [\\\"*\\\"].",
                                 "items": {
                                   "type": "string"
                                 }
@@ -12423,7 +12417,7 @@
                               },
                               "scopes": {
                                 "type": "array",
-                                "description": "Default scopes to request when token params specify scopes: [\"*\"].",
+                                "description": "Default scopes to request when token params specify scopes: [\\\"*\\\"].",
                                 "items": {
                                   "type": "string"
                                 }
@@ -12820,6 +12814,60 @@
                         "additionalProperties": true
                       }
                     ]
+                  },
+                  "icon": {
+                    "type": "string"
+                  },
+                  "backgroundColor": {
+                    "type": "string"
+                  },
+                  "accentColor": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "description": "Known types: api-key, github, linear, oauth, salesforce, slack, snowflake."
+                  },
+                  "service": {
+                    "type": "string",
+                    "description": "Service slug or URL for which the connector is used."
+                  },
+                  "uid": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "projectId": {
+                    "type": "string",
+                    "description": "Link to the specified project when specified. See environments."
+                  },
+                  "environments": {
+                    "description": "Use these built-in environment names or stable custom environment IDs when linking to projectId.",
+                    "type": "array",
+                    "items": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "string",
+                          "pattern": "^env_"
+                        }
+                      ],
+                      "description": "A built-in environment name or the stable env_* ID of a custom environment."
+                    }
+                  },
+                  "triggers": {
+                    "description": "Whether the triggers are enabled for this connector.",
+                    "type": "boolean"
+                  },
+                  "events": {
+                    "type": "array",
+                    "description": "The list of the defaults trigger events for this connector.",
+                    "items": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -12887,6 +12935,14 @@
                     },
                     "externalSubject": {
                       "type": "string"
+                    },
+                    "authorizationId": {
+                      "type": "string",
+                      "description": "Stable id correlating all tokens (including refreshes) back to the original authorization."
+                    },
+                    "tokenGroupId": {
+                      "type": "string",
+                      "description": "Stable id that groups all tokens with the same parameters across refreshes."
                     },
                     "claims": {
                       "additionalProperties": true,
@@ -13107,6 +13163,10 @@
                           "name": {
                             "type": "string"
                           },
+                          "data": {
+                            "additionalProperties": true,
+                            "type": "object"
+                          },
                           "installationId": {
                             "type": "string"
                           },
@@ -13184,10 +13244,6 @@
                             ],
                             "type": "object"
                           },
-                          "data": {
-                            "additionalProperties": true,
-                            "type": "object"
-                          },
                           "subject": {
                             "oneOf": [
                               {
@@ -13231,6 +13287,8 @@
                             "type": "string",
                             "enum": [
                               "development",
+                              "development",
+                              "preview",
                               "preview",
                               "production"
                             ]
@@ -66486,6 +66544,9 @@
             "description": ""
           },
           "410": {
+            "description": ""
+          },
+          "429": {
             "description": ""
           }
         },
@@ -127417,7 +127478,7 @@
             }
           },
           "400": {
-            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid.\nTrusted IPs is only accessible for enterprise customers"
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid.\nTrusted IPs is only accessible for enterprise customers. This plan gate runs before the ACL check below on purpose: it depends only on the team's billing plan, so it can reject unsupported plans deterministically. `auth.can` resolves team membership (a DynamoDB lookup) and rejecting here first avoids depending on that external read for a request that is invalid regardless of authorization."
           },
           "401": {
             "description": "The request is not authorized."
@@ -183860,6 +183921,9 @@
                               "cacheReason": {
                                 "type": "string"
                               },
+                              "pprState": {
+                                "type": "string"
+                              },
                               "clientIp": {
                                 "type": "string"
                               },
@@ -184490,6 +184554,9 @@
                               "cacheReason": {
                                 "type": "string"
                               },
+                              "pprState": {
+                                "type": "string"
+                              },
                               "clientIp": {
                                 "type": "string"
                               },
@@ -185066,6 +185133,7 @@
                               "pathType",
                               "pathTypeVariant",
                               "piiRedactionApplied",
+                              "pprState",
                               "privatelinkDnsName",
                               "privatelinkEndpointId",
                               "privatelinkIpAddress",
@@ -185574,6 +185642,9 @@
                               "cacheReason": {
                                 "type": "string"
                               },
+                              "pprState": {
+                                "type": "string"
+                              },
                               "clientIp": {
                                 "type": "string"
                               },
@@ -186204,6 +186275,9 @@
                               "cacheReason": {
                                 "type": "string"
                               },
+                              "pprState": {
+                                "type": "string"
+                              },
                               "clientIp": {
                                 "type": "string"
                               },
@@ -186780,6 +186854,7 @@
                               "pathType",
                               "pathTypeVariant",
                               "piiRedactionApplied",
+                              "pprState",
                               "privatelinkDnsName",
                               "privatelinkEndpointId",
                               "privatelinkIpAddress",
@@ -187252,6 +187327,9 @@
                         "cacheReason": {
                           "type": "string"
                         },
+                        "pprState": {
+                          "type": "string"
+                        },
                         "clientIp": {
                           "type": "string"
                         },
@@ -187828,6 +187906,7 @@
                         "pathType",
                         "pathTypeVariant",
                         "piiRedactionApplied",
+                        "pprState",
                         "privatelinkDnsName",
                         "privatelinkEndpointId",
                         "privatelinkIpAddress",
@@ -188231,6 +188310,9 @@
                         "cacheReason": {
                           "type": "string"
                         },
+                        "pprState": {
+                          "type": "string"
+                        },
                         "clientIp": {
                           "type": "string"
                         },
@@ -188807,6 +188889,7 @@
                         "pathType",
                         "pathTypeVariant",
                         "piiRedactionApplied",
+                        "pprState",
                         "privatelinkDnsName",
                         "privatelinkEndpointId",
                         "privatelinkIpAddress",
@@ -195730,6 +195813,7 @@
               "cert-renew",
               "cert-replace",
               "cert-system-create",
+              "code-owners-config-updated",
               "compliance-document-downloaded",
               "concurrent-builds-update",
               "connect-attach-project",
@@ -198954,6 +199038,70 @@
                     "type": "array"
                   }
                 },
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "gitOwnerName": {
+                    "type": "string"
+                  },
+                  "gitRepositoryName": {
+                    "type": "string"
+                  },
+                  "previous": {
+                    "properties": {
+                      "enabled": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ]
+                      },
+                      "autoAddReviewers": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ]
+                      }
+                    },
+                    "required": [
+                      "autoAddReviewers",
+                      "enabled"
+                    ],
+                    "type": "object"
+                  },
+                  "next": {
+                    "properties": {
+                      "enabled": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ]
+                      },
+                      "autoAddReviewers": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ]
+                      }
+                    },
+                    "required": [
+                      "autoAddReviewers",
+                      "enabled"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "gitOwnerName",
+                  "gitRepositoryName",
+                  "next",
+                  "previous"
+                ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
               },
@@ -204455,22 +204603,42 @@
                       },
                       "resourceLimits": {
                         "additionalProperties": {
-                          "properties": {
-                            "max": {
-                              "type": "number"
+                          "oneOf": [
+                            {
+                              "properties": {
+                                "max": {
+                                  "type": "number"
+                                },
+                                "duration": {
+                                  "type": "number"
+                                }
+                              },
+                              "required": [
+                                "duration",
+                                "max"
+                              ],
+                              "type": "object",
+                              "description": "Override for a token-bucket rate limit: a fixed quantity per duration."
                             },
-                            "duration": {
-                              "type": "number"
+                            {
+                              "properties": {
+                                "minRate": {
+                                  "type": "number"
+                                },
+                                "maxRate": {
+                                  "type": "number"
+                                },
+                                "stepPerMinute": {
+                                  "type": "number"
+                                }
+                              },
+                              "type": "object",
+                              "description": "Overrides for a ramp (slew-rate) admission limit, which bounds how quickly the allowed rate may change over time rather than capping a fixed quantity. All three are expressed in units per minute. - `minRate`: the floor the allowed rate never drops below. Also the cold-start rate a new or idle consumer begins at. - `maxRate`: the ceiling the allowed rate may climb to. - `stepPerMinute`: how much the allowed rate moves per minute of activity — the slope at which it ramps up toward `maxRate` (and, where supported, decays back down toward `minRate`)."
                             }
-                          },
-                          "required": [
-                            "duration",
-                            "max"
-                          ],
-                          "type": "object"
+                          ]
                         },
                         "type": "object",
-                        "description": "User | Team resource limits"
+                        "description": "User | Team resource limits. Each entry overrides either a token-bucket rate limit or a ramp admission limit, never both."
                       },
                       "activeDashboardViews": {
                         "items": {
@@ -206403,11 +206571,12 @@
                                   "enum": [
                                     "admin_removal",
                                     "passkey",
+                                    "self_serve_recovery",
                                     "totp",
                                     "unknown",
                                     "user_disabled"
                                   ],
-                                  "description": "Method used for the state change - 'totp': User set up TOTP authenticator - 'passkey': User registered a passkey - 'user_disabled': User disabled their own MFA - 'admin_removal': Admin removed MFA via backoffice - 'unknown': Method unknown (for pre-tracking events)"
+                                  "description": "Method used for the state change - 'totp': User set up TOTP authenticator - 'passkey': User registered a passkey - 'user_disabled': User disabled their own MFA - 'admin_removal': Admin removed MFA via backoffice - 'self_serve_recovery': User disabled their own MFA through the self-serve MFA disable recovery flow (a \"Locked Out User\" with only a passkey) - 'unknown': Method unknown (for pre-tracking events)"
                                 },
                                 "actorId": {
                                   "type": "string",
@@ -216125,6 +216294,7 @@
               "cert-renew",
               "cert-replace",
               "cert-system-create",
+              "code-owners-config-updated",
               "compliance-document-downloaded",
               "concurrent-builds-update",
               "connect-attach-project",
@@ -216748,6 +216918,7 @@
                 "cert-renew",
                 "cert-replace",
                 "cert-system-create",
+                "code-owners-config-updated",
                 "compliance-document-downloaded",
                 "concurrent-builds-update",
                 "connect-attach-project",

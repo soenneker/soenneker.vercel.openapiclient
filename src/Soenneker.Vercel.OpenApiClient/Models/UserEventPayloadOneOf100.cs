@@ -13,8 +13,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf100 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The action property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100Action? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The domain property</summary>
@@ -33,8 +31,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The initiator property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100Initiator? Initiator { get; set; }
         /// <summary>The mxPriority property</summary>
         public double? MxPriority { get; set; }
         /// <summary>The name property</summary>
@@ -44,22 +40,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string Name { get; set; }
-#endif
-        /// <summary>The previousValue property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PreviousValue { get; set; }
-#nullable restore
-#else
-        public string PreviousValue { get; set; }
-#endif
-        /// <summary>The source property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Source { get; set; }
-#nullable restore
-#else
-        public string Source { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,14 +82,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100Action>(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "initiator", n => { Initiator = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100Initiator>(); } },
                 { "mxPriority", n => { MxPriority = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "previousValue", n => { PreviousValue = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
@@ -121,14 +97,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100Action>("action", Action);
             writer.WriteStringValue("domain", Domain);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100Initiator>("initiator", Initiator);
             writer.WriteDoubleValue("mxPriority", MxPriority);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("previousValue", PreviousValue);
-            writer.WriteStringValue("source", Source);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);

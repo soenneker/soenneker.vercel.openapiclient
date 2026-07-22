@@ -15,16 +15,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The elevatedScopeCount property</summary>
-        public double? ElevatedScopeCount { get; set; }
-        /// <summary>Requested Vercel scopes that are not included in the baseline token.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? ElevatedScopes { get; set; }
-#nullable restore
-#else
-        public List<string> ElevatedScopes { get; set; }
-#endif
         /// <summary>The eventId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,46 +23,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string EventId { get; set; }
 #endif
-        /// <summary>The githubScopeCount property</summary>
-        public double? GithubScopeCount { get; set; }
-        /// <summary>External GitHub scopes requested by the plan; these are not Vercel token scopes.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? GithubScopes { get; set; }
-#nullable restore
-#else
-        public List<string> GithubScopes { get; set; }
-#endif
-        /// <summary>The mergedScopeCount property</summary>
-        public double? MergedScopeCount { get; set; }
-        /// <summary>Baseline plus elevated Vercel scopes used when minting scoped tokens.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? MergedScopes { get; set; }
-#nullable restore
-#else
-        public List<string> MergedScopes { get; set; }
-#endif
         /// <summary>The occurredAt property</summary>
         public double? OccurredAt { get; set; }
-        /// <summary>The planId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PlanId { get; set; }
-#nullable restore
-#else
-        public string PlanId { get; set; }
-#endif
-        /// <summary>The requestedScopeCount property</summary>
-        public double? RequestedScopeCount { get; set; }
-        /// <summary>Scopes requested by the model-authored plan.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? RequestedScopes { get; set; }
-#nullable restore
-#else
-        public List<string> RequestedScopes { get; set; }
-#endif
         /// <summary>The sessionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,17 +74,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "elevatedScopeCount", n => { ElevatedScopeCount = n.GetDoubleValue(); } },
-                { "elevatedScopes", n => { ElevatedScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "eventId", n => { EventId = n.GetStringValue(); } },
-                { "githubScopeCount", n => { GithubScopeCount = n.GetDoubleValue(); } },
-                { "githubScopes", n => { GithubScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "mergedScopeCount", n => { MergedScopeCount = n.GetDoubleValue(); } },
-                { "mergedScopes", n => { MergedScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "occurredAt", n => { OccurredAt = n.GetDoubleValue(); } },
-                { "planId", n => { PlanId = n.GetStringValue(); } },
-                { "requestedScopeCount", n => { RequestedScopeCount = n.GetDoubleValue(); } },
-                { "requestedScopes", n => { RequestedScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "sessionId", n => { SessionId = n.GetStringValue(); } },
                 { "sessionKind", n => { SessionKind = n.GetStringValue(); } },
                 { "surface", n => { Surface = n.GetStringValue(); } },
@@ -145,17 +88,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("elevatedScopeCount", ElevatedScopeCount);
-            writer.WriteCollectionOfPrimitiveValues<string>("elevatedScopes", ElevatedScopes);
             writer.WriteStringValue("eventId", EventId);
-            writer.WriteDoubleValue("githubScopeCount", GithubScopeCount);
-            writer.WriteCollectionOfPrimitiveValues<string>("githubScopes", GithubScopes);
-            writer.WriteDoubleValue("mergedScopeCount", MergedScopeCount);
-            writer.WriteCollectionOfPrimitiveValues<string>("mergedScopes", MergedScopes);
             writer.WriteDoubleValue("occurredAt", OccurredAt);
-            writer.WriteStringValue("planId", PlanId);
-            writer.WriteDoubleValue("requestedScopeCount", RequestedScopeCount);
-            writer.WriteCollectionOfPrimitiveValues<string>("requestedScopes", RequestedScopes);
             writer.WriteStringValue("sessionId", SessionId);
             writer.WriteStringValue("sessionKind", SessionKind);
             writer.WriteStringValue("surface", Surface);

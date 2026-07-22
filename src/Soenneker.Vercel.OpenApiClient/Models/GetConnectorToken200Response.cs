@@ -14,6 +14,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Stable id correlating all tokens (including refreshes) back to the original authorization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AuthorizationId { get; set; }
+#nullable restore
+#else
+        public string AuthorizationId { get; set; }
+#endif
         /// <summary>Claims extracted from the provider&apos;s tokens per the connector&apos;s `ForwardedClaims` allow-list. Currently sourced from the OIDC id_token only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +88,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Token { get; set; }
 #endif
+        /// <summary>Stable id that groups all tokens with the same parameters across refreshes.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TokenGroupId { get; set; }
+#nullable restore
+#else
+        public string TokenGroupId { get; set; }
+#endif
         /// <summary>The tokenId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,6 +129,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "authorizationId", n => { AuthorizationId = n.GetStringValue(); } },
                 { "claims", n => { Claims = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorToken200ResponseClaims>(global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorToken200ResponseClaims.CreateFromDiscriminatorValue); } },
                 { "connector", n => { Connector = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorToken200ResponseConnector>(global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorToken200ResponseConnector.CreateFromDiscriminatorValue); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
@@ -122,6 +139,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
                 { "token", n => { Token = n.GetStringValue(); } },
+                { "tokenGroupId", n => { TokenGroupId = n.GetStringValue(); } },
                 { "tokenId", n => { TokenId = n.GetStringValue(); } },
             };
         }
@@ -132,6 +150,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("authorizationId", AuthorizationId);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorToken200ResponseClaims>("claims", Claims);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorToken200ResponseConnector>("connector", Connector);
             writer.WriteDoubleValue("expiresAt", ExpiresAt);
@@ -141,6 +160,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteStringValue("token", Token);
+            writer.WriteStringValue("tokenGroupId", TokenGroupId);
             writer.WriteStringValue("tokenId", TokenId);
             writer.WriteAdditionalData(AdditionalData);
         }

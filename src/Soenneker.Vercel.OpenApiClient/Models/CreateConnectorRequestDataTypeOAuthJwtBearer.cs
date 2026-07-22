@@ -38,7 +38,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Iss { get; set; }
 #endif
-        /// <summary>&quot;Default scopes to request when token params specify scopes: [\&quot;*\&quot;].&quot;</summary>
+        /// <summary>&quot;Default scopes to request when token params specify scopes: [\\&quot;*\\&quot;].&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Scopes { get; set; }

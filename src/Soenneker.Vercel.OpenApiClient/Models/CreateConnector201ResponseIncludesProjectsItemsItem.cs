@@ -27,10 +27,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The environments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludesProjectsItemsItemEnvironmentsItem?>? Environments { get; set; }
+        public List<string>? Environments { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludesProjectsItemsItemEnvironmentsItem?> Environments { get; set; }
+        public List<string> Environments { get; set; }
 #endif
         /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,7 +77,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "clientId", n => { ClientId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
-                { "environments", n => { Environments = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludesProjectsItemsItemEnvironmentsItem>()?.AsList(); } },
+                { "environments", n => { Environments = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludesProjectsItemsItemProject>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludesProjectsItemsItemProject.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
@@ -92,7 +92,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("clientId", ClientId);
             writer.WriteDoubleValue("createdAt", CreatedAt);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludesProjectsItemsItemEnvironmentsItem>("environments", Environments);
+            writer.WriteCollectionOfPrimitiveValues<string>("environments", Environments);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludesProjectsItemsItemProject>("project", Project);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);

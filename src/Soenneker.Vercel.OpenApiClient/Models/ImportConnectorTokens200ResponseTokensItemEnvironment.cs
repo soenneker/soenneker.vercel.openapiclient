@@ -10,11 +10,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         [EnumMember(Value = "development")]
         #pragma warning disable CS1591
-        Development,
+        Development1,
         #pragma warning restore CS1591
         [EnumMember(Value = "preview")]
         #pragma warning disable CS1591
-        Preview,
+        Preview1,
         #pragma warning restore CS1591
         [EnumMember(Value = "production")]
         #pragma warning disable CS1591
