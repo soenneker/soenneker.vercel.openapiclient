@@ -32,6 +32,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string EdgeConfigTokenId { get; set; }
 #endif
+        /// <summary>The globalConfigId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GlobalConfigId { get; set; }
+#nullable restore
+#else
+        public string GlobalConfigId { get; set; }
+#endif
+        /// <summary>The globalConfigSyncingEnabled property</summary>
+        public bool? GlobalConfigSyncingEnabled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200ResponseResourcesItemProtocolSettingsExperimentation"/> and sets the default values.
         /// </summary>
@@ -60,6 +70,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
                 { "edgeConfigSyncingEnabled", n => { EdgeConfigSyncingEnabled = n.GetBoolValue(); } },
                 { "edgeConfigTokenId", n => { EdgeConfigTokenId = n.GetStringValue(); } },
+                { "globalConfigId", n => { GlobalConfigId = n.GetStringValue(); } },
+                { "globalConfigSyncingEnabled", n => { GlobalConfigSyncingEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -72,6 +84,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("edgeConfigId", EdgeConfigId);
             writer.WriteBoolValue("edgeConfigSyncingEnabled", EdgeConfigSyncingEnabled);
             writer.WriteStringValue("edgeConfigTokenId", EdgeConfigTokenId);
+            writer.WriteStringValue("globalConfigId", GlobalConfigId);
+            writer.WriteBoolValue("globalConfigSyncingEnabled", GlobalConfigSyncingEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

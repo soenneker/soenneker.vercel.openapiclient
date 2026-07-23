@@ -142,6 +142,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string UpdatedBy { get; set; }
 #endif
+        /// <summary>User-facing config/secret model. When set, authoritative for new code paths when the env-var-config-secret-ui flag is enabled. Legacy rows omit this field; legacy rows omit it and callers fall back to existing `type` behavior.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf1Visibility? Visibility { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf1"/> and sets the default values.
         /// </summary>
@@ -186,6 +188,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf1Type>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
+                { "visibility", n => { Visibility = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf1Visibility>(); } },
             };
         }
         /// <summary>
@@ -214,6 +217,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf1Type>("type", Type);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedBy", UpdatedBy);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf1Visibility>("visibility", Visibility);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

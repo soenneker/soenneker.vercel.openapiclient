@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetDeployment200Response : IComposedTypeWrapper, IParsable
@@ -29,6 +29,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2 GetDeployment200ResponseOneOf2 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3? GetDeployment200ResponseOneOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3 GetDeployment200ResponseOneOf3 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +55,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 result.GetDeployment200ResponseOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2();
             }
+            else if("GetDeployment200ResponseOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetDeployment200ResponseOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3();
+            }
             return result;
         }
         /// <summary>
@@ -62,6 +74,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if(GetDeployment200ResponseOneOf2 != null)
             {
                 return GetDeployment200ResponseOneOf2.GetFieldDeserializers();
+            }
+            else if(GetDeployment200ResponseOneOf3 != null)
+            {
+                return GetDeployment200ResponseOneOf3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -79,6 +95,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if(GetDeployment200ResponseOneOf2 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2>(null, GetDeployment200ResponseOneOf2);
+            }
+            else if(GetDeployment200ResponseOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3>(null, GetDeployment200ResponseOneOf3);
             }
         }
     }

@@ -150,6 +150,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Value { get; set; }
 #endif
+        /// <summary>User-facing config/secret model. When set, authoritative for new code paths when the env-var-config-secret-ui flag is enabled. Legacy rows omit this field; legacy rows omit it and callers fall back to existing `type` behavior.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseEnvItemVisibility? Visibility { get; set; }
         /// <summary>The vsmValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -203,6 +205,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
+                { "visibility", n => { Visibility = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseEnvItemVisibility>(); } },
                 { "vsmValue", n => { VsmValue = n.GetStringValue(); } },
             };
         }
@@ -233,6 +236,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedBy", UpdatedBy);
             writer.WriteStringValue("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseEnvItemVisibility>("visibility", Visibility);
             writer.WriteStringValue("vsmValue", VsmValue);
             writer.WriteAdditionalData(AdditionalData);
         }
