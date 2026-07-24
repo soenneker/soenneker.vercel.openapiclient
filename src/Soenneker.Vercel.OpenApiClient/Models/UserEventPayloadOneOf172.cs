@@ -15,46 +15,78 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fallbackEnvironment property</summary>
+        /// <summary>The env property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FallbackEnvironment { get; set; }
+        public string? Env { get; set; }
 #nullable restore
 #else
-        public string FallbackEnvironment { get; set; }
+        public string Env { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The factors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172Factors? Factors { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172Factors Factors { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The geolocation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172Geolocation? Geolocation { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172Geolocation Geolocation { get; set; }
 #endif
-        /// <summary>The prev property</summary>
+        /// <summary>The os property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172Prev? Prev { get; set; }
+        public string? Os { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172Prev Prev { get; set; }
+        public string Os { get; set; }
 #endif
-        /// <summary>The slug property</summary>
+        /// <summary>The ssoType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Slug { get; set; }
+        public string? SsoType { get; set; }
 #nullable restore
 #else
-        public string Slug { get; set; }
+        public string SsoType { get; set; }
 #endif
+        /// <summary>The userAgent property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserAgent { get; set; }
+#nullable restore
+#else
+        public string UserAgent { get; set; }
+#endif
+        /// <summary>The username property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Username { get; set; }
+#nullable restore
+#else
+        public string Username { get; set; }
+#endif
+        /// <summary>The viaApple property</summary>
+        public bool? ViaApple { get; set; }
+        /// <summary>The viaBitbucket property</summary>
+        public bool? ViaBitbucket { get; set; }
+        /// <summary>The viaGithub property</summary>
+        public bool? ViaGithub { get; set; }
+        /// <summary>The viaGitlab property</summary>
+        public bool? ViaGitlab { get; set; }
+        /// <summary>The viaGoogle property</summary>
+        public bool? ViaGoogle { get; set; }
+        /// <summary>The viaOTP property</summary>
+        public bool? ViaOTP { get; set; }
+        /// <summary>The viaPasskey property</summary>
+        public bool? ViaPasskey { get; set; }
+        /// <summary>The viaSamlSso property</summary>
+        public bool? ViaSamlSso { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172"/> and sets the default values.
         /// </summary>
@@ -80,11 +112,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fallbackEnvironment", n => { FallbackEnvironment = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "prev", n => { Prev = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172Prev>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172Prev.CreateFromDiscriminatorValue); } },
-                { "slug", n => { Slug = n.GetStringValue(); } },
+                { "env", n => { Env = n.GetStringValue(); } },
+                { "factors", n => { Factors = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172Factors>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172Factors.CreateFromDiscriminatorValue); } },
+                { "geolocation", n => { Geolocation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172Geolocation>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172Geolocation.CreateFromDiscriminatorValue); } },
+                { "os", n => { Os = n.GetStringValue(); } },
+                { "ssoType", n => { SsoType = n.GetStringValue(); } },
+                { "userAgent", n => { UserAgent = n.GetStringValue(); } },
+                { "username", n => { Username = n.GetStringValue(); } },
+                { "viaApple", n => { ViaApple = n.GetBoolValue(); } },
+                { "viaBitbucket", n => { ViaBitbucket = n.GetBoolValue(); } },
+                { "viaGithub", n => { ViaGithub = n.GetBoolValue(); } },
+                { "viaGitlab", n => { ViaGitlab = n.GetBoolValue(); } },
+                { "viaGoogle", n => { ViaGoogle = n.GetBoolValue(); } },
+                { "viaOTP", n => { ViaOTP = n.GetBoolValue(); } },
+                { "viaPasskey", n => { ViaPasskey = n.GetBoolValue(); } },
+                { "viaSamlSso", n => { ViaSamlSso = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -94,11 +136,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("fallbackEnvironment", FallbackEnvironment);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172Prev>("prev", Prev);
-            writer.WriteStringValue("slug", Slug);
+            writer.WriteStringValue("env", Env);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172Factors>("factors", Factors);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf172Geolocation>("geolocation", Geolocation);
+            writer.WriteStringValue("os", Os);
+            writer.WriteStringValue("ssoType", SsoType);
+            writer.WriteStringValue("userAgent", UserAgent);
+            writer.WriteStringValue("username", Username);
+            writer.WriteBoolValue("viaApple", ViaApple);
+            writer.WriteBoolValue("viaBitbucket", ViaBitbucket);
+            writer.WriteBoolValue("viaGithub", ViaGithub);
+            writer.WriteBoolValue("viaGitlab", ViaGitlab);
+            writer.WriteBoolValue("viaGoogle", ViaGoogle);
+            writer.WriteBoolValue("viaOTP", ViaOTP);
+            writer.WriteBoolValue("viaPasskey", ViaPasskey);
+            writer.WriteBoolValue("viaSamlSso", ViaSamlSso);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

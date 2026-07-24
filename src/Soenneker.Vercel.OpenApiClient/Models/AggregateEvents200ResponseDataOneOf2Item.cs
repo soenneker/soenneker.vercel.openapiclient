@@ -654,6 +654,38 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ImageTransformationRegion { get; set; }
 #endif
+        /// <summary>The inferenceEndpointSlug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InferenceEndpointSlug { get; set; }
+#nullable restore
+#else
+        public string InferenceEndpointSlug { get; set; }
+#endif
+        /// <summary>The inferenceGeoRegion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InferenceGeoRegion { get; set; }
+#nullable restore
+#else
+        public string InferenceGeoRegion { get; set; }
+#endif
+        /// <summary>The inferenceProviderRegion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InferenceProviderRegion { get; set; }
+#nullable restore
+#else
+        public string InferenceProviderRegion { get; set; }
+#endif
+        /// <summary>The inferenceScope property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InferenceScope { get; set; }
+#nullable restore
+#else
+        public string InferenceScope { get; set; }
+#endif
         /// <summary>The isAdditionalRequest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1197,6 +1229,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string RequestApi { get; set; }
+#endif
+        /// <summary>The requestedInferenceRegion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RequestedInferenceRegion { get; set; }
+#nullable restore
+#else
+        public string RequestedInferenceRegion { get; set; }
 #endif
         /// <summary>The requestExtension property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1767,6 +1807,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "httpStatus", n => { HttpStatus = n.GetStringValue(); } },
                 { "imageSource", n => { ImageSource = n.GetStringValue(); } },
                 { "imageTransformationRegion", n => { ImageTransformationRegion = n.GetStringValue(); } },
+                { "inferenceEndpointSlug", n => { InferenceEndpointSlug = n.GetStringValue(); } },
+                { "inferenceGeoRegion", n => { InferenceGeoRegion = n.GetStringValue(); } },
+                { "inferenceProviderRegion", n => { InferenceProviderRegion = n.GetStringValue(); } },
+                { "inferenceScope", n => { InferenceScope = n.GetStringValue(); } },
                 { "isAdditionalRequest", n => { IsAdditionalRequest = n.GetStringValue(); } },
                 { "isByok", n => { IsByok = n.GetStringValue(); } },
                 { "isPrefetchRequest", n => { IsPrefetchRequest = n.GetStringValue(); } },
@@ -1841,6 +1885,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "requestMethod", n => { RequestMethod = n.GetStringValue(); } },
                 { "requestPath", n => { RequestPath = n.GetStringValue(); } },
                 { "requestResolvedIp", n => { RequestResolvedIp = n.GetStringValue(); } },
+                { "requestedInferenceRegion", n => { RequestedInferenceRegion = n.GetStringValue(); } },
                 { "reviewConclusion", n => { ReviewConclusion = n.GetStringValue(); } },
                 { "reviewStatus", n => { ReviewStatus = n.GetStringValue(); } },
                 { "rewriteDestinationHostname", n => { RewriteDestinationHostname = n.GetStringValue(); } },
@@ -1982,6 +2027,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("httpStatus", HttpStatus);
             writer.WriteStringValue("imageSource", ImageSource);
             writer.WriteStringValue("imageTransformationRegion", ImageTransformationRegion);
+            writer.WriteStringValue("inferenceEndpointSlug", InferenceEndpointSlug);
+            writer.WriteStringValue("inferenceGeoRegion", InferenceGeoRegion);
+            writer.WriteStringValue("inferenceProviderRegion", InferenceProviderRegion);
+            writer.WriteStringValue("inferenceScope", InferenceScope);
             writer.WriteStringValue("isAdditionalRequest", IsAdditionalRequest);
             writer.WriteStringValue("isByok", IsByok);
             writer.WriteStringValue("isPrefetchRequest", IsPrefetchRequest);
@@ -2050,6 +2099,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("repositoryName", RepositoryName);
             writer.WriteStringValue("repositoryOwner", RepositoryOwner);
             writer.WriteStringValue("requestApi", RequestApi);
+            writer.WriteStringValue("requestedInferenceRegion", RequestedInferenceRegion);
             writer.WriteStringValue("requestExtension", RequestExtension);
             writer.WriteStringValue("requestHostname", RequestHostname);
             writer.WriteStringValue("requestId", RequestId);

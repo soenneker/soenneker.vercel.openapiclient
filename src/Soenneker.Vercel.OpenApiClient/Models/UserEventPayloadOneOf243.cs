@@ -17,6 +17,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The disableRepositoryDispatchEvents property</summary>
         public bool? DisableRepositoryDispatchEvents { get; set; }
+        /// <summary>The projectId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get; set; }
+#nullable restore
+#else
+        public string ProjectId { get; set; }
+#endif
+        /// <summary>The projectName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectName { get; set; }
+#nullable restore
+#else
+        public string ProjectName { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf243"/> and sets the default values.
         /// </summary>
@@ -43,6 +59,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "disableRepositoryDispatchEvents", n => { DisableRepositoryDispatchEvents = n.GetBoolValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -53,6 +71,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("disableRepositoryDispatchEvents", DisableRepositoryDispatchEvents);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

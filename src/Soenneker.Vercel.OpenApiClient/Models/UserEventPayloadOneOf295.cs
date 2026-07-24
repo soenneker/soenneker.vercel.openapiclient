@@ -15,21 +15,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The alias property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf295Name? Name { get; set; }
+        public string? Alias { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf295Name Name { get; set; }
+        public string Alias { get; set; }
 #endif
-        /// <summary>The uid property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uid { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string Uid { get; set; }
+        public string ProjectId { get; set; }
+#endif
+        /// <summary>The sandboxId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SandboxId { get; set; }
+#nullable restore
+#else
+        public string SandboxId { get; set; }
+#endif
+        /// <summary>The sandboxName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SandboxName { get; set; }
+#nullable restore
+#else
+        public string SandboxName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf295"/> and sets the default values.
@@ -56,8 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf295Name>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf295Name.CreateFromDiscriminatorValue); } },
-                { "uid", n => { Uid = n.GetStringValue(); } },
+                { "alias", n => { Alias = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "sandboxId", n => { SandboxId = n.GetStringValue(); } },
+                { "sandboxName", n => { SandboxName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf295Name>("name", Name);
-            writer.WriteStringValue("uid", Uid);
+            writer.WriteStringValue("alias", Alias);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("sandboxId", SandboxId);
+            writer.WriteStringValue("sandboxName", SandboxName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

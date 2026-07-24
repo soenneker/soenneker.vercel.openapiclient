@@ -15,29 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The oldOptionsAllowlist property</summary>
+        /// <summary>The destinationAccountName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263OldOptionsAllowlist? OldOptionsAllowlist { get; set; }
+        public string? DestinationAccountName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263OldOptionsAllowlist OldOptionsAllowlist { get; set; }
+        public string DestinationAccountName { get; set; }
 #endif
-        /// <summary>The optionsAllowlist property</summary>
+        /// <summary>The previousProjectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263OptionsAllowlist? OptionsAllowlist { get; set; }
+        public string? PreviousProjectId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263OptionsAllowlist OptionsAllowlist { get; set; }
-#endif
-        /// <summary>The projectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
+        public string PreviousProjectId { get; set; }
 #endif
         /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,6 +38,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string ProjectName { get; set; }
+#endif
+        /// <summary>The transferId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TransferId { get; set; }
+#nullable restore
+#else
+        public string TransferId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263"/> and sets the default values.
@@ -72,10 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "oldOptionsAllowlist", n => { OldOptionsAllowlist = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263OldOptionsAllowlist>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263OldOptionsAllowlist.CreateFromDiscriminatorValue); } },
-                { "optionsAllowlist", n => { OptionsAllowlist = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263OptionsAllowlist>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263OptionsAllowlist.CreateFromDiscriminatorValue); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "destinationAccountName", n => { DestinationAccountName = n.GetStringValue(); } },
+                { "previousProjectId", n => { PreviousProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "transferId", n => { TransferId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,10 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263OldOptionsAllowlist>("oldOptionsAllowlist", OldOptionsAllowlist);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf263OptionsAllowlist>("optionsAllowlist", OptionsAllowlist);
-            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("destinationAccountName", DestinationAccountName);
+            writer.WriteStringValue("previousProjectId", PreviousProjectId);
             writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("transferId", TransferId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

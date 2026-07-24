@@ -15,25 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The max property</summary>
-        public double? Max { get; set; }
-        /// <summary>The min property</summary>
-        public double? Min { get; set; }
-        /// <summary>The scalingRules property</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf299ScalingRulesProperty? ScalingRules { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf299Name? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf299ScalingRulesProperty ScalingRules { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf299Name Name { get; set; }
 #endif
-        /// <summary>The url property</summary>
+        /// <summary>The uid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Uid { get; set; }
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Uid { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf299"/> and sets the default values.
@@ -60,10 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "max", n => { Max = n.GetDoubleValue(); } },
-                { "min", n => { Min = n.GetDoubleValue(); } },
-                { "scalingRules", n => { ScalingRules = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf299ScalingRulesProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf299ScalingRulesProperty.CreateFromDiscriminatorValue); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf299Name>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf299Name.CreateFromDiscriminatorValue); } },
+                { "uid", n => { Uid = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -73,10 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("max", Max);
-            writer.WriteDoubleValue("min", Min);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf299ScalingRulesProperty>("scalingRules", ScalingRules);
-            writer.WriteStringValue("url", Url);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf299Name>("name", Name);
+            writer.WriteStringValue("uid", Uid);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

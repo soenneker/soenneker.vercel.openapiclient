@@ -15,22 +15,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The current property</summary>
+        /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Current? Current { get; set; }
+        public string? Currency { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Current Current { get; set; }
+        public string Currency { get; set; }
 #endif
-        /// <summary>The prev property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Prev? Prev { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Prev Prev { get; set; }
-#endif
+        /// <summary>The enabled property</summary>
+        public bool? Enabled { get; set; }
+        /// <summary>The price property</summary>
+        public double? Price { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203"/> and sets the default values.
         /// </summary>
@@ -56,8 +52,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "current", n => { Current = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Current>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Current.CreateFromDiscriminatorValue); } },
-                { "prev", n => { Prev = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Prev>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Prev.CreateFromDiscriminatorValue); } },
+                { "currency", n => { Currency = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "price", n => { Price = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Current>("current", Current);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Prev>("prev", Prev);
+            writer.WriteStringValue("currency", Currency);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteDoubleValue("price", Price);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -38,6 +38,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasAuditLog AuditLog { get; set; }
 #endif
+        /// <summary>The connect property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasConnect? Connect { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasConnect Connect { get; set; }
+#endif
         /// <summary>The log property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +98,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "ai_gateway", n => { AiGateway = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasAiGateway>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasAiGateway.CreateFromDiscriminatorValue); } },
                 { "analytics", n => { Analytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasAnalytics.CreateFromDiscriminatorValue); } },
                 { "audit_log", n => { AuditLog = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasAuditLog>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasAuditLog.CreateFromDiscriminatorValue); } },
+                { "connect", n => { Connect = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasConnect>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasConnect.CreateFromDiscriminatorValue); } },
                 { "log", n => { Log = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasLog>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasLog.CreateFromDiscriminatorValue); } },
                 { "speed_insights", n => { SpeedInsights = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasSpeedInsights>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasSpeedInsights.CreateFromDiscriminatorValue); } },
                 { "trace", n => { Trace = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasTrace>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasTrace.CreateFromDiscriminatorValue); } },
@@ -105,6 +114,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasAiGateway>("ai_gateway", AiGateway);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasAnalytics>("analytics", Analytics);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasAuditLog>("audit_log", AuditLog);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasConnect>("connect", Connect);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasLog>("log", Log);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasSpeedInsights>("speed_insights", SpeedInsights);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSchemasTrace>("trace", Trace);

@@ -62,6 +62,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Sub { get; set; }
 #endif
+        /// <summary>The token property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Token { get; set; }
+#nullable restore
+#else
+        public string Token { get; set; }
+#endif
         /// <summary>The type property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorTokenRequestSubjectType? Type { get; set; }
         /// <summary>
@@ -95,6 +103,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "iss", n => { Iss = n.GetStringValue(); } },
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
                 { "sub", n => { Sub = n.GetStringValue(); } },
+                { "token", n => { Token = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorTokenRequestSubjectType>(); } },
             };
         }
@@ -111,6 +120,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("iss", Iss);
             writer.WriteStringValue("issuer", Issuer);
             writer.WriteStringValue("sub", Sub);
+            writer.WriteStringValue("token", Token);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConnectorTokenRequestSubjectType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

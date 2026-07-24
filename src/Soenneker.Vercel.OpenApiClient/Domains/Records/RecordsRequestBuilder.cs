@@ -16,7 +16,7 @@ namespace Soenneker.Vercel.OpenApiClient.Domains.Records
     public partial class RecordsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.domains.records.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique ID of the DNS record</param>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Domains.Records.Item.WithRecordItemRequestBuilder"/></returns>
         public global::Soenneker.Vercel.OpenApiClient.Domains.Records.Item.WithRecordItemRequestBuilder this[string position]
         {

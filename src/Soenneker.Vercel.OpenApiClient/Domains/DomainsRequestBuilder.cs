@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.Domains
             get => new global::Soenneker.Vercel.OpenApiClient.Domains.Records.RecordsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.domains.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The domain name</param>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Domains.Item.WithDomainItemRequestBuilder"/></returns>
         public global::Soenneker.Vercel.OpenApiClient.Domains.Item.WithDomainItemRequestBuilder this[string position]
         {

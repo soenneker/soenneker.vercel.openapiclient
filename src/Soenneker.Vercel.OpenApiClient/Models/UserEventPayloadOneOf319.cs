@@ -13,42 +13,36 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf319 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>The access property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf319Access? Access { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The eventId property</summary>
+        /// <summary>The computeUnitsMax property</summary>
+        public double? ComputeUnitsMax { get; set; }
+        /// <summary>The computeUnitsMin property</summary>
+        public double? ComputeUnitsMin { get; set; }
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventId { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string EventId { get; set; }
+        public string Id { get; set; }
 #endif
-        /// <summary>The occurredAt property</summary>
-        public double? OccurredAt { get; set; }
-        /// <summary>The sessionId property</summary>
+        /// <summary>The locked property</summary>
+        public bool? Locked { get; set; }
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionId { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public string SessionId { get; set; }
+        public string Name { get; set; }
 #endif
-        /// <summary>&quot;Currently emitted session kinds: chat, investigation.&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SessionKind { get; set; }
-#nullable restore
-#else
-        public string SessionKind { get; set; }
-#endif
-        /// <summary>&quot;Currently emitted surfaces: dashboard, internal, slack, automation, github.&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Surface { get; set; }
-#nullable restore
-#else
-        public string Surface { get; set; }
-#endif
+        /// <summary>The suspendTimeoutSeconds property</summary>
+        public double? SuspendTimeoutSeconds { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf319Type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf319"/> and sets the default values.
         /// </summary>
@@ -74,11 +68,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "eventId", n => { EventId = n.GetStringValue(); } },
-                { "occurredAt", n => { OccurredAt = n.GetDoubleValue(); } },
-                { "sessionId", n => { SessionId = n.GetStringValue(); } },
-                { "sessionKind", n => { SessionKind = n.GetStringValue(); } },
-                { "surface", n => { Surface = n.GetStringValue(); } },
+                { "access", n => { Access = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf319Access>(); } },
+                { "computeUnitsMax", n => { ComputeUnitsMax = n.GetDoubleValue(); } },
+                { "computeUnitsMin", n => { ComputeUnitsMin = n.GetDoubleValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "locked", n => { Locked = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "suspendTimeoutSeconds", n => { SuspendTimeoutSeconds = n.GetDoubleValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf319Type>(); } },
             };
         }
         /// <summary>
@@ -88,11 +85,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("eventId", EventId);
-            writer.WriteDoubleValue("occurredAt", OccurredAt);
-            writer.WriteStringValue("sessionId", SessionId);
-            writer.WriteStringValue("sessionKind", SessionKind);
-            writer.WriteStringValue("surface", Surface);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf319Access>("access", Access);
+            writer.WriteDoubleValue("computeUnitsMax", ComputeUnitsMax);
+            writer.WriteDoubleValue("computeUnitsMin", ComputeUnitsMin);
+            writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("locked", Locked);
+            writer.WriteStringValue("name", Name);
+            writer.WriteDoubleValue("suspendTimeoutSeconds", SuspendTimeoutSeconds);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf319Type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

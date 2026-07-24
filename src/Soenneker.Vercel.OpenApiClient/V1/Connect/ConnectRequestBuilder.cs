@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.V1.Connect.Authorize;
 using Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors;
+using Soenneker.Vercel.OpenApiClient.V1.Connect.Install;
 using Soenneker.Vercel.OpenApiClient.V1.Connect.Networks;
 using Soenneker.Vercel.OpenApiClient.V1.Connect.Token;
 using System.Collections.Generic;
@@ -27,6 +28,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect
         public global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.ConnectorsRequestBuilder Connectors
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.ConnectorsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The install property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Connect.Install.InstallRequestBuilder Install
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Connect.Install.InstallRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The networks property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.NetworksRequestBuilder Networks

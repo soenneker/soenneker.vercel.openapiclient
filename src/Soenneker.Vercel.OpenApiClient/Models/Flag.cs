@@ -118,6 +118,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.FlagTypeName? TypeName { get; set; }
         /// <summary>The updatedAt property</summary>
         public double? UpdatedAt { get; set; }
+        /// <summary>The updatedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UpdatedBy { get; set; }
+#nullable restore
+#else
+        public string UpdatedBy { get; set; }
+#endif
         /// <summary>The variants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -170,6 +178,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "typeName", n => { TypeName = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagTypeName>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
+                { "updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
                 { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FlagVariantsItemProperty>(global::Soenneker.Vercel.OpenApiClient.Models.FlagVariantsItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -199,6 +208,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagTypeName>("typeName", TypeName);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
+            writer.WriteStringValue("updatedBy", UpdatedBy);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FlagVariantsItemProperty>("variants", Variants);
             writer.WriteAdditionalData(AdditionalData);
         }

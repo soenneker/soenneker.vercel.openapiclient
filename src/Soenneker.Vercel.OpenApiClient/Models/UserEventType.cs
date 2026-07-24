@@ -919,6 +919,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         IntegrationInstallationRemoved,
         #pragma warning restore CS1591
+        [EnumMember(Value = "integration-resource-redis-command-executed")]
+        #pragma warning disable CS1591
+        IntegrationResourceRedisCommandExecuted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "integration-resource-sql-query-executed")]
         #pragma warning disable CS1591
         IntegrationResourceSqlQueryExecuted,

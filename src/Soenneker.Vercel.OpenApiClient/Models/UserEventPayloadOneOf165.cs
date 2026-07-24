@@ -15,6 +15,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The algorithm property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Algorithm { get; set; }
+#nullable restore
+#else
+        public string Algorithm { get; set; }
+#endif
         /// <summary>The issuerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,21 +39,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string IssuerName { get; set; }
 #endif
-        /// <summary>The kind property</summary>
+        /// <summary>The managedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kind { get; set; }
+        public string? ManagedBy { get; set; }
 #nullable restore
 #else
-        public string Kind { get; set; }
+        public string ManagedBy { get; set; }
 #endif
-        /// <summary>The policyKey property</summary>
+        /// <summary>The origin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyKey { get; set; }
+        public string? Origin { get; set; }
 #nullable restore
 #else
-        public string PolicyKey { get; set; }
+        public string Origin { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165"/> and sets the default values.
@@ -72,10 +80,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "algorithm", n => { Algorithm = n.GetStringValue(); } },
                 { "issuerId", n => { IssuerId = n.GetStringValue(); } },
                 { "issuerName", n => { IssuerName = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetStringValue(); } },
-                { "policyKey", n => { PolicyKey = n.GetStringValue(); } },
+                { "managedBy", n => { ManagedBy = n.GetStringValue(); } },
+                { "origin", n => { Origin = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,10 +94,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("algorithm", Algorithm);
             writer.WriteStringValue("issuerId", IssuerId);
             writer.WriteStringValue("issuerName", IssuerName);
-            writer.WriteStringValue("kind", Kind);
-            writer.WriteStringValue("policyKey", PolicyKey);
+            writer.WriteStringValue("managedBy", ManagedBy);
+            writer.WriteStringValue("origin", Origin);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

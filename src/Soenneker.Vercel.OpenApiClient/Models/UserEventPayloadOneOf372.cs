@@ -39,14 +39,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string RepositoryName { get; set; }
 #endif
-        /// <summary>The sharedWithTeamId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SharedWithTeamId { get; set; }
-#nullable restore
-#else
-        public string SharedWithTeamId { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf372"/> and sets the default values.
         /// </summary>
@@ -75,7 +67,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
                 { "repositoryName", n => { RepositoryName = n.GetStringValue(); } },
-                { "sharedWithTeamId", n => { SharedWithTeamId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -88,7 +79,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteStringValue("repositoryName", RepositoryName);
-            writer.WriteStringValue("sharedWithTeamId", SharedWithTeamId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

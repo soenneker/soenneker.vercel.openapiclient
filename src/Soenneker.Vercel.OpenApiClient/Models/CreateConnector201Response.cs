@@ -56,6 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreatedBy CreatedBy { get; set; }
 #endif
+        /// <summary>How the connector row was originally created. New create paths stamp this explicitly; older rows may omit it.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreationMode? CreationMode { get; set; }
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -283,6 +285,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "clientUrl", n => { ClientUrl = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreatedBy>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreatedBy.CreateFromDiscriminatorValue); } },
+                { "creationMode", n => { CreationMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreationMode>(); } },
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseData>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseData.CreateFromDiscriminatorValue); } },
                 { "defaultInstallationId", n => { DefaultInstallationId = n.GetStringValue(); } },
                 { "deletedAt", n => { DeletedAt = n.GetDoubleValue(); } },
@@ -330,6 +333,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("clientUrl", ClientUrl);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreatedBy>("createdBy", CreatedBy);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreationMode>("creationMode", CreationMode);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseData>("data", Data);
             writer.WriteStringValue("defaultInstallationId", DefaultInstallationId);
             writer.WriteDoubleValue("deletedAt", DeletedAt);

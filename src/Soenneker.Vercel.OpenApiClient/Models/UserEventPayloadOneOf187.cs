@@ -15,36 +15,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The connectSrcCount property</summary>
-        public double? ConnectSrcCount { get; set; }
-        /// <summary>The connectSrcNormalizationRulesCleared property</summary>
-        public bool? ConnectSrcNormalizationRulesCleared { get; set; }
-        /// <summary>The connectSrcOriginCount property</summary>
-        public double? ConnectSrcOriginCount { get; set; }
-        /// <summary>The connectSrcUserNormalizationRuleCount property</summary>
-        public double? ConnectSrcUserNormalizationRuleCount { get; set; }
-        /// <summary>The deletedCount property</summary>
-        public double? DeletedCount { get; set; }
-        /// <summary>The headerCount property</summary>
-        public double? HeaderCount { get; set; }
-        /// <summary>The projectId property</summary>
+        /// <summary>The cause property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? Cause { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string Cause { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The ownerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public string? OwnerId { get; set; }
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public string OwnerId { get; set; }
 #endif
-        /// <summary>The scriptCount property</summary>
-        public double? ScriptCount { get; set; }
+        /// <summary>The source property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Source { get; set; }
+#nullable restore
+#else
+        public string Source { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf187"/> and sets the default values.
         /// </summary>
@@ -70,15 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "connectSrcCount", n => { ConnectSrcCount = n.GetDoubleValue(); } },
-                { "connectSrcNormalizationRulesCleared", n => { ConnectSrcNormalizationRulesCleared = n.GetBoolValue(); } },
-                { "connectSrcOriginCount", n => { ConnectSrcOriginCount = n.GetDoubleValue(); } },
-                { "connectSrcUserNormalizationRuleCount", n => { ConnectSrcUserNormalizationRuleCount = n.GetDoubleValue(); } },
-                { "deletedCount", n => { DeletedCount = n.GetDoubleValue(); } },
-                { "headerCount", n => { HeaderCount = n.GetDoubleValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "scriptCount", n => { ScriptCount = n.GetDoubleValue(); } },
+                { "cause", n => { Cause = n.GetStringValue(); } },
+                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
+                { "source", n => { Source = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -88,15 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("connectSrcCount", ConnectSrcCount);
-            writer.WriteBoolValue("connectSrcNormalizationRulesCleared", ConnectSrcNormalizationRulesCleared);
-            writer.WriteDoubleValue("connectSrcOriginCount", ConnectSrcOriginCount);
-            writer.WriteDoubleValue("connectSrcUserNormalizationRuleCount", ConnectSrcUserNormalizationRuleCount);
-            writer.WriteDoubleValue("deletedCount", DeletedCount);
-            writer.WriteDoubleValue("headerCount", HeaderCount);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteDoubleValue("scriptCount", ScriptCount);
+            writer.WriteStringValue("cause", Cause);
+            writer.WriteStringValue("ownerId", OwnerId);
+            writer.WriteStringValue("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -44,8 +44,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemData Data { get; set; }
 #endif
-        /// <summary>The environment property</summary>
+        /// <summary>A built-in environment name or the stable env_* ID of a custom environment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemEnvironment? Environment { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemEnvironment Environment { get; set; }
+#endif
         /// <summary>The expiresAt property</summary>
         public double? ExpiresAt { get; set; }
         /// <summary>The externalSubject property</summary>
@@ -144,7 +150,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "audience", n => { Audience = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "authorizationDetails", n => { AuthorizationDetails = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemAuthorizationDetailsItem>(global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemAuthorizationDetailsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemData>(global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemData.CreateFromDiscriminatorValue); } },
-                { "environment", n => { Environment = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemEnvironment>(); } },
+                { "environment", n => { Environment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemEnvironment>(global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemEnvironment.CreateFromDiscriminatorValue); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
                 { "externalSubject", n => { ExternalSubject = n.GetStringValue(); } },
                 { "installation", n => { Installation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemInstallation>(global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemInstallation.CreateFromDiscriminatorValue); } },
@@ -169,7 +175,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("audience", Audience);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemAuthorizationDetailsItem>("authorizationDetails", AuthorizationDetails);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemData>("data", Data);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemEnvironment>("environment", Environment);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemEnvironment>("environment", Environment);
             writer.WriteDoubleValue("expiresAt", ExpiresAt);
             writer.WriteStringValue("externalSubject", ExternalSubject);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemInstallation>("installation", Installation);

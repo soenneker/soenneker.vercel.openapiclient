@@ -414,6 +414,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnexClientProject { get; set; }
 #endif
+        /// <summary>The connexInstallation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ConnexInstallation { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ConnexInstallation { get; set; }
+#endif
         /// <summary>The connexToken property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2193,6 +2201,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "connectConfigurationLink", n => { ConnectConfigurationLink = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "connexClient", n => { ConnexClient = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "connexClientProject", n => { ConnexClientProject = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
+                { "connexInstallation", n => { ConnexInstallation = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "connexToken", n => { ConnexToken = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "dataCacheBillingSettings", n => { DataCacheBillingSettings = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "dataCacheNamespace", n => { DataCacheNamespace = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
@@ -2465,6 +2474,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("connectConfigurationLink", ConnectConfigurationLink);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("connexClient", ConnexClient);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("connexClientProject", ConnexClientProject);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("connexInstallation", ConnexInstallation);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("connexToken", ConnexToken);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("dataCacheBillingSettings", DataCacheBillingSettings);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("dataCacheNamespace", DataCacheNamespace);

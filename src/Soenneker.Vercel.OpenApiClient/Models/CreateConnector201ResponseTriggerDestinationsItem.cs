@@ -23,6 +23,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Branch { get; set; }
 #endif
+        /// <summary>Stable custom-environment ID to route this destination to. Mutually exclusive with `branch`; omitted destinations keep the legacy production behavior.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomEnvironmentId { get; set; }
+#nullable restore
+#else
+        public string CustomEnvironmentId { get; set; }
+#endif
         /// <summary>The path property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,6 +73,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "branch", n => { Branch = n.GetStringValue(); } },
+                { "customEnvironmentId", n => { CustomEnvironmentId = n.GetStringValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
             };
@@ -77,6 +86,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("branch", Branch);
+            writer.WriteStringValue("customEnvironmentId", CustomEnvironmentId);
             writer.WriteStringValue("path", Path);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteAdditionalData(AdditionalData);

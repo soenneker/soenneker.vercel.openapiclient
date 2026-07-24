@@ -41,6 +41,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ClientUid { get; set; }
 #endif
+        /// <summary>The environments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Environments { get; set; }
+#nullable restore
+#else
+        public List<string> Environments { get; set; }
+#endif
         /// <summary>The fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,6 +112,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "clientId", n => { ClientId = n.GetStringValue(); } },
                 { "clientName", n => { ClientName = n.GetStringValue(); } },
                 { "clientUid", n => { ClientUid = n.GetStringValue(); } },
+                { "environments", n => { Environments = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "importedTokenCount", n => { ImportedTokenCount = n.GetDoubleValue(); } },
                 { "installationId", n => { InstallationId = n.GetStringValue(); } },
@@ -125,6 +134,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("clientId", ClientId);
             writer.WriteStringValue("clientName", ClientName);
             writer.WriteStringValue("clientUid", ClientUid);
+            writer.WriteCollectionOfPrimitiveValues<string>("environments", Environments);
             writer.WriteCollectionOfPrimitiveValues<string>("fields", Fields);
             writer.WriteDoubleValue("importedTokenCount", ImportedTokenCount);
             writer.WriteStringValue("installationId", InstallationId);

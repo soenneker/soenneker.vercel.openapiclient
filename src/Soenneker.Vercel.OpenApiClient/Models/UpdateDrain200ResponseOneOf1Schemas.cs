@@ -38,6 +38,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAuditLog AuditLog { get; set; }
 #endif
+        /// <summary>The connect property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasConnect? Connect { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasConnect Connect { get; set; }
+#endif
         /// <summary>The log property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +98,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "ai_gateway", n => { AiGateway = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAiGateway>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAiGateway.CreateFromDiscriminatorValue); } },
                 { "analytics", n => { Analytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAnalytics.CreateFromDiscriminatorValue); } },
                 { "audit_log", n => { AuditLog = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAuditLog>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAuditLog.CreateFromDiscriminatorValue); } },
+                { "connect", n => { Connect = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasConnect>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasConnect.CreateFromDiscriminatorValue); } },
                 { "log", n => { Log = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasLog>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasLog.CreateFromDiscriminatorValue); } },
                 { "speed_insights", n => { SpeedInsights = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasSpeedInsights>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasSpeedInsights.CreateFromDiscriminatorValue); } },
                 { "trace", n => { Trace = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasTrace>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasTrace.CreateFromDiscriminatorValue); } },
@@ -105,6 +114,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAiGateway>("ai_gateway", AiGateway);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAnalytics>("analytics", Analytics);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasAuditLog>("audit_log", AuditLog);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasConnect>("connect", Connect);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasLog>("log", Log);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasSpeedInsights>("speed_insights", SpeedInsights);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDrain200ResponseOneOf1SchemasTrace>("trace", Trace);

@@ -20,5 +20,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         JwtBearer,
         #pragma warning restore CS1591
+        [EnumMember(Value = "token")]
+        #pragma warning disable CS1591
+        Token,
+        #pragma warning restore CS1591
     }
 }
