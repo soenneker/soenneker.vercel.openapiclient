@@ -32,6 +32,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         OAuth,
         #pragma warning restore CS1591
+        [EnumMember(Value = "photon")]
+        #pragma warning disable CS1591
+        Photon,
+        #pragma warning restore CS1591
         [EnumMember(Value = "salesforce")]
         #pragma warning disable CS1591
         Salesforce,

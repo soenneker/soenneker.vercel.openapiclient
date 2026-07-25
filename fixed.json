@@ -72756,6 +72756,7 @@
         "description": "A built-in environment name or the stable env_* ID of a custom environment."
       },
       "CreateConnector201ResponseCreatedByEnvironment": {
+        "title": "CreatedByEnvironmentTarget",
         "type": "object",
         "oneOf": [
           {
@@ -72767,6 +72768,7 @@
         ]
       },
       "CreateConnector201ResponseUpdatedByEnvironment": {
+        "title": "UpdatedByEnvironmentTarget",
         "type": "object",
         "oneOf": [
           {
@@ -72778,6 +72780,7 @@
         ]
       },
       "CreateConnector201ResponseIncludesProjectsItemsItemEnvironmentsItem": {
+        "title": "CreateConnectorEnvironmentTarget",
         "type": "object",
         "oneOf": [
           {
@@ -72789,10 +72792,11 @@
         ]
       },
       "ImportConnectorTokensRequestTokensItemEnvironment": {
+        "title": "ImportConnectorTokensEnvironmentTarget",
         "type": "object",
         "anyOf": [
           {
-            "type": "string"
+            "$ref": "#/components/schemas/ImportConnectorTokensRequestTokensItemEnvironmentAnyOf1"
           },
           {
             "pattern": "^env_",
@@ -72802,6 +72806,7 @@
         "description": "A built-in environment name or the stable env_* ID of a custom environment."
       },
       "ImportConnectorTokens200ResponseTokensItemEnvironment": {
+        "title": "ImportConnectorTokensConnectEnvironmentTarget",
         "type": "object",
         "oneOf": [
           {
@@ -201936,6 +201941,7 @@
           "linear",
           "microsoft-entra",
           "oauth",
+          "photon",
           "salesforce",
           "slack",
           "snowflake",
@@ -201970,6 +201976,10 @@
             {
               "value": "oauth",
               "name": "OAuth"
+            },
+            {
+              "value": "photon",
+              "name": "Photon"
             },
             {
               "value": "salesforce",
@@ -213770,6 +213780,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
+        "x-speakeasy-name-override": "created_by_environment",
         "x-ms-enum": {
           "name": "CreateConnector201ResponseCreatedByEnvironmentOneOf2",
           "modelAsString": false,
@@ -213797,6 +213808,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
+        "x-speakeasy-name-override": "updated_by_environment",
         "x-ms-enum": {
           "name": "CreateConnector201ResponseUpdatedByEnvironmentOneOf2",
           "modelAsString": false,
@@ -213824,8 +213836,37 @@
         ],
         "type": "string",
         "additionalProperties": false,
+        "x-speakeasy-name-override": "create_connector_environments",
         "x-ms-enum": {
           "name": "CreateConnector201ResponseIncludesProjectsItemsItemEnvironmentsItemOneOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "development",
+              "name": "Development"
+            },
+            {
+              "value": "preview",
+              "name": "Preview"
+            },
+            {
+              "value": "production",
+              "name": "Production"
+            }
+          ]
+        }
+      },
+      "ImportConnectorTokensRequestTokensItemEnvironmentAnyOf1": {
+        "enum": [
+          "development",
+          "preview",
+          "production"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-speakeasy-name-override": "import_connector_tokens_environment",
+        "x-ms-enum": {
+          "name": "ImportConnectorTokensRequestTokensItemEnvironmentAnyOf1",
           "modelAsString": false,
           "values": [
             {
@@ -213851,6 +213892,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
+        "x-speakeasy-name-override": "import_connector_tokens_connect_environment",
         "x-ms-enum": {
           "name": "ImportConnectorTokens200ResponseTokensItemEnvironmentOneOf2",
           "modelAsString": false,

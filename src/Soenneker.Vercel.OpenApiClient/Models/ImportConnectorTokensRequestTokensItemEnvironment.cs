@@ -8,11 +8,13 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="string"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemEnvironmentAnyOf1"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ImportConnectorTokensRequestTokensItemEnvironment : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemEnvironmentAnyOf1"/></summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemEnvironmentAnyOf1? ImportConnectorTokensRequestTokensItemEnvironmentAnyOf1 { get; set; }
         /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -34,6 +36,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 result.String = stringValue;
             }
+            else if(parseNode.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemEnvironmentAnyOf1>() is global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemEnvironmentAnyOf1 importConnectorTokensRequestTokensItemEnvironmentAnyOf1Value)
+            {
+                result.ImportConnectorTokensRequestTokensItemEnvironmentAnyOf1 = importConnectorTokensRequestTokensItemEnvironmentAnyOf1Value;
+            }
             return result;
         }
         /// <summary>
@@ -54,6 +60,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(String != null)
             {
                 writer.WriteStringValue(null, String);
+            }
+            else if(ImportConnectorTokensRequestTokensItemEnvironmentAnyOf1 != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokensRequestTokensItemEnvironmentAnyOf1>(null, ImportConnectorTokensRequestTokensItemEnvironmentAnyOf1);
             }
         }
     }
