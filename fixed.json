@@ -3626,7 +3626,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Returns a reduced view of the deployment with public information only. Private fields are omitted when the requester is not the deployment owner.\nReturns the deployment object for the authenticated owner, including private fields such as environment variables, build log URLs, and internal metadata.\nReturns the reduced deployment view for anonymous (\u0060vcn_\u0060) callers, with an \u0060anonymous.expiresAt\u0060 marking when the project and its token expire. Pool-team details are withheld.",
+            "description": "Returns a reduced view of the deployment with public information only. Private fields are omitted when the requester is not the deployment owner.\nReturns the deployment object for the authenticated owner, including private fields such as environment variables, build log URLs, and internal metadata.\nReturns the reduced deployment view for anonymous (\u0060vcn_\u0060) callers. Pool-team details are withheld.",
             "content": {
               "application/json": {
                 "schema": {
@@ -3764,7 +3764,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns the newly created deployment object. Poll \u0060readyState\u0060 to track build progress. See https://vercel.com/docs/deployments/deployment-states for possible states.\nReturns the reduced deployment view for anonymous (\u0060vcn_\u0060) callers, with an \u0060anonymous.expiresAt\u0060 marking when the project and its token expire. Pool-team details are withheld.",
+            "description": "Returns the newly created deployment object. Poll \u0060readyState\u0060 to track build progress. See https://vercel.com/docs/deployments/deployment-states for possible states.\nReturns the reduced deployment view for anonymous (\u0060vcn_\u0060) callers. Pool-team details are withheld.",
             "content": {
               "application/json": {
                 "schema": {
@@ -25417,6 +25417,9 @@
           },
           {
             "$ref": "#/components/schemas/UserEventPayloadOneOf394"
+          },
+          {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf395"
           }
         ],
         "properties": {
@@ -25820,7 +25823,8 @@
             "UserEventPayloadOneOf391": "#/components/schemas/UserEventPayloadOneOf391",
             "UserEventPayloadOneOf392": "#/components/schemas/UserEventPayloadOneOf392",
             "UserEventPayloadOneOf393": "#/components/schemas/UserEventPayloadOneOf393",
-            "UserEventPayloadOneOf394": "#/components/schemas/UserEventPayloadOneOf394"
+            "UserEventPayloadOneOf394": "#/components/schemas/UserEventPayloadOneOf394",
+            "UserEventPayloadOneOf395": "#/components/schemas/UserEventPayloadOneOf395"
           }
         }
       },
@@ -28007,8 +28011,13 @@
           },
           "parentId": {
             "type": "string",
-            "description": "The organizationId for child teams created under an organization.",
+            "description": "The organizationId for teams that belong to an organization (set on both the organization\u0027s root team and its child teams).",
             "example": "org_nllPyCtREAqxxdyFKbbMDlxd"
+          },
+          "orgRootTeamId": {
+            "type": "string",
+            "description": "Best-effort ID of the organization\u2019s root billing team. When present, compare \u0060orgRootTeamId === id\u0060 to identify the root team. It may be omitted even when \u0060parentId\u0060 is set if organization resolution fails or the referenced organization is missing. Always omitted for non-organization teams.",
+            "example": "team_nllPyCtREAqxxdyFKbbMDlxd"
           }
         },
         "description": "Data representing a Team."
@@ -28072,8 +28081,13 @@
           },
           "parentId": {
             "type": "string",
-            "description": "The organizationId for child teams created under an organization.",
+            "description": "The organizationId for teams that belong to an organization (set on both the organization\u0027s root team and its child teams).",
             "example": "org_nllPyCtREAqxxdyFKbbMDlxd"
+          },
+          "orgRootTeamId": {
+            "type": "string",
+            "description": "Best-effort ID of the organization\u2019s root billing team. When present, compare \u0060orgRootTeamId === id\u0060 to identify the root team. It may be omitted even when \u0060parentId\u0060 is set if organization resolution fails or the referenced organization is missing. Always omitted for non-organization teams.",
+            "example": "team_nllPyCtREAqxxdyFKbbMDlxd"
           }
         },
         "description": "A limited form of data representing a Team, due to the authentication token missing privileges to read the full Team data."
@@ -36980,6 +36994,10 @@
         "description": "The payload of the event, if requested."
       },
       "UserEventPayloadOneOf325": {
+        "required": [
+          "next",
+          "previous"
+        ],
         "type": "object",
         "properties": {
           "previous": {
@@ -36987,11 +37005,26 @@
           },
           "next": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf325Next"
+          },
+          "teamSlug": {
+            "type": "string"
           }
         },
         "description": "The payload of the event, if requested."
       },
       "UserEventPayloadOneOf326": {
+        "type": "object",
+        "properties": {
+          "previous": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf326Previous"
+          },
+          "next": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf326Next"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf327": {
         "required": [
           "by",
           "slug",
@@ -37014,11 +37047,11 @@
           "reasons": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf326ReasonsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf327ReasonsItem"
             }
           },
           "removedUsers": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf326RemovedUsersProperty"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf327RemovedUsersProperty"
           },
           "removedMemberCount": {
             "type": "number"
@@ -37029,7 +37062,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf327": {
+      "UserEventPayloadOneOf328": {
         "required": [
           "next",
           "previous"
@@ -37037,15 +37070,15 @@
         "type": "object",
         "properties": {
           "previous": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf327Previous"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf328Previous"
           },
           "next": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf327Next"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf328Next"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf328": {
+      "UserEventPayloadOneOf329": {
         "required": [
           "enabled"
         ],
@@ -37061,7 +37094,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf329": {
+      "UserEventPayloadOneOf330": {
         "required": [
           "enabled",
           "environment",
@@ -37081,12 +37114,12 @@
             "additionalProperties": false
           },
           "environment": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf329Environment"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf330Environment"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf330": {
+      "UserEventPayloadOneOf331": {
         "required": [
           "enabled",
           "environment"
@@ -37094,15 +37127,15 @@
         "type": "object",
         "properties": {
           "environment": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf330Environment"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf331Environment"
           },
           "enabled": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf330Enabled"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf331Enabled"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf331": {
+      "UserEventPayloadOneOf332": {
         "type": "object",
         "properties": {
           "emailDomain": {
@@ -37112,7 +37145,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf332": {
+      "UserEventPayloadOneOf333": {
         "required": [
           "deletedCount",
           "inviteIds"
@@ -37131,7 +37164,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf333": {
+      "UserEventPayloadOneOf334": {
         "type": "object",
         "properties": {
           "directoryType": {
@@ -37141,7 +37174,7 @@
             "type": "string"
           },
           "invitedUser": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf333InvitedUser"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf334InvitedUser"
           },
           "invitedEmail": {
             "type": "string"
@@ -37167,7 +37200,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf334": {
+      "UserEventPayloadOneOf335": {
         "required": [
           "teamName"
         ],
@@ -37203,7 +37236,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf335": {
+      "UserEventPayloadOneOf336": {
         "required": [
           "teamName"
         ],
@@ -37234,11 +37267,11 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf336": {
+      "UserEventPayloadOneOf337": {
         "type": "object",
         "properties": {
           "deletedUser": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf336DeletedUser"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf337DeletedUser"
           },
           "deletedUid": {
             "type": "string"
@@ -37259,38 +37292,22 @@
             "type": "string"
           },
           "role": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf336Role"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf337Role"
           },
           "reason": {
             "type": "string",
             "description": "Why the member was removed. When removed due to a plan downgrade, this is a {@link DowngradeReason} from \u0060@api/pubsub-types\u0060 (e.g. \u0060trial_expired\u0060, \u0060user_downgrade\u0060)."
           },
           "previousPlan": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf336PreviousPlan"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf337PreviousPlan"
           },
           "newPlan": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf336NewPlan"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf337NewPlan"
           },
           "automated": {
             "type": "boolean",
             "additionalProperties": false,
             "description": "Whether the removal was system-initiated rather than human-initiated."
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf337": {
-        "required": [
-          "entitlement",
-          "user"
-        ],
-        "type": "object",
-        "properties": {
-          "entitlement": {
-            "type": "string"
-          },
-          "user": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf337User"
           }
         },
         "description": "The payload of the event, if requested."
@@ -37307,6 +37324,22 @@
           },
           "user": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf338User"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf339": {
+        "required": [
+          "entitlement",
+          "user"
+        ],
+        "type": "object",
+        "properties": {
+          "entitlement": {
+            "type": "string"
+          },
+          "user": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf339User"
           },
           "previousCanceledAt": {
             "type": "string"
@@ -37314,7 +37347,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf339": {
+      "UserEventPayloadOneOf340": {
         "type": "object",
         "properties": {
           "role": {
@@ -37327,7 +37360,7 @@
             "type": "string"
           },
           "updatedUser": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf339UpdatedUser"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf340UpdatedUser"
           },
           "origin": {
             "type": "string"
@@ -37354,12 +37387,12 @@
             }
           },
           "invitedBy": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf339InvitedBy"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf340InvitedBy"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf340": {
+      "UserEventPayloadOneOf341": {
         "required": [
           "requestedTeamName"
         ],
@@ -37387,12 +37420,12 @@
             "type": "string"
           },
           "source": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf340Source"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf341Source"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf341": {
+      "UserEventPayloadOneOf342": {
         "required": [
           "previousRole"
         ],
@@ -37405,7 +37438,7 @@
             "type": "string"
           },
           "updatedUser": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf341UpdatedUser"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf342UpdatedUser"
           },
           "role": {
             "type": "string"
@@ -37425,7 +37458,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf342": {
+      "UserEventPayloadOneOf343": {
         "required": [
           "authorized"
         ],
@@ -37444,7 +37477,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf343": {
+      "UserEventPayloadOneOf344": {
         "required": [
           "enforced"
         ],
@@ -37457,7 +37490,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf344": {
+      "UserEventPayloadOneOf345": {
         "required": [
           "expiresAt",
           "maxUses",
@@ -37484,7 +37517,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf345": {
+      "UserEventPayloadOneOf346": {
         "required": [
           "publicId"
         ],
@@ -37499,7 +37532,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf346": {
+      "UserEventPayloadOneOf347": {
         "required": [
           "nextConcurrentBuilds",
           "previousConcurrentBuilds"
@@ -37515,22 +37548,22 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf347": {
+      "UserEventPayloadOneOf348": {
         "required": [
           "plan"
         ],
         "type": "object",
         "properties": {
           "plan": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf347Plan"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf348Plan"
           },
           "trial": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf347Trial"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf348Trial"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf348": {
+      "UserEventPayloadOneOf349": {
         "required": [
           "convertedFromTrial",
           "invoiceId",
@@ -37546,12 +37579,12 @@
             "additionalProperties": false
           },
           "plan": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf348Plan"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf349Plan"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf349": {
+      "UserEventPayloadOneOf350": {
         "type": "object",
         "properties": {
           "inviteCode": {
@@ -37560,7 +37593,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf350": {
+      "UserEventPayloadOneOf351": {
         "type": "object",
         "properties": {
           "name": {
@@ -37569,28 +37602,28 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf351": {
+      "UserEventPayloadOneOf352": {
         "required": [
           "consent"
         ],
         "type": "object",
         "properties": {
           "consent": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf351Consent"
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf352": {
-        "type": "object",
-        "properties": {
-          "remoteCaching": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf352RemoteCaching"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf352Consent"
           }
         },
         "description": "The payload of the event, if requested."
       },
       "UserEventPayloadOneOf353": {
+        "type": "object",
+        "properties": {
+          "remoteCaching": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf353RemoteCaching"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf354": {
         "required": [
           "deletedCount"
         ],
@@ -37602,19 +37635,19 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf354": {
+      "UserEventPayloadOneOf355": {
         "required": [
           "enabled"
         ],
         "type": "object",
         "properties": {
           "enabled": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf354Enabled"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf355Enabled"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf355": {
+      "UserEventPayloadOneOf356": {
         "required": [
           "enabled",
           "scope"
@@ -37626,24 +37659,24 @@
             "additionalProperties": false
           },
           "scope": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf355Scope"
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf356": {
-        "type": "object",
-        "properties": {
-          "previous": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf356PreviousProperty"
-          },
-          "next": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf356NextProperty"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf356Scope"
           }
         },
         "description": "The payload of the event, if requested."
       },
       "UserEventPayloadOneOf357": {
+        "type": "object",
+        "properties": {
+          "previous": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf357PreviousProperty"
+          },
+          "next": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf357NextProperty"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf358": {
         "required": [
           "domain",
           "ips"
@@ -37662,7 +37695,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf358": {
+      "UserEventPayloadOneOf359": {
         "required": [
           "tokenTypes"
         ],
@@ -37677,7 +37710,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf359": {
+      "UserEventPayloadOneOf360": {
         "required": [
           "exportId",
           "format",
@@ -37701,7 +37734,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf360": {
+      "UserEventPayloadOneOf361": {
         "required": [
           "fileId"
         ],
@@ -37713,7 +37746,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf361": {
+      "UserEventPayloadOneOf362": {
         "type": "object",
         "properties": {
           "slug": {
@@ -37722,7 +37755,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf362": {
+      "UserEventPayloadOneOf363": {
         "required": [
           "projectId",
           "projectName"
@@ -37738,13 +37771,13 @@
           "sampling": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf362SamplingItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf363SamplingItem"
             }
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf363": {
+      "UserEventPayloadOneOf364": {
         "required": [
           "login",
           "provider"
@@ -37752,7 +37785,7 @@
         "type": "object",
         "properties": {
           "provider": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf363Provider"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf364Provider"
           },
           "login": {
             "type": "string"
@@ -37760,7 +37793,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf364": {
+      "UserEventPayloadOneOf365": {
         "required": [
           "recoveryCodes",
           "totp"
@@ -37778,7 +37811,7 @@
             "type": "string"
           },
           "actorType": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf364ActorType"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf365ActorType"
           },
           "reason": {
             "type": "string"
@@ -37786,7 +37819,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf365": {
+      "UserEventPayloadOneOf366": {
         "required": [
           "username"
         ],
@@ -37802,7 +37835,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf366": {
+      "UserEventPayloadOneOf367": {
         "required": [
           "username"
         ],
@@ -37814,7 +37847,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf367": {
+      "UserEventPayloadOneOf368": {
         "required": [
           "next",
           "previous"
@@ -37822,15 +37855,15 @@
         "type": "object",
         "properties": {
           "previous": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf367Previous"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf368Previous"
           },
           "next": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf367Next"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf368Next"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf368": {
+      "UserEventPayloadOneOf369": {
         "required": [
           "mfaEnabled"
         ],
@@ -37843,19 +37876,19 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf369": {
+      "UserEventPayloadOneOf370": {
         "required": [
           "mfa"
         ],
         "type": "object",
         "properties": {
           "mfa": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf369Mfa"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf370Mfa"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf370": {
+      "UserEventPayloadOneOf371": {
         "required": [
           "enabled",
           "totpVerified"
@@ -37873,7 +37906,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf371": {
+      "UserEventPayloadOneOf372": {
         "required": [
           "email",
           "prevEmail"
@@ -37889,7 +37922,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf372": {
+      "UserEventPayloadOneOf373": {
         "required": [
           "projectId",
           "projectName",
@@ -37909,7 +37942,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf373": {
+      "UserEventPayloadOneOf374": {
         "required": [
           "digest",
           "projectId",
@@ -37937,7 +37970,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf374": {
+      "UserEventPayloadOneOf375": {
         "required": [
           "projectId",
           "projectName",
@@ -37961,7 +37994,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf375": {
+      "UserEventPayloadOneOf376": {
         "required": [
           "projectId",
           "projectName",
@@ -37989,7 +38022,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf376": {
+      "UserEventPayloadOneOf377": {
         "required": [
           "projectId",
           "projectName",
@@ -38013,7 +38046,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf377": {
+      "UserEventPayloadOneOf378": {
         "required": [
           "projectId",
           "projectName",
@@ -38040,7 +38073,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf378": {
+      "UserEventPayloadOneOf379": {
         "required": [
           "ruleName"
         ],
@@ -38052,7 +38085,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf379": {
+      "UserEventPayloadOneOf380": {
         "required": [
           "nextProjectCount",
           "previousProjectCount"
@@ -38070,7 +38103,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf380": {
+      "UserEventPayloadOneOf381": {
         "required": [
           "customAlertTitle"
         ],
@@ -38082,7 +38115,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf381": {
+      "UserEventPayloadOneOf382": {
         "required": [
           "protectedProjectCount",
           "protectionEnabled",
@@ -38102,26 +38135,6 @@
           },
           "protectedProjectCount": {
             "type": "number"
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf382": {
-        "required": [
-          "configuration",
-          "peering",
-          "team"
-        ],
-        "type": "object",
-        "properties": {
-          "team": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf382Team"
-          },
-          "configuration": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf382Configuration"
-          },
-          "peering": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf382Peering"
           }
         },
         "description": "The payload of the event, if requested."
@@ -38162,6 +38175,26 @@
           },
           "peering": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf384Peering"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf385": {
+        "required": [
+          "configuration",
+          "peering",
+          "team"
+        ],
+        "type": "object",
+        "properties": {
+          "team": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf385Team"
+          },
+          "configuration": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf385Configuration"
+          },
+          "peering": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf385Peering"
           },
           "newName": {
             "type": "string"
@@ -38169,19 +38202,19 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf385": {
+      "UserEventPayloadOneOf386": {
         "required": [
           "tier"
         ],
         "type": "object",
         "properties": {
           "tier": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf385Tier"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf386Tier"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf386": {
+      "UserEventPayloadOneOf387": {
         "required": [
           "id",
           "url"
@@ -38197,7 +38230,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf387": {
+      "UserEventPayloadOneOf388": {
         "required": [
           "chatId"
         ],
@@ -38212,7 +38245,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf388": {
+      "UserEventPayloadOneOf389": {
         "required": [
           "chatId",
           "events",
@@ -38249,13 +38282,13 @@
           "events": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf388EventsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf389EventsItem"
             }
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf389": {
+      "UserEventPayloadOneOf390": {
         "required": [
           "chatId",
           "messageId"
@@ -38274,7 +38307,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf390": {
+      "UserEventPayloadOneOf391": {
         "required": [
           "deploymentId",
           "projectId",
@@ -38294,7 +38327,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf391": {
+      "UserEventPayloadOneOf392": {
         "required": [
           "appName",
           "atTTL",
@@ -38305,7 +38338,7 @@
         "type": "object",
         "properties": {
           "grantType": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf391GrantType"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf392GrantType"
           },
           "appName": {
             "type": "string",
@@ -38323,10 +38356,10 @@
             "type": "string"
           },
           "authMethod": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf391AuthMethod"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf392AuthMethod"
           },
           "app": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf391App"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf392App"
           },
           "includesRefreshToken": {
             "type": "boolean",
@@ -38338,7 +38371,7 @@
             "description": "optional since entries prior to 2025-10-13 do not contain this field"
           },
           "tokenPrefix": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf391TokenPrefix"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf392TokenPrefix"
           },
           "tokenSuffix": {
             "type": "string",
@@ -38349,7 +38382,7 @@
             "description": "optional; only present when a refresh token was issued (offline_access)."
           },
           "refreshTokenPrefix": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf391RefreshTokenPrefix"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf392RefreshTokenPrefix"
           },
           "refreshTokenSuffix": {
             "type": "string",
@@ -38365,7 +38398,7 @@
             "nullable": true
           },
           "geolocation": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf391Geolocation"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf392Geolocation"
           },
           "userAgent": {
             "type": "string",
@@ -38386,7 +38419,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf392": {
+      "UserEventPayloadOneOf393": {
         "required": [
           "origin",
           "scope",
@@ -38400,7 +38433,7 @@
             "description": "The token\u0027s public ID."
           },
           "tokenPrefix": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392TokenPrefix"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf393TokenPrefix"
           },
           "tokenSuffix": {
             "type": "string",
@@ -38411,10 +38444,10 @@
             "description": "User-supplied name of the token."
           },
           "origin": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392Origin"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf393Origin"
           },
           "scope": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392Scope"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf393Scope"
           },
           "teamId": {
             "type": "string",
@@ -38429,7 +38462,7 @@
             "description": "Present when \u0060scope\u0060 is \u0060\u0027project\u0027\u0060."
           },
           "projectScope": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392ProjectScope"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf393ProjectScope"
           },
           "expiresAt": {
             "type": "number",
@@ -38439,65 +38472,6 @@
             "type": "boolean",
             "additionalProperties": false,
             "description": "Whether the token was issued with RFC 9396 authorization details."
-          },
-          "ip": {
-            "type": "string",
-            "nullable": true
-          },
-          "geolocation": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392Geolocation"
-          },
-          "userAgent": {
-            "type": "string"
-          },
-          "reqId": {
-            "type": "string"
-          },
-          "reqUrl": {
-            "type": "string"
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf393": {
-        "required": [
-          "actorTokenId",
-          "tokenId",
-          "tokenName",
-          "tokenType"
-        ],
-        "type": "object",
-        "properties": {
-          "tokenId": {
-            "type": "string"
-          },
-          "tokenType": {
-            "type": "string"
-          },
-          "tokenName": {
-            "type": "string"
-          },
-          "actorTokenId": {
-            "type": "string",
-            "description": "The token\u0027s public ID."
-          },
-          "origin": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf393Origin"
-          },
-          "teamId": {
-            "type": "string"
-          },
-          "expired": {
-            "type": "boolean",
-            "additionalProperties": false
-          },
-          "leaked": {
-            "type": "boolean",
-            "additionalProperties": false
-          },
-          "revoked": {
-            "type": "boolean",
-            "additionalProperties": false
           },
           "ip": {
             "type": "string",
@@ -38521,6 +38495,65 @@
       "UserEventPayloadOneOf394": {
         "required": [
           "actorTokenId",
+          "tokenId",
+          "tokenName",
+          "tokenType"
+        ],
+        "type": "object",
+        "properties": {
+          "tokenId": {
+            "type": "string"
+          },
+          "tokenType": {
+            "type": "string"
+          },
+          "tokenName": {
+            "type": "string"
+          },
+          "actorTokenId": {
+            "type": "string",
+            "description": "The token\u0027s public ID."
+          },
+          "origin": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf394Origin"
+          },
+          "teamId": {
+            "type": "string"
+          },
+          "expired": {
+            "type": "boolean",
+            "additionalProperties": false
+          },
+          "leaked": {
+            "type": "boolean",
+            "additionalProperties": false
+          },
+          "revoked": {
+            "type": "boolean",
+            "additionalProperties": false
+          },
+          "ip": {
+            "type": "string",
+            "nullable": true
+          },
+          "geolocation": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf394Geolocation"
+          },
+          "userAgent": {
+            "type": "string"
+          },
+          "reqId": {
+            "type": "string"
+          },
+          "reqUrl": {
+            "type": "string"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf395": {
+        "required": [
+          "actorTokenId",
           "deletedCount"
         ],
         "type": "object",
@@ -38537,7 +38570,7 @@
             "nullable": true
           },
           "geolocation": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf394Geolocation"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf395Geolocation"
           },
           "userAgent": {
             "type": "string"
@@ -39867,17 +39900,17 @@
           }
         }
       },
-      "UserEventPayloadOneOf356PreviousAdditionalProperties": {
+      "UserEventPayloadOneOf357PreviousAdditionalProperties": {
         "required": [
           "type"
         ],
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf356PreviousAdditionalPropertiesOneOf1"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf357PreviousAdditionalPropertiesOneOf1"
           },
           {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf356PreviousAdditionalPropertiesWrapper"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf357PreviousAdditionalPropertiesWrapper"
           }
         ],
         "properties": {
@@ -39889,21 +39922,21 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "UserEventPayloadOneOf356PreviousAdditionalPropertiesOneOf1": "#/components/schemas/UserEventPayloadOneOf356PreviousAdditionalPropertiesOneOf1"
+            "UserEventPayloadOneOf357PreviousAdditionalPropertiesOneOf1": "#/components/schemas/UserEventPayloadOneOf357PreviousAdditionalPropertiesOneOf1"
           }
         }
       },
-      "UserEventPayloadOneOf356NextAdditionalProperties": {
+      "UserEventPayloadOneOf357NextAdditionalProperties": {
         "required": [
           "type"
         ],
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf356NextAdditionalPropertiesOneOf1"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf357NextAdditionalPropertiesOneOf1"
           },
           {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf356NextAdditionalPropertiesWrapper"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf357NextAdditionalPropertiesWrapper"
           }
         ],
         "properties": {
@@ -39915,7 +39948,7 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "UserEventPayloadOneOf356NextAdditionalPropertiesOneOf1": "#/components/schemas/UserEventPayloadOneOf356NextAdditionalPropertiesOneOf1"
+            "UserEventPayloadOneOf357NextAdditionalPropertiesOneOf1": "#/components/schemas/UserEventPayloadOneOf357NextAdditionalPropertiesOneOf1"
           }
         }
       },
@@ -41632,7 +41665,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf356PreviousAdditionalPropertiesOneOf1": {
+      "UserEventPayloadOneOf357PreviousAdditionalPropertiesOneOf1": {
         "required": [
           "accessGroupId"
         ],
@@ -41643,7 +41676,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf356NextAdditionalPropertiesOneOf1": {
+      "UserEventPayloadOneOf357NextAdditionalPropertiesOneOf1": {
         "required": [
           "accessGroupId"
         ],
@@ -46303,7 +46336,7 @@
         },
         "description": "Automatic code review settings"
       },
-      "UserEventPayloadOneOf326ReasonsItem": {
+      "UserEventPayloadOneOf327ReasonsItem": {
         "required": [
           "description",
           "slug"
@@ -46318,21 +46351,21 @@
           }
         }
       },
-      "UserEventPayloadOneOf326RemovedUsers": {
+      "UserEventPayloadOneOf327RemovedUsers": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/UserEventPayloadOneOf326RemovedUsersAdditionalProperties"
+          "$ref": "#/components/schemas/UserEventPayloadOneOf327RemovedUsersAdditionalProperties"
         }
       },
-      "UserEventPayloadOneOf327Previous": {
+      "UserEventPayloadOneOf328Previous": {
         "type": "object",
         "nullable": true
       },
-      "UserEventPayloadOneOf327Next": {
+      "UserEventPayloadOneOf328Next": {
         "type": "object",
         "nullable": true
       },
-      "UserEventPayloadOneOf333InvitedUser": {
+      "UserEventPayloadOneOf334InvitedUser": {
         "required": [
           "email",
           "username"
@@ -46347,7 +46380,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf336DeletedUser": {
+      "UserEventPayloadOneOf337DeletedUser": {
         "required": [
           "email",
           "username"
@@ -46358,21 +46391,6 @@
             "type": "string"
           },
           "email": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf337User": {
-        "required": [
-          "id",
-          "username"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "username": {
             "type": "string"
           }
         }
@@ -46392,7 +46410,22 @@
           }
         }
       },
-      "UserEventPayloadOneOf339UpdatedUser": {
+      "UserEventPayloadOneOf339User": {
+        "required": [
+          "id",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf340UpdatedUser": {
         "required": [
           "email",
           "username"
@@ -46407,7 +46440,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf339InvitedBy": {
+      "UserEventPayloadOneOf340InvitedBy": {
         "required": [
           "email"
         ],
@@ -46424,7 +46457,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf341UpdatedUser": {
+      "UserEventPayloadOneOf342UpdatedUser": {
         "required": [
           "email",
           "username"
@@ -46439,7 +46472,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf347Trial": {
+      "UserEventPayloadOneOf348Trial": {
         "required": [
           "end",
           "start"
@@ -46455,7 +46488,7 @@
         },
         "nullable": true
       },
-      "UserEventPayloadOneOf352RemoteCaching": {
+      "UserEventPayloadOneOf353RemoteCaching": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -46465,19 +46498,19 @@
         },
         "description": "Represents configuration for remote caching"
       },
-      "UserEventPayloadOneOf356Previous": {
+      "UserEventPayloadOneOf357Previous": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/UserEventPayloadOneOf356PreviousAdditionalProperties"
+          "$ref": "#/components/schemas/UserEventPayloadOneOf357PreviousAdditionalProperties"
         }
       },
-      "UserEventPayloadOneOf356Next": {
+      "UserEventPayloadOneOf357Next": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/UserEventPayloadOneOf356NextAdditionalProperties"
+          "$ref": "#/components/schemas/UserEventPayloadOneOf357NextAdditionalProperties"
         }
       },
-      "UserEventPayloadOneOf362SamplingItem": {
+      "UserEventPayloadOneOf363SamplingItem": {
         "required": [
           "rate",
           "type"
@@ -46485,20 +46518,20 @@
         "type": "object",
         "properties": {
           "type": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf362SamplingItemType"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf363SamplingItemType"
           },
           "rate": {
             "type": "number"
           },
           "env": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf362SamplingItemEnv"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf363SamplingItemEnv"
           },
           "requestPath": {
             "type": "string"
           }
         }
       },
-      "UserEventPayloadOneOf367Previous": {
+      "UserEventPayloadOneOf368Previous": {
         "required": [
           "enabled",
           "totpVerified"
@@ -46515,7 +46548,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf367Next": {
+      "UserEventPayloadOneOf368Next": {
         "required": [
           "enabled",
           "totpVerified"
@@ -46532,7 +46565,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf369Mfa": {
+      "UserEventPayloadOneOf370Mfa": {
         "required": [
           "enabled",
           "totpVerified"
@@ -46546,58 +46579,6 @@
           "totpVerified": {
             "type": "boolean",
             "additionalProperties": false
-          }
-        }
-      },
-      "UserEventPayloadOneOf382Team": {
-        "required": [
-          "id",
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf382Configuration": {
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf382Peering": {
-        "required": [
-          "accountId",
-          "id",
-          "region",
-          "vpcId"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "accountId": {
-            "type": "string"
-          },
-          "region": {
-            "type": "string"
-          },
-          "vpcId": {
-            "type": "string"
           }
         }
       },
@@ -46632,14 +46613,23 @@
       },
       "UserEventPayloadOneOf383Peering": {
         "required": [
-          "id"
+          "accountId",
+          "id",
+          "region",
+          "vpcId"
         ],
         "type": "object",
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "accountId": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "vpcId": {
             "type": "string"
           }
         }
@@ -46687,7 +46677,50 @@
           }
         }
       },
-      "UserEventPayloadOneOf388EventsItem": {
+      "UserEventPayloadOneOf385Team": {
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf385Configuration": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf385Peering": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf389EventsItem": {
         "required": [
           "cacheCreationInputTokens",
           "cacheReadInputTokens",
@@ -46726,7 +46759,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf391App": {
+      "UserEventPayloadOneOf392App": {
         "required": [
           "clientAuthenticationUsed",
           "clientId",
@@ -46742,32 +46775,10 @@
             "description": "the app\u0027s name at the time the event was published (it could have changed since then)"
           },
           "clientAuthenticationUsed": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf391AppClientAuthenticationUsed"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf392AppClientAuthenticationUsed"
           }
         },
         "description": "optional since entries prior to 2025-10-13 do not contain app information"
-      },
-      "UserEventPayloadOneOf391Geolocation": {
-        "required": [
-          "country"
-        ],
-        "type": "object",
-        "properties": {
-          "city": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf391GeolocationCity"
-          },
-          "country": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf391GeolocationCountry"
-          },
-          "most_specific_subdivision": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf391GeolocationMostSpecificSubdivision"
-          },
-          "regionName": {
-            "type": "string"
-          }
-        },
-        "description": "optional since entries prior to 2026-04-23 do not contain this field",
-        "nullable": true
       },
       "UserEventPayloadOneOf392Geolocation": {
         "required": [
@@ -46788,6 +46799,7 @@
             "type": "string"
           }
         },
+        "description": "optional since entries prior to 2026-04-23 do not contain this field",
         "nullable": true
       },
       "UserEventPayloadOneOf393Geolocation": {
@@ -46825,6 +46837,27 @@
           },
           "most_specific_subdivision": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf394GeolocationMostSpecificSubdivision"
+          },
+          "regionName": {
+            "type": "string"
+          }
+        },
+        "nullable": true
+      },
+      "UserEventPayloadOneOf395Geolocation": {
+        "required": [
+          "country"
+        ],
+        "type": "object",
+        "properties": {
+          "city": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf395GeolocationCity"
+          },
+          "country": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf395GeolocationCountry"
+          },
+          "most_specific_subdivision": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf395GeolocationMostSpecificSubdivision"
           },
           "regionName": {
             "type": "string"
@@ -49554,7 +49587,7 @@
         },
         "description": "Represents a budget for tracking and notifying teams on their spending."
       },
-      "UserEventPayloadOneOf326RemovedUsersAdditionalProperties": {
+      "UserEventPayloadOneOf327RemovedUsersAdditionalProperties": {
         "required": [
           "confirmed",
           "role"
@@ -49562,7 +49595,7 @@
         "type": "object",
         "properties": {
           "role": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf326RemovedUsersAdditionalPropertiesRole"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf327RemovedUsersAdditionalPropertiesRole"
           },
           "confirmed": {
             "type": "boolean",
@@ -49573,50 +49606,17 @@
           }
         }
       },
-      "UserEventPayloadOneOf391AppClientAuthenticationUsed": {
+      "UserEventPayloadOneOf392AppClientAuthenticationUsed": {
         "required": [
           "method"
         ],
         "type": "object",
         "properties": {
           "method": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf391AppClientAuthenticationUsedMethod"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf392AppClientAuthenticationUsedMethod"
           },
           "secretId": {
             "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf391GeolocationCity": {
-        "required": [
-          "names"
-        ],
-        "type": "object",
-        "properties": {
-          "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf391GeolocationCityNames"
-          }
-        }
-      },
-      "UserEventPayloadOneOf391GeolocationCountry": {
-        "required": [
-          "names"
-        ],
-        "type": "object",
-        "properties": {
-          "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf391GeolocationCountryNames"
-          }
-        }
-      },
-      "UserEventPayloadOneOf391GeolocationMostSpecificSubdivision": {
-        "required": [
-          "names"
-        ],
-        "type": "object",
-        "properties": {
-          "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf391GeolocationMostSpecificSubdivisionNames"
           }
         }
       },
@@ -49716,6 +49716,39 @@
         "properties": {
           "names": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf394GeolocationMostSpecificSubdivisionNames"
+          }
+        }
+      },
+      "UserEventPayloadOneOf395GeolocationCity": {
+        "required": [
+          "names"
+        ],
+        "type": "object",
+        "properties": {
+          "names": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf395GeolocationCityNames"
+          }
+        }
+      },
+      "UserEventPayloadOneOf395GeolocationCountry": {
+        "required": [
+          "names"
+        ],
+        "type": "object",
+        "properties": {
+          "names": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf395GeolocationCountryNames"
+          }
+        }
+      },
+      "UserEventPayloadOneOf395GeolocationMostSpecificSubdivision": {
+        "required": [
+          "names"
+        ],
+        "type": "object",
+        "properties": {
+          "names": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf395GeolocationMostSpecificSubdivisionNames"
           }
         }
       },
@@ -51404,39 +51437,6 @@
           }
         }
       },
-      "UserEventPayloadOneOf391GeolocationCityNames": {
-        "required": [
-          "en"
-        ],
-        "type": "object",
-        "properties": {
-          "en": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf391GeolocationCountryNames": {
-        "required": [
-          "en"
-        ],
-        "type": "object",
-        "properties": {
-          "en": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf391GeolocationMostSpecificSubdivisionNames": {
-        "required": [
-          "en"
-        ],
-        "type": "object",
-        "properties": {
-          "en": {
-            "type": "string"
-          }
-        }
-      },
       "UserEventPayloadOneOf392GeolocationCityNames": {
         "required": [
           "en"
@@ -51526,6 +51526,39 @@
         }
       },
       "UserEventPayloadOneOf394GeolocationMostSpecificSubdivisionNames": {
+        "required": [
+          "en"
+        ],
+        "type": "object",
+        "properties": {
+          "en": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf395GeolocationCityNames": {
+        "required": [
+          "en"
+        ],
+        "type": "object",
+        "properties": {
+          "en": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf395GeolocationCountryNames": {
+        "required": [
+          "en"
+        ],
+        "type": "object",
+        "properties": {
+          "en": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf395GeolocationMostSpecificSubdivisionNames": {
         "required": [
           "en"
         ],
@@ -53994,33 +54027,11 @@
             "description": "A string holding the unique ID of the deployment",
             "example": "dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ"
           },
-          "name": {
-            "type": "string",
-            "description": "The name of the project associated with the deployment at the time that the deployment was created",
-            "example": "my-project"
-          },
-          "url": {
-            "type": "string",
-            "description": "A string with the unique URL of the deployment",
-            "example": "my-instant-deployment-3ij3cxz9qr.now.sh"
-          },
           "target": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseTarget"
           },
-          "createdAt": {
-            "type": "number",
-            "description": "A number containing the date when the deployment was created in milliseconds",
-            "example": 1540257589405
-          },
           "readyState": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseReadyState"
-          },
-          "readySubstate": {
-            "$ref": "#/components/schemas/CancelDeployment200ResponseReadySubstate"
-          },
-          "prebuilt": {
-            "type": "boolean",
-            "additionalProperties": false
           },
           "aliasError": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseAliasError"
@@ -54028,31 +54039,29 @@
           "aliasWarning": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseAliasWarning"
           },
-          "aliasFinal": {
-            "type": "string",
-            "nullable": true
-          },
-          "checksState": {
-            "$ref": "#/components/schemas/CancelDeployment200ResponseChecksState"
-          },
-          "checksConclusion": {
-            "$ref": "#/components/schemas/CancelDeployment200ResponseChecksConclusion"
-          },
           "errorCode": {
-            "type": "string"
-          },
-          "errorLink": {
             "type": "string"
           },
           "errorMessage": {
             "type": "string",
             "nullable": true
           },
-          "errorStep": {
-            "type": "string"
+          "createdAt": {
+            "type": "number",
+            "description": "A number containing the date when the deployment was created in milliseconds",
+            "example": 1540257589405
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the project associated with the deployment at the time that the deployment was created",
+            "example": "my-project"
           },
           "type": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseType"
+          },
+          "aliasFinal": {
+            "type": "string",
+            "nullable": true
           },
           "autoAssignCustomDomains": {
             "type": "boolean",
@@ -54068,6 +54077,12 @@
           "buildErrorAt": {
             "type": "number"
           },
+          "checksState": {
+            "$ref": "#/components/schemas/CancelDeployment200ResponseChecksState"
+          },
+          "checksConclusion": {
+            "$ref": "#/components/schemas/CancelDeployment200ResponseChecksConclusion"
+          },
           "deletedAt": {
             "type": "number",
             "description": "A number containing the date when the deployment was deleted at milliseconds",
@@ -54080,6 +54095,12 @@
           },
           "canceledAt": {
             "type": "number"
+          },
+          "errorLink": {
+            "type": "string"
+          },
+          "errorStep": {
+            "type": "string"
           },
           "passiveRegions": {
             "type": "array",
@@ -54106,6 +54127,13 @@
           "project": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseProject"
           },
+          "prebuilt": {
+            "type": "boolean",
+            "additionalProperties": false
+          },
+          "readySubstate": {
+            "$ref": "#/components/schemas/CancelDeployment200ResponseReadySubstate"
+          },
           "regions": {
             "type": "array",
             "items": {
@@ -54127,6 +54155,11 @@
             "description": "A number containing the date when the deployment was undeleted at milliseconds",
             "example": 1540257589405
           },
+          "url": {
+            "type": "string",
+            "description": "A string with the unique URL of the deployment",
+            "example": "my-instant-deployment-3ij3cxz9qr.now.sh"
+          },
           "userConfiguredDeploymentId": {
             "type": "string",
             "description": "Since January 2025 User-configured deployment ID for skew protection with pre-built deployments. This is set when users configure a custom deploymentId in their next.config.js file. This allows Next.js to use skew protection even when deployments are pre-built outside of Vercel\u0027s build system.",
@@ -54143,9 +54176,6 @@
           },
           "plan": {
             "$ref": "#/components/schemas/CancelDeployment200ResponsePlan"
-          },
-          "platform": {
-            "$ref": "#/components/schemas/CancelDeployment200ResponsePlatform"
           },
           "connectBuildsEnabled": {
             "type": "boolean",
@@ -54199,6 +54229,9 @@
           },
           "microfrontends": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseMicrofrontends"
+          },
+          "platform": {
+            "$ref": "#/components/schemas/CancelDeployment200ResponsePlatform"
           },
           "config": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseConfig"
@@ -57169,12 +57202,6 @@
               "type": "string"
             }
           },
-          "connections": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetFlagSettings200ResponseConnectionsItem"
-            }
-          },
           "entities": {
             "type": "array",
             "items": {
@@ -57190,8 +57217,7 @@
           "metadata": {
             "$ref": "#/components/schemas/GetFlagSettings200ResponseMetadata"
           }
-        },
-        "description": "Syncs direct the synchronization of Flags to Edge Configs"
+        }
       },
       "UpdateFlagSettingsRequest": {
         "type": "object",
@@ -57246,12 +57272,6 @@
               "type": "string"
             }
           },
-          "connections": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UpdateFlagSettings200ResponseConnectionsItem"
-            }
-          },
           "entities": {
             "type": "array",
             "items": {
@@ -57267,8 +57287,7 @@
           "metadata": {
             "$ref": "#/components/schemas/UpdateFlagSettings200ResponseMetadata"
           }
-        },
-        "description": "Syncs direct the synchronization of Flags to Edge Configs"
+        }
       },
       "UpdateFlagSettings201Response": {
         "required": [
@@ -57300,12 +57319,6 @@
               "type": "string"
             }
           },
-          "connections": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UpdateFlagSettings201ResponseConnectionsItem"
-            }
-          },
           "entities": {
             "type": "array",
             "items": {
@@ -57321,8 +57334,7 @@
           "metadata": {
             "$ref": "#/components/schemas/UpdateFlagSettings201ResponseMetadata"
           }
-        },
-        "description": "Syncs direct the synchronization of Flags to Edge Configs"
+        }
       },
       "ListTeamFlagSettings200Response": {
         "required": [
@@ -65426,28 +65438,28 @@
           }
         }
       },
-      "UserEventPayloadOneOf356PreviousAdditionalPropertiesWrapper": {
+      "UserEventPayloadOneOf357PreviousAdditionalPropertiesWrapper": {
         "required": [
           "value"
         ],
         "type": "object",
         "properties": {
           "value": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf356PreviousAdditionalPropertiesWrapperValue"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf357PreviousAdditionalPropertiesWrapperValue"
           },
           "type": {
             "type": "string"
           }
         }
       },
-      "UserEventPayloadOneOf356NextAdditionalPropertiesWrapper": {
+      "UserEventPayloadOneOf357NextAdditionalPropertiesWrapper": {
         "required": [
           "value"
         ],
         "type": "object",
         "properties": {
           "value": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf356NextAdditionalPropertiesWrapperValue"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf357NextAdditionalPropertiesWrapperValue"
           },
           "type": {
             "type": "string"
@@ -72952,13 +72964,8 @@
       "GetDeployment200ResponseOneOf1": {
         "required": [
           "aliasAssigned",
-          "anonymous",
-          "createdAt",
           "id",
-          "name",
-          "projectId",
-          "readyState",
-          "url"
+          "readyState"
         ],
         "type": "object",
         "properties": {
@@ -72972,47 +72979,16 @@
             "type": "boolean",
             "additionalProperties": false
           },
-          "readyStateReason": {
-            "type": "string"
-          },
-          "anonymous": {
-            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf1Anonymous"
-          },
           "id": {
             "type": "string",
             "description": "A string holding the unique ID of the deployment",
             "example": "dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ"
           },
-          "name": {
-            "type": "string",
-            "description": "The name of the project associated with the deployment at the time that the deployment was created",
-            "example": "my-project"
-          },
-          "url": {
-            "type": "string",
-            "description": "A string with the unique URL of the deployment",
-            "example": "my-instant-deployment-3ij3cxz9qr.now.sh"
-          },
-          "projectId": {
-            "type": "string"
-          },
           "target": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf1Target"
           },
-          "createdAt": {
-            "type": "number",
-            "description": "A number containing the date when the deployment was created in milliseconds",
-            "example": 1540257589405
-          },
           "readyState": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf1ReadyState"
-          },
-          "readySubstate": {
-            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf1ReadySubstate"
-          },
-          "prebuilt": {
-            "type": "boolean",
-            "additionalProperties": false
           },
           "aliasError": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf1AliasError"
@@ -73020,31 +72996,15 @@
           "aliasWarning": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf1AliasWarning"
           },
-          "aliasFinal": {
-            "type": "string",
-            "nullable": true
-          },
-          "checksState": {
-            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf1ChecksState"
-          },
-          "checksConclusion": {
-            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf1ChecksConclusion"
-          },
           "errorCode": {
-            "type": "string"
-          },
-          "errorLink": {
             "type": "string"
           },
           "errorMessage": {
             "type": "string",
             "nullable": true
-          },
-          "errorStep": {
-            "type": "string"
           }
         },
-        "description": "Returns the reduced deployment view for anonymous (\u0060vcn_\u0060) callers, with an \u0060anonymous.expiresAt\u0060 marking when the project and its token expire. Pool-team details are withheld."
+        "description": "Returns the reduced deployment view for anonymous (\u0060vcn_\u0060) callers. Pool-team details are withheld."
       },
       "GetDeployment200ResponseOneOf2": {
         "required": [
@@ -73221,33 +73181,11 @@
             "description": "A string holding the unique ID of the deployment",
             "example": "dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ"
           },
-          "name": {
-            "type": "string",
-            "description": "The name of the project associated with the deployment at the time that the deployment was created",
-            "example": "my-project"
-          },
-          "url": {
-            "type": "string",
-            "description": "A string with the unique URL of the deployment",
-            "example": "my-instant-deployment-3ij3cxz9qr.now.sh"
-          },
           "target": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2Target"
           },
-          "createdAt": {
-            "type": "number",
-            "description": "A number containing the date when the deployment was created in milliseconds",
-            "example": 1540257589405
-          },
           "readyState": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2ReadyState"
-          },
-          "readySubstate": {
-            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2ReadySubstate"
-          },
-          "prebuilt": {
-            "type": "boolean",
-            "additionalProperties": false
           },
           "aliasError": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2AliasError"
@@ -73255,31 +73193,29 @@
           "aliasWarning": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2AliasWarning"
           },
-          "aliasFinal": {
-            "type": "string",
-            "nullable": true
-          },
-          "checksState": {
-            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2ChecksState"
-          },
-          "checksConclusion": {
-            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2ChecksConclusion"
-          },
           "errorCode": {
-            "type": "string"
-          },
-          "errorLink": {
             "type": "string"
           },
           "errorMessage": {
             "type": "string",
             "nullable": true
           },
-          "errorStep": {
-            "type": "string"
+          "createdAt": {
+            "type": "number",
+            "description": "A number containing the date when the deployment was created in milliseconds",
+            "example": 1540257589405
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the project associated with the deployment at the time that the deployment was created",
+            "example": "my-project"
           },
           "type": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2Type"
+          },
+          "aliasFinal": {
+            "type": "string",
+            "nullable": true
           },
           "autoAssignCustomDomains": {
             "type": "boolean",
@@ -73295,6 +73231,12 @@
           "buildErrorAt": {
             "type": "number"
           },
+          "checksState": {
+            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2ChecksState"
+          },
+          "checksConclusion": {
+            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2ChecksConclusion"
+          },
           "deletedAt": {
             "type": "number",
             "description": "A number containing the date when the deployment was deleted at milliseconds",
@@ -73307,6 +73249,12 @@
           },
           "canceledAt": {
             "type": "number"
+          },
+          "errorLink": {
+            "type": "string"
+          },
+          "errorStep": {
+            "type": "string"
           },
           "passiveRegions": {
             "type": "array",
@@ -73333,6 +73281,13 @@
           "project": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2Project"
           },
+          "prebuilt": {
+            "type": "boolean",
+            "additionalProperties": false
+          },
+          "readySubstate": {
+            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2ReadySubstate"
+          },
           "regions": {
             "type": "array",
             "items": {
@@ -73357,6 +73312,11 @@
             "description": "A number containing the date when the deployment was undeleted at milliseconds",
             "example": 1540257589405
           },
+          "url": {
+            "type": "string",
+            "description": "A string with the unique URL of the deployment",
+            "example": "my-instant-deployment-3ij3cxz9qr.now.sh"
+          },
           "userConfiguredDeploymentId": {
             "type": "string",
             "description": "Since January 2025 User-configured deployment ID for skew protection with pre-built deployments. This is set when users configure a custom deploymentId in their next.config.js file. This allows Next.js to use skew protection even when deployments are pre-built outside of Vercel\u0027s build system.",
@@ -73373,9 +73333,6 @@
           },
           "plan": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2Plan"
-          },
-          "platform": {
-            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2Platform"
           },
           "connectBuildsEnabled": {
             "type": "boolean",
@@ -73429,6 +73386,9 @@
           },
           "microfrontends": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2Microfrontends"
+          },
+          "platform": {
+            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2Platform"
           },
           "config": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2Config"
@@ -73560,33 +73520,11 @@
             "description": "A string holding the unique ID of the deployment",
             "example": "dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ"
           },
-          "name": {
-            "type": "string",
-            "description": "The name of the project associated with the deployment at the time that the deployment was created",
-            "example": "my-project"
-          },
-          "url": {
-            "type": "string",
-            "description": "A string with the unique URL of the deployment",
-            "example": "my-instant-deployment-3ij3cxz9qr.now.sh"
-          },
           "target": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf3Target"
           },
-          "createdAt": {
-            "type": "number",
-            "description": "A number containing the date when the deployment was created in milliseconds",
-            "example": 1540257589405
-          },
           "readyState": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf3ReadyState"
-          },
-          "readySubstate": {
-            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf3ReadySubstate"
-          },
-          "prebuilt": {
-            "type": "boolean",
-            "additionalProperties": false
           },
           "aliasError": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf3AliasError"
@@ -73594,31 +73532,29 @@
           "aliasWarning": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf3AliasWarning"
           },
-          "aliasFinal": {
-            "type": "string",
-            "nullable": true
-          },
-          "checksState": {
-            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf3ChecksState"
-          },
-          "checksConclusion": {
-            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf3ChecksConclusion"
-          },
           "errorCode": {
-            "type": "string"
-          },
-          "errorLink": {
             "type": "string"
           },
           "errorMessage": {
             "type": "string",
             "nullable": true
           },
-          "errorStep": {
-            "type": "string"
+          "createdAt": {
+            "type": "number",
+            "description": "A number containing the date when the deployment was created in milliseconds",
+            "example": 1540257589405
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the project associated with the deployment at the time that the deployment was created",
+            "example": "my-project"
           },
           "type": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf3Type"
+          },
+          "aliasFinal": {
+            "type": "string",
+            "nullable": true
           },
           "autoAssignCustomDomains": {
             "type": "boolean",
@@ -73634,6 +73570,12 @@
           "buildErrorAt": {
             "type": "number"
           },
+          "checksState": {
+            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf3ChecksState"
+          },
+          "checksConclusion": {
+            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf3ChecksConclusion"
+          },
           "deletedAt": {
             "type": "number",
             "description": "A number containing the date when the deployment was deleted at milliseconds",
@@ -73646,6 +73588,12 @@
           },
           "canceledAt": {
             "type": "number"
+          },
+          "errorLink": {
+            "type": "string"
+          },
+          "errorStep": {
+            "type": "string"
           },
           "passiveRegions": {
             "type": "array",
@@ -73672,6 +73620,13 @@
           "project": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf3Project"
           },
+          "prebuilt": {
+            "type": "boolean",
+            "additionalProperties": false
+          },
+          "readySubstate": {
+            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf3ReadySubstate"
+          },
           "regions": {
             "type": "array",
             "items": {
@@ -73695,6 +73650,11 @@
             "type": "number",
             "description": "A number containing the date when the deployment was undeleted at milliseconds",
             "example": 1540257589405
+          },
+          "url": {
+            "type": "string",
+            "description": "A string with the unique URL of the deployment",
+            "example": "my-instant-deployment-3ij3cxz9qr.now.sh"
           },
           "userConfiguredDeploymentId": {
             "type": "string",
@@ -73737,13 +73697,8 @@
       "CreateDeployment200ResponseOneOf1": {
         "required": [
           "aliasAssigned",
-          "anonymous",
-          "createdAt",
           "id",
-          "name",
-          "projectId",
-          "readyState",
-          "url"
+          "readyState"
         ],
         "type": "object",
         "properties": {
@@ -73757,47 +73712,16 @@
             "type": "boolean",
             "additionalProperties": false
           },
-          "readyStateReason": {
-            "type": "string"
-          },
-          "anonymous": {
-            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf1Anonymous"
-          },
           "id": {
             "type": "string",
             "description": "A string holding the unique ID of the deployment",
             "example": "dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ"
           },
-          "name": {
-            "type": "string",
-            "description": "The name of the project associated with the deployment at the time that the deployment was created",
-            "example": "my-project"
-          },
-          "url": {
-            "type": "string",
-            "description": "A string with the unique URL of the deployment",
-            "example": "my-instant-deployment-3ij3cxz9qr.now.sh"
-          },
-          "projectId": {
-            "type": "string"
-          },
           "target": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf1Target"
           },
-          "createdAt": {
-            "type": "number",
-            "description": "A number containing the date when the deployment was created in milliseconds",
-            "example": 1540257589405
-          },
           "readyState": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf1ReadyState"
-          },
-          "readySubstate": {
-            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf1ReadySubstate"
-          },
-          "prebuilt": {
-            "type": "boolean",
-            "additionalProperties": false
           },
           "aliasError": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf1AliasError"
@@ -73805,31 +73729,15 @@
           "aliasWarning": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf1AliasWarning"
           },
-          "aliasFinal": {
-            "type": "string",
-            "nullable": true
-          },
-          "checksState": {
-            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf1ChecksState"
-          },
-          "checksConclusion": {
-            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf1ChecksConclusion"
-          },
           "errorCode": {
-            "type": "string"
-          },
-          "errorLink": {
             "type": "string"
           },
           "errorMessage": {
             "type": "string",
             "nullable": true
-          },
-          "errorStep": {
-            "type": "string"
           }
         },
-        "description": "Returns the reduced deployment view for anonymous (\u0060vcn_\u0060) callers, with an \u0060anonymous.expiresAt\u0060 marking when the project and its token expire. Pool-team details are withheld."
+        "description": "Returns the reduced deployment view for anonymous (\u0060vcn_\u0060) callers. Pool-team details are withheld."
       },
       "CreateDeployment200ResponseOneOf2": {
         "required": [
@@ -74006,33 +73914,11 @@
             "description": "A string holding the unique ID of the deployment",
             "example": "dpl_89qyp1cskzkLrVicDaZoDbjyHuDJ"
           },
-          "name": {
-            "type": "string",
-            "description": "The name of the project associated with the deployment at the time that the deployment was created",
-            "example": "my-project"
-          },
-          "url": {
-            "type": "string",
-            "description": "A string with the unique URL of the deployment",
-            "example": "my-instant-deployment-3ij3cxz9qr.now.sh"
-          },
           "target": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2Target"
           },
-          "createdAt": {
-            "type": "number",
-            "description": "A number containing the date when the deployment was created in milliseconds",
-            "example": 1540257589405
-          },
           "readyState": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2ReadyState"
-          },
-          "readySubstate": {
-            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2ReadySubstate"
-          },
-          "prebuilt": {
-            "type": "boolean",
-            "additionalProperties": false
           },
           "aliasError": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2AliasError"
@@ -74040,31 +73926,29 @@
           "aliasWarning": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2AliasWarning"
           },
-          "aliasFinal": {
-            "type": "string",
-            "nullable": true
-          },
-          "checksState": {
-            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2ChecksState"
-          },
-          "checksConclusion": {
-            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2ChecksConclusion"
-          },
           "errorCode": {
-            "type": "string"
-          },
-          "errorLink": {
             "type": "string"
           },
           "errorMessage": {
             "type": "string",
             "nullable": true
           },
-          "errorStep": {
-            "type": "string"
+          "createdAt": {
+            "type": "number",
+            "description": "A number containing the date when the deployment was created in milliseconds",
+            "example": 1540257589405
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the project associated with the deployment at the time that the deployment was created",
+            "example": "my-project"
           },
           "type": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2Type"
+          },
+          "aliasFinal": {
+            "type": "string",
+            "nullable": true
           },
           "autoAssignCustomDomains": {
             "type": "boolean",
@@ -74080,6 +73964,12 @@
           "buildErrorAt": {
             "type": "number"
           },
+          "checksState": {
+            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2ChecksState"
+          },
+          "checksConclusion": {
+            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2ChecksConclusion"
+          },
           "deletedAt": {
             "type": "number",
             "description": "A number containing the date when the deployment was deleted at milliseconds",
@@ -74092,6 +73982,12 @@
           },
           "canceledAt": {
             "type": "number"
+          },
+          "errorLink": {
+            "type": "string"
+          },
+          "errorStep": {
+            "type": "string"
           },
           "passiveRegions": {
             "type": "array",
@@ -74118,6 +74014,13 @@
           "project": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2Project"
           },
+          "prebuilt": {
+            "type": "boolean",
+            "additionalProperties": false
+          },
+          "readySubstate": {
+            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2ReadySubstate"
+          },
           "regions": {
             "type": "array",
             "items": {
@@ -74142,6 +74045,11 @@
             "description": "A number containing the date when the deployment was undeleted at milliseconds",
             "example": 1540257589405
           },
+          "url": {
+            "type": "string",
+            "description": "A string with the unique URL of the deployment",
+            "example": "my-instant-deployment-3ij3cxz9qr.now.sh"
+          },
           "userConfiguredDeploymentId": {
             "type": "string",
             "description": "Since January 2025 User-configured deployment ID for skew protection with pre-built deployments. This is set when users configure a custom deploymentId in their next.config.js file. This allows Next.js to use skew protection even when deployments are pre-built outside of Vercel\u0027s build system.",
@@ -74158,9 +74066,6 @@
           },
           "plan": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2Plan"
-          },
-          "platform": {
-            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2Platform"
           },
           "connectBuildsEnabled": {
             "type": "boolean",
@@ -74214,6 +74119,9 @@
           },
           "microfrontends": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2Microfrontends"
+          },
+          "platform": {
+            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2Platform"
           },
           "config": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2Config"
@@ -89968,22 +89876,22 @@
           "$ref": "#/components/schemas/UserEventPayloadOneOf303ScalingRulesAdditionalProperties"
         }
       },
-      "UserEventPayloadOneOf326RemovedUsersProperty": {
+      "UserEventPayloadOneOf327RemovedUsersProperty": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/UserEventPayloadOneOf326RemovedUsersAdditionalProperties"
+          "$ref": "#/components/schemas/UserEventPayloadOneOf327RemovedUsersAdditionalProperties"
         }
       },
-      "UserEventPayloadOneOf356PreviousProperty": {
+      "UserEventPayloadOneOf357PreviousProperty": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/UserEventPayloadOneOf356PreviousAdditionalProperties"
+          "$ref": "#/components/schemas/UserEventPayloadOneOf357PreviousAdditionalProperties"
         }
       },
-      "UserEventPayloadOneOf356NextProperty": {
+      "UserEventPayloadOneOf357NextProperty": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/UserEventPayloadOneOf356NextAdditionalProperties"
+          "$ref": "#/components/schemas/UserEventPayloadOneOf357NextAdditionalProperties"
         }
       },
       "FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf2WeightsProperty": {
@@ -91883,11 +91791,11 @@
           "id": {
             "type": "string"
           },
-          "createdAt": {
-            "type": "number"
-          },
           "readyState": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseLambdasItemReadyState"
+          },
+          "createdAt": {
+            "type": "number"
           },
           "entrypoint": {
             "type": "string",
@@ -92167,29 +92075,6 @@
             "type": "string"
           }
         }
-      },
-      "CancelDeployment200ResponsePlatform": {
-        "required": [
-          "creator",
-          "origin",
-          "source"
-        ],
-        "type": "object",
-        "properties": {
-          "source": {
-            "$ref": "#/components/schemas/CancelDeployment200ResponsePlatformSource"
-          },
-          "origin": {
-            "$ref": "#/components/schemas/CancelDeployment200ResponsePlatformOrigin"
-          },
-          "creator": {
-            "$ref": "#/components/schemas/CancelDeployment200ResponsePlatformCreator"
-          },
-          "meta": {
-            "$ref": "#/components/schemas/CancelDeployment200ResponsePlatformMeta"
-          }
-        },
-        "description": "Metadata about the source platform that triggered the deployment. Allows us to map a deployment back to a platform (e.g. the chat that created it)"
       },
       "CancelDeployment200ResponseCronsItem": {
         "required": [
@@ -92547,6 +92432,29 @@
             "$ref": "#/components/schemas/CancelDeployment200ResponseMicrofrontendsMfeConfigUploadState"
           }
         }
+      },
+      "CancelDeployment200ResponsePlatform": {
+        "required": [
+          "creator",
+          "origin",
+          "source"
+        ],
+        "type": "object",
+        "properties": {
+          "source": {
+            "$ref": "#/components/schemas/CancelDeployment200ResponsePlatformSource"
+          },
+          "origin": {
+            "$ref": "#/components/schemas/CancelDeployment200ResponsePlatformOrigin"
+          },
+          "creator": {
+            "$ref": "#/components/schemas/CancelDeployment200ResponsePlatformCreator"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/CancelDeployment200ResponsePlatformMeta"
+          }
+        },
+        "description": "Metadata about the source platform that triggered the deployment. Allows us to map a deployment back to a platform (e.g. the chat that created it)"
       },
       "CancelDeployment200ResponseConfig": {
         "required": [
@@ -94464,21 +94372,6 @@
       "ListFlagVersions200ResponsePagination": {
         "type": "object"
       },
-      "GetFlagSettings200ResponseConnectionsItem": {
-        "required": [
-          "edgeConfigId",
-          "edgeConfigItemKey"
-        ],
-        "type": "object",
-        "properties": {
-          "edgeConfigId": {
-            "type": "string"
-          },
-          "edgeConfigItemKey": {
-            "type": "string"
-          }
-        }
-      },
       "GetFlagSettings200ResponseEntitiesItem": {
         "required": [
           "attributes",
@@ -94556,21 +94449,6 @@
         },
         "additionalProperties": false
       },
-      "UpdateFlagSettings200ResponseConnectionsItem": {
-        "required": [
-          "edgeConfigId",
-          "edgeConfigItemKey"
-        ],
-        "type": "object",
-        "properties": {
-          "edgeConfigId": {
-            "type": "string"
-          },
-          "edgeConfigItemKey": {
-            "type": "string"
-          }
-        }
-      },
       "UpdateFlagSettings200ResponseEntitiesItem": {
         "required": [
           "attributes",
@@ -94619,21 +94497,6 @@
           },
           "configUpdatedAt": {
             "type": "number"
-          }
-        }
-      },
-      "UpdateFlagSettings201ResponseConnectionsItem": {
-        "required": [
-          "edgeConfigId",
-          "edgeConfigItemKey"
-        ],
-        "type": "object",
-        "properties": {
-          "edgeConfigId": {
-            "type": "string"
-          },
-          "edgeConfigItemKey": {
-            "type": "string"
           }
         }
       },
@@ -120089,19 +119952,6 @@
         },
         "nullable": true
       },
-      "GetDeployment200ResponseOneOf1Anonymous": {
-        "required": [
-          "expiresAt"
-        ],
-        "type": "object",
-        "properties": {
-          "expiresAt": {
-            "type": "number",
-            "description": "When the anonymous project and its token expire, in milliseconds.",
-            "example": 1753120000000
-          }
-        }
-      },
       "GetDeployment200ResponseOneOf1AliasError": {
         "required": [
           "code",
@@ -120324,11 +120174,11 @@
           "id": {
             "type": "string"
           },
-          "createdAt": {
-            "type": "number"
-          },
           "readyState": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2LambdasItemReadyState"
+          },
+          "createdAt": {
+            "type": "number"
           },
           "entrypoint": {
             "type": "string",
@@ -120608,29 +120458,6 @@
             "type": "string"
           }
         }
-      },
-      "GetDeployment200ResponseOneOf2Platform": {
-        "required": [
-          "creator",
-          "origin",
-          "source"
-        ],
-        "type": "object",
-        "properties": {
-          "source": {
-            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2PlatformSource"
-          },
-          "origin": {
-            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2PlatformOrigin"
-          },
-          "creator": {
-            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2PlatformCreator"
-          },
-          "meta": {
-            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2PlatformMeta"
-          }
-        },
-        "description": "Metadata about the source platform that triggered the deployment. Allows us to map a deployment back to a platform (e.g. the chat that created it)"
       },
       "GetDeployment200ResponseOneOf2CronsItem": {
         "required": [
@@ -120989,6 +120816,29 @@
           }
         }
       },
+      "GetDeployment200ResponseOneOf2Platform": {
+        "required": [
+          "creator",
+          "origin",
+          "source"
+        ],
+        "type": "object",
+        "properties": {
+          "source": {
+            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2PlatformSource"
+          },
+          "origin": {
+            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2PlatformOrigin"
+          },
+          "creator": {
+            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2PlatformCreator"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2PlatformMeta"
+          }
+        },
+        "description": "Metadata about the source platform that triggered the deployment. Allows us to map a deployment back to a platform (e.g. the chat that created it)"
+      },
       "GetDeployment200ResponseOneOf2Config": {
         "required": [
           "functionMemoryType",
@@ -121116,11 +120966,11 @@
           "id": {
             "type": "string"
           },
-          "createdAt": {
-            "type": "number"
-          },
           "readyState": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf3LambdasItemReadyState"
+          },
+          "createdAt": {
+            "type": "number"
           },
           "entrypoint": {
             "type": "string",
@@ -121401,19 +121251,6 @@
           }
         }
       },
-      "CreateDeployment200ResponseOneOf1Anonymous": {
-        "required": [
-          "expiresAt"
-        ],
-        "type": "object",
-        "properties": {
-          "expiresAt": {
-            "type": "number",
-            "description": "When the anonymous project and its token expire, in milliseconds.",
-            "example": 1753120000000
-          }
-        }
-      },
       "CreateDeployment200ResponseOneOf1AliasError": {
         "required": [
           "code",
@@ -121636,11 +121473,11 @@
           "id": {
             "type": "string"
           },
-          "createdAt": {
-            "type": "number"
-          },
           "readyState": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2LambdasItemReadyState"
+          },
+          "createdAt": {
+            "type": "number"
           },
           "entrypoint": {
             "type": "string",
@@ -121920,29 +121757,6 @@
             "type": "string"
           }
         }
-      },
-      "CreateDeployment200ResponseOneOf2Platform": {
-        "required": [
-          "creator",
-          "origin",
-          "source"
-        ],
-        "type": "object",
-        "properties": {
-          "source": {
-            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2PlatformSource"
-          },
-          "origin": {
-            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2PlatformOrigin"
-          },
-          "creator": {
-            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2PlatformCreator"
-          },
-          "meta": {
-            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2PlatformMeta"
-          }
-        },
-        "description": "Metadata about the source platform that triggered the deployment. Allows us to map a deployment back to a platform (e.g. the chat that created it)"
       },
       "CreateDeployment200ResponseOneOf2CronsItem": {
         "required": [
@@ -122300,6 +122114,29 @@
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2MicrofrontendsMfeConfigUploadState"
           }
         }
+      },
+      "CreateDeployment200ResponseOneOf2Platform": {
+        "required": [
+          "creator",
+          "origin",
+          "source"
+        ],
+        "type": "object",
+        "properties": {
+          "source": {
+            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2PlatformSource"
+          },
+          "origin": {
+            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2PlatformOrigin"
+          },
+          "creator": {
+            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2PlatformCreator"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2PlatformMeta"
+          }
+        },
+        "description": "Metadata about the source platform that triggered the deployment. Allows us to map a deployment back to a platform (e.g. the chat that created it)"
       },
       "CreateDeployment200ResponseOneOf2Config": {
         "required": [
@@ -123670,12 +123507,6 @@
               "type": "string"
             }
           },
-          "connections": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ListTeamFlagSettings200ResponseOneOf2DataItemConnectionsItem"
-            }
-          },
           "entities": {
             "type": "array",
             "items": {
@@ -123691,8 +123522,7 @@
           "metadata": {
             "$ref": "#/components/schemas/ListTeamFlagSettings200ResponseOneOf2DataItemMetadata"
           }
-        },
-        "description": "Syncs direct the synchronization of Flags to Edge Configs"
+        }
       },
       "ListTeamFlagSettings200ResponseOneOf2Pagination": {
         "required": [
@@ -131566,60 +131396,6 @@
         },
         "description": "List of domains associated with this environment"
       },
-      "CancelDeployment200ResponsePlatformSource": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Display name of the platform."
-          }
-        },
-        "description": "The external platform that created the deployment (e.g. its display name)."
-      },
-      "CancelDeployment200ResponsePlatformOrigin": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/CancelDeployment200ResponsePlatformOriginType"
-          },
-          "value": {
-            "type": "string",
-            "description": "The identifier or URL pointing to the originating entity."
-          }
-        },
-        "description": "Reference back to the entity on the platform that initiated the deployment."
-      },
-      "CancelDeployment200ResponsePlatformCreator": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Display name of the platform user."
-          },
-          "avatar": {
-            "type": "string",
-            "description": "URL of the platform user\u0027s avatar image."
-          }
-        },
-        "description": "The user on the external platform who triggered the deployment."
-      },
-      "CancelDeployment200ResponsePlatformMeta": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        },
-        "description": "Arbitrary key-value metadata provided by the platform."
-      },
       "CancelDeployment200ResponseFunctionsAdditionalProperties": {
         "type": "object",
         "properties": {
@@ -132030,6 +131806,60 @@
             "$ref": "#/components/schemas/CancelDeployment200ResponseServicesItemRoutesItemHandle"
           }
         }
+      },
+      "CancelDeployment200ResponsePlatformSource": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Display name of the platform."
+          }
+        },
+        "description": "The external platform that created the deployment (e.g. its display name)."
+      },
+      "CancelDeployment200ResponsePlatformOrigin": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/CancelDeployment200ResponsePlatformOriginType"
+          },
+          "value": {
+            "type": "string",
+            "description": "The identifier or URL pointing to the originating entity."
+          }
+        },
+        "description": "Reference back to the entity on the platform that initiated the deployment."
+      },
+      "CancelDeployment200ResponsePlatformCreator": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Display name of the platform user."
+          },
+          "avatar": {
+            "type": "string",
+            "description": "URL of the platform user\u0027s avatar image."
+          }
+        },
+        "description": "The user on the external platform who triggered the deployment."
+      },
+      "CancelDeployment200ResponsePlatformMeta": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Arbitrary key-value metadata provided by the platform."
       },
       "CancelDeployment200ResponseConfigResourceConfig": {
         "type": "object",
@@ -148831,60 +148661,6 @@
         },
         "description": "List of domains associated with this environment"
       },
-      "GetDeployment200ResponseOneOf2PlatformSource": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Display name of the platform."
-          }
-        },
-        "description": "The external platform that created the deployment (e.g. its display name)."
-      },
-      "GetDeployment200ResponseOneOf2PlatformOrigin": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2PlatformOriginType"
-          },
-          "value": {
-            "type": "string",
-            "description": "The identifier or URL pointing to the originating entity."
-          }
-        },
-        "description": "Reference back to the entity on the platform that initiated the deployment."
-      },
-      "GetDeployment200ResponseOneOf2PlatformCreator": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Display name of the platform user."
-          },
-          "avatar": {
-            "type": "string",
-            "description": "URL of the platform user\u0027s avatar image."
-          }
-        },
-        "description": "The user on the external platform who triggered the deployment."
-      },
-      "GetDeployment200ResponseOneOf2PlatformMeta": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        },
-        "description": "Arbitrary key-value metadata provided by the platform."
-      },
       "GetDeployment200ResponseOneOf2FunctionsAdditionalProperties": {
         "type": "object",
         "properties": {
@@ -149296,6 +149072,60 @@
           }
         }
       },
+      "GetDeployment200ResponseOneOf2PlatformSource": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Display name of the platform."
+          }
+        },
+        "description": "The external platform that created the deployment (e.g. its display name)."
+      },
+      "GetDeployment200ResponseOneOf2PlatformOrigin": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2PlatformOriginType"
+          },
+          "value": {
+            "type": "string",
+            "description": "The identifier or URL pointing to the originating entity."
+          }
+        },
+        "description": "Reference back to the entity on the platform that initiated the deployment."
+      },
+      "GetDeployment200ResponseOneOf2PlatformCreator": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Display name of the platform user."
+          },
+          "avatar": {
+            "type": "string",
+            "description": "URL of the platform user\u0027s avatar image."
+          }
+        },
+        "description": "The user on the external platform who triggered the deployment."
+      },
+      "GetDeployment200ResponseOneOf2PlatformMeta": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Arbitrary key-value metadata provided by the platform."
+      },
       "GetDeployment200ResponseOneOf2ConfigResourceConfig": {
         "type": "object",
         "properties": {
@@ -149665,60 +149495,6 @@
           }
         },
         "description": "List of domains associated with this environment"
-      },
-      "CreateDeployment200ResponseOneOf2PlatformSource": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Display name of the platform."
-          }
-        },
-        "description": "The external platform that created the deployment (e.g. its display name)."
-      },
-      "CreateDeployment200ResponseOneOf2PlatformOrigin": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2PlatformOriginType"
-          },
-          "value": {
-            "type": "string",
-            "description": "The identifier or URL pointing to the originating entity."
-          }
-        },
-        "description": "Reference back to the entity on the platform that initiated the deployment."
-      },
-      "CreateDeployment200ResponseOneOf2PlatformCreator": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Display name of the platform user."
-          },
-          "avatar": {
-            "type": "string",
-            "description": "URL of the platform user\u0027s avatar image."
-          }
-        },
-        "description": "The user on the external platform who triggered the deployment."
-      },
-      "CreateDeployment200ResponseOneOf2PlatformMeta": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        },
-        "description": "Arbitrary key-value metadata provided by the platform."
       },
       "CreateDeployment200ResponseOneOf2FunctionsAdditionalProperties": {
         "type": "object",
@@ -150130,6 +149906,60 @@
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2ServicesItemRoutesItemHandle"
           }
         }
+      },
+      "CreateDeployment200ResponseOneOf2PlatformSource": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Display name of the platform."
+          }
+        },
+        "description": "The external platform that created the deployment (e.g. its display name)."
+      },
+      "CreateDeployment200ResponseOneOf2PlatformOrigin": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2PlatformOriginType"
+          },
+          "value": {
+            "type": "string",
+            "description": "The identifier or URL pointing to the originating entity."
+          }
+        },
+        "description": "Reference back to the entity on the platform that initiated the deployment."
+      },
+      "CreateDeployment200ResponseOneOf2PlatformCreator": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Display name of the platform user."
+          },
+          "avatar": {
+            "type": "string",
+            "description": "URL of the platform user\u0027s avatar image."
+          }
+        },
+        "description": "The user on the external platform who triggered the deployment."
+      },
+      "CreateDeployment200ResponseOneOf2PlatformMeta": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Arbitrary key-value metadata provided by the platform."
       },
       "CreateDeployment200ResponseOneOf2ConfigResourceConfig": {
         "type": "object",
@@ -150637,21 +150467,6 @@
             "items": {
               "$ref": "#/components/schemas/UpdateFlag200ResponseOneOf1EnvironmentsAdditionalPropertiesRulesItem"
             }
-          }
-        }
-      },
-      "ListTeamFlagSettings200ResponseOneOf2DataItemConnectionsItem": {
-        "required": [
-          "edgeConfigId",
-          "edgeConfigItemKey"
-        ],
-        "type": "object",
-        "properties": {
-          "edgeConfigId": {
-            "type": "string"
-          },
-          "edgeConfigItemKey": {
-            "type": "string"
           }
         }
       },
@@ -178812,6 +178627,8 @@
           "invoice-refunded",
           "kms-issuer-created",
           "kms-issuer-deleted",
+          "kms-issuer-key-activated",
+          "kms-issuer-key-created",
           "kms-issuer-key-rotated",
           "kms-issuer-policy-created",
           "kms-issuer-policy-deleted",
@@ -179053,6 +178870,7 @@
           "subscription-updated",
           "team",
           "team-avatar-update",
+          "team-collaboration-settings-updated",
           "team-default-build-machine-updated",
           "team-default-passport-updated",
           "team-delete",
@@ -180096,6 +179914,14 @@
               "name": "KmsIssuerDeleted"
             },
             {
+              "value": "kms-issuer-key-activated",
+              "name": "KmsIssuerKeyActivated"
+            },
+            {
+              "value": "kms-issuer-key-created",
+              "name": "KmsIssuerKeyCreated"
+            },
+            {
               "value": "kms-issuer-key-rotated",
               "name": "KmsIssuerKeyRotated"
             },
@@ -181060,6 +180886,10 @@
               "name": "TeamAvatarUpdate"
             },
             {
+              "value": "team-collaboration-settings-updated",
+              "name": "TeamCollaborationSettingsUpdated"
+            },
+            {
               "value": "team-default-build-machine-updated",
               "name": "TeamDefaultBuildMachineUpdated"
             },
@@ -181795,6 +181625,8 @@
           "invoice-refunded",
           "kms-issuer-created",
           "kms-issuer-deleted",
+          "kms-issuer-key-activated",
+          "kms-issuer-key-created",
           "kms-issuer-key-rotated",
           "kms-issuer-policy-created",
           "kms-issuer-policy-deleted",
@@ -182036,6 +181868,7 @@
           "subscription-updated",
           "team",
           "team-avatar-update",
+          "team-collaboration-settings-updated",
           "team-default-build-machine-updated",
           "team-default-passport-updated",
           "team-delete",
@@ -183079,6 +182912,14 @@
               "name": "KmsIssuerDeleted"
             },
             {
+              "value": "kms-issuer-key-activated",
+              "name": "KmsIssuerKeyActivated"
+            },
+            {
+              "value": "kms-issuer-key-created",
+              "name": "KmsIssuerKeyCreated"
+            },
+            {
               "value": "kms-issuer-key-rotated",
               "name": "KmsIssuerKeyRotated"
             },
@@ -184043,6 +183884,10 @@
               "name": "TeamAvatarUpdate"
             },
             {
+              "value": "team-collaboration-settings-updated",
+              "name": "TeamCollaborationSettingsUpdated"
+            },
+            {
               "value": "team-default-build-machine-updated",
               "name": "TeamDefaultBuildMachineUpdated"
             },
@@ -184778,6 +184623,8 @@
           "invoice-refunded",
           "kms-issuer-created",
           "kms-issuer-deleted",
+          "kms-issuer-key-activated",
+          "kms-issuer-key-created",
           "kms-issuer-key-rotated",
           "kms-issuer-policy-created",
           "kms-issuer-policy-deleted",
@@ -185019,6 +184866,7 @@
           "subscription-updated",
           "team",
           "team-avatar-update",
+          "team-collaboration-settings-updated",
           "team-default-build-machine-updated",
           "team-default-passport-updated",
           "team-delete",
@@ -186061,6 +185909,14 @@
               "name": "KmsIssuerDeleted"
             },
             {
+              "value": "kms-issuer-key-activated",
+              "name": "KmsIssuerKeyActivated"
+            },
+            {
+              "value": "kms-issuer-key-created",
+              "name": "KmsIssuerKeyCreated"
+            },
+            {
               "value": "kms-issuer-key-rotated",
               "name": "KmsIssuerKeyRotated"
             },
@@ -187023,6 +186879,10 @@
             {
               "value": "team-avatar-update",
               "name": "TeamAvatarUpdate"
+            },
+            {
+              "value": "team-collaboration-settings-updated",
+              "name": "TeamCollaborationSettingsUpdated"
             },
             {
               "value": "team-default-build-machine-updated",
@@ -191201,38 +191061,62 @@
       },
       "UserEventPayloadOneOf325Previous": {
         "enum": [
-          "elastic",
-          "enhanced",
-          "standard",
-          "turbo"
+          "auto-approval",
+          "block",
+          "manual-approval"
         ],
         "type": "string",
         "additionalProperties": false,
+        "nullable": true,
         "x-ms-enum": {
           "name": "UserEventPayloadOneOf325Previous",
           "modelAsString": false,
           "values": [
             {
-              "value": "elastic",
-              "name": "Elastic"
+              "value": "auto-approval",
+              "name": "AutoApproval"
             },
             {
-              "value": "enhanced",
-              "name": "Enhanced"
+              "value": "block",
+              "name": "Block"
             },
             {
-              "value": "standard",
-              "name": "Standard"
-            },
-            {
-              "value": "turbo",
-              "name": "Turbo"
+              "value": "manual-approval",
+              "name": "ManualApproval"
             }
           ]
         }
       },
       "UserEventPayloadOneOf325Next": {
         "enum": [
+          "auto-approval",
+          "block",
+          "manual-approval"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf325Next",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "auto-approval",
+              "name": "AutoApproval"
+            },
+            {
+              "value": "block",
+              "name": "Block"
+            },
+            {
+              "value": "manual-approval",
+              "name": "ManualApproval"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf326Previous": {
+        "enum": [
           "elastic",
           "enhanced",
           "standard",
@@ -191241,7 +191125,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf325Next",
+          "name": "UserEventPayloadOneOf326Previous",
           "modelAsString": false,
           "values": [
             {
@@ -191263,24 +191147,34 @@
           ]
         }
       },
-      "UserEventPayloadOneOf329Environment": {
+      "UserEventPayloadOneOf326Next": {
         "enum": [
-          "preview",
-          "production"
+          "elastic",
+          "enhanced",
+          "standard",
+          "turbo"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf329Environment",
+          "name": "UserEventPayloadOneOf326Next",
           "modelAsString": false,
           "values": [
             {
-              "value": "preview",
-              "name": "Preview"
+              "value": "elastic",
+              "name": "Elastic"
             },
             {
-              "value": "production",
-              "name": "Production"
+              "value": "enhanced",
+              "name": "Enhanced"
+            },
+            {
+              "value": "standard",
+              "name": "Standard"
+            },
+            {
+              "value": "turbo",
+              "name": "Turbo"
             }
           ]
         }
@@ -191307,7 +191201,29 @@
           ]
         }
       },
-      "UserEventPayloadOneOf330Enabled": {
+      "UserEventPayloadOneOf331Environment": {
+        "enum": [
+          "preview",
+          "production"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf331Environment",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "preview",
+              "name": "Preview"
+            },
+            {
+              "value": "production",
+              "name": "Production"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf331Enabled": {
         "enum": [
           "default",
           "default-force",
@@ -191319,7 +191235,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf330Enabled",
+          "name": "UserEventPayloadOneOf331Enabled",
           "modelAsString": false,
           "values": [
             {
@@ -191349,7 +191265,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf336Role": {
+      "UserEventPayloadOneOf337Role": {
         "enum": [
           "BILLING",
           "CONTRIBUTOR",
@@ -191363,7 +191279,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf336Role",
+          "name": "UserEventPayloadOneOf337Role",
           "modelAsString": false,
           "values": [
             {
@@ -191401,7 +191317,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf336PreviousPlan": {
+      "UserEventPayloadOneOf337PreviousPlan": {
         "enum": [
           "enterprise",
           "hobby",
@@ -191410,7 +191326,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf336PreviousPlan",
+          "name": "UserEventPayloadOneOf337PreviousPlan",
           "modelAsString": false,
           "values": [
             {
@@ -191428,7 +191344,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf336NewPlan": {
+      "UserEventPayloadOneOf337NewPlan": {
         "enum": [
           "enterprise",
           "hobby",
@@ -191437,7 +191353,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf336NewPlan",
+          "name": "UserEventPayloadOneOf337NewPlan",
           "modelAsString": false,
           "values": [
             {
@@ -191455,7 +191371,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf340Source": {
+      "UserEventPayloadOneOf341Source": {
         "enum": [
           "account-update",
           "bitbucket",
@@ -191480,7 +191396,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf340Source",
+          "name": "UserEventPayloadOneOf341Source",
           "modelAsString": false,
           "values": [
             {
@@ -191562,33 +191478,6 @@
           ]
         }
       },
-      "UserEventPayloadOneOf347Plan": {
-        "enum": [
-          "enterprise",
-          "hobby",
-          "pro"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "UserEventPayloadOneOf347Plan",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "enterprise",
-              "name": "Enterprise"
-            },
-            {
-              "value": "hobby",
-              "name": "Hobby"
-            },
-            {
-              "value": "pro",
-              "name": "Pro"
-            }
-          ]
-        }
-      },
       "UserEventPayloadOneOf348Plan": {
         "enum": [
           "enterprise",
@@ -191616,7 +191505,34 @@
           ]
         }
       },
-      "UserEventPayloadOneOf351Consent": {
+      "UserEventPayloadOneOf349Plan": {
+        "enum": [
+          "enterprise",
+          "hobby",
+          "pro"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf349Plan",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "enterprise",
+              "name": "Enterprise"
+            },
+            {
+              "value": "hobby",
+              "name": "Hobby"
+            },
+            {
+              "value": "pro",
+              "name": "Pro"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf352Consent": {
         "enum": [
           "granted",
           "refused"
@@ -191624,7 +191540,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf351Consent",
+          "name": "UserEventPayloadOneOf352Consent",
           "modelAsString": false,
           "values": [
             {
@@ -191638,7 +191554,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf354Enabled": {
+      "UserEventPayloadOneOf355Enabled": {
         "enum": [
           "default",
           "off",
@@ -191647,7 +191563,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf354Enabled",
+          "name": "UserEventPayloadOneOf355Enabled",
           "modelAsString": false,
           "values": [
             {
@@ -191665,7 +191581,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf355Scope": {
+      "UserEventPayloadOneOf356Scope": {
         "enum": [
           "dashboard",
           "log-drains"
@@ -191673,7 +191589,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf355Scope",
+          "name": "UserEventPayloadOneOf356Scope",
           "modelAsString": false,
           "values": [
             {
@@ -191687,7 +191603,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf363Provider": {
+      "UserEventPayloadOneOf364Provider": {
         "enum": [
           "apple",
           "bitbucket",
@@ -191701,7 +191617,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf363Provider",
+          "name": "UserEventPayloadOneOf364Provider",
           "modelAsString": false,
           "values": [
             {
@@ -191739,7 +191655,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf364ActorType": {
+      "UserEventPayloadOneOf365ActorType": {
         "enum": [
           "admin",
           "user"
@@ -191747,7 +191663,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf364ActorType",
+          "name": "UserEventPayloadOneOf365ActorType",
           "modelAsString": false,
           "values": [
             {
@@ -191761,7 +191677,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf385Tier": {
+      "UserEventPayloadOneOf386Tier": {
         "enum": [
           "plus",
           "pro"
@@ -191769,7 +191685,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf385Tier",
+          "name": "UserEventPayloadOneOf386Tier",
           "modelAsString": false,
           "values": [
             {
@@ -191783,7 +191699,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf391GrantType": {
+      "UserEventPayloadOneOf392GrantType": {
         "enum": [
           "authorization_code",
           "urn:ietf:params:oauth:grant-type:device_code",
@@ -191792,7 +191708,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf391GrantType",
+          "name": "UserEventPayloadOneOf392GrantType",
           "modelAsString": false,
           "values": [
             {
@@ -191810,7 +191726,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf391AuthMethod": {
+      "UserEventPayloadOneOf392AuthMethod": {
         "enum": [
           "app",
           "apple",
@@ -191833,7 +191749,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf391AuthMethod",
+          "name": "UserEventPayloadOneOf392AuthMethod",
           "modelAsString": false,
           "values": [
             {
@@ -191907,7 +191823,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf391TokenPrefix": {
+      "UserEventPayloadOneOf392TokenPrefix": {
         "enum": [
           "vca_"
         ],
@@ -191915,7 +191831,7 @@
         "additionalProperties": false,
         "description": "optional since entries prior to 2026-04-23 do not contain this field",
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf391TokenPrefix",
+          "name": "UserEventPayloadOneOf392TokenPrefix",
           "modelAsString": false,
           "values": [
             {
@@ -191925,7 +191841,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf391RefreshTokenPrefix": {
+      "UserEventPayloadOneOf392RefreshTokenPrefix": {
         "enum": [
           "vcr_"
         ],
@@ -191933,7 +191849,7 @@
         "additionalProperties": false,
         "description": "optional; only present when a refresh token was issued (offline_access).",
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf391RefreshTokenPrefix",
+          "name": "UserEventPayloadOneOf392RefreshTokenPrefix",
           "modelAsString": false,
           "values": [
             {
@@ -191943,7 +191859,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf392TokenPrefix": {
+      "UserEventPayloadOneOf393TokenPrefix": {
         "enum": [
           "vcp_"
         ],
@@ -191951,161 +191867,12 @@
         "additionalProperties": false,
         "description": "The token prefix used when showing a safe checksum-style fingerprint.",
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf392TokenPrefix",
+          "name": "UserEventPayloadOneOf393TokenPrefix",
           "modelAsString": false,
           "values": [
             {
               "value": "vcp_",
               "name": "Vcp"
-            }
-          ]
-        }
-      },
-      "UserEventPayloadOneOf392Origin": {
-        "enum": [
-          "app",
-          "apple",
-          "bitbucket",
-          "chatgpt",
-          "email",
-          "emu",
-          "github",
-          "github-webhook",
-          "gitlab",
-          "google",
-          "invite",
-          "manual",
-          "otp",
-          "passkey",
-          "saml",
-          "sms",
-          "token-exchange-oidc"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "How the token was issued. Always \u0060\u0027manual\u0027\u0060 for explicit PAT creation.",
-        "x-ms-enum": {
-          "name": "UserEventPayloadOneOf392Origin",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "app",
-              "name": "App"
-            },
-            {
-              "value": "apple",
-              "name": "Apple"
-            },
-            {
-              "value": "bitbucket",
-              "name": "Bitbucket"
-            },
-            {
-              "value": "chatgpt",
-              "name": "Chatgpt"
-            },
-            {
-              "value": "email",
-              "name": "Email"
-            },
-            {
-              "value": "emu",
-              "name": "Emu"
-            },
-            {
-              "value": "github",
-              "name": "Github"
-            },
-            {
-              "value": "github-webhook",
-              "name": "GithubWebhook"
-            },
-            {
-              "value": "gitlab",
-              "name": "Gitlab"
-            },
-            {
-              "value": "google",
-              "name": "Google"
-            },
-            {
-              "value": "invite",
-              "name": "Invite"
-            },
-            {
-              "value": "manual",
-              "name": "Manual"
-            },
-            {
-              "value": "otp",
-              "name": "Otp"
-            },
-            {
-              "value": "passkey",
-              "name": "Passkey"
-            },
-            {
-              "value": "saml",
-              "name": "Saml"
-            },
-            {
-              "value": "sms",
-              "name": "Sms"
-            },
-            {
-              "value": "token-exchange-oidc",
-              "name": "TokenExchangeOidc"
-            }
-          ]
-        }
-      },
-      "UserEventPayloadOneOf392Scope": {
-        "enum": [
-          "project",
-          "team",
-          "user"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "\u0022Scope of the token: - \u0060\u0027user\u0027\u0060: full-account token (not tied to any team). - \u0060\u0027team\u0027\u0060: scoped to a single team. - \u0060\u0027project\u0027\u0060: scoped to a single project within a team.\u0022",
-        "x-ms-enum": {
-          "name": "UserEventPayloadOneOf392Scope",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "project",
-              "name": "Project"
-            },
-            {
-              "value": "team",
-              "name": "Team"
-            },
-            {
-              "value": "user",
-              "name": "User"
-            }
-          ]
-        }
-      },
-      "UserEventPayloadOneOf392ProjectScope": {
-        "enum": [
-          "account",
-          "project-only"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Present when \u0060scope\u0060 is \u0060\u0027project\u0027\u0060.",
-        "x-ms-enum": {
-          "name": "UserEventPayloadOneOf392ProjectScope",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "account",
-              "name": "Account"
-            },
-            {
-              "value": "project-only",
-              "name": "ProjectOnly"
             }
           ]
         }
@@ -192132,8 +191899,157 @@
         ],
         "type": "string",
         "additionalProperties": false,
+        "description": "How the token was issued. Always \u0060\u0027manual\u0027\u0060 for explicit PAT creation.",
         "x-ms-enum": {
           "name": "UserEventPayloadOneOf393Origin",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "app",
+              "name": "App"
+            },
+            {
+              "value": "apple",
+              "name": "Apple"
+            },
+            {
+              "value": "bitbucket",
+              "name": "Bitbucket"
+            },
+            {
+              "value": "chatgpt",
+              "name": "Chatgpt"
+            },
+            {
+              "value": "email",
+              "name": "Email"
+            },
+            {
+              "value": "emu",
+              "name": "Emu"
+            },
+            {
+              "value": "github",
+              "name": "Github"
+            },
+            {
+              "value": "github-webhook",
+              "name": "GithubWebhook"
+            },
+            {
+              "value": "gitlab",
+              "name": "Gitlab"
+            },
+            {
+              "value": "google",
+              "name": "Google"
+            },
+            {
+              "value": "invite",
+              "name": "Invite"
+            },
+            {
+              "value": "manual",
+              "name": "Manual"
+            },
+            {
+              "value": "otp",
+              "name": "Otp"
+            },
+            {
+              "value": "passkey",
+              "name": "Passkey"
+            },
+            {
+              "value": "saml",
+              "name": "Saml"
+            },
+            {
+              "value": "sms",
+              "name": "Sms"
+            },
+            {
+              "value": "token-exchange-oidc",
+              "name": "TokenExchangeOidc"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf393Scope": {
+        "enum": [
+          "project",
+          "team",
+          "user"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022Scope of the token: - \u0060\u0027user\u0027\u0060: full-account token (not tied to any team). - \u0060\u0027team\u0027\u0060: scoped to a single team. - \u0060\u0027project\u0027\u0060: scoped to a single project within a team.\u0022",
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf393Scope",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "project",
+              "name": "Project"
+            },
+            {
+              "value": "team",
+              "name": "Team"
+            },
+            {
+              "value": "user",
+              "name": "User"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf393ProjectScope": {
+        "enum": [
+          "account",
+          "project-only"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Present when \u0060scope\u0060 is \u0060\u0027project\u0027\u0060.",
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf393ProjectScope",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "account",
+              "name": "Account"
+            },
+            {
+              "value": "project-only",
+              "name": "ProjectOnly"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf394Origin": {
+        "enum": [
+          "app",
+          "apple",
+          "bitbucket",
+          "chatgpt",
+          "email",
+          "emu",
+          "github",
+          "github-webhook",
+          "gitlab",
+          "google",
+          "invite",
+          "manual",
+          "otp",
+          "passkey",
+          "saml",
+          "sms",
+          "token-exchange-oidc"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf394Origin",
           "modelAsString": false,
           "values": [
             {
@@ -198218,14 +198134,14 @@
           ]
         }
       },
-      "UserEventPayloadOneOf362SamplingItemType": {
+      "UserEventPayloadOneOf363SamplingItemType": {
         "enum": [
           "head_sampling"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf362SamplingItemType",
+          "name": "UserEventPayloadOneOf363SamplingItemType",
           "modelAsString": false,
           "values": [
             {
@@ -198235,7 +198151,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf362SamplingItemEnv": {
+      "UserEventPayloadOneOf363SamplingItemEnv": {
         "enum": [
           "preview",
           "production"
@@ -198243,7 +198159,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf362SamplingItemEnv",
+          "name": "UserEventPayloadOneOf363SamplingItemEnv",
           "modelAsString": false,
           "values": [
             {
@@ -199868,7 +199784,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf326RemovedUsersAdditionalPropertiesRole": {
+      "UserEventPayloadOneOf327RemovedUsersAdditionalPropertiesRole": {
         "enum": [
           "BILLING",
           "CONTRIBUTOR",
@@ -199882,7 +199798,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf326RemovedUsersAdditionalPropertiesRole",
+          "name": "UserEventPayloadOneOf327RemovedUsersAdditionalPropertiesRole",
           "modelAsString": false,
           "values": [
             {
@@ -199920,7 +199836,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf391AppClientAuthenticationUsedMethod": {
+      "UserEventPayloadOneOf392AppClientAuthenticationUsedMethod": {
         "enum": [
           "client_secret_basic",
           "client_secret_jwt",
@@ -199932,7 +199848,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf391AppClientAuthenticationUsedMethod",
+          "name": "UserEventPayloadOneOf392AppClientAuthenticationUsedMethod",
           "modelAsString": false,
           "values": [
             {
@@ -202202,30 +202118,19 @@
           ]
         }
       },
-      "CancelDeployment200ResponseReadySubstate": {
+      "CancelDeployment200ResponseType": {
         "enum": [
-          "PROMOTED",
-          "ROLLING",
-          "STAGED"
+          "LAMBDAS"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "\u0022Substate of deployment when readyState is \u0027READY\u0027 Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic\u0022",
         "x-ms-enum": {
-          "name": "CancelDeployment200ResponseReadySubstate",
+          "name": "CancelDeployment200ResponseType",
           "modelAsString": false,
           "values": [
             {
-              "value": "PROMOTED",
-              "name": "Promoted"
-            },
-            {
-              "value": "ROLLING",
-              "name": "Rolling"
-            },
-            {
-              "value": "STAGED",
-              "name": "Staged"
+              "value": "LAMBDAS",
+              "name": "Lambdas"
             }
           ]
         }
@@ -202289,23 +202194,6 @@
           ]
         }
       },
-      "CancelDeployment200ResponseType": {
-        "enum": [
-          "LAMBDAS"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "CancelDeployment200ResponseType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "LAMBDAS",
-              "name": "Lambdas"
-            }
-          ]
-        }
-      },
       "CancelDeployment200ResponseNodeVersion": {
         "enum": [
           "10.x",
@@ -202360,6 +202248,34 @@
             {
               "value": "8.10.x",
               "name": "Value810X"
+            }
+          ]
+        }
+      },
+      "CancelDeployment200ResponseReadySubstate": {
+        "enum": [
+          "PROMOTED",
+          "ROLLING",
+          "STAGED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022Substate of deployment when readyState is \u0027READY\u0027 Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic\u0022",
+        "x-ms-enum": {
+          "name": "CancelDeployment200ResponseReadySubstate",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "PROMOTED",
+              "name": "Promoted"
+            },
+            {
+              "value": "ROLLING",
+              "name": "Rolling"
+            },
+            {
+              "value": "STAGED",
+              "name": "Staged"
             }
           ]
         }
@@ -210243,7 +210159,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf356PreviousAdditionalPropertiesWrapperValue": {
+      "UserEventPayloadOneOf357PreviousAdditionalPropertiesWrapperValue": {
         "enum": [
           "BILLING",
           "CONTRIBUTOR",
@@ -210257,7 +210173,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf356PreviousAdditionalPropertiesWrapperValue",
+          "name": "UserEventPayloadOneOf357PreviousAdditionalPropertiesWrapperValue",
           "modelAsString": false,
           "values": [
             {
@@ -210295,7 +210211,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf356NextAdditionalPropertiesWrapperValue": {
+      "UserEventPayloadOneOf357NextAdditionalPropertiesWrapperValue": {
         "enum": [
           "BILLING",
           "CONTRIBUTOR",
@@ -210309,7 +210225,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf356NextAdditionalPropertiesWrapperValue",
+          "name": "UserEventPayloadOneOf357NextAdditionalPropertiesWrapperValue",
           "modelAsString": false,
           "values": [
             {
@@ -214251,93 +214167,6 @@
           ]
         }
       },
-      "GetDeployment200ResponseOneOf1ReadySubstate": {
-        "enum": [
-          "PROMOTED",
-          "ROLLING",
-          "STAGED"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "\u0022Substate of deployment when readyState is \u0027READY\u0027 Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic\u0022",
-        "x-ms-enum": {
-          "name": "GetDeployment200ResponseOneOf1ReadySubstate",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "PROMOTED",
-              "name": "Promoted"
-            },
-            {
-              "value": "ROLLING",
-              "name": "Rolling"
-            },
-            {
-              "value": "STAGED",
-              "name": "Staged"
-            }
-          ]
-        }
-      },
-      "GetDeployment200ResponseOneOf1ChecksState": {
-        "enum": [
-          "completed",
-          "registered",
-          "running"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetDeployment200ResponseOneOf1ChecksState",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "completed",
-              "name": "Completed"
-            },
-            {
-              "value": "registered",
-              "name": "Registered"
-            },
-            {
-              "value": "running",
-              "name": "Running"
-            }
-          ]
-        }
-      },
-      "GetDeployment200ResponseOneOf1ChecksConclusion": {
-        "enum": [
-          "canceled",
-          "failed",
-          "skipped",
-          "succeeded"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetDeployment200ResponseOneOf1ChecksConclusion",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "canceled",
-              "name": "Canceled"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "skipped",
-              "name": "Skipped"
-            },
-            {
-              "value": "succeeded",
-              "name": "Succeeded"
-            }
-          ]
-        }
-      },
       "GetDeployment200ResponseOneOf2Status": {
         "enum": [
           "BLOCKED",
@@ -214476,30 +214305,19 @@
           ]
         }
       },
-      "GetDeployment200ResponseOneOf2ReadySubstate": {
+      "GetDeployment200ResponseOneOf2Type": {
         "enum": [
-          "PROMOTED",
-          "ROLLING",
-          "STAGED"
+          "LAMBDAS"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "\u0022Substate of deployment when readyState is \u0027READY\u0027 Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic\u0022",
         "x-ms-enum": {
-          "name": "GetDeployment200ResponseOneOf2ReadySubstate",
+          "name": "GetDeployment200ResponseOneOf2Type",
           "modelAsString": false,
           "values": [
             {
-              "value": "PROMOTED",
-              "name": "Promoted"
-            },
-            {
-              "value": "ROLLING",
-              "name": "Rolling"
-            },
-            {
-              "value": "STAGED",
-              "name": "Staged"
+              "value": "LAMBDAS",
+              "name": "Lambdas"
             }
           ]
         }
@@ -214563,23 +214381,6 @@
           ]
         }
       },
-      "GetDeployment200ResponseOneOf2Type": {
-        "enum": [
-          "LAMBDAS"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetDeployment200ResponseOneOf2Type",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "LAMBDAS",
-              "name": "Lambdas"
-            }
-          ]
-        }
-      },
       "GetDeployment200ResponseOneOf2NodeVersion": {
         "enum": [
           "10.x",
@@ -214634,6 +214435,34 @@
             {
               "value": "8.10.x",
               "name": "Value810X"
+            }
+          ]
+        }
+      },
+      "GetDeployment200ResponseOneOf2ReadySubstate": {
+        "enum": [
+          "PROMOTED",
+          "ROLLING",
+          "STAGED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022Substate of deployment when readyState is \u0027READY\u0027 Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic\u0022",
+        "x-ms-enum": {
+          "name": "GetDeployment200ResponseOneOf2ReadySubstate",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "PROMOTED",
+              "name": "Promoted"
+            },
+            {
+              "value": "ROLLING",
+              "name": "Rolling"
+            },
+            {
+              "value": "STAGED",
+              "name": "Staged"
             }
           ]
         }
@@ -214871,30 +214700,19 @@
           ]
         }
       },
-      "GetDeployment200ResponseOneOf3ReadySubstate": {
+      "GetDeployment200ResponseOneOf3Type": {
         "enum": [
-          "PROMOTED",
-          "ROLLING",
-          "STAGED"
+          "LAMBDAS"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "\u0022Substate of deployment when readyState is \u0027READY\u0027 Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic\u0022",
         "x-ms-enum": {
-          "name": "GetDeployment200ResponseOneOf3ReadySubstate",
+          "name": "GetDeployment200ResponseOneOf3Type",
           "modelAsString": false,
           "values": [
             {
-              "value": "PROMOTED",
-              "name": "Promoted"
-            },
-            {
-              "value": "ROLLING",
-              "name": "Rolling"
-            },
-            {
-              "value": "STAGED",
-              "name": "Staged"
+              "value": "LAMBDAS",
+              "name": "Lambdas"
             }
           ]
         }
@@ -214958,23 +214776,6 @@
           ]
         }
       },
-      "GetDeployment200ResponseOneOf3Type": {
-        "enum": [
-          "LAMBDAS"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetDeployment200ResponseOneOf3Type",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "LAMBDAS",
-              "name": "Lambdas"
-            }
-          ]
-        }
-      },
       "GetDeployment200ResponseOneOf3NodeVersion": {
         "enum": [
           "10.x",
@@ -215029,6 +214830,34 @@
             {
               "value": "8.10.x",
               "name": "Value810X"
+            }
+          ]
+        }
+      },
+      "GetDeployment200ResponseOneOf3ReadySubstate": {
+        "enum": [
+          "PROMOTED",
+          "ROLLING",
+          "STAGED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022Substate of deployment when readyState is \u0027READY\u0027 Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic\u0022",
+        "x-ms-enum": {
+          "name": "GetDeployment200ResponseOneOf3ReadySubstate",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "PROMOTED",
+              "name": "Promoted"
+            },
+            {
+              "value": "ROLLING",
+              "name": "Rolling"
+            },
+            {
+              "value": "STAGED",
+              "name": "Staged"
             }
           ]
         }
@@ -215175,93 +215004,6 @@
           ]
         }
       },
-      "CreateDeployment200ResponseOneOf1ReadySubstate": {
-        "enum": [
-          "PROMOTED",
-          "ROLLING",
-          "STAGED"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "\u0022Substate of deployment when readyState is \u0027READY\u0027 Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic\u0022",
-        "x-ms-enum": {
-          "name": "CreateDeployment200ResponseOneOf1ReadySubstate",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "PROMOTED",
-              "name": "Promoted"
-            },
-            {
-              "value": "ROLLING",
-              "name": "Rolling"
-            },
-            {
-              "value": "STAGED",
-              "name": "Staged"
-            }
-          ]
-        }
-      },
-      "CreateDeployment200ResponseOneOf1ChecksState": {
-        "enum": [
-          "completed",
-          "registered",
-          "running"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "CreateDeployment200ResponseOneOf1ChecksState",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "completed",
-              "name": "Completed"
-            },
-            {
-              "value": "registered",
-              "name": "Registered"
-            },
-            {
-              "value": "running",
-              "name": "Running"
-            }
-          ]
-        }
-      },
-      "CreateDeployment200ResponseOneOf1ChecksConclusion": {
-        "enum": [
-          "canceled",
-          "failed",
-          "skipped",
-          "succeeded"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "CreateDeployment200ResponseOneOf1ChecksConclusion",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "canceled",
-              "name": "Canceled"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "skipped",
-              "name": "Skipped"
-            },
-            {
-              "value": "succeeded",
-              "name": "Succeeded"
-            }
-          ]
-        }
-      },
       "CreateDeployment200ResponseOneOf2Status": {
         "enum": [
           "BLOCKED",
@@ -215400,30 +215142,19 @@
           ]
         }
       },
-      "CreateDeployment200ResponseOneOf2ReadySubstate": {
+      "CreateDeployment200ResponseOneOf2Type": {
         "enum": [
-          "PROMOTED",
-          "ROLLING",
-          "STAGED"
+          "LAMBDAS"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "\u0022Substate of deployment when readyState is \u0027READY\u0027 Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic\u0022",
         "x-ms-enum": {
-          "name": "CreateDeployment200ResponseOneOf2ReadySubstate",
+          "name": "CreateDeployment200ResponseOneOf2Type",
           "modelAsString": false,
           "values": [
             {
-              "value": "PROMOTED",
-              "name": "Promoted"
-            },
-            {
-              "value": "ROLLING",
-              "name": "Rolling"
-            },
-            {
-              "value": "STAGED",
-              "name": "Staged"
+              "value": "LAMBDAS",
+              "name": "Lambdas"
             }
           ]
         }
@@ -215487,23 +215218,6 @@
           ]
         }
       },
-      "CreateDeployment200ResponseOneOf2Type": {
-        "enum": [
-          "LAMBDAS"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "CreateDeployment200ResponseOneOf2Type",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "LAMBDAS",
-              "name": "Lambdas"
-            }
-          ]
-        }
-      },
       "CreateDeployment200ResponseOneOf2NodeVersion": {
         "enum": [
           "10.x",
@@ -215558,6 +215272,34 @@
             {
               "value": "8.10.x",
               "name": "Value810X"
+            }
+          ]
+        }
+      },
+      "CreateDeployment200ResponseOneOf2ReadySubstate": {
+        "enum": [
+          "PROMOTED",
+          "ROLLING",
+          "STAGED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022Substate of deployment when readyState is \u0027READY\u0027 Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic\u0022",
+        "x-ms-enum": {
+          "name": "CreateDeployment200ResponseOneOf2ReadySubstate",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "PROMOTED",
+              "name": "Promoted"
+            },
+            {
+              "value": "ROLLING",
+              "name": "Rolling"
+            },
+            {
+              "value": "STAGED",
+              "name": "Staged"
             }
           ]
         }
@@ -248459,29 +248201,6 @@
         "additionalProperties": false,
         "nullable": true
       },
-      "CancelDeployment200ResponsePlatformOriginType": {
-        "enum": [
-          "id",
-          "url"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Whether the value is an opaque identifier or a URL.",
-        "x-ms-enum": {
-          "name": "CancelDeployment200ResponsePlatformOriginType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "id",
-              "name": "Id"
-            },
-            {
-              "value": "url",
-              "name": "Url"
-            }
-          ]
-        }
-      },
       "CancelDeployment200ResponseFunctionsAdditionalPropertiesArchitecture": {
         "enum": [
           "arm64",
@@ -248723,6 +248442,29 @@
             {
               "value": "rewrite",
               "name": "Rewrite"
+            }
+          ]
+        }
+      },
+      "CancelDeployment200ResponsePlatformOriginType": {
+        "enum": [
+          "id",
+          "url"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Whether the value is an opaque identifier or a URL.",
+        "x-ms-enum": {
+          "name": "CancelDeployment200ResponsePlatformOriginType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "url",
+              "name": "Url"
             }
           ]
         }
@@ -262001,29 +261743,6 @@
         "additionalProperties": false,
         "nullable": true
       },
-      "GetDeployment200ResponseOneOf2PlatformOriginType": {
-        "enum": [
-          "id",
-          "url"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Whether the value is an opaque identifier or a URL.",
-        "x-ms-enum": {
-          "name": "GetDeployment200ResponseOneOf2PlatformOriginType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "id",
-              "name": "Id"
-            },
-            {
-              "value": "url",
-              "name": "Url"
-            }
-          ]
-        }
-      },
       "GetDeployment200ResponseOneOf2FunctionsAdditionalPropertiesArchitecture": {
         "enum": [
           "arm64",
@@ -262269,6 +261988,29 @@
           ]
         }
       },
+      "GetDeployment200ResponseOneOf2PlatformOriginType": {
+        "enum": [
+          "id",
+          "url"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Whether the value is an opaque identifier or a URL.",
+        "x-ms-enum": {
+          "name": "GetDeployment200ResponseOneOf2PlatformOriginType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "url",
+              "name": "Url"
+            }
+          ]
+        }
+      },
       "GetDeployment200ResponseOneOf2ConfigResourceConfigElasticConcurrency": {
         "enum": [
           "PROJECT_SETTING",
@@ -262424,29 +262166,6 @@
         "type": "number",
         "additionalProperties": false,
         "nullable": true
-      },
-      "CreateDeployment200ResponseOneOf2PlatformOriginType": {
-        "enum": [
-          "id",
-          "url"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Whether the value is an opaque identifier or a URL.",
-        "x-ms-enum": {
-          "name": "CreateDeployment200ResponseOneOf2PlatformOriginType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "id",
-              "name": "Id"
-            },
-            {
-              "value": "url",
-              "name": "Url"
-            }
-          ]
-        }
       },
       "CreateDeployment200ResponseOneOf2FunctionsAdditionalPropertiesArchitecture": {
         "enum": [
@@ -262689,6 +262408,29 @@
             {
               "value": "rewrite",
               "name": "Rewrite"
+            }
+          ]
+        }
+      },
+      "CreateDeployment200ResponseOneOf2PlatformOriginType": {
+        "enum": [
+          "id",
+          "url"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Whether the value is an opaque identifier or a URL.",
+        "x-ms-enum": {
+          "name": "CreateDeployment200ResponseOneOf2PlatformOriginType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "url",
+              "name": "Url"
             }
           ]
         }

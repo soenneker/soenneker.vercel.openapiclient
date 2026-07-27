@@ -179,7 +179,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamNsnbConfig NsnbConfig { get; set; }
 #endif
-        /// <summary>The organizationId for child teams created under an organization.</summary>
+        /// <summary>Best-effort ID of the organization’s root billing team. When present, compare `orgRootTeamId === id` to identify the root team. It may be omitted even when `parentId` is set if organization resolution fails or the referenced organization is missing. Always omitted for non-organization teams.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrgRootTeamId { get; set; }
+#nullable restore
+#else
+        public string OrgRootTeamId { get; set; }
+#endif
+        /// <summary>The organizationId for teams that belong to an organization (set on both the organization&apos;s root team and its child teams).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParentId { get; set; }
@@ -322,6 +330,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "membership", n => { Membership = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamMembership>(global::Soenneker.Vercel.OpenApiClient.Models.TeamMembership.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nsnbConfig", n => { NsnbConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamNsnbConfig>(global::Soenneker.Vercel.OpenApiClient.Models.TeamNsnbConfig.CreateFromDiscriminatorValue); } },
+                { "orgRootTeamId", n => { OrgRootTeamId = n.GetStringValue(); } },
                 { "parentId", n => { ParentId = n.GetStringValue(); } },
                 { "personalAccessTokensInvalidatedAt", n => { PersonalAccessTokensInvalidatedAt = n.GetDoubleValue(); } },
                 { "platform", n => { Platform = n.GetBoolValue(); } },
@@ -374,6 +383,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamMembership>("membership", Membership);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamNsnbConfig>("nsnbConfig", NsnbConfig);
+            writer.WriteStringValue("orgRootTeamId", OrgRootTeamId);
             writer.WriteStringValue("parentId", ParentId);
             writer.WriteDoubleValue("personalAccessTokensInvalidatedAt", PersonalAccessTokensInvalidatedAt);
             writer.WriteBoolValue("platform", Platform);

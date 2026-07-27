@@ -59,7 +59,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The organizationId for child teams created under an organization.</summary>
+        /// <summary>Best-effort ID of the organization’s root billing team. When present, compare `orgRootTeamId === id` to identify the root team. It may be omitted even when `parentId` is set if organization resolution fails or the referenced organization is missing. Always omitted for non-organization teams.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrgRootTeamId { get; set; }
+#nullable restore
+#else
+        public string OrgRootTeamId { get; set; }
+#endif
+        /// <summary>The organizationId for teams that belong to an organization (set on both the organization&apos;s root team and its child teams).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParentId { get; set; }
@@ -116,6 +124,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "limitedBy", n => { LimitedBy = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedLimitedByItem>()?.AsList(); } },
                 { "membership", n => { Membership = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership>(global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "orgRootTeamId", n => { OrgRootTeamId = n.GetStringValue(); } },
                 { "parentId", n => { ParentId = n.GetStringValue(); } },
                 { "saml", n => { Saml = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedSaml>(global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedSaml.CreateFromDiscriminatorValue); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
@@ -135,6 +144,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedLimitedByItem>("limitedBy", LimitedBy);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembership>("membership", Membership);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("orgRootTeamId", OrgRootTeamId);
             writer.WriteStringValue("parentId", ParentId);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedSaml>("saml", Saml);
             writer.WriteStringValue("slug", Slug);

@@ -8,21 +8,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UserEventPayloadOneOf325Next
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "elastic")]
+        [EnumMember(Value = "auto-approval")]
         #pragma warning disable CS1591
-        Elastic,
+        AutoApproval,
         #pragma warning restore CS1591
-        [EnumMember(Value = "enhanced")]
+        [EnumMember(Value = "block")]
         #pragma warning disable CS1591
-        Enhanced,
+        Block,
         #pragma warning restore CS1591
-        [EnumMember(Value = "standard")]
+        [EnumMember(Value = "manual-approval")]
         #pragma warning disable CS1591
-        Standard,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "turbo")]
-        #pragma warning disable CS1591
-        Turbo,
+        ManualApproval,
         #pragma warning restore CS1591
     }
 }

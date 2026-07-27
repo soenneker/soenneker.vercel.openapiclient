@@ -947,6 +947,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         KmsIssuerDeleted,
         #pragma warning restore CS1591
+        [EnumMember(Value = "kms-issuer-key-activated")]
+        #pragma warning disable CS1591
+        KmsIssuerKeyActivated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "kms-issuer-key-created")]
+        #pragma warning disable CS1591
+        KmsIssuerKeyCreated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "kms-issuer-key-rotated")]
         #pragma warning disable CS1591
         KmsIssuerKeyRotated,
@@ -1910,6 +1918,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "team-avatar-update")]
         #pragma warning disable CS1591
         TeamAvatarUpdate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "team-collaboration-settings-updated")]
+        #pragma warning disable CS1591
+        TeamCollaborationSettingsUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "team-default-build-machine-updated")]
         #pragma warning disable CS1591

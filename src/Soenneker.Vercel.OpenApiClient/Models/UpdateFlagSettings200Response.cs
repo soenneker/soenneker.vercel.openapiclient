@@ -7,22 +7,13 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Syncs direct the synchronization of Flags to Edge Configs
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class UpdateFlagSettings200Response : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The connections property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSettings200ResponseConnectionsItem>? Connections { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSettings200ResponseConnectionsItem> Connections { get; set; }
-#endif
         /// <summary>The createdAt property</summary>
         public double? CreatedAt { get; set; }
         /// <summary>The enabled property</summary>
@@ -96,7 +87,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "connections", n => { Connections = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSettings200ResponseConnectionsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSettings200ResponseConnectionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "entities", n => { Entities = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSettings200ResponseEntitiesItem>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSettings200ResponseEntitiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -115,7 +105,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSettings200ResponseConnectionsItem>("connections", Connections);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSettings200ResponseEntitiesItem>("entities", Entities);
