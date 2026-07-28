@@ -48,6 +48,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The date at which the Network was created, represented as a UNIX timestamp since EPOCH.</summary>
         public double? CreatedAt { get; set; }
+        /// <summary>The single contiguous CIDR block from which all egress (NAT gateway) IP addresses are allocated. Present only for networks created with the egress CIDR block feature enabled. Customers can allowlist this range instead of individual egress IPs so it keeps working when AZs are added.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EgressCidrBlock { get; set; }
+#nullable restore
+#else
+        public string EgressCidrBlock { get; set; }
+#endif
         /// <summary>The egressIpAddresses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -152,6 +160,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "awsRegion", n => { AwsRegion = n.GetStringValue(); } },
                 { "cidr", n => { Cidr = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
+                { "egressCidrBlock", n => { EgressCidrBlock = n.GetStringValue(); } },
                 { "egressIpAddresses", n => { EgressIpAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "hostedZones", n => { HostedZones = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones>(global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -176,6 +185,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("awsRegion", AwsRegion);
             writer.WriteStringValue("cidr", Cidr);
             writer.WriteDoubleValue("createdAt", CreatedAt);
+            writer.WriteStringValue("egressCidrBlock", EgressCidrBlock);
             writer.WriteCollectionOfPrimitiveValues<string>("egressIpAddresses", EgressIpAddresses);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones>("hostedZones", HostedZones);
             writer.WriteStringValue("id", Id);

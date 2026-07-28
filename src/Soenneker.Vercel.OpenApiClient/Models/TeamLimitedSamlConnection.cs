@@ -29,7 +29,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string State { get; set; }
 #endif
-        /// <summary>Current status of the connection.</summary>
+        /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

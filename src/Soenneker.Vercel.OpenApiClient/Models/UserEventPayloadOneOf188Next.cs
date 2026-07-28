@@ -16,6 +16,38 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The allowUnsafeScriptSrcKeywords property</summary>
         public bool? AllowUnsafeScriptSrcKeywords { get; set; }
+        /// <summary>The computedConnectSrc property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ComputedConnectSrc { get; set; }
+#nullable restore
+#else
+        public string ComputedConnectSrc { get; set; }
+#endif
+        /// <summary>The computedConnectSrcPreview property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ComputedConnectSrcPreview { get; set; }
+#nullable restore
+#else
+        public string ComputedConnectSrcPreview { get; set; }
+#endif
+        /// <summary>The computedScriptSrc property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ComputedScriptSrc { get; set; }
+#nullable restore
+#else
+        public string ComputedScriptSrc { get; set; }
+#endif
+        /// <summary>The computedScriptSrcPreview property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ComputedScriptSrcPreview { get; set; }
+#nullable restore
+#else
+        public string ComputedScriptSrcPreview { get; set; }
+#endif
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
         /// <summary>The enforcementScope property</summary>
@@ -60,6 +92,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allowUnsafeScriptSrcKeywords", n => { AllowUnsafeScriptSrcKeywords = n.GetBoolValue(); } },
+                { "computedConnectSrc", n => { ComputedConnectSrc = n.GetStringValue(); } },
+                { "computedConnectSrcPreview", n => { ComputedConnectSrcPreview = n.GetStringValue(); } },
+                { "computedScriptSrc", n => { ComputedScriptSrc = n.GetStringValue(); } },
+                { "computedScriptSrcPreview", n => { ComputedScriptSrcPreview = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "enforcePercentage", n => { EnforcePercentage = n.GetDoubleValue(); } },
                 { "enforcementScope", n => { EnforcementScope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf188NextEnforcementScope>(); } },
@@ -76,6 +112,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowUnsafeScriptSrcKeywords", AllowUnsafeScriptSrcKeywords);
+            writer.WriteStringValue("computedConnectSrc", ComputedConnectSrc);
+            writer.WriteStringValue("computedConnectSrcPreview", ComputedConnectSrcPreview);
+            writer.WriteStringValue("computedScriptSrc", ComputedScriptSrc);
+            writer.WriteStringValue("computedScriptSrcPreview", ComputedScriptSrcPreview);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf188NextEnforcementScope>("enforcementScope", EnforcementScope);
             writer.WriteDoubleValue("enforcePercentage", EnforcePercentage);

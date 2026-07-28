@@ -15,14 +15,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The prevProjectWebAnalytics property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293PrevProjectWebAnalytics? PrevProjectWebAnalytics { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293PrevProjectWebAnalytics PrevProjectWebAnalytics { get; set; }
-#endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,22 +23,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectName { get; set; }
-#nullable restore
-#else
-        public string ProjectName { get; set; }
-#endif
-        /// <summary>The projectWebAnalytics property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293ProjectWebAnalytics? ProjectWebAnalytics { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293ProjectWebAnalytics ProjectWebAnalytics { get; set; }
-#endif
+        /// <summary>The reasonCode property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293ReasonCode? ReasonCode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293"/> and sets the default values.
         /// </summary>
@@ -72,10 +50,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "prevProjectWebAnalytics", n => { PrevProjectWebAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293PrevProjectWebAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293PrevProjectWebAnalytics.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "projectWebAnalytics", n => { ProjectWebAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293ProjectWebAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293ProjectWebAnalytics.CreateFromDiscriminatorValue); } },
+                { "reasonCode", n => { ReasonCode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293ReasonCode>(); } },
             };
         }
         /// <summary>
@@ -85,10 +61,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293PrevProjectWebAnalytics>("prevProjectWebAnalytics", PrevProjectWebAnalytics);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293ProjectWebAnalytics>("projectWebAnalytics", ProjectWebAnalytics);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf293ReasonCode>("reasonCode", ReasonCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

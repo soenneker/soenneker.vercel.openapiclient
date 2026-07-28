@@ -1615,6 +1615,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ProjectRoutesVersionRestored,
         #pragma warning restore CS1591
+        [EnumMember(Value = "project-sandbox-config-updated")]
+        #pragma warning disable CS1591
+        ProjectSandboxConfigUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project-sandbox-url-protection-updated")]
         #pragma warning disable CS1591
         ProjectSandboxUrlProtectionUpdated,

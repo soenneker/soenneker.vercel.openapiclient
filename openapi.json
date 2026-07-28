@@ -11731,6 +11731,7 @@
                       "enum": [
                         "api-key",
                         "custom",
+                        "discord",
                         "github",
                         "linear",
                         "microsoft-entra",
@@ -12113,6 +12114,9 @@
             "description": ""
           },
           "410": {
+            "description": ""
+          },
+          "422": {
             "description": ""
           },
           "502": {
@@ -13252,6 +13256,9 @@
                             "type": "array"
                           },
                           "expiresAt": {
+                            "type": "number"
+                          },
+                          "expiresIn": {
                             "type": "number"
                           },
                           "refreshTokenExpiresAt": {
@@ -76834,6 +76841,30 @@
                             },
                             "type": "object"
                           },
+                          "sandbox": {
+                            "properties": {
+                              "region": {
+                                "type": "string",
+                                "enum": [
+                                  "cle1",
+                                  "iad1",
+                                  "sfo1"
+                                ]
+                              },
+                              "failoverRegions": {
+                                "items": {
+                                  "type": "string",
+                                  "enum": [
+                                    "cle1",
+                                    "iad1",
+                                    "sfo1"
+                                  ]
+                                },
+                                "type": "array"
+                              }
+                            },
+                            "type": "object"
+                          },
                           "productionDeploymentsFastLane": {
                             "type": "boolean",
                             "enum": [
@@ -100294,6 +100325,30 @@
                                 },
                                 "type": "object"
                               },
+                              "sandbox": {
+                                "properties": {
+                                  "region": {
+                                    "type": "string",
+                                    "enum": [
+                                      "cle1",
+                                      "iad1",
+                                      "sfo1"
+                                    ]
+                                  },
+                                  "failoverRegions": {
+                                    "items": {
+                                      "type": "string",
+                                      "enum": [
+                                        "cle1",
+                                        "iad1",
+                                        "sfo1"
+                                      ]
+                                    },
+                                    "type": "array"
+                                  }
+                                },
+                                "type": "object"
+                              },
                               "productionDeploymentsFastLane": {
                                 "type": "boolean",
                                 "enum": [
@@ -108161,6 +108216,30 @@
                             }
                           },
                           "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "sandbox": {
+                      "properties": {
+                        "region": {
+                          "type": "string",
+                          "enum": [
+                            "cle1",
+                            "iad1",
+                            "sfo1"
+                          ]
+                        },
+                        "failoverRegions": {
+                          "items": {
+                            "type": "string",
+                            "enum": [
+                              "cle1",
+                              "iad1",
+                              "sfo1"
+                            ]
+                          },
+                          "type": "array"
                         }
                       },
                       "type": "object"
@@ -116202,6 +116281,30 @@
                       },
                       "type": "object"
                     },
+                    "sandbox": {
+                      "properties": {
+                        "region": {
+                          "type": "string",
+                          "enum": [
+                            "cle1",
+                            "iad1",
+                            "sfo1"
+                          ]
+                        },
+                        "failoverRegions": {
+                          "items": {
+                            "type": "string",
+                            "enum": [
+                              "cle1",
+                              "iad1",
+                              "sfo1"
+                            ]
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object"
+                    },
                     "productionDeploymentsFastLane": {
                       "type": "boolean",
                       "enum": [
@@ -123596,6 +123699,30 @@
                             }
                           },
                           "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "sandbox": {
+                      "properties": {
+                        "region": {
+                          "type": "string",
+                          "enum": [
+                            "cle1",
+                            "iad1",
+                            "sfo1"
+                          ]
+                        },
+                        "failoverRegions": {
+                          "items": {
+                            "type": "string",
+                            "enum": [
+                              "cle1",
+                              "iad1",
+                              "sfo1"
+                            ]
+                          },
+                          "type": "array"
                         }
                       },
                       "type": "object"
@@ -132258,6 +132385,30 @@
                             }
                           },
                           "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "sandbox": {
+                      "properties": {
+                        "region": {
+                          "type": "string",
+                          "enum": [
+                            "cle1",
+                            "iad1",
+                            "sfo1"
+                          ]
+                        },
+                        "failoverRegions": {
+                          "items": {
+                            "type": "string",
+                            "enum": [
+                              "cle1",
+                              "iad1",
+                              "sfo1"
+                            ]
+                          },
+                          "type": "array"
                         }
                       },
                       "type": "object"
@@ -152325,6 +152476,30 @@
                             }
                           },
                           "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "sandbox": {
+                      "properties": {
+                        "region": {
+                          "type": "string",
+                          "enum": [
+                            "cle1",
+                            "iad1",
+                            "sfo1"
+                          ]
+                        },
+                        "failoverRegions": {
+                          "items": {
+                            "type": "string",
+                            "enum": [
+                              "cle1",
+                              "iad1",
+                              "sfo1"
+                            ]
+                          },
+                          "type": "array"
                         }
                       },
                       "type": "object"
@@ -195737,6 +195912,10 @@
             },
             "type": "array"
           },
+          "egressCidrBlock": {
+            "type": "string",
+            "description": "The single contiguous CIDR block from which all egress (NAT gateway) IP addresses are allocated. Present only for networks created with the egress CIDR block feature enabled. Customers can allowlist this range instead of individual egress IPs so it keeps working when AZs are added."
+          },
           "hostedZones": {
             "properties": {
               "count": {
@@ -197585,6 +197764,7 @@
               "project-root-directory-updated",
               "project-routes-version-promoted",
               "project-routes-version-restored",
+              "project-sandbox-config-updated",
               "project-sandbox-url-protection-updated",
               "project-skew-protection-allowed-domains-updated",
               "project-skew-protection-max-age-updated",
@@ -209840,6 +210020,18 @@
                           false,
                           true
                         ]
+                      },
+                      "computedScriptSrc": {
+                        "type": "string"
+                      },
+                      "computedScriptSrcPreview": {
+                        "type": "string"
+                      },
+                      "computedConnectSrc": {
+                        "type": "string"
+                      },
+                      "computedConnectSrcPreview": {
+                        "type": "string"
                       }
                     },
                     "required": [
@@ -209893,6 +210085,18 @@
                           false,
                           true
                         ]
+                      },
+                      "computedScriptSrc": {
+                        "type": "string"
+                      },
+                      "computedScriptSrcPreview": {
+                        "type": "string"
+                      },
+                      "computedConnectSrc": {
+                        "type": "string"
+                      },
+                      "computedConnectSrcPreview": {
+                        "type": "string"
                       }
                     },
                     "required": [
@@ -210021,6 +210225,13 @@
                   },
                   "justification": {
                     "type": "string"
+                  },
+                  "approvalScope": {
+                    "type": "string",
+                    "enum": [
+                      "all",
+                      "preview"
+                    ]
                   },
                   "kind": {
                     "type": "string",
@@ -213162,6 +213373,31 @@
                 "required": [
                   "next",
                   "previous",
+                  "projectId",
+                  "projectName"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "projectId": {
+                    "type": "string"
+                  },
+                  "projectName": {
+                    "type": "string"
+                  },
+                  "region": {
+                    "type": "string"
+                  },
+                  "failoverRegions": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
                   "projectId",
                   "projectName"
                 ],
@@ -218359,6 +218595,7 @@
               "project-root-directory-updated",
               "project-routes-version-promoted",
               "project-routes-version-restored",
+              "project-sandbox-config-updated",
               "project-sandbox-url-protection-updated",
               "project-skew-protection-allowed-domains-updated",
               "project-skew-protection-max-age-updated",
@@ -218989,6 +219226,7 @@
                 "project-root-directory-updated",
                 "project-routes-version-promoted",
                 "project-routes-version-restored",
+                "project-sandbox-config-updated",
                 "project-sandbox-url-protection-updated",
                 "project-skew-protection-allowed-domains-updated",
                 "project-skew-protection-max-age-updated",
@@ -221636,11 +221874,6 @@
             "properties": {
               "connection": {
                 "properties": {
-                  "status": {
-                    "type": "string",
-                    "description": "Current status of the connection.",
-                    "example": "linked"
-                  },
                   "type": {
                     "type": "string",
                     "description": "The Identity Provider \"type\", for example Okta.",
@@ -221673,6 +221906,9 @@
                       "SETUP"
                     ],
                     "description": "Controls whether directory sync events are processed. - 'SETUP': Directory connected but role mappings not yet configured. Events are acknowledged but not processed. - 'ACTIVE': Fully configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat as 'ACTIVE' for backwards compatibility."
+                  },
+                  "status": {
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -222750,11 +222986,6 @@
             "properties": {
               "connection": {
                 "properties": {
-                  "status": {
-                    "type": "string",
-                    "description": "Current status of the connection.",
-                    "example": "linked"
-                  },
                   "type": {
                     "type": "string",
                     "description": "The Identity Provider \"type\", for example Okta.",
@@ -222787,6 +223018,9 @@
                       "SETUP"
                     ],
                     "description": "Controls whether directory sync events are processed. - 'SETUP': Directory connected but role mappings not yet configured. Events are acknowledged but not processed. - 'ACTIVE': Fully configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat as 'ACTIVE' for backwards compatibility."
+                  },
+                  "status": {
+                    "type": "string"
                   }
                 },
                 "required": [

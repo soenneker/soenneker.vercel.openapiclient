@@ -16,6 +16,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Custom,
         #pragma warning restore CS1591
+        [EnumMember(Value = "discord")]
+        #pragma warning disable CS1591
+        Discord,
+        #pragma warning restore CS1591
         [EnumMember(Value = "github")]
         #pragma warning disable CS1591
         Github,

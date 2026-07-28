@@ -56,6 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The expiresAt property</summary>
         public double? ExpiresAt { get; set; }
+        /// <summary>The expiresIn property</summary>
+        public double? ExpiresIn { get; set; }
         /// <summary>The externalSubject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,6 +157,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokens200ResponseTokensItemData>(global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokens200ResponseTokensItemData.CreateFromDiscriminatorValue); } },
                 { "environment", n => { Environment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokens200ResponseTokensItemEnvironment>(global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokens200ResponseTokensItemEnvironment.CreateFromDiscriminatorValue); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
+                { "expiresIn", n => { ExpiresIn = n.GetDoubleValue(); } },
                 { "externalSubject", n => { ExternalSubject = n.GetStringValue(); } },
                 { "installation", n => { Installation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokens200ResponseTokensItemInstallation>(global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokens200ResponseTokensItemInstallation.CreateFromDiscriminatorValue); } },
                 { "installationId", n => { InstallationId = n.GetStringValue(); } },
@@ -180,6 +183,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokens200ResponseTokensItemData>("data", Data);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokens200ResponseTokensItemEnvironment>("environment", Environment);
             writer.WriteDoubleValue("expiresAt", ExpiresAt);
+            writer.WriteDoubleValue("expiresIn", ExpiresIn);
             writer.WriteStringValue("externalSubject", ExternalSubject);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportConnectorTokens200ResponseTokensItemInstallation>("installation", Installation);
             writer.WriteStringValue("installationId", InstallationId);

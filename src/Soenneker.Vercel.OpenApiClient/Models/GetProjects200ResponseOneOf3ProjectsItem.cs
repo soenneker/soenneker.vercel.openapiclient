@@ -458,6 +458,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string RootDirectory { get; set; }
 #endif
+        /// <summary>The sandbox property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemSandbox? Sandbox { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemSandbox Sandbox { get; set; }
+#endif
         /// <summary>The security property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -695,6 +703,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "rollbackDescription", n => { RollbackDescription = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemRollbackDescription>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemRollbackDescription.CreateFromDiscriminatorValue); } },
                 { "rollingRelease", n => { RollingRelease = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemRollingRelease>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemRollingRelease.CreateFromDiscriminatorValue); } },
                 { "rootDirectory", n => { RootDirectory = n.GetStringValue(); } },
+                { "sandbox", n => { Sandbox = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemSandbox>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemSandbox.CreateFromDiscriminatorValue); } },
                 { "security", n => { Security = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemSecurity>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemSecurity.CreateFromDiscriminatorValue); } },
                 { "serverlessFunctionZeroConfigFailover", n => { ServerlessFunctionZeroConfigFailover = n.GetBoolValue(); } },
                 { "services", n => { Services = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemServicesItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemServicesItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -801,6 +810,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemRollbackDescription>("rollbackDescription", RollbackDescription);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemRollingRelease>("rollingRelease", RollingRelease);
             writer.WriteStringValue("rootDirectory", RootDirectory);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemSandbox>("sandbox", Sandbox);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemSecurity>("security", Security);
             writer.WriteBoolValue("serverlessFunctionZeroConfigFailover", ServerlessFunctionZeroConfigFailover);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemServicesItem>("services", Services);

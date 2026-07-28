@@ -23911,6 +23911,10 @@
               "type": "string"
             }
           },
+          "egressCidrBlock": {
+            "type": "string",
+            "description": "The single contiguous CIDR block from which all egress (NAT gateway) IP addresses are allocated. Present only for networks created with the egress CIDR block feature enabled. Customers can allowlist this range instead of individual egress IPs so it keeps working when AZs are added."
+          },
           "hostedZones": {
             "$ref": "#/components/schemas/NetworkHostedZones"
           },
@@ -25420,6 +25424,9 @@
           },
           {
             "$ref": "#/components/schemas/UserEventPayloadOneOf395"
+          },
+          {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf396"
           }
         ],
         "properties": {
@@ -25824,7 +25831,8 @@
             "UserEventPayloadOneOf392": "#/components/schemas/UserEventPayloadOneOf392",
             "UserEventPayloadOneOf393": "#/components/schemas/UserEventPayloadOneOf393",
             "UserEventPayloadOneOf394": "#/components/schemas/UserEventPayloadOneOf394",
-            "UserEventPayloadOneOf395": "#/components/schemas/UserEventPayloadOneOf395"
+            "UserEventPayloadOneOf395": "#/components/schemas/UserEventPayloadOneOf395",
+            "UserEventPayloadOneOf396": "#/components/schemas/UserEventPayloadOneOf396"
           }
         }
       },
@@ -33963,6 +33971,9 @@
           "justification": {
             "type": "string"
           },
+          "approvalScope": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf192ApprovalScope"
+          },
           "kind": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf192Kind"
           }
@@ -35873,6 +35884,31 @@
       },
       "UserEventPayloadOneOf278": {
         "required": [
+          "projectId",
+          "projectName"
+        ],
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string"
+          },
+          "projectName": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "failoverRegions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf279": {
+        "required": [
           "next",
           "previous",
           "projectId",
@@ -35887,15 +35923,15 @@
             "type": "string"
           },
           "previous": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf278Previous"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf279Previous"
           },
           "next": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf278Next"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf279Next"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf279": {
+      "UserEventPayloadOneOf280": {
         "required": [
           "customerSupportCodeVisibility",
           "projectId",
@@ -35916,7 +35952,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf280": {
+      "UserEventPayloadOneOf281": {
         "required": [
           "gitForkProtection",
           "projectId",
@@ -35937,7 +35973,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf281": {
+      "UserEventPayloadOneOf282": {
         "required": [
           "projectId",
           "projectName",
@@ -35958,7 +35994,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf282": {
+      "UserEventPayloadOneOf283": {
         "required": [
           "inheritDeploymentProtection",
           "projectId",
@@ -35979,7 +36015,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf283": {
+      "UserEventPayloadOneOf284": {
         "required": [
           "projectId",
           "projectName",
@@ -36000,7 +36036,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf284": {
+      "UserEventPayloadOneOf285": {
         "required": [
           "next",
           "previous"
@@ -36014,34 +36050,10 @@
             "type": "string"
           },
           "previous": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf284Previous"
-          },
-          "next": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf284Next"
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf285": {
-        "required": [
-          "next",
-          "previous",
-          "projectId",
-          "projectName"
-        ],
-        "type": "object",
-        "properties": {
-          "projectId": {
-            "type": "string"
-          },
-          "projectName": {
-            "type": "string"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf285Previous"
           },
           "next": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf285Next"
-          },
-          "previous": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf285Previous"
           }
         },
         "description": "The payload of the event, if requested."
@@ -36096,6 +36108,30 @@
       },
       "UserEventPayloadOneOf288": {
         "required": [
+          "next",
+          "previous",
+          "projectId",
+          "projectName"
+        ],
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string"
+          },
+          "projectName": {
+            "type": "string"
+          },
+          "next": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf288Next"
+          },
+          "previous": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf288Previous"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf289": {
+        "required": [
           "oldSsoProtection",
           "ssoProtection"
         ],
@@ -36108,15 +36144,15 @@
             "type": "string"
           },
           "ssoProtection": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf288SsoProtection"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf289SsoProtection"
           },
           "oldSsoProtection": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf288OldSsoProtection"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf289OldSsoProtection"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf289": {
+      "UserEventPayloadOneOf290": {
         "required": [
           "next",
           "previous",
@@ -36132,15 +36168,15 @@
             "type": "string"
           },
           "next": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf289Next"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf290Next"
           },
           "previous": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf289Previous"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf290Previous"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf290": {
+      "UserEventPayloadOneOf291": {
         "required": [
           "projectId",
           "projectName"
@@ -36154,10 +36190,10 @@
             "type": "string"
           },
           "trustedIps": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf290TrustedIps"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf291TrustedIps"
           },
           "oldTrustedIps": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf290OldTrustedIps"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf291OldTrustedIps"
           },
           "addedAddresses": {
             "type": "array",
@@ -36176,7 +36212,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf291": {
+      "UserEventPayloadOneOf292": {
         "required": [
           "addedProjects",
           "addedProviders",
@@ -36196,13 +36232,13 @@
           "addedProjects": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf291AddedProjectsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf292AddedProjectsItem"
             }
           },
           "removedProjects": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf291RemovedProjectsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf292RemovedProjectsItem"
             }
           },
           "addedProviders": {
@@ -36220,7 +36256,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf292": {
+      "UserEventPayloadOneOf293": {
         "required": [
           "projectId"
         ],
@@ -36230,12 +36266,12 @@
             "type": "string"
           },
           "reasonCode": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf292ReasonCode"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf293ReasonCode"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf293": {
+      "UserEventPayloadOneOf294": {
         "required": [
           "projectId",
           "projectName"
@@ -36249,15 +36285,15 @@
             "type": "string"
           },
           "projectWebAnalytics": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf293ProjectWebAnalytics"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf294ProjectWebAnalytics"
           },
           "prevProjectWebAnalytics": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf293PrevProjectWebAnalytics"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf294PrevProjectWebAnalytics"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf294": {
+      "UserEventPayloadOneOf295": {
         "required": [
           "gitProvider",
           "gitProviderGroupDescriptor",
@@ -36277,7 +36313,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf295": {
+      "UserEventPayloadOneOf296": {
         "required": [
           "alias",
           "sandboxName"
@@ -36299,7 +36335,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf296": {
+      "UserEventPayloadOneOf297": {
         "required": [
           "instances",
           "url"
@@ -36315,7 +36351,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf297": {
+      "UserEventPayloadOneOf298": {
         "required": [
           "email",
           "verified"
@@ -36332,7 +36368,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf298": {
+      "UserEventPayloadOneOf299": {
         "required": [
           "email"
         ],
@@ -36344,7 +36380,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf299": {
+      "UserEventPayloadOneOf300": {
         "required": [
           "name",
           "uid"
@@ -36355,12 +36391,12 @@
             "type": "string"
           },
           "name": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf299Name"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf300Name"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf300": {
+      "UserEventPayloadOneOf301": {
         "required": [
           "newName",
           "oldName"
@@ -36379,7 +36415,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf301": {
+      "UserEventPayloadOneOf302": {
         "required": [
           "enabled",
           "updatedAt"
@@ -36405,7 +36441,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf302": {
+      "UserEventPayloadOneOf303": {
         "required": [
           "bio"
         ],
@@ -36417,7 +36453,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf303": {
+      "UserEventPayloadOneOf304": {
         "required": [
           "max",
           "min",
@@ -36427,7 +36463,7 @@
         "type": "object",
         "properties": {
           "scalingRules": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf303ScalingRulesProperty"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf304ScalingRulesProperty"
           },
           "min": {
             "type": "number"
@@ -36441,14 +36477,14 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf304": {
+      "UserEventPayloadOneOf305": {
         "type": "object",
         "properties": {
           "userAgent": {
             "type": "string"
           },
           "geolocation": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf304Geolocation"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf305Geolocation"
           },
           "env": {
             "type": "string"
@@ -36467,7 +36503,7 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf304FactorsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf305FactorsItem"
             }
           },
           "viaOTP": {
@@ -36505,7 +36541,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf305": {
+      "UserEventPayloadOneOf306": {
         "required": [
           "bitbucketEmail",
           "bitbucketLogin",
@@ -36537,7 +36573,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf306": {
+      "UserEventPayloadOneOf307": {
         "required": [
           "email",
           "githubLogin",
@@ -36561,7 +36597,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf307": {
+      "UserEventPayloadOneOf308": {
         "required": [
           "email",
           "gitlabEmail",
@@ -36593,7 +36629,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf308": {
+      "UserEventPayloadOneOf309": {
         "required": [
           "previous",
           "sampleRatePercent",
@@ -36619,19 +36655,7 @@
             "nullable": true
           },
           "previous": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf308Previous"
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf309": {
-        "required": [
-          "budget"
-        ],
-        "type": "object",
-        "properties": {
-          "budget": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf309Budget"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf309Previous"
           }
         },
         "description": "The payload of the event, if requested."
@@ -36656,6 +36680,18 @@
         "properties": {
           "budget": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf311Budget"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf312": {
+        "required": [
+          "budget"
+        ],
+        "type": "object",
+        "properties": {
+          "budget": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf312Budget"
           },
           "webhookUrl": {
             "type": "string"
@@ -36663,7 +36699,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf312": {
+      "UserEventPayloadOneOf313": {
         "type": "object",
         "properties": {
           "webhookUrl": {
@@ -36672,19 +36708,19 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf313": {
+      "UserEventPayloadOneOf314": {
         "required": [
           "storeType"
         ],
         "type": "object",
         "properties": {
           "storeType": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf313StoreType"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf314StoreType"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf314": {
+      "UserEventPayloadOneOf315": {
         "required": [
           "store",
           "transferRequestCode"
@@ -36695,12 +36731,12 @@
             "type": "string"
           },
           "store": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf314Store"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf315Store"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf315": {
+      "UserEventPayloadOneOf316": {
         "required": [
           "destinationTeamId",
           "destinationTeamName",
@@ -36713,7 +36749,7 @@
             "type": "string"
           },
           "store": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf315Store"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf316Store"
           },
           "destinationTeamId": {
             "type": "string"
@@ -36724,7 +36760,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf316": {
+      "UserEventPayloadOneOf317": {
         "required": [
           "originTeamId",
           "originTeamName",
@@ -36737,7 +36773,7 @@
             "type": "string"
           },
           "store": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf316Store"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf317Store"
           },
           "originTeamId": {
             "type": "string"
@@ -36748,7 +36784,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf317": {
+      "UserEventPayloadOneOf318": {
         "required": [
           "id",
           "type"
@@ -36771,22 +36807,22 @@
             "type": "number"
           },
           "type": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf317Type"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf318Type"
           },
           "access": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf317Access"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf318Access"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf318": {
+      "UserEventPayloadOneOf319": {
         "required": [
           "store"
         ],
         "type": "object",
         "properties": {
           "store": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf318Store"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf319Store"
           },
           "ownerId": {
             "type": "string"
@@ -36794,7 +36830,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf319": {
+      "UserEventPayloadOneOf320": {
         "required": [
           "id",
           "locked",
@@ -36818,10 +36854,10 @@
             "type": "number"
           },
           "type": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf319Type"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf320Type"
           },
           "access": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf319Access"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf320Access"
           },
           "locked": {
             "type": "boolean",
@@ -36830,7 +36866,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf320": {
+      "UserEventPayloadOneOf321": {
         "required": [
           "slug"
         ],
@@ -36842,22 +36878,22 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf321": {
+      "UserEventPayloadOneOf322": {
         "required": [
           "next"
         ],
         "type": "object",
         "properties": {
           "previous": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf321Previous"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf322Previous"
           },
           "next": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf321Next"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf322Next"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf322": {
+      "UserEventPayloadOneOf323": {
         "required": [
           "amount",
           "currency",
@@ -36881,7 +36917,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf323": {
+      "UserEventPayloadOneOf324": {
         "required": [
           "eventId",
           "occurredAt",
@@ -36911,7 +36947,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf324": {
+      "UserEventPayloadOneOf325": {
         "required": [
           "elevatedScopeCount",
           "elevatedScopes",
@@ -36993,7 +37029,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf325": {
+      "UserEventPayloadOneOf326": {
         "required": [
           "next",
           "previous"
@@ -37001,10 +37037,10 @@
         "type": "object",
         "properties": {
           "previous": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf325Previous"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf326Previous"
           },
           "next": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf325Next"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf326Next"
           },
           "teamSlug": {
             "type": "string"
@@ -37012,19 +37048,19 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf326": {
+      "UserEventPayloadOneOf327": {
         "type": "object",
         "properties": {
           "previous": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf326Previous"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf327Previous"
           },
           "next": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf326Next"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf327Next"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf327": {
+      "UserEventPayloadOneOf328": {
         "required": [
           "by",
           "slug",
@@ -37047,11 +37083,11 @@
           "reasons": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf327ReasonsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf328ReasonsItem"
             }
           },
           "removedUsers": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf327RemovedUsersProperty"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf328RemovedUsersProperty"
           },
           "removedMemberCount": {
             "type": "number"
@@ -37062,7 +37098,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf328": {
+      "UserEventPayloadOneOf329": {
         "required": [
           "next",
           "previous"
@@ -37070,15 +37106,15 @@
         "type": "object",
         "properties": {
           "previous": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf328Previous"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf329Previous"
           },
           "next": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf328Next"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf329Next"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf329": {
+      "UserEventPayloadOneOf330": {
         "required": [
           "enabled"
         ],
@@ -37094,7 +37130,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf330": {
+      "UserEventPayloadOneOf331": {
         "required": [
           "enabled",
           "environment",
@@ -37114,12 +37150,12 @@
             "additionalProperties": false
           },
           "environment": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf330Environment"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf331Environment"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf331": {
+      "UserEventPayloadOneOf332": {
         "required": [
           "enabled",
           "environment"
@@ -37127,15 +37163,15 @@
         "type": "object",
         "properties": {
           "environment": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf331Environment"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf332Environment"
           },
           "enabled": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf331Enabled"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf332Enabled"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf332": {
+      "UserEventPayloadOneOf333": {
         "type": "object",
         "properties": {
           "emailDomain": {
@@ -37145,7 +37181,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf333": {
+      "UserEventPayloadOneOf334": {
         "required": [
           "deletedCount",
           "inviteIds"
@@ -37164,7 +37200,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf334": {
+      "UserEventPayloadOneOf335": {
         "type": "object",
         "properties": {
           "directoryType": {
@@ -37174,7 +37210,7 @@
             "type": "string"
           },
           "invitedUser": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf334InvitedUser"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf335InvitedUser"
           },
           "invitedEmail": {
             "type": "string"
@@ -37200,7 +37236,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf335": {
+      "UserEventPayloadOneOf336": {
         "required": [
           "teamName"
         ],
@@ -37236,7 +37272,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf336": {
+      "UserEventPayloadOneOf337": {
         "required": [
           "teamName"
         ],
@@ -37267,11 +37303,11 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf337": {
+      "UserEventPayloadOneOf338": {
         "type": "object",
         "properties": {
           "deletedUser": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf337DeletedUser"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf338DeletedUser"
           },
           "deletedUid": {
             "type": "string"
@@ -37292,38 +37328,22 @@
             "type": "string"
           },
           "role": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf337Role"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf338Role"
           },
           "reason": {
             "type": "string",
             "description": "Why the member was removed. When removed due to a plan downgrade, this is a {@link DowngradeReason} from \u0060@api/pubsub-types\u0060 (e.g. \u0060trial_expired\u0060, \u0060user_downgrade\u0060)."
           },
           "previousPlan": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf337PreviousPlan"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf338PreviousPlan"
           },
           "newPlan": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf337NewPlan"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf338NewPlan"
           },
           "automated": {
             "type": "boolean",
             "additionalProperties": false,
             "description": "Whether the removal was system-initiated rather than human-initiated."
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf338": {
-        "required": [
-          "entitlement",
-          "user"
-        ],
-        "type": "object",
-        "properties": {
-          "entitlement": {
-            "type": "string"
-          },
-          "user": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf338User"
           }
         },
         "description": "The payload of the event, if requested."
@@ -37340,6 +37360,22 @@
           },
           "user": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf339User"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf340": {
+        "required": [
+          "entitlement",
+          "user"
+        ],
+        "type": "object",
+        "properties": {
+          "entitlement": {
+            "type": "string"
+          },
+          "user": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf340User"
           },
           "previousCanceledAt": {
             "type": "string"
@@ -37347,7 +37383,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf340": {
+      "UserEventPayloadOneOf341": {
         "type": "object",
         "properties": {
           "role": {
@@ -37360,7 +37396,7 @@
             "type": "string"
           },
           "updatedUser": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf340UpdatedUser"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf341UpdatedUser"
           },
           "origin": {
             "type": "string"
@@ -37387,12 +37423,12 @@
             }
           },
           "invitedBy": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf340InvitedBy"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf341InvitedBy"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf341": {
+      "UserEventPayloadOneOf342": {
         "required": [
           "requestedTeamName"
         ],
@@ -37420,12 +37456,12 @@
             "type": "string"
           },
           "source": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf341Source"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf342Source"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf342": {
+      "UserEventPayloadOneOf343": {
         "required": [
           "previousRole"
         ],
@@ -37438,7 +37474,7 @@
             "type": "string"
           },
           "updatedUser": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf342UpdatedUser"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf343UpdatedUser"
           },
           "role": {
             "type": "string"
@@ -37458,7 +37494,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf343": {
+      "UserEventPayloadOneOf344": {
         "required": [
           "authorized"
         ],
@@ -37477,7 +37513,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf344": {
+      "UserEventPayloadOneOf345": {
         "required": [
           "enforced"
         ],
@@ -37490,7 +37526,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf345": {
+      "UserEventPayloadOneOf346": {
         "required": [
           "expiresAt",
           "maxUses",
@@ -37517,7 +37553,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf346": {
+      "UserEventPayloadOneOf347": {
         "required": [
           "publicId"
         ],
@@ -37532,7 +37568,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf347": {
+      "UserEventPayloadOneOf348": {
         "required": [
           "nextConcurrentBuilds",
           "previousConcurrentBuilds"
@@ -37548,22 +37584,22 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf348": {
+      "UserEventPayloadOneOf349": {
         "required": [
           "plan"
         ],
         "type": "object",
         "properties": {
           "plan": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf348Plan"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf349Plan"
           },
           "trial": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf348Trial"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf349Trial"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf349": {
+      "UserEventPayloadOneOf350": {
         "required": [
           "convertedFromTrial",
           "invoiceId",
@@ -37579,12 +37615,12 @@
             "additionalProperties": false
           },
           "plan": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf349Plan"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf350Plan"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf350": {
+      "UserEventPayloadOneOf351": {
         "type": "object",
         "properties": {
           "inviteCode": {
@@ -37593,7 +37629,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf351": {
+      "UserEventPayloadOneOf352": {
         "type": "object",
         "properties": {
           "name": {
@@ -37602,28 +37638,28 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf352": {
+      "UserEventPayloadOneOf353": {
         "required": [
           "consent"
         ],
         "type": "object",
         "properties": {
           "consent": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf352Consent"
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf353": {
-        "type": "object",
-        "properties": {
-          "remoteCaching": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf353RemoteCaching"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf353Consent"
           }
         },
         "description": "The payload of the event, if requested."
       },
       "UserEventPayloadOneOf354": {
+        "type": "object",
+        "properties": {
+          "remoteCaching": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf354RemoteCaching"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf355": {
         "required": [
           "deletedCount"
         ],
@@ -37635,19 +37671,19 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf355": {
+      "UserEventPayloadOneOf356": {
         "required": [
           "enabled"
         ],
         "type": "object",
         "properties": {
           "enabled": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf355Enabled"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf356Enabled"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf356": {
+      "UserEventPayloadOneOf357": {
         "required": [
           "enabled",
           "scope"
@@ -37659,24 +37695,24 @@
             "additionalProperties": false
           },
           "scope": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf356Scope"
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf357": {
-        "type": "object",
-        "properties": {
-          "previous": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf357PreviousProperty"
-          },
-          "next": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf357NextProperty"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf357Scope"
           }
         },
         "description": "The payload of the event, if requested."
       },
       "UserEventPayloadOneOf358": {
+        "type": "object",
+        "properties": {
+          "previous": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf358PreviousProperty"
+          },
+          "next": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf358NextProperty"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf359": {
         "required": [
           "domain",
           "ips"
@@ -37695,7 +37731,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf359": {
+      "UserEventPayloadOneOf360": {
         "required": [
           "tokenTypes"
         ],
@@ -37710,7 +37746,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf360": {
+      "UserEventPayloadOneOf361": {
         "required": [
           "exportId",
           "format",
@@ -37734,7 +37770,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf361": {
+      "UserEventPayloadOneOf362": {
         "required": [
           "fileId"
         ],
@@ -37746,7 +37782,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf362": {
+      "UserEventPayloadOneOf363": {
         "type": "object",
         "properties": {
           "slug": {
@@ -37755,7 +37791,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf363": {
+      "UserEventPayloadOneOf364": {
         "required": [
           "projectId",
           "projectName"
@@ -37771,13 +37807,13 @@
           "sampling": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf363SamplingItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf364SamplingItem"
             }
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf364": {
+      "UserEventPayloadOneOf365": {
         "required": [
           "login",
           "provider"
@@ -37785,7 +37821,7 @@
         "type": "object",
         "properties": {
           "provider": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf364Provider"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf365Provider"
           },
           "login": {
             "type": "string"
@@ -37793,7 +37829,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf365": {
+      "UserEventPayloadOneOf366": {
         "required": [
           "recoveryCodes",
           "totp"
@@ -37811,7 +37847,7 @@
             "type": "string"
           },
           "actorType": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf365ActorType"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf366ActorType"
           },
           "reason": {
             "type": "string"
@@ -37819,7 +37855,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf366": {
+      "UserEventPayloadOneOf367": {
         "required": [
           "username"
         ],
@@ -37835,7 +37871,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf367": {
+      "UserEventPayloadOneOf368": {
         "required": [
           "username"
         ],
@@ -37847,7 +37883,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf368": {
+      "UserEventPayloadOneOf369": {
         "required": [
           "next",
           "previous"
@@ -37855,15 +37891,15 @@
         "type": "object",
         "properties": {
           "previous": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf368Previous"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf369Previous"
           },
           "next": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf368Next"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf369Next"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf369": {
+      "UserEventPayloadOneOf370": {
         "required": [
           "mfaEnabled"
         ],
@@ -37876,19 +37912,19 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf370": {
+      "UserEventPayloadOneOf371": {
         "required": [
           "mfa"
         ],
         "type": "object",
         "properties": {
           "mfa": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf370Mfa"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf371Mfa"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf371": {
+      "UserEventPayloadOneOf372": {
         "required": [
           "enabled",
           "totpVerified"
@@ -37906,7 +37942,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf372": {
+      "UserEventPayloadOneOf373": {
         "required": [
           "email",
           "prevEmail"
@@ -37922,7 +37958,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf373": {
+      "UserEventPayloadOneOf374": {
         "required": [
           "projectId",
           "projectName",
@@ -37942,7 +37978,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf374": {
+      "UserEventPayloadOneOf375": {
         "required": [
           "digest",
           "projectId",
@@ -37970,7 +38006,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf375": {
+      "UserEventPayloadOneOf376": {
         "required": [
           "projectId",
           "projectName",
@@ -37994,7 +38030,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf376": {
+      "UserEventPayloadOneOf377": {
         "required": [
           "projectId",
           "projectName",
@@ -38022,7 +38058,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf377": {
+      "UserEventPayloadOneOf378": {
         "required": [
           "projectId",
           "projectName",
@@ -38046,7 +38082,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf378": {
+      "UserEventPayloadOneOf379": {
         "required": [
           "projectId",
           "projectName",
@@ -38073,7 +38109,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf379": {
+      "UserEventPayloadOneOf380": {
         "required": [
           "ruleName"
         ],
@@ -38085,7 +38121,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf380": {
+      "UserEventPayloadOneOf381": {
         "required": [
           "nextProjectCount",
           "previousProjectCount"
@@ -38103,7 +38139,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf381": {
+      "UserEventPayloadOneOf382": {
         "required": [
           "customAlertTitle"
         ],
@@ -38115,7 +38151,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf382": {
+      "UserEventPayloadOneOf383": {
         "required": [
           "protectedProjectCount",
           "protectionEnabled",
@@ -38135,26 +38171,6 @@
           },
           "protectedProjectCount": {
             "type": "number"
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf383": {
-        "required": [
-          "configuration",
-          "peering",
-          "team"
-        ],
-        "type": "object",
-        "properties": {
-          "team": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf383Team"
-          },
-          "configuration": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf383Configuration"
-          },
-          "peering": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf383Peering"
           }
         },
         "description": "The payload of the event, if requested."
@@ -38195,6 +38211,26 @@
           },
           "peering": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf385Peering"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf386": {
+        "required": [
+          "configuration",
+          "peering",
+          "team"
+        ],
+        "type": "object",
+        "properties": {
+          "team": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf386Team"
+          },
+          "configuration": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf386Configuration"
+          },
+          "peering": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf386Peering"
           },
           "newName": {
             "type": "string"
@@ -38202,19 +38238,19 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf386": {
+      "UserEventPayloadOneOf387": {
         "required": [
           "tier"
         ],
         "type": "object",
         "properties": {
           "tier": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf386Tier"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf387Tier"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf387": {
+      "UserEventPayloadOneOf388": {
         "required": [
           "id",
           "url"
@@ -38230,7 +38266,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf388": {
+      "UserEventPayloadOneOf389": {
         "required": [
           "chatId"
         ],
@@ -38245,7 +38281,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf389": {
+      "UserEventPayloadOneOf390": {
         "required": [
           "chatId",
           "events",
@@ -38282,13 +38318,13 @@
           "events": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf389EventsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf390EventsItem"
             }
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf390": {
+      "UserEventPayloadOneOf391": {
         "required": [
           "chatId",
           "messageId"
@@ -38307,7 +38343,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf391": {
+      "UserEventPayloadOneOf392": {
         "required": [
           "deploymentId",
           "projectId",
@@ -38327,7 +38363,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf392": {
+      "UserEventPayloadOneOf393": {
         "required": [
           "appName",
           "atTTL",
@@ -38338,7 +38374,7 @@
         "type": "object",
         "properties": {
           "grantType": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392GrantType"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf393GrantType"
           },
           "appName": {
             "type": "string",
@@ -38356,10 +38392,10 @@
             "type": "string"
           },
           "authMethod": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392AuthMethod"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf393AuthMethod"
           },
           "app": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392App"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf393App"
           },
           "includesRefreshToken": {
             "type": "boolean",
@@ -38371,7 +38407,7 @@
             "description": "optional since entries prior to 2025-10-13 do not contain this field"
           },
           "tokenPrefix": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392TokenPrefix"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf393TokenPrefix"
           },
           "tokenSuffix": {
             "type": "string",
@@ -38382,7 +38418,7 @@
             "description": "optional; only present when a refresh token was issued (offline_access)."
           },
           "refreshTokenPrefix": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392RefreshTokenPrefix"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf393RefreshTokenPrefix"
           },
           "refreshTokenSuffix": {
             "type": "string",
@@ -38398,7 +38434,7 @@
             "nullable": true
           },
           "geolocation": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392Geolocation"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf393Geolocation"
           },
           "userAgent": {
             "type": "string",
@@ -38419,7 +38455,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf393": {
+      "UserEventPayloadOneOf394": {
         "required": [
           "origin",
           "scope",
@@ -38433,7 +38469,7 @@
             "description": "The token\u0027s public ID."
           },
           "tokenPrefix": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf393TokenPrefix"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf394TokenPrefix"
           },
           "tokenSuffix": {
             "type": "string",
@@ -38444,10 +38480,10 @@
             "description": "User-supplied name of the token."
           },
           "origin": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf393Origin"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf394Origin"
           },
           "scope": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf393Scope"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf394Scope"
           },
           "teamId": {
             "type": "string",
@@ -38462,7 +38498,7 @@
             "description": "Present when \u0060scope\u0060 is \u0060\u0027project\u0027\u0060."
           },
           "projectScope": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf393ProjectScope"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf394ProjectScope"
           },
           "expiresAt": {
             "type": "number",
@@ -38472,65 +38508,6 @@
             "type": "boolean",
             "additionalProperties": false,
             "description": "Whether the token was issued with RFC 9396 authorization details."
-          },
-          "ip": {
-            "type": "string",
-            "nullable": true
-          },
-          "geolocation": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf393Geolocation"
-          },
-          "userAgent": {
-            "type": "string"
-          },
-          "reqId": {
-            "type": "string"
-          },
-          "reqUrl": {
-            "type": "string"
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf394": {
-        "required": [
-          "actorTokenId",
-          "tokenId",
-          "tokenName",
-          "tokenType"
-        ],
-        "type": "object",
-        "properties": {
-          "tokenId": {
-            "type": "string"
-          },
-          "tokenType": {
-            "type": "string"
-          },
-          "tokenName": {
-            "type": "string"
-          },
-          "actorTokenId": {
-            "type": "string",
-            "description": "The token\u0027s public ID."
-          },
-          "origin": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf394Origin"
-          },
-          "teamId": {
-            "type": "string"
-          },
-          "expired": {
-            "type": "boolean",
-            "additionalProperties": false
-          },
-          "leaked": {
-            "type": "boolean",
-            "additionalProperties": false
-          },
-          "revoked": {
-            "type": "boolean",
-            "additionalProperties": false
           },
           "ip": {
             "type": "string",
@@ -38554,6 +38531,65 @@
       "UserEventPayloadOneOf395": {
         "required": [
           "actorTokenId",
+          "tokenId",
+          "tokenName",
+          "tokenType"
+        ],
+        "type": "object",
+        "properties": {
+          "tokenId": {
+            "type": "string"
+          },
+          "tokenType": {
+            "type": "string"
+          },
+          "tokenName": {
+            "type": "string"
+          },
+          "actorTokenId": {
+            "type": "string",
+            "description": "The token\u0027s public ID."
+          },
+          "origin": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf395Origin"
+          },
+          "teamId": {
+            "type": "string"
+          },
+          "expired": {
+            "type": "boolean",
+            "additionalProperties": false
+          },
+          "leaked": {
+            "type": "boolean",
+            "additionalProperties": false
+          },
+          "revoked": {
+            "type": "boolean",
+            "additionalProperties": false
+          },
+          "ip": {
+            "type": "string",
+            "nullable": true
+          },
+          "geolocation": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf395Geolocation"
+          },
+          "userAgent": {
+            "type": "string"
+          },
+          "reqId": {
+            "type": "string"
+          },
+          "reqUrl": {
+            "type": "string"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf396": {
+        "required": [
+          "actorTokenId",
           "deletedCount"
         ],
         "type": "object",
@@ -38570,7 +38606,7 @@
             "nullable": true
           },
           "geolocation": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf395Geolocation"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf396Geolocation"
           },
           "userAgent": {
             "type": "string"
@@ -39797,17 +39833,17 @@
           }
         }
       },
-      "UserEventPayloadOneOf288SsoProtection": {
+      "UserEventPayloadOneOf289SsoProtection": {
         "required": [
           "type"
         ],
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf288SsoProtectionOneOf1"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf289SsoProtectionOneOf1"
           },
           {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf288SsoProtectionWrapper"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf289SsoProtectionWrapper"
           }
         ],
         "properties": {
@@ -39819,21 +39855,21 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "UserEventPayloadOneOf288SsoProtectionOneOf1": "#/components/schemas/UserEventPayloadOneOf288SsoProtectionOneOf1"
+            "UserEventPayloadOneOf289SsoProtectionOneOf1": "#/components/schemas/UserEventPayloadOneOf289SsoProtectionOneOf1"
           }
         }
       },
-      "UserEventPayloadOneOf288OldSsoProtection": {
+      "UserEventPayloadOneOf289OldSsoProtection": {
         "required": [
           "type"
         ],
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf288OldSsoProtectionOneOf1"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf289OldSsoProtectionOneOf1"
           },
           {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf288OldSsoProtectionWrapper"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf289OldSsoProtectionWrapper"
           }
         ],
         "properties": {
@@ -39845,21 +39881,21 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "UserEventPayloadOneOf288OldSsoProtectionOneOf1": "#/components/schemas/UserEventPayloadOneOf288OldSsoProtectionOneOf1"
+            "UserEventPayloadOneOf289OldSsoProtectionOneOf1": "#/components/schemas/UserEventPayloadOneOf289OldSsoProtectionOneOf1"
           }
         }
       },
-      "UserEventPayloadOneOf299Name": {
+      "UserEventPayloadOneOf300Name": {
         "required": [
           "type"
         ],
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf299NameBranch1"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf300NameBranch1"
           },
           {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf299NameOneOf2"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf300NameOneOf2"
           }
         ],
         "properties": {
@@ -39871,19 +39907,19 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "UserEventPayloadOneOf299Name_1": "#/components/schemas/UserEventPayloadOneOf299NameBranch1",
-            "UserEventPayloadOneOf299NameOneOf2": "#/components/schemas/UserEventPayloadOneOf299NameOneOf2"
+            "UserEventPayloadOneOf300Name_1": "#/components/schemas/UserEventPayloadOneOf300NameBranch1",
+            "UserEventPayloadOneOf300NameOneOf2": "#/components/schemas/UserEventPayloadOneOf300NameOneOf2"
           }
         }
       },
-      "UserEventPayloadOneOf304FactorsItem": {
+      "UserEventPayloadOneOf305FactorsItem": {
         "required": [
           "type"
         ],
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf304FactorsItemOneOf1"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf305FactorsItemOneOf1"
           }
         ],
         "properties": {
@@ -39896,21 +39932,21 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "UserEventPayloadOneOf304FactorsItemOneOf1": "#/components/schemas/UserEventPayloadOneOf304FactorsItemOneOf1"
+            "UserEventPayloadOneOf305FactorsItemOneOf1": "#/components/schemas/UserEventPayloadOneOf305FactorsItemOneOf1"
           }
         }
       },
-      "UserEventPayloadOneOf357PreviousAdditionalProperties": {
+      "UserEventPayloadOneOf358PreviousAdditionalProperties": {
         "required": [
           "type"
         ],
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf357PreviousAdditionalPropertiesOneOf1"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf358PreviousAdditionalPropertiesOneOf1"
           },
           {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf357PreviousAdditionalPropertiesWrapper"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf358PreviousAdditionalPropertiesWrapper"
           }
         ],
         "properties": {
@@ -39922,21 +39958,21 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "UserEventPayloadOneOf357PreviousAdditionalPropertiesOneOf1": "#/components/schemas/UserEventPayloadOneOf357PreviousAdditionalPropertiesOneOf1"
+            "UserEventPayloadOneOf358PreviousAdditionalPropertiesOneOf1": "#/components/schemas/UserEventPayloadOneOf358PreviousAdditionalPropertiesOneOf1"
           }
         }
       },
-      "UserEventPayloadOneOf357NextAdditionalProperties": {
+      "UserEventPayloadOneOf358NextAdditionalProperties": {
         "required": [
           "type"
         ],
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf357NextAdditionalPropertiesOneOf1"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf358NextAdditionalPropertiesOneOf1"
           },
           {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf357NextAdditionalPropertiesWrapper"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf358NextAdditionalPropertiesWrapper"
           }
         ],
         "properties": {
@@ -39948,7 +39984,7 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "UserEventPayloadOneOf357NextAdditionalPropertiesOneOf1": "#/components/schemas/UserEventPayloadOneOf357NextAdditionalPropertiesOneOf1"
+            "UserEventPayloadOneOf358NextAdditionalPropertiesOneOf1": "#/components/schemas/UserEventPayloadOneOf358NextAdditionalPropertiesOneOf1"
           }
         }
       },
@@ -41596,41 +41632,41 @@
           }
         }
       },
-      "UserEventPayloadOneOf288SsoProtectionOneOf1": {
+      "UserEventPayloadOneOf289SsoProtectionOneOf1": {
         "required": [
           "deploymentType"
         ],
         "type": "object",
         "properties": {
           "deploymentType": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf288SsoProtectionOneOf1DeploymentType"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf289SsoProtectionOneOf1DeploymentType"
           },
           "cve55182MigrationAppliedFrom": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf288SsoProtectionOneOf1Cve55182MigrationAppliedFrom"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf289SsoProtectionOneOf1Cve55182MigrationAppliedFrom"
           },
           "april2026SecurityIncidentMigrationAppliedFrom": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf288SsoProtectionOneOf1April2026SecurityIncidentMigrationAppliedFrom"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf289SsoProtectionOneOf1April2026SecurityIncidentMigrationAppliedFrom"
           }
         }
       },
-      "UserEventPayloadOneOf288OldSsoProtectionOneOf1": {
+      "UserEventPayloadOneOf289OldSsoProtectionOneOf1": {
         "required": [
           "deploymentType"
         ],
         "type": "object",
         "properties": {
           "deploymentType": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf288OldSsoProtectionOneOf1DeploymentType"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf289OldSsoProtectionOneOf1DeploymentType"
           },
           "cve55182MigrationAppliedFrom": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf288OldSsoProtectionOneOf1Cve55182MigrationAppliedFrom"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf289OldSsoProtectionOneOf1Cve55182MigrationAppliedFrom"
           },
           "april2026SecurityIncidentMigrationAppliedFrom": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf288OldSsoProtectionOneOf1April2026SecurityIncidentMigrationAppliedFrom"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf289OldSsoProtectionOneOf1April2026SecurityIncidentMigrationAppliedFrom"
           }
         }
       },
-      "UserEventPayloadOneOf299NameOneOf2": {
+      "UserEventPayloadOneOf300NameOneOf2": {
         "required": [
           "name"
         ],
@@ -41641,14 +41677,14 @@
           }
         }
       },
-      "UserEventPayloadOneOf304FactorsItemOneOf1": {
+      "UserEventPayloadOneOf305FactorsItemOneOf1": {
         "required": [
           "origin"
         ],
         "type": "object",
         "properties": {
           "origin": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf304FactorsItemOneOf1Origin"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf305FactorsItemOneOf1Origin"
           },
           "username": {
             "type": "string"
@@ -41665,7 +41701,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf357PreviousAdditionalPropertiesOneOf1": {
+      "UserEventPayloadOneOf358PreviousAdditionalPropertiesOneOf1": {
         "required": [
           "accessGroupId"
         ],
@@ -41676,7 +41712,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf357NextAdditionalPropertiesOneOf1": {
+      "UserEventPayloadOneOf358NextAdditionalPropertiesOneOf1": {
         "required": [
           "accessGroupId"
         ],
@@ -44990,6 +45026,18 @@
           "omitScriptNonce": {
             "type": "boolean",
             "additionalProperties": false
+          },
+          "computedScriptSrc": {
+            "type": "string"
+          },
+          "computedScriptSrcPreview": {
+            "type": "string"
+          },
+          "computedConnectSrc": {
+            "type": "string"
+          },
+          "computedConnectSrcPreview": {
+            "type": "string"
           }
         },
         "nullable": true
@@ -45027,6 +45075,18 @@
           "omitScriptNonce": {
             "type": "boolean",
             "additionalProperties": false
+          },
+          "computedScriptSrc": {
+            "type": "string"
+          },
+          "computedScriptSrcPreview": {
+            "type": "string"
+          },
+          "computedConnectSrc": {
+            "type": "string"
+          },
+          "computedConnectSrcPreview": {
+            "type": "string"
           }
         }
       },
@@ -45779,43 +45839,26 @@
         "type": "object",
         "nullable": true
       },
-      "UserEventPayloadOneOf278Previous": {
+      "UserEventPayloadOneOf279Previous": {
         "type": "object",
         "properties": {
           "issuerMode": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf278PreviousIssuerMode"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf279PreviousIssuerMode"
           }
         }
       },
-      "UserEventPayloadOneOf278Next": {
+      "UserEventPayloadOneOf279Next": {
         "required": [
           "issuerMode"
         ],
         "type": "object",
         "properties": {
           "issuerMode": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf278NextIssuerMode"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf279NextIssuerMode"
           }
         }
       },
-      "UserEventPayloadOneOf284Previous": {
-        "type": "object",
-        "properties": {
-          "expiration": {
-            "type": "string"
-          },
-          "expirationProduction": {
-            "type": "string"
-          },
-          "expirationCanceled": {
-            "type": "string"
-          },
-          "expirationErrored": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf284Next": {
+      "UserEventPayloadOneOf285Previous": {
         "type": "object",
         "properties": {
           "expiration": {
@@ -45833,6 +45876,23 @@
         }
       },
       "UserEventPayloadOneOf285Next": {
+        "type": "object",
+        "properties": {
+          "expiration": {
+            "type": "string"
+          },
+          "expirationProduction": {
+            "type": "string"
+          },
+          "expirationCanceled": {
+            "type": "string"
+          },
+          "expirationErrored": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf286Next": {
         "required": [
           "skewProtectionBoundaryAt"
         ],
@@ -45843,7 +45903,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf285Previous": {
+      "UserEventPayloadOneOf286Previous": {
         "type": "object",
         "properties": {
           "skewProtectionBoundaryAt": {
@@ -45851,7 +45911,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf286Next": {
+      "UserEventPayloadOneOf287Next": {
         "required": [
           "skewProtectionMaxAge"
         ],
@@ -45862,7 +45922,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf286Previous": {
+      "UserEventPayloadOneOf287Previous": {
         "type": "object",
         "properties": {
           "skewProtectionMaxAge": {
@@ -45870,7 +45930,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf287Next": {
+      "UserEventPayloadOneOf288Next": {
         "required": [
           "skewProtectionAllowedDomains"
         ],
@@ -45884,7 +45944,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf287Previous": {
+      "UserEventPayloadOneOf288Previous": {
         "type": "object",
         "properties": {
           "skewProtectionAllowedDomains": {
@@ -45895,29 +45955,29 @@
           }
         }
       },
-      "UserEventPayloadOneOf289Next": {
+      "UserEventPayloadOneOf290Next": {
         "required": [
           "project"
         ],
         "type": "object",
         "properties": {
           "project": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf289NextProject"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf290NextProject"
           }
         }
       },
-      "UserEventPayloadOneOf289Previous": {
+      "UserEventPayloadOneOf290Previous": {
         "required": [
           "project"
         ],
         "type": "object",
         "properties": {
           "project": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf289PreviousProject"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf290PreviousProject"
           }
         }
       },
-      "UserEventPayloadOneOf291AddedProjectsItem": {
+      "UserEventPayloadOneOf292AddedProjectsItem": {
         "required": [
           "id",
           "name"
@@ -45932,7 +45992,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf291RemovedProjectsItem": {
+      "UserEventPayloadOneOf292RemovedProjectsItem": {
         "required": [
           "id",
           "name"
@@ -45947,7 +46007,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf293ProjectWebAnalytics": {
+      "UserEventPayloadOneOf294ProjectWebAnalytics": {
         "required": [
           "id"
         ],
@@ -45972,7 +46032,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf293PrevProjectWebAnalytics": {
+      "UserEventPayloadOneOf294PrevProjectWebAnalytics": {
         "required": [
           "id"
         ],
@@ -45998,26 +46058,26 @@
         },
         "nullable": true
       },
-      "UserEventPayloadOneOf303ScalingRules": {
+      "UserEventPayloadOneOf304ScalingRules": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/UserEventPayloadOneOf303ScalingRulesAdditionalProperties"
+          "$ref": "#/components/schemas/UserEventPayloadOneOf304ScalingRulesAdditionalProperties"
         }
       },
-      "UserEventPayloadOneOf304Geolocation": {
+      "UserEventPayloadOneOf305Geolocation": {
         "required": [
           "country"
         ],
         "type": "object",
         "properties": {
           "city": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf304GeolocationCity"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf305GeolocationCity"
           },
           "country": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf304GeolocationCountry"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf305GeolocationCountry"
           },
           "most_specific_subdivision": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf304GeolocationMostSpecificSubdivision"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf305GeolocationMostSpecificSubdivision"
           },
           "regionName": {
             "type": "string"
@@ -46025,7 +46085,7 @@
         },
         "nullable": true
       },
-      "UserEventPayloadOneOf308Previous": {
+      "UserEventPayloadOneOf309Previous": {
         "required": [
           "sampleRatePercent",
           "spendLimitInDollars"
@@ -46042,91 +46102,16 @@
           }
         }
       },
-      "UserEventPayloadOneOf309Budget": {
+      "UserEventPayloadOneOf310Budget": {
         "required": [
           "budgetItem"
         ],
         "type": "object",
         "properties": {
           "budgetItem": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf309BudgetBudgetItem"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf310BudgetBudgetItem"
           }
         }
-      },
-      "UserEventPayloadOneOf310Budget": {
-        "required": [
-          "createdAt",
-          "fixedBudget",
-          "id",
-          "isActive",
-          "notifiedAt",
-          "previousSpend",
-          "teamId",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf310BudgetType"
-          },
-          "fixedBudget": {
-            "type": "number",
-            "description": "Budget amount (USD / dollars)"
-          },
-          "previousSpend": {
-            "type": "array",
-            "items": {
-              "type": "number"
-            },
-            "description": "Array of the last 3 months of spend data"
-          },
-          "notifiedAt": {
-            "type": "array",
-            "items": {
-              "type": "number"
-            },
-            "description": "Array of 50, 75, 100 to keep track of notifications sent out"
-          },
-          "webhookId": {
-            "type": "string",
-            "description": "Webhook id that corresponds to a webhook in Cosmos webhook collection"
-          },
-          "webhookNotified": {
-            "type": "boolean",
-            "additionalProperties": false,
-            "description": "Keep track if the webhook has been called for the month"
-          },
-          "createdAt": {
-            "type": "number",
-            "description": "Date time when budget is created"
-          },
-          "updatedAt": {
-            "type": "number",
-            "description": "Date time when budget is updated last"
-          },
-          "isActive": {
-            "type": "boolean",
-            "additionalProperties": false,
-            "description": "Is the budget currently active for a customer"
-          },
-          "pauseProjects": {
-            "type": "boolean",
-            "additionalProperties": false,
-            "description": "Should all projects be paused if budget is exceeded"
-          },
-          "pricingPlan": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf310BudgetPricingPlan"
-          },
-          "teamId": {
-            "type": "string",
-            "description": "Partition key"
-          },
-          "id": {
-            "type": "string",
-            "description": "Sort key that needs to be unique per teamId"
-          }
-        },
-        "description": "Represents a budget for tracking and notifying teams on their spending."
       },
       "UserEventPayloadOneOf311Budget": {
         "required": [
@@ -46203,23 +46188,80 @@
         },
         "description": "Represents a budget for tracking and notifying teams on their spending."
       },
-      "UserEventPayloadOneOf314Store": {
+      "UserEventPayloadOneOf312Budget": {
         "required": [
+          "createdAt",
+          "fixedBudget",
           "id",
+          "isActive",
+          "notifiedAt",
+          "previousSpend",
+          "teamId",
           "type"
         ],
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
           "type": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf314StoreType"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf312BudgetType"
+          },
+          "fixedBudget": {
+            "type": "number",
+            "description": "Budget amount (USD / dollars)"
+          },
+          "previousSpend": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "description": "Array of the last 3 months of spend data"
+          },
+          "notifiedAt": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "description": "Array of 50, 75, 100 to keep track of notifications sent out"
+          },
+          "webhookId": {
+            "type": "string",
+            "description": "Webhook id that corresponds to a webhook in Cosmos webhook collection"
+          },
+          "webhookNotified": {
+            "type": "boolean",
+            "additionalProperties": false,
+            "description": "Keep track if the webhook has been called for the month"
+          },
+          "createdAt": {
+            "type": "number",
+            "description": "Date time when budget is created"
+          },
+          "updatedAt": {
+            "type": "number",
+            "description": "Date time when budget is updated last"
+          },
+          "isActive": {
+            "type": "boolean",
+            "additionalProperties": false,
+            "description": "Is the budget currently active for a customer"
+          },
+          "pauseProjects": {
+            "type": "boolean",
+            "additionalProperties": false,
+            "description": "Should all projects be paused if budget is exceeded"
+          },
+          "pricingPlan": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf312BudgetPricingPlan"
+          },
+          "teamId": {
+            "type": "string",
+            "description": "Partition key"
+          },
+          "id": {
+            "type": "string",
+            "description": "Sort key that needs to be unique per teamId"
           }
-        }
+        },
+        "description": "Represents a budget for tracking and notifying teams on their spending."
       },
       "UserEventPayloadOneOf315Store": {
         "required": [
@@ -46257,7 +46299,25 @@
           }
         }
       },
-      "UserEventPayloadOneOf318Store": {
+      "UserEventPayloadOneOf317Store": {
+        "required": [
+          "id",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf317StoreType"
+          }
+        }
+      },
+      "UserEventPayloadOneOf319Store": {
         "required": [
           "id",
           "name"
@@ -46272,7 +46332,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf321Previous": {
+      "UserEventPayloadOneOf322Previous": {
         "required": [
           "enabled",
           "includeDrafts",
@@ -46286,7 +46346,7 @@
             "description": "Whether automatic code reviews are enabled"
           },
           "scope": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf321PreviousScope"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf322PreviousScope"
           },
           "includeDrafts": {
             "type": "boolean",
@@ -46304,7 +46364,7 @@
         },
         "description": "Automatic code review settings"
       },
-      "UserEventPayloadOneOf321Next": {
+      "UserEventPayloadOneOf322Next": {
         "required": [
           "enabled",
           "includeDrafts",
@@ -46318,7 +46378,7 @@
             "description": "Whether automatic code reviews are enabled"
           },
           "scope": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf321NextScope"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf322NextScope"
           },
           "includeDrafts": {
             "type": "boolean",
@@ -46336,7 +46396,7 @@
         },
         "description": "Automatic code review settings"
       },
-      "UserEventPayloadOneOf327ReasonsItem": {
+      "UserEventPayloadOneOf328ReasonsItem": {
         "required": [
           "description",
           "slug"
@@ -46351,21 +46411,21 @@
           }
         }
       },
-      "UserEventPayloadOneOf327RemovedUsers": {
+      "UserEventPayloadOneOf328RemovedUsers": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/UserEventPayloadOneOf327RemovedUsersAdditionalProperties"
+          "$ref": "#/components/schemas/UserEventPayloadOneOf328RemovedUsersAdditionalProperties"
         }
       },
-      "UserEventPayloadOneOf328Previous": {
+      "UserEventPayloadOneOf329Previous": {
         "type": "object",
         "nullable": true
       },
-      "UserEventPayloadOneOf328Next": {
+      "UserEventPayloadOneOf329Next": {
         "type": "object",
         "nullable": true
       },
-      "UserEventPayloadOneOf334InvitedUser": {
+      "UserEventPayloadOneOf335InvitedUser": {
         "required": [
           "email",
           "username"
@@ -46380,7 +46440,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf337DeletedUser": {
+      "UserEventPayloadOneOf338DeletedUser": {
         "required": [
           "email",
           "username"
@@ -46391,21 +46451,6 @@
             "type": "string"
           },
           "email": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf338User": {
-        "required": [
-          "id",
-          "username"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "username": {
             "type": "string"
           }
         }
@@ -46425,7 +46470,22 @@
           }
         }
       },
-      "UserEventPayloadOneOf340UpdatedUser": {
+      "UserEventPayloadOneOf340User": {
+        "required": [
+          "id",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf341UpdatedUser": {
         "required": [
           "email",
           "username"
@@ -46440,7 +46500,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf340InvitedBy": {
+      "UserEventPayloadOneOf341InvitedBy": {
         "required": [
           "email"
         ],
@@ -46457,7 +46517,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf342UpdatedUser": {
+      "UserEventPayloadOneOf343UpdatedUser": {
         "required": [
           "email",
           "username"
@@ -46472,7 +46532,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf348Trial": {
+      "UserEventPayloadOneOf349Trial": {
         "required": [
           "end",
           "start"
@@ -46488,7 +46548,7 @@
         },
         "nullable": true
       },
-      "UserEventPayloadOneOf353RemoteCaching": {
+      "UserEventPayloadOneOf354RemoteCaching": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -46498,19 +46558,19 @@
         },
         "description": "Represents configuration for remote caching"
       },
-      "UserEventPayloadOneOf357Previous": {
+      "UserEventPayloadOneOf358Previous": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/UserEventPayloadOneOf357PreviousAdditionalProperties"
+          "$ref": "#/components/schemas/UserEventPayloadOneOf358PreviousAdditionalProperties"
         }
       },
-      "UserEventPayloadOneOf357Next": {
+      "UserEventPayloadOneOf358Next": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/UserEventPayloadOneOf357NextAdditionalProperties"
+          "$ref": "#/components/schemas/UserEventPayloadOneOf358NextAdditionalProperties"
         }
       },
-      "UserEventPayloadOneOf363SamplingItem": {
+      "UserEventPayloadOneOf364SamplingItem": {
         "required": [
           "rate",
           "type"
@@ -46518,20 +46578,20 @@
         "type": "object",
         "properties": {
           "type": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf363SamplingItemType"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf364SamplingItemType"
           },
           "rate": {
             "type": "number"
           },
           "env": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf363SamplingItemEnv"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf364SamplingItemEnv"
           },
           "requestPath": {
             "type": "string"
           }
         }
       },
-      "UserEventPayloadOneOf368Previous": {
+      "UserEventPayloadOneOf369Previous": {
         "required": [
           "enabled",
           "totpVerified"
@@ -46548,7 +46608,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf368Next": {
+      "UserEventPayloadOneOf369Next": {
         "required": [
           "enabled",
           "totpVerified"
@@ -46565,7 +46625,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf370Mfa": {
+      "UserEventPayloadOneOf371Mfa": {
         "required": [
           "enabled",
           "totpVerified"
@@ -46579,58 +46639,6 @@
           "totpVerified": {
             "type": "boolean",
             "additionalProperties": false
-          }
-        }
-      },
-      "UserEventPayloadOneOf383Team": {
-        "required": [
-          "id",
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf383Configuration": {
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf383Peering": {
-        "required": [
-          "accountId",
-          "id",
-          "region",
-          "vpcId"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "accountId": {
-            "type": "string"
-          },
-          "region": {
-            "type": "string"
-          },
-          "vpcId": {
-            "type": "string"
           }
         }
       },
@@ -46665,14 +46673,23 @@
       },
       "UserEventPayloadOneOf384Peering": {
         "required": [
-          "id"
+          "accountId",
+          "id",
+          "region",
+          "vpcId"
         ],
         "type": "object",
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "accountId": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "vpcId": {
             "type": "string"
           }
         }
@@ -46720,7 +46737,50 @@
           }
         }
       },
-      "UserEventPayloadOneOf389EventsItem": {
+      "UserEventPayloadOneOf386Team": {
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf386Configuration": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf386Peering": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf390EventsItem": {
         "required": [
           "cacheCreationInputTokens",
           "cacheReadInputTokens",
@@ -46759,7 +46819,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf392App": {
+      "UserEventPayloadOneOf393App": {
         "required": [
           "clientAuthenticationUsed",
           "clientId",
@@ -46775,32 +46835,10 @@
             "description": "the app\u0027s name at the time the event was published (it could have changed since then)"
           },
           "clientAuthenticationUsed": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392AppClientAuthenticationUsed"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf393AppClientAuthenticationUsed"
           }
         },
         "description": "optional since entries prior to 2025-10-13 do not contain app information"
-      },
-      "UserEventPayloadOneOf392Geolocation": {
-        "required": [
-          "country"
-        ],
-        "type": "object",
-        "properties": {
-          "city": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392GeolocationCity"
-          },
-          "country": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392GeolocationCountry"
-          },
-          "most_specific_subdivision": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392GeolocationMostSpecificSubdivision"
-          },
-          "regionName": {
-            "type": "string"
-          }
-        },
-        "description": "optional since entries prior to 2026-04-23 do not contain this field",
-        "nullable": true
       },
       "UserEventPayloadOneOf393Geolocation": {
         "required": [
@@ -46821,6 +46859,7 @@
             "type": "string"
           }
         },
+        "description": "optional since entries prior to 2026-04-23 do not contain this field",
         "nullable": true
       },
       "UserEventPayloadOneOf394Geolocation": {
@@ -46858,6 +46897,27 @@
           },
           "most_specific_subdivision": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf395GeolocationMostSpecificSubdivision"
+          },
+          "regionName": {
+            "type": "string"
+          }
+        },
+        "nullable": true
+      },
+      "UserEventPayloadOneOf396Geolocation": {
+        "required": [
+          "country"
+        ],
+        "type": "object",
+        "properties": {
+          "city": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf396GeolocationCity"
+          },
+          "country": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf396GeolocationCountry"
+          },
+          "most_specific_subdivision": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf396GeolocationMostSpecificSubdivision"
           },
           "regionName": {
             "type": "string"
@@ -47794,11 +47854,6 @@
         ],
         "type": "object",
         "properties": {
-          "status": {
-            "type": "string",
-            "description": "Current status of the connection.",
-            "example": "linked"
-          },
           "type": {
             "type": "string",
             "description": "The Identity Provider \u0022type\u0022, for example Okta.",
@@ -47826,6 +47881,9 @@
           },
           "syncState": {
             "$ref": "#/components/schemas/TeamSamlConnectionSyncState"
+          },
+          "status": {
+            "type": "string"
           }
         },
         "description": "Information for the SAML Single Sign-On configuration."
@@ -48081,11 +48139,6 @@
         ],
         "type": "object",
         "properties": {
-          "status": {
-            "type": "string",
-            "description": "Current status of the connection.",
-            "example": "linked"
-          },
           "type": {
             "type": "string",
             "description": "The Identity Provider \u0022type\u0022, for example Okta.",
@@ -48113,6 +48166,9 @@
           },
           "syncState": {
             "$ref": "#/components/schemas/TeamLimitedSamlConnectionSyncState"
+          },
+          "status": {
+            "type": "string"
           }
         },
         "description": "Information for the SAML Single Sign-On configuration."
@@ -49436,7 +49492,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf289NextProject": {
+      "UserEventPayloadOneOf290NextProject": {
         "required": [
           "staticIps"
         ],
@@ -49446,11 +49502,11 @@
             "type": "string"
           },
           "staticIps": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf289NextProjectStaticIps"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf290NextProjectStaticIps"
           }
         }
       },
-      "UserEventPayloadOneOf289PreviousProject": {
+      "UserEventPayloadOneOf290PreviousProject": {
         "required": [
           "staticIps"
         ],
@@ -49460,11 +49516,11 @@
             "type": "string"
           },
           "staticIps": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf289PreviousProjectStaticIps"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf290PreviousProjectStaticIps"
           }
         }
       },
-      "UserEventPayloadOneOf303ScalingRulesAdditionalProperties": {
+      "UserEventPayloadOneOf304ScalingRulesAdditionalProperties": {
         "required": [
           "max",
           "min"
@@ -49479,40 +49535,40 @@
           }
         }
       },
-      "UserEventPayloadOneOf304GeolocationCity": {
+      "UserEventPayloadOneOf305GeolocationCity": {
         "required": [
           "names"
         ],
         "type": "object",
         "properties": {
           "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf304GeolocationCityNames"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf305GeolocationCityNames"
           }
         }
       },
-      "UserEventPayloadOneOf304GeolocationCountry": {
+      "UserEventPayloadOneOf305GeolocationCountry": {
         "required": [
           "names"
         ],
         "type": "object",
         "properties": {
           "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf304GeolocationCountryNames"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf305GeolocationCountryNames"
           }
         }
       },
-      "UserEventPayloadOneOf304GeolocationMostSpecificSubdivision": {
+      "UserEventPayloadOneOf305GeolocationMostSpecificSubdivision": {
         "required": [
           "names"
         ],
         "type": "object",
         "properties": {
           "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf304GeolocationMostSpecificSubdivisionNames"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf305GeolocationMostSpecificSubdivisionNames"
           }
         }
       },
-      "UserEventPayloadOneOf309BudgetBudgetItem": {
+      "UserEventPayloadOneOf310BudgetBudgetItem": {
         "required": [
           "createdAt",
           "fixedBudget",
@@ -49526,7 +49582,7 @@
         "type": "object",
         "properties": {
           "type": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf309BudgetBudgetItemType"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf310BudgetBudgetItemType"
           },
           "fixedBudget": {
             "type": "number",
@@ -49574,7 +49630,7 @@
             "description": "Should all projects be paused if budget is exceeded"
           },
           "pricingPlan": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf309BudgetBudgetItemPricingPlan"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf310BudgetBudgetItemPricingPlan"
           },
           "teamId": {
             "type": "string",
@@ -49587,7 +49643,7 @@
         },
         "description": "Represents a budget for tracking and notifying teams on their spending."
       },
-      "UserEventPayloadOneOf327RemovedUsersAdditionalProperties": {
+      "UserEventPayloadOneOf328RemovedUsersAdditionalProperties": {
         "required": [
           "confirmed",
           "role"
@@ -49595,7 +49651,7 @@
         "type": "object",
         "properties": {
           "role": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf327RemovedUsersAdditionalPropertiesRole"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf328RemovedUsersAdditionalPropertiesRole"
           },
           "confirmed": {
             "type": "boolean",
@@ -49606,50 +49662,17 @@
           }
         }
       },
-      "UserEventPayloadOneOf392AppClientAuthenticationUsed": {
+      "UserEventPayloadOneOf393AppClientAuthenticationUsed": {
         "required": [
           "method"
         ],
         "type": "object",
         "properties": {
           "method": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392AppClientAuthenticationUsedMethod"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf393AppClientAuthenticationUsedMethod"
           },
           "secretId": {
             "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf392GeolocationCity": {
-        "required": [
-          "names"
-        ],
-        "type": "object",
-        "properties": {
-          "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392GeolocationCityNames"
-          }
-        }
-      },
-      "UserEventPayloadOneOf392GeolocationCountry": {
-        "required": [
-          "names"
-        ],
-        "type": "object",
-        "properties": {
-          "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392GeolocationCountryNames"
-          }
-        }
-      },
-      "UserEventPayloadOneOf392GeolocationMostSpecificSubdivision": {
-        "required": [
-          "names"
-        ],
-        "type": "object",
-        "properties": {
-          "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392GeolocationMostSpecificSubdivisionNames"
           }
         }
       },
@@ -49749,6 +49772,39 @@
         "properties": {
           "names": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf395GeolocationMostSpecificSubdivisionNames"
+          }
+        }
+      },
+      "UserEventPayloadOneOf396GeolocationCity": {
+        "required": [
+          "names"
+        ],
+        "type": "object",
+        "properties": {
+          "names": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf396GeolocationCityNames"
+          }
+        }
+      },
+      "UserEventPayloadOneOf396GeolocationCountry": {
+        "required": [
+          "names"
+        ],
+        "type": "object",
+        "properties": {
+          "names": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf396GeolocationCountryNames"
+          }
+        }
+      },
+      "UserEventPayloadOneOf396GeolocationMostSpecificSubdivision": {
+        "required": [
+          "names"
+        ],
+        "type": "object",
+        "properties": {
+          "names": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf396GeolocationMostSpecificSubdivisionNames"
           }
         }
       },
@@ -51354,7 +51410,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf289NextProjectStaticIps": {
+      "UserEventPayloadOneOf290NextProjectStaticIps": {
         "required": [
           "enabled"
         ],
@@ -51379,7 +51435,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf289PreviousProjectStaticIps": {
+      "UserEventPayloadOneOf290PreviousProjectStaticIps": {
         "required": [
           "enabled"
         ],
@@ -51404,7 +51460,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf304GeolocationCityNames": {
+      "UserEventPayloadOneOf305GeolocationCityNames": {
         "required": [
           "en"
         ],
@@ -51415,7 +51471,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf304GeolocationCountryNames": {
+      "UserEventPayloadOneOf305GeolocationCountryNames": {
         "required": [
           "en"
         ],
@@ -51426,40 +51482,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf304GeolocationMostSpecificSubdivisionNames": {
-        "required": [
-          "en"
-        ],
-        "type": "object",
-        "properties": {
-          "en": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf392GeolocationCityNames": {
-        "required": [
-          "en"
-        ],
-        "type": "object",
-        "properties": {
-          "en": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf392GeolocationCountryNames": {
-        "required": [
-          "en"
-        ],
-        "type": "object",
-        "properties": {
-          "en": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf392GeolocationMostSpecificSubdivisionNames": {
+      "UserEventPayloadOneOf305GeolocationMostSpecificSubdivisionNames": {
         "required": [
           "en"
         ],
@@ -51559,6 +51582,39 @@
         }
       },
       "UserEventPayloadOneOf395GeolocationMostSpecificSubdivisionNames": {
+        "required": [
+          "en"
+        ],
+        "type": "object",
+        "properties": {
+          "en": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf396GeolocationCityNames": {
+        "required": [
+          "en"
+        ],
+        "type": "object",
+        "properties": {
+          "en": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf396GeolocationCountryNames": {
+        "required": [
+          "en"
+        ],
+        "type": "object",
+        "properties": {
+          "en": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf396GeolocationMostSpecificSubdivisionNames": {
         "required": [
           "en"
         ],
@@ -59481,6 +59537,9 @@
           "protectionConfig": {
             "$ref": "#/components/schemas/CreateProject200ResponseProtectionConfig"
           },
+          "sandbox": {
+            "$ref": "#/components/schemas/CreateProject200ResponseSandbox"
+          },
           "productionDeploymentsFastLane": {
             "type": "boolean",
             "additionalProperties": false
@@ -59907,6 +59966,9 @@
           },
           "protectionConfig": {
             "$ref": "#/components/schemas/GetProject200ResponseProtectionConfig"
+          },
+          "sandbox": {
+            "$ref": "#/components/schemas/GetProject200ResponseSandbox"
           },
           "productionDeploymentsFastLane": {
             "type": "boolean",
@@ -60482,6 +60544,9 @@
           "protectionConfig": {
             "$ref": "#/components/schemas/UpdateProject200ResponseProtectionConfig"
           },
+          "sandbox": {
+            "$ref": "#/components/schemas/UpdateProject200ResponseSandbox"
+          },
           "productionDeploymentsFastLane": {
             "type": "boolean",
             "additionalProperties": false
@@ -60863,6 +60928,9 @@
           },
           "protectionConfig": {
             "$ref": "#/components/schemas/UploadProjectAvatar200ResponseProtectionConfig"
+          },
+          "sandbox": {
+            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseSandbox"
           },
           "productionDeploymentsFastLane": {
             "type": "boolean",
@@ -62512,6 +62580,9 @@
           },
           "protectionConfig": {
             "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseProtectionConfig"
+          },
+          "sandbox": {
+            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseSandbox"
           },
           "productionDeploymentsFastLane": {
             "type": "boolean",
@@ -65410,56 +65481,56 @@
           }
         }
       },
-      "UserEventPayloadOneOf288SsoProtectionWrapper": {
+      "UserEventPayloadOneOf289SsoProtectionWrapper": {
         "required": [
           "value"
         ],
         "type": "object",
         "properties": {
           "value": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf288SsoProtectionWrapperValue"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf289SsoProtectionWrapperValue"
           },
           "type": {
             "type": "string"
           }
         }
       },
-      "UserEventPayloadOneOf288OldSsoProtectionWrapper": {
+      "UserEventPayloadOneOf289OldSsoProtectionWrapper": {
         "required": [
           "value"
         ],
         "type": "object",
         "properties": {
           "value": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf288OldSsoProtectionWrapperValue"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf289OldSsoProtectionWrapperValue"
           },
           "type": {
             "type": "string"
           }
         }
       },
-      "UserEventPayloadOneOf357PreviousAdditionalPropertiesWrapper": {
+      "UserEventPayloadOneOf358PreviousAdditionalPropertiesWrapper": {
         "required": [
           "value"
         ],
         "type": "object",
         "properties": {
           "value": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf357PreviousAdditionalPropertiesWrapperValue"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf358PreviousAdditionalPropertiesWrapperValue"
           },
           "type": {
             "type": "string"
           }
         }
       },
-      "UserEventPayloadOneOf357NextAdditionalPropertiesWrapper": {
+      "UserEventPayloadOneOf358NextAdditionalPropertiesWrapper": {
         "required": [
           "value"
         ],
         "type": "object",
         "properties": {
           "value": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf357NextAdditionalPropertiesWrapperValue"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf358NextAdditionalPropertiesWrapperValue"
           },
           "type": {
             "type": "string"
@@ -65706,7 +65777,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf299NameBranch1": {
+      "UserEventPayloadOneOf300NameBranch1": {
         "required": [
           "value"
         ],
@@ -89870,28 +89941,28 @@
       "UserEventPayloadOneOf217NextProperty": {
         "type": "object"
       },
-      "UserEventPayloadOneOf303ScalingRulesProperty": {
+      "UserEventPayloadOneOf304ScalingRulesProperty": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/UserEventPayloadOneOf303ScalingRulesAdditionalProperties"
+          "$ref": "#/components/schemas/UserEventPayloadOneOf304ScalingRulesAdditionalProperties"
         }
       },
-      "UserEventPayloadOneOf327RemovedUsersProperty": {
+      "UserEventPayloadOneOf328RemovedUsersProperty": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/UserEventPayloadOneOf327RemovedUsersAdditionalProperties"
+          "$ref": "#/components/schemas/UserEventPayloadOneOf328RemovedUsersAdditionalProperties"
         }
       },
-      "UserEventPayloadOneOf357PreviousProperty": {
+      "UserEventPayloadOneOf358PreviousProperty": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/UserEventPayloadOneOf357PreviousAdditionalProperties"
+          "$ref": "#/components/schemas/UserEventPayloadOneOf358PreviousAdditionalProperties"
         }
       },
-      "UserEventPayloadOneOf357NextProperty": {
+      "UserEventPayloadOneOf358NextProperty": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/UserEventPayloadOneOf357NextAdditionalProperties"
+          "$ref": "#/components/schemas/UserEventPayloadOneOf358NextAdditionalProperties"
         }
       },
       "FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf2WeightsProperty": {
@@ -91239,6 +91310,9 @@
             }
           },
           "expiresAt": {
+            "type": "number"
+          },
+          "expiresIn": {
             "type": "number"
           },
           "refreshTokenExpiresAt": {
@@ -96045,6 +96119,9 @@
           "protectionConfig": {
             "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemProtectionConfig"
           },
+          "sandbox": {
+            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemSandbox"
+          },
           "productionDeploymentsFastLane": {
             "type": "boolean",
             "additionalProperties": false
@@ -97902,6 +97979,20 @@
         "properties": {
           "sandboxUrls": {
             "$ref": "#/components/schemas/CreateProject200ResponseProtectionConfigSandboxUrls"
+          }
+        }
+      },
+      "CreateProject200ResponseSandbox": {
+        "type": "object",
+        "properties": {
+          "region": {
+            "$ref": "#/components/schemas/CreateProject200ResponseSandboxRegion"
+          },
+          "failoverRegions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateProject200ResponseSandboxFailoverRegionsItem"
+            }
           }
         }
       },
@@ -100920,6 +101011,20 @@
         "properties": {
           "sandboxUrls": {
             "$ref": "#/components/schemas/GetProject200ResponseProtectionConfigSandboxUrls"
+          }
+        }
+      },
+      "GetProject200ResponseSandbox": {
+        "type": "object",
+        "properties": {
+          "region": {
+            "$ref": "#/components/schemas/GetProject200ResponseSandboxRegion"
+          },
+          "failoverRegions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetProject200ResponseSandboxFailoverRegionsItem"
+            }
           }
         }
       },
@@ -104176,6 +104281,20 @@
           }
         }
       },
+      "UpdateProject200ResponseSandbox": {
+        "type": "object",
+        "properties": {
+          "region": {
+            "$ref": "#/components/schemas/UpdateProject200ResponseSandboxRegion"
+          },
+          "failoverRegions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateProject200ResponseSandboxFailoverRegionsItem"
+            }
+          }
+        }
+      },
       "UpdateProject200ResponseResourceConfig": {
         "required": [
           "functionDefaultRegions"
@@ -107170,6 +107289,20 @@
         "properties": {
           "sandboxUrls": {
             "$ref": "#/components/schemas/UploadProjectAvatar200ResponseProtectionConfigSandboxUrls"
+          }
+        }
+      },
+      "UploadProjectAvatar200ResponseSandbox": {
+        "type": "object",
+        "properties": {
+          "region": {
+            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseSandboxRegion"
+          },
+          "failoverRegions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UploadProjectAvatar200ResponseSandboxFailoverRegionsItem"
+            }
           }
         }
       },
@@ -111132,6 +111265,20 @@
         "properties": {
           "sandboxUrls": {
             "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseProtectionConfigSandboxUrls"
+          }
+        }
+      },
+      "UpdateMicrofrontends200ResponseSandbox": {
+        "type": "object",
+        "properties": {
+          "region": {
+            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseSandboxRegion"
+          },
+          "failoverRegions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseSandboxFailoverRegionsItem"
+            }
           }
         }
       },
@@ -124720,6 +124867,9 @@
           "protectionConfig": {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemProtectionConfig"
           },
+          "sandbox": {
+            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemSandbox"
+          },
           "productionDeploymentsFastLane": {
             "type": "boolean",
             "additionalProperties": false
@@ -133994,6 +134144,20 @@
         "properties": {
           "sandboxUrls": {
             "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemProtectionConfigSandboxUrls"
+          }
+        }
+      },
+      "GetMicrofrontendsInGroup200ResponseProjectsItemSandbox": {
+        "type": "object",
+        "properties": {
+          "region": {
+            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemSandboxRegion"
+          },
+          "failoverRegions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemSandboxFailoverRegionsItem"
+            }
           }
         }
       },
@@ -152631,6 +152795,20 @@
         "properties": {
           "sandboxUrls": {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemProtectionConfigSandboxUrls"
+          }
+        }
+      },
+      "GetProjects200ResponseOneOf3ProjectsItemSandbox": {
+        "type": "object",
+        "properties": {
+          "region": {
+            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemSandboxRegion"
+          },
+          "failoverRegions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemSandboxFailoverRegionsItem"
+            }
           }
         }
       },
@@ -178794,6 +178972,7 @@
           "project-root-directory-updated",
           "project-routes-version-promoted",
           "project-routes-version-restored",
+          "project-sandbox-config-updated",
           "project-sandbox-url-protection-updated",
           "project-skew-protection-allowed-domains-updated",
           "project-skew-protection-max-age-updated",
@@ -180582,6 +180761,10 @@
               "name": "ProjectRoutesVersionRestored"
             },
             {
+              "value": "project-sandbox-config-updated",
+              "name": "ProjectSandboxConfigUpdated"
+            },
+            {
               "value": "project-sandbox-url-protection-updated",
               "name": "ProjectSandboxUrlProtectionUpdated"
             },
@@ -181792,6 +181975,7 @@
           "project-root-directory-updated",
           "project-routes-version-promoted",
           "project-routes-version-restored",
+          "project-sandbox-config-updated",
           "project-sandbox-url-protection-updated",
           "project-skew-protection-allowed-domains-updated",
           "project-skew-protection-max-age-updated",
@@ -183580,6 +183764,10 @@
               "name": "ProjectRoutesVersionRestored"
             },
             {
+              "value": "project-sandbox-config-updated",
+              "name": "ProjectSandboxConfigUpdated"
+            },
+            {
               "value": "project-sandbox-url-protection-updated",
               "name": "ProjectSandboxUrlProtectionUpdated"
             },
@@ -184790,6 +184978,7 @@
           "project-root-directory-updated",
           "project-routes-version-promoted",
           "project-routes-version-restored",
+          "project-sandbox-config-updated",
           "project-sandbox-url-protection-updated",
           "project-skew-protection-allowed-domains-updated",
           "project-skew-protection-max-age-updated",
@@ -186575,6 +186764,10 @@
             {
               "value": "project-routes-version-restored",
               "name": "ProjectRoutesVersionRestored"
+            },
+            {
+              "value": "project-sandbox-config-updated",
+              "name": "ProjectSandboxConfigUpdated"
             },
             {
               "value": "project-sandbox-url-protection-updated",
@@ -190515,6 +190708,28 @@
           ]
         }
       },
+      "UserEventPayloadOneOf192ApprovalScope": {
+        "enum": [
+          "all",
+          "preview"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf192ApprovalScope",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "all",
+              "name": "All"
+            },
+            {
+              "value": "preview",
+              "name": "Preview"
+            }
+          ]
+        }
+      },
       "UserEventPayloadOneOf192Kind": {
         "enum": [
           "connectSrc",
@@ -190821,7 +191036,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf290TrustedIps": {
+      "UserEventPayloadOneOf291TrustedIps": {
         "enum": [
           "all",
           "all_except_custom_domains",
@@ -190833,7 +191048,7 @@
         "additionalProperties": false,
         "nullable": true,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf290TrustedIps",
+          "name": "UserEventPayloadOneOf291TrustedIps",
           "modelAsString": false,
           "values": [
             {
@@ -190859,7 +191074,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf290OldTrustedIps": {
+      "UserEventPayloadOneOf291OldTrustedIps": {
         "enum": [
           "all",
           "all_except_custom_domains",
@@ -190871,7 +191086,7 @@
         "additionalProperties": false,
         "nullable": true,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf290OldTrustedIps",
+          "name": "UserEventPayloadOneOf291OldTrustedIps",
           "modelAsString": false,
           "values": [
             {
@@ -190897,7 +191112,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf292ReasonCode": {
+      "UserEventPayloadOneOf293ReasonCode": {
         "enum": [
           "BACKOFFICE",
           "PUBLIC_API"
@@ -190905,7 +191120,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf292ReasonCode",
+          "name": "UserEventPayloadOneOf293ReasonCode",
           "modelAsString": false,
           "values": [
             {
@@ -190919,7 +191134,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf313StoreType": {
+      "UserEventPayloadOneOf314StoreType": {
         "enum": [
           "postgres",
           "redis"
@@ -190927,7 +191142,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf313StoreType",
+          "name": "UserEventPayloadOneOf314StoreType",
           "modelAsString": false,
           "values": [
             {
@@ -190941,7 +191156,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf317Type": {
+      "UserEventPayloadOneOf318Type": {
         "enum": [
           "blob",
           "edge-config",
@@ -190952,7 +191167,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf317Type",
+          "name": "UserEventPayloadOneOf318Type",
           "modelAsString": false,
           "values": [
             {
@@ -190978,7 +191193,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf317Access": {
+      "UserEventPayloadOneOf318Access": {
         "enum": [
           "private",
           "public"
@@ -190986,7 +191201,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf317Access",
+          "name": "UserEventPayloadOneOf318Access",
           "modelAsString": false,
           "values": [
             {
@@ -191000,7 +191215,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf319Type": {
+      "UserEventPayloadOneOf320Type": {
         "enum": [
           "blob",
           "edge-config",
@@ -191011,7 +191226,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf319Type",
+          "name": "UserEventPayloadOneOf320Type",
           "modelAsString": false,
           "values": [
             {
@@ -191037,7 +191252,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf319Access": {
+      "UserEventPayloadOneOf320Access": {
         "enum": [
           "private",
           "public"
@@ -191045,7 +191260,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf319Access",
+          "name": "UserEventPayloadOneOf320Access",
           "modelAsString": false,
           "values": [
             {
@@ -191055,100 +191270,68 @@
             {
               "value": "public",
               "name": "PublicValue"
-            }
-          ]
-        }
-      },
-      "UserEventPayloadOneOf325Previous": {
-        "enum": [
-          "auto-approval",
-          "block",
-          "manual-approval"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "UserEventPayloadOneOf325Previous",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "auto-approval",
-              "name": "AutoApproval"
-            },
-            {
-              "value": "block",
-              "name": "Block"
-            },
-            {
-              "value": "manual-approval",
-              "name": "ManualApproval"
-            }
-          ]
-        }
-      },
-      "UserEventPayloadOneOf325Next": {
-        "enum": [
-          "auto-approval",
-          "block",
-          "manual-approval"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "UserEventPayloadOneOf325Next",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "auto-approval",
-              "name": "AutoApproval"
-            },
-            {
-              "value": "block",
-              "name": "Block"
-            },
-            {
-              "value": "manual-approval",
-              "name": "ManualApproval"
             }
           ]
         }
       },
       "UserEventPayloadOneOf326Previous": {
         "enum": [
-          "elastic",
-          "enhanced",
-          "standard",
-          "turbo"
+          "auto-approval",
+          "block",
+          "manual-approval"
         ],
         "type": "string",
         "additionalProperties": false,
+        "nullable": true,
         "x-ms-enum": {
           "name": "UserEventPayloadOneOf326Previous",
           "modelAsString": false,
           "values": [
             {
-              "value": "elastic",
-              "name": "Elastic"
+              "value": "auto-approval",
+              "name": "AutoApproval"
             },
             {
-              "value": "enhanced",
-              "name": "Enhanced"
+              "value": "block",
+              "name": "Block"
             },
             {
-              "value": "standard",
-              "name": "Standard"
-            },
-            {
-              "value": "turbo",
-              "name": "Turbo"
+              "value": "manual-approval",
+              "name": "ManualApproval"
             }
           ]
         }
       },
       "UserEventPayloadOneOf326Next": {
         "enum": [
+          "auto-approval",
+          "block",
+          "manual-approval"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf326Next",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "auto-approval",
+              "name": "AutoApproval"
+            },
+            {
+              "value": "block",
+              "name": "Block"
+            },
+            {
+              "value": "manual-approval",
+              "name": "ManualApproval"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf327Previous": {
+        "enum": [
           "elastic",
           "enhanced",
           "standard",
@@ -191157,7 +191340,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf326Next",
+          "name": "UserEventPayloadOneOf327Previous",
           "modelAsString": false,
           "values": [
             {
@@ -191179,24 +191362,34 @@
           ]
         }
       },
-      "UserEventPayloadOneOf330Environment": {
+      "UserEventPayloadOneOf327Next": {
         "enum": [
-          "preview",
-          "production"
+          "elastic",
+          "enhanced",
+          "standard",
+          "turbo"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf330Environment",
+          "name": "UserEventPayloadOneOf327Next",
           "modelAsString": false,
           "values": [
             {
-              "value": "preview",
-              "name": "Preview"
+              "value": "elastic",
+              "name": "Elastic"
             },
             {
-              "value": "production",
-              "name": "Production"
+              "value": "enhanced",
+              "name": "Enhanced"
+            },
+            {
+              "value": "standard",
+              "name": "Standard"
+            },
+            {
+              "value": "turbo",
+              "name": "Turbo"
             }
           ]
         }
@@ -191223,7 +191416,29 @@
           ]
         }
       },
-      "UserEventPayloadOneOf331Enabled": {
+      "UserEventPayloadOneOf332Environment": {
+        "enum": [
+          "preview",
+          "production"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf332Environment",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "preview",
+              "name": "Preview"
+            },
+            {
+              "value": "production",
+              "name": "Production"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf332Enabled": {
         "enum": [
           "default",
           "default-force",
@@ -191235,7 +191450,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf331Enabled",
+          "name": "UserEventPayloadOneOf332Enabled",
           "modelAsString": false,
           "values": [
             {
@@ -191265,7 +191480,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf337Role": {
+      "UserEventPayloadOneOf338Role": {
         "enum": [
           "BILLING",
           "CONTRIBUTOR",
@@ -191279,7 +191494,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf337Role",
+          "name": "UserEventPayloadOneOf338Role",
           "modelAsString": false,
           "values": [
             {
@@ -191317,7 +191532,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf337PreviousPlan": {
+      "UserEventPayloadOneOf338PreviousPlan": {
         "enum": [
           "enterprise",
           "hobby",
@@ -191326,7 +191541,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf337PreviousPlan",
+          "name": "UserEventPayloadOneOf338PreviousPlan",
           "modelAsString": false,
           "values": [
             {
@@ -191344,7 +191559,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf337NewPlan": {
+      "UserEventPayloadOneOf338NewPlan": {
         "enum": [
           "enterprise",
           "hobby",
@@ -191353,7 +191568,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf337NewPlan",
+          "name": "UserEventPayloadOneOf338NewPlan",
           "modelAsString": false,
           "values": [
             {
@@ -191371,7 +191586,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf341Source": {
+      "UserEventPayloadOneOf342Source": {
         "enum": [
           "account-update",
           "bitbucket",
@@ -191396,7 +191611,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf341Source",
+          "name": "UserEventPayloadOneOf342Source",
           "modelAsString": false,
           "values": [
             {
@@ -191478,33 +191693,6 @@
           ]
         }
       },
-      "UserEventPayloadOneOf348Plan": {
-        "enum": [
-          "enterprise",
-          "hobby",
-          "pro"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "UserEventPayloadOneOf348Plan",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "enterprise",
-              "name": "Enterprise"
-            },
-            {
-              "value": "hobby",
-              "name": "Hobby"
-            },
-            {
-              "value": "pro",
-              "name": "Pro"
-            }
-          ]
-        }
-      },
       "UserEventPayloadOneOf349Plan": {
         "enum": [
           "enterprise",
@@ -191532,7 +191720,34 @@
           ]
         }
       },
-      "UserEventPayloadOneOf352Consent": {
+      "UserEventPayloadOneOf350Plan": {
+        "enum": [
+          "enterprise",
+          "hobby",
+          "pro"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf350Plan",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "enterprise",
+              "name": "Enterprise"
+            },
+            {
+              "value": "hobby",
+              "name": "Hobby"
+            },
+            {
+              "value": "pro",
+              "name": "Pro"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf353Consent": {
         "enum": [
           "granted",
           "refused"
@@ -191540,7 +191755,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf352Consent",
+          "name": "UserEventPayloadOneOf353Consent",
           "modelAsString": false,
           "values": [
             {
@@ -191554,7 +191769,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf355Enabled": {
+      "UserEventPayloadOneOf356Enabled": {
         "enum": [
           "default",
           "off",
@@ -191563,7 +191778,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf355Enabled",
+          "name": "UserEventPayloadOneOf356Enabled",
           "modelAsString": false,
           "values": [
             {
@@ -191581,7 +191796,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf356Scope": {
+      "UserEventPayloadOneOf357Scope": {
         "enum": [
           "dashboard",
           "log-drains"
@@ -191589,7 +191804,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf356Scope",
+          "name": "UserEventPayloadOneOf357Scope",
           "modelAsString": false,
           "values": [
             {
@@ -191603,7 +191818,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf364Provider": {
+      "UserEventPayloadOneOf365Provider": {
         "enum": [
           "apple",
           "bitbucket",
@@ -191617,7 +191832,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf364Provider",
+          "name": "UserEventPayloadOneOf365Provider",
           "modelAsString": false,
           "values": [
             {
@@ -191655,7 +191870,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf365ActorType": {
+      "UserEventPayloadOneOf366ActorType": {
         "enum": [
           "admin",
           "user"
@@ -191663,7 +191878,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf365ActorType",
+          "name": "UserEventPayloadOneOf366ActorType",
           "modelAsString": false,
           "values": [
             {
@@ -191677,7 +191892,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf386Tier": {
+      "UserEventPayloadOneOf387Tier": {
         "enum": [
           "plus",
           "pro"
@@ -191685,7 +191900,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf386Tier",
+          "name": "UserEventPayloadOneOf387Tier",
           "modelAsString": false,
           "values": [
             {
@@ -191699,7 +191914,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf392GrantType": {
+      "UserEventPayloadOneOf393GrantType": {
         "enum": [
           "authorization_code",
           "urn:ietf:params:oauth:grant-type:device_code",
@@ -191708,7 +191923,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf392GrantType",
+          "name": "UserEventPayloadOneOf393GrantType",
           "modelAsString": false,
           "values": [
             {
@@ -191726,7 +191941,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf392AuthMethod": {
+      "UserEventPayloadOneOf393AuthMethod": {
         "enum": [
           "app",
           "apple",
@@ -191749,7 +191964,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf392AuthMethod",
+          "name": "UserEventPayloadOneOf393AuthMethod",
           "modelAsString": false,
           "values": [
             {
@@ -191823,7 +192038,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf392TokenPrefix": {
+      "UserEventPayloadOneOf393TokenPrefix": {
         "enum": [
           "vca_"
         ],
@@ -191831,7 +192046,7 @@
         "additionalProperties": false,
         "description": "optional since entries prior to 2026-04-23 do not contain this field",
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf392TokenPrefix",
+          "name": "UserEventPayloadOneOf393TokenPrefix",
           "modelAsString": false,
           "values": [
             {
@@ -191841,7 +192056,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf392RefreshTokenPrefix": {
+      "UserEventPayloadOneOf393RefreshTokenPrefix": {
         "enum": [
           "vcr_"
         ],
@@ -191849,7 +192064,7 @@
         "additionalProperties": false,
         "description": "optional; only present when a refresh token was issued (offline_access).",
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf392RefreshTokenPrefix",
+          "name": "UserEventPayloadOneOf393RefreshTokenPrefix",
           "modelAsString": false,
           "values": [
             {
@@ -191859,7 +192074,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf393TokenPrefix": {
+      "UserEventPayloadOneOf394TokenPrefix": {
         "enum": [
           "vcp_"
         ],
@@ -191867,161 +192082,12 @@
         "additionalProperties": false,
         "description": "The token prefix used when showing a safe checksum-style fingerprint.",
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf393TokenPrefix",
+          "name": "UserEventPayloadOneOf394TokenPrefix",
           "modelAsString": false,
           "values": [
             {
               "value": "vcp_",
               "name": "Vcp"
-            }
-          ]
-        }
-      },
-      "UserEventPayloadOneOf393Origin": {
-        "enum": [
-          "app",
-          "apple",
-          "bitbucket",
-          "chatgpt",
-          "email",
-          "emu",
-          "github",
-          "github-webhook",
-          "gitlab",
-          "google",
-          "invite",
-          "manual",
-          "otp",
-          "passkey",
-          "saml",
-          "sms",
-          "token-exchange-oidc"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "How the token was issued. Always \u0060\u0027manual\u0027\u0060 for explicit PAT creation.",
-        "x-ms-enum": {
-          "name": "UserEventPayloadOneOf393Origin",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "app",
-              "name": "App"
-            },
-            {
-              "value": "apple",
-              "name": "Apple"
-            },
-            {
-              "value": "bitbucket",
-              "name": "Bitbucket"
-            },
-            {
-              "value": "chatgpt",
-              "name": "Chatgpt"
-            },
-            {
-              "value": "email",
-              "name": "Email"
-            },
-            {
-              "value": "emu",
-              "name": "Emu"
-            },
-            {
-              "value": "github",
-              "name": "Github"
-            },
-            {
-              "value": "github-webhook",
-              "name": "GithubWebhook"
-            },
-            {
-              "value": "gitlab",
-              "name": "Gitlab"
-            },
-            {
-              "value": "google",
-              "name": "Google"
-            },
-            {
-              "value": "invite",
-              "name": "Invite"
-            },
-            {
-              "value": "manual",
-              "name": "Manual"
-            },
-            {
-              "value": "otp",
-              "name": "Otp"
-            },
-            {
-              "value": "passkey",
-              "name": "Passkey"
-            },
-            {
-              "value": "saml",
-              "name": "Saml"
-            },
-            {
-              "value": "sms",
-              "name": "Sms"
-            },
-            {
-              "value": "token-exchange-oidc",
-              "name": "TokenExchangeOidc"
-            }
-          ]
-        }
-      },
-      "UserEventPayloadOneOf393Scope": {
-        "enum": [
-          "project",
-          "team",
-          "user"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "\u0022Scope of the token: - \u0060\u0027user\u0027\u0060: full-account token (not tied to any team). - \u0060\u0027team\u0027\u0060: scoped to a single team. - \u0060\u0027project\u0027\u0060: scoped to a single project within a team.\u0022",
-        "x-ms-enum": {
-          "name": "UserEventPayloadOneOf393Scope",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "project",
-              "name": "Project"
-            },
-            {
-              "value": "team",
-              "name": "Team"
-            },
-            {
-              "value": "user",
-              "name": "User"
-            }
-          ]
-        }
-      },
-      "UserEventPayloadOneOf393ProjectScope": {
-        "enum": [
-          "account",
-          "project-only"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Present when \u0060scope\u0060 is \u0060\u0027project\u0027\u0060.",
-        "x-ms-enum": {
-          "name": "UserEventPayloadOneOf393ProjectScope",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "account",
-              "name": "Account"
-            },
-            {
-              "value": "project-only",
-              "name": "ProjectOnly"
             }
           ]
         }
@@ -192048,8 +192114,157 @@
         ],
         "type": "string",
         "additionalProperties": false,
+        "description": "How the token was issued. Always \u0060\u0027manual\u0027\u0060 for explicit PAT creation.",
         "x-ms-enum": {
           "name": "UserEventPayloadOneOf394Origin",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "app",
+              "name": "App"
+            },
+            {
+              "value": "apple",
+              "name": "Apple"
+            },
+            {
+              "value": "bitbucket",
+              "name": "Bitbucket"
+            },
+            {
+              "value": "chatgpt",
+              "name": "Chatgpt"
+            },
+            {
+              "value": "email",
+              "name": "Email"
+            },
+            {
+              "value": "emu",
+              "name": "Emu"
+            },
+            {
+              "value": "github",
+              "name": "Github"
+            },
+            {
+              "value": "github-webhook",
+              "name": "GithubWebhook"
+            },
+            {
+              "value": "gitlab",
+              "name": "Gitlab"
+            },
+            {
+              "value": "google",
+              "name": "Google"
+            },
+            {
+              "value": "invite",
+              "name": "Invite"
+            },
+            {
+              "value": "manual",
+              "name": "Manual"
+            },
+            {
+              "value": "otp",
+              "name": "Otp"
+            },
+            {
+              "value": "passkey",
+              "name": "Passkey"
+            },
+            {
+              "value": "saml",
+              "name": "Saml"
+            },
+            {
+              "value": "sms",
+              "name": "Sms"
+            },
+            {
+              "value": "token-exchange-oidc",
+              "name": "TokenExchangeOidc"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf394Scope": {
+        "enum": [
+          "project",
+          "team",
+          "user"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022Scope of the token: - \u0060\u0027user\u0027\u0060: full-account token (not tied to any team). - \u0060\u0027team\u0027\u0060: scoped to a single team. - \u0060\u0027project\u0027\u0060: scoped to a single project within a team.\u0022",
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf394Scope",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "project",
+              "name": "Project"
+            },
+            {
+              "value": "team",
+              "name": "Team"
+            },
+            {
+              "value": "user",
+              "name": "User"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf394ProjectScope": {
+        "enum": [
+          "account",
+          "project-only"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Present when \u0060scope\u0060 is \u0060\u0027project\u0027\u0060.",
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf394ProjectScope",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "account",
+              "name": "Account"
+            },
+            {
+              "value": "project-only",
+              "name": "ProjectOnly"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf395Origin": {
+        "enum": [
+          "app",
+          "apple",
+          "bitbucket",
+          "chatgpt",
+          "email",
+          "emu",
+          "github",
+          "github-webhook",
+          "gitlab",
+          "google",
+          "invite",
+          "manual",
+          "otp",
+          "passkey",
+          "saml",
+          "sms",
+          "token-exchange-oidc"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf395Origin",
           "modelAsString": false,
           "values": [
             {
@@ -194697,7 +194912,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf288SsoProtectionOneOf1DeploymentType": {
+      "UserEventPayloadOneOf289SsoProtectionOneOf1DeploymentType": {
         "enum": [
           "all",
           "all_except_custom_domains",
@@ -194707,7 +194922,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf288SsoProtectionOneOf1DeploymentType",
+          "name": "UserEventPayloadOneOf289SsoProtectionOneOf1DeploymentType",
           "modelAsString": false,
           "values": [
             {
@@ -194729,40 +194944,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf288SsoProtectionOneOf1Cve55182MigrationAppliedFrom": {
-        "enum": [
-          "all",
-          "all_except_custom_domains",
-          "preview",
-          "prod_deployment_urls_and_all_previews"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "UserEventPayloadOneOf288SsoProtectionOneOf1Cve55182MigrationAppliedFrom",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "all",
-              "name": "All"
-            },
-            {
-              "value": "all_except_custom_domains",
-              "name": "AllExceptCustomDomains"
-            },
-            {
-              "value": "preview",
-              "name": "Preview"
-            },
-            {
-              "value": "prod_deployment_urls_and_all_previews",
-              "name": "ProdDeploymentUrlsAndAllPreviews"
-            }
-          ]
-        }
-      },
-      "UserEventPayloadOneOf288SsoProtectionOneOf1April2026SecurityIncidentMigrationAppliedFrom": {
+      "UserEventPayloadOneOf289SsoProtectionOneOf1Cve55182MigrationAppliedFrom": {
         "enum": [
           "all",
           "all_except_custom_domains",
@@ -194773,7 +194955,7 @@
         "additionalProperties": false,
         "nullable": true,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf288SsoProtectionOneOf1April2026SecurityIncidentMigrationAppliedFrom",
+          "name": "UserEventPayloadOneOf289SsoProtectionOneOf1Cve55182MigrationAppliedFrom",
           "modelAsString": false,
           "values": [
             {
@@ -194795,39 +194977,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf288OldSsoProtectionOneOf1DeploymentType": {
-        "enum": [
-          "all",
-          "all_except_custom_domains",
-          "preview",
-          "prod_deployment_urls_and_all_previews"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "UserEventPayloadOneOf288OldSsoProtectionOneOf1DeploymentType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "all",
-              "name": "All"
-            },
-            {
-              "value": "all_except_custom_domains",
-              "name": "AllExceptCustomDomains"
-            },
-            {
-              "value": "preview",
-              "name": "Preview"
-            },
-            {
-              "value": "prod_deployment_urls_and_all_previews",
-              "name": "ProdDeploymentUrlsAndAllPreviews"
-            }
-          ]
-        }
-      },
-      "UserEventPayloadOneOf288OldSsoProtectionOneOf1Cve55182MigrationAppliedFrom": {
+      "UserEventPayloadOneOf289SsoProtectionOneOf1April2026SecurityIncidentMigrationAppliedFrom": {
         "enum": [
           "all",
           "all_except_custom_domains",
@@ -194838,7 +194988,7 @@
         "additionalProperties": false,
         "nullable": true,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf288OldSsoProtectionOneOf1Cve55182MigrationAppliedFrom",
+          "name": "UserEventPayloadOneOf289SsoProtectionOneOf1April2026SecurityIncidentMigrationAppliedFrom",
           "modelAsString": false,
           "values": [
             {
@@ -194860,7 +195010,39 @@
           ]
         }
       },
-      "UserEventPayloadOneOf288OldSsoProtectionOneOf1April2026SecurityIncidentMigrationAppliedFrom": {
+      "UserEventPayloadOneOf289OldSsoProtectionOneOf1DeploymentType": {
+        "enum": [
+          "all",
+          "all_except_custom_domains",
+          "preview",
+          "prod_deployment_urls_and_all_previews"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf289OldSsoProtectionOneOf1DeploymentType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "all",
+              "name": "All"
+            },
+            {
+              "value": "all_except_custom_domains",
+              "name": "AllExceptCustomDomains"
+            },
+            {
+              "value": "preview",
+              "name": "Preview"
+            },
+            {
+              "value": "prod_deployment_urls_and_all_previews",
+              "name": "ProdDeploymentUrlsAndAllPreviews"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf289OldSsoProtectionOneOf1Cve55182MigrationAppliedFrom": {
         "enum": [
           "all",
           "all_except_custom_domains",
@@ -194871,7 +195053,7 @@
         "additionalProperties": false,
         "nullable": true,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf288OldSsoProtectionOneOf1April2026SecurityIncidentMigrationAppliedFrom",
+          "name": "UserEventPayloadOneOf289OldSsoProtectionOneOf1Cve55182MigrationAppliedFrom",
           "modelAsString": false,
           "values": [
             {
@@ -194893,7 +195075,40 @@
           ]
         }
       },
-      "UserEventPayloadOneOf304FactorsItemOneOf1Origin": {
+      "UserEventPayloadOneOf289OldSsoProtectionOneOf1April2026SecurityIncidentMigrationAppliedFrom": {
+        "enum": [
+          "all",
+          "all_except_custom_domains",
+          "preview",
+          "prod_deployment_urls_and_all_previews"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf289OldSsoProtectionOneOf1April2026SecurityIncidentMigrationAppliedFrom",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "all",
+              "name": "All"
+            },
+            {
+              "value": "all_except_custom_domains",
+              "name": "AllExceptCustomDomains"
+            },
+            {
+              "value": "preview",
+              "name": "Preview"
+            },
+            {
+              "value": "prod_deployment_urls_and_all_previews",
+              "name": "ProdDeploymentUrlsAndAllPreviews"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf305FactorsItemOneOf1Origin": {
         "enum": [
           "apple",
           "bitbucket",
@@ -194908,7 +195123,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf304FactorsItemOneOf1Origin",
+          "name": "UserEventPayloadOneOf305FactorsItemOneOf1Origin",
           "modelAsString": false,
           "values": [
             {
@@ -197811,7 +198026,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf278PreviousIssuerMode": {
+      "UserEventPayloadOneOf279PreviousIssuerMode": {
         "enum": [
           "global",
           "team"
@@ -197819,7 +198034,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf278PreviousIssuerMode",
+          "name": "UserEventPayloadOneOf279PreviousIssuerMode",
           "modelAsString": false,
           "values": [
             {
@@ -197833,7 +198048,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf278NextIssuerMode": {
+      "UserEventPayloadOneOf279NextIssuerMode": {
         "enum": [
           "global",
           "team"
@@ -197841,7 +198056,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf278NextIssuerMode",
+          "name": "UserEventPayloadOneOf279NextIssuerMode",
           "modelAsString": false,
           "values": [
             {
@@ -197851,57 +198066,6 @@
             {
               "value": "team",
               "name": "Team"
-            }
-          ]
-        }
-      },
-      "UserEventPayloadOneOf310BudgetType": {
-        "enum": [
-          "fixed"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "The budget type",
-        "x-ms-enum": {
-          "name": "UserEventPayloadOneOf310BudgetType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "fixed",
-              "name": "FixedValue"
-            }
-          ]
-        }
-      },
-      "UserEventPayloadOneOf310BudgetPricingPlan": {
-        "enum": [
-          "legacy",
-          "platform",
-          "plus",
-          "unbundled"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "The acive pricing plan the team is billed with",
-        "x-ms-enum": {
-          "name": "UserEventPayloadOneOf310BudgetPricingPlan",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "legacy",
-              "name": "Legacy"
-            },
-            {
-              "value": "platform",
-              "name": "Platform"
-            },
-            {
-              "value": "plus",
-              "name": "Plus"
-            },
-            {
-              "value": "unbundled",
-              "name": "Unbundled"
             }
           ]
         }
@@ -197957,39 +198121,53 @@
           ]
         }
       },
-      "UserEventPayloadOneOf314StoreType": {
+      "UserEventPayloadOneOf312BudgetType": {
         "enum": [
-          "blob",
-          "edge-config",
-          "integration",
-          "postgres",
-          "redis"
+          "fixed"
         ],
         "type": "string",
         "additionalProperties": false,
+        "description": "The budget type",
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf314StoreType",
+          "name": "UserEventPayloadOneOf312BudgetType",
           "modelAsString": false,
           "values": [
             {
-              "value": "blob",
-              "name": "Blob"
+              "value": "fixed",
+              "name": "FixedValue"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf312BudgetPricingPlan": {
+        "enum": [
+          "legacy",
+          "platform",
+          "plus",
+          "unbundled"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The acive pricing plan the team is billed with",
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf312BudgetPricingPlan",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "legacy",
+              "name": "Legacy"
             },
             {
-              "value": "edge-config",
-              "name": "EdgeConfig"
+              "value": "platform",
+              "name": "Platform"
             },
             {
-              "value": "integration",
-              "name": "Integration"
+              "value": "plus",
+              "name": "Plus"
             },
             {
-              "value": "postgres",
-              "name": "Postgres"
-            },
-            {
-              "value": "redis",
-              "name": "Redis"
+              "value": "unbundled",
+              "name": "Unbundled"
             }
           ]
         }
@@ -198068,7 +198246,44 @@
           ]
         }
       },
-      "UserEventPayloadOneOf321PreviousScope": {
+      "UserEventPayloadOneOf317StoreType": {
+        "enum": [
+          "blob",
+          "edge-config",
+          "integration",
+          "postgres",
+          "redis"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf317StoreType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "blob",
+              "name": "Blob"
+            },
+            {
+              "value": "edge-config",
+              "name": "EdgeConfig"
+            },
+            {
+              "value": "integration",
+              "name": "Integration"
+            },
+            {
+              "value": "postgres",
+              "name": "Postgres"
+            },
+            {
+              "value": "redis",
+              "name": "Redis"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf322PreviousScope": {
         "enum": [
           "all",
           "private",
@@ -198079,7 +198294,7 @@
         "additionalProperties": false,
         "description": "Which repository visibilities get automatic reviews",
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf321PreviousScope",
+          "name": "UserEventPayloadOneOf322PreviousScope",
           "modelAsString": false,
           "values": [
             {
@@ -198101,7 +198316,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf321NextScope": {
+      "UserEventPayloadOneOf322NextScope": {
         "enum": [
           "all",
           "private",
@@ -198112,7 +198327,7 @@
         "additionalProperties": false,
         "description": "Which repository visibilities get automatic reviews",
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf321NextScope",
+          "name": "UserEventPayloadOneOf322NextScope",
           "modelAsString": false,
           "values": [
             {
@@ -198134,14 +198349,14 @@
           ]
         }
       },
-      "UserEventPayloadOneOf363SamplingItemType": {
+      "UserEventPayloadOneOf364SamplingItemType": {
         "enum": [
           "head_sampling"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf363SamplingItemType",
+          "name": "UserEventPayloadOneOf364SamplingItemType",
           "modelAsString": false,
           "values": [
             {
@@ -198151,7 +198366,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf363SamplingItemEnv": {
+      "UserEventPayloadOneOf364SamplingItemEnv": {
         "enum": [
           "preview",
           "production"
@@ -198159,7 +198374,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf363SamplingItemEnv",
+          "name": "UserEventPayloadOneOf364SamplingItemEnv",
           "modelAsString": false,
           "values": [
             {
@@ -199733,7 +199948,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf309BudgetBudgetItemType": {
+      "UserEventPayloadOneOf310BudgetBudgetItemType": {
         "enum": [
           "fixed"
         ],
@@ -199741,7 +199956,7 @@
         "additionalProperties": false,
         "description": "The budget type",
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf309BudgetBudgetItemType",
+          "name": "UserEventPayloadOneOf310BudgetBudgetItemType",
           "modelAsString": false,
           "values": [
             {
@@ -199751,7 +199966,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf309BudgetBudgetItemPricingPlan": {
+      "UserEventPayloadOneOf310BudgetBudgetItemPricingPlan": {
         "enum": [
           "legacy",
           "platform",
@@ -199762,7 +199977,7 @@
         "additionalProperties": false,
         "description": "The acive pricing plan the team is billed with",
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf309BudgetBudgetItemPricingPlan",
+          "name": "UserEventPayloadOneOf310BudgetBudgetItemPricingPlan",
           "modelAsString": false,
           "values": [
             {
@@ -199784,7 +199999,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf327RemovedUsersAdditionalPropertiesRole": {
+      "UserEventPayloadOneOf328RemovedUsersAdditionalPropertiesRole": {
         "enum": [
           "BILLING",
           "CONTRIBUTOR",
@@ -199798,7 +200013,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf327RemovedUsersAdditionalPropertiesRole",
+          "name": "UserEventPayloadOneOf328RemovedUsersAdditionalPropertiesRole",
           "modelAsString": false,
           "values": [
             {
@@ -199836,7 +200051,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf392AppClientAuthenticationUsedMethod": {
+      "UserEventPayloadOneOf393AppClientAuthenticationUsedMethod": {
         "enum": [
           "client_secret_basic",
           "client_secret_jwt",
@@ -199848,7 +200063,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf392AppClientAuthenticationUsedMethod",
+          "name": "UserEventPayloadOneOf393AppClientAuthenticationUsedMethod",
           "modelAsString": false,
           "values": [
             {
@@ -201853,6 +202068,7 @@
         "enum": [
           "api-key",
           "custom",
+          "discord",
           "github",
           "linear",
           "microsoft-entra",
@@ -201876,6 +202092,10 @@
             {
               "value": "custom",
               "name": "Custom"
+            },
+            {
+              "value": "discord",
+              "name": "Discord"
             },
             {
               "value": "github",
@@ -210095,7 +210315,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf288SsoProtectionWrapperValue": {
+      "UserEventPayloadOneOf289SsoProtectionWrapperValue": {
         "enum": [
           "all",
           "all_except_custom_domains",
@@ -210105,7 +210325,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf288SsoProtectionWrapperValue",
+          "name": "UserEventPayloadOneOf289SsoProtectionWrapperValue",
           "modelAsString": false,
           "values": [
             {
@@ -210127,7 +210347,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf288OldSsoProtectionWrapperValue": {
+      "UserEventPayloadOneOf289OldSsoProtectionWrapperValue": {
         "enum": [
           "all",
           "all_except_custom_domains",
@@ -210137,7 +210357,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf288OldSsoProtectionWrapperValue",
+          "name": "UserEventPayloadOneOf289OldSsoProtectionWrapperValue",
           "modelAsString": false,
           "values": [
             {
@@ -210159,7 +210379,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf357PreviousAdditionalPropertiesWrapperValue": {
+      "UserEventPayloadOneOf358PreviousAdditionalPropertiesWrapperValue": {
         "enum": [
           "BILLING",
           "CONTRIBUTOR",
@@ -210173,7 +210393,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf357PreviousAdditionalPropertiesWrapperValue",
+          "name": "UserEventPayloadOneOf358PreviousAdditionalPropertiesWrapperValue",
           "modelAsString": false,
           "values": [
             {
@@ -210211,7 +210431,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf357NextAdditionalPropertiesWrapperValue": {
+      "UserEventPayloadOneOf358NextAdditionalPropertiesWrapperValue": {
         "enum": [
           "BILLING",
           "CONTRIBUTOR",
@@ -210225,7 +210445,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf357NextAdditionalPropertiesWrapperValue",
+          "name": "UserEventPayloadOneOf358NextAdditionalPropertiesWrapperValue",
           "modelAsString": false,
           "values": [
             {
@@ -228758,6 +228978,60 @@
           ]
         }
       },
+      "CreateProject200ResponseSandboxRegion": {
+        "enum": [
+          "cle1",
+          "iad1",
+          "sfo1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateProject200ResponseSandboxRegion",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            }
+          ]
+        }
+      },
+      "CreateProject200ResponseSandboxFailoverRegionsItem": {
+        "enum": [
+          "cle1",
+          "iad1",
+          "sfo1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateProject200ResponseSandboxFailoverRegionsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            }
+          ]
+        }
+      },
       "CreateProject200ResponseResourceConfigFunctionDefaultMemoryType": {
         "enum": [
           "performance",
@@ -230208,6 +230482,60 @@
             {
               "value": "prod_deployment_urls_and_all_previews",
               "name": "ProdDeploymentUrlsAndAllPreviews"
+            }
+          ]
+        }
+      },
+      "GetProject200ResponseSandboxRegion": {
+        "enum": [
+          "cle1",
+          "iad1",
+          "sfo1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetProject200ResponseSandboxRegion",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            }
+          ]
+        }
+      },
+      "GetProject200ResponseSandboxFailoverRegionsItem": {
+        "enum": [
+          "cle1",
+          "iad1",
+          "sfo1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetProject200ResponseSandboxFailoverRegionsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
             }
           ]
         }
@@ -232019,6 +232347,60 @@
           ]
         }
       },
+      "UpdateProject200ResponseSandboxRegion": {
+        "enum": [
+          "cle1",
+          "iad1",
+          "sfo1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateProject200ResponseSandboxRegion",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            }
+          ]
+        }
+      },
+      "UpdateProject200ResponseSandboxFailoverRegionsItem": {
+        "enum": [
+          "cle1",
+          "iad1",
+          "sfo1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateProject200ResponseSandboxFailoverRegionsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            }
+          ]
+        }
+      },
       "UpdateProject200ResponseResourceConfigFunctionDefaultMemoryType": {
         "enum": [
           "performance",
@@ -233469,6 +233851,60 @@
             {
               "value": "prod_deployment_urls_and_all_previews",
               "name": "ProdDeploymentUrlsAndAllPreviews"
+            }
+          ]
+        }
+      },
+      "UploadProjectAvatar200ResponseSandboxRegion": {
+        "enum": [
+          "cle1",
+          "iad1",
+          "sfo1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UploadProjectAvatar200ResponseSandboxRegion",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            }
+          ]
+        }
+      },
+      "UploadProjectAvatar200ResponseSandboxFailoverRegionsItem": {
+        "enum": [
+          "cle1",
+          "iad1",
+          "sfo1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UploadProjectAvatar200ResponseSandboxFailoverRegionsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
             }
           ]
         }
@@ -235565,6 +236001,60 @@
             {
               "value": "prod_deployment_urls_and_all_previews",
               "name": "ProdDeploymentUrlsAndAllPreviews"
+            }
+          ]
+        }
+      },
+      "UpdateMicrofrontends200ResponseSandboxRegion": {
+        "enum": [
+          "cle1",
+          "iad1",
+          "sfo1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateMicrofrontends200ResponseSandboxRegion",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            }
+          ]
+        }
+      },
+      "UpdateMicrofrontends200ResponseSandboxFailoverRegionsItem": {
+        "enum": [
+          "cle1",
+          "iad1",
+          "sfo1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateMicrofrontends200ResponseSandboxFailoverRegionsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
             }
           ]
         }
@@ -249847,6 +250337,60 @@
             {
               "value": "prod_deployment_urls_and_all_previews",
               "name": "ProdDeploymentUrlsAndAllPreviews"
+            }
+          ]
+        }
+      },
+      "GetMicrofrontendsInGroup200ResponseProjectsItemSandboxRegion": {
+        "enum": [
+          "cle1",
+          "iad1",
+          "sfo1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetMicrofrontendsInGroup200ResponseProjectsItemSandboxRegion",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            }
+          ]
+        }
+      },
+      "GetMicrofrontendsInGroup200ResponseProjectsItemSandboxFailoverRegionsItem": {
+        "enum": [
+          "cle1",
+          "iad1",
+          "sfo1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetMicrofrontendsInGroup200ResponseProjectsItemSandboxFailoverRegionsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
             }
           ]
         }
@@ -264551,6 +265095,60 @@
             {
               "value": "prod_deployment_urls_and_all_previews",
               "name": "ProdDeploymentUrlsAndAllPreviews"
+            }
+          ]
+        }
+      },
+      "GetProjects200ResponseOneOf3ProjectsItemSandboxRegion": {
+        "enum": [
+          "cle1",
+          "iad1",
+          "sfo1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetProjects200ResponseOneOf3ProjectsItemSandboxRegion",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            }
+          ]
+        }
+      },
+      "GetProjects200ResponseOneOf3ProjectsItemSandboxFailoverRegionsItem": {
+        "enum": [
+          "cle1",
+          "iad1",
+          "sfo1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetProjects200ResponseOneOf3ProjectsItemSandboxFailoverRegionsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
             }
           ]
         }

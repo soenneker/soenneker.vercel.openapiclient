@@ -23,14 +23,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385Configuration Configuration { get; set; }
 #endif
-        /// <summary>The newName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? NewName { get; set; }
-#nullable restore
-#else
-        public string NewName { get; set; }
-#endif
         /// <summary>The peering property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,7 +65,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385Configuration>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385Configuration.CreateFromDiscriminatorValue); } },
-                { "newName", n => { NewName = n.GetStringValue(); } },
                 { "peering", n => { Peering = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385Peering>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385Peering.CreateFromDiscriminatorValue); } },
                 { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385Team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385Team.CreateFromDiscriminatorValue); } },
             };
@@ -86,7 +77,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385Configuration>("configuration", Configuration);
-            writer.WriteStringValue("newName", NewName);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385Peering>("peering", Peering);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385Team>("team", Team);
             writer.WriteAdditionalData(AdditionalData);

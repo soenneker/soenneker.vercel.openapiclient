@@ -458,6 +458,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string RootDirectory { get; set; }
 #endif
+        /// <summary>The sandbox property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseSandbox? Sandbox { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseSandbox Sandbox { get; set; }
+#endif
         /// <summary>The security property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -695,6 +703,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "rollbackDescription", n => { RollbackDescription = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseRollbackDescription>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseRollbackDescription.CreateFromDiscriminatorValue); } },
                 { "rollingRelease", n => { RollingRelease = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseRollingRelease>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseRollingRelease.CreateFromDiscriminatorValue); } },
                 { "rootDirectory", n => { RootDirectory = n.GetStringValue(); } },
+                { "sandbox", n => { Sandbox = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseSandbox>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseSandbox.CreateFromDiscriminatorValue); } },
                 { "security", n => { Security = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseSecurity>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseSecurity.CreateFromDiscriminatorValue); } },
                 { "serverlessFunctionZeroConfigFailover", n => { ServerlessFunctionZeroConfigFailover = n.GetBoolValue(); } },
                 { "services", n => { Services = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseServicesItem>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseServicesItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -801,6 +810,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseRollbackDescription>("rollbackDescription", RollbackDescription);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseRollingRelease>("rollingRelease", RollingRelease);
             writer.WriteStringValue("rootDirectory", RootDirectory);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseSandbox>("sandbox", Sandbox);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseSecurity>("security", Security);
             writer.WriteBoolValue("serverlessFunctionZeroConfigFailover", ServerlessFunctionZeroConfigFailover);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseServicesItem>("services", Services);
