@@ -33,7 +33,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Service { get; set; }
 #endif
-        /// <summary>Must be `&quot;service&quot;` for Service-to-Service HTTP bindings.</summary>
+        /// <summary>If present, must be `&quot;service&quot;` for Service-to-Service HTTP bindings.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemBindingsItemType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ServicesItemBindingsItem"/> and sets the default values.

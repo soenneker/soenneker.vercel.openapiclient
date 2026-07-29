@@ -15,13 +15,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The configuration property</summary>
+        /// <summary>The gitOwnerName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72Configuration? Configuration { get; set; }
+        public string? GitOwnerName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72Configuration Configuration { get; set; }
+        public string GitOwnerName { get; set; }
+#endif
+        /// <summary>The gitRepositoryName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GitRepositoryName { get; set; }
+#nullable restore
+#else
+        public string GitRepositoryName { get; set; }
+#endif
+        /// <summary>The next property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72Next? Next { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72Next Next { get; set; }
+#endif
+        /// <summary>The previous property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72Previous? Previous { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72Previous Previous { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72"/> and sets the default values.
@@ -48,7 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72Configuration>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72Configuration.CreateFromDiscriminatorValue); } },
+                { "gitOwnerName", n => { GitOwnerName = n.GetStringValue(); } },
+                { "gitRepositoryName", n => { GitRepositoryName = n.GetStringValue(); } },
+                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72Next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72Next.CreateFromDiscriminatorValue); } },
+                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72Previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72Previous.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72Configuration>("configuration", Configuration);
+            writer.WriteStringValue("gitOwnerName", GitOwnerName);
+            writer.WriteStringValue("gitRepositoryName", GitRepositoryName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72Next>("next", Next);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf72Previous>("previous", Previous);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -31,6 +31,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> Cns { get; set; }
 #endif
+        /// <summary>The custom property</summary>
+        public bool? Custom { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "cn", n => { Cn = n.GetStringValue(); } },
                 { "cns", n => { Cns = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "custom", n => { Custom = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
             };
         }
@@ -78,6 +81,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cn", Cn);
             writer.WriteCollectionOfPrimitiveValues<string>("cns", Cns);
+            writer.WriteBoolValue("custom", Custom);
             writer.WriteStringValue("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }

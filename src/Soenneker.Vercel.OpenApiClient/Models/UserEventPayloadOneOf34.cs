@@ -15,37 +15,23 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The alias property</summary>
+        /// <summary>The aliasCount property</summary>
+        public double? AliasCount { get; set; }
+        /// <summary>The deployment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Alias { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf34Deployment? Deployment { get; set; }
 #nullable restore
 #else
-        public string Alias { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf34Deployment Deployment { get; set; }
 #endif
-        /// <summary>The aliasId property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AliasId { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string AliasId { get; set; }
-#endif
-        /// <summary>The deploymentId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DeploymentId { get; set; }
-#nullable restore
-#else
-        public string DeploymentId { get; set; }
-#endif
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
+        public string ProjectId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf34"/> and sets the default values.
@@ -72,10 +58,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alias", n => { Alias = n.GetStringValue(); } },
-                { "aliasId", n => { AliasId = n.GetStringValue(); } },
-                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "aliasCount", n => { AliasCount = n.GetDoubleValue(); } },
+                { "deployment", n => { Deployment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf34Deployment>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf34Deployment.CreateFromDiscriminatorValue); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,10 +70,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("alias", Alias);
-            writer.WriteStringValue("aliasId", AliasId);
-            writer.WriteStringValue("deploymentId", DeploymentId);
-            writer.WriteStringValue("name", Name);
+            writer.WriteDoubleValue("aliasCount", AliasCount);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf34Deployment>("deployment", Deployment);
+            writer.WriteStringValue("projectId", ProjectId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

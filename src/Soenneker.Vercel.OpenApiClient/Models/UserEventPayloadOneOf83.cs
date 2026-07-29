@@ -15,22 +15,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The bitbucketAccountId property</summary>
+        /// <summary>The gitlabLogin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BitbucketAccountId { get; set; }
+        public string? GitlabLogin { get; set; }
 #nullable restore
 #else
-        public string BitbucketAccountId { get; set; }
+        public string GitlabLogin { get; set; }
 #endif
-        /// <summary>The bitbucketLogin property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BitbucketLogin { get; set; }
-#nullable restore
-#else
-        public string BitbucketLogin { get; set; }
-#endif
+        /// <summary>The gitlabUserId property</summary>
+        public double? GitlabUserId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf83"/> and sets the default values.
         /// </summary>
@@ -56,8 +50,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bitbucketAccountId", n => { BitbucketAccountId = n.GetStringValue(); } },
-                { "bitbucketLogin", n => { BitbucketLogin = n.GetStringValue(); } },
+                { "gitlabLogin", n => { GitlabLogin = n.GetStringValue(); } },
+                { "gitlabUserId", n => { GitlabUserId = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +61,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("bitbucketAccountId", BitbucketAccountId);
-            writer.WriteStringValue("bitbucketLogin", BitbucketLogin);
+            writer.WriteStringValue("gitlabLogin", GitlabLogin);
+            writer.WriteDoubleValue("gitlabUserId", GitlabUserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

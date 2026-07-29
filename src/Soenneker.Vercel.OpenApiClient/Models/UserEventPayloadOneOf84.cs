@@ -13,76 +13,32 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf84 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The acceptedTokenCount property</summary>
-        public double? AcceptedTokenCount { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The clientId property</summary>
+        /// <summary>The bitbucketEmail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get; set; }
+        public string? BitbucketEmail { get; set; }
 #nullable restore
 #else
-        public string ClientId { get; set; }
+        public string BitbucketEmail { get; set; }
 #endif
-        /// <summary>The clientName property</summary>
+        /// <summary>The bitbucketLogin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientName { get; set; }
+        public string? BitbucketLogin { get; set; }
 #nullable restore
 #else
-        public string ClientName { get; set; }
+        public string BitbucketLogin { get; set; }
 #endif
-        /// <summary>The clientUid property</summary>
+        /// <summary>The bitbucketName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientUid { get; set; }
+        public string? BitbucketName { get; set; }
 #nullable restore
 #else
-        public string ClientUid { get; set; }
+        public string BitbucketName { get; set; }
 #endif
-        /// <summary>The environments property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Environments { get; set; }
-#nullable restore
-#else
-        public List<string> Environments { get; set; }
-#endif
-        /// <summary>The fields property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Fields { get; set; }
-#nullable restore
-#else
-        public List<string> Fields { get; set; }
-#endif
-        /// <summary>The importedTokenCount property</summary>
-        public double? ImportedTokenCount { get; set; }
-        /// <summary>The installationId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? InstallationId { get; set; }
-#nullable restore
-#else
-        public string InstallationId { get; set; }
-#endif
-        /// <summary>The projectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
-#endif
-        /// <summary>The subjectType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84SubjectType? SubjectType { get; set; }
-        /// <summary>The tokenCount property</summary>
-        public double? TokenCount { get; set; }
-        /// <summary>The tokensDeleted property</summary>
-        public double? TokensDeleted { get; set; }
-        /// <summary>The triggerDestinationCount property</summary>
-        public double? TriggerDestinationCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84"/> and sets the default values.
         /// </summary>
@@ -108,19 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "acceptedTokenCount", n => { AcceptedTokenCount = n.GetDoubleValue(); } },
-                { "clientId", n => { ClientId = n.GetStringValue(); } },
-                { "clientName", n => { ClientName = n.GetStringValue(); } },
-                { "clientUid", n => { ClientUid = n.GetStringValue(); } },
-                { "environments", n => { Environments = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "importedTokenCount", n => { ImportedTokenCount = n.GetDoubleValue(); } },
-                { "installationId", n => { InstallationId = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "subjectType", n => { SubjectType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84SubjectType>(); } },
-                { "tokenCount", n => { TokenCount = n.GetDoubleValue(); } },
-                { "tokensDeleted", n => { TokensDeleted = n.GetDoubleValue(); } },
-                { "triggerDestinationCount", n => { TriggerDestinationCount = n.GetDoubleValue(); } },
+                { "bitbucketEmail", n => { BitbucketEmail = n.GetStringValue(); } },
+                { "bitbucketLogin", n => { BitbucketLogin = n.GetStringValue(); } },
+                { "bitbucketName", n => { BitbucketName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -130,19 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("acceptedTokenCount", AcceptedTokenCount);
-            writer.WriteStringValue("clientId", ClientId);
-            writer.WriteStringValue("clientName", ClientName);
-            writer.WriteStringValue("clientUid", ClientUid);
-            writer.WriteCollectionOfPrimitiveValues<string>("environments", Environments);
-            writer.WriteCollectionOfPrimitiveValues<string>("fields", Fields);
-            writer.WriteDoubleValue("importedTokenCount", ImportedTokenCount);
-            writer.WriteStringValue("installationId", InstallationId);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84SubjectType>("subjectType", SubjectType);
-            writer.WriteDoubleValue("tokenCount", TokenCount);
-            writer.WriteDoubleValue("tokensDeleted", TokensDeleted);
-            writer.WriteDoubleValue("triggerDestinationCount", TriggerDestinationCount);
+            writer.WriteStringValue("bitbucketEmail", BitbucketEmail);
+            writer.WriteStringValue("bitbucketLogin", BitbucketLogin);
+            writer.WriteStringValue("bitbucketName", BitbucketName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

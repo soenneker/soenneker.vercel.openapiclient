@@ -31,6 +31,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
+        /// <summary>The username property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Username { get; set; }
+#nullable restore
+#else
+        public string Username { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37"/> and sets the default values.
         /// </summary>
@@ -58,6 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "alias", n => { Alias = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
+                { "username", n => { Username = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,6 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("alias", Alias);
             writer.WriteStringValue("email", Email);
+            writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

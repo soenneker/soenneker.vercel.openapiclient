@@ -15,16 +15,38 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The email property</summary>
+        /// <summary>The alias property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? Alias { get; set; }
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string Alias { get; set; }
 #endif
-        /// <summary>The verified property</summary>
-        public bool? Verified { get; set; }
+        /// <summary>The projectId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get; set; }
+#nullable restore
+#else
+        public string ProjectId { get; set; }
+#endif
+        /// <summary>The sandboxId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SandboxId { get; set; }
+#nullable restore
+#else
+        public string SandboxId { get; set; }
+#endif
+        /// <summary>The sandboxName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SandboxName { get; set; }
+#nullable restore
+#else
+        public string SandboxName { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf298"/> and sets the default values.
         /// </summary>
@@ -50,8 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "verified", n => { Verified = n.GetBoolValue(); } },
+                { "alias", n => { Alias = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "sandboxId", n => { SandboxId = n.GetStringValue(); } },
+                { "sandboxName", n => { SandboxName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,8 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("email", Email);
-            writer.WriteBoolValue("verified", Verified);
+            writer.WriteStringValue("alias", Alias);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("sandboxId", SandboxId);
+            writer.WriteStringValue("sandboxName", SandboxName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,19 +13,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf61 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>The action property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61Action? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The bulkRedirectsLimit property</summary>
-        public double? BulkRedirectsLimit { get; set; }
-        /// <summary>The prevBulkRedirectsLimit property</summary>
-        public double? PrevBulkRedirectsLimit { get; set; }
-        /// <summary>The project property</summary>
+        /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61Project? Project { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61DataProperty? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61Project Project { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61DataProperty Data { get; set; }
+#endif
+        /// <summary>The subscriptionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SubscriptionId { get; set; }
+#nullable restore
+#else
+        public string SubscriptionId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61"/> and sets the default values.
@@ -52,9 +58,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bulkRedirectsLimit", n => { BulkRedirectsLimit = n.GetDoubleValue(); } },
-                { "prevBulkRedirectsLimit", n => { PrevBulkRedirectsLimit = n.GetDoubleValue(); } },
-                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61Project.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61Action>(); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61DataProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61DataProperty.CreateFromDiscriminatorValue); } },
+                { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -64,9 +70,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("bulkRedirectsLimit", BulkRedirectsLimit);
-            writer.WriteDoubleValue("prevBulkRedirectsLimit", PrevBulkRedirectsLimit);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61Project>("project", Project);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61Action>("action", Action);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61DataProperty>("data", Data);
+            writer.WriteStringValue("subscriptionId", SubscriptionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,61 +15,45 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The configurationId property</summary>
+        /// <summary>The fromDeploymentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfigurationId { get; set; }
+        public string? FromDeploymentId { get; set; }
 #nullable restore
 #else
-        public string ConfigurationId { get; set; }
+        public string FromDeploymentId { get; set; }
 #endif
-        /// <summary>The confirmedScopes property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ConfirmedScopes { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public List<string> ConfirmedScopes { get; set; }
+        public string ProjectId { get; set; }
 #endif
-        /// <summary>The integrationId property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationId { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public string IntegrationId { get; set; }
+        public string ProjectName { get; set; }
 #endif
-        /// <summary>The integrationName property</summary>
+        /// <summary>The reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationName { get; set; }
+        public string? Reason { get; set; }
 #nullable restore
 #else
-        public string IntegrationName { get; set; }
+        public string Reason { get; set; }
 #endif
-        /// <summary>The integrationSlug property</summary>
+        /// <summary>The toDeploymentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationSlug { get; set; }
+        public string? ToDeploymentId { get; set; }
 #nullable restore
 #else
-        public string IntegrationSlug { get; set; }
-#endif
-        /// <summary>The ownerId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OwnerId { get; set; }
-#nullable restore
-#else
-        public string OwnerId { get; set; }
-#endif
-        /// <summary>The projectIds property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? ProjectIds { get; set; }
-#nullable restore
-#else
-        public List<string> ProjectIds { get; set; }
+        public string ToDeploymentId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153"/> and sets the default values.
@@ -96,13 +80,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configurationId", n => { ConfigurationId = n.GetStringValue(); } },
-                { "confirmedScopes", n => { ConfirmedScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
-                { "integrationName", n => { IntegrationName = n.GetStringValue(); } },
-                { "integrationSlug", n => { IntegrationSlug = n.GetStringValue(); } },
-                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "projectIds", n => { ProjectIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "fromDeploymentId", n => { FromDeploymentId = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "toDeploymentId", n => { ToDeploymentId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -112,13 +94,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("configurationId", ConfigurationId);
-            writer.WriteCollectionOfPrimitiveValues<string>("confirmedScopes", ConfirmedScopes);
-            writer.WriteStringValue("integrationId", IntegrationId);
-            writer.WriteStringValue("integrationName", IntegrationName);
-            writer.WriteStringValue("integrationSlug", IntegrationSlug);
-            writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteCollectionOfPrimitiveValues<string>("projectIds", ProjectIds);
+            writer.WriteStringValue("fromDeploymentId", FromDeploymentId);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("reason", Reason);
+            writer.WriteStringValue("toDeploymentId", ToDeploymentId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

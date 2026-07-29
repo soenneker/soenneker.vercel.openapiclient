@@ -15,13 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The blocked deployment&apos;s id (e.g. `dpl_…`). When present, the message links it to the deployment details (inspector) page. Optional so events emitted before this field was added still render.</summary>
+        /// <summary>The gitCommitterName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeploymentId { get; set; }
+        public string? GitCommitterName { get; set; }
 #nullable restore
 #else
-        public string DeploymentId { get; set; }
+        public string GitCommitterName { get; set; }
+#endif
+        /// <summary>The gitUserPlatform property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GitUserPlatform { get; set; }
+#nullable restore
+#else
+        public string GitUserPlatform { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,11 +47,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get; set; }
 #endif
-        /// <summary>Which rule blocked the deploy.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf97RuleName? RuleName { get; set; }
-        /// <summary>Team-level or project-level rule.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf97RuleProvenance? RuleProvenance { get; set; }
-        /// <summary>Classified deploy source, e.g. &apos;cli&apos;, &apos;git&apos;, &apos;integration&apos;.</summary>
+        /// <summary>The sha property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Sha { get; set; }
+#nullable restore
+#else
+        public string Sha { get; set; }
+#endif
+        /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Source { get; set; }
@@ -76,11 +88,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
+                { "gitCommitterName", n => { GitCommitterName = n.GetStringValue(); } },
+                { "gitUserPlatform", n => { GitUserPlatform = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "ruleName", n => { RuleName = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf97RuleName>(); } },
-                { "ruleProvenance", n => { RuleProvenance = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf97RuleProvenance>(); } },
+                { "sha", n => { Sha = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
             };
         }
@@ -91,11 +103,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("deploymentId", DeploymentId);
+            writer.WriteStringValue("gitCommitterName", GitCommitterName);
+            writer.WriteStringValue("gitUserPlatform", GitUserPlatform);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf97RuleName>("ruleName", RuleName);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf97RuleProvenance>("ruleProvenance", RuleProvenance);
+            writer.WriteStringValue("sha", Sha);
             writer.WriteStringValue("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -11,9 +11,9 @@ using Soenneker.Vercel.OpenApiClient.V1.Deployments;
 using Soenneker.Vercel.OpenApiClient.V1.Domains;
 using Soenneker.Vercel.OpenApiClient.V1.Drains;
 using Soenneker.Vercel.OpenApiClient.V1.EdgeCache;
-using Soenneker.Vercel.OpenApiClient.V1.EdgeConfig;
 using Soenneker.Vercel.OpenApiClient.V1.Env;
 using Soenneker.Vercel.OpenApiClient.V1.Events;
+using Soenneker.Vercel.OpenApiClient.V1.GlobalConfig;
 using Soenneker.Vercel.OpenApiClient.V1.Installations;
 using Soenneker.Vercel.OpenApiClient.V1.Integrations;
 using Soenneker.Vercel.OpenApiClient.V1.LogDrains;
@@ -85,11 +85,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.EdgeCache.EdgeCacheRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The edgeConfig property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.EdgeConfigRequestBuilder EdgeConfig
-        {
-            get => new global::Soenneker.Vercel.OpenApiClient.V1.EdgeConfig.EdgeConfigRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The env property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Env.EnvRequestBuilder Env
         {
@@ -99,6 +94,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1
         public global::Soenneker.Vercel.OpenApiClient.V1.Events.EventsRequestBuilder Events
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The globalConfig property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.GlobalConfigRequestBuilder GlobalConfig
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.GlobalConfigRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The installations property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Installations.InstallationsRequestBuilder Installations

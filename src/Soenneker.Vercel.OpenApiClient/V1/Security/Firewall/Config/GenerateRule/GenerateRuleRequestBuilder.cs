@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.GenerateRul
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GenerateRuleRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/config/generate-rule?projectId={projectId}{&slug*,teamId*}", pathParameters)
+        public GenerateRuleRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/config/generate-rule{?projectId*,slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Config.GenerateRul
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GenerateRuleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/config/generate-rule?projectId={projectId}{&slug*,teamId*}", rawUrl)
+        public GenerateRuleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/config/generate-rule{?projectId*,slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>

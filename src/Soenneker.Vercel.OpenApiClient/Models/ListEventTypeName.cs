@@ -79,6 +79,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayApiKeyQuotaUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-budget-default-updated")]
+        #pragma warning disable CS1591
+        AiGatewayBudgetDefaultUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-byok-credential-created")]
         #pragma warning disable CS1591
         AiGatewayByokCredentialCreated,
@@ -146,6 +150,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "ai-gateway-rule-updated")]
         #pragma warning disable CS1591
         AiGatewayRuleUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-scope-budget-updated")]
+        #pragma warning disable CS1591
+        AiGatewayScopeBudgetUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-virtual-model-config-archived")]
         #pragma warning disable CS1591
@@ -1918,6 +1926,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "team")]
         #pragma warning disable CS1591
         Team,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "team-agent-billing-migration-decision-changed")]
+        #pragma warning disable CS1591
+        TeamAgentBillingMigrationDecisionChanged,
         #pragma warning restore CS1591
         [EnumMember(Value = "team-avatar-update")]
         #pragma warning disable CS1591

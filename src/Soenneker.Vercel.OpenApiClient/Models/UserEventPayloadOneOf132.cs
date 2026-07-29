@@ -15,29 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The edgeConfigId property</summary>
+        /// <summary>The edgeConfig property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeConfigId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132EdgeConfig? EdgeConfig { get; set; }
 #nullable restore
 #else
-        public string EdgeConfigId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132EdgeConfig EdgeConfig { get; set; }
 #endif
-        /// <summary>The edgeConfigSlug property</summary>
+        /// <summary>The fromAccount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeConfigSlug { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132FromAccount? FromAccount { get; set; }
 #nullable restore
 #else
-        public string EdgeConfigSlug { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132FromAccount FromAccount { get; set; }
 #endif
-        /// <summary>ids of deleted tokens</summary>
+        /// <summary>The toAccount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EdgeConfigTokenIds { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132ToAccount? ToAccount { get; set; }
 #nullable restore
 #else
-        public List<string> EdgeConfigTokenIds { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132ToAccount ToAccount { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132"/> and sets the default values.
@@ -64,9 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
-                { "edgeConfigSlug", n => { EdgeConfigSlug = n.GetStringValue(); } },
-                { "edgeConfigTokenIds", n => { EdgeConfigTokenIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "edgeConfig", n => { EdgeConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132EdgeConfig>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132EdgeConfig.CreateFromDiscriminatorValue); } },
+                { "fromAccount", n => { FromAccount = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132FromAccount>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132FromAccount.CreateFromDiscriminatorValue); } },
+                { "toAccount", n => { ToAccount = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132ToAccount>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132ToAccount.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,9 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("edgeConfigId", EdgeConfigId);
-            writer.WriteStringValue("edgeConfigSlug", EdgeConfigSlug);
-            writer.WriteCollectionOfPrimitiveValues<string>("edgeConfigTokenIds", EdgeConfigTokenIds);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132EdgeConfig>("edgeConfig", EdgeConfig);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132FromAccount>("fromAccount", FromAccount);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132ToAccount>("toAccount", ToAccount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

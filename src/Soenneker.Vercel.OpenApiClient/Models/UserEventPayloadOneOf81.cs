@@ -15,16 +15,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The gitlabLogin property</summary>
+        /// <summary>The githubLogin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitlabLogin { get; set; }
+        public string? GithubLogin { get; set; }
 #nullable restore
 #else
-        public string GitlabLogin { get; set; }
+        public string GithubLogin { get; set; }
 #endif
-        /// <summary>The gitlabUserId property</summary>
-        public double? GitlabUserId { get; set; }
+        /// <summary>The host property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Host { get; set; }
+#nullable restore
+#else
+        public string Host { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf81"/> and sets the default values.
         /// </summary>
@@ -50,8 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "gitlabLogin", n => { GitlabLogin = n.GetStringValue(); } },
-                { "gitlabUserId", n => { GitlabUserId = n.GetDoubleValue(); } },
+                { "githubLogin", n => { GithubLogin = n.GetStringValue(); } },
+                { "host", n => { Host = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,8 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("gitlabLogin", GitlabLogin);
-            writer.WriteDoubleValue("gitlabUserId", GitlabUserId);
+            writer.WriteStringValue("githubLogin", GithubLogin);
+            writer.WriteStringValue("host", Host);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

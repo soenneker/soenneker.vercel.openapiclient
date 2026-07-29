@@ -110,6 +110,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The middleware property</summary>
         public bool? Middleware { get; set; }
+        /// <summary>The middlewareMatcher property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigMiddlewareMatcher? MiddlewareMatcher { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigMiddlewareMatcher MiddlewareMatcher { get; set; }
+#endif
+        /// <summary>Enforced runtime for explicitly configured Routing Middleware.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigMiddlewareRuntime? MiddlewareRuntime { get; set; }
         /// <summary>The nodeVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -192,6 +202,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "ldsflags", n => { Ldsflags = n.GetStringValue(); } },
                 { "maxLambdaSize", n => { MaxLambdaSize = n.GetStringValue(); } },
                 { "middleware", n => { Middleware = n.GetBoolValue(); } },
+                { "middlewareMatcher", n => { MiddlewareMatcher = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigMiddlewareMatcher>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigMiddlewareMatcher.CreateFromDiscriminatorValue); } },
+                { "middlewareRuntime", n => { MiddlewareRuntime = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigMiddlewareRuntime>(); } },
                 { "nodeVersion", n => { NodeVersion = n.GetStringValue(); } },
                 { "outputDirectory", n => { OutputDirectory = n.GetStringValue(); } },
                 { "projectSettings", n => { ProjectSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigProjectSettings>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigProjectSettings.CreateFromDiscriminatorValue); } },
@@ -222,6 +234,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("ldsflags", Ldsflags);
             writer.WriteStringValue("maxLambdaSize", MaxLambdaSize);
             writer.WriteBoolValue("middleware", Middleware);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigMiddlewareMatcher>("middlewareMatcher", MiddlewareMatcher);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigMiddlewareRuntime>("middlewareRuntime", MiddlewareRuntime);
             writer.WriteStringValue("nodeVersion", NodeVersion);
             writer.WriteStringValue("outputDirectory", OutputDirectory);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigProjectSettings>("projectSettings", ProjectSettings);

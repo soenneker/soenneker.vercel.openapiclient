@@ -15,29 +15,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The brand property</summary>
+        /// <summary>The amount property</summary>
+        public double? Amount { get; set; }
+        /// <summary>The invoiceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Brand { get; set; }
+        public string? InvoiceId { get; set; }
 #nullable restore
 #else
-        public string Brand { get; set; }
+        public string InvoiceId { get; set; }
 #endif
-        /// <summary>The last4 property</summary>
+        /// <summary>The lineItemCount property</summary>
+        public double? LineItemCount { get; set; }
+        /// <summary>The refundReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Last4 { get; set; }
+        public string? RefundReason { get; set; }
 #nullable restore
 #else
-        public string Last4 { get; set; }
-#endif
-        /// <summary>The paymentMethodId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PaymentMethodId { get; set; }
-#nullable restore
-#else
-        public string PaymentMethodId { get; set; }
+        public string RefundReason { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf55"/> and sets the default values.
@@ -64,9 +60,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "brand", n => { Brand = n.GetStringValue(); } },
-                { "last4", n => { Last4 = n.GetStringValue(); } },
-                { "paymentMethodId", n => { PaymentMethodId = n.GetStringValue(); } },
+                { "amount", n => { Amount = n.GetDoubleValue(); } },
+                { "invoiceId", n => { InvoiceId = n.GetStringValue(); } },
+                { "lineItemCount", n => { LineItemCount = n.GetDoubleValue(); } },
+                { "refundReason", n => { RefundReason = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +73,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("brand", Brand);
-            writer.WriteStringValue("last4", Last4);
-            writer.WriteStringValue("paymentMethodId", PaymentMethodId);
+            writer.WriteDoubleValue("amount", Amount);
+            writer.WriteStringValue("invoiceId", InvoiceId);
+            writer.WriteDoubleValue("lineItemCount", LineItemCount);
+            writer.WriteStringValue("refundReason", RefundReason);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -31,13 +31,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get; set; }
 #endif
-        /// <summary>The removedTeamIds property</summary>
+        /// <summary>The reference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RemovedTeamIds { get; set; }
+        public string? Reference { get; set; }
 #nullable restore
 #else
-        public List<string> RemovedTeamIds { get; set; }
+        public string Reference { get; set; }
 #endif
         /// <summary>The repositoryName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "removedTeamIds", n => { RemovedTeamIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "reference", n => { Reference = n.GetStringValue(); } },
                 { "repositoryName", n => { RepositoryName = n.GetStringValue(); } },
             };
         }
@@ -87,7 +87,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteCollectionOfPrimitiveValues<string>("removedTeamIds", RemovedTeamIds);
+            writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("repositoryName", RepositoryName);
             writer.WriteAdditionalData(AdditionalData);
         }

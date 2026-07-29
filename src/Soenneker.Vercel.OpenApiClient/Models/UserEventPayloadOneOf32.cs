@@ -15,24 +15,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The aliasCount property</summary>
-        public double? AliasCount { get; set; }
-        /// <summary>The deployment property</summary>
+        /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf32Deployment? Deployment { get; set; }
+        public string? Currency { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf32Deployment Deployment { get; set; }
+        public string Currency { get; set; }
 #endif
-        /// <summary>The projectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
-#endif
+        /// <summary>The price property</summary>
+        public double? Price { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf32"/> and sets the default values.
         /// </summary>
@@ -58,9 +50,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "aliasCount", n => { AliasCount = n.GetDoubleValue(); } },
-                { "deployment", n => { Deployment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf32Deployment>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf32Deployment.CreateFromDiscriminatorValue); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "currency", n => { Currency = n.GetStringValue(); } },
+                { "price", n => { Price = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -70,9 +61,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("aliasCount", AliasCount);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf32Deployment>("deployment", Deployment);
-            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("currency", Currency);
+            writer.WriteDoubleValue("price", Price);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

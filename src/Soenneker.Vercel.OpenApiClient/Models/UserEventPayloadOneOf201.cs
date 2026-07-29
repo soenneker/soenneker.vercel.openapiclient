@@ -15,21 +15,95 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The next property</summary>
+        /// <summary>The connectorId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf201Next? Next { get; set; }
+        public string? ConnectorId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf201Next Next { get; set; }
+        public string ConnectorId { get; set; }
 #endif
-        /// <summary>The previous property</summary>
+        /// <summary>The connectorService property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf201Previous? Previous { get; set; }
+        public string? ConnectorService { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf201Previous Previous { get; set; }
+        public string ConnectorService { get; set; }
+#endif
+        /// <summary>The connectorType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConnectorType { get; set; }
+#nullable restore
+#else
+        public string ConnectorType { get; set; }
+#endif
+        /// <summary>The emailVerified property</summary>
+        public bool? EmailVerified { get; set; }
+        /// <summary>The environment property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Environment { get; set; }
+#nullable restore
+#else
+        public string Environment { get; set; }
+#endif
+        /// <summary>The externalIssuer property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalIssuer { get; set; }
+#nullable restore
+#else
+        public string ExternalIssuer { get; set; }
+#endif
+        /// <summary>The externalSubject property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalSubject { get; set; }
+#nullable restore
+#else
+        public string ExternalSubject { get; set; }
+#endif
+        /// <summary>The host property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Host { get; set; }
+#nullable restore
+#else
+        public string Host { get; set; }
+#endif
+        /// <summary>The installationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InstallationId { get; set; }
+#nullable restore
+#else
+        public string InstallationId { get; set; }
+#endif
+        /// <summary>The projectId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get; set; }
+#nullable restore
+#else
+        public string ProjectId { get; set; }
+#endif
+        /// <summary>The sessionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SessionId { get; set; }
+#nullable restore
+#else
+        public string SessionId { get; set; }
+#endif
+        /// <summary>The tenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TenantId { get; set; }
+#nullable restore
+#else
+        public string TenantId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf201"/> and sets the default values.
@@ -56,8 +130,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf201Next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf201Next.CreateFromDiscriminatorValue); } },
-                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf201Previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf201Previous.CreateFromDiscriminatorValue); } },
+                { "connectorId", n => { ConnectorId = n.GetStringValue(); } },
+                { "connectorService", n => { ConnectorService = n.GetStringValue(); } },
+                { "connectorType", n => { ConnectorType = n.GetStringValue(); } },
+                { "emailVerified", n => { EmailVerified = n.GetBoolValue(); } },
+                { "environment", n => { Environment = n.GetStringValue(); } },
+                { "externalIssuer", n => { ExternalIssuer = n.GetStringValue(); } },
+                { "externalSubject", n => { ExternalSubject = n.GetStringValue(); } },
+                { "host", n => { Host = n.GetStringValue(); } },
+                { "installationId", n => { InstallationId = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "sessionId", n => { SessionId = n.GetStringValue(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +151,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf201Next>("next", Next);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf201Previous>("previous", Previous);
+            writer.WriteStringValue("connectorId", ConnectorId);
+            writer.WriteStringValue("connectorService", ConnectorService);
+            writer.WriteStringValue("connectorType", ConnectorType);
+            writer.WriteBoolValue("emailVerified", EmailVerified);
+            writer.WriteStringValue("environment", Environment);
+            writer.WriteStringValue("externalIssuer", ExternalIssuer);
+            writer.WriteStringValue("externalSubject", ExternalSubject);
+            writer.WriteStringValue("host", Host);
+            writer.WriteStringValue("installationId", InstallationId);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("sessionId", SessionId);
+            writer.WriteStringValue("tenantId", TenantId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -2,7 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig;
+using Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.GlobalConfig;
 using Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.Items;
 using System.Collections.Generic;
 using System.IO;
@@ -16,10 +16,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Ex
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExperimentationRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The edgeConfig property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigRequestBuilder EdgeConfig
+        /// <summary>The globalConfig property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.GlobalConfig.GlobalConfigRequestBuilder GlobalConfig
         {
-            get => new global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.EdgeConfig.EdgeConfigRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.GlobalConfig.GlobalConfigRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The items property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Resources.Item.Experimentation.Items.ItemsRequestBuilder Items

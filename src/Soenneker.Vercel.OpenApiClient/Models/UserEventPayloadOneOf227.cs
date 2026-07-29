@@ -13,16 +13,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf227 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>The action property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf227Action? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The buildQueueConfiguration property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf227BuildQueueConfiguration? BuildQueueConfiguration { get; set; }
-        /// <summary>The elasticConcurrencyEnabled property</summary>
-        public bool? ElasticConcurrencyEnabled { get; set; }
-        /// <summary>The oldBuildQueueConfiguration property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf227OldBuildQueueConfiguration? OldBuildQueueConfiguration { get; set; }
-        /// <summary>The oldElasticConcurrencyEnabled property</summary>
-        public bool? OldElasticConcurrencyEnabled { get; set; }
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,10 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "buildQueueConfiguration", n => { BuildQueueConfiguration = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf227BuildQueueConfiguration>(); } },
-                { "elasticConcurrencyEnabled", n => { ElasticConcurrencyEnabled = n.GetBoolValue(); } },
-                { "oldBuildQueueConfiguration", n => { OldBuildQueueConfiguration = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf227OldBuildQueueConfiguration>(); } },
-                { "oldElasticConcurrencyEnabled", n => { OldElasticConcurrencyEnabled = n.GetBoolValue(); } },
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf227Action>(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
@@ -79,10 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf227BuildQueueConfiguration>("buildQueueConfiguration", BuildQueueConfiguration);
-            writer.WriteBoolValue("elasticConcurrencyEnabled", ElasticConcurrencyEnabled);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf227OldBuildQueueConfiguration>("oldBuildQueueConfiguration", OldBuildQueueConfiguration);
-            writer.WriteBoolValue("oldElasticConcurrencyEnabled", OldElasticConcurrencyEnabled);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf227Action>("action", Action);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteAdditionalData(AdditionalData);

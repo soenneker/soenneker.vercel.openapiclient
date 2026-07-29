@@ -15,6 +15,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The edgeConfigDigest property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EdgeConfigDigest { get; set; }
+#nullable restore
+#else
+        public string EdgeConfigDigest { get; set; }
+#endif
         /// <summary>The edgeConfigId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,22 +38,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string EdgeConfigSlug { get; set; }
-#endif
-        /// <summary>The edgeConfigTokenId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EdgeConfigTokenId { get; set; }
-#nullable restore
-#else
-        public string EdgeConfigTokenId { get; set; }
-#endif
-        /// <summary>The label property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Label { get; set; }
-#nullable restore
-#else
-        public string Label { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf131"/> and sets the default values.
@@ -72,10 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "edgeConfigDigest", n => { EdgeConfigDigest = n.GetStringValue(); } },
                 { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
                 { "edgeConfigSlug", n => { EdgeConfigSlug = n.GetStringValue(); } },
-                { "edgeConfigTokenId", n => { EdgeConfigTokenId = n.GetStringValue(); } },
-                { "label", n => { Label = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,10 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("edgeConfigDigest", EdgeConfigDigest);
             writer.WriteStringValue("edgeConfigId", EdgeConfigId);
             writer.WriteStringValue("edgeConfigSlug", EdgeConfigSlug);
-            writer.WriteStringValue("edgeConfigTokenId", EdgeConfigTokenId);
-            writer.WriteStringValue("label", Label);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

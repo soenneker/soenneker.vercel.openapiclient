@@ -23,21 +23,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The directoryType property</summary>
+        /// <summary>The next_role property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29NextRole? NextRole { get; set; }
+        /// <summary>The previous_role property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29PreviousRole? PreviousRole { get; set; }
+        /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DirectoryType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29Project? Project { get; set; }
 #nullable restore
 #else
-        public string DirectoryType { get; set; }
-#endif
-        /// <summary>The user property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29User? User { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29User User { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29Project Project { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29"/> and sets the default values.
@@ -65,8 +61,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accessGroup", n => { AccessGroup = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29AccessGroup>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29AccessGroup.CreateFromDiscriminatorValue); } },
-                { "directoryType", n => { DirectoryType = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29User>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29User.CreateFromDiscriminatorValue); } },
+                { "next_role", n => { NextRole = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29NextRole>(); } },
+                { "previous_role", n => { PreviousRole = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29PreviousRole>(); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29Project.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,8 +74,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29AccessGroup>("accessGroup", AccessGroup);
-            writer.WriteStringValue("directoryType", DirectoryType);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29User>("user", User);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29NextRole>("next_role", NextRole);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29PreviousRole>("previous_role", PreviousRole);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf29Project>("project", Project);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,22 +15,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The newOwnerId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? NewOwnerId { get; set; }
-#nullable restore
-#else
-        public string NewOwnerId { get; set; }
-#endif
-        /// <summary>The previousOwnerId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PreviousOwnerId { get; set; }
-#nullable restore
-#else
-        public string PreviousOwnerId { get; set; }
-#endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +22,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string ProjectId { get; set; }
+#endif
+        /// <summary>The ruleGroups property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf149RuleGroupsProperty? RuleGroups { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf149RuleGroupsProperty RuleGroups { get; set; }
+#endif
+        /// <summary>The rulesetName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RulesetName { get; set; }
+#nullable restore
+#else
+        public string RulesetName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf149"/> and sets the default values.
@@ -64,9 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "newOwnerId", n => { NewOwnerId = n.GetStringValue(); } },
-                { "previousOwnerId", n => { PreviousOwnerId = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "ruleGroups", n => { RuleGroups = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf149RuleGroupsProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf149RuleGroupsProperty.CreateFromDiscriminatorValue); } },
+                { "rulesetName", n => { RulesetName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("newOwnerId", NewOwnerId);
-            writer.WriteStringValue("previousOwnerId", PreviousOwnerId);
             writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf149RuleGroupsProperty>("ruleGroups", RuleGroups);
+            writer.WriteStringValue("rulesetName", RulesetName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

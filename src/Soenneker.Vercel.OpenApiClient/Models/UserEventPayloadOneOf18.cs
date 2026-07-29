@@ -13,15 +13,23 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf18 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The privateModel property</summary>
+        /// <summary>The added property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18PrivateModel? PrivateModel { get; set; }
+        public List<string>? Added { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18PrivateModel PrivateModel { get; set; }
+        public List<string> Added { get; set; }
+#endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The removed property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Removed { get; set; }
+#nullable restore
+#else
+        public List<string> Removed { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18"/> and sets the default values.
@@ -48,7 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "privateModel", n => { PrivateModel = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18PrivateModel>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18PrivateModel.CreateFromDiscriminatorValue); } },
+                { "added", n => { Added = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "removed", n => { Removed = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18PrivateModel>("privateModel", PrivateModel);
+            writer.WriteCollectionOfPrimitiveValues<string>("added", Added);
+            writer.WriteCollectionOfPrimitiveValues<string>("removed", Removed);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

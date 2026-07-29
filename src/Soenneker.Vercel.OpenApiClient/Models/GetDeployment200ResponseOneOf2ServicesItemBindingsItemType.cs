@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>Must be `&quot;service&quot;` for Service-to-Service HTTP bindings.</summary>
+    /// <summary>If present, must be `&quot;service&quot;` for Service-to-Service HTTP bindings.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetDeployment200ResponseOneOf2ServicesItemBindingsItemType
     {
