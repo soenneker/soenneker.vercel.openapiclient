@@ -335,6 +335,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ComplianceDocumentDownloaded,
         #pragma warning restore CS1591
+        [EnumMember(Value = "compliance-documents-bulk-downloaded")]
+        #pragma warning disable CS1591
+        ComplianceDocumentsBulkDownloaded,
+        #pragma warning restore CS1591
         [EnumMember(Value = "concurrent-builds-update")]
         #pragma warning disable CS1591
         ConcurrentBuildsUpdate,
@@ -1099,6 +1103,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ObservabilityPlusProjectEnabled,
         #pragma warning restore CS1591
+        [EnumMember(Value = "oidc-policy-created")]
+        #pragma warning disable CS1591
+        OidcPolicyCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "oidc-policy-deleted")]
+        #pragma warning disable CS1591
+        OidcPolicyDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "oidc-policy-updated")]
+        #pragma warning disable CS1591
+        OidcPolicyUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "oidc-policy-used-to-obtain-app-token")]
+        #pragma warning disable CS1591
+        OidcPolicyUsedToObtainAppToken,
+        #pragma warning restore CS1591
         [EnumMember(Value = "organization-create")]
         #pragma warning disable CS1591
         OrganizationCreate,
@@ -1290,6 +1310,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "project-build-machine-updated")]
         #pragma warning disable CS1591
         ProjectBuildMachineUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-card-widget-preference-updated")]
+        #pragma warning disable CS1591
+        ProjectCardWidgetPreferenceUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "project-client-cert-delete")]
         #pragma warning disable CS1591

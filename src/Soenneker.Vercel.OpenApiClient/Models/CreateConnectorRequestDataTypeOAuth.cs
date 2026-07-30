@@ -60,6 +60,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string DefaultAudience { get; set; }
 #endif
+        /// <summary>Default token lifetime in seconds to use when the token response omits expires_in.</summary>
+        public double? DefaultTokenExpiresIn { get; set; }
         /// <summary>Allow-list of extra claims to propagate, keyed by source (idToken). Only claims named here and present in that source are exposed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,6 +152,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "clientSecret", n => { ClientSecret = n.GetStringValue(); } },
                 { "codeChallengeMethod", n => { CodeChallengeMethod = n.GetStringValue(); } },
                 { "defaultAudience", n => { DefaultAudience = n.GetStringValue(); } },
+                { "defaultTokenExpiresIn", n => { DefaultTokenExpiresIn = n.GetDoubleValue(); } },
                 { "forwardedClaims", n => { ForwardedClaims = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthForwardedClaims>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthForwardedClaims.CreateFromDiscriminatorValue); } },
                 { "jwtBearer", n => { JwtBearer = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthJwtBearer>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthJwtBearer.CreateFromDiscriminatorValue); } },
                 { "pkceRequired", n => { PkceRequired = n.GetBoolValue(); } },
@@ -174,6 +177,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("clientSecret", ClientSecret);
             writer.WriteStringValue("codeChallengeMethod", CodeChallengeMethod);
             writer.WriteStringValue("defaultAudience", DefaultAudience);
+            writer.WriteDoubleValue("defaultTokenExpiresIn", DefaultTokenExpiresIn);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthForwardedClaims>("forwardedClaims", ForwardedClaims);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthJwtBearer>("jwtBearer", JwtBearer);
             writer.WriteBoolValue("pkceRequired", PkceRequired);

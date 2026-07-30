@@ -1745,7 +1745,7 @@
         ],
         "summary": "Create rule",
         "tags": [
-          "api-ai-gateway"
+          "ai-gateway"
         ],
         "responses": {
           "201": {
@@ -1808,7 +1808,7 @@
         ],
         "summary": "List rules",
         "tags": [
-          "api-ai-gateway"
+          "ai-gateway"
         ],
         "responses": {
           "200": {
@@ -1879,7 +1879,7 @@
         ],
         "summary": "Update rule",
         "tags": [
-          "api-ai-gateway"
+          "ai-gateway"
         ],
         "responses": {
           "200": {
@@ -1942,7 +1942,7 @@
         ],
         "summary": "Delete rule",
         "tags": [
-          "api-ai-gateway"
+          "ai-gateway"
         ],
         "responses": {
           "204": {
@@ -12422,6 +12422,11 @@
                           },
                           "defaultAudience": {
                             "type": "string"
+                          },
+                          "defaultTokenExpiresIn": {
+                            "type": "number",
+                            "minimum": 60,
+                            "description": "Default token lifetime in seconds to use when the token response omits expires_in."
                           },
                           "authorizationUrlParams": {
                             "type": "object",
@@ -79202,6 +79207,12 @@
                                 },
                                 "type": "array"
                               },
+                              "projectDomainVerify": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
                               "projectEvent": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
@@ -82153,7 +82164,7 @@
         ],
         "summary": "Lists disabled Observability Plus projects",
         "tags": [
-          "api-observability"
+          "observability"
         ],
         "responses": {
           "200": {
@@ -82241,7 +82252,7 @@
         ],
         "summary": "Updates a disabled Observability Plus project setting",
         "tags": [
-          "api-observability"
+          "observability"
         ],
         "responses": {
           "200": {
@@ -102692,6 +102703,12 @@
                                     },
                                     "type": "array"
                                   },
+                                  "projectDomainVerify": {
+                                    "items": {
+                                      "$ref": "#/components/schemas/ACLAction"
+                                    },
+                                    "type": "array"
+                                  },
                                   "projectEvent": {
                                     "items": {
                                       "$ref": "#/components/schemas/ACLAction"
@@ -110588,6 +110605,12 @@
                           "type": "array"
                         },
                         "projectDomainMove": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "projectDomainVerify": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -118660,6 +118683,12 @@
                           },
                           "type": "array"
                         },
+                        "projectDomainVerify": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "projectEvent": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -126083,6 +126112,12 @@
                           "type": "array"
                         },
                         "projectDomainMove": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "projectDomainVerify": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -134775,6 +134810,12 @@
                           "type": "array"
                         },
                         "projectDomainMove": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "projectDomainVerify": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -154877,6 +154918,12 @@
                           },
                           "type": "array"
                         },
+                        "projectDomainVerify": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "projectEvent": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -163052,7 +163099,7 @@
         "security": [],
         "summary": "Returns activated WAF config",
         "tags": [
-          "api-security"
+          "security"
         ],
         "responses": {
           "200": {
@@ -172773,7 +172820,7 @@
         "security": [],
         "summary": "Returns activated WAF config",
         "tags": [
-          "api-security"
+          "security"
         ],
         "responses": {
           "204": {
@@ -172828,7 +172875,7 @@
         "security": [],
         "summary": "Returns activated WAF config",
         "tags": [
-          "api-security"
+          "security"
         ],
         "responses": {
           "200": {
@@ -175229,7 +175276,7 @@
         ],
         "summary": "Generate a firewall rule from natural language",
         "tags": [
-          "firewall"
+          "security"
         ],
         "responses": {
           "200": {
@@ -184071,6 +184118,10 @@
                   },
                   "expiresAt": {
                     "type": "number"
+                  },
+                  "projectId": {
+                    "type": "string",
+                    "description": "The ID of the project to scope this token to"
                   }
                 }
               }
@@ -185878,6 +185929,12 @@
                               "keyName": {
                                 "type": "string"
                               },
+                              "authMethod": {
+                                "type": "string"
+                              },
+                              "appName": {
+                                "type": "string"
+                              },
                               "isByok": {
                                 "type": "string"
                               },
@@ -186526,6 +186583,12 @@
                               "keyName": {
                                 "type": "string"
                               },
+                              "authMethod": {
+                                "type": "string"
+                              },
+                              "appName": {
+                                "type": "string"
+                              },
                               "isByok": {
                                 "type": "string"
                               },
@@ -186769,11 +186832,13 @@
                               "aiModel",
                               "aiModelType",
                               "aiProvider",
+                              "appName",
                               "asnId",
                               "asnName",
                               "attributes",
                               "attributionEventName",
                               "attributionTarget",
+                              "authMethod",
                               "billableRegion",
                               "blobOperationLevel",
                               "blobOperationType",
@@ -187634,6 +187699,12 @@
                               "keyName": {
                                 "type": "string"
                               },
+                              "authMethod": {
+                                "type": "string"
+                              },
+                              "appName": {
+                                "type": "string"
+                              },
                               "isByok": {
                                 "type": "string"
                               },
@@ -188282,6 +188353,12 @@
                               "keyName": {
                                 "type": "string"
                               },
+                              "authMethod": {
+                                "type": "string"
+                              },
+                              "appName": {
+                                "type": "string"
+                              },
                               "isByok": {
                                 "type": "string"
                               },
@@ -188525,11 +188602,13 @@
                               "aiModel",
                               "aiModelType",
                               "aiProvider",
+                              "appName",
                               "asnId",
                               "asnName",
                               "attributes",
                               "attributionEventName",
                               "attributionTarget",
+                              "authMethod",
                               "billableRegion",
                               "blobOperationLevel",
                               "blobOperationType",
@@ -189354,6 +189433,12 @@
                         "keyName": {
                           "type": "string"
                         },
+                        "authMethod": {
+                          "type": "string"
+                        },
+                        "appName": {
+                          "type": "string"
+                        },
                         "isByok": {
                           "type": "string"
                         },
@@ -189597,11 +189682,13 @@
                         "aiModel",
                         "aiModelType",
                         "aiProvider",
+                        "appName",
                         "asnId",
                         "asnName",
                         "attributes",
                         "attributionEventName",
                         "attributionTarget",
+                        "authMethod",
                         "billableRegion",
                         "blobOperationLevel",
                         "blobOperationType",
@@ -190357,6 +190444,12 @@
                         "keyName": {
                           "type": "string"
                         },
+                        "authMethod": {
+                          "type": "string"
+                        },
+                        "appName": {
+                          "type": "string"
+                        },
                         "isByok": {
                           "type": "string"
                         },
@@ -190600,11 +190693,13 @@
                         "aiModel",
                         "aiModelType",
                         "aiProvider",
+                        "appName",
                         "asnId",
                         "asnName",
                         "attributes",
                         "attributionEventName",
                         "attributionTarget",
+                        "authMethod",
                         "billableRegion",
                         "blobOperationLevel",
                         "blobOperationType",
@@ -197645,6 +197740,7 @@
               "cert-system-create",
               "code-owners-config-updated",
               "compliance-document-downloaded",
+              "compliance-documents-bulk-downloaded",
               "concurrent-builds-update",
               "connect-attach-project",
               "connect-bitbucket",
@@ -197836,6 +197932,10 @@
               "observability-enabled",
               "observability-plus-project-disabled",
               "observability-plus-project-enabled",
+              "oidc-policy-created",
+              "oidc-policy-deleted",
+              "oidc-policy-updated",
+              "oidc-policy-used-to-obtain-app-token",
               "organization-create",
               "organization-delete",
               "organization-slug-update",
@@ -197884,6 +197984,7 @@
               "project-build-command-updated",
               "project-build-logs-and-source-protection-updated",
               "project-build-machine-updated",
+              "project-card-widget-preference-updated",
               "project-client-cert-delete",
               "project-client-cert-upload",
               "project-connect-configurations",
@@ -201071,6 +201172,46 @@
                   "fingerprint",
                   "slug",
                   "title"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "count": {
+                    "type": "number"
+                  },
+                  "documents": {
+                    "items": {
+                      "properties": {
+                        "slug": {
+                          "type": "string"
+                        },
+                        "documentId": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "fingerprint": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "documentId",
+                        "fingerprint",
+                        "slug",
+                        "title"
+                      ],
+                      "type": "object",
+                      "description": "A single document included in a bulk compliance download."
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "count",
+                  "documents"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -206368,6 +206509,31 @@
                         "type": "number",
                         "description": "Overrides our DEFAULT project domains limit per account or per project."
                       },
+                      "projectCardWidgetPreferences": {
+                        "items": {
+                          "properties": {
+                            "projectId": {
+                              "type": "string"
+                            },
+                            "widget": {
+                              "type": "string",
+                              "enum": [
+                                "alert",
+                                "firewall-allowed",
+                                "firewall-denied",
+                                "online",
+                                "res"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "projectId",
+                            "widget"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
                       "remoteCaching": {
                         "properties": {
                           "enabled": {
@@ -206748,6 +206914,7 @@
                               "ENTERPRISE_UNPAID_INVOICE",
                               "EXPOSURE_CAP_EXCEEDED",
                               "FAIR_USE_LIMITS_EXCEEDED",
+                              "HOBBY_ALLOCATION_PAUSED",
                               "SUBSCRIPTION_CANCELED",
                               "SUBSCRIPTION_EXPIRED",
                               "UNPAID_INVOICE"
@@ -206796,6 +206963,93 @@
                               "wafRateLimitRequest",
                               "webAnalyticsEvent"
                             ]
+                          },
+                          "hobbyAllocationPause": {
+                            "properties": {
+                              "pausedUntil": {
+                                "type": "number",
+                                "description": "Unix ms timestamp at which the pause is eligible to end. This is the single source of truth for when the pause ends. Never re-derive it by re-checking usage — usage keeps moving while a team is paused, and the pause duration is a fixed experiment parameter."
+                              },
+                              "pausedAt": {
+                                "type": "number",
+                                "description": "Unix ms timestamp of when the pause was applied."
+                              },
+                              "triggers": {
+                                "items": {
+                                  "properties": {
+                                    "allocation": {
+                                      "type": "string",
+                                      "enum": [
+                                        "analyticsUsage",
+                                        "artifacts",
+                                        "bandwidth",
+                                        "blobDataTransfer",
+                                        "blobTotalAdvancedRequests",
+                                        "blobTotalAvgSizeInBytes",
+                                        "blobTotalGetResponseObjectSizeInBytes",
+                                        "blobTotalSimpleRequests",
+                                        "connectDataTransfer",
+                                        "dataCacheRead",
+                                        "dataCacheWrite",
+                                        "edgeConfigRead",
+                                        "edgeConfigWrite",
+                                        "edgeFunctionExecutionUnits",
+                                        "edgeMiddlewareInvocations",
+                                        "edgeRequest",
+                                        "edgeRequestAdditionalCpuDuration",
+                                        "elasticConcurrencyBuildSlots",
+                                        "fastDataTransfer",
+                                        "fastOriginTransfer",
+                                        "fluidCpuDuration",
+                                        "fluidDuration",
+                                        "functionDuration",
+                                        "functionInvocation",
+                                        "imageOptimizationCacheRead",
+                                        "imageOptimizationCacheWrite",
+                                        "imageOptimizationTransformation",
+                                        "logDrainsVolume",
+                                        "monitoringMetric",
+                                        "observabilityEvent",
+                                        "onDemandConcurrencyMinutes",
+                                        "runtimeCacheRead",
+                                        "runtimeCacheWrite",
+                                        "serverlessFunctionExecution",
+                                        "sourceImages",
+                                        "wafOwaspExcessBytes",
+                                        "wafOwaspRequests",
+                                        "wafRateLimitRequest",
+                                        "webAnalyticsEvent"
+                                      ],
+                                      "description": "Metered allocation whose included amount was fully consumed."
+                                    },
+                                    "usage": {
+                                      "type": "number",
+                                      "description": "Usage recorded for that allocation when the pause was applied."
+                                    }
+                                  },
+                                  "required": [
+                                    "allocation",
+                                    "usage"
+                                  ],
+                                  "type": "object",
+                                  "description": "Allocations that were at or over 100% when the pause was applied."
+                                },
+                                "type": "array",
+                                "description": "Allocations that were at or over 100% when the pause was applied."
+                              },
+                              "cohort": {
+                                "type": "string",
+                                "description": "Experiment cohort the owner was assigned to when the pause fired. Free-form so cohort naming stays owned by the assignment path."
+                              }
+                            },
+                            "required": [
+                              "cohort",
+                              "pausedAt",
+                              "pausedUntil",
+                              "triggers"
+                            ],
+                            "type": "object",
+                            "description": "Present only when `reason` is `HOBBY_ALLOCATION_PAUSED`. Makes the pause self-describing for support without a separate lookup."
                           }
                         },
                         "required": [
@@ -211673,6 +211927,35 @@
                   "nextBuildMachineType",
                   "previousBuildMachineSelection",
                   "projectName"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "projectId": {
+                    "type": "string"
+                  },
+                  "projectName": {
+                    "type": "string"
+                  },
+                  "widget": {
+                    "nullable": true,
+                    "type": "string",
+                    "enum": [
+                      "alert",
+                      "firewall-allowed",
+                      "firewall-denied",
+                      "online",
+                      "res",
+                      null
+                    ]
+                  }
+                },
+                "required": [
+                  "projectId",
+                  "projectName",
+                  "widget"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -218080,6 +218363,346 @@
               },
               {
                 "properties": {
+                  "policy": {
+                    "properties": {
+                      "policyId": {
+                        "type": "string"
+                      },
+                      "clientId": {
+                        "type": "string"
+                      },
+                      "issuerUrl": {
+                        "type": "string"
+                      },
+                      "teamId": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "nullable": true,
+                        "type": "string",
+                        "description": "Human-readable policy name, or `null` when unnamed."
+                      },
+                      "claims": {
+                        "items": {
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "values": {
+                              "items": {
+                                "properties": {
+                                  "value": {
+                                    "type": "string"
+                                  },
+                                  "wildcards": {
+                                    "type": "boolean",
+                                    "enum": [
+                                      false,
+                                      true
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "value",
+                                  "wildcards"
+                                ],
+                                "type": "object"
+                              },
+                              "type": "array"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "values"
+                          ],
+                          "type": "object",
+                          "description": "Claim matchers an OIDC token must satisfy to use the policy."
+                        },
+                        "type": "array",
+                        "description": "Claim matchers an OIDC token must satisfy to use the policy."
+                      },
+                      "permissions": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array",
+                        "description": "Permission boundary (`['*']` = the app's full declared permissions)."
+                      },
+                      "resources": {
+                        "nullable": true,
+                        "properties": {
+                          "projectIds": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          }
+                        },
+                        "required": [
+                          "projectIds"
+                        ],
+                        "type": "object",
+                        "description": "Resource boundary, or `null` when the policy has none."
+                      },
+                      "createdAt": {
+                        "type": "number",
+                        "description": "Creation time (epoch ms)."
+                      },
+                      "updatedAt": {
+                        "type": "number",
+                        "description": "Last-update time (epoch ms)."
+                      }
+                    },
+                    "required": [
+                      "claims",
+                      "clientId",
+                      "createdAt",
+                      "issuerUrl",
+                      "name",
+                      "permissions",
+                      "policyId",
+                      "resources",
+                      "teamId",
+                      "updatedAt"
+                    ],
+                    "type": "object",
+                    "description": "A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape."
+                  },
+                  "appName": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "policy"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "before": {
+                    "properties": {
+                      "policyId": {
+                        "type": "string"
+                      },
+                      "clientId": {
+                        "type": "string"
+                      },
+                      "issuerUrl": {
+                        "type": "string"
+                      },
+                      "teamId": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "nullable": true,
+                        "type": "string",
+                        "description": "Human-readable policy name, or `null` when unnamed."
+                      },
+                      "claims": {
+                        "items": {
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "values": {
+                              "items": {
+                                "properties": {
+                                  "value": {
+                                    "type": "string"
+                                  },
+                                  "wildcards": {
+                                    "type": "boolean",
+                                    "enum": [
+                                      false,
+                                      true
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "value",
+                                  "wildcards"
+                                ],
+                                "type": "object"
+                              },
+                              "type": "array"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "values"
+                          ],
+                          "type": "object",
+                          "description": "Claim matchers an OIDC token must satisfy to use the policy."
+                        },
+                        "type": "array",
+                        "description": "Claim matchers an OIDC token must satisfy to use the policy."
+                      },
+                      "permissions": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array",
+                        "description": "Permission boundary (`['*']` = the app's full declared permissions)."
+                      },
+                      "resources": {
+                        "nullable": true,
+                        "properties": {
+                          "projectIds": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          }
+                        },
+                        "required": [
+                          "projectIds"
+                        ],
+                        "type": "object",
+                        "description": "Resource boundary, or `null` when the policy has none."
+                      },
+                      "createdAt": {
+                        "type": "number",
+                        "description": "Creation time (epoch ms)."
+                      },
+                      "updatedAt": {
+                        "type": "number",
+                        "description": "Last-update time (epoch ms)."
+                      }
+                    },
+                    "required": [
+                      "claims",
+                      "clientId",
+                      "createdAt",
+                      "issuerUrl",
+                      "name",
+                      "permissions",
+                      "policyId",
+                      "resources",
+                      "teamId",
+                      "updatedAt"
+                    ],
+                    "type": "object",
+                    "description": "A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape."
+                  },
+                  "after": {
+                    "properties": {
+                      "policyId": {
+                        "type": "string"
+                      },
+                      "clientId": {
+                        "type": "string"
+                      },
+                      "issuerUrl": {
+                        "type": "string"
+                      },
+                      "teamId": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "nullable": true,
+                        "type": "string",
+                        "description": "Human-readable policy name, or `null` when unnamed."
+                      },
+                      "claims": {
+                        "items": {
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "values": {
+                              "items": {
+                                "properties": {
+                                  "value": {
+                                    "type": "string"
+                                  },
+                                  "wildcards": {
+                                    "type": "boolean",
+                                    "enum": [
+                                      false,
+                                      true
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "value",
+                                  "wildcards"
+                                ],
+                                "type": "object"
+                              },
+                              "type": "array"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "values"
+                          ],
+                          "type": "object",
+                          "description": "Claim matchers an OIDC token must satisfy to use the policy."
+                        },
+                        "type": "array",
+                        "description": "Claim matchers an OIDC token must satisfy to use the policy."
+                      },
+                      "permissions": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array",
+                        "description": "Permission boundary (`['*']` = the app's full declared permissions)."
+                      },
+                      "resources": {
+                        "nullable": true,
+                        "properties": {
+                          "projectIds": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          }
+                        },
+                        "required": [
+                          "projectIds"
+                        ],
+                        "type": "object",
+                        "description": "Resource boundary, or `null` when the policy has none."
+                      },
+                      "createdAt": {
+                        "type": "number",
+                        "description": "Creation time (epoch ms)."
+                      },
+                      "updatedAt": {
+                        "type": "number",
+                        "description": "Last-update time (epoch ms)."
+                      }
+                    },
+                    "required": [
+                      "claims",
+                      "clientId",
+                      "createdAt",
+                      "issuerUrl",
+                      "name",
+                      "permissions",
+                      "policyId",
+                      "resources",
+                      "teamId",
+                      "updatedAt"
+                    ],
+                    "type": "object",
+                    "description": "A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints' public response shape."
+                  },
+                  "appName": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "after",
+                  "before"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "tokenId": {
                     "type": "string",
                     "description": "The token's public ID."
@@ -218607,6 +219230,7 @@
               "cert-system-create",
               "code-owners-config-updated",
               "compliance-document-downloaded",
+              "compliance-documents-bulk-downloaded",
               "concurrent-builds-update",
               "connect-attach-project",
               "connect-bitbucket",
@@ -218798,6 +219422,10 @@
               "observability-enabled",
               "observability-plus-project-disabled",
               "observability-plus-project-enabled",
+              "oidc-policy-created",
+              "oidc-policy-deleted",
+              "oidc-policy-updated",
+              "oidc-policy-used-to-obtain-app-token",
               "organization-create",
               "organization-delete",
               "organization-slug-update",
@@ -218846,6 +219474,7 @@
               "project-build-command-updated",
               "project-build-logs-and-source-protection-updated",
               "project-build-machine-updated",
+              "project-card-widget-preference-updated",
               "project-client-cert-delete",
               "project-client-cert-upload",
               "project-connect-configurations",
@@ -219241,6 +219870,7 @@
                 "cert-system-create",
                 "code-owners-config-updated",
                 "compliance-document-downloaded",
+                "compliance-documents-bulk-downloaded",
                 "concurrent-builds-update",
                 "connect-attach-project",
                 "connect-bitbucket",
@@ -219432,6 +220062,10 @@
                 "observability-enabled",
                 "observability-plus-project-disabled",
                 "observability-plus-project-enabled",
+                "oidc-policy-created",
+                "oidc-policy-deleted",
+                "oidc-policy-updated",
+                "oidc-policy-used-to-obtain-app-token",
                 "organization-create",
                 "organization-delete",
                 "organization-slug-update",
@@ -219480,6 +220114,7 @@
                 "project-build-command-updated",
                 "project-build-logs-and-source-protection-updated",
                 "project-build-machine-updated",
+                "project-card-widget-preference-updated",
                 "project-client-cert-delete",
                 "project-client-cert-upload",
                 "project-connect-configurations",
@@ -223866,6 +224501,7 @@
                   "ENTERPRISE_UNPAID_INVOICE",
                   "EXPOSURE_CAP_EXCEEDED",
                   "FAIR_USE_LIMITS_EXCEEDED",
+                  "HOBBY_ALLOCATION_PAUSED",
                   "SUBSCRIPTION_CANCELED",
                   "SUBSCRIPTION_EXPIRED",
                   "UNPAID_INVOICE"
@@ -223914,6 +224550,93 @@
                   "wafRateLimitRequest",
                   "webAnalyticsEvent"
                 ]
+              },
+              "hobbyAllocationPause": {
+                "properties": {
+                  "pausedUntil": {
+                    "type": "number",
+                    "description": "Unix ms timestamp at which the pause is eligible to end. This is the single source of truth for when the pause ends. Never re-derive it by re-checking usage — usage keeps moving while a team is paused, and the pause duration is a fixed experiment parameter."
+                  },
+                  "pausedAt": {
+                    "type": "number",
+                    "description": "Unix ms timestamp of when the pause was applied."
+                  },
+                  "triggers": {
+                    "items": {
+                      "properties": {
+                        "allocation": {
+                          "type": "string",
+                          "enum": [
+                            "analyticsUsage",
+                            "artifacts",
+                            "bandwidth",
+                            "blobDataTransfer",
+                            "blobTotalAdvancedRequests",
+                            "blobTotalAvgSizeInBytes",
+                            "blobTotalGetResponseObjectSizeInBytes",
+                            "blobTotalSimpleRequests",
+                            "connectDataTransfer",
+                            "dataCacheRead",
+                            "dataCacheWrite",
+                            "edgeConfigRead",
+                            "edgeConfigWrite",
+                            "edgeFunctionExecutionUnits",
+                            "edgeMiddlewareInvocations",
+                            "edgeRequest",
+                            "edgeRequestAdditionalCpuDuration",
+                            "elasticConcurrencyBuildSlots",
+                            "fastDataTransfer",
+                            "fastOriginTransfer",
+                            "fluidCpuDuration",
+                            "fluidDuration",
+                            "functionDuration",
+                            "functionInvocation",
+                            "imageOptimizationCacheRead",
+                            "imageOptimizationCacheWrite",
+                            "imageOptimizationTransformation",
+                            "logDrainsVolume",
+                            "monitoringMetric",
+                            "observabilityEvent",
+                            "onDemandConcurrencyMinutes",
+                            "runtimeCacheRead",
+                            "runtimeCacheWrite",
+                            "serverlessFunctionExecution",
+                            "sourceImages",
+                            "wafOwaspExcessBytes",
+                            "wafOwaspRequests",
+                            "wafRateLimitRequest",
+                            "webAnalyticsEvent"
+                          ],
+                          "description": "Metered allocation whose included amount was fully consumed."
+                        },
+                        "usage": {
+                          "type": "number",
+                          "description": "Usage recorded for that allocation when the pause was applied."
+                        }
+                      },
+                      "required": [
+                        "allocation",
+                        "usage"
+                      ],
+                      "type": "object",
+                      "description": "Allocations that were at or over 100% when the pause was applied."
+                    },
+                    "type": "array",
+                    "description": "Allocations that were at or over 100% when the pause was applied."
+                  },
+                  "cohort": {
+                    "type": "string",
+                    "description": "Experiment cohort the owner was assigned to when the pause fired. Free-form so cohort naming stays owned by the assignment path."
+                  }
+                },
+                "required": [
+                  "cohort",
+                  "pausedAt",
+                  "pausedUntil",
+                  "triggers"
+                ],
+                "type": "object",
+                "description": "Present only when `reason` is `HOBBY_ALLOCATION_PAUSED`. Makes the pause self-describing for support without a separate lookup."
               }
             },
             "required": [

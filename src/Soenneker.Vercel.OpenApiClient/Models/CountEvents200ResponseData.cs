@@ -46,6 +46,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string AiProvider { get; set; }
 #endif
+        /// <summary>The appName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AppName { get; set; }
+#nullable restore
+#else
+        public string AppName { get; set; }
+#endif
         /// <summary>The asnId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,6 +93,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string AttributionTarget { get; set; }
+#endif
+        /// <summary>The authMethod property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AuthMethod { get; set; }
+#nullable restore
+#else
+        public string AuthMethod { get; set; }
 #endif
         /// <summary>The billableRegion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1731,11 +1747,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "aiModel", n => { AiModel = n.GetStringValue(); } },
                 { "aiModelType", n => { AiModelType = n.GetStringValue(); } },
                 { "aiProvider", n => { AiProvider = n.GetStringValue(); } },
+                { "appName", n => { AppName = n.GetStringValue(); } },
                 { "asnId", n => { AsnId = n.GetStringValue(); } },
                 { "asnName", n => { AsnName = n.GetStringValue(); } },
                 { "attributes", n => { Attributes = n.GetStringValue(); } },
                 { "attributionEventName", n => { AttributionEventName = n.GetStringValue(); } },
                 { "attributionTarget", n => { AttributionTarget = n.GetStringValue(); } },
+                { "authMethod", n => { AuthMethod = n.GetStringValue(); } },
                 { "billableRegion", n => { BillableRegion = n.GetStringValue(); } },
                 { "blobOperationLevel", n => { BlobOperationLevel = n.GetStringValue(); } },
                 { "blobOperationType", n => { BlobOperationType = n.GetStringValue(); } },
@@ -1951,11 +1969,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("aiModel", AiModel);
             writer.WriteStringValue("aiModelType", AiModelType);
             writer.WriteStringValue("aiProvider", AiProvider);
+            writer.WriteStringValue("appName", AppName);
             writer.WriteStringValue("asnId", AsnId);
             writer.WriteStringValue("asnName", AsnName);
             writer.WriteStringValue("attributes", Attributes);
             writer.WriteStringValue("attributionEventName", AttributionEventName);
             writer.WriteStringValue("attributionTarget", AttributionTarget);
+            writer.WriteStringValue("authMethod", AuthMethod);
             writer.WriteStringValue("billableRegion", BillableRegion);
             writer.WriteStringValue("blobOperationLevel", BlobOperationLevel);
             writer.WriteStringValue("blobOperationType", BlobOperationType);

@@ -1446,6 +1446,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectDomainMove { get; set; }
 #endif
+        /// <summary>The projectDomainVerify property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? ProjectDomainVerify { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> ProjectDomainVerify { get; set; }
+#endif
         /// <summary>The projectEnvVars property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2339,6 +2347,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "projectDomain", n => { ProjectDomain = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "projectDomainCheckConfig", n => { ProjectDomainCheckConfig = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "projectDomainMove", n => { ProjectDomainMove = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
+                { "projectDomainVerify", n => { ProjectDomainVerify = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "projectEnvVars", n => { ProjectEnvVars = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "projectEnvVarsProduction", n => { ProjectEnvVarsProduction = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "projectEnvVarsUnownedByIntegration", n => { ProjectEnvVarsUnownedByIntegration = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
@@ -2612,6 +2621,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("projectDomain", ProjectDomain);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("projectDomainCheckConfig", ProjectDomainCheckConfig);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("projectDomainMove", ProjectDomainMove);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("projectDomainVerify", ProjectDomainVerify);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("projectEnvVars", ProjectEnvVars);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("projectEnvVarsProduction", ProjectEnvVarsProduction);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("projectEnvVarsUnownedByIntegration", ProjectEnvVarsUnownedByIntegration);

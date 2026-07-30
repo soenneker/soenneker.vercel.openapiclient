@@ -8,9 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UserEventPayloadOneOf163RequestKind
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "list_keys")]
+        [EnumMember(Value = "raw_commands")]
         #pragma warning disable CS1591
-        ListKeys,
+        RawCommands,
         #pragma warning restore CS1591
     }
 }

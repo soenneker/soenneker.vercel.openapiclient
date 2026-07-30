@@ -19,6 +19,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? BlockedAt { get; set; }
         /// <summary>The blockedDueToOverageType property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockBlockedDueToOverageType? BlockedDueToOverageType { get; set; }
+        /// <summary>Present only when `reason` is `HOBBY_ALLOCATION_PAUSED`. Makes the pause self-describing for support without a separate lookup.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockHobbyAllocationPause? HobbyAllocationPause { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockHobbyAllocationPause HobbyAllocationPause { get; set; }
+#endif
         /// <summary>The reason property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockReason? Reason { get; set; }
         /// <summary>
@@ -48,6 +56,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "blockedAt", n => { BlockedAt = n.GetDoubleValue(); } },
                 { "blockedDueToOverageType", n => { BlockedDueToOverageType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockBlockedDueToOverageType>(); } },
+                { "hobbyAllocationPause", n => { HobbyAllocationPause = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockHobbyAllocationPause>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockHobbyAllocationPause.CreateFromDiscriminatorValue); } },
                 { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockReason>(); } },
             };
         }
@@ -60,6 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("blockedAt", BlockedAt);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockBlockedDueToOverageType>("blockedDueToOverageType", BlockedDueToOverageType);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockHobbyAllocationPause>("hobbyAllocationPause", HobbyAllocationPause);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockReason>("reason", Reason);
             writer.WriteAdditionalData(AdditionalData);
         }

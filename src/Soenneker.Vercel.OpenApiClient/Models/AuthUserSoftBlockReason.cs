@@ -32,6 +32,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         FairUseLimitsExceeded,
         #pragma warning restore CS1591
+        [EnumMember(Value = "HOBBY_ALLOCATION_PAUSED")]
+        #pragma warning disable CS1591
+        HobbyAllocationPaused,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SUBSCRIPTION_CANCELED")]
         #pragma warning disable CS1591
         SubscriptionCanceled,

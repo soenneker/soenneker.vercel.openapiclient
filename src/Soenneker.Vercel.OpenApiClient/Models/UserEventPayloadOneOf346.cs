@@ -15,24 +15,64 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The authorized property</summary>
-        public bool? Authorized { get; set; }
-        /// <summary>The email property</summary>
+        /// <summary>The bitbucketUsername property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? BitbucketUsername { get; set; }
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string BitbucketUsername { get; set; }
 #endif
-        /// <summary>The reason property</summary>
+        /// <summary>The githubUsername property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get; set; }
+        public string? GithubUsername { get; set; }
 #nullable restore
 #else
-        public string Reason { get; set; }
+        public string GithubUsername { get; set; }
 #endif
+        /// <summary>The gitlabUsername property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GitlabUsername { get; set; }
+#nullable restore
+#else
+        public string GitlabUsername { get; set; }
+#endif
+        /// <summary>The gitUsername property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GitUsername { get; set; }
+#nullable restore
+#else
+        public string GitUsername { get; set; }
+#endif
+        /// <summary>The requestedTeamName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RequestedTeamName { get; set; }
+#nullable restore
+#else
+        public string RequestedTeamName { get; set; }
+#endif
+        /// <summary>The requestedTeamSlug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RequestedTeamSlug { get; set; }
+#nullable restore
+#else
+        public string RequestedTeamSlug { get; set; }
+#endif
+        /// <summary>The requestedUserName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RequestedUserName { get; set; }
+#nullable restore
+#else
+        public string RequestedUserName { get; set; }
+#endif
+        /// <summary>The source property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf346Source? Source { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf346"/> and sets the default values.
         /// </summary>
@@ -58,9 +98,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "authorized", n => { Authorized = n.GetBoolValue(); } },
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "bitbucketUsername", n => { BitbucketUsername = n.GetStringValue(); } },
+                { "gitUsername", n => { GitUsername = n.GetStringValue(); } },
+                { "githubUsername", n => { GithubUsername = n.GetStringValue(); } },
+                { "gitlabUsername", n => { GitlabUsername = n.GetStringValue(); } },
+                { "requestedTeamName", n => { RequestedTeamName = n.GetStringValue(); } },
+                { "requestedTeamSlug", n => { RequestedTeamSlug = n.GetStringValue(); } },
+                { "requestedUserName", n => { RequestedUserName = n.GetStringValue(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf346Source>(); } },
             };
         }
         /// <summary>
@@ -70,9 +115,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("authorized", Authorized);
-            writer.WriteStringValue("email", Email);
-            writer.WriteStringValue("reason", Reason);
+            writer.WriteStringValue("bitbucketUsername", BitbucketUsername);
+            writer.WriteStringValue("githubUsername", GithubUsername);
+            writer.WriteStringValue("gitlabUsername", GitlabUsername);
+            writer.WriteStringValue("gitUsername", GitUsername);
+            writer.WriteStringValue("requestedTeamName", RequestedTeamName);
+            writer.WriteStringValue("requestedTeamSlug", RequestedTeamSlug);
+            writer.WriteStringValue("requestedUserName", RequestedUserName);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf346Source>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,16 +13,24 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf296 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The prevProjectWebAnalytics property</summary>
+        /// <summary>The addedProjects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296PrevProjectWebAnalytics? PrevProjectWebAnalytics { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296AddedProjectsItem>? AddedProjects { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296PrevProjectWebAnalytics PrevProjectWebAnalytics { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296AddedProjectsItem> AddedProjects { get; set; }
 #endif
+        /// <summary>The addedProviders property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AddedProviders { get; set; }
+#nullable restore
+#else
+        public List<string> AddedProviders { get; set; }
+#endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,13 +47,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get; set; }
 #endif
-        /// <summary>The projectWebAnalytics property</summary>
+        /// <summary>The removedProjects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296ProjectWebAnalytics? ProjectWebAnalytics { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296RemovedProjectsItem>? RemovedProjects { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296ProjectWebAnalytics ProjectWebAnalytics { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296RemovedProjectsItem> RemovedProjects { get; set; }
+#endif
+        /// <summary>The removedProviders property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? RemovedProviders { get; set; }
+#nullable restore
+#else
+        public List<string> RemovedProviders { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296"/> and sets the default values.
@@ -72,10 +88,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "prevProjectWebAnalytics", n => { PrevProjectWebAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296PrevProjectWebAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296PrevProjectWebAnalytics.CreateFromDiscriminatorValue); } },
+                { "addedProjects", n => { AddedProjects = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296AddedProjectsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296AddedProjectsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "addedProviders", n => { AddedProviders = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "projectWebAnalytics", n => { ProjectWebAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296ProjectWebAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296ProjectWebAnalytics.CreateFromDiscriminatorValue); } },
+                { "removedProjects", n => { RemovedProjects = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296RemovedProjectsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296RemovedProjectsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "removedProviders", n => { RemovedProviders = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -85,10 +103,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296PrevProjectWebAnalytics>("prevProjectWebAnalytics", PrevProjectWebAnalytics);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296AddedProjectsItem>("addedProjects", AddedProjects);
+            writer.WriteCollectionOfPrimitiveValues<string>("addedProviders", AddedProviders);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296ProjectWebAnalytics>("projectWebAnalytics", ProjectWebAnalytics);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf296RemovedProjectsItem>("removedProjects", RemovedProjects);
+            writer.WriteCollectionOfPrimitiveValues<string>("removedProviders", RemovedProviders);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
