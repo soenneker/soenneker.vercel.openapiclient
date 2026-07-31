@@ -11747,6 +11747,14 @@
                       "type": "string",
                       "description": "Best-effort identifier of the third-party service this client represents, independent of `type`. Examples: `'slack'`, `'mcp.linear.app'`, `'auth.example.com'`. Always non-empty on the API response — falls back through `storedClient.service ?? typeDef.service ?? typeDef.type`."
                     },
+                    "connectionMethod": {
+                      "type": "string",
+                      "description": "The connection method this connector was created from, when the create request named one."
+                    },
+                    "target": {
+                      "type": "string",
+                      "description": "Which of the service's products/surfaces this connector points at."
+                    },
                     "name": {
                       "type": "string"
                     },
@@ -12340,6 +12348,9 @@
                             "default": {}
                           },
                           "clientId": {
+                            "type": "string"
+                          },
+                          "clientName": {
                             "type": "string"
                           },
                           "clientSecret": {
@@ -77081,6 +77092,7 @@
                               "buildMachineType": {
                                 "type": "string",
                                 "enum": [
+                                  "basic",
                                   "enhanced",
                                   "standard",
                                   "turbo"
@@ -77280,6 +77292,7 @@
                               "buildMachineType": {
                                 "type": "string",
                                 "enum": [
+                                  "basic",
                                   "enhanced",
                                   "standard",
                                   "turbo"
@@ -78470,6 +78483,12 @@
                                 "type": "array"
                               },
                               "marketplaceExperimentationItem": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "marketplaceFlexCommit": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
                                 },
@@ -90678,6 +90697,7 @@
                               "buildMachineType": {
                                 "type": "string",
                                 "enum": [
+                                  "basic",
                                   "enhanced",
                                   "standard",
                                   "turbo"
@@ -95204,6 +95224,7 @@
                                   "buildMachineType": {
                                     "type": "string",
                                     "enum": [
+                                      "basic",
                                       "enhanced",
                                       "standard",
                                       "turbo"
@@ -100577,6 +100598,7 @@
                                   "buildMachineType": {
                                     "type": "string",
                                     "enum": [
+                                      "basic",
                                       "enhanced",
                                       "standard",
                                       "turbo"
@@ -100776,6 +100798,7 @@
                                   "buildMachineType": {
                                     "type": "string",
                                     "enum": [
+                                      "basic",
                                       "enhanced",
                                       "standard",
                                       "turbo"
@@ -101966,6 +101989,12 @@
                                     "type": "array"
                                   },
                                   "marketplaceExperimentationItem": {
+                                    "items": {
+                                      "$ref": "#/components/schemas/ACLAction"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "marketplaceFlexCommit": {
                                     "items": {
                                       "$ref": "#/components/schemas/ACLAction"
                                     },
@@ -108484,6 +108513,7 @@
                         "buildMachineType": {
                           "type": "string",
                           "enum": [
+                            "basic",
                             "enhanced",
                             "standard",
                             "turbo"
@@ -108683,6 +108713,7 @@
                         "buildMachineType": {
                           "type": "string",
                           "enum": [
+                            "basic",
                             "enhanced",
                             "standard",
                             "turbo"
@@ -109873,6 +109904,12 @@
                           "type": "array"
                         },
                         "marketplaceExperimentationItem": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "marketplaceFlexCommit": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -113218,6 +113255,7 @@
                     "properties": {
                       "buildMachineType": {
                         "enum": [
+                          "basic",
                           "enhanced",
                           "turbo",
                           "standard",
@@ -116557,6 +116595,7 @@
                         "buildMachineType": {
                           "type": "string",
                           "enum": [
+                            "basic",
                             "enhanced",
                             "standard",
                             "turbo"
@@ -116756,6 +116795,7 @@
                         "buildMachineType": {
                           "type": "string",
                           "enum": [
+                            "basic",
                             "enhanced",
                             "standard",
                             "turbo"
@@ -117946,6 +117986,12 @@
                           "type": "array"
                         },
                         "marketplaceExperimentationItem": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "marketplaceFlexCommit": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -123991,6 +124037,7 @@
                         "buildMachineType": {
                           "type": "string",
                           "enum": [
+                            "basic",
                             "enhanced",
                             "standard",
                             "turbo"
@@ -124190,6 +124237,7 @@
                         "buildMachineType": {
                           "type": "string",
                           "enum": [
+                            "basic",
                             "enhanced",
                             "standard",
                             "turbo"
@@ -125380,6 +125428,12 @@
                           "type": "array"
                         },
                         "marketplaceExperimentationItem": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "marketplaceFlexCommit": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -128614,6 +128668,7 @@
                       "buildMachineType": {
                         "enum": [
                           null,
+                          "basic",
                           "enhanced",
                           "turbo",
                           "standard",
@@ -132689,6 +132744,7 @@
                         "buildMachineType": {
                           "type": "string",
                           "enum": [
+                            "basic",
                             "enhanced",
                             "standard",
                             "turbo"
@@ -132888,6 +132944,7 @@
                         "buildMachineType": {
                           "type": "string",
                           "enum": [
+                            "basic",
                             "enhanced",
                             "standard",
                             "turbo"
@@ -134078,6 +134135,12 @@
                           "type": "array"
                         },
                         "marketplaceExperimentationItem": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "marketplaceFlexCommit": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -152792,6 +152855,7 @@
                         "buildMachineType": {
                           "type": "string",
                           "enum": [
+                            "basic",
                             "enhanced",
                             "standard",
                             "turbo"
@@ -152991,6 +153055,7 @@
                         "buildMachineType": {
                           "type": "string",
                           "enum": [
+                            "basic",
                             "enhanced",
                             "standard",
                             "turbo"
@@ -154181,6 +154246,12 @@
                           "type": "array"
                         },
                         "marketplaceExperimentationItem": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "marketplaceFlexCommit": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -183004,6 +183075,7 @@
                           "default": {
                             "type": "string",
                             "enum": [
+                              "basic",
                               "enhanced",
                               "turbo",
                               "standard",
@@ -186115,6 +186187,15 @@
                               "contentCaptureOutputs": {
                                 "type": "string"
                               },
+                              "transcriptStatus": {
+                                "type": "string"
+                              },
+                              "transcriptInputs": {
+                                "type": "string"
+                              },
+                              "transcriptOutputs": {
+                                "type": "string"
+                              },
                               "providerAttemptError": {
                                 "type": "string"
                               },
@@ -186769,6 +186850,15 @@
                               "contentCaptureOutputs": {
                                 "type": "string"
                               },
+                              "transcriptStatus": {
+                                "type": "string"
+                              },
+                              "transcriptInputs": {
+                                "type": "string"
+                              },
+                              "transcriptOutputs": {
+                                "type": "string"
+                              },
                               "providerAttemptError": {
                                 "type": "string"
                               },
@@ -187022,6 +187112,9 @@
                               "toolCallSuccess",
                               "toolCallType",
                               "trafficSource",
+                              "transcriptInputs",
+                              "transcriptOutputs",
+                              "transcriptStatus",
                               "triggeringTag",
                               "utmCampaign",
                               "utmContent",
@@ -187885,6 +187978,15 @@
                               "contentCaptureOutputs": {
                                 "type": "string"
                               },
+                              "transcriptStatus": {
+                                "type": "string"
+                              },
+                              "transcriptInputs": {
+                                "type": "string"
+                              },
+                              "transcriptOutputs": {
+                                "type": "string"
+                              },
                               "providerAttemptError": {
                                 "type": "string"
                               },
@@ -188539,6 +188641,15 @@
                               "contentCaptureOutputs": {
                                 "type": "string"
                               },
+                              "transcriptStatus": {
+                                "type": "string"
+                              },
+                              "transcriptInputs": {
+                                "type": "string"
+                              },
+                              "transcriptOutputs": {
+                                "type": "string"
+                              },
                               "providerAttemptError": {
                                 "type": "string"
                               },
@@ -188792,6 +188903,9 @@
                               "toolCallSuccess",
                               "toolCallType",
                               "trafficSource",
+                              "transcriptInputs",
+                              "transcriptOutputs",
+                              "transcriptStatus",
                               "triggeringTag",
                               "utmCampaign",
                               "utmContent",
@@ -189619,6 +189733,15 @@
                         "contentCaptureOutputs": {
                           "type": "string"
                         },
+                        "transcriptStatus": {
+                          "type": "string"
+                        },
+                        "transcriptInputs": {
+                          "type": "string"
+                        },
+                        "transcriptOutputs": {
+                          "type": "string"
+                        },
                         "providerAttemptError": {
                           "type": "string"
                         },
@@ -189872,6 +189995,9 @@
                         "toolCallSuccess",
                         "toolCallType",
                         "trafficSource",
+                        "transcriptInputs",
+                        "transcriptOutputs",
+                        "transcriptStatus",
                         "triggeringTag",
                         "utmCampaign",
                         "utmContent",
@@ -190630,6 +190756,15 @@
                         "contentCaptureOutputs": {
                           "type": "string"
                         },
+                        "transcriptStatus": {
+                          "type": "string"
+                        },
+                        "transcriptInputs": {
+                          "type": "string"
+                        },
+                        "transcriptOutputs": {
+                          "type": "string"
+                        },
                         "providerAttemptError": {
                           "type": "string"
                         },
@@ -190883,6 +191018,9 @@
                         "toolCallSuccess",
                         "toolCallType",
                         "trafficSource",
+                        "transcriptInputs",
+                        "transcriptOutputs",
+                        "transcriptStatus",
                         "triggeringTag",
                         "utmCampaign",
                         "utmContent",
@@ -197909,6 +198047,7 @@
               "log-drain-enabled",
               "login",
               "manual-deployment-promotion-created",
+              "marketplace-flex-commit-opt-in",
               "marketplace-integration-allowlist-updated",
               "microfrontend-group-added",
               "microfrontend-group-deleted",
@@ -198193,11 +198332,14 @@
               "tracing-configured",
               "tracing-disabled",
               "unlink-login-connection",
+              "update-account-flow-triggered",
               "user-delete",
               "user-emu-account-archived",
               "user-emu-account-deleted",
               "user-emu-account-recovered",
+              "user-mfa-challenge-failed",
               "user-mfa-challenge-verified",
+              "user-mfa-change-failed",
               "user-mfa-configuration-updated",
               "user-mfa-recovery-codes-regenerated",
               "user-mfa-removed",
@@ -206705,6 +206847,7 @@
                               "default": {
                                 "type": "string",
                                 "enum": [
+                                  "basic",
                                   "elastic",
                                   "enhanced",
                                   "standard",
@@ -209862,6 +210005,41 @@
               },
               {
                 "properties": {
+                  "periods": {
+                    "items": {
+                      "properties": {
+                        "periodNumber": {
+                          "type": "number"
+                        },
+                        "percent": {
+                          "type": "string"
+                        },
+                        "startDate": {
+                          "type": "string"
+                        },
+                        "endDate": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "endDate",
+                        "percent",
+                        "periodNumber",
+                        "startDate"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "periods"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "enabled": {
                     "type": "boolean",
                     "enum": [
@@ -210587,6 +210765,13 @@
                           true
                         ]
                       },
+                      "connectSrcNotificationsEnabled": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ]
+                      },
                       "computedScriptSrc": {
                         "type": "string"
                       },
@@ -210646,6 +210831,13 @@
                         ]
                       },
                       "omitScriptNonce": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ]
+                      },
+                      "connectSrcNotificationsEnabled": {
                         "type": "boolean",
                         "enum": [
                           false,
@@ -216209,6 +216401,7 @@
                   "previous": {
                     "type": "string",
                     "enum": [
+                      "basic",
                       "elastic",
                       "enhanced",
                       "standard",
@@ -216218,6 +216411,7 @@
                   "next": {
                     "type": "string",
                     "enum": [
+                      "basic",
                       "elastic",
                       "enhanced",
                       "standard",
@@ -217368,6 +217562,15 @@
               },
               {
                 "properties": {
+                  "teamName": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "totp": {
                     "type": "boolean",
                     "enum": [
@@ -217423,6 +217626,53 @@
                 },
                 "required": [
                   "username"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "method": {
+                    "type": "string",
+                    "enum": [
+                      "email-otp",
+                      "recovery-code",
+                      "totp",
+                      "webauthn"
+                    ]
+                  },
+                  "reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "method",
+                  "reason"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "action": {
+                    "type": "string",
+                    "enum": [
+                      "add-passkey",
+                      "add-totp",
+                      "admin-remove",
+                      "disable",
+                      "enable",
+                      "regenerate-recovery-codes",
+                      "remove-passkey"
+                    ]
+                  },
+                  "reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "action",
+                  "reason"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -219399,6 +219649,7 @@
               "log-drain-enabled",
               "login",
               "manual-deployment-promotion-created",
+              "marketplace-flex-commit-opt-in",
               "marketplace-integration-allowlist-updated",
               "microfrontend-group-added",
               "microfrontend-group-deleted",
@@ -219683,11 +219934,14 @@
               "tracing-configured",
               "tracing-disabled",
               "unlink-login-connection",
+              "update-account-flow-triggered",
               "user-delete",
               "user-emu-account-archived",
               "user-emu-account-deleted",
               "user-emu-account-recovered",
+              "user-mfa-challenge-failed",
               "user-mfa-challenge-verified",
+              "user-mfa-change-failed",
               "user-mfa-configuration-updated",
               "user-mfa-recovery-codes-regenerated",
               "user-mfa-removed",
@@ -220039,6 +220293,7 @@
                 "log-drain-enabled",
                 "login",
                 "manual-deployment-promotion-created",
+                "marketplace-flex-commit-opt-in",
                 "marketplace-integration-allowlist-updated",
                 "microfrontend-group-added",
                 "microfrontend-group-deleted",
@@ -220323,11 +220578,14 @@
                 "tracing-configured",
                 "tracing-disabled",
                 "unlink-login-connection",
+                "update-account-flow-triggered",
                 "user-delete",
                 "user-emu-account-archived",
                 "user-emu-account-deleted",
                 "user-emu-account-recovered",
+                "user-mfa-challenge-failed",
                 "user-mfa-challenge-verified",
+                "user-mfa-change-failed",
                 "user-mfa-configuration-updated",
                 "user-mfa-recovery-codes-regenerated",
                 "user-mfa-removed",
@@ -223113,6 +223371,7 @@
                   "default": {
                     "type": "string",
                     "enum": [
+                      "basic",
                       "elastic",
                       "enhanced",
                       "standard",

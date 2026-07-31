@@ -15,51 +15,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The chatId property</summary>
+        /// <summary>The configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChatId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Configuration? Configuration { get; set; }
 #nullable restore
 #else
-        public string ChatId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Configuration Configuration { get; set; }
 #endif
-        /// <summary>The events property</summary>
+        /// <summary>The newName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395EventsItem>? Events { get; set; }
+        public string? NewName { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395EventsItem> Events { get; set; }
+        public string NewName { get; set; }
 #endif
-        /// <summary>The inputTokens property</summary>
-        public double? InputTokens { get; set; }
-        /// <summary>The messageId property</summary>
+        /// <summary>The peering property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Peering? Peering { get; set; }
 #nullable restore
 #else
-        public string MessageId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Peering Peering { get; set; }
 #endif
-        /// <summary>The model property</summary>
+        /// <summary>The team property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Team? Team { get; set; }
 #nullable restore
 #else
-        public string Model { get; set; }
-#endif
-        /// <summary>The outputTokens property</summary>
-        public double? OutputTokens { get; set; }
-        /// <summary>The timestamp property</summary>
-        public double? Timestamp { get; set; }
-        /// <summary>The useCase property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UseCase { get; set; }
-#nullable restore
-#else
-        public string UseCase { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Team Team { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395"/> and sets the default values.
@@ -86,14 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "chatId", n => { ChatId = n.GetStringValue(); } },
-                { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395EventsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395EventsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "inputTokens", n => { InputTokens = n.GetDoubleValue(); } },
-                { "messageId", n => { MessageId = n.GetStringValue(); } },
-                { "model", n => { Model = n.GetStringValue(); } },
-                { "outputTokens", n => { OutputTokens = n.GetDoubleValue(); } },
-                { "timestamp", n => { Timestamp = n.GetDoubleValue(); } },
-                { "useCase", n => { UseCase = n.GetStringValue(); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Configuration>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Configuration.CreateFromDiscriminatorValue); } },
+                { "newName", n => { NewName = n.GetStringValue(); } },
+                { "peering", n => { Peering = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Peering>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Peering.CreateFromDiscriminatorValue); } },
+                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Team.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -103,14 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("chatId", ChatId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395EventsItem>("events", Events);
-            writer.WriteDoubleValue("inputTokens", InputTokens);
-            writer.WriteStringValue("messageId", MessageId);
-            writer.WriteStringValue("model", Model);
-            writer.WriteDoubleValue("outputTokens", OutputTokens);
-            writer.WriteDoubleValue("timestamp", Timestamp);
-            writer.WriteStringValue("useCase", UseCase);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Configuration>("configuration", Configuration);
+            writer.WriteStringValue("newName", NewName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Peering>("peering", Peering);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Team>("team", Team);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

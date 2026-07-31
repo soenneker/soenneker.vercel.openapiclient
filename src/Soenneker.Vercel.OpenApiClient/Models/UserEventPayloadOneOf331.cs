@@ -19,6 +19,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Next? Next { get; set; }
         /// <summary>The previous property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Previous? Previous { get; set; }
+        /// <summary>The teamSlug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TeamSlug { get; set; }
+#nullable restore
+#else
+        public string TeamSlug { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331"/> and sets the default values.
         /// </summary>
@@ -46,6 +54,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "next", n => { Next = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Next>(); } },
                 { "previous", n => { Previous = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Previous>(); } },
+                { "teamSlug", n => { TeamSlug = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,6 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Next>("next", Next);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf331Previous>("previous", Previous);
+            writer.WriteStringValue("teamSlug", TeamSlug);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

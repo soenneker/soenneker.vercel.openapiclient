@@ -15,21 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The current property</summary>
+        /// <summary>The privateLinkEndpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210Current? Current { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210PrivateLinkEndpoint? PrivateLinkEndpoint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210Current Current { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210PrivateLinkEndpoint PrivateLinkEndpoint { get; set; }
 #endif
-        /// <summary>The prev property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210Prev? Prev { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210Prev Prev { get; set; }
+        public string ProjectId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "current", n => { Current = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210Current>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210Current.CreateFromDiscriminatorValue); } },
-                { "prev", n => { Prev = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210Prev>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210Prev.CreateFromDiscriminatorValue); } },
+                { "privateLinkEndpoint", n => { PrivateLinkEndpoint = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210PrivateLinkEndpoint>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210PrivateLinkEndpoint.CreateFromDiscriminatorValue); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210Current>("current", Current);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210Prev>("prev", Prev);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf210PrivateLinkEndpoint>("privateLinkEndpoint", PrivateLinkEndpoint);
+            writer.WriteStringValue("projectId", ProjectId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

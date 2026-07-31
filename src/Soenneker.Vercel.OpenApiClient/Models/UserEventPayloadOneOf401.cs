@@ -15,29 +15,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Unix epoch milliseconds. Absent when the token never expires.</summary>
-        public double? ExpiresAt { get; set; }
-        /// <summary>The geolocation property</summary>
+        /// <summary>The deploymentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Geolocation? Geolocation { get; set; }
+        public string? DeploymentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Geolocation Geolocation { get; set; }
+        public string DeploymentId { get; set; }
 #endif
-        /// <summary>Whether the token was issued with RFC 9396 authorization details.</summary>
-        public bool? HasAuthorizationDetails { get; set; }
-        /// <summary>The ip property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Ip { get; set; }
-#nullable restore
-#else
-        public string Ip { get; set; }
-#endif
-        /// <summary>How the token was issued. Always `&apos;manual&apos;` for explicit PAT creation.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Origin? Origin { get; set; }
-        /// <summary>Present when `scope` is `&apos;project&apos;`.</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectId { get; set; }
@@ -45,75 +31,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>Present when `scope` is `&apos;project&apos;`.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401ProjectScope? ProjectScope { get; set; }
-        /// <summary>The reqId property</summary>
+        /// <summary>The runId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReqId { get; set; }
+        public string? RunId { get; set; }
 #nullable restore
 #else
-        public string ReqId { get; set; }
-#endif
-        /// <summary>The reqUrl property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ReqUrl { get; set; }
-#nullable restore
-#else
-        public string ReqUrl { get; set; }
-#endif
-        /// <summary>&quot;Scope of the token: - `&apos;user&apos;`: full-account token (not tied to any team). - `&apos;team&apos;`: scoped to a single team. - `&apos;project&apos;`: scoped to a single project within a team.&quot;</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Scope? Scope { get; set; }
-        /// <summary>Present when `scope` is `&apos;team&apos;` or `&apos;project&apos;`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TeamId { get; set; }
-#nullable restore
-#else
-        public string TeamId { get; set; }
-#endif
-        /// <summary>Present when `scope` is `&apos;team&apos;` or `&apos;project&apos;`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TeamSlug { get; set; }
-#nullable restore
-#else
-        public string TeamSlug { get; set; }
-#endif
-        /// <summary>The token&apos;s public ID.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TokenId { get; set; }
-#nullable restore
-#else
-        public string TokenId { get; set; }
-#endif
-        /// <summary>User-supplied name of the token.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TokenName { get; set; }
-#nullable restore
-#else
-        public string TokenName { get; set; }
-#endif
-        /// <summary>The token prefix used when showing a safe checksum-style fingerprint.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401TokenPrefix? TokenPrefix { get; set; }
-        /// <summary>The token checksum suffix.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TokenSuffix { get; set; }
-#nullable restore
-#else
-        public string TokenSuffix { get; set; }
-#endif
-        /// <summary>The userAgent property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserAgent { get; set; }
-#nullable restore
-#else
-        public string UserAgent { get; set; }
+        public string RunId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401"/> and sets the default values.
@@ -140,23 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
-                { "geolocation", n => { Geolocation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Geolocation>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Geolocation.CreateFromDiscriminatorValue); } },
-                { "hasAuthorizationDetails", n => { HasAuthorizationDetails = n.GetBoolValue(); } },
-                { "ip", n => { Ip = n.GetStringValue(); } },
-                { "origin", n => { Origin = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Origin>(); } },
+                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectScope", n => { ProjectScope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401ProjectScope>(); } },
-                { "reqId", n => { ReqId = n.GetStringValue(); } },
-                { "reqUrl", n => { ReqUrl = n.GetStringValue(); } },
-                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Scope>(); } },
-                { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "teamSlug", n => { TeamSlug = n.GetStringValue(); } },
-                { "tokenId", n => { TokenId = n.GetStringValue(); } },
-                { "tokenName", n => { TokenName = n.GetStringValue(); } },
-                { "tokenPrefix", n => { TokenPrefix = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401TokenPrefix>(); } },
-                { "tokenSuffix", n => { TokenSuffix = n.GetStringValue(); } },
-                { "userAgent", n => { UserAgent = n.GetStringValue(); } },
+                { "runId", n => { RunId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -166,23 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("expiresAt", ExpiresAt);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Geolocation>("geolocation", Geolocation);
-            writer.WriteBoolValue("hasAuthorizationDetails", HasAuthorizationDetails);
-            writer.WriteStringValue("ip", Ip);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Origin>("origin", Origin);
+            writer.WriteStringValue("deploymentId", DeploymentId);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401ProjectScope>("projectScope", ProjectScope);
-            writer.WriteStringValue("reqId", ReqId);
-            writer.WriteStringValue("reqUrl", ReqUrl);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Scope>("scope", Scope);
-            writer.WriteStringValue("teamId", TeamId);
-            writer.WriteStringValue("teamSlug", TeamSlug);
-            writer.WriteStringValue("tokenId", TokenId);
-            writer.WriteStringValue("tokenName", TokenName);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401TokenPrefix>("tokenPrefix", TokenPrefix);
-            writer.WriteStringValue("tokenSuffix", TokenSuffix);
-            writer.WriteStringValue("userAgent", UserAgent);
+            writer.WriteStringValue("runId", RunId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

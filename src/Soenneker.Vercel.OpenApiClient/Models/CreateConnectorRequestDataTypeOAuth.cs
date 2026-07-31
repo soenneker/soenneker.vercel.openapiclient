@@ -36,6 +36,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
+        /// <summary>The clientName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientName { get; set; }
+#nullable restore
+#else
+        public string ClientName { get; set; }
+#endif
         /// <summary>The clientSecret property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -149,6 +157,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "authorizationUrlParams", n => { AuthorizationUrlParams = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthAuthorizationUrlParams>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthAuthorizationUrlParams.CreateFromDiscriminatorValue); } },
                 { "clientCredentials", n => { ClientCredentials = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthClientCredentials>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthClientCredentials.CreateFromDiscriminatorValue); } },
                 { "clientId", n => { ClientId = n.GetStringValue(); } },
+                { "clientName", n => { ClientName = n.GetStringValue(); } },
                 { "clientSecret", n => { ClientSecret = n.GetStringValue(); } },
                 { "codeChallengeMethod", n => { CodeChallengeMethod = n.GetStringValue(); } },
                 { "defaultAudience", n => { DefaultAudience = n.GetStringValue(); } },
@@ -174,6 +183,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthAuthorizationUrlParams>("authorizationUrlParams", AuthorizationUrlParams);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthClientCredentials>("clientCredentials", ClientCredentials);
             writer.WriteStringValue("clientId", ClientId);
+            writer.WriteStringValue("clientName", ClientName);
             writer.WriteStringValue("clientSecret", ClientSecret);
             writer.WriteStringValue("codeChallengeMethod", CodeChallengeMethod);
             writer.WriteStringValue("defaultAudience", DefaultAudience);

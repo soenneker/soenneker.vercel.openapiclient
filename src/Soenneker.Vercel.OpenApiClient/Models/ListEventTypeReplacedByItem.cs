@@ -1011,6 +1011,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ManualDeploymentPromotionCreated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "marketplace-flex-commit-opt-in")]
+        #pragma warning disable CS1591
+        MarketplaceFlexCommitOptIn,
+        #pragma warning restore CS1591
         [EnumMember(Value = "marketplace-integration-allowlist-updated")]
         #pragma warning disable CS1591
         MarketplaceIntegrationAllowlistUpdated,
@@ -2147,6 +2151,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         UnlinkLoginConnection,
         #pragma warning restore CS1591
+        [EnumMember(Value = "update-account-flow-triggered")]
+        #pragma warning disable CS1591
+        UpdateAccountFlowTriggered,
+        #pragma warning restore CS1591
         [EnumMember(Value = "user-delete")]
         #pragma warning disable CS1591
         UserDelete,
@@ -2163,9 +2171,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         UserEmuAccountRecovered,
         #pragma warning restore CS1591
+        [EnumMember(Value = "user-mfa-challenge-failed")]
+        #pragma warning disable CS1591
+        UserMfaChallengeFailed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "user-mfa-challenge-verified")]
         #pragma warning disable CS1591
         UserMfaChallengeVerified,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "user-mfa-change-failed")]
+        #pragma warning disable CS1591
+        UserMfaChangeFailed,
         #pragma warning restore CS1591
         [EnumMember(Value = "user-mfa-configuration-updated")]
         #pragma warning disable CS1591

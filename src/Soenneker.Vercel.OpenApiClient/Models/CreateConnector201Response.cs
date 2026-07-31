@@ -46,6 +46,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ClientUrl { get; set; }
 #endif
+        /// <summary>The connection method this connector was created from, when the create request named one.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConnectionMethod { get; set; }
+#nullable restore
+#else
+        public string ConnectionMethod { get; set; }
+#endif
         /// <summary>The createdAt property</summary>
         public double? CreatedAt { get; set; }
         /// <summary>The createdBy property</summary>
@@ -186,6 +194,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public bool? SupportsRevocation { get; set; }
         /// <summary>Whether this client type supports trigger webhooks. Derived from the type definition; indicates that `triggers` and `triggerDestinations` may be meaningful for this client.</summary>
         public bool? SupportsTriggers { get; set; }
+        /// <summary>Which of the service&apos;s products/surfaces this connector points at.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Target { get; set; }
+#nullable restore
+#else
+        public string Target { get; set; }
+#endif
         /// <summary>Destinations that incoming triggers should be forwarded to. Limited to `MAX_CONNEX_TRIGGER_DESTINATIONS` entries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -283,6 +299,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "appTokens", n => { AppTokens = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseAppTokens>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseAppTokens.CreateFromDiscriminatorValue); } },
                 { "backgroundColor", n => { BackgroundColor = n.GetStringValue(); } },
                 { "clientUrl", n => { ClientUrl = n.GetStringValue(); } },
+                { "connectionMethod", n => { ConnectionMethod = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreatedBy>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreatedBy.CreateFromDiscriminatorValue); } },
                 { "creationMode", n => { CreationMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreationMode>(); } },
@@ -308,6 +325,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "supportsInstallation", n => { SupportsInstallation = n.GetBoolValue(); } },
                 { "supportsRevocation", n => { SupportsRevocation = n.GetBoolValue(); } },
                 { "supportsTriggers", n => { SupportsTriggers = n.GetBoolValue(); } },
+                { "target", n => { Target = n.GetStringValue(); } },
                 { "triggerDestinations", n => { TriggerDestinations = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseTriggerDestinationsItem>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseTriggerDestinationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "triggers", n => { Triggers = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseTriggers>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseTriggers.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseType>(); } },
@@ -331,6 +349,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseAppTokens>("appTokens", AppTokens);
             writer.WriteStringValue("backgroundColor", BackgroundColor);
             writer.WriteStringValue("clientUrl", ClientUrl);
+            writer.WriteStringValue("connectionMethod", ConnectionMethod);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreatedBy>("createdBy", CreatedBy);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseCreationMode>("creationMode", CreationMode);
@@ -356,6 +375,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("supportsInstallation", SupportsInstallation);
             writer.WriteBoolValue("supportsRevocation", SupportsRevocation);
             writer.WriteBoolValue("supportsTriggers", SupportsTriggers);
+            writer.WriteStringValue("target", Target);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseTriggerDestinationsItem>("triggerDestinations", TriggerDestinations);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseTriggers>("triggers", Triggers);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseType>("type", Type);

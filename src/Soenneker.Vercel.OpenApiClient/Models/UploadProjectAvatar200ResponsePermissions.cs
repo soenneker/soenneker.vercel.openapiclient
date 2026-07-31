@@ -966,6 +966,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MarketplaceExperimentationItem { get; set; }
 #endif
+        /// <summary>The marketplaceFlexCommit property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MarketplaceFlexCommit { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MarketplaceFlexCommit { get; set; }
+#endif
         /// <summary>The marketplaceInstallationMember property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2286,6 +2294,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "marketplaceBillingData", n => { MarketplaceBillingData = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "marketplaceExperimentationEdgeConfigData", n => { MarketplaceExperimentationEdgeConfigData = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "marketplaceExperimentationItem", n => { MarketplaceExperimentationItem = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
+                { "marketplaceFlexCommit", n => { MarketplaceFlexCommit = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "marketplaceInstallationMember", n => { MarketplaceInstallationMember = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "marketplaceInvoice", n => { MarketplaceInvoice = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "marketplaceSettings", n => { MarketplaceSettings = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
@@ -2561,6 +2570,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("marketplaceBillingData", MarketplaceBillingData);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("marketplaceExperimentationEdgeConfigData", MarketplaceExperimentationEdgeConfigData);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("marketplaceExperimentationItem", MarketplaceExperimentationItem);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("marketplaceFlexCommit", MarketplaceFlexCommit);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("marketplaceInstallationMember", MarketplaceInstallationMember);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("marketplaceInvoice", MarketplaceInvoice);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("marketplaceSettings", MarketplaceSettings);

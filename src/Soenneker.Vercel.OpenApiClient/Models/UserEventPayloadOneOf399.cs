@@ -15,21 +15,51 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The appName property</summary>
+        /// <summary>The chatId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppName { get; set; }
+        public string? ChatId { get; set; }
 #nullable restore
 #else
-        public string AppName { get; set; }
+        public string ChatId { get; set; }
 #endif
-        /// <summary>A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints&apos; public response shape.</summary>
+        /// <summary>The events property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf399Policy? Policy { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf399EventsItem>? Events { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf399Policy Policy { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf399EventsItem> Events { get; set; }
+#endif
+        /// <summary>The inputTokens property</summary>
+        public double? InputTokens { get; set; }
+        /// <summary>The messageId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessageId { get; set; }
+#nullable restore
+#else
+        public string MessageId { get; set; }
+#endif
+        /// <summary>The model property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Model { get; set; }
+#nullable restore
+#else
+        public string Model { get; set; }
+#endif
+        /// <summary>The outputTokens property</summary>
+        public double? OutputTokens { get; set; }
+        /// <summary>The timestamp property</summary>
+        public double? Timestamp { get; set; }
+        /// <summary>The useCase property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UseCase { get; set; }
+#nullable restore
+#else
+        public string UseCase { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf399"/> and sets the default values.
@@ -56,8 +86,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "appName", n => { AppName = n.GetStringValue(); } },
-                { "policy", n => { Policy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf399Policy>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf399Policy.CreateFromDiscriminatorValue); } },
+                { "chatId", n => { ChatId = n.GetStringValue(); } },
+                { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf399EventsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf399EventsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "inputTokens", n => { InputTokens = n.GetDoubleValue(); } },
+                { "messageId", n => { MessageId = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "outputTokens", n => { OutputTokens = n.GetDoubleValue(); } },
+                { "timestamp", n => { Timestamp = n.GetDoubleValue(); } },
+                { "useCase", n => { UseCase = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +103,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("appName", AppName);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf399Policy>("policy", Policy);
+            writer.WriteStringValue("chatId", ChatId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf399EventsItem>("events", Events);
+            writer.WriteDoubleValue("inputTokens", InputTokens);
+            writer.WriteStringValue("messageId", MessageId);
+            writer.WriteStringValue("model", Model);
+            writer.WriteDoubleValue("outputTokens", OutputTokens);
+            writer.WriteDoubleValue("timestamp", Timestamp);
+            writer.WriteStringValue("useCase", UseCase);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

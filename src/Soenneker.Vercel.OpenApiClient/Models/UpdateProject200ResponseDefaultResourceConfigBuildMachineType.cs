@@ -8,6 +8,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UpdateProject200ResponseDefaultResourceConfigBuildMachineType
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "basic")]
+        #pragma warning disable CS1591
+        Basic,
+        #pragma warning restore CS1591
         [EnumMember(Value = "enhanced")]
         #pragma warning disable CS1591
         Enhanced,

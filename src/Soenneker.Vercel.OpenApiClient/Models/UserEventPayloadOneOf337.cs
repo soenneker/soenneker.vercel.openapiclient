@@ -15,14 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The emailDomain property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EmailDomain { get; set; }
-#nullable restore
-#else
-        public string EmailDomain { get; set; }
-#endif
+        /// <summary>The enabled property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf337Enabled? Enabled { get; set; }
+        /// <summary>The environment property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf337Environment? Environment { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf337"/> and sets the default values.
         /// </summary>
@@ -48,7 +44,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "emailDomain", n => { EmailDomain = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf337Enabled>(); } },
+                { "environment", n => { Environment = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf337Environment>(); } },
             };
         }
         /// <summary>
@@ -58,7 +55,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("emailDomain", EmailDomain);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf337Enabled>("enabled", Enabled);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf337Environment>("environment", Environment);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

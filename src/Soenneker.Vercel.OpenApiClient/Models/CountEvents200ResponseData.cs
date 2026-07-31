@@ -1566,6 +1566,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string TrafficSource { get; set; }
 #endif
+        /// <summary>The transcriptInputs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TranscriptInputs { get; set; }
+#nullable restore
+#else
+        public string TranscriptInputs { get; set; }
+#endif
+        /// <summary>The transcriptOutputs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TranscriptOutputs { get; set; }
+#nullable restore
+#else
+        public string TranscriptOutputs { get; set; }
+#endif
+        /// <summary>The transcriptStatus property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TranscriptStatus { get; set; }
+#nullable restore
+#else
+        public string TranscriptStatus { get; set; }
+#endif
         /// <summary>The triggeringTag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1937,6 +1961,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "toolCallSuccess", n => { ToolCallSuccess = n.GetStringValue(); } },
                 { "toolCallType", n => { ToolCallType = n.GetStringValue(); } },
                 { "trafficSource", n => { TrafficSource = n.GetStringValue(); } },
+                { "transcriptInputs", n => { TranscriptInputs = n.GetStringValue(); } },
+                { "transcriptOutputs", n => { TranscriptOutputs = n.GetStringValue(); } },
+                { "transcriptStatus", n => { TranscriptStatus = n.GetStringValue(); } },
                 { "triggeringTag", n => { TriggeringTag = n.GetStringValue(); } },
                 { "utmCampaign", n => { UtmCampaign = n.GetStringValue(); } },
                 { "utmContent", n => { UtmContent = n.GetStringValue(); } },
@@ -2159,6 +2186,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("toolCallSuccess", ToolCallSuccess);
             writer.WriteStringValue("toolCallType", ToolCallType);
             writer.WriteStringValue("trafficSource", TrafficSource);
+            writer.WriteStringValue("transcriptInputs", TranscriptInputs);
+            writer.WriteStringValue("transcriptOutputs", TranscriptOutputs);
+            writer.WriteStringValue("transcriptStatus", TranscriptStatus);
             writer.WriteStringValue("triggeringTag", TriggeringTag);
             writer.WriteStringValue("utmCampaign", UtmCampaign);
             writer.WriteStringValue("utmContent", UtmContent);
