@@ -36,20 +36,20 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Unpause
         /// <summary>
         /// Unpause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project enables auto assigning custom production domains and unblocks the active Production Deployment then the request will return with 200 status code.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson37"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UnpauseProject201Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson37?> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Unpause.UnpauseRequestBuilder.UnpauseRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UnpauseProject201Response?> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Unpause.UnpauseRequestBuilder.UnpauseRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson37> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Unpause.UnpauseRequestBuilder.UnpauseRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.UnpauseProject201Response> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Unpause.UnpauseRequestBuilder.UnpauseRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson37>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.DefaultResponseResponseJson37.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.UnpauseProject201Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.UnpauseProject201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Unpause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project enables auto assigning custom production domains and unblocks the active Production Deployment then the request will return with 200 status code.

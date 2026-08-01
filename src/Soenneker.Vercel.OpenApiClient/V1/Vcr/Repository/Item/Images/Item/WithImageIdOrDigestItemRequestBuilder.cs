@@ -36,20 +36,20 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Images.Item
         /// <summary>
         /// Schedule an image for deletion. The image is marked so it disappears from list/get immediately; subscriber-vcr reclaims the manifest, blobs, tags and row asynchronously via the VcrManifestRemoved event.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteRepositoryImage202ResponseResponseJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteRepositoryImage202ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRepositoryImage202ResponseResponseJson?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Images.Item.WithImageIdOrDigestItemRequestBuilder.WithImageIdOrDigestItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRepositoryImage202ResponseSchema?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Images.Item.WithImageIdOrDigestItemRequestBuilder.WithImageIdOrDigestItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRepositoryImage202ResponseResponseJson> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Images.Item.WithImageIdOrDigestItemRequestBuilder.WithImageIdOrDigestItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRepositoryImage202ResponseSchema> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Images.Item.WithImageIdOrDigestItemRequestBuilder.WithImageIdOrDigestItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRepositoryImage202ResponseResponseJson>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.DeleteRepositoryImage202ResponseResponseJson.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRepositoryImage202ResponseSchema>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.DeleteRepositoryImage202ResponseSchema.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetch an individual image from a repository, including its tags and Dockerfile history entries with discriminated layer details for UI rendering. The image may be addressed by its internal id (`image_...`) or by its manifest digest (`sha256:...`).

@@ -12127,6 +12127,9 @@
           "422": {
             "description": ""
           },
+          "500": {
+            "description": ""
+          },
           "502": {
             "description": ""
           }
@@ -12138,7 +12141,6 @@
               "schema": {
                 "type": "object",
                 "required": [
-                  "type",
                   "data"
                 ],
                 "properties": {
@@ -12479,6 +12481,22 @@
                               }
                             },
                             "additionalProperties": false
+                          },
+                          "clientAssertion": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "type": {
+                                "type": "string"
+                              },
+                              "ttl": {
+                                "type": "number"
+                              },
+                              "claims": {
+                                "type": "object",
+                                "additionalProperties": {}
+                              }
+                            }
                           }
                         },
                         "required": [
@@ -12845,6 +12863,26 @@
                         "title": "type:snowflake-wif"
                       },
                       {
+                        "type": "object",
+                        "properties": {
+                          "projectId": {
+                            "type": "string"
+                          },
+                          "projectSecret": {
+                            "type": "string"
+                          },
+                          "webhookSecret": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "projectId",
+                          "projectSecret"
+                        ],
+                        "additionalProperties": false,
+                        "title": "type:photon"
+                      },
+                      {
                         "title": "type:other",
                         "type": "object",
                         "additionalProperties": true
@@ -12862,11 +12900,30 @@
                   },
                   "type": {
                     "type": "string",
-                    "description": "Known types: api-key, github, linear, oauth, salesforce, slack, snowflake."
+                    "description": "Known types: api-key, github, linear, oauth, photon, salesforce, slack, snowflake. Optional when \\\"connectionMethod\\\" is set."
                   },
                   "service": {
                     "type": "string",
                     "description": "Service slug or URL for which the connector is used."
+                  },
+                  "connectionMethod": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": "Connection method slug of the service."
+                  },
+                  "params": {
+                    "type": "object",
+                    "maxProperties": 16,
+                    "additionalProperties": {
+                      "type": "string",
+                      "maxLength": 256
+                    },
+                    "description": "Values for the connection method's templateFields."
+                  },
+                  "target": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": "Which of the service's targets this connector is for. Requires \\\"connectionMethod\\\" and must be one that method serves. Optional."
                   },
                   "uid": {
                     "type": "string"
@@ -77111,6 +77168,7 @@
                               "buildMachineElasticReason": {
                                 "type": "string",
                                 "enum": [
+                                  "basic-floor",
                                   "build-timeout-failure",
                                   "enospc-failure",
                                   "enterprise-floor",
@@ -77311,6 +77369,7 @@
                               "buildMachineElasticReason": {
                                 "type": "string",
                                 "enum": [
+                                  "basic-floor",
                                   "build-timeout-failure",
                                   "enospc-failure",
                                   "enterprise-floor",
@@ -90716,6 +90775,7 @@
                               "buildMachineElasticReason": {
                                 "type": "string",
                                 "enum": [
+                                  "basic-floor",
                                   "build-timeout-failure",
                                   "enospc-failure",
                                   "enterprise-floor",
@@ -95243,6 +95303,7 @@
                                   "buildMachineElasticReason": {
                                     "type": "string",
                                     "enum": [
+                                      "basic-floor",
                                       "build-timeout-failure",
                                       "enospc-failure",
                                       "enterprise-floor",
@@ -100617,6 +100678,7 @@
                                   "buildMachineElasticReason": {
                                     "type": "string",
                                     "enum": [
+                                      "basic-floor",
                                       "build-timeout-failure",
                                       "enospc-failure",
                                       "enterprise-floor",
@@ -100817,6 +100879,7 @@
                                   "buildMachineElasticReason": {
                                     "type": "string",
                                     "enum": [
+                                      "basic-floor",
                                       "build-timeout-failure",
                                       "enospc-failure",
                                       "enterprise-floor",
@@ -108532,6 +108595,7 @@
                         "buildMachineElasticReason": {
                           "type": "string",
                           "enum": [
+                            "basic-floor",
                             "build-timeout-failure",
                             "enospc-failure",
                             "enterprise-floor",
@@ -108732,6 +108796,7 @@
                         "buildMachineElasticReason": {
                           "type": "string",
                           "enum": [
+                            "basic-floor",
                             "build-timeout-failure",
                             "enospc-failure",
                             "enterprise-floor",
@@ -113313,6 +113378,7 @@
                           "oom-failure",
                           "enospc-failure",
                           "build-timeout-failure",
+                          "basic-floor",
                           "high-peak-memory",
                           "sustained-high-cpu",
                           "high-peak-disk",
@@ -116614,6 +116680,7 @@
                         "buildMachineElasticReason": {
                           "type": "string",
                           "enum": [
+                            "basic-floor",
                             "build-timeout-failure",
                             "enospc-failure",
                             "enterprise-floor",
@@ -116814,6 +116881,7 @@
                         "buildMachineElasticReason": {
                           "type": "string",
                           "enum": [
+                            "basic-floor",
                             "build-timeout-failure",
                             "enospc-failure",
                             "enterprise-floor",
@@ -124056,6 +124124,7 @@
                         "buildMachineElasticReason": {
                           "type": "string",
                           "enum": [
+                            "basic-floor",
                             "build-timeout-failure",
                             "enospc-failure",
                             "enterprise-floor",
@@ -124256,6 +124325,7 @@
                         "buildMachineElasticReason": {
                           "type": "string",
                           "enum": [
+                            "basic-floor",
                             "build-timeout-failure",
                             "enospc-failure",
                             "enterprise-floor",
@@ -128738,6 +128808,7 @@
                           "oom-failure",
                           "enospc-failure",
                           "build-timeout-failure",
+                          "basic-floor",
                           "high-peak-memory",
                           "sustained-high-cpu",
                           "high-peak-disk",
@@ -132763,6 +132834,7 @@
                         "buildMachineElasticReason": {
                           "type": "string",
                           "enum": [
+                            "basic-floor",
                             "build-timeout-failure",
                             "enospc-failure",
                             "enterprise-floor",
@@ -132963,6 +133035,7 @@
                         "buildMachineElasticReason": {
                           "type": "string",
                           "enum": [
+                            "basic-floor",
                             "build-timeout-failure",
                             "enospc-failure",
                             "enterprise-floor",
@@ -152874,6 +152947,7 @@
                         "buildMachineElasticReason": {
                           "type": "string",
                           "enum": [
+                            "basic-floor",
                             "build-timeout-failure",
                             "enospc-failure",
                             "enterprise-floor",
@@ -153074,6 +153148,7 @@
                         "buildMachineElasticReason": {
                           "type": "string",
                           "enum": [
+                            "basic-floor",
                             "build-timeout-failure",
                             "enospc-failure",
                             "enterprise-floor",
@@ -206785,6 +206860,9 @@
                           "edgeFunctionExecutionTimeoutMs": {
                             "type": "number"
                           },
+                          "serverlessFunctionMaxDuration": {
+                            "type": "number"
+                          },
                           "serverlessFunctionMaxMemorySize": {
                             "type": "number"
                           },
@@ -222329,7 +222407,7 @@
           },
           "region": {
             "type": "string",
-            "description": "The region the sandbox runs in.",
+            "description": "The region the sandbox is configured to run in: the region set on the sandbox, otherwise the project-level default, then the platform default. Where a running session actually landed is reported by `session.region`.",
             "example": "iad1"
           },
           "vcpus": {
@@ -224988,6 +225066,10 @@
                 "description": "An object containing infomation related to the amount of platform resources may be allocated to the User account."
               },
               "edgeFunctionExecutionTimeoutMs": {
+                "type": "number",
+                "description": "An object containing infomation related to the amount of platform resources may be allocated to the User account."
+              },
+              "serverlessFunctionMaxDuration": {
                 "type": "number",
                 "description": "An object containing infomation related to the amount of platform resources may be allocated to the User account."
               },

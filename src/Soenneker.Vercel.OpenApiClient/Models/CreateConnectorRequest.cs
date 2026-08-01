@@ -30,6 +30,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string BackgroundColor { get; set; }
 #endif
+        /// <summary>Connection method slug of the service.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConnectionMethod { get; set; }
+#nullable restore
+#else
+        public string ConnectionMethod { get; set; }
+#endif
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,6 +78,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Values for the connection method&apos;s templateFields.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestParams? Params { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestParams Params { get; set; }
+#endif
         /// <summary>Link to the specified project when specified. See environments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,9 +102,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Service { get; set; }
 #endif
+        /// <summary>Which of the service&apos;s targets this connector is for. Requires \&quot;connectionMethod\&quot; and must be one that method serves. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Target { get; set; }
+#nullable restore
+#else
+        public string Target { get; set; }
+#endif
         /// <summary>Whether the triggers are enabled for this connector.</summary>
         public bool? Triggers { get; set; }
-        /// <summary>&quot;Known types: api-key, github, linear, oauth, salesforce, slack, snowflake.&quot;</summary>
+        /// <summary>&quot;Known types: api-key, github, linear, oauth, photon, salesforce, slack, snowflake. Optional when \\&quot;connectionMethod\\&quot; is set.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -131,13 +155,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "accentColor", n => { AccentColor = n.GetStringValue(); } },
                 { "backgroundColor", n => { BackgroundColor = n.GetStringValue(); } },
+                { "connectionMethod", n => { ConnectionMethod = n.GetStringValue(); } },
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestData>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestData.CreateFromDiscriminatorValue); } },
                 { "environments", n => { Environments = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "icon", n => { Icon = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "params", n => { Params = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestParams>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestParams.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "service", n => { Service = n.GetStringValue(); } },
+                { "target", n => { Target = n.GetStringValue(); } },
                 { "triggers", n => { Triggers = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
@@ -152,13 +179,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accentColor", AccentColor);
             writer.WriteStringValue("backgroundColor", BackgroundColor);
+            writer.WriteStringValue("connectionMethod", ConnectionMethod);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestData>("data", Data);
             writer.WriteCollectionOfPrimitiveValues<string>("environments", Environments);
             writer.WriteCollectionOfPrimitiveValues<string>("events", Events);
             writer.WriteStringValue("icon", Icon);
             writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestParams>("params", Params);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("service", Service);
+            writer.WriteStringValue("target", Target);
             writer.WriteBoolValue("triggers", Triggers);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("uid", Uid);

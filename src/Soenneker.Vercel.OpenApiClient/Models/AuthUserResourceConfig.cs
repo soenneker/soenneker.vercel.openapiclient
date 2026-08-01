@@ -114,6 +114,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigSecurity Security { get; set; }
 #endif
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
+        public double? ServerlessFunctionMaxDuration { get; set; }
+        /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
         public double? ServerlessFunctionMaxMemorySize { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfig"/> and sets the default values.
@@ -165,6 +167,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "nodeType", n => { NodeType = n.GetStringValue(); } },
                 { "postgresDatabases", n => { PostgresDatabases = n.GetDoubleValue(); } },
                 { "security", n => { Security = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigSecurity>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigSecurity.CreateFromDiscriminatorValue); } },
+                { "serverlessFunctionMaxDuration", n => { ServerlessFunctionMaxDuration = n.GetDoubleValue(); } },
                 { "serverlessFunctionMaxMemorySize", n => { ServerlessFunctionMaxMemorySize = n.GetDoubleValue(); } },
             };
         }
@@ -200,6 +203,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("nodeType", NodeType);
             writer.WriteDoubleValue("postgresDatabases", PostgresDatabases);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigSecurity>("security", Security);
+            writer.WriteDoubleValue("serverlessFunctionMaxDuration", ServerlessFunctionMaxDuration);
             writer.WriteDoubleValue("serverlessFunctionMaxMemorySize", ServerlessFunctionMaxMemorySize);
             writer.WriteAdditionalData(AdditionalData);
         }

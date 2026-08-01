@@ -120,6 +120,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155NewOwnerResourceConfigSecurity Security { get; set; }
 #endif
+        /// <summary>The serverlessFunctionMaxDuration property</summary>
+        public double? ServerlessFunctionMaxDuration { get; set; }
         /// <summary>The serverlessFunctionMaxMemorySize property</summary>
         public double? ServerlessFunctionMaxMemorySize { get; set; }
         /// <summary>
@@ -173,6 +175,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "nodeType", n => { NodeType = n.GetStringValue(); } },
                 { "postgresDatabases", n => { PostgresDatabases = n.GetDoubleValue(); } },
                 { "security", n => { Security = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155NewOwnerResourceConfigSecurity>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155NewOwnerResourceConfigSecurity.CreateFromDiscriminatorValue); } },
+                { "serverlessFunctionMaxDuration", n => { ServerlessFunctionMaxDuration = n.GetDoubleValue(); } },
                 { "serverlessFunctionMaxMemorySize", n => { ServerlessFunctionMaxMemorySize = n.GetDoubleValue(); } },
             };
         }
@@ -209,6 +212,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("nodeType", NodeType);
             writer.WriteDoubleValue("postgresDatabases", PostgresDatabases);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155NewOwnerResourceConfigSecurity>("security", Security);
+            writer.WriteDoubleValue("serverlessFunctionMaxDuration", ServerlessFunctionMaxDuration);
             writer.WriteDoubleValue("serverlessFunctionMaxMemorySize", ServerlessFunctionMaxMemorySize);
             writer.WriteAdditionalData(AdditionalData);
         }

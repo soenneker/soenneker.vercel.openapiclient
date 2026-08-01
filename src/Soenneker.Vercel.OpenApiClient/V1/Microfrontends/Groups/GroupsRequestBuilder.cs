@@ -49,20 +49,20 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups
         /// <summary>
         /// Get the microfrontends group IDs for a team.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsGroups200ResponseResponseJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsGroups200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsGroups200ResponseResponseJson?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsGroups200ResponseSchema?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsGroups200ResponseResponseJson> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsGroups200ResponseSchema> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Microfrontends.Groups.GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsGroups200ResponseResponseJson>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsGroups200ResponseResponseJson.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsGroups200ResponseSchema>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsGroups200ResponseSchema.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the microfrontends group IDs for a team.

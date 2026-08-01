@@ -36,20 +36,20 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Integrations.LogDrains
         /// <summary>
         /// Retrieves a list of all Integration log drains that are defined for the authenticated user or team. When using an OAuth2 token, the list is limited to log drains created by the authenticated integration.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseResponseJsonItem&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseSchemaItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseResponseJsonItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Integrations.LogDrains.LogDrainsRequestBuilder.LogDrainsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseSchemaItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Integrations.LogDrains.LogDrainsRequestBuilder.LogDrainsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseResponseJsonItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Integrations.LogDrains.LogDrainsRequestBuilder.LogDrainsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseSchemaItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Integrations.LogDrains.LogDrainsRequestBuilder.LogDrainsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseResponseJsonItem>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseResponseJsonItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseSchemaItem>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationLogDrains200ResponseSchemaItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>

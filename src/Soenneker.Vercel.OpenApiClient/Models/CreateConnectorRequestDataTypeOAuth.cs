@@ -20,6 +20,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthAuthorizationUrlParams AuthorizationUrlParams { get; set; }
 #endif
+        /// <summary>The clientAssertion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthClientAssertion? ClientAssertion { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthClientAssertion ClientAssertion { get; set; }
+#endif
         /// <summary>The clientCredentials property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,6 +163,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "authorizationUrlParams", n => { AuthorizationUrlParams = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthAuthorizationUrlParams>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthAuthorizationUrlParams.CreateFromDiscriminatorValue); } },
+                { "clientAssertion", n => { ClientAssertion = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthClientAssertion>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthClientAssertion.CreateFromDiscriminatorValue); } },
                 { "clientCredentials", n => { ClientCredentials = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthClientCredentials>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthClientCredentials.CreateFromDiscriminatorValue); } },
                 { "clientId", n => { ClientId = n.GetStringValue(); } },
                 { "clientName", n => { ClientName = n.GetStringValue(); } },
@@ -181,6 +190,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthAuthorizationUrlParams>("authorizationUrlParams", AuthorizationUrlParams);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthClientAssertion>("clientAssertion", ClientAssertion);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuthClientCredentials>("clientCredentials", ClientCredentials);
             writer.WriteStringValue("clientId", ClientId);
             writer.WriteStringValue("clientName", ClientName);

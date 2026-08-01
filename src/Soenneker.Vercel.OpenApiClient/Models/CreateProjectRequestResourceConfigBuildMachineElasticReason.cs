@@ -20,6 +20,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         BuildTimeoutFailure,
         #pragma warning restore CS1591
+        [EnumMember(Value = "basic-floor")]
+        #pragma warning disable CS1591
+        BasicFloor,
+        #pragma warning restore CS1591
         [EnumMember(Value = "high-peak-memory")]
         #pragma warning disable CS1591
         HighPeakMemory,

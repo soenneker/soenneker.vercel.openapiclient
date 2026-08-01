@@ -36,20 +36,20 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces
         /// <summary>
         /// Lists git namespaces for a supported provider. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider is not provided, it will try to obtain it from the user that authenticated the request.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseResponseJsonItem&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseSchemaItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseResponseJsonItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GitNamespacesRequestBuilder.GitNamespacesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseSchemaItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GitNamespacesRequestBuilder.GitNamespacesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseResponseJsonItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GitNamespacesRequestBuilder.GitNamespacesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseSchemaItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces.GitNamespacesRequestBuilder.GitNamespacesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseResponseJsonItem>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseResponseJsonItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseSchemaItem>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseSchemaItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>

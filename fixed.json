@@ -184,7 +184,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponse"
+                  "$ref": "#/components/schemas/DeleteAccessGroup204Response"
                 }
               }
             }
@@ -806,7 +806,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteAccessGroupProject204Response"
                 }
               }
             }
@@ -1003,7 +1003,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteAiGatewayRule204ResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteAiGatewayRule204ResponseSchema"
                 }
               }
             }
@@ -1082,7 +1082,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson2"
+                  "$ref": "#/components/schemas/RecordEvents201Response"
                 }
               }
             }
@@ -1348,7 +1348,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DownloadArtifact200ResponseResponseJson"
+                  "$ref": "#/components/schemas/DownloadArtifact200ResponseSchema"
                 }
               }
             }
@@ -1404,7 +1404,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson3"
+                  "$ref": "#/components/schemas/ArtifactExists200Response"
                 }
               }
             }
@@ -1460,7 +1460,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ArtifactQuery200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ArtifactQuery200ResponseSchema"
                 }
               }
             }
@@ -1574,7 +1574,7 @@
             "content": {
               "application/jsonl": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListBillingCharges200Response"
+                  "$ref": "#/components/schemas/ListBillingCharges200JsonlResponse"
                 }
               }
             }
@@ -1621,7 +1621,7 @@
             "content": {
               "application/jsonl": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListContractCommitments200Response"
+                  "$ref": "#/components/schemas/ListContractCommitments200JsonlResponse"
                 }
               }
             }
@@ -2887,7 +2887,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListNetworks200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListNetworks200ResponseSchema"
                 }
               }
             }
@@ -2999,7 +2999,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson4"
+                  "$ref": "#/components/schemas/DeleteNetwork204Response"
                 }
               }
             }
@@ -3491,7 +3491,7 @@
               },
               "application/stream\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJson"
+                  "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponse"
                 }
               }
             }
@@ -3562,7 +3562,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson5"
+                  "$ref": "#/components/schemas/UpdateIntegrationDeploymentAction200Response"
                 }
               }
             }
@@ -4174,7 +4174,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RemoveRecord200ResponseResponseJson"
+                  "$ref": "#/components/schemas/RemoveRecord200ResponseSchema"
                 }
               }
             }
@@ -4211,7 +4211,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetSupportedTlds200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetSupportedTlds200ResponseSchema"
                 }
               }
             }
@@ -5759,7 +5759,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetContactInfoSchema200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetContactInfoSchema200ResponseSchema"
                 }
               }
             }
@@ -6614,7 +6614,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson6"
+                  "$ref": "#/components/schemas/DeleteConfigurableLogDrain204Response"
                 }
               }
             }
@@ -6738,7 +6738,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateConfigurableLogDrain200ResponseResponseJson"
+                  "$ref": "#/components/schemas/CreateConfigurableLogDrain200ResponseSchema"
                 }
               }
             }
@@ -6909,7 +6909,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson7"
+                  "$ref": "#/components/schemas/DeleteDrain204Response"
                 }
               }
             }
@@ -7144,7 +7144,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson8"
+                  "$ref": "#/components/schemas/InvalidateByTags201Response"
                 }
               }
             }
@@ -7208,7 +7208,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson9"
+                  "$ref": "#/components/schemas/DangerouslyDeleteByTags201Response"
                 }
               }
             }
@@ -7272,7 +7272,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson10"
+                  "$ref": "#/components/schemas/InvalidateBySrcImages201Response"
                 }
               }
             }
@@ -7336,7 +7336,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson11"
+                  "$ref": "#/components/schemas/DangerouslyDeleteBySrcImages201Response"
                 }
               }
             }
@@ -7607,7 +7607,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson12"
+                  "$ref": "#/components/schemas/DeleteEdgeConfig204Response"
                 }
               }
             }
@@ -7663,7 +7663,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetEdgeConfigItems200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetEdgeConfigItems200ResponseSchema"
                 }
               }
             }
@@ -7903,7 +7903,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson13"
+                  "$ref": "#/components/schemas/DeleteEdgeConfigSchema204Response"
                 }
               }
             }
@@ -8085,7 +8085,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson14"
+                  "$ref": "#/components/schemas/DeleteEdgeConfigTokens204Response"
                 }
               }
             }
@@ -9572,7 +9572,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson15"
+                  "$ref": "#/components/schemas/DeleteFlag204Response"
                 }
               }
             }
@@ -10413,7 +10413,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson16"
+                  "$ref": "#/components/schemas/DeleteFlagSegment204Response"
                 }
               }
             }
@@ -10740,7 +10740,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson17"
+                  "$ref": "#/components/schemas/DeleteSdkKey204Response"
                 }
               }
             }
@@ -10795,7 +10795,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GitNamespaces200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GitNamespaces200ResponseSchema"
                 }
               }
             }
@@ -11044,7 +11044,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson18"
+                  "$ref": "#/components/schemas/ConnectIntegrationResourceToProject201Response"
                 }
               }
             }
@@ -11090,7 +11090,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson19"
+                  "$ref": "#/components/schemas/UpdateInstallation200Response"
                 }
               }
             }
@@ -11218,7 +11218,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson20"
+                  "$ref": "#/components/schemas/CreateEvent201Response"
                 }
               }
             }
@@ -11347,7 +11347,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson21"
+                  "$ref": "#/components/schemas/DeleteIntegrationResource204Response"
                 }
               }
             }
@@ -11497,7 +11497,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson22"
+                  "$ref": "#/components/schemas/SubmitBillingData201Response"
                 }
               }
             }
@@ -11580,7 +11580,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson23"
+                  "$ref": "#/components/schemas/FinalizeInstallation201Response"
                 }
               }
             }
@@ -11679,7 +11679,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson24"
+                  "$ref": "#/components/schemas/UpdateInvoice201Response"
                 }
               }
             }
@@ -11725,7 +11725,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson25"
+                  "$ref": "#/components/schemas/SubmitPrepaymentBalances201Response"
                 }
               }
             }
@@ -11779,7 +11779,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson26"
+                  "$ref": "#/components/schemas/UpdateResourceSecretsById200Response"
                 }
               }
             }
@@ -11961,7 +11961,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson27"
+                  "$ref": "#/components/schemas/DeleteConfiguration204Response"
                 }
               }
             }
@@ -12099,7 +12099,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetIntegrationLogDrains200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetIntegrationLogDrains200ResponseSchema"
                 }
               }
             }
@@ -12210,7 +12210,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson28"
+                  "$ref": "#/components/schemas/DeleteIntegrationLogDrain204Response"
                 }
               }
             }
@@ -12341,7 +12341,7 @@
             "content": {
               "application/stream\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetRuntimeLogs200Response"
+                  "$ref": "#/components/schemas/GetRuntimeLogs200StreamJsonResponse"
                 }
               }
             }
@@ -12395,7 +12395,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson29"
+                  "$ref": "#/components/schemas/CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems201Response"
                 }
               }
             }
@@ -12457,7 +12457,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson30"
+                  "$ref": "#/components/schemas/UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId200Response"
                 }
               }
             }
@@ -12508,7 +12508,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson31"
+                  "$ref": "#/components/schemas/DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId204Response"
                 }
               }
             }
@@ -12695,7 +12695,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetMicrofrontendsGroups200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetMicrofrontendsGroups200ResponseSchema"
                 }
               }
             }
@@ -13065,7 +13065,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateObservabilityQuery200ResponseResponseJson"
+                  "$ref": "#/components/schemas/CreateObservabilityQuery200ResponseSchema"
                 }
               }
             }
@@ -13113,7 +13113,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetObservabilitySchemaByMetricId200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetObservabilitySchemaByMetricId200ResponseSchema"
                 }
               }
             }
@@ -14481,7 +14481,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson32"
+                  "$ref": "#/components/schemas/DeleteProject204Response"
                 }
               }
             }
@@ -14614,7 +14614,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UpdateStaticIps200ResponseResponseJson"
+                  "$ref": "#/components/schemas/UpdateStaticIps200ResponseSchema"
                 }
               }
             }
@@ -15338,7 +15338,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RemoveProjectDomain200ResponseResponseJson"
+                  "$ref": "#/components/schemas/RemoveProjectDomain200ResponseSchema"
                 }
               }
             }
@@ -16781,7 +16781,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson33"
+                  "$ref": "#/components/schemas/RequestRollback201Response"
                 }
               }
             }
@@ -16835,7 +16835,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson34"
+                  "$ref": "#/components/schemas/UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription200Response"
                 }
               }
             }
@@ -16961,7 +16961,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson35"
+                  "$ref": "#/components/schemas/RequestPromote201Response"
                 }
               }
             }
@@ -17113,7 +17113,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson36"
+                  "$ref": "#/components/schemas/PauseProject201Response"
                 }
               }
             }
@@ -17170,7 +17170,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson37"
+                  "$ref": "#/components/schemas/UnpauseProject201Response"
                 }
               }
             }
@@ -18346,12 +18346,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RunSessionCommand200ResponseResponseJson"
+                  "$ref": "#/components/schemas/RunSessionCommand200Response"
                 }
               },
               "application/x-ndjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/RunSessionCommand200Response"
+                  "$ref": "#/components/schemas/RunSessionCommand200XNdjsonResponse"
                 }
               }
             }
@@ -18575,7 +18575,7 @@
             "content": {
               "application/x-ndjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetSessionCommandLogs200Response"
+                  "$ref": "#/components/schemas/GetSessionCommandLogs200XNdjsonResponse"
                 }
               }
             }
@@ -18834,7 +18834,7 @@
             "content": {
               "application/octet-stream": {
                 "schema": {
-                  "$ref": "#/components/schemas/ReadSessionFile200ResponseResponseOctetStream"
+                  "$ref": "#/components/schemas/ReadSessionFile200OctetStreamResponseSchema"
                 }
               }
             }
@@ -18901,7 +18901,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateSessionDirectory200ResponseResponseJson"
+                  "$ref": "#/components/schemas/CreateSessionDirectory200ResponseSchema"
                 }
               }
             }
@@ -18969,7 +18969,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WriteSessionFiles200ResponseResponseJson"
+                  "$ref": "#/components/schemas/WriteSessionFiles200ResponseSchema"
                 }
               }
             }
@@ -19317,7 +19317,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UpdateFirewallConfig200ResponseResponseJson"
+                  "$ref": "#/components/schemas/UpdateFirewallConfig200ResponseSchema"
                 }
               }
             }
@@ -19417,7 +19417,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteSecurityFirewallConfigByConfigVersion204ResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteSecurityFirewallConfigByConfigVersion204ResponseSchema"
                 }
               }
             }
@@ -20966,7 +20966,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteMicrofrontendsGroup200ResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteMicrofrontendsGroup200ResponseSchema"
                 }
               }
             }
@@ -21542,7 +21542,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteRepository202ResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteRepository202ResponseSchema"
                 }
               }
             }
@@ -21947,7 +21947,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteRepositoryImage202ResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteRepositoryImage202ResponseSchema"
                 }
               }
             }
@@ -22706,7 +22706,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson38"
+                  "$ref": "#/components/schemas/DeleteWebhook204Response"
                 }
               }
             }
@@ -23192,7 +23192,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatchUrlProtectionBypass200ResponseResponseJson"
+                  "$ref": "#/components/schemas/PatchUrlProtectionBypass200ResponseSchema"
                 }
               }
             }
@@ -23304,7 +23304,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RemoveCert200ResponseResponseJson"
+                  "$ref": "#/components/schemas/RemoveCert200ResponseSchema"
                 }
               }
             }
@@ -23516,7 +23516,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListDeploymentFiles200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListDeploymentFiles200ResponseSchema"
                 }
               }
             }
@@ -23592,7 +23592,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson39"
+                  "$ref": "#/components/schemas/GetDeploymentFileContents200Response"
                 }
               }
             }
@@ -27350,7 +27350,7 @@
           },
           "region": {
             "type": "string",
-            "description": "The region the sandbox runs in.",
+            "description": "\u0022The region the sandbox is configured to run in: the region set on the sandbox, otherwise the project-level default, then the platform default. Where a running session actually landed is reported by \u0060session.region\u0060.\u0022",
             "example": "iad1"
           },
           "vcpus": {
@@ -43114,6 +43114,10 @@
             "type": "number",
             "description": "An object containing infomation related to the amount of platform resources may be allocated to the User account."
           },
+          "serverlessFunctionMaxDuration": {
+            "type": "number",
+            "description": "An object containing infomation related to the amount of platform resources may be allocated to the User account."
+          },
           "serverlessFunctionMaxMemorySize": {
             "type": "number",
             "description": "An object containing infomation related to the amount of platform resources may be allocated to the User account."
@@ -49302,6 +49306,9 @@
           "edgeFunctionExecutionTimeoutMs": {
             "type": "number"
           },
+          "serverlessFunctionMaxDuration": {
+            "type": "number"
+          },
           "serverlessFunctionMaxMemorySize": {
             "type": "number"
           },
@@ -53068,7 +53075,7 @@
           }
         }
       },
-      "ListBillingCharges200Response": {
+      "ListBillingCharges200JsonlResponse": {
         "required": [
           "BilledCost",
           "BillingCurrency",
@@ -53093,10 +53100,10 @@
             "description": "Charge amount serving as the basis for invoicing"
           },
           "BillingCurrency": {
-            "$ref": "#/components/schemas/ListBillingCharges200ResponseBillingCurrency"
+            "$ref": "#/components/schemas/ListBillingCharges200JsonlResponseBillingCurrency"
           },
           "ChargeCategory": {
-            "$ref": "#/components/schemas/ListBillingCharges200ResponseChargeCategory"
+            "$ref": "#/components/schemas/ListBillingCharges200JsonlResponseChargeCategory"
           },
           "ChargePeriodStart": {
             "type": "string",
@@ -53133,20 +53140,20 @@
             "description": "Display name for the service/product"
           },
           "ServiceCategory": {
-            "$ref": "#/components/schemas/ListBillingCharges200ResponseServiceCategory"
+            "$ref": "#/components/schemas/ListBillingCharges200JsonlResponseServiceCategory"
           },
           "ServiceProviderName": {
             "type": "string",
             "description": "Entity making the resource/service available for purchase (v1.3)"
           },
           "Tags": {
-            "$ref": "#/components/schemas/ListBillingCharges200ResponseTags"
+            "$ref": "#/components/schemas/ListBillingCharges200JsonlResponseTags"
           },
           "PricingCategory": {
-            "$ref": "#/components/schemas/ListBillingCharges200ResponsePricingCategory"
+            "$ref": "#/components/schemas/ListBillingCharges200JsonlResponsePricingCategory"
           },
           "PricingCurrency": {
-            "$ref": "#/components/schemas/ListBillingCharges200ResponsePricingCurrency"
+            "$ref": "#/components/schemas/ListBillingCharges200JsonlResponsePricingCurrency"
           },
           "PricingQuantity": {
             "type": "number"
@@ -53157,7 +53164,7 @@
         },
         "description": "Extension of the base schema for Focus charges. Includes pricing information for all customers."
       },
-      "ListContractCommitments200Response": {
+      "ListContractCommitments200JsonlResponse": {
         "required": [
           "BillingCurrency",
           "ContractCommitmentCategory",
@@ -53173,7 +53180,7 @@
         "type": "object",
         "properties": {
           "ContractCommitmentCategory": {
-            "$ref": "#/components/schemas/ListContractCommitments200ResponseContractCommitmentCategory"
+            "$ref": "#/components/schemas/ListContractCommitments200JsonlResponseContractCommitmentCategory"
           },
           "ContractCommitmentCost": {
             "type": "number",
@@ -53995,7 +54002,6 @@
       },
       "CreateConnectorRequest": {
         "required": [
-          "type",
           "data"
         ],
         "type": "object",
@@ -54014,11 +54020,24 @@
           },
           "type": {
             "type": "string",
-            "description": "\u0022Known types: api-key, github, linear, oauth, salesforce, slack, snowflake.\u0022"
+            "description": "\u0022Known types: api-key, github, linear, oauth, photon, salesforce, slack, snowflake. Optional when \\\\\u0022connectionMethod\\\\\u0022 is set.\u0022"
           },
           "service": {
             "type": "string",
             "description": "Service slug or URL for which the connector is used."
+          },
+          "connectionMethod": {
+            "maxLength": 64,
+            "type": "string",
+            "description": "Connection method slug of the service."
+          },
+          "params": {
+            "$ref": "#/components/schemas/CreateConnectorRequestParams"
+          },
+          "target": {
+            "maxLength": 64,
+            "type": "string",
+            "description": "Which of the service\u0027s targets this connector is for. Requires \\\u0022connectionMethod\\\u0022 and must be one that method serves. Optional."
           },
           "uid": {
             "type": "string"
@@ -54523,20 +54542,20 @@
         },
         "nullable": true
       },
-      "GetDeploymentEvents200ResponseResponseStreamJson": {
+      "GetDeploymentEvents200StreamJsonResponse": {
         "required": [
           "type"
         ],
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf1"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf1"
           },
           {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf2"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf2"
           },
           {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf3"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf3"
           }
         ],
         "properties": {
@@ -59361,7 +59380,7 @@
           }
         }
       },
-      "GetRuntimeLogs200Response": {
+      "GetRuntimeLogs200StreamJsonResponse": {
         "required": [
           "domain",
           "level",
@@ -59377,7 +59396,7 @@
         "type": "object",
         "properties": {
           "level": {
-            "$ref": "#/components/schemas/GetRuntimeLogs200ResponseLevel"
+            "$ref": "#/components/schemas/GetRuntimeLogs200StreamJsonResponseLevel"
           },
           "message": {
             "type": "string"
@@ -59386,7 +59405,7 @@
             "type": "string"
           },
           "source": {
-            "$ref": "#/components/schemas/GetRuntimeLogs200ResponseSource"
+            "$ref": "#/components/schemas/GetRuntimeLogs200StreamJsonResponseSource"
           },
           "timestampInMs": {
             "type": "number"
@@ -64011,20 +64030,20 @@
         },
         "additionalProperties": false
       },
-      "RunSessionCommand200Response": {
+      "RunSessionCommand200XNdjsonResponse": {
         "required": [
           "type"
         ],
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/RunSessionCommand200ResponseOneOf1"
+            "$ref": "#/components/schemas/RunSessionCommand200XNdjsonResponseOneOf1"
           },
           {
-            "$ref": "#/components/schemas/RunSessionCommand200ResponseOneOf2"
+            "$ref": "#/components/schemas/RunSessionCommand200XNdjsonResponseOneOf2"
           },
           {
-            "$ref": "#/components/schemas/RunSessionCommand200ResponseOneOf3"
+            "$ref": "#/components/schemas/RunSessionCommand200XNdjsonResponseOneOf3"
           }
         ],
         "properties": {
@@ -64051,17 +64070,17 @@
         },
         "additionalProperties": false
       },
-      "GetSessionCommandLogs200Response": {
+      "GetSessionCommandLogs200XNdjsonResponse": {
         "required": [
           "type"
         ],
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/GetSessionCommandLogs200ResponseOneOf1"
+            "$ref": "#/components/schemas/GetSessionCommandLogs200XNdjsonResponseOneOf1"
           },
           {
-            "$ref": "#/components/schemas/GetSessionCommandLogs200ResponseOneOf2"
+            "$ref": "#/components/schemas/GetSessionCommandLogs200XNdjsonResponseOneOf2"
           }
         ],
         "properties": {
@@ -64154,7 +64173,7 @@
         },
         "additionalProperties": false
       },
-      "ReadSessionFile200Response": {
+      "ReadSessionFile200OctetStreamResponse": {
         "type": "string",
         "format": "binary"
       },
@@ -72253,17 +72272,17 @@
           }
         }
       },
-      "DefaultResponse": {
+      "DeleteAccessGroup204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson": {
+      "DeleteAccessGroupProject204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DeleteAiGatewayRule204ResponseResponseJson": {
+      "DeleteAiGatewayRule204ResponseSchema": {
         "type": "object"
       },
       "RecordEventsRequestRequestBody": {
@@ -72272,47 +72291,47 @@
           "$ref": "#/components/schemas/RecordEventsRequestRequestBodyItem"
         }
       },
-      "DefaultResponseResponseJson2": {
+      "RecordEvents201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DownloadArtifact200ResponseResponseJson": {
+      "DownloadArtifact200ResponseSchema": {
         "type": "string",
         "description": "An octet stream response that will be piped to the response stream.",
         "format": "binary"
       },
-      "DefaultResponseResponseJson3": {
+      "ArtifactExists200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ArtifactQuery200ResponseResponseJson": {
+      "ArtifactQuery200ResponseSchema": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/ArtifactQuery200ResponseResponseJsonAdditionalProperties"
+          "$ref": "#/components/schemas/ArtifactQuery200ResponseSchemaAdditionalProperties"
         }
       },
-      "ListNetworks200ResponseResponseJson": {
+      "ListNetworks200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Network"
         }
       },
-      "DefaultResponseResponseJson4": {
+      "DeleteNetwork204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson5": {
+      "UpdateIntegrationDeploymentAction200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "RemoveRecord200ResponseResponseJson": {
+      "RemoveRecord200ResponseSchema": {
         "type": "object"
       },
-      "GetSupportedTlds200ResponseResponseJson": {
+      "GetSupportedTlds200ResponseSchema": {
         "type": "array",
         "items": {
           "type": "string",
@@ -72320,7 +72339,7 @@
         },
         "description": "A list of the TLDs supported by Vercel."
       },
-      "GetContactInfoSchema200ResponseResponseJson": {
+      "GetContactInfoSchema200ResponseSchema": {
         "type": "object"
       },
       "GetDomainProjectDomains200Response": {
@@ -72359,56 +72378,56 @@
           }
         }
       },
-      "DefaultResponseResponseJson6": {
+      "DeleteConfigurableLogDrain204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "CreateConfigurableLogDrain200ResponseResponseJson": {
+      "CreateConfigurableLogDrain200ResponseSchema": {
         "type": "object"
       },
-      "DefaultResponseResponseJson7": {
+      "DeleteDrain204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson8": {
+      "InvalidateByTags201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson9": {
+      "DangerouslyDeleteByTags201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson10": {
+      "InvalidateBySrcImages201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson11": {
+      "DangerouslyDeleteBySrcImages201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson12": {
+      "DeleteEdgeConfig204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "GetEdgeConfigItems200ResponseResponseJson": {
+      "GetEdgeConfigItems200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/EdgeConfigItem"
         }
       },
-      "DefaultResponseResponseJson13": {
+      "DeleteEdgeConfigSchema204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson14": {
+      "DeleteEdgeConfigTokens204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -72447,7 +72466,7 @@
         },
         "description": "Successful response."
       },
-      "DefaultResponseResponseJson15": {
+      "DeleteFlag204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -72466,79 +72485,79 @@
           }
         }
       },
-      "DefaultResponseResponseJson16": {
+      "DeleteFlagSegment204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson17": {
+      "DeleteSdkKey204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "GitNamespaces200ResponseResponseJson": {
+      "GitNamespaces200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/GitNamespaces200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/GitNamespaces200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson18": {
+      "ConnectIntegrationResourceToProject201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson19": {
+      "UpdateInstallation200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson20": {
+      "CreateEvent201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson21": {
+      "DeleteIntegrationResource204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson22": {
+      "SubmitBillingData201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson23": {
+      "FinalizeInstallation201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson24": {
+      "UpdateInvoice201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson25": {
+      "SubmitPrepaymentBalances201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson26": {
+      "UpdateResourceSecretsById200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson27": {
+      "DeleteConfiguration204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "GetIntegrationLogDrains200ResponseResponseJson": {
+      "GetIntegrationLogDrains200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/GetIntegrationLogDrains200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/GetIntegrationLogDrains200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson28": {
+      "DeleteIntegrationLogDrain204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -72560,68 +72579,68 @@
           }
         }
       },
-      "DefaultResponseResponseJson29": {
+      "CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson30": {
+      "UpdateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson31": {
+      "DeleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "GetMicrofrontendsGroups200ResponseResponseJson": {
+      "GetMicrofrontendsGroups200ResponseSchema": {
         "type": "object"
       },
-      "CreateObservabilityQuery200ResponseResponseJson": {
+      "CreateObservabilityQuery200ResponseSchema": {
         "type": "object"
       },
-      "GetObservabilitySchemaByMetricId200ResponseResponseJson": {
+      "GetObservabilitySchemaByMetricId200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/GetObservabilitySchemaByMetricId200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/GetObservabilitySchemaByMetricId200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson32": {
+      "DeleteProject204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "UpdateStaticIps200ResponseResponseJson": {
+      "UpdateStaticIps200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/UpdateStaticIps200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/UpdateStaticIps200ResponseSchemaItem"
         }
       },
-      "RemoveProjectDomain200ResponseResponseJson": {
+      "RemoveProjectDomain200ResponseSchema": {
         "type": "object"
       },
-      "DefaultResponseResponseJson33": {
+      "RequestRollback201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson34": {
+      "UpdateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson35": {
+      "RequestPromote201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson36": {
+      "PauseProject201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson37": {
+      "UnpauseProject201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -72706,7 +72725,7 @@
           }
         }
       },
-      "RunSessionCommand200ResponseResponseJson": {
+      "RunSessionCommand200Response": {
         "required": [
           "command"
         ],
@@ -72761,20 +72780,20 @@
           }
         }
       },
-      "ReadSessionFile200ResponseResponseOctetStream": {
+      "ReadSessionFile200OctetStreamResponseSchema": {
         "type": "string",
         "format": "binary"
       },
-      "CreateSessionDirectory200ResponseResponseJson": {
+      "CreateSessionDirectory200ResponseSchema": {
         "type": "object"
       },
-      "WriteSessionFiles200ResponseResponseJson": {
+      "WriteSessionFiles200ResponseSchema": {
         "type": "object"
       },
-      "UpdateFirewallConfig200ResponseResponseJson": {
+      "UpdateFirewallConfig200ResponseSchema": {
         "type": "object"
       },
-      "DeleteSecurityFirewallConfigByConfigVersion204ResponseResponseJson": {
+      "DeleteSecurityFirewallConfigByConfigVersion204ResponseSchema": {
         "type": "string"
       },
       "InviteUserToTeamRequestRequestBody": {
@@ -72811,7 +72830,7 @@
           }
         }
       },
-      "DeleteMicrofrontendsGroup200ResponseResponseJson": {
+      "DeleteMicrofrontendsGroup200ResponseSchema": {
         "type": "object"
       },
       "CreateAuthToken200Response": {
@@ -72866,7 +72885,7 @@
           }
         }
       },
-      "DeleteRepository202ResponseResponseJson": {
+      "DeleteRepository202ResponseSchema": {
         "type": "object"
       },
       "GetRepositoryTag200Response": {
@@ -72891,10 +72910,10 @@
           }
         }
       },
-      "DeleteRepositoryImage202ResponseResponseJson": {
+      "DeleteRepositoryImage202ResponseSchema": {
         "type": "object"
       },
-      "DefaultResponseResponseJson38": {
+      "DeleteWebhook204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -72917,10 +72936,10 @@
           }
         }
       },
-      "PatchUrlProtectionBypass200ResponseResponseJson": {
+      "PatchUrlProtectionBypass200ResponseSchema": {
         "type": "object"
       },
-      "RemoveCert200ResponseResponseJson": {
+      "RemoveCert200ResponseSchema": {
         "type": "object"
       },
       "GetCerts200Response": {
@@ -72941,13 +72960,13 @@
           }
         }
       },
-      "ListDeploymentFiles200ResponseResponseJson": {
+      "ListDeploymentFiles200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/FileTree"
         }
       },
-      "DefaultResponseResponseJson39": {
+      "GetDeploymentFileContents200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -73648,6 +73667,9 @@
             "$ref": "#/components/schemas/CreateConnectorRequestDataTypeSnowflakeWif"
           },
           {
+            "$ref": "#/components/schemas/CreateConnectorRequestDataTypePhoton"
+          },
+          {
             "title": "type:other",
             "type": "object"
           }
@@ -73742,7 +73764,7 @@
           }
         ]
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf1": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf1": {
         "required": [
           "created",
           "payload",
@@ -73751,17 +73773,17 @@
         "type": "object",
         "properties": {
           "type": {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf1Type"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf1Type"
           },
           "created": {
             "type": "number"
           },
           "payload": {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf1Payload"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf1Payload"
           }
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf2": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf2": {
         "required": [
           "created",
           "date",
@@ -73786,7 +73808,7 @@
             "type": "string"
           },
           "info": {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf2Info"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf2Info"
           },
           "serial": {
             "type": "string"
@@ -73795,27 +73817,27 @@
             "type": "string"
           },
           "type": {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf2Type"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf2Type"
           },
           "level": {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf2Level"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf2Level"
           }
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf3": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf3": {
         "required": [
           "type"
         ],
         "type": "object",
         "properties": {
           "type": {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf3Type"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf3Type"
           },
           "created": {
             "type": "number"
           },
           "payload": {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf3Payload"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf3Payload"
           },
           "date": {
             "type": "number"
@@ -73827,7 +73849,7 @@
             "type": "string"
           },
           "info": {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf3Info"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf3Info"
           },
           "serial": {
             "type": "string"
@@ -73836,7 +73858,7 @@
             "type": "string"
           },
           "level": {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf3Level"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf3Level"
           },
           "alias": {
             "type": "array",
@@ -73845,10 +73867,10 @@
             }
           },
           "aliasError": {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf3AliasError"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf3AliasError"
           },
           "aliasWarning": {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf3AliasWarning"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf3AliasWarning"
           }
         }
       },
@@ -80303,7 +80325,7 @@
           }
         }
       },
-      "RunSessionCommand200ResponseOneOf1": {
+      "RunSessionCommand200XNdjsonResponseOneOf1": {
         "required": [
           "data",
           "stream"
@@ -80314,11 +80336,11 @@
             "type": "string"
           },
           "data": {
-            "$ref": "#/components/schemas/RunSessionCommand200ResponseOneOf1Data"
+            "$ref": "#/components/schemas/RunSessionCommand200XNdjsonResponseOneOf1Data"
           }
         }
       },
-      "RunSessionCommand200ResponseOneOf2": {
+      "RunSessionCommand200XNdjsonResponseOneOf2": {
         "required": [
           "command",
           "data",
@@ -80337,7 +80359,7 @@
           }
         }
       },
-      "RunSessionCommand200ResponseOneOf3": {
+      "RunSessionCommand200XNdjsonResponseOneOf3": {
         "required": [
           "data",
           "stream"
@@ -80348,11 +80370,11 @@
             "type": "string"
           },
           "data": {
-            "$ref": "#/components/schemas/RunSessionCommand200ResponseOneOf3Data"
+            "$ref": "#/components/schemas/RunSessionCommand200XNdjsonResponseOneOf3Data"
           }
         }
       },
-      "GetSessionCommandLogs200ResponseOneOf1": {
+      "GetSessionCommandLogs200XNdjsonResponseOneOf1": {
         "required": [
           "data",
           "stream"
@@ -80363,11 +80385,11 @@
             "type": "string"
           },
           "data": {
-            "$ref": "#/components/schemas/GetSessionCommandLogs200ResponseOneOf1Data"
+            "$ref": "#/components/schemas/GetSessionCommandLogs200XNdjsonResponseOneOf1Data"
           }
         }
       },
-      "GetSessionCommandLogs200ResponseOneOf2": {
+      "GetSessionCommandLogs200XNdjsonResponseOneOf2": {
         "required": [
           "data",
           "stream"
@@ -83089,6 +83111,9 @@
           },
           "jwtBearer": {
             "$ref": "#/components/schemas/CreateConnectorRequestDataTypeOAuthJwtBearer"
+          },
+          "clientAssertion": {
+            "$ref": "#/components/schemas/CreateConnectorRequestDataTypeOAuthClientAssertion"
           }
         },
         "additionalProperties": false
@@ -83301,6 +83326,26 @@
           },
           "extras": {
             "$ref": "#/components/schemas/CreateConnectorRequestDataTypeSnowflakeWifExtras"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateConnectorRequestDataTypePhoton": {
+        "title": "type:photon",
+        "required": [
+          "projectId",
+          "projectSecret"
+        ],
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string"
+          },
+          "projectSecret": {
+            "type": "string"
+          },
+          "webhookSecret": {
+            "type": "string"
           }
         },
         "additionalProperties": false
@@ -91210,7 +91255,7 @@
           }
         }
       },
-      "ListBillingCharges200ResponseTags": {
+      "ListBillingCharges200JsonlResponseTags": {
         "type": "object",
         "additionalProperties": {
           "type": "string"
@@ -91882,6 +91927,15 @@
       },
       "UpdateDeploymentCheckRunRequestOutput": {
         "type": "object"
+      },
+      "CreateConnectorRequestParams": {
+        "maxProperties": 16,
+        "type": "object",
+        "additionalProperties": {
+          "maxLength": 256,
+          "type": "string"
+        },
+        "description": "Values for the connection method\u0027s templateFields."
       },
       "CreateConnector201ResponseCreatedBy": {
         "required": [
@@ -119342,7 +119396,7 @@
         },
         "additionalProperties": false
       },
-      "ArtifactQuery200ResponseResponseJsonAdditionalProperties": {
+      "ArtifactQuery200ResponseSchemaAdditionalProperties": {
         "type": "object",
         "properties": {
           "size": {
@@ -119631,7 +119685,7 @@
           }
         }
       },
-      "GitNamespaces200ResponseResponseJsonItem": {
+      "GitNamespaces200ResponseSchemaItem": {
         "required": [
           "id",
           "ownerType",
@@ -119671,7 +119725,7 @@
           }
         }
       },
-      "GetIntegrationLogDrains200ResponseResponseJsonItem": {
+      "GetIntegrationLogDrains200ResponseSchemaItem": {
         "required": [
           "createdAt",
           "id",
@@ -119768,7 +119822,7 @@
           }
         }
       },
-      "GetObservabilitySchemaByMetricId200ResponseResponseJsonItem": {
+      "GetObservabilitySchemaByMetricId200ResponseSchemaItem": {
         "required": [
           "aggregations",
           "defaultAggregation",
@@ -119805,7 +119859,7 @@
           }
         }
       },
-      "UpdateStaticIps200ResponseResponseJsonItem": {
+      "UpdateStaticIps200ResponseSchemaItem": {
         "required": [
           "buildsEnabled",
           "connectConfigurationId",
@@ -120913,7 +120967,7 @@
           }
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf1Payload": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf1Payload": {
         "required": [
           "date",
           "deploymentId",
@@ -120926,7 +120980,7 @@
             "type": "string"
           },
           "info": {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf1PayloadInfo"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf1PayloadInfo"
           },
           "text": {
             "type": "string"
@@ -120950,11 +121004,11 @@
             "type": "string"
           },
           "proxy": {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf1PayloadProxy"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf1PayloadProxy"
           }
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf2Info": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf2Info": {
         "required": [
           "name",
           "type"
@@ -120981,7 +121035,7 @@
           }
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf3Payload": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf3Payload": {
         "required": [
           "date",
           "deploymentId",
@@ -120994,7 +121048,7 @@
             "type": "string"
           },
           "info": {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf3PayloadInfo"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf3PayloadInfo"
           },
           "text": {
             "type": "string"
@@ -121018,11 +121072,11 @@
             "type": "string"
           },
           "proxy": {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf3PayloadProxy"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf3PayloadProxy"
           }
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf3Info": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf3Info": {
         "required": [
           "name",
           "type"
@@ -121049,7 +121103,7 @@
           }
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf3AliasError": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf3AliasError": {
         "required": [
           "code",
           "message"
@@ -121065,7 +121119,7 @@
         },
         "nullable": true
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf3AliasWarning": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf3AliasWarning": {
         "required": [
           "code",
           "message"
@@ -126666,7 +126720,7 @@
           }
         }
       },
-      "RunSessionCommand200ResponseOneOf1Data": {
+      "RunSessionCommand200XNdjsonResponseOneOf1Data": {
         "required": [
           "code",
           "message"
@@ -126674,14 +126728,14 @@
         "type": "object",
         "properties": {
           "code": {
-            "$ref": "#/components/schemas/RunSessionCommand200ResponseOneOf1DataCode"
+            "$ref": "#/components/schemas/RunSessionCommand200XNdjsonResponseOneOf1DataCode"
           },
           "message": {
-            "$ref": "#/components/schemas/RunSessionCommand200ResponseOneOf1DataMessage"
+            "$ref": "#/components/schemas/RunSessionCommand200XNdjsonResponseOneOf1DataMessage"
           }
         }
       },
-      "RunSessionCommand200ResponseOneOf3Data": {
+      "RunSessionCommand200XNdjsonResponseOneOf3Data": {
         "required": [
           "code",
           "message"
@@ -126689,14 +126743,14 @@
         "type": "object",
         "properties": {
           "code": {
-            "$ref": "#/components/schemas/RunSessionCommand200ResponseOneOf3DataCode"
+            "$ref": "#/components/schemas/RunSessionCommand200XNdjsonResponseOneOf3DataCode"
           },
           "message": {
-            "$ref": "#/components/schemas/RunSessionCommand200ResponseOneOf3DataMessage"
+            "$ref": "#/components/schemas/RunSessionCommand200XNdjsonResponseOneOf3DataMessage"
           }
         }
       },
-      "GetSessionCommandLogs200ResponseOneOf1Data": {
+      "GetSessionCommandLogs200XNdjsonResponseOneOf1Data": {
         "required": [
           "code",
           "message"
@@ -126704,10 +126758,10 @@
         "type": "object",
         "properties": {
           "code": {
-            "$ref": "#/components/schemas/GetSessionCommandLogs200ResponseOneOf1DataCode"
+            "$ref": "#/components/schemas/GetSessionCommandLogs200XNdjsonResponseOneOf1DataCode"
           },
           "message": {
-            "$ref": "#/components/schemas/GetSessionCommandLogs200ResponseOneOf1DataMessage"
+            "$ref": "#/components/schemas/GetSessionCommandLogs200XNdjsonResponseOneOf1DataMessage"
           }
         }
       },
@@ -127572,6 +127626,21 @@
           },
           "useClientCredentials": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateConnectorRequestDataTypeOAuthClientAssertion": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "ttl": {
+            "type": "number"
+          },
+          "claims": {
+            "$ref": "#/components/schemas/CreateConnectorRequestDataTypeOAuthClientAssertionClaims"
           }
         },
         "additionalProperties": false
@@ -149492,7 +149561,7 @@
           }
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf1PayloadInfo": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf1PayloadInfo": {
         "required": [
           "name",
           "type"
@@ -149519,7 +149588,7 @@
           }
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf1PayloadProxy": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf1PayloadProxy": {
         "required": [
           "host",
           "method",
@@ -149576,20 +149645,20 @@
             "type": "string"
           },
           "vercelCache": {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf1PayloadProxyVercelCache"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf1PayloadProxyVercelCache"
           },
           "lambdaRegion": {
             "type": "string"
           },
           "wafAction": {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf1PayloadProxyWafAction"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf1PayloadProxyWafAction"
           },
           "wafRuleId": {
             "type": "string"
           }
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf3PayloadInfo": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf3PayloadInfo": {
         "required": [
           "name",
           "type"
@@ -149616,7 +149685,7 @@
           }
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf3PayloadProxy": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf3PayloadProxy": {
         "required": [
           "host",
           "method",
@@ -149673,13 +149742,13 @@
             "type": "string"
           },
           "vercelCache": {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf3PayloadProxyVercelCache"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf3PayloadProxyVercelCache"
           },
           "lambdaRegion": {
             "type": "string"
           },
           "wafAction": {
-            "$ref": "#/components/schemas/GetDeploymentEvents200ResponseResponseStreamJsonOneOf3PayloadProxyWafAction"
+            "$ref": "#/components/schemas/GetDeploymentEvents200StreamJsonResponseOneOf3PayloadProxyWafAction"
           },
           "wafRuleId": {
             "type": "string"
@@ -156451,6 +156520,12 @@
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/CreateConnectorRequestDataTypeOAuthJwtBearerAdditionalClaimsAdditionalProperties"
+        }
+      },
+      "CreateConnectorRequestDataTypeOAuthClientAssertionClaims": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/CreateConnectorRequestDataTypeOAuthClientAssertionClaimsAdditionalProperties"
         }
       },
       "CreateConnectorRequestDataTypeGithubExtrasAdditionalProperties": {
@@ -171004,6 +171079,9 @@
         }
       },
       "CreateConnectorRequestDataTypeOAuthJwtBearerAdditionalClaimsAdditionalProperties": {
+        "type": "object"
+      },
+      "CreateConnectorRequestDataTypeOAuthClientAssertionClaimsAdditionalProperties": {
         "type": "object"
       },
       "CancelDeployment200ResponseFlagsOneOf1DefinitionsAdditionalPropertiesOptionsItem": {
@@ -203476,7 +203554,7 @@
           ]
         }
       },
-      "ListBillingCharges200ResponseBillingCurrency": {
+      "ListBillingCharges200JsonlResponseBillingCurrency": {
         "enum": [
           "USD"
         ],
@@ -203484,7 +203562,7 @@
         "additionalProperties": false,
         "description": "Currency used for billing (ISO 4217)",
         "x-ms-enum": {
-          "name": "ListBillingCharges200ResponseBillingCurrency",
+          "name": "ListBillingCharges200JsonlResponseBillingCurrency",
           "modelAsString": false,
           "values": [
             {
@@ -203494,7 +203572,7 @@
           ]
         }
       },
-      "ListBillingCharges200ResponseChargeCategory": {
+      "ListBillingCharges200JsonlResponseChargeCategory": {
         "enum": [
           "Adjustment",
           "Credit",
@@ -203506,7 +203584,7 @@
         "additionalProperties": false,
         "description": "Classification of the charge"
       },
-      "ListBillingCharges200ResponseServiceCategory": {
+      "ListBillingCharges200JsonlResponseServiceCategory": {
         "enum": [
           "AI and Machine Learning",
           "Analytics",
@@ -203532,7 +203610,7 @@
         "additionalProperties": false,
         "description": "High-level category of the service",
         "x-ms-enum": {
-          "name": "ListBillingCharges200ResponseServiceCategory",
+          "name": "ListBillingCharges200JsonlResponseServiceCategory",
           "modelAsString": false,
           "values": [
             {
@@ -203558,7 +203636,7 @@
           ]
         }
       },
-      "ListBillingCharges200ResponsePricingCategory": {
+      "ListBillingCharges200JsonlResponsePricingCategory": {
         "enum": [
           "Committed",
           "Dynamic",
@@ -203569,14 +203647,14 @@
         "additionalProperties": false,
         "description": "Pricing model used for the charge."
       },
-      "ListBillingCharges200ResponsePricingCurrency": {
+      "ListBillingCharges200JsonlResponsePricingCurrency": {
         "enum": [
           "USD"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "ListBillingCharges200ResponsePricingCurrency",
+          "name": "ListBillingCharges200JsonlResponsePricingCurrency",
           "modelAsString": false,
           "values": [
             {
@@ -203586,7 +203664,7 @@
           ]
         }
       },
-      "ListContractCommitments200ResponseContractCommitmentCategory": {
+      "ListContractCommitments200JsonlResponseContractCommitmentCategory": {
         "enum": [
           "Spend",
           "Usage"
@@ -206281,7 +206359,7 @@
           ]
         }
       },
-      "GetRuntimeLogs200ResponseLevel": {
+      "GetRuntimeLogs200StreamJsonResponseLevel": {
         "enum": [
           "debug",
           "error",
@@ -206293,7 +206371,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "GetRuntimeLogs200ResponseLevel",
+          "name": "GetRuntimeLogs200StreamJsonResponseLevel",
           "modelAsString": false,
           "values": [
             {
@@ -206323,7 +206401,7 @@
           ]
         }
       },
-      "GetRuntimeLogs200ResponseSource": {
+      "GetRuntimeLogs200StreamJsonResponseSource": {
         "enum": [
           "delimiter",
           "edge-function",
@@ -206334,7 +206412,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "GetRuntimeLogs200ResponseSource",
+          "name": "GetRuntimeLogs200StreamJsonResponseSource",
           "modelAsString": false,
           "values": [
             {
@@ -216118,7 +216196,7 @@
           ]
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf1Type": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf1Type": {
         "enum": [
           "command",
           "delimiter",
@@ -216136,7 +216214,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "GetDeploymentEvents200ResponseResponseStreamJsonOneOf1Type",
+          "name": "GetDeploymentEvents200StreamJsonResponseOneOf1Type",
           "modelAsString": false,
           "values": [
             {
@@ -216190,7 +216268,7 @@
           ]
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf2Type": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf2Type": {
         "enum": [
           "command",
           "delimiter",
@@ -216208,7 +216286,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "GetDeploymentEvents200ResponseResponseStreamJsonOneOf2Type",
+          "name": "GetDeploymentEvents200StreamJsonResponseOneOf2Type",
           "modelAsString": false,
           "values": [
             {
@@ -216262,7 +216340,7 @@
           ]
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf2Level": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf2Level": {
         "enum": [
           "error",
           "warning"
@@ -216270,7 +216348,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "GetDeploymentEvents200ResponseResponseStreamJsonOneOf2Level",
+          "name": "GetDeploymentEvents200StreamJsonResponseOneOf2Level",
           "modelAsString": false,
           "values": [
             {
@@ -216284,7 +216362,7 @@
           ]
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf3Type": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf3Type": {
         "enum": [
           "command",
           "delimiter",
@@ -216303,7 +216381,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "GetDeploymentEvents200ResponseResponseStreamJsonOneOf3Type",
+          "name": "GetDeploymentEvents200StreamJsonResponseOneOf3Type",
           "modelAsString": false,
           "values": [
             {
@@ -216361,7 +216439,7 @@
           ]
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf3Level": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf3Level": {
         "enum": [
           "error",
           "warning"
@@ -216369,7 +216447,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "GetDeploymentEvents200ResponseResponseStreamJsonOneOf3Level",
+          "name": "GetDeploymentEvents200StreamJsonResponseOneOf3Level",
           "modelAsString": false,
           "values": [
             {
@@ -230135,6 +230213,7 @@
           "oom-failure",
           "enospc-failure",
           "build-timeout-failure",
+          "basic-floor",
           "high-peak-memory",
           "sustained-high-cpu",
           "high-peak-disk",
@@ -230159,6 +230238,10 @@
             {
               "value": "build-timeout-failure",
               "name": "BuildTimeoutFailure"
+            },
+            {
+              "value": "basic-floor",
+              "name": "BasicFloor"
             },
             {
               "value": "high-peak-memory",
@@ -231200,6 +231283,7 @@
       },
       "CreateProject200ResponseResourceConfigBuildMachineElasticReason": {
         "enum": [
+          "basic-floor",
           "build-timeout-failure",
           "enospc-failure",
           "enterprise-floor",
@@ -231216,6 +231300,10 @@
           "name": "CreateProject200ResponseResourceConfigBuildMachineElasticReason",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic-floor",
+              "name": "BasicFloor"
+            },
             {
               "value": "build-timeout-failure",
               "name": "BuildTimeoutFailure"
@@ -231343,6 +231431,7 @@
       },
       "CreateProject200ResponseDefaultResourceConfigBuildMachineElasticReason": {
         "enum": [
+          "basic-floor",
           "build-timeout-failure",
           "enospc-failure",
           "enterprise-floor",
@@ -231359,6 +231448,10 @@
           "name": "CreateProject200ResponseDefaultResourceConfigBuildMachineElasticReason",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic-floor",
+              "name": "BasicFloor"
+            },
             {
               "value": "build-timeout-failure",
               "name": "BuildTimeoutFailure"
@@ -232718,6 +232811,7 @@
       },
       "GetProject200ResponseResourceConfigBuildMachineElasticReason": {
         "enum": [
+          "basic-floor",
           "build-timeout-failure",
           "enospc-failure",
           "enterprise-floor",
@@ -232734,6 +232828,10 @@
           "name": "GetProject200ResponseResourceConfigBuildMachineElasticReason",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic-floor",
+              "name": "BasicFloor"
+            },
             {
               "value": "build-timeout-failure",
               "name": "BuildTimeoutFailure"
@@ -232861,6 +232959,7 @@
       },
       "GetProject200ResponseDefaultResourceConfigBuildMachineElasticReason": {
         "enum": [
+          "basic-floor",
           "build-timeout-failure",
           "enospc-failure",
           "enterprise-floor",
@@ -232877,6 +232976,10 @@
           "name": "GetProject200ResponseDefaultResourceConfigBuildMachineElasticReason",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic-floor",
+              "name": "BasicFloor"
+            },
             {
               "value": "build-timeout-failure",
               "name": "BuildTimeoutFailure"
@@ -233319,6 +233422,7 @@
           "oom-failure",
           "enospc-failure",
           "build-timeout-failure",
+          "basic-floor",
           "high-peak-memory",
           "sustained-high-cpu",
           "high-peak-disk",
@@ -233343,6 +233447,10 @@
             {
               "value": "build-timeout-failure",
               "name": "BuildTimeoutFailure"
+            },
+            {
+              "value": "basic-floor",
+              "name": "BasicFloor"
             },
             {
               "value": "high-peak-memory",
@@ -234594,6 +234702,7 @@
       },
       "UpdateProject200ResponseResourceConfigBuildMachineElasticReason": {
         "enum": [
+          "basic-floor",
           "build-timeout-failure",
           "enospc-failure",
           "enterprise-floor",
@@ -234610,6 +234719,10 @@
           "name": "UpdateProject200ResponseResourceConfigBuildMachineElasticReason",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic-floor",
+              "name": "BasicFloor"
+            },
             {
               "value": "build-timeout-failure",
               "name": "BuildTimeoutFailure"
@@ -234737,6 +234850,7 @@
       },
       "UpdateProject200ResponseDefaultResourceConfigBuildMachineElasticReason": {
         "enum": [
+          "basic-floor",
           "build-timeout-failure",
           "enospc-failure",
           "enterprise-floor",
@@ -234753,6 +234867,10 @@
           "name": "UpdateProject200ResponseDefaultResourceConfigBuildMachineElasticReason",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic-floor",
+              "name": "BasicFloor"
+            },
             {
               "value": "build-timeout-failure",
               "name": "BuildTimeoutFailure"
@@ -236112,6 +236230,7 @@
       },
       "UploadProjectAvatar200ResponseResourceConfigBuildMachineElasticReason": {
         "enum": [
+          "basic-floor",
           "build-timeout-failure",
           "enospc-failure",
           "enterprise-floor",
@@ -236128,6 +236247,10 @@
           "name": "UploadProjectAvatar200ResponseResourceConfigBuildMachineElasticReason",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic-floor",
+              "name": "BasicFloor"
+            },
             {
               "value": "build-timeout-failure",
               "name": "BuildTimeoutFailure"
@@ -236255,6 +236378,7 @@
       },
       "UploadProjectAvatar200ResponseDefaultResourceConfigBuildMachineElasticReason": {
         "enum": [
+          "basic-floor",
           "build-timeout-failure",
           "enospc-failure",
           "enterprise-floor",
@@ -236271,6 +236395,10 @@
           "name": "UploadProjectAvatar200ResponseDefaultResourceConfigBuildMachineElasticReason",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic-floor",
+              "name": "BasicFloor"
+            },
             {
               "value": "build-timeout-failure",
               "name": "BuildTimeoutFailure"
@@ -238272,6 +238400,7 @@
       },
       "UpdateMicrofrontends200ResponseResourceConfigBuildMachineElasticReason": {
         "enum": [
+          "basic-floor",
           "build-timeout-failure",
           "enospc-failure",
           "enterprise-floor",
@@ -238288,6 +238417,10 @@
           "name": "UpdateMicrofrontends200ResponseResourceConfigBuildMachineElasticReason",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic-floor",
+              "name": "BasicFloor"
+            },
             {
               "value": "build-timeout-failure",
               "name": "BuildTimeoutFailure"
@@ -238415,6 +238548,7 @@
       },
       "UpdateMicrofrontends200ResponseDefaultResourceConfigBuildMachineElasticReason": {
         "enum": [
+          "basic-floor",
           "build-timeout-failure",
           "enospc-failure",
           "enterprise-floor",
@@ -238431,6 +238565,10 @@
           "name": "UpdateMicrofrontends200ResponseDefaultResourceConfigBuildMachineElasticReason",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic-floor",
+              "name": "BasicFloor"
+            },
             {
               "value": "build-timeout-failure",
               "name": "BuildTimeoutFailure"
@@ -248422,14 +248560,14 @@
           ]
         }
       },
-      "RunSessionCommand200ResponseOneOf1DataCode": {
+      "RunSessionCommand200XNdjsonResponseOneOf1DataCode": {
         "enum": [
           "sandbox_stream_closed"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "RunSessionCommand200ResponseOneOf1DataCode",
+          "name": "RunSessionCommand200XNdjsonResponseOneOf1DataCode",
           "modelAsString": false,
           "values": [
             {
@@ -248439,14 +248577,14 @@
           ]
         }
       },
-      "RunSessionCommand200ResponseOneOf1DataMessage": {
+      "RunSessionCommand200XNdjsonResponseOneOf1DataMessage": {
         "enum": [
           "Sandbox stream was closed and is not accepting commands."
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "RunSessionCommand200ResponseOneOf1DataMessage",
+          "name": "RunSessionCommand200XNdjsonResponseOneOf1DataMessage",
           "modelAsString": false,
           "values": [
             {
@@ -248456,14 +248594,14 @@
           ]
         }
       },
-      "RunSessionCommand200ResponseOneOf3DataCode": {
+      "RunSessionCommand200XNdjsonResponseOneOf3DataCode": {
         "enum": [
           "sandbox_stream_closed"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "RunSessionCommand200ResponseOneOf3DataCode",
+          "name": "RunSessionCommand200XNdjsonResponseOneOf3DataCode",
           "modelAsString": false,
           "values": [
             {
@@ -248473,14 +248611,14 @@
           ]
         }
       },
-      "RunSessionCommand200ResponseOneOf3DataMessage": {
+      "RunSessionCommand200XNdjsonResponseOneOf3DataMessage": {
         "enum": [
           "Sandbox stream was closed and is not accepting commands."
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "RunSessionCommand200ResponseOneOf3DataMessage",
+          "name": "RunSessionCommand200XNdjsonResponseOneOf3DataMessage",
           "modelAsString": false,
           "values": [
             {
@@ -248490,14 +248628,14 @@
           ]
         }
       },
-      "GetSessionCommandLogs200ResponseOneOf1DataCode": {
+      "GetSessionCommandLogs200XNdjsonResponseOneOf1DataCode": {
         "enum": [
           "sandbox_stream_closed"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "GetSessionCommandLogs200ResponseOneOf1DataCode",
+          "name": "GetSessionCommandLogs200XNdjsonResponseOneOf1DataCode",
           "modelAsString": false,
           "values": [
             {
@@ -248507,14 +248645,14 @@
           ]
         }
       },
-      "GetSessionCommandLogs200ResponseOneOf1DataMessage": {
+      "GetSessionCommandLogs200XNdjsonResponseOneOf1DataMessage": {
         "enum": [
           "Sandbox stream was closed and is not accepting commands."
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "GetSessionCommandLogs200ResponseOneOf1DataMessage",
+          "name": "GetSessionCommandLogs200XNdjsonResponseOneOf1DataMessage",
           "modelAsString": false,
           "values": [
             {
@@ -252601,6 +252739,7 @@
       },
       "GetMicrofrontendsInGroup200ResponseProjectsItemResourceConfigBuildMachineElasticReason": {
         "enum": [
+          "basic-floor",
           "build-timeout-failure",
           "enospc-failure",
           "enterprise-floor",
@@ -252617,6 +252756,10 @@
           "name": "GetMicrofrontendsInGroup200ResponseProjectsItemResourceConfigBuildMachineElasticReason",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic-floor",
+              "name": "BasicFloor"
+            },
             {
               "value": "build-timeout-failure",
               "name": "BuildTimeoutFailure"
@@ -252744,6 +252887,7 @@
       },
       "GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigBuildMachineElasticReason": {
         "enum": [
+          "basic-floor",
           "build-timeout-failure",
           "enospc-failure",
           "enterprise-floor",
@@ -252760,6 +252904,10 @@
           "name": "GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigBuildMachineElasticReason",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic-floor",
+              "name": "BasicFloor"
+            },
             {
               "value": "build-timeout-failure",
               "name": "BuildTimeoutFailure"
@@ -263080,6 +263228,7 @@
       },
       "GetProjects200ResponseBranch1ValueItemResourceConfigBuildMachineElasticReason": {
         "enum": [
+          "basic-floor",
           "build-timeout-failure",
           "enospc-failure",
           "enterprise-floor",
@@ -263096,6 +263245,10 @@
           "name": "GetProjects200ResponseBranch1ValueItemResourceConfigBuildMachineElasticReason",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic-floor",
+              "name": "BasicFloor"
+            },
             {
               "value": "build-timeout-failure",
               "name": "BuildTimeoutFailure"
@@ -264205,7 +264358,7 @@
           ]
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf1PayloadProxyVercelCache": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf1PayloadProxyVercelCache": {
         "enum": [
           "BYPASS",
           "HIT",
@@ -264217,7 +264370,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "GetDeploymentEvents200ResponseResponseStreamJsonOneOf1PayloadProxyVercelCache",
+          "name": "GetDeploymentEvents200StreamJsonResponseOneOf1PayloadProxyVercelCache",
           "modelAsString": false,
           "values": [
             {
@@ -264247,7 +264400,7 @@
           ]
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf1PayloadProxyWafAction": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf1PayloadProxyWafAction": {
         "enum": [
           "bypass",
           "challenge",
@@ -264258,7 +264411,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "GetDeploymentEvents200ResponseResponseStreamJsonOneOf1PayloadProxyWafAction",
+          "name": "GetDeploymentEvents200StreamJsonResponseOneOf1PayloadProxyWafAction",
           "modelAsString": false,
           "values": [
             {
@@ -264284,7 +264437,7 @@
           ]
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf3PayloadProxyVercelCache": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf3PayloadProxyVercelCache": {
         "enum": [
           "BYPASS",
           "HIT",
@@ -264296,7 +264449,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "GetDeploymentEvents200ResponseResponseStreamJsonOneOf3PayloadProxyVercelCache",
+          "name": "GetDeploymentEvents200StreamJsonResponseOneOf3PayloadProxyVercelCache",
           "modelAsString": false,
           "values": [
             {
@@ -264326,7 +264479,7 @@
           ]
         }
       },
-      "GetDeploymentEvents200ResponseResponseStreamJsonOneOf3PayloadProxyWafAction": {
+      "GetDeploymentEvents200StreamJsonResponseOneOf3PayloadProxyWafAction": {
         "enum": [
           "bypass",
           "challenge",
@@ -264337,7 +264490,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "GetDeploymentEvents200ResponseResponseStreamJsonOneOf3PayloadProxyWafAction",
+          "name": "GetDeploymentEvents200StreamJsonResponseOneOf3PayloadProxyWafAction",
           "modelAsString": false,
           "values": [
             {
@@ -266172,6 +266325,7 @@
       },
       "GetProjects200ResponseOneOf2ProjectsItemResourceConfigBuildMachineElasticReason": {
         "enum": [
+          "basic-floor",
           "build-timeout-failure",
           "enospc-failure",
           "enterprise-floor",
@@ -266188,6 +266342,10 @@
           "name": "GetProjects200ResponseOneOf2ProjectsItemResourceConfigBuildMachineElasticReason",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic-floor",
+              "name": "BasicFloor"
+            },
             {
               "value": "build-timeout-failure",
               "name": "BuildTimeoutFailure"
@@ -267384,6 +267542,7 @@
       },
       "GetProjects200ResponseOneOf3ProjectsItemResourceConfigBuildMachineElasticReason": {
         "enum": [
+          "basic-floor",
           "build-timeout-failure",
           "enospc-failure",
           "enterprise-floor",
@@ -267400,6 +267559,10 @@
           "name": "GetProjects200ResponseOneOf3ProjectsItemResourceConfigBuildMachineElasticReason",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic-floor",
+              "name": "BasicFloor"
+            },
             {
               "value": "build-timeout-failure",
               "name": "BuildTimeoutFailure"
@@ -267527,6 +267690,7 @@
       },
       "GetProjects200ResponseOneOf3ProjectsItemDefaultResourceConfigBuildMachineElasticReason": {
         "enum": [
+          "basic-floor",
           "build-timeout-failure",
           "enospc-failure",
           "enterprise-floor",
@@ -267543,6 +267707,10 @@
           "name": "GetProjects200ResponseOneOf3ProjectsItemDefaultResourceConfigBuildMachineElasticReason",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic-floor",
+              "name": "BasicFloor"
+            },
             {
               "value": "build-timeout-failure",
               "name": "BuildTimeoutFailure"

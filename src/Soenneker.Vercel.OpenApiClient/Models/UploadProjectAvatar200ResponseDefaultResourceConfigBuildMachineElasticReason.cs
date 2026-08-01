@@ -8,6 +8,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UploadProjectAvatar200ResponseDefaultResourceConfigBuildMachineElasticReason
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "basic-floor")]
+        #pragma warning disable CS1591
+        BasicFloor,
+        #pragma warning restore CS1591
         [EnumMember(Value = "build-timeout-failure")]
         #pragma warning disable CS1591
         BuildTimeoutFailure,

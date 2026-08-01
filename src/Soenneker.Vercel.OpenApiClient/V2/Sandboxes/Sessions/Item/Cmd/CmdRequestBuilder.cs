@@ -67,22 +67,22 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd
         /// <summary>
         /// Executes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommand200ResponseResponseJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommand200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommand200ResponseResponseJson?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommandRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.CmdRequestBuilder.CmdRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommand200Response?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommandRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.CmdRequestBuilder.CmdRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommand200ResponseResponseJson> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommandRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.CmdRequestBuilder.CmdRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommand200Response> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommandRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.CmdRequestBuilder.CmdRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommand200ResponseResponseJson>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommand200ResponseResponseJson.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommand200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommand200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of all commands that have been executed in a session, including their current status, exit codes, and execution times, ordered from the most recent to the oldest.
