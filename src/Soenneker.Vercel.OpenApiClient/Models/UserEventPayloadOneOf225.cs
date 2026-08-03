@@ -31,8 +31,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get; set; }
 #endif
-        /// <summary>The widget property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf225Widget? Widget { get; set; }
+        /// <summary>The sourceFilesOutsideRootDirectory property</summary>
+        public bool? SourceFilesOutsideRootDirectory { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf225"/> and sets the default values.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "widget", n => { Widget = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf225Widget>(); } },
+                { "sourceFilesOutsideRootDirectory", n => { SourceFilesOutsideRootDirectory = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf225Widget>("widget", Widget);
+            writer.WriteBoolValue("sourceFilesOutsideRootDirectory", SourceFilesOutsideRootDirectory);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

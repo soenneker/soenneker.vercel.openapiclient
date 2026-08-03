@@ -24,6 +24,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The API key&apos;s expiration, expressed as a UNIX timestamp in milliseconds.</summary>
         public double? ExpiresAt { get; set; }
+        /// <summary>Optional generic metadata for the API key. The accepted shape depends on the key&apos;s `purpose` and is validated on creation; for `ai-gateway` keys this accepts `environment`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeysRequestMetadata? Metadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeysRequestMetadata Metadata { get; set; }
+#endif
         /// <summary>An optional name for the API key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +83,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "aiGatewayQuota", n => { AiGatewayQuota = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeysRequestAiGatewayQuota>(global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeysRequestAiGatewayQuota.CreateFromDiscriminatorValue); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeysRequestMetadata>(global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeysRequestMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "purpose", n => { Purpose = n.GetStringValue(); } },
@@ -89,6 +98,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeysRequestAiGatewayQuota>("aiGatewayQuota", AiGatewayQuota);
             writer.WriteDoubleValue("expiresAt", ExpiresAt);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateApiKeysRequestMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("purpose", Purpose);

@@ -31,6 +31,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf11Budget Budget { get; set; }
 #endif
+        /// <summary>True when the key was created with a ZDR exemption.</summary>
+        public bool? ZdrExemption { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf11"/> and sets the default values.
         /// </summary>
@@ -58,6 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "apiKey", n => { ApiKey = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf11ApiKey>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf11ApiKey.CreateFromDiscriminatorValue); } },
                 { "budget", n => { Budget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf11Budget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf11Budget.CreateFromDiscriminatorValue); } },
+                { "zdrExemption", n => { ZdrExemption = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -69,6 +72,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf11ApiKey>("apiKey", ApiKey);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf11Budget>("budget", Budget);
+            writer.WriteBoolValue("zdrExemption", ZdrExemption);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

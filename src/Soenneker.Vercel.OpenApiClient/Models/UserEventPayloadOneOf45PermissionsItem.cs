@@ -128,6 +128,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ReadWriteColonTeamMembers,
         #pragma warning restore CS1591
+        [EnumMember(Value = "read-write:vcr")]
+        #pragma warning disable CS1591
+        ReadWriteColonVcr,
+        #pragma warning restore CS1591
         [EnumMember(Value = "read:access-group")]
         #pragma warning disable CS1591
         ReadColonAccessGroup,
@@ -219,6 +223,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "read:user")]
         #pragma warning disable CS1591
         ReadColonUser,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "read:vcr")]
+        #pragma warning disable CS1591
+        ReadColonVcr,
         #pragma warning restore CS1591
         [EnumMember(Value = "read:web-analytics")]
         #pragma warning disable CS1591

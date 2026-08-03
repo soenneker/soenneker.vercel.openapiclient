@@ -89,6 +89,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string RemoteUrl { get; set; }
 #endif
+        /// <summary>Path of the deployed directory relative to the detected git repository root. Empty string when deploying from the repository root.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RootDirectory { get; set; }
+#nullable restore
+#else
+        public string RootDirectory { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -118,6 +126,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "commitSha", n => { CommitSha = n.GetStringValue(); } },
                 { "dirty", n => { Dirty = n.GetBoolValue(); } },
                 { "remoteUrl", n => { RemoteUrl = n.GetStringValue(); } },
+                { "rootDirectory", n => { RootDirectory = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -138,6 +147,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("commitSha", CommitSha);
             writer.WriteBoolValue("dirty", Dirty);
             writer.WriteStringValue("remoteUrl", RemoteUrl);
+            writer.WriteStringValue("rootDirectory", RootDirectory);
         }
     }
 }

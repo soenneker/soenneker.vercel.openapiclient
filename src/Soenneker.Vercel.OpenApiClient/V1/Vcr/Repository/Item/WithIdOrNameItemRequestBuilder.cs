@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.Models;
 using Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Images;
+using Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Permissions;
 using Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Tags;
 using System.Collections.Generic;
 using System.IO;
@@ -23,6 +24,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item
         public global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Images.ImagesRequestBuilder Images
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Images.ImagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The permissions property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Permissions.PermissionsRequestBuilder Permissions
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Permissions.PermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tags property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Tags.TagsRequestBuilder Tags

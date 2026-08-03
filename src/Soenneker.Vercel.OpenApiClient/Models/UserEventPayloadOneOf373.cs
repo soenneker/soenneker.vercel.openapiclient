@@ -13,30 +13,32 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf373 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The actorId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ActorId { get; set; }
-#nullable restore
-#else
-        public string ActorId { get; set; }
-#endif
-        /// <summary>The actorType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf373ActorType? ActorType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The reason property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string Reason { get; set; }
+        public string ProjectId { get; set; }
 #endif
-        /// <summary>The recoveryCodes property</summary>
-        public double? RecoveryCodes { get; set; }
-        /// <summary>The totp property</summary>
-        public bool? Totp { get; set; }
+        /// <summary>The projectName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectName { get; set; }
+#nullable restore
+#else
+        public string ProjectName { get; set; }
+#endif
+        /// <summary>The sampling property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf373SamplingItem>? Sampling { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf373SamplingItem> Sampling { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf373"/> and sets the default values.
         /// </summary>
@@ -62,11 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actorId", n => { ActorId = n.GetStringValue(); } },
-                { "actorType", n => { ActorType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf373ActorType>(); } },
-                { "reason", n => { Reason = n.GetStringValue(); } },
-                { "recoveryCodes", n => { RecoveryCodes = n.GetDoubleValue(); } },
-                { "totp", n => { Totp = n.GetBoolValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "sampling", n => { Sampling = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf373SamplingItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf373SamplingItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -76,11 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("actorId", ActorId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf373ActorType>("actorType", ActorType);
-            writer.WriteStringValue("reason", Reason);
-            writer.WriteDoubleValue("recoveryCodes", RecoveryCodes);
-            writer.WriteBoolValue("totp", Totp);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf373SamplingItem>("sampling", Sampling);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

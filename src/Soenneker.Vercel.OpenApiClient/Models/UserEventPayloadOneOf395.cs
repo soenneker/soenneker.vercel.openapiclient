@@ -15,37 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The configuration property</summary>
+        /// <summary>The customAlertTitle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Configuration? Configuration { get; set; }
+        public string? CustomAlertTitle { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Configuration Configuration { get; set; }
-#endif
-        /// <summary>The newName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? NewName { get; set; }
-#nullable restore
-#else
-        public string NewName { get; set; }
-#endif
-        /// <summary>The peering property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Peering? Peering { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Peering Peering { get; set; }
-#endif
-        /// <summary>The team property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Team? Team { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Team Team { get; set; }
+        public string CustomAlertTitle { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395"/> and sets the default values.
@@ -72,10 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Configuration>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Configuration.CreateFromDiscriminatorValue); } },
-                { "newName", n => { NewName = n.GetStringValue(); } },
-                { "peering", n => { Peering = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Peering>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Peering.CreateFromDiscriminatorValue); } },
-                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Team.CreateFromDiscriminatorValue); } },
+                { "customAlertTitle", n => { CustomAlertTitle = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,10 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Configuration>("configuration", Configuration);
-            writer.WriteStringValue("newName", NewName);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Peering>("peering", Peering);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395Team>("team", Team);
+            writer.WriteStringValue("customAlertTitle", CustomAlertTitle);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

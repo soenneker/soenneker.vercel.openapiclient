@@ -1007,6 +1007,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Login,
         #pragma warning restore CS1591
+        [EnumMember(Value = "login-connection-linked")]
+        #pragma warning disable CS1591
+        LoginConnectionLinked,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "login-connection-unlinked")]
+        #pragma warning disable CS1591
+        LoginConnectionUnlinked,
+        #pragma warning restore CS1591
         [EnumMember(Value = "manual-deployment-promotion-created")]
         #pragma warning disable CS1591
         ManualDeploymentPromotionCreated,
@@ -1731,6 +1739,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         SandboxAliasDelete,
         #pragma warning restore CS1591
+        [EnumMember(Value = "sandbox-snapshot-regions-updated")]
+        #pragma warning disable CS1591
+        SandboxSnapshotRegionsUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "scale")]
         #pragma warning disable CS1591
         Scale,
@@ -2187,6 +2199,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         UserMfaConfigurationUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "user-mfa-recovery-code-used")]
+        #pragma warning disable CS1591
+        UserMfaRecoveryCodeUsed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "user-mfa-recovery-codes-regenerated")]
         #pragma warning disable CS1591
         UserMfaRecoveryCodesRegenerated,
@@ -2266,6 +2282,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "vcr-repository-permissions-cleared")]
         #pragma warning disable CS1591
         VcrRepositoryPermissionsCleared,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "vcr-repository-visibility-changed")]
+        #pragma warning disable CS1591
+        VcrRepositoryVisibilityChanged,
         #pragma warning restore CS1591
         [EnumMember(Value = "vercel-agent-elevated-permissions-approved")]
         #pragma warning disable CS1591

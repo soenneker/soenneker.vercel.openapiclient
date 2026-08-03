@@ -29871,6 +29871,12 @@
                     },
                     "type": "array"
                   },
+                  "gitAccessToken": {
+                    "description": "A read-only GitHub access token scoped to the requested repository. Use a token with a lifetime of 24 hours or less that remains valid until source retrieval completes.",
+                    "maxLength": 1024,
+                    "type": "string",
+                    "writeOnly": true
+                  },
                   "gitMetadata": {
                     "description": "Populates initial git metadata for different git providers.",
                     "additionalProperties": false,
@@ -29930,6 +29936,11 @@
                         "type": "string",
                         "description": "The visibility of the Git repository if their CI (e.g. GitHub Actions) was used, if available",
                         "example": "private"
+                      },
+                      "rootDirectory": {
+                        "type": "string",
+                        "description": "Path of the deployed directory relative to the detected git repository root. Empty string when deploying from the repository root.",
+                        "example": "apps/web"
                       }
                     }
                   },
@@ -73347,6 +73358,11 @@
                     "required": [
                       "limitAmount"
                     ]
+                  },
+                  "metadata": {
+                    "type": "object",
+                    "description": "Optional generic metadata for the API key. The accepted shape depends on the key's `purpose` and is validated on creation; for `ai-gateway` keys this accepts `environment`.",
+                    "additionalProperties": true
                   }
                 }
               }
@@ -77977,6 +77993,12 @@
                                 },
                                 "type": "array"
                               },
+                              "aiGatewayApiKeyZdrExemption": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
                               "aiGatewayBudget": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
@@ -80627,15 +80649,6 @@
                           },
                           "tier": {
                             "type": "string"
-                          },
-                          "flatRateTier": {
-                            "type": "string",
-                            "enum": [
-                              "advanced",
-                              "base",
-                              "critical",
-                              "standard"
-                            ]
                           },
                           "usageStatus": {
                             "properties": {
@@ -101487,6 +101500,12 @@
                                     },
                                     "type": "array"
                                   },
+                                  "aiGatewayApiKeyZdrExemption": {
+                                    "items": {
+                                      "$ref": "#/components/schemas/ACLAction"
+                                    },
+                                    "type": "array"
+                                  },
                                   "aiGatewayBudget": {
                                     "items": {
                                       "$ref": "#/components/schemas/ACLAction"
@@ -104127,15 +104146,6 @@
                               "tier": {
                                 "type": "string"
                               },
-                              "flatRateTier": {
-                                "type": "string",
-                                "enum": [
-                                  "advanced",
-                                  "base",
-                                  "critical",
-                                  "standard"
-                                ]
-                              },
                               "usageStatus": {
                                 "properties": {
                                   "kind": {
@@ -105361,12 +105371,18 @@
                                 "properties": {
                                   "code": {
                                     "type": "number"
+                                  },
+                                  "message": {
+                                    "type": "string"
                                   }
                                 },
                                 "required": [
                                   "code"
                                 ],
                                 "type": "object"
+                              },
+                              "traceState": {
+                                "type": "string"
                               },
                               "traceFlags": {
                                 "type": "number"
@@ -109404,6 +109420,12 @@
                           },
                           "type": "array"
                         },
+                        "aiGatewayApiKeyZdrExemption": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "aiGatewayBudget": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -112043,15 +112065,6 @@
                     },
                     "tier": {
                       "type": "string"
-                    },
-                    "flatRateTier": {
-                      "type": "string",
-                      "enum": [
-                        "advanced",
-                        "base",
-                        "critical",
-                        "standard"
-                      ]
                     },
                     "usageStatus": {
                       "properties": {
@@ -117489,6 +117502,12 @@
                           },
                           "type": "array"
                         },
+                        "aiGatewayApiKeyZdrExemption": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "aiGatewayBudget": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -120128,15 +120147,6 @@
                     },
                     "tier": {
                       "type": "string"
-                    },
-                    "flatRateTier": {
-                      "type": "string",
-                      "enum": [
-                        "advanced",
-                        "base",
-                        "critical",
-                        "standard"
-                      ]
                     },
                     "usageStatus": {
                       "properties": {
@@ -124933,6 +124943,12 @@
                           },
                           "type": "array"
                         },
+                        "aiGatewayApiKeyZdrExemption": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "aiGatewayBudget": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -127572,15 +127588,6 @@
                     },
                     "tier": {
                       "type": "string"
-                    },
-                    "flatRateTier": {
-                      "type": "string",
-                      "enum": [
-                        "advanced",
-                        "base",
-                        "critical",
-                        "standard"
-                      ]
                     },
                     "usageStatus": {
                       "properties": {
@@ -133643,6 +133650,12 @@
                           },
                           "type": "array"
                         },
+                        "aiGatewayApiKeyZdrExemption": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "aiGatewayBudget": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -136282,15 +136295,6 @@
                     },
                     "tier": {
                       "type": "string"
-                    },
-                    "flatRateTier": {
-                      "type": "string",
-                      "enum": [
-                        "advanced",
-                        "base",
-                        "critical",
-                        "standard"
-                      ]
                     },
                     "usageStatus": {
                       "properties": {
@@ -153756,6 +153760,12 @@
                           },
                           "type": "array"
                         },
+                        "aiGatewayApiKeyZdrExemption": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "aiGatewayBudget": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -156395,15 +156405,6 @@
                     },
                     "tier": {
                       "type": "string"
-                    },
-                    "flatRateTier": {
-                      "type": "string",
-                      "enum": [
-                        "advanced",
-                        "base",
-                        "critical",
-                        "standard"
-                      ]
                     },
                     "usageStatus": {
                       "properties": {
@@ -161596,9 +161597,6 @@
           },
           "401": {
             "description": "The request is not authorized."
-          },
-          "402": {
-            "description": ""
           },
           "403": {
             "description": "You do not have permission to access this resource."
@@ -185050,6 +185048,399 @@
         ]
       }
     },
+    "/v1/vcr/repository/{idOrName}/permissions": {
+      "post": {
+        "description": "Grant a team access to a VCR repository. Sharing applies to the whole repository.",
+        "operationId": "addRepositoryPermission",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Add a repository permission",
+        "tags": [
+          "vcr"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "permission": {
+                      "$ref": "#/components/schemas/VcrRepositoryPermission"
+                    }
+                  },
+                  "required": [
+                    "permission"
+                  ],
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "idOrName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 255
+            }
+          },
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "description": "The Team slug to perform the request on behalf of.",
+            "in": "query",
+            "name": "slug",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "teamId": {
+                    "type": "string",
+                    "pattern": "^team_[a-zA-Z0-9]+$",
+                    "maxLength": 64,
+                    "description": "ID of a team that is granted access to a repository.",
+                    "example": "team_LLHUOMOoDlqOp8wPE4kFo9pE"
+                  },
+                  "teamSlug": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+                    "maxLength": 64,
+                    "description": "Slug of a team that is granted access to a repository.",
+                    "example": "my-team"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "Revoke a team's access to a VCR repository.",
+        "operationId": "removeRepositoryPermission",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Remove a repository permission",
+        "tags": [
+          "vcr"
+        ],
+        "responses": {
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "idOrName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 255
+            }
+          },
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "description": "The Team slug to perform the request on behalf of.",
+            "in": "query",
+            "name": "slug",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "teamId": {
+                    "type": "string",
+                    "pattern": "^team_[a-zA-Z0-9]+$",
+                    "maxLength": 64,
+                    "description": "ID of a team that is granted access to a repository.",
+                    "example": "team_LLHUOMOoDlqOp8wPE4kFo9pE"
+                  },
+                  "teamSlug": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+                    "maxLength": 64,
+                    "description": "Slug of a team that is granted access to a repository.",
+                    "example": "my-team"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "description": "List the teams a VCR repository is shared with.",
+        "operationId": "listRepositoryPermissions",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "List repository permissions",
+        "tags": [
+          "vcr"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VcrRepositoryPermissionList"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "idOrName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            }
+          },
+          {
+            "name": "cursor",
+            "description": "Opaque pagination cursor returned by a previous list response.",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 1024,
+              "description": "Opaque pagination cursor returned by a previous list response."
+            }
+          },
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "description": "The Team slug to perform the request on behalf of.",
+            "in": "query",
+            "name": "slug",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ]
+      }
+    },
+    "/v1/vcr/repository/{idOrName}/permissions/all": {
+      "delete": {
+        "description": "Revoke every team's access to a VCR repository. Clearing an unshared repository is a no-op.",
+        "operationId": "clearRepositoryPermissions",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Clear all repository permissions",
+        "tags": [
+          "vcr"
+        ],
+        "responses": {
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "idOrName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 255
+            }
+          },
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "description": "The Team slug to perform the request on behalf of.",
+            "in": "query",
+            "name": "slug",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ]
+      }
+    },
     "/v1/vcr/repository/{idOrName}/tags": {
       "get": {
         "description": "List a repository's tags.",
@@ -185525,6 +185916,1257 @@
             "schema": {
               "type": "string",
               "example": "my-team-url-slug"
+            }
+          }
+        ]
+      }
+    },
+    "/v2/": {
+      "get": {
+        "description": "GET /v2/ Docker Registry v2 version check. Returns a 401 challenge when no credentials are provided, prompting the Docker client to send auth. With valid credentials, returns 200 so the client can proceed.",
+        "operationId": "getRoot",
+        "security": [],
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": ""
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest}": {
+      "head": {
+        "description": "HEAD /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Check whether a blob exists. Used by the Docker client before pushing a layer to avoid re-uploading content that already exists.",
+        "operationId": "headByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest",
+        "security": [],
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "teamSlug",
+            "description": "Single Docker repository team slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository team slug component.",
+              "example": "team-slug"
+            }
+          },
+          {
+            "name": "projectSlug",
+            "description": "Single Docker repository project slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository project slug component.",
+              "example": "project-slug"
+            }
+          },
+          {
+            "name": "repositoryName",
+            "description": "Single Docker repository name component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$",
+              "maxLength": 255,
+              "description": "Single Docker repository name component.",
+              "example": "nginx"
+            }
+          },
+          {
+            "name": "digest",
+            "description": "Content-addressable digest (algorithm:hex).",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_+.-]+:[A-Fa-f0-9]+$",
+              "maxLength": 255,
+              "description": "Content-addressable digest (algorithm:hex).",
+              "example": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          }
+        ]
+      },
+      "get": {
+        "description": "GET /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Fetch a blob by digest.",
+        "operationId": "getByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest",
+        "security": [],
+        "tags": [],
+        "responses": {
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          },
+          "416": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "teamSlug",
+            "description": "Single Docker repository team slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository team slug component.",
+              "example": "team-slug"
+            }
+          },
+          {
+            "name": "projectSlug",
+            "description": "Single Docker repository project slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository project slug component.",
+              "example": "project-slug"
+            }
+          },
+          {
+            "name": "repositoryName",
+            "description": "Single Docker repository name component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$",
+              "maxLength": 255,
+              "description": "Single Docker repository name component.",
+              "example": "nginx"
+            }
+          },
+          {
+            "name": "digest",
+            "description": "Content-addressable digest (algorithm:hex).",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_+.-]+:[A-Fa-f0-9]+$",
+              "maxLength": 255,
+              "description": "Content-addressable digest (algorithm:hex).",
+              "example": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "description": "DELETE /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Blob deletion is intentionally not supported. Matches the behaviour of most public registries.",
+        "operationId": "deleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest",
+        "security": [],
+        "tags": [],
+        "responses": {
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "405": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "teamSlug",
+            "description": "Single Docker repository team slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository team slug component.",
+              "example": "team-slug"
+            }
+          },
+          {
+            "name": "projectSlug",
+            "description": "Single Docker repository project slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository project slug component.",
+              "example": "project-slug"
+            }
+          },
+          {
+            "name": "repositoryName",
+            "description": "Single Docker repository name component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$",
+              "maxLength": 255,
+              "description": "Single Docker repository name component.",
+              "example": "nginx"
+            }
+          },
+          {
+            "name": "digest",
+            "description": "Content-addressable digest (algorithm:hex).",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_+.-]+:[A-Fa-f0-9]+$",
+              "maxLength": 255,
+              "description": "Content-addressable digest (algorithm:hex).",
+              "example": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          }
+        ]
+      }
+    },
+    "/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}": {
+      "get": {
+        "description": "GET /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Query the status of an in-progress blob upload. Used by clients to resume a partial upload after an interruption.",
+        "operationId": "getByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid",
+        "security": [],
+        "tags": [],
+        "responses": {
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "teamSlug",
+            "description": "Single Docker repository team slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository team slug component.",
+              "example": "team-slug"
+            }
+          },
+          {
+            "name": "projectSlug",
+            "description": "Single Docker repository project slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository project slug component.",
+              "example": "project-slug"
+            }
+          },
+          {
+            "name": "repositoryName",
+            "description": "Single Docker repository name component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$",
+              "maxLength": 255,
+              "description": "Single Docker repository name component.",
+              "example": "nginx"
+            }
+          },
+          {
+            "name": "uuid",
+            "description": "Blob upload session identifier.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{40}$",
+              "maxLength": 40,
+              "description": "Blob upload session identifier.",
+              "example": "0123456789abcdef0123456789abcdef01234567"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "description": "DELETE /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Cancel an in-flight blob upload. Aborts the underlying S3 multipart upload (if one was started) and discards the session.",
+        "operationId": "deleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid",
+        "security": [],
+        "tags": [],
+        "responses": {
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "teamSlug",
+            "description": "Single Docker repository team slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository team slug component.",
+              "example": "team-slug"
+            }
+          },
+          {
+            "name": "projectSlug",
+            "description": "Single Docker repository project slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository project slug component.",
+              "example": "project-slug"
+            }
+          },
+          {
+            "name": "repositoryName",
+            "description": "Single Docker repository name component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$",
+              "maxLength": 255,
+              "description": "Single Docker repository name component.",
+              "example": "nginx"
+            }
+          },
+          {
+            "name": "uuid",
+            "description": "Blob upload session identifier.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{40}$",
+              "maxLength": 40,
+              "description": "Blob upload session identifier.",
+              "example": "0123456789abcdef0123456789abcdef01234567"
+            }
+          }
+        ]
+      },
+      "patch": {
+        "description": "PATCH /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Upload a chunk of blob data. The request body is streamed directly to S3 as a multipart upload part while hashing incrementally. The client may call this multiple times for chunked uploads.",
+        "operationId": "updateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid",
+        "security": [],
+        "tags": [],
+        "responses": {
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          },
+          "413": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "teamSlug",
+            "description": "Single Docker repository team slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository team slug component.",
+              "example": "team-slug"
+            }
+          },
+          {
+            "name": "projectSlug",
+            "description": "Single Docker repository project slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository project slug component.",
+              "example": "project-slug"
+            }
+          },
+          {
+            "name": "repositoryName",
+            "description": "Single Docker repository name component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$",
+              "maxLength": 255,
+              "description": "Single Docker repository name component.",
+              "example": "nginx"
+            }
+          },
+          {
+            "name": "uuid",
+            "description": "Blob upload session identifier.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{40}$",
+              "maxLength": 40,
+              "description": "Blob upload session identifier.",
+              "example": "0123456789abcdef0123456789abcdef01234567"
+            }
+          }
+        ]
+      },
+      "put": {
+        "description": "PUT /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid?digest=\u003cdigest\u003e Complete the blob upload. This may include a final chunk of data in the request body (monolithic upload) or just finalize a previous chunked upload.",
+        "operationId": "replaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid",
+        "security": [],
+        "tags": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          },
+          "413": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "teamSlug",
+            "description": "Single Docker repository team slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository team slug component.",
+              "example": "team-slug"
+            }
+          },
+          {
+            "name": "projectSlug",
+            "description": "Single Docker repository project slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository project slug component.",
+              "example": "project-slug"
+            }
+          },
+          {
+            "name": "repositoryName",
+            "description": "Single Docker repository name component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$",
+              "maxLength": 255,
+              "description": "Single Docker repository name component.",
+              "example": "nginx"
+            }
+          },
+          {
+            "name": "uuid",
+            "description": "Blob upload session identifier.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{40}$",
+              "maxLength": 40,
+              "description": "Blob upload session identifier.",
+              "example": "0123456789abcdef0123456789abcdef01234567"
+            }
+          },
+          {
+            "name": "digest",
+            "description": "Content-addressable digest (algorithm:hex).",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_+.-]+:[A-Fa-f0-9]+$",
+              "maxLength": 255,
+              "description": "Content-addressable digest (algorithm:hex).",
+              "example": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          }
+        ]
+      }
+    },
+    "/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/": {
+      "post": {
+        "description": "POST /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/[?mount=\u003cdigest\u003e\u0026from=\u003crepo\u003e] Initiate a blob upload. Returns a UUID in the Location header that the client uses for subsequent PATCH (chunk) and PUT (complete) requests.",
+        "operationId": "createByTeamSlugByProjectSlugByRepositoryNameBlobsUploads",
+        "security": [],
+        "tags": [],
+        "responses": {
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "teamSlug",
+            "description": "Single Docker repository team slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository team slug component.",
+              "example": "team-slug"
+            }
+          },
+          {
+            "name": "projectSlug",
+            "description": "Single Docker repository project slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository project slug component.",
+              "example": "project-slug"
+            }
+          },
+          {
+            "name": "repositoryName",
+            "description": "Single Docker repository name component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$",
+              "maxLength": 255,
+              "description": "Single Docker repository name component.",
+              "example": "nginx"
+            }
+          },
+          {
+            "name": "mount",
+            "description": "Digest of the blob to mount from another repository.",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_+.-]+:[A-Fa-f0-9]+$",
+              "maxLength": 255,
+              "description": "Digest of the blob to mount from another repository."
+            }
+          },
+          {
+            "name": "from",
+            "description": "Source repository to mount the blob from.",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?\\\\/[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?\\\\/[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$",
+              "maxLength": 255,
+              "description": "Source repository to mount the blob from."
+            }
+          }
+        ]
+      }
+    },
+    "/v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference}": {
+      "put": {
+        "description": "PUT /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Upload an image manifest. The digest is computed from the body and returned in the Docker-Content-Digest header.",
+        "operationId": "replaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference",
+        "security": [],
+        "tags": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          },
+          "413": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "teamSlug",
+            "description": "Single Docker repository team slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository team slug component.",
+              "example": "team-slug"
+            }
+          },
+          {
+            "name": "projectSlug",
+            "description": "Single Docker repository project slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository project slug component.",
+              "example": "project-slug"
+            }
+          },
+          {
+            "name": "repositoryName",
+            "description": "Single Docker repository name component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$",
+              "maxLength": 255,
+              "description": "Single Docker repository name component.",
+              "example": "nginx"
+            }
+          },
+          {
+            "name": "reference",
+            "description": "Manifest reference: a tag or digest.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:[a-zA-Z0-9_][a-zA-Z0-9._-]{0,127}|[A-Za-z0-9_+.-]+:[A-Fa-f0-9]+)$",
+              "maxLength": 255,
+              "description": "Manifest reference: a tag or digest.",
+              "example": "latest"
+            }
+          }
+        ]
+      },
+      "head": {
+        "description": "HEAD /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Check whether a manifest exists. Used by Docker client during push to determine if a manifest (or config blob referenced by digest) is already present.",
+        "operationId": "headByTeamSlugByProjectSlugByRepositoryNameManifestsByReference",
+        "security": [],
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "teamSlug",
+            "description": "Single Docker repository team slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository team slug component.",
+              "example": "team-slug"
+            }
+          },
+          {
+            "name": "projectSlug",
+            "description": "Single Docker repository project slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository project slug component.",
+              "example": "project-slug"
+            }
+          },
+          {
+            "name": "repositoryName",
+            "description": "Single Docker repository name component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$",
+              "maxLength": 255,
+              "description": "Single Docker repository name component.",
+              "example": "nginx"
+            }
+          },
+          {
+            "name": "reference",
+            "description": "Manifest reference: a tag or digest.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:[a-zA-Z0-9_][a-zA-Z0-9._-]{0,127}|[A-Za-z0-9_+.-]+:[A-Fa-f0-9]+)$",
+              "maxLength": 255,
+              "description": "Manifest reference: a tag or digest.",
+              "example": "latest"
+            }
+          }
+        ]
+      },
+      "get": {
+        "description": "GET /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Fetch a manifest by tag or digest.",
+        "operationId": "getByTeamSlugByProjectSlugByRepositoryNameManifestsByReference",
+        "security": [],
+        "tags": [],
+        "responses": {
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "teamSlug",
+            "description": "Single Docker repository team slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository team slug component.",
+              "example": "team-slug"
+            }
+          },
+          {
+            "name": "projectSlug",
+            "description": "Single Docker repository project slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository project slug component.",
+              "example": "project-slug"
+            }
+          },
+          {
+            "name": "repositoryName",
+            "description": "Single Docker repository name component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$",
+              "maxLength": 255,
+              "description": "Single Docker repository name component.",
+              "example": "nginx"
+            }
+          },
+          {
+            "name": "reference",
+            "description": "Manifest reference: a tag or digest.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:[a-zA-Z0-9_][a-zA-Z0-9._-]{0,127}|[A-Za-z0-9_+.-]+:[A-Fa-f0-9]+)$",
+              "maxLength": 255,
+              "description": "Manifest reference: a tag or digest.",
+              "example": "latest"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "description": "DELETE /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Reference must be a digest.",
+        "operationId": "deleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference",
+        "security": [],
+        "tags": [],
+        "responses": {
+          "202": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "teamSlug",
+            "description": "Single Docker repository team slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository team slug component.",
+              "example": "team-slug"
+            }
+          },
+          {
+            "name": "projectSlug",
+            "description": "Single Docker repository project slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository project slug component.",
+              "example": "project-slug"
+            }
+          },
+          {
+            "name": "repositoryName",
+            "description": "Single Docker repository name component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$",
+              "maxLength": 255,
+              "description": "Single Docker repository name component.",
+              "example": "nginx"
+            }
+          },
+          {
+            "name": "reference",
+            "description": "Content-addressable digest (algorithm:hex).",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_+.-]+:[A-Fa-f0-9]+$",
+              "maxLength": 255,
+              "description": "Content-addressable digest (algorithm:hex).",
+              "example": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          }
+        ]
+      }
+    },
+    "/v2/{teamSlug}/{projectSlug}/{repositoryName}/tags/list": {
+      "get": {
+        "description": "GET /v2/:teamSlug/:projectSlug/:repositoryName/tags/list List the tags in a repository.",
+        "operationId": "getByTeamSlugByProjectSlugByRepositoryNameTagsList",
+        "security": [],
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "tags": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "tags"
+                  ],
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "teamSlug",
+            "description": "Single Docker repository team slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository team slug component.",
+              "example": "team-slug"
+            }
+          },
+          {
+            "name": "projectSlug",
+            "description": "Single Docker repository project slug component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9](?:[a-z0-9-]{0,46}[a-z0-9])?$",
+              "maxLength": 255,
+              "description": "Single Docker repository project slug component.",
+              "example": "project-slug"
+            }
+          },
+          {
+            "name": "repositoryName",
+            "description": "Single Docker repository name component.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:(?:\\\\.|_|__|-+)[a-z0-9]+)*$",
+              "maxLength": 255,
+              "description": "Single Docker repository name component.",
+              "example": "nginx"
+            }
+          },
+          {
+            "name": "n",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000
+            }
+          },
+          {
+            "name": "last",
+            "description": "Opaque pagination cursor returned by a previous list response.",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 1024,
+              "description": "Opaque pagination cursor returned by a previous list response."
             }
           }
         ]
@@ -198121,6 +199763,8 @@
               "log-drain-disabled",
               "log-drain-enabled",
               "login",
+              "login-connection-linked",
+              "login-connection-unlinked",
               "manual-deployment-promotion-created",
               "marketplace-flex-commit-opt-in",
               "marketplace-integration-allowlist-updated",
@@ -198302,6 +199946,7 @@
               "runtime-cache-purge-all",
               "sandbox-alias-assigned",
               "sandbox-alias-delete",
+              "sandbox-snapshot-regions-updated",
               "scale",
               "scale-auto",
               "secondary-email-added",
@@ -198416,6 +200061,7 @@
               "user-mfa-challenge-verified",
               "user-mfa-change-failed",
               "user-mfa-configuration-updated",
+              "user-mfa-recovery-code-used",
               "user-mfa-recovery-codes-regenerated",
               "user-mfa-removed",
               "user-mfa-setup-skipped",
@@ -198436,6 +200082,7 @@
               "vcr-repository-permission-added",
               "vcr-repository-permission-removed",
               "vcr-repository-permissions-cleared",
+              "vcr-repository-visibility-changed",
               "vercel-agent-elevated-permissions-approved",
               "vercel-agent-elevated-permissions-requested",
               "vercel-agent-session-created",
@@ -199115,6 +200762,14 @@
                     ],
                     "type": "object",
                     "description": "Spend budget on an AI Gateway API key, as surfaced in activity messages. Defined locally (rather than imported from `@api/pubsub-types`) because `@api/pubsub-types` already depends on `@api/events`; importing it here would create a circular dependency. Must stay structurally aligned with `APIKeyBudget` in `@api/pubsub-types/event-payloads/api-keys`."
+                  },
+                  "zdrExemption": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
+                    ],
+                    "description": "True when the key was created with a ZDR exemption."
                   }
                 },
                 "required": [
@@ -200256,6 +201911,7 @@
                         "read-write:remote-cache",
                         "read-write:sandbox",
                         "read-write:team-members",
+                        "read-write:vcr",
                         "read:access-group",
                         "read:ai-gateway-guardrails",
                         "read:ai-gateway-private-models",
@@ -200279,6 +201935,7 @@
                         "read:speed-insights",
                         "read:team",
                         "read:user",
+                        "read:vcr",
                         "read:web-analytics",
                         "use:ai-gateway"
                       ]
@@ -200362,6 +202019,7 @@
                         "read-write:remote-cache",
                         "read-write:sandbox",
                         "read-write:team-members",
+                        "read-write:vcr",
                         "read:access-group",
                         "read:ai-gateway-guardrails",
                         "read:ai-gateway-private-models",
@@ -200385,6 +202043,7 @@
                         "read:speed-insights",
                         "read:team",
                         "read:user",
+                        "read:vcr",
                         "read:web-analytics",
                         "use:ai-gateway"
                       ]
@@ -200490,6 +202149,7 @@
                             "read-write:remote-cache",
                             "read-write:sandbox",
                             "read-write:team-members",
+                            "read-write:vcr",
                             "read:access-group",
                             "read:ai-gateway-guardrails",
                             "read:ai-gateway-private-models",
@@ -200512,6 +202172,7 @@
                             "read:sandbox",
                             "read:speed-insights",
                             "read:team",
+                            "read:vcr",
                             "read:web-analytics",
                             "use:ai-gateway"
                           ]
@@ -200601,6 +202262,7 @@
                             "read-write:remote-cache",
                             "read-write:sandbox",
                             "read-write:team-members",
+                            "read-write:vcr",
                             "read:access-group",
                             "read:ai-gateway-guardrails",
                             "read:ai-gateway-private-models",
@@ -200623,6 +202285,7 @@
                             "read:sandbox",
                             "read:speed-insights",
                             "read:team",
+                            "read:vcr",
                             "read:web-analytics",
                             "use:ai-gateway"
                           ]
@@ -200725,6 +202388,7 @@
                         "read-write:remote-cache",
                         "read-write:sandbox",
                         "read-write:team-members",
+                        "read-write:vcr",
                         "read:access-group",
                         "read:ai-gateway-guardrails",
                         "read:ai-gateway-private-models",
@@ -200747,6 +202411,7 @@
                         "read:sandbox",
                         "read:speed-insights",
                         "read:team",
+                        "read:vcr",
                         "read:web-analytics",
                         "use:ai-gateway"
                       ]
@@ -202100,6 +203765,12 @@
                     "enum": [
                       false,
                       true
+                    ]
+                  },
+                  "gitCredentialSource": {
+                    "type": "string",
+                    "enum": [
+                      "external-token"
                     ]
                   },
                   "deploymentId": {
@@ -206735,11 +208406,18 @@
                             "widget": {
                               "type": "string",
                               "enum": [
-                                "alert",
+                                "analytics-online",
+                                "analytics-page-views",
+                                "analytics-visitors",
                                 "firewall-allowed",
                                 "firewall-denied",
-                                "online",
-                                "res"
+                                "observability-alert",
+                                "observability-edge-requests",
+                                "observability-error-rate",
+                                "observability-function-invocations",
+                                "speed-insights-cls",
+                                "speed-insights-lcp",
+                                "speed-insights-res"
                               ]
                             }
                           },
@@ -209795,6 +211473,54 @@
               },
               {
                 "properties": {
+                  "provider": {
+                    "type": "string",
+                    "enum": [
+                      "apple",
+                      "bitbucket",
+                      "chatgpt",
+                      "github",
+                      "github-custom-host",
+                      "github-limited",
+                      "gitlab",
+                      "google"
+                    ]
+                  },
+                  "login": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "login",
+                  "provider"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "provider": {
+                    "type": "string",
+                    "enum": [
+                      "apple",
+                      "bitbucket",
+                      "chatgpt",
+                      "github",
+                      "github-custom-host",
+                      "github-limited",
+                      "gitlab",
+                      "google"
+                    ]
+                  }
+                },
+                "required": [
+                  "provider"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "userAgent": {
                     "type": "string"
                   },
@@ -212214,10 +213940,20 @@
                     "type": "string",
                     "enum": [
                       "alert",
+                      "analytics-online",
+                      "analytics-page-views",
+                      "analytics-visitors",
                       "firewall-allowed",
                       "firewall-denied",
+                      "observability-alert",
+                      "observability-edge-requests",
+                      "observability-error-rate",
+                      "observability-function-invocations",
                       "online",
                       "res",
+                      "speed-insights-cls",
+                      "speed-insights-lcp",
+                      "speed-insights-res",
                       null
                     ]
                   }
@@ -215095,6 +216831,33 @@
               },
               {
                 "properties": {
+                  "projectId": {
+                    "type": "string"
+                  },
+                  "projectName": {
+                    "type": "string"
+                  },
+                  "snapshotId": {
+                    "type": "string"
+                  },
+                  "targetRegions": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "projectId",
+                  "projectName",
+                  "snapshotId",
+                  "targetRegions"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "instances": {
                     "type": "number"
                   },
@@ -217614,32 +219377,6 @@
               },
               {
                 "properties": {
-                  "provider": {
-                    "type": "string",
-                    "enum": [
-                      "apple",
-                      "bitbucket",
-                      "chatgpt",
-                      "github",
-                      "github-custom-host",
-                      "github-limited",
-                      "gitlab",
-                      "google"
-                    ]
-                  },
-                  "login": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "login",
-                  "provider"
-                ],
-                "type": "object",
-                "description": "The payload of the event, if requested."
-              },
-              {
-                "properties": {
                   "teamName": {
                     "type": "string"
                   }
@@ -217807,6 +219544,18 @@
                 "required": [
                   "next",
                   "previous"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "remaining": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "remaining"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -218019,6 +219768,34 @@
                   "projectName",
                   "repositoryName",
                   "sharedWithTeamId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "projectId": {
+                    "type": "string"
+                  },
+                  "projectName": {
+                    "type": "string"
+                  },
+                  "repositoryName": {
+                    "type": "string"
+                  },
+                  "public": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
+                    ]
+                  }
+                },
+                "required": [
+                  "projectId",
+                  "projectName",
+                  "public",
+                  "repositoryName"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -219726,6 +221503,8 @@
               "log-drain-disabled",
               "log-drain-enabled",
               "login",
+              "login-connection-linked",
+              "login-connection-unlinked",
               "manual-deployment-promotion-created",
               "marketplace-flex-commit-opt-in",
               "marketplace-integration-allowlist-updated",
@@ -219907,6 +221686,7 @@
               "runtime-cache-purge-all",
               "sandbox-alias-assigned",
               "sandbox-alias-delete",
+              "sandbox-snapshot-regions-updated",
               "scale",
               "scale-auto",
               "secondary-email-added",
@@ -220021,6 +221801,7 @@
               "user-mfa-challenge-verified",
               "user-mfa-change-failed",
               "user-mfa-configuration-updated",
+              "user-mfa-recovery-code-used",
               "user-mfa-recovery-codes-regenerated",
               "user-mfa-removed",
               "user-mfa-setup-skipped",
@@ -220041,6 +221822,7 @@
               "vcr-repository-permission-added",
               "vcr-repository-permission-removed",
               "vcr-repository-permissions-cleared",
+              "vcr-repository-visibility-changed",
               "vercel-agent-elevated-permissions-approved",
               "vercel-agent-elevated-permissions-requested",
               "vercel-agent-session-created",
@@ -220370,6 +222152,8 @@
                 "log-drain-disabled",
                 "log-drain-enabled",
                 "login",
+                "login-connection-linked",
+                "login-connection-unlinked",
                 "manual-deployment-promotion-created",
                 "marketplace-flex-commit-opt-in",
                 "marketplace-integration-allowlist-updated",
@@ -220551,6 +222335,7 @@
                 "runtime-cache-purge-all",
                 "sandbox-alias-assigned",
                 "sandbox-alias-delete",
+                "sandbox-snapshot-regions-updated",
                 "scale",
                 "scale-auto",
                 "secondary-email-added",
@@ -220665,6 +222450,7 @@
                 "user-mfa-challenge-verified",
                 "user-mfa-change-failed",
                 "user-mfa-configuration-updated",
+                "user-mfa-recovery-code-used",
                 "user-mfa-recovery-codes-regenerated",
                 "user-mfa-removed",
                 "user-mfa-setup-skipped",
@@ -220685,6 +222471,7 @@
                 "vcr-repository-permission-added",
                 "vcr-repository-permission-removed",
                 "vcr-repository-permissions-cleared",
+                "vcr-repository-visibility-changed",
                 "vercel-agent-elevated-permissions-approved",
                 "vercel-agent-elevated-permissions-requested",
                 "vercel-agent-session-created",
@@ -222259,6 +224046,13 @@
           },
           "quota": {
             "$ref": "#/components/schemas/APIKeyQuota"
+          },
+          "metadata": {
+            "description": "Generic metadata attached to the API key.\n\nThe accepted shape depends on the key's `purpose` and is validated when the key is created. For `ai-gateway` keys this carries `environment`.",
+            "type": "object",
+            "patternProperties": {
+              "^(.*)$": {}
+            }
           }
         },
         "required": [
@@ -225591,6 +227385,15 @@
             "description": "Name of the repository.",
             "example": "my-app"
           },
+          "public": {
+            "type": "boolean",
+            "enum": [
+              false,
+              true
+            ],
+            "description": "Whether the repository is public. Images in public repositories can be pulled by anyone. Defaults to `false` (private).",
+            "example": false
+          },
           "createdAt": {
             "type": "string",
             "description": "ISO 8601 timestamp of when the repository was created.",
@@ -225607,6 +227410,7 @@
           "id",
           "name",
           "projectId",
+          "public",
           "updatedAt"
         ],
         "type": "object",
@@ -225767,6 +227571,38 @@
         ],
         "type": "object",
         "description": "A paginated list of images for a repository."
+      },
+      "VcrRepositoryPermission": {
+        "properties": {
+          "repositoryId": {
+            "type": "string",
+            "description": "Identifier of the repository the permission grants access to.",
+            "example": "repo_a1b2c3d4e5f6"
+          },
+          "teamId": {
+            "type": "string",
+            "description": "Identifier of the team that is granted access to the repository.",
+            "example": "team_a1b2c3d4e5f6"
+          },
+          "teamSlug": {
+            "type": "string",
+            "description": "Slug of the team that is granted access to the repository.",
+            "example": "my-team"
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "ISO 8601 timestamp of when the permission was created.",
+            "example": "2026-06-30T10:00:00.000Z"
+          }
+        },
+        "required": [
+          "createdAt",
+          "repositoryId",
+          "teamId",
+          "teamSlug"
+        ],
+        "type": "object",
+        "description": "A team's access grant to a Vercel Container Registry repository."
       },
       "VcrTag": {
         "properties": {
@@ -226236,6 +228072,25 @@
         ],
         "type": "object",
         "description": "A single image with its tags, status and resolved Dockerfile layer history."
+      },
+      "VcrRepositoryPermissionList": {
+        "properties": {
+          "permissions": {
+            "items": {
+              "$ref": "#/components/schemas/VcrRepositoryPermission"
+            },
+            "type": "array"
+          },
+          "nextCursor": {
+            "type": "string",
+            "description": "Cursor to fetch the next page of results, when more are available."
+          }
+        },
+        "required": [
+          "permissions"
+        ],
+        "type": "object",
+        "description": "A paginated list of Vercel Container Registry repository permissions."
       },
       "FileTree": {
         "properties": {

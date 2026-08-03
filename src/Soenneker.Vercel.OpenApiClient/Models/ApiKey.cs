@@ -55,6 +55,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string LeakedUrl { get; set; }
 #endif
+        /// <summary>Generic metadata attached to the API key.The accepted shape depends on the key&apos;s `purpose` and is validated when the key is created. For `ai-gateway` keys this carries `environment`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.ApiKeyMetadataProperty? Metadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.ApiKeyMetadataProperty Metadata { get; set; }
+#endif
         /// <summary>The human-readable name of the API key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -136,6 +144,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "leakedAt", n => { LeakedAt = n.GetDoubleValue(); } },
                 { "leakedUrl", n => { LeakedUrl = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ApiKeyMetadataProperty>(global::Soenneker.Vercel.OpenApiClient.Models.ApiKeyMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "partialKey", n => { PartialKey = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
@@ -159,6 +168,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("leakedAt", LeakedAt);
             writer.WriteStringValue("leakedUrl", LeakedUrl);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ApiKeyMetadataProperty>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("partialKey", PartialKey);
             writer.WriteStringValue("projectId", ProjectId);

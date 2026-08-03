@@ -15,46 +15,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fallbackEnvironment property</summary>
+        /// <summary>The allowedIntegrationCount property</summary>
+        public double? AllowedIntegrationCount { get; set; }
+        /// <summary>The allowedIntegrationIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FallbackEnvironment { get; set; }
+        public List<string>? AllowedIntegrationIds { get; set; }
 #nullable restore
 #else
-        public string FallbackEnvironment { get; set; }
+        public List<string> AllowedIntegrationIds { get; set; }
 #endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>The prev property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf180Prev? Prev { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf180Prev Prev { get; set; }
-#endif
-        /// <summary>The slug property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Slug { get; set; }
-#nullable restore
-#else
-        public string Slug { get; set; }
-#endif
+        /// <summary>The enabled property</summary>
+        public bool? Enabled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf180"/> and sets the default values.
         /// </summary>
@@ -80,11 +52,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fallbackEnvironment", n => { FallbackEnvironment = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "prev", n => { Prev = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf180Prev>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf180Prev.CreateFromDiscriminatorValue); } },
-                { "slug", n => { Slug = n.GetStringValue(); } },
+                { "allowedIntegrationCount", n => { AllowedIntegrationCount = n.GetDoubleValue(); } },
+                { "allowedIntegrationIds", n => { AllowedIntegrationIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -94,11 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("fallbackEnvironment", FallbackEnvironment);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf180Prev>("prev", Prev);
-            writer.WriteStringValue("slug", Slug);
+            writer.WriteDoubleValue("allowedIntegrationCount", AllowedIntegrationCount);
+            writer.WriteCollectionOfPrimitiveValues<string>("allowedIntegrationIds", AllowedIntegrationIds);
+            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

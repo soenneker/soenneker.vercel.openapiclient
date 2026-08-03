@@ -13,34 +13,36 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf328 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>The access property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf328Access? Access { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>The computeUnitsMax property</summary>
+        public double? ComputeUnitsMax { get; set; }
+        /// <summary>The computeUnitsMin property</summary>
+        public double? ComputeUnitsMin { get; set; }
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Amount { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Amount { get; set; }
+        public string Id { get; set; }
 #endif
-        /// <summary>The currency property</summary>
+        /// <summary>The locked property</summary>
+        public bool? Locked { get; set; }
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Name { get; set; }
 #endif
-        /// <summary>The expiresAt property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ExpiresAt { get; set; }
-#nullable restore
-#else
-        public string ExpiresAt { get; set; }
-#endif
-        /// <summary>The trialCreditsIssuedAt property</summary>
-        public double? TrialCreditsIssuedAt { get; set; }
+        /// <summary>The suspendTimeoutSeconds property</summary>
+        public double? SuspendTimeoutSeconds { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf328Type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf328"/> and sets the default values.
         /// </summary>
@@ -66,10 +68,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetStringValue(); } },
-                { "currency", n => { Currency = n.GetStringValue(); } },
-                { "expiresAt", n => { ExpiresAt = n.GetStringValue(); } },
-                { "trialCreditsIssuedAt", n => { TrialCreditsIssuedAt = n.GetDoubleValue(); } },
+                { "access", n => { Access = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf328Access>(); } },
+                { "computeUnitsMax", n => { ComputeUnitsMax = n.GetDoubleValue(); } },
+                { "computeUnitsMin", n => { ComputeUnitsMin = n.GetDoubleValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "locked", n => { Locked = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "suspendTimeoutSeconds", n => { SuspendTimeoutSeconds = n.GetDoubleValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf328Type>(); } },
             };
         }
         /// <summary>
@@ -79,10 +85,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("amount", Amount);
-            writer.WriteStringValue("currency", Currency);
-            writer.WriteStringValue("expiresAt", ExpiresAt);
-            writer.WriteDoubleValue("trialCreditsIssuedAt", TrialCreditsIssuedAt);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf328Access>("access", Access);
+            writer.WriteDoubleValue("computeUnitsMax", ComputeUnitsMax);
+            writer.WriteDoubleValue("computeUnitsMin", ComputeUnitsMin);
+            writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("locked", Locked);
+            writer.WriteStringValue("name", Name);
+            writer.WriteDoubleValue("suspendTimeoutSeconds", SuspendTimeoutSeconds);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf328Type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

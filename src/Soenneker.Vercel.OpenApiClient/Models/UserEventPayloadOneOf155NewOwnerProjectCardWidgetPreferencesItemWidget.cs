@@ -8,9 +8,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UserEventPayloadOneOf155NewOwnerProjectCardWidgetPreferencesItemWidget
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "alert")]
+        [EnumMember(Value = "analytics-online")]
         #pragma warning disable CS1591
-        Alert,
+        AnalyticsOnline,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "analytics-page-views")]
+        #pragma warning disable CS1591
+        AnalyticsPageViews,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "analytics-visitors")]
+        #pragma warning disable CS1591
+        AnalyticsVisitors,
         #pragma warning restore CS1591
         [EnumMember(Value = "firewall-allowed")]
         #pragma warning disable CS1591
@@ -20,13 +28,33 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         FirewallDenied,
         #pragma warning restore CS1591
-        [EnumMember(Value = "online")]
+        [EnumMember(Value = "observability-alert")]
         #pragma warning disable CS1591
-        Online,
+        ObservabilityAlert,
         #pragma warning restore CS1591
-        [EnumMember(Value = "res")]
+        [EnumMember(Value = "observability-edge-requests")]
         #pragma warning disable CS1591
-        Res,
+        ObservabilityEdgeRequests,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "observability-error-rate")]
+        #pragma warning disable CS1591
+        ObservabilityErrorRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "observability-function-invocations")]
+        #pragma warning disable CS1591
+        ObservabilityFunctionInvocations,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "speed-insights-cls")]
+        #pragma warning disable CS1591
+        SpeedInsightsCls,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "speed-insights-lcp")]
+        #pragma warning disable CS1591
+        SpeedInsightsLcp,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "speed-insights-res")]
+        #pragma warning disable CS1591
+        SpeedInsightsRes,
         #pragma warning restore CS1591
     }
 }

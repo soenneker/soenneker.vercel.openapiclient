@@ -16,6 +16,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The code property</summary>
         public double? Code { get; set; }
+        /// <summary>The message property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Message { get; set; }
+#nullable restore
+#else
+        public string Message { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectTrace200ResponseTraceSpansItemStatus"/> and sets the default values.
         /// </summary>
@@ -42,6 +50,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetDoubleValue(); } },
+                { "message", n => { Message = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -52,6 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("code", Code);
+            writer.WriteStringValue("message", Message);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

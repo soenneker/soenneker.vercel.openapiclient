@@ -41,6 +41,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The forced property</summary>
         public bool? Forced { get; set; }
+        /// <summary>The gitCredentialSource property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf95GitCredentialSource? GitCredentialSource { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -134,6 +136,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "deployment", n => { Deployment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf95Deployment>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf95Deployment.CreateFromDiscriminatorValue); } },
                 { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
                 { "forced", n => { Forced = n.GetBoolValue(); } },
+                { "gitCredentialSource", n => { GitCredentialSource = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf95GitCredentialSource>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "plan", n => { Plan = n.GetStringValue(); } },
                 { "project", n => { Project = n.GetStringValue(); } },
@@ -155,6 +158,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf95Deployment>("deployment", Deployment);
             writer.WriteStringValue("deploymentId", DeploymentId);
             writer.WriteBoolValue("forced", Forced);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf95GitCredentialSource>("gitCredentialSource", GitCredentialSource);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("plan", Plan);
             writer.WriteStringValue("project", Project);

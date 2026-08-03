@@ -13,16 +13,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf283 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The failoverRegions property</summary>
+        /// <summary>The action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FailoverRegions { get; set; }
+        public string? Action { get; set; }
 #nullable restore
 #else
-        public List<string> FailoverRegions { get; set; }
+        public string Action { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,13 +39,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get; set; }
 #endif
-        /// <summary>The region property</summary>
+        /// <summary>The targetDeploymentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get; set; }
+        public string? TargetDeploymentId { get; set; }
 #nullable restore
 #else
-        public string Region { get; set; }
+        public string TargetDeploymentId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf283"/> and sets the default values.
@@ -72,10 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "failoverRegions", n => { FailoverRegions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "action", n => { Action = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetStringValue(); } },
+                { "targetDeploymentId", n => { TargetDeploymentId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,10 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("failoverRegions", FailoverRegions);
+            writer.WriteStringValue("action", Action);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("region", Region);
+            writer.WriteStringValue("targetDeploymentId", TargetDeploymentId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

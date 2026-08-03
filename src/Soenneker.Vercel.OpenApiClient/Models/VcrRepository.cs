@@ -47,6 +47,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
+        /// <summary>Whether the repository is public. Images in public repositories can be pulled by anyone. Defaults to `false` (private).</summary>
+        public bool? Public { get; set; }
         /// <summary>ISO 8601 timestamp of when the repository was last updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,6 +86,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "public", n => { Public = n.GetBoolValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
@@ -98,6 +101,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteBoolValue("public", Public);
             writer.WriteStringValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -114,6 +114,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The traceFlags property</summary>
         public double? TraceFlags { get; set; }
+        /// <summary>The traceState property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TraceState { get; set; }
+#nullable restore
+#else
+        public string TraceState { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectTrace200ResponseTraceSpansItem"/> and sets the default values.
         /// </summary>
@@ -153,6 +161,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "startTime", n => { StartTime = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectTrace200ResponseTraceSpansItemStatus>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectTrace200ResponseTraceSpansItemStatus.CreateFromDiscriminatorValue); } },
                 { "traceFlags", n => { TraceFlags = n.GetDoubleValue(); } },
+                { "traceState", n => { TraceState = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -176,6 +185,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<double?>("startTime", StartTime);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectTrace200ResponseTraceSpansItemStatus>("status", Status);
             writer.WriteDoubleValue("traceFlags", TraceFlags);
+            writer.WriteStringValue("traceState", TraceState);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

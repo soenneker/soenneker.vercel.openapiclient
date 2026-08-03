@@ -15,21 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Automatic code review settings</summary>
+        /// <summary>The ownerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Next? Next { get; set; }
+        public string? OwnerId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Next Next { get; set; }
+        public string OwnerId { get; set; }
 #endif
-        /// <summary>Automatic code review settings</summary>
+        /// <summary>The store property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Previous? Previous { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Store? Store { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Previous Previous { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Store Store { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Next.CreateFromDiscriminatorValue); } },
-                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Previous.CreateFromDiscriminatorValue); } },
+                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
+                { "store", n => { Store = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Store>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Store.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Next>("next", Next);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Previous>("previous", Previous);
+            writer.WriteStringValue("ownerId", OwnerId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Store>("store", Store);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

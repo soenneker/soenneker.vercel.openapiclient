@@ -228,8 +228,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseFeatures Features { get; set; }
 #endif
-        /// <summary>The flatRateTier property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseFlatRateTier? FlatRateTier { get; set; }
         /// <summary>The framework property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseFramework? Framework { get; set; }
         /// <summary>The gitComments property</summary>
@@ -674,7 +672,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "env", n => { Env = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseEnvItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseEnvItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseExpiration>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseExpiration.CreateFromDiscriminatorValue); } },
                 { "features", n => { Features = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseFeatures>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseFeatures.CreateFromDiscriminatorValue); } },
-                { "flatRateTier", n => { FlatRateTier = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseFlatRateTier>(); } },
                 { "framework", n => { Framework = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseFramework>(); } },
                 { "gitComments", n => { GitComments = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseGitComments>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseGitComments.CreateFromDiscriminatorValue); } },
                 { "gitForkProtection", n => { GitForkProtection = n.GetBoolValue(); } },
@@ -782,7 +779,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseEnvItem>("env", Env);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseExpiration>("expiration", Expiration);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseFeatures>("features", Features);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseFlatRateTier>("flatRateTier", FlatRateTier);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseFramework>("framework", Framework);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseGitComments>("gitComments", GitComments);
             writer.WriteBoolValue("gitForkProtection", GitForkProtection);
