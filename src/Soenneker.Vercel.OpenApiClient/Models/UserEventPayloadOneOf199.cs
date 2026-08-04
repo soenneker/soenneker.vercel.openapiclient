@@ -15,6 +15,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The connectSrcCount property</summary>
+        public double? ConnectSrcCount { get; set; }
+        /// <summary>The connectSrcNormalizationRulesCleared property</summary>
+        public bool? ConnectSrcNormalizationRulesCleared { get; set; }
+        /// <summary>The connectSrcOriginCount property</summary>
+        public double? ConnectSrcOriginCount { get; set; }
+        /// <summary>The connectSrcUserNormalizationRuleCount property</summary>
+        public double? ConnectSrcUserNormalizationRuleCount { get; set; }
+        /// <summary>The deletedCount property</summary>
+        public double? DeletedCount { get; set; }
+        /// <summary>The headerCount property</summary>
+        public double? HeaderCount { get; set; }
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,16 +35,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>The resourceUrl property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceUrl { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public string ResourceUrl { get; set; }
+        public string ProjectName { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf199Type? Type { get; set; }
+        /// <summary>The scriptCount property</summary>
+        public double? ScriptCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf199"/> and sets the default values.
         /// </summary>
@@ -58,9 +70,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "connectSrcCount", n => { ConnectSrcCount = n.GetDoubleValue(); } },
+                { "connectSrcNormalizationRulesCleared", n => { ConnectSrcNormalizationRulesCleared = n.GetBoolValue(); } },
+                { "connectSrcOriginCount", n => { ConnectSrcOriginCount = n.GetDoubleValue(); } },
+                { "connectSrcUserNormalizationRuleCount", n => { ConnectSrcUserNormalizationRuleCount = n.GetDoubleValue(); } },
+                { "deletedCount", n => { DeletedCount = n.GetDoubleValue(); } },
+                { "headerCount", n => { HeaderCount = n.GetDoubleValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "resourceUrl", n => { ResourceUrl = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf199Type>(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "scriptCount", n => { ScriptCount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -70,9 +88,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("connectSrcCount", ConnectSrcCount);
+            writer.WriteBoolValue("connectSrcNormalizationRulesCleared", ConnectSrcNormalizationRulesCleared);
+            writer.WriteDoubleValue("connectSrcOriginCount", ConnectSrcOriginCount);
+            writer.WriteDoubleValue("connectSrcUserNormalizationRuleCount", ConnectSrcUserNormalizationRuleCount);
+            writer.WriteDoubleValue("deletedCount", DeletedCount);
+            writer.WriteDoubleValue("headerCount", HeaderCount);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("resourceUrl", ResourceUrl);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf199Type>("type", Type);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteDoubleValue("scriptCount", ScriptCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

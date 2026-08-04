@@ -27,6 +27,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Git,
         #pragma warning restore CS1591
+        [EnumMember(Value = "git-deploy-hook")]
+        #pragma warning disable CS1591
+        GitDeployHook,
+        #pragma warning restore CS1591
         [EnumMember(Value = "import")]
         #pragma warning disable CS1591
         Import,

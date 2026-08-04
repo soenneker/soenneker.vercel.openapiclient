@@ -31,16 +31,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get; set; }
 #endif
-        /// <summary>The target property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Target { get; set; }
-#nullable restore
-#else
-        public List<string> Target { get; set; }
-#endif
-        /// <summary>The updated property</summary>
-        public bool? Updated { get; set; }
+        /// <summary>The widget property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229Widget? Widget { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229"/> and sets the default values.
         /// </summary>
@@ -68,8 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "target", n => { Target = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "updated", n => { Updated = n.GetBoolValue(); } },
+                { "widget", n => { Widget = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229Widget>(); } },
             };
         }
         /// <summary>
@@ -81,8 +72,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteCollectionOfPrimitiveValues<string>("target", Target);
-            writer.WriteBoolValue("updated", Updated);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229Widget>("widget", Widget);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>&quot;Default build machine type for new builds: standard, enhanced, turbo, or elastic.&quot;</summary>
+    /// <summary>&quot;Default build machine type for new builds: basic, standard, enhanced, turbo, or elastic.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PatchTeamRequestResourceConfigBuildMachineDefault
     {

@@ -24,6 +24,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewaySettings,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ConnectorManager")]
+        #pragma warning disable CS1591
+        ConnectorManager,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CreateProject")]
         #pragma warning disable CS1591
         CreateProject,

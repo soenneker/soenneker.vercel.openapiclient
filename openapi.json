@@ -45,6 +45,7 @@
                           "AiGatewayBudgetManager",
                           "AiGatewayCredits",
                           "AiGatewaySettings",
+                          "ConnectorManager",
                           "CreateProject",
                           "EnvVariableManager",
                           "EnvironmentManager",
@@ -15857,6 +15858,51 @@
                           },
                           "type": "array"
                         },
+                        "resourceConfig": {
+                          "properties": {
+                            "buildMachine": {
+                              "properties": {
+                                "purchaseType": {
+                                  "type": "string",
+                                  "enum": [
+                                    "basic",
+                                    "enhanced",
+                                    "standard",
+                                    "turbo"
+                                  ],
+                                  "description": "Machine type which was purchased/selected for this build. `basic` is the 2vCPU tier, recorded on the deployment so the build pipeline can detect a basic build without consulting the project."
+                                },
+                                "defaultPurchaseType": {
+                                  "type": "string",
+                                  "enum": [
+                                    "enhanced",
+                                    "standard"
+                                  ],
+                                  "description": "The default plan type for the build machine — what the customer is *paying* for on their plan. For most customers, this is standard, but some customers have an entitlement for enhanced builds."
+                                },
+                                "machineSelectionType": {
+                                  "type": "string",
+                                  "enum": [
+                                    "elastic",
+                                    "fixed"
+                                  ],
+                                  "description": "Whether the build ran on a fixed or elastic machine. Used to drive billing for the build."
+                                },
+                                "cores": {
+                                  "type": "number",
+                                  "description": "Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive."
+                                },
+                                "memory": {
+                                  "type": "number",
+                                  "description": "Memory, in MiB, the build machine ran with. Set at dispatch time once the build lands on a hive."
+                                }
+                              },
+                              "type": "object",
+                              "description": "Build machine configuration recorded for this deployment's build. See {@link DeploymentBuildMachine}. Distinct from the team/user `resourceConfig.buildMachine`, which only carries `default`."
+                            }
+                          },
+                          "type": "object"
+                        },
                         "inspectorUrl": {
                           "nullable": true,
                           "type": "string"
@@ -17084,6 +17130,43 @@
                                 "type": {
                                   "type": "string",
                                   "enum": [
+                                    "cursor-origin"
+                                  ]
+                                },
+                                "repoId": {
+                                  "type": "string",
+                                  "description": "Origin repository id."
+                                },
+                                "owner": {
+                                  "type": "string",
+                                  "description": "Owner (namespace) slug."
+                                },
+                                "repo": {
+                                  "type": "string"
+                                },
+                                "ref": {
+                                  "nullable": true,
+                                  "type": "string"
+                                },
+                                "sha": {
+                                  "type": "string"
+                                },
+                                "prId": {
+                                  "nullable": true,
+                                  "type": "number"
+                                }
+                              },
+                              "required": [
+                                "repoId",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
                                     "custom"
                                   ]
                                 },
@@ -17300,6 +17383,40 @@
                                 "type"
                               ],
                               "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "cursor-origin"
+                                  ]
+                                },
+                                "ref": {
+                                  "type": "string"
+                                },
+                                "sha": {
+                                  "type": "string"
+                                },
+                                "repoId": {
+                                  "type": "string"
+                                },
+                                "owner": {
+                                  "type": "string"
+                                },
+                                "repo": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "owner",
+                                "ref",
+                                "repo",
+                                "repoId",
+                                "sha",
+                                "type"
+                              ],
+                              "type": "object"
                             }
                           ]
                         },
@@ -17412,6 +17529,7 @@
                             "clone/repo",
                             "drop",
                             "git",
+                            "git-deploy-hook",
                             "import",
                             "import/repo",
                             "redeploy",
@@ -21483,6 +21601,62 @@
                                 "path",
                                 "private",
                                 "repo",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "owner": {
+                                  "type": "string",
+                                  "description": "Owner (namespace) slug."
+                                },
+                                "repo": {
+                                  "type": "string"
+                                },
+                                "repoId": {
+                                  "type": "string",
+                                  "description": "Origin repository id."
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "cursor-origin"
+                                  ]
+                                },
+                                "path": {
+                                  "type": "string"
+                                },
+                                "defaultBranch": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "private": {
+                                  "type": "boolean",
+                                  "enum": [
+                                    false,
+                                    true
+                                  ]
+                                },
+                                "ownerType": {
+                                  "type": "string",
+                                  "enum": [
+                                    "team",
+                                    "user"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "defaultBranch",
+                                "name",
+                                "owner",
+                                "ownerType",
+                                "path",
+                                "private",
+                                "repo",
+                                "repoId",
                                 "type"
                               ],
                               "type": "object"
@@ -22880,6 +23054,43 @@
                                 "type": {
                                   "type": "string",
                                   "enum": [
+                                    "cursor-origin"
+                                  ]
+                                },
+                                "repoId": {
+                                  "type": "string",
+                                  "description": "Origin repository id."
+                                },
+                                "owner": {
+                                  "type": "string",
+                                  "description": "Owner (namespace) slug."
+                                },
+                                "repo": {
+                                  "type": "string"
+                                },
+                                "ref": {
+                                  "nullable": true,
+                                  "type": "string"
+                                },
+                                "sha": {
+                                  "type": "string"
+                                },
+                                "prId": {
+                                  "nullable": true,
+                                  "type": "number"
+                                }
+                              },
+                              "required": [
+                                "repoId",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
                                     "custom"
                                   ]
                                 },
@@ -23096,6 +23307,40 @@
                                 "type"
                               ],
                               "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "cursor-origin"
+                                  ]
+                                },
+                                "ref": {
+                                  "type": "string"
+                                },
+                                "sha": {
+                                  "type": "string"
+                                },
+                                "repoId": {
+                                  "type": "string"
+                                },
+                                "owner": {
+                                  "type": "string"
+                                },
+                                "repo": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "owner",
+                                "ref",
+                                "repo",
+                                "repoId",
+                                "sha",
+                                "type"
+                              ],
+                              "type": "object"
                             }
                           ]
                         },
@@ -23208,6 +23453,7 @@
                             "clone/repo",
                             "drop",
                             "git",
+                            "git-deploy-hook",
                             "import",
                             "import/repo",
                             "redeploy",
@@ -23580,6 +23826,51 @@
                             "type": "string"
                           },
                           "type": "array"
+                        },
+                        "resourceConfig": {
+                          "properties": {
+                            "buildMachine": {
+                              "properties": {
+                                "purchaseType": {
+                                  "type": "string",
+                                  "enum": [
+                                    "basic",
+                                    "enhanced",
+                                    "standard",
+                                    "turbo"
+                                  ],
+                                  "description": "Machine type which was purchased/selected for this build. `basic` is the 2vCPU tier, recorded on the deployment so the build pipeline can detect a basic build without consulting the project."
+                                },
+                                "defaultPurchaseType": {
+                                  "type": "string",
+                                  "enum": [
+                                    "enhanced",
+                                    "standard"
+                                  ],
+                                  "description": "The default plan type for the build machine — what the customer is *paying* for on their plan. For most customers, this is standard, but some customers have an entitlement for enhanced builds."
+                                },
+                                "machineSelectionType": {
+                                  "type": "string",
+                                  "enum": [
+                                    "elastic",
+                                    "fixed"
+                                  ],
+                                  "description": "Whether the build ran on a fixed or elastic machine. Used to drive billing for the build."
+                                },
+                                "cores": {
+                                  "type": "number",
+                                  "description": "Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive."
+                                },
+                                "memory": {
+                                  "type": "number",
+                                  "description": "Memory, in MiB, the build machine ran with. Set at dispatch time once the build lands on a hive."
+                                }
+                              },
+                              "type": "object",
+                              "description": "Build machine configuration recorded for this deployment's build. See {@link DeploymentBuildMachine}. Distinct from the team/user `resourceConfig.buildMachine`, which only carries `default`."
+                            }
+                          },
+                          "type": "object"
                         },
                         "inspectorUrl": {
                           "nullable": true,
@@ -24808,6 +25099,43 @@
                                 "type": {
                                   "type": "string",
                                   "enum": [
+                                    "cursor-origin"
+                                  ]
+                                },
+                                "repoId": {
+                                  "type": "string",
+                                  "description": "Origin repository id."
+                                },
+                                "owner": {
+                                  "type": "string",
+                                  "description": "Owner (namespace) slug."
+                                },
+                                "repo": {
+                                  "type": "string"
+                                },
+                                "ref": {
+                                  "nullable": true,
+                                  "type": "string"
+                                },
+                                "sha": {
+                                  "type": "string"
+                                },
+                                "prId": {
+                                  "nullable": true,
+                                  "type": "number"
+                                }
+                              },
+                              "required": [
+                                "repoId",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
                                     "custom"
                                   ]
                                 },
@@ -25024,6 +25352,40 @@
                                 "type"
                               ],
                               "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "cursor-origin"
+                                  ]
+                                },
+                                "ref": {
+                                  "type": "string"
+                                },
+                                "sha": {
+                                  "type": "string"
+                                },
+                                "repoId": {
+                                  "type": "string"
+                                },
+                                "owner": {
+                                  "type": "string"
+                                },
+                                "repo": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "owner",
+                                "ref",
+                                "repo",
+                                "repoId",
+                                "sha",
+                                "type"
+                              ],
+                              "type": "object"
                             }
                           ]
                         },
@@ -25136,6 +25498,7 @@
                             "clone/repo",
                             "drop",
                             "git",
+                            "git-deploy-hook",
                             "import",
                             "import/repo",
                             "redeploy",
@@ -29210,6 +29573,62 @@
                                 "type"
                               ],
                               "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "owner": {
+                                  "type": "string",
+                                  "description": "Owner (namespace) slug."
+                                },
+                                "repo": {
+                                  "type": "string"
+                                },
+                                "repoId": {
+                                  "type": "string",
+                                  "description": "Origin repository id."
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "cursor-origin"
+                                  ]
+                                },
+                                "path": {
+                                  "type": "string"
+                                },
+                                "defaultBranch": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "private": {
+                                  "type": "boolean",
+                                  "enum": [
+                                    false,
+                                    true
+                                  ]
+                                },
+                                "ownerType": {
+                                  "type": "string",
+                                  "enum": [
+                                    "team",
+                                    "user"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "defaultBranch",
+                                "name",
+                                "owner",
+                                "ownerType",
+                                "path",
+                                "private",
+                                "repo",
+                                "repoId",
+                                "type"
+                              ],
+                              "type": "object"
                             }
                           ]
                         },
@@ -30496,6 +30915,51 @@
                       },
                       "type": "array"
                     },
+                    "resourceConfig": {
+                      "properties": {
+                        "buildMachine": {
+                          "properties": {
+                            "purchaseType": {
+                              "type": "string",
+                              "enum": [
+                                "basic",
+                                "enhanced",
+                                "standard",
+                                "turbo"
+                              ],
+                              "description": "Machine type which was purchased/selected for this build. `basic` is the 2vCPU tier, recorded on the deployment so the build pipeline can detect a basic build without consulting the project."
+                            },
+                            "defaultPurchaseType": {
+                              "type": "string",
+                              "enum": [
+                                "enhanced",
+                                "standard"
+                              ],
+                              "description": "The default plan type for the build machine — what the customer is *paying* for on their plan. For most customers, this is standard, but some customers have an entitlement for enhanced builds."
+                            },
+                            "machineSelectionType": {
+                              "type": "string",
+                              "enum": [
+                                "elastic",
+                                "fixed"
+                              ],
+                              "description": "Whether the build ran on a fixed or elastic machine. Used to drive billing for the build."
+                            },
+                            "cores": {
+                              "type": "number",
+                              "description": "Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive."
+                            },
+                            "memory": {
+                              "type": "number",
+                              "description": "Memory, in MiB, the build machine ran with. Set at dispatch time once the build lands on a hive."
+                            }
+                          },
+                          "type": "object",
+                          "description": "Build machine configuration recorded for this deployment's build. See {@link DeploymentBuildMachine}. Distinct from the team/user `resourceConfig.buildMachine`, which only carries `default`."
+                        }
+                      },
+                      "type": "object"
+                    },
                     "inspectorUrl": {
                       "nullable": true,
                       "type": "string"
@@ -31723,6 +32187,43 @@
                             "type": {
                               "type": "string",
                               "enum": [
+                                "cursor-origin"
+                              ]
+                            },
+                            "repoId": {
+                              "type": "string",
+                              "description": "Origin repository id."
+                            },
+                            "owner": {
+                              "type": "string",
+                              "description": "Owner (namespace) slug."
+                            },
+                            "repo": {
+                              "type": "string"
+                            },
+                            "ref": {
+                              "nullable": true,
+                              "type": "string"
+                            },
+                            "sha": {
+                              "type": "string"
+                            },
+                            "prId": {
+                              "nullable": true,
+                              "type": "number"
+                            }
+                          },
+                          "required": [
+                            "repoId",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
                                 "custom"
                               ]
                             },
@@ -31939,6 +32440,40 @@
                             "type"
                           ],
                           "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "cursor-origin"
+                              ]
+                            },
+                            "ref": {
+                              "type": "string"
+                            },
+                            "sha": {
+                              "type": "string"
+                            },
+                            "repoId": {
+                              "type": "string"
+                            },
+                            "owner": {
+                              "type": "string"
+                            },
+                            "repo": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "owner",
+                            "ref",
+                            "repo",
+                            "repoId",
+                            "sha",
+                            "type"
+                          ],
+                          "type": "object"
                         }
                       ]
                     },
@@ -32051,6 +32586,7 @@
                         "clone/repo",
                         "drop",
                         "git",
+                        "git-deploy-hook",
                         "import",
                         "import/repo",
                         "redeploy",
@@ -36122,6 +36658,62 @@
                             "path",
                             "private",
                             "repo",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "owner": {
+                              "type": "string",
+                              "description": "Owner (namespace) slug."
+                            },
+                            "repo": {
+                              "type": "string"
+                            },
+                            "repoId": {
+                              "type": "string",
+                              "description": "Origin repository id."
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "cursor-origin"
+                              ]
+                            },
+                            "path": {
+                              "type": "string"
+                            },
+                            "defaultBranch": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "private": {
+                              "type": "boolean",
+                              "enum": [
+                                false,
+                                true
+                              ]
+                            },
+                            "ownerType": {
+                              "type": "string",
+                              "enum": [
+                                "team",
+                                "user"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "defaultBranch",
+                            "name",
+                            "owner",
+                            "ownerType",
+                            "path",
+                            "private",
+                            "repo",
+                            "repoId",
                             "type"
                           ],
                           "type": "object"
@@ -76840,6 +77432,90 @@
                                   "type"
                                 ],
                                 "type": "object"
+                              },
+                              {
+                                "properties": {
+                                  "owner": {
+                                    "type": "string",
+                                    "description": "Owner (namespace) slug, e.g. `acme`."
+                                  },
+                                  "repo": {
+                                    "type": "string"
+                                  },
+                                  "repoId": {
+                                    "type": "string",
+                                    "description": "Origin repository id."
+                                  },
+                                  "ownerId": {
+                                    "type": "string",
+                                    "description": "Origin namespace id (`ns_…`) of the owner."
+                                  },
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "cursor-origin"
+                                    ]
+                                  },
+                                  "createdAt": {
+                                    "type": "number"
+                                  },
+                                  "deployHooks": {
+                                    "items": {
+                                      "properties": {
+                                        "createdAt": {
+                                          "type": "number"
+                                        },
+                                        "id": {
+                                          "type": "string"
+                                        },
+                                        "name": {
+                                          "type": "string"
+                                        },
+                                        "ref": {
+                                          "type": "string"
+                                        },
+                                        "url": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "id",
+                                        "name",
+                                        "ref",
+                                        "url"
+                                      ],
+                                      "type": "object"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "gitCredentialId": {
+                                    "type": "string"
+                                  },
+                                  "updatedAt": {
+                                    "type": "number"
+                                  },
+                                  "sourceless": {
+                                    "type": "boolean",
+                                    "enum": [
+                                      false,
+                                      true
+                                    ]
+                                  },
+                                  "productionBranch": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "deployHooks",
+                                  "gitCredentialId",
+                                  "owner",
+                                  "ownerId",
+                                  "productionBranch",
+                                  "repo",
+                                  "repoId",
+                                  "type"
+                                ],
+                                "type": "object"
                               }
                             ]
                           },
@@ -90675,6 +91351,90 @@
                                   "type"
                                 ],
                                 "type": "object"
+                              },
+                              {
+                                "properties": {
+                                  "owner": {
+                                    "type": "string",
+                                    "description": "Owner (namespace) slug, e.g. `acme`."
+                                  },
+                                  "repo": {
+                                    "type": "string"
+                                  },
+                                  "repoId": {
+                                    "type": "string",
+                                    "description": "Origin repository id."
+                                  },
+                                  "ownerId": {
+                                    "type": "string",
+                                    "description": "Origin namespace id (`ns_…`) of the owner."
+                                  },
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "cursor-origin"
+                                    ]
+                                  },
+                                  "createdAt": {
+                                    "type": "number"
+                                  },
+                                  "deployHooks": {
+                                    "items": {
+                                      "properties": {
+                                        "createdAt": {
+                                          "type": "number"
+                                        },
+                                        "id": {
+                                          "type": "string"
+                                        },
+                                        "name": {
+                                          "type": "string"
+                                        },
+                                        "ref": {
+                                          "type": "string"
+                                        },
+                                        "url": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "id",
+                                        "name",
+                                        "ref",
+                                        "url"
+                                      ],
+                                      "type": "object"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "gitCredentialId": {
+                                    "type": "string"
+                                  },
+                                  "updatedAt": {
+                                    "type": "number"
+                                  },
+                                  "sourceless": {
+                                    "type": "boolean",
+                                    "enum": [
+                                      false,
+                                      true
+                                    ]
+                                  },
+                                  "productionBranch": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "deployHooks",
+                                  "gitCredentialId",
+                                  "owner",
+                                  "ownerId",
+                                  "productionBranch",
+                                  "repo",
+                                  "repoId",
+                                  "type"
+                                ],
+                                "type": "object"
                               }
                             ]
                           },
@@ -95200,6 +95960,90 @@
                                       "org",
                                       "productionBranch",
                                       "repo",
+                                      "type"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  {
+                                    "properties": {
+                                      "owner": {
+                                        "type": "string",
+                                        "description": "Owner (namespace) slug, e.g. `acme`."
+                                      },
+                                      "repo": {
+                                        "type": "string"
+                                      },
+                                      "repoId": {
+                                        "type": "string",
+                                        "description": "Origin repository id."
+                                      },
+                                      "ownerId": {
+                                        "type": "string",
+                                        "description": "Origin namespace id (`ns_…`) of the owner."
+                                      },
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "cursor-origin"
+                                        ]
+                                      },
+                                      "createdAt": {
+                                        "type": "number"
+                                      },
+                                      "deployHooks": {
+                                        "items": {
+                                          "properties": {
+                                            "createdAt": {
+                                              "type": "number"
+                                            },
+                                            "id": {
+                                              "type": "string"
+                                            },
+                                            "name": {
+                                              "type": "string"
+                                            },
+                                            "ref": {
+                                              "type": "string"
+                                            },
+                                            "url": {
+                                              "type": "string"
+                                            }
+                                          },
+                                          "required": [
+                                            "id",
+                                            "name",
+                                            "ref",
+                                            "url"
+                                          ],
+                                          "type": "object"
+                                        },
+                                        "type": "array"
+                                      },
+                                      "gitCredentialId": {
+                                        "type": "string"
+                                      },
+                                      "updatedAt": {
+                                        "type": "number"
+                                      },
+                                      "sourceless": {
+                                        "type": "boolean",
+                                        "enum": [
+                                          false,
+                                          true
+                                        ]
+                                      },
+                                      "productionBranch": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "deployHooks",
+                                      "gitCredentialId",
+                                      "owner",
+                                      "ownerId",
+                                      "productionBranch",
+                                      "repo",
+                                      "repoId",
                                       "type"
                                     ],
                                     "type": "object"
@@ -100344,6 +101188,90 @@
                                       "org",
                                       "productionBranch",
                                       "repo",
+                                      "type"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  {
+                                    "properties": {
+                                      "owner": {
+                                        "type": "string",
+                                        "description": "Owner (namespace) slug, e.g. `acme`."
+                                      },
+                                      "repo": {
+                                        "type": "string"
+                                      },
+                                      "repoId": {
+                                        "type": "string",
+                                        "description": "Origin repository id."
+                                      },
+                                      "ownerId": {
+                                        "type": "string",
+                                        "description": "Origin namespace id (`ns_…`) of the owner."
+                                      },
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "cursor-origin"
+                                        ]
+                                      },
+                                      "createdAt": {
+                                        "type": "number"
+                                      },
+                                      "deployHooks": {
+                                        "items": {
+                                          "properties": {
+                                            "createdAt": {
+                                              "type": "number"
+                                            },
+                                            "id": {
+                                              "type": "string"
+                                            },
+                                            "name": {
+                                              "type": "string"
+                                            },
+                                            "ref": {
+                                              "type": "string"
+                                            },
+                                            "url": {
+                                              "type": "string"
+                                            }
+                                          },
+                                          "required": [
+                                            "id",
+                                            "name",
+                                            "ref",
+                                            "url"
+                                          ],
+                                          "type": "object"
+                                        },
+                                        "type": "array"
+                                      },
+                                      "gitCredentialId": {
+                                        "type": "string"
+                                      },
+                                      "updatedAt": {
+                                        "type": "number"
+                                      },
+                                      "sourceless": {
+                                        "type": "boolean",
+                                        "enum": [
+                                          false,
+                                          true
+                                        ]
+                                      },
+                                      "productionBranch": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "deployHooks",
+                                      "gitCredentialId",
+                                      "owner",
+                                      "ownerId",
+                                      "productionBranch",
+                                      "repo",
+                                      "repoId",
                                       "type"
                                     ],
                                     "type": "object"
@@ -108264,6 +109192,90 @@
                             "org",
                             "productionBranch",
                             "repo",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "owner": {
+                              "type": "string",
+                              "description": "Owner (namespace) slug, e.g. `acme`."
+                            },
+                            "repo": {
+                              "type": "string"
+                            },
+                            "repoId": {
+                              "type": "string",
+                              "description": "Origin repository id."
+                            },
+                            "ownerId": {
+                              "type": "string",
+                              "description": "Origin namespace id (`ns_…`) of the owner."
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "cursor-origin"
+                              ]
+                            },
+                            "createdAt": {
+                              "type": "number"
+                            },
+                            "deployHooks": {
+                              "items": {
+                                "properties": {
+                                  "createdAt": {
+                                    "type": "number"
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "ref": {
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "name",
+                                  "ref",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              "type": "array"
+                            },
+                            "gitCredentialId": {
+                              "type": "string"
+                            },
+                            "updatedAt": {
+                              "type": "number"
+                            },
+                            "sourceless": {
+                              "type": "boolean",
+                              "enum": [
+                                false,
+                                true
+                              ]
+                            },
+                            "productionBranch": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "deployHooks",
+                            "gitCredentialId",
+                            "owner",
+                            "ownerId",
+                            "productionBranch",
+                            "repo",
+                            "repoId",
                             "type"
                           ],
                           "type": "object"
@@ -116349,6 +117361,90 @@
                             "type"
                           ],
                           "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "owner": {
+                              "type": "string",
+                              "description": "Owner (namespace) slug, e.g. `acme`."
+                            },
+                            "repo": {
+                              "type": "string"
+                            },
+                            "repoId": {
+                              "type": "string",
+                              "description": "Origin repository id."
+                            },
+                            "ownerId": {
+                              "type": "string",
+                              "description": "Origin namespace id (`ns_…`) of the owner."
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "cursor-origin"
+                              ]
+                            },
+                            "createdAt": {
+                              "type": "number"
+                            },
+                            "deployHooks": {
+                              "items": {
+                                "properties": {
+                                  "createdAt": {
+                                    "type": "number"
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "ref": {
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "name",
+                                  "ref",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              "type": "array"
+                            },
+                            "gitCredentialId": {
+                              "type": "string"
+                            },
+                            "updatedAt": {
+                              "type": "number"
+                            },
+                            "sourceless": {
+                              "type": "boolean",
+                              "enum": [
+                                false,
+                                true
+                              ]
+                            },
+                            "productionBranch": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "deployHooks",
+                            "gitCredentialId",
+                            "owner",
+                            "ownerId",
+                            "productionBranch",
+                            "repo",
+                            "repoId",
+                            "type"
+                          ],
+                          "type": "object"
                         }
                       ]
                     },
@@ -123790,6 +124886,90 @@
                             "type"
                           ],
                           "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "owner": {
+                              "type": "string",
+                              "description": "Owner (namespace) slug, e.g. `acme`."
+                            },
+                            "repo": {
+                              "type": "string"
+                            },
+                            "repoId": {
+                              "type": "string",
+                              "description": "Origin repository id."
+                            },
+                            "ownerId": {
+                              "type": "string",
+                              "description": "Origin namespace id (`ns_…`) of the owner."
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "cursor-origin"
+                              ]
+                            },
+                            "createdAt": {
+                              "type": "number"
+                            },
+                            "deployHooks": {
+                              "items": {
+                                "properties": {
+                                  "createdAt": {
+                                    "type": "number"
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "ref": {
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "name",
+                                  "ref",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              "type": "array"
+                            },
+                            "gitCredentialId": {
+                              "type": "string"
+                            },
+                            "updatedAt": {
+                              "type": "number"
+                            },
+                            "sourceless": {
+                              "type": "boolean",
+                              "enum": [
+                                false,
+                                true
+                              ]
+                            },
+                            "productionBranch": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "deployHooks",
+                            "gitCredentialId",
+                            "owner",
+                            "ownerId",
+                            "productionBranch",
+                            "repo",
+                            "repoId",
+                            "type"
+                          ],
+                          "type": "object"
                         }
                       ]
                     },
@@ -128517,9 +129697,6 @@
           },
           "428": {
             "description": "Owner does not have protection add-on"
-          },
-          "500": {
-            "description": ""
           }
         },
         "x-vercel-cli": {
@@ -128752,6 +129929,13 @@
                           "elastic"
                         ]
                       },
+                      "buildMachineSelection": {
+                        "type": "string",
+                        "enum": [
+                          "elastic",
+                          "fixed"
+                        ]
+                      },
                       "buildQueue": {
                         "type": "object",
                         "properties": {
@@ -128800,12 +129984,6 @@
                       },
                       "elasticConcurrencyEnabled": {
                         "type": "boolean"
-                      },
-                      "buildMachineSelection": {
-                        "enum": [
-                          "elastic",
-                          "fixed"
-                        ]
                       },
                       "buildMachineElasticLastUpdated": {
                         "type": "number"
@@ -132494,6 +133672,90 @@
                             "org",
                             "productionBranch",
                             "repo",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "owner": {
+                              "type": "string",
+                              "description": "Owner (namespace) slug, e.g. `acme`."
+                            },
+                            "repo": {
+                              "type": "string"
+                            },
+                            "repoId": {
+                              "type": "string",
+                              "description": "Origin repository id."
+                            },
+                            "ownerId": {
+                              "type": "string",
+                              "description": "Origin namespace id (`ns_…`) of the owner."
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "cursor-origin"
+                              ]
+                            },
+                            "createdAt": {
+                              "type": "number"
+                            },
+                            "deployHooks": {
+                              "items": {
+                                "properties": {
+                                  "createdAt": {
+                                    "type": "number"
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "ref": {
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "name",
+                                  "ref",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              "type": "array"
+                            },
+                            "gitCredentialId": {
+                              "type": "string"
+                            },
+                            "updatedAt": {
+                              "type": "number"
+                            },
+                            "sourceless": {
+                              "type": "boolean",
+                              "enum": [
+                                false,
+                                true
+                              ]
+                            },
+                            "productionBranch": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "deployHooks",
+                            "gitCredentialId",
+                            "owner",
+                            "ownerId",
+                            "productionBranch",
+                            "repo",
+                            "repoId",
                             "type"
                           ],
                           "type": "object"
@@ -146986,6 +148248,7 @@
                                 "clone/repo",
                                 "drop",
                                 "git",
+                                "git-deploy-hook",
                                 "import",
                                 "import/repo",
                                 "redeploy",
@@ -147074,6 +148337,7 @@
                                 "clone/repo",
                                 "drop",
                                 "git",
+                                "git-deploy-hook",
                                 "import",
                                 "import/repo",
                                 "redeploy",
@@ -147568,6 +148832,7 @@
                                 "clone/repo",
                                 "drop",
                                 "git",
+                                "git-deploy-hook",
                                 "import",
                                 "import/repo",
                                 "redeploy",
@@ -147656,6 +148921,7 @@
                                 "clone/repo",
                                 "drop",
                                 "git",
+                                "git-deploy-hook",
                                 "import",
                                 "import/repo",
                                 "redeploy",
@@ -148161,6 +149427,7 @@
                                 "clone/repo",
                                 "drop",
                                 "git",
+                                "git-deploy-hook",
                                 "import",
                                 "import/repo",
                                 "redeploy",
@@ -148249,6 +149516,7 @@
                                 "clone/repo",
                                 "drop",
                                 "git",
+                                "git-deploy-hook",
                                 "import",
                                 "import/repo",
                                 "redeploy",
@@ -148752,6 +150020,7 @@
                                 "clone/repo",
                                 "drop",
                                 "git",
+                                "git-deploy-hook",
                                 "import",
                                 "import/repo",
                                 "redeploy",
@@ -148840,6 +150109,7 @@
                                 "clone/repo",
                                 "drop",
                                 "git",
+                                "git-deploy-hook",
                                 "import",
                                 "import/repo",
                                 "redeploy",
@@ -152604,6 +153874,90 @@
                             "org",
                             "productionBranch",
                             "repo",
+                            "type"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "owner": {
+                              "type": "string",
+                              "description": "Owner (namespace) slug, e.g. `acme`."
+                            },
+                            "repo": {
+                              "type": "string"
+                            },
+                            "repoId": {
+                              "type": "string",
+                              "description": "Origin repository id."
+                            },
+                            "ownerId": {
+                              "type": "string",
+                              "description": "Origin namespace id (`ns_…`) of the owner."
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "cursor-origin"
+                              ]
+                            },
+                            "createdAt": {
+                              "type": "number"
+                            },
+                            "deployHooks": {
+                              "items": {
+                                "properties": {
+                                  "createdAt": {
+                                    "type": "number"
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "ref": {
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "name",
+                                  "ref",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              "type": "array"
+                            },
+                            "gitCredentialId": {
+                              "type": "string"
+                            },
+                            "updatedAt": {
+                              "type": "number"
+                            },
+                            "sourceless": {
+                              "type": "boolean",
+                              "enum": [
+                                false,
+                                true
+                              ]
+                            },
+                            "productionBranch": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "deployHooks",
+                            "gitCredentialId",
+                            "owner",
+                            "ownerId",
+                            "productionBranch",
+                            "repo",
+                            "repoId",
                             "type"
                           ],
                           "type": "object"
@@ -181138,6 +182492,7 @@
                                 "AiGatewayBudgetManager",
                                 "AiGatewayCredits",
                                 "AiGatewaySettings",
+                                "ConnectorManager",
                                 "CreateProject",
                                 "EnvVariableManager",
                                 "EnvironmentManager",
@@ -182195,6 +183550,7 @@
                     "items": {
                       "type": "string",
                       "enum": [
+                        "ConnectorManager",
                         "IntegrationManager",
                         "CreateProject",
                         "FullProductionDeployment",
@@ -183155,7 +184511,7 @@
                               "elastic"
                             ],
                             "example": "standard",
-                            "description": "Default build machine type for new builds: standard, enhanced, turbo, or elastic."
+                            "description": "Default build machine type for new builds: basic, standard, enhanced, turbo, or elastic."
                           }
                         }
                       }
@@ -196879,6 +198235,7 @@
                               "clone/repo",
                               "drop",
                               "git",
+                              "git-deploy-hook",
                               "import",
                               "import/repo",
                               "redeploy",
@@ -199796,6 +201153,8 @@
               "oidc-policy-used-to-obtain-app-token",
               "organization-create",
               "organization-delete",
+              "organization-dsync-group-delete",
+              "organization-dsync-group-upsert",
               "organization-slug-update",
               "organization-team-add",
               "organization-team-create",
@@ -205839,6 +207198,324 @@
                           "type"
                         ],
                         "type": "object"
+                      },
+                      {
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "cursor-origin-push"
+                            ]
+                          },
+                          "ref": {
+                            "type": "string"
+                          },
+                          "sha": {
+                            "type": "string"
+                          },
+                          "beforeSha": {
+                            "type": "string"
+                          },
+                          "defaultBranch": {
+                            "type": "string"
+                          },
+                          "forced": {
+                            "type": "boolean",
+                            "enum": [
+                              false,
+                              true
+                            ]
+                          },
+                          "repoPushedAt": {
+                            "nullable": true,
+                            "type": "number"
+                          },
+                          "deployHook": {
+                            "properties": {
+                              "createdAt": {
+                                "type": "number"
+                              },
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "ref": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "createdAt",
+                              "id",
+                              "name",
+                              "ref"
+                            ],
+                            "type": "object"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "target": {
+                            "nullable": true,
+                            "type": "string"
+                          },
+                          "deploymentId": {
+                            "type": "string"
+                          },
+                          "linkedProjectId": {
+                            "type": "string"
+                          },
+                          "projectId": {
+                            "type": "string"
+                          },
+                          "createdAt": {
+                            "type": "number"
+                          },
+                          "eventful": {
+                            "type": "boolean",
+                            "enum": [
+                              false,
+                              true
+                            ]
+                          },
+                          "forceNew": {
+                            "type": "boolean",
+                            "enum": [
+                              false,
+                              true
+                            ]
+                          },
+                          "authorized": {
+                            "type": "boolean",
+                            "enum": [
+                              false,
+                              true
+                            ]
+                          },
+                          "authorizedBy": {
+                            "type": "string"
+                          },
+                          "jobProjectIds": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array",
+                            "description": "Since December 2022 All project ids associated to this job. Think monorepo. This job will be for one of these project."
+                          },
+                          "jobPairs": {
+                            "items": {
+                              "items": {
+                                "oneOf": [
+                                  {
+                                    "type": "string"
+                                  },
+                                  {
+                                    "type": "string"
+                                  }
+                                ]
+                              },
+                              "maxItems": 2,
+                              "minItems": 2,
+                              "type": "array",
+                              "description": "Since December 2022 Pairs of projects and owner ids to build for this build request."
+                            },
+                            "type": "array",
+                            "description": "Since December 2022 Pairs of projects and owner ids to build for this build request."
+                          },
+                          "skippedJobPairs": {
+                            "items": {
+                              "items": {
+                                "oneOf": [
+                                  {
+                                    "type": "string"
+                                  },
+                                  {
+                                    "type": "string"
+                                  }
+                                ]
+                              },
+                              "maxItems": 2,
+                              "minItems": 2,
+                              "type": "array",
+                              "description": "Since June 2024 Pairs of projects and owner ids to immediately finish (without building) because we want to create them in a skipped state."
+                            },
+                            "type": "array",
+                            "description": "Since June 2024 Pairs of projects and owner ids to immediately finish (without building) because we want to create them in a skipped state."
+                          },
+                          "gitHashtagVercel": {
+                            "items": {
+                              "type": "string",
+                              "enum": [
+                                "#VERCEL_BUILD_PRIO_1",
+                                "#VERCEL_BUILD_PRIO_10",
+                                "#VERCEL_BUILD_PRIO_2",
+                                "#VERCEL_BUILD_PRIO_3",
+                                "#VERCEL_BUILD_PRIO_4",
+                                "#VERCEL_BUILD_PRIO_5",
+                                "#VERCEL_BUILD_PRIO_6",
+                                "#VERCEL_BUILD_PRIO_7",
+                                "#VERCEL_BUILD_PRIO_8",
+                                "#VERCEL_BUILD_PRIO_9",
+                                "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_CANCEL",
+                                "#VERCEL_SDDJ_AFTER_GET_REPO_FORCE_ERROR",
+                                "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_CANCEL",
+                                "#VERCEL_SDDJ_AFTER_VERIFY_FORCE_ERROR",
+                                "#VERCEL_SDDJ_BEFORE_BUILD_JOB_QUEUED_ERROR",
+                                "#VERCEL_SDDJ_FORCE_GIT_FORK_ERROR",
+                                "#VERCEL_SKIP",
+                                "#VERCEL_V0_MESSAGE"
+                              ],
+                              "description": "Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING"
+                            },
+                            "type": "array",
+                            "description": "Since February 2022 All the hashtag-vercel tags found in the commit message triggering the deploy. For example, #VERCEL_DO_SOMETHING"
+                          },
+                          "connectedProjectCount": {
+                            "type": "number",
+                            "description": "Since April 2023 Cached count of how many projects are connected to the repo. Saves a few Cosmos queries down the road in the main flow."
+                          },
+                          "prIdOrZero": {
+                            "type": "number",
+                            "description": "Since April 2023 If set then it is a cached result of asking the remote for the PR ID the commit that triggered this Job. Or zero if it was not a PR. This prevents a few git round trips by the git updater."
+                          },
+                          "gitComments": {
+                            "properties": {
+                              "onPullRequest": {
+                                "type": "boolean",
+                                "enum": [
+                                  false,
+                                  true
+                                ]
+                              },
+                              "onCommit": {
+                                "type": "boolean",
+                                "enum": [
+                                  false,
+                                  true
+                                ]
+                              }
+                            },
+                            "required": [
+                              "onCommit",
+                              "onPullRequest"
+                            ],
+                            "type": "object",
+                            "description": "Since June 2023 Determines if comments should be posted to the git host. Replaces `github.silent` in the vercel.json."
+                          },
+                          "isManualGitDeploy": {
+                            "type": "boolean",
+                            "enum": [
+                              false,
+                              true
+                            ],
+                            "description": "Since 28 Feb 2024 If set to true, identifies that the git job was created for a manual git deployment"
+                          },
+                          "commitVerification": {
+                            "type": "string",
+                            "enum": [
+                              "unknown",
+                              "unverified",
+                              "verified"
+                            ],
+                            "description": "Since 6 Nov 2025 The verification status of the commit. - 'verified' if the commit is verified - 'unverified' if the commit is not verified - 'unknown' if the commit verification status is unknown or not supported"
+                          },
+                          "nsnbSideEffect": {
+                            "properties": {
+                              "action": {
+                                "type": "string",
+                                "enum": [
+                                  "auto-approved-member",
+                                  "auto-approved-pending-invite"
+                                ]
+                              },
+                              "gitUserLogin": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "action",
+                              "gitUserLogin"
+                            ],
+                            "type": "object",
+                            "description": "Since March 2026 Records a successful NSNB auto-add result so later GitHub PR comments can deterministically explain why this SHA was allowed to deploy."
+                          },
+                          "headInfo": {
+                            "properties": {
+                              "owner": {
+                                "type": "string",
+                                "description": "Owner (namespace) slug, e.g. `acme`."
+                              },
+                              "ownerId": {
+                                "type": "string",
+                                "description": "Origin namespace id (`ns_…`)."
+                              },
+                              "ref": {
+                                "type": "string"
+                              },
+                              "repo": {
+                                "type": "string",
+                                "description": "Repository name, e.g. `api`."
+                              },
+                              "repoId": {
+                                "type": "string",
+                                "description": "Origin repository id."
+                              },
+                              "sha": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "owner",
+                              "ownerId",
+                              "ref",
+                              "repo",
+                              "repoId",
+                              "sha"
+                            ],
+                            "type": "object",
+                            "description": "Cursor Origin"
+                          },
+                          "installationId": {
+                            "type": "string",
+                            "description": "Origin installation id (`i_…`) used to resolve the credential."
+                          },
+                          "owner": {
+                            "type": "string"
+                          },
+                          "repo": {
+                            "type": "string"
+                          },
+                          "repoId": {
+                            "type": "string"
+                          },
+                          "provider": {
+                            "type": "string",
+                            "enum": [
+                              "cursor-origin"
+                            ]
+                          },
+                          "customEnvId": {
+                            "nullable": true,
+                            "type": "string"
+                          },
+                          "prId": {
+                            "nullable": true,
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "headInfo",
+                          "installationId",
+                          "owner",
+                          "provider",
+                          "ref",
+                          "repo",
+                          "repoId",
+                          "sha",
+                          "type"
+                        ],
+                        "type": "object"
                       }
                     ]
                   }
@@ -208315,6 +209992,7 @@
                         "type": "string",
                         "enum": [
                           "bitbucket",
+                          "cursor-origin",
                           "github",
                           "github-custom-host",
                           "github-limited",
@@ -209021,6 +210699,7 @@
                                   "AiGatewayBudgetManager",
                                   "AiGatewayCredits",
                                   "AiGatewaySettings",
+                                  "ConnectorManager",
                                   "CreateProject",
                                   "EnvVariableManager",
                                   "EnvironmentManager",
@@ -211483,7 +213162,8 @@
                       "github-custom-host",
                       "github-limited",
                       "gitlab",
-                      "google"
+                      "google",
+                      "saml"
                     ]
                   },
                   "login": {
@@ -211509,7 +213189,8 @@
                       "github-custom-host",
                       "github-limited",
                       "gitlab",
-                      "google"
+                      "google",
+                      "saml"
                     ]
                   }
                 },
@@ -212375,6 +214056,88 @@
                   "organizationId",
                   "rootTeamId",
                   "slug"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "directoryGroupId": {
+                    "type": "string"
+                  },
+                  "directoryId": {
+                    "type": "string"
+                  },
+                  "groupName": {
+                    "type": "string"
+                  },
+                  "next": {
+                    "properties": {
+                      "default": {
+                        "type": "string",
+                        "enum": [
+                          "BILLING",
+                          "CONTRIBUTOR",
+                          "DEVELOPER",
+                          "MEMBER",
+                          "OWNER",
+                          "SECURITY",
+                          "VIEWER",
+                          "VIEWER_FOR_PLUS"
+                        ]
+                      },
+                      "roles": {
+                        "additionalProperties": {
+                          "type": "string",
+                          "enum": [
+                            "BILLING",
+                            "CONTRIBUTOR",
+                            "DEVELOPER",
+                            "MEMBER",
+                            "OWNER",
+                            "SECURITY",
+                            "VIEWER",
+                            "VIEWER_FOR_PLUS"
+                          ]
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "required": [
+                      "roles"
+                    ],
+                    "type": "object"
+                  },
+                  "organizationId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "directoryGroupId",
+                  "directoryId",
+                  "groupName",
+                  "next",
+                  "organizationId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "directoryGroupId": {
+                    "type": "string"
+                  },
+                  "directoryId": {
+                    "type": "string"
+                  },
+                  "organizationId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "directoryGroupId",
+                  "directoryId",
+                  "organizationId"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -214708,6 +216471,7 @@
                         "type": "string",
                         "enum": [
                           "bitbucket",
+                          "cursor-origin",
                           "github",
                           "github-custom-host",
                           "github-limited",
@@ -214735,6 +216499,7 @@
                         "type": "string",
                         "enum": [
                           "bitbucket",
+                          "cursor-origin",
                           "github",
                           "github-custom-host",
                           "github-limited",
@@ -214777,6 +216542,7 @@
                     "type": "string",
                     "enum": [
                       "bitbucket",
+                      "cursor-origin",
                       "github",
                       "github-custom-host",
                       "github-limited",
@@ -221536,6 +223302,8 @@
               "oidc-policy-used-to-obtain-app-token",
               "organization-create",
               "organization-delete",
+              "organization-dsync-group-delete",
+              "organization-dsync-group-upsert",
               "organization-slug-update",
               "organization-team-add",
               "organization-team-create",
@@ -222185,6 +223953,8 @@
                 "oidc-policy-used-to-obtain-app-token",
                 "organization-create",
                 "organization-delete",
+                "organization-dsync-group-delete",
+                "organization-dsync-group-upsert",
                 "organization-slug-update",
                 "organization-team-add",
                 "organization-team-create",
@@ -224910,6 +226680,7 @@
                 "AiGatewayBudgetManager",
                 "AiGatewayCredits",
                 "AiGatewaySettings",
+                "ConnectorManager",
                 "CreateProject",
                 "EnvVariableManager",
                 "EnvironmentManager",
@@ -225161,6 +226932,7 @@
                     "AiGatewayBudgetManager",
                     "AiGatewayCredits",
                     "AiGatewaySettings",
+                    "ConnectorManager",
                     "CreateProject",
                     "EnvVariableManager",
                     "EnvironmentManager",
@@ -225935,6 +227707,7 @@
                     "AiGatewayBudgetManager",
                     "AiGatewayCredits",
                     "AiGatewaySettings",
+                    "ConnectorManager",
                     "CreateProject",
                     "EnvVariableManager",
                     "EnvironmentManager",
@@ -226285,6 +228058,7 @@
                     "AiGatewayBudgetManager",
                     "AiGatewayCredits",
                     "AiGatewaySettings",
+                    "ConnectorManager",
                     "CreateProject",
                     "EnvVariableManager",
                     "EnvironmentManager",
@@ -227019,6 +228793,7 @@
             "type": "string",
             "enum": [
               "bitbucket",
+              "cursor-origin",
               "github",
               "github-custom-host",
               "github-limited",

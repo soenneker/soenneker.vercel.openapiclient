@@ -453,6 +453,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> Regions { get; set; }
 #endif
+        /// <summary>The resourceConfig property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfig? ResourceConfig { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfig ResourceConfig { get; set; }
+#endif
         /// <summary>The routes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -625,6 +633,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "readyStateReason", n => { ReadyStateReason = n.GetStringValue(); } },
                 { "readySubstate", n => { ReadySubstate = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseReadySubstate>(); } },
                 { "regions", n => { Regions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "resourceConfig", n => { ResourceConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfig>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfig.CreateFromDiscriminatorValue); } },
                 { "routes", n => { Routes = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseRoutesItem>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseRoutesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "seatBlock", n => { SeatBlock = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseSeatBlock>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseSeatBlock.CreateFromDiscriminatorValue); } },
                 { "services", n => { Services = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItem>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -724,6 +733,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("readyStateReason", ReadyStateReason);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseReadySubstate>("readySubstate", ReadySubstate);
             writer.WriteCollectionOfPrimitiveValues<string>("regions", Regions);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfig>("resourceConfig", ResourceConfig);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseRoutesItem>("routes", Routes);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseSeatBlock>("seatBlock", SeatBlock);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItem>("services", Services);

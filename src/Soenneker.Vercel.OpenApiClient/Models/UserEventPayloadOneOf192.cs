@@ -39,6 +39,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string OwnerId { get; set; }
 #endif
+        /// <summary>The siftRoute property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192SiftRoute? SiftRoute { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192SiftRoute SiftRoute { get; set; }
+#endif
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +83,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "blockReason", n => { BlockReason = n.GetStringValue(); } },
                 { "cause", n => { Cause = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
+                { "siftRoute", n => { SiftRoute = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192SiftRoute>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192SiftRoute.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
             };
         }
@@ -88,6 +97,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("blockReason", BlockReason);
             writer.WriteStringValue("cause", Cause);
             writer.WriteStringValue("ownerId", OwnerId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf192SiftRoute>("siftRoute", SiftRoute);
             writer.WriteStringValue("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }

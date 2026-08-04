@@ -8,6 +8,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UpdateTeamMemberRequestTeamPermissionsItem
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "ConnectorManager")]
+        #pragma warning disable CS1591
+        ConnectorManager,
+        #pragma warning restore CS1591
         [EnumMember(Value = "IntegrationManager")]
         #pragma warning disable CS1591
         IntegrationManager,

@@ -453,6 +453,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> Regions { get; set; }
 #endif
+        /// <summary>The resourceConfig property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ResourceConfig? ResourceConfig { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ResourceConfig ResourceConfig { get; set; }
+#endif
         /// <summary>The routes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -625,6 +633,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "readyStateReason", n => { ReadyStateReason = n.GetStringValue(); } },
                 { "readySubstate", n => { ReadySubstate = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ReadySubstate>(); } },
                 { "regions", n => { Regions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "resourceConfig", n => { ResourceConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ResourceConfig>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ResourceConfig.CreateFromDiscriminatorValue); } },
                 { "routes", n => { Routes = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2RoutesItem>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2RoutesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "seatBlock", n => { SeatBlock = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2SeatBlock>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2SeatBlock.CreateFromDiscriminatorValue); } },
                 { "services", n => { Services = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItem>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -724,6 +733,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("readyStateReason", ReadyStateReason);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ReadySubstate>("readySubstate", ReadySubstate);
             writer.WriteCollectionOfPrimitiveValues<string>("regions", Regions);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ResourceConfig>("resourceConfig", ResourceConfig);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2RoutesItem>("routes", Routes);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2SeatBlock>("seatBlock", SeatBlock);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2ServicesItem>("services", Services);

@@ -64,6 +64,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Owner { get; set; }
 #endif
+        /// <summary>Origin namespace id (`ns_…`) of the owner.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OwnerId { get; set; }
+#nullable restore
+#else
+        public string OwnerId { get; set; }
+#endif
         /// <summary>The productionBranch property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -188,6 +196,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "org", n => { Org = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
+                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "productionBranch", n => { ProductionBranch = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
@@ -220,6 +229,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("org", Org);
             writer.WriteStringValue("owner", Owner);
+            writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteStringValue("productionBranch", ProductionBranch);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);

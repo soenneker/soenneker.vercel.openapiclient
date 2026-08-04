@@ -40,5 +40,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Google,
         #pragma warning restore CS1591
+        [EnumMember(Value = "saml")]
+        #pragma warning disable CS1591
+        Saml,
+        #pragma warning restore CS1591
     }
 }

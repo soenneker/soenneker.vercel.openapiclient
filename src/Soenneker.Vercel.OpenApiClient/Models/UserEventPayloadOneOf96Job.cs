@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf8"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf9"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf96Job : IComposedTypeWrapper, IParsable
@@ -77,6 +77,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf8 UserEventPayloadOneOf96JobOneOf8 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf9"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf9? UserEventPayloadOneOf96JobOneOf9 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf9 UserEventPayloadOneOf96JobOneOf9 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -119,6 +127,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 result.UserEventPayloadOneOf96JobOneOf8 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf8();
             }
+            else if("UserEventPayloadOneOf96JobOneOf9".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf96JobOneOf9 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf9();
+            }
             return result;
         }
         /// <summary>
@@ -158,6 +170,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if(UserEventPayloadOneOf96JobOneOf8 != null)
             {
                 return UserEventPayloadOneOf96JobOneOf8.GetFieldDeserializers();
+            }
+            else if(UserEventPayloadOneOf96JobOneOf9 != null)
+            {
+                return UserEventPayloadOneOf96JobOneOf9.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -199,6 +215,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if(UserEventPayloadOneOf96JobOneOf8 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf8>(null, UserEventPayloadOneOf96JobOneOf8);
+            }
+            else if(UserEventPayloadOneOf96JobOneOf9 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf96JobOneOf9>(null, UserEventPayloadOneOf96JobOneOf9);
             }
         }
     }
