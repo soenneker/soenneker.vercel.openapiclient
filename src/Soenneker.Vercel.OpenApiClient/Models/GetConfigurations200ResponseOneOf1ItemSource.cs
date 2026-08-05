@@ -23,6 +23,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         External,
         #pragma warning restore CS1591
+        [EnumMember(Value = "import-recommended-integrations")]
+        #pragma warning disable CS1591
+        ImportRecommendedIntegrations,
+        #pragma warning restore CS1591
         [EnumMember(Value = "marketplace")]
         #pragma warning disable CS1591
         Marketplace,

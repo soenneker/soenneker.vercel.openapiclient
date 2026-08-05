@@ -15,15 +15,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The count property</summary>
-        public double? Count { get; set; }
-        /// <summary>The documents property</summary>
+        /// <summary>The documentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf74DocumentsItem>? Documents { get; set; }
+        public string? DocumentId { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf74DocumentsItem> Documents { get; set; }
+        public string DocumentId { get; set; }
+#endif
+        /// <summary>The fingerprint property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Fingerprint { get; set; }
+#nullable restore
+#else
+        public string Fingerprint { get; set; }
+#endif
+        /// <summary>The slug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Slug { get; set; }
+#nullable restore
+#else
+        public string Slug { get; set; }
+#endif
+        /// <summary>The title property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Title { get; set; }
+#nullable restore
+#else
+        public string Title { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf74"/> and sets the default values.
@@ -50,8 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "count", n => { Count = n.GetDoubleValue(); } },
-                { "documents", n => { Documents = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf74DocumentsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf74DocumentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "documentId", n => { DocumentId = n.GetStringValue(); } },
+                { "fingerprint", n => { Fingerprint = n.GetStringValue(); } },
+                { "slug", n => { Slug = n.GetStringValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,8 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("count", Count);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf74DocumentsItem>("documents", Documents);
+            writer.WriteStringValue("documentId", DocumentId);
+            writer.WriteStringValue("fingerprint", Fingerprint);
+            writer.WriteStringValue("slug", Slug);
+            writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

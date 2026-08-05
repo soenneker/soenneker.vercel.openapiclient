@@ -55,13 +55,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string IntegrationSlug { get; set; }
 #endif
-        /// <summary>The keys property</summary>
+        /// <summary>The pattern property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Keys { get; set; }
+        public string? Pattern { get; set; }
 #nullable restore
 #else
-        public List<string> Keys { get; set; }
+        public string Pattern { get; set; }
 #endif
         /// <summary>The requestKind property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165RequestKind? RequestKind { get; set; }
@@ -72,6 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string ResourceId { get; set; }
+#endif
+        /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165"/> and sets the default values.
@@ -103,9 +111,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
                 { "integrationProductSlug", n => { IntegrationProductSlug = n.GetStringValue(); } },
                 { "integrationSlug", n => { IntegrationSlug = n.GetStringValue(); } },
-                { "keys", n => { Keys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "pattern", n => { Pattern = n.GetStringValue(); } },
                 { "requestKind", n => { RequestKind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165RequestKind>(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -120,9 +129,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("integrationId", IntegrationId);
             writer.WriteStringValue("integrationProductSlug", IntegrationProductSlug);
             writer.WriteStringValue("integrationSlug", IntegrationSlug);
-            writer.WriteCollectionOfPrimitiveValues<string>("keys", Keys);
+            writer.WriteStringValue("pattern", Pattern);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165RequestKind>("requestKind", RequestKind);
             writer.WriteStringValue("resourceId", ResourceId);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

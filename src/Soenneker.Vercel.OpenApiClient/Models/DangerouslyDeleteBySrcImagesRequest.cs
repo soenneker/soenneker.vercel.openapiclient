@@ -13,7 +13,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The revalidationDeadlineSeconds property</summary>
-        public double? RevalidationDeadlineSeconds { get; set; }
+        public int? RevalidationDeadlineSeconds { get; set; }
         /// <summary>The srcImages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,7 +40,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "revalidationDeadlineSeconds", n => { RevalidationDeadlineSeconds = n.GetDoubleValue(); } },
+                { "revalidationDeadlineSeconds", n => { RevalidationDeadlineSeconds = n.GetIntValue(); } },
                 { "srcImages", n => { SrcImages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -51,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("revalidationDeadlineSeconds", RevalidationDeadlineSeconds);
+            writer.WriteIntValue("revalidationDeadlineSeconds", RevalidationDeadlineSeconds);
             writer.WriteCollectionOfPrimitiveValues<string>("srcImages", SrcImages);
         }
     }

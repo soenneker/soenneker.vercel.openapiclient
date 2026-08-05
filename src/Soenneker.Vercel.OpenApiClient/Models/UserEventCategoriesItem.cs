@@ -23,6 +23,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Billing,
         #pragma warning restore CS1591
+        [EnumMember(Value = "connect")]
+        #pragma warning disable CS1591
+        Connect,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deployment")]
         #pragma warning disable CS1591
         Deployment,

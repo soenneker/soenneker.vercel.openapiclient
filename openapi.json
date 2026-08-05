@@ -11717,6 +11717,19 @@
                       ],
                       "description": "How the connector row was originally created. New create paths stamp this explicitly; older rows may omit it."
                     },
+                    "managed": {
+                      "properties": {
+                        "sync": {
+                          "type": "boolean",
+                          "enum": [
+                            false,
+                            true
+                          ]
+                        }
+                      },
+                      "type": "object",
+                      "description": "Managed-client metadata exposed without leaking the manager client or installation identifiers."
+                    },
                     "public": {
                       "type": "boolean",
                       "enum": [
@@ -52015,7 +52028,8 @@
                 "properties": {
                   "revalidationDeadlineSeconds": {
                     "minimum": 0,
-                    "type": "number"
+                    "maximum": 31536000,
+                    "type": "integer"
                   },
                   "tags": {
                     "oneOf": [
@@ -52214,7 +52228,8 @@
                 "properties": {
                   "revalidationDeadlineSeconds": {
                     "minimum": 0,
-                    "type": "number"
+                    "maximum": 31536000,
+                    "type": "integer"
                   },
                   "srcImages": {
                     "items": {
@@ -56269,6 +56284,16 @@
             "schema": {
               "description": "Comma-delimited list of project IDs to filter the results by.",
               "example": "aeIInYVk59zbFF2SxfyxxmuO",
+              "type": "string"
+            }
+          },
+          {
+            "name": "entityId",
+            "description": "Filters events to those associated with a specific entity (matched against `payload.id`). For example, a connector ID.",
+            "in": "query",
+            "schema": {
+              "description": "Filters events to those associated with a specific entity (matched against `payload.id`). For example, a connector ID.",
+              "example": "scl_123",
               "type": "string"
             }
           },
@@ -65388,7 +65413,8 @@
                 "resource-claims",
                 "cli",
                 "oauth",
-                "backoffice"
+                "backoffice",
+                "import-recommended-integrations"
               ]
             }
           },
@@ -68380,6 +68406,7 @@
                               "cli",
                               "deploy-button",
                               "external",
+                              "import-recommended-integrations",
                               "marketplace",
                               "oauth",
                               "resource-claims",
@@ -68604,6 +68631,7 @@
                               "cli",
                               "deploy-button",
                               "external",
+                              "import-recommended-integrations",
                               "marketplace",
                               "oauth",
                               "resource-claims",
@@ -69101,6 +69129,7 @@
                             "cli",
                             "deploy-button",
                             "external",
+                            "import-recommended-integrations",
                             "marketplace",
                             "oauth",
                             "resource-claims",
@@ -69244,6 +69273,7 @@
                             "cli",
                             "deploy-button",
                             "external",
+                            "import-recommended-integrations",
                             "marketplace",
                             "oauth",
                             "resource-claims",
@@ -69407,6 +69437,7 @@
                             "cli",
                             "deploy-button",
                             "external",
+                            "import-recommended-integrations",
                             "marketplace",
                             "oauth",
                             "resource-claims",
@@ -87598,7 +87629,13 @@
           "404": {
             "description": ""
           },
+          "409": {
+            "description": ""
+          },
           "410": {
+            "description": ""
+          },
+          "500": {
             "description": ""
           }
         },
@@ -177072,7 +177109,9 @@
         "description": "",
         "operationId": "getStorageStoresById",
         "security": [],
-        "tags": [],
+        "tags": [
+          "storage"
+        ],
         "responses": {
           "200": {
             "description": "",
@@ -177392,7 +177431,9 @@
         "description": "",
         "operationId": "createStorageStoresBlob",
         "security": [],
-        "tags": [],
+        "tags": [
+          "storage"
+        ],
         "responses": {
           "200": {
             "description": "",
@@ -177813,7 +177854,9 @@
         "description": "",
         "operationId": "deleteStorageStoresBlobById",
         "security": [],
-        "tags": [],
+        "tags": [
+          "storage"
+        ],
         "responses": {
           "200": {
             "description": "",
@@ -182182,7 +182225,8 @@
                       "resource-claims",
                       "cli",
                       "oauth",
-                      "backoffice"
+                      "backoffice",
+                      "import-recommended-integrations"
                     ],
                     "description": "Source of the store creation request",
                     "example": "marketplace",
@@ -187282,7 +187326,9 @@
         "description": "GET /v2/ Docker Registry v2 version check. Returns a 401 challenge when no credentials are provided, prompting the Docker client to send auth. With valid credentials, returns 200 so the client can proceed.",
         "operationId": "getRoot",
         "security": [],
-        "tags": [],
+        "tags": [
+          "vcr"
+        ],
         "responses": {
           "200": {
             "description": "",
@@ -187321,7 +187367,9 @@
         "description": "HEAD /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Check whether a blob exists. Used by the Docker client before pushing a layer to avoid re-uploading content that already exists.",
         "operationId": "headByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest",
         "security": [],
-        "tags": [],
+        "tags": [
+          "vcr"
+        ],
         "responses": {
           "200": {
             "description": "",
@@ -187411,7 +187459,9 @@
         "description": "GET /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Fetch a blob by digest.",
         "operationId": "getByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest",
         "security": [],
-        "tags": [],
+        "tags": [
+          "vcr"
+        ],
         "responses": {
           "400": {
             "description": "One of the provided values in the request query is invalid."
@@ -187494,7 +187544,9 @@
         "description": "DELETE /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Blob deletion is intentionally not supported. Matches the behaviour of most public registries.",
         "operationId": "deleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest",
         "security": [],
-        "tags": [],
+        "tags": [
+          "vcr"
+        ],
         "responses": {
           "400": {
             "description": "One of the provided values in the request query is invalid."
@@ -187579,7 +187631,9 @@
         "description": "GET /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Query the status of an in-progress blob upload. Used by clients to resume a partial upload after an interruption.",
         "operationId": "getByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid",
         "security": [],
-        "tags": [],
+        "tags": [
+          "vcr"
+        ],
         "responses": {
           "204": {
             "description": "",
@@ -187669,7 +187723,9 @@
         "description": "DELETE /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Cancel an in-flight blob upload. Aborts the underlying S3 multipart upload (if one was started) and discards the session.",
         "operationId": "deleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid",
         "security": [],
-        "tags": [],
+        "tags": [
+          "vcr"
+        ],
         "responses": {
           "204": {
             "description": "",
@@ -187759,7 +187815,9 @@
         "description": "PATCH /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Upload a chunk of blob data. The request body is streamed directly to S3 as a multipart upload part while hashing incrementally. The client may call this multiple times for chunked uploads.",
         "operationId": "updateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid",
         "security": [],
-        "tags": [],
+        "tags": [
+          "vcr"
+        ],
         "responses": {
           "202": {
             "description": "",
@@ -187852,7 +187910,9 @@
         "description": "PUT /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid?digest=\u003cdigest\u003e Complete the blob upload. This may include a final chunk of data in the request body (monolithic upload) or just finalize a previous chunked upload.",
         "operationId": "replaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid",
         "security": [],
-        "tags": [],
+        "tags": [
+          "vcr"
+        ],
         "responses": {
           "201": {
             "description": "",
@@ -187960,7 +188020,9 @@
         "description": "POST /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/[?mount=\u003cdigest\u003e\u0026from=\u003crepo\u003e] Initiate a blob upload. Returns a UUID in the Location header that the client uses for subsequent PATCH (chunk) and PUT (complete) requests.",
         "operationId": "createByTeamSlugByProjectSlugByRepositoryNameBlobsUploads",
         "security": [],
-        "tags": [],
+        "tags": [
+          "vcr"
+        ],
         "responses": {
           "202": {
             "description": "",
@@ -188063,7 +188125,9 @@
         "description": "PUT /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Upload an image manifest. The digest is computed from the body and returned in the Docker-Content-Digest header.",
         "operationId": "replaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference",
         "security": [],
-        "tags": [],
+        "tags": [
+          "vcr"
+        ],
         "responses": {
           "201": {
             "description": "",
@@ -188156,7 +188220,9 @@
         "description": "HEAD /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Check whether a manifest exists. Used by Docker client during push to determine if a manifest (or config blob referenced by digest) is already present.",
         "operationId": "headByTeamSlugByProjectSlugByRepositoryNameManifestsByReference",
         "security": [],
-        "tags": [],
+        "tags": [
+          "vcr"
+        ],
         "responses": {
           "200": {
             "description": "",
@@ -188246,7 +188312,9 @@
         "description": "GET /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Fetch a manifest by tag or digest.",
         "operationId": "getByTeamSlugByProjectSlugByRepositoryNameManifestsByReference",
         "security": [],
-        "tags": [],
+        "tags": [
+          "vcr"
+        ],
         "responses": {
           "400": {
             "description": "One of the provided values in the request query is invalid."
@@ -188326,7 +188394,9 @@
         "description": "DELETE /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Reference must be a digest.",
         "operationId": "deleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference",
         "security": [],
-        "tags": [],
+        "tags": [
+          "vcr"
+        ],
         "responses": {
           "202": {
             "description": "",
@@ -188418,7 +188488,9 @@
         "description": "GET /v2/:teamSlug/:projectSlug/:repositoryName/tags/list List the tags in a repository.",
         "operationId": "getByTeamSlugByProjectSlugByRepositoryNameTagsList",
         "security": [],
-        "tags": [],
+        "tags": [
+          "vcr"
+        ],
         "responses": {
           "200": {
             "description": "",
@@ -188831,9 +188903,6 @@
                               "cacheReason": {
                                 "type": "string"
                               },
-                              "pprState": {
-                                "type": "string"
-                              },
                               "clientIp": {
                                 "type": "string"
                               },
@@ -189078,6 +189147,9 @@
                                 "type": "string"
                               },
                               "appName": {
+                                "type": "string"
+                              },
+                              "codingAgent": {
                                 "type": "string"
                               },
                               "isByok": {
@@ -189494,9 +189566,6 @@
                               "cacheReason": {
                                 "type": "string"
                               },
-                              "pprState": {
-                                "type": "string"
-                              },
                               "clientIp": {
                                 "type": "string"
                               },
@@ -189741,6 +189810,9 @@
                                 "type": "string"
                               },
                               "appName": {
+                                "type": "string"
+                              },
+                              "codingAgent": {
                                 "type": "string"
                               },
                               "isByok": {
@@ -190028,6 +190100,7 @@
                               "clientIpCountry",
                               "clientJa4Digest",
                               "clientUserAgent",
+                              "codingAgent",
                               "commitSha",
                               "consumerGroup",
                               "contentCaptureInputs",
@@ -190109,7 +190182,6 @@
                               "pathType",
                               "pathTypeVariant",
                               "piiRedactionApplied",
-                              "pprState",
                               "privatelinkDnsName",
                               "privatelinkEndpointId",
                               "privatelinkIpAddress",
@@ -190622,9 +190694,6 @@
                               "cacheReason": {
                                 "type": "string"
                               },
-                              "pprState": {
-                                "type": "string"
-                              },
                               "clientIp": {
                                 "type": "string"
                               },
@@ -190869,6 +190938,9 @@
                                 "type": "string"
                               },
                               "appName": {
+                                "type": "string"
+                              },
+                              "codingAgent": {
                                 "type": "string"
                               },
                               "isByok": {
@@ -191285,9 +191357,6 @@
                               "cacheReason": {
                                 "type": "string"
                               },
-                              "pprState": {
-                                "type": "string"
-                              },
                               "clientIp": {
                                 "type": "string"
                               },
@@ -191532,6 +191601,9 @@
                                 "type": "string"
                               },
                               "appName": {
+                                "type": "string"
+                              },
+                              "codingAgent": {
                                 "type": "string"
                               },
                               "isByok": {
@@ -191819,6 +191891,7 @@
                               "clientIpCountry",
                               "clientJa4Digest",
                               "clientUserAgent",
+                              "codingAgent",
                               "commitSha",
                               "consumerGroup",
                               "contentCaptureInputs",
@@ -191900,7 +191973,6 @@
                               "pathType",
                               "pathTypeVariant",
                               "piiRedactionApplied",
-                              "pprState",
                               "privatelinkDnsName",
                               "privatelinkEndpointId",
                               "privatelinkIpAddress",
@@ -192377,9 +192449,6 @@
                         "cacheReason": {
                           "type": "string"
                         },
-                        "pprState": {
-                          "type": "string"
-                        },
                         "clientIp": {
                           "type": "string"
                         },
@@ -192624,6 +192693,9 @@
                           "type": "string"
                         },
                         "appName": {
+                          "type": "string"
+                        },
+                        "codingAgent": {
                           "type": "string"
                         },
                         "isByok": {
@@ -192911,6 +192983,7 @@
                         "clientIpCountry",
                         "clientJa4Digest",
                         "clientUserAgent",
+                        "codingAgent",
                         "commitSha",
                         "consumerGroup",
                         "contentCaptureInputs",
@@ -192992,7 +193065,6 @@
                         "pathType",
                         "pathTypeVariant",
                         "piiRedactionApplied",
-                        "pprState",
                         "privatelinkDnsName",
                         "privatelinkEndpointId",
                         "privatelinkIpAddress",
@@ -193400,9 +193472,6 @@
                         "cacheReason": {
                           "type": "string"
                         },
-                        "pprState": {
-                          "type": "string"
-                        },
                         "clientIp": {
                           "type": "string"
                         },
@@ -193647,6 +193716,9 @@
                           "type": "string"
                         },
                         "appName": {
+                          "type": "string"
+                        },
+                        "codingAgent": {
                           "type": "string"
                         },
                         "isByok": {
@@ -193934,6 +194006,7 @@
                         "clientIpCountry",
                         "clientJa4Digest",
                         "clientUserAgent",
+                        "codingAgent",
                         "commitSha",
                         "consumerGroup",
                         "contentCaptureInputs",
@@ -194015,7 +194088,6 @@
                         "pathType",
                         "pathTypeVariant",
                         "piiRedactionApplied",
-                        "pprState",
                         "privatelinkDnsName",
                         "privatelinkEndpointId",
                         "privatelinkIpAddress",
@@ -200907,6 +200979,11 @@
               "ai-gateway-rule-deleted",
               "ai-gateway-rule-updated",
               "ai-gateway-scope-budget-updated",
+              "ai-gateway-transcripts-default-disabled",
+              "ai-gateway-transcripts-default-enabled",
+              "ai-gateway-transcripts-disabled",
+              "ai-gateway-transcripts-enabled",
+              "ai-gateway-transcripts-retention-updated",
               "ai-gateway-virtual-model-config-archived",
               "ai-gateway-virtual-model-config-created",
               "ai-gateway-virtual-model-config-restored",
@@ -201335,6 +201412,7 @@
               "spend-created",
               "spend-deleted",
               "spend-updated",
+              "sso-login",
               "storage-accept-tos",
               "storage-access-token-set",
               "storage-accessed-data-browser",
@@ -201361,6 +201439,7 @@
               "subscription-product-added",
               "subscription-product-removed",
               "subscription-updated",
+              "support-session-created",
               "team",
               "team-agent-billing-migration-decision-changed",
               "team-avatar-update",
@@ -201411,11 +201490,15 @@
               "tracing-configured",
               "tracing-disabled",
               "unlink-login-connection",
+              "update-account-flow-dismissed",
               "update-account-flow-triggered",
+              "user-blocked",
               "user-delete",
               "user-emu-account-archived",
               "user-emu-account-deleted",
               "user-emu-account-recovered",
+              "user-emu-recovery-initiated",
+              "user-emu-toggled",
               "user-mfa-challenge-failed",
               "user-mfa-challenge-verified",
               "user-mfa-change-failed",
@@ -201426,10 +201509,14 @@
               "user-mfa-setup-skipped",
               "user-mfa-totp-verification-started",
               "user-mfa-totp-verified",
+              "user-phone-removed",
+              "user-phone-updated",
               "user-primary-email-updated",
+              "user-sudo-mode-removed",
               "user-token-created",
               "user-token-deleted",
               "user-tokens-deleted",
+              "user-unblocked",
               "username",
               "v0-chat-ai-usage",
               "v0-chat-created",
@@ -201475,6 +201562,7 @@
                 "ai",
                 "ai-gateway",
                 "billing",
+                "connect",
                 "deployment",
                 "domain",
                 "edge",
@@ -202516,6 +202604,44 @@
               },
               {
                 "properties": {
+                  "retention": {
+                    "properties": {
+                      "defaultMode": {
+                        "type": "string",
+                        "enum": [
+                          "days",
+                          "until-requested"
+                        ]
+                      },
+                      "defaultDays": {
+                        "type": "number"
+                      },
+                      "ceilingMode": {
+                        "type": "string",
+                        "enum": [
+                          "days",
+                          "until-requested"
+                        ]
+                      },
+                      "ceilingDays": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "ceilingMode",
+                      "defaultMode"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "retention"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "rule": {
                     "properties": {
                       "id": {
@@ -202620,8 +202746,7 @@
                       }
                     },
                     "required": [
-                      "id",
-                      "modelSlug"
+                      "id"
                     ],
                     "type": "object"
                   }
@@ -219725,6 +219850,31 @@
               },
               {
                 "properties": {
+                  "actorId": {
+                    "type": "string"
+                  },
+                  "actorType": {
+                    "type": "string",
+                    "enum": [
+                      "admin",
+                      "user"
+                    ]
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "caseNumber": {
+                    "type": "string"
+                  },
+                  "client": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "slug": {
                     "type": "string"
                   }
@@ -221207,6 +221357,74 @@
                 },
                 "required": [
                   "username"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "actorId": {
+                    "type": "string"
+                  },
+                  "actorType": {
+                    "type": "string",
+                    "enum": [
+                      "admin"
+                    ]
+                  },
+                  "reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "actorId",
+                  "actorType"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "actorId": {
+                    "type": "string"
+                  },
+                  "actorType": {
+                    "type": "string",
+                    "enum": [
+                      "admin"
+                    ]
+                  }
+                },
+                "required": [
+                  "actorId",
+                  "actorType"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "enabled": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
+                    ]
+                  },
+                  "actorId": {
+                    "type": "string"
+                  },
+                  "actorType": {
+                    "type": "string",
+                    "enum": [
+                      "admin"
+                    ]
+                  }
+                },
+                "required": [
+                  "actorId",
+                  "actorType",
+                  "enabled"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -223056,6 +223274,11 @@
               "ai-gateway-rule-deleted",
               "ai-gateway-rule-updated",
               "ai-gateway-scope-budget-updated",
+              "ai-gateway-transcripts-default-disabled",
+              "ai-gateway-transcripts-default-enabled",
+              "ai-gateway-transcripts-disabled",
+              "ai-gateway-transcripts-enabled",
+              "ai-gateway-transcripts-retention-updated",
               "ai-gateway-virtual-model-config-archived",
               "ai-gateway-virtual-model-config-created",
               "ai-gateway-virtual-model-config-restored",
@@ -223484,6 +223707,7 @@
               "spend-created",
               "spend-deleted",
               "spend-updated",
+              "sso-login",
               "storage-accept-tos",
               "storage-access-token-set",
               "storage-accessed-data-browser",
@@ -223510,6 +223734,7 @@
               "subscription-product-added",
               "subscription-product-removed",
               "subscription-updated",
+              "support-session-created",
               "team",
               "team-agent-billing-migration-decision-changed",
               "team-avatar-update",
@@ -223560,11 +223785,15 @@
               "tracing-configured",
               "tracing-disabled",
               "unlink-login-connection",
+              "update-account-flow-dismissed",
               "update-account-flow-triggered",
+              "user-blocked",
               "user-delete",
               "user-emu-account-archived",
               "user-emu-account-deleted",
               "user-emu-account-recovered",
+              "user-emu-recovery-initiated",
+              "user-emu-toggled",
               "user-mfa-challenge-failed",
               "user-mfa-challenge-verified",
               "user-mfa-change-failed",
@@ -223575,10 +223804,14 @@
               "user-mfa-setup-skipped",
               "user-mfa-totp-verification-started",
               "user-mfa-totp-verified",
+              "user-phone-removed",
+              "user-phone-updated",
               "user-primary-email-updated",
+              "user-sudo-mode-removed",
               "user-token-created",
               "user-token-deleted",
               "user-tokens-deleted",
+              "user-unblocked",
               "username",
               "v0-chat-ai-usage",
               "v0-chat-created",
@@ -223628,6 +223861,7 @@
                 "ai",
                 "ai-gateway",
                 "billing",
+                "connect",
                 "deployment",
                 "domain",
                 "edge",
@@ -223707,6 +223941,11 @@
                 "ai-gateway-rule-deleted",
                 "ai-gateway-rule-updated",
                 "ai-gateway-scope-budget-updated",
+                "ai-gateway-transcripts-default-disabled",
+                "ai-gateway-transcripts-default-enabled",
+                "ai-gateway-transcripts-disabled",
+                "ai-gateway-transcripts-enabled",
+                "ai-gateway-transcripts-retention-updated",
                 "ai-gateway-virtual-model-config-archived",
                 "ai-gateway-virtual-model-config-created",
                 "ai-gateway-virtual-model-config-restored",
@@ -224135,6 +224374,7 @@
                 "spend-created",
                 "spend-deleted",
                 "spend-updated",
+                "sso-login",
                 "storage-accept-tos",
                 "storage-access-token-set",
                 "storage-accessed-data-browser",
@@ -224161,6 +224401,7 @@
                 "subscription-product-added",
                 "subscription-product-removed",
                 "subscription-updated",
+                "support-session-created",
                 "team",
                 "team-agent-billing-migration-decision-changed",
                 "team-avatar-update",
@@ -224211,11 +224452,15 @@
                 "tracing-configured",
                 "tracing-disabled",
                 "unlink-login-connection",
+                "update-account-flow-dismissed",
                 "update-account-flow-triggered",
+                "user-blocked",
                 "user-delete",
                 "user-emu-account-archived",
                 "user-emu-account-deleted",
                 "user-emu-account-recovered",
+                "user-emu-recovery-initiated",
+                "user-emu-toggled",
                 "user-mfa-challenge-failed",
                 "user-mfa-challenge-verified",
                 "user-mfa-change-failed",
@@ -224226,10 +224471,14 @@
                 "user-mfa-setup-skipped",
                 "user-mfa-totp-verification-started",
                 "user-mfa-totp-verified",
+                "user-phone-removed",
+                "user-phone-updated",
                 "user-primary-email-updated",
+                "user-sudo-mode-removed",
                 "user-token-created",
                 "user-token-deleted",
                 "user-tokens-deleted",
+                "user-unblocked",
                 "username",
                 "v0-chat-ai-usage",
                 "v0-chat-created",
@@ -224296,6 +224545,7 @@
                     "ai",
                     "ai-gateway",
                     "billing",
+                    "connect",
                     "deployment",
                     "domain",
                     "edge",
@@ -226900,6 +227150,24 @@
             "description": "Code that can be used to join this Team. Only visible to Team owners.",
             "example": "hasihf9e89"
           },
+          "billing": {
+            "nullable": true,
+            "properties": {
+              "plan": {
+                "type": "string",
+                "enum": [
+                  "enterprise",
+                  "hobby",
+                  "pro"
+                ]
+              }
+            },
+            "required": [
+              "plan"
+            ],
+            "type": "object",
+            "description": "The team's billing plan."
+          },
           "description": {
             "nullable": true,
             "type": "string",
@@ -227826,6 +228094,7 @@
         },
         "required": [
           "avatar",
+          "billing",
           "createdAt",
           "creatorId",
           "description",
@@ -228988,21 +229257,32 @@
                     "avatar": {
                       "nullable": true,
                       "type": "string"
+                    },
+                    "workEmail": {
+                      "type": "string"
                     }
                   },
                   "required": [
                     "avatar",
                     "name",
                     "slug",
-                    "teamId"
+                    "teamId",
+                    "workEmail"
                   ],
                   "type": "object"
+                },
+                "type": "array"
+              },
+              "verifiedEmuDomains": {
+                "items": {
+                  "type": "string"
                 },
                 "type": "array"
               }
             },
             "required": [
-              "managedTeams"
+              "managedTeams",
+              "verifiedEmuDomains"
             ],
             "type": "object",
             "description": "Context for the Update Account screen. Present only when `isAccountUpdateRequired` is true. `managedTeams` is empty for orphan mode (user matches an EMU domain but is not on the team)."

@@ -15,38 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The configuration property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Configuration? Configuration { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Configuration Configuration { get; set; }
-#endif
-        /// <summary>The newName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? NewName { get; set; }
-#nullable restore
-#else
-        public string NewName { get; set; }
-#endif
-        /// <summary>The peering property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Peering? Peering { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Peering Peering { get; set; }
-#endif
-        /// <summary>The team property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Team? Team { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Team Team { get; set; }
-#endif
+        /// <summary>The nextProjectCount property</summary>
+        public double? NextProjectCount { get; set; }
+        /// <summary>The previousProjectCount property</summary>
+        public double? PreviousProjectCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401"/> and sets the default values.
         /// </summary>
@@ -72,10 +44,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Configuration>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Configuration.CreateFromDiscriminatorValue); } },
-                { "newName", n => { NewName = n.GetStringValue(); } },
-                { "peering", n => { Peering = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Peering>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Peering.CreateFromDiscriminatorValue); } },
-                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Team.CreateFromDiscriminatorValue); } },
+                { "nextProjectCount", n => { NextProjectCount = n.GetDoubleValue(); } },
+                { "previousProjectCount", n => { PreviousProjectCount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -85,10 +55,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Configuration>("configuration", Configuration);
-            writer.WriteStringValue("newName", NewName);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Peering>("peering", Peering);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf401Team>("team", Team);
+            writer.WriteDoubleValue("nextProjectCount", NextProjectCount);
+            writer.WriteDoubleValue("previousProjectCount", PreviousProjectCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

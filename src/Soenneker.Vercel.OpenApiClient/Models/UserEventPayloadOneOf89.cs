@@ -15,22 +15,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The reason property</summary>
+        /// <summary>The prevPurchasedAmount property</summary>
+        public double? PrevPurchasedAmount { get; set; }
+        /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf89Project? Project { get; set; }
 #nullable restore
 #else
-        public string Reason { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf89Project Project { get; set; }
 #endif
-        /// <summary>The suffix property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Suffix { get; set; }
-#nullable restore
-#else
-        public string Suffix { get; set; }
-#endif
+        /// <summary>The purchasedAmount property</summary>
+        public double? PurchasedAmount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf89"/> and sets the default values.
         /// </summary>
@@ -56,8 +52,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "reason", n => { Reason = n.GetStringValue(); } },
-                { "suffix", n => { Suffix = n.GetStringValue(); } },
+                { "prevPurchasedAmount", n => { PrevPurchasedAmount = n.GetDoubleValue(); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf89Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf89Project.CreateFromDiscriminatorValue); } },
+                { "purchasedAmount", n => { PurchasedAmount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("reason", Reason);
-            writer.WriteStringValue("suffix", Suffix);
+            writer.WriteDoubleValue("prevPurchasedAmount", PrevPurchasedAmount);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf89Project>("project", Project);
+            writer.WriteDoubleValue("purchasedAmount", PurchasedAmount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

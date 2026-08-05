@@ -8,9 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UserEventPayloadOneOf60Action
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "resume_plan")]
+        [EnumMember(Value = "cancel_plan")]
         #pragma warning disable CS1591
-        ResumePlan,
+        CancelPlan,
         #pragma warning restore CS1591
     }
 }

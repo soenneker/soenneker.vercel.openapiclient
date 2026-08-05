@@ -13,7 +13,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The revalidationDeadlineSeconds property</summary>
-        public double? RevalidationDeadlineSeconds { get; set; }
+        public int? RevalidationDeadlineSeconds { get; set; }
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,7 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "revalidationDeadlineSeconds", n => { RevalidationDeadlineSeconds = n.GetDoubleValue(); } },
+                { "revalidationDeadlineSeconds", n => { RevalidationDeadlineSeconds = n.GetIntValue(); } },
                 { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DangerouslyDeleteByTagsRequestTags>(global::Soenneker.Vercel.OpenApiClient.Models.DangerouslyDeleteByTagsRequestTags.CreateFromDiscriminatorValue); } },
                 { "target", n => { Target = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.DangerouslyDeleteByTagsRequestTarget>(); } },
             };
@@ -54,7 +54,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("revalidationDeadlineSeconds", RevalidationDeadlineSeconds);
+            writer.WriteIntValue("revalidationDeadlineSeconds", RevalidationDeadlineSeconds);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DangerouslyDeleteByTagsRequestTags>("tags", Tags);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.DangerouslyDeleteByTagsRequestTarget>("target", Target);
         }

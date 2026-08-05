@@ -23,18 +23,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Domain { get; set; }
 #endif
-        /// <summary>The initiator property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf116Initiator? Initiator { get; set; }
-        /// <summary>The previousZone property</summary>
-        public bool? PreviousZone { get; set; }
-        /// <summary>The source property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Source { get; set; }
-#nullable restore
-#else
-        public string Source { get; set; }
-#endif
         /// <summary>The zone property</summary>
         public bool? Zone { get; set; }
         /// <summary>
@@ -63,9 +51,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "domain", n => { Domain = n.GetStringValue(); } },
-                { "initiator", n => { Initiator = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf116Initiator>(); } },
-                { "previousZone", n => { PreviousZone = n.GetBoolValue(); } },
-                { "source", n => { Source = n.GetStringValue(); } },
                 { "zone", n => { Zone = n.GetBoolValue(); } },
             };
         }
@@ -77,9 +62,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("domain", Domain);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf116Initiator>("initiator", Initiator);
-            writer.WriteBoolValue("previousZone", PreviousZone);
-            writer.WriteStringValue("source", Source);
             writer.WriteBoolValue("zone", Zone);
             writer.WriteAdditionalData(AdditionalData);
         }

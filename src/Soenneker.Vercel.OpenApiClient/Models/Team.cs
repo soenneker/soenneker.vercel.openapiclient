@@ -27,6 +27,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Avatar { get; set; }
 #endif
+        /// <summary>The team&apos;s billing plan.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamBilling? Billing { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamBilling Billing { get; set; }
+#endif
         /// <summary>The connect property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -305,6 +313,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "apiKeysInvalidatedAt", n => { ApiKeysInvalidatedAt = n.GetDoubleValue(); } },
                 { "appTokensInvalidatedAt", n => { AppTokensInvalidatedAt = n.GetDoubleValue(); } },
                 { "avatar", n => { Avatar = n.GetStringValue(); } },
+                { "billing", n => { Billing = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamBilling>(global::Soenneker.Vercel.OpenApiClient.Models.TeamBilling.CreateFromDiscriminatorValue); } },
                 { "connect", n => { Connect = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamConnect>(global::Soenneker.Vercel.OpenApiClient.Models.TeamConnect.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "creatorId", n => { CreatorId = n.GetStringValue(); } },
@@ -358,6 +367,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("apiKeysInvalidatedAt", ApiKeysInvalidatedAt);
             writer.WriteDoubleValue("appTokensInvalidatedAt", AppTokensInvalidatedAt);
             writer.WriteStringValue("avatar", Avatar);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamBilling>("billing", Billing);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamConnect>("connect", Connect);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteStringValue("creatorId", CreatorId);

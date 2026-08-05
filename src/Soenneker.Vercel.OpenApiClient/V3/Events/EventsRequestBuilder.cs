@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V3.Events
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/events{?limit*,principalId*,projectIds*,since*,slug*,teamId*,types*,until*,userId*,withPayload*}", pathParameters)
+        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/events{?entityId*,limit*,principalId*,projectIds*,since*,slug*,teamId*,types*,until*,userId*,withPayload*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Vercel.OpenApiClient.V3.Events
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/events{?limit*,principalId*,projectIds*,since*,slug*,teamId*,types*,until*,userId*,withPayload*}", rawUrl)
+        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/events{?entityId*,limit*,principalId*,projectIds*,since*,slug*,teamId*,types*,until*,userId*,withPayload*}", rawUrl)
         {
         }
         /// <summary>
@@ -85,6 +85,16 @@ namespace Soenneker.Vercel.OpenApiClient.V3.Events
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Filters events to those associated with a specific entity (matched against `payload.id`). For example, a connector ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("entityId")]
+            public string? EntityId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("entityId")]
+            public string EntityId { get; set; }
+#endif
             /// <summary>Maximum number of items which may be returned.</summary>
             [QueryParameter("limit")]
             public double? Limit { get; set; }

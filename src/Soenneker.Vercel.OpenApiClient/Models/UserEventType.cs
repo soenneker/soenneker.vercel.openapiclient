@@ -155,6 +155,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayScopeBudgetUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-transcripts-default-disabled")]
+        #pragma warning disable CS1591
+        AiGatewayTranscriptsDefaultDisabled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-transcripts-default-enabled")]
+        #pragma warning disable CS1591
+        AiGatewayTranscriptsDefaultEnabled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-transcripts-disabled")]
+        #pragma warning disable CS1591
+        AiGatewayTranscriptsDisabled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-transcripts-enabled")]
+        #pragma warning disable CS1591
+        AiGatewayTranscriptsEnabled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-transcripts-retention-updated")]
+        #pragma warning disable CS1591
+        AiGatewayTranscriptsRetentionUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-virtual-model-config-archived")]
         #pragma warning disable CS1591
         AiGatewayVirtualModelConfigArchived,
@@ -1867,6 +1887,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         SpendUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "sso-login")]
+        #pragma warning disable CS1591
+        SsoLogin,
+        #pragma warning restore CS1591
         [EnumMember(Value = "storage-accept-tos")]
         #pragma warning disable CS1591
         StorageAcceptTos,
@@ -1970,6 +1994,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "subscription-updated")]
         #pragma warning disable CS1591
         SubscriptionUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "support-session-created")]
+        #pragma warning disable CS1591
+        SupportSessionCreated,
         #pragma warning restore CS1591
         [EnumMember(Value = "team")]
         #pragma warning disable CS1591
@@ -2171,9 +2199,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         UnlinkLoginConnection,
         #pragma warning restore CS1591
+        [EnumMember(Value = "update-account-flow-dismissed")]
+        #pragma warning disable CS1591
+        UpdateAccountFlowDismissed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "update-account-flow-triggered")]
         #pragma warning disable CS1591
         UpdateAccountFlowTriggered,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "user-blocked")]
+        #pragma warning disable CS1591
+        UserBlocked,
         #pragma warning restore CS1591
         [EnumMember(Value = "user-delete")]
         #pragma warning disable CS1591
@@ -2190,6 +2226,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "user-emu-account-recovered")]
         #pragma warning disable CS1591
         UserEmuAccountRecovered,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "user-emu-recovery-initiated")]
+        #pragma warning disable CS1591
+        UserEmuRecoveryInitiated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "user-emu-toggled")]
+        #pragma warning disable CS1591
+        UserEmuToggled,
         #pragma warning restore CS1591
         [EnumMember(Value = "user-mfa-challenge-failed")]
         #pragma warning disable CS1591
@@ -2231,9 +2275,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         UserMfaTotpVerified,
         #pragma warning restore CS1591
+        [EnumMember(Value = "user-phone-removed")]
+        #pragma warning disable CS1591
+        UserPhoneRemoved,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "user-phone-updated")]
+        #pragma warning disable CS1591
+        UserPhoneUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "user-primary-email-updated")]
         #pragma warning disable CS1591
         UserPrimaryEmailUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "user-sudo-mode-removed")]
+        #pragma warning disable CS1591
+        UserSudoModeRemoved,
         #pragma warning restore CS1591
         [EnumMember(Value = "user-token-created")]
         #pragma warning disable CS1591
@@ -2246,6 +2302,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "user-tokens-deleted")]
         #pragma warning disable CS1591
         UserTokensDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "user-unblocked")]
+        #pragma warning disable CS1591
+        UserUnblocked,
         #pragma warning restore CS1591
         [EnumMember(Value = "username")]
         #pragma warning disable CS1591

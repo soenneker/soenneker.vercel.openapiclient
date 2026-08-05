@@ -46,6 +46,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string TeamId { get; set; }
 #endif
+        /// <summary>The workEmail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WorkEmail { get; set; }
+#nullable restore
+#else
+        public string WorkEmail { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextManagedTeamsItem"/> and sets the default values.
         /// </summary>
@@ -75,6 +83,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
+                { "workEmail", n => { WorkEmail = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -88,6 +97,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("slug", Slug);
             writer.WriteStringValue("teamId", TeamId);
+            writer.WriteStringValue("workEmail", WorkEmail);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

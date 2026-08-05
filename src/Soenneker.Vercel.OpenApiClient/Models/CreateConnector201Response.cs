@@ -134,6 +134,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Whether this connector is linked to the project supplied through `prioritizedProjectId`. Only present on prioritized list responses.</summary>
         public bool? IsConnectedToPrioritizedProject { get; set; }
+        /// <summary>Managed-client metadata exposed without leaking the manager client or installation identifiers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseManaged? Managed { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseManaged Managed { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -313,6 +321,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "includes", n => { Includes = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludes>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludes.CreateFromDiscriminatorValue); } },
                 { "isConnectedToPrioritizedProject", n => { IsConnectedToPrioritizedProject = n.GetBoolValue(); } },
+                { "managed", n => { Managed = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseManaged>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseManaged.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "ownerTenantId", n => { OwnerTenantId = n.GetStringValue(); } },
@@ -363,6 +372,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludes>("includes", Includes);
             writer.WriteBoolValue("isConnectedToPrioritizedProject", IsConnectedToPrioritizedProject);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseManaged>("managed", Managed);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteStringValue("ownerTenantId", OwnerTenantId);

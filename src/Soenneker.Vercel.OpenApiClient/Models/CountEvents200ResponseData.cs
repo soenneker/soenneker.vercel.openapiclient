@@ -310,6 +310,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ClientUserAgent { get; set; }
 #endif
+        /// <summary>The codingAgent property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CodingAgent { get; set; }
+#nullable restore
+#else
+        public string CodingAgent { get; set; }
+#endif
         /// <summary>The commitSha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -957,14 +965,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string PiiRedactionApplied { get; set; }
-#endif
-        /// <summary>The pprState property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PprState { get; set; }
-#nullable restore
-#else
-        public string PprState { get; set; }
 #endif
         /// <summary>The privatelinkDnsName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1804,6 +1804,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "clientIpCountry", n => { ClientIpCountry = n.GetStringValue(); } },
                 { "clientJa4Digest", n => { ClientJa4Digest = n.GetStringValue(); } },
                 { "clientUserAgent", n => { ClientUserAgent = n.GetStringValue(); } },
+                { "codingAgent", n => { CodingAgent = n.GetStringValue(); } },
                 { "commitSha", n => { CommitSha = n.GetStringValue(); } },
                 { "consumerGroup", n => { ConsumerGroup = n.GetStringValue(); } },
                 { "contentCaptureInputs", n => { ContentCaptureInputs = n.GetStringValue(); } },
@@ -1885,7 +1886,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "pathType", n => { PathType = n.GetStringValue(); } },
                 { "pathTypeVariant", n => { PathTypeVariant = n.GetStringValue(); } },
                 { "piiRedactionApplied", n => { PiiRedactionApplied = n.GetStringValue(); } },
-                { "pprState", n => { PprState = n.GetStringValue(); } },
                 { "privatelinkDnsName", n => { PrivatelinkDnsName = n.GetStringValue(); } },
                 { "privatelinkEndpointId", n => { PrivatelinkEndpointId = n.GetStringValue(); } },
                 { "privatelinkIpAddress", n => { PrivatelinkIpAddress = n.GetStringValue(); } },
@@ -2029,6 +2029,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("clientIpCountry", ClientIpCountry);
             writer.WriteStringValue("clientJa4Digest", ClientJa4Digest);
             writer.WriteStringValue("clientUserAgent", ClientUserAgent);
+            writer.WriteStringValue("codingAgent", CodingAgent);
             writer.WriteStringValue("commitSha", CommitSha);
             writer.WriteStringValue("consumerGroup", ConsumerGroup);
             writer.WriteStringValue("contentCaptureInputs", ContentCaptureInputs);
@@ -2110,7 +2111,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("pathType", PathType);
             writer.WriteStringValue("pathTypeVariant", PathTypeVariant);
             writer.WriteStringValue("piiRedactionApplied", PiiRedactionApplied);
-            writer.WriteStringValue("pprState", PprState);
             writer.WriteStringValue("privatelinkDnsName", PrivatelinkDnsName);
             writer.WriteStringValue("privatelinkEndpointId", PrivatelinkEndpointId);
             writer.WriteStringValue("privatelinkIpAddress", PrivatelinkIpAddress);
