@@ -15,52 +15,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The chatId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ChatId { get; set; }
-#nullable restore
-#else
-        public string ChatId { get; set; }
-#endif
-        /// <summary>The events property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410EventsItem>? Events { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410EventsItem> Events { get; set; }
-#endif
-        /// <summary>The inputTokens property</summary>
-        public double? InputTokens { get; set; }
-        /// <summary>The messageId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MessageId { get; set; }
-#nullable restore
-#else
-        public string MessageId { get; set; }
-#endif
-        /// <summary>The model property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Model { get; set; }
-#nullable restore
-#else
-        public string Model { get; set; }
-#endif
-        /// <summary>The outputTokens property</summary>
-        public double? OutputTokens { get; set; }
-        /// <summary>The timestamp property</summary>
-        public double? Timestamp { get; set; }
-        /// <summary>The useCase property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UseCase { get; set; }
-#nullable restore
-#else
-        public string UseCase { get; set; }
-#endif
+        /// <summary>The tier property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410Tier? Tier { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410"/> and sets the default values.
         /// </summary>
@@ -86,14 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "chatId", n => { ChatId = n.GetStringValue(); } },
-                { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410EventsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410EventsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "inputTokens", n => { InputTokens = n.GetDoubleValue(); } },
-                { "messageId", n => { MessageId = n.GetStringValue(); } },
-                { "model", n => { Model = n.GetStringValue(); } },
-                { "outputTokens", n => { OutputTokens = n.GetDoubleValue(); } },
-                { "timestamp", n => { Timestamp = n.GetDoubleValue(); } },
-                { "useCase", n => { UseCase = n.GetStringValue(); } },
+                { "tier", n => { Tier = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410Tier>(); } },
             };
         }
         /// <summary>
@@ -103,14 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("chatId", ChatId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410EventsItem>("events", Events);
-            writer.WriteDoubleValue("inputTokens", InputTokens);
-            writer.WriteStringValue("messageId", MessageId);
-            writer.WriteStringValue("model", Model);
-            writer.WriteDoubleValue("outputTokens", OutputTokens);
-            writer.WriteDoubleValue("timestamp", Timestamp);
-            writer.WriteStringValue("useCase", UseCase);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf410Tier>("tier", Tier);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

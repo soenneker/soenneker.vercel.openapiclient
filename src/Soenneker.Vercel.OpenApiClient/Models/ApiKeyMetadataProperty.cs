@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Generic metadata attached to the API key.The accepted shape depends on the key&apos;s `purpose` and is validated when the key is created. For `ai-gateway` keys this carries `environment`.
+    /// Generic metadata attached to the API key.The accepted shape depends on the key&apos;s `purpose` and is validated when the key is created. For `ai-gateway` keys this carries `environment` and `spendAttribution`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApiKeyMetadataProperty : IAdditionalDataHolder, IParsable

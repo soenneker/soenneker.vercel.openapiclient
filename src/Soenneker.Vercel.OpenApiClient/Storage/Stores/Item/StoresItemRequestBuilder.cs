@@ -33,6 +33,9 @@ namespace Soenneker.Vercel.OpenApiClient.Storage.Stores.Item
         public StoresItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/stores/{id}{?%27include%2Dguides%27*,%27skip%2Dmetadata%27*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Get a store
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetStorageStoresById200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,10 +76,11 @@ namespace Soenneker.Vercel.OpenApiClient.Storage.Stores.Item
         {
             return new global::Soenneker.Vercel.OpenApiClient.Storage.Stores.Item.StoresItemRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Get a store
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class StoresItemRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
             [QueryParameter("%27include%2Dguides%27")]
             public bool? IncludeGuides { get; set; }

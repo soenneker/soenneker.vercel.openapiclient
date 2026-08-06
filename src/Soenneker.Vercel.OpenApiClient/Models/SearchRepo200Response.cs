@@ -7,44 +7,44 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class SearchRepo200Response : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class SearchRepo200Response : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The gitAccount property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf2GitAccount? GitAccount { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseMember1? SearchRepo200ResponseMember1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf2GitAccount GitAccount { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseMember1 SearchRepo200ResponseMember1 { get; set; }
 #endif
-        /// <summary>The repos property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf2ReposItem>? Repos { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf2? SearchRepo200ResponseOneOf2 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf2ReposItem> Repos { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf2 SearchRepo200ResponseOneOf2 { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3? SearchRepo200ResponseOneOf3 { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3 SearchRepo200ResponseOneOf3 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200Response"/> and sets the default values.
-        /// </summary>
-        public SearchRepo200Response()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4? SearchRepo200ResponseOneOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4 SearchRepo200ResponseOneOf4 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,7 +53,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200Response();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200Response();
+            if("SearchRepo200ResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SearchRepo200ResponseOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf2();
+            }
+            else if("SearchRepo200ResponseOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SearchRepo200ResponseOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3();
+            }
+            else if("SearchRepo200ResponseOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SearchRepo200ResponseOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,12 +75,23 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(SearchRepo200ResponseMember1 != null)
             {
-                { "gitAccount", n => { GitAccount = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf2GitAccount>(global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf2GitAccount.CreateFromDiscriminatorValue); } },
-                { "repos", n => { Repos = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf2ReposItem>(global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf2ReposItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return SearchRepo200ResponseMember1.GetFieldDeserializers();
+            }
+            else if(SearchRepo200ResponseOneOf2 != null)
+            {
+                return SearchRepo200ResponseOneOf2.GetFieldDeserializers();
+            }
+            else if(SearchRepo200ResponseOneOf3 != null)
+            {
+                return SearchRepo200ResponseOneOf3.GetFieldDeserializers();
+            }
+            else if(SearchRepo200ResponseOneOf4 != null)
+            {
+                return SearchRepo200ResponseOneOf4.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -75,10 +100,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf2GitAccount>("gitAccount", GitAccount);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf2ReposItem>("repos", Repos);
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(SearchRepo200ResponseMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseMember1>(null, SearchRepo200ResponseMember1);
+            }
+            else if(SearchRepo200ResponseOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf2>(null, SearchRepo200ResponseOneOf2);
+            }
+            else if(SearchRepo200ResponseOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3>(null, SearchRepo200ResponseOneOf3);
+            }
+            else if(SearchRepo200ResponseOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4>(null, SearchRepo200ResponseOneOf4);
+            }
         }
     }
 }

@@ -16,6 +16,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The crossInstallation property</summary>
         public bool? CrossInstallation { get; set; }
+        /// <summary>Link to the page on the service where this client&apos;s app-level permissions are declared and granted, when the service has one and it differs from `clientUrl`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PermissionsUrl { get; set; }
+#nullable restore
+#else
+        public string PermissionsUrl { get; set; }
+#endif
         /// <summary>True when changing app token grants requires reinstalling the app, so tokens cannot be partitioned independently by requester environment.</summary>
         public bool? RequiresReinstallation { get; set; }
         /// <summary>Known allowed app-level scopes. For Slack this is the bot scope set configured on the app; for OAuth it is `scopes_supported` from the server&apos;s discovery document.</summary>
@@ -62,6 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "crossInstallation", n => { CrossInstallation = n.GetBoolValue(); } },
+                { "permissionsUrl", n => { PermissionsUrl = n.GetStringValue(); } },
                 { "requiresReinstallation", n => { RequiresReinstallation = n.GetBoolValue(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "supportedAuthorizationDetails", n => { SupportedAuthorizationDetails = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -76,6 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("crossInstallation", CrossInstallation);
+            writer.WriteStringValue("permissionsUrl", PermissionsUrl);
             writer.WriteBoolValue("requiresReinstallation", RequiresReinstallation);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedAuthorizationDetails", SupportedAuthorizationDetails);

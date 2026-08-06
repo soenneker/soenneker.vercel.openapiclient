@@ -28,5 +28,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Bitbucket,
         #pragma warning restore CS1591
+        [EnumMember(Value = "cursor-origin")]
+        #pragma warning disable CS1591
+        CursorOrigin,
+        #pragma warning restore CS1591
     }
 }

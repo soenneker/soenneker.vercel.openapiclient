@@ -33,6 +33,9 @@ namespace Soenneker.Vercel.OpenApiClient.Storage.Stores.Blob.Item
         public BlobItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/stores/blob/{id}", rawUrl)
         {
         }
+        /// <summary>
+        /// Delete a Blob store
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteStorageStoresBlobById200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.V3.Deployments;
 using Soenneker.Vercel.OpenApiClient.V3.Domains;
 using Soenneker.Vercel.OpenApiClient.V3.Events;
+using Soenneker.Vercel.OpenApiClient.V3.Sandboxes;
 using Soenneker.Vercel.OpenApiClient.V3.Teams;
 using Soenneker.Vercel.OpenApiClient.V3.User;
 using System.Collections.Generic;
@@ -33,6 +34,11 @@ namespace Soenneker.Vercel.OpenApiClient.V3
         public global::Soenneker.Vercel.OpenApiClient.V3.Events.EventsRequestBuilder Events
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V3.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sandboxes property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V3.Sandboxes.SandboxesRequestBuilder Sandboxes
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V3.Sandboxes.SandboxesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The teams property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V3.Teams.TeamsRequestBuilder Teams

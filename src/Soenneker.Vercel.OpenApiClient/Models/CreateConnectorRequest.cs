@@ -110,6 +110,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Target { get; set; }
 #endif
+        /// <summary>Initial trigger destination routing for the linked project.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestTriggerDestination? TriggerDestination { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestTriggerDestination TriggerDestination { get; set; }
+#endif
         /// <summary>Whether the triggers are enabled for this connector.</summary>
         public bool? Triggers { get; set; }
         /// <summary>&quot;Known types: api-key, github, linear, oauth, photon, salesforce, slack, snowflake. Optional when \\&quot;connectionMethod\\&quot; is set.&quot;</summary>
@@ -165,6 +173,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "service", n => { Service = n.GetStringValue(); } },
                 { "target", n => { Target = n.GetStringValue(); } },
+                { "triggerDestination", n => { TriggerDestination = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestTriggerDestination>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestTriggerDestination.CreateFromDiscriminatorValue); } },
                 { "triggers", n => { Triggers = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
@@ -189,6 +198,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("service", Service);
             writer.WriteStringValue("target", Target);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestTriggerDestination>("triggerDestination", TriggerDestination);
             writer.WriteBoolValue("triggers", Triggers);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("uid", Uid);

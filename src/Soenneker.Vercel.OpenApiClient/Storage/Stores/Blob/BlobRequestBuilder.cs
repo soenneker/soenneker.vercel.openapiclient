@@ -46,6 +46,9 @@ namespace Soenneker.Vercel.OpenApiClient.Storage.Stores.Blob
         public BlobRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/stores/blob", rawUrl)
         {
         }
+        /// <summary>
+        /// Create a Blob store
+        /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateStorageStoresBlob200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

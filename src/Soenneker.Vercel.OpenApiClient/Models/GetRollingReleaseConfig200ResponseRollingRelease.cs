@@ -17,6 +17,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the request served by a canary deployment should return a header indicating a canary was served. Defaults to `false` when omitted.</summary>
         public bool? CanaryResponseHeader { get; set; }
+        /// <summary>&quot;Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200ResponseRollingReleaseGate? Gate { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200ResponseRollingReleaseGate Gate { get; set; }
+#endif
         /// <summary>&quot;An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,6 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "canaryResponseHeader", n => { CanaryResponseHeader = n.GetBoolValue(); } },
+                { "gate", n => { Gate = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200ResponseRollingReleaseGate>(global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200ResponseRollingReleaseGate.CreateFromDiscriminatorValue); } },
                 { "stages", n => { Stages = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200ResponseRollingReleaseStagesItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200ResponseRollingReleaseStagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "target", n => { Target = n.GetStringValue(); } },
             };
@@ -71,6 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("canaryResponseHeader", CanaryResponseHeader);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200ResponseRollingReleaseGate>("gate", Gate);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200ResponseRollingReleaseStagesItem>("stages", Stages);
             writer.WriteStringValue("target", Target);
             writer.WriteAdditionalData(AdditionalData);

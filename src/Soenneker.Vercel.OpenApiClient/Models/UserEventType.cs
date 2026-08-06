@@ -907,6 +907,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         FlagsTransferred,
         #pragma warning restore CS1591
+        [EnumMember(Value = "git-integration-repo-push")]
+        #pragma warning disable CS1591
+        GitIntegrationRepoPush,
+        #pragma warning restore CS1591
         [EnumMember(Value = "git_account_integration_link_added")]
         #pragma warning disable CS1591
         GitAccountIntegrationLinkAdded,
@@ -1759,6 +1763,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         RuntimeCachePurgeAll,
         #pragma warning restore CS1591
+        [EnumMember(Value = "saml-connection-created")]
+        #pragma warning disable CS1591
+        SamlConnectionCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "saml-connection-deleted")]
+        #pragma warning disable CS1591
+        SamlConnectionDeleted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sandbox-alias-assigned")]
         #pragma warning disable CS1591
         SandboxAliasAssigned,
@@ -2207,6 +2219,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         UpdateAccountFlowTriggered,
         #pragma warning restore CS1591
+        [EnumMember(Value = "user-auto-block-configured")]
+        #pragma warning disable CS1591
+        UserAutoBlockConfigured,
+        #pragma warning restore CS1591
         [EnumMember(Value = "user-blocked")]
         #pragma warning disable CS1591
         UserBlocked,
@@ -2226,6 +2242,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "user-emu-account-recovered")]
         #pragma warning disable CS1591
         UserEmuAccountRecovered,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "user-emu-recovery-email-sent")]
+        #pragma warning disable CS1591
+        UserEmuRecoveryEmailSent,
         #pragma warning restore CS1591
         [EnumMember(Value = "user-emu-recovery-initiated")]
         #pragma warning disable CS1591

@@ -55,7 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string LeakedUrl { get; set; }
 #endif
-        /// <summary>Generic metadata attached to the API key.The accepted shape depends on the key&apos;s `purpose` and is validated when the key is created. For `ai-gateway` keys this carries `environment`.</summary>
+        /// <summary>Generic metadata attached to the API key.The accepted shape depends on the key&apos;s `purpose` and is validated when the key is created. For `ai-gateway` keys this carries `environment` and `spendAttribution`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.ApiKeyMetadataProperty? Metadata { get; set; }
