@@ -991,6 +991,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         KmsIssuerKeyCreated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "kms-issuer-key-revoked")]
+        #pragma warning disable CS1591
+        KmsIssuerKeyRevoked,
+        #pragma warning restore CS1591
         [EnumMember(Value = "kms-issuer-key-rotated")]
         #pragma warning disable CS1591
         KmsIssuerKeyRotated,
@@ -2230,6 +2234,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "user-delete")]
         #pragma warning disable CS1591
         UserDelete,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "user-delete-requested")]
+        #pragma warning disable CS1591
+        UserDeleteRequested,
         #pragma warning restore CS1591
         [EnumMember(Value = "user-emu-account-archived")]
         #pragma warning disable CS1591

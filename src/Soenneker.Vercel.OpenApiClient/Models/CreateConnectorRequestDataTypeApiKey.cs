@@ -12,6 +12,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class CreateConnectorRequestDataTypeApiKey : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The subjectType property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeApiKeySubjectType? SubjectType { get; set; }
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +40,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "subjectType", n => { SubjectType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeApiKeySubjectType>(); } },
                 { "values", n => { Values = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeApiKeyValuesItem>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeApiKeyValuesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -48,6 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeApiKeySubjectType>("subjectType", SubjectType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeApiKeyValuesItem>("values", Values);
         }
     }

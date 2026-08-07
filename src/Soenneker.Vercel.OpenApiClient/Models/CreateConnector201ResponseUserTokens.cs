@@ -16,6 +16,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The crossInstallation property</summary>
         public bool? CrossInstallation { get; set; }
+        /// <summary>User authorization is completed by the Connect consent screen submitting a credential instead of an OAuth redirect.</summary>
+        public bool? ManualCredentialInput { get; set; }
         /// <summary>Known allowed user-level scopes. For Slack this is the user scope set configured on the app; for OAuth it is `scopes_supported` from the server&apos;s discovery document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,6 +62,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "crossInstallation", n => { CrossInstallation = n.GetBoolValue(); } },
+                { "manualCredentialInput", n => { ManualCredentialInput = n.GetBoolValue(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "supportedAuthorizationDetails", n => { SupportedAuthorizationDetails = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "supportsRefinement", n => { SupportsRefinement = n.GetBoolValue(); } },
@@ -73,6 +76,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("crossInstallation", CrossInstallation);
+            writer.WriteBoolValue("manualCredentialInput", ManualCredentialInput);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedAuthorizationDetails", SupportedAuthorizationDetails);
             writer.WriteBoolValue("supportsRefinement", SupportsRefinement);

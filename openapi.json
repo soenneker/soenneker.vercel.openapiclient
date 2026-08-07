@@ -11896,6 +11896,14 @@
                             "type": "string"
                           },
                           "type": "array"
+                        },
+                        "manualCredentialInput": {
+                          "type": "boolean",
+                          "enum": [
+                            false,
+                            true
+                          ],
+                          "description": "User authorization is completed by the Connect consent screen submitting a credential instead of an OAuth redirect."
                         }
                       },
                       "required": [
@@ -12526,6 +12534,13 @@
                       {
                         "type": "object",
                         "properties": {
+                          "subjectType": {
+                            "type": "string",
+                            "enum": [
+                              "app",
+                              "user"
+                            ]
+                          },
                           "values": {
                             "type": "array",
                             "items": {
@@ -12546,13 +12561,9 @@
                                 "value"
                               ],
                               "additionalProperties": false
-                            },
-                            "minItems": 1
+                            }
                           }
                         },
-                        "required": [
-                          "values"
-                        ],
                         "additionalProperties": false,
                         "title": "type:api-key"
                       },
@@ -17733,6 +17744,9 @@
                                   }
                                 ]
                               },
+                              "maxConcurrency": {
+                                "type": "number"
+                              },
                               "regions": {
                                 "items": {
                                   "type": "string"
@@ -17851,6 +17865,14 @@
                             "type": "object"
                           },
                           "type": "object"
+                        },
+                        "isInstantStatic": {
+                          "type": "boolean",
+                          "enum": [
+                            false,
+                            true
+                          ],
+                          "description": "Whether this deployment completed through the instant static fast path."
                         },
                         "monorepoManager": {
                           "nullable": true,
@@ -18695,6 +18717,9 @@
                                                     }
                                                   ]
                                                 },
+                                                "maxConcurrency": {
+                                                  "type": "number"
+                                                },
                                                 "regions": {
                                                   "items": {
                                                     "type": "string"
@@ -19188,6 +19213,9 @@
                                                     }
                                                   ]
                                                 },
+                                                "maxConcurrency": {
+                                                  "type": "number"
+                                                },
                                                 "regions": {
                                                   "items": {
                                                     "type": "string"
@@ -19516,6 +19544,9 @@
                                               ]
                                             }
                                           ]
+                                        },
+                                        "maxConcurrency": {
+                                          "type": "number"
                                         },
                                         "regions": {
                                           "items": {
@@ -25702,6 +25733,9 @@
                                   }
                                 ]
                               },
+                              "maxConcurrency": {
+                                "type": "number"
+                              },
                               "regions": {
                                 "items": {
                                   "type": "string"
@@ -25820,6 +25854,14 @@
                             "type": "object"
                           },
                           "type": "object"
+                        },
+                        "isInstantStatic": {
+                          "type": "boolean",
+                          "enum": [
+                            false,
+                            true
+                          ],
+                          "description": "Whether this deployment completed through the instant static fast path."
                         },
                         "monorepoManager": {
                           "nullable": true,
@@ -26664,6 +26706,9 @@
                                                     }
                                                   ]
                                                 },
+                                                "maxConcurrency": {
+                                                  "type": "number"
+                                                },
                                                 "regions": {
                                                   "items": {
                                                     "type": "string"
@@ -27157,6 +27202,9 @@
                                                     }
                                                   ]
                                                 },
+                                                "maxConcurrency": {
+                                                  "type": "number"
+                                                },
                                                 "regions": {
                                                   "items": {
                                                     "type": "string"
@@ -27485,6 +27533,9 @@
                                               ]
                                             }
                                           ]
+                                        },
+                                        "maxConcurrency": {
+                                          "type": "number"
                                         },
                                         "regions": {
                                           "items": {
@@ -32820,6 +32871,9 @@
                               }
                             ]
                           },
+                          "maxConcurrency": {
+                            "type": "number"
+                          },
                           "regions": {
                             "items": {
                               "type": "string"
@@ -32938,6 +32992,14 @@
                         "type": "object"
                       },
                       "type": "object"
+                    },
+                    "isInstantStatic": {
+                      "type": "boolean",
+                      "enum": [
+                        false,
+                        true
+                      ],
+                      "description": "Whether this deployment completed through the instant static fast path."
                     },
                     "monorepoManager": {
                       "nullable": true,
@@ -33782,6 +33844,9 @@
                                                 }
                                               ]
                                             },
+                                            "maxConcurrency": {
+                                              "type": "number"
+                                            },
                                             "regions": {
                                               "items": {
                                                 "type": "string"
@@ -34275,6 +34340,9 @@
                                                 }
                                               ]
                                             },
+                                            "maxConcurrency": {
+                                              "type": "number"
+                                            },
                                             "regions": {
                                               "items": {
                                                 "type": "string"
@@ -34603,6 +34671,9 @@
                                           ]
                                         }
                                       ]
+                                    },
+                                    "maxConcurrency": {
+                                      "type": "number"
                                     },
                                     "regions": {
                                       "items": {
@@ -203127,6 +203198,7 @@
               "kms-issuer-deleted",
               "kms-issuer-key-activated",
               "kms-issuer-key-created",
+              "kms-issuer-key-revoked",
               "kms-issuer-key-rotated",
               "kms-issuer-policy-created",
               "kms-issuer-policy-deleted",
@@ -203437,6 +203509,7 @@
               "user-auto-block-configured",
               "user-blocked",
               "user-delete",
+              "user-delete-requested",
               "user-emu-account-archived",
               "user-emu-account-deleted",
               "user-emu-account-recovered",
@@ -225567,6 +225640,7 @@
               "kms-issuer-deleted",
               "kms-issuer-key-activated",
               "kms-issuer-key-created",
+              "kms-issuer-key-revoked",
               "kms-issuer-key-rotated",
               "kms-issuer-policy-created",
               "kms-issuer-policy-deleted",
@@ -225877,6 +225951,7 @@
               "user-auto-block-configured",
               "user-blocked",
               "user-delete",
+              "user-delete-requested",
               "user-emu-account-archived",
               "user-emu-account-deleted",
               "user-emu-account-recovered",
@@ -226239,6 +226314,7 @@
                 "kms-issuer-deleted",
                 "kms-issuer-key-activated",
                 "kms-issuer-key-created",
+                "kms-issuer-key-revoked",
                 "kms-issuer-key-rotated",
                 "kms-issuer-policy-created",
                 "kms-issuer-policy-deleted",
@@ -226549,6 +226625,7 @@
                 "user-auto-block-configured",
                 "user-blocked",
                 "user-delete",
+                "user-delete-requested",
                 "user-emu-account-archived",
                 "user-emu-account-deleted",
                 "user-emu-account-recovered",

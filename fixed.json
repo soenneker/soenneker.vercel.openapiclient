@@ -57280,6 +57280,11 @@
           "functions": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseFunctions"
           },
+          "isInstantStatic": {
+            "type": "boolean",
+            "additionalProperties": false,
+            "description": "Whether this deployment completed through the instant static fast path."
+          },
           "monorepoManager": {
             "type": "string",
             "nullable": true
@@ -76783,6 +76788,11 @@
           "functions": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2Functions"
           },
+          "isInstantStatic": {
+            "type": "boolean",
+            "additionalProperties": false,
+            "description": "Whether this deployment completed through the instant static fast path."
+          },
           "monorepoManager": {
             "type": "string",
             "nullable": true
@@ -77518,6 +77528,11 @@
           },
           "functions": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2Functions"
+          },
+          "isInstantStatic": {
+            "type": "boolean",
+            "additionalProperties": false,
+            "description": "Whether this deployment completed through the instant static fast path."
           },
           "monorepoManager": {
             "type": "string",
@@ -85835,13 +85850,12 @@
       },
       "CreateConnectorRequestDataTypeApiKey": {
         "title": "type:api-key",
-        "required": [
-          "values"
-        ],
         "type": "object",
         "properties": {
+          "subjectType": {
+            "$ref": "#/components/schemas/CreateConnectorRequestDataTypeApiKeySubjectType"
+          },
           "values": {
-            "minItems": 1,
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/CreateConnectorRequestDataTypeApiKeyValuesItem"
@@ -94808,6 +94822,11 @@
             "items": {
               "type": "string"
             }
+          },
+          "manualCredentialInput": {
+            "type": "boolean",
+            "additionalProperties": false,
+            "description": "User authorization is completed by the Connect consent screen submitting a credential instead of an OAuth redirect."
           }
         }
       },
@@ -135865,6 +135884,9 @@
           "maxDuration": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseFunctionsAdditionalPropertiesMaxDuration"
           },
+          "maxConcurrency": {
+            "type": "number"
+          },
           "regions": {
             "type": "array",
             "items": {
@@ -153486,6 +153508,9 @@
           "maxDuration": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2FunctionsAdditionalPropertiesMaxDuration"
           },
+          "maxConcurrency": {
+            "type": "number"
+          },
           "regions": {
             "type": "array",
             "items": {
@@ -154342,6 +154367,9 @@
           },
           "maxDuration": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2FunctionsAdditionalPropertiesMaxDuration"
+          },
+          "maxConcurrency": {
+            "type": "number"
           },
           "regions": {
             "type": "array",
@@ -161381,6 +161409,9 @@
           },
           "maxDuration": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseServicesItemFunctionsAdditionalPropertiesMaxDuration"
+          },
+          "maxConcurrency": {
+            "type": "number"
           },
           "regions": {
             "type": "array",
@@ -171151,6 +171182,9 @@
           "maxDuration": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2ServicesItemFunctionsAdditionalPropertiesMaxDuration"
           },
+          "maxConcurrency": {
+            "type": "number"
+          },
           "regions": {
             "type": "array",
             "items": {
@@ -171641,6 +171675,9 @@
           },
           "maxDuration": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2ServicesItemFunctionsAdditionalPropertiesMaxDuration"
+          },
+          "maxConcurrency": {
+            "type": "number"
           },
           "regions": {
             "type": "array",
@@ -180834,6 +180871,9 @@
           "maxDuration": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseServicesItemBuilderConfigFunctionsAdditionalPropertiesMaxDuration"
           },
+          "maxConcurrency": {
+            "type": "number"
+          },
           "regions": {
             "type": "array",
             "items": {
@@ -182310,6 +182350,9 @@
           "maxDuration": {
             "$ref": "#/components/schemas/GetDeployment200ResponseOneOf2ServicesItemBuilderConfigFunctionsAdditionalPropertiesMaxDuration"
           },
+          "maxConcurrency": {
+            "type": "number"
+          },
           "regions": {
             "type": "array",
             "items": {
@@ -182354,6 +182397,9 @@
           },
           "maxDuration": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseOneOf2ServicesItemBuilderConfigFunctionsAdditionalPropertiesMaxDuration"
+          },
+          "maxConcurrency": {
+            "type": "number"
           },
           "regions": {
             "type": "array",
@@ -184258,6 +184304,7 @@
           "kms-issuer-deleted",
           "kms-issuer-key-activated",
           "kms-issuer-key-created",
+          "kms-issuer-key-revoked",
           "kms-issuer-key-rotated",
           "kms-issuer-policy-created",
           "kms-issuer-policy-deleted",
@@ -184568,6 +184615,7 @@
           "user-auto-block-configured",
           "user-blocked",
           "user-delete",
+          "user-delete-requested",
           "user-emu-account-archived",
           "user-emu-account-deleted",
           "user-emu-account-recovered",
@@ -185619,6 +185667,10 @@
               "name": "KmsIssuerKeyCreated"
             },
             {
+              "value": "kms-issuer-key-revoked",
+              "name": "KmsIssuerKeyRevoked"
+            },
+            {
               "value": "kms-issuer-key-rotated",
               "name": "KmsIssuerKeyRotated"
             },
@@ -186859,6 +186911,10 @@
               "name": "UserDelete"
             },
             {
+              "value": "user-delete-requested",
+              "name": "UserDeleteRequested"
+            },
+            {
               "value": "user-emu-account-archived",
               "name": "UserEmuAccountArchived"
             },
@@ -187466,6 +187522,7 @@
           "kms-issuer-deleted",
           "kms-issuer-key-activated",
           "kms-issuer-key-created",
+          "kms-issuer-key-revoked",
           "kms-issuer-key-rotated",
           "kms-issuer-policy-created",
           "kms-issuer-policy-deleted",
@@ -187776,6 +187833,7 @@
           "user-auto-block-configured",
           "user-blocked",
           "user-delete",
+          "user-delete-requested",
           "user-emu-account-archived",
           "user-emu-account-deleted",
           "user-emu-account-recovered",
@@ -188827,6 +188885,10 @@
               "name": "KmsIssuerKeyCreated"
             },
             {
+              "value": "kms-issuer-key-revoked",
+              "name": "KmsIssuerKeyRevoked"
+            },
+            {
               "value": "kms-issuer-key-rotated",
               "name": "KmsIssuerKeyRotated"
             },
@@ -190067,6 +190129,10 @@
               "name": "UserDelete"
             },
             {
+              "value": "user-delete-requested",
+              "name": "UserDeleteRequested"
+            },
+            {
               "value": "user-emu-account-archived",
               "name": "UserEmuAccountArchived"
             },
@@ -190674,6 +190740,7 @@
           "kms-issuer-deleted",
           "kms-issuer-key-activated",
           "kms-issuer-key-created",
+          "kms-issuer-key-revoked",
           "kms-issuer-key-rotated",
           "kms-issuer-policy-created",
           "kms-issuer-policy-deleted",
@@ -190984,6 +191051,7 @@
           "user-auto-block-configured",
           "user-blocked",
           "user-delete",
+          "user-delete-requested",
           "user-emu-account-archived",
           "user-emu-account-deleted",
           "user-emu-account-recovered",
@@ -192034,6 +192102,10 @@
               "name": "KmsIssuerKeyCreated"
             },
             {
+              "value": "kms-issuer-key-revoked",
+              "name": "KmsIssuerKeyRevoked"
+            },
+            {
               "value": "kms-issuer-key-rotated",
               "name": "KmsIssuerKeyRotated"
             },
@@ -193272,6 +193344,10 @@
             {
               "value": "user-delete",
               "name": "UserDelete"
+            },
+            {
+              "value": "user-delete-requested",
+              "name": "UserDeleteRequested"
             },
             {
               "value": "user-emu-account-archived",
@@ -227960,6 +228036,28 @@
         ],
         "type": "boolean",
         "additionalProperties": false
+      },
+      "CreateConnectorRequestDataTypeApiKeySubjectType": {
+        "enum": [
+          "app",
+          "user"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateConnectorRequestDataTypeApiKeySubjectType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "app",
+              "name": "App"
+            },
+            {
+              "value": "user",
+              "name": "User"
+            }
+          ]
+        }
       },
       "GetDeploymentEvents200ResponseItemOneOf1Type": {
         "enum": [

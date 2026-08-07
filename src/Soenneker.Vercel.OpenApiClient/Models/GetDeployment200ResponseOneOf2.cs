@@ -297,6 +297,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public bool? IsFirstBranchDeployment { get; set; }
         /// <summary>The isInConcurrentBuildsQueue property</summary>
         public bool? IsInConcurrentBuildsQueue { get; set; }
+        /// <summary>Whether this deployment completed through the instant static fast path.</summary>
+        public bool? IsInstantStatic { get; set; }
         /// <summary>The isInSystemBuildsQueue property</summary>
         public bool? IsInSystemBuildsQueue { get; set; }
         /// <summary>The lambdas property</summary>
@@ -607,6 +609,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "isFirstBranchDeployment", n => { IsFirstBranchDeployment = n.GetBoolValue(); } },
                 { "isInConcurrentBuildsQueue", n => { IsInConcurrentBuildsQueue = n.GetBoolValue(); } },
                 { "isInSystemBuildsQueue", n => { IsInSystemBuildsQueue = n.GetBoolValue(); } },
+                { "isInstantStatic", n => { IsInstantStatic = n.GetBoolValue(); } },
                 { "lambdas", n => { Lambdas = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2LambdasItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2LambdasItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "manualProvisioning", n => { ManualProvisioning = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ManualProvisioning>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ManualProvisioning.CreateFromDiscriminatorValue); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2Meta>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2Meta.CreateFromDiscriminatorValue); } },
@@ -706,6 +709,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2Integrations>("integrations", Integrations);
             writer.WriteBoolValue("isFirstBranchDeployment", IsFirstBranchDeployment);
             writer.WriteBoolValue("isInConcurrentBuildsQueue", IsInConcurrentBuildsQueue);
+            writer.WriteBoolValue("isInstantStatic", IsInstantStatic);
             writer.WriteBoolValue("isInSystemBuildsQueue", IsInSystemBuildsQueue);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2LambdasItem>("lambdas", Lambdas);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2ManualProvisioning>("manualProvisioning", ManualProvisioning);
