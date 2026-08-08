@@ -102099,6 +102099,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "aiGatewayVirtualModelConfigs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "alerts": {
             "type": "array",
             "items": {
@@ -102328,6 +102334,12 @@
             }
           },
           "buildMachineDefault": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "cursorOriginInstallation": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -105168,6 +105180,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "aiGatewayVirtualModelConfigs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "alerts": {
             "type": "array",
             "items": {
@@ -105397,6 +105415,12 @@
             }
           },
           "buildMachineDefault": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "cursorOriginInstallation": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -108472,6 +108496,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "aiGatewayVirtualModelConfigs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "alerts": {
             "type": "array",
             "items": {
@@ -108701,6 +108731,12 @@
             }
           },
           "buildMachineDefault": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "cursorOriginInstallation": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -111520,6 +111556,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "aiGatewayVirtualModelConfigs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "alerts": {
             "type": "array",
             "items": {
@@ -111749,6 +111791,12 @@
             }
           },
           "buildMachineDefault": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "cursorOriginInstallation": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -115536,6 +115584,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "aiGatewayVirtualModelConfigs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "alerts": {
             "type": "array",
             "items": {
@@ -115765,6 +115819,12 @@
             }
           },
           "buildMachineDefault": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "cursorOriginInstallation": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -138795,6 +138855,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "aiGatewayVirtualModelConfigs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "alerts": {
             "type": "array",
             "items": {
@@ -139024,6 +139090,12 @@
             }
           },
           "buildMachineDefault": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "cursorOriginInstallation": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -157877,6 +157949,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "aiGatewayVirtualModelConfigs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "alerts": {
             "type": "array",
             "items": {
@@ -158106,6 +158184,12 @@
             }
           },
           "buildMachineDefault": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "cursorOriginInstallation": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -184145,6 +184229,7 @@
           "cert-system-create",
           "code-owners-config-updated",
           "compliance-document-downloaded",
+          "compliance-document-previewed",
           "compliance-documents-bulk-downloaded",
           "concurrent-builds-update",
           "connect-attach-project",
@@ -185029,6 +185114,10 @@
             {
               "value": "compliance-document-downloaded",
               "name": "ComplianceDocumentDownloaded"
+            },
+            {
+              "value": "compliance-document-previewed",
+              "name": "ComplianceDocumentPreviewed"
             },
             {
               "value": "compliance-documents-bulk-downloaded",
@@ -187363,6 +187452,7 @@
           "cert-system-create",
           "code-owners-config-updated",
           "compliance-document-downloaded",
+          "compliance-document-previewed",
           "compliance-documents-bulk-downloaded",
           "concurrent-builds-update",
           "connect-attach-project",
@@ -188247,6 +188337,10 @@
             {
               "value": "compliance-document-downloaded",
               "name": "ComplianceDocumentDownloaded"
+            },
+            {
+              "value": "compliance-document-previewed",
+              "name": "ComplianceDocumentPreviewed"
             },
             {
               "value": "compliance-documents-bulk-downloaded",
@@ -190581,6 +190675,7 @@
           "cert-system-create",
           "code-owners-config-updated",
           "compliance-document-downloaded",
+          "compliance-document-previewed",
           "compliance-documents-bulk-downloaded",
           "concurrent-builds-update",
           "connect-attach-project",
@@ -191464,6 +191559,10 @@
             {
               "value": "compliance-document-downloaded",
               "name": "ComplianceDocumentDownloaded"
+            },
+            {
+              "value": "compliance-document-previewed",
+              "name": "ComplianceDocumentPreviewed"
             },
             {
               "value": "compliance-documents-bulk-downloaded",
@@ -195620,6 +195719,7 @@
           "read-write:ai-gateway-guardrails",
           "read-write:ai-gateway-private-models",
           "read-write:ai-gateway-rules",
+          "read-write:ai-gateway-virtual-model-configs",
           "read-write:alerts",
           "read-write:billing",
           "read-write:blob",
@@ -195648,6 +195748,7 @@
           "read:ai-gateway-guardrails",
           "read:ai-gateway-private-models",
           "read:ai-gateway-rules",
+          "read:ai-gateway-virtual-model-configs",
           "read:alerts",
           "read:billing",
           "read:deployment",
@@ -195704,6 +195805,10 @@
             {
               "value": "read-write:ai-gateway-rules",
               "name": "ReadWriteColonAiGatewayRules"
+            },
+            {
+              "value": "read-write:ai-gateway-virtual-model-configs",
+              "name": "ReadWriteColonAiGatewayVirtualModelConfigs"
             },
             {
               "value": "read-write:alerts",
@@ -195816,6 +195921,10 @@
             {
               "value": "read:ai-gateway-rules",
               "name": "ReadColonAiGatewayRules"
+            },
+            {
+              "value": "read:ai-gateway-virtual-model-configs",
+              "name": "ReadColonAiGatewayVirtualModelConfigs"
             },
             {
               "value": "read:alerts",
@@ -195949,6 +196058,7 @@
           "read-write:ai-gateway-guardrails",
           "read-write:ai-gateway-private-models",
           "read-write:ai-gateway-rules",
+          "read-write:ai-gateway-virtual-model-configs",
           "read-write:alerts",
           "read-write:billing",
           "read-write:blob",
@@ -195977,6 +196087,7 @@
           "read:ai-gateway-guardrails",
           "read:ai-gateway-private-models",
           "read:ai-gateway-rules",
+          "read:ai-gateway-virtual-model-configs",
           "read:alerts",
           "read:billing",
           "read:deployment",
@@ -196033,6 +196144,10 @@
             {
               "value": "read-write:ai-gateway-rules",
               "name": "ReadWriteColonAiGatewayRules"
+            },
+            {
+              "value": "read-write:ai-gateway-virtual-model-configs",
+              "name": "ReadWriteColonAiGatewayVirtualModelConfigs"
             },
             {
               "value": "read-write:alerts",
@@ -196145,6 +196260,10 @@
             {
               "value": "read:ai-gateway-rules",
               "name": "ReadColonAiGatewayRules"
+            },
+            {
+              "value": "read:ai-gateway-virtual-model-configs",
+              "name": "ReadColonAiGatewayVirtualModelConfigs"
             },
             {
               "value": "read:alerts",
@@ -196245,6 +196364,7 @@
           "read-write:ai-gateway-guardrails",
           "read-write:ai-gateway-private-models",
           "read-write:ai-gateway-rules",
+          "read-write:ai-gateway-virtual-model-configs",
           "read-write:alerts",
           "read-write:billing",
           "read-write:blob",
@@ -196273,6 +196393,7 @@
           "read:ai-gateway-guardrails",
           "read:ai-gateway-private-models",
           "read:ai-gateway-rules",
+          "read:ai-gateway-virtual-model-configs",
           "read:alerts",
           "read:billing",
           "read:deployment",
@@ -196324,6 +196445,10 @@
             {
               "value": "read-write:ai-gateway-rules",
               "name": "ReadWriteColonAiGatewayRules"
+            },
+            {
+              "value": "read-write:ai-gateway-virtual-model-configs",
+              "name": "ReadWriteColonAiGatewayVirtualModelConfigs"
             },
             {
               "value": "read-write:alerts",
@@ -196436,6 +196561,10 @@
             {
               "value": "read:ai-gateway-rules",
               "name": "ReadColonAiGatewayRules"
+            },
+            {
+              "value": "read:ai-gateway-virtual-model-configs",
+              "name": "ReadColonAiGatewayVirtualModelConfigs"
             },
             {
               "value": "read:alerts",
@@ -203718,6 +203847,7 @@
           "read-write:ai-gateway-guardrails",
           "read-write:ai-gateway-private-models",
           "read-write:ai-gateway-rules",
+          "read-write:ai-gateway-virtual-model-configs",
           "read-write:alerts",
           "read-write:billing",
           "read-write:blob",
@@ -203746,6 +203876,7 @@
           "read:ai-gateway-guardrails",
           "read:ai-gateway-private-models",
           "read:ai-gateway-rules",
+          "read:ai-gateway-virtual-model-configs",
           "read:alerts",
           "read:billing",
           "read:deployment",
@@ -203797,6 +203928,10 @@
             {
               "value": "read-write:ai-gateway-rules",
               "name": "ReadWriteColonAiGatewayRules"
+            },
+            {
+              "value": "read-write:ai-gateway-virtual-model-configs",
+              "name": "ReadWriteColonAiGatewayVirtualModelConfigs"
             },
             {
               "value": "read-write:alerts",
@@ -203909,6 +204044,10 @@
             {
               "value": "read:ai-gateway-rules",
               "name": "ReadColonAiGatewayRules"
+            },
+            {
+              "value": "read:ai-gateway-virtual-model-configs",
+              "name": "ReadColonAiGatewayVirtualModelConfigs"
             },
             {
               "value": "read:alerts",
@@ -204005,6 +204144,7 @@
           "read-write:ai-gateway-guardrails",
           "read-write:ai-gateway-private-models",
           "read-write:ai-gateway-rules",
+          "read-write:ai-gateway-virtual-model-configs",
           "read-write:alerts",
           "read-write:billing",
           "read-write:blob",
@@ -204033,6 +204173,7 @@
           "read:ai-gateway-guardrails",
           "read:ai-gateway-private-models",
           "read:ai-gateway-rules",
+          "read:ai-gateway-virtual-model-configs",
           "read:alerts",
           "read:billing",
           "read:deployment",
@@ -204084,6 +204225,10 @@
             {
               "value": "read-write:ai-gateway-rules",
               "name": "ReadWriteColonAiGatewayRules"
+            },
+            {
+              "value": "read-write:ai-gateway-virtual-model-configs",
+              "name": "ReadWriteColonAiGatewayVirtualModelConfigs"
             },
             {
               "value": "read-write:alerts",
@@ -204196,6 +204341,10 @@
             {
               "value": "read:ai-gateway-rules",
               "name": "ReadColonAiGatewayRules"
+            },
+            {
+              "value": "read:ai-gateway-virtual-model-configs",
+              "name": "ReadColonAiGatewayVirtualModelConfigs"
             },
             {
               "value": "read:alerts",
@@ -256515,6 +256664,7 @@
       },
       "CancelDeployment200ResponseResourceConfigBuildMachineDefaultPurchaseType": {
         "enum": [
+          "basic",
           "enhanced",
           "standard"
         ],
@@ -256525,6 +256675,10 @@
           "name": "CancelDeployment200ResponseResourceConfigBuildMachineDefaultPurchaseType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic",
+              "name": "Basic"
+            },
             {
               "value": "enhanced",
               "name": "Enhanced"
@@ -270419,6 +270573,7 @@
       },
       "GetDeployment200ResponseOneOf2ResourceConfigBuildMachineDefaultPurchaseType": {
         "enum": [
+          "basic",
           "enhanced",
           "standard"
         ],
@@ -270429,6 +270584,10 @@
           "name": "GetDeployment200ResponseOneOf2ResourceConfigBuildMachineDefaultPurchaseType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic",
+              "name": "Basic"
+            },
             {
               "value": "enhanced",
               "name": "Enhanced"
@@ -270922,6 +271081,7 @@
       },
       "CreateDeployment200ResponseOneOf2ResourceConfigBuildMachineDefaultPurchaseType": {
         "enum": [
+          "basic",
           "enhanced",
           "standard"
         ],
@@ -270932,6 +271092,10 @@
           "name": "CreateDeployment200ResponseOneOf2ResourceConfigBuildMachineDefaultPurchaseType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "basic",
+              "name": "Basic"
+            },
             {
               "value": "enhanced",
               "name": "Enhanced"

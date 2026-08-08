@@ -355,6 +355,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ComplianceDocumentDownloaded,
         #pragma warning restore CS1591
+        [EnumMember(Value = "compliance-document-previewed")]
+        #pragma warning disable CS1591
+        ComplianceDocumentPreviewed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "compliance-documents-bulk-downloaded")]
         #pragma warning disable CS1591
         ComplianceDocumentsBulkDownloaded,

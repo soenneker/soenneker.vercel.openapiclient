@@ -32,6 +32,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ReadWriteColonAiGatewayRules,
         #pragma warning restore CS1591
+        [EnumMember(Value = "read-write:ai-gateway-virtual-model-configs")]
+        #pragma warning disable CS1591
+        ReadWriteColonAiGatewayVirtualModelConfigs,
+        #pragma warning restore CS1591
         [EnumMember(Value = "read-write:alerts")]
         #pragma warning disable CS1591
         ReadWriteColonAlerts,
@@ -143,6 +147,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "read:ai-gateway-rules")]
         #pragma warning disable CS1591
         ReadColonAiGatewayRules,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "read:ai-gateway-virtual-model-configs")]
+        #pragma warning disable CS1591
+        ReadColonAiGatewayVirtualModelConfigs,
         #pragma warning restore CS1591
         [EnumMember(Value = "read:alerts")]
         #pragma warning disable CS1591
