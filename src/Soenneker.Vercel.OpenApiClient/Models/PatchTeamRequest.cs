@@ -70,6 +70,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Default for projects in the team. When `true`, projects in this team will not emit GitHub repository-dispatch events on deployment events unless the project explicitly overrides this setting.</summary>
         public bool? DisableRepositoryDispatchEvents { get; set; }
+        /// <summary>&quot;Require production secrets to be in their own environment group: one of on, off or default.&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisjunctiveProductionSecretPolicy { get; set; }
+#nullable restore
+#else
+        public string DisjunctiveProductionSecretPolicy { get; set; }
+#endif
         /// <summary>Controls who can request access to protected deployments.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDpAccessRequestsMode? DpAccessRequestsMode { get; set; }
         /// <summary>The emailDomain property</summary>
@@ -218,6 +226,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "deploymentPolicy", n => { DeploymentPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicy>(global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicy.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "disableRepositoryDispatchEvents", n => { DisableRepositoryDispatchEvents = n.GetBoolValue(); } },
+                { "disjunctiveProductionSecretPolicy", n => { DisjunctiveProductionSecretPolicy = n.GetStringValue(); } },
                 { "dpAccessRequestsMode", n => { DpAccessRequestsMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDpAccessRequestsMode>(); } },
                 { "emailDomain", n => { EmailDomain = n.GetStringValue(); } },
                 { "enablePreviewFeedback", n => { EnablePreviewFeedback = n.GetStringValue(); } },
@@ -254,6 +263,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDeploymentPolicy>("deploymentPolicy", DeploymentPolicy);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("disableRepositoryDispatchEvents", DisableRepositoryDispatchEvents);
+            writer.WriteStringValue("disjunctiveProductionSecretPolicy", DisjunctiveProductionSecretPolicy);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDpAccessRequestsMode>("dpAccessRequestsMode", DpAccessRequestsMode);
             writer.WriteStringValue("emailDomain", EmailDomain);
             writer.WriteStringValue("enablePreviewFeedback", EnablePreviewFeedback);

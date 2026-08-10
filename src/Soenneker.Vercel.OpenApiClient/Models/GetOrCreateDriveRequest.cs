@@ -22,6 +22,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
+        /// <summary>Region where the drive is stored. Defaults to iad1.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetOrCreateDriveRequestRegion? Region { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,6 +44,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "maxSizeBytes", n => { MaxSizeBytes = n.GetIntValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "region", n => { Region = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrCreateDriveRequestRegion>(); } },
             };
         }
         /// <summary>
@@ -53,6 +56,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("maxSizeBytes", MaxSizeBytes);
             writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetOrCreateDriveRequestRegion>("region", Region);
         }
     }
 }

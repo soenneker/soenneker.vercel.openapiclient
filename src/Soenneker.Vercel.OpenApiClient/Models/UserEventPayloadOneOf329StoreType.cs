@@ -8,18 +8,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UserEventPayloadOneOf329StoreType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "blob")]
-        #pragma warning disable CS1591
-        Blob,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "edge-config")]
-        #pragma warning disable CS1591
-        EdgeConfig,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "integration")]
-        #pragma warning disable CS1591
-        Integration,
-        #pragma warning restore CS1591
         [EnumMember(Value = "postgres")]
         #pragma warning disable CS1591
         Postgres,

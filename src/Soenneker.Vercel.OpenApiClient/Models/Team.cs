@@ -119,6 +119,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Default for projects in the team. When `true`, projects in this team will not emit GitHub repository-dispatch events on deployment events unless the project explicitly overrides this setting via `project.gitProviderOptions.disableRepositoryDispatchEvents`.</summary>
         public bool? DisableRepositoryDispatchEvents { get; set; }
+        /// <summary>Require production secrets to use a different value than preview or development.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDisjunctiveProductionSecretPolicy? DisjunctiveProductionSecretPolicy { get; set; }
         /// <summary>Controls who can request access to protected deployments.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamDpAccessRequestsMode? DpAccessRequestsMode { get; set; }
         /// <summary>Hostname that&apos;ll be matched with emails on sign-up to automatically join the Team.</summary>
@@ -326,6 +328,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "disableHardAutoBlocks", n => { DisableHardAutoBlocks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDisableHardAutoBlocks>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDisableHardAutoBlocks.CreateFromDiscriminatorValue); } },
                 { "disableRepositoryDispatchEvents", n => { DisableRepositoryDispatchEvents = n.GetBoolValue(); } },
+                { "disjunctiveProductionSecretPolicy", n => { DisjunctiveProductionSecretPolicy = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDisjunctiveProductionSecretPolicy>(); } },
                 { "dpAccessRequestsMode", n => { DpAccessRequestsMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDpAccessRequestsMode>(); } },
                 { "emailDomain", n => { EmailDomain = n.GetStringValue(); } },
                 { "enablePreviewFeedback", n => { EnablePreviewFeedback = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamEnablePreviewFeedback>(); } },
@@ -380,6 +383,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDisableHardAutoBlocks>("disableHardAutoBlocks", DisableHardAutoBlocks);
             writer.WriteBoolValue("disableRepositoryDispatchEvents", DisableRepositoryDispatchEvents);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDisjunctiveProductionSecretPolicy>("disjunctiveProductionSecretPolicy", DisjunctiveProductionSecretPolicy);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDpAccessRequestsMode>("dpAccessRequestsMode", DpAccessRequestsMode);
             writer.WriteStringValue("emailDomain", EmailDomain);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamEnablePreviewFeedback>("enablePreviewFeedback", EnablePreviewFeedback);

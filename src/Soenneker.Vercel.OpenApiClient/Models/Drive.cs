@@ -51,6 +51,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
+        /// <summary>The region where the drive is stored.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Region { get; set; }
+#nullable restore
+#else
+        public string Region { get; set; }
+#endif
         /// <summary>The last time the drive was updated, in milliseconds since the epoch.</summary>
         public double? UpdatedAt { get; set; }
         /// <summary>
@@ -84,6 +92,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "maxSizeBytes", n => { MaxSizeBytes = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "region", n => { Region = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
             };
         }
@@ -100,6 +109,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("maxSizeBytes", MaxSizeBytes);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("region", Region);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

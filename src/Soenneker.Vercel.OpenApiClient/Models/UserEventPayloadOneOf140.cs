@@ -15,29 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The deletedUid property</summary>
+        /// <summary>The nextRule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedUid { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140NextRule? NextRule { get; set; }
 #nullable restore
 #else
-        public string DeletedUid { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140NextRule NextRule { get; set; }
 #endif
-        /// <summary>The deletedUser property</summary>
+        /// <summary>The previousRule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140DeletedUser? DeletedUser { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140PreviousRule? PreviousRule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140DeletedUser DeletedUser { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140PreviousRule PreviousRule { get; set; }
 #endif
-        /// <summary>The emailDomain property</summary>
+        /// <summary>The team property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailDomain { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140Team? Team { get; set; }
 #nullable restore
 #else
-        public string EmailDomain { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140Team Team { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140"/> and sets the default values.
@@ -64,9 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deletedUid", n => { DeletedUid = n.GetStringValue(); } },
-                { "deletedUser", n => { DeletedUser = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140DeletedUser>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140DeletedUser.CreateFromDiscriminatorValue); } },
-                { "emailDomain", n => { EmailDomain = n.GetStringValue(); } },
+                { "nextRule", n => { NextRule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140NextRule>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140NextRule.CreateFromDiscriminatorValue); } },
+                { "previousRule", n => { PreviousRule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140PreviousRule>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140PreviousRule.CreateFromDiscriminatorValue); } },
+                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140Team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140Team.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,9 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("deletedUid", DeletedUid);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140DeletedUser>("deletedUser", DeletedUser);
-            writer.WriteStringValue("emailDomain", EmailDomain);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140NextRule>("nextRule", NextRule);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140PreviousRule>("previousRule", PreviousRule);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf140Team>("team", Team);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

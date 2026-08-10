@@ -475,6 +475,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         CustomEnvironmentsSettingsUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "custom-metric-metadata-deleted")]
+        #pragma warning disable CS1591
+        CustomMetricMetadataDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "custom-metric-metadata-updated")]
+        #pragma warning disable CS1591
+        CustomMetricMetadataUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "custom-suffix-clear")]
         #pragma warning disable CS1591
         CustomSuffixClear,
@@ -766,6 +774,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "emu-member-removed-unverified-domain")]
         #pragma warning disable CS1591
         EmuMemberRemovedUnverifiedDomain,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "enforce-disjunctive-production-secrets")]
+        #pragma warning disable CS1591
+        EnforceDisjunctiveProductionSecrets,
         #pragma warning restore CS1591
         [EnumMember(Value = "enforce-sensitive-environment-variables")]
         #pragma warning disable CS1591
@@ -1786,6 +1798,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "sandbox-alias-delete")]
         #pragma warning disable CS1591
         SandboxAliasDelete,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sandbox-drive-created")]
+        #pragma warning disable CS1591
+        SandboxDriveCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sandbox-drive-deleted")]
+        #pragma warning disable CS1591
+        SandboxDriveDeleted,
         #pragma warning restore CS1591
         [EnumMember(Value = "sandbox-snapshot-regions-updated")]
         #pragma warning disable CS1591

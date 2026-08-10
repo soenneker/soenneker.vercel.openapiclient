@@ -25,18 +25,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf387ActorType? ActorType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The autoBlockPrevented property</summary>
-        public bool? AutoBlockPrevented { get; set; }
-        /// <summary>The preventUntil property</summary>
-        public double? PreventUntil { get; set; }
-        /// <summary>The reason property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Reason { get; set; }
-#nullable restore
-#else
-        public string Reason { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf387"/> and sets the default values.
         /// </summary>
@@ -64,9 +52,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "actorId", n => { ActorId = n.GetStringValue(); } },
                 { "actorType", n => { ActorType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf387ActorType>(); } },
-                { "autoBlockPrevented", n => { AutoBlockPrevented = n.GetBoolValue(); } },
-                { "preventUntil", n => { PreventUntil = n.GetDoubleValue(); } },
-                { "reason", n => { Reason = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,9 +63,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actorId", ActorId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf387ActorType>("actorType", ActorType);
-            writer.WriteBoolValue("autoBlockPrevented", AutoBlockPrevented);
-            writer.WriteDoubleValue("preventUntil", PreventUntil);
-            writer.WriteStringValue("reason", Reason);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

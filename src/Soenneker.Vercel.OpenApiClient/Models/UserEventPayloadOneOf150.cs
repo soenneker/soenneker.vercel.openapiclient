@@ -26,25 +26,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150ConfigChangesItemProperty> ConfigChanges { get; set; }
 #endif
         /// <summary>The configVersion property</summary>
-        public double? ConfigVersion { get; set; }
-        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150ConfigVersion? ConfigVersion { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150ConfigVersion ConfigVersion { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectName { get; set; }
-#nullable restore
-#else
-        public string ProjectName { get; set; }
-#endif
-        /// <summary>The restore property</summary>
-        public bool? Restore { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150"/> and sets the default values.
         /// </summary>
@@ -72,10 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "configChangeCount", n => { ConfigChangeCount = n.GetDoubleValue(); } },
                 { "configChanges", n => { ConfigChanges = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150ConfigChangesItemProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150ConfigChangesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "configVersion", n => { ConfigVersion = n.GetDoubleValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "restore", n => { Restore = n.GetBoolValue(); } },
+                { "configVersion", n => { ConfigVersion = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150ConfigVersion>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150ConfigVersion.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,10 +72,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("configChangeCount", ConfigChangeCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150ConfigChangesItemProperty>("configChanges", ConfigChanges);
-            writer.WriteDoubleValue("configVersion", ConfigVersion);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteBoolValue("restore", Restore);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf150ConfigVersion>("configVersion", ConfigVersion);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,6 +15,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The alias property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Alias { get; set; }
+#nullable restore
+#else
+        public string Alias { get; set; }
+#endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,29 +31,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The sandboxId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public string? SandboxId { get; set; }
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public string SandboxId { get; set; }
 #endif
-        /// <summary>The snapshotId property</summary>
+        /// <summary>The sandboxName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SnapshotId { get; set; }
+        public string? SandboxName { get; set; }
 #nullable restore
 #else
-        public string SnapshotId { get; set; }
-#endif
-        /// <summary>The targetRegions property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? TargetRegions { get; set; }
-#nullable restore
-#else
-        public List<string> TargetRegions { get; set; }
+        public string SandboxName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf309"/> and sets the default values.
@@ -72,10 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "alias", n => { Alias = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "snapshotId", n => { SnapshotId = n.GetStringValue(); } },
-                { "targetRegions", n => { TargetRegions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "sandboxId", n => { SandboxId = n.GetStringValue(); } },
+                { "sandboxName", n => { SandboxName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,10 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("alias", Alias);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("snapshotId", SnapshotId);
-            writer.WriteCollectionOfPrimitiveValues<string>("targetRegions", TargetRegions);
+            writer.WriteStringValue("sandboxId", SandboxId);
+            writer.WriteStringValue("sandboxName", SandboxName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
