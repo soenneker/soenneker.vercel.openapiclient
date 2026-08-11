@@ -36,20 +36,20 @@ namespace Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Item_by_id.Item
         /// <summary>
         /// Returns a specific Global Config Item.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItem?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Item_by_id.Item.WithEdgeConfigItemKeyItemRequestBuilder.WithEdgeConfigItemKeyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItem?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Item_by_id.Item.WithEdgeConfigItemKeyItemRequestBuilder.WithEdgeConfigItemKeyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItem> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Item_by_id.Item.WithEdgeConfigItemKeyItemRequestBuilder.WithEdgeConfigItemKeyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItem> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Item_by_id.Item.WithEdgeConfigItemKeyItemRequestBuilder.WithEdgeConfigItemKeyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItem>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItem>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a specific Global Config Item.

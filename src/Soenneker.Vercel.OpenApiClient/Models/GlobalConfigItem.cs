@@ -11,7 +11,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     /// The Global Config.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class EdgeConfigItem : IAdditionalDataHolder, IParsable
+    public partial class GlobalConfigItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -46,27 +46,27 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue? Value { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValue? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue Value { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValue Value { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItem"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItem"/> and sets the default values.
         /// </summary>
-        public EdgeConfigItem()
+        public GlobalConfigItem()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItem();
+            return new global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,7 +81,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue>(global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValue>(global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -96,7 +96,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("edgeConfigId", EdgeConfigId);
             writer.WriteStringValue("key", Key);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItemValue>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

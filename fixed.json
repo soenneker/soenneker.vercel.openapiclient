@@ -7967,7 +7967,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EdgeConfigItem"
+                  "$ref": "#/components/schemas/GlobalConfigItem"
                 }
               }
             }
@@ -8022,7 +8022,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EdgeConfigToken"
+                  "$ref": "#/components/schemas/GlobalConfigToken"
                 }
               }
             }
@@ -8148,7 +8148,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EdgeConfigToken"
+                  "$ref": "#/components/schemas/GlobalConfigToken"
                 }
               }
             }
@@ -17744,9 +17744,11 @@
             "description": "The unique identifier of the snapshot to retrieve.",
             "required": true,
             "schema": {
+              "maxLength": 33,
+              "pattern": "^(?:snap_[A-Za-z0-9]{28}|vhs_[a-z0-9]{28})$",
               "type": "string",
               "description": "The unique identifier of the snapshot to retrieve.",
-              "example": "snap_abc123"
+              "example": "snap_1234567890123456789012345678"
             }
           },
           {
@@ -17800,9 +17802,11 @@
             "description": "The unique identifier of the snapshot to delete.",
             "required": true,
             "schema": {
+              "maxLength": 33,
+              "pattern": "^(?:snap_[A-Za-z0-9]{28}|vhs_[a-z0-9]{28})$",
               "type": "string",
               "description": "The unique identifier of the snapshot to delete.",
-              "example": "snap_abc123"
+              "example": "snap_1234567890123456789012345678"
             }
           },
           {
@@ -28065,29 +28069,29 @@
           }
         }
       },
-      "EdgeConfigItemValue": {
+      "GlobalConfigItemValue": {
         "required": [
           "type"
         ],
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/EdgeConfigItemValueBranch1"
+            "$ref": "#/components/schemas/GlobalConfigItemValueBranch1"
           },
           {
-            "$ref": "#/components/schemas/EdgeConfigItemValueBranch2"
+            "$ref": "#/components/schemas/GlobalConfigItemValueBranch2"
           },
           {
             "type": "object",
             "additionalProperties": {
-              "$ref": "#/components/schemas/EdgeConfigItemValue"
+              "$ref": "#/components/schemas/GlobalConfigItemValue"
             }
           },
           {
-            "$ref": "#/components/schemas/EdgeConfigItemValueBranch4"
+            "$ref": "#/components/schemas/GlobalConfigItemValueBranch4"
           },
           {
-            "$ref": "#/components/schemas/EdgeConfigItemValueWrapper"
+            "$ref": "#/components/schemas/GlobalConfigItemValueWrapper"
           }
         ],
         "properties": {
@@ -28099,13 +28103,13 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "EdgeConfigItemValue_1": "#/components/schemas/EdgeConfigItemValueBranch1",
-            "EdgeConfigItemValue_2": "#/components/schemas/EdgeConfigItemValueBranch2",
-            "EdgeConfigItemValue_4": "#/components/schemas/EdgeConfigItemValueBranch4"
+            "GlobalConfigItemValue_1": "#/components/schemas/GlobalConfigItemValueBranch1",
+            "GlobalConfigItemValue_2": "#/components/schemas/GlobalConfigItemValueBranch2",
+            "GlobalConfigItemValue_4": "#/components/schemas/GlobalConfigItemValueBranch4"
           }
         }
       },
-      "EdgeConfigItem": {
+      "GlobalConfigItem": {
         "required": [
           "createdAt",
           "edgeConfigId",
@@ -28119,7 +28123,7 @@
             "type": "string"
           },
           "value": {
-            "$ref": "#/components/schemas/EdgeConfigItemValue"
+            "$ref": "#/components/schemas/GlobalConfigItemValue"
           },
           "description": {
             "type": "string"
@@ -28136,7 +28140,7 @@
         },
         "description": "The Global Config."
       },
-      "EdgeConfigToken": {
+      "GlobalConfigToken": {
         "required": [
           "createdAt",
           "edgeConfigId",
@@ -59634,7 +59638,7 @@
       "GetEdgeConfigItems200Response": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/EdgeConfigItem"
+          "$ref": "#/components/schemas/GlobalConfigItem"
         }
       },
       "PatchEdgeConfigItemsRequest": {
@@ -68734,7 +68738,7 @@
           }
         }
       },
-      "EdgeConfigItemValueWrapper": {
+      "GlobalConfigItemValueWrapper": {
         "required": [
           "value"
         ],
@@ -68993,7 +68997,7 @@
           }
         }
       },
-      "EdgeConfigItemValueBranch1": {
+      "GlobalConfigItemValueBranch1": {
         "required": [
           "value"
         ],
@@ -69004,7 +69008,7 @@
           }
         }
       },
-      "EdgeConfigItemValueBranch2": {
+      "GlobalConfigItemValueBranch2": {
         "required": [
           "value"
         ],
@@ -69015,7 +69019,7 @@
           }
         }
       },
-      "EdgeConfigItemValueBranch4": {
+      "GlobalConfigItemValueBranch4": {
         "required": [
           "value"
         ],
@@ -69024,7 +69028,7 @@
           "value": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/EdgeConfigItemValue"
+              "$ref": "#/components/schemas/GlobalConfigItemValue"
             }
           }
         }
@@ -74929,7 +74933,7 @@
       "GetEdgeConfigItems200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/EdgeConfigItem"
+          "$ref": "#/components/schemas/GlobalConfigItem"
         }
       },
       "DeleteEdgeConfigSchema204Response": {
@@ -82652,7 +82656,7 @@
                   },
                   "forwardURL": {
                     "type": "string",
-                    "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include query string or fragment."
+                    "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment."
                   }
                 },
                 "additionalProperties": false
@@ -82887,7 +82891,7 @@
                   },
                   "forwardURL": {
                     "type": "string",
-                    "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include query string or fragment."
+                    "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment."
                   }
                 },
                 "additionalProperties": false
@@ -83269,7 +83273,7 @@
                   },
                   "forwardURL": {
                     "type": "string",
-                    "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include query string or fragment."
+                    "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment."
                   }
                 },
                 "additionalProperties": false
@@ -83443,7 +83447,7 @@
                   },
                   "forwardURL": {
                     "type": "string",
-                    "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include query string or fragment."
+                    "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment."
                   }
                 },
                 "additionalProperties": false
@@ -89594,7 +89598,7 @@
                   },
                   "forwardURL": {
                     "type": "string",
-                    "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include query string or fragment."
+                    "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment."
                   }
                 },
                 "additionalProperties": false
@@ -99737,13 +99741,13 @@
       "HeadInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200ResponseItems": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/EdgeConfigItemValue"
+          "$ref": "#/components/schemas/GlobalConfigItemValue"
         }
       },
       "GetInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200ResponseItems": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/EdgeConfigItemValue"
+          "$ref": "#/components/schemas/GlobalConfigItemValue"
         }
       },
       "ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigRequestData": {
@@ -99755,7 +99759,7 @@
       "ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig200ResponseItems": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/EdgeConfigItemValue"
+          "$ref": "#/components/schemas/GlobalConfigItemValue"
         }
       },
       "GetMicrofrontendsInGroup200ResponseProjectsItem": {
@@ -172343,7 +172347,7 @@
             "type": "number"
           },
           "value": {
-            "$ref": "#/components/schemas/EdgeConfigItemValue"
+            "$ref": "#/components/schemas/GlobalConfigItemValue"
           },
           "description": {
             "type": "string"
@@ -172365,7 +172369,7 @@
             "type": "number"
           },
           "value": {
-            "$ref": "#/components/schemas/EdgeConfigItemValue"
+            "$ref": "#/components/schemas/GlobalConfigItemValue"
           },
           "description": {
             "type": "string"

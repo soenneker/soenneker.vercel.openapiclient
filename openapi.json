@@ -53231,7 +53231,7 @@
               "application/json": {
                 "schema": {
                   "items": {
-                    "$ref": "#/components/schemas/EdgeConfigItem"
+                    "$ref": "#/components/schemas/GlobalConfigItem"
                   },
                   "type": "array"
                 }
@@ -53738,7 +53738,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EdgeConfigItem"
+                  "$ref": "#/components/schemas/GlobalConfigItem"
                 }
               }
             }
@@ -53817,7 +53817,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EdgeConfigToken"
+                  "$ref": "#/components/schemas/GlobalConfigToken"
                 }
               }
             }
@@ -53993,7 +53993,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EdgeConfigToken"
+                  "$ref": "#/components/schemas/GlobalConfigToken"
                 }
               }
             }
@@ -54207,7 +54207,7 @@
                                     "type": "number"
                                   },
                                   "value": {
-                                    "$ref": "#/components/schemas/EdgeConfigItemValue"
+                                    "$ref": "#/components/schemas/GlobalConfigItemValue"
                                   },
                                   "description": {
                                     "type": "string"
@@ -54338,7 +54338,7 @@
                                     "type": "number"
                                   },
                                   "value": {
-                                    "$ref": "#/components/schemas/EdgeConfigItemValue"
+                                    "$ref": "#/components/schemas/GlobalConfigItemValue"
                                   },
                                   "description": {
                                     "type": "string"
@@ -74714,7 +74714,7 @@
                   "properties": {
                     "items": {
                       "additionalProperties": {
-                        "$ref": "#/components/schemas/EdgeConfigItemValue"
+                        "$ref": "#/components/schemas/GlobalConfigItemValue"
                       },
                       "type": "object"
                     },
@@ -74801,7 +74801,7 @@
                   "properties": {
                     "items": {
                       "additionalProperties": {
-                        "$ref": "#/components/schemas/EdgeConfigItemValue"
+                        "$ref": "#/components/schemas/GlobalConfigItemValue"
                       },
                       "type": "object"
                     },
@@ -74888,7 +74888,7 @@
                   "properties": {
                     "items": {
                       "additionalProperties": {
-                        "$ref": "#/components/schemas/EdgeConfigItemValue"
+                        "$ref": "#/components/schemas/GlobalConfigItemValue"
                       },
                       "type": "object"
                     },
@@ -161153,7 +161153,7 @@
                                       },
                                       "forwardURL": {
                                         "type": "string",
-                                        "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include query string or fragment."
+                                        "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment."
                                       }
                                     }
                                   }
@@ -162079,7 +162079,9 @@
             "schema": {
               "type": "string",
               "description": "The unique identifier of the snapshot to retrieve.",
-              "example": "snap_abc123"
+              "pattern": "^(?:snap_[A-Za-z0-9]{28}|vhs_[a-z0-9]{28})$",
+              "maxLength": 33,
+              "example": "snap_1234567890123456789012345678"
             }
           },
           {
@@ -162161,7 +162163,9 @@
             "schema": {
               "type": "string",
               "description": "The unique identifier of the snapshot to delete.",
-              "example": "snap_abc123"
+              "pattern": "^(?:snap_[A-Za-z0-9]{28}|vhs_[a-z0-9]{28})$",
+              "maxLength": 33,
+              "example": "snap_1234567890123456789012345678"
             }
           },
           {
@@ -163171,7 +163175,7 @@
                                       },
                                       "forwardURL": {
                                         "type": "string",
-                                        "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include query string or fragment."
+                                        "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment."
                                       }
                                     }
                                   }
@@ -164751,7 +164755,7 @@
                                   },
                                   "forwardURL": {
                                     "type": "string",
-                                    "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include query string or fragment."
+                                    "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment."
                                   }
                                 }
                               }
@@ -165682,7 +165686,7 @@
                                       },
                                       "forwardURL": {
                                         "type": "string",
-                                        "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include query string or fragment."
+                                        "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment."
                                       }
                                     }
                                   }
@@ -166316,7 +166320,7 @@
                                       },
                                       "forwardURL": {
                                         "type": "string",
-                                        "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include query string or fragment."
+                                        "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment."
                                       }
                                     }
                                   }
@@ -202893,7 +202897,7 @@
         ],
         "description": "Schema definition for registrant fields."
       },
-      "EdgeConfigItemValue": {
+      "GlobalConfigItemValue": {
         "nullable": true,
         "oneOf": [
           {
@@ -202904,13 +202908,13 @@
           },
           {
             "additionalProperties": {
-              "$ref": "#/components/schemas/EdgeConfigItemValue"
+              "$ref": "#/components/schemas/GlobalConfigItemValue"
             },
             "type": "object"
           },
           {
             "items": {
-              "$ref": "#/components/schemas/EdgeConfigItemValue"
+              "$ref": "#/components/schemas/GlobalConfigItemValue"
             },
             "type": "array"
           },
@@ -202923,13 +202927,13 @@
           }
         ]
       },
-      "EdgeConfigItem": {
+      "GlobalConfigItem": {
         "properties": {
           "key": {
             "type": "string"
           },
           "value": {
-            "$ref": "#/components/schemas/EdgeConfigItemValue"
+            "$ref": "#/components/schemas/GlobalConfigItemValue"
           },
           "description": {
             "type": "string"
@@ -202954,7 +202958,7 @@
         "type": "object",
         "description": "The Global Config."
       },
-      "EdgeConfigToken": {
+      "GlobalConfigToken": {
         "properties": {
           "partialToken": {
             "type": "string",

@@ -36,20 +36,20 @@ namespace Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Items
         /// <summary>
         /// Returns all items of a Global Config.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItem&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItem>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.EdgeConfigItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItem>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
