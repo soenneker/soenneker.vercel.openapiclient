@@ -92,6 +92,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Devsite { get; set; }
 #endif
+        /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayName { get; set; }
+#nullable restore
+#else
+        public string DisplayName { get; set; }
+#endif
         /// <summary>The docsite property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -315,6 +323,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "defaultInstallationId", n => { DefaultInstallationId = n.GetStringValue(); } },
                 { "deletedAt", n => { DeletedAt = n.GetDoubleValue(); } },
                 { "devsite", n => { Devsite = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "docsite", n => { Docsite = n.GetStringValue(); } },
                 { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "icon", n => { Icon = n.GetStringValue(); } },
@@ -366,6 +375,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("defaultInstallationId", DefaultInstallationId);
             writer.WriteDoubleValue("deletedAt", DeletedAt);
             writer.WriteStringValue("devsite", Devsite);
+            writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("docsite", Docsite);
             writer.WriteCollectionOfPrimitiveValues<string>("events", Events);
             writer.WriteStringValue("icon", Icon);

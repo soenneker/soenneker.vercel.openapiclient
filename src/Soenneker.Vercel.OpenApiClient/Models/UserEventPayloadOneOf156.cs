@@ -85,7 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string SourceCommitSha { get; set; }
 #endif
-        /// <summary>Source repository, &quot;owner/name&quot;.</summary>
+        /// <summary>Source repository, &quot;owner/name&quot;. Null when the pushed content was generated in-request (push-files-to-repo) rather than copied from a repository.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceRepo { get; set; }

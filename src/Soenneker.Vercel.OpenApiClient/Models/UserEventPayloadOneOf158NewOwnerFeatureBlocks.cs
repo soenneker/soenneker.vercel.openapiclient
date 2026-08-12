@@ -47,6 +47,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksImageOptimizationTransformation ImageOptimizationTransformation { get; set; }
 #endif
+        /// <summary>The kmsOperations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksKmsOperations? KmsOperations { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksKmsOperations KmsOperations { get; set; }
+#endif
         /// <summary>The microfrontendsRequest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -156,6 +164,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "connexTokenRequests", n => { ConnexTokenRequests = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksConnexTokenRequests>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksConnexTokenRequests.CreateFromDiscriminatorValue); } },
                 { "dataCache", n => { DataCache = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksDataCache>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksDataCache.CreateFromDiscriminatorValue); } },
                 { "imageOptimizationTransformation", n => { ImageOptimizationTransformation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksImageOptimizationTransformation>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksImageOptimizationTransformation.CreateFromDiscriminatorValue); } },
+                { "kmsOperations", n => { KmsOperations = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksKmsOperations>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksKmsOperations.CreateFromDiscriminatorValue); } },
                 { "microfrontendsRequest", n => { MicrofrontendsRequest = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksMicrofrontendsRequest>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksMicrofrontendsRequest.CreateFromDiscriminatorValue); } },
                 { "monitoring", n => { Monitoring = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksMonitoring>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksMonitoring.CreateFromDiscriminatorValue); } },
                 { "observabilityPlus", n => { ObservabilityPlus = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksObservabilityPlus>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksObservabilityPlus.CreateFromDiscriminatorValue); } },
@@ -179,6 +188,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksConnexTokenRequests>("connexTokenRequests", ConnexTokenRequests);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksDataCache>("dataCache", DataCache);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksImageOptimizationTransformation>("imageOptimizationTransformation", ImageOptimizationTransformation);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksKmsOperations>("kmsOperations", KmsOperations);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksMicrofrontendsRequest>("microfrontendsRequest", MicrofrontendsRequest);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksMonitoring>("monitoring", Monitoring);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158NewOwnerFeatureBlocksObservabilityPlus>("observabilityPlus", ObservabilityPlus);

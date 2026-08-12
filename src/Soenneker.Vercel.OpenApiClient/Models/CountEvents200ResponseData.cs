@@ -374,6 +374,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string CostCurrency { get; set; }
 #endif
+        /// <summary>The count property</summary>
+        public double? Count { get; set; }
         /// <summary>The country property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1462,6 +1464,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string SpecVersion { get; set; }
 #endif
+        /// <summary>The spendAttribution property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SpendAttribution { get; set; }
+#nullable restore
+#else
+        public string SpendAttribution { get; set; }
+#endif
         /// <summary>The spendReportDatePart property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1686,6 +1696,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string VisitorId { get; set; }
 #endif
+        /// <summary>The visitors property</summary>
+        public double? Visitors { get; set; }
         /// <summary>The wafAction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1812,6 +1824,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "contentCaptureStatus", n => { ContentCaptureStatus = n.GetStringValue(); } },
                 { "contentType", n => { ContentType = n.GetStringValue(); } },
                 { "costCurrency", n => { CostCurrency = n.GetStringValue(); } },
+                { "count", n => { Count = n.GetDoubleValue(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "dataCacheRegion", n => { DataCacheRegion = n.GetStringValue(); } },
                 { "deepAnalysisCheck", n => { DeepAnalysisCheck = n.GetStringValue(); } },
@@ -1948,6 +1961,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "sourceImageHostname", n => { SourceImageHostname = n.GetStringValue(); } },
                 { "sourceImagePathname", n => { SourceImagePathname = n.GetStringValue(); } },
                 { "specVersion", n => { SpecVersion = n.GetStringValue(); } },
+                { "spendAttribution", n => { SpendAttribution = n.GetStringValue(); } },
                 { "spendReportDatePart", n => { SpendReportDatePart = n.GetStringValue(); } },
                 { "spendReportGroupBy", n => { SpendReportGroupBy = n.GetStringValue(); } },
                 { "stepRunId", n => { StepRunId = n.GetStringValue(); } },
@@ -1976,6 +1990,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "virtualModelKind", n => { VirtualModelKind = n.GetStringValue(); } },
                 { "virtualModelSlug", n => { VirtualModelSlug = n.GetStringValue(); } },
                 { "visitorId", n => { VisitorId = n.GetStringValue(); } },
+                { "visitors", n => { Visitors = n.GetDoubleValue(); } },
                 { "wafAction", n => { WafAction = n.GetStringValue(); } },
                 { "wafRuleId", n => { WafRuleId = n.GetStringValue(); } },
                 { "workflowEventType", n => { WorkflowEventType = n.GetStringValue(); } },
@@ -2037,6 +2052,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("contentCaptureStatus", ContentCaptureStatus);
             writer.WriteStringValue("contentType", ContentType);
             writer.WriteStringValue("costCurrency", CostCurrency);
+            writer.WriteDoubleValue("count", Count);
             writer.WriteStringValue("country", Country);
             writer.WriteStringValue("dataCacheRegion", DataCacheRegion);
             writer.WriteStringValue("deepAnalysisCheck", DeepAnalysisCheck);
@@ -2173,6 +2189,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("sourceImageHostname", SourceImageHostname);
             writer.WriteStringValue("sourceImagePathname", SourceImagePathname);
             writer.WriteStringValue("specVersion", SpecVersion);
+            writer.WriteStringValue("spendAttribution", SpendAttribution);
             writer.WriteStringValue("spendReportDatePart", SpendReportDatePart);
             writer.WriteStringValue("spendReportGroupBy", SpendReportGroupBy);
             writer.WriteStringValue("stepRunId", StepRunId);
@@ -2201,6 +2218,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("virtualModelKind", VirtualModelKind);
             writer.WriteStringValue("virtualModelSlug", VirtualModelSlug);
             writer.WriteStringValue("visitorId", VisitorId);
+            writer.WriteDoubleValue("visitors", Visitors);
             writer.WriteStringValue("wafAction", WafAction);
             writer.WriteStringValue("wafRuleId", WafRuleId);
             writer.WriteStringValue("workflowEventType", WorkflowEventType);

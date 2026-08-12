@@ -3,29 +3,25 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>Mirrors `PushFailureStage` in `@api/git-push-repo`.</summary>
+    /// <summary>&quot;For kind=router: how to order candidates.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum UserEventPayloadOneOf156FailureStage
+    public enum AiGatewayVirtualModelConfigSelector
     {
-        [EnumMember(Value = "authorization")]
+        [EnumMember(Value = "cost")]
         #pragma warning disable CS1591
-        Authorization,
+        Cost,
         #pragma warning restore CS1591
-        [EnumMember(Value = "push")]
+        [EnumMember(Value = "priority")]
         #pragma warning disable CS1591
-        Push,
+        Priority,
         #pragma warning restore CS1591
-        [EnumMember(Value = "unexpected")]
+        [EnumMember(Value = "tps")]
         #pragma warning disable CS1591
-        Unexpected,
+        Tps,
         #pragma warning restore CS1591
-        [EnumMember(Value = "unknown")]
+        [EnumMember(Value = "ttft")]
         #pragma warning disable CS1591
-        Unknown,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "validation")]
-        #pragma warning disable CS1591
-        Validation,
+        Ttft,
         #pragma warning restore CS1591
     }
 }

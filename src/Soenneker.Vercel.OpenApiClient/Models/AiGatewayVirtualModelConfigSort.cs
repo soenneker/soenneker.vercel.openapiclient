@@ -3,38 +3,33 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>Rank eligible providers by an attribute.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public enum SearchRepo200ResponseOneOf4GitAccountProvider
-    #pragma warning restore CS1591
+    public enum AiGatewayVirtualModelConfigSort
     {
-        [EnumMember(Value = "bitbucket")]
+        [EnumMember(Value = "cost")]
         #pragma warning disable CS1591
-        Bitbucket,
+        Cost,
         #pragma warning restore CS1591
-        [EnumMember(Value = "cursor-origin")]
+        [EnumMember(Value = "latency")]
         #pragma warning disable CS1591
-        CursorOrigin,
+        Latency,
         #pragma warning restore CS1591
-        [EnumMember(Value = "github")]
+        [EnumMember(Value = "price")]
         #pragma warning disable CS1591
-        Github,
+        Price,
         #pragma warning restore CS1591
-        [EnumMember(Value = "github-custom-host")]
+        [EnumMember(Value = "throughput")]
         #pragma warning disable CS1591
-        GithubCustomHost,
+        Throughput,
         #pragma warning restore CS1591
-        [EnumMember(Value = "github-limited")]
+        [EnumMember(Value = "tps")]
         #pragma warning disable CS1591
-        GithubLimited,
+        Tps,
         #pragma warning restore CS1591
-        [EnumMember(Value = "gitlab")]
+        [EnumMember(Value = "ttft")]
         #pragma warning disable CS1591
-        Gitlab,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "vercel")]
-        #pragma warning disable CS1591
-        Vercel,
+        Ttft,
         #pragma warning restore CS1591
     }
 }

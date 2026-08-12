@@ -1735,6 +1735,379 @@
         ]
       }
     },
+    "/v1/ai-gateway/virtual-model-configs": {
+      "post": {
+        "description": "Create a virtual model config (VMC)",
+        "operationId": "createAiGatewayVirtualModelConfig",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Create virtual model config",
+        "tags": [
+          "api-ai-gateway"
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayVirtualModelConfig"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": ""
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "409": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          },
+          "429": {
+            "description": ""
+          },
+          "500": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "description": "The Team slug to perform the request on behalf of.",
+            "in": "query",
+            "name": "slug",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ]
+      },
+      "get": {
+        "description": "Get a virtual model config",
+        "operationId": "getAiGatewayVirtualModelConfig",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Get virtual model config",
+        "tags": [
+          "api-ai-gateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayVirtualModelConfig"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          },
+          "500": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "virtualModelSlug",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "description": "The Team slug to perform the request on behalf of.",
+            "in": "query",
+            "name": "slug",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ]
+      },
+      "patch": {
+        "description": "Update a virtual model config",
+        "operationId": "updateAiGatewayVirtualModelConfig",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Update virtual model config",
+        "tags": [
+          "api-ai-gateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayVirtualModelConfig"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": ""
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          },
+          "500": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "description": "The Team slug to perform the request on behalf of.",
+            "in": "query",
+            "name": "slug",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "description": "Delete a virtual model config (soft delete)",
+        "operationId": "deleteAiGatewayVirtualModelConfig",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Delete virtual model config",
+        "tags": [
+          "api-ai-gateway"
+        ],
+        "responses": {
+          "204": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          },
+          "500": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "virtualModelSlug",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "description": "The Team slug to perform the request on behalf of.",
+            "in": "query",
+            "name": "slug",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ]
+      }
+    },
+    "/v1/ai-gateway/virtual-model-configs/list": {
+      "get": {
+        "description": "List virtual model configs. With `ownerId`, returns all of that team's VMCs. Without it, pages through VMCs across all teams (newest-first, `limit`/`cursor`).",
+        "operationId": "listAiGatewayVirtualModelConfigs",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "List virtual model configs",
+        "tags": [
+          "api-ai-gateway"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayVirtualModelConfigList"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "410": {
+            "description": ""
+          },
+          "500": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "description": "The Team slug to perform the request on behalf of.",
+            "in": "query",
+            "name": "slug",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ]
+      }
+    },
     "/v1/ai-gateway/rules": {
       "post": {
         "description": "Create a routing rule",
@@ -4951,13 +5324,65 @@
                       },
                       "required": [
                         "pagination",
-                        "redirects",
-                        "version"
+                        "redirects"
                       ],
                       "type": "object"
                     },
                     {
                       "properties": {
+                        "version": {
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "description": "The unique identifier for the version."
+                            },
+                            "key": {
+                              "type": "string",
+                              "description": "The key of the version. The key may be duplicated across versions if the contents are the same as a different version."
+                            },
+                            "lastModified": {
+                              "type": "number"
+                            },
+                            "createdBy": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string",
+                              "description": "Optional name for the version. If not provided, defaults to an ISO timestamp string."
+                            },
+                            "isStaging": {
+                              "type": "boolean",
+                              "enum": [
+                                false,
+                                true
+                              ],
+                              "description": "Whether this version has not been promoted to production yet and is not serving end users."
+                            },
+                            "isLive": {
+                              "type": "boolean",
+                              "enum": [
+                                false,
+                                true
+                              ],
+                              "description": "Whether this version is currently live in production."
+                            },
+                            "redirectCount": {
+                              "type": "number",
+                              "description": "The number of redirects in this version."
+                            },
+                            "alias": {
+                              "type": "string",
+                              "description": "The staging link for previewing redirects in this version."
+                            }
+                          },
+                          "required": [
+                            "createdBy",
+                            "id",
+                            "key",
+                            "lastModified"
+                          ],
+                          "type": "object"
+                        },
                         "redirects": {
                           "items": {
                             "properties": {
@@ -5014,59 +5439,6 @@
                           },
                           "type": "array"
                         },
-                        "version": {
-                          "properties": {
-                            "id": {
-                              "type": "string",
-                              "description": "The unique identifier for the version."
-                            },
-                            "key": {
-                              "type": "string",
-                              "description": "The key of the version. The key may be duplicated across versions if the contents are the same as a different version."
-                            },
-                            "lastModified": {
-                              "type": "number"
-                            },
-                            "createdBy": {
-                              "type": "string"
-                            },
-                            "name": {
-                              "type": "string",
-                              "description": "Optional name for the version. If not provided, defaults to an ISO timestamp string."
-                            },
-                            "isStaging": {
-                              "type": "boolean",
-                              "enum": [
-                                false,
-                                true
-                              ],
-                              "description": "Whether this version has not been promoted to production yet and is not serving end users."
-                            },
-                            "isLive": {
-                              "type": "boolean",
-                              "enum": [
-                                false,
-                                true
-                              ],
-                              "description": "Whether this version is currently live in production."
-                            },
-                            "redirectCount": {
-                              "type": "number",
-                              "description": "The number of redirects in this version."
-                            },
-                            "alias": {
-                              "type": "string",
-                              "description": "The staging link for previewing redirects in this version."
-                            }
-                          },
-                          "required": [
-                            "createdBy",
-                            "id",
-                            "key",
-                            "lastModified"
-                          ],
-                          "type": "object"
-                        },
                         "pagination": {
                           "properties": {
                             "page": {
@@ -5089,7 +5461,8 @@
                       },
                       "required": [
                         "pagination",
-                        "redirects"
+                        "redirects",
+                        "version"
                       ],
                       "type": "object"
                     }
@@ -11772,6 +12145,9 @@
                     "name": {
                       "type": "string"
                     },
+                    "displayName": {
+                      "type": "string"
+                    },
                     "clientUrl": {
                       "nullable": true,
                       "type": "string"
@@ -12112,6 +12488,7 @@
                   "required": [
                     "createdAt",
                     "data",
+                    "displayName",
                     "id",
                     "name",
                     "ownerId",
@@ -13785,12 +14162,17 @@
                           "type": "string",
                           "description": "Curated display name of the resolved service (e.g. \"Salesforce\"), present when the service is a known service. Suited for end-user surfaces like \"Sign in with {serviceName}\"."
                         },
+                        "displayName": {
+                          "type": "string",
+                          "description": "Provider-facing display name when the connector type exposes one, falling back to the stored connector name."
+                        },
                         "name": {
                           "type": "string",
                           "description": "The connector's own name: the operator-given client name, falling back to the client type's name for legacy rows without one."
                         }
                       },
                       "required": [
+                        "displayName",
                         "id",
                         "name",
                         "type",
@@ -14081,12 +14463,17 @@
                           "type": "string",
                           "description": "Curated display name of the resolved service (e.g. \"Salesforce\"), present when the service is a known service. Suited for end-user surfaces like \"Sign in with {serviceName}\"."
                         },
+                        "displayName": {
+                          "type": "string",
+                          "description": "Provider-facing display name when the connector type exposes one, falling back to the stored connector name."
+                        },
                         "name": {
                           "type": "string",
                           "description": "The connector's own name: the operator-given client name, falling back to the client type's name for legacy rows without one."
                         }
                       },
                       "required": [
+                        "displayName",
                         "id",
                         "name",
                         "type",
@@ -37750,7 +38137,6 @@
                         }
                       },
                       "required": [
-                        "uid",
                         "updated"
                       ],
                       "type": "object"
@@ -65232,6 +65618,7 @@
                               "type": "string",
                               "enum": [
                                 "bitbucket",
+                                "cursor-origin",
                                 "github",
                                 "github-custom-host",
                                 "github-limited",
@@ -65274,6 +65661,7 @@
                                 "type": "string",
                                 "enum": [
                                   "bitbucket",
+                                  "cursor-origin",
                                   "github",
                                   "github-custom-host",
                                   "github-limited",
@@ -145300,7 +145688,6 @@
                     }
                   },
                   "required": [
-                    "created",
                     "failed"
                   ],
                   "type": "object"
@@ -185762,7 +186149,7 @@
         }
       },
       "delete": {
-        "description": "Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team.",
+        "description": "Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team. Directory Sync members can be removed when their directory email is absent or does not match the user's primary or verified secondary emails.",
         "operationId": "removeTeamMember",
         "security": [
           {
@@ -191275,6 +191662,9 @@
                               "isByok": {
                                 "type": "string"
                               },
+                              "spendAttribution": {
+                                "type": "string"
+                              },
                               "isPrivateModel": {
                                 "type": "string"
                               },
@@ -191938,6 +192328,9 @@
                               "isByok": {
                                 "type": "string"
                               },
+                              "spendAttribution": {
+                                "type": "string"
+                              },
                               "isPrivateModel": {
                                 "type": "string"
                               },
@@ -192364,6 +192757,7 @@
                               "sourceImageHostname",
                               "sourceImagePathname",
                               "specVersion",
+                              "spendAttribution",
                               "spendReportDatePart",
                               "spendReportGroupBy",
                               "stepRunId",
@@ -193066,6 +193460,9 @@
                               "isByok": {
                                 "type": "string"
                               },
+                              "spendAttribution": {
+                                "type": "string"
+                              },
                               "isPrivateModel": {
                                 "type": "string"
                               },
@@ -193729,6 +194126,9 @@
                               "isByok": {
                                 "type": "string"
                               },
+                              "spendAttribution": {
+                                "type": "string"
+                              },
                               "isPrivateModel": {
                                 "type": "string"
                               },
@@ -194155,6 +194555,7 @@
                               "sourceImageHostname",
                               "sourceImagePathname",
                               "specVersion",
+                              "spendAttribution",
                               "spendReportDatePart",
                               "spendReportGroupBy",
                               "stepRunId",
@@ -194415,879 +194816,902 @@
                       "type": "object"
                     },
                     "data": {
-                      "properties": {
-                        "projectId": {
-                          "type": "string"
-                        },
-                        "country": {
-                          "type": "string"
-                        },
-                        "deviceType": {
-                          "type": "string"
-                        },
-                        "environment": {
-                          "type": "string"
-                        },
-                        "requestPath": {
-                          "type": "string"
-                        },
-                        "referrerHostname": {
-                          "type": "string"
-                        },
-                        "osName": {
-                          "type": "string"
-                        },
-                        "browserName": {
-                          "type": "string"
-                        },
-                        "route": {
-                          "type": "string"
-                        },
-                        "utmSource": {
-                          "type": "string"
-                        },
-                        "utmMedium": {
-                          "type": "string"
-                        },
-                        "utmCampaign": {
-                          "type": "string"
-                        },
-                        "utmContent": {
-                          "type": "string"
-                        },
-                        "utmTerm": {
-                          "type": "string"
-                        },
-                        "flags": {
-                          "type": "string"
-                        },
-                        "errorMessage": {
-                          "type": "string"
-                        },
-                        "entryRevalidateSeconds": {
-                          "type": "string"
-                        },
-                        "projectName": {
-                          "type": "string"
-                        },
-                        "deploymentId": {
-                          "type": "string"
-                        },
-                        "pathType": {
-                          "type": "string"
-                        },
-                        "pathTypeVariant": {
-                          "type": "string"
-                        },
-                        "requestHostname": {
-                          "type": "string"
-                        },
-                        "requestResolvedIp": {
-                          "type": "string"
-                        },
-                        "requestMethod": {
-                          "type": "string"
-                        },
-                        "requestExtension": {
-                          "type": "string"
-                        },
-                        "requestId": {
-                          "type": "string"
-                        },
-                        "requestApi": {
-                          "type": "string"
-                        },
-                        "referrerUrl": {
-                          "type": "string"
-                        },
-                        "serverActionName": {
-                          "type": "string"
-                        },
-                        "httpStatus": {
-                          "type": "string"
-                        },
-                        "errorCode": {
-                          "type": "string"
-                        },
-                        "source": {
-                          "type": "string"
-                        },
-                        "edgeType": {
-                          "type": "string"
-                        },
-                        "reason": {
-                          "type": "string"
-                        },
-                        "edgeNetworkRegion": {
-                          "type": "string"
-                        },
-                        "functionRegion": {
-                          "type": "string"
-                        },
-                        "imageTransformationRegion": {
-                          "type": "string"
-                        },
-                        "dataCacheRegion": {
-                          "type": "string"
-                        },
-                        "cause": {
-                          "type": "string"
-                        },
-                        "runtime": {
-                          "type": "string"
-                        },
-                        "provider": {
-                          "type": "string"
-                        },
-                        "isrCacheRegion": {
-                          "type": "string"
-                        },
-                        "isrAction": {
-                          "type": "string"
-                        },
-                        "cacheResult": {
-                          "type": "string"
-                        },
-                        "cacheOperation": {
-                          "type": "string"
-                        },
-                        "cacheHostname": {
-                          "type": "string"
-                        },
-                        "cachePath": {
-                          "type": "string"
-                        },
-                        "cacheHitState": {
-                          "type": "string"
-                        },
-                        "cacheHitLevel": {
-                          "type": "string"
-                        },
-                        "cacheApi": {
-                          "type": "string"
-                        },
-                        "cacheReason": {
-                          "type": "string"
-                        },
-                        "clientIp": {
-                          "type": "string"
-                        },
-                        "clientIpCountry": {
-                          "type": "string"
-                        },
-                        "clientUserAgent": {
-                          "type": "string"
-                        },
-                        "httpAccept": {
-                          "type": "string"
-                        },
-                        "clientJa4Digest": {
-                          "type": "string"
-                        },
-                        "asnId": {
-                          "type": "string"
-                        },
-                        "asnName": {
-                          "type": "string"
-                        },
-                        "botName": {
-                          "type": "string"
-                        },
-                        "botCategory": {
-                          "type": "string"
-                        },
-                        "botCategoryLegacy": {
-                          "type": "string"
-                        },
-                        "botVerified": {
-                          "type": "string"
-                        },
-                        "botCheckResult": {
-                          "type": "string"
-                        },
-                        "deepAnalysisCheck": {
-                          "type": "string"
-                        },
-                        "wafAction": {
-                          "type": "string"
-                        },
-                        "wafRuleId": {
-                          "type": "string"
-                        },
-                        "skewProtection": {
-                          "type": "string"
-                        },
-                        "functionStartType": {
-                          "type": "string"
-                        },
-                        "functionDispatcher": {
-                          "type": "string"
-                        },
-                        "isAdditionalRequest": {
-                          "type": "string"
-                        },
-                        "originHostname": {
-                          "type": "string"
-                        },
-                        "originPath": {
-                          "type": "string"
-                        },
-                        "originRoute": {
-                          "type": "string"
-                        },
-                        "fetchType": {
-                          "type": "string"
-                        },
-                        "fetchIndex": {
-                          "type": "string"
-                        },
-                        "imageSource": {
-                          "type": "string"
-                        },
-                        "sourceImage": {
-                          "type": "string"
-                        },
-                        "sourceImagePathname": {
-                          "type": "string"
-                        },
-                        "sourceImageHostname": {
-                          "type": "string"
-                        },
-                        "sourceImageHash": {
-                          "type": "string"
-                        },
-                        "optimizedQuality": {
-                          "type": "string"
-                        },
-                        "optimizedWidthPixels": {
-                          "type": "string"
-                        },
-                        "optimizedFormatMimeType": {
-                          "type": "string"
-                        },
-                        "vdcOperationOrigin": {
-                          "type": "string"
-                        },
-                        "entryName": {
-                          "type": "string"
-                        },
-                        "entryId": {
-                          "type": "string"
-                        },
-                        "entryItemId": {
-                          "type": "string"
-                        },
-                        "tagName": {
-                          "type": "string"
-                        },
-                        "cacheTags": {
-                          "type": "string"
-                        },
-                        "storeId": {
-                          "type": "string"
-                        },
-                        "storeName": {
-                          "type": "string"
-                        },
-                        "blobOperationType": {
-                          "type": "string"
-                        },
-                        "blobOperationLevel": {
-                          "type": "string"
-                        },
-                        "visitorId": {
-                          "type": "string"
-                        },
-                        "eventName": {
-                          "type": "string"
-                        },
-                        "attributionTarget": {
-                          "type": "string"
-                        },
-                        "attributionEventName": {
-                          "type": "string"
-                        },
-                        "metricName": {
-                          "type": "string"
-                        },
-                        "attributes": {
-                          "type": "string"
-                        },
-                        "flagKey": {
-                          "type": "string"
-                        },
-                        "flagVariant": {
-                          "type": "string"
-                        },
-                        "flagEvaluationReason": {
-                          "type": "string"
-                        },
-                        "flagClientName": {
-                          "type": "string"
-                        },
-                        "sdkKeyId": {
-                          "type": "string"
-                        },
-                        "sdkKeyEnvironment": {
-                          "type": "string"
-                        },
-                        "reportingProjectId": {
-                          "type": "string"
-                        },
-                        "reportingProjectName": {
-                          "type": "string"
-                        },
-                        "eventData": {
-                          "type": "string"
-                        },
-                        "middlewareAction": {
-                          "type": "string"
-                        },
-                        "middlewareActionTarget": {
-                          "type": "string"
-                        },
-                        "aiModel": {
-                          "type": "string"
-                        },
-                        "aiGatewayModelId": {
-                          "type": "string"
-                        },
-                        "aiProvider": {
-                          "type": "string"
-                        },
-                        "aiModelType": {
-                          "type": "string"
-                        },
-                        "servedSpeed": {
-                          "type": "string"
-                        },
-                        "virtualModelSlug": {
-                          "type": "string"
-                        },
-                        "virtualModelKind": {
-                          "type": "string"
-                        },
-                        "inferenceEndpointSlug": {
-                          "type": "string"
-                        },
-                        "inferenceScope": {
-                          "type": "string"
-                        },
-                        "inferenceGeoRegion": {
-                          "type": "string"
-                        },
-                        "inferenceProviderRegion": {
-                          "type": "string"
-                        },
-                        "requestedInferenceRegion": {
-                          "type": "string"
-                        },
-                        "costCurrency": {
-                          "type": "string"
-                        },
-                        "marketCostCurrency": {
-                          "type": "string"
-                        },
-                        "cachedInputTokensCurrency": {
-                          "type": "string"
-                        },
-                        "cacheCreationInputTokensCurrency": {
-                          "type": "string"
-                        },
-                        "cacheCreation1hInputTokensCurrency": {
-                          "type": "string"
-                        },
-                        "surchargeCostCurrency": {
-                          "type": "string"
-                        },
-                        "gatewayCostCurrency": {
-                          "type": "string"
-                        },
-                        "keyId": {
-                          "type": "string"
-                        },
-                        "keyName": {
-                          "type": "string"
-                        },
-                        "authMethod": {
-                          "type": "string"
-                        },
-                        "appName": {
-                          "type": "string"
-                        },
-                        "codingAgent": {
-                          "type": "string"
-                        },
-                        "isByok": {
-                          "type": "string"
-                        },
-                        "isPrivateModel": {
-                          "type": "string"
-                        },
-                        "isRequestZdr": {
-                          "type": "string"
-                        },
-                        "hipaaRequested": {
-                          "type": "string"
-                        },
-                        "quotaRequested": {
-                          "type": "string"
-                        },
-                        "quotaEntityId": {
-                          "type": "string"
-                        },
-                        "quotaEntityType": {
-                          "type": "string"
-                        },
-                        "videoResolution": {
-                          "type": "string"
-                        },
-                        "videoAspectRatio": {
-                          "type": "string"
-                        },
-                        "piiRedactionApplied": {
-                          "type": "string"
-                        },
-                        "moderationApplied": {
-                          "type": "string"
-                        },
-                        "queueName": {
-                          "type": "string"
-                        },
-                        "consumerGroup": {
-                          "type": "string"
-                        },
-                        "messageId": {
-                          "type": "string"
-                        },
-                        "eventType": {
-                          "type": "string"
-                        },
-                        "notificationUrl": {
-                          "type": "string"
-                        },
-                        "sandboxSessionId": {
-                          "type": "string"
-                        },
-                        "sandboxName": {
-                          "type": "string"
-                        },
-                        "workflowRunId": {
-                          "type": "string"
-                        },
-                        "workflowName": {
-                          "type": "string"
-                        },
-                        "workflowStatus": {
-                          "type": "string"
-                        },
-                        "stepRunId": {
-                          "type": "string"
-                        },
-                        "workflowStepName": {
-                          "type": "string"
-                        },
-                        "workflowEventType": {
-                          "type": "string"
-                        },
-                        "region": {
-                          "type": "string"
-                        },
-                        "specVersion": {
-                          "type": "string"
-                        },
-                        "contentType": {
-                          "type": "string"
-                        },
-                        "rewriteDestinationHostname": {
-                          "type": "string"
-                        },
-                        "externalRewriteTargetHost": {
-                          "type": "string"
-                        },
-                        "externalRewriteTargetPath": {
-                          "type": "string"
-                        },
-                        "commitSha": {
-                          "type": "string"
-                        },
-                        "reviewConclusion": {
-                          "type": "string"
-                        },
-                        "pullRequestNumber": {
-                          "type": "string"
-                        },
-                        "repositoryName": {
-                          "type": "string"
-                        },
-                        "repositoryOwner": {
-                          "type": "string"
-                        },
-                        "reviewStatus": {
-                          "type": "string"
-                        },
-                        "pullRequestState": {
-                          "type": "string"
-                        },
-                        "triggeringTag": {
-                          "type": "string"
-                        },
-                        "redirectLocation": {
-                          "type": "string"
-                        },
-                        "microfrontendsResponseReason": {
-                          "type": "string"
-                        },
-                        "microfrontendsMatchedPath": {
-                          "type": "string"
-                        },
-                        "microfrontendsDefaultAppDeploymentId": {
-                          "type": "string"
-                        },
-                        "microfrontendsDefaultAppProjectId": {
-                          "type": "string"
-                        },
-                        "service": {
-                          "type": "string"
-                        },
-                        "isPrefetchRequest": {
-                          "type": "string"
-                        },
-                        "spendReportGroupBy": {
-                          "type": "string"
-                        },
-                        "spendReportDatePart": {
-                          "type": "string"
-                        },
-                        "providerAttemptCanonicalSlug": {
-                          "type": "string"
-                        },
-                        "providerAttemptCredentialType": {
-                          "type": "string"
-                        },
-                        "providerAttemptSuccess": {
-                          "type": "string"
-                        },
-                        "providerAttemptStatusCode": {
-                          "type": "string"
-                        },
-                        "providerAttemptTimeout": {
-                          "type": "string"
-                        },
-                        "providerAttemptIsFinal": {
-                          "type": "string"
-                        },
-                        "providerAttemptNumber": {
-                          "type": "string"
-                        },
-                        "providerAttemptTotalInRequest": {
-                          "type": "string"
-                        },
-                        "generationId": {
-                          "type": "string"
-                        },
-                        "sessionId": {
-                          "type": "string"
-                        },
-                        "contentCaptureStatus": {
-                          "type": "string"
-                        },
-                        "contentCaptureInputs": {
-                          "type": "string"
-                        },
-                        "contentCaptureOutputs": {
-                          "type": "string"
-                        },
-                        "transcriptStatus": {
-                          "type": "string"
-                        },
-                        "transcriptInputs": {
-                          "type": "string"
-                        },
-                        "transcriptOutputs": {
-                          "type": "string"
-                        },
-                        "providerAttemptError": {
-                          "type": "string"
-                        },
-                        "providerAttemptSafetyIdentifier": {
-                          "type": "string"
-                        },
-                        "providerAttemptDevSafetyIdentifier": {
-                          "type": "string"
-                        },
-                        "providerAttemptRegion": {
-                          "type": "string"
-                        },
-                        "providerAttemptModelIndex": {
-                          "type": "string"
-                        },
-                        "toolCallType": {
-                          "type": "string"
-                        },
-                        "toolCallProvider": {
-                          "type": "string"
-                        },
-                        "toolCallSuccess": {
-                          "type": "string"
-                        },
-                        "toolCallErrorType": {
-                          "type": "string"
-                        },
-                        "toolCallStatusCode": {
-                          "type": "string"
-                        },
-                        "environmentId": {
-                          "type": "string"
-                        },
-                        "billableRegion": {
-                          "type": "string"
-                        },
-                        "direction": {
-                          "type": "string"
-                        },
-                        "networkTenancy": {
-                          "type": "string"
-                        },
-                        "trafficSource": {
-                          "type": "string"
-                        },
-                        "networkId": {
-                          "type": "string"
-                        },
-                        "privatelinkEndpointId": {
-                          "type": "string"
-                        },
-                        "privatelinkDnsName": {
-                          "type": "string"
-                        },
-                        "privatelinkIpAddress": {
-                          "type": "string"
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "projectId": {
+                              "type": "string"
+                            },
+                            "country": {
+                              "type": "string"
+                            },
+                            "deviceType": {
+                              "type": "string"
+                            },
+                            "environment": {
+                              "type": "string"
+                            },
+                            "requestPath": {
+                              "type": "string"
+                            },
+                            "referrerHostname": {
+                              "type": "string"
+                            },
+                            "osName": {
+                              "type": "string"
+                            },
+                            "browserName": {
+                              "type": "string"
+                            },
+                            "route": {
+                              "type": "string"
+                            },
+                            "utmSource": {
+                              "type": "string"
+                            },
+                            "utmMedium": {
+                              "type": "string"
+                            },
+                            "utmCampaign": {
+                              "type": "string"
+                            },
+                            "utmContent": {
+                              "type": "string"
+                            },
+                            "utmTerm": {
+                              "type": "string"
+                            },
+                            "flags": {
+                              "type": "string"
+                            },
+                            "errorMessage": {
+                              "type": "string"
+                            },
+                            "entryRevalidateSeconds": {
+                              "type": "string"
+                            },
+                            "projectName": {
+                              "type": "string"
+                            },
+                            "deploymentId": {
+                              "type": "string"
+                            },
+                            "pathType": {
+                              "type": "string"
+                            },
+                            "pathTypeVariant": {
+                              "type": "string"
+                            },
+                            "requestHostname": {
+                              "type": "string"
+                            },
+                            "requestResolvedIp": {
+                              "type": "string"
+                            },
+                            "requestMethod": {
+                              "type": "string"
+                            },
+                            "requestExtension": {
+                              "type": "string"
+                            },
+                            "requestId": {
+                              "type": "string"
+                            },
+                            "requestApi": {
+                              "type": "string"
+                            },
+                            "referrerUrl": {
+                              "type": "string"
+                            },
+                            "serverActionName": {
+                              "type": "string"
+                            },
+                            "httpStatus": {
+                              "type": "string"
+                            },
+                            "errorCode": {
+                              "type": "string"
+                            },
+                            "source": {
+                              "type": "string"
+                            },
+                            "edgeType": {
+                              "type": "string"
+                            },
+                            "reason": {
+                              "type": "string"
+                            },
+                            "edgeNetworkRegion": {
+                              "type": "string"
+                            },
+                            "functionRegion": {
+                              "type": "string"
+                            },
+                            "imageTransformationRegion": {
+                              "type": "string"
+                            },
+                            "dataCacheRegion": {
+                              "type": "string"
+                            },
+                            "cause": {
+                              "type": "string"
+                            },
+                            "runtime": {
+                              "type": "string"
+                            },
+                            "provider": {
+                              "type": "string"
+                            },
+                            "isrCacheRegion": {
+                              "type": "string"
+                            },
+                            "isrAction": {
+                              "type": "string"
+                            },
+                            "cacheResult": {
+                              "type": "string"
+                            },
+                            "cacheOperation": {
+                              "type": "string"
+                            },
+                            "cacheHostname": {
+                              "type": "string"
+                            },
+                            "cachePath": {
+                              "type": "string"
+                            },
+                            "cacheHitState": {
+                              "type": "string"
+                            },
+                            "cacheHitLevel": {
+                              "type": "string"
+                            },
+                            "cacheApi": {
+                              "type": "string"
+                            },
+                            "cacheReason": {
+                              "type": "string"
+                            },
+                            "clientIp": {
+                              "type": "string"
+                            },
+                            "clientIpCountry": {
+                              "type": "string"
+                            },
+                            "clientUserAgent": {
+                              "type": "string"
+                            },
+                            "httpAccept": {
+                              "type": "string"
+                            },
+                            "clientJa4Digest": {
+                              "type": "string"
+                            },
+                            "asnId": {
+                              "type": "string"
+                            },
+                            "asnName": {
+                              "type": "string"
+                            },
+                            "botName": {
+                              "type": "string"
+                            },
+                            "botCategory": {
+                              "type": "string"
+                            },
+                            "botCategoryLegacy": {
+                              "type": "string"
+                            },
+                            "botVerified": {
+                              "type": "string"
+                            },
+                            "botCheckResult": {
+                              "type": "string"
+                            },
+                            "deepAnalysisCheck": {
+                              "type": "string"
+                            },
+                            "wafAction": {
+                              "type": "string"
+                            },
+                            "wafRuleId": {
+                              "type": "string"
+                            },
+                            "skewProtection": {
+                              "type": "string"
+                            },
+                            "functionStartType": {
+                              "type": "string"
+                            },
+                            "functionDispatcher": {
+                              "type": "string"
+                            },
+                            "isAdditionalRequest": {
+                              "type": "string"
+                            },
+                            "originHostname": {
+                              "type": "string"
+                            },
+                            "originPath": {
+                              "type": "string"
+                            },
+                            "originRoute": {
+                              "type": "string"
+                            },
+                            "fetchType": {
+                              "type": "string"
+                            },
+                            "fetchIndex": {
+                              "type": "string"
+                            },
+                            "imageSource": {
+                              "type": "string"
+                            },
+                            "sourceImage": {
+                              "type": "string"
+                            },
+                            "sourceImagePathname": {
+                              "type": "string"
+                            },
+                            "sourceImageHostname": {
+                              "type": "string"
+                            },
+                            "sourceImageHash": {
+                              "type": "string"
+                            },
+                            "optimizedQuality": {
+                              "type": "string"
+                            },
+                            "optimizedWidthPixels": {
+                              "type": "string"
+                            },
+                            "optimizedFormatMimeType": {
+                              "type": "string"
+                            },
+                            "vdcOperationOrigin": {
+                              "type": "string"
+                            },
+                            "entryName": {
+                              "type": "string"
+                            },
+                            "entryId": {
+                              "type": "string"
+                            },
+                            "entryItemId": {
+                              "type": "string"
+                            },
+                            "tagName": {
+                              "type": "string"
+                            },
+                            "cacheTags": {
+                              "type": "string"
+                            },
+                            "storeId": {
+                              "type": "string"
+                            },
+                            "storeName": {
+                              "type": "string"
+                            },
+                            "blobOperationType": {
+                              "type": "string"
+                            },
+                            "blobOperationLevel": {
+                              "type": "string"
+                            },
+                            "visitorId": {
+                              "type": "string"
+                            },
+                            "eventName": {
+                              "type": "string"
+                            },
+                            "attributionTarget": {
+                              "type": "string"
+                            },
+                            "attributionEventName": {
+                              "type": "string"
+                            },
+                            "metricName": {
+                              "type": "string"
+                            },
+                            "attributes": {
+                              "type": "string"
+                            },
+                            "flagKey": {
+                              "type": "string"
+                            },
+                            "flagVariant": {
+                              "type": "string"
+                            },
+                            "flagEvaluationReason": {
+                              "type": "string"
+                            },
+                            "flagClientName": {
+                              "type": "string"
+                            },
+                            "sdkKeyId": {
+                              "type": "string"
+                            },
+                            "sdkKeyEnvironment": {
+                              "type": "string"
+                            },
+                            "reportingProjectId": {
+                              "type": "string"
+                            },
+                            "reportingProjectName": {
+                              "type": "string"
+                            },
+                            "eventData": {
+                              "type": "string"
+                            },
+                            "middlewareAction": {
+                              "type": "string"
+                            },
+                            "middlewareActionTarget": {
+                              "type": "string"
+                            },
+                            "aiModel": {
+                              "type": "string"
+                            },
+                            "aiGatewayModelId": {
+                              "type": "string"
+                            },
+                            "aiProvider": {
+                              "type": "string"
+                            },
+                            "aiModelType": {
+                              "type": "string"
+                            },
+                            "servedSpeed": {
+                              "type": "string"
+                            },
+                            "virtualModelSlug": {
+                              "type": "string"
+                            },
+                            "virtualModelKind": {
+                              "type": "string"
+                            },
+                            "inferenceEndpointSlug": {
+                              "type": "string"
+                            },
+                            "inferenceScope": {
+                              "type": "string"
+                            },
+                            "inferenceGeoRegion": {
+                              "type": "string"
+                            },
+                            "inferenceProviderRegion": {
+                              "type": "string"
+                            },
+                            "requestedInferenceRegion": {
+                              "type": "string"
+                            },
+                            "costCurrency": {
+                              "type": "string"
+                            },
+                            "marketCostCurrency": {
+                              "type": "string"
+                            },
+                            "cachedInputTokensCurrency": {
+                              "type": "string"
+                            },
+                            "cacheCreationInputTokensCurrency": {
+                              "type": "string"
+                            },
+                            "cacheCreation1hInputTokensCurrency": {
+                              "type": "string"
+                            },
+                            "surchargeCostCurrency": {
+                              "type": "string"
+                            },
+                            "gatewayCostCurrency": {
+                              "type": "string"
+                            },
+                            "keyId": {
+                              "type": "string"
+                            },
+                            "keyName": {
+                              "type": "string"
+                            },
+                            "authMethod": {
+                              "type": "string"
+                            },
+                            "appName": {
+                              "type": "string"
+                            },
+                            "codingAgent": {
+                              "type": "string"
+                            },
+                            "isByok": {
+                              "type": "string"
+                            },
+                            "spendAttribution": {
+                              "type": "string"
+                            },
+                            "isPrivateModel": {
+                              "type": "string"
+                            },
+                            "isRequestZdr": {
+                              "type": "string"
+                            },
+                            "hipaaRequested": {
+                              "type": "string"
+                            },
+                            "quotaRequested": {
+                              "type": "string"
+                            },
+                            "quotaEntityId": {
+                              "type": "string"
+                            },
+                            "quotaEntityType": {
+                              "type": "string"
+                            },
+                            "videoResolution": {
+                              "type": "string"
+                            },
+                            "videoAspectRatio": {
+                              "type": "string"
+                            },
+                            "piiRedactionApplied": {
+                              "type": "string"
+                            },
+                            "moderationApplied": {
+                              "type": "string"
+                            },
+                            "queueName": {
+                              "type": "string"
+                            },
+                            "consumerGroup": {
+                              "type": "string"
+                            },
+                            "messageId": {
+                              "type": "string"
+                            },
+                            "eventType": {
+                              "type": "string"
+                            },
+                            "notificationUrl": {
+                              "type": "string"
+                            },
+                            "sandboxSessionId": {
+                              "type": "string"
+                            },
+                            "sandboxName": {
+                              "type": "string"
+                            },
+                            "workflowRunId": {
+                              "type": "string"
+                            },
+                            "workflowName": {
+                              "type": "string"
+                            },
+                            "workflowStatus": {
+                              "type": "string"
+                            },
+                            "stepRunId": {
+                              "type": "string"
+                            },
+                            "workflowStepName": {
+                              "type": "string"
+                            },
+                            "workflowEventType": {
+                              "type": "string"
+                            },
+                            "region": {
+                              "type": "string"
+                            },
+                            "specVersion": {
+                              "type": "string"
+                            },
+                            "contentType": {
+                              "type": "string"
+                            },
+                            "rewriteDestinationHostname": {
+                              "type": "string"
+                            },
+                            "externalRewriteTargetHost": {
+                              "type": "string"
+                            },
+                            "externalRewriteTargetPath": {
+                              "type": "string"
+                            },
+                            "commitSha": {
+                              "type": "string"
+                            },
+                            "reviewConclusion": {
+                              "type": "string"
+                            },
+                            "pullRequestNumber": {
+                              "type": "string"
+                            },
+                            "repositoryName": {
+                              "type": "string"
+                            },
+                            "repositoryOwner": {
+                              "type": "string"
+                            },
+                            "reviewStatus": {
+                              "type": "string"
+                            },
+                            "pullRequestState": {
+                              "type": "string"
+                            },
+                            "triggeringTag": {
+                              "type": "string"
+                            },
+                            "redirectLocation": {
+                              "type": "string"
+                            },
+                            "microfrontendsResponseReason": {
+                              "type": "string"
+                            },
+                            "microfrontendsMatchedPath": {
+                              "type": "string"
+                            },
+                            "microfrontendsDefaultAppDeploymentId": {
+                              "type": "string"
+                            },
+                            "microfrontendsDefaultAppProjectId": {
+                              "type": "string"
+                            },
+                            "service": {
+                              "type": "string"
+                            },
+                            "isPrefetchRequest": {
+                              "type": "string"
+                            },
+                            "spendReportGroupBy": {
+                              "type": "string"
+                            },
+                            "spendReportDatePart": {
+                              "type": "string"
+                            },
+                            "providerAttemptCanonicalSlug": {
+                              "type": "string"
+                            },
+                            "providerAttemptCredentialType": {
+                              "type": "string"
+                            },
+                            "providerAttemptSuccess": {
+                              "type": "string"
+                            },
+                            "providerAttemptStatusCode": {
+                              "type": "string"
+                            },
+                            "providerAttemptTimeout": {
+                              "type": "string"
+                            },
+                            "providerAttemptIsFinal": {
+                              "type": "string"
+                            },
+                            "providerAttemptNumber": {
+                              "type": "string"
+                            },
+                            "providerAttemptTotalInRequest": {
+                              "type": "string"
+                            },
+                            "generationId": {
+                              "type": "string"
+                            },
+                            "sessionId": {
+                              "type": "string"
+                            },
+                            "contentCaptureStatus": {
+                              "type": "string"
+                            },
+                            "contentCaptureInputs": {
+                              "type": "string"
+                            },
+                            "contentCaptureOutputs": {
+                              "type": "string"
+                            },
+                            "transcriptStatus": {
+                              "type": "string"
+                            },
+                            "transcriptInputs": {
+                              "type": "string"
+                            },
+                            "transcriptOutputs": {
+                              "type": "string"
+                            },
+                            "providerAttemptError": {
+                              "type": "string"
+                            },
+                            "providerAttemptSafetyIdentifier": {
+                              "type": "string"
+                            },
+                            "providerAttemptDevSafetyIdentifier": {
+                              "type": "string"
+                            },
+                            "providerAttemptRegion": {
+                              "type": "string"
+                            },
+                            "providerAttemptModelIndex": {
+                              "type": "string"
+                            },
+                            "toolCallType": {
+                              "type": "string"
+                            },
+                            "toolCallProvider": {
+                              "type": "string"
+                            },
+                            "toolCallSuccess": {
+                              "type": "string"
+                            },
+                            "toolCallErrorType": {
+                              "type": "string"
+                            },
+                            "toolCallStatusCode": {
+                              "type": "string"
+                            },
+                            "environmentId": {
+                              "type": "string"
+                            },
+                            "billableRegion": {
+                              "type": "string"
+                            },
+                            "direction": {
+                              "type": "string"
+                            },
+                            "networkTenancy": {
+                              "type": "string"
+                            },
+                            "trafficSource": {
+                              "type": "string"
+                            },
+                            "networkId": {
+                              "type": "string"
+                            },
+                            "privatelinkEndpointId": {
+                              "type": "string"
+                            },
+                            "privatelinkDnsName": {
+                              "type": "string"
+                            },
+                            "privatelinkIpAddress": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "aiGatewayModelId",
+                            "aiModel",
+                            "aiModelType",
+                            "aiProvider",
+                            "appName",
+                            "asnId",
+                            "asnName",
+                            "attributes",
+                            "attributionEventName",
+                            "attributionTarget",
+                            "authMethod",
+                            "billableRegion",
+                            "blobOperationLevel",
+                            "blobOperationType",
+                            "botCategory",
+                            "botCategoryLegacy",
+                            "botCheckResult",
+                            "botName",
+                            "botVerified",
+                            "browserName",
+                            "cacheApi",
+                            "cacheCreation1hInputTokensCurrency",
+                            "cacheCreationInputTokensCurrency",
+                            "cacheHitLevel",
+                            "cacheHitState",
+                            "cacheHostname",
+                            "cacheOperation",
+                            "cachePath",
+                            "cacheReason",
+                            "cacheResult",
+                            "cacheTags",
+                            "cachedInputTokensCurrency",
+                            "cause",
+                            "clientIp",
+                            "clientIpCountry",
+                            "clientJa4Digest",
+                            "clientUserAgent",
+                            "codingAgent",
+                            "commitSha",
+                            "consumerGroup",
+                            "contentCaptureInputs",
+                            "contentCaptureOutputs",
+                            "contentCaptureStatus",
+                            "contentType",
+                            "costCurrency",
+                            "country",
+                            "dataCacheRegion",
+                            "deepAnalysisCheck",
+                            "deploymentId",
+                            "deviceType",
+                            "direction",
+                            "edgeNetworkRegion",
+                            "edgeType",
+                            "entryId",
+                            "entryItemId",
+                            "entryName",
+                            "entryRevalidateSeconds",
+                            "environment",
+                            "environmentId",
+                            "errorCode",
+                            "errorMessage",
+                            "eventData",
+                            "eventName",
+                            "eventType",
+                            "externalRewriteTargetHost",
+                            "externalRewriteTargetPath",
+                            "fetchIndex",
+                            "fetchType",
+                            "flagClientName",
+                            "flagEvaluationReason",
+                            "flagKey",
+                            "flagVariant",
+                            "flags",
+                            "functionDispatcher",
+                            "functionRegion",
+                            "functionStartType",
+                            "gatewayCostCurrency",
+                            "generationId",
+                            "hipaaRequested",
+                            "httpAccept",
+                            "httpStatus",
+                            "imageSource",
+                            "imageTransformationRegion",
+                            "inferenceEndpointSlug",
+                            "inferenceGeoRegion",
+                            "inferenceProviderRegion",
+                            "inferenceScope",
+                            "isAdditionalRequest",
+                            "isByok",
+                            "isPrefetchRequest",
+                            "isPrivateModel",
+                            "isRequestZdr",
+                            "isrAction",
+                            "isrCacheRegion",
+                            "keyId",
+                            "keyName",
+                            "marketCostCurrency",
+                            "messageId",
+                            "metricName",
+                            "microfrontendsDefaultAppDeploymentId",
+                            "microfrontendsDefaultAppProjectId",
+                            "microfrontendsMatchedPath",
+                            "microfrontendsResponseReason",
+                            "middlewareAction",
+                            "middlewareActionTarget",
+                            "moderationApplied",
+                            "networkId",
+                            "networkTenancy",
+                            "notificationUrl",
+                            "optimizedFormatMimeType",
+                            "optimizedQuality",
+                            "optimizedWidthPixels",
+                            "originHostname",
+                            "originPath",
+                            "originRoute",
+                            "osName",
+                            "pathType",
+                            "pathTypeVariant",
+                            "piiRedactionApplied",
+                            "privatelinkDnsName",
+                            "privatelinkEndpointId",
+                            "privatelinkIpAddress",
+                            "projectId",
+                            "projectName",
+                            "provider",
+                            "providerAttemptCanonicalSlug",
+                            "providerAttemptCredentialType",
+                            "providerAttemptDevSafetyIdentifier",
+                            "providerAttemptError",
+                            "providerAttemptIsFinal",
+                            "providerAttemptModelIndex",
+                            "providerAttemptNumber",
+                            "providerAttemptRegion",
+                            "providerAttemptSafetyIdentifier",
+                            "providerAttemptStatusCode",
+                            "providerAttemptSuccess",
+                            "providerAttemptTimeout",
+                            "providerAttemptTotalInRequest",
+                            "pullRequestNumber",
+                            "pullRequestState",
+                            "queueName",
+                            "quotaEntityId",
+                            "quotaEntityType",
+                            "quotaRequested",
+                            "reason",
+                            "redirectLocation",
+                            "referrerHostname",
+                            "referrerUrl",
+                            "region",
+                            "reportingProjectId",
+                            "reportingProjectName",
+                            "repositoryName",
+                            "repositoryOwner",
+                            "requestApi",
+                            "requestExtension",
+                            "requestHostname",
+                            "requestId",
+                            "requestMethod",
+                            "requestPath",
+                            "requestResolvedIp",
+                            "requestedInferenceRegion",
+                            "reviewConclusion",
+                            "reviewStatus",
+                            "rewriteDestinationHostname",
+                            "route",
+                            "runtime",
+                            "sandboxName",
+                            "sandboxSessionId",
+                            "sdkKeyEnvironment",
+                            "sdkKeyId",
+                            "servedSpeed",
+                            "serverActionName",
+                            "service",
+                            "sessionId",
+                            "skewProtection",
+                            "source",
+                            "sourceImage",
+                            "sourceImageHash",
+                            "sourceImageHostname",
+                            "sourceImagePathname",
+                            "specVersion",
+                            "spendAttribution",
+                            "spendReportDatePart",
+                            "spendReportGroupBy",
+                            "stepRunId",
+                            "storeId",
+                            "storeName",
+                            "surchargeCostCurrency",
+                            "tagName",
+                            "toolCallErrorType",
+                            "toolCallProvider",
+                            "toolCallStatusCode",
+                            "toolCallSuccess",
+                            "toolCallType",
+                            "trafficSource",
+                            "transcriptInputs",
+                            "transcriptOutputs",
+                            "transcriptStatus",
+                            "triggeringTag",
+                            "utmCampaign",
+                            "utmContent",
+                            "utmMedium",
+                            "utmSource",
+                            "utmTerm",
+                            "vdcOperationOrigin",
+                            "videoAspectRatio",
+                            "videoResolution",
+                            "virtualModelKind",
+                            "virtualModelSlug",
+                            "visitorId",
+                            "wafAction",
+                            "wafRuleId",
+                            "workflowEventType",
+                            "workflowName",
+                            "workflowRunId",
+                            "workflowStatus",
+                            "workflowStepName"
+                          ],
+                          "type": "object",
+                          "additionalProperties": {
+                            "nullable": true,
+                            "type": "number"
+                          }
+                        },
+                        {
+                          "properties": {
+                            "visitors": {
+                              "type": "number"
+                            },
+                            "pageviews": {
+                              "type": "number"
+                            }
+                          },
+                          "required": [
+                            "pageviews",
+                            "visitors"
+                          ],
+                          "type": "object"
                         }
-                      },
-                      "required": [
-                        "aiGatewayModelId",
-                        "aiModel",
-                        "aiModelType",
-                        "aiProvider",
-                        "appName",
-                        "asnId",
-                        "asnName",
-                        "attributes",
-                        "attributionEventName",
-                        "attributionTarget",
-                        "authMethod",
-                        "billableRegion",
-                        "blobOperationLevel",
-                        "blobOperationType",
-                        "botCategory",
-                        "botCategoryLegacy",
-                        "botCheckResult",
-                        "botName",
-                        "botVerified",
-                        "browserName",
-                        "cacheApi",
-                        "cacheCreation1hInputTokensCurrency",
-                        "cacheCreationInputTokensCurrency",
-                        "cacheHitLevel",
-                        "cacheHitState",
-                        "cacheHostname",
-                        "cacheOperation",
-                        "cachePath",
-                        "cacheReason",
-                        "cacheResult",
-                        "cacheTags",
-                        "cachedInputTokensCurrency",
-                        "cause",
-                        "clientIp",
-                        "clientIpCountry",
-                        "clientJa4Digest",
-                        "clientUserAgent",
-                        "codingAgent",
-                        "commitSha",
-                        "consumerGroup",
-                        "contentCaptureInputs",
-                        "contentCaptureOutputs",
-                        "contentCaptureStatus",
-                        "contentType",
-                        "costCurrency",
-                        "country",
-                        "dataCacheRegion",
-                        "deepAnalysisCheck",
-                        "deploymentId",
-                        "deviceType",
-                        "direction",
-                        "edgeNetworkRegion",
-                        "edgeType",
-                        "entryId",
-                        "entryItemId",
-                        "entryName",
-                        "entryRevalidateSeconds",
-                        "environment",
-                        "environmentId",
-                        "errorCode",
-                        "errorMessage",
-                        "eventData",
-                        "eventName",
-                        "eventType",
-                        "externalRewriteTargetHost",
-                        "externalRewriteTargetPath",
-                        "fetchIndex",
-                        "fetchType",
-                        "flagClientName",
-                        "flagEvaluationReason",
-                        "flagKey",
-                        "flagVariant",
-                        "flags",
-                        "functionDispatcher",
-                        "functionRegion",
-                        "functionStartType",
-                        "gatewayCostCurrency",
-                        "generationId",
-                        "hipaaRequested",
-                        "httpAccept",
-                        "httpStatus",
-                        "imageSource",
-                        "imageTransformationRegion",
-                        "inferenceEndpointSlug",
-                        "inferenceGeoRegion",
-                        "inferenceProviderRegion",
-                        "inferenceScope",
-                        "isAdditionalRequest",
-                        "isByok",
-                        "isPrefetchRequest",
-                        "isPrivateModel",
-                        "isRequestZdr",
-                        "isrAction",
-                        "isrCacheRegion",
-                        "keyId",
-                        "keyName",
-                        "marketCostCurrency",
-                        "messageId",
-                        "metricName",
-                        "microfrontendsDefaultAppDeploymentId",
-                        "microfrontendsDefaultAppProjectId",
-                        "microfrontendsMatchedPath",
-                        "microfrontendsResponseReason",
-                        "middlewareAction",
-                        "middlewareActionTarget",
-                        "moderationApplied",
-                        "networkId",
-                        "networkTenancy",
-                        "notificationUrl",
-                        "optimizedFormatMimeType",
-                        "optimizedQuality",
-                        "optimizedWidthPixels",
-                        "originHostname",
-                        "originPath",
-                        "originRoute",
-                        "osName",
-                        "pathType",
-                        "pathTypeVariant",
-                        "piiRedactionApplied",
-                        "privatelinkDnsName",
-                        "privatelinkEndpointId",
-                        "privatelinkIpAddress",
-                        "projectId",
-                        "projectName",
-                        "provider",
-                        "providerAttemptCanonicalSlug",
-                        "providerAttemptCredentialType",
-                        "providerAttemptDevSafetyIdentifier",
-                        "providerAttemptError",
-                        "providerAttemptIsFinal",
-                        "providerAttemptModelIndex",
-                        "providerAttemptNumber",
-                        "providerAttemptRegion",
-                        "providerAttemptSafetyIdentifier",
-                        "providerAttemptStatusCode",
-                        "providerAttemptSuccess",
-                        "providerAttemptTimeout",
-                        "providerAttemptTotalInRequest",
-                        "pullRequestNumber",
-                        "pullRequestState",
-                        "queueName",
-                        "quotaEntityId",
-                        "quotaEntityType",
-                        "quotaRequested",
-                        "reason",
-                        "redirectLocation",
-                        "referrerHostname",
-                        "referrerUrl",
-                        "region",
-                        "reportingProjectId",
-                        "reportingProjectName",
-                        "repositoryName",
-                        "repositoryOwner",
-                        "requestApi",
-                        "requestExtension",
-                        "requestHostname",
-                        "requestId",
-                        "requestMethod",
-                        "requestPath",
-                        "requestResolvedIp",
-                        "requestedInferenceRegion",
-                        "reviewConclusion",
-                        "reviewStatus",
-                        "rewriteDestinationHostname",
-                        "route",
-                        "runtime",
-                        "sandboxName",
-                        "sandboxSessionId",
-                        "sdkKeyEnvironment",
-                        "sdkKeyId",
-                        "servedSpeed",
-                        "serverActionName",
-                        "service",
-                        "sessionId",
-                        "skewProtection",
-                        "source",
-                        "sourceImage",
-                        "sourceImageHash",
-                        "sourceImageHostname",
-                        "sourceImagePathname",
-                        "specVersion",
-                        "spendReportDatePart",
-                        "spendReportGroupBy",
-                        "stepRunId",
-                        "storeId",
-                        "storeName",
-                        "surchargeCostCurrency",
-                        "tagName",
-                        "toolCallErrorType",
-                        "toolCallProvider",
-                        "toolCallStatusCode",
-                        "toolCallSuccess",
-                        "toolCallType",
-                        "trafficSource",
-                        "transcriptInputs",
-                        "transcriptOutputs",
-                        "transcriptStatus",
-                        "triggeringTag",
-                        "utmCampaign",
-                        "utmContent",
-                        "utmMedium",
-                        "utmSource",
-                        "utmTerm",
-                        "vdcOperationOrigin",
-                        "videoAspectRatio",
-                        "videoResolution",
-                        "virtualModelKind",
-                        "virtualModelSlug",
-                        "visitorId",
-                        "wafAction",
-                        "wafRuleId",
-                        "workflowEventType",
-                        "workflowName",
-                        "workflowRunId",
-                        "workflowStatus",
-                        "workflowStepName"
-                      ],
-                      "type": "object",
-                      "additionalProperties": {
-                        "nullable": true,
-                        "type": "number"
-                      }
+                      ]
                     }
                   },
                   "required": [
@@ -195438,879 +195862,902 @@
                       "type": "object"
                     },
                     "data": {
-                      "properties": {
-                        "projectId": {
-                          "type": "string"
-                        },
-                        "country": {
-                          "type": "string"
-                        },
-                        "deviceType": {
-                          "type": "string"
-                        },
-                        "environment": {
-                          "type": "string"
-                        },
-                        "requestPath": {
-                          "type": "string"
-                        },
-                        "referrerHostname": {
-                          "type": "string"
-                        },
-                        "osName": {
-                          "type": "string"
-                        },
-                        "browserName": {
-                          "type": "string"
-                        },
-                        "route": {
-                          "type": "string"
-                        },
-                        "utmSource": {
-                          "type": "string"
-                        },
-                        "utmMedium": {
-                          "type": "string"
-                        },
-                        "utmCampaign": {
-                          "type": "string"
-                        },
-                        "utmContent": {
-                          "type": "string"
-                        },
-                        "utmTerm": {
-                          "type": "string"
-                        },
-                        "flags": {
-                          "type": "string"
-                        },
-                        "errorMessage": {
-                          "type": "string"
-                        },
-                        "entryRevalidateSeconds": {
-                          "type": "string"
-                        },
-                        "projectName": {
-                          "type": "string"
-                        },
-                        "deploymentId": {
-                          "type": "string"
-                        },
-                        "pathType": {
-                          "type": "string"
-                        },
-                        "pathTypeVariant": {
-                          "type": "string"
-                        },
-                        "requestHostname": {
-                          "type": "string"
-                        },
-                        "requestResolvedIp": {
-                          "type": "string"
-                        },
-                        "requestMethod": {
-                          "type": "string"
-                        },
-                        "requestExtension": {
-                          "type": "string"
-                        },
-                        "requestId": {
-                          "type": "string"
-                        },
-                        "requestApi": {
-                          "type": "string"
-                        },
-                        "referrerUrl": {
-                          "type": "string"
-                        },
-                        "serverActionName": {
-                          "type": "string"
-                        },
-                        "httpStatus": {
-                          "type": "string"
-                        },
-                        "errorCode": {
-                          "type": "string"
-                        },
-                        "source": {
-                          "type": "string"
-                        },
-                        "edgeType": {
-                          "type": "string"
-                        },
-                        "reason": {
-                          "type": "string"
-                        },
-                        "edgeNetworkRegion": {
-                          "type": "string"
-                        },
-                        "functionRegion": {
-                          "type": "string"
-                        },
-                        "imageTransformationRegion": {
-                          "type": "string"
-                        },
-                        "dataCacheRegion": {
-                          "type": "string"
-                        },
-                        "cause": {
-                          "type": "string"
-                        },
-                        "runtime": {
-                          "type": "string"
-                        },
-                        "provider": {
-                          "type": "string"
-                        },
-                        "isrCacheRegion": {
-                          "type": "string"
-                        },
-                        "isrAction": {
-                          "type": "string"
-                        },
-                        "cacheResult": {
-                          "type": "string"
-                        },
-                        "cacheOperation": {
-                          "type": "string"
-                        },
-                        "cacheHostname": {
-                          "type": "string"
-                        },
-                        "cachePath": {
-                          "type": "string"
-                        },
-                        "cacheHitState": {
-                          "type": "string"
-                        },
-                        "cacheHitLevel": {
-                          "type": "string"
-                        },
-                        "cacheApi": {
-                          "type": "string"
-                        },
-                        "cacheReason": {
-                          "type": "string"
-                        },
-                        "clientIp": {
-                          "type": "string"
-                        },
-                        "clientIpCountry": {
-                          "type": "string"
-                        },
-                        "clientUserAgent": {
-                          "type": "string"
-                        },
-                        "httpAccept": {
-                          "type": "string"
-                        },
-                        "clientJa4Digest": {
-                          "type": "string"
-                        },
-                        "asnId": {
-                          "type": "string"
-                        },
-                        "asnName": {
-                          "type": "string"
-                        },
-                        "botName": {
-                          "type": "string"
-                        },
-                        "botCategory": {
-                          "type": "string"
-                        },
-                        "botCategoryLegacy": {
-                          "type": "string"
-                        },
-                        "botVerified": {
-                          "type": "string"
-                        },
-                        "botCheckResult": {
-                          "type": "string"
-                        },
-                        "deepAnalysisCheck": {
-                          "type": "string"
-                        },
-                        "wafAction": {
-                          "type": "string"
-                        },
-                        "wafRuleId": {
-                          "type": "string"
-                        },
-                        "skewProtection": {
-                          "type": "string"
-                        },
-                        "functionStartType": {
-                          "type": "string"
-                        },
-                        "functionDispatcher": {
-                          "type": "string"
-                        },
-                        "isAdditionalRequest": {
-                          "type": "string"
-                        },
-                        "originHostname": {
-                          "type": "string"
-                        },
-                        "originPath": {
-                          "type": "string"
-                        },
-                        "originRoute": {
-                          "type": "string"
-                        },
-                        "fetchType": {
-                          "type": "string"
-                        },
-                        "fetchIndex": {
-                          "type": "string"
-                        },
-                        "imageSource": {
-                          "type": "string"
-                        },
-                        "sourceImage": {
-                          "type": "string"
-                        },
-                        "sourceImagePathname": {
-                          "type": "string"
-                        },
-                        "sourceImageHostname": {
-                          "type": "string"
-                        },
-                        "sourceImageHash": {
-                          "type": "string"
-                        },
-                        "optimizedQuality": {
-                          "type": "string"
-                        },
-                        "optimizedWidthPixels": {
-                          "type": "string"
-                        },
-                        "optimizedFormatMimeType": {
-                          "type": "string"
-                        },
-                        "vdcOperationOrigin": {
-                          "type": "string"
-                        },
-                        "entryName": {
-                          "type": "string"
-                        },
-                        "entryId": {
-                          "type": "string"
-                        },
-                        "entryItemId": {
-                          "type": "string"
-                        },
-                        "tagName": {
-                          "type": "string"
-                        },
-                        "cacheTags": {
-                          "type": "string"
-                        },
-                        "storeId": {
-                          "type": "string"
-                        },
-                        "storeName": {
-                          "type": "string"
-                        },
-                        "blobOperationType": {
-                          "type": "string"
-                        },
-                        "blobOperationLevel": {
-                          "type": "string"
-                        },
-                        "visitorId": {
-                          "type": "string"
-                        },
-                        "eventName": {
-                          "type": "string"
-                        },
-                        "attributionTarget": {
-                          "type": "string"
-                        },
-                        "attributionEventName": {
-                          "type": "string"
-                        },
-                        "metricName": {
-                          "type": "string"
-                        },
-                        "attributes": {
-                          "type": "string"
-                        },
-                        "flagKey": {
-                          "type": "string"
-                        },
-                        "flagVariant": {
-                          "type": "string"
-                        },
-                        "flagEvaluationReason": {
-                          "type": "string"
-                        },
-                        "flagClientName": {
-                          "type": "string"
-                        },
-                        "sdkKeyId": {
-                          "type": "string"
-                        },
-                        "sdkKeyEnvironment": {
-                          "type": "string"
-                        },
-                        "reportingProjectId": {
-                          "type": "string"
-                        },
-                        "reportingProjectName": {
-                          "type": "string"
-                        },
-                        "eventData": {
-                          "type": "string"
-                        },
-                        "middlewareAction": {
-                          "type": "string"
-                        },
-                        "middlewareActionTarget": {
-                          "type": "string"
-                        },
-                        "aiModel": {
-                          "type": "string"
-                        },
-                        "aiGatewayModelId": {
-                          "type": "string"
-                        },
-                        "aiProvider": {
-                          "type": "string"
-                        },
-                        "aiModelType": {
-                          "type": "string"
-                        },
-                        "servedSpeed": {
-                          "type": "string"
-                        },
-                        "virtualModelSlug": {
-                          "type": "string"
-                        },
-                        "virtualModelKind": {
-                          "type": "string"
-                        },
-                        "inferenceEndpointSlug": {
-                          "type": "string"
-                        },
-                        "inferenceScope": {
-                          "type": "string"
-                        },
-                        "inferenceGeoRegion": {
-                          "type": "string"
-                        },
-                        "inferenceProviderRegion": {
-                          "type": "string"
-                        },
-                        "requestedInferenceRegion": {
-                          "type": "string"
-                        },
-                        "costCurrency": {
-                          "type": "string"
-                        },
-                        "marketCostCurrency": {
-                          "type": "string"
-                        },
-                        "cachedInputTokensCurrency": {
-                          "type": "string"
-                        },
-                        "cacheCreationInputTokensCurrency": {
-                          "type": "string"
-                        },
-                        "cacheCreation1hInputTokensCurrency": {
-                          "type": "string"
-                        },
-                        "surchargeCostCurrency": {
-                          "type": "string"
-                        },
-                        "gatewayCostCurrency": {
-                          "type": "string"
-                        },
-                        "keyId": {
-                          "type": "string"
-                        },
-                        "keyName": {
-                          "type": "string"
-                        },
-                        "authMethod": {
-                          "type": "string"
-                        },
-                        "appName": {
-                          "type": "string"
-                        },
-                        "codingAgent": {
-                          "type": "string"
-                        },
-                        "isByok": {
-                          "type": "string"
-                        },
-                        "isPrivateModel": {
-                          "type": "string"
-                        },
-                        "isRequestZdr": {
-                          "type": "string"
-                        },
-                        "hipaaRequested": {
-                          "type": "string"
-                        },
-                        "quotaRequested": {
-                          "type": "string"
-                        },
-                        "quotaEntityId": {
-                          "type": "string"
-                        },
-                        "quotaEntityType": {
-                          "type": "string"
-                        },
-                        "videoResolution": {
-                          "type": "string"
-                        },
-                        "videoAspectRatio": {
-                          "type": "string"
-                        },
-                        "piiRedactionApplied": {
-                          "type": "string"
-                        },
-                        "moderationApplied": {
-                          "type": "string"
-                        },
-                        "queueName": {
-                          "type": "string"
-                        },
-                        "consumerGroup": {
-                          "type": "string"
-                        },
-                        "messageId": {
-                          "type": "string"
-                        },
-                        "eventType": {
-                          "type": "string"
-                        },
-                        "notificationUrl": {
-                          "type": "string"
-                        },
-                        "sandboxSessionId": {
-                          "type": "string"
-                        },
-                        "sandboxName": {
-                          "type": "string"
-                        },
-                        "workflowRunId": {
-                          "type": "string"
-                        },
-                        "workflowName": {
-                          "type": "string"
-                        },
-                        "workflowStatus": {
-                          "type": "string"
-                        },
-                        "stepRunId": {
-                          "type": "string"
-                        },
-                        "workflowStepName": {
-                          "type": "string"
-                        },
-                        "workflowEventType": {
-                          "type": "string"
-                        },
-                        "region": {
-                          "type": "string"
-                        },
-                        "specVersion": {
-                          "type": "string"
-                        },
-                        "contentType": {
-                          "type": "string"
-                        },
-                        "rewriteDestinationHostname": {
-                          "type": "string"
-                        },
-                        "externalRewriteTargetHost": {
-                          "type": "string"
-                        },
-                        "externalRewriteTargetPath": {
-                          "type": "string"
-                        },
-                        "commitSha": {
-                          "type": "string"
-                        },
-                        "reviewConclusion": {
-                          "type": "string"
-                        },
-                        "pullRequestNumber": {
-                          "type": "string"
-                        },
-                        "repositoryName": {
-                          "type": "string"
-                        },
-                        "repositoryOwner": {
-                          "type": "string"
-                        },
-                        "reviewStatus": {
-                          "type": "string"
-                        },
-                        "pullRequestState": {
-                          "type": "string"
-                        },
-                        "triggeringTag": {
-                          "type": "string"
-                        },
-                        "redirectLocation": {
-                          "type": "string"
-                        },
-                        "microfrontendsResponseReason": {
-                          "type": "string"
-                        },
-                        "microfrontendsMatchedPath": {
-                          "type": "string"
-                        },
-                        "microfrontendsDefaultAppDeploymentId": {
-                          "type": "string"
-                        },
-                        "microfrontendsDefaultAppProjectId": {
-                          "type": "string"
-                        },
-                        "service": {
-                          "type": "string"
-                        },
-                        "isPrefetchRequest": {
-                          "type": "string"
-                        },
-                        "spendReportGroupBy": {
-                          "type": "string"
-                        },
-                        "spendReportDatePart": {
-                          "type": "string"
-                        },
-                        "providerAttemptCanonicalSlug": {
-                          "type": "string"
-                        },
-                        "providerAttemptCredentialType": {
-                          "type": "string"
-                        },
-                        "providerAttemptSuccess": {
-                          "type": "string"
-                        },
-                        "providerAttemptStatusCode": {
-                          "type": "string"
-                        },
-                        "providerAttemptTimeout": {
-                          "type": "string"
-                        },
-                        "providerAttemptIsFinal": {
-                          "type": "string"
-                        },
-                        "providerAttemptNumber": {
-                          "type": "string"
-                        },
-                        "providerAttemptTotalInRequest": {
-                          "type": "string"
-                        },
-                        "generationId": {
-                          "type": "string"
-                        },
-                        "sessionId": {
-                          "type": "string"
-                        },
-                        "contentCaptureStatus": {
-                          "type": "string"
-                        },
-                        "contentCaptureInputs": {
-                          "type": "string"
-                        },
-                        "contentCaptureOutputs": {
-                          "type": "string"
-                        },
-                        "transcriptStatus": {
-                          "type": "string"
-                        },
-                        "transcriptInputs": {
-                          "type": "string"
-                        },
-                        "transcriptOutputs": {
-                          "type": "string"
-                        },
-                        "providerAttemptError": {
-                          "type": "string"
-                        },
-                        "providerAttemptSafetyIdentifier": {
-                          "type": "string"
-                        },
-                        "providerAttemptDevSafetyIdentifier": {
-                          "type": "string"
-                        },
-                        "providerAttemptRegion": {
-                          "type": "string"
-                        },
-                        "providerAttemptModelIndex": {
-                          "type": "string"
-                        },
-                        "toolCallType": {
-                          "type": "string"
-                        },
-                        "toolCallProvider": {
-                          "type": "string"
-                        },
-                        "toolCallSuccess": {
-                          "type": "string"
-                        },
-                        "toolCallErrorType": {
-                          "type": "string"
-                        },
-                        "toolCallStatusCode": {
-                          "type": "string"
-                        },
-                        "environmentId": {
-                          "type": "string"
-                        },
-                        "billableRegion": {
-                          "type": "string"
-                        },
-                        "direction": {
-                          "type": "string"
-                        },
-                        "networkTenancy": {
-                          "type": "string"
-                        },
-                        "trafficSource": {
-                          "type": "string"
-                        },
-                        "networkId": {
-                          "type": "string"
-                        },
-                        "privatelinkEndpointId": {
-                          "type": "string"
-                        },
-                        "privatelinkDnsName": {
-                          "type": "string"
-                        },
-                        "privatelinkIpAddress": {
-                          "type": "string"
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "projectId": {
+                              "type": "string"
+                            },
+                            "country": {
+                              "type": "string"
+                            },
+                            "deviceType": {
+                              "type": "string"
+                            },
+                            "environment": {
+                              "type": "string"
+                            },
+                            "requestPath": {
+                              "type": "string"
+                            },
+                            "referrerHostname": {
+                              "type": "string"
+                            },
+                            "osName": {
+                              "type": "string"
+                            },
+                            "browserName": {
+                              "type": "string"
+                            },
+                            "route": {
+                              "type": "string"
+                            },
+                            "utmSource": {
+                              "type": "string"
+                            },
+                            "utmMedium": {
+                              "type": "string"
+                            },
+                            "utmCampaign": {
+                              "type": "string"
+                            },
+                            "utmContent": {
+                              "type": "string"
+                            },
+                            "utmTerm": {
+                              "type": "string"
+                            },
+                            "flags": {
+                              "type": "string"
+                            },
+                            "errorMessage": {
+                              "type": "string"
+                            },
+                            "entryRevalidateSeconds": {
+                              "type": "string"
+                            },
+                            "projectName": {
+                              "type": "string"
+                            },
+                            "deploymentId": {
+                              "type": "string"
+                            },
+                            "pathType": {
+                              "type": "string"
+                            },
+                            "pathTypeVariant": {
+                              "type": "string"
+                            },
+                            "requestHostname": {
+                              "type": "string"
+                            },
+                            "requestResolvedIp": {
+                              "type": "string"
+                            },
+                            "requestMethod": {
+                              "type": "string"
+                            },
+                            "requestExtension": {
+                              "type": "string"
+                            },
+                            "requestId": {
+                              "type": "string"
+                            },
+                            "requestApi": {
+                              "type": "string"
+                            },
+                            "referrerUrl": {
+                              "type": "string"
+                            },
+                            "serverActionName": {
+                              "type": "string"
+                            },
+                            "httpStatus": {
+                              "type": "string"
+                            },
+                            "errorCode": {
+                              "type": "string"
+                            },
+                            "source": {
+                              "type": "string"
+                            },
+                            "edgeType": {
+                              "type": "string"
+                            },
+                            "reason": {
+                              "type": "string"
+                            },
+                            "edgeNetworkRegion": {
+                              "type": "string"
+                            },
+                            "functionRegion": {
+                              "type": "string"
+                            },
+                            "imageTransformationRegion": {
+                              "type": "string"
+                            },
+                            "dataCacheRegion": {
+                              "type": "string"
+                            },
+                            "cause": {
+                              "type": "string"
+                            },
+                            "runtime": {
+                              "type": "string"
+                            },
+                            "provider": {
+                              "type": "string"
+                            },
+                            "isrCacheRegion": {
+                              "type": "string"
+                            },
+                            "isrAction": {
+                              "type": "string"
+                            },
+                            "cacheResult": {
+                              "type": "string"
+                            },
+                            "cacheOperation": {
+                              "type": "string"
+                            },
+                            "cacheHostname": {
+                              "type": "string"
+                            },
+                            "cachePath": {
+                              "type": "string"
+                            },
+                            "cacheHitState": {
+                              "type": "string"
+                            },
+                            "cacheHitLevel": {
+                              "type": "string"
+                            },
+                            "cacheApi": {
+                              "type": "string"
+                            },
+                            "cacheReason": {
+                              "type": "string"
+                            },
+                            "clientIp": {
+                              "type": "string"
+                            },
+                            "clientIpCountry": {
+                              "type": "string"
+                            },
+                            "clientUserAgent": {
+                              "type": "string"
+                            },
+                            "httpAccept": {
+                              "type": "string"
+                            },
+                            "clientJa4Digest": {
+                              "type": "string"
+                            },
+                            "asnId": {
+                              "type": "string"
+                            },
+                            "asnName": {
+                              "type": "string"
+                            },
+                            "botName": {
+                              "type": "string"
+                            },
+                            "botCategory": {
+                              "type": "string"
+                            },
+                            "botCategoryLegacy": {
+                              "type": "string"
+                            },
+                            "botVerified": {
+                              "type": "string"
+                            },
+                            "botCheckResult": {
+                              "type": "string"
+                            },
+                            "deepAnalysisCheck": {
+                              "type": "string"
+                            },
+                            "wafAction": {
+                              "type": "string"
+                            },
+                            "wafRuleId": {
+                              "type": "string"
+                            },
+                            "skewProtection": {
+                              "type": "string"
+                            },
+                            "functionStartType": {
+                              "type": "string"
+                            },
+                            "functionDispatcher": {
+                              "type": "string"
+                            },
+                            "isAdditionalRequest": {
+                              "type": "string"
+                            },
+                            "originHostname": {
+                              "type": "string"
+                            },
+                            "originPath": {
+                              "type": "string"
+                            },
+                            "originRoute": {
+                              "type": "string"
+                            },
+                            "fetchType": {
+                              "type": "string"
+                            },
+                            "fetchIndex": {
+                              "type": "string"
+                            },
+                            "imageSource": {
+                              "type": "string"
+                            },
+                            "sourceImage": {
+                              "type": "string"
+                            },
+                            "sourceImagePathname": {
+                              "type": "string"
+                            },
+                            "sourceImageHostname": {
+                              "type": "string"
+                            },
+                            "sourceImageHash": {
+                              "type": "string"
+                            },
+                            "optimizedQuality": {
+                              "type": "string"
+                            },
+                            "optimizedWidthPixels": {
+                              "type": "string"
+                            },
+                            "optimizedFormatMimeType": {
+                              "type": "string"
+                            },
+                            "vdcOperationOrigin": {
+                              "type": "string"
+                            },
+                            "entryName": {
+                              "type": "string"
+                            },
+                            "entryId": {
+                              "type": "string"
+                            },
+                            "entryItemId": {
+                              "type": "string"
+                            },
+                            "tagName": {
+                              "type": "string"
+                            },
+                            "cacheTags": {
+                              "type": "string"
+                            },
+                            "storeId": {
+                              "type": "string"
+                            },
+                            "storeName": {
+                              "type": "string"
+                            },
+                            "blobOperationType": {
+                              "type": "string"
+                            },
+                            "blobOperationLevel": {
+                              "type": "string"
+                            },
+                            "visitorId": {
+                              "type": "string"
+                            },
+                            "eventName": {
+                              "type": "string"
+                            },
+                            "attributionTarget": {
+                              "type": "string"
+                            },
+                            "attributionEventName": {
+                              "type": "string"
+                            },
+                            "metricName": {
+                              "type": "string"
+                            },
+                            "attributes": {
+                              "type": "string"
+                            },
+                            "flagKey": {
+                              "type": "string"
+                            },
+                            "flagVariant": {
+                              "type": "string"
+                            },
+                            "flagEvaluationReason": {
+                              "type": "string"
+                            },
+                            "flagClientName": {
+                              "type": "string"
+                            },
+                            "sdkKeyId": {
+                              "type": "string"
+                            },
+                            "sdkKeyEnvironment": {
+                              "type": "string"
+                            },
+                            "reportingProjectId": {
+                              "type": "string"
+                            },
+                            "reportingProjectName": {
+                              "type": "string"
+                            },
+                            "eventData": {
+                              "type": "string"
+                            },
+                            "middlewareAction": {
+                              "type": "string"
+                            },
+                            "middlewareActionTarget": {
+                              "type": "string"
+                            },
+                            "aiModel": {
+                              "type": "string"
+                            },
+                            "aiGatewayModelId": {
+                              "type": "string"
+                            },
+                            "aiProvider": {
+                              "type": "string"
+                            },
+                            "aiModelType": {
+                              "type": "string"
+                            },
+                            "servedSpeed": {
+                              "type": "string"
+                            },
+                            "virtualModelSlug": {
+                              "type": "string"
+                            },
+                            "virtualModelKind": {
+                              "type": "string"
+                            },
+                            "inferenceEndpointSlug": {
+                              "type": "string"
+                            },
+                            "inferenceScope": {
+                              "type": "string"
+                            },
+                            "inferenceGeoRegion": {
+                              "type": "string"
+                            },
+                            "inferenceProviderRegion": {
+                              "type": "string"
+                            },
+                            "requestedInferenceRegion": {
+                              "type": "string"
+                            },
+                            "costCurrency": {
+                              "type": "string"
+                            },
+                            "marketCostCurrency": {
+                              "type": "string"
+                            },
+                            "cachedInputTokensCurrency": {
+                              "type": "string"
+                            },
+                            "cacheCreationInputTokensCurrency": {
+                              "type": "string"
+                            },
+                            "cacheCreation1hInputTokensCurrency": {
+                              "type": "string"
+                            },
+                            "surchargeCostCurrency": {
+                              "type": "string"
+                            },
+                            "gatewayCostCurrency": {
+                              "type": "string"
+                            },
+                            "keyId": {
+                              "type": "string"
+                            },
+                            "keyName": {
+                              "type": "string"
+                            },
+                            "authMethod": {
+                              "type": "string"
+                            },
+                            "appName": {
+                              "type": "string"
+                            },
+                            "codingAgent": {
+                              "type": "string"
+                            },
+                            "isByok": {
+                              "type": "string"
+                            },
+                            "spendAttribution": {
+                              "type": "string"
+                            },
+                            "isPrivateModel": {
+                              "type": "string"
+                            },
+                            "isRequestZdr": {
+                              "type": "string"
+                            },
+                            "hipaaRequested": {
+                              "type": "string"
+                            },
+                            "quotaRequested": {
+                              "type": "string"
+                            },
+                            "quotaEntityId": {
+                              "type": "string"
+                            },
+                            "quotaEntityType": {
+                              "type": "string"
+                            },
+                            "videoResolution": {
+                              "type": "string"
+                            },
+                            "videoAspectRatio": {
+                              "type": "string"
+                            },
+                            "piiRedactionApplied": {
+                              "type": "string"
+                            },
+                            "moderationApplied": {
+                              "type": "string"
+                            },
+                            "queueName": {
+                              "type": "string"
+                            },
+                            "consumerGroup": {
+                              "type": "string"
+                            },
+                            "messageId": {
+                              "type": "string"
+                            },
+                            "eventType": {
+                              "type": "string"
+                            },
+                            "notificationUrl": {
+                              "type": "string"
+                            },
+                            "sandboxSessionId": {
+                              "type": "string"
+                            },
+                            "sandboxName": {
+                              "type": "string"
+                            },
+                            "workflowRunId": {
+                              "type": "string"
+                            },
+                            "workflowName": {
+                              "type": "string"
+                            },
+                            "workflowStatus": {
+                              "type": "string"
+                            },
+                            "stepRunId": {
+                              "type": "string"
+                            },
+                            "workflowStepName": {
+                              "type": "string"
+                            },
+                            "workflowEventType": {
+                              "type": "string"
+                            },
+                            "region": {
+                              "type": "string"
+                            },
+                            "specVersion": {
+                              "type": "string"
+                            },
+                            "contentType": {
+                              "type": "string"
+                            },
+                            "rewriteDestinationHostname": {
+                              "type": "string"
+                            },
+                            "externalRewriteTargetHost": {
+                              "type": "string"
+                            },
+                            "externalRewriteTargetPath": {
+                              "type": "string"
+                            },
+                            "commitSha": {
+                              "type": "string"
+                            },
+                            "reviewConclusion": {
+                              "type": "string"
+                            },
+                            "pullRequestNumber": {
+                              "type": "string"
+                            },
+                            "repositoryName": {
+                              "type": "string"
+                            },
+                            "repositoryOwner": {
+                              "type": "string"
+                            },
+                            "reviewStatus": {
+                              "type": "string"
+                            },
+                            "pullRequestState": {
+                              "type": "string"
+                            },
+                            "triggeringTag": {
+                              "type": "string"
+                            },
+                            "redirectLocation": {
+                              "type": "string"
+                            },
+                            "microfrontendsResponseReason": {
+                              "type": "string"
+                            },
+                            "microfrontendsMatchedPath": {
+                              "type": "string"
+                            },
+                            "microfrontendsDefaultAppDeploymentId": {
+                              "type": "string"
+                            },
+                            "microfrontendsDefaultAppProjectId": {
+                              "type": "string"
+                            },
+                            "service": {
+                              "type": "string"
+                            },
+                            "isPrefetchRequest": {
+                              "type": "string"
+                            },
+                            "spendReportGroupBy": {
+                              "type": "string"
+                            },
+                            "spendReportDatePart": {
+                              "type": "string"
+                            },
+                            "providerAttemptCanonicalSlug": {
+                              "type": "string"
+                            },
+                            "providerAttemptCredentialType": {
+                              "type": "string"
+                            },
+                            "providerAttemptSuccess": {
+                              "type": "string"
+                            },
+                            "providerAttemptStatusCode": {
+                              "type": "string"
+                            },
+                            "providerAttemptTimeout": {
+                              "type": "string"
+                            },
+                            "providerAttemptIsFinal": {
+                              "type": "string"
+                            },
+                            "providerAttemptNumber": {
+                              "type": "string"
+                            },
+                            "providerAttemptTotalInRequest": {
+                              "type": "string"
+                            },
+                            "generationId": {
+                              "type": "string"
+                            },
+                            "sessionId": {
+                              "type": "string"
+                            },
+                            "contentCaptureStatus": {
+                              "type": "string"
+                            },
+                            "contentCaptureInputs": {
+                              "type": "string"
+                            },
+                            "contentCaptureOutputs": {
+                              "type": "string"
+                            },
+                            "transcriptStatus": {
+                              "type": "string"
+                            },
+                            "transcriptInputs": {
+                              "type": "string"
+                            },
+                            "transcriptOutputs": {
+                              "type": "string"
+                            },
+                            "providerAttemptError": {
+                              "type": "string"
+                            },
+                            "providerAttemptSafetyIdentifier": {
+                              "type": "string"
+                            },
+                            "providerAttemptDevSafetyIdentifier": {
+                              "type": "string"
+                            },
+                            "providerAttemptRegion": {
+                              "type": "string"
+                            },
+                            "providerAttemptModelIndex": {
+                              "type": "string"
+                            },
+                            "toolCallType": {
+                              "type": "string"
+                            },
+                            "toolCallProvider": {
+                              "type": "string"
+                            },
+                            "toolCallSuccess": {
+                              "type": "string"
+                            },
+                            "toolCallErrorType": {
+                              "type": "string"
+                            },
+                            "toolCallStatusCode": {
+                              "type": "string"
+                            },
+                            "environmentId": {
+                              "type": "string"
+                            },
+                            "billableRegion": {
+                              "type": "string"
+                            },
+                            "direction": {
+                              "type": "string"
+                            },
+                            "networkTenancy": {
+                              "type": "string"
+                            },
+                            "trafficSource": {
+                              "type": "string"
+                            },
+                            "networkId": {
+                              "type": "string"
+                            },
+                            "privatelinkEndpointId": {
+                              "type": "string"
+                            },
+                            "privatelinkDnsName": {
+                              "type": "string"
+                            },
+                            "privatelinkIpAddress": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "aiGatewayModelId",
+                            "aiModel",
+                            "aiModelType",
+                            "aiProvider",
+                            "appName",
+                            "asnId",
+                            "asnName",
+                            "attributes",
+                            "attributionEventName",
+                            "attributionTarget",
+                            "authMethod",
+                            "billableRegion",
+                            "blobOperationLevel",
+                            "blobOperationType",
+                            "botCategory",
+                            "botCategoryLegacy",
+                            "botCheckResult",
+                            "botName",
+                            "botVerified",
+                            "browserName",
+                            "cacheApi",
+                            "cacheCreation1hInputTokensCurrency",
+                            "cacheCreationInputTokensCurrency",
+                            "cacheHitLevel",
+                            "cacheHitState",
+                            "cacheHostname",
+                            "cacheOperation",
+                            "cachePath",
+                            "cacheReason",
+                            "cacheResult",
+                            "cacheTags",
+                            "cachedInputTokensCurrency",
+                            "cause",
+                            "clientIp",
+                            "clientIpCountry",
+                            "clientJa4Digest",
+                            "clientUserAgent",
+                            "codingAgent",
+                            "commitSha",
+                            "consumerGroup",
+                            "contentCaptureInputs",
+                            "contentCaptureOutputs",
+                            "contentCaptureStatus",
+                            "contentType",
+                            "costCurrency",
+                            "country",
+                            "dataCacheRegion",
+                            "deepAnalysisCheck",
+                            "deploymentId",
+                            "deviceType",
+                            "direction",
+                            "edgeNetworkRegion",
+                            "edgeType",
+                            "entryId",
+                            "entryItemId",
+                            "entryName",
+                            "entryRevalidateSeconds",
+                            "environment",
+                            "environmentId",
+                            "errorCode",
+                            "errorMessage",
+                            "eventData",
+                            "eventName",
+                            "eventType",
+                            "externalRewriteTargetHost",
+                            "externalRewriteTargetPath",
+                            "fetchIndex",
+                            "fetchType",
+                            "flagClientName",
+                            "flagEvaluationReason",
+                            "flagKey",
+                            "flagVariant",
+                            "flags",
+                            "functionDispatcher",
+                            "functionRegion",
+                            "functionStartType",
+                            "gatewayCostCurrency",
+                            "generationId",
+                            "hipaaRequested",
+                            "httpAccept",
+                            "httpStatus",
+                            "imageSource",
+                            "imageTransformationRegion",
+                            "inferenceEndpointSlug",
+                            "inferenceGeoRegion",
+                            "inferenceProviderRegion",
+                            "inferenceScope",
+                            "isAdditionalRequest",
+                            "isByok",
+                            "isPrefetchRequest",
+                            "isPrivateModel",
+                            "isRequestZdr",
+                            "isrAction",
+                            "isrCacheRegion",
+                            "keyId",
+                            "keyName",
+                            "marketCostCurrency",
+                            "messageId",
+                            "metricName",
+                            "microfrontendsDefaultAppDeploymentId",
+                            "microfrontendsDefaultAppProjectId",
+                            "microfrontendsMatchedPath",
+                            "microfrontendsResponseReason",
+                            "middlewareAction",
+                            "middlewareActionTarget",
+                            "moderationApplied",
+                            "networkId",
+                            "networkTenancy",
+                            "notificationUrl",
+                            "optimizedFormatMimeType",
+                            "optimizedQuality",
+                            "optimizedWidthPixels",
+                            "originHostname",
+                            "originPath",
+                            "originRoute",
+                            "osName",
+                            "pathType",
+                            "pathTypeVariant",
+                            "piiRedactionApplied",
+                            "privatelinkDnsName",
+                            "privatelinkEndpointId",
+                            "privatelinkIpAddress",
+                            "projectId",
+                            "projectName",
+                            "provider",
+                            "providerAttemptCanonicalSlug",
+                            "providerAttemptCredentialType",
+                            "providerAttemptDevSafetyIdentifier",
+                            "providerAttemptError",
+                            "providerAttemptIsFinal",
+                            "providerAttemptModelIndex",
+                            "providerAttemptNumber",
+                            "providerAttemptRegion",
+                            "providerAttemptSafetyIdentifier",
+                            "providerAttemptStatusCode",
+                            "providerAttemptSuccess",
+                            "providerAttemptTimeout",
+                            "providerAttemptTotalInRequest",
+                            "pullRequestNumber",
+                            "pullRequestState",
+                            "queueName",
+                            "quotaEntityId",
+                            "quotaEntityType",
+                            "quotaRequested",
+                            "reason",
+                            "redirectLocation",
+                            "referrerHostname",
+                            "referrerUrl",
+                            "region",
+                            "reportingProjectId",
+                            "reportingProjectName",
+                            "repositoryName",
+                            "repositoryOwner",
+                            "requestApi",
+                            "requestExtension",
+                            "requestHostname",
+                            "requestId",
+                            "requestMethod",
+                            "requestPath",
+                            "requestResolvedIp",
+                            "requestedInferenceRegion",
+                            "reviewConclusion",
+                            "reviewStatus",
+                            "rewriteDestinationHostname",
+                            "route",
+                            "runtime",
+                            "sandboxName",
+                            "sandboxSessionId",
+                            "sdkKeyEnvironment",
+                            "sdkKeyId",
+                            "servedSpeed",
+                            "serverActionName",
+                            "service",
+                            "sessionId",
+                            "skewProtection",
+                            "source",
+                            "sourceImage",
+                            "sourceImageHash",
+                            "sourceImageHostname",
+                            "sourceImagePathname",
+                            "specVersion",
+                            "spendAttribution",
+                            "spendReportDatePart",
+                            "spendReportGroupBy",
+                            "stepRunId",
+                            "storeId",
+                            "storeName",
+                            "surchargeCostCurrency",
+                            "tagName",
+                            "toolCallErrorType",
+                            "toolCallProvider",
+                            "toolCallStatusCode",
+                            "toolCallSuccess",
+                            "toolCallType",
+                            "trafficSource",
+                            "transcriptInputs",
+                            "transcriptOutputs",
+                            "transcriptStatus",
+                            "triggeringTag",
+                            "utmCampaign",
+                            "utmContent",
+                            "utmMedium",
+                            "utmSource",
+                            "utmTerm",
+                            "vdcOperationOrigin",
+                            "videoAspectRatio",
+                            "videoResolution",
+                            "virtualModelKind",
+                            "virtualModelSlug",
+                            "visitorId",
+                            "wafAction",
+                            "wafRuleId",
+                            "workflowEventType",
+                            "workflowName",
+                            "workflowRunId",
+                            "workflowStatus",
+                            "workflowStepName"
+                          ],
+                          "type": "object",
+                          "additionalProperties": {
+                            "nullable": true,
+                            "type": "number"
+                          }
+                        },
+                        {
+                          "properties": {
+                            "visitors": {
+                              "type": "number"
+                            },
+                            "count": {
+                              "type": "number"
+                            }
+                          },
+                          "required": [
+                            "count",
+                            "visitors"
+                          ],
+                          "type": "object"
                         }
-                      },
-                      "required": [
-                        "aiGatewayModelId",
-                        "aiModel",
-                        "aiModelType",
-                        "aiProvider",
-                        "appName",
-                        "asnId",
-                        "asnName",
-                        "attributes",
-                        "attributionEventName",
-                        "attributionTarget",
-                        "authMethod",
-                        "billableRegion",
-                        "blobOperationLevel",
-                        "blobOperationType",
-                        "botCategory",
-                        "botCategoryLegacy",
-                        "botCheckResult",
-                        "botName",
-                        "botVerified",
-                        "browserName",
-                        "cacheApi",
-                        "cacheCreation1hInputTokensCurrency",
-                        "cacheCreationInputTokensCurrency",
-                        "cacheHitLevel",
-                        "cacheHitState",
-                        "cacheHostname",
-                        "cacheOperation",
-                        "cachePath",
-                        "cacheReason",
-                        "cacheResult",
-                        "cacheTags",
-                        "cachedInputTokensCurrency",
-                        "cause",
-                        "clientIp",
-                        "clientIpCountry",
-                        "clientJa4Digest",
-                        "clientUserAgent",
-                        "codingAgent",
-                        "commitSha",
-                        "consumerGroup",
-                        "contentCaptureInputs",
-                        "contentCaptureOutputs",
-                        "contentCaptureStatus",
-                        "contentType",
-                        "costCurrency",
-                        "country",
-                        "dataCacheRegion",
-                        "deepAnalysisCheck",
-                        "deploymentId",
-                        "deviceType",
-                        "direction",
-                        "edgeNetworkRegion",
-                        "edgeType",
-                        "entryId",
-                        "entryItemId",
-                        "entryName",
-                        "entryRevalidateSeconds",
-                        "environment",
-                        "environmentId",
-                        "errorCode",
-                        "errorMessage",
-                        "eventData",
-                        "eventName",
-                        "eventType",
-                        "externalRewriteTargetHost",
-                        "externalRewriteTargetPath",
-                        "fetchIndex",
-                        "fetchType",
-                        "flagClientName",
-                        "flagEvaluationReason",
-                        "flagKey",
-                        "flagVariant",
-                        "flags",
-                        "functionDispatcher",
-                        "functionRegion",
-                        "functionStartType",
-                        "gatewayCostCurrency",
-                        "generationId",
-                        "hipaaRequested",
-                        "httpAccept",
-                        "httpStatus",
-                        "imageSource",
-                        "imageTransformationRegion",
-                        "inferenceEndpointSlug",
-                        "inferenceGeoRegion",
-                        "inferenceProviderRegion",
-                        "inferenceScope",
-                        "isAdditionalRequest",
-                        "isByok",
-                        "isPrefetchRequest",
-                        "isPrivateModel",
-                        "isRequestZdr",
-                        "isrAction",
-                        "isrCacheRegion",
-                        "keyId",
-                        "keyName",
-                        "marketCostCurrency",
-                        "messageId",
-                        "metricName",
-                        "microfrontendsDefaultAppDeploymentId",
-                        "microfrontendsDefaultAppProjectId",
-                        "microfrontendsMatchedPath",
-                        "microfrontendsResponseReason",
-                        "middlewareAction",
-                        "middlewareActionTarget",
-                        "moderationApplied",
-                        "networkId",
-                        "networkTenancy",
-                        "notificationUrl",
-                        "optimizedFormatMimeType",
-                        "optimizedQuality",
-                        "optimizedWidthPixels",
-                        "originHostname",
-                        "originPath",
-                        "originRoute",
-                        "osName",
-                        "pathType",
-                        "pathTypeVariant",
-                        "piiRedactionApplied",
-                        "privatelinkDnsName",
-                        "privatelinkEndpointId",
-                        "privatelinkIpAddress",
-                        "projectId",
-                        "projectName",
-                        "provider",
-                        "providerAttemptCanonicalSlug",
-                        "providerAttemptCredentialType",
-                        "providerAttemptDevSafetyIdentifier",
-                        "providerAttemptError",
-                        "providerAttemptIsFinal",
-                        "providerAttemptModelIndex",
-                        "providerAttemptNumber",
-                        "providerAttemptRegion",
-                        "providerAttemptSafetyIdentifier",
-                        "providerAttemptStatusCode",
-                        "providerAttemptSuccess",
-                        "providerAttemptTimeout",
-                        "providerAttemptTotalInRequest",
-                        "pullRequestNumber",
-                        "pullRequestState",
-                        "queueName",
-                        "quotaEntityId",
-                        "quotaEntityType",
-                        "quotaRequested",
-                        "reason",
-                        "redirectLocation",
-                        "referrerHostname",
-                        "referrerUrl",
-                        "region",
-                        "reportingProjectId",
-                        "reportingProjectName",
-                        "repositoryName",
-                        "repositoryOwner",
-                        "requestApi",
-                        "requestExtension",
-                        "requestHostname",
-                        "requestId",
-                        "requestMethod",
-                        "requestPath",
-                        "requestResolvedIp",
-                        "requestedInferenceRegion",
-                        "reviewConclusion",
-                        "reviewStatus",
-                        "rewriteDestinationHostname",
-                        "route",
-                        "runtime",
-                        "sandboxName",
-                        "sandboxSessionId",
-                        "sdkKeyEnvironment",
-                        "sdkKeyId",
-                        "servedSpeed",
-                        "serverActionName",
-                        "service",
-                        "sessionId",
-                        "skewProtection",
-                        "source",
-                        "sourceImage",
-                        "sourceImageHash",
-                        "sourceImageHostname",
-                        "sourceImagePathname",
-                        "specVersion",
-                        "spendReportDatePart",
-                        "spendReportGroupBy",
-                        "stepRunId",
-                        "storeId",
-                        "storeName",
-                        "surchargeCostCurrency",
-                        "tagName",
-                        "toolCallErrorType",
-                        "toolCallProvider",
-                        "toolCallStatusCode",
-                        "toolCallSuccess",
-                        "toolCallType",
-                        "trafficSource",
-                        "transcriptInputs",
-                        "transcriptOutputs",
-                        "transcriptStatus",
-                        "triggeringTag",
-                        "utmCampaign",
-                        "utmContent",
-                        "utmMedium",
-                        "utmSource",
-                        "utmTerm",
-                        "vdcOperationOrigin",
-                        "videoAspectRatio",
-                        "videoResolution",
-                        "virtualModelKind",
-                        "virtualModelSlug",
-                        "visitorId",
-                        "wafAction",
-                        "wafRuleId",
-                        "workflowEventType",
-                        "workflowName",
-                        "workflowRunId",
-                        "workflowStatus",
-                        "workflowStepName"
-                      ],
-                      "type": "object",
-                      "additionalProperties": {
-                        "nullable": true,
-                        "type": "number"
-                      }
+                      ]
                     }
                   },
                   "required": [
@@ -198408,9 +198855,7 @@
                               }
                             },
                             "required": [
-                              "email",
-                              "uid",
-                              "username"
+                              "uid"
                             ],
                             "type": "object",
                             "description": "Information of the user who created the alias"
@@ -198440,8 +198885,7 @@
                               }
                             },
                             "required": [
-                              "id",
-                              "url"
+                              "id"
                             ],
                             "type": "object",
                             "description": "A map with the deployment ID, URL and metadata"
@@ -198921,9 +199365,7 @@
                         }
                       },
                       "required": [
-                        "email",
-                        "uid",
-                        "username"
+                        "uid"
                       ],
                       "type": "object",
                       "description": "Information of the user who created the alias"
@@ -198953,8 +199395,7 @@
                         }
                       },
                       "required": [
-                        "id",
-                        "url"
+                        "id"
                       ],
                       "type": "object",
                       "description": "A map with the deployment ID, URL and metadata"
@@ -201492,6 +201933,296 @@
   },
   "components": {
     "schemas": {
+      "AiGatewayVirtualModelConfig": {
+        "properties": {
+          "ownerId": {
+            "type": "string",
+            "description": "Team (owner) that owns this VMC."
+          },
+          "virtualModelSlug": {
+            "type": "string",
+            "description": "Client-facing alias used as the model slug in Gateway calls."
+          },
+          "displayName": {
+            "type": "string",
+            "description": "Human-readable name for UI."
+          },
+          "description": {
+            "type": "string",
+            "description": "Optional description for UI."
+          },
+          "deleted": {
+            "type": "boolean",
+            "enum": [
+              false,
+              true
+            ],
+            "description": "Whether this VMC is soft-deleted."
+          },
+          "status": {
+            "type": "string",
+            "description": "UI lifecycle status: draft, active, or archived."
+          },
+          "visibility": {
+            "type": "string",
+            "description": "Visibility in listings: public, internal, or stealth."
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "User id that last updated this VMC."
+          },
+          "kind": {
+            "type": "string",
+            "description": "VMC kind: alias, relay, or router."
+          },
+          "baseUrl": {
+            "type": "string",
+            "description": "For kind=relay: URL the gateway forwards requests to as a transparent proxy."
+          },
+          "instanceId": {
+            "type": "string",
+            "description": "The concrete model-provider instance this VMC resolves to."
+          },
+          "providerOrder": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "description": "Ordered list of providers to try as fallbacks on failure."
+          },
+          "providerOnly": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "description": "Restrict routing to only these providers."
+          },
+          "inferenceRegion": {
+            "properties": {
+              "providers": {
+                "additionalProperties": {
+                  "nullable": true,
+                  "properties": {
+                    "scope": {
+                      "type": "string",
+                      "enum": [
+                        "global",
+                        "specific",
+                        "zone"
+                      ],
+                      "description": "Pin scope: `specific` (one provider region), `zone` (geo zone), or `global`."
+                    },
+                    "geoRegion": {
+                      "type": "string",
+                      "description": "Geo zone (e.g. \"us\", \"eu\")."
+                    },
+                    "providerRegion": {
+                      "type": "string",
+                      "description": "Provider-specific region identifier."
+                    }
+                  },
+                  "type": "object",
+                  "description": "Per-provider region overrides keyed by provider slug."
+                },
+                "type": "object",
+                "description": "Per-provider region overrides keyed by provider slug."
+              },
+              "scope": {
+                "type": "string",
+                "enum": [
+                  "global",
+                  "specific",
+                  "zone"
+                ],
+                "description": "Pin scope: `specific` (one provider region), `zone` (geo zone), or `global`."
+              },
+              "geoRegion": {
+                "type": "string",
+                "description": "Geo zone (e.g. \"us\", \"eu\")."
+              },
+              "providerRegion": {
+                "type": "string",
+                "description": "Provider-specific region identifier."
+              }
+            },
+            "type": "object",
+            "description": "Region pinned on the VMC for system-credential routing (alias/router only)."
+          },
+          "modelSlug": {
+            "type": "string",
+            "description": "Canonical model slug this VMC maps to (e.g. \"creator/model\"). Not used by kind=router."
+          },
+          "models": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "description": "For kind=router: ordered candidates, model slugs or router references. Otherwise: fallback models."
+          },
+          "selector": {
+            "type": "string",
+            "enum": [
+              "cost",
+              "priority",
+              "tps",
+              "ttft"
+            ],
+            "description": "For kind=router: how to order candidates."
+          },
+          "requires": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "description": "For kind=router: capability tags a candidate must have."
+          },
+          "byokCredentialIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "description": "BYOK credential IDs allowed for this VMC."
+          },
+          "observabilityTags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "description": "Observability tags attached to requests through this VMC."
+          },
+          "sort": {
+            "type": "string",
+            "enum": [
+              "cost",
+              "latency",
+              "price",
+              "throughput",
+              "tps",
+              "ttft"
+            ],
+            "description": "Rank eligible providers by an attribute."
+          },
+          "has": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "implicit-caching",
+                "vision"
+              ],
+              "description": "Limit providers to those with these features."
+            },
+            "type": "array",
+            "description": "Limit providers to those with these features."
+          },
+          "caching": {
+            "type": "string",
+            "enum": [
+              "auto"
+            ],
+            "description": "Use caching if available."
+          },
+          "serviceTier": {
+            "type": "string",
+            "enum": [
+              "fast",
+              "flex",
+              "priority"
+            ],
+            "description": "Service tier for providers that support it."
+          },
+          "providerTimeouts": {
+            "properties": {
+              "byok": {
+                "additionalProperties": {
+                  "type": "number"
+                },
+                "type": "object"
+              }
+            },
+            "type": "object",
+            "description": "Per-request provider timeouts in ms, keyed by provider slug for BYOK credentials."
+          },
+          "zeroDataRetention": {
+            "type": "boolean",
+            "enum": [
+              false,
+              true
+            ],
+            "description": "Only use providers with zero data retention."
+          },
+          "hipaaCompliant": {
+            "type": "boolean",
+            "enum": [
+              false,
+              true
+            ],
+            "description": "Only use HIPAA-compliant providers."
+          },
+          "disallowPromptTraining": {
+            "type": "boolean",
+            "enum": [
+              false,
+              true
+            ],
+            "description": "Only use providers that will not train on your prompts."
+          },
+          "speed": {
+            "type": "string",
+            "enum": [
+              "fast"
+            ],
+            "description": "Only use fastest providers with short timeouts."
+          },
+          "allowFallbackFromFast": {
+            "type": "boolean",
+            "enum": [
+              false,
+              true
+            ],
+            "description": "Allow fallback from fast to standard providers on failure."
+          },
+          "createdAt": {
+            "type": "number",
+            "description": "Creation timestamp (epoch ms)."
+          },
+          "updatedAt": {
+            "type": "number",
+            "description": "Last update timestamp (epoch ms)."
+          }
+        },
+        "required": [
+          "createdAt",
+          "deleted",
+          "kind",
+          "ownerId",
+          "status",
+          "updatedAt",
+          "virtualModelSlug"
+        ],
+        "type": "object",
+        "description": "Public response shape for virtual model configs. Used so OpenAPI generation can avoid ElectroDB's recursive EntityItem types."
+      },
+      "AiGatewayVirtualModelConfigList": {
+        "properties": {
+          "virtualModelConfigs": {
+            "items": {
+              "$ref": "#/components/schemas/AiGatewayVirtualModelConfig"
+            },
+            "type": "array",
+            "description": "The page of VMCs."
+          },
+          "cursor": {
+            "nullable": true,
+            "type": "string",
+            "description": "Cursor for the next page, or null when no more pages remain."
+          }
+        },
+        "required": [
+          "cursor",
+          "virtualModelConfigs"
+        ],
+        "type": "object"
+      },
       "AiGatewayRule": {
         "properties": {
           "ownerId": {
@@ -209797,6 +210528,128 @@
                           "type"
                         ],
                         "type": "object"
+                      },
+                      {
+                        "properties": {
+                          "createdAt": {
+                            "type": "number"
+                          },
+                          "eventful": {
+                            "type": "boolean",
+                            "enum": [
+                              false,
+                              true
+                            ]
+                          },
+                          "headInfo": {
+                            "properties": {
+                              "owner": {
+                                "type": "string",
+                                "description": "Owner (namespace) slug, e.g. `acme`."
+                              },
+                              "ownerId": {
+                                "type": "string",
+                                "description": "Origin namespace id (`ns_…`)."
+                              },
+                              "ref": {
+                                "type": "string"
+                              },
+                              "repo": {
+                                "type": "string",
+                                "description": "Repository name, e.g. `api`."
+                              },
+                              "repoId": {
+                                "type": "string",
+                                "description": "Origin repository id."
+                              },
+                              "sha": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "owner",
+                              "ownerId",
+                              "ref",
+                              "repo",
+                              "repoId",
+                              "sha"
+                            ],
+                            "type": "object",
+                            "description": "Cursor Origin"
+                          },
+                          "installationId": {
+                            "type": "string",
+                            "description": "Origin installation id (`i_…`) used to resolve the credential."
+                          },
+                          "linkedProjectId": {
+                            "type": "string"
+                          },
+                          "owner": {
+                            "type": "string"
+                          },
+                          "prId": {
+                            "type": "number"
+                          },
+                          "projectId": {
+                            "nullable": true
+                          },
+                          "customEnvId": {
+                            "nullable": true
+                          },
+                          "repo": {
+                            "type": "string"
+                          },
+                          "repoId": {
+                            "type": "string"
+                          },
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "cursor-origin-now-comment"
+                            ]
+                          },
+                          "gitComments": {
+                            "properties": {
+                              "onPullRequest": {
+                                "type": "boolean",
+                                "enum": [
+                                  false,
+                                  true
+                                ]
+                              },
+                              "onCommit": {
+                                "type": "boolean",
+                                "enum": [
+                                  false,
+                                  true
+                                ]
+                              }
+                            },
+                            "required": [
+                              "onCommit",
+                              "onPullRequest"
+                            ],
+                            "type": "object"
+                          },
+                          "provider": {
+                            "type": "string",
+                            "enum": [
+                              "cursor-origin"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "headInfo",
+                          "installationId",
+                          "owner",
+                          "prId",
+                          "projectId",
+                          "provider",
+                          "repo",
+                          "repoId",
+                          "type"
+                        ],
+                        "type": "object"
                       }
                     ]
                   }
@@ -211889,8 +212742,9 @@
                     ]
                   },
                   "sourceRepo": {
+                    "nullable": true,
                     "type": "string",
-                    "description": "Source repository, \"owner/name\"."
+                    "description": "Source repository, \"owner/name\". Null when the pushed content was generated in-request (push-files-to-repo) rather than copied from a repository."
                   },
                   "sourceCommitSha": {
                     "nullable": true,
@@ -211922,7 +212776,8 @@
                       "authorization",
                       "push",
                       "unexpected",
-                      "unknown"
+                      "unknown",
+                      "validation"
                     ],
                     "description": "Mirrors `PushFailureStage` in `@api/git-push-repo`."
                   },
@@ -214554,6 +215409,32 @@
                             "type": "object"
                           },
                           "connexTokenRequests": {
+                            "properties": {
+                              "updatedAt": {
+                                "type": "number"
+                              },
+                              "blockedFrom": {
+                                "type": "number"
+                              },
+                              "blockedUntil": {
+                                "type": "number"
+                              },
+                              "blockReason": {
+                                "type": "string",
+                                "enum": [
+                                  "admin_override",
+                                  "hard_blocked",
+                                  "limits_exceeded"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "blockReason",
+                              "updatedAt"
+                            ],
+                            "type": "object"
+                          },
+                          "kmsOperations": {
                             "properties": {
                               "updatedAt": {
                                 "type": "number"

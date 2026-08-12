@@ -819,6 +819,287 @@
         ]
       }
     },
+    "/v1/ai-gateway/virtual-model-configs": {
+      "post": {
+        "tags": [
+          "api-ai-gateway"
+        ],
+        "summary": "Create virtual model config",
+        "description": "Create a virtual model config (VMC)",
+        "operationId": "CreateAiGatewayVirtualModelConfig",
+        "parameters": [
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayVirtualModelConfig"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "api-ai-gateway"
+        ],
+        "summary": "Get virtual model config",
+        "description": "Get a virtual model config",
+        "operationId": "GetAiGatewayVirtualModelConfig",
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "virtualModelSlug",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayVirtualModelConfig"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "api-ai-gateway"
+        ],
+        "summary": "Update virtual model config",
+        "description": "Update a virtual model config",
+        "operationId": "UpdateAiGatewayVirtualModelConfig",
+        "parameters": [
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayVirtualModelConfig"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "api-ai-gateway"
+        ],
+        "summary": "Delete virtual model config",
+        "description": "Delete a virtual model config (soft delete)",
+        "operationId": "DeleteAiGatewayVirtualModelConfig",
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "virtualModelSlug",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteAiGatewayVirtualModelConfig204ResponseSchema"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
+    "/v1/ai-gateway/virtual-model-configs/list": {
+      "get": {
+        "tags": [
+          "api-ai-gateway"
+        ],
+        "summary": "List virtual model configs",
+        "description": "List virtual model configs. With \u0060ownerId\u0060, returns all of that team\u0027s VMCs. Without it, pages through VMCs across all teams (newest-first, \u0060limit\u0060/\u0060cursor\u0060).",
+        "operationId": "ListAiGatewayVirtualModelConfigs",
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayVirtualModelConfigList"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
     "/v1/ai-gateway/rules": {
       "post": {
         "tags": [
@@ -20513,7 +20794,7 @@
           "teams"
         ],
         "summary": "Remove a Team Member",
-        "description": "Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team.",
+        "description": "Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team. Directory Sync members can be removed when their directory email is absent or does not match the user\u0027s primary or verified secondary emails.",
         "operationId": "RemoveTeamMember",
         "parameters": [
           {
@@ -25209,6 +25490,189 @@
   },
   "components": {
     "schemas": {
+      "AiGatewayVirtualModelConfig": {
+        "required": [
+          "createdAt",
+          "deleted",
+          "kind",
+          "ownerId",
+          "status",
+          "updatedAt",
+          "virtualModelSlug"
+        ],
+        "type": "object",
+        "properties": {
+          "ownerId": {
+            "type": "string",
+            "description": "Team (owner) that owns this VMC."
+          },
+          "virtualModelSlug": {
+            "type": "string",
+            "description": "Client-facing alias used as the model slug in Gateway calls."
+          },
+          "displayName": {
+            "type": "string",
+            "description": "Human-readable name for UI."
+          },
+          "description": {
+            "type": "string",
+            "description": "Optional description for UI."
+          },
+          "deleted": {
+            "type": "boolean",
+            "additionalProperties": false,
+            "description": "Whether this VMC is soft-deleted."
+          },
+          "status": {
+            "type": "string",
+            "description": "\u0022UI lifecycle status: draft, active, or archived.\u0022"
+          },
+          "visibility": {
+            "type": "string",
+            "description": "\u0022Visibility in listings: public, internal, or stealth.\u0022"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "User id that last updated this VMC."
+          },
+          "kind": {
+            "type": "string",
+            "description": "\u0022VMC kind: alias, relay, or router.\u0022"
+          },
+          "baseUrl": {
+            "type": "string",
+            "description": "\u0022For kind=relay: URL the gateway forwards requests to as a transparent proxy.\u0022"
+          },
+          "instanceId": {
+            "type": "string",
+            "description": "The concrete model-provider instance this VMC resolves to."
+          },
+          "providerOrder": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Ordered list of providers to try as fallbacks on failure."
+          },
+          "providerOnly": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Restrict routing to only these providers."
+          },
+          "inferenceRegion": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigInferenceRegion"
+          },
+          "modelSlug": {
+            "type": "string",
+            "description": "Canonical model slug this VMC maps to (e.g. \u0022creator/model\u0022). Not used by kind=router."
+          },
+          "models": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "\u0022For kind=router: ordered candidates, model slugs or router references. Otherwise: fallback models.\u0022"
+          },
+          "selector": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigSelector"
+          },
+          "requires": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "\u0022For kind=router: capability tags a candidate must have.\u0022"
+          },
+          "byokCredentialIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "BYOK credential IDs allowed for this VMC."
+          },
+          "observabilityTags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Observability tags attached to requests through this VMC."
+          },
+          "sort": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigSort"
+          },
+          "has": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AiGatewayVirtualModelConfigHasItem"
+            },
+            "description": "Limit providers to those with these features."
+          },
+          "caching": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigCaching"
+          },
+          "serviceTier": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigServiceTier"
+          },
+          "providerTimeouts": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigProviderTimeouts"
+          },
+          "zeroDataRetention": {
+            "type": "boolean",
+            "additionalProperties": false,
+            "description": "Only use providers with zero data retention."
+          },
+          "hipaaCompliant": {
+            "type": "boolean",
+            "additionalProperties": false,
+            "description": "Only use HIPAA-compliant providers."
+          },
+          "disallowPromptTraining": {
+            "type": "boolean",
+            "additionalProperties": false,
+            "description": "Only use providers that will not train on your prompts."
+          },
+          "speed": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigSpeed"
+          },
+          "allowFallbackFromFast": {
+            "type": "boolean",
+            "additionalProperties": false,
+            "description": "Allow fallback from fast to standard providers on failure."
+          },
+          "createdAt": {
+            "type": "number",
+            "description": "Creation timestamp (epoch ms)."
+          },
+          "updatedAt": {
+            "type": "number",
+            "description": "Last update timestamp (epoch ms)."
+          }
+        },
+        "description": "Public response shape for virtual model configs. Used so OpenAPI generation can avoid ElectroDB\u0027s recursive EntityItem types."
+      },
+      "AiGatewayVirtualModelConfigList": {
+        "required": [
+          "cursor",
+          "virtualModelConfigs"
+        ],
+        "type": "object",
+        "properties": {
+          "virtualModelConfigs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AiGatewayVirtualModelConfig"
+            },
+            "description": "The page of VMCs."
+          },
+          "cursor": {
+            "type": "string",
+            "description": "Cursor for the next page, or null when no more pages remain.",
+            "nullable": true
+          }
+        }
+      },
       "AiGatewayRule": {
         "required": [
           "createdAt",
@@ -34561,7 +35025,8 @@
           },
           "sourceRepo": {
             "type": "string",
-            "description": "Source repository, \u0022owner/name\u0022."
+            "description": "Source repository, \u0022owner/name\u0022. Null when the pushed content was generated in-request (push-files-to-repo) rather than copied from a repository.",
+            "nullable": true
           },
           "sourceCommitSha": {
             "type": "string",
@@ -41534,6 +41999,9 @@
           },
           {
             "$ref": "#/components/schemas/UserEventPayloadOneOf98JobOneOf9"
+          },
+          {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf98JobOneOf10"
           }
         ],
         "properties": {
@@ -41553,7 +42021,8 @@
             "UserEventPayloadOneOf98JobOneOf6": "#/components/schemas/UserEventPayloadOneOf98JobOneOf6",
             "UserEventPayloadOneOf98JobOneOf7": "#/components/schemas/UserEventPayloadOneOf98JobOneOf7",
             "UserEventPayloadOneOf98JobOneOf8": "#/components/schemas/UserEventPayloadOneOf98JobOneOf8",
-            "UserEventPayloadOneOf98JobOneOf9": "#/components/schemas/UserEventPayloadOneOf98JobOneOf9"
+            "UserEventPayloadOneOf98JobOneOf9": "#/components/schemas/UserEventPayloadOneOf98JobOneOf9",
+            "UserEventPayloadOneOf98JobOneOf10": "#/components/schemas/UserEventPayloadOneOf98JobOneOf10"
           }
         }
       },
@@ -43425,6 +43894,66 @@
           }
         }
       },
+      "UserEventPayloadOneOf98JobOneOf10": {
+        "required": [
+          "headInfo",
+          "installationId",
+          "owner",
+          "prId",
+          "projectId",
+          "provider",
+          "repo",
+          "repoId",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "number"
+          },
+          "eventful": {
+            "type": "boolean",
+            "additionalProperties": false
+          },
+          "headInfo": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf98JobOneOf10HeadInfo"
+          },
+          "installationId": {
+            "type": "string",
+            "description": "Origin installation id (\u0060i_\u2026\u0060) used to resolve the credential."
+          },
+          "linkedProjectId": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "prId": {
+            "type": "number"
+          },
+          "projectId": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf98JobOneOf10ProjectId"
+          },
+          "customEnvId": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf98JobOneOf10CustomEnvId"
+          },
+          "repo": {
+            "type": "string"
+          },
+          "repoId": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf98JobOneOf10Type"
+          },
+          "gitComments": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf98JobOneOf10GitComments"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf98JobOneOf10Provider"
+          }
+        }
+      },
       "UserEventPayloadOneOf158NewOwnerCredentialsItemOneOf1": {
         "required": [
           "id",
@@ -44300,6 +44829,35 @@
             "$ref": "#/components/schemas/UserEventPayloadOneOf180FactorsOneOf2ItemOneOf2Origin"
           }
         }
+      },
+      "AiGatewayVirtualModelConfigInferenceRegion": {
+        "type": "object",
+        "properties": {
+          "providers": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigInferenceRegionProvidersProperty"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigInferenceRegionScope"
+          },
+          "geoRegion": {
+            "type": "string",
+            "description": "Geo zone (e.g. \u0022us\u0022, \u0022eu\u0022)."
+          },
+          "providerRegion": {
+            "type": "string",
+            "description": "Provider-specific region identifier."
+          }
+        },
+        "description": "Region pinned on the VMC for system-credential routing (alias/router only)."
+      },
+      "AiGatewayVirtualModelConfigProviderTimeouts": {
+        "type": "object",
+        "properties": {
+          "byok": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigProviderTimeoutsByokProperty"
+          }
+        },
+        "description": "Per-request provider timeouts in ms, keyed by provider slug for BYOK credentials."
       },
       "AiGatewayRuleMatch": {
         "type": "object",
@@ -50442,6 +51000,72 @@
         },
         "description": "Cursor Origin"
       },
+      "UserEventPayloadOneOf98JobOneOf10HeadInfo": {
+        "required": [
+          "owner",
+          "ownerId",
+          "ref",
+          "repo",
+          "repoId",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "owner": {
+            "type": "string",
+            "description": "Owner (namespace) slug, e.g. \u0060acme\u0060."
+          },
+          "ownerId": {
+            "type": "string",
+            "description": "Origin namespace id (\u0060ns_\u2026\u0060)."
+          },
+          "ref": {
+            "type": "string"
+          },
+          "repo": {
+            "type": "string",
+            "description": "Repository name, e.g. \u0060api\u0060."
+          },
+          "repoId": {
+            "type": "string",
+            "description": "Origin repository id."
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Cursor Origin"
+      },
+      "UserEventPayloadOneOf98JobOneOf10GitComments": {
+        "required": [
+          "onCommit",
+          "onPullRequest"
+        ],
+        "type": "object",
+        "properties": {
+          "onPullRequest": {
+            "type": "boolean",
+            "additionalProperties": false
+          },
+          "onCommit": {
+            "type": "boolean",
+            "additionalProperties": false
+          }
+        }
+      },
+      "AiGatewayVirtualModelConfigInferenceRegionProviders": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/AiGatewayVirtualModelConfigInferenceRegionProvidersAdditionalProperties"
+        },
+        "description": "Per-provider region overrides keyed by provider slug."
+      },
+      "AiGatewayVirtualModelConfigProviderTimeoutsByok": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number"
+        }
+      },
       "RegistrantFieldAnyOf2OptionsItemFields": {
         "type": "object"
       },
@@ -51967,6 +52591,9 @@
           "connexTokenRequests": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf158NewOwnerFeatureBlocksConnexTokenRequests"
           },
+          "kmsOperations": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf158NewOwnerFeatureBlocksKmsOperations"
+          },
           "vcr": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf158NewOwnerFeatureBlocksVcr"
           }
@@ -52812,6 +53439,24 @@
             "nullable": true
           }
         }
+      },
+      "AiGatewayVirtualModelConfigInferenceRegionProvidersAdditionalProperties": {
+        "type": "object",
+        "properties": {
+          "scope": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigInferenceRegionProvidersAdditionalPropertiesScope"
+          },
+          "geoRegion": {
+            "type": "string",
+            "description": "Geo zone (e.g. \u0022us\u0022, \u0022eu\u0022)."
+          },
+          "providerRegion": {
+            "type": "string",
+            "description": "Provider-specific region identifier."
+          }
+        },
+        "description": "Per-provider region overrides keyed by provider slug.",
+        "nullable": true
       },
       "FlagEnvironmentsAdditionalPropertiesReuse": {
         "required": [
@@ -54222,6 +54867,27 @@
           }
         }
       },
+      "UserEventPayloadOneOf158NewOwnerFeatureBlocksKmsOperations": {
+        "required": [
+          "blockReason",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "updatedAt": {
+            "type": "number"
+          },
+          "blockedFrom": {
+            "type": "number"
+          },
+          "blockedUntil": {
+            "type": "number"
+          },
+          "blockReason": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf158NewOwnerFeatureBlocksKmsOperationsBlockReason"
+          }
+        }
+      },
       "UserEventPayloadOneOf158NewOwnerFeatureBlocksVcr": {
         "required": [
           "blockReason",
@@ -55247,6 +55913,9 @@
             "type": "string"
           }
         }
+      },
+      "DeleteAiGatewayVirtualModelConfig204Response": {
+        "type": "object"
       },
       "DeleteAiGatewayRule204Response": {
         "type": "object"
@@ -56345,6 +57014,7 @@
         "required": [
           "createdAt",
           "data",
+          "displayName",
           "id",
           "name",
           "ownerId",
@@ -56416,6 +57086,9 @@
             "description": "Which of the service\u0027s products/surfaces this connector points at."
           },
           "name": {
+            "type": "string"
+          },
+          "displayName": {
             "type": "string"
           },
           "clientUrl": {
@@ -65011,7 +65684,6 @@
       },
       "CreateProjectEnv201Response": {
         "required": [
-          "created",
           "failed"
         ],
         "type": "object",
@@ -74796,6 +75468,9 @@
         "type": "object",
         "description": "Default response schema"
       },
+      "DeleteAiGatewayVirtualModelConfig204ResponseSchema": {
+        "type": "object"
+      },
       "DeleteAiGatewayRule204ResponseSchema": {
         "type": "object"
       },
@@ -75656,8 +76331,7 @@
       "GetRedirects200ResponseOneOf2": {
         "required": [
           "pagination",
-          "redirects",
-          "version"
+          "redirects"
         ],
         "type": "object",
         "properties": {
@@ -75678,18 +76352,19 @@
       "GetRedirects200ResponseOneOf3": {
         "required": [
           "pagination",
-          "redirects"
+          "redirects",
+          "version"
         ],
         "type": "object",
         "properties": {
+          "version": {
+            "$ref": "#/components/schemas/GetRedirects200ResponseOneOf3Version"
+          },
           "redirects": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/GetRedirects200ResponseOneOf3RedirectsItem"
             }
-          },
-          "version": {
-            "$ref": "#/components/schemas/GetRedirects200ResponseOneOf3Version"
           },
           "pagination": {
             "$ref": "#/components/schemas/GetRedirects200ResponseOneOf3Pagination"
@@ -78408,7 +79083,6 @@
       },
       "CreateRecord200ResponseOneOf1": {
         "required": [
-          "uid",
           "updated"
         ],
         "type": "object",
@@ -93723,11 +94397,30 @@
       "UserEventPayloadOneOf98JobOneOf5CustomEnvId": {
         "type": "object"
       },
+      "UserEventPayloadOneOf98JobOneOf10ProjectId": {
+        "type": "object"
+      },
+      "UserEventPayloadOneOf98JobOneOf10CustomEnvId": {
+        "type": "object"
+      },
       "UserEventPayloadOneOf187ProjectMicrofrontendsOneOf3GroupIdsItem": {
         "type": "object"
       },
       "UserEventPayloadOneOf187PrevProjectMicrofrontendsOneOf3GroupIdsItem": {
         "type": "object"
+      },
+      "AiGatewayVirtualModelConfigInferenceRegionProvidersProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/AiGatewayVirtualModelConfigInferenceRegionProvidersAdditionalProperties"
+        },
+        "description": "Per-provider region overrides keyed by provider slug."
+      },
+      "AiGatewayVirtualModelConfigProviderTimeoutsByokProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number"
+        }
       },
       "RegistrantFieldAnyOf2OptionsItemFieldsProperty": {
         "type": "object"
@@ -95201,6 +95894,7 @@
       },
       "CreateConnectorAuthorizationRequest200ResponseConnector": {
         "required": [
+          "displayName",
           "id",
           "name",
           "type",
@@ -95227,6 +95921,10 @@
           "serviceName": {
             "type": "string",
             "description": "Curated display name of the resolved service (e.g. \u0022Salesforce\u0022), present when the service is a known service. Suited for end-user surfaces like \u0022Sign in with {serviceName}\u0022."
+          },
+          "displayName": {
+            "type": "string",
+            "description": "Provider-facing display name when the connector type exposes one, falling back to the stored connector name."
           },
           "name": {
             "type": "string",
@@ -95244,6 +95942,7 @@
       },
       "CreateConnectorInstallationRequest200ResponseConnector": {
         "required": [
+          "displayName",
           "id",
           "name",
           "type",
@@ -95270,6 +95969,10 @@
           "serviceName": {
             "type": "string",
             "description": "Curated display name of the resolved service (e.g. \u0022Salesforce\u0022), present when the service is a known service. Suited for end-user surfaces like \u0022Sign in with {serviceName}\u0022."
+          },
+          "displayName": {
+            "type": "string",
+            "description": "Provider-facing display name when the connector type exposes one, falling back to the stored connector name."
           },
           "name": {
             "type": "string",
@@ -119928,224 +120631,6 @@
         }
       },
       "CountPageviews200ResponseData": {
-        "required": [
-          "aiGatewayModelId",
-          "aiModel",
-          "aiModelType",
-          "aiProvider",
-          "appName",
-          "asnId",
-          "asnName",
-          "attributes",
-          "attributionEventName",
-          "attributionTarget",
-          "authMethod",
-          "billableRegion",
-          "blobOperationLevel",
-          "blobOperationType",
-          "botCategory",
-          "botCategoryLegacy",
-          "botCheckResult",
-          "botName",
-          "botVerified",
-          "browserName",
-          "cacheApi",
-          "cacheCreation1hInputTokensCurrency",
-          "cacheCreationInputTokensCurrency",
-          "cacheHitLevel",
-          "cacheHitState",
-          "cacheHostname",
-          "cacheOperation",
-          "cachePath",
-          "cacheReason",
-          "cacheResult",
-          "cacheTags",
-          "cachedInputTokensCurrency",
-          "cause",
-          "clientIp",
-          "clientIpCountry",
-          "clientJa4Digest",
-          "clientUserAgent",
-          "codingAgent",
-          "commitSha",
-          "consumerGroup",
-          "contentCaptureInputs",
-          "contentCaptureOutputs",
-          "contentCaptureStatus",
-          "contentType",
-          "costCurrency",
-          "country",
-          "dataCacheRegion",
-          "deepAnalysisCheck",
-          "deploymentId",
-          "deviceType",
-          "direction",
-          "edgeNetworkRegion",
-          "edgeType",
-          "entryId",
-          "entryItemId",
-          "entryName",
-          "entryRevalidateSeconds",
-          "environment",
-          "environmentId",
-          "errorCode",
-          "errorMessage",
-          "eventData",
-          "eventName",
-          "eventType",
-          "externalRewriteTargetHost",
-          "externalRewriteTargetPath",
-          "fetchIndex",
-          "fetchType",
-          "flagClientName",
-          "flagEvaluationReason",
-          "flagKey",
-          "flagVariant",
-          "flags",
-          "functionDispatcher",
-          "functionRegion",
-          "functionStartType",
-          "gatewayCostCurrency",
-          "generationId",
-          "hipaaRequested",
-          "httpAccept",
-          "httpStatus",
-          "imageSource",
-          "imageTransformationRegion",
-          "inferenceEndpointSlug",
-          "inferenceGeoRegion",
-          "inferenceProviderRegion",
-          "inferenceScope",
-          "isAdditionalRequest",
-          "isByok",
-          "isPrefetchRequest",
-          "isPrivateModel",
-          "isRequestZdr",
-          "isrAction",
-          "isrCacheRegion",
-          "keyId",
-          "keyName",
-          "marketCostCurrency",
-          "messageId",
-          "metricName",
-          "microfrontendsDefaultAppDeploymentId",
-          "microfrontendsDefaultAppProjectId",
-          "microfrontendsMatchedPath",
-          "microfrontendsResponseReason",
-          "middlewareAction",
-          "middlewareActionTarget",
-          "moderationApplied",
-          "networkId",
-          "networkTenancy",
-          "notificationUrl",
-          "optimizedFormatMimeType",
-          "optimizedQuality",
-          "optimizedWidthPixels",
-          "originHostname",
-          "originPath",
-          "originRoute",
-          "osName",
-          "pathType",
-          "pathTypeVariant",
-          "piiRedactionApplied",
-          "privatelinkDnsName",
-          "privatelinkEndpointId",
-          "privatelinkIpAddress",
-          "projectId",
-          "projectName",
-          "provider",
-          "providerAttemptCanonicalSlug",
-          "providerAttemptCredentialType",
-          "providerAttemptDevSafetyIdentifier",
-          "providerAttemptError",
-          "providerAttemptIsFinal",
-          "providerAttemptModelIndex",
-          "providerAttemptNumber",
-          "providerAttemptRegion",
-          "providerAttemptSafetyIdentifier",
-          "providerAttemptStatusCode",
-          "providerAttemptSuccess",
-          "providerAttemptTimeout",
-          "providerAttemptTotalInRequest",
-          "pullRequestNumber",
-          "pullRequestState",
-          "queueName",
-          "quotaEntityId",
-          "quotaEntityType",
-          "quotaRequested",
-          "reason",
-          "redirectLocation",
-          "referrerHostname",
-          "referrerUrl",
-          "region",
-          "reportingProjectId",
-          "reportingProjectName",
-          "repositoryName",
-          "repositoryOwner",
-          "requestApi",
-          "requestExtension",
-          "requestHostname",
-          "requestId",
-          "requestMethod",
-          "requestPath",
-          "requestResolvedIp",
-          "requestedInferenceRegion",
-          "reviewConclusion",
-          "reviewStatus",
-          "rewriteDestinationHostname",
-          "route",
-          "runtime",
-          "sandboxName",
-          "sandboxSessionId",
-          "sdkKeyEnvironment",
-          "sdkKeyId",
-          "servedSpeed",
-          "serverActionName",
-          "service",
-          "sessionId",
-          "skewProtection",
-          "source",
-          "sourceImage",
-          "sourceImageHash",
-          "sourceImageHostname",
-          "sourceImagePathname",
-          "specVersion",
-          "spendReportDatePart",
-          "spendReportGroupBy",
-          "stepRunId",
-          "storeId",
-          "storeName",
-          "surchargeCostCurrency",
-          "tagName",
-          "toolCallErrorType",
-          "toolCallProvider",
-          "toolCallStatusCode",
-          "toolCallSuccess",
-          "toolCallType",
-          "trafficSource",
-          "transcriptInputs",
-          "transcriptOutputs",
-          "transcriptStatus",
-          "triggeringTag",
-          "utmCampaign",
-          "utmContent",
-          "utmMedium",
-          "utmSource",
-          "utmTerm",
-          "vdcOperationOrigin",
-          "videoAspectRatio",
-          "videoResolution",
-          "virtualModelKind",
-          "virtualModelSlug",
-          "visitorId",
-          "wafAction",
-          "wafRuleId",
-          "workflowEventType",
-          "workflowName",
-          "workflowRunId",
-          "workflowStatus",
-          "workflowStepName"
-        ],
         "type": "object",
         "properties": {
           "projectId": {
@@ -120553,6 +121038,9 @@
           "isByok": {
             "type": "string"
           },
+          "spendAttribution": {
+            "type": "string"
+          },
           "isPrivateModel": {
             "type": "string"
           },
@@ -120795,11 +121283,13 @@
           },
           "privatelinkIpAddress": {
             "type": "string"
+          },
+          "visitors": {
+            "type": "number"
+          },
+          "pageviews": {
+            "type": "number"
           }
-        },
-        "additionalProperties": {
-          "type": "number",
-          "nullable": true
         }
       },
       "CountEvents200ResponseQuery": {
@@ -120821,224 +121311,6 @@
         }
       },
       "CountEvents200ResponseData": {
-        "required": [
-          "aiGatewayModelId",
-          "aiModel",
-          "aiModelType",
-          "aiProvider",
-          "appName",
-          "asnId",
-          "asnName",
-          "attributes",
-          "attributionEventName",
-          "attributionTarget",
-          "authMethod",
-          "billableRegion",
-          "blobOperationLevel",
-          "blobOperationType",
-          "botCategory",
-          "botCategoryLegacy",
-          "botCheckResult",
-          "botName",
-          "botVerified",
-          "browserName",
-          "cacheApi",
-          "cacheCreation1hInputTokensCurrency",
-          "cacheCreationInputTokensCurrency",
-          "cacheHitLevel",
-          "cacheHitState",
-          "cacheHostname",
-          "cacheOperation",
-          "cachePath",
-          "cacheReason",
-          "cacheResult",
-          "cacheTags",
-          "cachedInputTokensCurrency",
-          "cause",
-          "clientIp",
-          "clientIpCountry",
-          "clientJa4Digest",
-          "clientUserAgent",
-          "codingAgent",
-          "commitSha",
-          "consumerGroup",
-          "contentCaptureInputs",
-          "contentCaptureOutputs",
-          "contentCaptureStatus",
-          "contentType",
-          "costCurrency",
-          "country",
-          "dataCacheRegion",
-          "deepAnalysisCheck",
-          "deploymentId",
-          "deviceType",
-          "direction",
-          "edgeNetworkRegion",
-          "edgeType",
-          "entryId",
-          "entryItemId",
-          "entryName",
-          "entryRevalidateSeconds",
-          "environment",
-          "environmentId",
-          "errorCode",
-          "errorMessage",
-          "eventData",
-          "eventName",
-          "eventType",
-          "externalRewriteTargetHost",
-          "externalRewriteTargetPath",
-          "fetchIndex",
-          "fetchType",
-          "flagClientName",
-          "flagEvaluationReason",
-          "flagKey",
-          "flagVariant",
-          "flags",
-          "functionDispatcher",
-          "functionRegion",
-          "functionStartType",
-          "gatewayCostCurrency",
-          "generationId",
-          "hipaaRequested",
-          "httpAccept",
-          "httpStatus",
-          "imageSource",
-          "imageTransformationRegion",
-          "inferenceEndpointSlug",
-          "inferenceGeoRegion",
-          "inferenceProviderRegion",
-          "inferenceScope",
-          "isAdditionalRequest",
-          "isByok",
-          "isPrefetchRequest",
-          "isPrivateModel",
-          "isRequestZdr",
-          "isrAction",
-          "isrCacheRegion",
-          "keyId",
-          "keyName",
-          "marketCostCurrency",
-          "messageId",
-          "metricName",
-          "microfrontendsDefaultAppDeploymentId",
-          "microfrontendsDefaultAppProjectId",
-          "microfrontendsMatchedPath",
-          "microfrontendsResponseReason",
-          "middlewareAction",
-          "middlewareActionTarget",
-          "moderationApplied",
-          "networkId",
-          "networkTenancy",
-          "notificationUrl",
-          "optimizedFormatMimeType",
-          "optimizedQuality",
-          "optimizedWidthPixels",
-          "originHostname",
-          "originPath",
-          "originRoute",
-          "osName",
-          "pathType",
-          "pathTypeVariant",
-          "piiRedactionApplied",
-          "privatelinkDnsName",
-          "privatelinkEndpointId",
-          "privatelinkIpAddress",
-          "projectId",
-          "projectName",
-          "provider",
-          "providerAttemptCanonicalSlug",
-          "providerAttemptCredentialType",
-          "providerAttemptDevSafetyIdentifier",
-          "providerAttemptError",
-          "providerAttemptIsFinal",
-          "providerAttemptModelIndex",
-          "providerAttemptNumber",
-          "providerAttemptRegion",
-          "providerAttemptSafetyIdentifier",
-          "providerAttemptStatusCode",
-          "providerAttemptSuccess",
-          "providerAttemptTimeout",
-          "providerAttemptTotalInRequest",
-          "pullRequestNumber",
-          "pullRequestState",
-          "queueName",
-          "quotaEntityId",
-          "quotaEntityType",
-          "quotaRequested",
-          "reason",
-          "redirectLocation",
-          "referrerHostname",
-          "referrerUrl",
-          "region",
-          "reportingProjectId",
-          "reportingProjectName",
-          "repositoryName",
-          "repositoryOwner",
-          "requestApi",
-          "requestExtension",
-          "requestHostname",
-          "requestId",
-          "requestMethod",
-          "requestPath",
-          "requestResolvedIp",
-          "requestedInferenceRegion",
-          "reviewConclusion",
-          "reviewStatus",
-          "rewriteDestinationHostname",
-          "route",
-          "runtime",
-          "sandboxName",
-          "sandboxSessionId",
-          "sdkKeyEnvironment",
-          "sdkKeyId",
-          "servedSpeed",
-          "serverActionName",
-          "service",
-          "sessionId",
-          "skewProtection",
-          "source",
-          "sourceImage",
-          "sourceImageHash",
-          "sourceImageHostname",
-          "sourceImagePathname",
-          "specVersion",
-          "spendReportDatePart",
-          "spendReportGroupBy",
-          "stepRunId",
-          "storeId",
-          "storeName",
-          "surchargeCostCurrency",
-          "tagName",
-          "toolCallErrorType",
-          "toolCallProvider",
-          "toolCallStatusCode",
-          "toolCallSuccess",
-          "toolCallType",
-          "trafficSource",
-          "transcriptInputs",
-          "transcriptOutputs",
-          "transcriptStatus",
-          "triggeringTag",
-          "utmCampaign",
-          "utmContent",
-          "utmMedium",
-          "utmSource",
-          "utmTerm",
-          "vdcOperationOrigin",
-          "videoAspectRatio",
-          "videoResolution",
-          "virtualModelKind",
-          "virtualModelSlug",
-          "visitorId",
-          "wafAction",
-          "wafRuleId",
-          "workflowEventType",
-          "workflowName",
-          "workflowRunId",
-          "workflowStatus",
-          "workflowStepName"
-        ],
         "type": "object",
         "properties": {
           "projectId": {
@@ -121446,6 +121718,9 @@
           "isByok": {
             "type": "string"
           },
+          "spendAttribution": {
+            "type": "string"
+          },
           "isPrivateModel": {
             "type": "string"
           },
@@ -121688,11 +121963,13 @@
           },
           "privatelinkIpAddress": {
             "type": "string"
+          },
+          "visitors": {
+            "type": "number"
+          },
+          "count": {
+            "type": "number"
           }
-        },
-        "additionalProperties": {
-          "type": "number",
-          "nullable": true
         }
       },
       "ListDeploymentAliases200ResponseAliasesItem": {
@@ -121732,9 +122009,7 @@
       },
       "GetAlias200ResponseCreator": {
         "required": [
-          "email",
-          "uid",
-          "username"
+          "uid"
         ],
         "type": "object",
         "properties": {
@@ -121758,8 +122033,7 @@
       },
       "GetAlias200ResponseDeployment": {
         "required": [
-          "id",
-          "url"
+          "id"
         ],
         "type": "object",
         "properties": {
@@ -123732,44 +124006,6 @@
           }
         }
       },
-      "GetRedirects200ResponseOneOf3RedirectsItem": {
-        "required": [
-          "destination",
-          "source"
-        ],
-        "type": "object",
-        "properties": {
-          "statusCode": {
-            "type": "number"
-          },
-          "permanent": {
-            "type": "boolean",
-            "additionalProperties": false
-          },
-          "sensitive": {
-            "type": "boolean",
-            "additionalProperties": false
-          },
-          "caseSensitive": {
-            "type": "boolean",
-            "additionalProperties": false
-          },
-          "query": {
-            "type": "boolean",
-            "additionalProperties": false
-          },
-          "preserveQueryParams": {
-            "type": "boolean",
-            "additionalProperties": false
-          },
-          "destination": {
-            "type": "string"
-          },
-          "source": {
-            "type": "string"
-          }
-        }
-      },
       "GetRedirects200ResponseOneOf3Version": {
         "required": [
           "createdBy",
@@ -123814,6 +124050,44 @@
           "alias": {
             "type": "string",
             "description": "The staging link for previewing redirects in this version."
+          }
+        }
+      },
+      "GetRedirects200ResponseOneOf3RedirectsItem": {
+        "required": [
+          "destination",
+          "source"
+        ],
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "number"
+          },
+          "permanent": {
+            "type": "boolean",
+            "additionalProperties": false
+          },
+          "sensitive": {
+            "type": "boolean",
+            "additionalProperties": false
+          },
+          "caseSensitive": {
+            "type": "boolean",
+            "additionalProperties": false
+          },
+          "query": {
+            "type": "boolean",
+            "additionalProperties": false
+          },
+          "preserveQueryParams": {
+            "type": "boolean",
+            "additionalProperties": false
+          },
+          "destination": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
           }
         }
       },
@@ -132289,6 +132563,9 @@
           "isByok": {
             "type": "string"
           },
+          "spendAttribution": {
+            "type": "string"
+          },
           "isPrivateModel": {
             "type": "string"
           },
@@ -132721,6 +132998,7 @@
           "sourceImageHostname",
           "sourceImagePathname",
           "specVersion",
+          "spendAttribution",
           "spendReportDatePart",
           "spendReportGroupBy",
           "stepRunId",
@@ -133162,6 +133440,9 @@
             "type": "string"
           },
           "isByok": {
+            "type": "string"
+          },
+          "spendAttribution": {
             "type": "string"
           },
           "isPrivateModel": {
@@ -133824,6 +134105,9 @@
           "isByok": {
             "type": "string"
           },
+          "spendAttribution": {
+            "type": "string"
+          },
           "isPrivateModel": {
             "type": "string"
           },
@@ -134256,6 +134540,7 @@
           "sourceImageHostname",
           "sourceImagePathname",
           "specVersion",
+          "spendAttribution",
           "spendReportDatePart",
           "spendReportGroupBy",
           "stepRunId",
@@ -134697,6 +134982,9 @@
             "type": "string"
           },
           "isByok": {
+            "type": "string"
+          },
+          "spendAttribution": {
             "type": "string"
           },
           "isPrivateModel": {
@@ -152769,9 +153057,7 @@
       },
       "ListAliases200ResponseAliasesItemCreator": {
         "required": [
-          "email",
-          "uid",
-          "username"
+          "uid"
         ],
         "type": "object",
         "properties": {
@@ -152795,8 +153081,7 @@
       },
       "ListAliases200ResponseAliasesItemDeployment": {
         "required": [
-          "id",
-          "url"
+          "id"
         ],
         "type": "object",
         "properties": {
@@ -183465,6 +183750,169 @@
           }
         }
       },
+      "AiGatewayVirtualModelConfigSelector": {
+        "enum": [
+          "cost",
+          "priority",
+          "tps",
+          "ttft"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022For kind=router: how to order candidates.\u0022",
+        "x-ms-enum": {
+          "name": "AiGatewayVirtualModelConfigSelector",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cost",
+              "name": "Cost"
+            },
+            {
+              "value": "priority",
+              "name": "Priority"
+            },
+            {
+              "value": "tps",
+              "name": "Tps"
+            },
+            {
+              "value": "ttft",
+              "name": "Ttft"
+            }
+          ]
+        }
+      },
+      "AiGatewayVirtualModelConfigSort": {
+        "enum": [
+          "cost",
+          "latency",
+          "price",
+          "throughput",
+          "tps",
+          "ttft"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Rank eligible providers by an attribute.",
+        "x-ms-enum": {
+          "name": "AiGatewayVirtualModelConfigSort",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cost",
+              "name": "Cost"
+            },
+            {
+              "value": "latency",
+              "name": "Latency"
+            },
+            {
+              "value": "price",
+              "name": "Price"
+            },
+            {
+              "value": "throughput",
+              "name": "Throughput"
+            },
+            {
+              "value": "tps",
+              "name": "Tps"
+            },
+            {
+              "value": "ttft",
+              "name": "Ttft"
+            }
+          ]
+        }
+      },
+      "AiGatewayVirtualModelConfigHasItem": {
+        "enum": [
+          "implicit-caching",
+          "vision"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Limit providers to those with these features.",
+        "x-ms-enum": {
+          "name": "AiGatewayVirtualModelConfigHasItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "implicit-caching",
+              "name": "ImplicitCaching"
+            },
+            {
+              "value": "vision",
+              "name": "Vision"
+            }
+          ]
+        }
+      },
+      "AiGatewayVirtualModelConfigCaching": {
+        "enum": [
+          "auto"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Use caching if available.",
+        "x-ms-enum": {
+          "name": "AiGatewayVirtualModelConfigCaching",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "auto",
+              "name": "Auto"
+            }
+          ]
+        }
+      },
+      "AiGatewayVirtualModelConfigServiceTier": {
+        "enum": [
+          "fast",
+          "flex",
+          "priority"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Service tier for providers that support it.",
+        "x-ms-enum": {
+          "name": "AiGatewayVirtualModelConfigServiceTier",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "fast",
+              "name": "Fast"
+            },
+            {
+              "value": "flex",
+              "name": "Flex"
+            },
+            {
+              "value": "priority",
+              "name": "Priority"
+            }
+          ]
+        }
+      },
+      "AiGatewayVirtualModelConfigSpeed": {
+        "enum": [
+          "fast"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Only use fastest providers with short timeouts.",
+        "x-ms-enum": {
+          "name": "AiGatewayVirtualModelConfigSpeed",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "fast",
+              "name": "Fast"
+            }
+          ]
+        }
+      },
       "AiGatewayRuleType": {
         "enum": [
           "deny",
@@ -197232,7 +197680,8 @@
           "authorization",
           "push",
           "unexpected",
-          "unknown"
+          "unknown",
+          "validation"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -197256,6 +197705,10 @@
             {
               "value": "unknown",
               "name": "Unknown"
+            },
+            {
+              "value": "validation",
+              "name": "Validation"
             }
           ]
         }
@@ -201236,6 +201689,40 @@
           ]
         }
       },
+      "UserEventPayloadOneOf98JobOneOf10Type": {
+        "enum": [
+          "cursor-origin-now-comment"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf98JobOneOf10Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cursor-origin-now-comment",
+              "name": "CursorOriginNowComment"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf98JobOneOf10Provider": {
+        "enum": [
+          "cursor-origin"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf98JobOneOf10Provider",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cursor-origin",
+              "name": "CursorOrigin"
+            }
+          ]
+        }
+      },
       "UserEventPayloadOneOf158NewOwnerCredentialsItemOneOf1Type": {
         "enum": [
           "apple",
@@ -202537,6 +203024,34 @@
             {
               "value": "webauthn",
               "name": "Webauthn"
+            }
+          ]
+        }
+      },
+      "AiGatewayVirtualModelConfigInferenceRegionScope": {
+        "enum": [
+          "global",
+          "specific",
+          "zone"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022Pin scope: \u0060specific\u0060 (one provider region), \u0060zone\u0060 (geo zone), or \u0060global\u0060.\u0022",
+        "x-ms-enum": {
+          "name": "AiGatewayVirtualModelConfigInferenceRegionScope",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "global",
+              "name": "Global"
+            },
+            {
+              "value": "specific",
+              "name": "Specific"
+            },
+            {
+              "value": "zone",
+              "name": "Zone"
             }
           ]
         }
@@ -207700,6 +208215,34 @@
           ]
         }
       },
+      "AiGatewayVirtualModelConfigInferenceRegionProvidersAdditionalPropertiesScope": {
+        "enum": [
+          "global",
+          "specific",
+          "zone"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022Pin scope: \u0060specific\u0060 (one provider region), \u0060zone\u0060 (geo zone), or \u0060global\u0060.\u0022",
+        "x-ms-enum": {
+          "name": "AiGatewayVirtualModelConfigInferenceRegionProvidersAdditionalPropertiesScope",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "global",
+              "name": "Global"
+            },
+            {
+              "value": "specific",
+              "name": "Specific"
+            },
+            {
+              "value": "zone",
+              "name": "Zone"
+            }
+          ]
+        }
+      },
       "FlagEnvironmentsAdditionalPropertiesPausedOutcomeType": {
         "enum": [
           "variant"
@@ -208599,6 +209142,33 @@
         "additionalProperties": false,
         "x-ms-enum": {
           "name": "UserEventPayloadOneOf158NewOwnerFeatureBlocksConnexTokenRequestsBlockReason",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "admin_override",
+              "name": "AdminOverride"
+            },
+            {
+              "value": "hard_blocked",
+              "name": "HardBlocked"
+            },
+            {
+              "value": "limits_exceeded",
+              "name": "LimitsExceeded"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf158NewOwnerFeatureBlocksKmsOperationsBlockReason": {
+        "enum": [
+          "admin_override",
+          "hard_blocked",
+          "limits_exceeded"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf158NewOwnerFeatureBlocksKmsOperationsBlockReason",
           "modelAsString": false,
           "values": [
             {
@@ -252068,6 +252638,7 @@
       "SearchRepo200ResponseOneOf4GitAccountProvider": {
         "enum": [
           "bitbucket",
+          "cursor-origin",
           "github",
           "github-custom-host",
           "github-limited",
@@ -252083,6 +252654,10 @@
             {
               "value": "bitbucket",
               "name": "Bitbucket"
+            },
+            {
+              "value": "cursor-origin",
+              "name": "CursorOrigin"
             },
             {
               "value": "github",
@@ -252110,6 +252685,7 @@
       "SearchRepo200ResponseOneOf4ReposItemProvider": {
         "enum": [
           "bitbucket",
+          "cursor-origin",
           "github",
           "github-custom-host",
           "github-limited",
@@ -252125,6 +252701,10 @@
             {
               "value": "bitbucket",
               "name": "Bitbucket"
+            },
+            {
+              "value": "cursor-origin",
+              "name": "CursorOrigin"
             },
             {
               "value": "github",

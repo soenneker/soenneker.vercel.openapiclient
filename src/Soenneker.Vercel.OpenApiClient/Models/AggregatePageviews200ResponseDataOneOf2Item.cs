@@ -1462,6 +1462,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string SpecVersion { get; set; }
 #endif
+        /// <summary>The spendAttribution property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SpendAttribution { get; set; }
+#nullable restore
+#else
+        public string SpendAttribution { get; set; }
+#endif
         /// <summary>The spendReportDatePart property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1948,6 +1956,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "sourceImageHostname", n => { SourceImageHostname = n.GetStringValue(); } },
                 { "sourceImagePathname", n => { SourceImagePathname = n.GetStringValue(); } },
                 { "specVersion", n => { SpecVersion = n.GetStringValue(); } },
+                { "spendAttribution", n => { SpendAttribution = n.GetStringValue(); } },
                 { "spendReportDatePart", n => { SpendReportDatePart = n.GetStringValue(); } },
                 { "spendReportGroupBy", n => { SpendReportGroupBy = n.GetStringValue(); } },
                 { "stepRunId", n => { StepRunId = n.GetStringValue(); } },
@@ -2173,6 +2182,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("sourceImageHostname", SourceImageHostname);
             writer.WriteStringValue("sourceImagePathname", SourceImagePathname);
             writer.WriteStringValue("specVersion", SpecVersion);
+            writer.WriteStringValue("spendAttribution", SpendAttribution);
             writer.WriteStringValue("spendReportDatePart", SpendReportDatePart);
             writer.WriteStringValue("spendReportGroupBy", SpendReportGroupBy);
             writer.WriteStringValue("stepRunId", StepRunId);
