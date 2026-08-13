@@ -48,10 +48,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>How often the quota refreshes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ApiKeyQuotaRefreshPeriod? RefreshPeriod { get; set; }
+        public string? RefreshPeriod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ApiKeyQuotaRefreshPeriod RefreshPeriod { get; set; }
+        public string RefreshPeriod { get; set; }
 #endif
         /// <summary>Timestamp (in milliseconds) of when the quota was last updated.</summary>
         public double? UpdatedAt { get; set; }
@@ -89,7 +89,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "includeByokInQuota", n => { IncludeByokInQuota = n.GetBoolValue(); } },
                 { "limitAmount", n => { LimitAmount = n.GetDoubleValue(); } },
                 { "quotaEntityId", n => { QuotaEntityId = n.GetStringValue(); } },
-                { "refreshPeriod", n => { RefreshPeriod = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ApiKeyQuotaRefreshPeriod>(global::Soenneker.Vercel.OpenApiClient.Models.ApiKeyQuotaRefreshPeriod.CreateFromDiscriminatorValue); } },
+                { "refreshPeriod", n => { RefreshPeriod = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
             };
         }
@@ -109,7 +109,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("includeByokInQuota", IncludeByokInQuota);
             writer.WriteDoubleValue("limitAmount", LimitAmount);
             writer.WriteStringValue("quotaEntityId", QuotaEntityId);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ApiKeyQuotaRefreshPeriod>("refreshPeriod", RefreshPeriod);
+            writer.WriteStringValue("refreshPeriod", RefreshPeriod);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

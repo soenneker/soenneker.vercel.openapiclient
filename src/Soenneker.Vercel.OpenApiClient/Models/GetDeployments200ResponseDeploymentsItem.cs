@@ -66,7 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? Created { get; set; }
         /// <summary>The createdAt property</summary>
         public double? CreatedAt { get; set; }
-        /// <summary>Metadata information of the user who created the deployment.</summary>
+        /// <summary>Metadata information of the deployment creator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemCreator? Creator { get; set; }

@@ -36,6 +36,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         EnvironmentManager,
         #pragma warning restore CS1591
+        [EnumMember(Value = "WorkflowDecryptor")]
+        #pragma warning disable CS1591
+        WorkflowDecryptor,
+        #pragma warning restore CS1591
         [EnumMember(Value = "OrgAdmin")]
         #pragma warning disable CS1591
         OrgAdmin,

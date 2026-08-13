@@ -188,13 +188,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ServerlessFunctionRegion { get; set; }
 #endif
         /// <summary>Specifies whether Zero Config Failover is enabled for this project.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestServerlessFunctionZeroConfigFailover? ServerlessFunctionZeroConfigFailover { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestServerlessFunctionZeroConfigFailover ServerlessFunctionZeroConfigFailover { get; set; }
-#endif
+        public bool? ServerlessFunctionZeroConfigFailover { get; set; }
         /// <summary>Cross-site domains allowed to fetch skew-protected assets (hostnames, optionally with leading wildcard like *.example.com).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -303,7 +297,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "resourceConfig", n => { ResourceConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestResourceConfig>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestResourceConfig.CreateFromDiscriminatorValue); } },
                 { "rootDirectory", n => { RootDirectory = n.GetStringValue(); } },
                 { "serverlessFunctionRegion", n => { ServerlessFunctionRegion = n.GetStringValue(); } },
-                { "serverlessFunctionZeroConfigFailover", n => { ServerlessFunctionZeroConfigFailover = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestServerlessFunctionZeroConfigFailover>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestServerlessFunctionZeroConfigFailover.CreateFromDiscriminatorValue); } },
+                { "serverlessFunctionZeroConfigFailover", n => { ServerlessFunctionZeroConfigFailover = n.GetBoolValue(); } },
                 { "skewProtectionAllowedDomains", n => { SkewProtectionAllowedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "skewProtectionBoundaryAt", n => { SkewProtectionBoundaryAt = n.GetIntValue(); } },
                 { "skewProtectionMaxAge", n => { SkewProtectionMaxAge = n.GetIntValue(); } },
@@ -356,7 +350,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestResourceConfig>("resourceConfig", ResourceConfig);
             writer.WriteStringValue("rootDirectory", RootDirectory);
             writer.WriteStringValue("serverlessFunctionRegion", ServerlessFunctionRegion);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestServerlessFunctionZeroConfigFailover>("serverlessFunctionZeroConfigFailover", ServerlessFunctionZeroConfigFailover);
+            writer.WriteBoolValue("serverlessFunctionZeroConfigFailover", ServerlessFunctionZeroConfigFailover);
             writer.WriteCollectionOfPrimitiveValues<string>("skewProtectionAllowedDomains", SkewProtectionAllowedDomains);
             writer.WriteIntValue("skewProtectionBoundaryAt", SkewProtectionBoundaryAt);
             writer.WriteIntValue("skewProtectionMaxAge", SkewProtectionMaxAge);

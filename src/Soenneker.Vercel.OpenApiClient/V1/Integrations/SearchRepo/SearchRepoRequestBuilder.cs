@@ -104,15 +104,8 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.SearchRepo
             [QueryParameter("installationId")]
             public string InstallationId { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("namespaceId")]
-            public string? NamespaceId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("namespaceId")]
-            public string NamespaceId { get; set; }
-#endif
+            public double? NamespaceId { get; set; }
             [QueryParameter("provider")]
             public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepoProviderParameter? Provider { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

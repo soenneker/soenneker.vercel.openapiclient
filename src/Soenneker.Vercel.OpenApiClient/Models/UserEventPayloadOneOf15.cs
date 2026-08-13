@@ -25,22 +25,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The change property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf15Change? Change { get; set; }
-        /// <summary>Associates the event with a project for filtering; not rendered.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
-#endif
-        /// <summary>The projectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectName { get; set; }
-#nullable restore
-#else
-        public string ProjectName { get; set; }
-#endif
         /// <summary>The scopeType property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf15ScopeType? ScopeType { get; set; }
         /// <summary>
@@ -70,8 +54,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "budget", n => { Budget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf15Budget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf15Budget.CreateFromDiscriminatorValue); } },
                 { "change", n => { Change = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf15Change>(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
                 { "scopeType", n => { ScopeType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf15ScopeType>(); } },
             };
         }
@@ -84,8 +66,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf15Budget>("budget", Budget);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf15Change>("change", Change);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf15ScopeType>("scopeType", ScopeType);
             writer.WriteAdditionalData(AdditionalData);
         }

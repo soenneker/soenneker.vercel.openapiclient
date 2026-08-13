@@ -87,7 +87,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Whether the sandbox persists its state across restarts via automatic snapshots.</summary>
         public bool? Persistent { get; set; }
-        /// <summary>&quot;The region the sandbox is configured to run in: the region set on the sandbox, otherwise the project-level default, then the platform default. Where a running session actually landed is reported by `session.region`.&quot;</summary>
+        /// <summary>&quot;The region the sandbox is pinned to: the region stored on the sandbox, otherwise the platform default. Where a running session actually landed is reported by `session.region`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get; set; }

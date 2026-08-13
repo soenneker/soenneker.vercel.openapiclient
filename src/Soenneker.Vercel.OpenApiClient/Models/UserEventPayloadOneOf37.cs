@@ -23,22 +23,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Alias { get; set; }
 #endif
-        /// <summary>The aliasId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AliasId { get; set; }
-#nullable restore
-#else
-        public string AliasId { get; set; }
-#endif
-        /// <summary>The deploymentId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DeploymentId { get; set; }
-#nullable restore
-#else
-        public string DeploymentId { get; set; }
-#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +30,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string Name { get; set; }
+#endif
+        /// <summary>The newTeam property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37NewTeam? NewTeam { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37NewTeam NewTeam { get; set; }
+#endif
+        /// <summary>The oldTeam property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37OldTeam? OldTeam { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37OldTeam OldTeam { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37"/> and sets the default values.
@@ -73,9 +73,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "alias", n => { Alias = n.GetStringValue(); } },
-                { "aliasId", n => { AliasId = n.GetStringValue(); } },
-                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "newTeam", n => { NewTeam = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37NewTeam>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37NewTeam.CreateFromDiscriminatorValue); } },
+                { "oldTeam", n => { OldTeam = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37OldTeam>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37OldTeam.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -86,9 +86,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("alias", Alias);
-            writer.WriteStringValue("aliasId", AliasId);
-            writer.WriteStringValue("deploymentId", DeploymentId);
             writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37NewTeam>("newTeam", NewTeam);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf37OldTeam>("oldTeam", OldTeam);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -23,7 +23,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Avatar { get; set; }
 #endif
-        /// <summary>The ID of the user that created the deployment</summary>
+        /// <summary>Principal type of the deployment creator.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2CreatorType? Type { get; set; }
+        /// <summary>Stable creator id across principal types (user id, app id, integration configuration id, or `system`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Uid { get; set; }
@@ -65,6 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "avatar", n => { Avatar = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2CreatorType>(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
             };
@@ -77,6 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("avatar", Avatar);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseOneOf2CreatorType>("type", Type);
             writer.WriteStringValue("uid", Uid);
             writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);

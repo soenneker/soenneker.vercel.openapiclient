@@ -23,6 +23,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12ApiKey ApiKey { get; set; }
 #endif
+        /// <summary>Spend budget on an AI Gateway API key, as surfaced in activity messages. Defined locally (rather than imported from `@api/pubsub-types`) because `@api/pubsub-types` already depends on `@api/events`; importing it here would create a circular dependency. Must stay structurally aligned with `APIKeyBudget` in `@api/pubsub-types/event-payloads/api-keys`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12Budget? Budget { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12Budget Budget { get; set; }
+#endif
+        /// <summary>True when the key was created with a ZDR exemption.</summary>
+        public bool? ZdrExemption { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12"/> and sets the default values.
         /// </summary>
@@ -49,6 +59,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "apiKey", n => { ApiKey = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12ApiKey>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12ApiKey.CreateFromDiscriminatorValue); } },
+                { "budget", n => { Budget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12Budget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12Budget.CreateFromDiscriminatorValue); } },
+                { "zdrExemption", n => { ZdrExemption = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -59,6 +71,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12ApiKey>("apiKey", ApiKey);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12Budget>("budget", Budget);
+            writer.WriteBoolValue("zdrExemption", ZdrExemption);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

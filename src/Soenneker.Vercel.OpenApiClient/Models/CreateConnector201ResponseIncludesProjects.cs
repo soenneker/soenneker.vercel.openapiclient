@@ -15,14 +15,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The cursor property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Cursor { get; set; }
-#nullable restore
-#else
-        public string Cursor { get; set; }
-#endif
         /// <summary>The hasMore property</summary>
         public bool? HasMore { get; set; }
         /// <summary>The items property</summary>
@@ -32,6 +24,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludesProjectsItemsItem> Items { get; set; }
+#endif
+        /// <summary>The pagination property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludesProjectsPagination? Pagination { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludesProjectsPagination Pagination { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludesProjects"/> and sets the default values.
@@ -58,9 +58,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cursor", n => { Cursor = n.GetStringValue(); } },
                 { "hasMore", n => { HasMore = n.GetBoolValue(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludesProjectsItemsItem>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludesProjectsItemsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludesProjectsPagination>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludesProjectsPagination.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -70,9 +70,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("cursor", Cursor);
             writer.WriteBoolValue("hasMore", HasMore);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludesProjectsItemsItem>("items", Items);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseIncludesProjectsPagination>("pagination", Pagination);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

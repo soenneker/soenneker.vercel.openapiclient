@@ -13,18 +13,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf303 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The addedAddresses property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? AddedAddresses { get; set; }
-#nullable restore
-#else
-        public List<string> AddedAddresses { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The oldTrustedIps property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303OldTrustedIps? OldTrustedIps { get; set; }
+        /// <summary>The oldSsoProtection property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303OldSsoProtection? OldSsoProtection { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303OldSsoProtection OldSsoProtection { get; set; }
+#endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,16 +39,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get; set; }
 #endif
-        /// <summary>The removedAddresses property</summary>
+        /// <summary>The ssoProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RemovedAddresses { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303SsoProtection? SsoProtection { get; set; }
 #nullable restore
 #else
-        public List<string> RemovedAddresses { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303SsoProtection SsoProtection { get; set; }
 #endif
-        /// <summary>The trustedIps property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303TrustedIps? TrustedIps { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303"/> and sets the default values.
         /// </summary>
@@ -76,12 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "addedAddresses", n => { AddedAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "oldTrustedIps", n => { OldTrustedIps = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303OldTrustedIps>(); } },
+                { "oldSsoProtection", n => { OldSsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303OldSsoProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303OldSsoProtection.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "removedAddresses", n => { RemovedAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "trustedIps", n => { TrustedIps = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303TrustedIps>(); } },
+                { "ssoProtection", n => { SsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303SsoProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303SsoProtection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -91,12 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("addedAddresses", AddedAddresses);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303OldTrustedIps>("oldTrustedIps", OldTrustedIps);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303OldSsoProtection>("oldSsoProtection", OldSsoProtection);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteCollectionOfPrimitiveValues<string>("removedAddresses", RemovedAddresses);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303TrustedIps>("trustedIps", TrustedIps);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303SsoProtection>("ssoProtection", SsoProtection);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

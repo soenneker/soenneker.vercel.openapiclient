@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Metadata information of the user who created the deployment.
+    /// Metadata information of the deployment creator.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetDeployments200ResponseDeploymentsItemCreator : IAdditionalDataHolder, IParsable
@@ -39,7 +39,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string GitlabLogin { get; set; }
 #endif
-        /// <summary>The unique identifier of the user.</summary>
+        /// <summary>Principal type of the deployment creator. Defaults to `&quot;user&quot;` if absent (legacy deployments created before principal attribution was recorded).</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemCreatorType? Type { get; set; }
+        /// <summary>Stable creator id across principal types. This may be a user ID, an app ID, an integration configuration ID, or `system`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Uid { get; set; }
@@ -83,6 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "githubLogin", n => { GithubLogin = n.GetStringValue(); } },
                 { "gitlabLogin", n => { GitlabLogin = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemCreatorType>(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
             };
@@ -97,6 +100,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("githubLogin", GithubLogin);
             writer.WriteStringValue("gitlabLogin", GitlabLogin);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemCreatorType>("type", Type);
             writer.WriteStringValue("uid", Uid);
             writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);

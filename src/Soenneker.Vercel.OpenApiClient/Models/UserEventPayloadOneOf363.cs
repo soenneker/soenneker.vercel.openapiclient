@@ -15,21 +15,23 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The authorized property</summary>
+        public bool? Authorized { get; set; }
+        /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Email { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Email { get; set; }
 #endif
-        /// <summary>The publicId property</summary>
+        /// <summary>The reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicId { get; set; }
+        public string? Reason { get; set; }
 #nullable restore
 #else
-        public string PublicId { get; set; }
+        public string Reason { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf363"/> and sets the default values.
@@ -56,8 +58,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "publicId", n => { PublicId = n.GetStringValue(); } },
+                { "authorized", n => { Authorized = n.GetBoolValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +70,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("publicId", PublicId);
+            writer.WriteBoolValue("authorized", Authorized);
+            writer.WriteStringValue("email", Email);
+            writer.WriteStringValue("reason", Reason);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

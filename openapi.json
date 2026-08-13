@@ -56,7 +56,8 @@
                           "UsageViewer",
                           "V0Builder",
                           "V0Chatter",
-                          "V0Viewer"
+                          "V0Viewer",
+                          "WorkflowDecryptor"
                         ]
                       },
                       "type": "array"
@@ -12468,14 +12469,23 @@
                                 true
                               ]
                             },
-                            "cursor": {
-                              "nullable": true,
-                              "type": "string"
+                            "pagination": {
+                              "properties": {
+                                "next": {
+                                  "nullable": true,
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "next"
+                              ],
+                              "type": "object"
                             }
                           },
                           "required": [
                             "hasMore",
-                            "items"
+                            "items",
+                            "pagination"
                           ],
                           "type": "object",
                           "description": "Set by `?include=projects`. Capped at 100 per client."
@@ -16719,8 +16729,18 @@
                           "properties": {
                             "uid": {
                               "type": "string",
-                              "description": "The ID of the user that created the deployment",
+                              "description": "Stable creator id across principal types (user id, app id, integration configuration id, or `system`).",
                               "example": "96SnxkFiMyVKsK3pnoHfx3Hz"
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "app",
+                                "integration",
+                                "system",
+                                "user"
+                              ],
+                              "description": "Principal type of the deployment creator."
                             },
                             "username": {
                               "type": "string",
@@ -22663,8 +22683,18 @@
                           "properties": {
                             "uid": {
                               "type": "string",
-                              "description": "The ID of the user that created the deployment",
+                              "description": "Stable creator id across principal types (user id, app id, integration configuration id, or `system`).",
                               "example": "96SnxkFiMyVKsK3pnoHfx3Hz"
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "app",
+                                "integration",
+                                "system",
+                                "user"
+                              ],
+                              "description": "Principal type of the deployment creator."
                             },
                             "username": {
                               "type": "string",
@@ -24709,8 +24739,18 @@
                           "properties": {
                             "uid": {
                               "type": "string",
-                              "description": "The ID of the user that created the deployment",
+                              "description": "Stable creator id across principal types (user id, app id, integration configuration id, or `system`).",
                               "example": "96SnxkFiMyVKsK3pnoHfx3Hz"
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "app",
+                                "integration",
+                                "system",
+                                "user"
+                              ],
+                              "description": "Principal type of the deployment creator."
                             },
                             "username": {
                               "type": "string",
@@ -31848,8 +31888,18 @@
                       "properties": {
                         "uid": {
                           "type": "string",
-                          "description": "The ID of the user that created the deployment",
+                          "description": "Stable creator id across principal types (user id, app id, integration configuration id, or `system`).",
                           "example": "96SnxkFiMyVKsK3pnoHfx3Hz"
+                        },
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "app",
+                            "integration",
+                            "system",
+                            "user"
+                          ],
+                          "description": "Principal type of the deployment creator."
                         },
                         "username": {
                           "type": "string",
@@ -78720,7 +78770,7 @@
                                             "type": "string"
                                           },
                                           "type": "array",
-                                          "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.",
+                                          "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.",
                                           "example": [
                                             "/api/health"
                                           ]
@@ -80535,6 +80585,12 @@
                                 "type": "array"
                               },
                               "webhook-event": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "workflowRunData": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
                                 },
@@ -92500,7 +92556,7 @@
                                             "type": "string"
                                           },
                                           "type": "array",
-                                          "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.",
+                                          "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.",
                                           "example": [
                                             "/api/health"
                                           ]
@@ -97208,7 +97264,7 @@
                                                 "type": "string"
                                               },
                                               "type": "array",
-                                              "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.",
+                                              "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.",
                                               "example": [
                                                 "/api/health"
                                               ]
@@ -102791,7 +102847,7 @@
                                                 "type": "string"
                                               },
                                               "type": "array",
-                                              "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.",
+                                              "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.",
                                               "example": [
                                                 "/api/health"
                                               ]
@@ -104606,6 +104662,12 @@
                                     "type": "array"
                                   },
                                   "webhook-event": {
+                                    "items": {
+                                      "$ref": "#/components/schemas/ACLAction"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "workflowRunData": {
                                     "items": {
                                       "$ref": "#/components/schemas/ACLAction"
                                     },
@@ -110912,7 +110974,7 @@
                                       "type": "string"
                                     },
                                     "type": "array",
-                                    "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.",
+                                    "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.",
                                     "example": [
                                       "/api/health"
                                     ]
@@ -112727,6 +112789,12 @@
                           "type": "array"
                         },
                         "webhook-event": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "workflowRunData": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -119193,7 +119261,7 @@
                                       "type": "string"
                                     },
                                     "type": "array",
-                                    "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.",
+                                    "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.",
                                     "example": [
                                       "/api/health"
                                     ]
@@ -121008,6 +121076,12 @@
                           "type": "array"
                         },
                         "webhook-event": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "workflowRunData": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -126832,7 +126906,7 @@
                                       "type": "string"
                                     },
                                     "type": "array",
-                                    "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.",
+                                    "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.",
                                     "example": [
                                       "/api/health"
                                     ]
@@ -128647,6 +128721,12 @@
                           "type": "array"
                         },
                         "webhook-event": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "workflowRunData": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -135735,7 +135815,7 @@
                                       "type": "string"
                                     },
                                     "type": "array",
-                                    "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.",
+                                    "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.",
                                     "example": [
                                       "/api/health"
                                     ]
@@ -137550,6 +137630,12 @@
                           "type": "array"
                         },
                         "webhook-event": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "workflowRunData": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -149487,7 +149573,7 @@
                                       "type": "string"
                                     },
                                     "type": "array",
-                                    "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.",
+                                    "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.",
                                     "example": [
                                       "/api/health"
                                     ]
@@ -156146,7 +156232,7 @@
                                       "type": "string"
                                     },
                                     "type": "array",
-                                    "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Defaults to `[]` when omitted.",
+                                    "description": "Request paths to ignore entirely — dropped from both the numerator (errors) and the denominator (total requests). Matched exactly against the request path with any query string removed; no prefix or glob matching. Defaults to `[]` when omitted.",
                                     "example": [
                                       "/api/health"
                                     ]
@@ -157961,6 +158047,12 @@
                           "type": "array"
                         },
                         "webhook-event": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "workflowRunData": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -185035,7 +185127,8 @@
                                 "UsageViewer",
                                 "V0Builder",
                                 "V0Chatter",
-                                "V0Viewer"
+                                "V0Viewer",
+                                "WorkflowDecryptor"
                               ]
                             },
                             "type": "array"
@@ -186089,6 +186182,7 @@
                         "UsageViewer",
                         "EnvVariableManager",
                         "EnvironmentManager",
+                        "WorkflowDecryptor",
                         "OrgAdmin",
                         "OrgViewer",
                         "AiGatewaySettings",
@@ -200904,8 +200998,18 @@
                             "properties": {
                               "uid": {
                                 "type": "string",
-                                "description": "The unique identifier of the user.",
+                                "description": "Stable creator id across principal types. This may be a user ID, an app ID, an integration configuration ID, or `system`.",
                                 "example": "eLrCnEgbKhsHyfbiNR7E8496"
+                              },
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "app",
+                                  "integration",
+                                  "system",
+                                  "user"
+                                ],
+                                "description": "Principal type of the deployment creator. Defaults to `\"user\"` if absent (legacy deployments created before principal attribution was recorded)."
                               },
                               "email": {
                                 "type": "string",
@@ -200932,7 +201036,7 @@
                               "uid"
                             ],
                             "type": "object",
-                            "description": "Metadata information of the user who created the deployment."
+                            "description": "Metadata information of the deployment creator."
                           },
                           "meta": {
                             "additionalProperties": {
@@ -203799,6 +203903,15 @@
               "access-group-updated",
               "access-group-user-added",
               "access-group-user-removed",
+              "admin-agentic-provisioning-account-unlinked",
+              "admin-plan-updated",
+              "admin-secondary-email-added",
+              "admin-secondary-email-removed",
+              "admin-team-name-update",
+              "admin-team-slug-update",
+              "admin-user-delete",
+              "admin-user-primary-email-updated",
+              "admin-username-updated",
               "agentic-provisioning-account-blocked",
               "agentic-provisioning-account-linked",
               "agentic-provisioning-account-relinked",
@@ -204364,6 +204477,7 @@
               "user-emu-recovery-initiated",
               "user-emu-toggled",
               "user-mfa-challenge-failed",
+              "user-mfa-challenge-initiated",
               "user-mfa-challenge-verified",
               "user-mfa-change-failed",
               "user-mfa-configuration-updated",
@@ -204376,6 +204490,7 @@
               "user-phone-removed",
               "user-phone-updated",
               "user-primary-email-updated",
+              "user-provider-email-claim-evaluated",
               "user-sudo-mode-removed",
               "user-token-created",
               "user-token-deleted",
@@ -204979,6 +205094,53 @@
                 "required": [
                   "projectName",
                   "resourceId"
+                ]
+              },
+              {
+                "properties": {
+                  "provider": {
+                    "type": "string",
+                    "enum": [
+                      "chatgpt",
+                      "stripe"
+                    ],
+                    "description": "Present on new events only. Equivalent to \"stripe\" when absent."
+                  },
+                  "providerAccount": {
+                    "type": "string",
+                    "description": "Present on new events only. Equivalent to `stripeAccount` when absent."
+                  },
+                  "stripeAccount": {
+                    "type": "string",
+                    "description": "Present when `provider` is \"stripe\". Equivalent to `providerAccount`."
+                  },
+                  "stripeOrganisation": {
+                    "type": "string",
+                    "description": "Present when `provider` is \"stripe\"."
+                  },
+                  "teamId": {
+                    "type": "string"
+                  },
+                  "actorId": {
+                    "type": "string",
+                    "description": "Okta user id."
+                  },
+                  "actorType": {
+                    "type": "string",
+                    "enum": [
+                      "admin"
+                    ]
+                  },
+                  "actorName": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "description": "The payload of the event, if requested.",
+                "required": [
+                  "actorId",
+                  "actorType",
+                  "teamId"
                 ]
               },
               {
@@ -210713,6 +210875,12 @@
                   },
                   "source": {
                     "type": "string"
+                  },
+                  "reason": {
+                    "type": "string",
+                    "enum": [
+                      "ip_allow_list"
+                    ]
                   }
                 },
                 "required": [
@@ -213937,7 +214105,8 @@
                                   "UsageViewer",
                                   "V0Builder",
                                   "V0Chatter",
-                                  "V0Viewer"
+                                  "V0Viewer",
+                                  "WorkflowDecryptor"
                                 ]
                               },
                               "type": "array"
@@ -214840,6 +215009,24 @@
                         "type": "object",
                         "description": "Contains the timestamps for usage summary emails."
                       },
+                      "speedInsightsFreeUsageAlert": {
+                        "properties": {
+                          "currentThreshold": {
+                            "type": "number",
+                            "description": "Highest allocation percentage threshold notified (e.g. 75 or 100)."
+                          },
+                          "notifiedAt": {
+                            "type": "number",
+                            "description": "When the notification for `currentThreshold` was sent."
+                          }
+                        },
+                        "required": [
+                          "currentThreshold",
+                          "notifiedAt"
+                        ],
+                        "type": "object",
+                        "description": "Tracks notifications sent for the team-wide Speed Insights free allocation. The allocation is measured over a rolling window (not a billing period), so deduplication is time-based rather than reset at period start."
+                      },
                       "username": {
                         "type": "string"
                       },
@@ -215485,6 +215672,33 @@
                               "updatedAt"
                             ],
                             "type": "object"
+                          },
+                          "speedInsightsFree": {
+                            "properties": {
+                              "updatedAt": {
+                                "type": "number"
+                              },
+                              "blockedFrom": {
+                                "type": "number"
+                              },
+                              "blockedUntil": {
+                                "type": "number"
+                              },
+                              "blockReason": {
+                                "type": "string",
+                                "enum": [
+                                  "admin_override",
+                                  "hard_blocked",
+                                  "limits_exceeded"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "blockReason",
+                              "updatedAt"
+                            ],
+                            "type": "object",
+                            "description": "Pauses Speed Insights free data-point ingestion when the team-wide free allocation is exhausted. The block lasts at least 14 days and is extended while rolling usage stays above half of the allocation."
                           }
                         },
                         "type": "object",
@@ -216533,6 +216747,10 @@
                   "os": {
                     "type": "string"
                   },
+                  "loginSessionId": {
+                    "type": "string",
+                    "description": "Browser login correlation ID. This is not an authentication credential."
+                  },
                   "username": {
                     "type": "string"
                   },
@@ -216553,6 +216771,7 @@
                                     "bitbucket",
                                     "chatgpt",
                                     "email",
+                                    "emu-recovery",
                                     "github",
                                     "gitlab",
                                     "google",
@@ -216604,6 +216823,7 @@
                                     "bitbucket",
                                     "chatgpt",
                                     "email",
+                                    "emu-recovery",
                                     "github",
                                     "gitlab",
                                     "google",
@@ -218324,6 +218544,185 @@
                   }
                 },
                 "required": [
+                  "plan"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "plan": {
+                    "type": "string"
+                  },
+                  "removedUsers": {
+                    "additionalProperties": {
+                      "properties": {
+                        "role": {
+                          "type": "string",
+                          "enum": [
+                            "BILLING",
+                            "CONTRIBUTOR",
+                            "DEVELOPER",
+                            "MEMBER",
+                            "OWNER",
+                            "SECURITY",
+                            "VIEWER",
+                            "VIEWER_FOR_PLUS"
+                          ]
+                        },
+                        "confirmed": {
+                          "type": "boolean",
+                          "enum": [
+                            false,
+                            true
+                          ]
+                        },
+                        "confirmedAt": {
+                          "type": "number"
+                        },
+                        "joinedFrom": {
+                          "properties": {
+                            "origin": {
+                              "type": "string",
+                              "enum": [
+                                "account-update",
+                                "bitbucket",
+                                "dsync",
+                                "feedback",
+                                "github",
+                                "gitlab",
+                                "import",
+                                "link",
+                                "mail",
+                                "nsnb-auto-approve",
+                                "nsnb-hobby-upgrade",
+                                "nsnb-invite",
+                                "nsnb-redeploy",
+                                "nsnb-redeploy-attribution-card",
+                                "nsnb-request-access",
+                                "nsnb-viewer-upgrade",
+                                "organization-teams",
+                                "saml",
+                                "teams"
+                              ]
+                            },
+                            "commitId": {
+                              "type": "string"
+                            },
+                            "repoId": {
+                              "type": "string"
+                            },
+                            "repoPath": {
+                              "type": "string"
+                            },
+                            "gitUserId": {
+                              "oneOf": [
+                                {
+                                  "type": "string"
+                                },
+                                {
+                                  "type": "number"
+                                }
+                              ]
+                            },
+                            "gitUserLogin": {
+                              "type": "string"
+                            },
+                            "ssoUserId": {
+                              "type": "string"
+                            },
+                            "ssoConnectedAt": {
+                              "type": "number"
+                            },
+                            "idpUserId": {
+                              "type": "string"
+                            },
+                            "dsyncUserId": {
+                              "type": "string"
+                            },
+                            "dsyncConnectedAt": {
+                              "type": "number"
+                            }
+                          },
+                          "required": [
+                            "origin"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "confirmed",
+                        "role"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "object"
+                  },
+                  "prevPlan": {
+                    "type": "string"
+                  },
+                  "priorPlan": {
+                    "type": "string"
+                  },
+                  "isDowngrade": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
+                    ]
+                  },
+                  "userAgent": {
+                    "type": "string"
+                  },
+                  "isReactivate": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
+                    ]
+                  },
+                  "isTrialUpgrade": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
+                    ]
+                  },
+                  "automated": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
+                    ],
+                    "description": "Whether the plan change was system-initiated rather than human-initiated."
+                  },
+                  "reason": {
+                    "type": "string",
+                    "description": "Why the plan changed. For downgrades, this is a {@link DowngradeReason} from `@api/pubsub-types` (e.g. `user_downgrade`, `trial_expired`)."
+                  },
+                  "timestamp": {
+                    "type": "number"
+                  },
+                  "removedMemberCount": {
+                    "type": "number"
+                  },
+                  "actorId": {
+                    "type": "string",
+                    "description": "Okta user id."
+                  },
+                  "actorType": {
+                    "type": "string",
+                    "enum": [
+                      "admin"
+                    ]
+                  },
+                  "actorName": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "actorId",
+                  "actorType",
                   "plan"
                 ],
                 "type": "object",
@@ -221955,6 +222354,41 @@
                 "properties": {
                   "email": {
                     "type": "string"
+                  },
+                  "verified": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
+                    ]
+                  },
+                  "actorId": {
+                    "type": "string",
+                    "description": "Okta user id."
+                  },
+                  "actorType": {
+                    "type": "string",
+                    "enum": [
+                      "admin"
+                    ]
+                  },
+                  "actorName": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "actorId",
+                  "actorType",
+                  "email",
+                  "verified"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "email": {
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -223342,6 +223776,29 @@
                       "standard",
                       "turbo"
                     ]
+                  },
+                  "isSystemInitiated": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
+                    ]
+                  },
+                  "reason": {
+                    "type": "string",
+                    "enum": [
+                      "basic-floor",
+                      "build-timeout-failure",
+                      "enospc-failure",
+                      "enterprise-floor",
+                      "high-peak-disk",
+                      "high-peak-memory",
+                      "long-build-duration",
+                      "oom-failure",
+                      "plan-change",
+                      "short-build-duration",
+                      "sustained-high-cpu"
+                    ]
                   }
                 },
                 "type": "object",
@@ -224159,6 +224616,32 @@
               },
               {
                 "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "actorId": {
+                    "type": "string",
+                    "description": "Okta user id."
+                  },
+                  "actorType": {
+                    "type": "string",
+                    "enum": [
+                      "admin"
+                    ]
+                  },
+                  "actorName": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "description": "The payload of the event, if requested.",
+                "required": [
+                  "actorId",
+                  "actorType"
+                ]
+              },
+              {
+                "properties": {
                   "decision": {
                     "type": "string",
                     "enum": [
@@ -224414,6 +224897,32 @@
               },
               {
                 "properties": {
+                  "slug": {
+                    "type": "string"
+                  },
+                  "actorId": {
+                    "type": "string",
+                    "description": "Okta user id."
+                  },
+                  "actorType": {
+                    "type": "string",
+                    "enum": [
+                      "admin"
+                    ]
+                  },
+                  "actorName": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "description": "The payload of the event, if requested.",
+                "required": [
+                  "actorId",
+                  "actorType"
+                ]
+              },
+              {
+                "properties": {
                   "projectId": {
                     "type": "string"
                   },
@@ -224490,6 +224999,10 @@
                       "user"
                     ]
                   },
+                  "actorName": {
+                    "type": "string",
+                    "description": "Human-readable admin who performed the removal."
+                  },
                   "reason": {
                     "type": "string"
                   }
@@ -224512,6 +225025,37 @@
                   }
                 },
                 "required": [
+                  "username"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "deletedAt": {
+                    "nullable": true,
+                    "type": "number"
+                  },
+                  "username": {
+                    "type": "string"
+                  },
+                  "actorId": {
+                    "type": "string",
+                    "description": "Okta user id."
+                  },
+                  "actorType": {
+                    "type": "string",
+                    "enum": [
+                      "admin"
+                    ]
+                  },
+                  "actorName": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "actorId",
+                  "actorType",
                   "username"
                 ],
                 "type": "object",
@@ -224643,11 +225187,48 @@
                   },
                   "reason": {
                     "type": "string"
+                  },
+                  "flowId": {
+                    "type": "string"
+                  },
+                  "loginSessionId": {
+                    "type": "string"
                   }
                 },
                 "required": [
                   "method",
                   "reason"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "allowedMethods": {
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "recovery-code",
+                        "totp",
+                        "webauthn"
+                      ]
+                    },
+                    "type": "array"
+                  },
+                  "firstFactor": {
+                    "type": "string"
+                  },
+                  "flowId": {
+                    "type": "string"
+                  },
+                  "loginSessionId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "allowedMethods",
+                  "firstFactor",
+                  "flowId"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -224724,6 +225305,15 @@
                       "totpVerified"
                     ],
                     "type": "object"
+                  },
+                  "method": {
+                    "type": "string",
+                    "enum": [
+                      "passkey",
+                      "self_serve_recovery",
+                      "totp",
+                      "user_disabled"
+                    ]
                   }
                 },
                 "required": [
@@ -224737,6 +225327,14 @@
                 "properties": {
                   "remaining": {
                     "type": "number"
+                  },
+                  "context": {
+                    "type": "string",
+                    "enum": [
+                      "login",
+                      "sudo"
+                    ],
+                    "description": "Absent on events predating the field; those were all logins."
                   }
                 },
                 "required": [
@@ -224819,6 +225417,144 @@
               },
               {
                 "properties": {
+                  "previous": {
+                    "properties": {
+                      "enabled": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ]
+                      },
+                      "totpVerified": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ]
+                      }
+                    },
+                    "required": [
+                      "enabled",
+                      "totpVerified"
+                    ],
+                    "type": "object"
+                  },
+                  "next": {
+                    "properties": {
+                      "enabled": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ]
+                      },
+                      "totpVerified": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ]
+                      }
+                    },
+                    "required": [
+                      "enabled",
+                      "totpVerified"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "next",
+                  "previous"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "provider": {
+                    "type": "string",
+                    "enum": [
+                      "google"
+                    ]
+                  },
+                  "providerSubjectId": {
+                    "type": "string"
+                  },
+                  "outcome": {
+                    "type": "string",
+                    "enum": [
+                      "account-matched",
+                      "linking-required"
+                    ]
+                  },
+                  "decision": {
+                    "properties": {
+                      "authoritative": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ]
+                      },
+                      "basis": {
+                        "type": "string",
+                        "enum": [
+                          "gmail",
+                          "none",
+                          "workspace-mx"
+                        ]
+                      },
+                      "emailDomain": {
+                        "type": "string"
+                      },
+                      "emailVerified": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ]
+                      },
+                      "hostedDomainMatch": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ]
+                      },
+                      "mxOutcome": {
+                        "type": "string",
+                        "enum": [
+                          "google",
+                          "lookup-error",
+                          "non-google",
+                          "not-checked"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "authoritative",
+                      "basis",
+                      "emailDomain",
+                      "emailVerified",
+                      "hostedDomainMatch",
+                      "mxOutcome"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "decision",
+                  "outcome",
+                  "provider",
+                  "providerSubjectId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "email": {
                     "type": "string"
                   },
@@ -224829,6 +225565,64 @@
                 "required": [
                   "email",
                   "prevEmail"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "prevEmail": {
+                    "type": "string"
+                  },
+                  "actorId": {
+                    "type": "string",
+                    "description": "Okta user id."
+                  },
+                  "actorType": {
+                    "type": "string",
+                    "enum": [
+                      "admin"
+                    ]
+                  },
+                  "actorName": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "actorId",
+                  "actorType",
+                  "email",
+                  "prevEmail"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "actorId": {
+                    "type": "string",
+                    "description": "Okta user id."
+                  },
+                  "actorType": {
+                    "type": "string",
+                    "enum": [
+                      "admin"
+                    ]
+                  },
+                  "actorName": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "actorId",
+                  "actorType",
+                  "username"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -226444,6 +227238,15 @@
               "access-group-updated",
               "access-group-user-added",
               "access-group-user-removed",
+              "admin-agentic-provisioning-account-unlinked",
+              "admin-plan-updated",
+              "admin-secondary-email-added",
+              "admin-secondary-email-removed",
+              "admin-team-name-update",
+              "admin-team-slug-update",
+              "admin-user-delete",
+              "admin-user-primary-email-updated",
+              "admin-username-updated",
               "agentic-provisioning-account-blocked",
               "agentic-provisioning-account-linked",
               "agentic-provisioning-account-relinked",
@@ -227009,6 +227812,7 @@
               "user-emu-recovery-initiated",
               "user-emu-toggled",
               "user-mfa-challenge-failed",
+              "user-mfa-challenge-initiated",
               "user-mfa-challenge-verified",
               "user-mfa-change-failed",
               "user-mfa-configuration-updated",
@@ -227021,6 +227825,7 @@
               "user-phone-removed",
               "user-phone-updated",
               "user-primary-email-updated",
+              "user-provider-email-claim-evaluated",
               "user-sudo-mode-removed",
               "user-token-created",
               "user-token-deleted",
@@ -227124,6 +227929,15 @@
                 "access-group-updated",
                 "access-group-user-added",
                 "access-group-user-removed",
+                "admin-agentic-provisioning-account-unlinked",
+                "admin-plan-updated",
+                "admin-secondary-email-added",
+                "admin-secondary-email-removed",
+                "admin-team-name-update",
+                "admin-team-slug-update",
+                "admin-user-delete",
+                "admin-user-primary-email-updated",
+                "admin-username-updated",
                 "agentic-provisioning-account-blocked",
                 "agentic-provisioning-account-linked",
                 "agentic-provisioning-account-relinked",
@@ -227689,6 +228503,7 @@
                 "user-emu-recovery-initiated",
                 "user-emu-toggled",
                 "user-mfa-challenge-failed",
+                "user-mfa-challenge-initiated",
                 "user-mfa-challenge-verified",
                 "user-mfa-change-failed",
                 "user-mfa-configuration-updated",
@@ -227701,6 +228516,7 @@
                 "user-phone-removed",
                 "user-phone-updated",
                 "user-primary-email-updated",
+                "user-provider-email-claim-evaluated",
                 "user-sudo-mode-removed",
                 "user-token-created",
                 "user-token-deleted",
@@ -229448,7 +230264,7 @@
           },
           "region": {
             "type": "string",
-            "description": "The region the sandbox is configured to run in: the region set on the sandbox, otherwise the project-level default, then the platform default. Where a running session actually landed is reported by `session.region`.",
+            "description": "The region the sandbox is pinned to: the region stored on the sandbox, otherwise the platform default. Where a running session actually landed is reported by `session.region`.",
             "example": "iad1"
           },
           "vcpus": {
@@ -230174,7 +230990,8 @@
                 "UsageViewer",
                 "V0Builder",
                 "V0Chatter",
-                "V0Viewer"
+                "V0Viewer",
+                "WorkflowDecryptor"
               ],
               "description": "The team permissions of the user",
               "example": [
@@ -230444,7 +231261,8 @@
                     "UsageViewer",
                     "V0Builder",
                     "V0Chatter",
-                    "V0Viewer"
+                    "V0Viewer",
+                    "WorkflowDecryptor"
                   ]
                 },
                 "type": "array"
@@ -231230,7 +232048,8 @@
                     "UsageViewer",
                     "V0Builder",
                     "V0Chatter",
-                    "V0Viewer"
+                    "V0Viewer",
+                    "WorkflowDecryptor"
                   ]
                 },
                 "type": "array"
@@ -231582,7 +232401,8 @@
                     "UsageViewer",
                     "V0Builder",
                     "V0Chatter",
-                    "V0Viewer"
+                    "V0Viewer",
+                    "WorkflowDecryptor"
                   ]
                 },
                 "type": "array"

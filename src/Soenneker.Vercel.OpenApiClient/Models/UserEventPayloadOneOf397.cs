@@ -15,21 +15,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The email property</summary>
+        /// <summary>The allowedMethods property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf397AllowedMethodsItem?>? AllowedMethods { get; set; }
 #nullable restore
 #else
-        public string Email { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf397AllowedMethodsItem?> AllowedMethods { get; set; }
 #endif
-        /// <summary>The prevEmail property</summary>
+        /// <summary>The firstFactor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrevEmail { get; set; }
+        public string? FirstFactor { get; set; }
 #nullable restore
 #else
-        public string PrevEmail { get; set; }
+        public string FirstFactor { get; set; }
+#endif
+        /// <summary>The flowId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FlowId { get; set; }
+#nullable restore
+#else
+        public string FlowId { get; set; }
+#endif
+        /// <summary>The loginSessionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LoginSessionId { get; set; }
+#nullable restore
+#else
+        public string LoginSessionId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf397"/> and sets the default values.
@@ -56,8 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "prevEmail", n => { PrevEmail = n.GetStringValue(); } },
+                { "allowedMethods", n => { AllowedMethods = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf397AllowedMethodsItem>()?.AsList(); } },
+                { "firstFactor", n => { FirstFactor = n.GetStringValue(); } },
+                { "flowId", n => { FlowId = n.GetStringValue(); } },
+                { "loginSessionId", n => { LoginSessionId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("email", Email);
-            writer.WriteStringValue("prevEmail", PrevEmail);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf397AllowedMethodsItem>("allowedMethods", AllowedMethods);
+            writer.WriteStringValue("firstFactor", FirstFactor);
+            writer.WriteStringValue("flowId", FlowId);
+            writer.WriteStringValue("loginSessionId", LoginSessionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -48,13 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The functionDefaultTimeout property</summary>
         public double? FunctionDefaultTimeout { get; set; }
         /// <summary>Specifies whether Zero Config Failover is enabled for this project.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigFunctionZeroConfigFailover? FunctionZeroConfigFailover { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigFunctionZeroConfigFailover FunctionZeroConfigFailover { get; set; }
-#endif
+        public bool? FunctionZeroConfigFailover { get; set; }
         /// <summary>The isNSNBDisabled property</summary>
         public bool? IsNSNBDisabled { get; set; }
         /// <summary>
@@ -86,7 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "functionDefaultMemoryType", n => { FunctionDefaultMemoryType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigFunctionDefaultMemoryType>(); } },
                 { "functionDefaultRegions", n => { FunctionDefaultRegions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "functionDefaultTimeout", n => { FunctionDefaultTimeout = n.GetDoubleValue(); } },
-                { "functionZeroConfigFailover", n => { FunctionZeroConfigFailover = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigFunctionZeroConfigFailover>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigFunctionZeroConfigFailover.CreateFromDiscriminatorValue); } },
+                { "functionZeroConfigFailover", n => { FunctionZeroConfigFailover = n.GetBoolValue(); } },
                 { "isNSNBDisabled", n => { IsNSNBDisabled = n.GetBoolValue(); } },
             };
         }
@@ -108,7 +102,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigFunctionDefaultMemoryType>("functionDefaultMemoryType", FunctionDefaultMemoryType);
             writer.WriteCollectionOfPrimitiveValues<string>("functionDefaultRegions", FunctionDefaultRegions);
             writer.WriteDoubleValue("functionDefaultTimeout", FunctionDefaultTimeout);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestResourceConfigFunctionZeroConfigFailover>("functionZeroConfigFailover", FunctionZeroConfigFailover);
+            writer.WriteBoolValue("functionZeroConfigFailover", FunctionZeroConfigFailover);
             writer.WriteBoolValue("isNSNBDisabled", IsNSNBDisabled);
         }
     }

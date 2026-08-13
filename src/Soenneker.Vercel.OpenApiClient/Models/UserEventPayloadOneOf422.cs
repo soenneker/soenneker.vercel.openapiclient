@@ -13,95 +13,39 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf422 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The token&apos;s public ID.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ActorTokenId { get; set; }
-#nullable restore
-#else
-        public string ActorTokenId { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The expired property</summary>
-        public bool? Expired { get; set; }
-        /// <summary>The geolocation property</summary>
+        /// <summary>The configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Geolocation? Geolocation { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Configuration? Configuration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Geolocation Geolocation { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Configuration Configuration { get; set; }
 #endif
-        /// <summary>The ip property</summary>
+        /// <summary>The newName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ip { get; set; }
+        public string? NewName { get; set; }
 #nullable restore
 #else
-        public string Ip { get; set; }
+        public string NewName { get; set; }
 #endif
-        /// <summary>The leaked property</summary>
-        public bool? Leaked { get; set; }
-        /// <summary>The origin property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Origin? Origin { get; set; }
-        /// <summary>The reqId property</summary>
+        /// <summary>The peering property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReqId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Peering? Peering { get; set; }
 #nullable restore
 #else
-        public string ReqId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Peering Peering { get; set; }
 #endif
-        /// <summary>The reqUrl property</summary>
+        /// <summary>The team property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReqUrl { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Team? Team { get; set; }
 #nullable restore
 #else
-        public string ReqUrl { get; set; }
-#endif
-        /// <summary>The revoked property</summary>
-        public bool? Revoked { get; set; }
-        /// <summary>The teamId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TeamId { get; set; }
-#nullable restore
-#else
-        public string TeamId { get; set; }
-#endif
-        /// <summary>The tokenId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TokenId { get; set; }
-#nullable restore
-#else
-        public string TokenId { get; set; }
-#endif
-        /// <summary>The tokenName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TokenName { get; set; }
-#nullable restore
-#else
-        public string TokenName { get; set; }
-#endif
-        /// <summary>The tokenType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TokenType { get; set; }
-#nullable restore
-#else
-        public string TokenType { get; set; }
-#endif
-        /// <summary>The userAgent property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserAgent { get; set; }
-#nullable restore
-#else
-        public string UserAgent { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Team Team { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422"/> and sets the default values.
@@ -128,20 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actorTokenId", n => { ActorTokenId = n.GetStringValue(); } },
-                { "expired", n => { Expired = n.GetBoolValue(); } },
-                { "geolocation", n => { Geolocation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Geolocation>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Geolocation.CreateFromDiscriminatorValue); } },
-                { "ip", n => { Ip = n.GetStringValue(); } },
-                { "leaked", n => { Leaked = n.GetBoolValue(); } },
-                { "origin", n => { Origin = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Origin>(); } },
-                { "reqId", n => { ReqId = n.GetStringValue(); } },
-                { "reqUrl", n => { ReqUrl = n.GetStringValue(); } },
-                { "revoked", n => { Revoked = n.GetBoolValue(); } },
-                { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "tokenId", n => { TokenId = n.GetStringValue(); } },
-                { "tokenName", n => { TokenName = n.GetStringValue(); } },
-                { "tokenType", n => { TokenType = n.GetStringValue(); } },
-                { "userAgent", n => { UserAgent = n.GetStringValue(); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Configuration>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Configuration.CreateFromDiscriminatorValue); } },
+                { "newName", n => { NewName = n.GetStringValue(); } },
+                { "peering", n => { Peering = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Peering>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Peering.CreateFromDiscriminatorValue); } },
+                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Team.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -151,20 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("actorTokenId", ActorTokenId);
-            writer.WriteBoolValue("expired", Expired);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Geolocation>("geolocation", Geolocation);
-            writer.WriteStringValue("ip", Ip);
-            writer.WriteBoolValue("leaked", Leaked);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Origin>("origin", Origin);
-            writer.WriteStringValue("reqId", ReqId);
-            writer.WriteStringValue("reqUrl", ReqUrl);
-            writer.WriteBoolValue("revoked", Revoked);
-            writer.WriteStringValue("teamId", TeamId);
-            writer.WriteStringValue("tokenId", TokenId);
-            writer.WriteStringValue("tokenName", TokenName);
-            writer.WriteStringValue("tokenType", TokenType);
-            writer.WriteStringValue("userAgent", UserAgent);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Configuration>("configuration", Configuration);
+            writer.WriteStringValue("newName", NewName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Peering>("peering", Peering);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf422Team>("team", Team);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

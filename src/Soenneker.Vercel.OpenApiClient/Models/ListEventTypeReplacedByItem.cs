@@ -31,6 +31,42 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AccessGroupUserRemoved,
         #pragma warning restore CS1591
+        [EnumMember(Value = "admin-agentic-provisioning-account-unlinked")]
+        #pragma warning disable CS1591
+        AdminAgenticProvisioningAccountUnlinked,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "admin-plan-updated")]
+        #pragma warning disable CS1591
+        AdminPlanUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "admin-secondary-email-added")]
+        #pragma warning disable CS1591
+        AdminSecondaryEmailAdded,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "admin-secondary-email-removed")]
+        #pragma warning disable CS1591
+        AdminSecondaryEmailRemoved,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "admin-team-name-update")]
+        #pragma warning disable CS1591
+        AdminTeamNameUpdate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "admin-team-slug-update")]
+        #pragma warning disable CS1591
+        AdminTeamSlugUpdate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "admin-user-delete")]
+        #pragma warning disable CS1591
+        AdminUserDelete,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "admin-user-primary-email-updated")]
+        #pragma warning disable CS1591
+        AdminUserPrimaryEmailUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "admin-username-updated")]
+        #pragma warning disable CS1591
+        AdminUsernameUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "agentic-provisioning-account-blocked")]
         #pragma warning disable CS1591
         AgenticProvisioningAccountBlocked,
@@ -2291,6 +2327,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         UserMfaChallengeFailed,
         #pragma warning restore CS1591
+        [EnumMember(Value = "user-mfa-challenge-initiated")]
+        #pragma warning disable CS1591
+        UserMfaChallengeInitiated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "user-mfa-challenge-verified")]
         #pragma warning disable CS1591
         UserMfaChallengeVerified,
@@ -2338,6 +2378,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "user-primary-email-updated")]
         #pragma warning disable CS1591
         UserPrimaryEmailUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "user-provider-email-claim-evaluated")]
+        #pragma warning disable CS1591
+        UserProviderEmailClaimEvaluated,
         #pragma warning restore CS1591
         [EnumMember(Value = "user-sudo-mode-removed")]
         #pragma warning disable CS1591
