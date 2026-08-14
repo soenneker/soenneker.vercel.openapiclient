@@ -7,28 +7,15 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="string"/>, List&lt;string&gt;
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UpdateFirewallConfigRequestOneOf19Value : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class UpdateFirewallConfigRequestOneOf19Value : IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type List&lt;string&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? String { get; set; }
-#nullable restore
-#else
-        public List<string> String { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UpdateFirewallConfigRequestOneOf19ValueString { get; set; }
-#nullable restore
-#else
-        public string UpdateFirewallConfigRequestOneOf19ValueString { get; set; }
-#endif
+        /// <summary>The action property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf19ValueAction? Action { get; set; }
+        /// <summary>The active property</summary>
+        public bool? Active { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,17 +24,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf19Value CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf19Value();
-            if(parseNode.GetStringValue() is string updateFirewallConfigRequestOneOf19ValueStringValue)
-            {
-                result.UpdateFirewallConfigRequestOneOf19ValueString = updateFirewallConfigRequestOneOf19ValueStringValue;
-            }
-            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
-            {
-                result.String = stringValue;
-            }
-            return result;
+            return new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf19Value();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,7 +32,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>();
+            return new Dictionary<string, Action<IParseNode>>
+            {
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf19ValueAction>(); } },
+                { "active", n => { Active = n.GetBoolValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -64,14 +45,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(UpdateFirewallConfigRequestOneOf19ValueString != null)
-            {
-                writer.WriteStringValue(null, UpdateFirewallConfigRequestOneOf19ValueString);
-            }
-            else if(String != null)
-            {
-                writer.WriteCollectionOfPrimitiveValues<string>(null, String);
-            }
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf19ValueAction>("action", Action);
+            writer.WriteBoolValue("active", Active);
         }
     }
 }

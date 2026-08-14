@@ -4,6 +4,8 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.Models;
+using Soenneker.Vercel.OpenApiClient.V3.Sandboxes.Item;
+using Soenneker.Vercel.OpenApiClient.V3.Sandboxes.Sessions;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +19,23 @@ namespace Soenneker.Vercel.OpenApiClient.V3.Sandboxes
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SandboxesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The sessions property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V3.Sandboxes.Sessions.SessionsRequestBuilder Sessions
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V3.Sandboxes.Sessions.SessionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v3.sandboxes.item collection</summary>
+        /// <param name="position">Name of the source sandbox to fork.</param>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V3.Sandboxes.Item.WithNameItemRequestBuilder"/></returns>
+        public global::Soenneker.Vercel.OpenApiClient.V3.Sandboxes.Item.WithNameItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("name", position);
+                return new global::Soenneker.Vercel.OpenApiClient.V3.Sandboxes.Item.WithNameItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V3.Sandboxes.SandboxesRequestBuilder"/> and sets the default values.
         /// </summary>

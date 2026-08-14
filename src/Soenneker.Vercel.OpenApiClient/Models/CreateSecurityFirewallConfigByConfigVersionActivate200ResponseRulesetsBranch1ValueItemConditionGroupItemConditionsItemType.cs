@@ -120,6 +120,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ServerAction,
         #pragma warning restore CS1591
+        [EnumMember(Value = "shared_condition")]
+        #pragma warning disable CS1591
+        SharedCondition,
+        #pragma warning restore CS1591
         [EnumMember(Value = "target_path")]
         #pragma warning disable CS1591
         TargetPath,

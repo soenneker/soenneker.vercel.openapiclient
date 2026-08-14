@@ -9,18 +9,53 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UpdateFirewallConfigRequestOneOf10Value : IAdditionalDataHolder, IParsable
+    public partial class UpdateFirewallConfigRequestOneOf10Value : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf10Value"/> and sets the default values.
-        /// </summary>
-        public UpdateFirewallConfigRequestOneOf10Value()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>The action property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf10ValueAction? Action { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf10ValueAction Action { get; set; }
+#endif
+        /// <summary>The active property</summary>
+        public bool? Active { get; set; }
+        /// <summary>The conditionGroup property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf10ValueConditionGroupItem>? ConditionGroup { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf10ValueConditionGroupItem> ConditionGroup { get; set; }
+#endif
+        /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>The valid property</summary>
+        public bool? Valid { get; set; }
+        /// <summary>The validationErrors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf10ValueValidationErrors? ValidationErrors { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf10ValueValidationErrors ValidationErrors { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,6 +74,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf10ValueAction>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf10ValueAction.CreateFromDiscriminatorValue); } },
+                { "active", n => { Active = n.GetBoolValue(); } },
+                { "conditionGroup", n => { ConditionGroup = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf10ValueConditionGroupItem>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf10ValueConditionGroupItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "valid", n => { Valid = n.GetBoolValue(); } },
+                { "validationErrors", n => { ValidationErrors = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf10ValueValidationErrors>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf10ValueValidationErrors.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,7 +90,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf10ValueAction>("action", Action);
+            writer.WriteBoolValue("active", Active);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf10ValueConditionGroupItem>("conditionGroup", ConditionGroup);
+            writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("valid", Valid);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf10ValueValidationErrors>("validationErrors", ValidationErrors);
         }
     }
 }

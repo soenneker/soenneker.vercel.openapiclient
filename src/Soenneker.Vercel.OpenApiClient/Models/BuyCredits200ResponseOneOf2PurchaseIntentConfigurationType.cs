@@ -32,5 +32,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         OrbSubscriptionIntent,
         #pragma warning restore CS1591
+        [EnumMember(Value = "subscription")]
+        #pragma warning disable CS1591
+        Subscription,
+        #pragma warning restore CS1591
     }
 }

@@ -14,8 +14,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>The action property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf16ValueAction? Action { get; set; }
-        /// <summary>The active property</summary>
-        public bool? Active { get; set; }
+        /// <summary>The hostname property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Hostname { get; set; }
+#nullable restore
+#else
+        public string Hostname { get; set; }
+#endif
+        /// <summary>The ip property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Ip { get; set; }
+#nullable restore
+#else
+        public string Ip { get; set; }
+#endif
+        /// <summary>The notes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Notes { get; set; }
+#nullable restore
+#else
+        public string Notes { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +57,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf16ValueAction>(); } },
-                { "active", n => { Active = n.GetBoolValue(); } },
+                { "hostname", n => { Hostname = n.GetStringValue(); } },
+                { "ip", n => { Ip = n.GetStringValue(); } },
+                { "notes", n => { Notes = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -46,7 +70,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf16ValueAction>("action", Action);
-            writer.WriteBoolValue("active", Active);
+            writer.WriteStringValue("hostname", Hostname);
+            writer.WriteStringValue("ip", Ip);
+            writer.WriteStringValue("notes", Notes);
         }
     }
 }

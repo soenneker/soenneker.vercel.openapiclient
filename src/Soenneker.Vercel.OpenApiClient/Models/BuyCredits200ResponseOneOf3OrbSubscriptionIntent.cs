@@ -46,6 +46,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string OrbSubscriptionId { get; set; }
 #endif
+        /// <summary>The orbUpdate property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentOrbUpdate? OrbUpdate { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentOrbUpdate OrbUpdate { get; set; }
+#endif
         /// <summary>The owner ID for this intent (e.g., team or user ID).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,6 +109,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "orbSubscriptionId", n => { OrbSubscriptionId = n.GetStringValue(); } },
+                { "orbUpdate", n => { OrbUpdate = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentOrbUpdate>(global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentOrbUpdate.CreateFromDiscriminatorValue); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "purchaseIntentId", n => { PurchaseIntentId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentStatus>(); } },
@@ -118,6 +127,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("createdAt", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("orbSubscriptionId", OrbSubscriptionId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentOrbUpdate>("orbUpdate", OrbUpdate);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteStringValue("purchaseIntentId", PurchaseIntentId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOneOf3OrbSubscriptionIntentStatus>("status", Status);

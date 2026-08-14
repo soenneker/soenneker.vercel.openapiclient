@@ -28,6 +28,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Linear,
         #pragma warning restore CS1591
+        [EnumMember(Value = "linq")]
+        #pragma warning disable CS1591
+        Linq,
+        #pragma warning restore CS1591
         [EnumMember(Value = "microsoft-entra")]
         #pragma warning disable CS1591
         MicrosoftEntra,

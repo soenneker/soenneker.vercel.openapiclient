@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeApiKey"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeGithub"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeLinear"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuth"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypePhoton"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeSalesforce"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeSlack"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeSnowflake"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeSnowflakeWif"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataMember1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeApiKey"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeGithub"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeLinear"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeLinq"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuth"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypePhoton"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeSalesforce"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeSlack"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeSnowflake"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeSnowflakeWif"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateConnectorRequestData : IComposedTypeWrapper, IParsable
@@ -44,6 +44,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeLinear CreateConnectorRequestDataTypeLinear { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeLinq"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeLinq? CreateConnectorRequestDataTypeLinq { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeLinq CreateConnectorRequestDataTypeLinq { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuth"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,6 +114,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             result.CreateConnectorRequestDataTypeApiKey = new global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeApiKey();
             result.CreateConnectorRequestDataTypeGithub = new global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeGithub();
             result.CreateConnectorRequestDataTypeLinear = new global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeLinear();
+            result.CreateConnectorRequestDataTypeLinq = new global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeLinq();
             result.CreateConnectorRequestDataTypeOAuth = new global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeOAuth();
             result.CreateConnectorRequestDataTypePhoton = new global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypePhoton();
             result.CreateConnectorRequestDataTypeSalesforce = new global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeSalesforce();
@@ -120,9 +129,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CreateConnectorRequestDataMember1 != null || CreateConnectorRequestDataTypeApiKey != null || CreateConnectorRequestDataTypeGithub != null || CreateConnectorRequestDataTypeLinear != null || CreateConnectorRequestDataTypeOAuth != null || CreateConnectorRequestDataTypePhoton != null || CreateConnectorRequestDataTypeSalesforce != null || CreateConnectorRequestDataTypeSlack != null || CreateConnectorRequestDataTypeSnowflake != null || CreateConnectorRequestDataTypeSnowflakeWif != null)
+            if(CreateConnectorRequestDataMember1 != null || CreateConnectorRequestDataTypeApiKey != null || CreateConnectorRequestDataTypeGithub != null || CreateConnectorRequestDataTypeLinear != null || CreateConnectorRequestDataTypeLinq != null || CreateConnectorRequestDataTypeOAuth != null || CreateConnectorRequestDataTypePhoton != null || CreateConnectorRequestDataTypeSalesforce != null || CreateConnectorRequestDataTypeSlack != null || CreateConnectorRequestDataTypeSnowflake != null || CreateConnectorRequestDataTypeSnowflakeWif != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CreateConnectorRequestDataMember1, CreateConnectorRequestDataTypeApiKey, CreateConnectorRequestDataTypeGithub, CreateConnectorRequestDataTypeLinear, CreateConnectorRequestDataTypeOAuth, CreateConnectorRequestDataTypePhoton, CreateConnectorRequestDataTypeSalesforce, CreateConnectorRequestDataTypeSlack, CreateConnectorRequestDataTypeSnowflake, CreateConnectorRequestDataTypeSnowflakeWif);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CreateConnectorRequestDataMember1, CreateConnectorRequestDataTypeApiKey, CreateConnectorRequestDataTypeGithub, CreateConnectorRequestDataTypeLinear, CreateConnectorRequestDataTypeLinq, CreateConnectorRequestDataTypeOAuth, CreateConnectorRequestDataTypePhoton, CreateConnectorRequestDataTypeSalesforce, CreateConnectorRequestDataTypeSlack, CreateConnectorRequestDataTypeSnowflake, CreateConnectorRequestDataTypeSnowflakeWif);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -133,7 +142,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataMember1>(null, CreateConnectorRequestDataMember1, CreateConnectorRequestDataTypeApiKey, CreateConnectorRequestDataTypeGithub, CreateConnectorRequestDataTypeLinear, CreateConnectorRequestDataTypeOAuth, CreateConnectorRequestDataTypePhoton, CreateConnectorRequestDataTypeSalesforce, CreateConnectorRequestDataTypeSlack, CreateConnectorRequestDataTypeSnowflake, CreateConnectorRequestDataTypeSnowflakeWif);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataMember1>(null, CreateConnectorRequestDataMember1, CreateConnectorRequestDataTypeApiKey, CreateConnectorRequestDataTypeGithub, CreateConnectorRequestDataTypeLinear, CreateConnectorRequestDataTypeLinq, CreateConnectorRequestDataTypeOAuth, CreateConnectorRequestDataTypePhoton, CreateConnectorRequestDataTypeSalesforce, CreateConnectorRequestDataTypeSlack, CreateConnectorRequestDataTypeSnowflake, CreateConnectorRequestDataTypeSnowflakeWif);
         }
     }
 }

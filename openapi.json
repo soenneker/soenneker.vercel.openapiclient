@@ -4053,6 +4053,78 @@
                                   ],
                                   "type": "object",
                                   "description": "The configuration for a credit purchase"
+                                },
+                                {
+                                  "properties": {
+                                    "options": {
+                                      "properties": {
+                                        "planId": {
+                                          "type": "string",
+                                          "description": "The ID of the plan to subscribe to"
+                                        },
+                                        "planItemQuantities": {
+                                          "items": {
+                                            "properties": {
+                                              "planItemId": {
+                                                "type": "string",
+                                                "description": "The ID of the plan item to set the quantity for"
+                                              },
+                                              "quantity": {
+                                                "type": "number",
+                                                "description": "The nonnegative integer quantity for the plan item"
+                                              },
+                                              "resourceIds": {
+                                                "items": {
+                                                  "type": "string"
+                                                },
+                                                "type": "array",
+                                                "description": "The resource IDs to associate with the plan item quantity"
+                                              }
+                                            },
+                                            "required": [
+                                              "planItemId",
+                                              "quantity"
+                                            ],
+                                            "type": "object",
+                                            "description": "The plan item quantities to set for the subscription"
+                                          },
+                                          "type": "array",
+                                          "description": "The plan item quantities to set for the subscription"
+                                        },
+                                        "rateVariantKey": {
+                                          "type": "string",
+                                          "description": "The rate variant key to apply to the subscription"
+                                        }
+                                      },
+                                      "required": [
+                                        "planId"
+                                      ],
+                                      "type": "object",
+                                      "description": "Purchase configuration specific options"
+                                    },
+                                    "output": {
+                                      "properties": {
+                                        "planChangeId": {
+                                          "type": "string",
+                                          "description": "The committed Plan revision used to calculate the purchase price"
+                                        }
+                                      },
+                                      "type": "object"
+                                    },
+                                    "type": {
+                                      "type": "string",
+                                      "enum": [
+                                        "subscription"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "options",
+                                    "output",
+                                    "type"
+                                  ],
+                                  "type": "object",
+                                  "description": "The configuration for a credit purchase"
                                 }
                               ]
                             },
@@ -4824,6 +4896,77 @@
                               "type": "string",
                               "description": "The Orb subscription ID this intent is associated with."
                             },
+                            "orbUpdate": {
+                              "oneOf": [
+                                {
+                                  "properties": {
+                                    "mode": {
+                                      "type": "string",
+                                      "enum": [
+                                        "sync"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "mode"
+                                  ],
+                                  "type": "object",
+                                  "description": "How the subscription change is applied to Orb."
+                                },
+                                {
+                                  "properties": {
+                                    "mode": {
+                                      "type": "string",
+                                      "enum": [
+                                        "async"
+                                      ]
+                                    },
+                                    "status": {
+                                      "type": "string",
+                                      "enum": [
+                                        "canceled",
+                                        "failed",
+                                        "pending",
+                                        "running"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "mode",
+                                    "status"
+                                  ],
+                                  "type": "object",
+                                  "description": "How the subscription change is applied to Orb."
+                                },
+                                {
+                                  "properties": {
+                                    "appliedAt": {
+                                      "type": "string",
+                                      "description": "The ISO 8601 date-time that the subscription change was applied to Orb."
+                                    },
+                                    "mode": {
+                                      "type": "string",
+                                      "enum": [
+                                        "async"
+                                      ]
+                                    },
+                                    "status": {
+                                      "type": "string",
+                                      "enum": [
+                                        "succeeded"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "appliedAt",
+                                    "mode",
+                                    "status"
+                                  ],
+                                  "type": "object",
+                                  "description": "How the subscription change is applied to Orb."
+                                }
+                              ]
+                            },
                             "ownerId": {
                               "type": "string",
                               "description": "The owner ID for this intent (e.g., team or user ID)."
@@ -4851,6 +4994,7 @@
                             "createdAt",
                             "id",
                             "orbSubscriptionId",
+                            "orbUpdate",
                             "ownerId",
                             "status",
                             "updatedAt"
@@ -12122,6 +12266,7 @@
                         "discord",
                         "github",
                         "linear",
+                        "linq",
                         "microsoft-entra",
                         "oauth",
                         "photon",
@@ -13155,6 +13300,27 @@
                       {
                         "type": "object",
                         "properties": {
+                          "apiToken": {
+                            "type": "string",
+                            "description": "Linq partner API token for the shared line."
+                          },
+                          "phoneNumbers": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "pattern": "^\\\\+[1-9]\\\\d{1,14}$"
+                            }
+                          }
+                        },
+                        "required": [
+                          "apiToken"
+                        ],
+                        "additionalProperties": false,
+                        "title": "type:linq"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
                           "consumerKey": {
                             "type": "string"
                           },
@@ -13316,7 +13482,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "description": "Known types: api-key, github, linear, oauth, photon, salesforce, slack, snowflake. Optional when \\\"connectionMethod\\\" is set."
+                    "description": "Known types: api-key, github, linear, linq, oauth, photon, salesforce, slack, snowflake. Optional when \\\"connectionMethod\\\" is set."
                   },
                   "service": {
                     "type": "string",
@@ -75995,7 +76161,8 @@
                                       "type": "string"
                                     },
                                     "userId": {
-                                      "type": "string"
+                                      "type": "string",
+                                      "description": "Present for user creators; omitted for app/integration/system creators."
                                     },
                                     "withCache": {
                                       "type": "boolean",
@@ -76016,8 +76183,7 @@
                                     "private",
                                     "readyState",
                                     "type",
-                                    "url",
-                                    "userId"
+                                    "url"
                                   ],
                                   "type": "object"
                                 },
@@ -77654,7 +77820,8 @@
                                   "type": "string"
                                 },
                                 "userId": {
-                                  "type": "string"
+                                  "type": "string",
+                                  "description": "Present for user creators; omitted for app/integration/system creators."
                                 },
                                 "withCache": {
                                   "type": "boolean",
@@ -77675,8 +77842,7 @@
                                 "private",
                                 "readyState",
                                 "type",
-                                "url",
-                                "userId"
+                                "url"
                               ],
                               "type": "object"
                             },
@@ -79368,7 +79534,8 @@
                                   "type": "string"
                                 },
                                 "userId": {
-                                  "type": "string"
+                                  "type": "string",
+                                  "description": "Present for user creators; omitted for app/integration/system creators."
                                 },
                                 "withCache": {
                                   "type": "boolean",
@@ -79389,8 +79556,7 @@
                                 "private",
                                 "readyState",
                                 "type",
-                                "url",
-                                "userId"
+                                "url"
                               ],
                               "type": "object"
                             },
@@ -90621,7 +90787,8 @@
                                       "type": "string"
                                     },
                                     "userId": {
-                                      "type": "string"
+                                      "type": "string",
+                                      "description": "Present for user creators; omitted for app/integration/system creators."
                                     },
                                     "withCache": {
                                       "type": "boolean",
@@ -90642,8 +90809,7 @@
                                     "private",
                                     "readyState",
                                     "type",
-                                    "url",
-                                    "userId"
+                                    "url"
                                   ],
                                   "type": "object"
                                 },
@@ -91699,7 +91865,8 @@
                                   "type": "string"
                                 },
                                 "userId": {
-                                  "type": "string"
+                                  "type": "string",
+                                  "description": "Present for user creators; omitted for app/integration/system creators."
                                 },
                                 "withCache": {
                                   "type": "boolean",
@@ -91720,8 +91887,7 @@
                                 "private",
                                 "readyState",
                                 "type",
-                                "url",
-                                "userId"
+                                "url"
                               ],
                               "type": "object"
                             },
@@ -93024,7 +93190,8 @@
                                   "type": "string"
                                 },
                                 "userId": {
-                                  "type": "string"
+                                  "type": "string",
+                                  "description": "Present for user creators; omitted for app/integration/system creators."
                                 },
                                 "withCache": {
                                   "type": "boolean",
@@ -93045,8 +93212,7 @@
                                 "private",
                                 "readyState",
                                 "type",
-                                "url",
-                                "userId"
+                                "url"
                               ],
                               "type": "object"
                             },
@@ -95329,7 +95495,8 @@
                                           "type": "string"
                                         },
                                         "userId": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "description": "Present for user creators; omitted for app/integration/system creators."
                                         },
                                         "withCache": {
                                           "type": "boolean",
@@ -95350,8 +95517,7 @@
                                         "private",
                                         "readyState",
                                         "type",
-                                        "url",
-                                        "userId"
+                                        "url"
                                       ],
                                       "type": "object"
                                     },
@@ -96407,7 +96573,8 @@
                                       "type": "string"
                                     },
                                     "userId": {
-                                      "type": "string"
+                                      "type": "string",
+                                      "description": "Present for user creators; omitted for app/integration/system creators."
                                     },
                                     "withCache": {
                                       "type": "boolean",
@@ -96428,8 +96595,7 @@
                                     "private",
                                     "readyState",
                                     "type",
-                                    "url",
-                                    "userId"
+                                    "url"
                                   ],
                                   "type": "object"
                                 },
@@ -97732,7 +97898,8 @@
                                       "type": "string"
                                     },
                                     "userId": {
-                                      "type": "string"
+                                      "type": "string",
+                                      "description": "Present for user creators; omitted for app/integration/system creators."
                                     },
                                     "withCache": {
                                       "type": "boolean",
@@ -97753,8 +97920,7 @@
                                     "private",
                                     "readyState",
                                     "type",
-                                    "url",
-                                    "userId"
+                                    "url"
                                   ],
                                   "type": "object"
                                 },
@@ -100072,7 +100238,8 @@
                                           "type": "string"
                                         },
                                         "userId": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "description": "Present for user creators; omitted for app/integration/system creators."
                                         },
                                         "withCache": {
                                           "type": "boolean",
@@ -100093,8 +100260,7 @@
                                         "private",
                                         "readyState",
                                         "type",
-                                        "url",
-                                        "userId"
+                                        "url"
                                       ],
                                       "type": "object"
                                     },
@@ -101731,7 +101897,8 @@
                                       "type": "string"
                                     },
                                     "userId": {
-                                      "type": "string"
+                                      "type": "string",
+                                      "description": "Present for user creators; omitted for app/integration/system creators."
                                     },
                                     "withCache": {
                                       "type": "boolean",
@@ -101752,8 +101919,7 @@
                                     "private",
                                     "readyState",
                                     "type",
-                                    "url",
-                                    "userId"
+                                    "url"
                                   ],
                                   "type": "object"
                                 },
@@ -103445,7 +103611,8 @@
                                       "type": "string"
                                     },
                                     "userId": {
-                                      "type": "string"
+                                      "type": "string",
+                                      "description": "Present for user creators; omitted for app/integration/system creators."
                                     },
                                     "withCache": {
                                       "type": "boolean",
@@ -103466,8 +103633,7 @@
                                     "private",
                                     "readyState",
                                     "type",
-                                    "url",
-                                    "userId"
+                                    "url"
                                   ],
                                   "type": "object"
                                 },
@@ -108199,7 +108365,8 @@
                                 "type": "string"
                               },
                               "userId": {
-                                "type": "string"
+                                "type": "string",
+                                "description": "Present for user creators; omitted for app/integration/system creators."
                               },
                               "withCache": {
                                 "type": "boolean",
@@ -108220,8 +108387,7 @@
                               "private",
                               "readyState",
                               "type",
-                              "url",
-                              "userId"
+                              "url"
                             ],
                             "type": "object"
                           },
@@ -109858,7 +110024,8 @@
                             "type": "string"
                           },
                           "userId": {
-                            "type": "string"
+                            "type": "string",
+                            "description": "Present for user creators; omitted for app/integration/system creators."
                           },
                           "withCache": {
                             "type": "boolean",
@@ -109879,8 +110046,7 @@
                           "private",
                           "readyState",
                           "type",
-                          "url",
-                          "userId"
+                          "url"
                         ],
                         "type": "object"
                       },
@@ -111572,7 +111738,8 @@
                             "type": "string"
                           },
                           "userId": {
-                            "type": "string"
+                            "type": "string",
+                            "description": "Present for user creators; omitted for app/integration/system creators."
                           },
                           "withCache": {
                             "type": "boolean",
@@ -111593,8 +111760,7 @@
                           "private",
                           "readyState",
                           "type",
-                          "url",
-                          "userId"
+                          "url"
                         ],
                         "type": "object"
                       },
@@ -116488,7 +116654,8 @@
                                 "type": "string"
                               },
                               "userId": {
-                                "type": "string"
+                                "type": "string",
+                                "description": "Present for user creators; omitted for app/integration/system creators."
                               },
                               "withCache": {
                                 "type": "boolean",
@@ -116509,8 +116676,7 @@
                               "private",
                               "readyState",
                               "type",
-                              "url",
-                              "userId"
+                              "url"
                             ],
                             "type": "object"
                           },
@@ -118145,7 +118311,8 @@
                             "type": "string"
                           },
                           "userId": {
-                            "type": "string"
+                            "type": "string",
+                            "description": "Present for user creators; omitted for app/integration/system creators."
                           },
                           "withCache": {
                             "type": "boolean",
@@ -118166,8 +118333,7 @@
                           "private",
                           "readyState",
                           "type",
-                          "url",
-                          "userId"
+                          "url"
                         ],
                         "type": "object"
                       },
@@ -119859,7 +120025,8 @@
                             "type": "string"
                           },
                           "userId": {
-                            "type": "string"
+                            "type": "string",
+                            "description": "Present for user creators; omitted for app/integration/system creators."
                           },
                           "withCache": {
                             "type": "boolean",
@@ -119880,8 +120047,7 @@
                           "private",
                           "readyState",
                           "type",
-                          "url",
-                          "userId"
+                          "url"
                         ],
                         "type": "object"
                       },
@@ -124140,7 +124306,8 @@
                                 "type": "string"
                               },
                               "userId": {
-                                "type": "string"
+                                "type": "string",
+                                "description": "Present for user creators; omitted for app/integration/system creators."
                               },
                               "withCache": {
                                 "type": "boolean",
@@ -124161,8 +124328,7 @@
                               "private",
                               "readyState",
                               "type",
-                              "url",
-                              "userId"
+                              "url"
                             ],
                             "type": "object"
                           },
@@ -125790,7 +125956,8 @@
                             "type": "string"
                           },
                           "userId": {
-                            "type": "string"
+                            "type": "string",
+                            "description": "Present for user creators; omitted for app/integration/system creators."
                           },
                           "withCache": {
                             "type": "boolean",
@@ -125811,8 +125978,7 @@
                           "private",
                           "readyState",
                           "type",
-                          "url",
-                          "userId"
+                          "url"
                         ],
                         "type": "object"
                       },
@@ -127504,7 +127670,8 @@
                             "type": "string"
                           },
                           "userId": {
-                            "type": "string"
+                            "type": "string",
+                            "description": "Present for user creators; omitted for app/integration/system creators."
                           },
                           "withCache": {
                             "type": "boolean",
@@ -127525,8 +127692,7 @@
                           "private",
                           "readyState",
                           "type",
-                          "url",
-                          "userId"
+                          "url"
                         ],
                         "type": "object"
                       },
@@ -133040,7 +133206,8 @@
                                 "type": "string"
                               },
                               "userId": {
-                                "type": "string"
+                                "type": "string",
+                                "description": "Present for user creators; omitted for app/integration/system creators."
                               },
                               "withCache": {
                                 "type": "boolean",
@@ -133061,8 +133228,7 @@
                               "private",
                               "readyState",
                               "type",
-                              "url",
-                              "userId"
+                              "url"
                             ],
                             "type": "object"
                           },
@@ -134699,7 +134865,8 @@
                             "type": "string"
                           },
                           "userId": {
-                            "type": "string"
+                            "type": "string",
+                            "description": "Present for user creators; omitted for app/integration/system creators."
                           },
                           "withCache": {
                             "type": "boolean",
@@ -134720,8 +134887,7 @@
                           "private",
                           "readyState",
                           "type",
-                          "url",
-                          "userId"
+                          "url"
                         ],
                         "type": "object"
                       },
@@ -136413,7 +136579,8 @@
                             "type": "string"
                           },
                           "userId": {
-                            "type": "string"
+                            "type": "string",
+                            "description": "Present for user creators; omitted for app/integration/system creators."
                           },
                           "withCache": {
                             "type": "boolean",
@@ -136434,8 +136601,7 @@
                           "private",
                           "readyState",
                           "type",
-                          "url",
-                          "userId"
+                          "url"
                         ],
                         "type": "object"
                       },
@@ -153457,7 +153623,8 @@
                                 "type": "string"
                               },
                               "userId": {
-                                "type": "string"
+                                "type": "string",
+                                "description": "Present for user creators; omitted for app/integration/system creators."
                               },
                               "withCache": {
                                 "type": "boolean",
@@ -153478,8 +153645,7 @@
                               "private",
                               "readyState",
                               "type",
-                              "url",
-                              "userId"
+                              "url"
                             ],
                             "type": "object"
                           },
@@ -155116,7 +155282,8 @@
                             "type": "string"
                           },
                           "userId": {
-                            "type": "string"
+                            "type": "string",
+                            "description": "Present for user creators; omitted for app/integration/system creators."
                           },
                           "withCache": {
                             "type": "boolean",
@@ -155137,8 +155304,7 @@
                           "private",
                           "readyState",
                           "type",
-                          "url",
-                          "userId"
+                          "url"
                         ],
                         "type": "object"
                       },
@@ -156830,7 +156996,8 @@
                             "type": "string"
                           },
                           "userId": {
-                            "type": "string"
+                            "type": "string",
+                            "description": "Present for user creators; omitted for app/integration/system creators."
                           },
                           "withCache": {
                             "type": "boolean",
@@ -156851,8 +157018,7 @@
                           "private",
                           "readyState",
                           "type",
-                          "url",
-                          "userId"
+                          "url"
                         ],
                         "type": "object"
                       },
@@ -165586,7 +165752,7 @@
     "/v2/sandboxes/sessions/{sessionId}/snapshot": {
       "post": {
         "description": "Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to quickly restore a session to a previous state or to create new sessions with pre-configured environments. The session must be running and able to accept commands for a snapshot to be created. The session will be terminated after the snapshot is created.",
-        "operationId": "createSessionSnapshot",
+        "operationId": "createSandboxesSessionsBySessionIdSnapshotV2",
         "security": [
           {
             "bearerToken": []
@@ -165704,7 +165870,7 @@
     "/v2/sandboxes/{name}/fork": {
       "post": {
         "description": "Forks a named sandbox, creating a new named sandbox from the source's configuration. Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence, snapshot settings and — unlike the SDK-side fork — environment variables are copied from the source automatically (`interactive` is not). When the source has a snapshot the fork starts from it; otherwise it starts from the source's runtime/image. Any field provided in the request body overrides the value copied from the source.",
-        "operationId": "createSandboxesByNameFork",
+        "operationId": "createSandboxesByNameForkV2",
         "security": [
           {
             "bearerToken": []
@@ -167081,6 +167247,1518 @@
         }
       }
     },
+    "/v3/sandboxes/sessions/{sessionId}/snapshot": {
+      "post": {
+        "description": "Creates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to quickly restore a session to a previous state or to create new sessions with pre-configured environments. The session must be running and able to accept commands for a snapshot to be created. The session will be terminated after the snapshot is created. Unlike v2, snapshots expire after 7 days when neither the request nor the sandbox configuration specifies an expiration.",
+        "operationId": "createSandboxesSessionsBySessionIdSnapshotV3",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Create a snapshot",
+        "tags": [
+          "sandboxes"
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "snapshot": {
+                      "$ref": "#/components/schemas/Snapshot"
+                    },
+                    "session": {
+                      "$ref": "#/components/schemas/Session"
+                    }
+                  },
+                  "required": [
+                    "session",
+                    "snapshot"
+                  ],
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          },
+          "422": {
+            "description": ""
+          },
+          "429": {
+            "description": ""
+          },
+          "500": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "sessionId",
+            "description": "The unique identifier of the session to snapshot.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The unique identifier of the session to snapshot.",
+              "example": "sbx_abc123"
+            }
+          },
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "description": "The Team slug to perform the request on behalf of.",
+            "in": "query",
+            "name": "slug",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "expiration": {
+                    "description": "The number of milliseconds after which the snapshot will expire and be deleted. Defaults to 7 days when neither this field nor the sandbox configuration specifies an expiration. Use 0 for no expiration.",
+                    "oneOf": [
+                      {},
+                      {
+                        "type": "integer"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v3/sandboxes/{name}/fork": {
+      "post": {
+        "description": "Forks a named sandbox, creating a new named sandbox from the source's configuration. Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence, snapshot settings and — unlike the SDK-side fork — environment variables are copied from the source automatically (`interactive` is not). When the source has a snapshot the fork starts from it; otherwise it starts from the source's runtime/image. Any field provided in the request body overrides the value copied from the source. Unlike v2, when neither the body nor the source provides a value, snapshots expire after 7 days by default and persistent sandboxes keep only their most recent snapshot (`keepLastSnapshots: null` disables the limit).",
+        "operationId": "createSandboxesByNameForkV3",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Fork a named sandbox",
+        "tags": [
+          "sandboxes"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "sandbox": {
+                      "$ref": "#/components/schemas/NamedSandbox"
+                    },
+                    "session": {
+                      "$ref": "#/components/schemas/Session"
+                    },
+                    "routes": {
+                      "items": {
+                        "$ref": "#/components/schemas/SandboxPublicRoute"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "routes",
+                    "sandbox",
+                    "session"
+                  ],
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "409": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          },
+          "422": {
+            "description": ""
+          },
+          "429": {
+            "description": "The concurrency limit has been exceeded."
+          },
+          "500": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "name",
+            "description": "Name of the source sandbox to fork.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "description": "Name of the source sandbox to fork.",
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9_-]+$",
+              "maxLength": 128
+            }
+          },
+          {
+            "name": "projectId",
+            "description": "The ID of the project the source sandbox belongs to. Required unless authenticating with an OIDC token.",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "description": "The ID of the project the source sandbox belongs to. Required unless authenticating with an OIDC token.",
+              "type": "string",
+              "maxLength": 128
+            }
+          },
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "description": "The Team slug to perform the request on behalf of.",
+            "in": "query",
+            "name": "slug",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "networkPolicy": {
+                    "oneOf": [
+                      {
+                        "description": "Network access policy for the sandbox.\\n    Controls which external hosts the sandbox can communicate with.\\n    Use \\\"allow-all\\\" mode to allow all traffic, \\\"deny-all\\\" to block all traffic or \\\"custom\\\" to provide specific rules.",
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "mode"
+                        ],
+                        "properties": {
+                          "mode": {
+                            "description": "The network access policy mode. Use \\\"allow-all\\\" to permit all outbound traffic. Use \\\"deny-all\\\" to block all outbound traffic. Use \\\"custom\\\" to specify explicit allow/deny rules.",
+                            "type": "string",
+                            "enum": [
+                              "allow-all",
+                              "deny-all",
+                              "custom",
+                              "default-allow",
+                              "default-deny"
+                            ],
+                            "example": "custom"
+                          },
+                          "allowedDomains": {
+                            "description": "List of domain names the sandbox is allowed to connect to. Only applies when mode is \\\"custom\\\". Supports wildcard patterns (e.g., \\\"*.example.com\\\" matches all subdomains).",
+                            "type": "array",
+                            "example": [
+                              "api.github.com",
+                              "*.npmjs.org"
+                            ],
+                            "items": {
+                              "type": "string",
+                              "description": "A domain name pattern. Use \\\"*\\\" for wildcard matching of subdomains (e.g., \\\"*.example.com\\\")."
+                            }
+                          },
+                          "allowedCIDRs": {
+                            "description": "List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to. Traffic to these addresses bypasses domain-based restrictions.",
+                            "type": "array",
+                            "example": [
+                              "35.192.0.0/12",
+                              "104.16.0.0/12"
+                            ],
+                            "items": {
+                              "type": "string",
+                              "description": "An IPv4 address range in CIDR notation (e.g., \\\"35.192.0.0/12\\\")."
+                            }
+                          },
+                          "deniedCIDRs": {
+                            "description": "List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.",
+                            "type": "array",
+                            "example": [
+                              "35.192.0.0/12"
+                            ],
+                            "items": {
+                              "type": "string",
+                              "description": "An IP address range in CIDR notation to block."
+                            }
+                          },
+                          "injectionRules": {
+                            "description": "HTTP header injection rules for outgoing requests matching specific domains. Traffic to matching domains will be intercepted instead of proxied through encrypted connections.",
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "required": [
+                                "domain",
+                                "headers"
+                              ],
+                              "properties": {
+                                "domain": {
+                                  "description": "The domain (or pattern) of requests to add headers for. Supports wildcards like *.example.com.",
+                                  "type": "string"
+                                },
+                                "headers": {
+                                  "description": "HTTP headers to inject into requests for this domain. Existing headers with the same name will be overridden.",
+                                  "type": "object",
+                                  "additionalProperties": {
+                                    "type": "string"
+                                  }
+                                },
+                                "match": {
+                                  "description": "Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.",
+                                  "type": "object",
+                                  "additionalProperties": false,
+                                  "properties": {
+                                    "path": {
+                                      "description": "Match on the request path. Comparison is case-sensitive.",
+                                      "type": "object",
+                                      "additionalProperties": false,
+                                      "properties": {
+                                        "exact": {
+                                          "type": "string",
+                                          "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                        },
+                                        "startsWith": {
+                                          "type": "string",
+                                          "description": "Match values that start with the given prefix."
+                                        }
+                                      }
+                                    },
+                                    "method": {
+                                      "type": "array",
+                                      "description": "HTTP methods to match. Any single match succeeds (OR semantics).",
+                                      "items": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "queryString": {
+                                      "type": "array",
+                                      "description": "Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.",
+                                      "items": {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                          "key": {
+                                            "description": "Matcher for the entry key (header name or query key).",
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "properties": {
+                                              "exact": {
+                                                "type": "string",
+                                                "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                              },
+                                              "startsWith": {
+                                                "type": "string",
+                                                "description": "Match values that start with the given prefix."
+                                              }
+                                            }
+                                          },
+                                          "value": {
+                                            "description": "Matcher for the entry value.",
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "properties": {
+                                              "exact": {
+                                                "type": "string",
+                                                "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                              },
+                                              "startsWith": {
+                                                "type": "string",
+                                                "description": "Match values that start with the given prefix."
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "headers": {
+                                      "type": "array",
+                                      "description": "Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.",
+                                      "items": {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                          "key": {
+                                            "description": "Matcher for the entry key (header name or query key).",
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "properties": {
+                                              "exact": {
+                                                "type": "string",
+                                                "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                              },
+                                              "startsWith": {
+                                                "type": "string",
+                                                "description": "Match values that start with the given prefix."
+                                              }
+                                            }
+                                          },
+                                          "value": {
+                                            "description": "Matcher for the entry value.",
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "properties": {
+                                              "exact": {
+                                                "type": "string",
+                                                "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                              },
+                                              "startsWith": {
+                                                "type": "string",
+                                                "description": "Match values that start with the given prefix."
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "allow": {
+                            "oneOf": [
+                              {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              {
+                                "description": "A rule applied to requests matching a domain in the network policy. Only one of `transform` or `forwardURL` can be specified per rule.",
+                                "type": "object",
+                                "additionalProperties": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                      "match": {
+                                        "description": "Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.",
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                          "path": {
+                                            "description": "Match on the request path. Comparison is case-sensitive.",
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "properties": {
+                                              "exact": {
+                                                "type": "string",
+                                                "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                              },
+                                              "startsWith": {
+                                                "type": "string",
+                                                "description": "Match values that start with the given prefix."
+                                              }
+                                            }
+                                          },
+                                          "method": {
+                                            "type": "array",
+                                            "description": "HTTP methods to match. Any single match succeeds (OR semantics).",
+                                            "items": {
+                                              "type": "string"
+                                            }
+                                          },
+                                          "queryString": {
+                                            "type": "array",
+                                            "description": "Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.",
+                                            "items": {
+                                              "type": "object",
+                                              "additionalProperties": false,
+                                              "properties": {
+                                                "key": {
+                                                  "description": "Matcher for the entry key (header name or query key).",
+                                                  "type": "object",
+                                                  "additionalProperties": false,
+                                                  "properties": {
+                                                    "exact": {
+                                                      "type": "string",
+                                                      "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                                    },
+                                                    "startsWith": {
+                                                      "type": "string",
+                                                      "description": "Match values that start with the given prefix."
+                                                    }
+                                                  }
+                                                },
+                                                "value": {
+                                                  "description": "Matcher for the entry value.",
+                                                  "type": "object",
+                                                  "additionalProperties": false,
+                                                  "properties": {
+                                                    "exact": {
+                                                      "type": "string",
+                                                      "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                                    },
+                                                    "startsWith": {
+                                                      "type": "string",
+                                                      "description": "Match values that start with the given prefix."
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "headers": {
+                                            "type": "array",
+                                            "description": "Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.",
+                                            "items": {
+                                              "type": "object",
+                                              "additionalProperties": false,
+                                              "properties": {
+                                                "key": {
+                                                  "description": "Matcher for the entry key (header name or query key).",
+                                                  "type": "object",
+                                                  "additionalProperties": false,
+                                                  "properties": {
+                                                    "exact": {
+                                                      "type": "string",
+                                                      "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                                    },
+                                                    "startsWith": {
+                                                      "type": "string",
+                                                      "description": "Match values that start with the given prefix."
+                                                    }
+                                                  }
+                                                },
+                                                "value": {
+                                                  "description": "Matcher for the entry value.",
+                                                  "type": "object",
+                                                  "additionalProperties": false,
+                                                  "properties": {
+                                                    "exact": {
+                                                      "type": "string",
+                                                      "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                                    },
+                                                    "startsWith": {
+                                                      "type": "string",
+                                                      "description": "Match values that start with the given prefix."
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "transform": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "object",
+                                          "additionalProperties": false,
+                                          "properties": {
+                                            "headers": {
+                                              "type": "object",
+                                              "additionalProperties": {
+                                                "type": "string"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "forwardURL": {
+                                        "type": "string",
+                                        "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment."
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          "subnets": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "allow": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "deny": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "resources": {
+                    "description": "Resources to define the VM",
+                    "additionalProperties": false,
+                    "type": "object",
+                    "properties": {
+                      "vcpus": {
+                        "description": "The number of virtual CPUs to allocate to the sandbox. Must be 1, or an even number.",
+                        "type": "integer",
+                        "minimum": 1,
+                        "default": 2,
+                        "example": 2
+                      },
+                      "memory": {
+                        "description": "The amount of memory in megabytes to allocate to the sandbox. Must equal vcpus * 2048.",
+                        "type": "integer",
+                        "minimum": 2048,
+                        "example": 4096
+                      }
+                    }
+                  },
+                  "ports": {
+                    "description": "List of ports to expose from the sandbox. Each port will be accessible via a unique URL. Maximum of 15 ports can be exposed.",
+                    "type": "array",
+                    "maxItems": 15,
+                    "uniqueItems": true,
+                    "example": [
+                      3000,
+                      4000
+                    ],
+                    "items": {
+                      "type": "integer",
+                      "description": "A port number to expose from the sandbox. Must be between 1024 and 65535.",
+                      "not": {
+                        "enum": [
+                          23456
+                        ]
+                      },
+                      "maximum": 65535,
+                      "minimum": 1024
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "description": "Image to use for the sandbox."
+                  },
+                  "timeout": {
+                    "type": "integer",
+                    "description": "Maximum duration in milliseconds that the sandbox can run before being automatically stopped.",
+                    "minimum": 1000,
+                    "example": 300000
+                  },
+                  "env": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "description": "Default environment variables for the sandbox. These are inherited by all commands unless overridden.",
+                    "default": {},
+                    "example": {
+                      "NODE_ENV": "production",
+                      "HELLO": "world"
+                    }
+                  },
+                  "mounts": {
+                    "type": "object",
+                    "description": "List of drives to mount to the sandbox at the provided path.",
+                    "maxProperties": 4,
+                    "additionalProperties": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "drive"
+                      ],
+                      "properties": {
+                        "drive": {
+                          "type": "string",
+                          "description": "Name of the drive to mount. The drive must already exist.",
+                          "maxLength": 64,
+                          "pattern": "^[a-zA-Z0-9_-]+$"
+                        },
+                        "mode": {
+                          "type": "string",
+                          "enum": [
+                            "read-only",
+                            "read-write"
+                          ],
+                          "description": "Mount the drive read-only or read-write.",
+                          "default": "read-write"
+                        }
+                      }
+                    }
+                  },
+                  "name": {
+                    "example": "my-sandbox-fork",
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9_-]+$",
+                    "maxLength": 128,
+                    "description": "Name for the forked sandbox. Must be unique per project and URL-safe (alphanumeric, hyphens, underscores). A random name is generated when omitted."
+                  },
+                  "persistent": {
+                    "description": "Whether the sandbox persists its state across restarts via automatic snapshots. Defaults to the source sandbox setting.",
+                    "type": "boolean"
+                  },
+                  "snapshotExpiration": {
+                    "description": "Default snapshot expiration time in milliseconds. Defaults to 7 days. Set to 0 to disable expiration. When set, this value is used as the default expiration for all snapshots created for this sandbox.",
+                    "oneOf": [
+                      {},
+                      {
+                        "type": "integer"
+                      }
+                    ],
+                    "example": 604800000
+                  },
+                  "keepLastSnapshots": {
+                    "description": "Protect the N most recent snapshots with different expiration/deletion behavior. Persistent sandboxes default to keeping only the last snapshot (evicted snapshots are deleted). Set to null to disable the limit.",
+                    "oneOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "count"
+                        ],
+                        "properties": {
+                          "count": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 10,
+                            "description": "Number of most recent snapshots to keep."
+                          },
+                          "expiration": {
+                            "description": "Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration.",
+                            "oneOf": [
+                              {},
+                              {
+                                "type": "integer"
+                              }
+                            ]
+                          },
+                          "deleteEvicted": {
+                            "type": "boolean",
+                            "description": "Whether to immediately delete evicted snapshots. Defaults to true."
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "tags": {
+                    "description": "Key-value tags to associate with the sandbox. Maximum 5 tags.",
+                    "type": "object",
+                    "maxProperties": 5,
+                    "additionalProperties": {
+                      "type": "string",
+                      "maxLength": 256
+                    },
+                    "example": {
+                      "env": "staging",
+                      "team": "platform"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v4/sandboxes": {
+      "post": {
+        "description": "Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown. When no `image` is provided (and the sandbox is not restored from a snapshot), the sandbox is created from the default universal image. Unlike v3, snapshots expire after 7 days by default and persistent sandboxes keep only their most recent snapshot unless `keepLastSnapshots` is configured otherwise (or set to `null` to disable the limit).",
+        "operationId": "createSandboxesV4",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Create a named sandbox",
+        "tags": [
+          "sandboxes"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "sandbox": {
+                      "$ref": "#/components/schemas/NamedSandbox"
+                    },
+                    "session": {
+                      "$ref": "#/components/schemas/Session"
+                    },
+                    "routes": {
+                      "items": {
+                        "$ref": "#/components/schemas/SandboxPublicRoute"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "routes",
+                    "sandbox",
+                    "session"
+                  ],
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "402": {
+            "description": "The account is missing a payment so payment method must be updated"
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "409": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          },
+          "422": {
+            "description": ""
+          },
+          "429": {
+            "description": "The concurrency limit has been exceeded."
+          },
+          "500": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "description": "The Team slug to perform the request on behalf of.",
+            "in": "query",
+            "name": "slug",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "networkPolicy": {
+                    "oneOf": [
+                      {
+                        "description": "Network access policy for the sandbox.\\n    Controls which external hosts the sandbox can communicate with.\\n    Use \\\"allow-all\\\" mode to allow all traffic, \\\"deny-all\\\" to block all traffic or \\\"custom\\\" to provide specific rules.",
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "mode"
+                        ],
+                        "properties": {
+                          "mode": {
+                            "description": "The network access policy mode. Use \\\"allow-all\\\" to permit all outbound traffic. Use \\\"deny-all\\\" to block all outbound traffic. Use \\\"custom\\\" to specify explicit allow/deny rules.",
+                            "type": "string",
+                            "enum": [
+                              "allow-all",
+                              "deny-all",
+                              "custom",
+                              "default-allow",
+                              "default-deny"
+                            ],
+                            "example": "custom"
+                          },
+                          "allowedDomains": {
+                            "description": "List of domain names the sandbox is allowed to connect to. Only applies when mode is \\\"custom\\\". Supports wildcard patterns (e.g., \\\"*.example.com\\\" matches all subdomains).",
+                            "type": "array",
+                            "example": [
+                              "api.github.com",
+                              "*.npmjs.org"
+                            ],
+                            "items": {
+                              "type": "string",
+                              "description": "A domain name pattern. Use \\\"*\\\" for wildcard matching of subdomains (e.g., \\\"*.example.com\\\")."
+                            }
+                          },
+                          "allowedCIDRs": {
+                            "description": "List of IP address ranges (in CIDR notation) the sandbox is allowed to connect to. Traffic to these addresses bypasses domain-based restrictions.",
+                            "type": "array",
+                            "example": [
+                              "35.192.0.0/12",
+                              "104.16.0.0/12"
+                            ],
+                            "items": {
+                              "type": "string",
+                              "description": "An IPv4 address range in CIDR notation (e.g., \\\"35.192.0.0/12\\\")."
+                            }
+                          },
+                          "deniedCIDRs": {
+                            "description": "List of IP address ranges (in CIDR notation) the sandbox is blocked from connecting to. These rules take precedence over all allowed rules.",
+                            "type": "array",
+                            "example": [
+                              "35.192.0.0/12"
+                            ],
+                            "items": {
+                              "type": "string",
+                              "description": "An IP address range in CIDR notation to block."
+                            }
+                          },
+                          "injectionRules": {
+                            "description": "HTTP header injection rules for outgoing requests matching specific domains. Traffic to matching domains will be intercepted instead of proxied through encrypted connections.",
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "required": [
+                                "domain",
+                                "headers"
+                              ],
+                              "properties": {
+                                "domain": {
+                                  "description": "The domain (or pattern) of requests to add headers for. Supports wildcards like *.example.com.",
+                                  "type": "string"
+                                },
+                                "headers": {
+                                  "description": "HTTP headers to inject into requests for this domain. Existing headers with the same name will be overridden.",
+                                  "type": "object",
+                                  "additionalProperties": {
+                                    "type": "string"
+                                  }
+                                },
+                                "match": {
+                                  "description": "Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.",
+                                  "type": "object",
+                                  "additionalProperties": false,
+                                  "properties": {
+                                    "path": {
+                                      "description": "Match on the request path. Comparison is case-sensitive.",
+                                      "type": "object",
+                                      "additionalProperties": false,
+                                      "properties": {
+                                        "exact": {
+                                          "type": "string",
+                                          "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                        },
+                                        "startsWith": {
+                                          "type": "string",
+                                          "description": "Match values that start with the given prefix."
+                                        }
+                                      }
+                                    },
+                                    "method": {
+                                      "type": "array",
+                                      "description": "HTTP methods to match. Any single match succeeds (OR semantics).",
+                                      "items": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "queryString": {
+                                      "type": "array",
+                                      "description": "Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.",
+                                      "items": {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                          "key": {
+                                            "description": "Matcher for the entry key (header name or query key).",
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "properties": {
+                                              "exact": {
+                                                "type": "string",
+                                                "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                              },
+                                              "startsWith": {
+                                                "type": "string",
+                                                "description": "Match values that start with the given prefix."
+                                              }
+                                            }
+                                          },
+                                          "value": {
+                                            "description": "Matcher for the entry value.",
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "properties": {
+                                              "exact": {
+                                                "type": "string",
+                                                "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                              },
+                                              "startsWith": {
+                                                "type": "string",
+                                                "description": "Match values that start with the given prefix."
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "headers": {
+                                      "type": "array",
+                                      "description": "Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.",
+                                      "items": {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                          "key": {
+                                            "description": "Matcher for the entry key (header name or query key).",
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "properties": {
+                                              "exact": {
+                                                "type": "string",
+                                                "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                              },
+                                              "startsWith": {
+                                                "type": "string",
+                                                "description": "Match values that start with the given prefix."
+                                              }
+                                            }
+                                          },
+                                          "value": {
+                                            "description": "Matcher for the entry value.",
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "properties": {
+                                              "exact": {
+                                                "type": "string",
+                                                "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                              },
+                                              "startsWith": {
+                                                "type": "string",
+                                                "description": "Match values that start with the given prefix."
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "allow": {
+                            "oneOf": [
+                              {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              {
+                                "description": "A rule applied to requests matching a domain in the network policy. Only one of `transform` or `forwardURL` can be specified per rule.",
+                                "type": "object",
+                                "additionalProperties": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                      "match": {
+                                        "description": "Optional L7 match. When provided, the injection rule only applies to requests that satisfy every specified dimension. When multiple injection rules target the same domain they are evaluated in order and the first match wins; a rule without `match` matches any request and shadows later rules for the same domain.",
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                          "path": {
+                                            "description": "Match on the request path. Comparison is case-sensitive.",
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "properties": {
+                                              "exact": {
+                                                "type": "string",
+                                                "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                              },
+                                              "startsWith": {
+                                                "type": "string",
+                                                "description": "Match values that start with the given prefix."
+                                              }
+                                            }
+                                          },
+                                          "method": {
+                                            "type": "array",
+                                            "description": "HTTP methods to match. Any single match succeeds (OR semantics).",
+                                            "items": {
+                                              "type": "string"
+                                            }
+                                          },
+                                          "queryString": {
+                                            "type": "array",
+                                            "description": "Query-string entry matchers. Multiple entries are ANDed. Query parameter names and values are both compared case-sensitively (RFC 3986). When a request has multiple values for the same key, any matching value satisfies the matcher.",
+                                            "items": {
+                                              "type": "object",
+                                              "additionalProperties": false,
+                                              "properties": {
+                                                "key": {
+                                                  "description": "Matcher for the entry key (header name or query key).",
+                                                  "type": "object",
+                                                  "additionalProperties": false,
+                                                  "properties": {
+                                                    "exact": {
+                                                      "type": "string",
+                                                      "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                                    },
+                                                    "startsWith": {
+                                                      "type": "string",
+                                                      "description": "Match values that start with the given prefix."
+                                                    }
+                                                  }
+                                                },
+                                                "value": {
+                                                  "description": "Matcher for the entry value.",
+                                                  "type": "object",
+                                                  "additionalProperties": false,
+                                                  "properties": {
+                                                    "exact": {
+                                                      "type": "string",
+                                                      "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                                    },
+                                                    "startsWith": {
+                                                      "type": "string",
+                                                      "description": "Match values that start with the given prefix."
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "headers": {
+                                            "type": "array",
+                                            "description": "Header matchers. Multiple entries are ANDed. Header names are compared case-insensitively (RFC 9110); header values are compared case-sensitively. When a request has multiple values for the same header, any matching value satisfies the matcher.",
+                                            "items": {
+                                              "type": "object",
+                                              "additionalProperties": false,
+                                              "properties": {
+                                                "key": {
+                                                  "description": "Matcher for the entry key (header name or query key).",
+                                                  "type": "object",
+                                                  "additionalProperties": false,
+                                                  "properties": {
+                                                    "exact": {
+                                                      "type": "string",
+                                                      "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                                    },
+                                                    "startsWith": {
+                                                      "type": "string",
+                                                      "description": "Match values that start with the given prefix."
+                                                    }
+                                                  }
+                                                },
+                                                "value": {
+                                                  "description": "Matcher for the entry value.",
+                                                  "type": "object",
+                                                  "additionalProperties": false,
+                                                  "properties": {
+                                                    "exact": {
+                                                      "type": "string",
+                                                      "description": "Match the value exactly. Case-sensitive for paths, header values, and methods; case-insensitive for domains and header keys."
+                                                    },
+                                                    "startsWith": {
+                                                      "type": "string",
+                                                      "description": "Match values that start with the given prefix."
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "transform": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "object",
+                                          "additionalProperties": false,
+                                          "properties": {
+                                            "headers": {
+                                              "type": "object",
+                                              "additionalProperties": {
+                                                "type": "string"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "forwardURL": {
+                                        "type": "string",
+                                        "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment."
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          "subnets": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "allow": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "deny": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "resources": {
+                    "description": "Resources to define the VM",
+                    "additionalProperties": false,
+                    "type": "object",
+                    "properties": {
+                      "vcpus": {
+                        "description": "The number of virtual CPUs to allocate to the sandbox. Must be 1, or an even number.",
+                        "type": "integer",
+                        "minimum": 1,
+                        "default": 2,
+                        "example": 2
+                      },
+                      "memory": {
+                        "description": "The amount of memory in megabytes to allocate to the sandbox. Must equal vcpus * 2048.",
+                        "type": "integer",
+                        "minimum": 2048,
+                        "example": 4096
+                      }
+                    }
+                  },
+                  "source": {
+                    "description": "The source from which to initialize the sandbox filesystem. Can be a Git repository, a tarball URL, or an existing snapshot.",
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "description": "Clone a Git repository into the sandbox.",
+                        "properties": {
+                          "type": {
+                            "description": "Indicates the source is a Git repository."
+                          },
+                          "url": {
+                            "type": "string",
+                            "format": "uri",
+                            "description": "The URL of the Git repository to clone.",
+                            "example": "https://github.com/vercel/next.js.git"
+                          },
+                          "username": {
+                            "type": "string",
+                            "description": "Username for Git authentication. Required together with password for private repositories."
+                          },
+                          "password": {
+                            "type": "string",
+                            "description": "Password or personal access token for Git authentication. Required together with username for private repositories."
+                          },
+                          "depth": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "description": "Create a shallow clone with history truncated to the specified number of commits. Useful for faster cloning of large repositories.",
+                            "example": 1
+                          },
+                          "revision": {
+                            "type": "string",
+                            "description": "The specific commit SHA, branch name, or tag to checkout after cloning.",
+                            "example": "main"
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "url"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "description": "Download and extract a gzipped tarball into the sandbox.",
+                        "properties": {
+                          "type": {
+                            "description": "Indicates the source is a tarball."
+                          },
+                          "url": {
+                            "type": "string",
+                            "format": "uri",
+                            "description": "URL of a gzipped tarball (.tar.gz) to download and extract.",
+                            "example": "https://example.com/project.tar.gz"
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "url"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "description": "Restore the sandbox filesystem from an existing snapshot.",
+                        "properties": {
+                          "type": {
+                            "description": "Indicates the source is a snapshot."
+                          },
+                          "snapshotId": {
+                            "type": "string",
+                            "description": "The unique identifier of the snapshot to restore.",
+                            "example": "snap_abc123"
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "snapshotId"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
+                  },
+                  "projectId": {
+                    "description": "The target project slug or ID in which the sandbox will be assigned to.",
+                    "example": "prj_abc123",
+                    "type": "string"
+                  },
+                  "ports": {
+                    "description": "List of ports to expose from the sandbox. Each port will be accessible via a unique URL. Maximum of 15 ports can be exposed.",
+                    "type": "array",
+                    "maxItems": 15,
+                    "uniqueItems": true,
+                    "example": [
+                      3000,
+                      4000
+                    ],
+                    "items": {
+                      "type": "integer",
+                      "description": "A port number to expose from the sandbox. Must be between 1024 and 65535.",
+                      "not": {
+                        "enum": [
+                          23456
+                        ]
+                      },
+                      "maximum": 65535,
+                      "minimum": 1024
+                    }
+                  },
+                  "image": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "description": "Image to use for the sandbox."
+                  },
+                  "timeout": {
+                    "type": "integer",
+                    "description": "Maximum duration in milliseconds that the sandbox can run before being automatically stopped.",
+                    "minimum": 1000,
+                    "example": 300000
+                  },
+                  "env": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "description": "Default environment variables for the sandbox. These are inherited by all commands unless overridden.",
+                    "default": {},
+                    "example": {
+                      "NODE_ENV": "production",
+                      "HELLO": "world"
+                    }
+                  },
+                  "mounts": {
+                    "type": "object",
+                    "description": "List of drives to mount to the sandbox at the provided path.",
+                    "maxProperties": 4,
+                    "additionalProperties": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "drive"
+                      ],
+                      "properties": {
+                        "drive": {
+                          "type": "string",
+                          "description": "Name of the drive to mount. The drive must already exist.",
+                          "maxLength": 64,
+                          "pattern": "^[a-zA-Z0-9_-]+$"
+                        },
+                        "mode": {
+                          "type": "string",
+                          "enum": [
+                            "read-only",
+                            "read-write"
+                          ],
+                          "description": "Mount the drive read-only or read-write.",
+                          "default": "read-write"
+                        }
+                      }
+                    }
+                  },
+                  "name": {
+                    "example": "my-sandbox",
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9_-]+$",
+                    "maxLength": 128,
+                    "description": "Name for the sandbox. Must be unique per project and URL-safe (alphanumeric, hyphens, underscores)."
+                  },
+                  "persistent": {
+                    "description": "Whether the sandbox persists its state across restarts via automatic snapshots. Defaults to true.",
+                    "type": "boolean",
+                    "default": true
+                  },
+                  "snapshotExpiration": {
+                    "description": "Default snapshot expiration time in milliseconds. Defaults to 7 days. Set to 0 to disable expiration. When set, this value is used as the default expiration for all snapshots created for this sandbox.",
+                    "oneOf": [
+                      {},
+                      {
+                        "type": "integer"
+                      }
+                    ],
+                    "example": 604800000
+                  },
+                  "keepLastSnapshots": {
+                    "description": "Protect the N most recent snapshots with different expiration/deletion behavior. Persistent sandboxes default to keeping only the last snapshot (evicted snapshots are deleted). Set to null to disable the limit.",
+                    "oneOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "count"
+                        ],
+                        "properties": {
+                          "count": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 10,
+                            "description": "Number of most recent snapshots to keep."
+                          },
+                          "expiration": {
+                            "description": "Expiration time in milliseconds for kept snapshots. Falls back to snapshotExpiration.",
+                            "oneOf": [
+                              {},
+                              {
+                                "type": "integer"
+                              }
+                            ]
+                          },
+                          "deleteEvicted": {
+                            "type": "boolean",
+                            "description": "Whether to immediately delete evicted snapshots. Defaults to true."
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "tags": {
+                    "description": "Key-value tags to associate with the sandbox. Maximum 5 tags.",
+                    "type": "object",
+                    "maxProperties": 5,
+                    "additionalProperties": {
+                      "type": "string",
+                      "maxLength": 256
+                    },
+                    "example": {
+                      "env": "staging",
+                      "team": "platform"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/security/attack-mode": {
       "post": {
         "description": "Update the setting for determining if the project has Attack Challenge mode enabled.",
@@ -167574,6 +169252,7 @@
                                                   "ruleset",
                                                   "scheme",
                                                   "server_action",
+                                                  "shared_condition",
                                                   "target_path",
                                                   "trusted_source",
                                                   "user_agent"
@@ -167834,6 +169513,7 @@
                                                   "ruleset",
                                                   "scheme",
                                                   "server_action",
+                                                  "shared_condition",
                                                   "target_path",
                                                   "trusted_source",
                                                   "user_agent"
@@ -168139,6 +169819,7 @@
                                                   "ruleset",
                                                   "scheme",
                                                   "server_action",
+                                                  "shared_condition",
                                                   "target_path",
                                                   "trusted_source",
                                                   "user_agent"
@@ -168449,6 +170130,142 @@
                               "type": "object"
                             }
                           ]
+                        },
+                        "conditions": {
+                          "items": {
+                            "properties": {
+                              "description": {
+                                "type": "string"
+                              },
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "active": {
+                                "type": "boolean",
+                                "enum": [
+                                  false,
+                                  true
+                                ]
+                              },
+                              "conditionGroup": {
+                                "items": {
+                                  "properties": {
+                                    "conditions": {
+                                      "items": {
+                                        "properties": {
+                                          "type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "bot_category",
+                                              "bot_name",
+                                              "bot_protection",
+                                              "bot_status",
+                                              "cookie",
+                                              "domain_environment",
+                                              "environment",
+                                              "geo_as_number",
+                                              "geo_city",
+                                              "geo_continent",
+                                              "geo_country",
+                                              "geo_country_region",
+                                              "header",
+                                              "host",
+                                              "ip_address",
+                                              "ja3_digest",
+                                              "ja4_digest",
+                                              "method",
+                                              "path",
+                                              "protocol",
+                                              "query",
+                                              "rate_limit_api_id",
+                                              "raw_path",
+                                              "region",
+                                              "route",
+                                              "ruleset",
+                                              "scheme",
+                                              "server_action",
+                                              "shared_condition",
+                                              "target_path",
+                                              "trusted_source",
+                                              "user_agent"
+                                            ]
+                                          },
+                                          "op": {
+                                            "type": "string",
+                                            "enum": [
+                                              "eq",
+                                              "ex",
+                                              "gt",
+                                              "gte",
+                                              "inc",
+                                              "list",
+                                              "lt",
+                                              "lte",
+                                              "neq",
+                                              "nex",
+                                              "ninc",
+                                              "pre",
+                                              "re",
+                                              "sub",
+                                              "suf"
+                                            ]
+                                          },
+                                          "neg": {
+                                            "type": "boolean",
+                                            "enum": [
+                                              false,
+                                              true
+                                            ]
+                                          },
+                                          "key": {
+                                            "type": "string"
+                                          },
+                                          "value": {
+                                            "oneOf": [
+                                              {
+                                                "type": "string"
+                                              },
+                                              {
+                                                "type": "number"
+                                              },
+                                              {
+                                                "items": {
+                                                  "type": "string"
+                                                },
+                                                "type": "array"
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "required": [
+                                          "op",
+                                          "type"
+                                        ],
+                                        "type": "object"
+                                      },
+                                      "type": "array"
+                                    }
+                                  },
+                                  "required": [
+                                    "conditions"
+                                  ],
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              }
+                            },
+                            "required": [
+                              "active",
+                              "conditionGroup",
+                              "id",
+                              "name"
+                            ],
+                            "type": "object"
+                          },
+                          "type": "array"
                         },
                         "changes": {
                           "items": {
@@ -169012,6 +170829,7 @@
                                                   "ruleset",
                                                   "scheme",
                                                   "server_action",
+                                                  "shared_condition",
                                                   "target_path",
                                                   "trusted_source",
                                                   "user_agent"
@@ -169272,6 +171090,7 @@
                                                   "ruleset",
                                                   "scheme",
                                                   "server_action",
+                                                  "shared_condition",
                                                   "target_path",
                                                   "trusted_source",
                                                   "user_agent"
@@ -169577,6 +171396,7 @@
                                                   "ruleset",
                                                   "scheme",
                                                   "server_action",
+                                                  "shared_condition",
                                                   "target_path",
                                                   "trusted_source",
                                                   "user_agent"
@@ -169887,6 +171707,142 @@
                               "type": "object"
                             }
                           ]
+                        },
+                        "conditions": {
+                          "items": {
+                            "properties": {
+                              "description": {
+                                "type": "string"
+                              },
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "active": {
+                                "type": "boolean",
+                                "enum": [
+                                  false,
+                                  true
+                                ]
+                              },
+                              "conditionGroup": {
+                                "items": {
+                                  "properties": {
+                                    "conditions": {
+                                      "items": {
+                                        "properties": {
+                                          "type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "bot_category",
+                                              "bot_name",
+                                              "bot_protection",
+                                              "bot_status",
+                                              "cookie",
+                                              "domain_environment",
+                                              "environment",
+                                              "geo_as_number",
+                                              "geo_city",
+                                              "geo_continent",
+                                              "geo_country",
+                                              "geo_country_region",
+                                              "header",
+                                              "host",
+                                              "ip_address",
+                                              "ja3_digest",
+                                              "ja4_digest",
+                                              "method",
+                                              "path",
+                                              "protocol",
+                                              "query",
+                                              "rate_limit_api_id",
+                                              "raw_path",
+                                              "region",
+                                              "route",
+                                              "ruleset",
+                                              "scheme",
+                                              "server_action",
+                                              "shared_condition",
+                                              "target_path",
+                                              "trusted_source",
+                                              "user_agent"
+                                            ]
+                                          },
+                                          "op": {
+                                            "type": "string",
+                                            "enum": [
+                                              "eq",
+                                              "ex",
+                                              "gt",
+                                              "gte",
+                                              "inc",
+                                              "list",
+                                              "lt",
+                                              "lte",
+                                              "neq",
+                                              "nex",
+                                              "ninc",
+                                              "pre",
+                                              "re",
+                                              "sub",
+                                              "suf"
+                                            ]
+                                          },
+                                          "neg": {
+                                            "type": "boolean",
+                                            "enum": [
+                                              false,
+                                              true
+                                            ]
+                                          },
+                                          "key": {
+                                            "type": "string"
+                                          },
+                                          "value": {
+                                            "oneOf": [
+                                              {
+                                                "type": "string"
+                                              },
+                                              {
+                                                "type": "number"
+                                              },
+                                              {
+                                                "items": {
+                                                  "type": "string"
+                                                },
+                                                "type": "array"
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "required": [
+                                          "op",
+                                          "type"
+                                        ],
+                                        "type": "object"
+                                      },
+                                      "type": "array"
+                                    }
+                                  },
+                                  "required": [
+                                    "conditions"
+                                  ],
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              }
+                            },
+                            "required": [
+                              "active",
+                              "conditionGroup",
+                              "id",
+                              "name"
+                            ],
+                            "type": "object"
+                          },
+                          "type": "array"
                         },
                         "changes": {
                           "items": {
@@ -170450,6 +172406,7 @@
                                                     "ruleset",
                                                     "scheme",
                                                     "server_action",
+                                                    "shared_condition",
                                                     "target_path",
                                                     "trusted_source",
                                                     "user_agent"
@@ -170710,6 +172667,7 @@
                                                     "ruleset",
                                                     "scheme",
                                                     "server_action",
+                                                    "shared_condition",
                                                     "target_path",
                                                     "trusted_source",
                                                     "user_agent"
@@ -171015,6 +172973,7 @@
                                                     "ruleset",
                                                     "scheme",
                                                     "server_action",
+                                                    "shared_condition",
                                                     "target_path",
                                                     "trusted_source",
                                                     "user_agent"
@@ -171325,6 +173284,142 @@
                                 "type": "object"
                               }
                             ]
+                          },
+                          "conditions": {
+                            "items": {
+                              "properties": {
+                                "description": {
+                                  "type": "string"
+                                },
+                                "id": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "active": {
+                                  "type": "boolean",
+                                  "enum": [
+                                    false,
+                                    true
+                                  ]
+                                },
+                                "conditionGroup": {
+                                  "items": {
+                                    "properties": {
+                                      "conditions": {
+                                        "items": {
+                                          "properties": {
+                                            "type": {
+                                              "type": "string",
+                                              "enum": [
+                                                "bot_category",
+                                                "bot_name",
+                                                "bot_protection",
+                                                "bot_status",
+                                                "cookie",
+                                                "domain_environment",
+                                                "environment",
+                                                "geo_as_number",
+                                                "geo_city",
+                                                "geo_continent",
+                                                "geo_country",
+                                                "geo_country_region",
+                                                "header",
+                                                "host",
+                                                "ip_address",
+                                                "ja3_digest",
+                                                "ja4_digest",
+                                                "method",
+                                                "path",
+                                                "protocol",
+                                                "query",
+                                                "rate_limit_api_id",
+                                                "raw_path",
+                                                "region",
+                                                "route",
+                                                "ruleset",
+                                                "scheme",
+                                                "server_action",
+                                                "shared_condition",
+                                                "target_path",
+                                                "trusted_source",
+                                                "user_agent"
+                                              ]
+                                            },
+                                            "op": {
+                                              "type": "string",
+                                              "enum": [
+                                                "eq",
+                                                "ex",
+                                                "gt",
+                                                "gte",
+                                                "inc",
+                                                "list",
+                                                "lt",
+                                                "lte",
+                                                "neq",
+                                                "nex",
+                                                "ninc",
+                                                "pre",
+                                                "re",
+                                                "sub",
+                                                "suf"
+                                              ]
+                                            },
+                                            "neg": {
+                                              "type": "boolean",
+                                              "enum": [
+                                                false,
+                                                true
+                                              ]
+                                            },
+                                            "key": {
+                                              "type": "string"
+                                            },
+                                            "value": {
+                                              "oneOf": [
+                                                {
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "type": "number"
+                                                },
+                                                {
+                                                  "items": {
+                                                    "type": "string"
+                                                  },
+                                                  "type": "array"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "required": [
+                                            "op",
+                                            "type"
+                                          ],
+                                          "type": "object"
+                                        },
+                                        "type": "array"
+                                      }
+                                    },
+                                    "required": [
+                                      "conditions"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "active",
+                                "conditionGroup",
+                                "id",
+                                "name"
+                              ],
+                              "type": "object"
+                            },
+                            "type": "array"
                           },
                           "changes": {
                             "items": {
@@ -171949,6 +174044,7 @@
                                                   "ruleset",
                                                   "scheme",
                                                   "server_action",
+                                                  "shared_condition",
                                                   "target_path",
                                                   "trusted_source",
                                                   "user_agent"
@@ -172209,6 +174305,7 @@
                                                   "ruleset",
                                                   "scheme",
                                                   "server_action",
+                                                  "shared_condition",
                                                   "target_path",
                                                   "trusted_source",
                                                   "user_agent"
@@ -172514,6 +174611,7 @@
                                                   "ruleset",
                                                   "scheme",
                                                   "server_action",
+                                                  "shared_condition",
                                                   "target_path",
                                                   "trusted_source",
                                                   "user_agent"
@@ -172824,6 +174922,142 @@
                               "type": "object"
                             }
                           ]
+                        },
+                        "conditions": {
+                          "items": {
+                            "properties": {
+                              "description": {
+                                "type": "string"
+                              },
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "active": {
+                                "type": "boolean",
+                                "enum": [
+                                  false,
+                                  true
+                                ]
+                              },
+                              "conditionGroup": {
+                                "items": {
+                                  "properties": {
+                                    "conditions": {
+                                      "items": {
+                                        "properties": {
+                                          "type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "bot_category",
+                                              "bot_name",
+                                              "bot_protection",
+                                              "bot_status",
+                                              "cookie",
+                                              "domain_environment",
+                                              "environment",
+                                              "geo_as_number",
+                                              "geo_city",
+                                              "geo_continent",
+                                              "geo_country",
+                                              "geo_country_region",
+                                              "header",
+                                              "host",
+                                              "ip_address",
+                                              "ja3_digest",
+                                              "ja4_digest",
+                                              "method",
+                                              "path",
+                                              "protocol",
+                                              "query",
+                                              "rate_limit_api_id",
+                                              "raw_path",
+                                              "region",
+                                              "route",
+                                              "ruleset",
+                                              "scheme",
+                                              "server_action",
+                                              "shared_condition",
+                                              "target_path",
+                                              "trusted_source",
+                                              "user_agent"
+                                            ]
+                                          },
+                                          "op": {
+                                            "type": "string",
+                                            "enum": [
+                                              "eq",
+                                              "ex",
+                                              "gt",
+                                              "gte",
+                                              "inc",
+                                              "list",
+                                              "lt",
+                                              "lte",
+                                              "neq",
+                                              "nex",
+                                              "ninc",
+                                              "pre",
+                                              "re",
+                                              "sub",
+                                              "suf"
+                                            ]
+                                          },
+                                          "neg": {
+                                            "type": "boolean",
+                                            "enum": [
+                                              false,
+                                              true
+                                            ]
+                                          },
+                                          "key": {
+                                            "type": "string"
+                                          },
+                                          "value": {
+                                            "oneOf": [
+                                              {
+                                                "type": "string"
+                                              },
+                                              {
+                                                "type": "number"
+                                              },
+                                              {
+                                                "items": {
+                                                  "type": "string"
+                                                },
+                                                "type": "array"
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "required": [
+                                          "op",
+                                          "type"
+                                        ],
+                                        "type": "object"
+                                      },
+                                      "type": "array"
+                                    }
+                                  },
+                                  "required": [
+                                    "conditions"
+                                  ],
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              }
+                            },
+                            "required": [
+                              "active",
+                              "conditionGroup",
+                              "id",
+                              "name"
+                            ],
+                            "type": "object"
+                          },
+                          "type": "array"
                         },
                         "changes": {
                           "items": {
@@ -173403,6 +175637,7 @@
                                         "bot_category",
                                         "bot_status",
                                         "bot_protection",
+                                        "shared_condition",
                                         "ruleset"
                                       ],
                                       "description": "[Parameter](https://vercel.com/docs/security/vercel-waf/rule-configuration#parameters) from the incoming traffic."
@@ -173678,6 +175913,7 @@
                                             "bot_category",
                                             "bot_status",
                                             "bot_protection",
+                                            "shared_condition",
                                             "ruleset"
                                           ]
                                         },
@@ -174022,6 +176258,7 @@
                                           "bot_category",
                                           "bot_status",
                                           "bot_protection",
+                                          "shared_condition",
                                           "ruleset"
                                         ]
                                       },
@@ -174208,6 +176445,7 @@
                                           "bot_category",
                                           "bot_status",
                                           "bot_protection",
+                                          "shared_condition",
                                           "ruleset"
                                         ]
                                       },
@@ -174350,7 +176588,7 @@
                     "additionalProperties": false
                   },
                   {
-                    "description": "Set the action for a consumed ruleset (project scope)",
+                    "description": "Add a named condition",
                     "type": "object",
                     "properties": {
                       "action": {
@@ -174360,94 +176598,7 @@
                         ]
                       },
                       "id": {
-                        "type": "string",
-                        "maxLength": 180
-                      },
-                      "value": {
-                        "properties": {
-                          "action": {
-                            "type": "string",
-                            "enum": [
-                              "deny",
-                              "challenge",
-                              "log",
-                              "allow"
-                            ]
-                          }
-                        },
-                        "required": [
-                          "action"
-                        ],
-                        "additionalProperties": false,
-                        "nullable": true
-                      }
-                    },
-                    "required": [
-                      "action",
-                      "id",
-                      "value"
-                    ],
-                    "additionalProperties": false
-                  },
-                  {
-                    "description": "Remove the action for a consumed ruleset (project scope)",
-                    "type": "object",
-                    "properties": {
-                      "action": {
-                        "type": "string",
-                        "enum": [
-                          "rules.priority"
-                        ]
-                      },
-                      "id": {
-                        "type": "string",
-                        "maxLength": 180
-                      },
-                      "value": {
                         "type": "string"
-                      }
-                    },
-                    "required": [
-                      "action",
-                      "id"
-                    ],
-                    "additionalProperties": false
-                  },
-                  {
-                    "description": "Enable Firewall",
-                    "type": "object",
-                    "properties": {
-                      "action": {
-                        "type": "string",
-                        "enum": [
-                          "crs.update"
-                        ]
-                      },
-                      "id": {
-                        "type": "string"
-                      },
-                      "value": {
-                        "type": "boolean"
-                      }
-                    },
-                    "required": [
-                      "action",
-                      "value"
-                    ],
-                    "additionalProperties": false
-                  },
-                  {
-                    "description": "Add a custom rule",
-                    "type": "object",
-                    "properties": {
-                      "action": {
-                        "type": "string",
-                        "enum": [
-                          "crs.disable"
-                        ]
-                      },
-                      "id": {
-                        "nullable": true
                       },
                       "value": {
                         "properties": {
@@ -174504,6 +176655,446 @@
                                           "bot_category",
                                           "bot_status",
                                           "bot_protection",
+                                          "shared_condition",
+                                          "ruleset"
+                                        ]
+                                      },
+                                      "op": {
+                                        "type": "string",
+                                        "enum": [
+                                          "re",
+                                          "eq",
+                                          "neq",
+                                          "ex",
+                                          "nex",
+                                          "inc",
+                                          "ninc",
+                                          "pre",
+                                          "suf",
+                                          "sub",
+                                          "gt",
+                                          "gte",
+                                          "lt",
+                                          "lte",
+                                          "list"
+                                        ]
+                                      },
+                                      "neg": {
+                                        "type": "boolean"
+                                      },
+                                      "key": {
+                                        "type": "string"
+                                      },
+                                      "value": {
+                                        "anyOf": [
+                                          {
+                                            "type": "string"
+                                          },
+                                          {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "string"
+                                            },
+                                            "maxItems": 75
+                                          },
+                                          {
+                                            "type": "number"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "type",
+                                      "op"
+                                    ],
+                                    "additionalProperties": false
+                                  },
+                                  "maxItems": 65
+                                }
+                              },
+                              "required": [
+                                "conditions"
+                              ],
+                              "additionalProperties": false
+                            },
+                            "maxItems": 25
+                          },
+                          "valid": {
+                            "type": "boolean"
+                          },
+                          "validationErrors": {
+                            "anyOf": [
+                              {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              {
+                                "type": "string"
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "active",
+                          "conditionGroup"
+                        ],
+                        "additionalProperties": false,
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "description": "Update a named condition",
+                    "type": "object",
+                    "properties": {
+                      "action": {
+                        "type": "string",
+                        "enum": [
+                          "rules.priority"
+                        ]
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "maxLength": 160
+                          },
+                          "description": {
+                            "type": "string",
+                            "maxLength": 256
+                          },
+                          "active": {
+                            "type": "boolean"
+                          },
+                          "conditionGroup": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "conditions": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "host",
+                                          "path",
+                                          "method",
+                                          "header",
+                                          "query",
+                                          "cookie",
+                                          "target_path",
+                                          "route",
+                                          "raw_path",
+                                          "ip_address",
+                                          "region",
+                                          "protocol",
+                                          "scheme",
+                                          "environment",
+                                          "domain_environment",
+                                          "user_agent",
+                                          "geo_continent",
+                                          "geo_country",
+                                          "geo_country_region",
+                                          "geo_city",
+                                          "geo_as_number",
+                                          "ja4_digest",
+                                          "ja3_digest",
+                                          "rate_limit_api_id",
+                                          "server_action",
+                                          "bot_name",
+                                          "bot_category",
+                                          "bot_status",
+                                          "bot_protection",
+                                          "shared_condition",
+                                          "ruleset"
+                                        ]
+                                      },
+                                      "op": {
+                                        "type": "string",
+                                        "enum": [
+                                          "re",
+                                          "eq",
+                                          "neq",
+                                          "ex",
+                                          "nex",
+                                          "inc",
+                                          "ninc",
+                                          "pre",
+                                          "suf",
+                                          "sub",
+                                          "gt",
+                                          "gte",
+                                          "lt",
+                                          "lte",
+                                          "list"
+                                        ]
+                                      },
+                                      "neg": {
+                                        "type": "boolean"
+                                      },
+                                      "key": {
+                                        "type": "string"
+                                      },
+                                      "value": {
+                                        "anyOf": [
+                                          {
+                                            "type": "string"
+                                          },
+                                          {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "string"
+                                            },
+                                            "maxItems": 75
+                                          },
+                                          {
+                                            "type": "number"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "type",
+                                      "op"
+                                    ],
+                                    "additionalProperties": false
+                                  },
+                                  "maxItems": 65
+                                }
+                              },
+                              "required": [
+                                "conditions"
+                              ],
+                              "additionalProperties": false
+                            },
+                            "maxItems": 25
+                          },
+                          "valid": {
+                            "type": "boolean"
+                          },
+                          "validationErrors": {
+                            "anyOf": [
+                              {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              {
+                                "type": "string"
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "active",
+                          "conditionGroup"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "id",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "description": "Remove a named condition",
+                    "type": "object",
+                    "properties": {
+                      "action": {
+                        "type": "string",
+                        "enum": [
+                          "crs.update"
+                        ]
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "id"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "description": "Set the action for a consumed ruleset (project scope)",
+                    "type": "object",
+                    "properties": {
+                      "action": {
+                        "type": "string",
+                        "enum": [
+                          "crs.disable"
+                        ]
+                      },
+                      "id": {
+                        "maxLength": 180,
+                        "nullable": true
+                      },
+                      "value": {
+                        "properties": {
+                          "action": {
+                            "type": "string",
+                            "enum": [
+                              "deny",
+                              "challenge",
+                              "log",
+                              "allow"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "action"
+                        ],
+                        "additionalProperties": false,
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "id",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "description": "Remove the action for a consumed ruleset (project scope)",
+                    "type": "object",
+                    "properties": {
+                      "action": {
+                        "type": "string",
+                        "enum": [
+                          "ip.insert"
+                        ]
+                      },
+                      "id": {
+                        "maxLength": 180,
+                        "nullable": true
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "id"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "description": "Enable Firewall",
+                    "type": "object",
+                    "properties": {
+                      "action": {
+                        "type": "string",
+                        "enum": [
+                          "ip.update"
+                        ]
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "description": "Add a custom rule",
+                    "type": "object",
+                    "properties": {
+                      "action": {
+                        "type": "string",
+                        "enum": [
+                          "ip.remove"
+                        ]
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "maxLength": 160
+                          },
+                          "description": {
+                            "type": "string",
+                            "maxLength": 256
+                          },
+                          "active": {
+                            "type": "boolean"
+                          },
+                          "conditionGroup": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "conditions": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "host",
+                                          "path",
+                                          "method",
+                                          "header",
+                                          "query",
+                                          "cookie",
+                                          "target_path",
+                                          "route",
+                                          "raw_path",
+                                          "ip_address",
+                                          "region",
+                                          "protocol",
+                                          "scheme",
+                                          "environment",
+                                          "domain_environment",
+                                          "user_agent",
+                                          "geo_continent",
+                                          "geo_country",
+                                          "geo_country_region",
+                                          "geo_city",
+                                          "geo_as_number",
+                                          "ja4_digest",
+                                          "ja3_digest",
+                                          "rate_limit_api_id",
+                                          "server_action",
+                                          "bot_name",
+                                          "bot_category",
+                                          "bot_status",
+                                          "bot_protection",
+                                          "shared_condition",
                                           "ruleset"
                                         ]
                                       },
@@ -174731,11 +177322,11 @@
                       "action": {
                         "type": "string",
                         "enum": [
-                          "ip.insert"
+                          "managedRules.update"
                         ]
                       },
                       "id": {
-                        "nullable": true
+                        "type": "string"
                       },
                       "value": {
                         "type": "object",
@@ -174793,6 +177384,7 @@
                                           "bot_category",
                                           "bot_status",
                                           "bot_protection",
+                                          "shared_condition",
                                           "ruleset"
                                         ]
                                       },
@@ -175018,10 +177610,7 @@
                     "type": "object",
                     "properties": {
                       "action": {
-                        "type": "string",
-                        "enum": [
-                          "ip.update"
-                        ]
+                        "type": "string"
                       },
                       "id": {
                         "type": "string"
@@ -175041,16 +177630,13 @@
                     "type": "object",
                     "properties": {
                       "action": {
-                        "type": "string",
-                        "enum": [
-                          "ip.remove"
-                        ]
+                        "type": "string"
                       },
                       "id": {
                         "type": "string"
                       },
                       "value": {
-                        "nullable": true
+                        "type": "number"
                       }
                     },
                     "required": [
@@ -175065,10 +177651,7 @@
                     "type": "object",
                     "properties": {
                       "action": {
-                        "type": "string",
-                        "enum": [
-                          "managedRules.update"
-                        ]
+                        "type": "string"
                       },
                       "id": {
                         "type": "string",
@@ -175785,6 +178368,7 @@
                                               "ruleset",
                                               "scheme",
                                               "server_action",
+                                              "shared_condition",
                                               "target_path",
                                               "trusted_source",
                                               "user_agent"
@@ -176045,6 +178629,7 @@
                                               "ruleset",
                                               "scheme",
                                               "server_action",
+                                              "shared_condition",
                                               "target_path",
                                               "trusted_source",
                                               "user_agent"
@@ -176350,6 +178935,7 @@
                                               "ruleset",
                                               "scheme",
                                               "server_action",
+                                              "shared_condition",
                                               "target_path",
                                               "trusted_source",
                                               "user_agent"
@@ -176660,6 +179246,142 @@
                           "type": "object"
                         }
                       ]
+                    },
+                    "conditions": {
+                      "items": {
+                        "properties": {
+                          "description": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "active": {
+                            "type": "boolean",
+                            "enum": [
+                              false,
+                              true
+                            ]
+                          },
+                          "conditionGroup": {
+                            "items": {
+                              "properties": {
+                                "conditions": {
+                                  "items": {
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "bot_category",
+                                          "bot_name",
+                                          "bot_protection",
+                                          "bot_status",
+                                          "cookie",
+                                          "domain_environment",
+                                          "environment",
+                                          "geo_as_number",
+                                          "geo_city",
+                                          "geo_continent",
+                                          "geo_country",
+                                          "geo_country_region",
+                                          "header",
+                                          "host",
+                                          "ip_address",
+                                          "ja3_digest",
+                                          "ja4_digest",
+                                          "method",
+                                          "path",
+                                          "protocol",
+                                          "query",
+                                          "rate_limit_api_id",
+                                          "raw_path",
+                                          "region",
+                                          "route",
+                                          "ruleset",
+                                          "scheme",
+                                          "server_action",
+                                          "shared_condition",
+                                          "target_path",
+                                          "trusted_source",
+                                          "user_agent"
+                                        ]
+                                      },
+                                      "op": {
+                                        "type": "string",
+                                        "enum": [
+                                          "eq",
+                                          "ex",
+                                          "gt",
+                                          "gte",
+                                          "inc",
+                                          "list",
+                                          "lt",
+                                          "lte",
+                                          "neq",
+                                          "nex",
+                                          "ninc",
+                                          "pre",
+                                          "re",
+                                          "sub",
+                                          "suf"
+                                        ]
+                                      },
+                                      "neg": {
+                                        "type": "boolean",
+                                        "enum": [
+                                          false,
+                                          true
+                                        ]
+                                      },
+                                      "key": {
+                                        "type": "string"
+                                      },
+                                      "value": {
+                                        "oneOf": [
+                                          {
+                                            "type": "string"
+                                          },
+                                          {
+                                            "type": "number"
+                                          },
+                                          {
+                                            "items": {
+                                              "type": "string"
+                                            },
+                                            "type": "array"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "op",
+                                      "type"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "conditions"
+                              ],
+                              "type": "object"
+                            },
+                            "type": "array"
+                          }
+                        },
+                        "required": [
+                          "active",
+                          "conditionGroup",
+                          "id",
+                          "name"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
                     },
                     "changes": {
                       "items": {
@@ -177347,6 +180069,7 @@
                                               "ruleset",
                                               "scheme",
                                               "server_action",
+                                              "shared_condition",
                                               "target_path",
                                               "trusted_source",
                                               "user_agent"
@@ -177607,6 +180330,7 @@
                                               "ruleset",
                                               "scheme",
                                               "server_action",
+                                              "shared_condition",
                                               "target_path",
                                               "trusted_source",
                                               "user_agent"
@@ -177912,6 +180636,7 @@
                                               "ruleset",
                                               "scheme",
                                               "server_action",
+                                              "shared_condition",
                                               "target_path",
                                               "trusted_source",
                                               "user_agent"
@@ -178222,6 +180947,142 @@
                           "type": "object"
                         }
                       ]
+                    },
+                    "conditions": {
+                      "items": {
+                        "properties": {
+                          "description": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "active": {
+                            "type": "boolean",
+                            "enum": [
+                              false,
+                              true
+                            ]
+                          },
+                          "conditionGroup": {
+                            "items": {
+                              "properties": {
+                                "conditions": {
+                                  "items": {
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "bot_category",
+                                          "bot_name",
+                                          "bot_protection",
+                                          "bot_status",
+                                          "cookie",
+                                          "domain_environment",
+                                          "environment",
+                                          "geo_as_number",
+                                          "geo_city",
+                                          "geo_continent",
+                                          "geo_country",
+                                          "geo_country_region",
+                                          "header",
+                                          "host",
+                                          "ip_address",
+                                          "ja3_digest",
+                                          "ja4_digest",
+                                          "method",
+                                          "path",
+                                          "protocol",
+                                          "query",
+                                          "rate_limit_api_id",
+                                          "raw_path",
+                                          "region",
+                                          "route",
+                                          "ruleset",
+                                          "scheme",
+                                          "server_action",
+                                          "shared_condition",
+                                          "target_path",
+                                          "trusted_source",
+                                          "user_agent"
+                                        ]
+                                      },
+                                      "op": {
+                                        "type": "string",
+                                        "enum": [
+                                          "eq",
+                                          "ex",
+                                          "gt",
+                                          "gte",
+                                          "inc",
+                                          "list",
+                                          "lt",
+                                          "lte",
+                                          "neq",
+                                          "nex",
+                                          "ninc",
+                                          "pre",
+                                          "re",
+                                          "sub",
+                                          "suf"
+                                        ]
+                                      },
+                                      "neg": {
+                                        "type": "boolean",
+                                        "enum": [
+                                          false,
+                                          true
+                                        ]
+                                      },
+                                      "key": {
+                                        "type": "string"
+                                      },
+                                      "value": {
+                                        "oneOf": [
+                                          {
+                                            "type": "string"
+                                          },
+                                          {
+                                            "type": "number"
+                                          },
+                                          {
+                                            "items": {
+                                              "type": "string"
+                                            },
+                                            "type": "array"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "op",
+                                      "type"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "conditions"
+                              ],
+                              "type": "object"
+                            },
+                            "type": "array"
+                          }
+                        },
+                        "required": [
+                          "active",
+                          "conditionGroup",
+                          "id",
+                          "name"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
                     },
                     "changes": {
                       "items": {
@@ -211704,7 +214565,7 @@
                   "edgeConfigSlug": {
                     "type": "string"
                   },
-                  "edgeConfigSchema": {
+                  "globalConfigSchema": {
                     "type": "object"
                   }
                 },

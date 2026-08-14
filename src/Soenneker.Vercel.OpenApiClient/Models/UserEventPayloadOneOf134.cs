@@ -23,14 +23,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string EdgeConfigId { get; set; }
 #endif
-        /// <summary>The edgeConfigSchema property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf134EdgeConfigSchemaProperty? EdgeConfigSchema { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf134EdgeConfigSchemaProperty EdgeConfigSchema { get; set; }
-#endif
         /// <summary>The edgeConfigSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +30,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string EdgeConfigSlug { get; set; }
+#endif
+        /// <summary>The globalConfigSchema property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf134GlobalConfigSchemaProperty? GlobalConfigSchema { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf134GlobalConfigSchemaProperty GlobalConfigSchema { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf134"/> and sets the default values.
@@ -65,8 +65,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
-                { "edgeConfigSchema", n => { EdgeConfigSchema = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf134EdgeConfigSchemaProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf134EdgeConfigSchemaProperty.CreateFromDiscriminatorValue); } },
                 { "edgeConfigSlug", n => { EdgeConfigSlug = n.GetStringValue(); } },
+                { "globalConfigSchema", n => { GlobalConfigSchema = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf134GlobalConfigSchemaProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf134GlobalConfigSchemaProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,8 +77,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("edgeConfigId", EdgeConfigId);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf134EdgeConfigSchemaProperty>("edgeConfigSchema", EdgeConfigSchema);
             writer.WriteStringValue("edgeConfigSlug", EdgeConfigSlug);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf134GlobalConfigSchemaProperty>("globalConfigSchema", GlobalConfigSchema);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

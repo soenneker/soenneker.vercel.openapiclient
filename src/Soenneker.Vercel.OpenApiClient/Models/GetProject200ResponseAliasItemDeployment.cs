@@ -196,7 +196,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Url { get; set; }
 #endif
-        /// <summary>The userId property</summary>
+        /// <summary>Present for user creators; omitted for app/integration/system creators.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }

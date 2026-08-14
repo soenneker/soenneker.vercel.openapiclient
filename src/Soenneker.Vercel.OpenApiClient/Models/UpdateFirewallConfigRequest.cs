@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf17"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf18"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf19"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf9"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf11"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf12"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf13"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf14"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf15"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf16"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf17"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf18"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf19"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf20"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf21"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf22"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf9"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateFirewallConfigRequest : IComposedTypeWrapper, IParsable
@@ -108,6 +108,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf2 UpdateFirewallConfigRequestOneOf2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf20"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf20? UpdateFirewallConfigRequestOneOf20 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf20 UpdateFirewallConfigRequestOneOf20 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf21"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf21? UpdateFirewallConfigRequestOneOf21 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf21 UpdateFirewallConfigRequestOneOf21 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf22"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf22? UpdateFirewallConfigRequestOneOf22 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf22 UpdateFirewallConfigRequestOneOf22 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -223,6 +247,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 result.UpdateFirewallConfigRequestOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf2();
             }
+            else if("UpdateFirewallConfigRequestOneOf20".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateFirewallConfigRequestOneOf20 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf20();
+            }
+            else if("UpdateFirewallConfigRequestOneOf21".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateFirewallConfigRequestOneOf21 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf21();
+            }
+            else if("UpdateFirewallConfigRequestOneOf22".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateFirewallConfigRequestOneOf22 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf22();
+            }
             else if("UpdateFirewallConfigRequestOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UpdateFirewallConfigRequestOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf3();
@@ -306,6 +342,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if(UpdateFirewallConfigRequestOneOf2 != null)
             {
                 return UpdateFirewallConfigRequestOneOf2.GetFieldDeserializers();
+            }
+            else if(UpdateFirewallConfigRequestOneOf20 != null)
+            {
+                return UpdateFirewallConfigRequestOneOf20.GetFieldDeserializers();
+            }
+            else if(UpdateFirewallConfigRequestOneOf21 != null)
+            {
+                return UpdateFirewallConfigRequestOneOf21.GetFieldDeserializers();
+            }
+            else if(UpdateFirewallConfigRequestOneOf22 != null)
+            {
+                return UpdateFirewallConfigRequestOneOf22.GetFieldDeserializers();
             }
             else if(UpdateFirewallConfigRequestOneOf3 != null)
             {
@@ -391,6 +439,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if(UpdateFirewallConfigRequestOneOf2 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf2>(null, UpdateFirewallConfigRequestOneOf2);
+            }
+            else if(UpdateFirewallConfigRequestOneOf20 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf20>(null, UpdateFirewallConfigRequestOneOf20);
+            }
+            else if(UpdateFirewallConfigRequestOneOf21 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf21>(null, UpdateFirewallConfigRequestOneOf21);
+            }
+            else if(UpdateFirewallConfigRequestOneOf22 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFirewallConfigRequestOneOf22>(null, UpdateFirewallConfigRequestOneOf22);
             }
             else if(UpdateFirewallConfigRequestOneOf3 != null)
             {

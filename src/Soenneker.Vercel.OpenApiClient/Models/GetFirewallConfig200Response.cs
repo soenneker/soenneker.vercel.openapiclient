@@ -24,6 +24,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseChangesItem> Changes { get; set; }
 #endif
+        /// <summary>The conditions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseConditionsItem>? Conditions { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseConditionsItem> Conditions { get; set; }
+#endif
         /// <summary>Custom Ruleset</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -135,6 +143,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "botIdEnabled", n => { BotIdEnabled = n.GetBoolValue(); } },
                 { "changes", n => { Changes = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseChangesItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseChangesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseConditionsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseConditionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "crs", n => { Crs = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseCrs>(global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseCrs.CreateFromDiscriminatorValue); } },
                 { "firewallEnabled", n => { FirewallEnabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -158,6 +167,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("botIdEnabled", BotIdEnabled);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseChangesItem>("changes", Changes);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseConditionsItem>("conditions", Conditions);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseCrs>("crs", Crs);
             writer.WriteBoolValue("firewallEnabled", FirewallEnabled);
             writer.WriteStringValue("id", Id);

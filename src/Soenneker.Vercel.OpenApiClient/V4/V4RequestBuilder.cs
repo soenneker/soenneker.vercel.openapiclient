@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.V4.Aliases;
+using Soenneker.Vercel.OpenApiClient.V4.Sandboxes;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Soenneker.Vercel.OpenApiClient.V4
         public global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesRequestBuilder Aliases
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V4.Aliases.AliasesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sandboxes property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V4.Sandboxes.SandboxesRequestBuilder Sandboxes
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V4.Sandboxes.SandboxesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V4.V4RequestBuilder"/> and sets the default values.

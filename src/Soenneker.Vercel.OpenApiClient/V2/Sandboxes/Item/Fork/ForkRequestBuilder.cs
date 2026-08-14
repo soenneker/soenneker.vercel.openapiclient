@@ -36,22 +36,22 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.Fork
         /// <summary>
         /// Forks a named sandbox, creating a new named sandbox from the source&apos;s configuration. Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence, snapshot settings and — unlike the SDK-side fork — environment variables are copied from the source automatically (`interactive` is not). When the source has a snapshot the fork starts from it; otherwise it starts from the source&apos;s runtime/image. Any field provided in the request body overrides the value copied from the source.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameFork200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV2200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameFork200Response?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.Fork.ForkRequestBuilder.ForkRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV2200Response?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV2Request body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.Fork.ForkRequestBuilder.ForkRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameFork200Response> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.Fork.ForkRequestBuilder.ForkRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV2200Response> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV2Request body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.Fork.ForkRequestBuilder.ForkRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameFork200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameFork200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV2200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV2200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Forks a named sandbox, creating a new named sandbox from the source&apos;s configuration. Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence, snapshot settings and — unlike the SDK-side fork — environment variables are copied from the source automatically (`interactive` is not). When the source has a snapshot the fork starts from it; otherwise it starts from the source&apos;s runtime/image. Any field provided in the request body overrides the value copied from the source.
@@ -61,11 +61,11 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.Fork
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.Fork.ForkRequestBuilder.ForkRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV2Request body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.Fork.ForkRequestBuilder.ForkRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.Fork.ForkRequestBuilder.ForkRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesByNameForkV2Request body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item.Fork.ForkRequestBuilder.ForkRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
