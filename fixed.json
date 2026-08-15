@@ -8061,7 +8061,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetEdgeConfigSchema200Response"
+                  "$ref": "#/components/schemas/GetEdgeConfigSchema200ResponseSchema"
                 }
               }
             }
@@ -8130,7 +8130,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PatchEdgeConfigSchema200Response"
+                  "$ref": "#/components/schemas/PatchEdgeConfigSchema200ResponseSchema"
                 }
               }
             }
@@ -30415,7 +30415,7 @@
             "$ref": "#/components/schemas/AuthUserSoftBlock"
           },
           "billing": {
-            "$ref": "#/components/schemas/AuthUserBilling"
+            "$ref": "#/components/schemas/AuthUserBillingProperty"
           },
           "resourceConfig": {
             "$ref": "#/components/schemas/AuthUserResourceConfig"
@@ -37028,7 +37028,7 @@
             "$ref": "#/components/schemas/UserEventPayloadOneOf225ProjectAnalyticsProperty"
           },
           "prevProjectAnalytics": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf225PrevProjectAnalytics"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf225PrevProjectAnalyticsProperty"
           }
         },
         "description": "The payload of the event, if requested."
@@ -38493,10 +38493,10 @@
             "type": "string"
           },
           "previous": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf291Previous"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf291PreviousProperty"
           },
           "next": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf291Next"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf291NextProperty"
           }
         },
         "description": "The payload of the event, if requested."
@@ -39849,10 +39849,10 @@
         "type": "object",
         "properties": {
           "previous": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf348Previous"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf348PreviousProperty"
           },
           "next": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf348Next"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf348NextProperty"
           }
         },
         "description": "The payload of the event, if requested."
@@ -40223,6 +40223,30 @@
           },
           "previousRole": {
             "type": "string"
+          },
+          "previousTeamRoles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserEventPayloadOneOf362PreviousTeamRolesItem"
+            }
+          },
+          "teamRoles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserEventPayloadOneOf362TeamRolesItem"
+            }
+          },
+          "previousTeamPermissions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserEventPayloadOneOf362PreviousTeamPermissionsItem"
+            }
+          },
+          "teamPermissions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserEventPayloadOneOf362TeamPermissionsItem"
+            }
           },
           "updatedUid": {
             "type": "string"
@@ -57513,7 +57537,7 @@
           },
           "type": {
             "type": "string",
-            "description": "\u0022Known types: api-key, github, linear, linq, oauth, photon, salesforce, slack, snowflake. Optional when \\\\\u0022connectionMethod\\\\\u0022 is set.\u0022"
+            "description": "\u0022Known types: api-key, github, linear, linq, oauth, photon, salesforce, sendblue, slack, snowflake. Optional when \\\\\u0022connectionMethod\\\\\u0022 is set.\u0022"
           },
           "service": {
             "type": "string",
@@ -76495,6 +76519,14 @@
           "$ref": "#/components/schemas/GlobalConfigItem"
         }
       },
+      "GetEdgeConfigSchema200ResponseSchema": {
+        "type": "object",
+        "description": "The Global Config."
+      },
+      "PatchEdgeConfigSchema200ResponseSchema": {
+        "type": "object",
+        "description": "The JSON schema uploaded by the user"
+      },
       "DeleteEdgeConfigSchema204Response": {
         "title": "DefaultResponse",
         "type": "object",
@@ -77783,6 +77815,9 @@
           },
           {
             "$ref": "#/components/schemas/CreateConnectorRequestDataTypeSalesforce"
+          },
+          {
+            "$ref": "#/components/schemas/CreateConnectorRequestDataTypeSendblue"
           },
           {
             "$ref": "#/components/schemas/CreateConnectorRequestDataTypeSlack"
@@ -87820,6 +87855,32 @@
         },
         "additionalProperties": false
       },
+      "CreateConnectorRequestDataTypeSendblue": {
+        "title": "type:sendblue",
+        "required": [
+          "apiKeyId",
+          "apiSecretKey"
+        ],
+        "type": "object",
+        "properties": {
+          "apiKeyId": {
+            "type": "string",
+            "description": "Sendblue API key id (\u0060sb-api-key-id\u0060)."
+          },
+          "apiSecretKey": {
+            "type": "string",
+            "description": "Sendblue API secret key (\u0060sb-api-secret-key\u0060)."
+          },
+          "phoneNumbers": {
+            "type": "array",
+            "items": {
+              "pattern": "^\\\\\u002B[1-9]\\\\d{1,14}$",
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateConnectorRequestDataTypeSlack": {
         "title": "type:slack",
         "required": [
@@ -95208,6 +95269,10 @@
         },
         "description": "Key-value pairs of mount path and drive."
       },
+      "AuthUserBillingProperty": {
+        "type": "object",
+        "description": "An object containing billing infomation associated with the User account."
+      },
       "FlagEnvironmentsAdditionalPropertiesFallthroughOneOf2WeightsProperty": {
         "type": "object",
         "additionalProperties": {
@@ -95247,10 +95312,19 @@
       "UserEventPayloadOneOf225ProjectAnalyticsProperty": {
         "type": "object"
       },
+      "UserEventPayloadOneOf225PrevProjectAnalyticsProperty": {
+        "type": "object"
+      },
       "UserEventPayloadOneOf230PreviousProperty": {
         "type": "object"
       },
       "UserEventPayloadOneOf230NextProperty": {
+        "type": "object"
+      },
+      "UserEventPayloadOneOf291PreviousProperty": {
+        "type": "object"
+      },
+      "UserEventPayloadOneOf291NextProperty": {
         "type": "object"
       },
       "UserEventPayloadOneOf322ScalingRulesProperty": {
@@ -95264,6 +95338,12 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/UserEventPayloadOneOf347RemovedUsersAdditionalProperties"
         }
+      },
+      "UserEventPayloadOneOf348PreviousProperty": {
+        "type": "object"
+      },
+      "UserEventPayloadOneOf348NextProperty": {
+        "type": "object"
       },
       "UserEventPayloadOneOf379PreviousProperty": {
         "type": "object",
@@ -201885,6 +201965,156 @@
           ]
         }
       },
+      "UserEventPayloadOneOf362PreviousTeamRolesItem": {
+        "enum": [
+          "BILLING",
+          "CONTRIBUTOR",
+          "DEVELOPER",
+          "MEMBER",
+          "OWNER",
+          "SECURITY",
+          "VIEWER",
+          "VIEWER_FOR_PLUS"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf362PreviousTeamRolesItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "BILLING",
+              "name": "Billing"
+            },
+            {
+              "value": "CONTRIBUTOR",
+              "name": "Contributor"
+            },
+            {
+              "value": "DEVELOPER",
+              "name": "Developer"
+            },
+            {
+              "value": "MEMBER",
+              "name": "Member"
+            },
+            {
+              "value": "OWNER",
+              "name": "Owner"
+            },
+            {
+              "value": "SECURITY",
+              "name": "Security"
+            },
+            {
+              "value": "VIEWER",
+              "name": "Viewer"
+            },
+            {
+              "value": "VIEWER_FOR_PLUS",
+              "name": "ViewerForPlus"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf362TeamRolesItem": {
+        "enum": [
+          "BILLING",
+          "CONTRIBUTOR",
+          "DEVELOPER",
+          "MEMBER",
+          "OWNER",
+          "SECURITY",
+          "VIEWER",
+          "VIEWER_FOR_PLUS"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf362TeamRolesItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "BILLING",
+              "name": "Billing"
+            },
+            {
+              "value": "CONTRIBUTOR",
+              "name": "Contributor"
+            },
+            {
+              "value": "DEVELOPER",
+              "name": "Developer"
+            },
+            {
+              "value": "MEMBER",
+              "name": "Member"
+            },
+            {
+              "value": "OWNER",
+              "name": "Owner"
+            },
+            {
+              "value": "SECURITY",
+              "name": "Security"
+            },
+            {
+              "value": "VIEWER",
+              "name": "Viewer"
+            },
+            {
+              "value": "VIEWER_FOR_PLUS",
+              "name": "ViewerForPlus"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf362PreviousTeamPermissionsItem": {
+        "enum": [
+          "AiGatewayApiKeyOwnedBySelf",
+          "AiGatewayBudgetManager",
+          "AiGatewayCredits",
+          "AiGatewaySettings",
+          "ConnectorManager",
+          "CreateProject",
+          "EnvVariableManager",
+          "EnvironmentManager",
+          "FullProductionDeployment",
+          "IntegrationManager",
+          "OrgAdmin",
+          "OrgViewer",
+          "UsageViewer",
+          "V0Builder",
+          "V0Chatter",
+          "V0Viewer",
+          "WorkflowDecryptor"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "UserEventPayloadOneOf362TeamPermissionsItem": {
+        "enum": [
+          "AiGatewayApiKeyOwnedBySelf",
+          "AiGatewayBudgetManager",
+          "AiGatewayCredits",
+          "AiGatewaySettings",
+          "ConnectorManager",
+          "CreateProject",
+          "EnvVariableManager",
+          "EnvironmentManager",
+          "FullProductionDeployment",
+          "IntegrationManager",
+          "OrgAdmin",
+          "OrgViewer",
+          "UsageViewer",
+          "V0Builder",
+          "V0Chatter",
+          "V0Viewer",
+          "WorkflowDecryptor"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
       "UserEventPayloadOneOf368Plan": {
         "enum": [
           "enterprise",
@@ -213989,6 +214219,7 @@
           "oauth",
           "photon",
           "salesforce",
+          "sendblue",
           "slack",
           "snowflake",
           "snowflake-wif"
@@ -214038,6 +214269,10 @@
             {
               "value": "salesforce",
               "name": "Salesforce"
+            },
+            {
+              "value": "sendblue",
+              "name": "Sendblue"
             },
             {
               "value": "slack",

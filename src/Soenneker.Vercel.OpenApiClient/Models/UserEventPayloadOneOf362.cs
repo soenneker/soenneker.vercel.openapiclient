@@ -39,6 +39,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string PreviousRole { get; set; }
 #endif
+        /// <summary>The previousTeamPermissions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362PreviousTeamPermissionsItem?>? PreviousTeamPermissions { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362PreviousTeamPermissionsItem?> PreviousTeamPermissions { get; set; }
+#endif
+        /// <summary>The previousTeamRoles property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362PreviousTeamRolesItem?>? PreviousTeamRoles { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362PreviousTeamRolesItem?> PreviousTeamRoles { get; set; }
+#endif
         /// <summary>The role property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,6 +70,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string SsoType { get; set; }
+#endif
+        /// <summary>The teamPermissions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362TeamPermissionsItem?>? TeamPermissions { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362TeamPermissionsItem?> TeamPermissions { get; set; }
+#endif
+        /// <summary>The teamRoles property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362TeamRolesItem?>? TeamRoles { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362TeamRolesItem?> TeamRoles { get; set; }
 #endif
         /// <summary>The teamSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,8 +139,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "directoryType", n => { DirectoryType = n.GetStringValue(); } },
                 { "origin", n => { Origin = n.GetStringValue(); } },
                 { "previousRole", n => { PreviousRole = n.GetStringValue(); } },
+                { "previousTeamPermissions", n => { PreviousTeamPermissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362PreviousTeamPermissionsItem>()?.AsList(); } },
+                { "previousTeamRoles", n => { PreviousTeamRoles = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362PreviousTeamRolesItem>()?.AsList(); } },
                 { "role", n => { Role = n.GetStringValue(); } },
                 { "ssoType", n => { SsoType = n.GetStringValue(); } },
+                { "teamPermissions", n => { TeamPermissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362TeamPermissionsItem>()?.AsList(); } },
+                { "teamRoles", n => { TeamRoles = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362TeamRolesItem>()?.AsList(); } },
                 { "teamSlug", n => { TeamSlug = n.GetStringValue(); } },
                 { "updatedUid", n => { UpdatedUid = n.GetStringValue(); } },
                 { "updatedUser", n => { UpdatedUser = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362UpdatedUser>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362UpdatedUser.CreateFromDiscriminatorValue); } },
@@ -124,8 +160,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("directoryType", DirectoryType);
             writer.WriteStringValue("origin", Origin);
             writer.WriteStringValue("previousRole", PreviousRole);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362PreviousTeamPermissionsItem>("previousTeamPermissions", PreviousTeamPermissions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362PreviousTeamRolesItem>("previousTeamRoles", PreviousTeamRoles);
             writer.WriteStringValue("role", Role);
             writer.WriteStringValue("ssoType", SsoType);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362TeamPermissionsItem>("teamPermissions", TeamPermissions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362TeamRolesItem>("teamRoles", TeamRoles);
             writer.WriteStringValue("teamSlug", TeamSlug);
             writer.WriteStringValue("updatedUid", UpdatedUid);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf362UpdatedUser>("updatedUser", UpdatedUser);

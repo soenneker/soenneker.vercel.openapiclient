@@ -48,6 +48,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Salesforce,
         #pragma warning restore CS1591
+        [EnumMember(Value = "sendblue")]
+        #pragma warning disable CS1591
+        Sendblue,
+        #pragma warning restore CS1591
         [EnumMember(Value = "slack")]
         #pragma warning disable CS1591
         Slack,

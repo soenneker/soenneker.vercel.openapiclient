@@ -120,7 +120,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Whether the triggers are enabled for this connector.</summary>
         public bool? Triggers { get; set; }
-        /// <summary>&quot;Known types: api-key, github, linear, linq, oauth, photon, salesforce, slack, snowflake. Optional when \\&quot;connectionMethod\\&quot; is set.&quot;</summary>
+        /// <summary>&quot;Known types: api-key, github, linear, linq, oauth, photon, salesforce, sendblue, slack, snowflake. Optional when \\&quot;connectionMethod\\&quot; is set.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

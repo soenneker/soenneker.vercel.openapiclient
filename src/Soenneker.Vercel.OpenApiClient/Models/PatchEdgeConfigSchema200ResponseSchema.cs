@@ -8,29 +8,29 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// An object containing billing infomation associated with the User account.
+    /// The JSON schema uploaded by the user
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AuthUserBilling : IAdditionalDataHolder, IParsable
+    public partial class PatchEdgeConfigSchema200ResponseSchema : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBilling"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigSchema200ResponseSchema"/> and sets the default values.
         /// </summary>
-        public AuthUserBilling()
+        public PatchEdgeConfigSchema200ResponseSchema()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBilling"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigSchema200ResponseSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBilling CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigSchema200ResponseSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBilling();
+            return new global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigSchema200ResponseSchema();
         }
         /// <summary>
         /// The deserialization information for the current model

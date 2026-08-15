@@ -42,10 +42,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>An object containing billing infomation associated with the User account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBilling? Billing { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBillingProperty? Billing { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBilling Billing { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBillingProperty Billing { get; set; }
 #endif
         /// <summary>UNIX timestamp (in milliseconds) when the User account was created.</summary>
         public double? CreatedAt { get; set; }
@@ -215,7 +215,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "accountUpdateContext", n => { AccountUpdateContext = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContext>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContext.CreateFromDiscriminatorValue); } },
                 { "activeDashboardViews", n => { ActiveDashboardViews = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItem>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "avatar", n => { Avatar = n.GetStringValue(); } },
-                { "billing", n => { Billing = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBilling>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBilling.CreateFromDiscriminatorValue); } },
+                { "billing", n => { Billing = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBillingProperty>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBillingProperty.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "dataCache", n => { DataCache = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDataCache>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDataCache.CreateFromDiscriminatorValue); } },
                 { "defaultTeamId", n => { DefaultTeamId = n.GetStringValue(); } },
@@ -250,7 +250,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContext>("accountUpdateContext", AccountUpdateContext);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserActiveDashboardViewsItem>("activeDashboardViews", ActiveDashboardViews);
             writer.WriteStringValue("avatar", Avatar);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBilling>("billing", Billing);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserBillingProperty>("billing", Billing);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserDataCache>("dataCache", DataCache);
             writer.WriteStringValue("defaultTeamId", DefaultTeamId);
