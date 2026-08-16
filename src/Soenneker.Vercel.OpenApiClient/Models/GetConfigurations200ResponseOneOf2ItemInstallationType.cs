@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>&quot;Defines the installation type. - &apos;external&apos; integrations are installed via the existing integrations flow - &apos;marketplace&apos; integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume &apos;external&apos;&quot;</summary>
+    /// <summary>Defines the installation type. - &apos;external&apos; integrations are installed via the existing integrations flow - &apos;marketplace&apos; integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume &apos;external&apos;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetConfigurations200ResponseOneOf2ItemInstallationType
     {

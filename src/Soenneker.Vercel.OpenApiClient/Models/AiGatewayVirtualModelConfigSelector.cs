@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>&quot;For kind=router: how to order candidates.&quot;</summary>
+    /// <summary>For kind=router: how to order candidates.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AiGatewayVirtualModelConfigSelector
     {

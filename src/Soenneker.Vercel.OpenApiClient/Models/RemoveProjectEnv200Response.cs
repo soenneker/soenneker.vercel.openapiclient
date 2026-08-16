@@ -45,11 +45,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.RemoveProjectEnv200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.RemoveProjectEnv200Response();
-            if("RemoveProjectEnv200Response_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("RemoveProjectEnv200ResponseBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RemoveProjectEnv200ResponseBranch1 = new global::Soenneker.Vercel.OpenApiClient.Models.RemoveProjectEnv200ResponseBranch1();
+            }
+            else if("RemoveProjectEnv200ResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RemoveProjectEnv200ResponseOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.RemoveProjectEnv200ResponseOneOf2();
+            }
+            else if("RemoveProjectEnv200ResponseOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RemoveProjectEnv200ResponseOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.RemoveProjectEnv200ResponseOneOf3();
             }
             return result;
         }

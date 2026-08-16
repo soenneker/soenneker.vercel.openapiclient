@@ -39,7 +39,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string RestoredFrom { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.RestoreEdgeConfigBackup200ResponseStatus? Status { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.OkStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.RestoreEdgeConfigBackup200Response"/> and sets the default values.
         /// </summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "digest", n => { Digest = n.GetStringValue(); } },
                 { "previousDigest", n => { PreviousDigest = n.GetStringValue(); } },
                 { "restoredFrom", n => { RestoredFrom = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.RestoreEdgeConfigBackup200ResponseStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OkStatus>(); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("digest", Digest);
             writer.WriteStringValue("previousDigest", PreviousDigest);
             writer.WriteStringValue("restoredFrom", RestoredFrom);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.RestoreEdgeConfigBackup200ResponseStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OkStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

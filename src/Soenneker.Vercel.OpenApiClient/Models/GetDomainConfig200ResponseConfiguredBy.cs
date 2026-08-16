@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>&quot;How we see the domain&apos;s configuration. - `CNAME`: Domain has a CNAME pointing to Vercel. - `A`: Domain&apos;s A record is resolving to Vercel. - `http`: Domain is resolving to Vercel but may be behind a Proxy. - `dns-01`: Domain is not resolving to Vercel but dns-01 challenge is enabled. - `null`: Domain is not resolving to Vercel.&quot;</summary>
+    /// <summary>How we see the domain&apos;s configuration. - `CNAME`: Domain has a CNAME pointing to Vercel. - `A`: Domain&apos;s A record is resolving to Vercel. - `http`: Domain is resolving to Vercel but may be behind a Proxy. - `dns-01`: Domain is not resolving to Vercel but dns-01 challenge is enabled. - `null`: Domain is not resolving to Vercel.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetDomainConfig200ResponseConfiguredBy
     {

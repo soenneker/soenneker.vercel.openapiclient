@@ -19,7 +19,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The blockedUntil property</summary>
         public double? BlockedUntil { get; set; }
         /// <summary>The blockReason property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerFeatureBlocksBlobOneOf1BlockReason? BlockReason { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.LimitsExceededBlockReason? BlockReason { get; set; }
         /// <summary>The overageReason property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerFeatureBlocksBlobOneOf1OverageReason? OverageReason { get; set; }
         /// <summary>The updatedAt property</summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "blockReason", n => { BlockReason = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerFeatureBlocksBlobOneOf1BlockReason>(); } },
+                { "blockReason", n => { BlockReason = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.LimitsExceededBlockReason>(); } },
                 { "blockedFrom", n => { BlockedFrom = n.GetDoubleValue(); } },
                 { "blockedUntil", n => { BlockedUntil = n.GetDoubleValue(); } },
                 { "overageReason", n => { OverageReason = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerFeatureBlocksBlobOneOf1OverageReason>(); } },
@@ -65,7 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("blockedFrom", BlockedFrom);
             writer.WriteDoubleValue("blockedUntil", BlockedUntil);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerFeatureBlocksBlobOneOf1BlockReason>("blockReason", BlockReason);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.LimitsExceededBlockReason>("blockReason", BlockReason);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerFeatureBlocksBlobOneOf1OverageReason>("overageReason", OverageReason);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

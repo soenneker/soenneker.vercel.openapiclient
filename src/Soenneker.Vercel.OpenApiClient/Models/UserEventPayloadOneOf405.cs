@@ -26,7 +26,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The outcome property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405Outcome? Outcome { get; set; }
         /// <summary>The provider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405Provider? Provider { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GoogleProvider? Provider { get; set; }
         /// <summary>The providerSubjectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,7 +62,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "decision", n => { Decision = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405Decision>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405Decision.CreateFromDiscriminatorValue); } },
                 { "outcome", n => { Outcome = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405Outcome>(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405Provider>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GoogleProvider>(); } },
                 { "providerSubjectId", n => { ProviderSubjectId = n.GetStringValue(); } },
             };
         }
@@ -75,7 +75,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405Decision>("decision", Decision);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405Outcome>("outcome", Outcome);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405Provider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GoogleProvider>("provider", Provider);
             writer.WriteStringValue("providerSubjectId", ProviderSubjectId);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -69,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectId { get; set; }
 #endif
         /// <summary>The provider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf7Provider? Provider { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GitlabProvider? Provider { get; set; }
         /// <summary>The ref property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,7 +87,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Sha { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf7Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GitlabNowCommentType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf7"/> and sets the default values.
         /// </summary>
@@ -122,10 +122,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "prId", n => { PrId = n.GetDoubleValue(); } },
                 { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf7Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf7Project.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf7Provider>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GitlabProvider>(); } },
                 { "ref", n => { Ref = n.GetStringValue(); } },
                 { "sha", n => { Sha = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf7Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GitlabNowCommentType>(); } },
             };
         }
         /// <summary>
@@ -144,10 +144,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("prId", PrId);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf7Project>("project", Project);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf7Provider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GitlabProvider>("provider", Provider);
             writer.WriteStringValue("ref", Ref);
             writer.WriteStringValue("sha", Sha);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf7Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GitlabNowCommentType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

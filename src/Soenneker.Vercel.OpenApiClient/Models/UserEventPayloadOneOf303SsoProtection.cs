@@ -37,11 +37,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303SsoProtection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303SsoProtection();
             if("UserEventPayloadOneOf303SsoProtectionOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPayloadOneOf303SsoProtectionOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303SsoProtectionOneOf1();
+            }
+            else if("UserEventPayloadOneOf303SsoProtectionWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf303SsoProtectionWrapper = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf303SsoProtectionWrapper();
             }
             return result;
         }

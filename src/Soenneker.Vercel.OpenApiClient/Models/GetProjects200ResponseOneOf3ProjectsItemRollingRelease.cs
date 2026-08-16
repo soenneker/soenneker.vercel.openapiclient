@@ -17,7 +17,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the request served by a canary deployment should return a header indicating a canary was served. Defaults to `false` when omitted.</summary>
         public bool? CanaryResponseHeader { get; set; }
-        /// <summary>&quot;Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.&quot;</summary>
+        /// <summary>Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemRollingReleaseGate? Gate { get; set; }
@@ -25,7 +25,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemRollingReleaseGate Gate { get; set; }
 #endif
-        /// <summary>&quot;An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.&quot;</summary>
+        /// <summary>An array of all the stages required during a deployment release. Each stage defines a target percentage and advancement rules. The final stage must always have targetPercentage: 100.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemRollingReleaseStagesItem>? Stages { get; set; }

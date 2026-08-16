@@ -144,8 +144,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Indicates if the deployment encountered an out-of-memory error.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemOomReport? OomReport { get; set; }
+        /// <summary>The oomReport property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.OutOfMemoryOomReport? OomReport { get; set; }
         /// <summary>The ID of Secure Compute network used for this deployment&apos;s passive functions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -186,7 +186,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? Ready { get; set; }
         /// <summary>The readyState property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemReadyState? ReadyState { get; set; }
-        /// <summary>&quot;Substate of deployment when readyState is &apos;READY&apos; Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of gradually transitioning production traffic - PROMOTED: has seen production traffic&quot;</summary>
+        /// <summary>Substate of deployment when readyState is &apos;READY&apos; Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of gradually transitioning production traffic - PROMOTED: has seen production traffic</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemReadySubstate? ReadySubstate { get; set; }
         /// <summary>NSNB Blocked metadata</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -204,8 +204,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemState? State { get; set; }
         /// <summary>On which environment has the deployment been deployed to.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemTarget? Target { get; set; }
-        /// <summary>The type of the deployment.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemType? Type { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.LambdasType? Type { get; set; }
         /// <summary>The unique identifier of the deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -272,7 +272,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "manualProvisioning", n => { ManualProvisioning = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemManualProvisioning>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemManualProvisioning.CreateFromDiscriminatorValue); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemMeta>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemMeta.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "oomReport", n => { OomReport = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemOomReport>(); } },
+                { "oomReport", n => { OomReport = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OutOfMemoryOomReport>(); } },
                 { "passiveConnectConfigurationId", n => { PassiveConnectConfigurationId = n.GetStringValue(); } },
                 { "platform", n => { Platform = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemPlatform>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemPlatform.CreateFromDiscriminatorValue); } },
                 { "prebuilt", n => { Prebuilt = n.GetBoolValue(); } },
@@ -287,7 +287,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "source", n => { Source = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemSource>(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemState>(); } },
                 { "target", n => { Target = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemTarget>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.LambdasType>(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
                 { "undeleted", n => { Undeleted = n.GetDoubleValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -323,7 +323,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemManualProvisioning>("manualProvisioning", ManualProvisioning);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemMeta>("meta", Meta);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemOomReport>("oomReport", OomReport);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OutOfMemoryOomReport>("oomReport", OomReport);
             writer.WriteStringValue("passiveConnectConfigurationId", PassiveConnectConfigurationId);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemPlatform>("platform", Platform);
             writer.WriteBoolValue("prebuilt", Prebuilt);
@@ -338,7 +338,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemSource>("source", Source);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemState>("state", State);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemTarget>("target", Target);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.LambdasType>("type", Type);
             writer.WriteStringValue("uid", Uid);
             writer.WriteDoubleValue("undeleted", Undeleted);
             writer.WriteStringValue("url", Url);

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>&quot;Pin scope: `specific` (one provider region), `zone` (geo zone), or `global`.&quot;</summary>
+    /// <summary>Pin scope: `specific` (one provider region), `zone` (geo zone), or `global`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AiGatewayVirtualModelConfigInferenceRegionScope
     {

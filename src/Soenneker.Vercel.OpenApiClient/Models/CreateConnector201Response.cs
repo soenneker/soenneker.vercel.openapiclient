@@ -186,7 +186,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Time when this connector started requiring reinstallation because an installation-affecting app-token grant changed.</summary>
         public double? ReinstallAt { get; set; }
-        /// <summary>&quot;Best-effort identifier of the third-party service this client represents, independent of `type`. Examples: `&apos;slack&apos;`, `&apos;mcp.linear.app&apos;`, `&apos;auth.example.com&apos;`. Always non-empty on the API response — falls back through `storedClient.service ?? typeDef.service ?? typeDef.type`.&quot;</summary>
+        /// <summary>Best-effort identifier of the third-party service this client represents, independent of `type`. Examples: `&apos;slack&apos;`, `&apos;mcp.linear.app&apos;`, `&apos;auth.example.com&apos;`. Always non-empty on the API response — falls back through `storedClient.service ?? typeDef.service ?? typeDef.type`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Service { get; set; }

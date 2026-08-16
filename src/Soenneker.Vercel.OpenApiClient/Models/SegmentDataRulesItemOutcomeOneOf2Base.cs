@@ -31,7 +31,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Kind { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemOutcomeOneOf2BaseType? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.EntityType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemOutcomeOneOf2Base"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "attribute", n => { Attribute = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemOutcomeOneOf2BaseType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.EntityType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("attribute", Attribute);
             writer.WriteStringValue("kind", Kind);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemOutcomeOneOf2BaseType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.EntityType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

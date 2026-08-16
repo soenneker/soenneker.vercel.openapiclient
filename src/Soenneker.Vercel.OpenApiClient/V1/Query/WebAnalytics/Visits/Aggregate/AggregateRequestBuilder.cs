@@ -85,7 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Query.WebAnalytics.Visits.Aggregate
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AggregateRequestBuilderGetQueryParameters 
         {
-            /// <summary>&quot;Up to two dimensions used to break down results.At most one time granularity is allowed: hour, day, week, month, year.Other dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm.JSON dimensions: flags. Used bare, it breaks down results by key, for example flags returns one group per flag name. With a key, it breaks down results by that key&apos;s value, for example flags/beta_banner. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/&apos;my-flag&apos;.&quot;</summary>
+            /// <summary>Up to two dimensions used to break down results.At most one time granularity is allowed: hour, day, week, month, year.Other dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm.JSON dimensions: flags. Used bare, it breaks down results by key, for example flags returns one group per flag name. With a key, it breaks down results by that key&apos;s value, for example flags/beta_banner. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/&apos;my-flag&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("by")]
@@ -95,7 +95,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Query.WebAnalytics.Visits.Aggregate
             [QueryParameter("by")]
             public string[] By { get; set; }
 #endif
-            /// <summary>&quot;OData-compliant filter. Encode the value when sending it in a URL.Allows filtering on one or multiple dimensions. By default, filters for production environment only.Supported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm.JSON dimensions filtered by key: flags/&lt;name&gt;, for example flags/beta_banner eq &apos;true&apos;. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/&apos;my-flag&apos; eq &apos;true&apos;.Supported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.&quot;</summary>
+            /// <summary>OData-compliant filter. Encode the value when sending it in a URL.Allows filtering on one or multiple dimensions. By default, filters for production environment only.Supported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm.JSON dimensions filtered by key: flags/&lt;name&gt;, for example flags/beta_banner eq &apos;true&apos;. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/&apos;my-flag&apos; eq &apos;true&apos;.Supported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter")]

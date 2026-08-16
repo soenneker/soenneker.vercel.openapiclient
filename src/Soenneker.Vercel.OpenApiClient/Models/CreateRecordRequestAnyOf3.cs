@@ -31,7 +31,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The TTL value. Must be a number between 60 and 2147483647. Default value is 60.</summary>
         public double? Ttl { get; set; }
         /// <summary>Must be of type `ALIAS`.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf3Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AliasType? Type { get; set; }
         /// <summary>An ALIAS virtual record pointing to a hostname resolved to an A record on server side.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,7 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "comment", n => { Comment = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ttl", n => { Ttl = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf3Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AliasType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -75,7 +75,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("comment", Comment);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("ttl", Ttl);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf3Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AliasType>("type", Type);
             writer.WriteStringValue("value", Value);
         }
     }

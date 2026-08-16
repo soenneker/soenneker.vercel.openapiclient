@@ -7,36 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf3"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DeleteRedirects200Response : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class DeleteRedirects200Response : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The alias property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf1? DeleteRedirects200ResponseOneOf1 { get; set; }
+        public string? Alias { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf1 DeleteRedirects200ResponseOneOf1 { get; set; }
+        public string Alias { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf2"/></summary>
+        /// <summary>The version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf2? DeleteRedirects200ResponseOneOf2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseVersion? Version { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf2 DeleteRedirects200ResponseOneOf2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseVersion Version { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf3? DeleteRedirects200ResponseOneOf3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf3 DeleteRedirects200ResponseOneOf3 { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200Response"/> and sets the default values.
+        /// </summary>
+        public DeleteRedirects200Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,21 +45,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200Response();
-            if("DeleteRedirects200ResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DeleteRedirects200ResponseOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf1();
-            }
-            else if("DeleteRedirects200ResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DeleteRedirects200ResponseOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf2();
-            }
-            else if("DeleteRedirects200ResponseOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.DeleteRedirects200ResponseOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf3();
-            }
-            return result;
+            return new global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200Response();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,19 +53,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(DeleteRedirects200ResponseOneOf1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return DeleteRedirects200ResponseOneOf1.GetFieldDeserializers();
-            }
-            else if(DeleteRedirects200ResponseOneOf2 != null)
-            {
-                return DeleteRedirects200ResponseOneOf2.GetFieldDeserializers();
-            }
-            else if(DeleteRedirects200ResponseOneOf3 != null)
-            {
-                return DeleteRedirects200ResponseOneOf3.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "alias", n => { Alias = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseVersion>(global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseVersion.CreateFromDiscriminatorValue); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -88,18 +66,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(DeleteRedirects200ResponseOneOf1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf1>(null, DeleteRedirects200ResponseOneOf1);
-            }
-            else if(DeleteRedirects200ResponseOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf2>(null, DeleteRedirects200ResponseOneOf2);
-            }
-            else if(DeleteRedirects200ResponseOneOf3 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseOneOf3>(null, DeleteRedirects200ResponseOneOf3);
-            }
+            writer.WriteStringValue("alias", Alias);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteRedirects200ResponseVersion>("version", Version);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

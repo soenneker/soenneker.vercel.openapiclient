@@ -37,11 +37,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200Response();
             if("Flag".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.Flag = new global::Soenneker.Vercel.OpenApiClient.Models.Flag();
+            }
+            else if("UpdateFlag200ResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateFlag200ResponseOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1();
             }
             return result;
         }

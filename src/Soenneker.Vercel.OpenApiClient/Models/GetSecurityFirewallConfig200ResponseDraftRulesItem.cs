@@ -72,7 +72,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public GetSecurityFirewallConfig200ResponseDraftRulesItem()
         {
             AdditionalData = new Dictionary<string, object>();
-            Valid = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

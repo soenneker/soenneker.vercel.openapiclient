@@ -24,7 +24,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Env { get; set; }
 #endif
         /// <summary>Generated value shape, must be `&quot;url&quot;`.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBindingsItemFormat? Format { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UrlFormat? Format { get; set; }
         /// <summary>Target service name from `services`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,8 +33,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Service { get; set; }
 #endif
-        /// <summary>If present, must be `&quot;service&quot;` for Service-to-Service HTTP bindings.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBindingsItemType? Type { get; set; }
+        /// <summary>Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.ServiceType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBindingsItem"/> and sets the default values.
         /// </summary>
@@ -61,9 +61,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "env", n => { Env = n.GetStringValue(); } },
-                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBindingsItemFormat>(); } },
+                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UrlFormat>(); } },
                 { "service", n => { Service = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBindingsItemType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ServiceType>(); } },
             };
         }
         /// <summary>
@@ -74,9 +74,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("env", Env);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBindingsItemFormat>("format", Format);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UrlFormat>("format", Format);
             writer.WriteStringValue("service", Service);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBindingsItemType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ServiceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

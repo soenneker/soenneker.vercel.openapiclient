@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>&quot;- team: `https://oidc.vercel.com/[team_slug]` - global: `https://oidc.vercel.com`&quot;</summary>
+    /// <summary>- team: `https://oidc.vercel.com/[team_slug]` - global: `https://oidc.vercel.com`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UpdateProject200ResponseOidcTokenConfigIssuerMode
     {

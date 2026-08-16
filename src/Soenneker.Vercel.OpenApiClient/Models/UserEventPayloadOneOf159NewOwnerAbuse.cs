@@ -38,7 +38,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string CreationUserAgent { get; set; }
 #endif
-        /// <summary>&quot;Since March 2022. Helps abuse checks by tracking git auths. Format: `&lt;platform&gt;:&lt;detail&gt;:&lt;value&gt;`&quot;</summary>
+        /// <summary>Since March 2022. Helps abuse checks by tracking git auths. Format: `&lt;platform&gt;:&lt;detail&gt;:&lt;value&gt;`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? GitAuthHistory { get; set; }
@@ -82,7 +82,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerAbuseScheduledBlock ScheduledBlock { get; set; }
 #endif
-        /// <summary>&quot;Since December 2025. UTC timestamp string of when an auto-unblock is scheduled. Format: \&quot;Wed, 03 Dec 2025 20:32:13 GMT\&quot;&quot;</summary>
+        /// <summary>Since December 2025. UTC timestamp string of when an auto-unblock is scheduled. Format: &quot;Wed, 03 Dec 2025 20:32:13 GMT&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScheduledUnblockAt { get; set; }

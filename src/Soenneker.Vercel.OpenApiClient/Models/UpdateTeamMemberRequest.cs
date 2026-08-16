@@ -54,7 +54,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public UpdateTeamMemberRequest()
         {
             AdditionalData = new Dictionary<string, object>();
-            Confirmed = true;
             Role = "MEMBER";
         }
         /// <summary>

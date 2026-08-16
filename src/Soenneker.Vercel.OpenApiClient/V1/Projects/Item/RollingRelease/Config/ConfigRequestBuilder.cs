@@ -70,7 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseConfig200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Update (or disable) Rolling Releases for a project. When disabling with the resolve-on-disable feature flag enabled, any active rolling release document is resolved using the disableRolloutAction parameter: \&quot;abort\&quot; to roll back (default), or \&quot;complete\&quot; to promote the canary to production. When enabling or updating config, changes only affect the next production deployment and do not alter a rollout that&apos;s already in-flight. Note: Enabling Rolling Releases automatically enables skew protection on the project with the default value if it wasn&apos;t configured already.&quot;
+        /// Update (or disable) Rolling Releases for a project. When disabling with the resolve-on-disable feature flag enabled, any active rolling release document is resolved using the disableRolloutAction parameter: &quot;abort&quot; to roll back (default), or &quot;complete&quot; to promote the canary to production. When enabling or updating config, changes only affect the next production deployment and do not alter a rollout that&apos;s already in-flight. Note: Enabling Rolling Releases automatically enables skew protection on the project with the default value if it wasn&apos;t configured already.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateRollingReleaseConfig200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -126,7 +126,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Update (or disable) Rolling Releases for a project. When disabling with the resolve-on-disable feature flag enabled, any active rolling release document is resolved using the disableRolloutAction parameter: \&quot;abort\&quot; to roll back (default), or \&quot;complete\&quot; to promote the canary to production. When enabling or updating config, changes only affect the next production deployment and do not alter a rollout that&apos;s already in-flight. Note: Enabling Rolling Releases automatically enables skew protection on the project with the default value if it wasn&apos;t configured already.&quot;
+        /// Update (or disable) Rolling Releases for a project. When disabling with the resolve-on-disable feature flag enabled, any active rolling release document is resolved using the disableRolloutAction parameter: &quot;abort&quot; to roll back (default), or &quot;complete&quot; to promote the canary to production. When enabling or updating config, changes only affect the next production deployment and do not alter a rollout that&apos;s already in-flight. Note: Enabling Rolling Releases automatically enables skew protection on the project with the default value if it wasn&apos;t configured already.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -208,7 +208,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.RollingRelease.Config
 #endif
         }
         /// <summary>
-        /// &quot;Update (or disable) Rolling Releases for a project. When disabling with the resolve-on-disable feature flag enabled, any active rolling release document is resolved using the disableRolloutAction parameter: \&quot;abort\&quot; to roll back (default), or \&quot;complete\&quot; to promote the canary to production. When enabling or updating config, changes only affect the next production deployment and do not alter a rollout that&apos;s already in-flight. Note: Enabling Rolling Releases automatically enables skew protection on the project with the default value if it wasn&apos;t configured already.&quot;
+        /// Update (or disable) Rolling Releases for a project. When disabling with the resolve-on-disable feature flag enabled, any active rolling release document is resolved using the disableRolloutAction parameter: &quot;abort&quot; to roll back (default), or &quot;complete&quot; to promote the canary to production. When enabling or updating config, changes only affect the next production deployment and do not alter a rollout that&apos;s already in-flight. Note: Enabling Rolling Releases automatically enables skew protection on the project with the default value if it wasn&apos;t configured already.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConfigRequestBuilderPatchQueryParameters 

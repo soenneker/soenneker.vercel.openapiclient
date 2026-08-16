@@ -16,7 +16,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Whether or not to generate OpenID Connect JSON Web Tokens.</summary>
         [Obsolete("")]
         public bool? Enabled { get; set; }
-        /// <summary>&quot;team: `https://oidc.vercel.com/[team_slug]` global: `https://oidc.vercel.com`&quot;</summary>
+        /// <summary>team: `https://oidc.vercel.com/[team_slug]` global: `https://oidc.vercel.com`</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestOidcTokenConfigIssuerMode? IssuerMode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectRequestOidcTokenConfig"/> and sets the default values.

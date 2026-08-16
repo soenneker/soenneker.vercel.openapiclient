@@ -69,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? RedirectStatusCode { get; set; }
         /// <summary>The updatedAt property</summary>
         public double? UpdatedAt { get; set; }
-        /// <summary>&quot;A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.&quot;</summary>
+        /// <summary>A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Vercel.OpenApiClient.Models.RemoveCustomEnvironment200ResponseDomainsItemVerificationItem>? Verification { get; set; }

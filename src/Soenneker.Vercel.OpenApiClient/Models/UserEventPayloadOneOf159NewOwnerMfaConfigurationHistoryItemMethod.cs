@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>&quot;Method used for the state change - &apos;totp&apos;: User set up TOTP authenticator - &apos;passkey&apos;: User registered a passkey - &apos;user_disabled&apos;: User disabled their own MFA - &apos;admin_removal&apos;: Admin removed MFA via backoffice - &apos;self_serve_recovery&apos;: User disabled their own MFA through the self-serve MFA disable recovery flow (a \&quot;Locked Out User\&quot; with only a passkey) - &apos;unknown&apos;: Method unknown (for pre-tracking events)&quot;</summary>
+    /// <summary>Method used for the state change - &apos;totp&apos;: User set up TOTP authenticator - &apos;passkey&apos;: User registered a passkey - &apos;user_disabled&apos;: User disabled their own MFA - &apos;admin_removal&apos;: Admin removed MFA via backoffice - &apos;self_serve_recovery&apos;: User disabled their own MFA through the self-serve MFA disable recovery flow (a &quot;Locked Out User&quot; with only a passkey) - &apos;unknown&apos;: Method unknown (for pre-tracking events)</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UserEventPayloadOneOf159NewOwnerMfaConfigurationHistoryItemMethod
     {

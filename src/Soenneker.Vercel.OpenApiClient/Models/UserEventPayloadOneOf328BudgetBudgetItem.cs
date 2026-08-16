@@ -58,7 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string TeamId { get; set; }
 #endif
         /// <summary>The budget type</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf328BudgetBudgetItemType? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FixedValueType? Type { get; set; }
         /// <summary>Date time when budget is updated last</summary>
         public double? UpdatedAt { get; set; }
         /// <summary>Webhook id that corresponds to a webhook in Cosmos webhook collection</summary>
@@ -105,7 +105,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "previousSpend", n => { PreviousSpend = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "pricingPlan", n => { PricingPlan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf328BudgetBudgetItemPricingPlan>(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf328BudgetBudgetItemType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FixedValueType>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "webhookId", n => { WebhookId = n.GetStringValue(); } },
                 { "webhookNotified", n => { WebhookNotified = n.GetBoolValue(); } },
@@ -127,7 +127,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<double?>("previousSpend", PreviousSpend);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf328BudgetBudgetItemPricingPlan>("pricingPlan", PricingPlan);
             writer.WriteStringValue("teamId", TeamId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf328BudgetBudgetItemType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FixedValueType>("type", Type);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("webhookId", WebhookId);
             writer.WriteBoolValue("webhookNotified", WebhookNotified);

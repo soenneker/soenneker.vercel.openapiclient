@@ -32,7 +32,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Project { get; set; }
 #endif
         /// <summary>The provider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicyGitSourcesItemSourcesItemOneOf2Provider? Provider { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GitlabProvider? Provider { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicyGitSourcesItemSourcesItemOneOf2"/> and sets the default values.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "namespace", n => { Namespace = n.GetStringValue(); } },
                 { "project", n => { Project = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicyGitSourcesItemSourcesItemOneOf2Provider>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GitlabProvider>(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("namespace", Namespace);
             writer.WriteStringValue("project", Project);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicyGitSourcesItemSourcesItemOneOf2Provider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GitlabProvider>("provider", Provider);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

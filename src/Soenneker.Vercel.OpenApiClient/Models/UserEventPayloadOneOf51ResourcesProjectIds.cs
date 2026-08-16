@@ -26,14 +26,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The required property</summary>
         public bool? Required { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51ResourcesProjectIdsType? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51ResourcesProjectIds"/> and sets the default values.
         /// </summary>
         public UserEventPayloadOneOf51ResourcesProjectIds()
         {
             AdditionalData = new Dictionary<string, object>();
-            Required = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,7 +54,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "items", n => { Items = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51ResourcesProjectIdsItems>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51ResourcesProjectIdsItems.CreateFromDiscriminatorValue); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51ResourcesProjectIdsType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListType>(); } },
             };
         }
         /// <summary>
@@ -67,7 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51ResourcesProjectIdsItems>("items", Items);
             writer.WriteBoolValue("required", Required);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf51ResourcesProjectIdsType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

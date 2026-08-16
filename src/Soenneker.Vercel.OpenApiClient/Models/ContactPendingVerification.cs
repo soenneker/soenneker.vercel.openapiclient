@@ -32,13 +32,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string VerifyBy { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ContactPendingVerification"/> and sets the default values.
-        /// </summary>
-        public ContactPendingVerification()
-        {
-            Verified = false;
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ContactPendingVerification"/></returns>

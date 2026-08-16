@@ -31,7 +31,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Pattern { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemConditionsItemRhsOneOf4Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.RegexType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemConditionsItemRhsOneOf4"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "flags", n => { Flags = n.GetStringValue(); } },
                 { "pattern", n => { Pattern = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemConditionsItemRhsOneOf4Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.RegexType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("flags", Flags);
             writer.WriteStringValue("pattern", Pattern);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemConditionsItemRhsOneOf4Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.RegexType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

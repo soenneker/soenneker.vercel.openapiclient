@@ -7,28 +7,158 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf2"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetProjectEnv200Response : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class GetProjectEnv200Response : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf1? GetProjectEnv200ResponseOneOf1 { get; set; }
+        public string? Comment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf1 GetProjectEnv200ResponseOneOf1 { get; set; }
+        public string Comment { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf2"/></summary>
+        /// <summary>The configurationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf2? GetProjectEnv200ResponseOneOf2 { get; set; }
+        public string? ConfigurationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf2 GetProjectEnv200ResponseOneOf2 { get; set; }
+        public string ConfigurationId { get; set; }
 #endif
+        /// <summary>The contentHint property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseContentHint? ContentHint { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseContentHint ContentHint { get; set; }
+#endif
+        /// <summary>The createdAt property</summary>
+        public double? CreatedAt { get; set; }
+        /// <summary>The createdBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedBy { get; set; }
+#nullable restore
+#else
+        public string CreatedBy { get; set; }
+#endif
+        /// <summary>The customEnvironmentIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? CustomEnvironmentIds { get; set; }
+#nullable restore
+#else
+        public List<string> CustomEnvironmentIds { get; set; }
+#endif
+        /// <summary>The decrypted property</summary>
+        public bool? Decrypted { get; set; }
+        /// <summary>The edgeConfigId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EdgeConfigId { get; set; }
+#nullable restore
+#else
+        public string EdgeConfigId { get; set; }
+#endif
+        /// <summary>The edgeConfigTokenId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EdgeConfigTokenId { get; set; }
+#nullable restore
+#else
+        public string EdgeConfigTokenId { get; set; }
+#endif
+        /// <summary>The gitBranch property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GitBranch { get; set; }
+#nullable restore
+#else
+        public string GitBranch { get; set; }
+#endif
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
+        /// <summary>Similar to `contentHints`, but should not be exposed to the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseInternalContentHint? InternalContentHint { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseInternalContentHint InternalContentHint { get; set; }
+#endif
+        /// <summary>The key property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Key { get; set; }
+#nullable restore
+#else
+        public string Key { get; set; }
+#endif
+        /// <summary>Legacy now-encryption ciphertext, present after migration swaps value/vsmValue</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LegacyValue { get; set; }
+#nullable restore
+#else
+        public string LegacyValue { get; set; }
+#endif
+        /// <summary>This is used to identify variables that have been migrated from type secret to sensitive.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SunsetSecretId { get; set; }
+#nullable restore
+#else
+        public string SunsetSecretId { get; set; }
+#endif
+        /// <summary>The target property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseTarget? Target { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseTarget Target { get; set; }
+#endif
+        /// <summary>The type property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseType? Type { get; set; }
+        /// <summary>The updatedAt property</summary>
+        public double? UpdatedAt { get; set; }
+        /// <summary>The updatedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UpdatedBy { get; set; }
+#nullable restore
+#else
+        public string UpdatedBy { get; set; }
+#endif
+        /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Value { get; set; }
+#nullable restore
+#else
+        public string Value { get; set; }
+#endif
+        /// <summary>User-facing config/secret model. When set, authoritative for new code paths when the env-var-config-secret-ui flag is enabled. Legacy rows omit this field; legacy rows omit it and callers fall back to existing `type` behavior.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseVisibility? Visibility { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200Response"/> and sets the default values.
+        /// </summary>
+        public GetProjectEnv200Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,17 +167,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200Response();
-            if("GetProjectEnv200ResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.GetProjectEnv200ResponseOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf1();
-            }
-            else if("GetProjectEnv200ResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.GetProjectEnv200ResponseOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf2();
-            }
-            return result;
+            return new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200Response();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,15 +175,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(GetProjectEnv200ResponseOneOf1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return GetProjectEnv200ResponseOneOf1.GetFieldDeserializers();
-            }
-            else if(GetProjectEnv200ResponseOneOf2 != null)
-            {
-                return GetProjectEnv200ResponseOneOf2.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "comment", n => { Comment = n.GetStringValue(); } },
+                { "configurationId", n => { ConfigurationId = n.GetStringValue(); } },
+                { "contentHint", n => { ContentHint = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseContentHint>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseContentHint.CreateFromDiscriminatorValue); } },
+                { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
+                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
+                { "customEnvironmentIds", n => { CustomEnvironmentIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "decrypted", n => { Decrypted = n.GetBoolValue(); } },
+                { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
+                { "edgeConfigTokenId", n => { EdgeConfigTokenId = n.GetStringValue(); } },
+                { "gitBranch", n => { GitBranch = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "internalContentHint", n => { InternalContentHint = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseInternalContentHint>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseInternalContentHint.CreateFromDiscriminatorValue); } },
+                { "key", n => { Key = n.GetStringValue(); } },
+                { "legacyValue", n => { LegacyValue = n.GetStringValue(); } },
+                { "sunsetSecretId", n => { SunsetSecretId = n.GetStringValue(); } },
+                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseTarget>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseTarget.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseType>(); } },
+                { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
+                { "updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
+                { "visibility", n => { Visibility = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseVisibility>(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -72,14 +207,28 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(GetProjectEnv200ResponseOneOf1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf1>(null, GetProjectEnv200ResponseOneOf1);
-            }
-            else if(GetProjectEnv200ResponseOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseOneOf2>(null, GetProjectEnv200ResponseOneOf2);
-            }
+            writer.WriteStringValue("comment", Comment);
+            writer.WriteStringValue("configurationId", ConfigurationId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseContentHint>("contentHint", ContentHint);
+            writer.WriteDoubleValue("createdAt", CreatedAt);
+            writer.WriteStringValue("createdBy", CreatedBy);
+            writer.WriteCollectionOfPrimitiveValues<string>("customEnvironmentIds", CustomEnvironmentIds);
+            writer.WriteBoolValue("decrypted", Decrypted);
+            writer.WriteStringValue("edgeConfigId", EdgeConfigId);
+            writer.WriteStringValue("edgeConfigTokenId", EdgeConfigTokenId);
+            writer.WriteStringValue("gitBranch", GitBranch);
+            writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseInternalContentHint>("internalContentHint", InternalContentHint);
+            writer.WriteStringValue("key", Key);
+            writer.WriteStringValue("legacyValue", LegacyValue);
+            writer.WriteStringValue("sunsetSecretId", SunsetSecretId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseTarget>("target", Target);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseType>("type", Type);
+            writer.WriteDoubleValue("updatedAt", UpdatedAt);
+            writer.WriteStringValue("updatedBy", UpdatedBy);
+            writer.WriteStringValue("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectEnv200ResponseVisibility>("visibility", Visibility);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

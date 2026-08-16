@@ -79,7 +79,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public TeamMembership()
         {
             AdditionalData = new Dictionary<string, object>();
-            Confirmed = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

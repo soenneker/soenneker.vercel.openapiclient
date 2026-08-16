@@ -37,7 +37,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Status { get; set; }
 #endif
-        /// <summary>&quot;Controls whether directory sync events are processed. - &apos;SETUP&apos;: Directory connected but role mappings not yet configured. Events are acknowledged but not processed. - &apos;ACTIVE&apos;: Fully configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat as &apos;ACTIVE&apos; for backwards compatibility.&quot;</summary>
+        /// <summary>Controls whether directory sync events are processed. - &apos;SETUP&apos;: Directory connected but role mappings not yet configured. Events are acknowledged but not processed. - &apos;ACTIVE&apos;: Fully configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat as &apos;ACTIVE&apos; for backwards compatibility.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlConnectionSyncState? SyncState { get; set; }
         /// <summary>The Identity Provider &quot;type&quot;, for example Okta.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -31,9 +31,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public List<string> Env { get; set; }
 #endif
         /// <summary>The op property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRewritesItemTransformsItemOp? Op { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SetOp? Op { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRewritesItemTransformsItemType? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.RequestPathType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRewritesItemTransformsItem"/> and sets the default values.
         /// </summary>
@@ -61,8 +61,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "args", n => { Args = n.GetStringValue(); } },
                 { "env", n => { Env = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "op", n => { Op = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRewritesItemTransformsItemOp>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRewritesItemTransformsItemType>(); } },
+                { "op", n => { Op = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SetOp>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.RequestPathType>(); } },
             };
         }
         /// <summary>
@@ -74,8 +74,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("args", Args);
             writer.WriteCollectionOfPrimitiveValues<string>("env", Env);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRewritesItemTransformsItemOp>("op", Op);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemRewritesItemTransformsItemType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SetOp>("op", Op);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.RequestPathType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

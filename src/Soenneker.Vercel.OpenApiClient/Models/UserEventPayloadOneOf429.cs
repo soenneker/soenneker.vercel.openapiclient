@@ -55,7 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Ip { get; set; }
 #endif
-        /// <summary>&quot;OIDC issuer (`iss`) of the token that authenticated the request. Present for OIDC-authenticated flows: the token-exchange grant, or `client_credentials` with the `oidc_token` client-authentication method.&quot;</summary>
+        /// <summary>OIDC issuer (`iss`) of the token that authenticated the request. Present for OIDC-authenticated flows: the token-exchange grant, or `client_credentials` with the `oidc_token` client-authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IssuerUrl { get; set; }
@@ -88,7 +88,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string PublicId { get; set; }
 #endif
         /// <summary>optional; only present when a refresh token was issued (offline_access).</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf429RefreshTokenPrefix? RefreshTokenPrefix { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.VcrRefreshTokenPrefix? RefreshTokenPrefix { get; set; }
         /// <summary>optional; only present when a refresh token was issued (offline_access).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,7 +124,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string SessionId { get; set; }
 #endif
         /// <summary>optional since entries prior to 2026-04-23 do not contain this field</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf429TokenPrefix? TokenPrefix { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.VcaTokenPrefix? TokenPrefix { get; set; }
         /// <summary>optional since entries prior to 2026-04-23 do not contain this field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -178,13 +178,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "oidcSubject", n => { OidcSubject = n.GetStringValue(); } },
                 { "policyId", n => { PolicyId = n.GetStringValue(); } },
                 { "publicId", n => { PublicId = n.GetStringValue(); } },
-                { "refreshTokenPrefix", n => { RefreshTokenPrefix = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf429RefreshTokenPrefix>(); } },
+                { "refreshTokenPrefix", n => { RefreshTokenPrefix = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrRefreshTokenPrefix>(); } },
                 { "refreshTokenPublicId", n => { RefreshTokenPublicId = n.GetStringValue(); } },
                 { "refreshTokenSuffix", n => { RefreshTokenSuffix = n.GetStringValue(); } },
                 { "rtTTL", n => { RtTTL = n.GetDoubleValue(); } },
                 { "scope", n => { Scope = n.GetStringValue(); } },
                 { "sessionId", n => { SessionId = n.GetStringValue(); } },
-                { "tokenPrefix", n => { TokenPrefix = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf429TokenPrefix>(); } },
+                { "tokenPrefix", n => { TokenPrefix = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcaTokenPrefix>(); } },
                 { "tokenSuffix", n => { TokenSuffix = n.GetStringValue(); } },
                 { "userAgent", n => { UserAgent = n.GetStringValue(); } },
             };
@@ -208,13 +208,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("oidcSubject", OidcSubject);
             writer.WriteStringValue("policyId", PolicyId);
             writer.WriteStringValue("publicId", PublicId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf429RefreshTokenPrefix>("refreshTokenPrefix", RefreshTokenPrefix);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrRefreshTokenPrefix>("refreshTokenPrefix", RefreshTokenPrefix);
             writer.WriteStringValue("refreshTokenPublicId", RefreshTokenPublicId);
             writer.WriteStringValue("refreshTokenSuffix", RefreshTokenSuffix);
             writer.WriteDoubleValue("rtTTL", RtTTL);
             writer.WriteStringValue("scope", Scope);
             writer.WriteStringValue("sessionId", SessionId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf429TokenPrefix>("tokenPrefix", TokenPrefix);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcaTokenPrefix>("tokenPrefix", TokenPrefix);
             writer.WriteStringValue("tokenSuffix", TokenSuffix);
             writer.WriteStringValue("userAgent", UserAgent);
             writer.WriteAdditionalData(AdditionalData);

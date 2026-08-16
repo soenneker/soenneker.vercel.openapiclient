@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;How we see the domain&apos;s configuration. - `CNAME`: Domain has a CNAME pointing to Vercel. - `A`: Domain&apos;s A record is resolving to Vercel. - `http`: Domain is resolving to Vercel but may be behind a Proxy. - `dns-01`: Domain is not resolving to Vercel but dns-01 challenge is enabled. - `null`: Domain is not resolving to Vercel.&quot;</summary>
+        /// <summary>How we see the domain&apos;s configuration. - `CNAME`: Domain has a CNAME pointing to Vercel. - `A`: Domain&apos;s A record is resolving to Vercel. - `http`: Domain is resolving to Vercel but may be behind a Proxy. - `dns-01`: Domain is not resolving to Vercel but dns-01 challenge is enabled. - `null`: Domain is not resolving to Vercel.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDomainConfig200ResponseConfiguredBy? ConfiguredBy { get; set; }
         /// <summary>Whether or not the domain is configured AND we can automatically generate a TLS certificate.</summary>
         public bool? Misconfigured { get; set; }

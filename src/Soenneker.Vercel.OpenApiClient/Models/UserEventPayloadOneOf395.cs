@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ActorId { get; set; }
 #endif
         /// <summary>The actorType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395ActorType? ActorType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType? ActorType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The autoBlockPrevented property</summary>
@@ -63,7 +63,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actorId", n => { ActorId = n.GetStringValue(); } },
-                { "actorType", n => { ActorType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395ActorType>(); } },
+                { "actorType", n => { ActorType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>(); } },
                 { "autoBlockPrevented", n => { AutoBlockPrevented = n.GetBoolValue(); } },
                 { "preventUntil", n => { PreventUntil = n.GetDoubleValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
@@ -77,7 +77,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actorId", ActorId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf395ActorType>("actorType", ActorType);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>("actorType", ActorType);
             writer.WriteBoolValue("autoBlockPrevented", AutoBlockPrevented);
             writer.WriteDoubleValue("preventUntil", PreventUntil);
             writer.WriteStringValue("reason", Reason);

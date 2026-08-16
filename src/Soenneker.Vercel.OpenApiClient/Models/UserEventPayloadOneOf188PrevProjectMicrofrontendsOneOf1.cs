@@ -44,8 +44,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public UserEventPayloadOneOf188PrevProjectMicrofrontendsOneOf1()
         {
             AdditionalData = new Dictionary<string, object>();
-            Enabled = true;
-            IsDefaultApp = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

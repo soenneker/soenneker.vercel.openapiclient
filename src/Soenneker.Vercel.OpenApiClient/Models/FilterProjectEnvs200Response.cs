@@ -7,36 +7,186 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf3"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FilterProjectEnvs200Response : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class FilterProjectEnvs200Response : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf1? FilterProjectEnvs200ResponseOneOf1 { get; set; }
+        public string? Comment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf1 FilterProjectEnvs200ResponseOneOf1 { get; set; }
+        public string Comment { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf2"/></summary>
+        /// <summary>The configurationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf2? FilterProjectEnvs200ResponseOneOf2 { get; set; }
+        public string? ConfigurationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf2 FilterProjectEnvs200ResponseOneOf2 { get; set; }
+        public string ConfigurationId { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf3"/></summary>
+        /// <summary>The contentHint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf3? FilterProjectEnvs200ResponseOneOf3 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseContentHint? ContentHint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf3 FilterProjectEnvs200ResponseOneOf3 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseContentHint ContentHint { get; set; }
 #endif
+        /// <summary>The createdAt property</summary>
+        public double? CreatedAt { get; set; }
+        /// <summary>The createdBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedBy { get; set; }
+#nullable restore
+#else
+        public string CreatedBy { get; set; }
+#endif
+        /// <summary>The customEnvironmentIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? CustomEnvironmentIds { get; set; }
+#nullable restore
+#else
+        public List<string> CustomEnvironmentIds { get; set; }
+#endif
+        /// <summary>The decrypted property</summary>
+        public bool? Decrypted { get; set; }
+        /// <summary>The edgeConfigId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EdgeConfigId { get; set; }
+#nullable restore
+#else
+        public string EdgeConfigId { get; set; }
+#endif
+        /// <summary>The edgeConfigTokenId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EdgeConfigTokenId { get; set; }
+#nullable restore
+#else
+        public string EdgeConfigTokenId { get; set; }
+#endif
+        /// <summary>The envs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItem>? Envs { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItem> Envs { get; set; }
+#endif
+        /// <summary>The gitBranch property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GitBranch { get; set; }
+#nullable restore
+#else
+        public string GitBranch { get; set; }
+#endif
+        /// <summary>The hiddenProductionEnvCount property</summary>
+        public double? HiddenProductionEnvCount { get; set; }
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
+        /// <summary>Similar to `contentHints`, but should not be exposed to the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseInternalContentHint? InternalContentHint { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseInternalContentHint InternalContentHint { get; set; }
+#endif
+        /// <summary>The key property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Key { get; set; }
+#nullable restore
+#else
+        public string Key { get; set; }
+#endif
+        /// <summary>Legacy now-encryption ciphertext, present after migration swaps value/vsmValue</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LegacyValue { get; set; }
+#nullable restore
+#else
+        public string LegacyValue { get; set; }
+#endif
+        /// <summary>This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.Pagination? Pagination { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.Pagination Pagination { get; set; }
+#endif
+        /// <summary>This is used to identify variables that have been migrated from type secret to sensitive.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SunsetSecretId { get; set; }
+#nullable restore
+#else
+        public string SunsetSecretId { get; set; }
+#endif
+        /// <summary>The system property</summary>
+        public bool? System { get; set; }
+        /// <summary>The target property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseTarget? Target { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseTarget Target { get; set; }
+#endif
+        /// <summary>The type property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseType? Type { get; set; }
+        /// <summary>The updatedAt property</summary>
+        public double? UpdatedAt { get; set; }
+        /// <summary>The updatedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UpdatedBy { get; set; }
+#nullable restore
+#else
+        public string UpdatedBy { get; set; }
+#endif
+        /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Value { get; set; }
+#nullable restore
+#else
+        public string Value { get; set; }
+#endif
+        /// <summary>User-facing config/secret model. When set, authoritative for new code paths when the env-var-config-secret-ui flag is enabled. Legacy rows omit this field; legacy rows omit it and callers fall back to existing `type` behavior.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseVisibility? Visibility { get; set; }
+        /// <summary>The vsmValue property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VsmValue { get; set; }
+#nullable restore
+#else
+        public string VsmValue { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200Response"/> and sets the default values.
+        /// </summary>
+        public FilterProjectEnvs200Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,21 +195,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200Response();
-            if("FilterProjectEnvs200ResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.FilterProjectEnvs200ResponseOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf1();
-            }
-            else if("FilterProjectEnvs200ResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.FilterProjectEnvs200ResponseOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf2();
-            }
-            else if("FilterProjectEnvs200ResponseOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.FilterProjectEnvs200ResponseOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf3();
-            }
-            return result;
+            return new global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200Response();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,19 +203,35 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(FilterProjectEnvs200ResponseOneOf1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return FilterProjectEnvs200ResponseOneOf1.GetFieldDeserializers();
-            }
-            else if(FilterProjectEnvs200ResponseOneOf2 != null)
-            {
-                return FilterProjectEnvs200ResponseOneOf2.GetFieldDeserializers();
-            }
-            else if(FilterProjectEnvs200ResponseOneOf3 != null)
-            {
-                return FilterProjectEnvs200ResponseOneOf3.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "comment", n => { Comment = n.GetStringValue(); } },
+                { "configurationId", n => { ConfigurationId = n.GetStringValue(); } },
+                { "contentHint", n => { ContentHint = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseContentHint>(global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseContentHint.CreateFromDiscriminatorValue); } },
+                { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
+                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
+                { "customEnvironmentIds", n => { CustomEnvironmentIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "decrypted", n => { Decrypted = n.GetBoolValue(); } },
+                { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
+                { "edgeConfigTokenId", n => { EdgeConfigTokenId = n.GetStringValue(); } },
+                { "envs", n => { Envs = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItem>(global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "gitBranch", n => { GitBranch = n.GetStringValue(); } },
+                { "hiddenProductionEnvCount", n => { HiddenProductionEnvCount = n.GetDoubleValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "internalContentHint", n => { InternalContentHint = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseInternalContentHint>(global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseInternalContentHint.CreateFromDiscriminatorValue); } },
+                { "key", n => { Key = n.GetStringValue(); } },
+                { "legacyValue", n => { LegacyValue = n.GetStringValue(); } },
+                { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Pagination>(global::Soenneker.Vercel.OpenApiClient.Models.Pagination.CreateFromDiscriminatorValue); } },
+                { "sunsetSecretId", n => { SunsetSecretId = n.GetStringValue(); } },
+                { "system", n => { System = n.GetBoolValue(); } },
+                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseTarget>(global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseTarget.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseType>(); } },
+                { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
+                { "updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
+                { "visibility", n => { Visibility = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseVisibility>(); } },
+                { "vsmValue", n => { VsmValue = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -88,18 +240,33 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(FilterProjectEnvs200ResponseOneOf1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf1>(null, FilterProjectEnvs200ResponseOneOf1);
-            }
-            else if(FilterProjectEnvs200ResponseOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf2>(null, FilterProjectEnvs200ResponseOneOf2);
-            }
-            else if(FilterProjectEnvs200ResponseOneOf3 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseOneOf3>(null, FilterProjectEnvs200ResponseOneOf3);
-            }
+            writer.WriteStringValue("comment", Comment);
+            writer.WriteStringValue("configurationId", ConfigurationId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseContentHint>("contentHint", ContentHint);
+            writer.WriteDoubleValue("createdAt", CreatedAt);
+            writer.WriteStringValue("createdBy", CreatedBy);
+            writer.WriteCollectionOfPrimitiveValues<string>("customEnvironmentIds", CustomEnvironmentIds);
+            writer.WriteBoolValue("decrypted", Decrypted);
+            writer.WriteStringValue("edgeConfigId", EdgeConfigId);
+            writer.WriteStringValue("edgeConfigTokenId", EdgeConfigTokenId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItem>("envs", Envs);
+            writer.WriteStringValue("gitBranch", GitBranch);
+            writer.WriteDoubleValue("hiddenProductionEnvCount", HiddenProductionEnvCount);
+            writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseInternalContentHint>("internalContentHint", InternalContentHint);
+            writer.WriteStringValue("key", Key);
+            writer.WriteStringValue("legacyValue", LegacyValue);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Pagination>("pagination", Pagination);
+            writer.WriteStringValue("sunsetSecretId", SunsetSecretId);
+            writer.WriteBoolValue("system", System);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseTarget>("target", Target);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseType>("type", Type);
+            writer.WriteDoubleValue("updatedAt", UpdatedAt);
+            writer.WriteStringValue("updatedBy", UpdatedBy);
+            writer.WriteStringValue("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseVisibility>("visibility", Visibility);
+            writer.WriteStringValue("vsmValue", VsmValue);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

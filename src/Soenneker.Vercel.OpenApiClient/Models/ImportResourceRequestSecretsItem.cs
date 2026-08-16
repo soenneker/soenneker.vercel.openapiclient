@@ -12,7 +12,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class ImportResourceRequestSecretsItem : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;A map of environments to override values for the secret, used for setting different values across deployments in production, preview, and development environments. Note: the same value will be used for all deployments in the given environment.&quot;</summary>
+        /// <summary>A map of environments to override values for the secret, used for setting different values across deployments in production, preview, and development environments. Note: the same value will be used for all deployments in the given environment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestSecretsItemEnvironmentOverrides? EnvironmentOverrides { get; set; }

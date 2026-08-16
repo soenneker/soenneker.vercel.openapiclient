@@ -32,7 +32,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf2Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AppType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf2"/> and sets the default values.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "clientId", n => { ClientId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf2Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AppType>(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("clientId", ClientId);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf2Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AppType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

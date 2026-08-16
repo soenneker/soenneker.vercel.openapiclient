@@ -145,7 +145,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectId { get; set; }
 #endif
         /// <summary>The provider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf1Provider? Provider { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.BitbucketProvider? Provider { get; set; }
         /// <summary>The ref property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -199,7 +199,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Target { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf1Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.BitbucketPushType? Type { get; set; }
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -266,7 +266,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "prId", n => { PrId = n.GetDoubleValue(); } },
                 { "prIdOrZero", n => { PrIdOrZero = n.GetDoubleValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf1Provider>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BitbucketProvider>(); } },
                 { "ref", n => { Ref = n.GetStringValue(); } },
                 { "repoPushedAt", n => { RepoPushedAt = n.GetDoubleValue(); } },
                 { "repoUuid", n => { RepoUuid = n.GetStringValue(); } },
@@ -275,7 +275,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "skippedJobPairs", n => { SkippedJobPairs = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "target", n => { Target = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf1Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BitbucketPushType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "withCache", n => { WithCache = n.GetBoolValue(); } },
                 { "workspaceUuid", n => { WorkspaceUuid = n.GetStringValue(); } },
@@ -311,7 +311,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("prId", PrId);
             writer.WriteDoubleValue("prIdOrZero", PrIdOrZero);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf1Provider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BitbucketProvider>("provider", Provider);
             writer.WriteStringValue("ref", Ref);
             writer.WriteDoubleValue("repoPushedAt", RepoPushedAt);
             writer.WriteStringValue("repoUuid", RepoUuid);
@@ -320,7 +320,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("skippedJobPairs", SkippedJobPairs);
             writer.WriteStringValue("slug", Slug);
             writer.WriteStringValue("target", Target);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf1Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BitbucketPushType>("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteBoolValue("withCache", WithCache);
             writer.WriteStringValue("workspaceUuid", WorkspaceUuid);

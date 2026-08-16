@@ -40,7 +40,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Schema { get; set; }
 #endif
         /// <summary>The version of the microfrontends config schema.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsConfig200ResponseConfigVersion? Version { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.Value1Version? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsConfig200ResponseConfig"/> and sets the default values.
         /// </summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "applications", n => { Applications = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsConfig200ResponseConfigApplications>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsConfig200ResponseConfigApplications.CreateFromDiscriminatorValue); } },
                 { "options", n => { Options = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsConfig200ResponseConfigOptions>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsConfig200ResponseConfigOptions.CreateFromDiscriminatorValue); } },
                 { "$schema", n => { Schema = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsConfig200ResponseConfigVersion>(); } },
+                { "version", n => { Version = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Value1Version>(); } },
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsConfig200ResponseConfigApplications>("applications", Applications);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsConfig200ResponseConfigOptions>("options", Options);
             writer.WriteStringValue("$schema", Schema);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsConfig200ResponseConfigVersion>("version", Version);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.Value1Version>("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -37,7 +37,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerFeatureBlocksBlob CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerFeatureBlocksBlob();
             if("UserEventPayloadOneOf159NewOwnerFeatureBlocksBlobOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {

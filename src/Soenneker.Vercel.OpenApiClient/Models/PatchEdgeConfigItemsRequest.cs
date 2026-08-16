@@ -15,10 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The items property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1>? Items { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItem>? Items { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1> Items { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItem> Items { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1>(global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItem>(global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItemOneOf1>("items", Items);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.PatchEdgeConfigItemsRequestItemsItem>("items", Items);
         }
     }
 }

@@ -49,7 +49,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Schedule { get; set; }
 #endif
         /// <summary>The origin of this definition. &apos;api&apos; means created via the API. Undefined means it originated from a deployment (vercel.json).</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseCronsDefinitionsItemSource? Source { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ApiSource? Source { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseCronsDefinitionsItem"/> and sets the default values.
         /// </summary>
@@ -80,7 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "hostInferred", n => { HostInferred = n.GetBoolValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "schedule", n => { Schedule = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseCronsDefinitionsItemSource>(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ApiSource>(); } },
             };
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("hostInferred", HostInferred);
             writer.WriteStringValue("path", Path);
             writer.WriteStringValue("schedule", Schedule);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseCronsDefinitionsItemSource>("source", Source);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ApiSource>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

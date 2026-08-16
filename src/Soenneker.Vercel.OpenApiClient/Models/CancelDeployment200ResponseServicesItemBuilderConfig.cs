@@ -119,7 +119,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigMiddlewareMatcher MiddlewareMatcher { get; set; }
 #endif
         /// <summary>Enforced runtime for explicitly configured Routing Middleware.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigMiddlewareRuntime? MiddlewareRuntime { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NodejsMiddlewareRuntime? MiddlewareRuntime { get; set; }
         /// <summary>The nodeVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -203,7 +203,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "maxLambdaSize", n => { MaxLambdaSize = n.GetStringValue(); } },
                 { "middleware", n => { Middleware = n.GetBoolValue(); } },
                 { "middlewareMatcher", n => { MiddlewareMatcher = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigMiddlewareMatcher>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigMiddlewareMatcher.CreateFromDiscriminatorValue); } },
-                { "middlewareRuntime", n => { MiddlewareRuntime = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigMiddlewareRuntime>(); } },
+                { "middlewareRuntime", n => { MiddlewareRuntime = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NodejsMiddlewareRuntime>(); } },
                 { "nodeVersion", n => { NodeVersion = n.GetStringValue(); } },
                 { "outputDirectory", n => { OutputDirectory = n.GetStringValue(); } },
                 { "projectSettings", n => { ProjectSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigProjectSettings>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigProjectSettings.CreateFromDiscriminatorValue); } },
@@ -235,7 +235,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("maxLambdaSize", MaxLambdaSize);
             writer.WriteBoolValue("middleware", Middleware);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigMiddlewareMatcher>("middlewareMatcher", MiddlewareMatcher);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigMiddlewareRuntime>("middlewareRuntime", MiddlewareRuntime);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NodejsMiddlewareRuntime>("middlewareRuntime", MiddlewareRuntime);
             writer.WriteStringValue("nodeVersion", NodeVersion);
             writer.WriteStringValue("outputDirectory", OutputDirectory);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigProjectSettings>("projectSettings", ProjectSettings);

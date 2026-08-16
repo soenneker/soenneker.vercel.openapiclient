@@ -15,7 +15,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;The NSNB decision code for the seat block. TODO: We should consolidate block types.&quot;</summary>
+        /// <summary>The NSNB decision code for the seat block. TODO: We should consolidate block types.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemSeatBlockBlockCode? BlockCode { get; set; }
         /// <summary>The git provider type associated with gitUserId.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemSeatBlockGitProvider? GitProvider { get; set; }

@@ -64,7 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Key { get; set; }
 #endif
         /// <summary>The requestKind property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170RequestKind? RequestKind { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetKeyDataRequestKind? RequestKind { get; set; }
         /// <summary>The resourceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,7 +104,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "integrationProductSlug", n => { IntegrationProductSlug = n.GetStringValue(); } },
                 { "integrationSlug", n => { IntegrationSlug = n.GetStringValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
-                { "requestKind", n => { RequestKind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170RequestKind>(); } },
+                { "requestKind", n => { RequestKind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetKeyDataRequestKind>(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
             };
         }
@@ -121,7 +121,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("integrationProductSlug", IntegrationProductSlug);
             writer.WriteStringValue("integrationSlug", IntegrationSlug);
             writer.WriteStringValue("key", Key);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf170RequestKind>("requestKind", RequestKind);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetKeyDataRequestKind>("requestKind", RequestKind);
             writer.WriteStringValue("resourceId", ResourceId);
             writer.WriteAdditionalData(AdditionalData);
         }

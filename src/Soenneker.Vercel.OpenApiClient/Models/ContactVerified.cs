@@ -16,13 +16,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The verified property</summary>
         public bool? Verified { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ContactVerified"/> and sets the default values.
-        /// </summary>
-        public ContactVerified()
-        {
-            Verified = true;
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ContactVerified"/></returns>

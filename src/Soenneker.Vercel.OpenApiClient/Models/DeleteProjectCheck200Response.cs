@@ -22,7 +22,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public DeleteProjectCheck200Response()
         {
             AdditionalData = new Dictionary<string, object>();
-            Success = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

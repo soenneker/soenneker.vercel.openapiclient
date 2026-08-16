@@ -33,10 +33,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The entitlements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateAccessGroup200ResponseEntitlementsItem?>? Entitlements { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.V0Item?>? Entitlements { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateAccessGroup200ResponseEntitlementsItem?> Entitlements { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.V0Item?> Entitlements { get; set; }
 #endif
         /// <summary>Number of members in the access group.</summary>
         public double? MembersCount { get; set; }
@@ -109,7 +109,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "accessGroupId", n => { AccessGroupId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
-                { "entitlements", n => { Entitlements = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateAccessGroup200ResponseEntitlementsItem>()?.AsList(); } },
+                { "entitlements", n => { Entitlements = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.V0Item>()?.AsList(); } },
                 { "membersCount", n => { MembersCount = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "projectsCount", n => { ProjectsCount = n.GetDoubleValue(); } },
@@ -128,7 +128,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accessGroupId", AccessGroupId);
             writer.WriteStringValue("createdAt", CreatedAt);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateAccessGroup200ResponseEntitlementsItem>("entitlements", Entitlements);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.V0Item>("entitlements", Entitlements);
             writer.WriteDoubleValue("membersCount", MembersCount);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("projectsCount", ProjectsCount);

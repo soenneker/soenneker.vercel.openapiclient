@@ -49,7 +49,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateCustomEnvironment200ResponseDomainsItem> Domains { get; set; }
 #endif
-        /// <summary>&quot;Unique identifier for the custom environment (format: env_*)&quot;</summary>
+        /// <summary>Unique identifier for the custom environment (format: env_*)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

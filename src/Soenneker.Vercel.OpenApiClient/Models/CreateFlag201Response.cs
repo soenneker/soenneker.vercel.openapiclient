@@ -107,7 +107,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public List<string> Tags { get; set; }
 #endif
         /// <summary>The typeName property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseTypeName? TypeName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FlagTypeName? TypeName { get; set; }
         /// <summary>The updatedAt property</summary>
         public double? UpdatedAt { get; set; }
         /// <summary>The updatedBy property</summary>
@@ -167,7 +167,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseState>(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "typeName", n => { TypeName = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseTypeName>(); } },
+                { "typeName", n => { TypeName = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagTypeName>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
                 { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseVariantsItem>(global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseVariantsItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -196,7 +196,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("slug", Slug);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseState>("state", State);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseTypeName>("typeName", TypeName);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagTypeName>("typeName", TypeName);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedBy", UpdatedBy);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseVariantsItem>("variants", Variants);

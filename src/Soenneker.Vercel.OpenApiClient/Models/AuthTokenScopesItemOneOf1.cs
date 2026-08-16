@@ -30,7 +30,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenScopesItemOneOf1Sudo Sudo { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenScopesItemOneOf1Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenScopesItemOneOf1"/> and sets the default values.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
                 { "origin", n => { Origin = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenScopesItemOneOf1Origin>(); } },
                 { "sudo", n => { Sudo = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenScopesItemOneOf1Sudo>(global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenScopesItemOneOf1Sudo.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenScopesItemOneOf1Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserType>(); } },
             };
         }
         /// <summary>
@@ -74,7 +74,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("expiresAt", ExpiresAt);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenScopesItemOneOf1Origin>("origin", Origin);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenScopesItemOneOf1Sudo>("sudo", Sudo);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenScopesItemOneOf1Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

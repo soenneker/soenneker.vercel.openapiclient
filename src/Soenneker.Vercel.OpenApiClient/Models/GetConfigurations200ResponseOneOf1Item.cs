@@ -25,7 +25,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? DeletedAt { get; set; }
         /// <summary>A timestamp that tells you when the configuration deletion has been started for cases when the deletion needs to be settled/approved by partners, such as when marketplace invoices have been paid.</summary>
         public double? DeleteRequestedAt { get; set; }
-        /// <summary>&quot;A timestamp that tells you when the configuration was disabled. Note: Configurations can be disabled when the associated user loses access to a team. They do not function during this time until the configuration is &apos;transferred&apos;, meaning the associated user is changed to one with access to the team.&quot;</summary>
+        /// <summary>A timestamp that tells you when the configuration was disabled. Note: Configurations can be disabled when the associated user loses access to a team. They do not function during this time until the configuration is &apos;transferred&apos;, meaning the associated user is changed to one with access to the team.</summary>
         public double? DisabledAt { get; set; }
         /// <summary>The disabledReason property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf1ItemDisabledReason? DisabledReason { get; set; }
@@ -45,7 +45,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;Defines the installation type. - &apos;external&apos; integrations are installed via the existing integrations flow - &apos;marketplace&apos; integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume &apos;external&apos;&quot;</summary>
+        /// <summary>Defines the installation type. - &apos;external&apos; integrations are installed via the existing integrations flow - &apos;marketplace&apos; integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume &apos;external&apos;</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf1ItemInstallationType? InstallationType { get; set; }
         /// <summary>The unique identifier of the app the configuration was created for</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string TeamId { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf1ItemType? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.IntegrationConfigurationType? Type { get; set; }
         /// <summary>A timestamp that tells you when the configuration was updated.</summary>
         public double? UpdatedAt { get; set; }
         /// <summary>The ID of the user that created the configuration.</summary>
@@ -154,7 +154,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "source", n => { Source = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf1ItemSource>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf1ItemStatus>(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf1ItemType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.IntegrationConfigurationType>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
             };
@@ -184,7 +184,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf1ItemSource>("source", Source);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf1ItemStatus>("status", Status);
             writer.WriteStringValue("teamId", TeamId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurations200ResponseOneOf1ItemType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.IntegrationConfigurationType>("type", Type);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("userId", UserId);
             writer.WriteAdditionalData(AdditionalData);

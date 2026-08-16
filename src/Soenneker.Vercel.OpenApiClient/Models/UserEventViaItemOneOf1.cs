@@ -40,7 +40,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Slug { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf1Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserType? Type { get; set; }
         /// <summary>The uid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,7 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "avatar", n => { Avatar = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf1Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserType>(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
             };
@@ -100,7 +100,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("avatar", Avatar);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventViaItemOneOf1Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserType>("type", Type);
             writer.WriteStringValue("uid", Uid);
             writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);

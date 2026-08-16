@@ -34,7 +34,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.AttackStatus
         {
         }
         /// <summary>
-        /// &quot;Retrieve active attack data within the last N days (default: 1 day)&quot;
+        /// Retrieve active attack data within the last N days (default: 1 day)
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetActiveAttackStatus200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.AttackStatus
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetActiveAttackStatus200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetActiveAttackStatus200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieve active attack data within the last N days (default: 1 day)&quot;
+        /// Retrieve active attack data within the last N days (default: 1 day)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.AttackStatus
             return new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.AttackStatus.AttackStatusRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Retrieve active attack data within the last N days (default: 1 day)&quot;
+        /// Retrieve active attack data within the last N days (default: 1 day)
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttackStatusRequestBuilderGetQueryParameters 

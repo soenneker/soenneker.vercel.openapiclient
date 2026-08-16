@@ -30,7 +30,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;The connector&apos;s own name: the operator-given client name, falling back to the client type&apos;s name for legacy rows without one.&quot;</summary>
+        /// <summary>The connector&apos;s own name: the operator-given client name, falling back to the client type&apos;s name for legacy rows without one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

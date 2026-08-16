@@ -84,7 +84,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public GetTeamMembers200ResponseEmailInviteCodesItem()
         {
             AdditionalData = new Dictionary<string, object>();
-            Expired = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

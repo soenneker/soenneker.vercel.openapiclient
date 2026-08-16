@@ -30,14 +30,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.Session> Sessions { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListSessions200Response"/> and sets the default values.
         /// </summary>
@@ -65,7 +57,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListSessions200ResponseOneOf2Pagination>(global::Soenneker.Vercel.OpenApiClient.Models.ListSessions200ResponseOneOf2Pagination.CreateFromDiscriminatorValue); } },
                 { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.Session>(global::Soenneker.Vercel.OpenApiClient.Models.Session.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -77,7 +68,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListSessions200ResponseOneOf2Pagination>("pagination", Pagination);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.Session>("sessions", Sessions);
-            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

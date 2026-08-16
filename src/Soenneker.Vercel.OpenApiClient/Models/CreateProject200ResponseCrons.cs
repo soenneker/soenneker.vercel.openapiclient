@@ -32,7 +32,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The time the feature was disabled for this project.</summary>
         public double? DisabledAt { get; set; }
-        /// <summary>&quot;The time the feature was enabled for this project. Note: It enables automatically with the first Deployment that outputs cronjobs.&quot;</summary>
+        /// <summary>The time the feature was enabled for this project. Note: It enables automatically with the first Deployment that outputs cronjobs.</summary>
         public double? EnabledAt { get; set; }
         /// <summary>The updatedAt property</summary>
         public double? UpdatedAt { get; set; }

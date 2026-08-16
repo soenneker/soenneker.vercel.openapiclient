@@ -23,7 +23,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The TTL value. Must be a number between 60 and 2147483647. Default value is 60.</summary>
         public double? Ttl { get; set; }
         /// <summary>Must be of type `TXT`.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf8Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TxtType? Type { get; set; }
         /// <summary>A TXT record containing arbitrary text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "comment", n => { Comment = n.GetStringValue(); } },
                 { "ttl", n => { Ttl = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf8Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TxtType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -65,7 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment", Comment);
             writer.WriteDoubleValue("ttl", Ttl);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf8Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TxtType>("type", Type);
             writer.WriteStringValue("value", Value);
         }
     }

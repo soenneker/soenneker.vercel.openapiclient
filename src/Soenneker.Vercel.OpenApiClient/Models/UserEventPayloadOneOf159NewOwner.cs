@@ -437,7 +437,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public List<string> TrialTeamIds { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerType? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserType? Type { get; set; }
         /// <summary>The updatedAt property</summary>
         public double? UpdatedAt { get; set; }
         /// <summary>Contains the timestamps when a user was notified about their usage</summary>
@@ -457,7 +457,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Username { get; set; }
 #endif
         /// <summary>The version property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerVersion? Version { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NorthstarVersion? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwner"/> and sets the default values.
         /// </summary>
@@ -556,11 +556,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "testAccountExpiresAt", n => { TestAccountExpiresAt = n.GetDoubleValue(); } },
                 { "trialTeamId", n => { TrialTeamId = n.GetStringValue(); } },
                 { "trialTeamIds", n => { TrialTeamIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserType>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "usageAlerts", n => { UsageAlerts = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerUsageAlerts>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerUsageAlerts.CreateFromDiscriminatorValue); } },
                 { "username", n => { Username = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerVersion>(); } },
+                { "version", n => { Version = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NorthstarVersion>(); } },
             };
         }
         /// <summary>
@@ -643,11 +643,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("testAccountExpiresAt", TestAccountExpiresAt);
             writer.WriteStringValue("trialTeamId", TrialTeamId);
             writer.WriteCollectionOfPrimitiveValues<string>("trialTeamIds", TrialTeamIds);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserType>("type", Type);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerUsageAlerts>("usageAlerts", UsageAlerts);
             writer.WriteStringValue("username", Username);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerVersion>("version", Version);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NorthstarVersion>("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>

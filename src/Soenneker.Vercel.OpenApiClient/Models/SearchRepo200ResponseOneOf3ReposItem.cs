@@ -55,11 +55,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3ReposItemOwner Owner { get; set; }
 #endif
         /// <summary>The ownerType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3ReposItemOwnerType? OwnerType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamOwnerType? OwnerType { get; set; }
         /// <summary>The private property</summary>
         public bool? Private { get; set; }
         /// <summary>The provider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3ReposItemProvider? Provider { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CursorOriginProvider? Provider { get; set; }
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,9 +108,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "namespace", n => { Namespace = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3ReposItemOwner>(global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3ReposItemOwner.CreateFromDiscriminatorValue); } },
-                { "ownerType", n => { OwnerType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3ReposItemOwnerType>(); } },
+                { "ownerType", n => { OwnerType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamOwnerType>(); } },
                 { "private", n => { Private = n.GetBoolValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3ReposItemProvider>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CursorOriginProvider>(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -128,9 +128,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("namespace", Namespace);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3ReposItemOwner>("owner", Owner);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3ReposItemOwnerType>("ownerType", OwnerType);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamOwnerType>("ownerType", OwnerType);
             writer.WriteBoolValue("private", Private);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3ReposItemProvider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CursorOriginProvider>("provider", Provider);
             writer.WriteStringValue("slug", Slug);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("url", Url);

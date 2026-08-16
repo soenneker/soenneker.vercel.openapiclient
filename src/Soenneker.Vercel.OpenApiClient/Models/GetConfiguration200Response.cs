@@ -7,36 +7,136 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf3"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetConfiguration200Response : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class GetConfiguration200Response : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The canConfigureOpenTelemetry property</summary>
+        public bool? CanConfigureOpenTelemetry { get; set; }
+        /// <summary>A timestamp that tells you when the configuration was installed successfully</summary>
+        public double? CompletedAt { get; set; }
+        /// <summary>A timestamp that tells you when the configuration was created</summary>
+        public double? CreatedAt { get; set; }
+        /// <summary>Record when the customer initited deletion, independent of whether `deleteRequestedAt` gets set.</summary>
+        public double? CustomerDeleteRequestedAt { get; set; }
+        /// <summary>A timestamp that tells you when the configuration was deleted.</summary>
+        public double? DeletedAt { get; set; }
+        /// <summary>A timestamp that tells you when the configuration deletion has been started for cases when the deletion needs to be settled/approved by partners, such as when marketplace invoices have been paid.</summary>
+        public double? DeleteRequestedAt { get; set; }
+        /// <summary>A timestamp that tells you when the configuration was disabled. Note: Configurations can be disabled when the associated user loses access to a team. They do not function during this time until the configuration is &apos;transferred&apos;, meaning the associated user is changed to one with access to the team.</summary>
+        public double? DisabledAt { get; set; }
+        /// <summary>The disabledReason property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseDisabledReason? DisabledReason { get; set; }
+        /// <summary>An external identifier defined by the integration vendor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf1? GetConfiguration200ResponseOneOf1 { get; set; }
+        public string? ExternalId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf1 GetConfiguration200ResponseOneOf1 { get; set; }
+        public string ExternalId { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf2"/></summary>
+        /// <summary>The unique identifier of the configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf2? GetConfiguration200ResponseOneOf2 { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf2 GetConfiguration200ResponseOneOf2 { get; set; }
+        public string Id { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf3"/></summary>
+        /// <summary>Defines the installation type. - &apos;external&apos; integrations are installed via the existing integrations flow - &apos;marketplace&apos; integrations are natively installed: - when accepting the TOS of a partner during the store creation process - if undefined, assume &apos;external&apos;</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseInstallationType? InstallationType { get; set; }
+        /// <summary>The unique identifier of the app the configuration was created for</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf3? GetConfiguration200ResponseOneOf3 { get; set; }
+        public string? IntegrationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf3 GetConfiguration200ResponseOneOf3 { get; set; }
+        public string IntegrationId { get; set; }
 #endif
+        /// <summary>The notification property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseNotification? Notification { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseNotification Notification { get; set; }
+#endif
+        /// <summary>The user or team ID that owns the configuration</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OwnerId { get; set; }
+#nullable restore
+#else
+        public string OwnerId { get; set; }
+#endif
+        /// <summary>When a configuration is limited to access certain projects, this will contain each of the project ID it is allowed to access. If it is not defined, the configuration has full access.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Projects { get; set; }
+#nullable restore
+#else
+        public List<string> Projects { get; set; }
+#endif
+        /// <summary>A string representing the permission for projects. Possible values are `all` or `selected`.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseProjectSelection? ProjectSelection { get; set; }
+        /// <summary>The resources that are allowed to be accessed by the configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Scopes { get; set; }
+#nullable restore
+#else
+        public List<string> Scopes { get; set; }
+#endif
+        /// <summary>The slug of the integration the configuration is created for.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Slug { get; set; }
+#nullable restore
+#else
+        public string Slug { get; set; }
+#endif
+        /// <summary>Source defines where the configuration was installed from. It is used to analyze user engagement for integration installations in product metrics.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseSource? Source { get; set; }
+        /// <summary>The configuration status. Optional. If not defined, assume &apos;ready&apos;.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseStatus? Status { get; set; }
+        /// <summary>When the configuration was created for a team, this will show the ID of the team.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TeamId { get; set; }
+#nullable restore
+#else
+        public string TeamId { get; set; }
+#endif
+        /// <summary>The transferRequest property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseTransferRequest? TransferRequest { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseTransferRequest TransferRequest { get; set; }
+#endif
+        /// <summary>The type property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.IntegrationConfigurationType? Type { get; set; }
+        /// <summary>A timestamp that tells you when the configuration was updated.</summary>
+        public double? UpdatedAt { get; set; }
+        /// <summary>The ID of the user that created the configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserId { get; set; }
+#nullable restore
+#else
+        public string UserId { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200Response"/> and sets the default values.
+        /// </summary>
+        public GetConfiguration200Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,21 +145,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200Response();
-            if("GetConfiguration200ResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.GetConfiguration200ResponseOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf1();
-            }
-            else if("GetConfiguration200ResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.GetConfiguration200ResponseOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf2();
-            }
-            else if("GetConfiguration200ResponseOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.GetConfiguration200ResponseOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf3();
-            }
-            return result;
+            return new global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200Response();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,19 +153,34 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(GetConfiguration200ResponseOneOf1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return GetConfiguration200ResponseOneOf1.GetFieldDeserializers();
-            }
-            else if(GetConfiguration200ResponseOneOf2 != null)
-            {
-                return GetConfiguration200ResponseOneOf2.GetFieldDeserializers();
-            }
-            else if(GetConfiguration200ResponseOneOf3 != null)
-            {
-                return GetConfiguration200ResponseOneOf3.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "canConfigureOpenTelemetry", n => { CanConfigureOpenTelemetry = n.GetBoolValue(); } },
+                { "completedAt", n => { CompletedAt = n.GetDoubleValue(); } },
+                { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
+                { "customerDeleteRequestedAt", n => { CustomerDeleteRequestedAt = n.GetDoubleValue(); } },
+                { "deleteRequestedAt", n => { DeleteRequestedAt = n.GetDoubleValue(); } },
+                { "deletedAt", n => { DeletedAt = n.GetDoubleValue(); } },
+                { "disabledAt", n => { DisabledAt = n.GetDoubleValue(); } },
+                { "disabledReason", n => { DisabledReason = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseDisabledReason>(); } },
+                { "externalId", n => { ExternalId = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "installationType", n => { InstallationType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseInstallationType>(); } },
+                { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
+                { "notification", n => { Notification = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseNotification>(global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseNotification.CreateFromDiscriminatorValue); } },
+                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
+                { "projectSelection", n => { ProjectSelection = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseProjectSelection>(); } },
+                { "projects", n => { Projects = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "slug", n => { Slug = n.GetStringValue(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseSource>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseStatus>(); } },
+                { "teamId", n => { TeamId = n.GetStringValue(); } },
+                { "transferRequest", n => { TransferRequest = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseTransferRequest>(global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseTransferRequest.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.IntegrationConfigurationType>(); } },
+                { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -88,18 +189,32 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(GetConfiguration200ResponseOneOf1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf1>(null, GetConfiguration200ResponseOneOf1);
-            }
-            else if(GetConfiguration200ResponseOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf2>(null, GetConfiguration200ResponseOneOf2);
-            }
-            else if(GetConfiguration200ResponseOneOf3 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseOneOf3>(null, GetConfiguration200ResponseOneOf3);
-            }
+            writer.WriteBoolValue("canConfigureOpenTelemetry", CanConfigureOpenTelemetry);
+            writer.WriteDoubleValue("completedAt", CompletedAt);
+            writer.WriteDoubleValue("createdAt", CreatedAt);
+            writer.WriteDoubleValue("customerDeleteRequestedAt", CustomerDeleteRequestedAt);
+            writer.WriteDoubleValue("deletedAt", DeletedAt);
+            writer.WriteDoubleValue("deleteRequestedAt", DeleteRequestedAt);
+            writer.WriteDoubleValue("disabledAt", DisabledAt);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseDisabledReason>("disabledReason", DisabledReason);
+            writer.WriteStringValue("externalId", ExternalId);
+            writer.WriteStringValue("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseInstallationType>("installationType", InstallationType);
+            writer.WriteStringValue("integrationId", IntegrationId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseNotification>("notification", Notification);
+            writer.WriteStringValue("ownerId", OwnerId);
+            writer.WriteCollectionOfPrimitiveValues<string>("projects", Projects);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseProjectSelection>("projectSelection", ProjectSelection);
+            writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
+            writer.WriteStringValue("slug", Slug);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseSource>("source", Source);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseStatus>("status", Status);
+            writer.WriteStringValue("teamId", TeamId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfiguration200ResponseTransferRequest>("transferRequest", TransferRequest);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.IntegrationConfigurationType>("type", Type);
+            writer.WriteDoubleValue("updatedAt", UpdatedAt);
+            writer.WriteStringValue("userId", UserId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerSiftRouteName? Name { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.StringValueName? Name { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerSiftRoute"/> and sets the default values.
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "name", n => { Name = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerSiftRouteName>(); } },
+                { "name", n => { Name = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.StringValueName>(); } },
             };
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerSiftRouteName>("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.StringValueName>("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

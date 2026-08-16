@@ -30,14 +30,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectMembers200ResponseOneOf2Pagination Pagination { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectMembers200Response"/> and sets the default values.
         /// </summary>
@@ -65,7 +57,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectMembers200ResponseOneOf2MembersItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectMembers200ResponseOneOf2MembersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectMembers200ResponseOneOf2Pagination>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectMembers200ResponseOneOf2Pagination.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -77,7 +68,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectMembers200ResponseOneOf2MembersItem>("members", Members);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectMembers200ResponseOneOf2Pagination>("pagination", Pagination);
-            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

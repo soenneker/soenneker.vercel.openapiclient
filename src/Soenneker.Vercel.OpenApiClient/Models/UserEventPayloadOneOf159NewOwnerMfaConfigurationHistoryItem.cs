@@ -15,7 +15,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>The action that occurred</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerMfaConfigurationHistoryItemAction? Action { get; set; }
-        /// <summary>&quot;ID of the actor who made the change - For user actions: the user&apos;s own ID - For admin actions: the admin&apos;s user ID&quot;</summary>
+        /// <summary>ID of the actor who made the change - For user actions: the user&apos;s own ID - For admin actions: the admin&apos;s user ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActorId { get; set; }
@@ -27,9 +27,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerMfaConfigurationHistoryItemActorType? ActorType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;Method used for the state change - &apos;totp&apos;: User set up TOTP authenticator - &apos;passkey&apos;: User registered a passkey - &apos;user_disabled&apos;: User disabled their own MFA - &apos;admin_removal&apos;: Admin removed MFA via backoffice - &apos;self_serve_recovery&apos;: User disabled their own MFA through the self-serve MFA disable recovery flow (a \&quot;Locked Out User\&quot; with only a passkey) - &apos;unknown&apos;: Method unknown (for pre-tracking events)&quot;</summary>
+        /// <summary>Method used for the state change - &apos;totp&apos;: User set up TOTP authenticator - &apos;passkey&apos;: User registered a passkey - &apos;user_disabled&apos;: User disabled their own MFA - &apos;admin_removal&apos;: Admin removed MFA via backoffice - &apos;self_serve_recovery&apos;: User disabled their own MFA through the self-serve MFA disable recovery flow (a &quot;Locked Out User&quot; with only a passkey) - &apos;unknown&apos;: Method unknown (for pre-tracking events)</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerMfaConfigurationHistoryItemMethod? Method { get; set; }
-        /// <summary>&quot;Optional: Additional context or reason e.g., \&quot;Account recovery request - ticket #12345\&quot;&quot;</summary>
+        /// <summary>Optional: Additional context or reason e.g., &quot;Account recovery request - ticket #12345&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reason { get; set; }

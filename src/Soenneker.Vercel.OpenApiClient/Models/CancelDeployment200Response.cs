@@ -360,7 +360,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseOidcTokenClaims OidcTokenClaims { get; set; }
 #endif
         /// <summary>The oomReport property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseOomReport? OomReport { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.OutOfMemoryOomReport? OomReport { get; set; }
         /// <summary>The originCacheRegion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -445,7 +445,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ReadyStateReason { get; set; }
 #endif
-        /// <summary>&quot;Substate of deployment when readyState is &apos;READY&apos; Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic&quot;</summary>
+        /// <summary>Substate of deployment when readyState is &apos;READY&apos; Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseReadySubstate? ReadySubstate { get; set; }
         /// <summary>The regions the deployment exists in</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -506,7 +506,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The ttyBuildLogs property</summary>
         public bool? TtyBuildLogs { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseType? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.LambdasType? Type { get; set; }
         /// <summary>A number containing the date when the deployment was undeleted at milliseconds</summary>
         public double? UndeletedAt { get; set; }
         /// <summary>A string with the unique URL of the deployment</summary>
@@ -618,7 +618,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nodeVersion", n => { NodeVersion = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseNodeVersion>(); } },
                 { "oidcTokenClaims", n => { OidcTokenClaims = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseOidcTokenClaims>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseOidcTokenClaims.CreateFromDiscriminatorValue); } },
-                { "oomReport", n => { OomReport = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseOomReport>(); } },
+                { "oomReport", n => { OomReport = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OutOfMemoryOomReport>(); } },
                 { "originCacheRegion", n => { OriginCacheRegion = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "passiveConnectConfigurationId", n => { PassiveConnectConfigurationId = n.GetStringValue(); } },
@@ -646,7 +646,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "target", n => { Target = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseTarget>(); } },
                 { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseTeam>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseTeam.CreateFromDiscriminatorValue); } },
                 { "ttyBuildLogs", n => { TtyBuildLogs = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.LambdasType>(); } },
                 { "undeletedAt", n => { UndeletedAt = n.GetDoubleValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "userAliases", n => { UserAliases = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -719,7 +719,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseNodeVersion>("nodeVersion", NodeVersion);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseOidcTokenClaims>("oidcTokenClaims", OidcTokenClaims);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseOomReport>("oomReport", OomReport);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OutOfMemoryOomReport>("oomReport", OomReport);
             writer.WriteStringValue("originCacheRegion", OriginCacheRegion);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteStringValue("passiveConnectConfigurationId", PassiveConnectConfigurationId);
@@ -747,7 +747,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseTarget>("target", Target);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseTeam>("team", Team);
             writer.WriteBoolValue("ttyBuildLogs", TtyBuildLogs);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.LambdasType>("type", Type);
             writer.WriteDoubleValue("undeletedAt", UndeletedAt);
             writer.WriteStringValue("url", Url);
             writer.WriteCollectionOfPrimitiveValues<string>("userAliases", UserAliases);

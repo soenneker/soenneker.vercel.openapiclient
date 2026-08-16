@@ -155,7 +155,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Members
 #endif
             /// <summary>Timestamp in milliseconds to only include members added since then.</summary>
             [QueryParameter("since")]
-            public int? Since { get; set; }
+            public long? Since { get; set; }
             /// <summary>The Team slug to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -178,7 +178,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Members
 #endif
             /// <summary>Timestamp in milliseconds to only include members added until then.</summary>
             [QueryParameter("until")]
-            public int? Until { get; set; }
+            public long? Until { get; set; }
         }
         /// <summary>
         /// Adds a new member to the project.

@@ -30,7 +30,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ActorName { get; set; }
 #endif
         /// <summary>The actorType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf215ActorType? ActorType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType? ActorType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the plan change was system-initiated rather than human-initiated.</summary>
@@ -120,7 +120,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "actorId", n => { ActorId = n.GetStringValue(); } },
                 { "actorName", n => { ActorName = n.GetStringValue(); } },
-                { "actorType", n => { ActorType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf215ActorType>(); } },
+                { "actorType", n => { ActorType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>(); } },
                 { "automated", n => { Automated = n.GetBoolValue(); } },
                 { "isDowngrade", n => { IsDowngrade = n.GetBoolValue(); } },
                 { "isReactivate", n => { IsReactivate = n.GetBoolValue(); } },
@@ -144,7 +144,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actorId", ActorId);
             writer.WriteStringValue("actorName", ActorName);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf215ActorType>("actorType", ActorType);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>("actorType", ActorType);
             writer.WriteBoolValue("automated", Automated);
             writer.WriteBoolValue("isDowngrade", IsDowngrade);
             writer.WriteBoolValue("isReactivate", IsReactivate);

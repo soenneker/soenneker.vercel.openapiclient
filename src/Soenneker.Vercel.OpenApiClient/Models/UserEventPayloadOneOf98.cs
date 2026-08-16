@@ -42,7 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The forced property</summary>
         public bool? Forced { get; set; }
         /// <summary>The gitCredentialSource property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98GitCredentialSource? GitCredentialSource { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ExternalTokenGitCredentialSource? GitCredentialSource { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -136,7 +136,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "deployment", n => { Deployment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98Deployment>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98Deployment.CreateFromDiscriminatorValue); } },
                 { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
                 { "forced", n => { Forced = n.GetBoolValue(); } },
-                { "gitCredentialSource", n => { GitCredentialSource = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98GitCredentialSource>(); } },
+                { "gitCredentialSource", n => { GitCredentialSource = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ExternalTokenGitCredentialSource>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "plan", n => { Plan = n.GetStringValue(); } },
                 { "project", n => { Project = n.GetStringValue(); } },
@@ -158,7 +158,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98Deployment>("deployment", Deployment);
             writer.WriteStringValue("deploymentId", DeploymentId);
             writer.WriteBoolValue("forced", Forced);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf98GitCredentialSource>("gitCredentialSource", GitCredentialSource);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ExternalTokenGitCredentialSource>("gitCredentialSource", GitCredentialSource);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("plan", Plan);
             writer.WriteStringValue("project", Project);

@@ -14,7 +14,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;Aggregation function to apply. Some aggregations require a dimension: use &lt;agg&gt;/&lt;dimension&gt;, for example unique/visitor_id.&quot;</summary>
+        /// <summary>Aggregation function to apply. Some aggregations require a dimension: use &lt;agg&gt;/&lt;dimension&gt;, for example unique/visitor_id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Aggregation { get; set; }

@@ -77,7 +77,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf10ProjectId ProjectId { get; set; }
 #endif
         /// <summary>The provider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf10Provider? Provider { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CursorOriginProvider? Provider { get; set; }
         /// <summary>The repo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,7 +95,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string RepoId { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf10Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CursorOriginNowCommentType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf10"/> and sets the default values.
         /// </summary>
@@ -131,10 +131,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "owner", n => { Owner = n.GetStringValue(); } },
                 { "prId", n => { PrId = n.GetDoubleValue(); } },
                 { "projectId", n => { ProjectId = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf10ProjectId>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf10ProjectId.CreateFromDiscriminatorValue); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf10Provider>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CursorOriginProvider>(); } },
                 { "repo", n => { Repo = n.GetStringValue(); } },
                 { "repoId", n => { RepoId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf10Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CursorOriginNowCommentType>(); } },
             };
         }
         /// <summary>
@@ -154,10 +154,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("owner", Owner);
             writer.WriteDoubleValue("prId", PrId);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf10ProjectId>("projectId", ProjectId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf10Provider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CursorOriginProvider>("provider", Provider);
             writer.WriteStringValue("repo", Repo);
             writer.WriteStringValue("repoId", RepoId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf10Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CursorOriginNowCommentType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -19,7 +19,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Timestamp until which the project has exceeded its CDN allowance.</summary>
         public double? ExceededAllowanceUntil { get; set; }
         /// <summary>Billing mode. Always &apos;flat&apos; for flat-rate projects.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemUsageStatusKind? Kind { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FlatKind? Kind { get; set; }
         /// <summary>Synced from `team.billing.usageStatus.throttled`. When `true`, the team has throttled all of its projects regardless of `throttled`. The effective throttle the CDN enforces is `throttled || teamThrottled`.</summary>
         public bool? TeamThrottled { get; set; }
         /// <summary>Per-project throttle, set explicitly for this project (e.g. via the per-project Flat Rate CDN endpoint).</summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "bypassThrottleUntil", n => { BypassThrottleUntil = n.GetDoubleValue(); } },
                 { "exceededAllowanceUntil", n => { ExceededAllowanceUntil = n.GetDoubleValue(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemUsageStatusKind>(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlatKind>(); } },
                 { "teamThrottled", n => { TeamThrottled = n.GetBoolValue(); } },
                 { "throttled", n => { Throttled = n.GetBoolValue(); } },
             };
@@ -65,7 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("bypassThrottleUntil", BypassThrottleUntil);
             writer.WriteDoubleValue("exceededAllowanceUntil", ExceededAllowanceUntil);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemUsageStatusKind>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlatKind>("kind", Kind);
             writer.WriteBoolValue("teamThrottled", TeamThrottled);
             writer.WriteBoolValue("throttled", Throttled);
             writer.WriteAdditionalData(AdditionalData);

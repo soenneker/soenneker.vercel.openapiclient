@@ -43,7 +43,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The sizeBytes property</summary>
         public double? SizeBytes { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.VcrImageLayerOneOf2Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.RunType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.VcrImageLayerOneOf2"/> and sets the default values.
         /// </summary>
@@ -74,7 +74,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "digest", n => { Digest = n.GetStringValue(); } },
                 { "operation", n => { Operation = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrImageLayerOneOf2Operation>(); } },
                 { "sizeBytes", n => { SizeBytes = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrImageLayerOneOf2Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.RunType>(); } },
             };
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("digest", Digest);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrImageLayerOneOf2Operation>("operation", Operation);
             writer.WriteDoubleValue("sizeBytes", SizeBytes);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrImageLayerOneOf2Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.RunType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

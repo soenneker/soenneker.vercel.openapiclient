@@ -25,7 +25,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The passPromille property</summary>
         public double? PassPromille { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemOutcomeOneOf2Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SplitType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemOutcomeOneOf2"/> and sets the default values.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "base", n => { Base = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemOutcomeOneOf2Base>(global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemOutcomeOneOf2Base.CreateFromDiscriminatorValue); } },
                 { "passPromille", n => { PassPromille = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemOutcomeOneOf2Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SplitType>(); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemOutcomeOneOf2Base>("base", Base);
             writer.WriteDoubleValue("passPromille", PassPromille);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemOutcomeOneOf2Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SplitType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -38,14 +38,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> TransferredStoreIds { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202Response"/> and sets the default values.
         /// </summary>
@@ -74,7 +66,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "partnerCalls", n => { PartnerCalls = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseOneOf1PartnerCallsItem>(global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseOneOf1PartnerCallsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resourceTransferErrors", n => { ResourceTransferErrors = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseOneOf1ResourceTransferErrorsItem>(global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseOneOf1ResourceTransferErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "transferredStoreIds", n => { TransferredStoreIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -87,7 +78,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseOneOf1PartnerCallsItem>("partnerCalls", PartnerCalls);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseOneOf1ResourceTransferErrorsItem>("resourceTransferErrors", ResourceTransferErrors);
             writer.WriteCollectionOfPrimitiveValues<string>("transferredStoreIds", TransferredStoreIds);
-            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

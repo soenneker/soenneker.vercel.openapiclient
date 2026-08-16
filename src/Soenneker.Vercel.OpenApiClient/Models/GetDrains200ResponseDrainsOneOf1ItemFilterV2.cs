@@ -23,7 +23,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemFilterV2Filter Filter { get; set; }
 #endif
         /// <summary>The version property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemFilterV2Version? Version { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.V2Version? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemFilterV2"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemFilterV2Filter>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemFilterV2Filter.CreateFromDiscriminatorValue); } },
-                { "version", n => { Version = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemFilterV2Version>(); } },
+                { "version", n => { Version = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.V2Version>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemFilterV2Filter>("filter", Filter);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemFilterV2Version>("version", Version);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.V2Version>("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

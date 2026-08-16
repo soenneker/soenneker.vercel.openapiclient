@@ -31,7 +31,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public List<string> Required { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemMetadataSchemaType? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ObjectValueType? Type { get; set; }
         /// <summary>The uiOrder property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemMetadataSchemaProperties>(global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemMetadataSchemaProperties.CreateFromDiscriminatorValue); } },
                 { "required", n => { Required = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemMetadataSchemaType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ObjectValueType>(); } },
                 { "ui:order", n => { UiOrder = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemMetadataSchemaProperties>("properties", Properties);
             writer.WriteCollectionOfPrimitiveValues<string>("required", Required);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationProducts200ResponseProductsItemMetadataSchemaType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ObjectValueType>("type", Type);
             writer.WriteCollectionOfPrimitiveValues<string>("ui:order", UiOrder);
             writer.WriteAdditionalData(AdditionalData);
         }

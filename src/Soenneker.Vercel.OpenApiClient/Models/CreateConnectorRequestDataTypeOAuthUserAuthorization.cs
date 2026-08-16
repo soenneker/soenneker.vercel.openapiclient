@@ -14,7 +14,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
-        /// <summary>&quot;Default scopes to request when token params specify scopes: [\\&quot;*\\&quot;].&quot;</summary>
+        /// <summary>Default scopes to request when token params specify scopes: [\&quot;*\&quot;].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Scopes { get; set; }

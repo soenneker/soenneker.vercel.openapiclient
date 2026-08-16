@@ -210,7 +210,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
             /// <summary>Filter named sandboxes by status. Only valid when sortBy is createdAt.</summary>
             [QueryParameter("status")]
             public global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxesStatusParameter? Status { get; set; }
-            /// <summary>&quot;Filter sandboxes by tag. Format: \\&quot;key:value\\&quot;. Only one tag filter is supported at a time.&quot;</summary>
+            /// <summary>Filter sandboxes by tag. Format: \&quot;key:value\&quot;. Only one tag filter is supported at a time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tags")]

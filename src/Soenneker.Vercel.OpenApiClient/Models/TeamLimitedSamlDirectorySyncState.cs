@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>&quot;Controls whether directory sync events are processed. - &apos;SETUP&apos;: Directory connected but role mappings not yet configured. Events are acknowledged but not processed. - &apos;ACTIVE&apos;: Fully configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat as &apos;ACTIVE&apos; for backwards compatibility.&quot;</summary>
+    /// <summary>Controls whether directory sync events are processed. - &apos;SETUP&apos;: Directory connected but role mappings not yet configured. Events are acknowledged but not processed. - &apos;ACTIVE&apos;: Fully configured. Events are processed normally. - undefined: Legacy directory (pre-feature), treat as &apos;ACTIVE&apos; for backwards compatibility.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TeamLimitedSamlDirectorySyncState
     {

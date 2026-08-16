@@ -40,7 +40,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The cleanUrls property</summary>
         public bool? CleanUrls { get; set; }
-        /// <summary>&quot;Command override for `runtime: \&quot;container\&quot;` services.&quot;</summary>
+        /// <summary>Command override for `runtime: &quot;container&quot;` services.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Command { get; set; }

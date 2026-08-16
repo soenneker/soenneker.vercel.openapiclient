@@ -27,7 +27,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Endpoint { get; set; }
 #endif
         /// <summary>The fileStructure property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryFileStructure? FileStructure { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.HiveFileStructure? FileStructure { get; set; }
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,7 +73,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Table { get; set; }
 #endif
         /// <summary>The target property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryTarget? Target { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.VercelOtelTracesDbTarget? Target { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryType? Type { get; set; }
         /// <summary>
@@ -104,7 +104,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "compression", n => { Compression = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryCompression>(); } },
                 { "encoding", n => { Encoding = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryEncoding>(); } },
                 { "endpoint", n => { Endpoint = n.GetStringValue(); } },
-                { "fileStructure", n => { FileStructure = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryFileStructure>(); } },
+                { "fileStructure", n => { FileStructure = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.HiveFileStructure>(); } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryHeaders>(global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryHeaders.CreateFromDiscriminatorValue); } },
                 { "objectAcl", n => { ObjectAcl = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryObjectAcl>(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
@@ -112,7 +112,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "secret", n => { Secret = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliverySecret>(global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliverySecret.CreateFromDiscriminatorValue); } },
                 { "serverSideEncryption", n => { ServerSideEncryption = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryServerSideEncryption>(); } },
                 { "table", n => { Table = n.GetStringValue(); } },
-                { "target", n => { Target = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryTarget>(); } },
+                { "target", n => { Target = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VercelOtelTracesDbTarget>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryType>(); } },
             };
         }
@@ -126,7 +126,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryCompression>("compression", Compression);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryEncoding>("encoding", Encoding);
             writer.WriteStringValue("endpoint", Endpoint);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryFileStructure>("fileStructure", FileStructure);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.HiveFileStructure>("fileStructure", FileStructure);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryHeaders>("headers", Headers);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryObjectAcl>("objectAcl", ObjectAcl);
             writer.WriteStringValue("region", Region);
@@ -134,7 +134,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliverySecret>("secret", Secret);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryServerSideEncryption>("serverSideEncryption", ServerSideEncryption);
             writer.WriteStringValue("table", Table);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryTarget>("target", Target);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VercelOtelTracesDbTarget>("target", Target);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAllLogDrains200ResponseOneOf2DrainsOneOf2ItemDeliveryType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

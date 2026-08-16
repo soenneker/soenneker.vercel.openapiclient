@@ -7,28 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponseOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponseOneOf2"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetProjectDomains200Response : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class GetProjectDomains200Response : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponseOneOf1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The domains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponseOneOf1? GetProjectDomains200ResponseOneOf1 { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponseDomainsItem>? Domains { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponseOneOf1 GetProjectDomains200ResponseOneOf1 { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponseDomainsItem> Domains { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponseOneOf2"/></summary>
+        /// <summary>The pagination property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponseOneOf2? GetProjectDomains200ResponseOneOf2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponsePagination? Pagination { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponseOneOf2 GetProjectDomains200ResponseOneOf2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponsePagination Pagination { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200Response"/> and sets the default values.
+        /// </summary>
+        public GetProjectDomains200Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,17 +45,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200Response();
-            if("GetProjectDomains200ResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.GetProjectDomains200ResponseOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponseOneOf1();
-            }
-            else if("GetProjectDomains200ResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.GetProjectDomains200ResponseOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponseOneOf2();
-            }
-            return result;
+            return new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200Response();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,15 +53,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(GetProjectDomains200ResponseOneOf1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return GetProjectDomains200ResponseOneOf1.GetFieldDeserializers();
-            }
-            else if(GetProjectDomains200ResponseOneOf2 != null)
-            {
-                return GetProjectDomains200ResponseOneOf2.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "domains", n => { Domains = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponseDomainsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponseDomainsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponsePagination>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponsePagination.CreateFromDiscriminatorValue); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -72,14 +66,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(GetProjectDomains200ResponseOneOf1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponseOneOf1>(null, GetProjectDomains200ResponseOneOf1);
-            }
-            else if(GetProjectDomains200ResponseOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponseOneOf2>(null, GetProjectDomains200ResponseOneOf2);
-            }
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponseDomainsItem>("domains", Domains);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectDomains200ResponsePagination>("pagination", Pagination);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

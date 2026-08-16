@@ -37,9 +37,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf318Name CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf318Name();
-            if("UserEventPayloadOneOf318Name_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("UserEventPayloadOneOf318NameBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPayloadOneOf318NameBranch1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf318NameBranch1();
             }

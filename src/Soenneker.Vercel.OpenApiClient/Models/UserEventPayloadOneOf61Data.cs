@@ -17,7 +17,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The planSlug property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61DataPlanSlug? PlanSlug { get; set; }
         /// <summary>The reason property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61DataReason? Reason { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NonPaymentReason? Reason { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61Data"/> and sets the default values.
         /// </summary>
@@ -44,7 +44,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "planSlug", n => { PlanSlug = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61DataPlanSlug>(); } },
-                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61DataReason>(); } },
+                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NonPaymentReason>(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61DataPlanSlug>("planSlug", PlanSlug);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf61DataReason>("reason", Reason);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NonPaymentReason>("reason", Reason);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

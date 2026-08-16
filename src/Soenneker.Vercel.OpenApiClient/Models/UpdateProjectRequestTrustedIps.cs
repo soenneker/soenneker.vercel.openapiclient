@@ -23,7 +23,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Specify if the Trusted IPs will apply to every Deployment Target or just Preview</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedIpsDeploymentType? DeploymentType { get; set; }
-        /// <summary>&quot;exclusive: ip match is enough to bypass deployment protection (regardless of other settings). additional: ip must match + any other protection should be also provided (password, vercel auth, shareable link, automation bypass header, automation bypass query param)&quot;</summary>
+        /// <summary>exclusive: ip match is enough to bypass deployment protection (regardless of other settings). additional: ip must match + any other protection should be also provided (password, vercel auth, shareable link, automation bypass header, automation bypass query param)</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedIpsProtectionMode? ProtectionMode { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

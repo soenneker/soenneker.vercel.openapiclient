@@ -70,7 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Default for projects in the team. When `true`, projects in this team will not emit GitHub repository-dispatch events on deployment events unless the project explicitly overrides this setting.</summary>
         public bool? DisableRepositoryDispatchEvents { get; set; }
-        /// <summary>&quot;Require production secrets to be in their own environment group: one of on, off or default.&quot;</summary>
+        /// <summary>Require production secrets to be in their own environment group: one of on, off or default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisjunctiveProductionSecretPolicy { get; set; }
@@ -88,7 +88,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string EmailDomain { get; set; }
 #endif
-        /// <summary>&quot;Enable preview toolbar: one of on, off or default.&quot;</summary>
+        /// <summary>Enable preview toolbar: one of on, off or default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EnablePreviewFeedback { get; set; }
@@ -96,7 +96,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string EnablePreviewFeedback { get; set; }
 #endif
-        /// <summary>&quot;Enable production toolbar: one of on, off or default.&quot;</summary>
+        /// <summary>Enable production toolbar: one of on, off or default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EnableProductionFeedback { get; set; }
@@ -160,7 +160,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestSaml Saml { get; set; }
 #endif
-        /// <summary>&quot;Sensitive environment variable policy: one of on, off or default.&quot;</summary>
+        /// <summary>Sensitive environment variable policy: one of on, off or default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SensitiveEnvironmentVariablePolicy { get; set; }

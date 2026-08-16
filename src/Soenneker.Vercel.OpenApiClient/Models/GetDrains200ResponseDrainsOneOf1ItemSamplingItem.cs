@@ -27,7 +27,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string RequestPath { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSamplingItemType? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.HeadSamplingType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSamplingItem"/> and sets the default values.
         /// </summary>
@@ -56,7 +56,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "env", n => { Env = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSamplingItemEnv>(); } },
                 { "rate", n => { Rate = n.GetDoubleValue(); } },
                 { "requestPath", n => { RequestPath = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSamplingItemType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.HeadSamplingType>(); } },
             };
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSamplingItemEnv>("env", Env);
             writer.WriteDoubleValue("rate", Rate);
             writer.WriteStringValue("requestPath", RequestPath);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrains200ResponseDrainsOneOf1ItemSamplingItemType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.HeadSamplingType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

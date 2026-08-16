@@ -31,7 +31,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseConfigResourceConfigBuildQueue BuildQueue { get; set; }
 #endif
-        /// <summary>&quot;When elastic concurrency is used for this deployment, a value is set. The value tells the reason where the setting was coming from. - TEAM_SETTING: Inherited from team settings - PROJECT_SETTING: Inherited from project settings - SKIP_QUEUE: Manually triggered by user to skip the queues&quot;</summary>
+        /// <summary>When elastic concurrency is used for this deployment, a value is set. The value tells the reason where the setting was coming from. - TEAM_SETTING: Inherited from team settings - PROJECT_SETTING: Inherited from project settings - SKIP_QUEUE: Manually triggered by user to skip the queues</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseConfigResourceConfigElasticConcurrency? ElasticConcurrency { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseConfigResourceConfig"/> and sets the default values.

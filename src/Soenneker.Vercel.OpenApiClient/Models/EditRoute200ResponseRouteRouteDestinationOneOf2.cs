@@ -31,7 +31,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Service { get; set; }
 #endif
         /// <summary>Optional explicit format marker. The destination is identified by the presence of `service`, so `type` is no longer required.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.EditRoute200ResponseRouteRouteDestinationOneOf2Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ServiceType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.EditRoute200ResponseRouteRouteDestinationOneOf2"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "service", n => { Service = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.EditRoute200ResponseRouteRouteDestinationOneOf2Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ServiceType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("path", Path);
             writer.WriteStringValue("service", Service);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.EditRoute200ResponseRouteRouteDestinationOneOf2Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ServiceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

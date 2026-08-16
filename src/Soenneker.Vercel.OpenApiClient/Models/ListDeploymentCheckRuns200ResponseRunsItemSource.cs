@@ -61,7 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ResourceId { get; set; }
 #endif
         /// <summary>The subKind property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemSourceSubKind? SubKind { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.VercelNativeCheckSubKind? SubKind { get; set; }
         /// <summary>The webhookId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,7 +103,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "origin", n => { Origin = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemSourceOrigin>(); } },
                 { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemSourceProvider>(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
-                { "subKind", n => { SubKind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemSourceSubKind>(); } },
+                { "subKind", n => { SubKind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VercelNativeCheckSubKind>(); } },
                 { "webhookId", n => { WebhookId = n.GetStringValue(); } },
             };
         }
@@ -122,7 +122,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemSourceOrigin>("origin", Origin);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemSourceProvider>("provider", Provider);
             writer.WriteStringValue("resourceId", ResourceId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemSourceSubKind>("subKind", SubKind);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VercelNativeCheckSubKind>("subKind", SubKind);
             writer.WriteStringValue("webhookId", WebhookId);
             writer.WriteAdditionalData(AdditionalData);
         }

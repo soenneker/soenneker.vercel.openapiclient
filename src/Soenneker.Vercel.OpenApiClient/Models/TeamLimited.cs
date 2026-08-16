@@ -97,7 +97,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public TeamLimited()
         {
             AdditionalData = new Dictionary<string, object>();
-            Limited = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

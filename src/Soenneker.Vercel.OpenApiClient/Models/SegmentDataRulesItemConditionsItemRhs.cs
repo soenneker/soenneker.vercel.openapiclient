@@ -61,13 +61,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemConditionsItemRhs CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemConditionsItemRhs();
-            if("SegmentDataRulesItemConditionsItemRhs_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("SegmentDataRulesItemConditionsItemRhsBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SegmentDataRulesItemConditionsItemRhsBranch1 = new global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemConditionsItemRhsBranch1();
             }
-            else if("SegmentDataRulesItemConditionsItemRhs_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SegmentDataRulesItemConditionsItemRhsBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SegmentDataRulesItemConditionsItemRhsBranch2 = new global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemConditionsItemRhsBranch2();
             }
@@ -78,6 +78,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             else if("SegmentDataRulesItemConditionsItemRhsOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SegmentDataRulesItemConditionsItemRhsOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemConditionsItemRhsOneOf4();
+            }
+            else if("SegmentDataRulesItemConditionsItemRhsWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SegmentDataRulesItemConditionsItemRhsWrapper = new global::Soenneker.Vercel.OpenApiClient.Models.SegmentDataRulesItemConditionsItemRhsWrapper();
             }
             return result;
         }

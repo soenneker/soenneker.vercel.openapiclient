@@ -21,7 +21,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public bool? IncludeDrafts { get; set; }
         /// <summary>Which repository visibilities get automatic reviews</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf341NextScope? Scope { get; set; }
-        /// <summary>&quot;GitHub repos to scope automatic reviews to. Format: \&quot;owner/repo\&quot; (lowercase). Only used when scope=&apos;selected_repos&apos;.&quot;</summary>
+        /// <summary>GitHub repos to scope automatic reviews to. Format: &quot;owner/repo&quot; (lowercase). Only used when scope=&apos;selected_repos&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SelectedRepos { get; set; }

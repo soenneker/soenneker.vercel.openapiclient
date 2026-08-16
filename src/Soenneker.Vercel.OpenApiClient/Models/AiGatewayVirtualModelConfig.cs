@@ -17,7 +17,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allow fallback from fast to standard providers on failure.</summary>
         public bool? AllowFallbackFromFast { get; set; }
-        /// <summary>&quot;For kind=relay: URL the gateway forwards requests to as a transparent proxy.&quot;</summary>
+        /// <summary>For kind=relay: URL the gateway forwards requests to as a transparent proxy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BaseUrl { get; set; }
@@ -34,7 +34,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public List<string> ByokCredentialIds { get; set; }
 #endif
         /// <summary>Use caching if available.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigCaching? Caching { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AutoCaching? Caching { get; set; }
         /// <summary>Creation timestamp (epoch ms).</summary>
         public double? CreatedAt { get; set; }
         /// <summary>Whether this VMC is soft-deleted.</summary>
@@ -83,7 +83,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string InstanceId { get; set; }
 #endif
-        /// <summary>&quot;VMC kind: alias, relay, or router.&quot;</summary>
+        /// <summary>VMC kind: alias, relay, or router.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Kind { get; set; }
@@ -91,7 +91,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Kind { get; set; }
 #endif
-        /// <summary>&quot;For kind=router: ordered candidates, model slugs or router references. Otherwise: fallback models.&quot;</summary>
+        /// <summary>For kind=router: ordered candidates, model slugs or router references. Otherwise: fallback models.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Models { get; set; }
@@ -147,7 +147,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderTimeouts ProviderTimeouts { get; set; }
 #endif
-        /// <summary>&quot;For kind=router: capability tags a candidate must have.&quot;</summary>
+        /// <summary>For kind=router: capability tags a candidate must have.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Requires { get; set; }
@@ -155,15 +155,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> Requires { get; set; }
 #endif
-        /// <summary>&quot;For kind=router: how to order candidates.&quot;</summary>
+        /// <summary>For kind=router: how to order candidates.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelector? Selector { get; set; }
         /// <summary>Service tier for providers that support it.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigServiceTier? ServiceTier { get; set; }
         /// <summary>Rank eligible providers by an attribute.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSort? Sort { get; set; }
         /// <summary>Only use fastest providers with short timeouts.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSpeed? Speed { get; set; }
-        /// <summary>&quot;UI lifecycle status: draft, active, or archived.&quot;</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.FastSpeed? Speed { get; set; }
+        /// <summary>UI lifecycle status: draft, active, or archived.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }
@@ -189,7 +189,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string VirtualModelSlug { get; set; }
 #endif
-        /// <summary>&quot;Visibility in listings: public, internal, or stealth.&quot;</summary>
+        /// <summary>Visibility in listings: public, internal, or stealth.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Visibility { get; set; }
@@ -227,7 +227,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "allowFallbackFromFast", n => { AllowFallbackFromFast = n.GetBoolValue(); } },
                 { "baseUrl", n => { BaseUrl = n.GetStringValue(); } },
                 { "byokCredentialIds", n => { ByokCredentialIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "caching", n => { Caching = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigCaching>(); } },
+                { "caching", n => { Caching = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AutoCaching>(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "deleted", n => { Deleted = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -249,7 +249,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "selector", n => { Selector = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelector>(); } },
                 { "serviceTier", n => { ServiceTier = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigServiceTier>(); } },
                 { "sort", n => { Sort = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSort>(); } },
-                { "speed", n => { Speed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSpeed>(); } },
+                { "speed", n => { Speed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FastSpeed>(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
@@ -268,7 +268,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("allowFallbackFromFast", AllowFallbackFromFast);
             writer.WriteStringValue("baseUrl", BaseUrl);
             writer.WriteCollectionOfPrimitiveValues<string>("byokCredentialIds", ByokCredentialIds);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigCaching>("caching", Caching);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AutoCaching>("caching", Caching);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteBoolValue("deleted", Deleted);
             writer.WriteStringValue("description", Description);
@@ -290,7 +290,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelector>("selector", Selector);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigServiceTier>("serviceTier", ServiceTier);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSort>("sort", Sort);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSpeed>("speed", Speed);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FastSpeed>("speed", Speed);
             writer.WriteStringValue("status", Status);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedBy", UpdatedBy);

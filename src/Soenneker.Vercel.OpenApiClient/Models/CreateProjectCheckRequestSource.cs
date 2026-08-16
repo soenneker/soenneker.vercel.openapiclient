@@ -39,7 +39,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Kind { get; set; }
 #endif
         /// <summary>The provider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectCheckRequestSourceProvider? Provider { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GithubProvider? Provider { get; set; }
         /// <summary>The webhookId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,7 +77,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "externalCheckName", n => { ExternalCheckName = n.GetStringValue(); } },
                 { "externalResourceId", n => { ExternalResourceId = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectCheckRequestSourceProvider>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GithubProvider>(); } },
                 { "webhookId", n => { WebhookId = n.GetStringValue(); } },
             };
         }
@@ -91,7 +91,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("externalCheckName", ExternalCheckName);
             writer.WriteStringValue("externalResourceId", ExternalResourceId);
             writer.WriteStringValue("kind", Kind);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProjectCheckRequestSourceProvider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GithubProvider>("provider", Provider);
             writer.WriteStringValue("webhookId", WebhookId);
             writer.WriteAdditionalData(AdditionalData);
         }

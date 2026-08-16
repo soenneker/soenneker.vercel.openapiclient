@@ -78,7 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectId { get; set; }
 #endif
         /// <summary>The provider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf2Provider? Provider { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.BitbucketProvider? Provider { get; set; }
         /// <summary>The ref property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,7 +112,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Slug { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf2Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.BitbucketNowCommentType? Type { get; set; }
         /// <summary>The workspaceUuid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -156,12 +156,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "owner", n => { Owner = n.GetStringValue(); } },
                 { "prId", n => { PrId = n.GetDoubleValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf2Provider>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BitbucketProvider>(); } },
                 { "ref", n => { Ref = n.GetStringValue(); } },
                 { "repoUuid", n => { RepoUuid = n.GetStringValue(); } },
                 { "sha", n => { Sha = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf2Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BitbucketNowCommentType>(); } },
                 { "workspaceUuid", n => { WorkspaceUuid = n.GetStringValue(); } },
             };
         }
@@ -182,12 +182,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("owner", Owner);
             writer.WriteDoubleValue("prId", PrId);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf2Provider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BitbucketProvider>("provider", Provider);
             writer.WriteStringValue("ref", Ref);
             writer.WriteStringValue("repoUuid", RepoUuid);
             writer.WriteStringValue("sha", Sha);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf2Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BitbucketNowCommentType>("type", Type);
             writer.WriteStringValue("workspaceUuid", WorkspaceUuid);
             writer.WriteAdditionalData(AdditionalData);
         }

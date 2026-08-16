@@ -101,7 +101,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The repoId property</summary>
         public double? RepoId { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf5Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NowCommentType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf5"/> and sets the default values.
         /// </summary>
@@ -143,7 +143,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf5Provider>(); } },
                 { "repo", n => { Repo = n.GetStringValue(); } },
                 { "repoId", n => { RepoId = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf5Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NowCommentType>(); } },
             };
         }
         /// <summary>
@@ -169,7 +169,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf5Provider>("provider", Provider);
             writer.WriteStringValue("repo", Repo);
             writer.WriteDoubleValue("repoId", RepoId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf5Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NowCommentType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

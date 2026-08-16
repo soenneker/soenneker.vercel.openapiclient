@@ -163,7 +163,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectId { get; set; }
 #endif
         /// <summary>The provider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf9Provider? Provider { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CursorOriginProvider? Provider { get; set; }
         /// <summary>The ref property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -215,7 +215,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Target { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf9Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CursorOriginPushType? Type { get; set; }
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -275,7 +275,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "prId", n => { PrId = n.GetDoubleValue(); } },
                 { "prIdOrZero", n => { PrIdOrZero = n.GetDoubleValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf9Provider>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CursorOriginProvider>(); } },
                 { "ref", n => { Ref = n.GetStringValue(); } },
                 { "repo", n => { Repo = n.GetStringValue(); } },
                 { "repoId", n => { RepoId = n.GetStringValue(); } },
@@ -283,7 +283,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "sha", n => { Sha = n.GetStringValue(); } },
                 { "skippedJobPairs", n => { SkippedJobPairs = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "target", n => { Target = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf9Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CursorOriginPushType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -320,7 +320,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("prId", PrId);
             writer.WriteDoubleValue("prIdOrZero", PrIdOrZero);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf9Provider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CursorOriginProvider>("provider", Provider);
             writer.WriteStringValue("ref", Ref);
             writer.WriteStringValue("repo", Repo);
             writer.WriteStringValue("repoId", RepoId);
@@ -328,7 +328,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("sha", Sha);
             writer.WriteObjectValue<UntypedNode>("skippedJobPairs", SkippedJobPairs);
             writer.WriteStringValue("target", Target);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf9Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CursorOriginPushType>("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

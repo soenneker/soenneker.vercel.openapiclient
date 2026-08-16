@@ -45,11 +45,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200Response();
-            if("GetProjects200Response_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("GetProjects200ResponseBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GetProjects200ResponseBranch1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1();
+            }
+            else if("GetProjects200ResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetProjects200ResponseOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2();
+            }
+            else if("GetProjects200ResponseOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetProjects200ResponseOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3();
             }
             return result;
         }

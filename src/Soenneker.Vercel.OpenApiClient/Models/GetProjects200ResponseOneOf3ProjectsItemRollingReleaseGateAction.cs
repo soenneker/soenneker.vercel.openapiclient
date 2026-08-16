@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>&quot;What to do when the gate trips: pause the rollout, or roll it back.&quot;</summary>
+    /// <summary>What to do when the gate trips: pause the rollout, or roll it back.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetProjects200ResponseOneOf3ProjectsItemRollingReleaseGateAction
     {

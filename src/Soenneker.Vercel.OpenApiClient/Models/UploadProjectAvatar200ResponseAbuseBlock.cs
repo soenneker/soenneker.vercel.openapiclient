@@ -13,7 +13,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseAbuseBlockAction? Action { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.BlockedAction? Action { get; set; }
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,7 +81,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseAbuseBlockAction>(); } },
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BlockedAction>(); } },
                 { "actor", n => { Actor = n.GetStringValue(); } },
                 { "caseId", n => { CaseId = n.GetStringValue(); } },
                 { "comment", n => { Comment = n.GetStringValue(); } },
@@ -99,7 +99,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseAbuseBlockAction>("action", Action);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BlockedAction>("action", Action);
             writer.WriteStringValue("actor", Actor);
             writer.WriteStringValue("caseId", CaseId);
             writer.WriteStringValue("comment", Comment);

@@ -23,7 +23,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Args { get; set; }
 #endif
         /// <summary>The op property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemTransformsItemOp? Op { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AppendOp? Op { get; set; }
         /// <summary>The target property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,7 +33,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemTransformsItemTarget Target { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemTransformsItemType? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.RequestHeadersType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemTransformsItem"/> and sets the default values.
         /// </summary>
@@ -60,9 +60,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "args", n => { Args = n.GetStringValue(); } },
-                { "op", n => { Op = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemTransformsItemOp>(); } },
+                { "op", n => { Op = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AppendOp>(); } },
                 { "target", n => { Target = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemTransformsItemTarget>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemTransformsItemTarget.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemTransformsItemType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.RequestHeadersType>(); } },
             };
         }
         /// <summary>
@@ -73,9 +73,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("args", Args);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemTransformsItemOp>("op", Op);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AppendOp>("op", Op);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemTransformsItemTarget>("target", Target);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemTransformsItemType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.RequestHeadersType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

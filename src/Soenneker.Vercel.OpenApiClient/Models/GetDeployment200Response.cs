@@ -7,36 +7,540 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetDeployment200Response : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class GetDeployment200Response : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The alias property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf1? GetDeployment200ResponseOneOf1 { get; set; }
+        public List<string>? Alias { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf1 GetDeployment200ResponseOneOf1 { get; set; }
+        public List<string> Alias { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2"/></summary>
+        /// <summary>The aliasAssigned property</summary>
+        public bool? AliasAssigned { get; set; }
+        /// <summary>The aliasAssignedAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2? GetDeployment200ResponseOneOf2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAliasAssignedAt? AliasAssignedAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2 GetDeployment200ResponseOneOf2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAliasAssignedAt AliasAssignedAt { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3"/></summary>
+        /// <summary>An object that will contain a `code` and a `message` when the aliasing fails, otherwise the value will be `null`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3? GetDeployment200ResponseOneOf3 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAliasError? AliasError { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3 GetDeployment200ResponseOneOf3 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAliasError AliasError { get; set; }
 #endif
+        /// <summary>The aliasFinal property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AliasFinal { get; set; }
+#nullable restore
+#else
+        public string AliasFinal { get; set; }
+#endif
+        /// <summary>The aliasWarning property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAliasWarning? AliasWarning { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAliasWarning AliasWarning { get; set; }
+#endif
+        /// <summary>The alwaysRefuseToBuild property</summary>
+        public bool? AlwaysRefuseToBuild { get; set; }
+        /// <summary>Attribution metadata for the deployment, linking commit author to git and Vercel users. Only populated when the `enable-deployment-attribution` flag is enabled.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAttribution? Attribution { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAttribution Attribution { get; set; }
+#endif
+        /// <summary>applies to custom domains only, defaults to `true`</summary>
+        public bool? AutoAssignCustomDomains { get; set; }
+        /// <summary>The automaticAliases property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AutomaticAliases { get; set; }
+#nullable restore
+#else
+        public List<string> AutomaticAliases { get; set; }
+#endif
+        /// <summary>The bootedAt property</summary>
+        public double? BootedAt { get; set; }
+        /// <summary>The build property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseBuild? Build { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseBuild Build { get; set; }
+#endif
+        /// <summary>The buildArtifactUrls property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? BuildArtifactUrls { get; set; }
+#nullable restore
+#else
+        public List<string> BuildArtifactUrls { get; set; }
+#endif
+        /// <summary>Since April 2025 it necessary for On-Demand Concurrency Minutes calculation</summary>
+        public double? BuildContainerFinishedAt { get; set; }
+        /// <summary>The buildErrorAt property</summary>
+        public double? BuildErrorAt { get; set; }
+        /// <summary>The buildingAt property</summary>
+        public double? BuildingAt { get; set; }
+        /// <summary>The builds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseBuildsItem>? Builds { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseBuildsItem> Builds { get; set; }
+#endif
+        /// <summary>The buildSkipped property</summary>
+        public bool? BuildSkipped { get; set; }
+        /// <summary>The canceledAt property</summary>
+        public double? CanceledAt { get; set; }
+        /// <summary>The checks property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseChecks? Checks { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseChecks Checks { get; set; }
+#endif
+        /// <summary>The checksConclusion property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseChecksConclusion? ChecksConclusion { get; set; }
+        /// <summary>The checksState property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseChecksState? ChecksState { get; set; }
+        /// <summary>Since February 2025 the configuration must include snapshot data at the time of deployment creation to capture properties for the /deployments/:id/config endpoint utilized for displaying Deployment Configuration on the frontend This is optional because older deployments may not have this data captured</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseConfig? Config { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseConfig Config { get; set; }
+#endif
+        /// <summary>The connectBuildsEnabled property</summary>
+        public bool? ConnectBuildsEnabled { get; set; }
+        /// <summary>The connectConfigurationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConnectConfigurationId { get; set; }
+#nullable restore
+#else
+        public string ConnectConfigurationId { get; set; }
+#endif
+        /// <summary>A number containing the date when the deployment was created in milliseconds</summary>
+        public double? CreatedAt { get; set; }
+        /// <summary>The createdIn property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedIn { get; set; }
+#nullable restore
+#else
+        public string CreatedIn { get; set; }
+#endif
+        /// <summary>Information about the deployment creator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseCreator? Creator { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseCreator Creator { get; set; }
+#endif
+        /// <summary>The crons property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseCronsItem>? Crons { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseCronsItem> Crons { get; set; }
+#endif
+        /// <summary>The customEnvironment property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseCustomEnvironment? CustomEnvironment { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseCustomEnvironment CustomEnvironment { get; set; }
+#endif
+        /// <summary>Computed field that is only available for deployments with a microfrontend configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DefaultRoute { get; set; }
+#nullable restore
+#else
+        public string DefaultRoute { get; set; }
+#endif
+        /// <summary>A number containing the date when the deployment was deleted at milliseconds</summary>
+        public double? DeletedAt { get; set; }
+        /// <summary>The env property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Env { get; set; }
+#nullable restore
+#else
+        public List<string> Env { get; set; }
+#endif
+        /// <summary>The errorCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ErrorCode { get; set; }
+#nullable restore
+#else
+        public string ErrorCode { get; set; }
+#endif
+        /// <summary>The errorLink property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ErrorLink { get; set; }
+#nullable restore
+#else
+        public string ErrorLink { get; set; }
+#endif
+        /// <summary>The errorMessage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ErrorMessage { get; set; }
+#nullable restore
+#else
+        public string ErrorMessage { get; set; }
+#endif
+        /// <summary>The errorStep property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ErrorStep { get; set; }
+#nullable restore
+#else
+        public string ErrorStep { get; set; }
+#endif
+        /// <summary>The flags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseFlags? Flags { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseFlags Flags { get; set; }
+#endif
+        /// <summary>The functions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseFunctions? Functions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseFunctions Functions { get; set; }
+#endif
+        /// <summary>The gitRepo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseGitRepo? GitRepo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseGitRepo GitRepo { get; set; }
+#endif
+        /// <summary>The gitSource property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseGitSource? GitSource { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseGitSource GitSource { get; set; }
+#endif
+        /// <summary>A string holding the unique ID of the deployment</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
+        /// <summary>The images property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseImages? Images { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseImages Images { get; set; }
+#endif
+        /// <summary>The initReadyAt property</summary>
+        public double? InitReadyAt { get; set; }
+        /// <summary>The inspectorUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InspectorUrl { get; set; }
+#nullable restore
+#else
+        public string InspectorUrl { get; set; }
+#endif
+        /// <summary>The integrations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseIntegrations? Integrations { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseIntegrations Integrations { get; set; }
+#endif
+        /// <summary>The isFirstBranchDeployment property</summary>
+        public bool? IsFirstBranchDeployment { get; set; }
+        /// <summary>The isInConcurrentBuildsQueue property</summary>
+        public bool? IsInConcurrentBuildsQueue { get; set; }
+        /// <summary>Whether this deployment completed through the instant static fast path.</summary>
+        public bool? IsInstantStatic { get; set; }
+        /// <summary>The isInSystemBuildsQueue property</summary>
+        public bool? IsInSystemBuildsQueue { get; set; }
+        /// <summary>The lambdas property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseLambdasItem>? Lambdas { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseLambdasItem> Lambdas { get; set; }
+#endif
+        /// <summary>Present when deployment was created with manual provisioning enabled, either explicitly or via the experimental BYOC git flow. The deployment stays in INITIALIZING until /continue is called.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseManualProvisioning? ManualProvisioning { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseManualProvisioning ManualProvisioning { get; set; }
+#endif
+        /// <summary>The meta property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseMeta? Meta { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseMeta Meta { get; set; }
+#endif
+        /// <summary>The microfrontends property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseMicrofrontends? Microfrontends { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseMicrofrontends Microfrontends { get; set; }
+#endif
+        /// <summary>The monorepoManager property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MonorepoManager { get; set; }
+#nullable restore
+#else
+        public string MonorepoManager { get; set; }
+#endif
+        /// <summary>The name of the project associated with the deployment at the time that the deployment was created</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>If set it overrides the `projectSettings.nodeVersion` for this deployment.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseNodeVersion? NodeVersion { get; set; }
+        /// <summary>The oidcTokenClaims property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOidcTokenClaims? OidcTokenClaims { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOidcTokenClaims OidcTokenClaims { get; set; }
+#endif
+        /// <summary>The oomReport property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.OutOfMemoryOomReport? OomReport { get; set; }
+        /// <summary>The originCacheRegion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OriginCacheRegion { get; set; }
+#nullable restore
+#else
+        public string OriginCacheRegion { get; set; }
+#endif
+        /// <summary>The ownerId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OwnerId { get; set; }
+#nullable restore
+#else
+        public string OwnerId { get; set; }
+#endif
+        /// <summary>Since November 2023 this field defines a Secure Compute network that will only be used to deploy passive lambdas to (as in passiveRegions)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PassiveConnectConfigurationId { get; set; }
+#nullable restore
+#else
+        public string PassiveConnectConfigurationId { get; set; }
+#endif
+        /// <summary>Since November 2023 this field defines a set of regions that we will deploy the lambda to passively Lambdas will be deployed to these regions but only invoked if all of the primary `regions` are marked as out of service</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? PassiveRegions { get; set; }
+#nullable restore
+#else
+        public List<string> PassiveRegions { get; set; }
+#endif
+        /// <summary>The plan property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponsePlan? Plan { get; set; }
+        /// <summary>Metadata about the source platform that triggered the deployment. Allows us to map a deployment back to a platform (e.g. the chat that created it)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponsePlatform? Platform { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponsePlatform Platform { get; set; }
+#endif
+        /// <summary>The prebuilt property</summary>
+        public bool? Prebuilt { get; set; }
+        /// <summary>Whether or not preview comments are enabled for the deployment</summary>
+        public bool? PreviewCommentsEnabled { get; set; }
+        /// <summary>The public project information associated with the deployment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseProject? Project { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseProject Project { get; set; }
+#endif
+        /// <summary>The projectId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get; set; }
+#nullable restore
+#else
+        public string ProjectId { get; set; }
+#endif
+        /// <summary>The projectSettings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseProjectSettings? ProjectSettings { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseProjectSettings ProjectSettings { get; set; }
+#endif
+        /// <summary>A boolean representing if the deployment is public or not. By default this is `false`</summary>
+        public bool? Public { get; set; }
+        /// <summary>The ready property</summary>
+        public double? Ready { get; set; }
+        /// <summary>The state of the deployment depending on the process of deploying, or if it is ready or in an error state</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseReadyState? ReadyState { get; set; }
+        /// <summary>The readyStateReason property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReadyStateReason { get; set; }
+#nullable restore
+#else
+        public string ReadyStateReason { get; set; }
+#endif
+        /// <summary>Substate of deployment when readyState is &apos;READY&apos; Tracks whether or not deployment has seen production traffic: - STAGED: never seen production traffic - ROLLING: in the process of having production traffic gradually transitioned. - PROMOTED: has seen production traffic</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseReadySubstate? ReadySubstate { get; set; }
+        /// <summary>The regions the deployment exists in</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Regions { get; set; }
+#nullable restore
+#else
+        public List<string> Regions { get; set; }
+#endif
+        /// <summary>The resourceConfig property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseResourceConfig? ResourceConfig { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseResourceConfig ResourceConfig { get; set; }
+#endif
+        /// <summary>The routes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseRoutesItem>? Routes { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseRoutesItem> Routes { get; set; }
+#endif
+        /// <summary>NSNB Blocked metadata</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseSeatBlock? SeatBlock { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseSeatBlock SeatBlock { get; set; }
+#endif
+        /// <summary>Services detected during build from vercel.json experimentalServices or auto-detected from project structure. Used to inject service URLs as environment variables at runtime.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseServicesItem>? Services { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseServicesItem> Services { get; set; }
+#endif
+        /// <summary>flag to indicate if the deployment was deleted by retention policy</summary>
+        public bool? SoftDeletedByRetention { get; set; }
+        /// <summary>Where was the deployment created from. Best-effort guess for metrics only — not authoritative; do not gate behavior on it.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseSource? Source { get; set; }
+        /// <summary>The status property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseStatus? Status { get; set; }
+        /// <summary>If defined, either `staging` if a staging alias in the format `&lt;project&gt;.&lt;team&gt;.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the &quot;preview&quot; deployment.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseTarget? Target { get; set; }
+        /// <summary>The team that owns the deployment if any</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseTeam? Team { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseTeam Team { get; set; }
+#endif
+        /// <summary>The ttyBuildLogs property</summary>
+        public bool? TtyBuildLogs { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.LambdasType? Type { get; set; }
+        /// <summary>A number containing the date when the deployment was undeleted at milliseconds</summary>
+        public double? UndeletedAt { get; set; }
+        /// <summary>A string with the unique URL of the deployment</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Url { get; set; }
+#nullable restore
+#else
+        public string Url { get; set; }
+#endif
+        /// <summary>An array of domains that were provided by the user when creating the Deployment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? UserAliases { get; set; }
+#nullable restore
+#else
+        public List<string> UserAliases { get; set; }
+#endif
+        /// <summary>Since January 2025 User-configured deployment ID for skew protection with pre-built deployments. This is set when users configure a custom deploymentId in their next.config.js file. This allows Next.js to use skew protection even when deployments are pre-built outside of Vercel&apos;s build system.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserConfiguredDeploymentId { get; set; }
+#nullable restore
+#else
+        public string UserConfiguredDeploymentId { get; set; }
+#endif
+        /// <summary>The platform version that was used to create the deployment.</summary>
+        public double? Version { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200Response"/> and sets the default values.
+        /// </summary>
+        public GetDeployment200Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,21 +549,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200Response();
-            if("GetDeployment200ResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.GetDeployment200ResponseOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf1();
-            }
-            else if("GetDeployment200ResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.GetDeployment200ResponseOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2();
-            }
-            else if("GetDeployment200ResponseOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.GetDeployment200ResponseOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3();
-            }
-            return result;
+            return new global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200Response();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,19 +557,101 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(GetDeployment200ResponseOneOf1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return GetDeployment200ResponseOneOf1.GetFieldDeserializers();
-            }
-            else if(GetDeployment200ResponseOneOf2 != null)
-            {
-                return GetDeployment200ResponseOneOf2.GetFieldDeserializers();
-            }
-            else if(GetDeployment200ResponseOneOf3 != null)
-            {
-                return GetDeployment200ResponseOneOf3.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "alias", n => { Alias = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "aliasAssigned", n => { AliasAssigned = n.GetBoolValue(); } },
+                { "aliasAssignedAt", n => { AliasAssignedAt = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAliasAssignedAt>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAliasAssignedAt.CreateFromDiscriminatorValue); } },
+                { "aliasError", n => { AliasError = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAliasError>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAliasError.CreateFromDiscriminatorValue); } },
+                { "aliasFinal", n => { AliasFinal = n.GetStringValue(); } },
+                { "aliasWarning", n => { AliasWarning = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAliasWarning>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAliasWarning.CreateFromDiscriminatorValue); } },
+                { "alwaysRefuseToBuild", n => { AlwaysRefuseToBuild = n.GetBoolValue(); } },
+                { "attribution", n => { Attribution = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAttribution>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAttribution.CreateFromDiscriminatorValue); } },
+                { "autoAssignCustomDomains", n => { AutoAssignCustomDomains = n.GetBoolValue(); } },
+                { "automaticAliases", n => { AutomaticAliases = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "bootedAt", n => { BootedAt = n.GetDoubleValue(); } },
+                { "build", n => { Build = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseBuild>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseBuild.CreateFromDiscriminatorValue); } },
+                { "buildArtifactUrls", n => { BuildArtifactUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "buildContainerFinishedAt", n => { BuildContainerFinishedAt = n.GetDoubleValue(); } },
+                { "buildErrorAt", n => { BuildErrorAt = n.GetDoubleValue(); } },
+                { "buildSkipped", n => { BuildSkipped = n.GetBoolValue(); } },
+                { "buildingAt", n => { BuildingAt = n.GetDoubleValue(); } },
+                { "builds", n => { Builds = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseBuildsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseBuildsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "canceledAt", n => { CanceledAt = n.GetDoubleValue(); } },
+                { "checks", n => { Checks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseChecks>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseChecks.CreateFromDiscriminatorValue); } },
+                { "checksConclusion", n => { ChecksConclusion = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseChecksConclusion>(); } },
+                { "checksState", n => { ChecksState = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseChecksState>(); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseConfig>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseConfig.CreateFromDiscriminatorValue); } },
+                { "connectBuildsEnabled", n => { ConnectBuildsEnabled = n.GetBoolValue(); } },
+                { "connectConfigurationId", n => { ConnectConfigurationId = n.GetStringValue(); } },
+                { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
+                { "createdIn", n => { CreatedIn = n.GetStringValue(); } },
+                { "creator", n => { Creator = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseCreator>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseCreator.CreateFromDiscriminatorValue); } },
+                { "crons", n => { Crons = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseCronsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseCronsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "customEnvironment", n => { CustomEnvironment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseCustomEnvironment>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseCustomEnvironment.CreateFromDiscriminatorValue); } },
+                { "defaultRoute", n => { DefaultRoute = n.GetStringValue(); } },
+                { "deletedAt", n => { DeletedAt = n.GetDoubleValue(); } },
+                { "env", n => { Env = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
+                { "errorLink", n => { ErrorLink = n.GetStringValue(); } },
+                { "errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
+                { "errorStep", n => { ErrorStep = n.GetStringValue(); } },
+                { "flags", n => { Flags = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseFlags>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseFlags.CreateFromDiscriminatorValue); } },
+                { "functions", n => { Functions = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseFunctions>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseFunctions.CreateFromDiscriminatorValue); } },
+                { "gitRepo", n => { GitRepo = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseGitRepo>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseGitRepo.CreateFromDiscriminatorValue); } },
+                { "gitSource", n => { GitSource = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseGitSource>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseGitSource.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "images", n => { Images = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseImages>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseImages.CreateFromDiscriminatorValue); } },
+                { "initReadyAt", n => { InitReadyAt = n.GetDoubleValue(); } },
+                { "inspectorUrl", n => { InspectorUrl = n.GetStringValue(); } },
+                { "integrations", n => { Integrations = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseIntegrations>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseIntegrations.CreateFromDiscriminatorValue); } },
+                { "isFirstBranchDeployment", n => { IsFirstBranchDeployment = n.GetBoolValue(); } },
+                { "isInConcurrentBuildsQueue", n => { IsInConcurrentBuildsQueue = n.GetBoolValue(); } },
+                { "isInSystemBuildsQueue", n => { IsInSystemBuildsQueue = n.GetBoolValue(); } },
+                { "isInstantStatic", n => { IsInstantStatic = n.GetBoolValue(); } },
+                { "lambdas", n => { Lambdas = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseLambdasItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseLambdasItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "manualProvisioning", n => { ManualProvisioning = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseManualProvisioning>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseManualProvisioning.CreateFromDiscriminatorValue); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseMeta>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseMeta.CreateFromDiscriminatorValue); } },
+                { "microfrontends", n => { Microfrontends = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseMicrofrontends>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseMicrofrontends.CreateFromDiscriminatorValue); } },
+                { "monorepoManager", n => { MonorepoManager = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "nodeVersion", n => { NodeVersion = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseNodeVersion>(); } },
+                { "oidcTokenClaims", n => { OidcTokenClaims = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOidcTokenClaims>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOidcTokenClaims.CreateFromDiscriminatorValue); } },
+                { "oomReport", n => { OomReport = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OutOfMemoryOomReport>(); } },
+                { "originCacheRegion", n => { OriginCacheRegion = n.GetStringValue(); } },
+                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
+                { "passiveConnectConfigurationId", n => { PassiveConnectConfigurationId = n.GetStringValue(); } },
+                { "passiveRegions", n => { PassiveRegions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponsePlan>(); } },
+                { "platform", n => { Platform = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponsePlatform>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponsePlatform.CreateFromDiscriminatorValue); } },
+                { "prebuilt", n => { Prebuilt = n.GetBoolValue(); } },
+                { "previewCommentsEnabled", n => { PreviewCommentsEnabled = n.GetBoolValue(); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseProject>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseProject.CreateFromDiscriminatorValue); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectSettings", n => { ProjectSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseProjectSettings>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseProjectSettings.CreateFromDiscriminatorValue); } },
+                { "public", n => { Public = n.GetBoolValue(); } },
+                { "ready", n => { Ready = n.GetDoubleValue(); } },
+                { "readyState", n => { ReadyState = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseReadyState>(); } },
+                { "readyStateReason", n => { ReadyStateReason = n.GetStringValue(); } },
+                { "readySubstate", n => { ReadySubstate = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseReadySubstate>(); } },
+                { "regions", n => { Regions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "resourceConfig", n => { ResourceConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseResourceConfig>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseResourceConfig.CreateFromDiscriminatorValue); } },
+                { "routes", n => { Routes = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseRoutesItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseRoutesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "seatBlock", n => { SeatBlock = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseSeatBlock>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseSeatBlock.CreateFromDiscriminatorValue); } },
+                { "services", n => { Services = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseServicesItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseServicesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "softDeletedByRetention", n => { SoftDeletedByRetention = n.GetBoolValue(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseSource>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseStatus>(); } },
+                { "target", n => { Target = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseTarget>(); } },
+                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseTeam>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseTeam.CreateFromDiscriminatorValue); } },
+                { "ttyBuildLogs", n => { TtyBuildLogs = n.GetBoolValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.LambdasType>(); } },
+                { "undeletedAt", n => { UndeletedAt = n.GetDoubleValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
+                { "userAliases", n => { UserAliases = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "userConfiguredDeploymentId", n => { UserConfiguredDeploymentId = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetDoubleValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -88,18 +660,99 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(GetDeployment200ResponseOneOf1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf1>(null, GetDeployment200ResponseOneOf1);
-            }
-            else if(GetDeployment200ResponseOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf2>(null, GetDeployment200ResponseOneOf2);
-            }
-            else if(GetDeployment200ResponseOneOf3 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOneOf3>(null, GetDeployment200ResponseOneOf3);
-            }
+            writer.WriteCollectionOfPrimitiveValues<string>("alias", Alias);
+            writer.WriteBoolValue("aliasAssigned", AliasAssigned);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAliasAssignedAt>("aliasAssignedAt", AliasAssignedAt);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAliasError>("aliasError", AliasError);
+            writer.WriteStringValue("aliasFinal", AliasFinal);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAliasWarning>("aliasWarning", AliasWarning);
+            writer.WriteBoolValue("alwaysRefuseToBuild", AlwaysRefuseToBuild);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseAttribution>("attribution", Attribution);
+            writer.WriteBoolValue("autoAssignCustomDomains", AutoAssignCustomDomains);
+            writer.WriteCollectionOfPrimitiveValues<string>("automaticAliases", AutomaticAliases);
+            writer.WriteDoubleValue("bootedAt", BootedAt);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseBuild>("build", Build);
+            writer.WriteCollectionOfPrimitiveValues<string>("buildArtifactUrls", BuildArtifactUrls);
+            writer.WriteDoubleValue("buildContainerFinishedAt", BuildContainerFinishedAt);
+            writer.WriteDoubleValue("buildErrorAt", BuildErrorAt);
+            writer.WriteDoubleValue("buildingAt", BuildingAt);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseBuildsItem>("builds", Builds);
+            writer.WriteBoolValue("buildSkipped", BuildSkipped);
+            writer.WriteDoubleValue("canceledAt", CanceledAt);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseChecks>("checks", Checks);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseChecksConclusion>("checksConclusion", ChecksConclusion);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseChecksState>("checksState", ChecksState);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseConfig>("config", Config);
+            writer.WriteBoolValue("connectBuildsEnabled", ConnectBuildsEnabled);
+            writer.WriteStringValue("connectConfigurationId", ConnectConfigurationId);
+            writer.WriteDoubleValue("createdAt", CreatedAt);
+            writer.WriteStringValue("createdIn", CreatedIn);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseCreator>("creator", Creator);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseCronsItem>("crons", Crons);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseCustomEnvironment>("customEnvironment", CustomEnvironment);
+            writer.WriteStringValue("defaultRoute", DefaultRoute);
+            writer.WriteDoubleValue("deletedAt", DeletedAt);
+            writer.WriteCollectionOfPrimitiveValues<string>("env", Env);
+            writer.WriteStringValue("errorCode", ErrorCode);
+            writer.WriteStringValue("errorLink", ErrorLink);
+            writer.WriteStringValue("errorMessage", ErrorMessage);
+            writer.WriteStringValue("errorStep", ErrorStep);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseFlags>("flags", Flags);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseFunctions>("functions", Functions);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseGitRepo>("gitRepo", GitRepo);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseGitSource>("gitSource", GitSource);
+            writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseImages>("images", Images);
+            writer.WriteDoubleValue("initReadyAt", InitReadyAt);
+            writer.WriteStringValue("inspectorUrl", InspectorUrl);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseIntegrations>("integrations", Integrations);
+            writer.WriteBoolValue("isFirstBranchDeployment", IsFirstBranchDeployment);
+            writer.WriteBoolValue("isInConcurrentBuildsQueue", IsInConcurrentBuildsQueue);
+            writer.WriteBoolValue("isInstantStatic", IsInstantStatic);
+            writer.WriteBoolValue("isInSystemBuildsQueue", IsInSystemBuildsQueue);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseLambdasItem>("lambdas", Lambdas);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseManualProvisioning>("manualProvisioning", ManualProvisioning);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseMeta>("meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseMicrofrontends>("microfrontends", Microfrontends);
+            writer.WriteStringValue("monorepoManager", MonorepoManager);
+            writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseNodeVersion>("nodeVersion", NodeVersion);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseOidcTokenClaims>("oidcTokenClaims", OidcTokenClaims);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OutOfMemoryOomReport>("oomReport", OomReport);
+            writer.WriteStringValue("originCacheRegion", OriginCacheRegion);
+            writer.WriteStringValue("ownerId", OwnerId);
+            writer.WriteStringValue("passiveConnectConfigurationId", PassiveConnectConfigurationId);
+            writer.WriteCollectionOfPrimitiveValues<string>("passiveRegions", PassiveRegions);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponsePlan>("plan", Plan);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponsePlatform>("platform", Platform);
+            writer.WriteBoolValue("prebuilt", Prebuilt);
+            writer.WriteBoolValue("previewCommentsEnabled", PreviewCommentsEnabled);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseProject>("project", Project);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseProjectSettings>("projectSettings", ProjectSettings);
+            writer.WriteBoolValue("public", Public);
+            writer.WriteDoubleValue("ready", Ready);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseReadyState>("readyState", ReadyState);
+            writer.WriteStringValue("readyStateReason", ReadyStateReason);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseReadySubstate>("readySubstate", ReadySubstate);
+            writer.WriteCollectionOfPrimitiveValues<string>("regions", Regions);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseResourceConfig>("resourceConfig", ResourceConfig);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseRoutesItem>("routes", Routes);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseSeatBlock>("seatBlock", SeatBlock);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseServicesItem>("services", Services);
+            writer.WriteBoolValue("softDeletedByRetention", SoftDeletedByRetention);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseSource>("source", Source);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseTarget>("target", Target);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseTeam>("team", Team);
+            writer.WriteBoolValue("ttyBuildLogs", TtyBuildLogs);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.LambdasType>("type", Type);
+            writer.WriteDoubleValue("undeletedAt", UndeletedAt);
+            writer.WriteStringValue("url", Url);
+            writer.WriteCollectionOfPrimitiveValues<string>("userAliases", UserAliases);
+            writer.WriteStringValue("userConfiguredDeploymentId", UserConfiguredDeploymentId);
+            writer.WriteDoubleValue("version", Version);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

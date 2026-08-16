@@ -24,7 +24,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string EncryptedValue { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseEnvItemInternalContentHintType? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.FlagsSecretType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseEnvItemInternalContentHint"/> and sets the default values.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "encryptedValue", n => { EncryptedValue = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseEnvItemInternalContentHintType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagsSecretType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("encryptedValue", EncryptedValue);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseEnvItemInternalContentHintType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagsSecretType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

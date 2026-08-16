@@ -12,7 +12,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class KillSessionCommandRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The POSIX signal number to send to the process. Common values: 15 (SIGTERM) for graceful termination, 9 (SIGKILL) for forced termination.&quot;</summary>
+        /// <summary>The POSIX signal number to send to the process. Common values: 15 (SIGTERM) for graceful termination, 9 (SIGKILL) for forced termination.</summary>
         public double? Signal { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

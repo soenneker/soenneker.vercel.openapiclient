@@ -31,12 +31,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<double?> ExcludeStatusCodes { get; set; }
 #endif
-        /// <summary>&quot;Seconds of ingest lag to allow for: the query&apos;s upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.&quot;</summary>
+        /// <summary>Seconds of ingest lag to allow for: the query&apos;s upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.</summary>
         public double? IngestWatermarkSeconds { get; set; }
         /// <summary>Minimum number of requests required in the window before the check can fail. Below this, the check is inconclusive rather than failing, so low-traffic stages don&apos;t gate on noise. Defaults to `100` when omitted.</summary>
         public double? MinSampleSize { get; set; }
         /// <summary>The metric this check evaluates.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseRollingReleaseGateChecksItemType? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ErrorRate5XxType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseRollingReleaseGateChecksItem"/> and sets the default values.
         /// </summary>
@@ -66,7 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "excludeStatusCodes", n => { ExcludeStatusCodes = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "ingestWatermarkSeconds", n => { IngestWatermarkSeconds = n.GetDoubleValue(); } },
                 { "minSampleSize", n => { MinSampleSize = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseRollingReleaseGateChecksItemType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ErrorRate5XxType>(); } },
             };
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<double?>("excludeStatusCodes", ExcludeStatusCodes);
             writer.WriteDoubleValue("ingestWatermarkSeconds", IngestWatermarkSeconds);
             writer.WriteDoubleValue("minSampleSize", MinSampleSize);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseRollingReleaseGateChecksItemType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ErrorRate5XxType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

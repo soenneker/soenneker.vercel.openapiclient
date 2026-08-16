@@ -15,7 +15,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A constant with the final state of the deployment.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.DeleteDeployment200ResponseState? State { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.DeletedState? State { get; set; }
         /// <summary>The removed deployment ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +49,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteDeployment200ResponseState>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.DeletedState>(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.DeleteDeployment200ResponseState>("state", State);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.DeletedState>("state", State);
             writer.WriteStringValue("uid", Uid);
             writer.WriteAdditionalData(AdditionalData);
         }

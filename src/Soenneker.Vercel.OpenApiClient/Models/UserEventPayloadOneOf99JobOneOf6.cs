@@ -145,7 +145,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectId { get; set; }
 #endif
         /// <summary>The provider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf6Provider? Provider { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GitlabProvider? Provider { get; set; }
         /// <summary>The ref property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -183,7 +183,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Target { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf6Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GitlabPushType? Type { get; set; }
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -242,14 +242,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "prIdOrZero", n => { PrIdOrZero = n.GetDoubleValue(); } },
                 { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf6Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf6Project.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf6Provider>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GitlabProvider>(); } },
                 { "ref", n => { Ref = n.GetStringValue(); } },
                 { "repoPushedAt", n => { RepoPushedAt = n.GetDoubleValue(); } },
                 { "sha", n => { Sha = n.GetStringValue(); } },
                 { "silent", n => { Silent = n.GetBoolValue(); } },
                 { "skippedJobPairs", n => { SkippedJobPairs = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "target", n => { Target = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf6Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GitlabPushType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "withCache", n => { WithCache = n.GetBoolValue(); } },
             };
@@ -284,14 +284,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("prIdOrZero", PrIdOrZero);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf6Project>("project", Project);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf6Provider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GitlabProvider>("provider", Provider);
             writer.WriteStringValue("ref", Ref);
             writer.WriteDoubleValue("repoPushedAt", RepoPushedAt);
             writer.WriteStringValue("sha", Sha);
             writer.WriteBoolValue("silent", Silent);
             writer.WriteObjectValue<UntypedNode>("skippedJobPairs", SkippedJobPairs);
             writer.WriteStringValue("target", Target);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf6Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GitlabPushType>("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteBoolValue("withCache", WithCache);
             writer.WriteAdditionalData(AdditionalData);

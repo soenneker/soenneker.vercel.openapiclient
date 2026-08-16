@@ -61,19 +61,23 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValue();
-            if("GlobalConfigItemValue_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("GlobalConfigItemValueBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GlobalConfigItemValueBranch1 = new global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch1();
             }
-            else if("GlobalConfigItemValue_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("GlobalConfigItemValueBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GlobalConfigItemValueBranch2 = new global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch2();
             }
-            else if("GlobalConfigItemValue_4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("GlobalConfigItemValueBranch4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GlobalConfigItemValueBranch4 = new global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch4();
+            }
+            else if("GlobalConfigItemValueWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GlobalConfigItemValueWrapper = new global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueWrapper();
             }
             return result;
         }

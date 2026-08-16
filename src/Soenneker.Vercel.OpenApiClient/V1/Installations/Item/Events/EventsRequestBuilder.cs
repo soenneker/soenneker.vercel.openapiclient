@@ -34,27 +34,26 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Events
         {
         }
         /// <summary>
-        /// &quot;Partner notifies Vercel of any changes made to an Installation or a Resource. Vercel is expected to use `list-resources` and other read APIs to get the new state.&lt;br/&gt; &lt;br/&gt; `resource.updated` event should be dispatched when any state of a resource linked to Vercel is modified by the partner.&lt;br/&gt; `installation.updated` event should be dispatched when an installation&apos;s billing plan is changed via the provider instead of Vercel.&lt;br/&gt; &lt;br/&gt; Resource update use cases: &lt;br/&gt; &lt;br/&gt; - The user renames a database in the partner’s application. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource in Vercel’s datastores.&lt;br/&gt; - A resource has been suspended due to a lack of use. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource&apos;s status in Vercel&apos;s datastores.&lt;br/&gt;&quot;
+        /// Partner notifies Vercel of any changes made to an Installation or a Resource. Vercel is expected to use `list-resources` and other read APIs to get the new state.&lt;br/&gt; &lt;br/&gt; `resource.updated` event should be dispatched when any state of a resource linked to Vercel is modified by the partner.&lt;br/&gt; `installation.updated` event should be dispatched when an installation&apos;s billing plan is changed via the provider instead of Vercel.&lt;br/&gt; &lt;br/&gt; Resource update use cases: &lt;br/&gt; &lt;br/&gt; - The user renames a database in the partner’s application. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource in Vercel’s datastores.&lt;br/&gt; - A resource has been suspended due to a lack of use. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource&apos;s status in Vercel&apos;s datastores.&lt;br/&gt;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateEvent201Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateEvent201Response?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateEventRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateEventRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateEvent201Response> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateEventRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateEventRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateEvent201Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateEvent201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Partner notifies Vercel of any changes made to an Installation or a Resource. Vercel is expected to use `list-resources` and other read APIs to get the new state.&lt;br/&gt; &lt;br/&gt; `resource.updated` event should be dispatched when any state of a resource linked to Vercel is modified by the partner.&lt;br/&gt; `installation.updated` event should be dispatched when an installation&apos;s billing plan is changed via the provider instead of Vercel.&lt;br/&gt; &lt;br/&gt; Resource update use cases: &lt;br/&gt; &lt;br/&gt; - The user renames a database in the partner’s application. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource in Vercel’s datastores.&lt;br/&gt; - A resource has been suspended due to a lack of use. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource&apos;s status in Vercel&apos;s datastores.&lt;br/&gt;&quot;
+        /// Partner notifies Vercel of any changes made to an Installation or a Resource. Vercel is expected to use `list-resources` and other read APIs to get the new state.&lt;br/&gt; &lt;br/&gt; `resource.updated` event should be dispatched when any state of a resource linked to Vercel is modified by the partner.&lt;br/&gt; `installation.updated` event should be dispatched when an installation&apos;s billing plan is changed via the provider instead of Vercel.&lt;br/&gt; &lt;br/&gt; Resource update use cases: &lt;br/&gt; &lt;br/&gt; - The user renames a database in the partner’s application. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource in Vercel’s datastores.&lt;br/&gt; - A resource has been suspended due to a lack of use. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource&apos;s status in Vercel&apos;s datastores.&lt;br/&gt;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -71,7 +70,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Events
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

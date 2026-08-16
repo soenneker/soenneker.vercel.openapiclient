@@ -31,7 +31,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerCredentialsItemOneOf2Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GithubOAuthCustomHostType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerCredentialsItemOneOf2"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "host", n => { Host = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerCredentialsItemOneOf2Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GithubOAuthCustomHostType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("host", Host);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf159NewOwnerCredentialsItemOneOf2Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GithubOAuthCustomHostType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

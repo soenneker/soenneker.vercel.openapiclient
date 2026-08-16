@@ -211,7 +211,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Target { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf3Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PrType? Type { get; set; }
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -282,7 +282,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "repoId", n => { RepoId = n.GetDoubleValue(); } },
                 { "skippedJobPairs", n => { SkippedJobPairs = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "target", n => { Target = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf3Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PrType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "withCache", n => { WithCache = n.GetBoolValue(); } },
             };
@@ -329,7 +329,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("repoId", RepoId);
             writer.WriteObjectValue<UntypedNode>("skippedJobPairs", SkippedJobPairs);
             writer.WriteStringValue("target", Target);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf99JobOneOf3Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PrType>("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteBoolValue("withCache", WithCache);
             writer.WriteAdditionalData(AdditionalData);

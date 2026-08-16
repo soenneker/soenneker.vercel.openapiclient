@@ -34,14 +34,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string TeamId { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
         /// <summary>The username property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,7 +71,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "origin", n => { Origin = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf323FactorsItemOneOf1Origin>(); } },
                 { "ssoType", n => { SsoType = n.GetStringValue(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
             };
         }
@@ -94,7 +85,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf323FactorsItemOneOf1Origin>("origin", Origin);
             writer.WriteStringValue("ssoType", SsoType);
             writer.WriteStringValue("teamId", TeamId);
-            writer.WriteStringValue("type", Type);
             writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -15,10 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The outcomes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf1>? Outcomes { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItem>? Outcomes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf1> Outcomes { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItem> Outcomes { get; set; }
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestStatus? Status { get; set; }
@@ -56,7 +56,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "outcomes", n => { Outcomes = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf1>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf1.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "outcomes", n => { Outcomes = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItem>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestStatus>(); } },
                 { "statusText", n => { StatusText = n.GetStringValue(); } },
                 { "statusUrl", n => { StatusUrl = n.GetStringValue(); } },
@@ -69,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf1>("outcomes", Outcomes);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItem>("outcomes", Outcomes);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestStatus>("status", Status);
             writer.WriteStringValue("statusText", StatusText);
             writer.WriteStringValue("statusUrl", StatusUrl);

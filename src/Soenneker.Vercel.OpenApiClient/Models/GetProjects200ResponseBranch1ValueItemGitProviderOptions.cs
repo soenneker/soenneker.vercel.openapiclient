@@ -22,13 +22,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemGitProviderOptionsConsolidatedGitCommitStatus ConsolidatedGitCommitStatus { get; set; }
 #endif
-        /// <summary>&quot;Whether the Vercel bot should automatically create GitHub deployments https://docs.github.com/en/rest/deployments/deployments#about-deployments NOTE: repository-dispatch events should be used instead&quot;</summary>
+        /// <summary>Whether the Vercel bot should automatically create GitHub deployments https://docs.github.com/en/rest/deployments/deployments#about-deployments NOTE: repository-dispatch events should be used instead</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemGitProviderOptionsCreateDeployments? CreateDeployments { get; set; }
-        /// <summary>&quot;Whether the Vercel bot should not automatically create GitHub repository-dispatch events on deployment events. https://vercel.com/docs/git/vercel-for-github#repository-dispatch-events - `true`: disable repository-dispatch events for this project (explicit override of the team setting). - `false`: enable repository-dispatch events for this project (explicit override of the team setting). - absent: inherit from `team.disableRepositoryDispatchEvents`.&quot;</summary>
+        /// <summary>Whether the Vercel bot should not automatically create GitHub repository-dispatch events on deployment events. https://vercel.com/docs/git/vercel-for-github#repository-dispatch-events - `true`: disable repository-dispatch events for this project (explicit override of the team setting). - `false`: enable repository-dispatch events for this project (explicit override of the team setting). - absent: inherit from `team.disableRepositoryDispatchEvents`.</summary>
         public bool? DisableRepositoryDispatchEvents { get; set; }
         /// <summary>Whether Vercel should post commit statuses for this project. When omitted, commit statuses remain enabled.</summary>
         public bool? GitCommitStatus { get; set; }
-        /// <summary>&quot;Whether the project requires commits to be signed &amp; verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`.&quot;</summary>
+        /// <summary>Whether the project requires commits to be signed &amp; verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`.</summary>
         public bool? RequireVerifiedCommits { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemGitProviderOptions"/> and sets the default values.

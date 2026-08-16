@@ -187,7 +187,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string TeamId { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLatestDeploymentsItemType? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.LambdasType? Type { get; set; }
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -263,7 +263,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "requestedAt", n => { RequestedAt = n.GetDoubleValue(); } },
                 { "target", n => { Target = n.GetStringValue(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLatestDeploymentsItemType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.LambdasType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "withCache", n => { WithCache = n.GetBoolValue(); } },
@@ -308,7 +308,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("requestedAt", RequestedAt);
             writer.WriteStringValue("target", Target);
             writer.WriteStringValue("teamId", TeamId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProject200ResponseLatestDeploymentsItemType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.LambdasType>("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteStringValue("userId", UserId);
             writer.WriteBoolValue("withCache", WithCache);

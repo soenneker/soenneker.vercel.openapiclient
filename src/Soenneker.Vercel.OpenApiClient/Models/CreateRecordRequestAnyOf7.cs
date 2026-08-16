@@ -31,7 +31,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The TTL value. Must be a number between 60 and 2147483647. Default value is 60.</summary>
         public double? Ttl { get; set; }
         /// <summary>Must be of type `SRV`.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SrvType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "comment", n => { Comment = n.GetStringValue(); } },
                 { "srv", n => { Srv = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7Srv>(global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7Srv.CreateFromDiscriminatorValue); } },
                 { "ttl", n => { Ttl = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SrvType>(); } },
             };
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("comment", Comment);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7Srv>("srv", Srv);
             writer.WriteDoubleValue("ttl", Ttl);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateRecordRequestAnyOf7Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SrvType>("type", Type);
         }
     }
 }

@@ -37,11 +37,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf282PasswordProtection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf282PasswordProtection();
             if("UserEventPayloadOneOf282PasswordProtectionOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UserEventPayloadOneOf282PasswordProtectionOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf282PasswordProtectionOneOf1();
+            }
+            else if("UserEventPayloadOneOf282PasswordProtectionWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserEventPayloadOneOf282PasswordProtectionWrapper = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf282PasswordProtectionWrapper();
             }
             return result;
         }

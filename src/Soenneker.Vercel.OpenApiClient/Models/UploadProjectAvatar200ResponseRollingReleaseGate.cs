@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.&quot;
+    /// Automated gating configuration. Omitted (the default) means no gating is configured, which is equivalent to `enabled: false`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UploadProjectAvatar200ResponseRollingReleaseGate : IAdditionalDataHolder, IParsable
     {
-        /// <summary>&quot;What to do when the gate trips: pause the rollout, or roll it back.&quot;</summary>
+        /// <summary>What to do when the gate trips: pause the rollout, or roll it back.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseRollingReleaseGateAction? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

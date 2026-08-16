@@ -7,44 +7,40 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf4"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetRollingReleaseBillingStatus200Response : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class GetRollingReleaseBillingStatus200Response : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The availableSlots property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseAvailableSlots? AvailableSlots { get; set; }
+        /// <summary>The enabledProjects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf1? GetRollingReleaseBillingStatus200ResponseOneOf1 { get; set; }
+        public List<string>? EnabledProjects { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf1 GetRollingReleaseBillingStatus200ResponseOneOf1 { get; set; }
+        public List<string> EnabledProjects { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf2"/></summary>
+        /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf2? GetRollingReleaseBillingStatus200ResponseOneOf2 { get; set; }
+        public string? Message { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf2 GetRollingReleaseBillingStatus200ResponseOneOf2 { get; set; }
+        public string Message { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf3? GetRollingReleaseBillingStatus200ResponseOneOf3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf3 GetRollingReleaseBillingStatus200ResponseOneOf3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf4? GetRollingReleaseBillingStatus200ResponseOneOf4 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf4 GetRollingReleaseBillingStatus200ResponseOneOf4 { get; set; }
-#endif
+        /// <summary>The reason property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseReason? Reason { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200Response"/> and sets the default values.
+        /// </summary>
+        public GetRollingReleaseBillingStatus200Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,25 +49,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200Response();
-            if("GetRollingReleaseBillingStatus200ResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.GetRollingReleaseBillingStatus200ResponseOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf1();
-            }
-            else if("GetRollingReleaseBillingStatus200ResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.GetRollingReleaseBillingStatus200ResponseOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf2();
-            }
-            else if("GetRollingReleaseBillingStatus200ResponseOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.GetRollingReleaseBillingStatus200ResponseOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf3();
-            }
-            else if("GetRollingReleaseBillingStatus200ResponseOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.GetRollingReleaseBillingStatus200ResponseOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf4();
-            }
-            return result;
+            return new global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200Response();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,23 +57,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(GetRollingReleaseBillingStatus200ResponseOneOf1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return GetRollingReleaseBillingStatus200ResponseOneOf1.GetFieldDeserializers();
-            }
-            else if(GetRollingReleaseBillingStatus200ResponseOneOf2 != null)
-            {
-                return GetRollingReleaseBillingStatus200ResponseOneOf2.GetFieldDeserializers();
-            }
-            else if(GetRollingReleaseBillingStatus200ResponseOneOf3 != null)
-            {
-                return GetRollingReleaseBillingStatus200ResponseOneOf3.GetFieldDeserializers();
-            }
-            else if(GetRollingReleaseBillingStatus200ResponseOneOf4 != null)
-            {
-                return GetRollingReleaseBillingStatus200ResponseOneOf4.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "availableSlots", n => { AvailableSlots = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseAvailableSlots>(); } },
+                { "enabledProjects", n => { EnabledProjects = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseReason>(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -104,22 +72,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(GetRollingReleaseBillingStatus200ResponseOneOf1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf1>(null, GetRollingReleaseBillingStatus200ResponseOneOf1);
-            }
-            else if(GetRollingReleaseBillingStatus200ResponseOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf2>(null, GetRollingReleaseBillingStatus200ResponseOneOf2);
-            }
-            else if(GetRollingReleaseBillingStatus200ResponseOneOf3 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf3>(null, GetRollingReleaseBillingStatus200ResponseOneOf3);
-            }
-            else if(GetRollingReleaseBillingStatus200ResponseOneOf4 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseOneOf4>(null, GetRollingReleaseBillingStatus200ResponseOneOf4);
-            }
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseAvailableSlots>("availableSlots", AvailableSlots);
+            writer.WriteCollectionOfPrimitiveValues<string>("enabledProjects", EnabledProjects);
+            writer.WriteStringValue("message", Message);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetRollingReleaseBillingStatus200ResponseReason>("reason", Reason);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

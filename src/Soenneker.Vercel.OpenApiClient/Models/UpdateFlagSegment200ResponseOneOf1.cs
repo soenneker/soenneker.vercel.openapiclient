@@ -81,7 +81,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Slug { get; set; }
 #endif
         /// <summary>The typeName property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1TypeName? TypeName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SegmentTypeName? TypeName { get; set; }
         /// <summary>The updatedAt property</summary>
         public double? UpdatedAt { get; set; }
         /// <summary>The usedByFlags property</summary>
@@ -134,7 +134,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "typeName", n => { TypeName = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1TypeName>(); } },
+                { "typeName", n => { TypeName = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentTypeName>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "usedByFlags", n => { UsedByFlags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "usedBySegments", n => { UsedBySegments = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -156,7 +156,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSegment200ResponseOneOf1TypeName>("typeName", TypeName);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SegmentTypeName>("typeName", TypeName);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("usedByFlags", UsedByFlags);
             writer.WriteCollectionOfPrimitiveValues<string>("usedBySegments", UsedBySegments);

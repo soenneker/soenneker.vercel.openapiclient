@@ -7,28 +7,50 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequestOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequestOneOf2"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PatchDomainRequest : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class PatchDomainRequest : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequestOneOf1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>This field is deprecated. Please use PATCH /v1/registrar/domains/{domainName}/nameservers instead.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequestOneOf1? PatchDomainRequestOneOf1 { get; set; }
+        public List<string>? CustomNameservers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequestOneOf1 PatchDomainRequestOneOf1 { get; set; }
+        public List<string> CustomNameservers { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequestOneOf2"/></summary>
+        /// <summary>User or team to move domain to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequestOneOf2? PatchDomainRequestOneOf2 { get; set; }
+        public string? Destination { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequestOneOf2 PatchDomainRequestOneOf2 { get; set; }
+        public string Destination { get; set; }
 #endif
+        /// <summary>The op property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Op { get; set; }
+#nullable restore
+#else
+        public string Op { get; set; }
+#endif
+        /// <summary>This field is deprecated. Please use PATCH /v1/registrar/domains/{domainName}/auto-renew instead.</summary>
+        [Obsolete("")]
+        public bool? Renew { get; set; }
+        /// <summary>Specifies whether this is a DNS zone that intends to use Vercel&apos;s nameservers.</summary>
+        public bool? Zone { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequest"/> and sets the default values.
+        /// </summary>
+        public PatchDomainRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,17 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequest();
-            if("PatchDomainRequestOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.PatchDomainRequestOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequestOneOf1();
-            }
-            else if("PatchDomainRequestOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.PatchDomainRequestOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequestOneOf2();
-            }
-            return result;
+            return new global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,15 +67,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PatchDomainRequestOneOf1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return PatchDomainRequestOneOf1.GetFieldDeserializers();
-            }
-            else if(PatchDomainRequestOneOf2 != null)
-            {
-                return PatchDomainRequestOneOf2.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "customNameservers", n => { CustomNameservers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "destination", n => { Destination = n.GetStringValue(); } },
+                { "op", n => { Op = n.GetStringValue(); } },
+                { "renew", n => { Renew = n.GetBoolValue(); } },
+                { "zone", n => { Zone = n.GetBoolValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -72,14 +83,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(PatchDomainRequestOneOf1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequestOneOf1>(null, PatchDomainRequestOneOf1);
-            }
-            else if(PatchDomainRequestOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequestOneOf2>(null, PatchDomainRequestOneOf2);
-            }
+            writer.WriteCollectionOfPrimitiveValues<string>("customNameservers", CustomNameservers);
+            writer.WriteStringValue("destination", Destination);
+            writer.WriteStringValue("op", Op);
+            writer.WriteBoolValue("renew", Renew);
+            writer.WriteBoolValue("zone", Zone);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

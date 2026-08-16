@@ -48,7 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectName { get; set; }
 #endif
         /// <summary>The reason property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf101Reason? Reason { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.IpAllowListReason? Reason { get; set; }
         /// <summary>The sha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,7 +94,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "gitUserPlatform", n => { GitUserPlatform = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf101Reason>(); } },
+                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.IpAllowListReason>(); } },
                 { "sha", n => { Sha = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
             };
@@ -110,7 +110,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("gitUserPlatform", GitUserPlatform);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf101Reason>("reason", Reason);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.IpAllowListReason>("reason", Reason);
             writer.WriteStringValue("sha", Sha);
             writer.WriteStringValue("source", Source);
             writer.WriteAdditionalData(AdditionalData);

@@ -39,7 +39,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegionProvidersProperty Providers { get; set; }
 #endif
-        /// <summary>&quot;Pin scope: `specific` (one provider region), `zone` (geo zone), or `global`.&quot;</summary>
+        /// <summary>Pin scope: `specific` (one provider region), `zone` (geo zone), or `global`.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegionScope? Scope { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegion"/> and sets the default values.

@@ -8,15 +8,21 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>
+    /// Composed type wrapper for classes <see cref="double"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAliasItemDeploymentAliasAssignedOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetProjects200ResponseOneOf3ProjectsItemAliasItemDeploymentAliasAssigned : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="bool"/></summary>
-        public bool? Boolean { get; set; }
         /// <summary>Composed type representation for type <see cref="double"/></summary>
         public double? Double { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAliasItemDeploymentAliasAssignedOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAliasItemDeploymentAliasAssignedOneOf2? GetProjects200ResponseOneOf3ProjectsItemAliasItemDeploymentAliasAssignedOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAliasItemDeploymentAliasAssignedOneOf2 GetProjects200ResponseOneOf3ProjectsItemAliasItemDeploymentAliasAssignedOneOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -27,11 +33,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAliasItemDeploymentAliasAssigned();
-            if(parseNode.GetBoolValue() is bool booleanValue)
-            {
-                result.Boolean = booleanValue;
-            }
-            else if(parseNode.GetDoubleValue() is double doubleValue)
+            if(parseNode.GetDoubleValue() is double doubleValue)
             {
                 result.Double = doubleValue;
             }
@@ -43,6 +45,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if(GetProjects200ResponseOneOf3ProjectsItemAliasItemDeploymentAliasAssignedOneOf2 != null)
+            {
+                return GetProjects200ResponseOneOf3ProjectsItemAliasItemDeploymentAliasAssignedOneOf2.GetFieldDeserializers();
+            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -52,9 +58,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(Boolean != null)
+            if(GetProjects200ResponseOneOf3ProjectsItemAliasItemDeploymentAliasAssignedOneOf2 != null)
             {
-                writer.WriteBoolValue(null, Boolean);
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAliasItemDeploymentAliasAssignedOneOf2>(null, GetProjects200ResponseOneOf3ProjectsItemAliasItemDeploymentAliasAssignedOneOf2);
             }
             else if(Double != null)
             {

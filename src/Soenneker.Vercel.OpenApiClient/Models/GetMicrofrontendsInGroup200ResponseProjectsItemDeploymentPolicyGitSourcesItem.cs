@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;`enabled: true` with empty `sources` is deny-all.&quot;
+    /// `enabled: true` with empty `sources` is deny-all.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetMicrofrontendsInGroup200ResponseProjectsItemDeploymentPolicyGitSourcesItem : IAdditionalDataHolder, IParsable

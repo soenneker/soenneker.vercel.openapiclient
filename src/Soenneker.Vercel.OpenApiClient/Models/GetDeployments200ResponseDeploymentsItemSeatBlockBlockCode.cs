@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>&quot;The NSNB decision code for the seat block. TODO: We should consolidate block types.&quot;</summary>
+    /// <summary>The NSNB decision code for the seat block. TODO: We should consolidate block types.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetDeployments200ResponseDeploymentsItemSeatBlockBlockCode
     {

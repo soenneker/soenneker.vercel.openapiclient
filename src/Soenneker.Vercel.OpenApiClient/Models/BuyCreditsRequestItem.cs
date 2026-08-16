@@ -19,7 +19,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The type of credits to purchase.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.BuyCreditsRequestItemCreditType? CreditType { get; set; }
         /// <summary>The type of item to purchase.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCreditsRequestItemType? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreditsType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCreditsRequestItem"/> and sets the default values.
         /// </summary>
@@ -47,7 +47,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "amount", n => { Amount = n.GetIntValue(); } },
                 { "creditType", n => { CreditType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCreditsRequestItemCreditType>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCreditsRequestItemType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreditsType>(); } },
             };
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("amount", Amount);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCreditsRequestItemCreditType>("creditType", CreditType);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCreditsRequestItemType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreditsType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

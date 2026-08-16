@@ -3,7 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Vercel.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -34,25 +33,24 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Promote.Item
         {
         }
         /// <summary>
-        /// &quot;Allows users to promote a deployment to production. Note: This does NOT rebuild the deployment. If you need that, then call create-deployments endpoint.&quot;
+        /// Allows users to promote a deployment to production. Note: This does NOT rebuild the deployment. If you need that, then call create-deployments endpoint.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.RequestPromote201Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.RequestPromote201Response?> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Promote.Item.WithDeploymentItemRequestBuilder.WithDeploymentItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Promote.Item.WithDeploymentItemRequestBuilder.WithDeploymentItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.RequestPromote201Response> PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Promote.Item.WithDeploymentItemRequestBuilder.WithDeploymentItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Promote.Item.WithDeploymentItemRequestBuilder.WithDeploymentItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.RequestPromote201Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.RequestPromote201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Allows users to promote a deployment to production. Note: This does NOT rebuild the deployment. If you need that, then call create-deployments endpoint.&quot;
+        /// Allows users to promote a deployment to production. Note: This does NOT rebuild the deployment. If you need that, then call create-deployments endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,7 +65,6 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Promote.Item
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -80,7 +77,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Promote.Item
             return new global::Soenneker.Vercel.OpenApiClient.V10.Projects.Item.Promote.Item.WithDeploymentItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Allows users to promote a deployment to production. Note: This does NOT rebuild the deployment. If you need that, then call create-deployments endpoint.&quot;
+        /// Allows users to promote a deployment to production. Note: This does NOT rebuild the deployment. If you need that, then call create-deployments endpoint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithDeploymentItemRequestBuilderPostQueryParameters 

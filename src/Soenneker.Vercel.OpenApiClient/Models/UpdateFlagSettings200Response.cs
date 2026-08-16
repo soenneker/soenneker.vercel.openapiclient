@@ -59,7 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectId { get; set; }
 #endif
         /// <summary>The typeName property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSettings200ResponseTypeName? TypeName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SettingsTypeName? TypeName { get; set; }
         /// <summary>The updatedAt property</summary>
         public double? UpdatedAt { get; set; }
         /// <summary>
@@ -94,7 +94,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSettings200ResponseMetadata>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSettings200ResponseMetadata.CreateFromDiscriminatorValue); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "typeName", n => { TypeName = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSettings200ResponseTypeName>(); } },
+                { "typeName", n => { TypeName = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SettingsTypeName>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
             };
         }
@@ -112,7 +112,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSettings200ResponseMetadata>("metadata", Metadata);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlagSettings200ResponseTypeName>("typeName", TypeName);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SettingsTypeName>("typeName", TypeName);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

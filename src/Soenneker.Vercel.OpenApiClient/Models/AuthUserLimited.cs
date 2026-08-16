@@ -75,7 +75,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public AuthUserLimited()
         {
             AdditionalData = new Dictionary<string, object>();
-            Limited = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

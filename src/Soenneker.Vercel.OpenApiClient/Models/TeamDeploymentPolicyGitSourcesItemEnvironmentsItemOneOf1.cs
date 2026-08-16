@@ -17,7 +17,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The target property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1Target? Target { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1Type? Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SystemType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1"/> and sets the default values.
         /// </summary>
@@ -44,7 +44,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "target", n => { Target = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1Target>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1Type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SystemType>(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1Target>("target", Target);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicyGitSourcesItemEnvironmentsItemOneOf1Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SystemType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

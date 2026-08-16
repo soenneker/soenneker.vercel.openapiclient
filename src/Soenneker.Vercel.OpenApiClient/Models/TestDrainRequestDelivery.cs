@@ -27,7 +27,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Endpoint { get; set; }
 #endif
         /// <summary>The fileStructure property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryFileStructure? FileStructure { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.HiveFileStructure? FileStructure { get; set; }
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,7 +100,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "compression", n => { Compression = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryCompression>(); } },
                 { "encoding", n => { Encoding = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryEncoding>(); } },
                 { "endpoint", n => { Endpoint = n.GetStringValue(); } },
-                { "fileStructure", n => { FileStructure = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryFileStructure>(); } },
+                { "fileStructure", n => { FileStructure = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.HiveFileStructure>(); } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryHeaders>(global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryHeaders.CreateFromDiscriminatorValue); } },
                 { "objectAcl", n => { ObjectAcl = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryObjectAcl>(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
@@ -120,7 +120,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryCompression>("compression", Compression);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryEncoding>("encoding", Encoding);
             writer.WriteStringValue("endpoint", Endpoint);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryFileStructure>("fileStructure", FileStructure);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.HiveFileStructure>("fileStructure", FileStructure);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryHeaders>("headers", Headers);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TestDrainRequestDeliveryObjectAcl>("objectAcl", ObjectAcl);
             writer.WriteStringValue("region", Region);

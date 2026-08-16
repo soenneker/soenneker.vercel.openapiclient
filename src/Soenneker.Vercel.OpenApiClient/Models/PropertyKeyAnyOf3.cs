@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Key { get; set; }
 #endif
         /// <summary>The tag property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyAnyOf3Tag? Tag { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SymbolTag? Tag { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "key", n => { Key = n.GetStringValue(); } },
-                { "_tag", n => { Tag = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyAnyOf3Tag>(); } },
+                { "_tag", n => { Tag = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SymbolTag>(); } },
             };
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("key", Key);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PropertyKeyAnyOf3Tag>("_tag", Tag);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SymbolTag>("_tag", Tag);
         }
     }
 }

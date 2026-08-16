@@ -15,7 +15,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The key property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRouteHasItemKey? Key { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.XVercelIpCountryKey? Key { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRouteHasItemType? Type { get; set; }
         /// <summary>The value property</summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "key", n => { Key = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRouteHasItemKey>(); } },
+                { "key", n => { Key = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.XVercelIpCountryKey>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRouteHasItemType>(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRouteHasItemValue>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRouteHasItemValue.CreateFromDiscriminatorValue); } },
             };
@@ -63,7 +63,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRouteHasItemKey>("key", Key);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.XVercelIpCountryKey>("key", Key);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRouteHasItemType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRouteHasItemValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);

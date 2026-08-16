@@ -36,7 +36,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public GetProjects200ResponseBranch1ValueItemWebAnalytics()
         {
             AdditionalData = new Dictionary<string, object>();
-            HasData = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

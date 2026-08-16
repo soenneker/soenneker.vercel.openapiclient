@@ -48,8 +48,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public UpdateMicrofrontends200ResponseMicrofrontends()
         {
             AdditionalData = new Dictionary<string, object>();
-            Enabled = true;
-            IsDefaultApp = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -22,7 +22,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilitiesSecretRotationBranch2()
         {
             AdditionalData = new Dictionary<string, object>();
-            Value = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

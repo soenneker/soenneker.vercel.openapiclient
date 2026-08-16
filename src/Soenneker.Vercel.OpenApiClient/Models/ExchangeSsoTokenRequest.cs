@@ -7,28 +7,70 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf2"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ExchangeSsoTokenRequest : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class ExchangeSsoTokenRequest : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The integration client id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf1? ExchangeSsoTokenRequestOneOf1 { get; set; }
+        public string? ClientId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf1 ExchangeSsoTokenRequestOneOf1 { get; set; }
+        public string ClientId { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf2"/></summary>
+        /// <summary>The integration client secret</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf2? ExchangeSsoTokenRequestOneOf2 { get; set; }
+        public string? ClientSecret { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf2 ExchangeSsoTokenRequestOneOf2 { get; set; }
+        public string ClientSecret { get; set; }
 #endif
+        /// <summary>The sensitive code received from Vercel</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Code { get; set; }
+#nullable restore
+#else
+        public string Code { get; set; }
+#endif
+        /// <summary>The grant type, when using x-www-form-urlencoded content type</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestGrantType? GrantType { get; set; }
+        /// <summary>The integration redirect URI</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RedirectUri { get; set; }
+#nullable restore
+#else
+        public string RedirectUri { get; set; }
+#endif
+        /// <summary>The refresh token received from previous token exchange</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RefreshToken { get; set; }
+#nullable restore
+#else
+        public string RefreshToken { get; set; }
+#endif
+        /// <summary>The state received from the initialization request</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? State { get; set; }
+#nullable restore
+#else
+        public string State { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequest"/> and sets the default values.
+        /// </summary>
+        public ExchangeSsoTokenRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,17 +79,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequest();
-            if("ExchangeSsoTokenRequestOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ExchangeSsoTokenRequestOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf1();
-            }
-            else if("ExchangeSsoTokenRequestOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ExchangeSsoTokenRequestOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf2();
-            }
-            return result;
+            return new global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,15 +87,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ExchangeSsoTokenRequestOneOf1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return ExchangeSsoTokenRequestOneOf1.GetFieldDeserializers();
-            }
-            else if(ExchangeSsoTokenRequestOneOf2 != null)
-            {
-                return ExchangeSsoTokenRequestOneOf2.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "client_id", n => { ClientId = n.GetStringValue(); } },
+                { "client_secret", n => { ClientSecret = n.GetStringValue(); } },
+                { "code", n => { Code = n.GetStringValue(); } },
+                { "grant_type", n => { GrantType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestGrantType>(); } },
+                { "redirect_uri", n => { RedirectUri = n.GetStringValue(); } },
+                { "refresh_token", n => { RefreshToken = n.GetStringValue(); } },
+                { "state", n => { State = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -72,14 +105,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ExchangeSsoTokenRequestOneOf1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf1>(null, ExchangeSsoTokenRequestOneOf1);
-            }
-            else if(ExchangeSsoTokenRequestOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestOneOf2>(null, ExchangeSsoTokenRequestOneOf2);
-            }
+            writer.WriteStringValue("client_id", ClientId);
+            writer.WriteStringValue("client_secret", ClientSecret);
+            writer.WriteStringValue("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ExchangeSsoTokenRequestGrantType>("grant_type", GrantType);
+            writer.WriteStringValue("redirect_uri", RedirectUri);
+            writer.WriteStringValue("refresh_token", RefreshToken);
+            writer.WriteStringValue("state", State);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

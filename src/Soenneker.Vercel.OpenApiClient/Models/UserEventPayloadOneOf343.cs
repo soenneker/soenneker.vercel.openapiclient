@@ -33,7 +33,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string SessionId { get; set; }
 #endif
-        /// <summary>&quot;Currently emitted session kinds: chat, investigation.&quot;</summary>
+        /// <summary>Currently emitted session kinds: chat, investigation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SessionKind { get; set; }
@@ -41,7 +41,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string SessionKind { get; set; }
 #endif
-        /// <summary>&quot;Currently emitted surfaces: dashboard, internal, slack, automation, github.&quot;</summary>
+        /// <summary>Currently emitted surfaces: dashboard, internal, slack, automation, github.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Surface { get; set; }

@@ -7,28 +7,44 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.StopSession200ResponseOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.StopSession200ResponseOneOf2"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class StopSession200Response : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class StopSession200Response : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.StopSession200ResponseOneOf1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>This object contains information related to a Vercel NamedSandbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.StopSession200ResponseOneOf1? StopSession200ResponseOneOf1 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox? Sandbox { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.StopSession200ResponseOneOf1 StopSession200ResponseOneOf1 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox Sandbox { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.StopSession200ResponseOneOf2"/></summary>
+        /// <summary>This object contains information related to a Vercel Sandbox Session. v2 endpoints return &quot;session&quot; instead of &quot;sandbox&quot; as the response wrapper key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.StopSession200ResponseOneOf2? StopSession200ResponseOneOf2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.Session? Session { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.StopSession200ResponseOneOf2 StopSession200ResponseOneOf2 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.Session Session { get; set; }
 #endif
+        /// <summary>This object contains information related to a Snapshot of a Vercel Sandbox session (v2 API).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.Snapshot? Snapshot { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.Snapshot Snapshot { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.StopSession200Response"/> and sets the default values.
+        /// </summary>
+        public StopSession200Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,17 +53,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.StopSession200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Vercel.OpenApiClient.Models.StopSession200Response();
-            if("StopSession200ResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.StopSession200ResponseOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.StopSession200ResponseOneOf1();
-            }
-            else if("StopSession200ResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.StopSession200ResponseOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.StopSession200ResponseOneOf2();
-            }
-            return result;
+            return new global::Soenneker.Vercel.OpenApiClient.Models.StopSession200Response();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,15 +61,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(StopSession200ResponseOneOf1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return StopSession200ResponseOneOf1.GetFieldDeserializers();
-            }
-            else if(StopSession200ResponseOneOf2 != null)
-            {
-                return StopSession200ResponseOneOf2.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "sandbox", n => { Sandbox = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox>(global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox.CreateFromDiscriminatorValue); } },
+                { "session", n => { Session = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Session>(global::Soenneker.Vercel.OpenApiClient.Models.Session.CreateFromDiscriminatorValue); } },
+                { "snapshot", n => { Snapshot = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Snapshot>(global::Soenneker.Vercel.OpenApiClient.Models.Snapshot.CreateFromDiscriminatorValue); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -72,14 +75,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(StopSession200ResponseOneOf1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.StopSession200ResponseOneOf1>(null, StopSession200ResponseOneOf1);
-            }
-            else if(StopSession200ResponseOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.StopSession200ResponseOneOf2>(null, StopSession200ResponseOneOf2);
-            }
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandbox>("sandbox", Sandbox);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Session>("session", Session);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Snapshot>("snapshot", Snapshot);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

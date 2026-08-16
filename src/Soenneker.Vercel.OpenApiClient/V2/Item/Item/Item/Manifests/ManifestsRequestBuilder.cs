@@ -16,7 +16,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Item.Item.Item.Manifests
     public partial class ManifestsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v2.item.item.item.manifests.item collection</summary>
-        /// <param name="position">&quot;Manifest reference: a tag or digest.&quot;</param>
+        /// <param name="position">Manifest reference: a tag or digest.</param>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Item.Item.Item.Manifests.Item.WithReferenceItemRequestBuilder"/></returns>
         public global::Soenneker.Vercel.OpenApiClient.V2.Item.Item.Item.Manifests.Item.WithReferenceItemRequestBuilder this[string position]
         {

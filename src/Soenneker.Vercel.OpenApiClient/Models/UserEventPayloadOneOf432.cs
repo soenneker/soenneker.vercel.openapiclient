@@ -63,7 +63,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ReqUrl { get; set; }
 #endif
-        /// <summary>&quot;Scope of the token: - `&apos;user&apos;`: full-account token (not tied to any team). - `&apos;team&apos;`: scoped to a single team. - `&apos;project&apos;`: scoped to a single project within a team.&quot;</summary>
+        /// <summary>Scope of the token: - `&apos;user&apos;`: full-account token (not tied to any team). - `&apos;team&apos;`: scoped to a single team. - `&apos;project&apos;`: scoped to a single project within a team.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf432Scope? Scope { get; set; }
         /// <summary>Present when `scope` is `&apos;team&apos;` or `&apos;project&apos;`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,7 +98,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string TokenName { get; set; }
 #endif
         /// <summary>The token prefix used when showing a safe checksum-style fingerprint.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf432TokenPrefix? TokenPrefix { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.VcpTokenPrefix? TokenPrefix { get; set; }
         /// <summary>The token checksum suffix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,7 +154,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "teamSlug", n => { TeamSlug = n.GetStringValue(); } },
                 { "tokenId", n => { TokenId = n.GetStringValue(); } },
                 { "tokenName", n => { TokenName = n.GetStringValue(); } },
-                { "tokenPrefix", n => { TokenPrefix = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf432TokenPrefix>(); } },
+                { "tokenPrefix", n => { TokenPrefix = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcpTokenPrefix>(); } },
                 { "tokenSuffix", n => { TokenSuffix = n.GetStringValue(); } },
                 { "userAgent", n => { UserAgent = n.GetStringValue(); } },
             };
@@ -180,7 +180,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("teamSlug", TeamSlug);
             writer.WriteStringValue("tokenId", TokenId);
             writer.WriteStringValue("tokenName", TokenName);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf432TokenPrefix>("tokenPrefix", TokenPrefix);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcpTokenPrefix>("tokenPrefix", TokenPrefix);
             writer.WriteStringValue("tokenSuffix", TokenSuffix);
             writer.WriteStringValue("userAgent", UserAgent);
             writer.WriteAdditionalData(AdditionalData);
