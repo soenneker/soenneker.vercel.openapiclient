@@ -1334,6 +1334,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Route { get; set; }
 #endif
+        /// <summary>The ruleCategory property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RuleCategory { get; set; }
+#nullable restore
+#else
+        public string RuleCategory { get; set; }
+#endif
         /// <summary>The runtime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1942,6 +1950,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "reviewStatus", n => { ReviewStatus = n.GetStringValue(); } },
                 { "rewriteDestinationHostname", n => { RewriteDestinationHostname = n.GetStringValue(); } },
                 { "route", n => { Route = n.GetStringValue(); } },
+                { "ruleCategory", n => { RuleCategory = n.GetStringValue(); } },
                 { "runtime", n => { Runtime = n.GetStringValue(); } },
                 { "sandboxName", n => { SandboxName = n.GetStringValue(); } },
                 { "sandboxSessionId", n => { SandboxSessionId = n.GetStringValue(); } },
@@ -2169,6 +2178,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("reviewStatus", ReviewStatus);
             writer.WriteStringValue("rewriteDestinationHostname", RewriteDestinationHostname);
             writer.WriteStringValue("route", Route);
+            writer.WriteStringValue("ruleCategory", RuleCategory);
             writer.WriteStringValue("runtime", Runtime);
             writer.WriteStringValue("sandboxName", SandboxName);
             writer.WriteStringValue("sandboxSessionId", SandboxSessionId);

@@ -8,6 +8,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum GetMicrofrontendsInGroup200ResponseProjectsItemSandboxFailoverRegionsItem
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "cdg1")]
+        #pragma warning disable CS1591
+        Cdg1,
+        #pragma warning restore CS1591
         [EnumMember(Value = "cle1")]
         #pragma warning disable CS1591
         Cle1,

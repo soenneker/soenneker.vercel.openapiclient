@@ -31,6 +31,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string AliasId { get; set; }
 #endif
+        /// <summary>The aliasUpdatedAt property</summary>
+        public double? AliasUpdatedAt { get; set; }
+        /// <summary>The deployment property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf38Deployment? Deployment { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf38Deployment Deployment { get; set; }
+#endif
         /// <summary>The deploymentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,13 +49,43 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string DeploymentId { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The deploymentUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? DeploymentUrl { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string DeploymentUrl { get; set; }
+#endif
+        /// <summary>The oldDeploymentId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OldDeploymentId { get; set; }
+#nullable restore
+#else
+        public string OldDeploymentId { get; set; }
+#endif
+        /// <summary>The redirect property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Redirect { get; set; }
+#nullable restore
+#else
+        public string Redirect { get; set; }
+#endif
+        /// <summary>The redirectStatusCode property</summary>
+        public double? RedirectStatusCode { get; set; }
+        /// <summary>The ruleCount property</summary>
+        public double? RuleCount { get; set; }
+        /// <summary>The system property</summary>
+        public bool? System { get; set; }
+        /// <summary>The target property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Target { get; set; }
+#nullable restore
+#else
+        public string Target { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf38"/> and sets the default values.
@@ -74,8 +114,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "alias", n => { Alias = n.GetStringValue(); } },
                 { "aliasId", n => { AliasId = n.GetStringValue(); } },
+                { "aliasUpdatedAt", n => { AliasUpdatedAt = n.GetDoubleValue(); } },
+                { "deployment", n => { Deployment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf38Deployment>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf38Deployment.CreateFromDiscriminatorValue); } },
                 { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "deploymentUrl", n => { DeploymentUrl = n.GetStringValue(); } },
+                { "oldDeploymentId", n => { OldDeploymentId = n.GetStringValue(); } },
+                { "redirect", n => { Redirect = n.GetStringValue(); } },
+                { "redirectStatusCode", n => { RedirectStatusCode = n.GetDoubleValue(); } },
+                { "ruleCount", n => { RuleCount = n.GetDoubleValue(); } },
+                { "system", n => { System = n.GetBoolValue(); } },
+                { "target", n => { Target = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -87,8 +135,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("alias", Alias);
             writer.WriteStringValue("aliasId", AliasId);
+            writer.WriteDoubleValue("aliasUpdatedAt", AliasUpdatedAt);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf38Deployment>("deployment", Deployment);
             writer.WriteStringValue("deploymentId", DeploymentId);
-            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("deploymentUrl", DeploymentUrl);
+            writer.WriteStringValue("oldDeploymentId", OldDeploymentId);
+            writer.WriteStringValue("redirect", Redirect);
+            writer.WriteDoubleValue("redirectStatusCode", RedirectStatusCode);
+            writer.WriteDoubleValue("ruleCount", RuleCount);
+            writer.WriteBoolValue("system", System);
+            writer.WriteStringValue("target", Target);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

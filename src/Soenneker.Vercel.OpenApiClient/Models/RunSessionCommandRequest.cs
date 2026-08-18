@@ -48,7 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public bool? Logs { get; set; }
         /// <summary>Execute the command with root (superuser) privileges.</summary>
         public bool? Sudo { get; set; }
-        /// <summary>Maximum duration in milliseconds the command may run before it is killed with SIGKILL. Enforced at exec time, independently of `wait`.</summary>
+        /// <summary>Maximum duration in milliseconds the command may run before it is killed with SIGKILL, up to 5 hours. Enforced at exec time, independently of `wait`.</summary>
         public int? Timeout { get; set; }
         /// <summary>If true, returns an ND-JSON stream that emits the command status when started and again when finished. Useful for synchronously waiting for command completion.</summary>
         public bool? Wait { get; set; }

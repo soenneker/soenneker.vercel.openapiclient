@@ -23,21 +23,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The directoryType property</summary>
+        /// <summary>The author property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DirectoryType { get; set; }
+        public string? Author { get; set; }
 #nullable restore
 #else
-        public string DirectoryType { get; set; }
-#endif
-        /// <summary>The user property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf33User? User { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf33User User { get; set; }
+        public string Author { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf33"/> and sets the default values.
@@ -65,8 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accessGroup", n => { AccessGroup = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf33AccessGroup>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf33AccessGroup.CreateFromDiscriminatorValue); } },
-                { "directoryType", n => { DirectoryType = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf33User>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf33User.CreateFromDiscriminatorValue); } },
+                { "author", n => { Author = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -77,8 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf33AccessGroup>("accessGroup", AccessGroup);
-            writer.WriteStringValue("directoryType", DirectoryType);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf33User>("user", User);
+            writer.WriteStringValue("author", Author);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -131,6 +131,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> ProviderOnly { get; set; }
 #endif
+        /// <summary>Arbitrary per-provider AI SDK options, keyed by gateway provider slug.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderOptionsProperty? ProviderOptions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderOptionsProperty ProviderOptions { get; set; }
+#endif
         /// <summary>Ordered list of providers to try as fallbacks on failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -243,6 +251,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "observabilityTags", n => { ObservabilityTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "providerOnly", n => { ProviderOnly = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "providerOptions", n => { ProviderOptions = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderOptionsProperty>(global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderOptionsProperty.CreateFromDiscriminatorValue); } },
                 { "providerOrder", n => { ProviderOrder = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "providerTimeouts", n => { ProviderTimeouts = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderTimeouts>(global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderTimeouts.CreateFromDiscriminatorValue); } },
                 { "requires", n => { Requires = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -284,6 +293,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("observabilityTags", ObservabilityTags);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteCollectionOfPrimitiveValues<string>("providerOnly", ProviderOnly);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderOptionsProperty>("providerOptions", ProviderOptions);
             writer.WriteCollectionOfPrimitiveValues<string>("providerOrder", ProviderOrder);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderTimeouts>("providerTimeouts", ProviderTimeouts);
             writer.WriteCollectionOfPrimitiveValues<string>("requires", Requires);

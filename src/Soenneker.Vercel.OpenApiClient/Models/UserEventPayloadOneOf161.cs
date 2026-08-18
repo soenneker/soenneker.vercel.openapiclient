@@ -15,29 +15,45 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The destinationTeamId property</summary>
+        /// <summary>The fromDeploymentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationTeamId { get; set; }
+        public string? FromDeploymentId { get; set; }
 #nullable restore
 #else
-        public string DestinationTeamId { get; set; }
+        public string FromDeploymentId { get; set; }
 #endif
-        /// <summary>The destinationTeamName property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationTeamName { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string DestinationTeamName { get; set; }
+        public string ProjectId { get; set; }
 #endif
-        /// <summary>The integration property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf161Integration? Integration { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf161Integration Integration { get; set; }
+        public string ProjectName { get; set; }
+#endif
+        /// <summary>The reason property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Reason { get; set; }
+#nullable restore
+#else
+        public string Reason { get; set; }
+#endif
+        /// <summary>The toDeploymentId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ToDeploymentId { get; set; }
+#nullable restore
+#else
+        public string ToDeploymentId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf161"/> and sets the default values.
@@ -64,9 +80,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "destinationTeamId", n => { DestinationTeamId = n.GetStringValue(); } },
-                { "destinationTeamName", n => { DestinationTeamName = n.GetStringValue(); } },
-                { "integration", n => { Integration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf161Integration>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf161Integration.CreateFromDiscriminatorValue); } },
+                { "fromDeploymentId", n => { FromDeploymentId = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "toDeploymentId", n => { ToDeploymentId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +94,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("destinationTeamId", DestinationTeamId);
-            writer.WriteStringValue("destinationTeamName", DestinationTeamName);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf161Integration>("integration", Integration);
+            writer.WriteStringValue("fromDeploymentId", FromDeploymentId);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("reason", Reason);
+            writer.WriteStringValue("toDeploymentId", ToDeploymentId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

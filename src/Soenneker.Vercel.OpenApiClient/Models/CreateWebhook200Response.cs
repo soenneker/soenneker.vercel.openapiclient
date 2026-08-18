@@ -14,6 +14,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The alertRuleIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AlertRuleIds { get; set; }
+#nullable restore
+#else
+        public List<string> AlertRuleIds { get; set; }
+#endif
         /// <summary>A number containing the date when the webhook was created in in milliseconds</summary>
         public double? CreatedAt { get; set; }
         /// <summary>The webhooks events</summary>
@@ -91,6 +99,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "alertRuleIds", n => { AlertRuleIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "events", n => { Events = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateWebhook200ResponseEventsItem>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -108,6 +117,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("alertRuleIds", AlertRuleIds);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateWebhook200ResponseEventsItem>("events", Events);
             writer.WriteStringValue("id", Id);

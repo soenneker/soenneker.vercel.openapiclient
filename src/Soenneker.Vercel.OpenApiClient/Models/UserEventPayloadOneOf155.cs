@@ -15,22 +15,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The newOwnerId property</summary>
+        /// <summary>The configChangeCount property</summary>
+        public double? ConfigChangeCount { get; set; }
+        /// <summary>The configChanges property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewOwnerId { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155ConfigChangesItemProperty>? ConfigChanges { get; set; }
 #nullable restore
 #else
-        public string NewOwnerId { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155ConfigChangesItemProperty> ConfigChanges { get; set; }
 #endif
-        /// <summary>The previousOwnerId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PreviousOwnerId { get; set; }
-#nullable restore
-#else
-        public string PreviousOwnerId { get; set; }
-#endif
+        /// <summary>The configVersion property</summary>
+        public double? ConfigVersion { get; set; }
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +35,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
+        /// <summary>The projectName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectName { get; set; }
+#nullable restore
+#else
+        public string ProjectName { get; set; }
+#endif
+        /// <summary>The restore property</summary>
+        public bool? Restore { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155"/> and sets the default values.
         /// </summary>
@@ -64,9 +70,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "newOwnerId", n => { NewOwnerId = n.GetStringValue(); } },
-                { "previousOwnerId", n => { PreviousOwnerId = n.GetStringValue(); } },
+                { "configChangeCount", n => { ConfigChangeCount = n.GetDoubleValue(); } },
+                { "configChanges", n => { ConfigChanges = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155ConfigChangesItemProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155ConfigChangesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "configVersion", n => { ConfigVersion = n.GetDoubleValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "restore", n => { Restore = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +85,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("newOwnerId", NewOwnerId);
-            writer.WriteStringValue("previousOwnerId", PreviousOwnerId);
+            writer.WriteDoubleValue("configChangeCount", ConfigChangeCount);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155ConfigChangesItemProperty>("configChanges", ConfigChanges);
+            writer.WriteDoubleValue("configVersion", ConfigVersion);
             writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteBoolValue("restore", Restore);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

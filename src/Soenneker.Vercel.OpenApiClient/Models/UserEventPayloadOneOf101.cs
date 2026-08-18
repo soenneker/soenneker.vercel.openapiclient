@@ -15,21 +15,57 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The gitCommitterName property</summary>
+        /// <summary>The alias property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitCommitterName { get; set; }
+        public List<string>? Alias { get; set; }
 #nullable restore
 #else
-        public string GitCommitterName { get; set; }
+        public List<string> Alias { get; set; }
 #endif
-        /// <summary>The gitUserPlatform property</summary>
+        /// <summary>The deployment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitUserPlatform { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf101Deployment? Deployment { get; set; }
 #nullable restore
 #else
-        public string GitUserPlatform { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf101Deployment Deployment { get; set; }
+#endif
+        /// <summary>The deploymentId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeploymentId { get; set; }
+#nullable restore
+#else
+        public string DeploymentId { get; set; }
+#endif
+        /// <summary>The forced property</summary>
+        public bool? Forced { get; set; }
+        /// <summary>The gitCredentialSource property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.ExternalTokenGitCredentialSource? GitCredentialSource { get; set; }
+        /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>The plan property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Plan { get; set; }
+#nullable restore
+#else
+        public string Plan { get; set; }
+#endif
+        /// <summary>The project property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Project { get; set; }
+#nullable restore
+#else
+        public string Project { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,31 +75,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The regions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public List<string>? Regions { get; set; }
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public List<string> Regions { get; set; }
 #endif
-        /// <summary>The reason property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.IpAllowListReason? Reason { get; set; }
-        /// <summary>The sha property</summary>
+        /// <summary>The target property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sha { get; set; }
+        public string? Target { get; set; }
 #nullable restore
 #else
-        public string Sha { get; set; }
+        public string Target { get; set; }
 #endif
-        /// <summary>The source property</summary>
+        /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Source { get; set; }
+        public string? Type { get; set; }
 #nullable restore
 #else
-        public string Source { get; set; }
+        public string Type { get; set; }
+#endif
+        /// <summary>The url property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Url { get; set; }
+#nullable restore
+#else
+        public string Url { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf101"/> and sets the default values.
@@ -90,13 +132,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "gitCommitterName", n => { GitCommitterName = n.GetStringValue(); } },
-                { "gitUserPlatform", n => { GitUserPlatform = n.GetStringValue(); } },
+                { "alias", n => { Alias = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "deployment", n => { Deployment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf101Deployment>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf101Deployment.CreateFromDiscriminatorValue); } },
+                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
+                { "forced", n => { Forced = n.GetBoolValue(); } },
+                { "gitCredentialSource", n => { GitCredentialSource = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ExternalTokenGitCredentialSource>(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "plan", n => { Plan = n.GetStringValue(); } },
+                { "project", n => { Project = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.IpAllowListReason>(); } },
-                { "sha", n => { Sha = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetStringValue(); } },
+                { "regions", n => { Regions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "target", n => { Target = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -106,13 +154,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("gitCommitterName", GitCommitterName);
-            writer.WriteStringValue("gitUserPlatform", GitUserPlatform);
+            writer.WriteCollectionOfPrimitiveValues<string>("alias", Alias);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf101Deployment>("deployment", Deployment);
+            writer.WriteStringValue("deploymentId", DeploymentId);
+            writer.WriteBoolValue("forced", Forced);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ExternalTokenGitCredentialSource>("gitCredentialSource", GitCredentialSource);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("plan", Plan);
+            writer.WriteStringValue("project", Project);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.IpAllowListReason>("reason", Reason);
-            writer.WriteStringValue("sha", Sha);
-            writer.WriteStringValue("source", Source);
+            writer.WriteCollectionOfPrimitiveValues<string>("regions", Regions);
+            writer.WriteStringValue("target", Target);
+            writer.WriteStringValue("type", Type);
+            writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

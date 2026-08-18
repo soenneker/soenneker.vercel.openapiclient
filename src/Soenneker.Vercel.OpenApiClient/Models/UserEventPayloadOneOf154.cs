@@ -13,27 +13,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf154 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The action property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154Action? Action { get; set; }
-        /// <summary>The active property</summary>
-        public bool? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The projectId property</summary>
+        /// <summary>The configChangeCount property</summary>
+        public double? ConfigChangeCount { get; set; }
+        /// <summary>The configChanges property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154ConfigChangesItemProperty>? ConfigChanges { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154ConfigChangesItemProperty> ConfigChanges { get; set; }
 #endif
-        /// <summary>The rulesetName property</summary>
+        /// <summary>The configVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RulesetName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154.UserEventPayloadOneOf154_configVersion? ConfigVersion { get; set; }
 #nullable restore
 #else
-        public string RulesetName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154.UserEventPayloadOneOf154_configVersion ConfigVersion { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154"/> and sets the default values.
@@ -60,10 +58,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154Action>(); } },
-                { "active", n => { Active = n.GetBoolValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "rulesetName", n => { RulesetName = n.GetStringValue(); } },
+                { "configChangeCount", n => { ConfigChangeCount = n.GetDoubleValue(); } },
+                { "configChanges", n => { ConfigChanges = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154ConfigChangesItemProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154ConfigChangesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "configVersion", n => { ConfigVersion = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154.UserEventPayloadOneOf154_configVersion>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154.UserEventPayloadOneOf154_configVersion.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -73,11 +70,70 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154Action>("action", Action);
-            writer.WriteBoolValue("active", Active);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("rulesetName", RulesetName);
+            writer.WriteDoubleValue("configChangeCount", ConfigChangeCount);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154ConfigChangesItemProperty>("configChanges", ConfigChanges);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154.UserEventPayloadOneOf154_configVersion>("configVersion", ConfigVersion);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="double"/>, <see cref="string"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class UserEventPayloadOneOf154_configVersion : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="double"/></summary>
+            public double? Double { get; set; }
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? String { get; set; }
+#nullable restore
+#else
+            public string String { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154.UserEventPayloadOneOf154_configVersion"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154.UserEventPayloadOneOf154_configVersion CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154.UserEventPayloadOneOf154_configVersion();
+                if(parseNode.GetDoubleValue() is double doubleValue)
+                {
+                    result.Double = doubleValue;
+                }
+                else if(parseNode.GetStringValue() is string stringValue)
+                {
+                    result.String = stringValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(Double != null)
+                {
+                    writer.WriteDoubleValue(null, Double);
+                }
+                else if(String != null)
+                {
+                    writer.WriteStringValue(null, String);
+                }
+            }
         }
     }
 }

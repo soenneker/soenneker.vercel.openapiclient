@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.Models;
 using Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Account;
 using Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing;
+using Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Credentials;
 using Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Events;
 using Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Member;
 using Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Products;
@@ -32,6 +33,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Installations.Item
         public global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.BillingRequestBuilder Billing
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Billing.BillingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The credentials property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Credentials.CredentialsRequestBuilder Credentials
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Credentials.CredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The events property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Installations.Item.Events.EventsRequestBuilder Events

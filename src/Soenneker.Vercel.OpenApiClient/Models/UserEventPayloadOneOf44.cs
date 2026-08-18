@@ -23,13 +23,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Alias { get; set; }
 #endif
-        /// <summary>The deploymentUrl property</summary>
+        /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeploymentUrl { get; set; }
+        public string? Email { get; set; }
 #nullable restore
 #else
-        public string DeploymentUrl { get; set; }
+        public string Email { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "alias", n => { Alias = n.GetStringValue(); } },
-                { "deploymentUrl", n => { DeploymentUrl = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("alias", Alias);
-            writer.WriteStringValue("deploymentUrl", DeploymentUrl);
+            writer.WriteStringValue("email", Email);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -23,22 +23,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The newTeam property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112NewTeam? NewTeam { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112NewTeam NewTeam { get; set; }
-#endif
-        /// <summary>The oldTeam property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112OldTeam? OldTeam { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112OldTeam OldTeam { get; set; }
-#endif
+        /// <summary>The zone property</summary>
+        public bool? Zone { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112"/> and sets the default values.
         /// </summary>
@@ -65,8 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "newTeam", n => { NewTeam = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112NewTeam>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112NewTeam.CreateFromDiscriminatorValue); } },
-                { "oldTeam", n => { OldTeam = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112OldTeam>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112OldTeam.CreateFromDiscriminatorValue); } },
+                { "zone", n => { Zone = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -77,8 +62,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112NewTeam>("newTeam", NewTeam);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112OldTeam>("oldTeam", OldTeam);
+            writer.WriteBoolValue("zone", Zone);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

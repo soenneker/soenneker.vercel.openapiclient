@@ -31,21 +31,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string EdgeConfigSlug { get; set; }
 #endif
-        /// <summary>The edgeConfigTokenId property</summary>
+        /// <summary>The globalConfigSchema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeConfigTokenId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137GlobalConfigSchemaProperty? GlobalConfigSchema { get; set; }
 #nullable restore
 #else
-        public string EdgeConfigTokenId { get; set; }
-#endif
-        /// <summary>The label property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Label { get; set; }
-#nullable restore
-#else
-        public string Label { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137GlobalConfigSchemaProperty GlobalConfigSchema { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137"/> and sets the default values.
@@ -74,8 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
                 { "edgeConfigSlug", n => { EdgeConfigSlug = n.GetStringValue(); } },
-                { "edgeConfigTokenId", n => { EdgeConfigTokenId = n.GetStringValue(); } },
-                { "label", n => { Label = n.GetStringValue(); } },
+                { "globalConfigSchema", n => { GlobalConfigSchema = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137GlobalConfigSchemaProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137GlobalConfigSchemaProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,8 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("edgeConfigId", EdgeConfigId);
             writer.WriteStringValue("edgeConfigSlug", EdgeConfigSlug);
-            writer.WriteStringValue("edgeConfigTokenId", EdgeConfigTokenId);
-            writer.WriteStringValue("label", Label);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137GlobalConfigSchemaProperty>("globalConfigSchema", GlobalConfigSchema);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

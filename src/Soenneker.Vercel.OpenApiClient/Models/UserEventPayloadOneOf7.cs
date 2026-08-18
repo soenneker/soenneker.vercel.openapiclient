@@ -49,14 +49,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string TeamId { get; set; }
 #endif
-        /// <summary>The teamSlug property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TeamSlug { get; set; }
-#nullable restore
-#else
-        public string TeamSlug { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf7"/> and sets the default values.
         /// </summary>
@@ -87,7 +79,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "stripeAccount", n => { StripeAccount = n.GetStringValue(); } },
                 { "stripeOrganisation", n => { StripeOrganisation = n.GetStringValue(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "teamSlug", n => { TeamSlug = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -102,7 +93,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("stripeAccount", StripeAccount);
             writer.WriteStringValue("stripeOrganisation", StripeOrganisation);
             writer.WriteStringValue("teamId", TeamId);
-            writer.WriteStringValue("teamSlug", TeamSlug);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

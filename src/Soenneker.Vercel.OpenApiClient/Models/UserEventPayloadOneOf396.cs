@@ -13,26 +13,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf396 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>The actorId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ActorId { get; set; }
+#nullable restore
+#else
+        public string ActorId { get; set; }
+#endif
+        /// <summary>The actorType property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType? ActorType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The flowId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? FlowId { get; set; }
-#nullable restore
-#else
-        public string FlowId { get; set; }
-#endif
-        /// <summary>The loginSessionId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LoginSessionId { get; set; }
-#nullable restore
-#else
-        public string LoginSessionId { get; set; }
-#endif
-        /// <summary>The method property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf396Method? Method { get; set; }
         /// <summary>The reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,9 +58,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "flowId", n => { FlowId = n.GetStringValue(); } },
-                { "loginSessionId", n => { LoginSessionId = n.GetStringValue(); } },
-                { "method", n => { Method = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf396Method>(); } },
+                { "actorId", n => { ActorId = n.GetStringValue(); } },
+                { "actorType", n => { ActorType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
             };
         }
@@ -79,9 +70,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("flowId", FlowId);
-            writer.WriteStringValue("loginSessionId", LoginSessionId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf396Method>("method", Method);
+            writer.WriteStringValue("actorId", ActorId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>("actorType", ActorType);
             writer.WriteStringValue("reason", Reason);
             writer.WriteAdditionalData(AdditionalData);
         }

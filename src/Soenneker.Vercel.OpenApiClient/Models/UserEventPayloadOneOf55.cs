@@ -15,23 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The autoExposeSystemEnvs property</summary>
-        public bool? AutoExposeSystemEnvs { get; set; }
-        /// <summary>The projectId property</summary>
+        /// <summary>The appId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? AppId { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string AppId { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The appName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public string? AppName { get; set; }
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public string AppName { get; set; }
+#endif
+        /// <summary>The secretLastFourChars property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SecretLastFourChars { get; set; }
+#nullable restore
+#else
+        public string SecretLastFourChars { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf55"/> and sets the default values.
@@ -58,9 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "autoExposeSystemEnvs", n => { AutoExposeSystemEnvs = n.GetBoolValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "appName", n => { AppName = n.GetStringValue(); } },
+                { "secretLastFourChars", n => { SecretLastFourChars = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -70,9 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("autoExposeSystemEnvs", AutoExposeSystemEnvs);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("appId", AppId);
+            writer.WriteStringValue("appName", AppName);
+            writer.WriteStringValue("secretLastFourChars", SecretLastFourChars);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

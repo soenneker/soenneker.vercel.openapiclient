@@ -13,7 +13,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PatchTeamRequestResourceConfigBuildMachine : IParsable
     {
-        /// <summary>Default build machine type for new builds: basic, standard, enhanced, turbo, or elastic.</summary>
+        /// <summary>Default build machine type for new builds: standard, enhanced, turbo, or elastic.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestResourceConfigBuildMachineDefault? Default { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

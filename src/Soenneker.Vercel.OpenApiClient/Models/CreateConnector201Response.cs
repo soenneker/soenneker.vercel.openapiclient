@@ -202,6 +202,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> SupportedSubjectTypes { get; set; }
 #endif
+        /// <summary>Whether this connector can verify and list messaging contacts. Derived from the type definition&apos;s `supportsContacts`; indicates that the `/connect/connectors/:connectorId/contacts` endpoints are meaningful for this connector.</summary>
+        public bool? SupportsContacts { get; set; }
         /// <summary>The supportsIcon property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseSupportsIcon? SupportsIcon { get; set; }
         /// <summary>The supportsInstallation property</summary>
@@ -339,6 +341,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "reinstallAt", n => { ReinstallAt = n.GetDoubleValue(); } },
                 { "service", n => { Service = n.GetStringValue(); } },
                 { "supportedSubjectTypes", n => { SupportedSubjectTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "supportsContacts", n => { SupportsContacts = n.GetBoolValue(); } },
                 { "supportsIcon", n => { SupportsIcon = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseSupportsIcon>(); } },
                 { "supportsInstallation", n => { SupportsInstallation = n.GetBoolValue(); } },
                 { "supportsRevocation", n => { SupportsRevocation = n.GetBoolValue(); } },
@@ -391,6 +394,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("reinstallAt", ReinstallAt);
             writer.WriteStringValue("service", Service);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedSubjectTypes", SupportedSubjectTypes);
+            writer.WriteBoolValue("supportsContacts", SupportsContacts);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201ResponseSupportsIcon>("supportsIcon", SupportsIcon);
             writer.WriteBoolValue("supportsInstallation", SupportsInstallation);
             writer.WriteBoolValue("supportsRevocation", SupportsRevocation);

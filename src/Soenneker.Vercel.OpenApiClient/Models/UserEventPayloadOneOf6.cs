@@ -13,6 +13,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf6 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>The accountRequestId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountRequestId { get; set; }
+#nullable restore
+#else
+        public string AccountRequestId { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Present on new events only. Equivalent to &quot;stripe&quot; when absent.</summary>
@@ -74,6 +82,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "accountRequestId", n => { AccountRequestId = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf6Provider>(); } },
                 { "providerAccount", n => { ProviderAccount = n.GetStringValue(); } },
                 { "stripeAccount", n => { StripeAccount = n.GetStringValue(); } },
@@ -88,6 +97,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("accountRequestId", AccountRequestId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf6Provider>("provider", Provider);
             writer.WriteStringValue("providerAccount", ProviderAccount);
             writer.WriteStringValue("stripeAccount", StripeAccount);

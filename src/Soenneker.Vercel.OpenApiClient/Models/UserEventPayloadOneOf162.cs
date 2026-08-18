@@ -15,29 +15,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The integration property</summary>
+        /// <summary>The configurationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf162Integration? Integration { get; set; }
+        public string? ConfigurationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf162Integration Integration { get; set; }
+        public string ConfigurationId { get; set; }
 #endif
-        /// <summary>The originTeamId property</summary>
+        /// <summary>The integrationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginTeamId { get; set; }
+        public string? IntegrationId { get; set; }
 #nullable restore
 #else
-        public string OriginTeamId { get; set; }
+        public string IntegrationId { get; set; }
 #endif
-        /// <summary>The originTeamName property</summary>
+        /// <summary>The integrationName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginTeamName { get; set; }
+        public string? IntegrationName { get; set; }
 #nullable restore
 #else
-        public string OriginTeamName { get; set; }
+        public string IntegrationName { get; set; }
+#endif
+        /// <summary>The integrationSlug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IntegrationSlug { get; set; }
+#nullable restore
+#else
+        public string IntegrationSlug { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf162"/> and sets the default values.
@@ -64,9 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "integration", n => { Integration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf162Integration>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf162Integration.CreateFromDiscriminatorValue); } },
-                { "originTeamId", n => { OriginTeamId = n.GetStringValue(); } },
-                { "originTeamName", n => { OriginTeamName = n.GetStringValue(); } },
+                { "configurationId", n => { ConfigurationId = n.GetStringValue(); } },
+                { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
+                { "integrationName", n => { IntegrationName = n.GetStringValue(); } },
+                { "integrationSlug", n => { IntegrationSlug = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf162Integration>("integration", Integration);
-            writer.WriteStringValue("originTeamId", OriginTeamId);
-            writer.WriteStringValue("originTeamName", OriginTeamName);
+            writer.WriteStringValue("configurationId", ConfigurationId);
+            writer.WriteStringValue("integrationId", IntegrationId);
+            writer.WriteStringValue("integrationName", IntegrationName);
+            writer.WriteStringValue("integrationSlug", IntegrationSlug);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -23,53 +23,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The entitlementsAdded property</summary>
+        /// <summary>The entitlements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EntitlementsAdded { get; set; }
+        public List<string>? Entitlements { get; set; }
 #nullable restore
 #else
-        public List<string> EntitlementsAdded { get; set; }
-#endif
-        /// <summary>The entitlementsRemoved property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? EntitlementsRemoved { get; set; }
-#nullable restore
-#else
-        public List<string> EntitlementsRemoved { get; set; }
-#endif
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>The previousName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PreviousName { get; set; }
-#nullable restore
-#else
-        public string PreviousName { get; set; }
-#endif
-        /// <summary>The previousTeamPermissions property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? PreviousTeamPermissions { get; set; }
-#nullable restore
-#else
-        public List<string> PreviousTeamPermissions { get; set; }
-#endif
-        /// <summary>The previousTeamRoles property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? PreviousTeamRoles { get; set; }
-#nullable restore
-#else
-        public List<string> PreviousTeamRoles { get; set; }
+        public List<string> Entitlements { get; set; }
 #endif
         /// <summary>The teamPermissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,12 +73,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accessGroup", n => { AccessGroup = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf32AccessGroup>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf32AccessGroup.CreateFromDiscriminatorValue); } },
-                { "entitlementsAdded", n => { EntitlementsAdded = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "entitlementsRemoved", n => { EntitlementsRemoved = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "previousName", n => { PreviousName = n.GetStringValue(); } },
-                { "previousTeamPermissions", n => { PreviousTeamPermissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "previousTeamRoles", n => { PreviousTeamRoles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "entitlements", n => { Entitlements = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "teamPermissions", n => { TeamPermissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "teamRoles", n => { TeamRoles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -131,12 +86,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf32AccessGroup>("accessGroup", AccessGroup);
-            writer.WriteCollectionOfPrimitiveValues<string>("entitlementsAdded", EntitlementsAdded);
-            writer.WriteCollectionOfPrimitiveValues<string>("entitlementsRemoved", EntitlementsRemoved);
-            writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("previousName", PreviousName);
-            writer.WriteCollectionOfPrimitiveValues<string>("previousTeamPermissions", PreviousTeamPermissions);
-            writer.WriteCollectionOfPrimitiveValues<string>("previousTeamRoles", PreviousTeamRoles);
+            writer.WriteCollectionOfPrimitiveValues<string>("entitlements", Entitlements);
             writer.WriteCollectionOfPrimitiveValues<string>("teamPermissions", TeamPermissions);
             writer.WriteCollectionOfPrimitiveValues<string>("teamRoles", TeamRoles);
             writer.WriteAdditionalData(AdditionalData);

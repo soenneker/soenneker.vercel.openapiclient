@@ -15,21 +15,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The planSlug property</summary>
+        /// <summary>The amount property</summary>
+        public double? Amount { get; set; }
+        /// <summary>The invoiceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlanSlug { get; set; }
+        public string? InvoiceId { get; set; }
 #nullable restore
 #else
-        public string PlanSlug { get; set; }
+        public string InvoiceId { get; set; }
 #endif
-        /// <summary>The subscriptionId property</summary>
+        /// <summary>The lineItemCount property</summary>
+        public double? LineItemCount { get; set; }
+        /// <summary>The refundReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionId { get; set; }
+        public string? RefundReason { get; set; }
 #nullable restore
 #else
-        public string SubscriptionId { get; set; }
+        public string RefundReason { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf60"/> and sets the default values.
@@ -56,8 +60,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "planSlug", n => { PlanSlug = n.GetStringValue(); } },
-                { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
+                { "amount", n => { Amount = n.GetDoubleValue(); } },
+                { "invoiceId", n => { InvoiceId = n.GetStringValue(); } },
+                { "lineItemCount", n => { LineItemCount = n.GetDoubleValue(); } },
+                { "refundReason", n => { RefundReason = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +73,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("planSlug", PlanSlug);
-            writer.WriteStringValue("subscriptionId", SubscriptionId);
+            writer.WriteDoubleValue("amount", Amount);
+            writer.WriteStringValue("invoiceId", InvoiceId);
+            writer.WriteDoubleValue("lineItemCount", LineItemCount);
+            writer.WriteStringValue("refundReason", RefundReason);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

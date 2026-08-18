@@ -15,21 +15,63 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The project property</summary>
+        /// <summary>The isSystemInitiated property</summary>
+        public bool? IsSystemInitiated { get; set; }
+        /// <summary>The nextBuildMachineSelection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf237Project? Project { get; set; }
+        public string? NextBuildMachineSelection { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf237Project Project { get; set; }
+        public string NextBuildMachineSelection { get; set; }
 #endif
-        /// <summary>The team property</summary>
+        /// <summary>The nextBuildMachineType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf237Team? Team { get; set; }
+        public string? NextBuildMachineType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf237Team Team { get; set; }
+        public string NextBuildMachineType { get; set; }
+#endif
+        /// <summary>The previousBuildMachineSelection property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviousBuildMachineSelection { get; set; }
+#nullable restore
+#else
+        public string PreviousBuildMachineSelection { get; set; }
+#endif
+        /// <summary>The previousBuildMachineType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviousBuildMachineType { get; set; }
+#nullable restore
+#else
+        public string PreviousBuildMachineType { get; set; }
+#endif
+        /// <summary>The projectId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get; set; }
+#nullable restore
+#else
+        public string ProjectId { get; set; }
+#endif
+        /// <summary>The projectName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectName { get; set; }
+#nullable restore
+#else
+        public string ProjectName { get; set; }
+#endif
+        /// <summary>For system-initiated (elastic) changes, why the build machine was upgraded/downgraded. Stored as the raw reason code (see `ElasticChangeReason` in `@api/build-machines-types`) and rendered as a human-readable clause in the activity/audit log.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Reason { get; set; }
+#nullable restore
+#else
+        public string Reason { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf237"/> and sets the default values.
@@ -56,8 +98,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf237Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf237Project.CreateFromDiscriminatorValue); } },
-                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf237Team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf237Team.CreateFromDiscriminatorValue); } },
+                { "isSystemInitiated", n => { IsSystemInitiated = n.GetBoolValue(); } },
+                { "nextBuildMachineSelection", n => { NextBuildMachineSelection = n.GetStringValue(); } },
+                { "nextBuildMachineType", n => { NextBuildMachineType = n.GetStringValue(); } },
+                { "previousBuildMachineSelection", n => { PreviousBuildMachineSelection = n.GetStringValue(); } },
+                { "previousBuildMachineType", n => { PreviousBuildMachineType = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +115,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf237Project>("project", Project);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf237Team>("team", Team);
+            writer.WriteBoolValue("isSystemInitiated", IsSystemInitiated);
+            writer.WriteStringValue("nextBuildMachineSelection", NextBuildMachineSelection);
+            writer.WriteStringValue("nextBuildMachineType", NextBuildMachineType);
+            writer.WriteStringValue("previousBuildMachineSelection", PreviousBuildMachineSelection);
+            writer.WriteStringValue("previousBuildMachineType", PreviousBuildMachineType);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("reason", Reason);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

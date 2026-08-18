@@ -15,29 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The bitbucketEmail property</summary>
+        /// <summary>The githubLogin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BitbucketEmail { get; set; }
+        public string? GithubLogin { get; set; }
 #nullable restore
 #else
-        public string BitbucketEmail { get; set; }
+        public string GithubLogin { get; set; }
 #endif
-        /// <summary>The bitbucketLogin property</summary>
+        /// <summary>The host property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BitbucketLogin { get; set; }
+        public string? Host { get; set; }
 #nullable restore
 #else
-        public string BitbucketLogin { get; set; }
-#endif
-        /// <summary>The bitbucketName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BitbucketName { get; set; }
-#nullable restore
-#else
-        public string BitbucketName { get; set; }
+        public string Host { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf87"/> and sets the default values.
@@ -64,9 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bitbucketEmail", n => { BitbucketEmail = n.GetStringValue(); } },
-                { "bitbucketLogin", n => { BitbucketLogin = n.GetStringValue(); } },
-                { "bitbucketName", n => { BitbucketName = n.GetStringValue(); } },
+                { "githubLogin", n => { GithubLogin = n.GetStringValue(); } },
+                { "host", n => { Host = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("bitbucketEmail", BitbucketEmail);
-            writer.WriteStringValue("bitbucketLogin", BitbucketLogin);
-            writer.WriteStringValue("bitbucketName", BitbucketName);
+            writer.WriteStringValue("githubLogin", GithubLogin);
+            writer.WriteStringValue("host", Host);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

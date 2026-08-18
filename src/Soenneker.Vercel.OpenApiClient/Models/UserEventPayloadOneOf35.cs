@@ -13,79 +13,79 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf35 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>The accessGroup property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf35AccessGroup? AccessGroup { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf35AccessGroup AccessGroup { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The alias property</summary>
+        /// <summary>The entitlementsAdded property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Alias { get; set; }
+        public List<string>? EntitlementsAdded { get; set; }
 #nullable restore
 #else
-        public string Alias { get; set; }
+        public List<string> EntitlementsAdded { get; set; }
 #endif
-        /// <summary>The aliasId property</summary>
+        /// <summary>The entitlementsRemoved property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AliasId { get; set; }
+        public List<string>? EntitlementsRemoved { get; set; }
 #nullable restore
 #else
-        public string AliasId { get; set; }
+        public List<string> EntitlementsRemoved { get; set; }
 #endif
-        /// <summary>The aliasUpdatedAt property</summary>
-        public double? AliasUpdatedAt { get; set; }
-        /// <summary>The deployment property</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf35Deployment? Deployment { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf35Deployment Deployment { get; set; }
+        public string Name { get; set; }
 #endif
-        /// <summary>The deploymentId property</summary>
+        /// <summary>The previousName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeploymentId { get; set; }
+        public string? PreviousName { get; set; }
 #nullable restore
 #else
-        public string DeploymentId { get; set; }
+        public string PreviousName { get; set; }
 #endif
-        /// <summary>The deploymentUrl property</summary>
+        /// <summary>The previousTeamPermissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeploymentUrl { get; set; }
+        public List<string>? PreviousTeamPermissions { get; set; }
 #nullable restore
 #else
-        public string DeploymentUrl { get; set; }
+        public List<string> PreviousTeamPermissions { get; set; }
 #endif
-        /// <summary>The oldDeploymentId property</summary>
+        /// <summary>The previousTeamRoles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OldDeploymentId { get; set; }
+        public List<string>? PreviousTeamRoles { get; set; }
 #nullable restore
 #else
-        public string OldDeploymentId { get; set; }
+        public List<string> PreviousTeamRoles { get; set; }
 #endif
-        /// <summary>The redirect property</summary>
+        /// <summary>The teamPermissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Redirect { get; set; }
+        public List<string>? TeamPermissions { get; set; }
 #nullable restore
 #else
-        public string Redirect { get; set; }
+        public List<string> TeamPermissions { get; set; }
 #endif
-        /// <summary>The redirectStatusCode property</summary>
-        public double? RedirectStatusCode { get; set; }
-        /// <summary>The ruleCount property</summary>
-        public double? RuleCount { get; set; }
-        /// <summary>The system property</summary>
-        public bool? System { get; set; }
-        /// <summary>The target property</summary>
+        /// <summary>The teamRoles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Target { get; set; }
+        public List<string>? TeamRoles { get; set; }
 #nullable restore
 #else
-        public string Target { get; set; }
+        public List<string> TeamRoles { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf35"/> and sets the default values.
@@ -112,18 +112,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alias", n => { Alias = n.GetStringValue(); } },
-                { "aliasId", n => { AliasId = n.GetStringValue(); } },
-                { "aliasUpdatedAt", n => { AliasUpdatedAt = n.GetDoubleValue(); } },
-                { "deployment", n => { Deployment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf35Deployment>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf35Deployment.CreateFromDiscriminatorValue); } },
-                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
-                { "deploymentUrl", n => { DeploymentUrl = n.GetStringValue(); } },
-                { "oldDeploymentId", n => { OldDeploymentId = n.GetStringValue(); } },
-                { "redirect", n => { Redirect = n.GetStringValue(); } },
-                { "redirectStatusCode", n => { RedirectStatusCode = n.GetDoubleValue(); } },
-                { "ruleCount", n => { RuleCount = n.GetDoubleValue(); } },
-                { "system", n => { System = n.GetBoolValue(); } },
-                { "target", n => { Target = n.GetStringValue(); } },
+                { "accessGroup", n => { AccessGroup = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf35AccessGroup>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf35AccessGroup.CreateFromDiscriminatorValue); } },
+                { "entitlementsAdded", n => { EntitlementsAdded = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "entitlementsRemoved", n => { EntitlementsRemoved = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "previousName", n => { PreviousName = n.GetStringValue(); } },
+                { "previousTeamPermissions", n => { PreviousTeamPermissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "previousTeamRoles", n => { PreviousTeamRoles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "teamPermissions", n => { TeamPermissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "teamRoles", n => { TeamRoles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -133,18 +130,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("alias", Alias);
-            writer.WriteStringValue("aliasId", AliasId);
-            writer.WriteDoubleValue("aliasUpdatedAt", AliasUpdatedAt);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf35Deployment>("deployment", Deployment);
-            writer.WriteStringValue("deploymentId", DeploymentId);
-            writer.WriteStringValue("deploymentUrl", DeploymentUrl);
-            writer.WriteStringValue("oldDeploymentId", OldDeploymentId);
-            writer.WriteStringValue("redirect", Redirect);
-            writer.WriteDoubleValue("redirectStatusCode", RedirectStatusCode);
-            writer.WriteDoubleValue("ruleCount", RuleCount);
-            writer.WriteBoolValue("system", System);
-            writer.WriteStringValue("target", Target);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf35AccessGroup>("accessGroup", AccessGroup);
+            writer.WriteCollectionOfPrimitiveValues<string>("entitlementsAdded", EntitlementsAdded);
+            writer.WriteCollectionOfPrimitiveValues<string>("entitlementsRemoved", EntitlementsRemoved);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("previousName", PreviousName);
+            writer.WriteCollectionOfPrimitiveValues<string>("previousTeamPermissions", PreviousTeamPermissions);
+            writer.WriteCollectionOfPrimitiveValues<string>("previousTeamRoles", PreviousTeamRoles);
+            writer.WriteCollectionOfPrimitiveValues<string>("teamPermissions", TeamPermissions);
+            writer.WriteCollectionOfPrimitiveValues<string>("teamRoles", TeamRoles);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

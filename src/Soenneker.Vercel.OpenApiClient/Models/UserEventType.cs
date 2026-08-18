@@ -115,6 +115,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayApiKeyQuotaUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-auto-reload-updated")]
+        #pragma warning disable CS1591
+        AiGatewayAutoReloadUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-budget-default-updated")]
         #pragma warning disable CS1591
         AiGatewayBudgetDefaultUpdated,
@@ -130,6 +134,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "ai-gateway-byok-credential-updated")]
         #pragma warning disable CS1591
         AiGatewayByokCredentialUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-credits-purchased")]
+        #pragma warning disable CS1591
+        AiGatewayCreditsPurchased,
         #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-guardrails-updated")]
         #pragma warning disable CS1591
@@ -875,6 +883,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         EnvVariableRotated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "experiment-created")]
+        #pragma warning disable CS1591
+        ExperimentCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "experiment-transitioned")]
+        #pragma warning disable CS1591
+        ExperimentTransitioned,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "experiment-updated")]
+        #pragma warning disable CS1591
+        ExperimentUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "firewall-bypass-created")]
         #pragma warning disable CS1591
         FirewallBypassCreated,
@@ -970,6 +990,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "instant-rollback-created")]
         #pragma warning disable CS1591
         InstantRollbackCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "integration-configuration-credential-rotated")]
+        #pragma warning disable CS1591
+        IntegrationConfigurationCredentialRotated,
         #pragma warning restore CS1591
         [EnumMember(Value = "integration-configuration-owner-changed")]
         #pragma warning disable CS1591

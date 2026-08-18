@@ -15,25 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
-        public double? Amount { get; set; }
-        /// <summary>The invoiceId property</summary>
+        /// <summary>The attackModeActiveUntil property</summary>
+        public double? AttackModeActiveUntil { get; set; }
+        /// <summary>The attackModeEnabled property</summary>
+        public bool? AttackModeEnabled { get; set; }
+        /// <summary>The prevAttackModeActiveUntil property</summary>
+        public double? PrevAttackModeActiveUntil { get; set; }
+        /// <summary>The prevAttackModeEnabled property</summary>
+        public bool? PrevAttackModeEnabled { get; set; }
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvoiceId { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string InvoiceId { get; set; }
-#endif
-        /// <summary>The lineItemCount property</summary>
-        public double? LineItemCount { get; set; }
-        /// <summary>The refundReason property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RefundReason { get; set; }
-#nullable restore
-#else
-        public string RefundReason { get; set; }
+        public string ProjectId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf57"/> and sets the default values.
@@ -60,10 +56,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetDoubleValue(); } },
-                { "invoiceId", n => { InvoiceId = n.GetStringValue(); } },
-                { "lineItemCount", n => { LineItemCount = n.GetDoubleValue(); } },
-                { "refundReason", n => { RefundReason = n.GetStringValue(); } },
+                { "attackModeActiveUntil", n => { AttackModeActiveUntil = n.GetDoubleValue(); } },
+                { "attackModeEnabled", n => { AttackModeEnabled = n.GetBoolValue(); } },
+                { "prevAttackModeActiveUntil", n => { PrevAttackModeActiveUntil = n.GetDoubleValue(); } },
+                { "prevAttackModeEnabled", n => { PrevAttackModeEnabled = n.GetBoolValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -73,10 +70,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("amount", Amount);
-            writer.WriteStringValue("invoiceId", InvoiceId);
-            writer.WriteDoubleValue("lineItemCount", LineItemCount);
-            writer.WriteStringValue("refundReason", RefundReason);
+            writer.WriteDoubleValue("attackModeActiveUntil", AttackModeActiveUntil);
+            writer.WriteBoolValue("attackModeEnabled", AttackModeEnabled);
+            writer.WriteDoubleValue("prevAttackModeActiveUntil", PrevAttackModeActiveUntil);
+            writer.WriteBoolValue("prevAttackModeEnabled", PrevAttackModeEnabled);
+            writer.WriteStringValue("projectId", ProjectId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

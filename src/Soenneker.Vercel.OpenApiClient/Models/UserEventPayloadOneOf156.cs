@@ -13,10 +13,32 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf156 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The action property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf156Action? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The projectId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get; set; }
+#nullable restore
+#else
+        public string ProjectId { get; set; }
+#endif
+        /// <summary>The ruleGroups property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf156RuleGroupsProperty? RuleGroups { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf156RuleGroupsProperty RuleGroups { get; set; }
+#endif
+        /// <summary>The rulesetName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RulesetName { get; set; }
+#nullable restore
+#else
+        public string RulesetName { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf156"/> and sets the default values.
         /// </summary>
@@ -42,7 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf156Action>(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "ruleGroups", n => { RuleGroups = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf156RuleGroupsProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf156RuleGroupsProperty.CreateFromDiscriminatorValue); } },
+                { "rulesetName", n => { RulesetName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -52,7 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf156Action>("action", Action);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf156RuleGroupsProperty>("ruleGroups", RuleGroups);
+            writer.WriteStringValue("rulesetName", RulesetName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

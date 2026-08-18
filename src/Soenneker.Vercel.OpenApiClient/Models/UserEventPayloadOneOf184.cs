@@ -15,18 +15,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allowedIntegrationCount property</summary>
-        public double? AllowedIntegrationCount { get; set; }
-        /// <summary>The allowedIntegrationIds property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? AllowedIntegrationIds { get; set; }
-#nullable restore
-#else
-        public List<string> AllowedIntegrationIds { get; set; }
-#endif
-        /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
+        /// <summary>The provider property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184Provider? Provider { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184"/> and sets the default values.
         /// </summary>
@@ -52,9 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowedIntegrationCount", n => { AllowedIntegrationCount = n.GetDoubleValue(); } },
-                { "allowedIntegrationIds", n => { AllowedIntegrationIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184Provider>(); } },
             };
         }
         /// <summary>
@@ -64,9 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("allowedIntegrationCount", AllowedIntegrationCount);
-            writer.WriteCollectionOfPrimitiveValues<string>("allowedIntegrationIds", AllowedIntegrationIds);
-            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184Provider>("provider", Provider);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

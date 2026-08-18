@@ -15,29 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The nextRule property</summary>
+        /// <summary>The edgeConfigId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141NextRule? NextRule { get; set; }
+        public string? EdgeConfigId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141NextRule NextRule { get; set; }
+        public string EdgeConfigId { get; set; }
 #endif
-        /// <summary>The previousRule property</summary>
+        /// <summary>The edgeConfigSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141PreviousRule? PreviousRule { get; set; }
+        public string? EdgeConfigSlug { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141PreviousRule PreviousRule { get; set; }
+        public string EdgeConfigSlug { get; set; }
 #endif
-        /// <summary>The team property</summary>
+        /// <summary>ids of deleted tokens</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141Team? Team { get; set; }
+        public List<string>? EdgeConfigTokenIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141Team Team { get; set; }
+        public List<string> EdgeConfigTokenIds { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141"/> and sets the default values.
@@ -64,9 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "nextRule", n => { NextRule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141NextRule>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141NextRule.CreateFromDiscriminatorValue); } },
-                { "previousRule", n => { PreviousRule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141PreviousRule>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141PreviousRule.CreateFromDiscriminatorValue); } },
-                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141Team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141Team.CreateFromDiscriminatorValue); } },
+                { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
+                { "edgeConfigSlug", n => { EdgeConfigSlug = n.GetStringValue(); } },
+                { "edgeConfigTokenIds", n => { EdgeConfigTokenIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -76,9 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141NextRule>("nextRule", NextRule);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141PreviousRule>("previousRule", PreviousRule);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141Team>("team", Team);
+            writer.WriteStringValue("edgeConfigId", EdgeConfigId);
+            writer.WriteStringValue("edgeConfigSlug", EdgeConfigSlug);
+            writer.WriteCollectionOfPrimitiveValues<string>("edgeConfigTokenIds", EdgeConfigTokenIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

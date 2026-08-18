@@ -15,6 +15,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The authentication property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200ResponseResourcesItemProtocolSettingsAuthentication? Authentication { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200ResponseResourcesItemProtocolSettingsAuthentication Authentication { get; set; }
+#endif
         /// <summary>The experimentation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +56,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "authentication", n => { Authentication = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200ResponseResourcesItemProtocolSettingsAuthentication>(global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200ResponseResourcesItemProtocolSettingsAuthentication.CreateFromDiscriminatorValue); } },
                 { "experimentation", n => { Experimentation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200ResponseResourcesItemProtocolSettingsExperimentation>(global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200ResponseResourcesItemProtocolSettingsExperimentation.CreateFromDiscriminatorValue); } },
             };
         }
@@ -58,6 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200ResponseResourcesItemProtocolSettingsAuthentication>("authentication", Authentication);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResources200ResponseResourcesItemProtocolSettingsExperimentation>("experimentation", Experimentation);
             writer.WriteAdditionalData(AdditionalData);
         }

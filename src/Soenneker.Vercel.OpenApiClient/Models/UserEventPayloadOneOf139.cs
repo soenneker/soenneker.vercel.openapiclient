@@ -15,21 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The email property</summary>
+        /// <summary>The edgeConfig property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139EdgeConfig? EdgeConfig { get; set; }
 #nullable restore
 #else
-        public string Email { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139EdgeConfig EdgeConfig { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The fromAccount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139FromAccount? FromAccount { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139FromAccount FromAccount { get; set; }
+#endif
+        /// <summary>The toAccount property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139ToAccount? ToAccount { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139ToAccount ToAccount { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139"/> and sets the default values.
@@ -56,8 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "edgeConfig", n => { EdgeConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139EdgeConfig>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139EdgeConfig.CreateFromDiscriminatorValue); } },
+                { "fromAccount", n => { FromAccount = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139FromAccount>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139FromAccount.CreateFromDiscriminatorValue); } },
+                { "toAccount", n => { ToAccount = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139ToAccount>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139ToAccount.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("email", Email);
-            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139EdgeConfig>("edgeConfig", EdgeConfig);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139FromAccount>("fromAccount", FromAccount);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf139ToAccount>("toAccount", ToAccount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

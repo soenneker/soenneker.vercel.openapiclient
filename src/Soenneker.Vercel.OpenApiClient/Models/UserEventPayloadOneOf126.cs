@@ -15,30 +15,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The drainName property</summary>
+        /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DrainName { get; set; }
+        public string? Domain { get; set; }
 #nullable restore
 #else
-        public string DrainName { get; set; }
+        public string Domain { get; set; }
 #endif
-        /// <summary>The drainUrl property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DrainUrl { get; set; }
-#nullable restore
-#else
-        public string DrainUrl { get; set; }
-#endif
-        /// <summary>The integrationName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IntegrationName { get; set; }
-#nullable restore
-#else
-        public string IntegrationName { get; set; }
-#endif
+        /// <summary>The renew property</summary>
+        public bool? Renew { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf126"/> and sets the default values.
         /// </summary>
@@ -64,9 +50,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "drainName", n => { DrainName = n.GetStringValue(); } },
-                { "drainUrl", n => { DrainUrl = n.GetStringValue(); } },
-                { "integrationName", n => { IntegrationName = n.GetStringValue(); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
+                { "renew", n => { Renew = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +61,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("drainName", DrainName);
-            writer.WriteStringValue("drainUrl", DrainUrl);
-            writer.WriteStringValue("integrationName", IntegrationName);
+            writer.WriteStringValue("domain", Domain);
+            writer.WriteBoolValue("renew", Renew);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

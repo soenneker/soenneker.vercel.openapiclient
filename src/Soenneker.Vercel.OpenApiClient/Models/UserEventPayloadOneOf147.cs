@@ -15,8 +15,78 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The expiresAt property</summary>
-        public double? ExpiresAt { get; set; }
+        /// <summary>The customEnvironmentSlugs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? CustomEnvironmentSlugs { get; set; }
+#nullable restore
+#else
+        public List<string> CustomEnvironmentSlugs { get; set; }
+#endif
+        /// <summary>The deploymentId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeploymentId { get; set; }
+#nullable restore
+#else
+        public string DeploymentId { get; set; }
+#endif
+        /// <summary>The deploymentUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeploymentUrl { get; set; }
+#nullable restore
+#else
+        public string DeploymentUrl { get; set; }
+#endif
+        /// <summary>The edgeConfigId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EdgeConfigId { get; set; }
+#nullable restore
+#else
+        public string EdgeConfigId { get; set; }
+#endif
+        /// <summary>The edgeConfigTokenId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EdgeConfigTokenId { get; set; }
+#nullable restore
+#else
+        public string EdgeConfigTokenId { get; set; }
+#endif
+        /// <summary>The gitBranch property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GitBranch { get; set; }
+#nullable restore
+#else
+        public string GitBranch { get; set; }
+#endif
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
+        /// <summary>The ipAddress property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IpAddress { get; set; }
+#nullable restore
+#else
+        public string IpAddress { get; set; }
+#endif
+        /// <summary>The key property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Key { get; set; }
+#nullable restore
+#else
+        public string Key { get; set; }
+#endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,13 +95,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>The scope property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Scope { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public string Scope { get; set; }
+        public string ProjectName { get; set; }
 #endif
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,6 +110,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string Source { get; set; }
+#endif
+        /// <summary>The target property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf147Target? Target { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf147Target Target { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf147"/> and sets the default values.
@@ -66,10 +144,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
+                { "customEnvironmentSlugs", n => { CustomEnvironmentSlugs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
+                { "deploymentUrl", n => { DeploymentUrl = n.GetStringValue(); } },
+                { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
+                { "edgeConfigTokenId", n => { EdgeConfigTokenId = n.GetStringValue(); } },
+                { "gitBranch", n => { GitBranch = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                { "key", n => { Key = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "scope", n => { Scope = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
+                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf147Target>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf147Target.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -79,10 +166,19 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("expiresAt", ExpiresAt);
+            writer.WriteCollectionOfPrimitiveValues<string>("customEnvironmentSlugs", CustomEnvironmentSlugs);
+            writer.WriteStringValue("deploymentId", DeploymentId);
+            writer.WriteStringValue("deploymentUrl", DeploymentUrl);
+            writer.WriteStringValue("edgeConfigId", EdgeConfigId);
+            writer.WriteStringValue("edgeConfigTokenId", EdgeConfigTokenId);
+            writer.WriteStringValue("gitBranch", GitBranch);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("ipAddress", IpAddress);
+            writer.WriteStringValue("key", Key);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("scope", Scope);
+            writer.WriteStringValue("projectName", ProjectName);
             writer.WriteStringValue("source", Source);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf147Target>("target", Target);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

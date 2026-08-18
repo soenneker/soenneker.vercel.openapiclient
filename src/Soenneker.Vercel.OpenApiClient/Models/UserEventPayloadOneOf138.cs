@@ -15,6 +15,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The edgeConfigDigest property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EdgeConfigDigest { get; set; }
+#nullable restore
+#else
+        public string EdgeConfigDigest { get; set; }
+#endif
         /// <summary>The edgeConfigId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,14 +38,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string EdgeConfigSlug { get; set; }
-#endif
-        /// <summary>ids of deleted tokens</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? EdgeConfigTokenIds { get; set; }
-#nullable restore
-#else
-        public List<string> EdgeConfigTokenIds { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf138"/> and sets the default values.
@@ -64,9 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "edgeConfigDigest", n => { EdgeConfigDigest = n.GetStringValue(); } },
                 { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
                 { "edgeConfigSlug", n => { EdgeConfigSlug = n.GetStringValue(); } },
-                { "edgeConfigTokenIds", n => { EdgeConfigTokenIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -76,9 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("edgeConfigDigest", EdgeConfigDigest);
             writer.WriteStringValue("edgeConfigId", EdgeConfigId);
             writer.WriteStringValue("edgeConfigSlug", EdgeConfigSlug);
-            writer.WriteCollectionOfPrimitiveValues<string>("edgeConfigTokenIds", EdgeConfigTokenIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

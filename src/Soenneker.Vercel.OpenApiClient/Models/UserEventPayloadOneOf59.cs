@@ -15,29 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The brand property</summary>
+        /// <summary>The avatar property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Brand { get; set; }
+        public string? Avatar { get; set; }
 #nullable restore
 #else
-        public string Brand { get; set; }
-#endif
-        /// <summary>The last4 property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Last4 { get; set; }
-#nullable restore
-#else
-        public string Last4 { get; set; }
-#endif
-        /// <summary>The paymentMethodId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PaymentMethodId { get; set; }
-#nullable restore
-#else
-        public string PaymentMethodId { get; set; }
+        public string Avatar { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf59"/> and sets the default values.
@@ -64,9 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "brand", n => { Brand = n.GetStringValue(); } },
-                { "last4", n => { Last4 = n.GetStringValue(); } },
-                { "paymentMethodId", n => { PaymentMethodId = n.GetStringValue(); } },
+                { "avatar", n => { Avatar = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("brand", Brand);
-            writer.WriteStringValue("last4", Last4);
-            writer.WriteStringValue("paymentMethodId", PaymentMethodId);
+            writer.WriteStringValue("avatar", Avatar);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

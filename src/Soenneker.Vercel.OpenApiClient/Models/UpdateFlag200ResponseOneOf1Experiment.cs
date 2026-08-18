@@ -14,57 +14,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allocationPercent property</summary>
-        public double? AllocationPercent { get; set; }
-        /// <summary>The allocationUnit property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentAllocationUnit? AllocationUnit { get; set; }
-        /// <summary>The controlVariantId property</summary>
+        /// <summary>The base property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ControlVariantId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentBase? Base { get; set; }
 #nullable restore
 #else
-        public string ControlVariantId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentBase Base { get; set; }
 #endif
-        /// <summary>The decision property</summary>
+        /// <summary>The defaultVariantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Decision { get; set; }
+        public string? DefaultVariantId { get; set; }
 #nullable restore
 #else
-        public string Decision { get; set; }
-#endif
-        /// <summary>The decisionReason property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DecisionReason { get; set; }
-#nullable restore
-#else
-        public string DecisionReason { get; set; }
-#endif
-        /// <summary>The device property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentDevice? Device { get; set; }
-        /// <summary>The duration property</summary>
-        public double? Duration { get; set; }
-        /// <summary>The durationUnit property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentDurationUnit? DurationUnit { get; set; }
-        /// <summary>The endedAt property</summary>
-        public double? EndedAt { get; set; }
-        /// <summary>The guardrailMetrics property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentGuardrailMetricsItem>? GuardrailMetrics { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentGuardrailMetricsItem> GuardrailMetrics { get; set; }
-#endif
-        /// <summary>The hypothesis property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Hypothesis { get; set; }
-#nullable restore
-#else
-        public string Hypothesis { get; set; }
+        public string DefaultVariantId { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,45 +38,23 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The layer property</summary>
+        /// <summary>The rampId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Layer { get; set; }
+        public string? RampId { get; set; }
 #nullable restore
 #else
-        public string Layer { get; set; }
+        public string RampId { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The rampPercentage property</summary>
+        public double? RampPercentage { get; set; }
+        /// <summary>The weights property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentWeights? Weights { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
-#endif
-        /// <summary>The numVariants property</summary>
-        public double? NumVariants { get; set; }
-        /// <summary>The primaryMetrics property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentPrimaryMetricsItem>? PrimaryMetrics { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentPrimaryMetricsItem> PrimaryMetrics { get; set; }
-#endif
-        /// <summary>The startedAt property</summary>
-        public double? StartedAt { get; set; }
-        /// <summary>The status property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentStatus? Status { get; set; }
-        /// <summary>The stickyRequirement property</summary>
-        public bool? StickyRequirement { get; set; }
-        /// <summary>The surfaceArea property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SurfaceArea { get; set; }
-#nullable restore
-#else
-        public string SurfaceArea { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentWeights Weights { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1Experiment"/> and sets the default values.
@@ -139,26 +81,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allocationPercent", n => { AllocationPercent = n.GetDoubleValue(); } },
-                { "allocationUnit", n => { AllocationUnit = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentAllocationUnit>(); } },
-                { "controlVariantId", n => { ControlVariantId = n.GetStringValue(); } },
-                { "decision", n => { Decision = n.GetStringValue(); } },
-                { "decisionReason", n => { DecisionReason = n.GetStringValue(); } },
-                { "device", n => { Device = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentDevice>(); } },
-                { "duration", n => { Duration = n.GetDoubleValue(); } },
-                { "durationUnit", n => { DurationUnit = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentDurationUnit>(); } },
-                { "endedAt", n => { EndedAt = n.GetDoubleValue(); } },
-                { "guardrailMetrics", n => { GuardrailMetrics = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentGuardrailMetricsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentGuardrailMetricsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "hypothesis", n => { Hypothesis = n.GetStringValue(); } },
+                { "base", n => { Base = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentBase>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentBase.CreateFromDiscriminatorValue); } },
+                { "defaultVariantId", n => { DefaultVariantId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "layer", n => { Layer = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "numVariants", n => { NumVariants = n.GetDoubleValue(); } },
-                { "primaryMetrics", n => { PrimaryMetrics = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentPrimaryMetricsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentPrimaryMetricsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "startedAt", n => { StartedAt = n.GetDoubleValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentStatus>(); } },
-                { "stickyRequirement", n => { StickyRequirement = n.GetBoolValue(); } },
-                { "surfaceArea", n => { SurfaceArea = n.GetStringValue(); } },
+                { "rampId", n => { RampId = n.GetStringValue(); } },
+                { "rampPercentage", n => { RampPercentage = n.GetDoubleValue(); } },
+                { "weights", n => { Weights = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentWeights>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentWeights.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -168,26 +96,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("allocationPercent", AllocationPercent);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentAllocationUnit>("allocationUnit", AllocationUnit);
-            writer.WriteStringValue("controlVariantId", ControlVariantId);
-            writer.WriteStringValue("decision", Decision);
-            writer.WriteStringValue("decisionReason", DecisionReason);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentDevice>("device", Device);
-            writer.WriteDoubleValue("duration", Duration);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentDurationUnit>("durationUnit", DurationUnit);
-            writer.WriteDoubleValue("endedAt", EndedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentGuardrailMetricsItem>("guardrailMetrics", GuardrailMetrics);
-            writer.WriteStringValue("hypothesis", Hypothesis);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentBase>("base", Base);
+            writer.WriteStringValue("defaultVariantId", DefaultVariantId);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("layer", Layer);
-            writer.WriteStringValue("name", Name);
-            writer.WriteDoubleValue("numVariants", NumVariants);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentPrimaryMetricsItem>("primaryMetrics", PrimaryMetrics);
-            writer.WriteDoubleValue("startedAt", StartedAt);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentStatus>("status", Status);
-            writer.WriteBoolValue("stickyRequirement", StickyRequirement);
-            writer.WriteStringValue("surfaceArea", SurfaceArea);
+            writer.WriteStringValue("rampId", RampId);
+            writer.WriteDoubleValue("rampPercentage", RampPercentage);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1ExperimentWeights>("weights", Weights);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
