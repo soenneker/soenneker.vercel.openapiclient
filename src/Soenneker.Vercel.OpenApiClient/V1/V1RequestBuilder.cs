@@ -16,6 +16,7 @@ using Soenneker.Vercel.OpenApiClient.V1.Events;
 using Soenneker.Vercel.OpenApiClient.V1.GlobalConfig;
 using Soenneker.Vercel.OpenApiClient.V1.Installations;
 using Soenneker.Vercel.OpenApiClient.V1.Integrations;
+using Soenneker.Vercel.OpenApiClient.V1.Kms;
 using Soenneker.Vercel.OpenApiClient.V1.LogDrains;
 using Soenneker.Vercel.OpenApiClient.V1.Microfrontends;
 using Soenneker.Vercel.OpenApiClient.V1.Observability;
@@ -109,6 +110,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1
         public global::Soenneker.Vercel.OpenApiClient.V1.Integrations.IntegrationsRequestBuilder Integrations
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Integrations.IntegrationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The kms property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Kms.KmsRequestBuilder Kms
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Kms.KmsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The logDrains property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.LogDrains.LogDrainsRequestBuilder LogDrains

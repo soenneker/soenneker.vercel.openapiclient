@@ -36,6 +36,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItem> Files { get; set; }
 #endif
+        /// <summary>Available only to Vercel platform accounts. A read-only GitHub access token scoped to the requested repository. Use a token with a lifetime of 24 hours or less that remains valid until source retrieval completes.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GitAccessToken { get; set; }
+#nullable restore
+#else
+        public string GitAccessToken { get; set; }
+#endif
         /// <summary>Populates initial git metadata for different git providers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,6 +131,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "customEnvironmentSlugOrId", n => { CustomEnvironmentSlugOrId = n.GetStringValue(); } },
                 { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
                 { "files", n => { Files = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItem>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "gitAccessToken", n => { GitAccessToken = n.GetStringValue(); } },
                 { "gitMetadata", n => { GitMetadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitMetadata>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitMetadata.CreateFromDiscriminatorValue); } },
                 { "gitSource", n => { GitSource = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource.CreateFromDiscriminatorValue); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestMeta>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestMeta.CreateFromDiscriminatorValue); } },
@@ -144,6 +153,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("customEnvironmentSlugOrId", CustomEnvironmentSlugOrId);
             writer.WriteStringValue("deploymentId", DeploymentId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItem>("files", Files);
+            writer.WriteStringValue("gitAccessToken", GitAccessToken);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitMetadata>("gitMetadata", GitMetadata);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestGitSource>("gitSource", GitSource);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestMeta>("meta", Meta);

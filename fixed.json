@@ -15754,6 +15754,1022 @@
         "security": []
       }
     },
+    "/v1/kms/issuers": {
+      "get": {
+        "tags": [
+          "kms"
+        ],
+        "summary": "List issuers",
+        "description": "Retrieve the list of KMS issuers that belong to the authenticated team. The results are paginated.",
+        "operationId": "ListKmsIssuers",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of issuers to return.",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "description": "Maximum number of issuers to return."
+            }
+          },
+          {
+            "name": "next",
+            "in": "query",
+            "description": "Continuation cursor to retrieve the next page of results.",
+            "schema": {
+              "maxLength": 1024,
+              "pattern": "^[A-Za-z0-9_-]\u002B$",
+              "type": "string",
+              "description": "Continuation cursor to retrieve the next page of results."
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListKmsIssuers200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "410": {
+            "description": "410 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "kms"
+        ],
+        "summary": "Create an issuer",
+        "description": "Create a new KMS issuer for the authenticated team. An issuer owns the asymmetric signing keys that are used to sign tokens and messages.",
+        "operationId": "CreateKmsIssuer",
+        "parameters": [
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateKmsIssuerRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateKmsIssuer201Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
+    "/v1/kms/issuers/{issuerId}/sign/message": {
+      "post": {
+        "tags": [
+          "kms"
+        ],
+        "summary": "Sign a message",
+        "description": "Sign a raw message with a KMS issuer\u0027s active signing key. Authenticate the request with a Vercel OIDC token in the \u0060Authorization: Bearer\u0060 header; the issuer\u0027s policies decide which workloads are allowed to sign.",
+        "operationId": "SignKmsMessage",
+        "parameters": [
+          {
+            "name": "issuerId",
+            "in": "path",
+            "description": "The ID of the issuer.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The ID of the issuer."
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignKmsMessageRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignKmsMessage200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "429": {
+            "description": "429 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
+    "/v1/kms/issuers/{issuerId}/sign/token": {
+      "post": {
+        "tags": [
+          "kms"
+        ],
+        "summary": "Sign a token",
+        "description": "Sign a JWT with a KMS issuer\u0027s active signing key. Authenticate the request with a Vercel OIDC token in the \u0060Authorization: Bearer\u0060 header; the issuer\u0027s policies decide which workloads are allowed to sign.",
+        "operationId": "SignKmsToken",
+        "parameters": [
+          {
+            "name": "issuerId",
+            "in": "path",
+            "description": "The ID of the issuer.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The ID of the issuer."
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignKmsTokenRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignKmsToken200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "401 response"
+          },
+          "403": {
+            "description": "403 response"
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "429": {
+            "description": "429 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
+    "/v1/kms/issuers/{issuerId}/keys": {
+      "post": {
+        "tags": [
+          "kms"
+        ],
+        "summary": "Create a signing key",
+        "description": "Create a new signing key for a KMS issuer. Depending on the activation mode, the key is activated automatically once its public key has propagated, or manually via the activate endpoint.",
+        "operationId": "CreateKmsSigningKey",
+        "parameters": [
+          {
+            "name": "issuerId",
+            "in": "path",
+            "description": "The ID of the issuer.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The ID of the issuer."
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateKmsSigningKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateKmsSigningKey200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "409": {
+            "description": "409 response"
+          },
+          "410": {
+            "description": "410 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
+    "/v1/kms/issuers/{issuerId}/keys/{keyId}/activate": {
+      "post": {
+        "tags": [
+          "kms"
+        ],
+        "summary": "Activate a signing key",
+        "description": "Activate a pending signing key so the issuer starts signing with it.",
+        "operationId": "ActivateKmsSigningKey",
+        "parameters": [
+          {
+            "name": "issuerId",
+            "in": "path",
+            "description": "The ID of the issuer.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The ID of the issuer."
+            }
+          },
+          {
+            "name": "keyId",
+            "in": "path",
+            "description": "The ID of the pending signing key to activate.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The ID of the pending signing key to activate."
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActivateKmsSigningKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivateKmsSigningKey200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "409": {
+            "description": "409 response"
+          },
+          "410": {
+            "description": "410 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
+    "/v1/kms/issuers/{issuerId}/keys/{keyId}/revoke": {
+      "post": {
+        "tags": [
+          "kms"
+        ],
+        "summary": "Revoke a signing key",
+        "description": "Immediately revoke a signing key that is already scheduled for revocation.",
+        "operationId": "RevokeKmsSigningKey",
+        "parameters": [
+          {
+            "name": "issuerId",
+            "in": "path",
+            "description": "The ID of the issuer.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The ID of the issuer."
+            }
+          },
+          {
+            "name": "keyId",
+            "in": "path",
+            "description": "The ID of the signing key to revoke immediately. The key must already be scheduled for revocation.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The ID of the signing key to revoke immediately. The key must already be scheduled for revocation."
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RevokeKmsSigningKey200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "409": {
+            "description": "409 response"
+          },
+          "410": {
+            "description": "410 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
+    "/v1/kms/issuers/{issuerId}": {
+      "get": {
+        "tags": [
+          "kms"
+        ],
+        "summary": "Get an issuer",
+        "description": "Retrieve a single KMS issuer by its ID.",
+        "operationId": "GetKmsIssuer",
+        "parameters": [
+          {
+            "name": "issuerId",
+            "in": "path",
+            "description": "The ID of the issuer.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The ID of the issuer."
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetKmsIssuer200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "kms"
+        ],
+        "summary": "Update an issuer",
+        "description": "Update a KMS issuer\u0027s name or claims schema.",
+        "operationId": "UpdateKmsIssuer",
+        "parameters": [
+          {
+            "name": "issuerId",
+            "in": "path",
+            "description": "The ID of the issuer.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The ID of the issuer."
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateKmsIssuerRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateKmsIssuer200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "kms"
+        ],
+        "summary": "Delete an issuer",
+        "description": "Delete a KMS issuer and its signing keys.",
+        "operationId": "DeleteKmsIssuer",
+        "parameters": [
+          {
+            "name": "issuerId",
+            "in": "path",
+            "description": "The ID of the issuer.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The ID of the issuer."
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 response"
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
+    "/v1/kms/issuers/{issuerId}/policies": {
+      "post": {
+        "tags": [
+          "kms"
+        ],
+        "summary": "Create an issuer policy",
+        "description": "Attach a policy to a KMS issuer that grants a project\u0027s deployments permission to sign with it.",
+        "operationId": "CreateKmsIssuerPolicy",
+        "parameters": [
+          {
+            "name": "issuerId",
+            "in": "path",
+            "description": "The ID of the issuer.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The ID of the issuer."
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateKmsIssuerPolicyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateKmsIssuerPolicy201Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
+    "/v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey}": {
+      "patch": {
+        "tags": [
+          "kms"
+        ],
+        "summary": "Update an issuer policy",
+        "description": "Update an existing KMS issuer policy\u0027s environments or token claims.",
+        "operationId": "UpdateKmsIssuerPolicy",
+        "parameters": [
+          {
+            "name": "issuerId",
+            "in": "path",
+            "description": "The ID of the issuer.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The ID of the issuer."
+            }
+          },
+          {
+            "name": "kind",
+            "in": "path",
+            "description": "The issuer policy kind.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/ProjectGrantKind"
+            }
+          },
+          {
+            "name": "policyKey",
+            "in": "path",
+            "description": "The policy identifier.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The policy identifier."
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateKmsIssuerPolicyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateKmsIssuerPolicy200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "kms"
+        ],
+        "summary": "Delete an issuer policy",
+        "description": "Remove a policy from a KMS issuer.",
+        "operationId": "DeleteKmsIssuerPolicy",
+        "parameters": [
+          {
+            "name": "issuerId",
+            "in": "path",
+            "description": "The ID of the issuer.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The ID of the issuer."
+            }
+          },
+          {
+            "name": "kind",
+            "in": "path",
+            "description": "The issuer policy kind.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/DeleteKmsIssuerPolicyKindParameter"
+            }
+          },
+          {
+            "name": "policyKey",
+            "in": "path",
+            "description": "The policy identifier.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The policy identifier."
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 response"
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
     "/v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs": {
       "get": {
         "tags": [
@@ -21553,6 +22569,9 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "422": {
+            "description": "422 response"
           }
         },
         "security": [
@@ -36875,27 +37894,6 @@
           "description": {
             "type": "string"
           },
-          "experiment": {
-            "$ref": "#/components/schemas/FlagExperiment"
-          },
-          "maintainerIds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "permanent": {
-            "$ref": "#/components/schemas/FlagPermanent"
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "updatedBy": {
-            "type": "string"
-          },
           "variants": {
             "type": "array",
             "items": {
@@ -36920,6 +37918,21 @@
           "state": {
             "$ref": "#/components/schemas/FlagState"
           },
+          "maintainerIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "permanent": {
+            "$ref": "#/components/schemas/FlagPermanent"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "slug": {
             "type": "string"
           },
@@ -36928,6 +37941,9 @@
           },
           "updatedAt": {
             "type": "number"
+          },
+          "updatedBy": {
+            "type": "string"
           },
           "createdBy": {
             "type": "string"
@@ -53151,36 +54167,6 @@
           }
         }
       },
-      "FlagExperiment": {
-        "required": [
-          "base",
-          "defaultVariantId",
-          "id",
-          "weights"
-        ],
-        "type": "object",
-        "properties": {
-          "rampId": {
-            "type": "string"
-          },
-          "rampPercentage": {
-            "type": "number"
-          },
-          "id": {
-            "type": "string"
-          },
-          "base": {
-            "$ref": "#/components/schemas/FlagExperimentBase"
-          },
-          "weights": {
-            "$ref": "#/components/schemas/FlagExperimentWeightsProperty"
-          },
-          "defaultVariantId": {
-            "type": "string"
-          }
-        },
-        "nullable": true
-      },
       "FlagVariantsItem": {
         "type": "object"
       },
@@ -59145,31 +60131,6 @@
       "RegistrantFieldAnyOf1OptionsItemFields": {
         "type": "object"
       },
-      "FlagExperimentBase": {
-        "required": [
-          "attribute",
-          "kind",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/EntityType"
-          },
-          "kind": {
-            "type": "string"
-          },
-          "attribute": {
-            "type": "string"
-          }
-        }
-      },
-      "FlagExperimentWeights": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "number"
-        }
-      },
       "FlagEnvironmentsAdditionalProperties": {
         "required": [
           "active",
@@ -60649,6 +61610,9 @@
           },
           "workflowEvents": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf163NewOwnerFeatureBlocksWorkflowEvents"
+          },
+          "connexForwardTriggers": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf163NewOwnerFeatureBlocksConnexForwardTriggers"
           },
           "connexTokenRequests": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf163NewOwnerFeatureBlocksConnexTokenRequests"
@@ -62916,6 +63880,27 @@
           },
           "blockReason": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf163NewOwnerFeatureBlocksWorkflowEventsBlockReason"
+          }
+        }
+      },
+      "UserEventPayloadOneOf163NewOwnerFeatureBlocksConnexForwardTriggers": {
+        "required": [
+          "blockReason",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "updatedAt": {
+            "type": "number"
+          },
+          "blockedFrom": {
+            "type": "number"
+          },
+          "blockedUntil": {
+            "type": "number"
+          },
+          "blockReason": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf163NewOwnerFeatureBlocksConnexForwardTriggersBlockReason"
           }
         }
       },
@@ -66493,6 +67478,12 @@
               "$ref": "#/components/schemas/CreateDeploymentRequestFilesItem"
             },
             "description": "The files to include in the deployment. Each entry is either an inlined file (with \u0060data\u0060 and \u0060encoding\u0060) or a reference to a previously uploaded file (with \u0060sha\u0060 and \u0060size\u0060). Required for non-git deployments. Cannot be used together with \u0060gitSource\u0060."
+          },
+          "gitAccessToken": {
+            "maxLength": 1024,
+            "type": "string",
+            "description": "Available only to Vercel platform accounts. A read-only GitHub access token scoped to the requested repository. Use a token with a lifetime of 24 hours or less that remains valid until source retrieval completes.",
+            "writeOnly": true
           },
           "gitMetadata": {
             "$ref": "#/components/schemas/CreateDeploymentRequestGitMetadata"
@@ -70102,27 +71093,6 @@
           "description": {
             "type": "string"
           },
-          "experiment": {
-            "$ref": "#/components/schemas/CreateFlag201ResponseExperiment"
-          },
-          "maintainerIds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "permanent": {
-            "$ref": "#/components/schemas/CreateFlag201ResponsePermanent"
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "updatedBy": {
-            "type": "string"
-          },
           "variants": {
             "type": "array",
             "items": {
@@ -70147,6 +71117,21 @@
           "state": {
             "$ref": "#/components/schemas/CreateFlag201ResponseState"
           },
+          "maintainerIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "permanent": {
+            "$ref": "#/components/schemas/CreateFlag201ResponsePermanent"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "slug": {
             "type": "string"
           },
@@ -70155,6 +71140,9 @@
           },
           "updatedAt": {
             "type": "number"
+          },
+          "updatedBy": {
+            "type": "string"
           },
           "createdBy": {
             "type": "string"
@@ -70244,21 +71232,6 @@
           "description": {
             "type": "string"
           },
-          "maintainerIds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "updatedBy": {
-            "type": "string"
-          },
           "variants": {
             "type": "array",
             "items": {
@@ -70274,6 +71247,18 @@
           "seed": {
             "type": "number"
           },
+          "maintainerIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "slug": {
             "type": "string"
           },
@@ -70282,6 +71267,9 @@
           },
           "updatedAt": {
             "type": "number"
+          },
+          "updatedBy": {
+            "type": "string"
           },
           "createdBy": {
             "type": "string"
@@ -71814,6 +72802,635 @@
         "properties": {
           "error": {
             "$ref": "#/components/schemas/CreateApiKeys500ResponseError"
+          }
+        }
+      },
+      "ListKmsIssuers200Response": {
+        "required": [
+          "issuers",
+          "pagination"
+        ],
+        "type": "object",
+        "properties": {
+          "issuers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListKmsIssuers200ResponseIssuersItem"
+            }
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/ListKmsIssuers200ResponsePagination"
+          }
+        }
+      },
+      "CreateKmsIssuerRequest": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the issuer."
+          },
+          "algorithm": {
+            "$ref": "#/components/schemas/CreateKmsIssuerRequestAlgorithm"
+          },
+          "claimsSchema": {
+            "$ref": "#/components/schemas/CreateKmsIssuerRequestClaimsSchema"
+          },
+          "policy": {
+            "$ref": "#/components/schemas/CreateKmsIssuerRequestPolicy"
+          },
+          "importKey": {
+            "type": "string",
+            "description": "The PEM-encoded private key to use for the issuer."
+          },
+          "importKeyId": {
+            "maxLength": 128,
+            "pattern": "^[A-Za-z0-9._-]\u002B$",
+            "type": "string",
+            "description": "The key id to use as the imported key\u0027s JWT/JWKS \u0060kid\u0060. Only allowed when \u0060importKey\u0060 is provided. Not required to be unique; the addressable key id is the server-minted \u0060keyId\u0060 returned in the response."
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateKmsIssuer201Response": {
+        "required": [
+          "algorithm",
+          "createdAt",
+          "id",
+          "name",
+          "origin",
+          "ownerId",
+          "policies",
+          "signingKeys",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "ownerId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "algorithm": {
+            "$ref": "#/components/schemas/CreateKmsIssuer201ResponseAlgorithm"
+          },
+          "origin": {
+            "$ref": "#/components/schemas/CreateKmsIssuer201ResponseOrigin"
+          },
+          "managedBy": {
+            "type": "string"
+          },
+          "claimsSchema": {
+            "$ref": "#/components/schemas/CreateKmsIssuer201ResponseClaimsSchema"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "signingKeys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateKmsIssuer201ResponseSigningKeysItem"
+            }
+          },
+          "policies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateKmsIssuer201ResponsePoliciesItem"
+            }
+          }
+        }
+      },
+      "SignKmsMessageRequest": {
+        "required": [
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "maxLength": 44000,
+            "pattern": "^[A-Za-z0-9\u002B/]*={0,2}$",
+            "type": "string",
+            "description": "Base64-encoded message to be signed."
+          }
+        }
+      },
+      "SignKmsMessage200Response": {
+        "required": [
+          "signature"
+        ],
+        "type": "object",
+        "properties": {
+          "signature": {
+            "$ref": "#/components/schemas/SignKmsMessage200ResponseSignature"
+          }
+        }
+      },
+      "SignKmsTokenRequest": {
+        "type": "object",
+        "properties": {
+          "claims": {
+            "$ref": "#/components/schemas/SignKmsTokenRequestClaims"
+          },
+          "headers": {
+            "$ref": "#/components/schemas/SignKmsTokenRequestHeaders"
+          },
+          "ttl": {
+            "type": "number",
+            "description": "The time-to-live for the token, in seconds.",
+            "default": 300,
+            "nullable": true
+          }
+        }
+      },
+      "SignKmsToken200Response": {
+        "required": [
+          "token"
+        ],
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateKmsSigningKeyRequest": {
+        "type": "object",
+        "properties": {
+          "activation": {
+            "$ref": "#/components/schemas/CreateKmsSigningKeyRequestActivation"
+          },
+          "revokePreviousAfterHours": {
+            "minimum": 0,
+            "type": "number",
+            "description": "For automatic activation, how many hours after activation the previous signing key should stop being used. Defaults to a 1 hour grace period so already-issued tokens keep verifying."
+          },
+          "revokePreviousAt": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "description": "Deprecated. The ISO date string or timestamp when the previous signing key should stop being used. Converted to a relative grace and applied at activation, not creation. Prefer revokePreviousAfterHours."
+          },
+          "importKey": {
+            "type": "string",
+            "description": "The PEM-encoded private key to use for the issuer."
+          },
+          "importKeyId": {
+            "maxLength": 128,
+            "pattern": "^[A-Za-z0-9._-]\u002B$",
+            "type": "string",
+            "description": "The key id to use as the imported key\u0027s JWT/JWKS \u0060kid\u0060. Only allowed when \u0060importKey\u0060 is provided. Not required to be unique; the addressable key id is the server-minted \u0060keyId\u0060 returned in the response."
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateKmsSigningKey200Response": {
+        "required": [
+          "algorithm",
+          "createdAt",
+          "issuerId",
+          "keyId",
+          "status",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints."
+          },
+          "importKeyId": {
+            "type": "string",
+            "description": "The caller-supplied key id (imported keys only), used as the JWT/JWKS \u0060kid\u0060. Not unique across an issuer\u0027s keys; omitted for generated keys."
+          },
+          "issuerId": {
+            "type": "string"
+          },
+          "algorithm": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/CreateKmsSigningKey200ResponseStatus"
+          },
+          "publicKey": {
+            "$ref": "#/components/schemas/CreateKmsSigningKey200ResponsePublicKey"
+          },
+          "publicKeyFingerprint": {
+            "type": "string"
+          },
+          "publicKeyPem": {
+            "type": "string",
+            "description": "The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from \u0060publicKey\u0060; the embedded certificate members (\u0060x5c\u0060/\u0060x5t#S256\u0060) do not affect it."
+          },
+          "certificatePem": {
+            "type": "string",
+            "description": "The stored X.509 certificate (from \u0060publicKey.x5c[0]\u0060) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored."
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "revokeAt": {
+            "type": "string"
+          },
+          "activateAt": {
+            "type": "string"
+          },
+          "activatedAt": {
+            "type": "string",
+            "description": "When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field)."
+          }
+        }
+      },
+      "ActivateKmsSigningKeyRequest": {
+        "type": "object",
+        "properties": {
+          "revokePreviousAfterHours": {
+            "minimum": 0,
+            "type": "number",
+            "description": "How many hours after activation the previously-active key should stop being used. Defaults to a 1 hour grace period so already-issued tokens keep verifying."
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivateKmsSigningKey200Response": {
+        "required": [
+          "algorithm",
+          "createdAt",
+          "issuerId",
+          "keyId",
+          "status",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints."
+          },
+          "importKeyId": {
+            "type": "string",
+            "description": "The caller-supplied key id (imported keys only), used as the JWT/JWKS \u0060kid\u0060. Not unique across an issuer\u0027s keys; omitted for generated keys."
+          },
+          "issuerId": {
+            "type": "string"
+          },
+          "algorithm": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ActivateKmsSigningKey200ResponseStatus"
+          },
+          "publicKey": {
+            "$ref": "#/components/schemas/ActivateKmsSigningKey200ResponsePublicKey"
+          },
+          "publicKeyFingerprint": {
+            "type": "string"
+          },
+          "publicKeyPem": {
+            "type": "string",
+            "description": "The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from \u0060publicKey\u0060; the embedded certificate members (\u0060x5c\u0060/\u0060x5t#S256\u0060) do not affect it."
+          },
+          "certificatePem": {
+            "type": "string",
+            "description": "The stored X.509 certificate (from \u0060publicKey.x5c[0]\u0060) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored."
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "revokeAt": {
+            "type": "string"
+          },
+          "activateAt": {
+            "type": "string"
+          },
+          "activatedAt": {
+            "type": "string",
+            "description": "When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field)."
+          }
+        }
+      },
+      "RevokeKmsSigningKey200Response": {
+        "required": [
+          "algorithm",
+          "createdAt",
+          "id",
+          "name",
+          "origin",
+          "ownerId",
+          "policies",
+          "signingKeys",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "ownerId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "algorithm": {
+            "$ref": "#/components/schemas/RevokeKmsSigningKey200ResponseAlgorithm"
+          },
+          "origin": {
+            "$ref": "#/components/schemas/RevokeKmsSigningKey200ResponseOrigin"
+          },
+          "managedBy": {
+            "type": "string"
+          },
+          "claimsSchema": {
+            "$ref": "#/components/schemas/RevokeKmsSigningKey200ResponseClaimsSchema"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "signingKeys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RevokeKmsSigningKey200ResponseSigningKeysItem"
+            }
+          },
+          "policies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RevokeKmsSigningKey200ResponsePoliciesItem"
+            }
+          }
+        }
+      },
+      "GetKmsIssuer200Response": {
+        "required": [
+          "algorithm",
+          "createdAt",
+          "id",
+          "name",
+          "origin",
+          "ownerId",
+          "policies",
+          "signingKeys",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "ownerId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "algorithm": {
+            "$ref": "#/components/schemas/GetKmsIssuer200ResponseAlgorithm"
+          },
+          "origin": {
+            "$ref": "#/components/schemas/GetKmsIssuer200ResponseOrigin"
+          },
+          "managedBy": {
+            "type": "string"
+          },
+          "claimsSchema": {
+            "$ref": "#/components/schemas/GetKmsIssuer200ResponseClaimsSchema"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "signingKeys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetKmsIssuer200ResponseSigningKeysItem"
+            }
+          },
+          "policies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetKmsIssuer200ResponsePoliciesItem"
+            }
+          }
+        }
+      },
+      "UpdateKmsIssuerRequest": {
+        "minProperties": 1,
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the issuer."
+          },
+          "claimsSchema": {
+            "$ref": "#/components/schemas/UpdateKmsIssuerRequestClaimsSchema"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateKmsIssuer200Response": {
+        "required": [
+          "algorithm",
+          "createdAt",
+          "id",
+          "name",
+          "origin",
+          "ownerId",
+          "policies",
+          "signingKeys",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "ownerId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "algorithm": {
+            "$ref": "#/components/schemas/UpdateKmsIssuer200ResponseAlgorithm"
+          },
+          "origin": {
+            "$ref": "#/components/schemas/UpdateKmsIssuer200ResponseOrigin"
+          },
+          "managedBy": {
+            "type": "string"
+          },
+          "claimsSchema": {
+            "$ref": "#/components/schemas/UpdateKmsIssuer200ResponseClaimsSchema"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "signingKeys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateKmsIssuer200ResponseSigningKeysItem"
+            }
+          },
+          "policies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateKmsIssuer200ResponsePoliciesItem"
+            }
+          }
+        }
+      },
+      "CreateKmsIssuerPolicyRequest": {
+        "required": [
+          "kind",
+          "projectId",
+          "environments"
+        ],
+        "type": "object",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/ProjectGrantKind"
+          },
+          "projectId": {
+            "type": "string",
+            "description": "The project ID for the project grant policy."
+          },
+          "environments": {
+            "minItems": 1,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "pattern": "^(?:production|preview|development|env_.\u002B)$",
+              "type": "string"
+            },
+            "description": "The environments for the project grant policy. Each entry is a system environment (production, preview, development) or a custom environment ID (env_...)."
+          },
+          "tokenClaims": {
+            "$ref": "#/components/schemas/CreateKmsIssuerPolicyRequestTokenClaims"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateKmsIssuerPolicy201Response": {
+        "required": [
+          "createdAt",
+          "kind",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/CreateKmsIssuerPolicy201ResponseKind"
+          },
+          "teamId": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "environments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (\u0060production\u0060, \u0060preview\u0060, \u0060development\u0060) or a custom environment ID (prefixed \u0060env_\u0060). Custom environments are matched against the token\u0027s \u0060custom_environment_id\u0060 claim (the stable ID); system environments against its \u0060environment\u0060 claim."
+          },
+          "tokenClaims": {
+            "$ref": "#/components/schemas/CreateKmsIssuerPolicy201ResponseTokenClaims"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateKmsIssuerPolicyRequest": {
+        "type": "object",
+        "properties": {
+          "environments": {
+            "minItems": 1,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "pattern": "^(?:production|preview|development|env_.\u002B)$",
+              "type": "string"
+            },
+            "description": "The environments for the project grant policy. Each entry is a system environment (production, preview, development) or a custom environment ID (env_...)."
+          },
+          "tokenClaims": {
+            "$ref": "#/components/schemas/UpdateKmsIssuerPolicyRequestTokenClaims"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateKmsIssuerPolicy200Response": {
+        "required": [
+          "createdAt",
+          "kind",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/UpdateKmsIssuerPolicy200ResponseKind"
+          },
+          "teamId": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "environments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (\u0060production\u0060, \u0060preview\u0060, \u0060development\u0060) or a custom environment ID (prefixed \u0060env_\u0060). Custom environments are matched against the token\u0027s \u0060custom_environment_id\u0060 claim (the stable ID); system environments against its \u0060environment\u0060 claim."
+          },
+          "tokenClaims": {
+            "$ref": "#/components/schemas/UpdateKmsIssuerPolicy200ResponseTokenClaims"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
           }
         }
       },
@@ -89973,27 +91590,6 @@
           "description": {
             "type": "string"
           },
-          "experiment": {
-            "$ref": "#/components/schemas/FlagExperiment"
-          },
-          "maintainerIds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "permanent": {
-            "$ref": "#/components/schemas/FlagPermanent"
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "updatedBy": {
-            "type": "string"
-          },
           "variants": {
             "type": "array",
             "items": {
@@ -90015,6 +91611,21 @@
           "seed": {
             "type": "number"
           },
+          "maintainerIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "permanent": {
+            "$ref": "#/components/schemas/FlagPermanent"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "slug": {
             "type": "string"
           },
@@ -90023,6 +91634,9 @@
           },
           "updatedAt": {
             "type": "number"
+          },
+          "updatedBy": {
+            "type": "string"
           },
           "createdBy": {
             "type": "string"
@@ -90228,27 +91842,6 @@
           "description": {
             "type": "string"
           },
-          "experiment": {
-            "$ref": "#/components/schemas/UpdateFlag200ResponseOneOf1Experiment"
-          },
-          "maintainerIds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "permanent": {
-            "$ref": "#/components/schemas/UpdateFlag200ResponseOneOf1Permanent"
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "updatedBy": {
-            "type": "string"
-          },
           "variants": {
             "type": "array",
             "items": {
@@ -90273,6 +91866,21 @@
           "state": {
             "$ref": "#/components/schemas/UpdateFlag200ResponseOneOf1State"
           },
+          "maintainerIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "permanent": {
+            "$ref": "#/components/schemas/UpdateFlag200ResponseOneOf1Permanent"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "slug": {
             "type": "string"
           },
@@ -90281,6 +91889,9 @@
           },
           "updatedAt": {
             "type": "number"
+          },
+          "updatedBy": {
+            "type": "string"
           },
           "createdBy": {
             "type": "string"
@@ -90362,27 +91973,6 @@
           "description": {
             "type": "string"
           },
-          "experiment": {
-            "$ref": "#/components/schemas/FlagExperiment"
-          },
-          "maintainerIds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "permanent": {
-            "$ref": "#/components/schemas/FlagPermanent"
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "updatedBy": {
-            "type": "string"
-          },
           "variants": {
             "type": "array",
             "items": {
@@ -90404,6 +91994,21 @@
           "seed": {
             "type": "number"
           },
+          "maintainerIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "permanent": {
+            "$ref": "#/components/schemas/FlagPermanent"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "slug": {
             "type": "string"
           },
@@ -90412,6 +92017,9 @@
           },
           "updatedAt": {
             "type": "number"
+          },
+          "updatedBy": {
+            "type": "string"
           },
           "createdBy": {
             "type": "string"
@@ -104014,12 +105622,6 @@
       "RegistrantFieldAnyOf1OptionsItemFieldsProperty": {
         "type": "object"
       },
-      "FlagExperimentWeightsProperty": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "number"
-        }
-      },
       "SegmentDataIncludeProperty": {
         "type": "object",
         "additionalProperties": {
@@ -111186,36 +112788,6 @@
         },
         "description": "The configuration for the flag in different environments"
       },
-      "CreateFlag201ResponseExperiment": {
-        "required": [
-          "base",
-          "defaultVariantId",
-          "id",
-          "weights"
-        ],
-        "type": "object",
-        "properties": {
-          "rampId": {
-            "type": "string"
-          },
-          "rampPercentage": {
-            "type": "number"
-          },
-          "id": {
-            "type": "string"
-          },
-          "base": {
-            "$ref": "#/components/schemas/CreateFlag201ResponseExperimentBase"
-          },
-          "weights": {
-            "$ref": "#/components/schemas/CreateFlag201ResponseExperimentWeights"
-          },
-          "defaultVariantId": {
-            "type": "string"
-          }
-        },
-        "nullable": true
-      },
       "CreateFlag201ResponseVariantsItem": {
         "type": "object"
       },
@@ -111269,15 +112841,6 @@
         ],
         "type": "object",
         "properties": {
-          "createdBy": {
-            "type": "string"
-          },
-          "message": {
-            "type": "string"
-          },
-          "data": {
-            "$ref": "#/components/schemas/ListFlagVersions200ResponseVersionsItemData"
-          },
           "id": {
             "type": "string"
           },
@@ -111287,6 +112850,12 @@
           "createdAt": {
             "type": "number"
           },
+          "createdBy": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
           "flagId": {
             "type": "string"
           },
@@ -111295,6 +112864,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "data": {
+            "$ref": "#/components/schemas/ListFlagVersions200ResponseVersionsItemData"
           },
           "metadata": {
             "$ref": "#/components/schemas/ListFlagVersions200ResponseVersionsItemMetadata"
@@ -112831,6 +114403,642 @@
             "type": "string"
           }
         }
+      },
+      "ListKmsIssuers200ResponseIssuersItem": {
+        "required": [
+          "algorithm",
+          "createdAt",
+          "id",
+          "name",
+          "origin",
+          "ownerId",
+          "policies",
+          "signingKeys",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "ownerId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "algorithm": {
+            "$ref": "#/components/schemas/ListKmsIssuers200ResponseIssuersItemAlgorithm"
+          },
+          "origin": {
+            "$ref": "#/components/schemas/ListKmsIssuers200ResponseIssuersItemOrigin"
+          },
+          "managedBy": {
+            "type": "string"
+          },
+          "claimsSchema": {
+            "$ref": "#/components/schemas/ListKmsIssuers200ResponseIssuersItemClaimsSchema"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "signingKeys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListKmsIssuers200ResponseIssuersItemSigningKeysItem"
+            }
+          },
+          "policies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListKmsIssuers200ResponseIssuersItemPoliciesItem"
+            }
+          }
+        }
+      },
+      "ListKmsIssuers200ResponsePagination": {
+        "required": [
+          "count",
+          "next"
+        ],
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "number"
+          },
+          "next": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "CreateKmsIssuerRequestClaimsSchema": {
+        "type": "object",
+        "description": "A JSON Schema used to validate the resolved token claims when signing tokens for this issuer."
+      },
+      "CreateKmsIssuerRequestPolicy": {
+        "required": [
+          "kind"
+        ],
+        "type": "object",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/CreateKmsIssuerRequestPolicyKind"
+          },
+          "teamId": {
+            "type": "string",
+            "description": "The team ID for the project grant policy."
+          },
+          "projectId": {
+            "type": "string",
+            "description": "The project ID for the project grant policy."
+          },
+          "environments": {
+            "minItems": 1,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "pattern": "^(?:production|preview|development|env_.\u002B)$",
+              "type": "string"
+            },
+            "description": "The environments for the project grant policy. Each entry is a system environment (production, preview, development) or a custom environment ID (env_...)."
+          },
+          "tokenClaims": {
+            "$ref": "#/components/schemas/CreateKmsIssuerRequestPolicyTokenClaims"
+          },
+          "clientId": {
+            "type": "string",
+            "description": "The Connex client ID for the Connex grant policy."
+          }
+        }
+      },
+      "CreateKmsIssuer201ResponseClaimsSchema": {
+        "type": "object"
+      },
+      "CreateKmsIssuer201ResponseSigningKeysItem": {
+        "required": [
+          "algorithm",
+          "createdAt",
+          "issuerId",
+          "keyId",
+          "status",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints."
+          },
+          "importKeyId": {
+            "type": "string",
+            "description": "The caller-supplied key id (imported keys only), used as the JWT/JWKS \u0060kid\u0060. Not unique across an issuer\u0027s keys; omitted for generated keys."
+          },
+          "issuerId": {
+            "type": "string"
+          },
+          "algorithm": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/CreateKmsIssuer201ResponseSigningKeysItemStatus"
+          },
+          "publicKey": {
+            "$ref": "#/components/schemas/CreateKmsIssuer201ResponseSigningKeysItemPublicKey"
+          },
+          "publicKeyFingerprint": {
+            "type": "string"
+          },
+          "publicKeyPem": {
+            "type": "string",
+            "description": "The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from \u0060publicKey\u0060; the embedded certificate members (\u0060x5c\u0060/\u0060x5t#S256\u0060) do not affect it."
+          },
+          "certificatePem": {
+            "type": "string",
+            "description": "The stored X.509 certificate (from \u0060publicKey.x5c[0]\u0060) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored."
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "revokeAt": {
+            "type": "string"
+          },
+          "activateAt": {
+            "type": "string"
+          },
+          "activatedAt": {
+            "type": "string",
+            "description": "When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field)."
+          }
+        }
+      },
+      "CreateKmsIssuer201ResponsePoliciesItem": {
+        "required": [
+          "createdAt",
+          "kind",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/CreateKmsIssuer201ResponsePoliciesItemKind"
+          },
+          "teamId": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "environments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (\u0060production\u0060, \u0060preview\u0060, \u0060development\u0060) or a custom environment ID (prefixed \u0060env_\u0060). Custom environments are matched against the token\u0027s \u0060custom_environment_id\u0060 claim (the stable ID); system environments against its \u0060environment\u0060 claim."
+          },
+          "tokenClaims": {
+            "$ref": "#/components/schemas/CreateKmsIssuer201ResponsePoliciesItemTokenClaims"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          }
+        }
+      },
+      "SignKmsMessage200ResponseSignature": {
+        "required": [
+          "payload",
+          "signature"
+        ],
+        "type": "object",
+        "properties": {
+          "payload": {
+            "type": "string"
+          },
+          "signature": {
+            "type": "string"
+          },
+          "header": {
+            "$ref": "#/components/schemas/SignKmsMessage200ResponseSignatureHeader"
+          },
+          "protected": {
+            "type": "string",
+            "description": "The \u0022protected\u0022 member MUST be present and contain the value BASE64URL(UTF8(JWS Protected Header)) when the JWS Protected Header value is non-empty; otherwise, it MUST be absent. These Header Parameter values are integrity protected."
+          }
+        },
+        "description": "Flattened JWS JSON Serialization Syntax token. Payload is returned as an empty string when JWS Unencoded Payload ({@link https://www.rfc-editor.org/rfc/rfc7797 RFC7797}) is used."
+      },
+      "SignKmsTokenRequestClaims": {
+        "maxProperties": 128,
+        "type": "object",
+        "description": "The claims to include in the token."
+      },
+      "SignKmsTokenRequestHeaders": {
+        "maxProperties": 64,
+        "type": "object",
+        "description": "Additional headers to include in the token."
+      },
+      "CreateKmsSigningKey200ResponsePublicKey": {
+        "type": "object",
+        "properties": {
+          "kty": {
+            "type": "string"
+          },
+          "kid": {
+            "type": "string"
+          },
+          "alg": {
+            "type": "string"
+          },
+          "use": {
+            "type": "string"
+          },
+          "key_ops": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "x5c": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The X.509 certificate chain (RFC 7517 \u00A74.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as \u0060[x5c]\u0060."
+          },
+          "x5t#S256": {
+            "type": "string",
+            "description": "The base64url SHA-256 thumbprint of the DER certificate in \u0060x5c[0]\u0060 (RFC 7517 \u00A74.9)."
+          }
+        }
+      },
+      "ActivateKmsSigningKey200ResponsePublicKey": {
+        "type": "object",
+        "properties": {
+          "kty": {
+            "type": "string"
+          },
+          "kid": {
+            "type": "string"
+          },
+          "alg": {
+            "type": "string"
+          },
+          "use": {
+            "type": "string"
+          },
+          "key_ops": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "x5c": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The X.509 certificate chain (RFC 7517 \u00A74.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as \u0060[x5c]\u0060."
+          },
+          "x5t#S256": {
+            "type": "string",
+            "description": "The base64url SHA-256 thumbprint of the DER certificate in \u0060x5c[0]\u0060 (RFC 7517 \u00A74.9)."
+          }
+        }
+      },
+      "RevokeKmsSigningKey200ResponseClaimsSchema": {
+        "type": "object"
+      },
+      "RevokeKmsSigningKey200ResponseSigningKeysItem": {
+        "required": [
+          "algorithm",
+          "createdAt",
+          "issuerId",
+          "keyId",
+          "status",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints."
+          },
+          "importKeyId": {
+            "type": "string",
+            "description": "The caller-supplied key id (imported keys only), used as the JWT/JWKS \u0060kid\u0060. Not unique across an issuer\u0027s keys; omitted for generated keys."
+          },
+          "issuerId": {
+            "type": "string"
+          },
+          "algorithm": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/RevokeKmsSigningKey200ResponseSigningKeysItemStatus"
+          },
+          "publicKey": {
+            "$ref": "#/components/schemas/RevokeKmsSigningKey200ResponseSigningKeysItemPublicKey"
+          },
+          "publicKeyFingerprint": {
+            "type": "string"
+          },
+          "publicKeyPem": {
+            "type": "string",
+            "description": "The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from \u0060publicKey\u0060; the embedded certificate members (\u0060x5c\u0060/\u0060x5t#S256\u0060) do not affect it."
+          },
+          "certificatePem": {
+            "type": "string",
+            "description": "The stored X.509 certificate (from \u0060publicKey.x5c[0]\u0060) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored."
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "revokeAt": {
+            "type": "string"
+          },
+          "activateAt": {
+            "type": "string"
+          },
+          "activatedAt": {
+            "type": "string",
+            "description": "When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field)."
+          }
+        }
+      },
+      "RevokeKmsSigningKey200ResponsePoliciesItem": {
+        "required": [
+          "createdAt",
+          "kind",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/RevokeKmsSigningKey200ResponsePoliciesItemKind"
+          },
+          "teamId": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "environments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (\u0060production\u0060, \u0060preview\u0060, \u0060development\u0060) or a custom environment ID (prefixed \u0060env_\u0060). Custom environments are matched against the token\u0027s \u0060custom_environment_id\u0060 claim (the stable ID); system environments against its \u0060environment\u0060 claim."
+          },
+          "tokenClaims": {
+            "$ref": "#/components/schemas/RevokeKmsSigningKey200ResponsePoliciesItemTokenClaims"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          }
+        }
+      },
+      "GetKmsIssuer200ResponseClaimsSchema": {
+        "type": "object"
+      },
+      "GetKmsIssuer200ResponseSigningKeysItem": {
+        "required": [
+          "algorithm",
+          "createdAt",
+          "issuerId",
+          "keyId",
+          "status",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints."
+          },
+          "importKeyId": {
+            "type": "string",
+            "description": "The caller-supplied key id (imported keys only), used as the JWT/JWKS \u0060kid\u0060. Not unique across an issuer\u0027s keys; omitted for generated keys."
+          },
+          "issuerId": {
+            "type": "string"
+          },
+          "algorithm": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/GetKmsIssuer200ResponseSigningKeysItemStatus"
+          },
+          "publicKey": {
+            "$ref": "#/components/schemas/GetKmsIssuer200ResponseSigningKeysItemPublicKey"
+          },
+          "publicKeyFingerprint": {
+            "type": "string"
+          },
+          "publicKeyPem": {
+            "type": "string",
+            "description": "The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from \u0060publicKey\u0060; the embedded certificate members (\u0060x5c\u0060/\u0060x5t#S256\u0060) do not affect it."
+          },
+          "certificatePem": {
+            "type": "string",
+            "description": "The stored X.509 certificate (from \u0060publicKey.x5c[0]\u0060) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored."
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "revokeAt": {
+            "type": "string"
+          },
+          "activateAt": {
+            "type": "string"
+          },
+          "activatedAt": {
+            "type": "string",
+            "description": "When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field)."
+          }
+        }
+      },
+      "GetKmsIssuer200ResponsePoliciesItem": {
+        "required": [
+          "createdAt",
+          "kind",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/GetKmsIssuer200ResponsePoliciesItemKind"
+          },
+          "teamId": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "environments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (\u0060production\u0060, \u0060preview\u0060, \u0060development\u0060) or a custom environment ID (prefixed \u0060env_\u0060). Custom environments are matched against the token\u0027s \u0060custom_environment_id\u0060 claim (the stable ID); system environments against its \u0060environment\u0060 claim."
+          },
+          "tokenClaims": {
+            "$ref": "#/components/schemas/GetKmsIssuer200ResponsePoliciesItemTokenClaims"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateKmsIssuerRequestClaimsSchema": {
+        "type": "object",
+        "description": "A JSON Schema used to validate the resolved token claims when signing tokens for this issuer. Pass null to remove it.",
+        "nullable": true
+      },
+      "UpdateKmsIssuer200ResponseClaimsSchema": {
+        "type": "object"
+      },
+      "UpdateKmsIssuer200ResponseSigningKeysItem": {
+        "required": [
+          "algorithm",
+          "createdAt",
+          "issuerId",
+          "keyId",
+          "status",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints."
+          },
+          "importKeyId": {
+            "type": "string",
+            "description": "The caller-supplied key id (imported keys only), used as the JWT/JWKS \u0060kid\u0060. Not unique across an issuer\u0027s keys; omitted for generated keys."
+          },
+          "issuerId": {
+            "type": "string"
+          },
+          "algorithm": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/UpdateKmsIssuer200ResponseSigningKeysItemStatus"
+          },
+          "publicKey": {
+            "$ref": "#/components/schemas/UpdateKmsIssuer200ResponseSigningKeysItemPublicKey"
+          },
+          "publicKeyFingerprint": {
+            "type": "string"
+          },
+          "publicKeyPem": {
+            "type": "string",
+            "description": "The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from \u0060publicKey\u0060; the embedded certificate members (\u0060x5c\u0060/\u0060x5t#S256\u0060) do not affect it."
+          },
+          "certificatePem": {
+            "type": "string",
+            "description": "The stored X.509 certificate (from \u0060publicKey.x5c[0]\u0060) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored."
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "revokeAt": {
+            "type": "string"
+          },
+          "activateAt": {
+            "type": "string"
+          },
+          "activatedAt": {
+            "type": "string",
+            "description": "When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field)."
+          }
+        }
+      },
+      "UpdateKmsIssuer200ResponsePoliciesItem": {
+        "required": [
+          "createdAt",
+          "kind",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/UpdateKmsIssuer200ResponsePoliciesItemKind"
+          },
+          "teamId": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "environments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (\u0060production\u0060, \u0060preview\u0060, \u0060development\u0060) or a custom environment ID (prefixed \u0060env_\u0060). Custom environments are matched against the token\u0027s \u0060custom_environment_id\u0060 claim (the stable ID); system environments against its \u0060environment\u0060 claim."
+          },
+          "tokenClaims": {
+            "$ref": "#/components/schemas/UpdateKmsIssuer200ResponsePoliciesItemTokenClaims"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateKmsIssuerPolicyRequestTokenClaims": {
+        "type": "object",
+        "description": "The claims that KMS should include in signed JWTs for this policy."
+      },
+      "CreateKmsIssuerPolicy201ResponseTokenClaims": {
+        "type": "object"
+      },
+      "UpdateKmsIssuerPolicyRequestTokenClaims": {
+        "type": "object",
+        "description": "The claims that KMS should include in signed JWTs for this policy. Pass null to remove them.",
+        "nullable": true
+      },
+      "UpdateKmsIssuerPolicy200ResponseTokenClaims": {
+        "type": "object"
       },
       "CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsRequestItemsItem": {
         "required": [
@@ -137167,36 +139375,6 @@
         },
         "additionalProperties": false
       },
-      "UpdateFlag200ResponseOneOf1Experiment": {
-        "required": [
-          "base",
-          "defaultVariantId",
-          "id",
-          "weights"
-        ],
-        "type": "object",
-        "properties": {
-          "rampId": {
-            "type": "string"
-          },
-          "rampPercentage": {
-            "type": "number"
-          },
-          "id": {
-            "type": "string"
-          },
-          "base": {
-            "$ref": "#/components/schemas/UpdateFlag200ResponseOneOf1ExperimentBase"
-          },
-          "weights": {
-            "$ref": "#/components/schemas/UpdateFlag200ResponseOneOf1ExperimentWeights"
-          },
-          "defaultVariantId": {
-            "type": "string"
-          }
-        },
-        "nullable": true
-      },
       "UpdateFlag200ResponseOneOf1VariantsItem": {
         "type": "object"
       },
@@ -147330,31 +149508,6 @@
         },
         "additionalProperties": false
       },
-      "CreateFlag201ResponseExperimentBase": {
-        "required": [
-          "attribute",
-          "kind",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/EntityType"
-          },
-          "kind": {
-            "type": "string"
-          },
-          "attribute": {
-            "type": "string"
-          }
-        }
-      },
-      "CreateFlag201ResponseExperimentWeights": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "number"
-        }
-      },
       "CreateFlag201ResponseEnvironmentsAdditionalProperties": {
         "required": [
           "active",
@@ -147440,8 +149593,20 @@
           "description": {
             "type": "string"
           },
-          "experiment": {
-            "$ref": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataExperiment"
+          "variants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataVariantsItem"
+            }
+          },
+          "environments": {
+            "$ref": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataEnvironments"
+          },
+          "seed": {
+            "type": "number"
+          },
+          "state": {
+            "$ref": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataState"
           },
           "maintainerIds": {
             "type": "array",
@@ -147457,21 +149622,6 @@
             "items": {
               "type": "string"
             }
-          },
-          "variants": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataVariantsItem"
-            }
-          },
-          "environments": {
-            "$ref": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataEnvironments"
-          },
-          "seed": {
-            "type": "number"
-          },
-          "state": {
-            "$ref": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataState"
           }
         }
       },
@@ -148105,6 +150255,313 @@
             "type": "string"
           }
         }
+      },
+      "ListKmsIssuers200ResponseIssuersItemClaimsSchema": {
+        "type": "object"
+      },
+      "ListKmsIssuers200ResponseIssuersItemSigningKeysItem": {
+        "required": [
+          "algorithm",
+          "createdAt",
+          "issuerId",
+          "keyId",
+          "status",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "The server-minted, unique record identifier. Use this to address the key on the activate / certificate endpoints."
+          },
+          "importKeyId": {
+            "type": "string",
+            "description": "The caller-supplied key id (imported keys only), used as the JWT/JWKS \u0060kid\u0060. Not unique across an issuer\u0027s keys; omitted for generated keys."
+          },
+          "issuerId": {
+            "type": "string"
+          },
+          "algorithm": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ListKmsIssuers200ResponseIssuersItemSigningKeysItemStatus"
+          },
+          "publicKey": {
+            "$ref": "#/components/schemas/ListKmsIssuers200ResponseIssuersItemSigningKeysItemPublicKey"
+          },
+          "publicKeyFingerprint": {
+            "type": "string"
+          },
+          "publicKeyPem": {
+            "type": "string",
+            "description": "The public key in SPKI PEM form, ready to render. Present whenever the key has public key material. Derived from \u0060publicKey\u0060; the embedded certificate members (\u0060x5c\u0060/\u0060x5t#S256\u0060) do not affect it."
+          },
+          "certificatePem": {
+            "type": "string",
+            "description": "The stored X.509 certificate (from \u0060publicKey.x5c[0]\u0060) in PEM form, ready to render. Present only for keys created with a stored certificate; omitted for keys created before certificates were stored."
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "revokeAt": {
+            "type": "string"
+          },
+          "activateAt": {
+            "type": "string"
+          },
+          "activatedAt": {
+            "type": "string",
+            "description": "When the key became the active signer. Present for active and revoking keys (and absent for pending keys and rows predating this field)."
+          }
+        }
+      },
+      "ListKmsIssuers200ResponseIssuersItemPoliciesItem": {
+        "required": [
+          "createdAt",
+          "kind",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/ListKmsIssuers200ResponseIssuersItemPoliciesItemKind"
+          },
+          "teamId": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "environments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Environments whose OIDC tokens this grant authorizes. Each entry is either a system environment slug (\u0060production\u0060, \u0060preview\u0060, \u0060development\u0060) or a custom environment ID (prefixed \u0060env_\u0060). Custom environments are matched against the token\u0027s \u0060custom_environment_id\u0060 claim (the stable ID); system environments against its \u0060environment\u0060 claim."
+          },
+          "tokenClaims": {
+            "$ref": "#/components/schemas/ListKmsIssuers200ResponseIssuersItemPoliciesItemTokenClaims"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateKmsIssuerRequestPolicyTokenClaims": {
+        "type": "object",
+        "description": "The claims that KMS should include in signed JWTs for this policy."
+      },
+      "CreateKmsIssuer201ResponseSigningKeysItemPublicKey": {
+        "type": "object",
+        "properties": {
+          "kty": {
+            "type": "string"
+          },
+          "kid": {
+            "type": "string"
+          },
+          "alg": {
+            "type": "string"
+          },
+          "use": {
+            "type": "string"
+          },
+          "key_ops": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "x5c": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The X.509 certificate chain (RFC 7517 \u00A74.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as \u0060[x5c]\u0060."
+          },
+          "x5t#S256": {
+            "type": "string",
+            "description": "The base64url SHA-256 thumbprint of the DER certificate in \u0060x5c[0]\u0060 (RFC 7517 \u00A74.9)."
+          }
+        }
+      },
+      "CreateKmsIssuer201ResponsePoliciesItemTokenClaims": {
+        "type": "object"
+      },
+      "SignKmsMessage200ResponseSignatureHeader": {
+        "type": "object",
+        "properties": {
+          "alg": {
+            "type": "string",
+            "description": "JWS \u0022alg\u0022 (Algorithm) Header Parameter"
+          },
+          "b64": {
+            "$ref": "#/components/schemas/SignKmsMessage200ResponseSignatureHeaderB64"
+          },
+          "crit": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "JWS \u0022crit\u0022 (Critical) Header Parameter"
+          },
+          "kid": {
+            "type": "string",
+            "description": "\u0022kid\u0022 (Key ID) Header Parameter"
+          },
+          "x5t": {
+            "type": "string",
+            "description": "\u0022x5t\u0022 (X.509 Certificate SHA-1 Thumbprint) Header Parameter"
+          },
+          "x5c": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "\u0022x5c\u0022 (X.509 Certificate Chain) Header Parameter"
+          },
+          "x5u": {
+            "type": "string",
+            "description": "\u0022x5u\u0022 (X.509 URL) Header Parameter"
+          },
+          "jku": {
+            "type": "string",
+            "description": "\u0022jku\u0022 (JWK Set URL) Header Parameter"
+          },
+          "jwk": {
+            "$ref": "#/components/schemas/SignKmsMessage200ResponseSignatureHeaderJwk"
+          },
+          "typ": {
+            "type": "string",
+            "description": "\u0022typ\u0022 (Type) Header Parameter"
+          },
+          "cty": {
+            "type": "string",
+            "description": "\u0022cty\u0022 (Content Type) Header Parameter"
+          }
+        },
+        "description": "The \u0022header\u0022 member MUST be present and contain the value JWS Unprotected Header when the JWS Unprotected Header value is non- empty; otherwise, it MUST be absent. This value is represented as an unencoded JSON object, rather than as a string. These Header Parameter values are not integrity protected."
+      },
+      "RevokeKmsSigningKey200ResponseSigningKeysItemPublicKey": {
+        "type": "object",
+        "properties": {
+          "kty": {
+            "type": "string"
+          },
+          "kid": {
+            "type": "string"
+          },
+          "alg": {
+            "type": "string"
+          },
+          "use": {
+            "type": "string"
+          },
+          "key_ops": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "x5c": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The X.509 certificate chain (RFC 7517 \u00A74.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as \u0060[x5c]\u0060."
+          },
+          "x5t#S256": {
+            "type": "string",
+            "description": "The base64url SHA-256 thumbprint of the DER certificate in \u0060x5c[0]\u0060 (RFC 7517 \u00A74.9)."
+          }
+        }
+      },
+      "RevokeKmsSigningKey200ResponsePoliciesItemTokenClaims": {
+        "type": "object"
+      },
+      "GetKmsIssuer200ResponseSigningKeysItemPublicKey": {
+        "type": "object",
+        "properties": {
+          "kty": {
+            "type": "string"
+          },
+          "kid": {
+            "type": "string"
+          },
+          "alg": {
+            "type": "string"
+          },
+          "use": {
+            "type": "string"
+          },
+          "key_ops": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "x5c": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The X.509 certificate chain (RFC 7517 \u00A74.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as \u0060[x5c]\u0060."
+          },
+          "x5t#S256": {
+            "type": "string",
+            "description": "The base64url SHA-256 thumbprint of the DER certificate in \u0060x5c[0]\u0060 (RFC 7517 \u00A74.9)."
+          }
+        }
+      },
+      "GetKmsIssuer200ResponsePoliciesItemTokenClaims": {
+        "type": "object"
+      },
+      "UpdateKmsIssuer200ResponseSigningKeysItemPublicKey": {
+        "type": "object",
+        "properties": {
+          "kty": {
+            "type": "string"
+          },
+          "kid": {
+            "type": "string"
+          },
+          "alg": {
+            "type": "string"
+          },
+          "use": {
+            "type": "string"
+          },
+          "key_ops": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "x5c": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The X.509 certificate chain (RFC 7517 \u00A74.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as \u0060[x5c]\u0060."
+          },
+          "x5t#S256": {
+            "type": "string",
+            "description": "The base64url SHA-256 thumbprint of the DER certificate in \u0060x5c[0]\u0060 (RFC 7517 \u00A74.9)."
+          }
+        }
+      },
+      "UpdateKmsIssuer200ResponsePoliciesItemTokenClaims": {
+        "type": "object"
       },
       "ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigRequestDataAdditionalProperties": {
         "type": "object"
@@ -163518,31 +165975,6 @@
           }
         }
       },
-      "UpdateFlag200ResponseOneOf1ExperimentBase": {
-        "required": [
-          "attribute",
-          "kind",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/EntityType"
-          },
-          "kind": {
-            "type": "string"
-          },
-          "attribute": {
-            "type": "string"
-          }
-        }
-      },
-      "UpdateFlag200ResponseOneOf1ExperimentWeights": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "number"
-        }
-      },
       "UpdateFlag200ResponseOneOf1EnvironmentsAdditionalProperties": {
         "required": [
           "active",
@@ -171425,36 +173857,6 @@
           }
         }
       },
-      "ListFlagVersions200ResponseVersionsItemDataExperiment": {
-        "required": [
-          "base",
-          "defaultVariantId",
-          "id",
-          "weights"
-        ],
-        "type": "object",
-        "properties": {
-          "rampId": {
-            "type": "string"
-          },
-          "rampPercentage": {
-            "type": "number"
-          },
-          "id": {
-            "type": "string"
-          },
-          "base": {
-            "$ref": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataExperimentBase"
-          },
-          "weights": {
-            "$ref": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataExperimentWeights"
-          },
-          "defaultVariantId": {
-            "type": "string"
-          }
-        },
-        "nullable": true
-      },
       "ListFlagVersions200ResponseVersionsItemDataVariantsItem": {
         "type": "object"
       },
@@ -172000,6 +174402,81 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/GetConfigurationProducts200ResponseProductsItemMetadataSchemaPropertiesAdditionalProperties"
         }
+      },
+      "ListKmsIssuers200ResponseIssuersItemSigningKeysItemPublicKey": {
+        "type": "object",
+        "properties": {
+          "kty": {
+            "type": "string"
+          },
+          "kid": {
+            "type": "string"
+          },
+          "alg": {
+            "type": "string"
+          },
+          "use": {
+            "type": "string"
+          },
+          "key_ops": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "x5c": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The X.509 certificate chain (RFC 7517 \u00A74.7). Each entry is the base64 DER (not base64url) of a certificate. For keys minted with a stored certificate this holds the single self-signed cert as \u0060[x5c]\u0060."
+          },
+          "x5t#S256": {
+            "type": "string",
+            "description": "The base64url SHA-256 thumbprint of the DER certificate in \u0060x5c[0]\u0060 (RFC 7517 \u00A74.9)."
+          }
+        }
+      },
+      "ListKmsIssuers200ResponseIssuersItemPoliciesItemTokenClaims": {
+        "type": "object"
+      },
+      "SignKmsMessage200ResponseSignatureHeaderJwk": {
+        "type": "object",
+        "properties": {
+          "kty": {
+            "type": "string",
+            "description": "JWK \u0022kty\u0022 (Key Type) Parameter"
+          },
+          "crv": {
+            "type": "string",
+            "description": "- EC JWK \u0022crv\u0022 (Curve) Parameter - OKP JWK \u0022crv\u0022 (The Subtype of Key Pair) Parameter"
+          },
+          "x": {
+            "type": "string",
+            "description": "- EC JWK \u0022x\u0022 (X Coordinate) Parameter - OKP JWK \u0022x\u0022 (The public key) Parameter"
+          },
+          "y": {
+            "type": "string",
+            "description": "EC JWK \u0022y\u0022 (Y Coordinate) Parameter"
+          },
+          "e": {
+            "type": "string",
+            "description": "RSA JWK \u0022e\u0022 (Exponent) Parameter"
+          },
+          "n": {
+            "type": "string",
+            "description": "RSA JWK \u0022n\u0022 (Modulus) Parameter"
+          },
+          "alg": {
+            "type": "string",
+            "description": "JWK \u0022alg\u0022 (Algorithm) Parameter"
+          },
+          "pub": {
+            "type": "string",
+            "description": "AKP JWK \u0022pub\u0022 (Public Key) Parameter"
+          }
+        },
+        "description": "\u0022jwk\u0022 (JSON Web Key) Header Parameter"
       },
       "GetMicrofrontendsInGroup200ResponseProjectsItemCreatorVia": {
         "required": [
@@ -184062,31 +186539,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "ListFlagVersions200ResponseVersionsItemDataExperimentBase": {
-        "required": [
-          "attribute",
-          "kind",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/EntityType"
-          },
-          "kind": {
-            "type": "string"
-          },
-          "attribute": {
-            "type": "string"
-          }
-        }
-      },
-      "ListFlagVersions200ResponseVersionsItemDataExperimentWeights": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "number"
-        }
       },
       "ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalProperties": {
         "required": [
@@ -202257,14 +204709,6 @@
           ]
         }
       },
-      "FlagPermanent": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
       "FlagKind": {
         "enum": [
           "boolean",
@@ -202318,6 +204762,14 @@
             }
           ]
         }
+      },
+      "FlagPermanent": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
       },
       "FlagTypeName": {
         "enum": [
@@ -219330,6 +221782,33 @@
           ]
         }
       },
+      "UserEventPayloadOneOf163NewOwnerFeatureBlocksConnexForwardTriggersBlockReason": {
+        "enum": [
+          "admin_override",
+          "hard_blocked",
+          "limits_exceeded"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf163NewOwnerFeatureBlocksConnexForwardTriggersBlockReason",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "admin_override",
+              "name": "AdminOverride"
+            },
+            {
+              "value": "hard_blocked",
+              "name": "HardBlocked"
+            },
+            {
+              "value": "limits_exceeded",
+              "name": "LimitsExceeded"
+            }
+          ]
+        }
+      },
       "UserEventPayloadOneOf163NewOwnerFeatureBlocksConnexTokenRequestsBlockReason": {
         "enum": [
           "admin_override",
@@ -224544,14 +227023,6 @@
           ]
         }
       },
-      "CreateFlag201ResponsePermanent": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
       "CreateFlag201ResponseKind": {
         "enum": [
           "boolean",
@@ -224605,6 +227076,14 @@
             }
           ]
         }
+      },
+      "CreateFlag201ResponsePermanent": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
       },
       "UpdateFlagRequestState": {
         "enum": [
@@ -225535,6 +228014,543 @@
             {
               "value": "production",
               "name": "Production"
+            }
+          ]
+        }
+      },
+      "CreateKmsIssuerRequestAlgorithm": {
+        "enum": [
+          "RS256",
+          "RS384",
+          "RS512",
+          "PS256",
+          "PS384",
+          "PS512",
+          "ES256",
+          "ES384",
+          "ES512",
+          "EdDSA"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The signing algorithm to use for the issuer.",
+        "x-ms-enum": {
+          "name": "CreateKmsIssuerRequestAlgorithm",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "RS256",
+              "name": "Rs256"
+            },
+            {
+              "value": "RS384",
+              "name": "Rs384"
+            },
+            {
+              "value": "RS512",
+              "name": "Rs512"
+            },
+            {
+              "value": "PS256",
+              "name": "Ps256"
+            },
+            {
+              "value": "PS384",
+              "name": "Ps384"
+            },
+            {
+              "value": "PS512",
+              "name": "Ps512"
+            },
+            {
+              "value": "ES256",
+              "name": "Es256"
+            },
+            {
+              "value": "ES384",
+              "name": "Es384"
+            },
+            {
+              "value": "ES512",
+              "name": "Es512"
+            },
+            {
+              "value": "EdDSA",
+              "name": "EdDsa"
+            }
+          ]
+        }
+      },
+      "CreateKmsIssuer201ResponseAlgorithm": {
+        "enum": [
+          "ES256",
+          "ES384",
+          "ES512",
+          "EdDSA",
+          "PS256",
+          "PS384",
+          "PS512",
+          "RS256",
+          "RS384",
+          "RS512"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateKmsIssuer201ResponseAlgorithm",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ES256",
+              "name": "Es256"
+            },
+            {
+              "value": "ES384",
+              "name": "Es384"
+            },
+            {
+              "value": "ES512",
+              "name": "Es512"
+            },
+            {
+              "value": "EdDSA",
+              "name": "EdDsa"
+            },
+            {
+              "value": "PS256",
+              "name": "Ps256"
+            },
+            {
+              "value": "PS384",
+              "name": "Ps384"
+            },
+            {
+              "value": "PS512",
+              "name": "Ps512"
+            },
+            {
+              "value": "RS256",
+              "name": "Rs256"
+            },
+            {
+              "value": "RS384",
+              "name": "Rs384"
+            },
+            {
+              "value": "RS512",
+              "name": "Rs512"
+            }
+          ]
+        }
+      },
+      "CreateKmsIssuer201ResponseOrigin": {
+        "enum": [
+          "external",
+          "vercel"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateKmsIssuer201ResponseOrigin",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "external",
+              "name": "External"
+            },
+            {
+              "value": "vercel",
+              "name": "Vercel"
+            }
+          ]
+        }
+      },
+      "CreateKmsSigningKeyRequestActivation": {
+        "enum": [
+          "automatic",
+          "manual"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Whether the new key is activated automatically after its public key has propagated, or manually via the activate endpoint. Defaults to \u0060automatic\u0060.",
+        "x-ms-enum": {
+          "name": "CreateKmsSigningKeyRequestActivation",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "automatic",
+              "name": "Automatic"
+            },
+            {
+              "value": "manual",
+              "name": "Manual"
+            }
+          ]
+        }
+      },
+      "CreateKmsSigningKey200ResponseStatus": {
+        "enum": [
+          "active",
+          "pending",
+          "revoking"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateKmsSigningKey200ResponseStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "active",
+              "name": "Active"
+            },
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "revoking",
+              "name": "Revoking"
+            }
+          ]
+        }
+      },
+      "ActivateKmsSigningKey200ResponseStatus": {
+        "enum": [
+          "active",
+          "pending",
+          "revoking"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ActivateKmsSigningKey200ResponseStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "active",
+              "name": "Active"
+            },
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "revoking",
+              "name": "Revoking"
+            }
+          ]
+        }
+      },
+      "RevokeKmsSigningKey200ResponseAlgorithm": {
+        "enum": [
+          "ES256",
+          "ES384",
+          "ES512",
+          "EdDSA",
+          "PS256",
+          "PS384",
+          "PS512",
+          "RS256",
+          "RS384",
+          "RS512"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "RevokeKmsSigningKey200ResponseAlgorithm",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ES256",
+              "name": "Es256"
+            },
+            {
+              "value": "ES384",
+              "name": "Es384"
+            },
+            {
+              "value": "ES512",
+              "name": "Es512"
+            },
+            {
+              "value": "EdDSA",
+              "name": "EdDsa"
+            },
+            {
+              "value": "PS256",
+              "name": "Ps256"
+            },
+            {
+              "value": "PS384",
+              "name": "Ps384"
+            },
+            {
+              "value": "PS512",
+              "name": "Ps512"
+            },
+            {
+              "value": "RS256",
+              "name": "Rs256"
+            },
+            {
+              "value": "RS384",
+              "name": "Rs384"
+            },
+            {
+              "value": "RS512",
+              "name": "Rs512"
+            }
+          ]
+        }
+      },
+      "RevokeKmsSigningKey200ResponseOrigin": {
+        "enum": [
+          "external",
+          "vercel"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "RevokeKmsSigningKey200ResponseOrigin",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "external",
+              "name": "External"
+            },
+            {
+              "value": "vercel",
+              "name": "Vercel"
+            }
+          ]
+        }
+      },
+      "GetKmsIssuer200ResponseAlgorithm": {
+        "enum": [
+          "ES256",
+          "ES384",
+          "ES512",
+          "EdDSA",
+          "PS256",
+          "PS384",
+          "PS512",
+          "RS256",
+          "RS384",
+          "RS512"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetKmsIssuer200ResponseAlgorithm",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ES256",
+              "name": "Es256"
+            },
+            {
+              "value": "ES384",
+              "name": "Es384"
+            },
+            {
+              "value": "ES512",
+              "name": "Es512"
+            },
+            {
+              "value": "EdDSA",
+              "name": "EdDsa"
+            },
+            {
+              "value": "PS256",
+              "name": "Ps256"
+            },
+            {
+              "value": "PS384",
+              "name": "Ps384"
+            },
+            {
+              "value": "PS512",
+              "name": "Ps512"
+            },
+            {
+              "value": "RS256",
+              "name": "Rs256"
+            },
+            {
+              "value": "RS384",
+              "name": "Rs384"
+            },
+            {
+              "value": "RS512",
+              "name": "Rs512"
+            }
+          ]
+        }
+      },
+      "GetKmsIssuer200ResponseOrigin": {
+        "enum": [
+          "external",
+          "vercel"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetKmsIssuer200ResponseOrigin",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "external",
+              "name": "External"
+            },
+            {
+              "value": "vercel",
+              "name": "Vercel"
+            }
+          ]
+        }
+      },
+      "UpdateKmsIssuer200ResponseAlgorithm": {
+        "enum": [
+          "ES256",
+          "ES384",
+          "ES512",
+          "EdDSA",
+          "PS256",
+          "PS384",
+          "PS512",
+          "RS256",
+          "RS384",
+          "RS512"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateKmsIssuer200ResponseAlgorithm",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ES256",
+              "name": "Es256"
+            },
+            {
+              "value": "ES384",
+              "name": "Es384"
+            },
+            {
+              "value": "ES512",
+              "name": "Es512"
+            },
+            {
+              "value": "EdDSA",
+              "name": "EdDsa"
+            },
+            {
+              "value": "PS256",
+              "name": "Ps256"
+            },
+            {
+              "value": "PS384",
+              "name": "Ps384"
+            },
+            {
+              "value": "PS512",
+              "name": "Ps512"
+            },
+            {
+              "value": "RS256",
+              "name": "Rs256"
+            },
+            {
+              "value": "RS384",
+              "name": "Rs384"
+            },
+            {
+              "value": "RS512",
+              "name": "Rs512"
+            }
+          ]
+        }
+      },
+      "UpdateKmsIssuer200ResponseOrigin": {
+        "enum": [
+          "external",
+          "vercel"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateKmsIssuer200ResponseOrigin",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "external",
+              "name": "External"
+            },
+            {
+              "value": "vercel",
+              "name": "Vercel"
+            }
+          ]
+        }
+      },
+      "ProjectGrantKind": {
+        "enum": [
+          "project-grant"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ProjectGrantKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "project-grant",
+              "name": "ProjectGrant"
+            }
+          ]
+        }
+      },
+      "CreateKmsIssuerPolicy201ResponseKind": {
+        "enum": [
+          "project-grant",
+          "connex-grant"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateKmsIssuerPolicy201ResponseKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "project-grant",
+              "name": "ProjectGrant"
+            },
+            {
+              "value": "connex-grant",
+              "name": "ConnexGrant"
+            }
+          ]
+        }
+      },
+      "UpdateKmsIssuerPolicy200ResponseKind": {
+        "enum": [
+          "project-grant",
+          "connex-grant"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateKmsIssuerPolicy200ResponseKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "project-grant",
+              "name": "ProjectGrant"
+            },
+            {
+              "value": "connex-grant",
+              "name": "ConnexGrant"
             }
           ]
         }
@@ -237787,14 +240803,6 @@
           ]
         }
       },
-      "UpdateFlag200ResponseOneOf1Permanent": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
       "UpdateFlag200ResponseOneOf1Kind": {
         "enum": [
           "boolean",
@@ -237848,6 +240856,14 @@
             }
           ]
         }
+      },
+      "UpdateFlag200ResponseOneOf1Permanent": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
       },
       "GetIntegrationResources200ResponseResourcesItemMetadataAdditionalPropertiesOneOf5": {
         "enum": [
@@ -250691,6 +253707,308 @@
         ],
         "type": "number",
         "additionalProperties": false
+      },
+      "ListKmsIssuers200ResponseIssuersItemAlgorithm": {
+        "enum": [
+          "ES256",
+          "ES384",
+          "ES512",
+          "EdDSA",
+          "PS256",
+          "PS384",
+          "PS512",
+          "RS256",
+          "RS384",
+          "RS512"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListKmsIssuers200ResponseIssuersItemAlgorithm",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ES256",
+              "name": "Es256"
+            },
+            {
+              "value": "ES384",
+              "name": "Es384"
+            },
+            {
+              "value": "ES512",
+              "name": "Es512"
+            },
+            {
+              "value": "EdDSA",
+              "name": "EdDsa"
+            },
+            {
+              "value": "PS256",
+              "name": "Ps256"
+            },
+            {
+              "value": "PS384",
+              "name": "Ps384"
+            },
+            {
+              "value": "PS512",
+              "name": "Ps512"
+            },
+            {
+              "value": "RS256",
+              "name": "Rs256"
+            },
+            {
+              "value": "RS384",
+              "name": "Rs384"
+            },
+            {
+              "value": "RS512",
+              "name": "Rs512"
+            }
+          ]
+        }
+      },
+      "ListKmsIssuers200ResponseIssuersItemOrigin": {
+        "enum": [
+          "external",
+          "vercel"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListKmsIssuers200ResponseIssuersItemOrigin",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "external",
+              "name": "External"
+            },
+            {
+              "value": "vercel",
+              "name": "Vercel"
+            }
+          ]
+        }
+      },
+      "CreateKmsIssuerRequestPolicyKind": {
+        "enum": [
+          "project-grant",
+          "connex-grant"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateKmsIssuerRequestPolicyKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "project-grant",
+              "name": "ProjectGrant"
+            },
+            {
+              "value": "connex-grant",
+              "name": "ConnexGrant"
+            }
+          ]
+        }
+      },
+      "CreateKmsIssuer201ResponseSigningKeysItemStatus": {
+        "enum": [
+          "active",
+          "pending",
+          "revoking"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateKmsIssuer201ResponseSigningKeysItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "active",
+              "name": "Active"
+            },
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "revoking",
+              "name": "Revoking"
+            }
+          ]
+        }
+      },
+      "CreateKmsIssuer201ResponsePoliciesItemKind": {
+        "enum": [
+          "project-grant",
+          "connex-grant"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateKmsIssuer201ResponsePoliciesItemKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "project-grant",
+              "name": "ProjectGrant"
+            },
+            {
+              "value": "connex-grant",
+              "name": "ConnexGrant"
+            }
+          ]
+        }
+      },
+      "RevokeKmsSigningKey200ResponseSigningKeysItemStatus": {
+        "enum": [
+          "active",
+          "pending",
+          "revoking"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "RevokeKmsSigningKey200ResponseSigningKeysItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "active",
+              "name": "Active"
+            },
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "revoking",
+              "name": "Revoking"
+            }
+          ]
+        }
+      },
+      "RevokeKmsSigningKey200ResponsePoliciesItemKind": {
+        "enum": [
+          "project-grant",
+          "connex-grant"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "RevokeKmsSigningKey200ResponsePoliciesItemKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "project-grant",
+              "name": "ProjectGrant"
+            },
+            {
+              "value": "connex-grant",
+              "name": "ConnexGrant"
+            }
+          ]
+        }
+      },
+      "GetKmsIssuer200ResponseSigningKeysItemStatus": {
+        "enum": [
+          "active",
+          "pending",
+          "revoking"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetKmsIssuer200ResponseSigningKeysItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "active",
+              "name": "Active"
+            },
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "revoking",
+              "name": "Revoking"
+            }
+          ]
+        }
+      },
+      "GetKmsIssuer200ResponsePoliciesItemKind": {
+        "enum": [
+          "project-grant",
+          "connex-grant"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetKmsIssuer200ResponsePoliciesItemKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "project-grant",
+              "name": "ProjectGrant"
+            },
+            {
+              "value": "connex-grant",
+              "name": "ConnexGrant"
+            }
+          ]
+        }
+      },
+      "UpdateKmsIssuer200ResponseSigningKeysItemStatus": {
+        "enum": [
+          "active",
+          "pending",
+          "revoking"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateKmsIssuer200ResponseSigningKeysItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "active",
+              "name": "Active"
+            },
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "revoking",
+              "name": "Revoking"
+            }
+          ]
+        }
+      },
+      "UpdateKmsIssuer200ResponsePoliciesItemKind": {
+        "enum": [
+          "project-grant",
+          "connex-grant"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateKmsIssuer200ResponsePoliciesItemKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "project-grant",
+              "name": "ProjectGrant"
+            },
+            {
+              "value": "connex-grant",
+              "name": "ConnexGrant"
+            }
+          ]
+        }
       },
       "CreateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsRequestItemsItemCategory": {
         "enum": [
@@ -272856,14 +276174,6 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "ListFlagVersions200ResponseVersionsItemDataPermanent": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
       "ListFlagVersions200ResponseVersionsItemDataState": {
         "enum": [
           "active",
@@ -272885,6 +276195,14 @@
             }
           ]
         }
+      },
+      "ListFlagVersions200ResponseVersionsItemDataPermanent": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
       },
       "GitNamespaces200ResponseItemViewerCanCreateApp": {
         "enum": [
@@ -273011,6 +276329,64 @@
             }
           ]
         }
+      },
+      "ListKmsIssuers200ResponseIssuersItemSigningKeysItemStatus": {
+        "enum": [
+          "active",
+          "pending",
+          "revoking"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListKmsIssuers200ResponseIssuersItemSigningKeysItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "active",
+              "name": "Active"
+            },
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "revoking",
+              "name": "Revoking"
+            }
+          ]
+        }
+      },
+      "ListKmsIssuers200ResponseIssuersItemPoliciesItemKind": {
+        "enum": [
+          "project-grant",
+          "connex-grant"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListKmsIssuers200ResponseIssuersItemPoliciesItemKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "project-grant",
+              "name": "ProjectGrant"
+            },
+            {
+              "value": "connex-grant",
+              "name": "ConnexGrant"
+            }
+          ]
+        }
+      },
+      "SignKmsMessage200ResponseSignatureHeaderB64": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false,
+        "description": "This JWS Extension Header Parameter modifies the JWS Payload representation and the JWS Signing Input computation as per {@link https://www.rfc-editor.org/rfc/rfc7797 RFC7797}."
       },
       "GetMicrofrontendsInGroup200ResponseProjectsItemCreatorType": {
         "enum": [
@@ -317564,6 +320940,29 @@
             {
               "value": "provisioning",
               "name": "Provisioning"
+            }
+          ]
+        }
+      },
+      "DeleteKmsIssuerPolicyKindParameter": {
+        "enum": [
+          "project-grant",
+          "connex-grant"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The issuer policy kind.",
+        "x-ms-enum": {
+          "name": "DeleteKmsIssuerPolicyKindParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "project-grant",
+              "name": "ProjectGrant"
+            },
+            {
+              "value": "connex-grant",
+              "name": "ConnexGrant"
             }
           ]
         }

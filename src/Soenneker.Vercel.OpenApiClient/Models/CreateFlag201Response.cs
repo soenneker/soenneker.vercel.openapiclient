@@ -40,14 +40,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseEnvironments Environments { get; set; }
 #endif
-        /// <summary>The experiment property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseExperiment? Experiment { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseExperiment Experiment { get; set; }
-#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,7 +147,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "environments", n => { Environments = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseEnvironments>(global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseEnvironments.CreateFromDiscriminatorValue); } },
-                { "experiment", n => { Experiment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseExperiment>(global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseExperiment.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseKind>(); } },
                 { "maintainerIds", n => { MaintainerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -184,7 +175,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseEnvironments>("environments", Environments);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseExperiment>("experiment", Experiment);
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseKind>("kind", Kind);
             writer.WriteCollectionOfPrimitiveValues<string>("maintainerIds", MaintainerIds);

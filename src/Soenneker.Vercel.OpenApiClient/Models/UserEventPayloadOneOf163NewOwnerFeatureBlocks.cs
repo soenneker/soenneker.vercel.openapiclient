@@ -23,6 +23,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksBlob Blob { get; set; }
 #endif
+        /// <summary>The connexForwardTriggers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksConnexForwardTriggers? ConnexForwardTriggers { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksConnexForwardTriggers ConnexForwardTriggers { get; set; }
+#endif
         /// <summary>The connexTokenRequests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -169,6 +177,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "blob", n => { Blob = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksBlob>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksBlob.CreateFromDiscriminatorValue); } },
+                { "connexForwardTriggers", n => { ConnexForwardTriggers = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksConnexForwardTriggers>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksConnexForwardTriggers.CreateFromDiscriminatorValue); } },
                 { "connexTokenRequests", n => { ConnexTokenRequests = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksConnexTokenRequests>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksConnexTokenRequests.CreateFromDiscriminatorValue); } },
                 { "dataCache", n => { DataCache = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksDataCache>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksDataCache.CreateFromDiscriminatorValue); } },
                 { "imageOptimizationTransformation", n => { ImageOptimizationTransformation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksImageOptimizationTransformation>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksImageOptimizationTransformation.CreateFromDiscriminatorValue); } },
@@ -194,6 +203,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksBlob>("blob", Blob);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksConnexForwardTriggers>("connexForwardTriggers", ConnexForwardTriggers);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksConnexTokenRequests>("connexTokenRequests", ConnexTokenRequests);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksDataCache>("dataCache", DataCache);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksImageOptimizationTransformation>("imageOptimizationTransformation", ImageOptimizationTransformation);

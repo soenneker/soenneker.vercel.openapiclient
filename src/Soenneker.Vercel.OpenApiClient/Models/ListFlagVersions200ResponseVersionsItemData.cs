@@ -30,14 +30,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.ListFlagVersions200ResponseVersionsItemDataEnvironments Environments { get; set; }
 #endif
-        /// <summary>The experiment property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListFlagVersions200ResponseVersionsItemDataExperiment? Experiment { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListFlagVersions200ResponseVersionsItemDataExperiment Experiment { get; set; }
-#endif
         /// <summary>The maintainerIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,7 +87,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "environments", n => { Environments = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListFlagVersions200ResponseVersionsItemDataEnvironments>(global::Soenneker.Vercel.OpenApiClient.Models.ListFlagVersions200ResponseVersionsItemDataEnvironments.CreateFromDiscriminatorValue); } },
-                { "experiment", n => { Experiment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListFlagVersions200ResponseVersionsItemDataExperiment>(global::Soenneker.Vercel.OpenApiClient.Models.ListFlagVersions200ResponseVersionsItemDataExperiment.CreateFromDiscriminatorValue); } },
                 { "maintainerIds", n => { MaintainerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "permanent", n => { Permanent = n.GetBoolValue(); } },
                 { "seed", n => { Seed = n.GetDoubleValue(); } },
@@ -113,7 +104,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListFlagVersions200ResponseVersionsItemDataEnvironments>("environments", Environments);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListFlagVersions200ResponseVersionsItemDataExperiment>("experiment", Experiment);
             writer.WriteCollectionOfPrimitiveValues<string>("maintainerIds", MaintainerIds);
             writer.WriteBoolValue("permanent", Permanent);
             writer.WriteDoubleValue("seed", Seed);
