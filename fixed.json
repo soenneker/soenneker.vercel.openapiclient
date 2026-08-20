@@ -28070,7 +28070,7 @@
           "teams"
         ],
         "summary": "Update a microfrontends group",
-        "description": "Updates the name (and slug) of a microfrontends group.",
+        "description": "Updates a microfrontends group\u0027s settings.",
         "operationId": "UpdateMicrofrontendsGroup",
         "parameters": [
           {
@@ -33616,9 +33616,6 @@
           },
           {
             "$ref": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesFallthroughOneOf3"
-          },
-          {
-            "$ref": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesFallthroughOneOf4"
           }
         ],
         "properties": {
@@ -35202,11 +35199,21 @@
           "zdrExemption": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf13ZdrExemption"
           },
+          "bypassAll": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf13BypassAll"
+          },
           "settings": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf16Settings"
           },
           "commitment": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf16Commitment"
+          },
+          "userId": {
+            "type": "string",
+            "description": "Associates the event with a member for filtering; not rendered."
+          },
+          "userName": {
+            "type": "string"
           },
           "credential": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf19Credential"
@@ -35349,9 +35356,6 @@
             "type": "string"
           },
           "username": {
-            "type": "string"
-          },
-          "userId": {
             "type": "string"
           },
           "appName": {
@@ -35739,8 +35743,8 @@
           "edgeConfigBackupVersionId": {
             "type": "string"
           },
-          "globalConfigSchema": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf137GlobalConfigSchemaProperty"
+          "edgeConfigSchema": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf137EdgeConfigSchemaProperty"
           },
           "edgeConfig": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf139EdgeConfig"
@@ -36058,6 +36062,9 @@
           },
           "fallbackEnvironment": {
             "type": "string"
+          },
+          "enablePolyrepoBranchRouting": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf190EnablePolyrepoBranchRouting"
           },
           "alertId": {
             "type": "string"
@@ -37090,13 +37097,15 @@
           "username": {
             "type": "string"
           },
+          "id": {
+            "type": "string",
+            "description": "The backing Vercel App ID. When absent, defaults to \u0060clientId\u0060."
+          },
           "clientId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OAuth 2.0 client ID, which may be a CIMD URL."
           },
           "name": {
-            "type": "string"
-          },
-          "id": {
             "type": "string"
           }
         }
@@ -37133,13 +37142,15 @@
           "username": {
             "type": "string"
           },
+          "id": {
+            "type": "string",
+            "description": "The backing Vercel App ID. When absent, defaults to \u0060clientId\u0060."
+          },
           "clientId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OAuth 2.0 client ID, which may be a CIMD URL."
           },
           "name": {
-            "type": "string"
-          },
-          "id": {
             "type": "string"
           }
         }
@@ -39521,9 +39532,6 @@
         ],
         "type": "object",
         "properties": {
-          "status": {
-            "$ref": "#/components/schemas/VcrImageListItemStatus"
-          },
           "tags": {
             "type": "array",
             "items": {
@@ -39567,8 +39575,8 @@
             "type": "number",
             "description": "Total size in bytes of the image\u0027s resources (manifest, config and layer blobs) stored by the registry."
           },
-          "vhs": {
-            "$ref": "#/components/schemas/VcrImageListItemVhs"
+          "status": {
+            "$ref": "#/components/schemas/VcrImageListItemStatus"
           },
           "createdAt": {
             "type": "string",
@@ -39770,9 +39778,6 @@
               "$ref": "#/components/schemas/VcrImageLayer"
             }
           },
-          "status": {
-            "$ref": "#/components/schemas/VcrImageDetailStatus"
-          },
           "tags": {
             "type": "array",
             "items": {
@@ -39816,8 +39821,8 @@
             "type": "number",
             "description": "Total size in bytes of the image\u0027s resources (manifest, config and layer blobs) stored by the registry."
           },
-          "vhs": {
-            "$ref": "#/components/schemas/VcrImageDetailVhs"
+          "status": {
+            "$ref": "#/components/schemas/VcrImageDetailStatus"
           },
           "createdAt": {
             "type": "string",
@@ -39983,9 +39988,6 @@
           },
           {
             "$ref": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3"
-          },
-          {
-            "$ref": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4"
           }
         ],
         "properties": {
@@ -40548,17 +40550,6 @@
           }
         }
       },
-      "FlagEnvironmentsAdditionalPropertiesFallthroughOneOf4": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/ExperimentType"
-          }
-        }
-      },
       "UserEventPayloadOneOf2": {
         "required": [
           "action",
@@ -40906,6 +40897,9 @@
           },
           "zdrExemption": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf13ZdrExemption"
+          },
+          "bypassAll": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf13BypassAll"
           }
         },
         "description": "The payload of the event, if requested."
@@ -40996,6 +40990,13 @@
             "description": "Associates the event with a project for filtering; not rendered."
           },
           "projectName": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string",
+            "description": "Associates the event with a member for filtering; not rendered."
+          },
+          "userName": {
             "type": "string"
           },
           "budget": {
@@ -43462,8 +43463,8 @@
           "edgeConfigSlug": {
             "type": "string"
           },
-          "globalConfigSchema": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf137GlobalConfigSchemaProperty"
+          "edgeConfigSchema": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf137EdgeConfigSchemaProperty"
           }
         },
         "description": "The payload of the event, if requested."
@@ -44979,6 +44980,9 @@
           "fallbackEnvironment": {
             "type": "string"
           },
+          "enablePolyrepoBranchRouting": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf190EnablePolyrepoBranchRouting"
+          },
           "prev": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf190Prev"
           }
@@ -46061,6 +46065,10 @@
           },
           "projectName": {
             "type": "string"
+          },
+          "deploymentId": {
+            "type": "string",
+            "description": "Deployment whose outcome caused a system-initiated elastic resize."
           },
           "previousBuildMachineType": {
             "type": "string"
@@ -50635,8 +50643,13 @@
           "type": {
             "$ref": "#/components/schemas/AppType"
           },
+          "id": {
+            "type": "string",
+            "description": "The backing Vercel App ID. When absent, defaults to \u0060clientId\u0060."
+          },
           "clientId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OAuth 2.0 client ID, which may be a CIMD URL."
           },
           "name": {
             "type": "string"
@@ -50720,8 +50733,13 @@
           "type": {
             "$ref": "#/components/schemas/AppType"
           },
+          "id": {
+            "type": "string",
+            "description": "The backing Vercel App ID. When absent, defaults to \u0060clientId\u0060."
+          },
           "clientId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OAuth 2.0 client ID, which may be a CIMD URL."
           },
           "name": {
             "type": "string"
@@ -50925,17 +50943,6 @@
             "items": {
               "$ref": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3SlotsItem"
             }
-          }
-        }
-      },
-      "FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/ExperimentType"
           }
         }
       },
@@ -54262,6 +54269,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "s3Key": {
+            "type": "string"
           }
         },
         "description": "Network policy configuration."
@@ -54983,44 +54993,6 @@
           }
         },
         "description": "Context for the Update Account screen. Present only when \u0060isAccountUpdateRequired\u0060 is true. \u0060managedTeams\u0060 is empty for orphan mode (user matches an EMU domain but is not on the team)."
-      },
-      "VcrImageListItemVhs": {
-        "required": [
-          "digest",
-          "path"
-        ],
-        "type": "object",
-        "properties": {
-          "path": {
-            "type": "string"
-          },
-          "digest": {
-            "type": "string"
-          },
-          "config": {
-            "$ref": "#/components/schemas/VcrImageListItemVhsConfig"
-          }
-        },
-        "description": "Converted VHS drive data, present once an image has been optimized for sandbox launch."
-      },
-      "VcrImageDetailVhs": {
-        "required": [
-          "digest",
-          "path"
-        ],
-        "type": "object",
-        "properties": {
-          "path": {
-            "type": "string"
-          },
-          "digest": {
-            "type": "string"
-          },
-          "config": {
-            "$ref": "#/components/schemas/VcrImageDetailVhsConfig"
-          }
-        },
-        "description": "Converted VHS drive data, present once an image has been optimized for sandbox launch."
       },
       "FlagEnvironmentsAdditionalPropertiesFallthroughOneOf2Base": {
         "required": [
@@ -56106,7 +56078,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf137GlobalConfigSchema": {
+      "UserEventPayloadOneOf137EdgeConfigSchema": {
         "type": "object"
       },
       "UserEventPayloadOneOf139EdgeConfig": {
@@ -56991,6 +56963,9 @@
           },
           "fallbackEnvironment": {
             "type": "string"
+          },
+          "enablePolyrepoBranchRouting": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf190PrevEnablePolyrepoBranchRouting"
           }
         }
       },
@@ -60825,48 +60800,6 @@
           }
         }
       },
-      "VcrImageListItemVhsConfig": {
-        "type": "object",
-        "properties": {
-          "command": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "entrypoint": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "workingDir": {
-            "type": "string"
-          }
-        },
-        "description": "Optional VHS drive configuration captured for an optimized image."
-      },
-      "VcrImageDetailVhsConfig": {
-        "type": "object",
-        "properties": {
-          "command": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "entrypoint": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "workingDir": {
-            "type": "string"
-          }
-        },
-        "description": "Optional VHS drive configuration captured for an optimized image."
-      },
       "UserEventPayloadOneOf38DeploymentMeta": {
         "type": "object",
         "additionalProperties": {
@@ -61619,6 +61552,9 @@
           },
           "kmsOperations": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf163NewOwnerFeatureBlocksKmsOperations"
+          },
+          "tracing": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf163NewOwnerFeatureBlocksTracing"
           },
           "vcr": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf163NewOwnerFeatureBlocksVcr"
@@ -63943,6 +63879,27 @@
           },
           "blockReason": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf163NewOwnerFeatureBlocksKmsOperationsBlockReason"
+          }
+        }
+      },
+      "UserEventPayloadOneOf163NewOwnerFeatureBlocksTracing": {
+        "required": [
+          "blockReason",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "updatedAt": {
+            "type": "number"
+          },
+          "blockedFrom": {
+            "type": "number"
+          },
+          "blockedUntil": {
+            "type": "number"
+          },
+          "blockReason": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf163NewOwnerFeatureBlocksTracingBlockReason"
           }
         }
       },
@@ -79797,6 +79754,10 @@
           "fallbackEnvironment": {
             "type": "string",
             "description": "The new fallback environment for the microfrontends group. Must be \u0022SAME_ENV\u0022, \u0022PRODUCTION\u0022, or a valid custom environment slug from the default app."
+          },
+          "enablePolyrepoBranchRouting": {
+            "type": "boolean",
+            "description": "Whether Preview Deployments can link to branches with the same name in other Git repositories."
           }
         }
       },
@@ -87439,6 +87400,16 @@
             "items": {
               "$ref": "#/components/schemas/CreateConnectorRequestDataTypeApiKeyValuesItem"
             }
+          },
+          "serviceUrls": {
+            "maxItems": 8,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            },
+            "description": "The HTTPS resources the API key authenticates against."
           },
           "appSlug": {
             "type": "string"
@@ -98598,6 +98569,16 @@
             "items": {
               "$ref": "#/components/schemas/CreateConnectorRequestDataTypeApiKeyValuesItem"
             }
+          },
+          "serviceUrls": {
+            "maxItems": 8,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            },
+            "description": "The HTTPS resources the API key authenticates against."
           }
         },
         "additionalProperties": false
@@ -105500,7 +105481,7 @@
       "UserEventPayloadOneOf66DataProperty": {
         "type": "object"
       },
-      "UserEventPayloadOneOf137GlobalConfigSchemaProperty": {
+      "UserEventPayloadOneOf137EdgeConfigSchemaProperty": {
         "type": "object"
       },
       "UserEventPayloadOneOf154ConfigChangesItemProperty": {
@@ -115536,6 +115517,7 @@
       "CreateMicrofrontendsGroupWithApplications200ResponseNewMicrofrontendsGroup": {
         "required": [
           "createdAt",
+          "enablePolyrepoBranchRouting",
           "fallbackEnvironment",
           "id",
           "name",
@@ -115555,6 +115537,9 @@
           },
           "fallbackEnvironment": {
             "type": "string"
+          },
+          "enablePolyrepoBranchRouting": {
+            "$ref": "#/components/schemas/CreateMicrofrontendsGroupWithApplications200ResponseNewMicrofrontendsGroupEnablePolyrepoBranchRouting"
           },
           "createdAt": {
             "type": "number"
@@ -116420,6 +116405,10 @@
           },
           "hasData": {
             "$ref": "#/components/schemas/CreateProject200ResponseSpeedInsightsHasData"
+          },
+          "dataReceivedAt": {
+            "type": "number",
+            "description": "When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads \u0022first free data point observed\u0022, not necessarily \u0022first ever\u0022."
           },
           "paidAt": {
             "type": "number"
@@ -117352,6 +117341,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "aiGatewayApiKeyBypassAll": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "aiGatewayApiKeyOwnedBySelf": {
             "type": "array",
             "items": {
@@ -118630,6 +118625,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "productionShareableLink": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "project": {
             "type": "array",
             "items": {
@@ -118876,6 +118877,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "shareableLink": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "shareableLinkStrict": {
             "type": "array",
             "items": {
@@ -118913,6 +118920,12 @@
             }
           },
           "v0Chat": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "vercelAuth": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -119441,6 +119454,10 @@
           },
           "hasData": {
             "$ref": "#/components/schemas/GetProject200ResponseSpeedInsightsHasData"
+          },
+          "dataReceivedAt": {
+            "type": "number",
+            "description": "When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads \u0022first free data point observed\u0022, not necessarily \u0022first ever\u0022."
           },
           "paidAt": {
             "type": "number"
@@ -120373,6 +120390,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "aiGatewayApiKeyBypassAll": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "aiGatewayApiKeyOwnedBySelf": {
             "type": "array",
             "items": {
@@ -121651,6 +121674,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "productionShareableLink": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "project": {
             "type": "array",
             "items": {
@@ -121897,6 +121926,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "shareableLink": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "shareableLinkStrict": {
             "type": "array",
             "items": {
@@ -121934,6 +121969,12 @@
             }
           },
           "v0Chat": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "vercelAuth": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -122726,6 +122767,10 @@
           },
           "hasData": {
             "$ref": "#/components/schemas/UpdateProject200ResponseSpeedInsightsHasData"
+          },
+          "dataReceivedAt": {
+            "type": "number",
+            "description": "When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads \u0022first free data point observed\u0022, not necessarily \u0022first ever\u0022."
           },
           "paidAt": {
             "type": "number"
@@ -123658,6 +123703,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "aiGatewayApiKeyBypassAll": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "aiGatewayApiKeyOwnedBySelf": {
             "type": "array",
             "items": {
@@ -124936,6 +124987,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "productionShareableLink": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "project": {
             "type": "array",
             "items": {
@@ -125182,6 +125239,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "shareableLink": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "shareableLinkStrict": {
             "type": "array",
             "items": {
@@ -125219,6 +125282,12 @@
             }
           },
           "v0Chat": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "vercelAuth": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -125726,6 +125795,10 @@
           },
           "hasData": {
             "$ref": "#/components/schemas/UploadProjectAvatar200ResponseSpeedInsightsHasData"
+          },
+          "dataReceivedAt": {
+            "type": "number",
+            "description": "When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads \u0022first free data point observed\u0022, not necessarily \u0022first ever\u0022."
           },
           "paidAt": {
             "type": "number"
@@ -126658,6 +126731,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "aiGatewayApiKeyBypassAll": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "aiGatewayApiKeyOwnedBySelf": {
             "type": "array",
             "items": {
@@ -127936,6 +128015,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "productionShareableLink": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "project": {
             "type": "array",
             "items": {
@@ -128182,6 +128267,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "shareableLink": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "shareableLinkStrict": {
             "type": "array",
             "items": {
@@ -128219,6 +128310,12 @@
             }
           },
           "v0Chat": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "vercelAuth": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -129934,6 +130031,10 @@
           "hasData": {
             "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseSpeedInsightsHasData"
           },
+          "dataReceivedAt": {
+            "type": "number",
+            "description": "When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads \u0022first free data point observed\u0022, not necessarily \u0022first ever\u0022."
+          },
           "paidAt": {
             "type": "number"
           }
@@ -130860,6 +130961,12 @@
             }
           },
           "aiGatewayApiKey": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "aiGatewayApiKeyBypassAll": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -132143,6 +132250,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "productionShareableLink": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "project": {
             "type": "array",
             "items": {
@@ -132389,6 +132502,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "shareableLink": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "shareableLinkStrict": {
             "type": "array",
             "items": {
@@ -132426,6 +132545,12 @@
             }
           },
           "v0Chat": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "vercelAuth": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -135506,6 +135631,9 @@
           },
           "fallbackEnvironment": {
             "type": "string"
+          },
+          "enablePolyrepoBranchRouting": {
+            "$ref": "#/components/schemas/UpdateMicrofrontendsGroup200ResponseUpdatedMicrofrontendsGroupEnablePolyrepoBranchRouting"
           }
         }
       },
@@ -146638,6 +146766,10 @@
           "hasData": {
             "$ref": "#/components/schemas/GetDeployment200ResponseProjectSettingsSpeedInsightsHasData"
           },
+          "dataReceivedAt": {
+            "type": "number",
+            "description": "When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads \u0022first free data point observed\u0022, not necessarily \u0022first ever\u0022."
+          },
           "paidAt": {
             "type": "number"
           }
@@ -147403,6 +147535,10 @@
           "hasData": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseProjectSettingsSpeedInsightsHasData"
           },
+          "dataReceivedAt": {
+            "type": "number",
+            "description": "When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads \u0022first free data point observed\u0022, not necessarily \u0022first ever\u0022."
+          },
           "paidAt": {
             "type": "number"
           }
@@ -148167,6 +148303,10 @@
           },
           "hasData": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseProjectSettingsSpeedInsightsHasData"
+          },
+          "dataReceivedAt": {
+            "type": "number",
+            "description": "When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads \u0022first free data point observed\u0022, not necessarily \u0022first ever\u0022."
           },
           "paidAt": {
             "type": "number"
@@ -150689,6 +150829,10 @@
           "hasData": {
             "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemSpeedInsightsHasData"
           },
+          "dataReceivedAt": {
+            "type": "number",
+            "description": "When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads \u0022first free data point observed\u0022, not necessarily \u0022first ever\u0022."
+          },
           "paidAt": {
             "type": "number"
           }
@@ -151615,6 +151759,12 @@
             }
           },
           "aiGatewayApiKey": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "aiGatewayApiKeyBypassAll": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -152898,6 +153048,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "productionShareableLink": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "project": {
             "type": "array",
             "items": {
@@ -153144,6 +153300,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "shareableLink": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "shareableLinkStrict": {
             "type": "array",
             "items": {
@@ -153181,6 +153343,12 @@
             }
           },
           "v0Chat": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "vercelAuth": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -164926,6 +165094,10 @@
           "hasData": {
             "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemSpeedInsightsHasData"
           },
+          "dataReceivedAt": {
+            "type": "number",
+            "description": "When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads \u0022first free data point observed\u0022, not necessarily \u0022first ever\u0022."
+          },
           "paidAt": {
             "type": "number"
           }
@@ -167046,6 +167218,10 @@
           "hasData": {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemSpeedInsightsHasData"
           },
+          "dataReceivedAt": {
+            "type": "number",
+            "description": "When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads \u0022first free data point observed\u0022, not necessarily \u0022first ever\u0022."
+          },
           "paidAt": {
             "type": "number"
           }
@@ -167415,6 +167591,10 @@
           },
           "hasData": {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemSpeedInsightsHasData"
+          },
+          "dataReceivedAt": {
+            "type": "number",
+            "description": "When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads \u0022first free data point observed\u0022, not necessarily \u0022first ever\u0022."
           },
           "paidAt": {
             "type": "number"
@@ -168342,6 +168522,12 @@
             }
           },
           "aiGatewayApiKey": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "aiGatewayApiKeyBypassAll": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -169625,6 +169811,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "productionShareableLink": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "project": {
             "type": "array",
             "items": {
@@ -169871,6 +170063,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "shareableLink": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "shareableLinkStrict": {
             "type": "array",
             "items": {
@@ -169908,6 +170106,12 @@
             }
           },
           "v0Chat": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "vercelAuth": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -182612,6 +182816,10 @@
           "hasData": {
             "$ref": "#/components/schemas/GetDeployments200ResponseDeploymentsItemProjectSettingsSpeedInsightsHasData"
           },
+          "dataReceivedAt": {
+            "type": "number",
+            "description": "When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads \u0022first free data point observed\u0022, not necessarily \u0022first ever\u0022."
+          },
           "paidAt": {
             "type": "number"
           }
@@ -195053,6 +195261,7 @@
           "env-variable-read:v0:env:pull",
           "env-variable-rotated",
           "experiment-created",
+          "experiment-deleted",
           "experiment-transitioned",
           "experiment-updated",
           "firewall-bypass-created",
@@ -195078,6 +195287,17 @@
           "flags-transferred",
           "git-integration-repo-push",
           "git_account_integration_link_added",
+          "global-config-backup-restored",
+          "global-config-created",
+          "global-config-deleted",
+          "global-config-items-updated",
+          "global-config-schema-deleted",
+          "global-config-schema-updated",
+          "global-config-token-created",
+          "global-config-token-deleted",
+          "global-config-transfer-in",
+          "global-config-transfer-out",
+          "global-config-updated",
           "instant-rollback-created",
           "integration-configuration-credential-rotated",
           "integration-configuration-owner-changed",
@@ -195282,6 +195502,7 @@
           "project-source-files-outside-root-directory-updated",
           "project-speed-insights-disabled",
           "project-speed-insights-enabled",
+          "project-speed-insights-free-data-started",
           "project-sso-protection",
           "project-static-ips-updated",
           "project-trusted-ips",
@@ -196361,6 +196582,10 @@
               "name": "ExperimentCreated"
             },
             {
+              "value": "experiment-deleted",
+              "name": "ExperimentDeleted"
+            },
+            {
               "value": "experiment-transitioned",
               "name": "ExperimentTransitioned"
             },
@@ -196459,6 +196684,50 @@
             {
               "value": "git_account_integration_link_added",
               "name": "GitAccountIntegrationLinkAdded"
+            },
+            {
+              "value": "global-config-backup-restored",
+              "name": "GlobalConfigBackupRestored"
+            },
+            {
+              "value": "global-config-created",
+              "name": "GlobalConfigCreated"
+            },
+            {
+              "value": "global-config-deleted",
+              "name": "GlobalConfigDeleted"
+            },
+            {
+              "value": "global-config-items-updated",
+              "name": "GlobalConfigItemsUpdated"
+            },
+            {
+              "value": "global-config-schema-deleted",
+              "name": "GlobalConfigSchemaDeleted"
+            },
+            {
+              "value": "global-config-schema-updated",
+              "name": "GlobalConfigSchemaUpdated"
+            },
+            {
+              "value": "global-config-token-created",
+              "name": "GlobalConfigTokenCreated"
+            },
+            {
+              "value": "global-config-token-deleted",
+              "name": "GlobalConfigTokenDeleted"
+            },
+            {
+              "value": "global-config-transfer-in",
+              "name": "GlobalConfigTransferIn"
+            },
+            {
+              "value": "global-config-transfer-out",
+              "name": "GlobalConfigTransferOut"
+            },
+            {
+              "value": "global-config-updated",
+              "name": "GlobalConfigUpdated"
             },
             {
               "value": "instant-rollback-created",
@@ -197275,6 +197544,10 @@
             {
               "value": "project-speed-insights-enabled",
               "name": "ProjectSpeedInsightsEnabled"
+            },
+            {
+              "value": "project-speed-insights-free-data-started",
+              "name": "ProjectSpeedInsightsFreeDataStarted"
             },
             {
               "value": "project-sso-protection",
@@ -198386,6 +198659,7 @@
           "env-variable-read:v0:env:pull",
           "env-variable-rotated",
           "experiment-created",
+          "experiment-deleted",
           "experiment-transitioned",
           "experiment-updated",
           "firewall-bypass-created",
@@ -198411,6 +198685,17 @@
           "flags-transferred",
           "git-integration-repo-push",
           "git_account_integration_link_added",
+          "global-config-backup-restored",
+          "global-config-created",
+          "global-config-deleted",
+          "global-config-items-updated",
+          "global-config-schema-deleted",
+          "global-config-schema-updated",
+          "global-config-token-created",
+          "global-config-token-deleted",
+          "global-config-transfer-in",
+          "global-config-transfer-out",
+          "global-config-updated",
           "instant-rollback-created",
           "integration-configuration-credential-rotated",
           "integration-configuration-owner-changed",
@@ -198615,6 +198900,7 @@
           "project-source-files-outside-root-directory-updated",
           "project-speed-insights-disabled",
           "project-speed-insights-enabled",
+          "project-speed-insights-free-data-started",
           "project-sso-protection",
           "project-static-ips-updated",
           "project-trusted-ips",
@@ -199694,6 +199980,10 @@
               "name": "ExperimentCreated"
             },
             {
+              "value": "experiment-deleted",
+              "name": "ExperimentDeleted"
+            },
+            {
               "value": "experiment-transitioned",
               "name": "ExperimentTransitioned"
             },
@@ -199792,6 +200082,50 @@
             {
               "value": "git_account_integration_link_added",
               "name": "GitAccountIntegrationLinkAdded"
+            },
+            {
+              "value": "global-config-backup-restored",
+              "name": "GlobalConfigBackupRestored"
+            },
+            {
+              "value": "global-config-created",
+              "name": "GlobalConfigCreated"
+            },
+            {
+              "value": "global-config-deleted",
+              "name": "GlobalConfigDeleted"
+            },
+            {
+              "value": "global-config-items-updated",
+              "name": "GlobalConfigItemsUpdated"
+            },
+            {
+              "value": "global-config-schema-deleted",
+              "name": "GlobalConfigSchemaDeleted"
+            },
+            {
+              "value": "global-config-schema-updated",
+              "name": "GlobalConfigSchemaUpdated"
+            },
+            {
+              "value": "global-config-token-created",
+              "name": "GlobalConfigTokenCreated"
+            },
+            {
+              "value": "global-config-token-deleted",
+              "name": "GlobalConfigTokenDeleted"
+            },
+            {
+              "value": "global-config-transfer-in",
+              "name": "GlobalConfigTransferIn"
+            },
+            {
+              "value": "global-config-transfer-out",
+              "name": "GlobalConfigTransferOut"
+            },
+            {
+              "value": "global-config-updated",
+              "name": "GlobalConfigUpdated"
             },
             {
               "value": "instant-rollback-created",
@@ -200608,6 +200942,10 @@
             {
               "value": "project-speed-insights-enabled",
               "name": "ProjectSpeedInsightsEnabled"
+            },
+            {
+              "value": "project-speed-insights-free-data-started",
+              "name": "ProjectSpeedInsightsFreeDataStarted"
             },
             {
               "value": "project-sso-protection",
@@ -201728,6 +202066,7 @@
           "env-variable-read:v0:env:pull",
           "env-variable-rotated",
           "experiment-created",
+          "experiment-deleted",
           "experiment-transitioned",
           "experiment-updated",
           "firewall-bypass-created",
@@ -201753,6 +202092,17 @@
           "flags-transferred",
           "git-integration-repo-push",
           "git_account_integration_link_added",
+          "global-config-backup-restored",
+          "global-config-created",
+          "global-config-deleted",
+          "global-config-items-updated",
+          "global-config-schema-deleted",
+          "global-config-schema-updated",
+          "global-config-token-created",
+          "global-config-token-deleted",
+          "global-config-transfer-in",
+          "global-config-transfer-out",
+          "global-config-updated",
           "instant-rollback-created",
           "integration-configuration-credential-rotated",
           "integration-configuration-owner-changed",
@@ -201957,6 +202307,7 @@
           "project-source-files-outside-root-directory-updated",
           "project-speed-insights-disabled",
           "project-speed-insights-enabled",
+          "project-speed-insights-free-data-started",
           "project-sso-protection",
           "project-static-ips-updated",
           "project-trusted-ips",
@@ -203035,6 +203386,10 @@
               "name": "ExperimentCreated"
             },
             {
+              "value": "experiment-deleted",
+              "name": "ExperimentDeleted"
+            },
+            {
               "value": "experiment-transitioned",
               "name": "ExperimentTransitioned"
             },
@@ -203133,6 +203488,50 @@
             {
               "value": "git_account_integration_link_added",
               "name": "GitAccountIntegrationLinkAdded"
+            },
+            {
+              "value": "global-config-backup-restored",
+              "name": "GlobalConfigBackupRestored"
+            },
+            {
+              "value": "global-config-created",
+              "name": "GlobalConfigCreated"
+            },
+            {
+              "value": "global-config-deleted",
+              "name": "GlobalConfigDeleted"
+            },
+            {
+              "value": "global-config-items-updated",
+              "name": "GlobalConfigItemsUpdated"
+            },
+            {
+              "value": "global-config-schema-deleted",
+              "name": "GlobalConfigSchemaDeleted"
+            },
+            {
+              "value": "global-config-schema-updated",
+              "name": "GlobalConfigSchemaUpdated"
+            },
+            {
+              "value": "global-config-token-created",
+              "name": "GlobalConfigTokenCreated"
+            },
+            {
+              "value": "global-config-token-deleted",
+              "name": "GlobalConfigTokenDeleted"
+            },
+            {
+              "value": "global-config-transfer-in",
+              "name": "GlobalConfigTransferIn"
+            },
+            {
+              "value": "global-config-transfer-out",
+              "name": "GlobalConfigTransferOut"
+            },
+            {
+              "value": "global-config-updated",
+              "name": "GlobalConfigUpdated"
             },
             {
               "value": "instant-rollback-created",
@@ -203949,6 +204348,10 @@
             {
               "value": "project-speed-insights-enabled",
               "name": "ProjectSpeedInsightsEnabled"
+            },
+            {
+              "value": "project-speed-insights-free-data-started",
+              "name": "ProjectSpeedInsightsFreeDataStarted"
             },
             {
               "value": "project-sso-protection",
@@ -205588,6 +205991,34 @@
         "description": "Whether the repository is public. Images in public repositories can be pulled by anyone. Defaults to \u0060false\u0060 (private).",
         "example": false
       },
+      "VcrImageListItemKind": {
+        "enum": [
+          "attestation",
+          "index",
+          "manifest"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Whether the manifest is a multi-platform image index, a single-platform image manifest or an attestation.",
+        "x-ms-enum": {
+          "name": "VcrImageListItemKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "attestation",
+              "name": "Attestation"
+            },
+            {
+              "value": "index",
+              "name": "Index"
+            },
+            {
+              "value": "manifest",
+              "name": "Manifest"
+            }
+          ]
+        }
+      },
       "VcrImageListItemStatus": {
         "enum": [
           "preparing",
@@ -205614,34 +206045,6 @@
             {
               "value": "unoptimized",
               "name": "Unoptimized"
-            }
-          ]
-        }
-      },
-      "VcrImageListItemKind": {
-        "enum": [
-          "attestation",
-          "index",
-          "manifest"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Whether the manifest is a multi-platform image index, a single-platform image manifest or an attestation.",
-        "x-ms-enum": {
-          "name": "VcrImageListItemKind",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "attestation",
-              "name": "Attestation"
-            },
-            {
-              "value": "index",
-              "name": "Index"
-            },
-            {
-              "value": "manifest",
-              "name": "Manifest"
             }
           ]
         }
@@ -205704,6 +206107,34 @@
           ]
         }
       },
+      "VcrImageDetailKind": {
+        "enum": [
+          "attestation",
+          "index",
+          "manifest"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Whether the manifest is a multi-platform image index, a single-platform image manifest or an attestation.",
+        "x-ms-enum": {
+          "name": "VcrImageDetailKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "attestation",
+              "name": "Attestation"
+            },
+            {
+              "value": "index",
+              "name": "Index"
+            },
+            {
+              "value": "manifest",
+              "name": "Manifest"
+            }
+          ]
+        }
+      },
       "VcrImageDetailStatus": {
         "enum": [
           "preparing",
@@ -205730,34 +206161,6 @@
             {
               "value": "unoptimized",
               "name": "Unoptimized"
-            }
-          ]
-        }
-      },
-      "VcrImageDetailKind": {
-        "enum": [
-          "attestation",
-          "index",
-          "manifest"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Whether the manifest is a multi-platform image index, a single-platform image manifest or an attestation.",
-        "x-ms-enum": {
-          "name": "VcrImageDetailKind",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "attestation",
-              "name": "Attestation"
-            },
-            {
-              "value": "index",
-              "name": "Index"
-            },
-            {
-              "value": "manifest",
-              "name": "Manifest"
             }
           ]
         }
@@ -206407,23 +206810,6 @@
           ]
         }
       },
-      "ExperimentType": {
-        "enum": [
-          "experiment"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "ExperimentType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "experiment",
-              "name": "Experiment"
-            }
-          ]
-        }
-      },
       "UserEventPayloadOneOf2Action": {
         "enum": [
           "archived",
@@ -206464,6 +206850,7 @@
       "UserEventPayloadOneOf3Action": {
         "enum": [
           "created",
+          "deleted",
           "transitioned",
           "updated"
         ],
@@ -206476,6 +206863,10 @@
             {
               "value": "created",
               "name": "Created"
+            },
+            {
+              "value": "deleted",
+              "name": "Deleted"
             },
             {
               "value": "transitioned",
@@ -206763,6 +207154,15 @@
         "additionalProperties": false,
         "description": "True when the key was created with a ZDR exemption."
       },
+      "UserEventPayloadOneOf13BypassAll": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false,
+        "description": "True when the key was created to bypass all of the team\u0027s restrictions (the ZDR-only model restriction and the provider/model allowlist)."
+      },
       "UserEventPayloadOneOf15Change": {
         "enum": [
           "disable",
@@ -206836,7 +207236,8 @@
         "enum": [
           "api-key",
           "project",
-          "team"
+          "team",
+          "user"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -206855,6 +207256,10 @@
             {
               "value": "team",
               "name": "Team"
+            },
+            {
+              "value": "user",
+              "name": "User"
             }
           ]
         }
@@ -206894,7 +207299,8 @@
       "UserEventPayloadOneOf18ScopeType": {
         "enum": [
           "project",
-          "team"
+          "team",
+          "user"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -206909,6 +207315,10 @@
             {
               "value": "team",
               "name": "Team"
+            },
+            {
+              "value": "user",
+              "name": "User"
             }
           ]
         }
@@ -207102,6 +207512,7 @@
           "read-write:alerts",
           "read-write:billing",
           "read-write:blob",
+          "read-write:connect",
           "read-write:deployment",
           "read-write:domain",
           "read-write:domain-registrar",
@@ -207200,6 +207611,10 @@
             {
               "value": "read-write:blob",
               "name": "ReadWriteColonBlob"
+            },
+            {
+              "value": "read-write:connect",
+              "name": "ReadWriteColonConnect"
             },
             {
               "value": "read-write:deployment",
@@ -207441,6 +207856,7 @@
           "read-write:alerts",
           "read-write:billing",
           "read-write:blob",
+          "read-write:connect",
           "read-write:deployment",
           "read-write:domain",
           "read-write:domain-registrar",
@@ -207539,6 +207955,10 @@
             {
               "value": "read-write:blob",
               "name": "ReadWriteColonBlob"
+            },
+            {
+              "value": "read-write:connect",
+              "name": "ReadWriteColonConnect"
             },
             {
               "value": "read-write:deployment",
@@ -207747,6 +208167,7 @@
           "read-write:alerts",
           "read-write:billing",
           "read-write:blob",
+          "read-write:connect",
           "read-write:deployment",
           "read-write:domain",
           "read-write:domain-registrar",
@@ -207840,6 +208261,10 @@
             {
               "value": "read-write:blob",
               "name": "ReadWriteColonBlob"
+            },
+            {
+              "value": "read-write:connect",
+              "name": "ReadWriteColonConnect"
             },
             {
               "value": "read-write:deployment",
@@ -208957,6 +209382,14 @@
         "additionalProperties": false
       },
       "UserEventPayloadOneOf188Enabled": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
+      "UserEventPayloadOneOf190EnablePolyrepoBranchRouting": {
         "enum": [
           false,
           true
@@ -216569,6 +217002,7 @@
           "read-write:alerts",
           "read-write:billing",
           "read-write:blob",
+          "read-write:connect",
           "read-write:deployment",
           "read-write:domain",
           "read-write:domain-registrar",
@@ -216662,6 +217096,10 @@
             {
               "value": "read-write:blob",
               "name": "ReadWriteColonBlob"
+            },
+            {
+              "value": "read-write:connect",
+              "name": "ReadWriteColonConnect"
             },
             {
               "value": "read-write:deployment",
@@ -216866,6 +217304,7 @@
           "read-write:alerts",
           "read-write:billing",
           "read-write:blob",
+          "read-write:connect",
           "read-write:deployment",
           "read-write:domain",
           "read-write:domain-registrar",
@@ -216959,6 +217398,10 @@
             {
               "value": "read-write:blob",
               "name": "ReadWriteColonBlob"
+            },
+            {
+              "value": "read-write:connect",
+              "name": "ReadWriteColonConnect"
             },
             {
               "value": "read-write:deployment",
@@ -217692,6 +218135,14 @@
         "type": "boolean",
         "additionalProperties": false,
         "description": "Indicates that the underlying user entity is a managed user for the enterprise it\u0027s associated with The intention is that this field is only set to true for users that are provisioned by the enterprise which means that the domain associated with the user\u0027s email is the same domain associated with the team Allowing us to query information about the user\u0027s team at login time through the domain verification service"
+      },
+      "UserEventPayloadOneOf190PrevEnablePolyrepoBranchRouting": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
       },
       "UserEventPayloadOneOf196NextDefault": {
         "enum": [
@@ -221846,6 +222297,33 @@
         "additionalProperties": false,
         "x-ms-enum": {
           "name": "UserEventPayloadOneOf163NewOwnerFeatureBlocksKmsOperationsBlockReason",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "admin_override",
+              "name": "AdminOverride"
+            },
+            {
+              "value": "hard_blocked",
+              "name": "HardBlocked"
+            },
+            {
+              "value": "limits_exceeded",
+              "name": "LimitsExceeded"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf163NewOwnerFeatureBlocksTracingBlockReason": {
+        "enum": [
+          "admin_override",
+          "hard_blocked",
+          "limits_exceeded"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf163NewOwnerFeatureBlocksTracingBlockReason",
           "modelAsString": false,
           "values": [
             {
@@ -254674,6 +255152,14 @@
           ]
         }
       },
+      "CreateMicrofrontendsGroupWithApplications200ResponseNewMicrofrontendsGroupEnablePolyrepoBranchRouting": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
       "StageRoutes200ResponseVersionIsStaging": {
         "enum": [
           false,
@@ -268224,6 +268710,14 @@
             }
           ]
         }
+      },
+      "UpdateMicrofrontendsGroup200ResponseUpdatedMicrofrontendsGroupEnablePolyrepoBranchRouting": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
       },
       "ListRepositoryTags200ResponseTagsItemKind": {
         "enum": [
@@ -298501,8 +298995,7 @@
         "enum": [
           "variant",
           "split",
-          "rollout",
-          "experiment"
+          "rollout"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -298521,10 +299014,6 @@
             {
               "value": "rollout",
               "name": "Rollout"
-            },
-            {
-              "value": "experiment",
-              "name": "Experiment"
             }
           ]
         }
@@ -310160,8 +310649,7 @@
         "enum": [
           "variant",
           "split",
-          "rollout",
-          "experiment"
+          "rollout"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -310180,10 +310668,6 @@
             {
               "value": "rollout",
               "name": "Rollout"
-            },
-            {
-              "value": "experiment",
-              "name": "Experiment"
             }
           ]
         }
@@ -312963,8 +313447,7 @@
         "enum": [
           "variant",
           "split",
-          "rollout",
-          "experiment"
+          "rollout"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -312983,10 +313466,6 @@
             {
               "value": "rollout",
               "name": "Rollout"
-            },
-            {
-              "value": "experiment",
-              "name": "Experiment"
             }
           ]
         }
@@ -317785,8 +318264,7 @@
         "enum": [
           "variant",
           "split",
-          "rollout",
-          "experiment"
+          "rollout"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -317805,10 +318283,6 @@
             {
               "value": "rollout",
               "name": "Rollout"
-            },
-            {
-              "value": "experiment",
-              "name": "Experiment"
             }
           ]
         }
@@ -319317,8 +319791,7 @@
         "enum": [
           "variant",
           "split",
-          "rollout",
-          "experiment"
+          "rollout"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -319337,10 +319810,6 @@
             {
               "value": "rollout",
               "name": "Rollout"
-            },
-            {
-              "value": "experiment",
-              "name": "Experiment"
             }
           ]
         }
@@ -320168,8 +320637,7 @@
         "enum": [
           "variant",
           "split",
-          "rollout",
-          "experiment"
+          "rollout"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -320188,10 +320656,6 @@
             {
               "value": "rollout",
               "name": "Rollout"
-            },
-            {
-              "value": "experiment",
-              "name": "Experiment"
             }
           ]
         }

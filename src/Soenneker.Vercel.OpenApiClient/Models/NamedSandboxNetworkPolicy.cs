@@ -41,6 +41,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The mode property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicyMode? Mode { get; set; }
+        /// <summary>The s3Key property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? S3Key { get; set; }
+#nullable restore
+#else
+        public string S3Key { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicy"/> and sets the default values.
         /// </summary>
@@ -70,6 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "allowedDomains", n => { AllowedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "deniedCIDRs", n => { DeniedCIDRs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicyMode>(); } },
+                { "s3Key", n => { S3Key = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -83,6 +92,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("allowedDomains", AllowedDomains);
             writer.WriteCollectionOfPrimitiveValues<string>("deniedCIDRs", DeniedCIDRs);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicyMode>("mode", Mode);
+            writer.WriteStringValue("s3Key", S3Key);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

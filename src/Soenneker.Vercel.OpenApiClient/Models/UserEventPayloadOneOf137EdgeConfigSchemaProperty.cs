@@ -9,27 +9,27 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UserEventPayloadOneOf137GlobalConfigSchemaProperty : IAdditionalDataHolder, IParsable
+    public partial class UserEventPayloadOneOf137EdgeConfigSchemaProperty : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137GlobalConfigSchemaProperty"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137EdgeConfigSchemaProperty"/> and sets the default values.
         /// </summary>
-        public UserEventPayloadOneOf137GlobalConfigSchemaProperty()
+        public UserEventPayloadOneOf137EdgeConfigSchemaProperty()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137GlobalConfigSchemaProperty"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137EdgeConfigSchemaProperty"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137GlobalConfigSchemaProperty CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137EdgeConfigSchemaProperty CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137GlobalConfigSchemaProperty();
+            return new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf137EdgeConfigSchemaProperty();
         }
         /// <summary>
         /// The deserialization information for the current model

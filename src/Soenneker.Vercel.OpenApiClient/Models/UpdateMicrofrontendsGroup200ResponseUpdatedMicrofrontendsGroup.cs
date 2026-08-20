@@ -14,6 +14,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The enablePolyrepoBranchRouting property</summary>
+        public bool? EnablePolyrepoBranchRouting { get; set; }
         /// <summary>The fallbackEnvironment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +73,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "enablePolyrepoBranchRouting", n => { EnablePolyrepoBranchRouting = n.GetBoolValue(); } },
                 { "fallbackEnvironment", n => { FallbackEnvironment = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -84,6 +87,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("enablePolyrepoBranchRouting", EnablePolyrepoBranchRouting);
             writer.WriteStringValue("fallbackEnvironment", FallbackEnvironment);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);

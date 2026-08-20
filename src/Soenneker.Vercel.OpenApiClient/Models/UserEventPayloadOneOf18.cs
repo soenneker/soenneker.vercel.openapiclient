@@ -43,6 +43,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The scopeType property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18ScopeType? ScopeType { get; set; }
+        /// <summary>Associates the event with a member for filtering; not rendered.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserId { get; set; }
+#nullable restore
+#else
+        public string UserId { get; set; }
+#endif
+        /// <summary>The userName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserName { get; set; }
+#nullable restore
+#else
+        public string UserName { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18"/> and sets the default values.
         /// </summary>
@@ -73,6 +89,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
                 { "scopeType", n => { ScopeType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18ScopeType>(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "userName", n => { UserName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -87,6 +105,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18ScopeType>("scopeType", ScopeType);
+            writer.WriteStringValue("userId", UserId);
+            writer.WriteStringValue("userName", UserName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

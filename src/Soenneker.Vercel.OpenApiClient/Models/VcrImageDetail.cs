@@ -93,14 +93,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> Tags { get; set; }
 #endif
-        /// <summary>Converted VHS drive data, present once an image has been optimized for sandbox launch.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.VcrImageDetailVhs? Vhs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.VcrImageDetailVhs Vhs { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.VcrImageDetail"/> and sets the default values.
         /// </summary>
@@ -138,7 +130,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "sizeInBytes", n => { SizeInBytes = n.GetDoubleValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrImageDetailStatus>(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "vhs", n => { Vhs = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrImageDetailVhs>(global::Soenneker.Vercel.OpenApiClient.Models.VcrImageDetailVhs.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -160,7 +151,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("sizeInBytes", SizeInBytes);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrImageDetailStatus>("status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrImageDetailVhs>("vhs", Vhs);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

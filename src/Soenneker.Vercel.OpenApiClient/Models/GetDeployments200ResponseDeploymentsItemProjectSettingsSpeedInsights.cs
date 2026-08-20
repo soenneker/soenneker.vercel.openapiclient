@@ -16,6 +16,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The canceledAt property</summary>
         public double? CanceledAt { get; set; }
+        /// <summary>When the first free (not Speed Insights Plus) production data point was observed, in ms. Set once by subscriber-analytics-events; projects that already had data before this field shipped get it backfilled on their next batch, so it reads &quot;first free data point observed&quot;, not necessarily &quot;first ever&quot;.</summary>
+        public double? DataReceivedAt { get; set; }
         /// <summary>The disabledAt property</summary>
         public double? DisabledAt { get; set; }
         /// <summary>The enabledAt property</summary>
@@ -58,6 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "canceledAt", n => { CanceledAt = n.GetDoubleValue(); } },
+                { "dataReceivedAt", n => { DataReceivedAt = n.GetDoubleValue(); } },
                 { "disabledAt", n => { DisabledAt = n.GetDoubleValue(); } },
                 { "enabledAt", n => { EnabledAt = n.GetDoubleValue(); } },
                 { "hasData", n => { HasData = n.GetBoolValue(); } },
@@ -73,6 +76,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("canceledAt", CanceledAt);
+            writer.WriteDoubleValue("dataReceivedAt", DataReceivedAt);
             writer.WriteDoubleValue("disabledAt", DisabledAt);
             writer.WriteDoubleValue("enabledAt", EnabledAt);
             writer.WriteBoolValue("hasData", HasData);

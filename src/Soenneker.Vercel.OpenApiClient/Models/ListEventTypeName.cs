@@ -887,6 +887,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ExperimentCreated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "experiment-deleted")]
+        #pragma warning disable CS1591
+        ExperimentDeleted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "experiment-transitioned")]
         #pragma warning disable CS1591
         ExperimentTransitioned,
@@ -986,6 +990,50 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "git_account_integration_link_added")]
         #pragma warning disable CS1591
         GitAccountIntegrationLinkAdded,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "global-config-backup-restored")]
+        #pragma warning disable CS1591
+        GlobalConfigBackupRestored,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "global-config-created")]
+        #pragma warning disable CS1591
+        GlobalConfigCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "global-config-deleted")]
+        #pragma warning disable CS1591
+        GlobalConfigDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "global-config-items-updated")]
+        #pragma warning disable CS1591
+        GlobalConfigItemsUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "global-config-schema-deleted")]
+        #pragma warning disable CS1591
+        GlobalConfigSchemaDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "global-config-schema-updated")]
+        #pragma warning disable CS1591
+        GlobalConfigSchemaUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "global-config-token-created")]
+        #pragma warning disable CS1591
+        GlobalConfigTokenCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "global-config-token-deleted")]
+        #pragma warning disable CS1591
+        GlobalConfigTokenDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "global-config-transfer-in")]
+        #pragma warning disable CS1591
+        GlobalConfigTransferIn,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "global-config-transfer-out")]
+        #pragma warning disable CS1591
+        GlobalConfigTransferOut,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "global-config-updated")]
+        #pragma warning disable CS1591
+        GlobalConfigUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "instant-rollback-created")]
         #pragma warning disable CS1591
@@ -1802,6 +1850,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "project-speed-insights-enabled")]
         #pragma warning disable CS1591
         ProjectSpeedInsightsEnabled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-speed-insights-free-data-started")]
+        #pragma warning disable CS1591
+        ProjectSpeedInsightsFreeDataStarted,
         #pragma warning restore CS1591
         [EnumMember(Value = "project-sso-protection")]
         #pragma warning disable CS1591

@@ -48,6 +48,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ReadWriteColonBlob,
         #pragma warning restore CS1591
+        [EnumMember(Value = "read-write:connect")]
+        #pragma warning disable CS1591
+        ReadWriteColonConnect,
+        #pragma warning restore CS1591
         [EnumMember(Value = "read-write:deployment")]
         #pragma warning disable CS1591
         ReadWriteColonDeployment,

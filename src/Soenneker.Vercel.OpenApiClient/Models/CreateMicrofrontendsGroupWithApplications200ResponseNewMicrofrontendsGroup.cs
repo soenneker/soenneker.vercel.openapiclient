@@ -16,6 +16,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The createdAt property</summary>
         public double? CreatedAt { get; set; }
+        /// <summary>The enablePolyrepoBranchRouting property</summary>
+        public bool? EnablePolyrepoBranchRouting { get; set; }
         /// <summary>The fallbackEnvironment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
+                { "enablePolyrepoBranchRouting", n => { EnablePolyrepoBranchRouting = n.GetBoolValue(); } },
                 { "fallbackEnvironment", n => { FallbackEnvironment = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -91,6 +94,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("createdAt", CreatedAt);
+            writer.WriteBoolValue("enablePolyrepoBranchRouting", EnablePolyrepoBranchRouting);
             writer.WriteStringValue("fallbackEnvironment", FallbackEnvironment);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);

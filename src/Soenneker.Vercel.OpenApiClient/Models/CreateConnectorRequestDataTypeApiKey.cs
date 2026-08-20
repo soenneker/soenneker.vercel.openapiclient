@@ -12,6 +12,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class CreateConnectorRequestDataTypeApiKey : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The HTTPS resources the API key authenticates against.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ServiceUrls { get; set; }
+#nullable restore
+#else
+        public List<string> ServiceUrls { get; set; }
+#endif
         /// <summary>The subjectType property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeApiKeySubjectType? SubjectType { get; set; }
         /// <summary>The values property</summary>
@@ -40,6 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "serviceUrls", n => { ServiceUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "subjectType", n => { SubjectType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeApiKeySubjectType>(); } },
                 { "values", n => { Values = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeApiKeyValuesItem>(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeApiKeyValuesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -51,6 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("serviceUrls", ServiceUrls);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeApiKeySubjectType>("subjectType", SubjectType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequestDataTypeApiKeyValuesItem>("values", Values);
         }

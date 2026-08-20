@@ -52,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.DeleteMicrofrontendsGroup200ResponseSchema>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.DeleteMicrofrontendsGroup200ResponseSchema.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates the name (and slug) of a microfrontends group.
+        /// Updates a microfrontends group&apos;s settings.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontendsGroup200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates the name (and slug) of a microfrontends group.
+        /// Updates a microfrontends group&apos;s settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -139,7 +139,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Teams.Item.Microfrontends.Item
 #endif
         }
         /// <summary>
-        /// Updates the name (and slug) of a microfrontends group.
+        /// Updates a microfrontends group&apos;s settings.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithGroupItemRequestBuilderPatchQueryParameters 

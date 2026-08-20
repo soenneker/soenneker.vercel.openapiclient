@@ -119,6 +119,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksSpeedInsightsFree SpeedInsightsFree { get; set; }
 #endif
+        /// <summary>The tracing property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksTracing? Tracing { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksTracing Tracing { get; set; }
+#endif
         /// <summary>The vcr property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -189,6 +197,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "redis", n => { Redis = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksRedis>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksRedis.CreateFromDiscriminatorValue); } },
                 { "sourceImages", n => { SourceImages = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksSourceImages>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksSourceImages.CreateFromDiscriminatorValue); } },
                 { "speedInsightsFree", n => { SpeedInsightsFree = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksSpeedInsightsFree>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksSpeedInsightsFree.CreateFromDiscriminatorValue); } },
+                { "tracing", n => { Tracing = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksTracing>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksTracing.CreateFromDiscriminatorValue); } },
                 { "vcr", n => { Vcr = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksVcr>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksVcr.CreateFromDiscriminatorValue); } },
                 { "webAnalytics", n => { WebAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksWebAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksWebAnalytics.CreateFromDiscriminatorValue); } },
                 { "workflowEvents", n => { WorkflowEvents = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksWorkflowEvents>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksWorkflowEvents.CreateFromDiscriminatorValue); } },
@@ -215,6 +224,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksRedis>("redis", Redis);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksSourceImages>("sourceImages", SourceImages);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksSpeedInsightsFree>("speedInsightsFree", SpeedInsightsFree);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksTracing>("tracing", Tracing);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksVcr>("vcr", Vcr);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksWebAnalytics>("webAnalytics", WebAnalytics);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf163NewOwnerFeatureBlocksWorkflowEvents>("workflowEvents", WorkflowEvents);

@@ -12,6 +12,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Created,
         #pragma warning restore CS1591
+        [EnumMember(Value = "deleted")]
+        #pragma warning disable CS1591
+        Deleted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "transitioned")]
         #pragma warning disable CS1591
         Transitioned,
