@@ -12372,7 +12372,7 @@
                             "type": "string"
                           },
                           "type": "array",
-                          "description": "Known allowed app-level scopes. For Slack this is the bot scope set configured on the app; for OAuth it is `scopes_supported` from the server's discovery document."
+                          "description": "Known allowed app-level scopes. For Slack this is the bot scope set configured on the app; for OAuth it is the connector's enabled `clientCredentials.scopes` configuration."
                         },
                         "supportedAuthorizationDetails": {
                           "items": {
@@ -12412,7 +12412,7 @@
                             "type": "string"
                           },
                           "type": "array",
-                          "description": "Known allowed user-level scopes. For Slack this is the user scope set configured on the app; for OAuth it is `scopes_supported` from the server's discovery document."
+                          "description": "Known allowed user-level scopes. For Slack this is the user scope set configured on the app; for OAuth it is the connector's enabled `userAuthorization.scopes` configuration."
                         },
                         "supportedAuthorizationDetails": {
                           "items": {
@@ -18472,6 +18472,21 @@
                                       ],
                                       "type": "object",
                                       "description": "Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly derived from the function path. Only one trigger per function is allowed."
+                                    },
+                                    {
+                                      "properties": {
+                                        "type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "schedule/v1beta"
+                                          ],
+                                          "description": "Event type - must be \"schedule/v1beta\" (REQUIRED)"
+                                        }
+                                      },
+                                      "required": [
+                                        "type"
+                                      ],
+                                      "type": "object"
                                     }
                                   ]
                                 },
@@ -19445,6 +19460,21 @@
                                                         ],
                                                         "type": "object",
                                                         "description": "Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly derived from the function path. Only one trigger per function is allowed."
+                                                      },
+                                                      {
+                                                        "properties": {
+                                                          "type": {
+                                                            "type": "string",
+                                                            "enum": [
+                                                              "schedule/v1beta"
+                                                            ],
+                                                            "description": "Event type - must be \"schedule/v1beta\" (REQUIRED)"
+                                                          }
+                                                        },
+                                                        "required": [
+                                                          "type"
+                                                        ],
+                                                        "type": "object"
                                                       }
                                                     ]
                                                   },
@@ -19941,6 +19971,21 @@
                                                         ],
                                                         "type": "object",
                                                         "description": "Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly derived from the function path. Only one trigger per function is allowed."
+                                                      },
+                                                      {
+                                                        "properties": {
+                                                          "type": {
+                                                            "type": "string",
+                                                            "enum": [
+                                                              "schedule/v1beta"
+                                                            ],
+                                                            "description": "Event type - must be \"schedule/v1beta\" (REQUIRED)"
+                                                          }
+                                                        },
+                                                        "required": [
+                                                          "type"
+                                                        ],
+                                                        "type": "object"
                                                       }
                                                     ]
                                                   },
@@ -20273,6 +20318,21 @@
                                                 ],
                                                 "type": "object",
                                                 "description": "Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly derived from the function path. Only one trigger per function is allowed."
+                                              },
+                                              {
+                                                "properties": {
+                                                  "type": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                      "schedule/v1beta"
+                                                    ],
+                                                    "description": "Event type - must be \"schedule/v1beta\" (REQUIRED)"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "type"
+                                                ],
+                                                "type": "object"
                                               }
                                             ]
                                           },
@@ -26486,6 +26546,21 @@
                                       ],
                                       "type": "object",
                                       "description": "Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly derived from the function path. Only one trigger per function is allowed."
+                                    },
+                                    {
+                                      "properties": {
+                                        "type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "schedule/v1beta"
+                                          ],
+                                          "description": "Event type - must be \"schedule/v1beta\" (REQUIRED)"
+                                        }
+                                      },
+                                      "required": [
+                                        "type"
+                                      ],
+                                      "type": "object"
                                     }
                                   ]
                                 },
@@ -27459,6 +27534,21 @@
                                                         ],
                                                         "type": "object",
                                                         "description": "Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly derived from the function path. Only one trigger per function is allowed."
+                                                      },
+                                                      {
+                                                        "properties": {
+                                                          "type": {
+                                                            "type": "string",
+                                                            "enum": [
+                                                              "schedule/v1beta"
+                                                            ],
+                                                            "description": "Event type - must be \"schedule/v1beta\" (REQUIRED)"
+                                                          }
+                                                        },
+                                                        "required": [
+                                                          "type"
+                                                        ],
+                                                        "type": "object"
                                                       }
                                                     ]
                                                   },
@@ -27955,6 +28045,21 @@
                                                         ],
                                                         "type": "object",
                                                         "description": "Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly derived from the function path. Only one trigger per function is allowed."
+                                                      },
+                                                      {
+                                                        "properties": {
+                                                          "type": {
+                                                            "type": "string",
+                                                            "enum": [
+                                                              "schedule/v1beta"
+                                                            ],
+                                                            "description": "Event type - must be \"schedule/v1beta\" (REQUIRED)"
+                                                          }
+                                                        },
+                                                        "required": [
+                                                          "type"
+                                                        ],
+                                                        "type": "object"
                                                       }
                                                     ]
                                                   },
@@ -28287,6 +28392,21 @@
                                                 ],
                                                 "type": "object",
                                                 "description": "Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly derived from the function path. Only one trigger per function is allowed."
+                                              },
+                                              {
+                                                "properties": {
+                                                  "type": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                      "schedule/v1beta"
+                                                    ],
+                                                    "description": "Event type - must be \"schedule/v1beta\" (REQUIRED)"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "type"
+                                                ],
+                                                "type": "object"
                                               }
                                             ]
                                           },
@@ -33645,6 +33765,21 @@
                                   ],
                                   "type": "object",
                                   "description": "Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly derived from the function path. Only one trigger per function is allowed."
+                                },
+                                {
+                                  "properties": {
+                                    "type": {
+                                      "type": "string",
+                                      "enum": [
+                                        "schedule/v1beta"
+                                      ],
+                                      "description": "Event type - must be \"schedule/v1beta\" (REQUIRED)"
+                                    }
+                                  },
+                                  "required": [
+                                    "type"
+                                  ],
+                                  "type": "object"
                                 }
                               ]
                             },
@@ -34618,6 +34753,21 @@
                                                     ],
                                                     "type": "object",
                                                     "description": "Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly derived from the function path. Only one trigger per function is allowed."
+                                                  },
+                                                  {
+                                                    "properties": {
+                                                      "type": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                          "schedule/v1beta"
+                                                        ],
+                                                        "description": "Event type - must be \"schedule/v1beta\" (REQUIRED)"
+                                                      }
+                                                    },
+                                                    "required": [
+                                                      "type"
+                                                    ],
+                                                    "type": "object"
                                                   }
                                                 ]
                                               },
@@ -35114,6 +35264,21 @@
                                                     ],
                                                     "type": "object",
                                                     "description": "Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly derived from the function path. Only one trigger per function is allowed."
+                                                  },
+                                                  {
+                                                    "properties": {
+                                                      "type": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                          "schedule/v1beta"
+                                                        ],
+                                                        "description": "Event type - must be \"schedule/v1beta\" (REQUIRED)"
+                                                      }
+                                                    },
+                                                    "required": [
+                                                      "type"
+                                                    ],
+                                                    "type": "object"
                                                   }
                                                 ]
                                               },
@@ -35446,6 +35611,21 @@
                                             ],
                                             "type": "object",
                                             "description": "Queue trigger input event for v2beta (from vercel.json config). Consumer name is implicitly derived from the function path. Only one trigger per function is allowed."
+                                          },
+                                          {
+                                            "properties": {
+                                              "type": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "schedule/v1beta"
+                                                ],
+                                                "description": "Event type - must be \"schedule/v1beta\" (REQUIRED)"
+                                              }
+                                            },
+                                            "required": [
+                                              "type"
+                                            ],
+                                            "type": "object"
                                           }
                                         ]
                                       },
@@ -45592,7 +45772,8 @@
                                       "account-plan-downgrade",
                                       "disabled-by-admin",
                                       "disabled-by-owner",
-                                      "feature-not-available"
+                                      "feature-not-available",
+                                      "limits-exceeded"
                                     ]
                                   },
                                   "schemas": {
@@ -46106,7 +46287,8 @@
                                       "account-plan-downgrade",
                                       "disabled-by-admin",
                                       "disabled-by-owner",
-                                      "feature-not-available"
+                                      "feature-not-available",
+                                      "limits-exceeded"
                                     ]
                                   },
                                   "schemas": {
@@ -46925,7 +47107,8 @@
                             "account-plan-downgrade",
                             "disabled-by-admin",
                             "disabled-by-owner",
-                            "feature-not-available"
+                            "feature-not-available",
+                            "limits-exceeded"
                           ]
                         },
                         "schemas": {
@@ -47436,7 +47619,8 @@
                             "account-plan-downgrade",
                             "disabled-by-admin",
                             "disabled-by-owner",
-                            "feature-not-available"
+                            "feature-not-available",
+                            "limits-exceeded"
                           ]
                         },
                         "schemas": {
@@ -48484,7 +48668,8 @@
                                   "account-plan-downgrade",
                                   "disabled-by-admin",
                                   "disabled-by-owner",
-                                  "feature-not-available"
+                                  "feature-not-available",
+                                  "limits-exceeded"
                                 ]
                               },
                               "schemas": {
@@ -48998,7 +49183,8 @@
                                   "account-plan-downgrade",
                                   "disabled-by-admin",
                                   "disabled-by-owner",
-                                  "feature-not-available"
+                                  "feature-not-available",
+                                  "limits-exceeded"
                                 ]
                               },
                               "schemas": {
@@ -49720,7 +49906,8 @@
                             "account-plan-downgrade",
                             "disabled-by-admin",
                             "disabled-by-owner",
-                            "feature-not-available"
+                            "feature-not-available",
+                            "limits-exceeded"
                           ]
                         },
                         "schemas": {
@@ -50231,7 +50418,8 @@
                             "account-plan-downgrade",
                             "disabled-by-admin",
                             "disabled-by-owner",
-                            "feature-not-available"
+                            "feature-not-available",
+                            "limits-exceeded"
                           ]
                         },
                         "schemas": {
@@ -50875,7 +51063,8 @@
                             "account-plan-downgrade",
                             "disabled-by-admin",
                             "disabled-by-owner",
-                            "feature-not-available"
+                            "feature-not-available",
+                            "limits-exceeded"
                           ]
                         },
                         "schemas": {
@@ -51386,7 +51575,8 @@
                             "account-plan-downgrade",
                             "disabled-by-admin",
                             "disabled-by-owner",
-                            "feature-not-available"
+                            "feature-not-available",
+                            "limits-exceeded"
                           ]
                         },
                         "schemas": {
@@ -57802,6 +57992,20 @@
                                   "type"
                                 ],
                                 "type": "object"
+                              },
+                              {
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "experiment"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "type"
+                                ],
+                                "type": "object"
                               }
                             ]
                           },
@@ -57954,6 +58158,20 @@
                                         "rollToVariantId",
                                         "slots",
                                         "startTimestamp",
+                                        "type"
+                                      ],
+                                      "type": "object"
+                                    },
+                                    {
+                                      "properties": {
+                                        "type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "experiment"
+                                          ]
+                                        }
+                                      },
+                                      "required": [
                                         "type"
                                       ],
                                       "type": "object"
@@ -59331,6 +59549,20 @@
                                       "type"
                                     ],
                                     "type": "object"
+                                  },
+                                  {
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "enum": [
+                                          "experiment"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "type"
+                                    ],
+                                    "type": "object"
                                   }
                                 ]
                               },
@@ -59483,6 +59715,20 @@
                                             "rollToVariantId",
                                             "slots",
                                             "startTimestamp",
+                                            "type"
+                                          ],
+                                          "type": "object"
+                                        },
+                                        {
+                                          "properties": {
+                                            "type": {
+                                              "type": "string",
+                                              "enum": [
+                                                "experiment"
+                                              ]
+                                            }
+                                          },
+                                          "required": [
                                             "type"
                                           ],
                                           "type": "object"
@@ -60907,6 +61153,20 @@
                                             "type"
                                           ],
                                           "type": "object"
+                                        },
+                                        {
+                                          "properties": {
+                                            "type": {
+                                              "type": "string",
+                                              "enum": [
+                                                "experiment"
+                                              ]
+                                            }
+                                          },
+                                          "required": [
+                                            "type"
+                                          ],
+                                          "type": "object"
                                         }
                                       ]
                                     },
@@ -61059,6 +61319,20 @@
                                                   "rollToVariantId",
                                                   "slots",
                                                   "startTimestamp",
+                                                  "type"
+                                                ],
+                                                "type": "object"
+                                              },
+                                              {
+                                                "properties": {
+                                                  "type": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                      "experiment"
+                                                    ]
+                                                  }
+                                                },
+                                                "required": [
                                                   "type"
                                                 ],
                                                 "type": "object"
@@ -118497,6 +118771,41 @@
                     ],
                     "nullable": true
                   },
+                  "sandbox": {
+                    "type": "object",
+                    "description": "Specifies the default region and failover regions for sandboxes created in the project",
+                    "properties": {
+                      "region": {
+                        "description": "The Vercel region sandboxes in this project are created in by default.",
+                        "enum": [
+                          "iad1",
+                          "sfo1",
+                          "cle1",
+                          "cdg1"
+                        ],
+                        "example": "iad1"
+                      },
+                      "failoverRegions": {
+                        "description": "The regions sandboxes in this project fall back to when they cannot be created in `region`.",
+                        "type": "array",
+                        "uniqueItems": true,
+                        "maxItems": 4,
+                        "items": {
+                          "enum": [
+                            "iad1",
+                            "sfo1",
+                            "cle1",
+                            "cdg1"
+                          ]
+                        },
+                        "example": [
+                          "sfo1",
+                          "cle1"
+                        ]
+                      }
+                    },
+                    "additionalProperties": false
+                  },
                   "outputDirectory": {
                     "description": "The output directory of the project. When `null` is used this value will be automatically detected",
                     "maxLength": 256,
@@ -134735,34 +135044,9 @@
                   },
                   "passport": {
                     "description": "Passport configuration for the project.",
+                    "type": "object",
+                    "additionalProperties": false,
                     "properties": {
-                      "publicPathRules": {
-                        "type": "array",
-                        "maxItems": 100,
-                        "uniqueItems": true,
-                        "items": {
-                          "type": "object",
-                          "additionalProperties": false,
-                          "required": [
-                            "type",
-                            "value"
-                          ],
-                          "properties": {
-                            "type": {
-                              "type": "string",
-                              "enum": [
-                                "equals",
-                                "startsWith"
-                              ]
-                            },
-                            "value": {
-                              "type": "string",
-                              "maxLength": 2048,
-                              "pattern": "^/[^?#\\\\s]*$"
-                            }
-                          }
-                        }
-                      },
                       "connectorId": {
                         "type": "string"
                       },
@@ -134777,12 +135061,45 @@
                         ]
                       }
                     },
-                    "type": "object",
-                    "additionalProperties": false,
                     "required": [
                       "connectorId"
                     ],
                     "nullable": true
+                  },
+                  "sandbox": {
+                    "type": "object",
+                    "description": "Specifies the default region and failover regions for sandboxes created in the project",
+                    "properties": {
+                      "region": {
+                        "description": "The Vercel region sandboxes in this project are created in by default.",
+                        "enum": [
+                          "iad1",
+                          "sfo1",
+                          "cle1",
+                          "cdg1"
+                        ],
+                        "example": "iad1"
+                      },
+                      "failoverRegions": {
+                        "description": "The regions sandboxes in this project fall back to when they cannot be created in `region`.",
+                        "type": "array",
+                        "uniqueItems": true,
+                        "maxItems": 4,
+                        "items": {
+                          "enum": [
+                            "iad1",
+                            "sfo1",
+                            "cle1",
+                            "cdg1"
+                          ]
+                        },
+                        "example": [
+                          "sfo1",
+                          "cle1"
+                        ]
+                      }
+                    },
+                    "additionalProperties": false
                   },
                   "ssoProtection": {
                     "additionalProperties": false,
@@ -164915,6 +165232,42 @@
                       }
                     }
                   },
+                  "region": {
+                    "type": "string",
+                    "enum": [
+                      "iad1",
+                      "sfo1",
+                      "cle1",
+                      "cdg1"
+                    ],
+                    "default": [
+                      "iad1",
+                      "sfo1",
+                      "cle1",
+                      "cdg1"
+                    ],
+                    "description": "The Vercel region in which to create the sandbox.",
+                    "example": "iad1"
+                  },
+                  "failoverRegions": {
+                    "type": "array",
+                    "maxItems": 4,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "iad1",
+                        "sfo1",
+                        "cle1",
+                        "cdg1"
+                      ]
+                    },
+                    "description": "The regions the sandbox falls back to when it cannot be created in `region`.",
+                    "example": [
+                      "sfo1",
+                      "cle1"
+                    ]
+                  },
                   "name": {
                     "example": "my-sandbox",
                     "type": "string",
@@ -166743,6 +167096,36 @@
                           }
                         }
                       }
+                    ]
+                  },
+                  "region": {
+                    "type": "string",
+                    "enum": [
+                      "iad1",
+                      "sfo1",
+                      "cle1",
+                      "cdg1"
+                    ],
+                    "description": "The Vercel region in which to create the sandbox.",
+                    "example": "iad1"
+                  },
+                  "failoverRegions": {
+                    "type": "array",
+                    "maxItems": 4,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "iad1",
+                        "sfo1",
+                        "cle1",
+                        "cdg1"
+                      ]
+                    },
+                    "description": "The regions the sandbox falls back to when it cannot be created in `region`.",
+                    "example": [
+                      "sfo1",
+                      "cle1"
                     ]
                   },
                   "env": {
@@ -169350,6 +169733,42 @@
                       }
                     }
                   },
+                  "region": {
+                    "type": "string",
+                    "enum": [
+                      "iad1",
+                      "sfo1",
+                      "cle1",
+                      "cdg1"
+                    ],
+                    "default": [
+                      "iad1",
+                      "sfo1",
+                      "cle1",
+                      "cdg1"
+                    ],
+                    "description": "The Vercel region in which to create the sandbox.",
+                    "example": "iad1"
+                  },
+                  "failoverRegions": {
+                    "type": "array",
+                    "maxItems": 4,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "iad1",
+                        "sfo1",
+                        "cle1",
+                        "cdg1"
+                      ]
+                    },
+                    "description": "The regions the sandbox falls back to when it cannot be created in `region`.",
+                    "example": [
+                      "sfo1",
+                      "cle1"
+                    ]
+                  },
                   "name": {
                     "example": "my-sandbox-fork",
                     "type": "string",
@@ -170071,6 +170490,42 @@
                         }
                       }
                     }
+                  },
+                  "region": {
+                    "type": "string",
+                    "enum": [
+                      "iad1",
+                      "sfo1",
+                      "cle1",
+                      "cdg1"
+                    ],
+                    "default": [
+                      "iad1",
+                      "sfo1",
+                      "cle1",
+                      "cdg1"
+                    ],
+                    "description": "The Vercel region in which to create the sandbox.",
+                    "example": "iad1"
+                  },
+                  "failoverRegions": {
+                    "type": "array",
+                    "maxItems": 4,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "iad1",
+                        "sfo1",
+                        "cle1",
+                        "cdg1"
+                      ]
+                    },
+                    "description": "The regions the sandbox falls back to when it cannot be created in `region`.",
+                    "example": [
+                      "sfo1",
+                      "cle1"
+                    ]
                   },
                   "name": {
                     "example": "my-sandbox",
@@ -170848,6 +171303,42 @@
                       }
                     }
                   },
+                  "region": {
+                    "type": "string",
+                    "enum": [
+                      "iad1",
+                      "sfo1",
+                      "cle1",
+                      "cdg1"
+                    ],
+                    "default": [
+                      "iad1",
+                      "sfo1",
+                      "cle1",
+                      "cdg1"
+                    ],
+                    "description": "The Vercel region in which to create the sandbox.",
+                    "example": "iad1"
+                  },
+                  "failoverRegions": {
+                    "type": "array",
+                    "maxItems": 4,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "iad1",
+                        "sfo1",
+                        "cle1",
+                        "cdg1"
+                      ]
+                    },
+                    "description": "The regions the sandbox falls back to when it cannot be created in `region`.",
+                    "example": [
+                      "sfo1",
+                      "cle1"
+                    ]
+                  },
                   "name": {
                     "example": "my-sandbox-fork",
                     "type": "string",
@@ -171576,6 +172067,42 @@
                         }
                       }
                     }
+                  },
+                  "region": {
+                    "type": "string",
+                    "enum": [
+                      "iad1",
+                      "sfo1",
+                      "cle1",
+                      "cdg1"
+                    ],
+                    "default": [
+                      "iad1",
+                      "sfo1",
+                      "cle1",
+                      "cdg1"
+                    ],
+                    "description": "The Vercel region in which to create the sandbox.",
+                    "example": "iad1"
+                  },
+                  "failoverRegions": {
+                    "type": "array",
+                    "maxItems": 4,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "iad1",
+                        "sfo1",
+                        "cle1",
+                        "cdg1"
+                      ]
+                    },
+                    "description": "The regions the sandbox falls back to when it cannot be created in `region`.",
+                    "example": [
+                      "sfo1",
+                      "cle1"
+                    ]
                   },
                   "name": {
                     "example": "my-sandbox",
@@ -210340,6 +210867,8 @@
               "team-tokens-invalidated",
               "tracing-configured",
               "tracing-disabled",
+              "tracing-paused",
+              "tracing-resumed",
               "unlink-login-connection",
               "update-account-flow-dismissed",
               "update-account-flow-triggered",
@@ -229054,6 +229583,7 @@
                           "pricingPlan": {
                             "type": "string",
                             "enum": [
+                              "flex",
                               "legacy",
                               "platform",
                               "plus",
@@ -229164,6 +229694,7 @@
                       "pricingPlan": {
                         "type": "string",
                         "enum": [
+                          "flex",
                           "legacy",
                           "platform",
                           "plus",
@@ -229268,6 +229799,7 @@
                       "pricingPlan": {
                         "type": "string",
                         "enum": [
+                          "flex",
                           "legacy",
                           "platform",
                           "plus",
@@ -231177,6 +231709,21 @@
                 "required": [
                   "projectId",
                   "projectName"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "reason": {
+                    "type": "string",
+                    "enum": [
+                      "limits-exceeded"
+                    ]
+                  }
+                },
+                "required": [
+                  "reason"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -234030,6 +234577,8 @@
               "team-tokens-invalidated",
               "tracing-configured",
               "tracing-disabled",
+              "tracing-paused",
+              "tracing-resumed",
               "unlink-login-connection",
               "update-account-flow-dismissed",
               "update-account-flow-triggered",
@@ -234740,6 +235289,8 @@
                 "team-tokens-invalidated",
                 "tracing-configured",
                 "tracing-disabled",
+                "tracing-paused",
+                "tracing-resumed",
                 "unlink-login-connection",
                 "update-account-flow-dismissed",
                 "update-account-flow-triggered",
@@ -235102,6 +235653,20 @@
                         "type"
                       ],
                       "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "experiment"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "type"
+                      ],
+                      "type": "object"
                     }
                   ]
                 },
@@ -235254,6 +235819,20 @@
                               "rollToVariantId",
                               "slots",
                               "startTimestamp",
+                              "type"
+                            ],
+                            "type": "object"
+                          },
+                          {
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "experiment"
+                                ]
+                              }
+                            },
+                            "required": [
                               "type"
                             ],
                             "type": "object"
@@ -236337,6 +236916,28 @@
             "description": "The region the sandbox is pinned to: the region stored on the sandbox, otherwise the platform default. Where a running session actually landed is reported by `session.region`.",
             "example": "iad1"
           },
+          "failoverRegions": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "cdg1",
+                "cle1",
+                "iad1",
+                "sfo1"
+              ],
+              "description": "The regions the sandbox fails over to. Empty when it does not fail over.",
+              "example": [
+                "sfo1",
+                "cle1"
+              ]
+            },
+            "type": "array",
+            "description": "The regions the sandbox fails over to. Empty when it does not fail over.",
+            "example": [
+              "sfo1",
+              "cle1"
+            ]
+          },
           "vcpus": {
             "type": "number",
             "description": "Number of virtual CPUs allocated.",
@@ -236863,6 +237464,17 @@
             "type": "string",
             "description": "The region where the snapshot is stored.",
             "example": "iad1"
+          },
+          "regions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "description": "The regions where the snapshot is available.",
+            "example": [
+              "iad1",
+              "sfo1"
+            ]
           },
           "status": {
             "type": "string",
@@ -239345,6 +239957,37 @@
                   "isCurrentlyBlocked"
                 ],
                 "type": "object"
+              },
+              "speedInsightsFree": {
+                "properties": {
+                  "blockedFrom": {
+                    "type": "number"
+                  },
+                  "blockedUntil": {
+                    "type": "number"
+                  },
+                  "blockReason": {
+                    "type": "string",
+                    "enum": [
+                      "admin_override",
+                      "hard_blocked",
+                      "limits_exceeded"
+                    ]
+                  },
+                  "isCurrentlyBlocked": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
+                    ]
+                  }
+                },
+                "required": [
+                  "blockReason",
+                  "isCurrentlyBlocked"
+                ],
+                "type": "object",
+                "description": "Client-facing view of the `speedInsightsFree` ingestion block. The dashboard needs `blockReason` to tell usage pauses apart from admin blocks."
               }
             },
             "type": "object",

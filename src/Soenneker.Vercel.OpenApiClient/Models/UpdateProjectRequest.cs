@@ -179,6 +179,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string RootDirectory { get; set; }
 #endif
+        /// <summary>Specifies the default region and failover regions for sandboxes created in the project</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestSandbox? Sandbox { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestSandbox Sandbox { get; set; }
+#endif
         /// <summary>The region to deploy Serverless Functions in this project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -296,6 +304,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "publicSource", n => { PublicSource = n.GetBoolValue(); } },
                 { "resourceConfig", n => { ResourceConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestResourceConfig>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestResourceConfig.CreateFromDiscriminatorValue); } },
                 { "rootDirectory", n => { RootDirectory = n.GetStringValue(); } },
+                { "sandbox", n => { Sandbox = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestSandbox>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestSandbox.CreateFromDiscriminatorValue); } },
                 { "serverlessFunctionRegion", n => { ServerlessFunctionRegion = n.GetStringValue(); } },
                 { "serverlessFunctionZeroConfigFailover", n => { ServerlessFunctionZeroConfigFailover = n.GetBoolValue(); } },
                 { "skewProtectionAllowedDomains", n => { SkewProtectionAllowedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -349,6 +358,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("publicSource", PublicSource);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestResourceConfig>("resourceConfig", ResourceConfig);
             writer.WriteStringValue("rootDirectory", RootDirectory);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestSandbox>("sandbox", Sandbox);
             writer.WriteStringValue("serverlessFunctionRegion", ServerlessFunctionRegion);
             writer.WriteBoolValue("serverlessFunctionZeroConfigFailover", ServerlessFunctionZeroConfigFailover);
             writer.WriteCollectionOfPrimitiveValues<string>("skewProtectionAllowedDomains", SkewProtectionAllowedDomains);

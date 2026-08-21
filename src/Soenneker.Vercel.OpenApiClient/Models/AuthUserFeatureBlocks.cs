@@ -15,6 +15,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Client-facing view of the `speedInsightsFree` ingestion block. The dashboard needs `blockReason` to tell usage pauses apart from admin blocks.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksSpeedInsightsFree? SpeedInsightsFree { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksSpeedInsightsFree SpeedInsightsFree { get; set; }
+#endif
         /// <summary>The webAnalytics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +56,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "speedInsightsFree", n => { SpeedInsightsFree = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksSpeedInsightsFree>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksSpeedInsightsFree.CreateFromDiscriminatorValue); } },
                 { "webAnalytics", n => { WebAnalytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksWebAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksWebAnalytics.CreateFromDiscriminatorValue); } },
             };
         }
@@ -58,6 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksSpeedInsightsFree>("speedInsightsFree", SpeedInsightsFree);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserFeatureBlocksWebAnalytics>("webAnalytics", WebAnalytics);
             writer.WriteAdditionalData(AdditionalData);
         }

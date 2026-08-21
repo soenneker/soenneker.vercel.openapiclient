@@ -7,6 +7,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UserEventPayloadOneOf334BudgetPricingPlan
     {
+        [EnumMember(Value = "flex")]
+        #pragma warning disable CS1591
+        Flex,
+        #pragma warning restore CS1591
         [EnumMember(Value = "legacy")]
         #pragma warning disable CS1591
         Legacy,

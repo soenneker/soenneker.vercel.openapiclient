@@ -26,7 +26,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>True when changing app token grants requires reinstalling the app, so tokens cannot be partitioned independently by requester environment.</summary>
         public bool? RequiresReinstallation { get; set; }
-        /// <summary>Known allowed app-level scopes. For Slack this is the bot scope set configured on the app; for OAuth it is `scopes_supported` from the server&apos;s discovery document.</summary>
+        /// <summary>Known allowed app-level scopes. For Slack this is the bot scope set configured on the app; for OAuth it is the connector&apos;s enabled `clientCredentials.scopes` configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Scopes { get; set; }

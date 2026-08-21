@@ -47,6 +47,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Region { get; set; }
 #endif
+        /// <summary>The regions where the snapshot is available.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Regions { get; set; }
+#nullable restore
+#else
+        public List<string> Regions { get; set; }
+#endif
         /// <summary>The size of the snapshot in bytes.</summary>
         public double? SizeBytes { get; set; }
         /// <summary>The unique identifier of the session from which the snapshot was created.</summary>
@@ -93,6 +101,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "lastUsedAt", n => { LastUsedAt = n.GetDoubleValue(); } },
                 { "parentId", n => { ParentId = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
+                { "regions", n => { Regions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "sizeBytes", n => { SizeBytes = n.GetDoubleValue(); } },
                 { "sourceSessionId", n => { SourceSessionId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SnapshotStatus>(); } },
@@ -113,6 +122,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("lastUsedAt", LastUsedAt);
             writer.WriteStringValue("parentId", ParentId);
             writer.WriteStringValue("region", Region);
+            writer.WriteCollectionOfPrimitiveValues<string>("regions", Regions);
             writer.WriteDoubleValue("sizeBytes", SizeBytes);
             writer.WriteStringValue("sourceSessionId", SourceSessionId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SnapshotStatus>("status", Status);

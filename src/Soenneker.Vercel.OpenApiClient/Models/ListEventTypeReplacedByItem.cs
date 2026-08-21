@@ -2347,6 +2347,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         TracingDisabled,
         #pragma warning restore CS1591
+        [EnumMember(Value = "tracing-paused")]
+        #pragma warning disable CS1591
+        TracingPaused,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "tracing-resumed")]
+        #pragma warning disable CS1591
+        TracingResumed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unlink-login-connection")]
         #pragma warning disable CS1591
         UnlinkLoginConnection,

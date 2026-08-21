@@ -20,6 +20,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestEnv Env { get; set; }
 #endif
+        /// <summary>The regions the sandbox falls back to when it cannot be created in `region`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestFailoverRegionsItem?>? FailoverRegions { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestFailoverRegionsItem?> FailoverRegions { get; set; }
+#endif
         /// <summary>Image to use for the sandbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -78,6 +86,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
+        /// <summary>The Vercel region in which to create the sandbox.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestRegion? Region { get; set; }
         /// <summary>Resources to define the VM</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,6 +148,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "env", n => { Env = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestEnv>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestEnv.CreateFromDiscriminatorValue); } },
+                { "failoverRegions", n => { FailoverRegions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestFailoverRegionsItem>()?.AsList(); } },
                 { "image", n => { Image = n.GetStringValue(); } },
                 { "keepLastSnapshots", n => { KeepLastSnapshots = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestKeepLastSnapshots>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestKeepLastSnapshots.CreateFromDiscriminatorValue); } },
                 { "mounts", n => { Mounts = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestMounts>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestMounts.CreateFromDiscriminatorValue); } },
@@ -146,6 +157,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "persistent", n => { Persistent = n.GetBoolValue(); } },
                 { "ports", n => { Ports = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "region", n => { Region = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestRegion>(); } },
                 { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestResources>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestResources.CreateFromDiscriminatorValue); } },
                 { "snapshotExpiration", n => { SnapshotExpiration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestSnapshotExpiration>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestSnapshotExpiration.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestSource>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestSource.CreateFromDiscriminatorValue); } },
@@ -161,6 +173,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestEnv>("env", Env);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestFailoverRegionsItem>("failoverRegions", FailoverRegions);
             writer.WriteStringValue("image", Image);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestKeepLastSnapshots>("keepLastSnapshots", KeepLastSnapshots);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestMounts>("mounts", Mounts);
@@ -169,6 +182,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("persistent", Persistent);
             writer.WriteCollectionOfPrimitiveValues<int?>("ports", Ports);
             writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestRegion>("region", Region);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestResources>("resources", Resources);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestSnapshotExpiration>("snapshotExpiration", SnapshotExpiration);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV3RequestSource>("source", Source);

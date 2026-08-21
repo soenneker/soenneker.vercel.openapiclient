@@ -43,6 +43,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The time at which the currently running sandbox will time out, in milliseconds since the epoch. Only present while a session is running.</summary>
         public double? ExpiresAt { get; set; }
+        /// <summary>The regions the sandbox fails over to. Empty when it does not fail over.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxFailoverRegionsItem?>? FailoverRegions { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxFailoverRegionsItem?> FailoverRegions { get; set; }
+#endif
         /// <summary>Digest-pinned reference of the container image the sandbox was created from, when it was created from an image (&quot;{repository}@{manifestDigest}&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,6 +169,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "currentSnapshotId", n => { CurrentSnapshotId = n.GetStringValue(); } },
                 { "cwd", n => { Cwd = n.GetStringValue(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
+                { "failoverRegions", n => { FailoverRegions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxFailoverRegionsItem>()?.AsList(); } },
                 { "image", n => { Image = n.GetStringValue(); } },
                 { "keepLastSnapshots", n => { KeepLastSnapshots = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxKeepLastSnapshots>(global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxKeepLastSnapshots.CreateFromDiscriminatorValue); } },
                 { "memory", n => { Memory = n.GetDoubleValue(); } },
@@ -195,6 +204,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("currentSnapshotId", CurrentSnapshotId);
             writer.WriteStringValue("cwd", Cwd);
             writer.WriteDoubleValue("expiresAt", ExpiresAt);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxFailoverRegionsItem>("failoverRegions", FailoverRegions);
             writer.WriteStringValue("image", Image);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxKeepLastSnapshots>("keepLastSnapshots", KeepLastSnapshots);
             writer.WriteDoubleValue("memory", Memory);

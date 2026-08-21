@@ -24,5 +24,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         FeatureNotAvailable,
         #pragma warning restore CS1591
+        [EnumMember(Value = "limits-exceeded")]
+        #pragma warning disable CS1591
+        LimitsExceeded,
+        #pragma warning restore CS1591
     }
 }

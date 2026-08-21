@@ -28,6 +28,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestEnv Env { get; set; }
 #endif
+        /// <summary>The regions the sandbox falls back to when it cannot be created in `region`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestFailoverRegionsItem?>? FailoverRegions { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestFailoverRegionsItem?> FailoverRegions { get; set; }
+#endif
         /// <summary>Protect the N most recent snapshots with different expiration/deletion behavior. Set to null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,6 +62,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<int?> Ports { get; set; }
 #endif
+        /// <summary>The Vercel region in which to create the sandbox.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestRegion? Region { get; set; }
         /// <summary>Resources to define the VM</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,10 +112,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "currentSnapshotId", n => { CurrentSnapshotId = n.GetStringValue(); } },
                 { "env", n => { Env = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestEnv>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestEnv.CreateFromDiscriminatorValue); } },
+                { "failoverRegions", n => { FailoverRegions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestFailoverRegionsItem>()?.AsList(); } },
                 { "keepLastSnapshots", n => { KeepLastSnapshots = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestKeepLastSnapshots>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestKeepLastSnapshots.CreateFromDiscriminatorValue); } },
                 { "networkPolicy", n => { NetworkPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicy>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicy.CreateFromDiscriminatorValue); } },
                 { "persistent", n => { Persistent = n.GetBoolValue(); } },
                 { "ports", n => { Ports = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
+                { "region", n => { Region = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestRegion>(); } },
                 { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestResources>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestResources.CreateFromDiscriminatorValue); } },
                 { "runtime", n => { Runtime = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestRuntime>(); } },
                 { "snapshotExpiration", n => { SnapshotExpiration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestSnapshotExpiration>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestSnapshotExpiration.CreateFromDiscriminatorValue); } },
@@ -122,10 +134,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("currentSnapshotId", CurrentSnapshotId);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestEnv>("env", Env);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestFailoverRegionsItem>("failoverRegions", FailoverRegions);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestKeepLastSnapshots>("keepLastSnapshots", KeepLastSnapshots);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestNetworkPolicy>("networkPolicy", NetworkPolicy);
             writer.WriteBoolValue("persistent", Persistent);
             writer.WriteCollectionOfPrimitiveValues<int?>("ports", Ports);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestRegion>("region", Region);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestResources>("resources", Resources);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestRuntime>("runtime", Runtime);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateSandboxRequestSnapshotExpiration>("snapshotExpiration", SnapshotExpiration);

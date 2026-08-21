@@ -33616,6 +33616,9 @@
           },
           {
             "$ref": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesFallthroughOneOf3"
+          },
+          {
+            "$ref": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesFallthroughOneOf4"
           }
         ],
         "properties": {
@@ -35138,6 +35141,9 @@
           },
           {
             "$ref": "#/components/schemas/UserEventPayloadOneOf438"
+          },
+          {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf439"
           }
         ],
         "properties": {
@@ -36707,13 +36713,13 @@
             }
           },
           "totp": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392Totp"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf393Totp"
           },
           "recoveryCodes": {
             "type": "number"
           },
           "autoBlockPrevented": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf399AutoBlockPrevented"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf400AutoBlockPrevented"
           },
           "preventUntil": {
             "type": "number"
@@ -36724,7 +36730,7 @@
           "allowedMethods": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf401AllowedMethodsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf402AllowedMethodsItem"
             }
           },
           "firstFactor": {
@@ -36734,16 +36740,16 @@
             "type": "number"
           },
           "context": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf404Context"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf405Context"
           },
           "mfaEnabled": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf405MfaEnabled"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf406MfaEnabled"
           },
           "mfa": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf406Mfa"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf407Mfa"
           },
           "totpVerified": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf407TotpVerified"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf408TotpVerified"
           },
           "providerSubjectId": {
             "type": "string"
@@ -36767,7 +36773,7 @@
             "type": "string"
           },
           "public": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf418Public"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf419Public"
           },
           "removedTeamIds": {
             "type": "array",
@@ -36793,13 +36799,13 @@
             }
           },
           "protectionEnabled": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf423ProtectionEnabled"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf424ProtectionEnabled"
           },
           "protectedProjectCount": {
             "type": "number"
           },
           "tier": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf427Tier"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf428Tier"
           },
           "chatId": {
             "type": "string"
@@ -36825,14 +36831,14 @@
           "events": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf430EventsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf431EventsItem"
             }
           },
           "runId": {
             "type": "string"
           },
           "grantType": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf433GrantType"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf434GrantType"
           },
           "atTTL": {
             "type": "number",
@@ -36843,10 +36849,10 @@
             "description": "refresh_token TTL"
           },
           "authMethod": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf433AuthMethod"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf434AuthMethod"
           },
           "includesRefreshToken": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf433IncludesRefreshToken"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf434IncludesRefreshToken"
           },
           "tokenSuffix": {
             "type": "string",
@@ -36881,7 +36887,7 @@
             "description": "\u0060sub\u0060 claim of the OIDC token. Present for OIDC-authenticated flows (see {@link issuerUrl})."
           },
           "policy": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf434Policy"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf435Policy"
           },
           "tokenId": {
             "type": "string",
@@ -36892,10 +36898,10 @@
             "description": "User-supplied name of the token."
           },
           "projectScope": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf436ProjectScope"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf437ProjectScope"
           },
           "hasAuthorizationDetails": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf436HasAuthorizationDetails"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf437HasAuthorizationDetails"
           },
           "reqId": {
             "type": "string"
@@ -36911,13 +36917,13 @@
             "description": "The token\u0027s public ID."
           },
           "expired": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf437Expired"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf438Expired"
           },
           "leaked": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf437Leaked"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf438Leaked"
           },
           "revoked": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf437Revoked"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf438Revoked"
           }
         }
       },
@@ -38394,6 +38400,13 @@
             "description": "The region the sandbox is pinned to: the region stored on the sandbox, otherwise the platform default. Where a running session actually landed is reported by \u0060session.region\u0060.",
             "example": "iad1"
           },
+          "failoverRegions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NamedSandboxFailoverRegionsItem"
+            },
+            "description": "The regions the sandbox fails over to. Empty when it does not fail over."
+          },
           "vcpus": {
             "type": "number",
             "description": "Number of virtual CPUs allocated.",
@@ -38776,6 +38789,13 @@
             "type": "string",
             "description": "The region where the snapshot is stored.",
             "example": "iad1"
+          },
+          "regions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The regions where the snapshot is available."
           },
           "status": {
             "$ref": "#/components/schemas/SnapshotStatus"
@@ -39988,6 +40008,9 @@
           },
           {
             "$ref": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3"
+          },
+          {
+            "$ref": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4"
           }
         ],
         "properties": {
@@ -40547,6 +40570,17 @@
             "items": {
               "$ref": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesFallthroughOneOf3SlotsItem"
             }
+          }
+        }
+      },
+      "FlagEnvironmentsAdditionalPropertiesFallthroughOneOf4": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/ExperimentType"
           }
         }
       },
@@ -49470,6 +49504,18 @@
         "description": "The payload of the event, if requested."
       },
       "UserEventPayloadOneOf391": {
+        "required": [
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "reason": {
+            "$ref": "#/components/schemas/LimitsExceededReason"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf392": {
         "type": "object",
         "properties": {
           "teamName": {
@@ -49478,7 +49524,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf392": {
+      "UserEventPayloadOneOf393": {
         "required": [
           "recoveryCodes",
           "totp"
@@ -49486,7 +49532,7 @@
         "type": "object",
         "properties": {
           "totp": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392Totp"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf393Totp"
           },
           "recoveryCodes": {
             "type": "number"
@@ -49495,7 +49541,7 @@
             "type": "string"
           },
           "actorType": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf392ActorType"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf393ActorType"
           },
           "actorName": {
             "type": "string",
@@ -49507,7 +49553,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf393": {
+      "UserEventPayloadOneOf394": {
         "required": [
           "username"
         ],
@@ -49523,7 +49569,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf394": {
+      "UserEventPayloadOneOf395": {
         "required": [
           "actorId",
           "actorType",
@@ -49551,32 +49597,13 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf395": {
+      "UserEventPayloadOneOf396": {
         "required": [
           "username"
         ],
         "type": "object",
         "properties": {
           "username": {
-            "type": "string"
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf396": {
-        "required": [
-          "actorId",
-          "actorType"
-        ],
-        "type": "object",
-        "properties": {
-          "actorId": {
-            "type": "string"
-          },
-          "actorType": {
-            "$ref": "#/components/schemas/AdminActorType"
-          },
-          "reason": {
             "type": "string"
           }
         },
@@ -49594,6 +49621,9 @@
           },
           "actorType": {
             "$ref": "#/components/schemas/AdminActorType"
+          },
+          "reason": {
+            "type": "string"
           }
         },
         "description": "The payload of the event, if requested."
@@ -49601,14 +49631,10 @@
       "UserEventPayloadOneOf398": {
         "required": [
           "actorId",
-          "actorType",
-          "enabled"
+          "actorType"
         ],
         "type": "object",
         "properties": {
-          "enabled": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf398Enabled"
-          },
           "actorId": {
             "type": "string"
           },
@@ -49622,12 +49648,32 @@
         "required": [
           "actorId",
           "actorType",
+          "enabled"
+        ],
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf399Enabled"
+          },
+          "actorId": {
+            "type": "string"
+          },
+          "actorType": {
+            "$ref": "#/components/schemas/AdminActorType"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf400": {
+        "required": [
+          "actorId",
+          "actorType",
           "autoBlockPrevented"
         ],
         "type": "object",
         "properties": {
           "autoBlockPrevented": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf399AutoBlockPrevented"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf400AutoBlockPrevented"
           },
           "preventUntil": {
             "type": "number"
@@ -49644,7 +49690,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf400": {
+      "UserEventPayloadOneOf401": {
         "required": [
           "method",
           "reason"
@@ -49652,7 +49698,7 @@
         "type": "object",
         "properties": {
           "method": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf400Method"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf401Method"
           },
           "reason": {
             "type": "string"
@@ -49666,7 +49712,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf401": {
+      "UserEventPayloadOneOf402": {
         "required": [
           "allowedMethods",
           "firstFactor",
@@ -49677,7 +49723,7 @@
           "allowedMethods": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf401AllowedMethodsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf402AllowedMethodsItem"
             }
           },
           "firstFactor": {
@@ -49692,7 +49738,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf402": {
+      "UserEventPayloadOneOf403": {
         "required": [
           "action",
           "reason"
@@ -49700,7 +49746,7 @@
         "type": "object",
         "properties": {
           "action": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf402Action"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf403Action"
           },
           "reason": {
             "type": "string"
@@ -49708,7 +49754,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf403": {
+      "UserEventPayloadOneOf404": {
         "required": [
           "next",
           "previous"
@@ -49716,18 +49762,18 @@
         "type": "object",
         "properties": {
           "previous": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf403Previous"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf404Previous"
           },
           "next": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf403Next"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf404Next"
           },
           "method": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf403Method"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf404Method"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf404": {
+      "UserEventPayloadOneOf405": {
         "required": [
           "remaining"
         ],
@@ -49737,36 +49783,36 @@
             "type": "number"
           },
           "context": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf404Context"
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf405": {
-        "required": [
-          "mfaEnabled"
-        ],
-        "type": "object",
-        "properties": {
-          "mfaEnabled": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf405MfaEnabled"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf405Context"
           }
         },
         "description": "The payload of the event, if requested."
       },
       "UserEventPayloadOneOf406": {
         "required": [
-          "mfa"
+          "mfaEnabled"
         ],
         "type": "object",
         "properties": {
-          "mfa": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf406Mfa"
+          "mfaEnabled": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf406MfaEnabled"
           }
         },
         "description": "The payload of the event, if requested."
       },
       "UserEventPayloadOneOf407": {
+        "required": [
+          "mfa"
+        ],
+        "type": "object",
+        "properties": {
+          "mfa": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf407Mfa"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf408": {
         "required": [
           "enabled",
           "totpVerified"
@@ -49774,15 +49820,15 @@
         "type": "object",
         "properties": {
           "enabled": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf407Enabled"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf408Enabled"
           },
           "totpVerified": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf407TotpVerified"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf408TotpVerified"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf408": {
+      "UserEventPayloadOneOf409": {
         "required": [
           "next",
           "previous"
@@ -49790,15 +49836,15 @@
         "type": "object",
         "properties": {
           "previous": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf408Previous"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf409Previous"
           },
           "next": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf408Next"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf409Next"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf409": {
+      "UserEventPayloadOneOf410": {
         "required": [
           "decision",
           "outcome",
@@ -49814,15 +49860,15 @@
             "type": "string"
           },
           "outcome": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf409Outcome"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf410Outcome"
           },
           "decision": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf409Decision"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf410Decision"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf410": {
+      "UserEventPayloadOneOf411": {
         "required": [
           "email",
           "prevEmail"
@@ -49838,7 +49884,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf411": {
+      "UserEventPayloadOneOf412": {
         "required": [
           "actorId",
           "actorType",
@@ -49866,7 +49912,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf412": {
+      "UserEventPayloadOneOf413": {
         "required": [
           "actorId",
           "actorType",
@@ -49890,7 +49936,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf413": {
+      "UserEventPayloadOneOf414": {
         "required": [
           "projectId",
           "projectName",
@@ -49910,7 +49956,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf414": {
+      "UserEventPayloadOneOf415": {
         "required": [
           "digest",
           "projectId",
@@ -49938,7 +49984,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf415": {
+      "UserEventPayloadOneOf416": {
         "required": [
           "projectId",
           "projectName",
@@ -49962,7 +50008,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf416": {
+      "UserEventPayloadOneOf417": {
         "required": [
           "projectId",
           "projectName",
@@ -49990,7 +50036,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf417": {
+      "UserEventPayloadOneOf418": {
         "required": [
           "projectId",
           "projectName",
@@ -50014,7 +50060,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf418": {
+      "UserEventPayloadOneOf419": {
         "required": [
           "projectId",
           "projectName",
@@ -50033,12 +50079,12 @@
             "type": "string"
           },
           "public": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf418Public"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf419Public"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf419": {
+      "UserEventPayloadOneOf420": {
         "required": [
           "projectId",
           "projectName",
@@ -50065,7 +50111,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf420": {
+      "UserEventPayloadOneOf421": {
         "required": [
           "ruleName"
         ],
@@ -50077,7 +50123,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf421": {
+      "UserEventPayloadOneOf422": {
         "required": [
           "nextProjectCount",
           "previousProjectCount"
@@ -50095,7 +50141,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf422": {
+      "UserEventPayloadOneOf423": {
         "required": [
           "customAlertTitle"
         ],
@@ -50107,7 +50153,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf423": {
+      "UserEventPayloadOneOf424": {
         "required": [
           "protectedProjectCount",
           "protectionEnabled",
@@ -50122,30 +50168,10 @@
             }
           },
           "protectionEnabled": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf423ProtectionEnabled"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf424ProtectionEnabled"
           },
           "protectedProjectCount": {
             "type": "number"
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf424": {
-        "required": [
-          "configuration",
-          "peering",
-          "team"
-        ],
-        "type": "object",
-        "properties": {
-          "team": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf424Team"
-          },
-          "configuration": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf424Configuration"
-          },
-          "peering": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf424Peering"
           }
         },
         "description": "The payload of the event, if requested."
@@ -50186,6 +50212,26 @@
           },
           "peering": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf426Peering"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf427": {
+        "required": [
+          "configuration",
+          "peering",
+          "team"
+        ],
+        "type": "object",
+        "properties": {
+          "team": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf427Team"
+          },
+          "configuration": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf427Configuration"
+          },
+          "peering": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf427Peering"
           },
           "newName": {
             "type": "string"
@@ -50193,19 +50239,19 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf427": {
+      "UserEventPayloadOneOf428": {
         "required": [
           "tier"
         ],
         "type": "object",
         "properties": {
           "tier": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf427Tier"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf428Tier"
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf428": {
+      "UserEventPayloadOneOf429": {
         "required": [
           "id",
           "url"
@@ -50221,7 +50267,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf429": {
+      "UserEventPayloadOneOf430": {
         "required": [
           "chatId"
         ],
@@ -50236,7 +50282,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf430": {
+      "UserEventPayloadOneOf431": {
         "required": [
           "chatId",
           "events",
@@ -50273,13 +50319,13 @@
           "events": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf430EventsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf431EventsItem"
             }
           }
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf431": {
+      "UserEventPayloadOneOf432": {
         "required": [
           "chatId",
           "messageId"
@@ -50298,7 +50344,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf432": {
+      "UserEventPayloadOneOf433": {
         "required": [
           "deploymentId",
           "projectId",
@@ -50318,7 +50364,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf433": {
+      "UserEventPayloadOneOf434": {
         "required": [
           "appName",
           "atTTL",
@@ -50329,7 +50375,7 @@
         "type": "object",
         "properties": {
           "grantType": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf433GrantType"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf434GrantType"
           },
           "appName": {
             "type": "string",
@@ -50347,13 +50393,13 @@
             "type": "string"
           },
           "authMethod": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf433AuthMethod"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf434AuthMethod"
           },
           "app": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf433App"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf434App"
           },
           "includesRefreshToken": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf433IncludesRefreshToken"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf434IncludesRefreshToken"
           },
           "publicId": {
             "type": "string",
@@ -50387,7 +50433,7 @@
             "nullable": true
           },
           "geolocation": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf433Geolocation"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf434Geolocation"
           },
           "userAgent": {
             "type": "string",
@@ -50408,33 +50454,14 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf434": {
+      "UserEventPayloadOneOf435": {
         "required": [
           "policy"
         ],
         "type": "object",
         "properties": {
           "policy": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf434Policy"
-          },
-          "appName": {
-            "type": "string"
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf435": {
-        "required": [
-          "after",
-          "before"
-        ],
-        "type": "object",
-        "properties": {
-          "before": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf435Before"
-          },
-          "after": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf435After"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf435Policy"
           },
           "appName": {
             "type": "string"
@@ -50443,6 +50470,25 @@
         "description": "The payload of the event, if requested."
       },
       "UserEventPayloadOneOf436": {
+        "required": [
+          "after",
+          "before"
+        ],
+        "type": "object",
+        "properties": {
+          "before": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf436Before"
+          },
+          "after": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf436After"
+          },
+          "appName": {
+            "type": "string"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf437": {
         "required": [
           "origin",
           "scope",
@@ -50467,10 +50513,10 @@
             "description": "User-supplied name of the token."
           },
           "origin": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf436Origin"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf437Origin"
           },
           "scope": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf436Scope"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf437Scope"
           },
           "teamId": {
             "type": "string",
@@ -50485,70 +50531,14 @@
             "description": "Present when \u0060scope\u0060 is \u0060\u0027project\u0027\u0060."
           },
           "projectScope": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf436ProjectScope"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf437ProjectScope"
           },
           "expiresAt": {
             "type": "number",
             "description": "Unix epoch milliseconds. Absent when the token never expires."
           },
           "hasAuthorizationDetails": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf436HasAuthorizationDetails"
-          },
-          "ip": {
-            "type": "string",
-            "nullable": true
-          },
-          "geolocation": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf436Geolocation"
-          },
-          "userAgent": {
-            "type": "string"
-          },
-          "reqId": {
-            "type": "string"
-          },
-          "reqUrl": {
-            "type": "string"
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf437": {
-        "required": [
-          "actorTokenId",
-          "tokenId",
-          "tokenName",
-          "tokenType"
-        ],
-        "type": "object",
-        "properties": {
-          "tokenId": {
-            "type": "string"
-          },
-          "tokenType": {
-            "type": "string"
-          },
-          "tokenName": {
-            "type": "string"
-          },
-          "actorTokenId": {
-            "type": "string",
-            "description": "The token\u0027s public ID."
-          },
-          "origin": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf437Origin"
-          },
-          "teamId": {
-            "type": "string"
-          },
-          "expired": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf437Expired"
-          },
-          "leaked": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf437Leaked"
-          },
-          "revoked": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf437Revoked"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf437HasAuthorizationDetails"
           },
           "ip": {
             "type": "string",
@@ -50572,6 +50562,62 @@
       "UserEventPayloadOneOf438": {
         "required": [
           "actorTokenId",
+          "tokenId",
+          "tokenName",
+          "tokenType"
+        ],
+        "type": "object",
+        "properties": {
+          "tokenId": {
+            "type": "string"
+          },
+          "tokenType": {
+            "type": "string"
+          },
+          "tokenName": {
+            "type": "string"
+          },
+          "actorTokenId": {
+            "type": "string",
+            "description": "The token\u0027s public ID."
+          },
+          "origin": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf438Origin"
+          },
+          "teamId": {
+            "type": "string"
+          },
+          "expired": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf438Expired"
+          },
+          "leaked": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf438Leaked"
+          },
+          "revoked": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf438Revoked"
+          },
+          "ip": {
+            "type": "string",
+            "nullable": true
+          },
+          "geolocation": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf438Geolocation"
+          },
+          "userAgent": {
+            "type": "string"
+          },
+          "reqId": {
+            "type": "string"
+          },
+          "reqUrl": {
+            "type": "string"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf439": {
+        "required": [
+          "actorTokenId",
           "deletedCount"
         ],
         "type": "object",
@@ -50588,7 +50634,7 @@
             "nullable": true
           },
           "geolocation": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf438Geolocation"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf439Geolocation"
           },
           "userAgent": {
             "type": "string"
@@ -50943,6 +50989,17 @@
             "items": {
               "$ref": "#/components/schemas/FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf3SlotsItem"
             }
+          }
+        }
+      },
+      "FlagEnvironmentsAdditionalPropertiesRulesItemOutcomeOneOf4": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/ExperimentType"
           }
         }
       },
@@ -54965,6 +55022,9 @@
         "properties": {
           "webAnalytics": {
             "$ref": "#/components/schemas/AuthUserFeatureBlocksWebAnalytics"
+          },
+          "speedInsightsFree": {
+            "$ref": "#/components/schemas/AuthUserFeatureBlocksSpeedInsightsFree"
           }
         },
         "description": "Feature blocks for the user"
@@ -58651,7 +58711,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf403Previous": {
+      "UserEventPayloadOneOf404Previous": {
         "required": [
           "enabled",
           "totpVerified"
@@ -58659,14 +58719,14 @@
         "type": "object",
         "properties": {
           "enabled": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf403PreviousEnabled"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf404PreviousEnabled"
           },
           "totpVerified": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf403PreviousTotpVerified"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf404PreviousTotpVerified"
           }
         }
       },
-      "UserEventPayloadOneOf403Next": {
+      "UserEventPayloadOneOf404Next": {
         "required": [
           "enabled",
           "totpVerified"
@@ -58674,14 +58734,14 @@
         "type": "object",
         "properties": {
           "enabled": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf403NextEnabled"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf404NextEnabled"
           },
           "totpVerified": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf403NextTotpVerified"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf404NextTotpVerified"
           }
         }
       },
-      "UserEventPayloadOneOf406Mfa": {
+      "UserEventPayloadOneOf407Mfa": {
         "required": [
           "enabled",
           "totpVerified"
@@ -58689,14 +58749,14 @@
         "type": "object",
         "properties": {
           "enabled": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf406MfaEnabled"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf407MfaEnabled"
           },
           "totpVerified": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf406MfaTotpVerified"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf407MfaTotpVerified"
           }
         }
       },
-      "UserEventPayloadOneOf408Previous": {
+      "UserEventPayloadOneOf409Previous": {
         "required": [
           "enabled",
           "totpVerified"
@@ -58704,14 +58764,14 @@
         "type": "object",
         "properties": {
           "enabled": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf408PreviousEnabled"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf409PreviousEnabled"
           },
           "totpVerified": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf408PreviousTotpVerified"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf409PreviousTotpVerified"
           }
         }
       },
-      "UserEventPayloadOneOf408Next": {
+      "UserEventPayloadOneOf409Next": {
         "required": [
           "enabled",
           "totpVerified"
@@ -58719,14 +58779,14 @@
         "type": "object",
         "properties": {
           "enabled": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf408NextEnabled"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf409NextEnabled"
           },
           "totpVerified": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf408NextTotpVerified"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf409NextTotpVerified"
           }
         }
       },
-      "UserEventPayloadOneOf409Decision": {
+      "UserEventPayloadOneOf410Decision": {
         "required": [
           "authoritative",
           "basis",
@@ -58738,74 +58798,22 @@
         "type": "object",
         "properties": {
           "authoritative": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf409DecisionAuthoritative"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf410DecisionAuthoritative"
           },
           "basis": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf409DecisionBasis"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf410DecisionBasis"
           },
           "emailDomain": {
             "type": "string"
           },
           "emailVerified": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf409DecisionEmailVerified"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf410DecisionEmailVerified"
           },
           "hostedDomainMatch": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf409DecisionHostedDomainMatch"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf410DecisionHostedDomainMatch"
           },
           "mxOutcome": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf409DecisionMxOutcome"
-          }
-        }
-      },
-      "UserEventPayloadOneOf424Team": {
-        "required": [
-          "id",
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf424Configuration": {
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf424Peering": {
-        "required": [
-          "accountId",
-          "id",
-          "region",
-          "vpcId"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "accountId": {
-            "type": "string"
-          },
-          "region": {
-            "type": "string"
-          },
-          "vpcId": {
-            "type": "string"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf410DecisionMxOutcome"
           }
         }
       },
@@ -58840,14 +58848,23 @@
       },
       "UserEventPayloadOneOf425Peering": {
         "required": [
-          "id"
+          "accountId",
+          "id",
+          "region",
+          "vpcId"
         ],
         "type": "object",
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "accountId": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "vpcId": {
             "type": "string"
           }
         }
@@ -58895,7 +58912,50 @@
           }
         }
       },
-      "UserEventPayloadOneOf430EventsItem": {
+      "UserEventPayloadOneOf427Team": {
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf427Configuration": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf427Peering": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf431EventsItem": {
         "required": [
           "cacheCreationInputTokens",
           "cacheReadInputTokens",
@@ -58934,7 +58994,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf433App": {
+      "UserEventPayloadOneOf434App": {
         "required": [
           "clientAuthenticationUsed",
           "clientId",
@@ -58950,25 +59010,25 @@
             "description": "the app\u0027s name at the time the event was published (it could have changed since then)"
           },
           "clientAuthenticationUsed": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf433AppClientAuthenticationUsed"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf434AppClientAuthenticationUsed"
           }
         },
         "description": "optional since entries prior to 2025-10-13 do not contain app information"
       },
-      "UserEventPayloadOneOf433Geolocation": {
+      "UserEventPayloadOneOf434Geolocation": {
         "required": [
           "country"
         ],
         "type": "object",
         "properties": {
           "city": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf433GeolocationCity"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf434GeolocationCity"
           },
           "country": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf433GeolocationCountry"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf434GeolocationCountry"
           },
           "most_specific_subdivision": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf433GeolocationMostSpecificSubdivision"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf434GeolocationMostSpecificSubdivision"
           },
           "regionName": {
             "type": "string"
@@ -58977,7 +59037,7 @@
         "description": "optional since entries prior to 2026-04-23 do not contain this field",
         "nullable": true
       },
-      "UserEventPayloadOneOf434Policy": {
+      "UserEventPayloadOneOf435Policy": {
         "required": [
           "claims",
           "clientId",
@@ -59012,7 +59072,7 @@
           "claims": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf434PolicyClaimsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf435PolicyClaimsItem"
             },
             "description": "Claim matchers an OIDC token must satisfy to use the policy."
           },
@@ -59024,7 +59084,7 @@
             "description": "Permission boundary (\u0060[\u0027*\u0027]\u0060 = the app\u0027s full declared permissions)."
           },
           "resources": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf434PolicyResources"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf435PolicyResources"
           },
           "createdAt": {
             "type": "number",
@@ -59037,7 +59097,7 @@
         },
         "description": "A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints\u0027 public response shape."
       },
-      "UserEventPayloadOneOf435Before": {
+      "UserEventPayloadOneOf436Before": {
         "required": [
           "claims",
           "clientId",
@@ -59072,7 +59132,7 @@
           "claims": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf435BeforeClaimsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf436BeforeClaimsItem"
             },
             "description": "Claim matchers an OIDC token must satisfy to use the policy."
           },
@@ -59084,7 +59144,7 @@
             "description": "Permission boundary (\u0060[\u0027*\u0027]\u0060 = the app\u0027s full declared permissions)."
           },
           "resources": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf435BeforeResources"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf436BeforeResources"
           },
           "createdAt": {
             "type": "number",
@@ -59097,7 +59157,7 @@
         },
         "description": "A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints\u0027 public response shape."
       },
-      "UserEventPayloadOneOf435After": {
+      "UserEventPayloadOneOf436After": {
         "required": [
           "claims",
           "clientId",
@@ -59132,7 +59192,7 @@
           "claims": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf435AfterClaimsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf436AfterClaimsItem"
             },
             "description": "Claim matchers an OIDC token must satisfy to use the policy."
           },
@@ -59144,7 +59204,7 @@
             "description": "Permission boundary (\u0060[\u0027*\u0027]\u0060 = the app\u0027s full declared permissions)."
           },
           "resources": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf435AfterResources"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf436AfterResources"
           },
           "createdAt": {
             "type": "number",
@@ -59156,27 +59216,6 @@
           }
         },
         "description": "A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints\u0027 public response shape."
-      },
-      "UserEventPayloadOneOf436Geolocation": {
-        "required": [
-          "country"
-        ],
-        "type": "object",
-        "properties": {
-          "city": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf436GeolocationCity"
-          },
-          "country": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf436GeolocationCountry"
-          },
-          "most_specific_subdivision": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf436GeolocationMostSpecificSubdivision"
-          },
-          "regionName": {
-            "type": "string"
-          }
-        },
-        "nullable": true
       },
       "UserEventPayloadOneOf437Geolocation": {
         "required": [
@@ -59213,6 +59252,27 @@
           },
           "most_specific_subdivision": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf438GeolocationMostSpecificSubdivision"
+          },
+          "regionName": {
+            "type": "string"
+          }
+        },
+        "nullable": true
+      },
+      "UserEventPayloadOneOf439Geolocation": {
+        "required": [
+          "country"
+        ],
+        "type": "object",
+        "properties": {
+          "city": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf439GeolocationCity"
+          },
+          "country": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf439GeolocationCountry"
+          },
+          "most_specific_subdivision": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf439GeolocationMostSpecificSubdivision"
           },
           "regionName": {
             "type": "string"
@@ -60753,6 +60813,28 @@
           }
         }
       },
+      "AuthUserFeatureBlocksSpeedInsightsFree": {
+        "required": [
+          "blockReason",
+          "isCurrentlyBlocked"
+        ],
+        "type": "object",
+        "properties": {
+          "blockedFrom": {
+            "type": "number"
+          },
+          "blockedUntil": {
+            "type": "number"
+          },
+          "blockReason": {
+            "$ref": "#/components/schemas/AuthUserFeatureBlocksSpeedInsightsFreeBlockReason"
+          },
+          "isCurrentlyBlocked": {
+            "$ref": "#/components/schemas/AuthUserFeatureBlocksSpeedInsightsFreeIsCurrentlyBlocked"
+          }
+        },
+        "description": "Client-facing view of the \u0060speedInsightsFree\u0060 ingestion block. The dashboard needs \u0060blockReason\u0060 to tell usage pauses apart from admin blocks."
+      },
       "AuthUserAccountUpdateContextOrganization": {
         "required": [
           "id",
@@ -62100,54 +62182,54 @@
           }
         }
       },
-      "UserEventPayloadOneOf433AppClientAuthenticationUsed": {
+      "UserEventPayloadOneOf434AppClientAuthenticationUsed": {
         "required": [
           "method"
         ],
         "type": "object",
         "properties": {
           "method": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf433AppClientAuthenticationUsedMethod"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf434AppClientAuthenticationUsedMethod"
           },
           "secretId": {
             "type": "string"
           }
         }
       },
-      "UserEventPayloadOneOf433GeolocationCity": {
+      "UserEventPayloadOneOf434GeolocationCity": {
         "required": [
           "names"
         ],
         "type": "object",
         "properties": {
           "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf433GeolocationCityNames"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf434GeolocationCityNames"
           }
         }
       },
-      "UserEventPayloadOneOf433GeolocationCountry": {
+      "UserEventPayloadOneOf434GeolocationCountry": {
         "required": [
           "names"
         ],
         "type": "object",
         "properties": {
           "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf433GeolocationCountryNames"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf434GeolocationCountryNames"
           }
         }
       },
-      "UserEventPayloadOneOf433GeolocationMostSpecificSubdivision": {
+      "UserEventPayloadOneOf434GeolocationMostSpecificSubdivision": {
         "required": [
           "names"
         ],
         "type": "object",
         "properties": {
           "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf433GeolocationMostSpecificSubdivisionNames"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf434GeolocationMostSpecificSubdivisionNames"
           }
         }
       },
-      "UserEventPayloadOneOf434PolicyClaimsItem": {
+      "UserEventPayloadOneOf435PolicyClaimsItem": {
         "required": [
           "name",
           "values"
@@ -62160,13 +62242,13 @@
           "values": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf434PolicyClaimsItemValuesItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf435PolicyClaimsItemValuesItem"
             }
           }
         },
         "description": "Claim matchers an OIDC token must satisfy to use the policy."
       },
-      "UserEventPayloadOneOf434PolicyResources": {
+      "UserEventPayloadOneOf435PolicyResources": {
         "required": [
           "projectIds"
         ],
@@ -62182,7 +62264,7 @@
         "description": "Resource boundary, or \u0060null\u0060 when the policy has none.",
         "nullable": true
       },
-      "UserEventPayloadOneOf435BeforeClaimsItem": {
+      "UserEventPayloadOneOf436BeforeClaimsItem": {
         "required": [
           "name",
           "values"
@@ -62195,13 +62277,13 @@
           "values": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf435BeforeClaimsItemValuesItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf436BeforeClaimsItemValuesItem"
             }
           }
         },
         "description": "Claim matchers an OIDC token must satisfy to use the policy."
       },
-      "UserEventPayloadOneOf435BeforeResources": {
+      "UserEventPayloadOneOf436BeforeResources": {
         "required": [
           "projectIds"
         ],
@@ -62217,7 +62299,7 @@
         "description": "Resource boundary, or \u0060null\u0060 when the policy has none.",
         "nullable": true
       },
-      "UserEventPayloadOneOf435AfterClaimsItem": {
+      "UserEventPayloadOneOf436AfterClaimsItem": {
         "required": [
           "name",
           "values"
@@ -62230,13 +62312,13 @@
           "values": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf435AfterClaimsItemValuesItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf436AfterClaimsItemValuesItem"
             }
           }
         },
         "description": "Claim matchers an OIDC token must satisfy to use the policy."
       },
-      "UserEventPayloadOneOf435AfterResources": {
+      "UserEventPayloadOneOf436AfterResources": {
         "required": [
           "projectIds"
         ],
@@ -62251,39 +62333,6 @@
         },
         "description": "Resource boundary, or \u0060null\u0060 when the policy has none.",
         "nullable": true
-      },
-      "UserEventPayloadOneOf436GeolocationCity": {
-        "required": [
-          "names"
-        ],
-        "type": "object",
-        "properties": {
-          "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf436GeolocationCityNames"
-          }
-        }
-      },
-      "UserEventPayloadOneOf436GeolocationCountry": {
-        "required": [
-          "names"
-        ],
-        "type": "object",
-        "properties": {
-          "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf436GeolocationCountryNames"
-          }
-        }
-      },
-      "UserEventPayloadOneOf436GeolocationMostSpecificSubdivision": {
-        "required": [
-          "names"
-        ],
-        "type": "object",
-        "properties": {
-          "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf436GeolocationMostSpecificSubdivisionNames"
-          }
-        }
       },
       "UserEventPayloadOneOf437GeolocationCity": {
         "required": [
@@ -62348,6 +62397,39 @@
         "properties": {
           "names": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf438GeolocationMostSpecificSubdivisionNames"
+          }
+        }
+      },
+      "UserEventPayloadOneOf439GeolocationCity": {
+        "required": [
+          "names"
+        ],
+        "type": "object",
+        "properties": {
+          "names": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf439GeolocationCityNames"
+          }
+        }
+      },
+      "UserEventPayloadOneOf439GeolocationCountry": {
+        "required": [
+          "names"
+        ],
+        "type": "object",
+        "properties": {
+          "names": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf439GeolocationCountryNames"
+          }
+        }
+      },
+      "UserEventPayloadOneOf439GeolocationMostSpecificSubdivision": {
+        "required": [
+          "names"
+        ],
+        "type": "object",
+        "properties": {
+          "names": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf439GeolocationMostSpecificSubdivisionNames"
           }
         }
       },
@@ -64238,7 +64320,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf433GeolocationCityNames": {
+      "UserEventPayloadOneOf434GeolocationCityNames": {
         "required": [
           "en"
         ],
@@ -64249,7 +64331,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf433GeolocationCountryNames": {
+      "UserEventPayloadOneOf434GeolocationCountryNames": {
         "required": [
           "en"
         ],
@@ -64260,7 +64342,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf433GeolocationMostSpecificSubdivisionNames": {
+      "UserEventPayloadOneOf434GeolocationMostSpecificSubdivisionNames": {
         "required": [
           "en"
         ],
@@ -64271,7 +64353,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf434PolicyClaimsItemValuesItem": {
+      "UserEventPayloadOneOf435PolicyClaimsItemValuesItem": {
         "required": [
           "value",
           "wildcards"
@@ -64282,11 +64364,11 @@
             "type": "string"
           },
           "wildcards": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf434PolicyClaimsItemValuesItemWildcards"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf435PolicyClaimsItemValuesItemWildcards"
           }
         }
       },
-      "UserEventPayloadOneOf435BeforeClaimsItemValuesItem": {
+      "UserEventPayloadOneOf436BeforeClaimsItemValuesItem": {
         "required": [
           "value",
           "wildcards"
@@ -64297,11 +64379,11 @@
             "type": "string"
           },
           "wildcards": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf435BeforeClaimsItemValuesItemWildcards"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf436BeforeClaimsItemValuesItemWildcards"
           }
         }
       },
-      "UserEventPayloadOneOf435AfterClaimsItemValuesItem": {
+      "UserEventPayloadOneOf436AfterClaimsItemValuesItem": {
         "required": [
           "value",
           "wildcards"
@@ -64312,40 +64394,7 @@
             "type": "string"
           },
           "wildcards": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf435AfterClaimsItemValuesItemWildcards"
-          }
-        }
-      },
-      "UserEventPayloadOneOf436GeolocationCityNames": {
-        "required": [
-          "en"
-        ],
-        "type": "object",
-        "properties": {
-          "en": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf436GeolocationCountryNames": {
-        "required": [
-          "en"
-        ],
-        "type": "object",
-        "properties": {
-          "en": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf436GeolocationMostSpecificSubdivisionNames": {
-        "required": [
-          "en"
-        ],
-        "type": "object",
-        "properties": {
-          "en": {
-            "type": "string"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf436AfterClaimsItemValuesItemWildcards"
           }
         }
       },
@@ -64405,6 +64454,39 @@
         }
       },
       "UserEventPayloadOneOf438GeolocationMostSpecificSubdivisionNames": {
+        "required": [
+          "en"
+        ],
+        "type": "object",
+        "properties": {
+          "en": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf439GeolocationCityNames": {
+        "required": [
+          "en"
+        ],
+        "type": "object",
+        "properties": {
+          "en": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf439GeolocationCountryNames": {
+        "required": [
+          "en"
+        ],
+        "type": "object",
+        "properties": {
+          "en": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf439GeolocationMostSpecificSubdivisionNames": {
         "required": [
           "en"
         ],
@@ -74186,6 +74268,9 @@
           "ssoProtection": {
             "$ref": "#/components/schemas/CreateProjectRequestSsoProtection"
           },
+          "sandbox": {
+            "$ref": "#/components/schemas/CreateProjectRequestSandbox"
+          },
           "outputDirectory": {
             "maxLength": 256,
             "type": "string",
@@ -75146,6 +75231,9 @@
           },
           "passport": {
             "$ref": "#/components/schemas/UpdateProjectRequestPassport"
+          },
+          "sandbox": {
+            "$ref": "#/components/schemas/UpdateProjectRequestSandbox"
           },
           "ssoProtection": {
             "$ref": "#/components/schemas/UpdateProjectRequestSsoProtection"
@@ -77775,6 +77863,18 @@
           "mounts": {
             "$ref": "#/components/schemas/CreateSandboxesV2RequestMounts"
           },
+          "region": {
+            "$ref": "#/components/schemas/CreateSandboxesV2RequestRegion"
+          },
+          "failoverRegions": {
+            "maxItems": 4,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateSandboxesV2RequestFailoverRegionsItem"
+            },
+            "description": "The regions the sandbox falls back to when it cannot be created in \u0060region\u0060."
+          },
           "name": {
             "maxLength": 128,
             "pattern": "^[a-zA-Z0-9_-]\u002B$",
@@ -77972,6 +78072,18 @@
           },
           "networkPolicy": {
             "$ref": "#/components/schemas/UpdateSandboxRequestNetworkPolicy"
+          },
+          "region": {
+            "$ref": "#/components/schemas/UpdateSandboxRequestRegion"
+          },
+          "failoverRegions": {
+            "maxItems": 4,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateSandboxRequestFailoverRegionsItem"
+            },
+            "description": "The regions the sandbox falls back to when it cannot be created in \u0060region\u0060."
           },
           "env": {
             "$ref": "#/components/schemas/UpdateSandboxRequestEnv"
@@ -78338,6 +78450,18 @@
           "mounts": {
             "$ref": "#/components/schemas/CreateSandboxesByNameForkV2RequestMounts"
           },
+          "region": {
+            "$ref": "#/components/schemas/CreateSandboxesByNameForkV2RequestRegion"
+          },
+          "failoverRegions": {
+            "maxItems": 4,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateSandboxesByNameForkV2RequestFailoverRegionsItem"
+            },
+            "description": "The regions the sandbox falls back to when it cannot be created in \u0060region\u0060."
+          },
           "name": {
             "maxLength": 128,
             "pattern": "^[a-zA-Z0-9_-]\u002B$",
@@ -78433,6 +78557,18 @@
           },
           "mounts": {
             "$ref": "#/components/schemas/CreateSandboxesV3RequestMounts"
+          },
+          "region": {
+            "$ref": "#/components/schemas/CreateSandboxesV3RequestRegion"
+          },
+          "failoverRegions": {
+            "maxItems": 4,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateSandboxesV3RequestFailoverRegionsItem"
+            },
+            "description": "The regions the sandbox falls back to when it cannot be created in \u0060region\u0060."
           },
           "name": {
             "maxLength": 128,
@@ -78547,6 +78683,18 @@
           "mounts": {
             "$ref": "#/components/schemas/CreateSandboxesByNameForkV3RequestMounts"
           },
+          "region": {
+            "$ref": "#/components/schemas/CreateSandboxesByNameForkV3RequestRegion"
+          },
+          "failoverRegions": {
+            "maxItems": 4,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateSandboxesByNameForkV3RequestFailoverRegionsItem"
+            },
+            "description": "The regions the sandbox falls back to when it cannot be created in \u0060region\u0060."
+          },
           "name": {
             "maxLength": 128,
             "pattern": "^[a-zA-Z0-9_-]\u002B$",
@@ -78642,6 +78790,18 @@
           },
           "mounts": {
             "$ref": "#/components/schemas/CreateSandboxesV4RequestMounts"
+          },
+          "region": {
+            "$ref": "#/components/schemas/CreateSandboxesV4RequestRegion"
+          },
+          "failoverRegions": {
+            "maxItems": 4,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateSandboxesV4RequestFailoverRegionsItem"
+            },
+            "description": "The regions the sandbox falls back to when it cannot be created in \u0060region\u0060."
           },
           "name": {
             "maxLength": 128,
@@ -107070,7 +107230,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Known allowed app-level scopes. For Slack this is the bot scope set configured on the app; for OAuth it is \u0060scopes_supported\u0060 from the server\u0027s discovery document."
+            "description": "Known allowed app-level scopes. For Slack this is the bot scope set configured on the app; for OAuth it is the connector\u0027s enabled \u0060clientCredentials.scopes\u0060 configuration."
           },
           "supportedAuthorizationDetails": {
             "type": "array",
@@ -107102,7 +107262,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Known allowed user-level scopes. For Slack this is the user scope set configured on the app; for OAuth it is \u0060scopes_supported\u0060 from the server\u0027s discovery document."
+            "description": "Known allowed user-level scopes. For Slack this is the user scope set configured on the app; for OAuth it is the connector\u0027s enabled \u0060userAuthorization.scopes\u0060 configuration."
           },
           "supportedAuthorizationDetails": {
             "type": "array",
@@ -116211,6 +116371,25 @@
         "description": "The Vercel Auth setting for the project (historically named \\\u0022SSO Protection\\\u0022)",
         "nullable": true
       },
+      "CreateProjectRequestSandbox": {
+        "type": "object",
+        "properties": {
+          "region": {
+            "$ref": "#/components/schemas/CreateProjectRequestSandboxRegion"
+          },
+          "failoverRegions": {
+            "maxItems": 4,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateProjectRequestSandboxFailoverRegionsItem"
+            },
+            "description": "The regions sandboxes in this project fall back to when they cannot be created in \u0060region\u0060."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Specifies the default region and failover regions for sandboxes created in the project"
+      },
       "CreateProjectRequestOidcTokenConfig": {
         "type": "object",
         "properties": {
@@ -122499,14 +122678,6 @@
         ],
         "type": "object",
         "properties": {
-          "publicPathRules": {
-            "maxItems": 100,
-            "uniqueItems": true,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UpdateProjectRequestPassportPublicPathRulesItem"
-            }
-          },
           "connectorId": {
             "type": "string"
           },
@@ -122517,6 +122688,25 @@
         "additionalProperties": false,
         "description": "Passport configuration for the project.",
         "nullable": true
+      },
+      "UpdateProjectRequestSandbox": {
+        "type": "object",
+        "properties": {
+          "region": {
+            "$ref": "#/components/schemas/UpdateProjectRequestSandboxRegion"
+          },
+          "failoverRegions": {
+            "maxItems": 4,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateProjectRequestSandboxFailoverRegionsItem"
+            },
+            "description": "The regions sandboxes in this project fall back to when they cannot be created in \u0060region\u0060."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Specifies the default region and failover regions for sandboxes created in the project"
       },
       "UpdateProjectRequestSsoProtection": {
         "required": [
@@ -156784,24 +156974,6 @@
         },
         "additionalProperties": false
       },
-      "UpdateProjectRequestPassportPublicPathRulesItem": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/UpdateProjectRequestPassportPublicPathRulesItemType"
-          },
-          "value": {
-            "maxLength": 2048,
-            "pattern": "^/[^?#\\\\s]*$",
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
       "UpdateProjectRequestTrustedIpsAddressesItem": {
         "required": [
           "value"
@@ -172194,7 +172366,6 @@
       },
       "GetDeployment200ResponseFunctionsAdditionalPropertiesExperimentalTriggersItem": {
         "required": [
-          "topic",
           "type"
         ],
         "type": "object",
@@ -172658,7 +172829,6 @@
       },
       "CreateDeployment200ResponseFunctionsAdditionalPropertiesExperimentalTriggersItem": {
         "required": [
-          "topic",
           "type"
         ],
         "type": "object",
@@ -173122,7 +173292,6 @@
       },
       "CancelDeployment200ResponseFunctionsAdditionalPropertiesExperimentalTriggersItem": {
         "required": [
-          "topic",
           "type"
         ],
         "type": "object",
@@ -186100,7 +186269,6 @@
       },
       "GetDeployment200ResponseServicesItemFunctionsAdditionalPropertiesExperimentalTriggersItem": {
         "required": [
-          "topic",
           "type"
         ],
         "type": "object",
@@ -186220,7 +186388,6 @@
       },
       "CreateDeployment200ResponseServicesItemFunctionsAdditionalPropertiesExperimentalTriggersItem": {
         "required": [
-          "topic",
           "type"
         ],
         "type": "object",
@@ -186340,7 +186507,6 @@
       },
       "CancelDeployment200ResponseServicesItemFunctionsAdditionalPropertiesExperimentalTriggersItem": {
         "required": [
-          "topic",
           "type"
         ],
         "type": "object",
@@ -193525,7 +193691,6 @@
       },
       "GetDeployment200ResponseServicesItemBuilderConfigFunctionsAdditionalPropertiesExperimentalTriggersItem": {
         "required": [
-          "topic",
           "type"
         ],
         "type": "object",
@@ -193561,7 +193726,6 @@
       },
       "CreateDeployment200ResponseServicesItemBuilderConfigFunctionsAdditionalPropertiesExperimentalTriggersItem": {
         "required": [
-          "topic",
           "type"
         ],
         "type": "object",
@@ -193597,7 +193761,6 @@
       },
       "CancelDeployment200ResponseServicesItemBuilderConfigFunctionsAdditionalPropertiesExperimentalTriggersItem": {
         "required": [
-          "topic",
           "type"
         ],
         "type": "object",
@@ -195626,6 +195789,8 @@
           "team-tokens-invalidated",
           "tracing-configured",
           "tracing-disabled",
+          "tracing-paused",
+          "tracing-resumed",
           "unlink-login-connection",
           "update-account-flow-dismissed",
           "update-account-flow-triggered",
@@ -198042,6 +198207,14 @@
               "name": "TracingDisabled"
             },
             {
+              "value": "tracing-paused",
+              "name": "TracingPaused"
+            },
+            {
+              "value": "tracing-resumed",
+              "name": "TracingResumed"
+            },
+            {
               "value": "unlink-login-connection",
               "name": "UnlinkLoginConnection"
             },
@@ -199024,6 +199197,8 @@
           "team-tokens-invalidated",
           "tracing-configured",
           "tracing-disabled",
+          "tracing-paused",
+          "tracing-resumed",
           "unlink-login-connection",
           "update-account-flow-dismissed",
           "update-account-flow-triggered",
@@ -201440,6 +201615,14 @@
               "name": "TracingDisabled"
             },
             {
+              "value": "tracing-paused",
+              "name": "TracingPaused"
+            },
+            {
+              "value": "tracing-resumed",
+              "name": "TracingResumed"
+            },
+            {
               "value": "unlink-login-connection",
               "name": "UnlinkLoginConnection"
             },
@@ -202431,6 +202614,8 @@
           "team-tokens-invalidated",
           "tracing-configured",
           "tracing-disabled",
+          "tracing-paused",
+          "tracing-resumed",
           "unlink-login-connection",
           "update-account-flow-dismissed",
           "update-account-flow-triggered",
@@ -204846,6 +205031,14 @@
               "name": "TracingDisabled"
             },
             {
+              "value": "tracing-paused",
+              "name": "TracingPaused"
+            },
+            {
+              "value": "tracing-resumed",
+              "name": "TracingResumed"
+            },
+            {
               "value": "unlink-login-connection",
               "name": "UnlinkLoginConnection"
             },
@@ -205334,6 +205527,40 @@
         "additionalProperties": false,
         "description": "Whether the sandbox persists its state across restarts via automatic snapshots.",
         "example": true
+      },
+      "NamedSandboxFailoverRegionsItem": {
+        "enum": [
+          "cdg1",
+          "cle1",
+          "iad1",
+          "sfo1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The regions the sandbox fails over to. Empty when it does not fail over.",
+        "example": "sfo1",
+        "x-ms-enum": {
+          "name": "NamedSandboxFailoverRegionsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cdg1",
+              "name": "Cdg1"
+            },
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            }
+          ]
+        }
       },
       "SandboxNetworkPolicyMode": {
         "enum": [
@@ -206806,6 +207033,23 @@
             {
               "value": "rollout",
               "name": "Rollout"
+            }
+          ]
+        }
+      },
+      "ExperimentType": {
+        "enum": [
+          "experiment"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ExperimentType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "experiment",
+              "name": "Experiment"
             }
           ]
         }
@@ -211361,7 +211605,24 @@
           ]
         }
       },
-      "UserEventPayloadOneOf392Totp": {
+      "LimitsExceededReason": {
+        "enum": [
+          "limits-exceeded"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "LimitsExceededReason",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "limits-exceeded",
+              "name": "LimitsExceeded"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf393Totp": {
         "enum": [
           false,
           true
@@ -211369,7 +211630,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf392ActorType": {
+      "UserEventPayloadOneOf393ActorType": {
         "enum": [
           "admin",
           "user"
@@ -211377,7 +211638,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf392ActorType",
+          "name": "UserEventPayloadOneOf393ActorType",
           "modelAsString": false,
           "values": [
             {
@@ -211391,7 +211652,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf398Enabled": {
+      "UserEventPayloadOneOf399Enabled": {
         "enum": [
           false,
           true
@@ -211399,7 +211660,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf399AutoBlockPrevented": {
+      "UserEventPayloadOneOf400AutoBlockPrevented": {
         "enum": [
           false,
           true
@@ -211407,7 +211668,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf400Method": {
+      "UserEventPayloadOneOf401Method": {
         "enum": [
           "email-otp",
           "recovery-code",
@@ -211417,7 +211678,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf400Method",
+          "name": "UserEventPayloadOneOf401Method",
           "modelAsString": false,
           "values": [
             {
@@ -211439,7 +211700,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf401AllowedMethodsItem": {
+      "UserEventPayloadOneOf402AllowedMethodsItem": {
         "enum": [
           "recovery-code",
           "totp",
@@ -211448,7 +211709,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf401AllowedMethodsItem",
+          "name": "UserEventPayloadOneOf402AllowedMethodsItem",
           "modelAsString": false,
           "values": [
             {
@@ -211466,7 +211727,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf402Action": {
+      "UserEventPayloadOneOf403Action": {
         "enum": [
           "add-passkey",
           "add-totp",
@@ -211479,7 +211740,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf402Action",
+          "name": "UserEventPayloadOneOf403Action",
           "modelAsString": false,
           "values": [
             {
@@ -211513,7 +211774,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf403Method": {
+      "UserEventPayloadOneOf404Method": {
         "enum": [
           "passkey",
           "self_serve_recovery",
@@ -211523,7 +211784,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf403Method",
+          "name": "UserEventPayloadOneOf404Method",
           "modelAsString": false,
           "values": [
             {
@@ -211545,7 +211806,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf404Context": {
+      "UserEventPayloadOneOf405Context": {
         "enum": [
           "login",
           "sudo"
@@ -211554,7 +211815,7 @@
         "additionalProperties": false,
         "description": "Absent on events predating the field; those were all logins.",
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf404Context",
+          "name": "UserEventPayloadOneOf405Context",
           "modelAsString": false,
           "values": [
             {
@@ -211568,7 +211829,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf405MfaEnabled": {
+      "UserEventPayloadOneOf406MfaEnabled": {
         "enum": [
           false,
           true
@@ -211576,7 +211837,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf407Enabled": {
+      "UserEventPayloadOneOf408Enabled": {
         "enum": [
           false,
           true
@@ -211584,7 +211845,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf407TotpVerified": {
+      "UserEventPayloadOneOf408TotpVerified": {
         "enum": [
           false,
           true
@@ -211609,7 +211870,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf409Outcome": {
+      "UserEventPayloadOneOf410Outcome": {
         "enum": [
           "account-matched",
           "linking-required"
@@ -211617,7 +211878,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf409Outcome",
+          "name": "UserEventPayloadOneOf410Outcome",
           "modelAsString": false,
           "values": [
             {
@@ -211631,7 +211892,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf418Public": {
+      "UserEventPayloadOneOf419Public": {
         "enum": [
           false,
           true
@@ -211639,7 +211900,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf423ProtectionEnabled": {
+      "UserEventPayloadOneOf424ProtectionEnabled": {
         "enum": [
           false,
           true
@@ -211647,7 +211908,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf427Tier": {
+      "UserEventPayloadOneOf428Tier": {
         "enum": [
           "plus",
           "pro"
@@ -211655,7 +211916,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf427Tier",
+          "name": "UserEventPayloadOneOf428Tier",
           "modelAsString": false,
           "values": [
             {
@@ -211669,7 +211930,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf433GrantType": {
+      "UserEventPayloadOneOf434GrantType": {
         "enum": [
           "authorization_code",
           "urn:ietf:params:oauth:grant-type:device_code",
@@ -211678,7 +211939,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf433GrantType",
+          "name": "UserEventPayloadOneOf434GrantType",
           "modelAsString": false,
           "values": [
             {
@@ -211696,7 +211957,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf433AuthMethod": {
+      "UserEventPayloadOneOf434AuthMethod": {
         "enum": [
           "app",
           "apple",
@@ -211719,7 +211980,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf433AuthMethod",
+          "name": "UserEventPayloadOneOf434AuthMethod",
           "modelAsString": false,
           "values": [
             {
@@ -211793,7 +212054,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf433IncludesRefreshToken": {
+      "UserEventPayloadOneOf434IncludesRefreshToken": {
         "enum": [
           false,
           true
@@ -211856,164 +212117,6 @@
           ]
         }
       },
-      "UserEventPayloadOneOf436Origin": {
-        "enum": [
-          "app",
-          "apple",
-          "bitbucket",
-          "chatgpt",
-          "email",
-          "emu",
-          "github",
-          "github-webhook",
-          "gitlab",
-          "google",
-          "invite",
-          "manual",
-          "otp",
-          "passkey",
-          "saml",
-          "sms",
-          "token-exchange-oidc"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "How the token was issued. Always \u0060\u0027manual\u0027\u0060 for explicit PAT creation.",
-        "x-ms-enum": {
-          "name": "UserEventPayloadOneOf436Origin",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "app",
-              "name": "App"
-            },
-            {
-              "value": "apple",
-              "name": "Apple"
-            },
-            {
-              "value": "bitbucket",
-              "name": "Bitbucket"
-            },
-            {
-              "value": "chatgpt",
-              "name": "Chatgpt"
-            },
-            {
-              "value": "email",
-              "name": "Email"
-            },
-            {
-              "value": "emu",
-              "name": "Emu"
-            },
-            {
-              "value": "github",
-              "name": "Github"
-            },
-            {
-              "value": "github-webhook",
-              "name": "GithubWebhook"
-            },
-            {
-              "value": "gitlab",
-              "name": "Gitlab"
-            },
-            {
-              "value": "google",
-              "name": "Google"
-            },
-            {
-              "value": "invite",
-              "name": "Invite"
-            },
-            {
-              "value": "manual",
-              "name": "Manual"
-            },
-            {
-              "value": "otp",
-              "name": "Otp"
-            },
-            {
-              "value": "passkey",
-              "name": "Passkey"
-            },
-            {
-              "value": "saml",
-              "name": "Saml"
-            },
-            {
-              "value": "sms",
-              "name": "Sms"
-            },
-            {
-              "value": "token-exchange-oidc",
-              "name": "TokenExchangeOidc"
-            }
-          ]
-        }
-      },
-      "UserEventPayloadOneOf436Scope": {
-        "enum": [
-          "project",
-          "team",
-          "user"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Scope of the token: - \u0060\u0027user\u0027\u0060: full-account token (not tied to any team). - \u0060\u0027team\u0027\u0060: scoped to a single team. - \u0060\u0027project\u0027\u0060: scoped to a single project within a team.",
-        "x-ms-enum": {
-          "name": "UserEventPayloadOneOf436Scope",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "project",
-              "name": "Project"
-            },
-            {
-              "value": "team",
-              "name": "Team"
-            },
-            {
-              "value": "user",
-              "name": "User"
-            }
-          ]
-        }
-      },
-      "UserEventPayloadOneOf436ProjectScope": {
-        "enum": [
-          "account",
-          "project-only"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Present when \u0060scope\u0060 is \u0060\u0027project\u0027\u0060.",
-        "x-ms-enum": {
-          "name": "UserEventPayloadOneOf436ProjectScope",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "account",
-              "name": "Account"
-            },
-            {
-              "value": "project-only",
-              "name": "ProjectOnly"
-            }
-          ]
-        }
-      },
-      "UserEventPayloadOneOf436HasAuthorizationDetails": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false,
-        "description": "Whether the token was issued with RFC 9396 authorization details."
-      },
       "UserEventPayloadOneOf437Origin": {
         "enum": [
           "app",
@@ -212036,6 +212139,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
+        "description": "How the token was issued. Always \u0060\u0027manual\u0027\u0060 for explicit PAT creation.",
         "x-ms-enum": {
           "name": "UserEventPayloadOneOf437Origin",
           "modelAsString": false,
@@ -212111,7 +212215,164 @@
           ]
         }
       },
-      "UserEventPayloadOneOf437Expired": {
+      "UserEventPayloadOneOf437Scope": {
+        "enum": [
+          "project",
+          "team",
+          "user"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Scope of the token: - \u0060\u0027user\u0027\u0060: full-account token (not tied to any team). - \u0060\u0027team\u0027\u0060: scoped to a single team. - \u0060\u0027project\u0027\u0060: scoped to a single project within a team.",
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf437Scope",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "project",
+              "name": "Project"
+            },
+            {
+              "value": "team",
+              "name": "Team"
+            },
+            {
+              "value": "user",
+              "name": "User"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf437ProjectScope": {
+        "enum": [
+          "account",
+          "project-only"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Present when \u0060scope\u0060 is \u0060\u0027project\u0027\u0060.",
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf437ProjectScope",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "account",
+              "name": "Account"
+            },
+            {
+              "value": "project-only",
+              "name": "ProjectOnly"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf437HasAuthorizationDetails": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false,
+        "description": "Whether the token was issued with RFC 9396 authorization details."
+      },
+      "UserEventPayloadOneOf438Origin": {
+        "enum": [
+          "app",
+          "apple",
+          "bitbucket",
+          "chatgpt",
+          "email",
+          "emu",
+          "github",
+          "github-webhook",
+          "gitlab",
+          "google",
+          "invite",
+          "manual",
+          "otp",
+          "passkey",
+          "saml",
+          "sms",
+          "token-exchange-oidc"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf438Origin",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "app",
+              "name": "App"
+            },
+            {
+              "value": "apple",
+              "name": "Apple"
+            },
+            {
+              "value": "bitbucket",
+              "name": "Bitbucket"
+            },
+            {
+              "value": "chatgpt",
+              "name": "Chatgpt"
+            },
+            {
+              "value": "email",
+              "name": "Email"
+            },
+            {
+              "value": "emu",
+              "name": "Emu"
+            },
+            {
+              "value": "github",
+              "name": "Github"
+            },
+            {
+              "value": "github-webhook",
+              "name": "GithubWebhook"
+            },
+            {
+              "value": "gitlab",
+              "name": "Gitlab"
+            },
+            {
+              "value": "google",
+              "name": "Google"
+            },
+            {
+              "value": "invite",
+              "name": "Invite"
+            },
+            {
+              "value": "manual",
+              "name": "Manual"
+            },
+            {
+              "value": "otp",
+              "name": "Otp"
+            },
+            {
+              "value": "passkey",
+              "name": "Passkey"
+            },
+            {
+              "value": "saml",
+              "name": "Saml"
+            },
+            {
+              "value": "sms",
+              "name": "Sms"
+            },
+            {
+              "value": "token-exchange-oidc",
+              "name": "TokenExchangeOidc"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf438Expired": {
         "enum": [
           false,
           true
@@ -212119,7 +212380,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf437Leaked": {
+      "UserEventPayloadOneOf438Leaked": {
         "enum": [
           false,
           true
@@ -212127,7 +212388,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf437Revoked": {
+      "UserEventPayloadOneOf438Revoked": {
         "enum": [
           false,
           true
@@ -218773,6 +219034,7 @@
       },
       "UserEventPayloadOneOf333BudgetPricingPlan": {
         "enum": [
+          "flex",
           "legacy",
           "platform",
           "plus",
@@ -218785,6 +219047,10 @@
           "name": "UserEventPayloadOneOf333BudgetPricingPlan",
           "modelAsString": false,
           "values": [
+            {
+              "value": "flex",
+              "name": "Flex"
+            },
             {
               "value": "legacy",
               "name": "Legacy"
@@ -218833,6 +219099,7 @@
       },
       "UserEventPayloadOneOf334BudgetPricingPlan": {
         "enum": [
+          "flex",
           "legacy",
           "platform",
           "plus",
@@ -218845,6 +219112,10 @@
           "name": "UserEventPayloadOneOf334BudgetPricingPlan",
           "modelAsString": false,
           "values": [
+            {
+              "value": "flex",
+              "name": "Flex"
+            },
             {
               "value": "legacy",
               "name": "Legacy"
@@ -219124,7 +219395,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf403PreviousEnabled": {
+      "UserEventPayloadOneOf404PreviousEnabled": {
         "enum": [
           false,
           true
@@ -219132,7 +219403,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf403PreviousTotpVerified": {
+      "UserEventPayloadOneOf404PreviousTotpVerified": {
         "enum": [
           false,
           true
@@ -219140,7 +219411,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf403NextEnabled": {
+      "UserEventPayloadOneOf404NextEnabled": {
         "enum": [
           false,
           true
@@ -219148,7 +219419,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf403NextTotpVerified": {
+      "UserEventPayloadOneOf404NextTotpVerified": {
         "enum": [
           false,
           true
@@ -219156,7 +219427,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf406MfaEnabled": {
+      "UserEventPayloadOneOf407MfaEnabled": {
         "enum": [
           false,
           true
@@ -219164,7 +219435,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf406MfaTotpVerified": {
+      "UserEventPayloadOneOf407MfaTotpVerified": {
         "enum": [
           false,
           true
@@ -219172,7 +219443,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf408PreviousEnabled": {
+      "UserEventPayloadOneOf409PreviousEnabled": {
         "enum": [
           false,
           true
@@ -219180,7 +219451,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf408PreviousTotpVerified": {
+      "UserEventPayloadOneOf409PreviousTotpVerified": {
         "enum": [
           false,
           true
@@ -219188,7 +219459,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf408NextEnabled": {
+      "UserEventPayloadOneOf409NextEnabled": {
         "enum": [
           false,
           true
@@ -219196,7 +219467,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf408NextTotpVerified": {
+      "UserEventPayloadOneOf409NextTotpVerified": {
         "enum": [
           false,
           true
@@ -219204,7 +219475,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf409DecisionAuthoritative": {
+      "UserEventPayloadOneOf410DecisionAuthoritative": {
         "enum": [
           false,
           true
@@ -219212,7 +219483,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf409DecisionBasis": {
+      "UserEventPayloadOneOf410DecisionBasis": {
         "enum": [
           "gmail",
           "none",
@@ -219221,7 +219492,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf409DecisionBasis",
+          "name": "UserEventPayloadOneOf410DecisionBasis",
           "modelAsString": false,
           "values": [
             {
@@ -219239,7 +219510,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf409DecisionEmailVerified": {
+      "UserEventPayloadOneOf410DecisionEmailVerified": {
         "enum": [
           false,
           true
@@ -219247,7 +219518,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf409DecisionHostedDomainMatch": {
+      "UserEventPayloadOneOf410DecisionHostedDomainMatch": {
         "enum": [
           false,
           true
@@ -219255,7 +219526,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf409DecisionMxOutcome": {
+      "UserEventPayloadOneOf410DecisionMxOutcome": {
         "enum": [
           "google",
           "lookup-error",
@@ -219265,7 +219536,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf409DecisionMxOutcome",
+          "name": "UserEventPayloadOneOf410DecisionMxOutcome",
           "modelAsString": false,
           "values": [
             {
@@ -220091,6 +220362,41 @@
         }
       },
       "AuthUserFeatureBlocksWebAnalyticsIsCurrentlyBlocked": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
+      "AuthUserFeatureBlocksSpeedInsightsFreeBlockReason": {
+        "enum": [
+          "admin_override",
+          "hard_blocked",
+          "limits_exceeded"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "AuthUserFeatureBlocksSpeedInsightsFreeBlockReason",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "admin_override",
+              "name": "AdminOverride"
+            },
+            {
+              "value": "hard_blocked",
+              "name": "HardBlocked"
+            },
+            {
+              "value": "limits_exceeded",
+              "name": "LimitsExceeded"
+            }
+          ]
+        }
+      },
+      "AuthUserFeatureBlocksSpeedInsightsFreeIsCurrentlyBlocked": {
         "enum": [
           false,
           true
@@ -221213,6 +221519,7 @@
       },
       "UserEventPayloadOneOf332BudgetBudgetItemPricingPlan": {
         "enum": [
+          "flex",
           "legacy",
           "platform",
           "plus",
@@ -221225,6 +221532,10 @@
           "name": "UserEventPayloadOneOf332BudgetBudgetItemPricingPlan",
           "modelAsString": false,
           "values": [
+            {
+              "value": "flex",
+              "name": "Flex"
+            },
             {
               "value": "legacy",
               "name": "Legacy"
@@ -221304,7 +221615,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf433AppClientAuthenticationUsedMethod": {
+      "UserEventPayloadOneOf434AppClientAuthenticationUsedMethod": {
         "enum": [
           "client_secret_basic",
           "client_secret_jwt",
@@ -221316,7 +221627,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf433AppClientAuthenticationUsedMethod",
+          "name": "UserEventPayloadOneOf434AppClientAuthenticationUsedMethod",
           "modelAsString": false,
           "values": [
             {
@@ -222730,7 +223041,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf434PolicyClaimsItemValuesItemWildcards": {
+      "UserEventPayloadOneOf435PolicyClaimsItemValuesItemWildcards": {
         "enum": [
           false,
           true
@@ -222738,7 +223049,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf435BeforeClaimsItemValuesItemWildcards": {
+      "UserEventPayloadOneOf436BeforeClaimsItemValuesItemWildcards": {
         "enum": [
           false,
           true
@@ -222746,7 +223057,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf435AfterClaimsItemValuesItemWildcards": {
+      "UserEventPayloadOneOf436AfterClaimsItemValuesItemWildcards": {
         "enum": [
           false,
           true
@@ -227064,7 +227375,8 @@
           "account-plan-downgrade",
           "disabled-by-admin",
           "disabled-by-owner",
-          "feature-not-available"
+          "feature-not-available",
+          "limits-exceeded"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -227087,6 +227399,10 @@
             {
               "value": "feature-not-available",
               "name": "FeatureNotAvailable"
+            },
+            {
+              "value": "limits-exceeded",
+              "name": "LimitsExceeded"
             }
           ]
         }
@@ -227123,7 +227439,8 @@
           "account-plan-downgrade",
           "disabled-by-admin",
           "disabled-by-owner",
-          "feature-not-available"
+          "feature-not-available",
+          "limits-exceeded"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -227146,6 +227463,10 @@
             {
               "value": "feature-not-available",
               "name": "FeatureNotAvailable"
+            },
+            {
+              "value": "limits-exceeded",
+              "name": "LimitsExceeded"
             }
           ]
         }
@@ -227226,7 +227547,8 @@
           "account-plan-downgrade",
           "disabled-by-admin",
           "disabled-by-owner",
-          "feature-not-available"
+          "feature-not-available",
+          "limits-exceeded"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -227249,6 +227571,10 @@
             {
               "value": "feature-not-available",
               "name": "FeatureNotAvailable"
+            },
+            {
+              "value": "limits-exceeded",
+              "name": "LimitsExceeded"
             }
           ]
         }
@@ -233834,6 +234160,72 @@
           ]
         }
       },
+      "CreateSandboxesV2RequestRegion": {
+        "enum": [
+          "iad1",
+          "sfo1",
+          "cle1",
+          "cdg1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The Vercel region in which to create the sandbox.",
+        "example": "iad1",
+        "x-ms-enum": {
+          "name": "CreateSandboxesV2RequestRegion",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            },
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "cdg1",
+              "name": "Cdg1"
+            }
+          ]
+        }
+      },
+      "CreateSandboxesV2RequestFailoverRegionsItem": {
+        "enum": [
+          "iad1",
+          "sfo1",
+          "cle1",
+          "cdg1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateSandboxesV2RequestFailoverRegionsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            },
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "cdg1",
+              "name": "Cdg1"
+            }
+          ]
+        }
+      },
       "GetOrCreateDriveRequestRegion": {
         "enum": [
           "iad1",
@@ -233910,6 +234302,72 @@
           ]
         }
       },
+      "UpdateSandboxRequestRegion": {
+        "enum": [
+          "iad1",
+          "sfo1",
+          "cle1",
+          "cdg1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The Vercel region in which to create the sandbox.",
+        "example": "iad1",
+        "x-ms-enum": {
+          "name": "UpdateSandboxRequestRegion",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            },
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "cdg1",
+              "name": "Cdg1"
+            }
+          ]
+        }
+      },
+      "UpdateSandboxRequestFailoverRegionsItem": {
+        "enum": [
+          "iad1",
+          "sfo1",
+          "cle1",
+          "cdg1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateSandboxRequestFailoverRegionsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            },
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "cdg1",
+              "name": "Cdg1"
+            }
+          ]
+        }
+      },
       "UpdateSandbox200ResponseResumed": {
         "enum": [
           false,
@@ -233953,6 +234411,270 @@
             {
               "value": "default-deny",
               "name": "DefaultDeny"
+            }
+          ]
+        }
+      },
+      "CreateSandboxesByNameForkV2RequestRegion": {
+        "enum": [
+          "iad1",
+          "sfo1",
+          "cle1",
+          "cdg1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The Vercel region in which to create the sandbox.",
+        "example": "iad1",
+        "x-ms-enum": {
+          "name": "CreateSandboxesByNameForkV2RequestRegion",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            },
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "cdg1",
+              "name": "Cdg1"
+            }
+          ]
+        }
+      },
+      "CreateSandboxesByNameForkV2RequestFailoverRegionsItem": {
+        "enum": [
+          "iad1",
+          "sfo1",
+          "cle1",
+          "cdg1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateSandboxesByNameForkV2RequestFailoverRegionsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            },
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "cdg1",
+              "name": "Cdg1"
+            }
+          ]
+        }
+      },
+      "CreateSandboxesV3RequestRegion": {
+        "enum": [
+          "iad1",
+          "sfo1",
+          "cle1",
+          "cdg1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The Vercel region in which to create the sandbox.",
+        "example": "iad1",
+        "x-ms-enum": {
+          "name": "CreateSandboxesV3RequestRegion",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            },
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "cdg1",
+              "name": "Cdg1"
+            }
+          ]
+        }
+      },
+      "CreateSandboxesV3RequestFailoverRegionsItem": {
+        "enum": [
+          "iad1",
+          "sfo1",
+          "cle1",
+          "cdg1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateSandboxesV3RequestFailoverRegionsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            },
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "cdg1",
+              "name": "Cdg1"
+            }
+          ]
+        }
+      },
+      "CreateSandboxesByNameForkV3RequestRegion": {
+        "enum": [
+          "iad1",
+          "sfo1",
+          "cle1",
+          "cdg1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The Vercel region in which to create the sandbox.",
+        "example": "iad1",
+        "x-ms-enum": {
+          "name": "CreateSandboxesByNameForkV3RequestRegion",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            },
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "cdg1",
+              "name": "Cdg1"
+            }
+          ]
+        }
+      },
+      "CreateSandboxesByNameForkV3RequestFailoverRegionsItem": {
+        "enum": [
+          "iad1",
+          "sfo1",
+          "cle1",
+          "cdg1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateSandboxesByNameForkV3RequestFailoverRegionsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            },
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "cdg1",
+              "name": "Cdg1"
+            }
+          ]
+        }
+      },
+      "CreateSandboxesV4RequestRegion": {
+        "enum": [
+          "iad1",
+          "sfo1",
+          "cle1",
+          "cdg1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The Vercel region in which to create the sandbox.",
+        "example": "iad1",
+        "x-ms-enum": {
+          "name": "CreateSandboxesV4RequestRegion",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            },
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "cdg1",
+              "name": "Cdg1"
+            }
+          ]
+        }
+      },
+      "CreateSandboxesV4RequestFailoverRegionsItem": {
+        "enum": [
+          "iad1",
+          "sfo1",
+          "cle1",
+          "cdg1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateSandboxesV4RequestFailoverRegionsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            },
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "cdg1",
+              "name": "Cdg1"
             }
           ]
         }
@@ -255621,6 +256343,72 @@
           ]
         }
       },
+      "CreateProjectRequestSandboxRegion": {
+        "enum": [
+          "iad1",
+          "sfo1",
+          "cle1",
+          "cdg1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The Vercel region sandboxes in this project are created in by default.",
+        "example": "iad1",
+        "x-ms-enum": {
+          "name": "CreateProjectRequestSandboxRegion",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            },
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "cdg1",
+              "name": "Cdg1"
+            }
+          ]
+        }
+      },
+      "CreateProjectRequestSandboxFailoverRegionsItem": {
+        "enum": [
+          "iad1",
+          "sfo1",
+          "cle1",
+          "cdg1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateProjectRequestSandboxFailoverRegionsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            },
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "cdg1",
+              "name": "Cdg1"
+            }
+          ]
+        }
+      },
       "CreateProjectRequestOidcTokenConfigIssuerMode": {
         "enum": [
           "team",
@@ -259927,6 +260715,72 @@
             {
               "value": "all_except_custom_domains",
               "name": "AllExceptCustomDomains"
+            }
+          ]
+        }
+      },
+      "UpdateProjectRequestSandboxRegion": {
+        "enum": [
+          "iad1",
+          "sfo1",
+          "cle1",
+          "cdg1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The Vercel region sandboxes in this project are created in by default.",
+        "example": "iad1",
+        "x-ms-enum": {
+          "name": "UpdateProjectRequestSandboxRegion",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            },
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "cdg1",
+              "name": "Cdg1"
+            }
+          ]
+        }
+      },
+      "UpdateProjectRequestSandboxFailoverRegionsItem": {
+        "enum": [
+          "iad1",
+          "sfo1",
+          "cle1",
+          "cdg1"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateProjectRequestSandboxFailoverRegionsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "iad1",
+              "name": "Iad1"
+            },
+            {
+              "value": "sfo1",
+              "name": "Sfo1"
+            },
+            {
+              "value": "cle1",
+              "name": "Cle1"
+            },
+            {
+              "value": "cdg1",
+              "name": "Cdg1"
             }
           ]
         }
@@ -273893,7 +274747,8 @@
           "account-plan-downgrade",
           "disabled-by-admin",
           "disabled-by-owner",
-          "feature-not-available"
+          "feature-not-available",
+          "limits-exceeded"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -273916,6 +274771,10 @@
             {
               "value": "feature-not-available",
               "name": "FeatureNotAvailable"
+            },
+            {
+              "value": "limits-exceeded",
+              "name": "LimitsExceeded"
             }
           ]
         }
@@ -273952,7 +274811,8 @@
           "account-plan-downgrade",
           "disabled-by-admin",
           "disabled-by-owner",
-          "feature-not-available"
+          "feature-not-available",
+          "limits-exceeded"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -273975,6 +274835,10 @@
             {
               "value": "feature-not-available",
               "name": "FeatureNotAvailable"
+            },
+            {
+              "value": "limits-exceeded",
+              "name": "LimitsExceeded"
             }
           ]
         }
@@ -274108,7 +274972,8 @@
           "account-plan-downgrade",
           "disabled-by-admin",
           "disabled-by-owner",
-          "feature-not-available"
+          "feature-not-available",
+          "limits-exceeded"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -274131,6 +274996,10 @@
             {
               "value": "feature-not-available",
               "name": "FeatureNotAvailable"
+            },
+            {
+              "value": "limits-exceeded",
+              "name": "LimitsExceeded"
             }
           ]
         }
@@ -274167,7 +275036,8 @@
           "account-plan-downgrade",
           "disabled-by-admin",
           "disabled-by-owner",
-          "feature-not-available"
+          "feature-not-available",
+          "limits-exceeded"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -274190,6 +275060,10 @@
             {
               "value": "feature-not-available",
               "name": "FeatureNotAvailable"
+            },
+            {
+              "value": "limits-exceeded",
+              "name": "LimitsExceeded"
             }
           ]
         }
@@ -281232,28 +282106,6 @@
             {
               "value": "external",
               "name": "External"
-            }
-          ]
-        }
-      },
-      "UpdateProjectRequestPassportPublicPathRulesItemType": {
-        "enum": [
-          "equals",
-          "startsWith"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "UpdateProjectRequestPassportPublicPathRulesItemType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "equals",
-              "name": "Equals"
-            },
-            {
-              "value": "startsWith",
-              "name": "StartsWith"
             }
           ]
         }
@@ -297153,7 +298005,8 @@
       "GetDeployment200ResponseFunctionsAdditionalPropertiesExperimentalTriggersItemType": {
         "enum": [
           "queue/v1beta",
-          "queue/v2beta"
+          "queue/v2beta",
+          "schedule/v1beta"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -297169,6 +298022,10 @@
             {
               "value": "queue/v2beta",
               "name": "QueueV2Beta"
+            },
+            {
+              "value": "schedule/v1beta",
+              "name": "ScheduleV1Beta"
             }
           ]
         }
@@ -297710,7 +298567,8 @@
       "CreateDeployment200ResponseFunctionsAdditionalPropertiesExperimentalTriggersItemType": {
         "enum": [
           "queue/v1beta",
-          "queue/v2beta"
+          "queue/v2beta",
+          "schedule/v1beta"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -297726,6 +298584,10 @@
             {
               "value": "queue/v2beta",
               "name": "QueueV2Beta"
+            },
+            {
+              "value": "schedule/v1beta",
+              "name": "ScheduleV1Beta"
             }
           ]
         }
@@ -298198,7 +299060,8 @@
       "CancelDeployment200ResponseFunctionsAdditionalPropertiesExperimentalTriggersItemType": {
         "enum": [
           "queue/v1beta",
-          "queue/v2beta"
+          "queue/v2beta",
+          "schedule/v1beta"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -298214,6 +299077,10 @@
             {
               "value": "queue/v2beta",
               "name": "QueueV2Beta"
+            },
+            {
+              "value": "schedule/v1beta",
+              "name": "ScheduleV1Beta"
             }
           ]
         }
@@ -298995,7 +299862,8 @@
         "enum": [
           "variant",
           "split",
-          "rollout"
+          "rollout",
+          "experiment"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -299014,6 +299882,10 @@
             {
               "value": "rollout",
               "name": "Rollout"
+            },
+            {
+              "value": "experiment",
+              "name": "Experiment"
             }
           ]
         }
@@ -310649,7 +311521,8 @@
         "enum": [
           "variant",
           "split",
-          "rollout"
+          "rollout",
+          "experiment"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -310668,6 +311541,10 @@
             {
               "value": "rollout",
               "name": "Rollout"
+            },
+            {
+              "value": "experiment",
+              "name": "Experiment"
             }
           ]
         }
@@ -313186,7 +314063,8 @@
       "GetDeployment200ResponseServicesItemFunctionsAdditionalPropertiesExperimentalTriggersItemType": {
         "enum": [
           "queue/v1beta",
-          "queue/v2beta"
+          "queue/v2beta",
+          "schedule/v1beta"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -313202,6 +314080,10 @@
             {
               "value": "queue/v2beta",
               "name": "QueueV2Beta"
+            },
+            {
+              "value": "schedule/v1beta",
+              "name": "ScheduleV1Beta"
             }
           ]
         }
@@ -313241,7 +314123,8 @@
       "CreateDeployment200ResponseServicesItemFunctionsAdditionalPropertiesExperimentalTriggersItemType": {
         "enum": [
           "queue/v1beta",
-          "queue/v2beta"
+          "queue/v2beta",
+          "schedule/v1beta"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -313257,6 +314140,10 @@
             {
               "value": "queue/v2beta",
               "name": "QueueV2Beta"
+            },
+            {
+              "value": "schedule/v1beta",
+              "name": "ScheduleV1Beta"
             }
           ]
         }
@@ -313296,7 +314183,8 @@
       "CancelDeployment200ResponseServicesItemFunctionsAdditionalPropertiesExperimentalTriggersItemType": {
         "enum": [
           "queue/v1beta",
-          "queue/v2beta"
+          "queue/v2beta",
+          "schedule/v1beta"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -313312,6 +314200,10 @@
             {
               "value": "queue/v2beta",
               "name": "QueueV2Beta"
+            },
+            {
+              "value": "schedule/v1beta",
+              "name": "ScheduleV1Beta"
             }
           ]
         }
@@ -313447,7 +314339,8 @@
         "enum": [
           "variant",
           "split",
-          "rollout"
+          "rollout",
+          "experiment"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -313466,6 +314359,10 @@
             {
               "value": "rollout",
               "name": "Rollout"
+            },
+            {
+              "value": "experiment",
+              "name": "Experiment"
             }
           ]
         }
@@ -318264,7 +319161,8 @@
         "enum": [
           "variant",
           "split",
-          "rollout"
+          "rollout",
+          "experiment"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -318283,6 +319181,10 @@
             {
               "value": "rollout",
               "name": "Rollout"
+            },
+            {
+              "value": "experiment",
+              "name": "Experiment"
             }
           ]
         }
@@ -319791,7 +320693,8 @@
         "enum": [
           "variant",
           "split",
-          "rollout"
+          "rollout",
+          "experiment"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -319810,6 +320713,10 @@
             {
               "value": "rollout",
               "name": "Rollout"
+            },
+            {
+              "value": "experiment",
+              "name": "Experiment"
             }
           ]
         }
@@ -320567,7 +321474,8 @@
       "GetDeployment200ResponseServicesItemBuilderConfigFunctionsAdditionalPropertiesExperimentalTriggersItemType": {
         "enum": [
           "queue/v1beta",
-          "queue/v2beta"
+          "queue/v2beta",
+          "schedule/v1beta"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -320583,6 +321491,10 @@
             {
               "value": "queue/v2beta",
               "name": "QueueV2Beta"
+            },
+            {
+              "value": "schedule/v1beta",
+              "name": "ScheduleV1Beta"
             }
           ]
         }
@@ -320590,7 +321502,8 @@
       "CreateDeployment200ResponseServicesItemBuilderConfigFunctionsAdditionalPropertiesExperimentalTriggersItemType": {
         "enum": [
           "queue/v1beta",
-          "queue/v2beta"
+          "queue/v2beta",
+          "schedule/v1beta"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -320606,6 +321519,10 @@
             {
               "value": "queue/v2beta",
               "name": "QueueV2Beta"
+            },
+            {
+              "value": "schedule/v1beta",
+              "name": "ScheduleV1Beta"
             }
           ]
         }
@@ -320613,7 +321530,8 @@
       "CancelDeployment200ResponseServicesItemBuilderConfigFunctionsAdditionalPropertiesExperimentalTriggersItemType": {
         "enum": [
           "queue/v1beta",
-          "queue/v2beta"
+          "queue/v2beta",
+          "schedule/v1beta"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -320629,6 +321547,10 @@
             {
               "value": "queue/v2beta",
               "name": "QueueV2Beta"
+            },
+            {
+              "value": "schedule/v1beta",
+              "name": "ScheduleV1Beta"
             }
           ]
         }
@@ -320637,7 +321559,8 @@
         "enum": [
           "variant",
           "split",
-          "rollout"
+          "rollout",
+          "experiment"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -320656,6 +321579,10 @@
             {
               "value": "rollout",
               "name": "Rollout"
+            },
+            {
+              "value": "experiment",
+              "name": "Experiment"
             }
           ]
         }

@@ -18,7 +18,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public bool? CrossInstallation { get; set; }
         /// <summary>User authorization is completed by the Connect consent screen submitting a credential instead of an OAuth redirect.</summary>
         public bool? ManualCredentialInput { get; set; }
-        /// <summary>Known allowed user-level scopes. For Slack this is the user scope set configured on the app; for OAuth it is `scopes_supported` from the server&apos;s discovery document.</summary>
+        /// <summary>Known allowed user-level scopes. For Slack this is the user scope set configured on the app; for OAuth it is the connector&apos;s enabled `userAuthorization.scopes` configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Scopes { get; set; }
