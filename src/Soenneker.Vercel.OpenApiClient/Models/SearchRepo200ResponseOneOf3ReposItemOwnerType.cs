@@ -5,12 +5,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum TeamOwnerType
+    public enum SearchRepo200ResponseOneOf3ReposItemOwnerType
     #pragma warning restore CS1591
     {
         [EnumMember(Value = "team")]
         #pragma warning disable CS1591
         Team,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "user")]
+        #pragma warning disable CS1591
+        User,
         #pragma warning restore CS1591
     }
 }

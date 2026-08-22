@@ -65564,7 +65564,8 @@
                               "ownerType": {
                                 "type": "string",
                                 "enum": [
-                                  "team"
+                                  "team",
+                                  "user"
                                 ]
                               },
                               "owner": {
@@ -221594,6 +221595,18 @@
                           "increasedOnDemandEmailAttemptedAt": {
                             "type": "number",
                             "description": "Tracks the last time we attempted to send an increased on-demand email. This check is to limit the number of attempts per day."
+                          },
+                          "hobbyPolicyNoticeSlackSentAt": {
+                            "type": "number",
+                            "description": "Tracks when the new-Hobby-policy notice was reported for this owner. Reported at most once per owner, ever."
+                          },
+                          "hobbyWarningV2SlackSentAt": {
+                            "type": "number",
+                            "description": "Tracks the last time a `warningThresholdsV2` crossing was reported for this owner. Hobby has no billing period, so this re-arms on the same rolling window the service already uses for Hobby alerts."
+                          },
+                          "hobbyPauseNoticeSlackSentAt": {
+                            "type": "number",
+                            "description": "Tracks the last time a `blockThresholdV2` breach was reported for this owner. Re-arms on the same rolling window as `hobbyWarningV2SlackSentAt`."
                           }
                         },
                         "type": "object",

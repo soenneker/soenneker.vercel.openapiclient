@@ -19,6 +19,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? DailyOverageSummaryEmailSentAt { get; set; }
         /// <summary>Tracks if the first time on-demand overage email has been sent.</summary>
         public double? FirstTimeOnDemandNotificationSentAt { get; set; }
+        /// <summary>Tracks the last time a `blockThresholdV2` breach was reported for this owner. Re-arms on the same rolling window as `hobbyWarningV2SlackSentAt`.</summary>
+        public double? HobbyPauseNoticeSlackSentAt { get; set; }
+        /// <summary>Tracks when the new-Hobby-policy notice was reported for this owner. Reported at most once per owner, ever.</summary>
+        public double? HobbyPolicyNoticeSlackSentAt { get; set; }
+        /// <summary>Tracks the last time a `warningThresholdsV2` crossing was reported for this owner. Hobby has no billing period, so this re-arms on the same rolling window the service already uses for Hobby alerts.</summary>
+        public double? HobbyWarningV2SlackSentAt { get; set; }
         /// <summary>Tracks the last time we attempted to send an increased on-demand email. This check is to limit the number of attempts per day.</summary>
         public double? IncreasedOnDemandEmailAttemptedAt { get; set; }
         /// <summary>Tracks the last time we sent a increased on-demand email.</summary>
@@ -54,6 +60,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "dailyOverageSummaryEmailSentAt", n => { DailyOverageSummaryEmailSentAt = n.GetDoubleValue(); } },
                 { "firstTimeOnDemandNotificationSentAt", n => { FirstTimeOnDemandNotificationSentAt = n.GetDoubleValue(); } },
+                { "hobbyPauseNoticeSlackSentAt", n => { HobbyPauseNoticeSlackSentAt = n.GetDoubleValue(); } },
+                { "hobbyPolicyNoticeSlackSentAt", n => { HobbyPolicyNoticeSlackSentAt = n.GetDoubleValue(); } },
+                { "hobbyWarningV2SlackSentAt", n => { HobbyWarningV2SlackSentAt = n.GetDoubleValue(); } },
                 { "increasedOnDemandEmailAttemptedAt", n => { IncreasedOnDemandEmailAttemptedAt = n.GetDoubleValue(); } },
                 { "increasedOnDemandEmailSentAt", n => { IncreasedOnDemandEmailSentAt = n.GetDoubleValue(); } },
                 { "overageSummaryExpiresAt", n => { OverageSummaryExpiresAt = n.GetDoubleValue(); } },
@@ -69,6 +78,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("dailyOverageSummaryEmailSentAt", DailyOverageSummaryEmailSentAt);
             writer.WriteDoubleValue("firstTimeOnDemandNotificationSentAt", FirstTimeOnDemandNotificationSentAt);
+            writer.WriteDoubleValue("hobbyPauseNoticeSlackSentAt", HobbyPauseNoticeSlackSentAt);
+            writer.WriteDoubleValue("hobbyPolicyNoticeSlackSentAt", HobbyPolicyNoticeSlackSentAt);
+            writer.WriteDoubleValue("hobbyWarningV2SlackSentAt", HobbyWarningV2SlackSentAt);
             writer.WriteDoubleValue("increasedOnDemandEmailAttemptedAt", IncreasedOnDemandEmailAttemptedAt);
             writer.WriteDoubleValue("increasedOnDemandEmailSentAt", IncreasedOnDemandEmailSentAt);
             writer.WriteDoubleValue("overageSummaryExpiresAt", OverageSummaryExpiresAt);

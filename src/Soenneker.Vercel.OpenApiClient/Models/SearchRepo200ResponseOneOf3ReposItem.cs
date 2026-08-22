@@ -55,7 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3ReposItemOwner Owner { get; set; }
 #endif
         /// <summary>The ownerType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.TeamOwnerType? OwnerType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3ReposItemOwnerType? OwnerType { get; set; }
         /// <summary>The private property</summary>
         public bool? Private { get; set; }
         /// <summary>The provider property</summary>
@@ -108,7 +108,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "namespace", n => { Namespace = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3ReposItemOwner>(global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3ReposItemOwner.CreateFromDiscriminatorValue); } },
-                { "ownerType", n => { OwnerType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamOwnerType>(); } },
+                { "ownerType", n => { OwnerType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3ReposItemOwnerType>(); } },
                 { "private", n => { Private = n.GetBoolValue(); } },
                 { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CursorOriginProvider>(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
@@ -128,7 +128,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("namespace", Namespace);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3ReposItemOwner>("owner", Owner);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamOwnerType>("ownerType", OwnerType);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf3ReposItemOwnerType>("ownerType", OwnerType);
             writer.WriteBoolValue("private", Private);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CursorOriginProvider>("provider", Provider);
             writer.WriteStringValue("slug", Slug);

@@ -61565,6 +61565,18 @@
           "increasedOnDemandEmailAttemptedAt": {
             "type": "number",
             "description": "Tracks the last time we attempted to send an increased on-demand email. This check is to limit the number of attempts per day."
+          },
+          "hobbyPolicyNoticeSlackSentAt": {
+            "type": "number",
+            "description": "Tracks when the new-Hobby-policy notice was reported for this owner. Reported at most once per owner, ever."
+          },
+          "hobbyWarningV2SlackSentAt": {
+            "type": "number",
+            "description": "Tracks the last time a \u0060warningThresholdsV2\u0060 crossing was reported for this owner. Hobby has no billing period, so this re-arms on the same rolling window the service already uses for Hobby alerts."
+          },
+          "hobbyPauseNoticeSlackSentAt": {
+            "type": "number",
+            "description": "Tracks the last time a \u0060blockThresholdV2\u0060 breach was reported for this owner. Re-arms on the same rolling window as \u0060hobbyWarningV2SlackSentAt\u0060."
           }
         },
         "description": "Contains the timestamps for usage summary emails."
@@ -139843,7 +139855,7 @@
             "type": "string"
           },
           "ownerType": {
-            "$ref": "#/components/schemas/TeamOwnerType"
+            "$ref": "#/components/schemas/SearchRepo200ResponseOneOf3ReposItemOwnerType"
           },
           "owner": {
             "$ref": "#/components/schemas/SearchRepo200ResponseOneOf3ReposItemOwner"
@@ -271135,19 +271147,24 @@
           ]
         }
       },
-      "TeamOwnerType": {
+      "SearchRepo200ResponseOneOf3ReposItemOwnerType": {
         "enum": [
-          "team"
+          "team",
+          "user"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "TeamOwnerType",
+          "name": "SearchRepo200ResponseOneOf3ReposItemOwnerType",
           "modelAsString": false,
           "values": [
             {
               "value": "team",
               "name": "Team"
+            },
+            {
+              "value": "user",
+              "name": "User"
             }
           ]
         }
