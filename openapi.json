@@ -221607,6 +221607,10 @@
                           "hobbyPauseNoticeSlackSentAt": {
                             "type": "number",
                             "description": "Tracks the last time a `blockThresholdV2` breach was reported for this owner. Re-arms on the same rolling window as `hobbyWarningV2SlackSentAt`."
+                          },
+                          "hobbyPolicySlackThreadTs": {
+                            "type": "string",
+                            "description": "Slack `ts` of the thread root holding this owner's new-Hobby-policy alerts. Every later alert for the owner is posted as a reply to it, so the channel carries one entry per owner rather than one per alert. Replaced if Slack reports the root as gone."
                           }
                         },
                         "type": "object",

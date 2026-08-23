@@ -61577,6 +61577,10 @@
           "hobbyPauseNoticeSlackSentAt": {
             "type": "number",
             "description": "Tracks the last time a \u0060blockThresholdV2\u0060 breach was reported for this owner. Re-arms on the same rolling window as \u0060hobbyWarningV2SlackSentAt\u0060."
+          },
+          "hobbyPolicySlackThreadTs": {
+            "type": "string",
+            "description": "Slack \u0060ts\u0060 of the thread root holding this owner\u0027s new-Hobby-policy alerts. Every later alert for the owner is posted as a reply to it, so the channel carries one entry per owner rather than one per alert. Replaced if Slack reports the root as gone."
           }
         },
         "description": "Contains the timestamps for usage summary emails."

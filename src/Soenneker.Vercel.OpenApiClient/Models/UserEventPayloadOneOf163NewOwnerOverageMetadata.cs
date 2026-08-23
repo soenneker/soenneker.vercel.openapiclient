@@ -23,6 +23,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? HobbyPauseNoticeSlackSentAt { get; set; }
         /// <summary>Tracks when the new-Hobby-policy notice was reported for this owner. Reported at most once per owner, ever.</summary>
         public double? HobbyPolicyNoticeSlackSentAt { get; set; }
+        /// <summary>Slack `ts` of the thread root holding this owner&apos;s new-Hobby-policy alerts. Every later alert for the owner is posted as a reply to it, so the channel carries one entry per owner rather than one per alert. Replaced if Slack reports the root as gone.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HobbyPolicySlackThreadTs { get; set; }
+#nullable restore
+#else
+        public string HobbyPolicySlackThreadTs { get; set; }
+#endif
         /// <summary>Tracks the last time a `warningThresholdsV2` crossing was reported for this owner. Hobby has no billing period, so this re-arms on the same rolling window the service already uses for Hobby alerts.</summary>
         public double? HobbyWarningV2SlackSentAt { get; set; }
         /// <summary>Tracks the last time we attempted to send an increased on-demand email. This check is to limit the number of attempts per day.</summary>
@@ -62,6 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "firstTimeOnDemandNotificationSentAt", n => { FirstTimeOnDemandNotificationSentAt = n.GetDoubleValue(); } },
                 { "hobbyPauseNoticeSlackSentAt", n => { HobbyPauseNoticeSlackSentAt = n.GetDoubleValue(); } },
                 { "hobbyPolicyNoticeSlackSentAt", n => { HobbyPolicyNoticeSlackSentAt = n.GetDoubleValue(); } },
+                { "hobbyPolicySlackThreadTs", n => { HobbyPolicySlackThreadTs = n.GetStringValue(); } },
                 { "hobbyWarningV2SlackSentAt", n => { HobbyWarningV2SlackSentAt = n.GetDoubleValue(); } },
                 { "increasedOnDemandEmailAttemptedAt", n => { IncreasedOnDemandEmailAttemptedAt = n.GetDoubleValue(); } },
                 { "increasedOnDemandEmailSentAt", n => { IncreasedOnDemandEmailSentAt = n.GetDoubleValue(); } },
@@ -80,6 +89,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("firstTimeOnDemandNotificationSentAt", FirstTimeOnDemandNotificationSentAt);
             writer.WriteDoubleValue("hobbyPauseNoticeSlackSentAt", HobbyPauseNoticeSlackSentAt);
             writer.WriteDoubleValue("hobbyPolicyNoticeSlackSentAt", HobbyPolicyNoticeSlackSentAt);
+            writer.WriteStringValue("hobbyPolicySlackThreadTs", HobbyPolicySlackThreadTs);
             writer.WriteDoubleValue("hobbyWarningV2SlackSentAt", HobbyWarningV2SlackSentAt);
             writer.WriteDoubleValue("increasedOnDemandEmailAttemptedAt", IncreasedOnDemandEmailAttemptedAt);
             writer.WriteDoubleValue("increasedOnDemandEmailSentAt", IncreasedOnDemandEmailSentAt);
