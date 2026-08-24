@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/connect/connectors", pathParameters)
+        public ConnectorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/connect/connectors{?slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,42 +30,63 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/connect/connectors", rawUrl)
+        public ConnectorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/connect/connectors{?slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>
-        /// Create a connector from type-specific configuration and optionally link it to a project during creation.
+        /// Create a connector and optionally link it to a project. Use `type` with complete provider data, or use `service` with `connectionMethod` so Connect can supply the type, endpoints, templates, and defaults.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201Response"/></returns>
-        /// <param name="body">The request body</param>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateResult"/></returns>
+        /// <param name="body">Create a connector with full provider configuration or with a known service connection method.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 409 status code</exception>
+        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 410 status code</exception>
+        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 502 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201Response?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateResult?> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.ConnectorsRequestBuilder.ConnectorsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201Response> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateResult> PostAsync(global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.ConnectorsRequestBuilder.ConnectorsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateConnector201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
+                { "410", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
+                { "502", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateResult>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a connector from type-specific configuration and optionally link it to a project during creation.
+        /// Create a connector and optionally link it to a project. Use `type` with complete provider data, or use `service` with `connectionMethod` so Connect can supply the type, endpoints, templates, and defaults.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Create a connector with full provider configuration or with a known service connection method.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.ConnectorsRequestBuilder.ConnectorsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.CreateConnectorRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequest body, Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.ConnectorsRequestBuilder.ConnectorsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -83,6 +104,33 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors
         public global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.ConnectorsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.ConnectorsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Create a connector and optionally link it to a project. Use `type` with complete provider data, or use `service` with `connectionMethod` so Connect can supply the type, endpoints, templates, and defaults.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ConnectorsRequestBuilderPostQueryParameters 
+        {
+            /// <summary>The team slug that scopes the request. Do not send it with teamId. If both are omitted, Vercel uses the team associated with the token or the authenticated user&apos;s default team. The request returns 401 if no team can be selected.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("slug")]
+            public string? Slug { get; set; }
+#nullable restore
+#else
+            [QueryParameter("slug")]
+            public string Slug { get; set; }
+#endif
+            /// <summary>The team ID that scopes the request. Do not send it with slug. If both are omitted, Vercel uses the team associated with the token or the authenticated user&apos;s default team. The request returns 401 if no team can be selected.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("teamId")]
+            public string? TeamId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("teamId")]
+            public string TeamId { get; set; }
+#endif
         }
     }
 }

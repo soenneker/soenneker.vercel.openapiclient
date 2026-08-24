@@ -39,7 +39,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Slug { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Principal kind.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserType? Type { get; set; }
         /// <summary>The uid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

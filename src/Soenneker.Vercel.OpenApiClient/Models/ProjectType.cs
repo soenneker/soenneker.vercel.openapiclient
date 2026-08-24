@@ -5,11 +5,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>Principal kind.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum UserType
+    public enum ProjectType
     {
-        [EnumMember(Value = "user")]
+        [EnumMember(Value = "project")]
         #pragma warning disable CS1591
-        User,
+        Project,
         #pragma warning restore CS1591
     }
 }

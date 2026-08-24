@@ -436,7 +436,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> TrialTeamIds { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Principal kind.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserType? Type { get; set; }
         /// <summary>The updatedAt property</summary>
         public double? UpdatedAt { get; set; }

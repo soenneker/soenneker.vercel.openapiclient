@@ -12,6 +12,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class GetSecurityFirewallEvents200ResponseActionsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The action property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Action { get; set; }
+#nullable restore
+#else
+        public string Action { get; set; }
+#endif
         /// <summary>The action_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,6 +58,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string PublicIp { get; set; }
 #endif
+        /// <summary>The ruleId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RuleId { get; set; }
+#nullable restore
+#else
+        public string RuleId { get; set; }
+#endif
+        /// <summary>The ruleName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RuleName { get; set; }
+#nullable restore
+#else
+        public string RuleName { get; set; }
+#endif
         /// <summary>The startTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,12 +107,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "action", n => { Action = n.GetStringValue(); } },
                 { "action_type", n => { ActionType = n.GetStringValue(); } },
                 { "count", n => { Count = n.GetDoubleValue(); } },
                 { "endTime", n => { EndTime = n.GetStringValue(); } },
                 { "host", n => { Host = n.GetStringValue(); } },
                 { "isActive", n => { IsActive = n.GetBoolValue(); } },
                 { "public_ip", n => { PublicIp = n.GetStringValue(); } },
+                { "ruleId", n => { RuleId = n.GetStringValue(); } },
+                { "ruleName", n => { RuleName = n.GetStringValue(); } },
                 { "startTime", n => { StartTime = n.GetStringValue(); } },
             };
         }
@@ -99,12 +126,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("action", Action);
             writer.WriteStringValue("action_type", ActionType);
             writer.WriteDoubleValue("count", Count);
             writer.WriteStringValue("endTime", EndTime);
             writer.WriteStringValue("host", Host);
             writer.WriteBoolValue("isActive", IsActive);
             writer.WriteStringValue("public_ip", PublicIp);
+            writer.WriteStringValue("ruleId", RuleId);
+            writer.WriteStringValue("ruleName", RuleName);
             writer.WriteStringValue("startTime", StartTime);
             writer.WriteAdditionalData(AdditionalData);
         }

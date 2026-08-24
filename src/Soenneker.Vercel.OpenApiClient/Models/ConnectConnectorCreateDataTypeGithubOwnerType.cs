@@ -3,13 +3,17 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>Principal kind.</summary>
+    /// <summary>GitHub App owner type.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum UserType
+    public enum ConnectConnectorCreateDataTypeGithubOwnerType
     {
         [EnumMember(Value = "user")]
         #pragma warning disable CS1591
-        User,
+        User1,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "organization")]
+        #pragma warning disable CS1591
+        Organization1,
         #pragma warning restore CS1591
     }
 }

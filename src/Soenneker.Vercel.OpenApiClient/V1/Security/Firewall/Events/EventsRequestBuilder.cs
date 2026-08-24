@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/events?projectId={projectId}{&endTimestamp*,hosts*,startTimestamp*}", pathParameters)
+        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/events?projectId={projectId}{&endTimestamp*,hosts*,slug*,startTimestamp*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/events?projectId={projectId}{&endTimestamp*,hosts*,startTimestamp*}", rawUrl)
+        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/events?projectId={projectId}{&endTimestamp*,hosts*,slug*,startTimestamp*,teamId*}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieve firewall actions for a project
+        /// Retrieve firewall actions for a project Rule names are resolved against the project&apos;s *current* active firewall configuration and the team&apos;s active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. System rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always report `null`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEvents200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEvents200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEvents200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve firewall actions for a project
+        /// Retrieve firewall actions for a project Rule names are resolved against the project&apos;s *current* active firewall configuration and the team&apos;s active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. System rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always report `null`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events
             return new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events.EventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve firewall actions for a project
+        /// Retrieve firewall actions for a project Rule names are resolved against the project&apos;s *current* active firewall configuration and the team&apos;s active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. System rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always report `null`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventsRequestBuilderGetQueryParameters 
@@ -105,8 +105,28 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events
             [QueryParameter("projectId")]
             public string ProjectId { get; set; }
 #endif
+            /// <summary>The Team slug to perform the request on behalf of.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("slug")]
+            public string? Slug { get; set; }
+#nullable restore
+#else
+            [QueryParameter("slug")]
+            public string Slug { get; set; }
+#endif
             [QueryParameter("startTimestamp")]
             public double? StartTimestamp { get; set; }
+            /// <summary>The Team identifier to perform the request on behalf of.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("teamId")]
+            public string? TeamId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("teamId")]
+            public string TeamId { get; set; }
+#endif
         }
     }
 }

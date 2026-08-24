@@ -29,7 +29,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenScopesItemOneOf1Sudo Sudo { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Principal kind.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthTokenScopesItemOneOf1"/> and sets the default values.
