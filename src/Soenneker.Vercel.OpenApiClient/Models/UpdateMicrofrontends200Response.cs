@@ -531,13 +531,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseTargets Targets { get; set; }
 #endif
         /// <summary>The tier property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Tier { get; set; }
-#nullable restore
-#else
-        public string Tier { get; set; }
-#endif
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseTier? Tier { get; set; }
         /// <summary>The tracing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -713,7 +707,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "ssoProtection", n => { SsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtection.CreateFromDiscriminatorValue); } },
                 { "staticIps", n => { StaticIps = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseStaticIps>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseStaticIps.CreateFromDiscriminatorValue); } },
                 { "targets", n => { Targets = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseTargets>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseTargets.CreateFromDiscriminatorValue); } },
-                { "tier", n => { Tier = n.GetStringValue(); } },
+                { "tier", n => { Tier = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseTier>(); } },
                 { "tracing", n => { Tracing = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseTracing>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseTracing.CreateFromDiscriminatorValue); } },
                 { "transferCompletedAt", n => { TransferCompletedAt = n.GetDoubleValue(); } },
                 { "transferStartedAt", n => { TransferStartedAt = n.GetDoubleValue(); } },
@@ -819,7 +813,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseSsoProtection>("ssoProtection", SsoProtection);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseStaticIps>("staticIps", StaticIps);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseTargets>("targets", Targets);
-            writer.WriteStringValue("tier", Tier);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseTier>("tier", Tier);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseTracing>("tracing", Tracing);
             writer.WriteDoubleValue("transferCompletedAt", TransferCompletedAt);
             writer.WriteStringValue("transferredFromAccountId", TransferredFromAccountId);

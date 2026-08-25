@@ -12,7 +12,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class PatchTeamRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The hash value of an uploaded image.</summary>
+        /// <summary>The hash value of an uploaded image, or `null` to clear the avatar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Avatar { get; set; }

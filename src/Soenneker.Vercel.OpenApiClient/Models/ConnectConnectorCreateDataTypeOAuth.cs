@@ -60,7 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ClientSecret { get; set; }
 #endif
-        /// <summary>PKCE code challenge method. Supported values are S256 and plain. Vercel prefers S256 when the provider supports it.</summary>
+        /// <summary>PKCE code challenge method. Supported values are S256 and plain. Vercel prefers S256 when the provider supports it. An empty string clears the configured method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CodeChallengeMethod { get; set; }
@@ -68,7 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string CodeChallengeMethod { get; set; }
 #endif
-        /// <summary>Default audience used when a token request omits one.</summary>
+        /// <summary>Default audience used when a token request omits one. An empty string clears the default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultAudience { get; set; }
@@ -104,7 +104,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeOAuthRefreshTokens RefreshTokens { get; set; }
 #endif
-        /// <summary>OAuth authorization response type. Defaults to code. Other provider-supported values are accepted.</summary>
+        /// <summary>OAuth authorization response type. Defaults to code. Other provider-supported values are accepted. An empty string clears the configured type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResponseType { get; set; }
@@ -112,7 +112,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ResponseType { get; set; }
 #endif
-        /// <summary>Authorization server metadata. Values override discovered metadata.</summary>
+        /// <summary>Authorization server metadata. Values override discovered metadata. Empty known string fields remove their stored overrides.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeOAuthServerConfig? ServerConfig { get; set; }

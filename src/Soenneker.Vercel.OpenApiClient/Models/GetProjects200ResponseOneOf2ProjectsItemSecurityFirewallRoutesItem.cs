@@ -58,6 +58,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The status property</summary>
         public double? Status { get; set; }
+        /// <summary>The tierRequirement property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemTierRequirement? TierRequirement { get; set; }
         /// <summary>The transforms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,6 +100,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "mitigate", n => { Mitigate = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMitigate>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMitigate.CreateFromDiscriminatorValue); } },
                 { "src", n => { Src = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemSrc>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemSrc.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetDoubleValue(); } },
+                { "tierRequirement", n => { TierRequirement = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemTierRequirement>(); } },
                 { "transforms", n => { Transforms = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemTransformsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemTransformsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -115,6 +118,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMitigate>("mitigate", Mitigate);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemSrc>("src", Src);
             writer.WriteDoubleValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemTierRequirement>("tierRequirement", TierRequirement);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemTransformsItem>("transforms", Transforms);
             writer.WriteAdditionalData(AdditionalData);
         }

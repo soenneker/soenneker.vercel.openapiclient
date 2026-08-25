@@ -23,7 +23,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Client assertion lifetime in seconds.</summary>
         public double? Ttl { get; set; }
-        /// <summary>OAuth client assertion type. Defaults to urn:ietf:params:oauth:client-assertion-type:jwt-bearer.</summary>
+        /// <summary>OAuth client assertion type. Defaults to urn:ietf:params:oauth:client-assertion-type:jwt-bearer. An empty string clears the configured type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

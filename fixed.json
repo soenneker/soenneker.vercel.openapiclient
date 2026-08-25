@@ -14112,6 +14112,70 @@
         ]
       }
     },
+    "/v1/installations/{integrationConfigurationId}/credentials/revoke": {
+      "post": {
+        "tags": [
+          "marketplace"
+        ],
+        "summary": "Revoke Installation Credential",
+        "description": "Retires a superseded installation credential, so a partner can complete a rotation it started with \u0060POST /credentials/rotate\u0060 \u2014 the leaked credential stops working without the customer having to reinstall. Authenticated by a live installation credential plus the integration\u0027s client secret. The credential to retire is named in the body rather than being the one that authenticates, so the ordinary flow is: rotate, store the replacement, then authenticate with the replacement and revoke the old one. Refuses to retire an installation\u0027s last live credential. Rotation exists so remediation is not customer-visible; revoking the only credential would undo that and leave the install needing a reinstall.",
+        "operationId": "RevokeInstallationCredential",
+        "parameters": [
+          {
+            "name": "integrationConfigurationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevokeInstallationCredentialRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RevokeInstallationCredential200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "409": {
+            "description": "409 response"
+          },
+          "410": {
+            "description": "410 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
     "/v1/installations/{integrationConfigurationId}/events": {
       "post": {
         "tags": [
@@ -33679,7 +33743,7 @@
           },
           "responseType": {
             "type": "string",
-            "description": "OAuth authorization response type. Defaults to code. Other provider-supported values are accepted."
+            "description": "OAuth authorization response type. Defaults to code. Other provider-supported values are accepted. An empty string clears the configured type."
           },
           "pkceRequired": {
             "type": "boolean",
@@ -33687,7 +33751,7 @@
           },
           "codeChallengeMethod": {
             "type": "string",
-            "description": "PKCE code challenge method. Supported values are S256 and plain. Vercel prefers S256 when the provider supports it."
+            "description": "PKCE code challenge method. Supported values are S256 and plain. Vercel prefers S256 when the provider supports it. An empty string clears the configured method."
           },
           "userAuthorization": {
             "$ref": "#/components/schemas/ConnectConnectorCreateDataTypeOAuthUserAuthorization"
@@ -33703,7 +33767,7 @@
           },
           "defaultAudience": {
             "type": "string",
-            "description": "Default audience used when a token request omits one."
+            "description": "Default audience used when a token request omits one. An empty string clears the default."
           },
           "defaultTokenExpiresIn": {
             "minimum": 60,
@@ -34592,7 +34656,7 @@
           },
           "responseType": {
             "type": "string",
-            "description": "OAuth authorization response type. Defaults to code. Other provider-supported values are accepted."
+            "description": "OAuth authorization response type. Defaults to code. Other provider-supported values are accepted. An empty string clears the configured type."
           },
           "pkceRequired": {
             "type": "boolean",
@@ -34600,7 +34664,7 @@
           },
           "codeChallengeMethod": {
             "type": "string",
-            "description": "PKCE code challenge method. Supported values are S256 and plain. Vercel prefers S256 when the provider supports it."
+            "description": "PKCE code challenge method. Supported values are S256 and plain. Vercel prefers S256 when the provider supports it. An empty string clears the configured method."
           },
           "userAuthorization": {
             "$ref": "#/components/schemas/ConnectConnectorCreateDataTypeOAuthUserAuthorization"
@@ -34616,7 +34680,7 @@
           },
           "defaultAudience": {
             "type": "string",
-            "description": "Default audience used when a token request omits one."
+            "description": "Default audience used when a token request omits one. An empty string clears the default."
           },
           "defaultTokenExpiresIn": {
             "minimum": 60,
@@ -41877,6 +41941,7 @@
           "id",
           "name",
           "projectId",
+          "slug",
           "state"
         ],
         "type": "object",
@@ -41888,6 +41953,9 @@
             "type": "string"
           },
           "name": {
+            "type": "string"
+          },
+          "slug": {
             "type": "string"
           },
           "state": {
@@ -55694,7 +55762,7 @@
             "description": "OAuth authorization-detail types supported by the server."
           }
         },
-        "description": "Authorization server metadata. Values override discovered metadata."
+        "description": "Authorization server metadata. Values override discovered metadata. Empty known string fields remove their stored overrides."
       },
       "ConnectConnectorCreateDataTypeOAuthUserAuthorization": {
         "required": [
@@ -55821,7 +55889,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "description": "OAuth client assertion type. Defaults to urn:ietf:params:oauth:client-assertion-type:jwt-bearer."
+            "description": "OAuth client assertion type. Defaults to urn:ietf:params:oauth:client-assertion-type:jwt-bearer. An empty string clears the configured type."
           },
           "ttl": {
             "minimum": 0,
@@ -73248,6 +73316,42 @@
           }
         }
       },
+      "RevokeInstallationCredentialRequest": {
+        "required": [
+          "token",
+          "client_secret"
+        ],
+        "type": "object",
+        "properties": {
+          "token": {
+            "maxLength": 512,
+            "type": "string"
+          },
+          "client_secret": {
+            "maxLength": 512,
+            "type": "string"
+          },
+          "client_id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RevokeInstallationCredential200Response": {
+        "required": [
+          "already_revoked",
+          "revoked"
+        ],
+        "type": "object",
+        "properties": {
+          "revoked": {
+            "$ref": "#/components/schemas/RevokeInstallationCredential200ResponseRevoked"
+          },
+          "already_revoked": {
+            "$ref": "#/components/schemas/RevokeInstallationCredential200ResponseAlreadyRevoked"
+          }
+        }
+      },
       "CreateEventRequest": {
         "required": [
           "event"
@@ -75908,7 +76012,7 @@
             "$ref": "#/components/schemas/CreateProject200ResponseDeploymentPolicy"
           },
           "tier": {
-            "type": "string"
+            "$ref": "#/components/schemas/CreateProject200ResponseTier"
           },
           "usageStatus": {
             "$ref": "#/components/schemas/CreateProject200ResponseUsageStatus"
@@ -76312,7 +76416,7 @@
             "$ref": "#/components/schemas/GetProject200ResponseDeploymentPolicy"
           },
           "tier": {
-            "type": "string"
+            "$ref": "#/components/schemas/GetProject200ResponseTier"
           },
           "usageStatus": {
             "$ref": "#/components/schemas/GetProject200ResponseUsageStatus"
@@ -76867,7 +76971,7 @@
             "$ref": "#/components/schemas/UpdateProject200ResponseDeploymentPolicy"
           },
           "tier": {
-            "type": "string"
+            "$ref": "#/components/schemas/UpdateProject200ResponseTier"
           },
           "usageStatus": {
             "$ref": "#/components/schemas/UpdateProject200ResponseUsageStatus"
@@ -77218,7 +77322,7 @@
             "$ref": "#/components/schemas/UploadProjectAvatar200ResponseDeploymentPolicy"
           },
           "tier": {
-            "type": "string"
+            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseTier"
           },
           "usageStatus": {
             "$ref": "#/components/schemas/UploadProjectAvatar200ResponseUsageStatus"
@@ -79018,7 +79122,7 @@
             "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseDeploymentPolicy"
           },
           "tier": {
-            "type": "string"
+            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseTier"
           },
           "usageStatus": {
             "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseUsageStatus"
@@ -80968,9 +81072,11 @@
         "type": "object",
         "properties": {
           "avatar": {
+            "maxLength": 40,
+            "pattern": "^[0-9a-f]\u002B$",
             "type": "string",
-            "description": "The hash value of an uploaded image.",
-            "format": "regex"
+            "description": "The hash value of an uploaded image, or \u0060null\u0060 to clear the avatar.",
+            "nullable": true
           },
           "description": {
             "maxLength": 140,
@@ -98372,6 +98478,9 @@
           "maxDelayHours": {
             "type": "number"
           },
+          "customRotationWarning": {
+            "type": "string"
+          },
           "value": {
             "$ref": "#/components/schemas/CreateIntegrationStoreDirect200ResponseStoreCapabilitiesSecretRotationBranch2Value"
           }
@@ -98416,6 +98525,9 @@
         "properties": {
           "maxDelayHours": {
             "type": "number"
+          },
+          "customRotationWarning": {
+            "type": "string"
           },
           "value": {
             "$ref": "#/components/schemas/CreateIntegrationStoreDirect200ResponseStoreProductCapabilitiesSecretRotationBranch2Value"
@@ -98549,6 +98661,9 @@
         "properties": {
           "maxDelayHours": {
             "type": "number"
+          },
+          "customRotationWarning": {
+            "type": "string"
           },
           "value": {
             "$ref": "#/components/schemas/CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilitiesSecretRotationBranch2Value"
@@ -104555,6 +104670,9 @@
         "properties": {
           "maxDelayHours": {
             "type": "number"
+          },
+          "customRotationWarning": {
+            "type": "string"
           }
         }
       },
@@ -104566,6 +104684,9 @@
         "properties": {
           "maxDelayHours": {
             "type": "number"
+          },
+          "customRotationWarning": {
+            "type": "string"
           }
         }
       },
@@ -104643,6 +104764,9 @@
         "properties": {
           "maxDelayHours": {
             "type": "number"
+          },
+          "customRotationWarning": {
+            "type": "string"
           }
         }
       },
@@ -115839,7 +115963,7 @@
             "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemDeploymentPolicy"
           },
           "tier": {
-            "type": "string"
+            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemTier"
           },
           "usageStatus": {
             "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemUsageStatus"
@@ -118912,12 +119036,6 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
-          "workflowRunData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AclAction"
-            }
-          },
           "aliasProject": {
             "type": "array",
             "items": {
@@ -119405,6 +119523,12 @@
             }
           },
           "webAnalytics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "workflowRunData": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -121961,12 +122085,6 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
-          "workflowRunData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AclAction"
-            }
-          },
           "aliasProject": {
             "type": "array",
             "items": {
@@ -122454,6 +122572,12 @@
             }
           },
           "webAnalytics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "workflowRunData": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -125285,12 +125409,6 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
-          "workflowRunData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AclAction"
-            }
-          },
           "aliasProject": {
             "type": "array",
             "items": {
@@ -125778,6 +125896,12 @@
             }
           },
           "webAnalytics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "workflowRunData": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -128313,12 +128437,6 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
-          "workflowRunData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AclAction"
-            }
-          },
           "aliasProject": {
             "type": "array",
             "items": {
@@ -128806,6 +128924,12 @@
             }
           },
           "webAnalytics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "workflowRunData": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -132548,12 +132672,6 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
-          "workflowRunData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AclAction"
-            }
-          },
           "aliasProject": {
             "type": "array",
             "items": {
@@ -133041,6 +133159,12 @@
             }
           },
           "webAnalytics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "workflowRunData": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -136447,6 +136571,9 @@
           "cacheReason": {
             "type": "string"
           },
+          "pprState": {
+            "type": "string"
+          },
           "clientIp": {
             "type": "string"
           },
@@ -137128,6 +137255,9 @@
             "type": "string"
           },
           "cacheReason": {
+            "type": "string"
+          },
+          "pprState": {
             "type": "string"
           },
           "clientIp": {
@@ -138097,7 +138227,7 @@
             "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemOidcTokenConfig"
           },
           "tier": {
-            "type": "string"
+            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemTier"
           },
           "abuse": {
             "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuse"
@@ -141035,7 +141165,7 @@
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemOidcTokenConfig"
           },
           "tier": {
-            "type": "string"
+            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemTier"
           },
           "abuse": {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuse"
@@ -141351,7 +141481,7 @@
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemDeploymentPolicy"
           },
           "tier": {
-            "type": "string"
+            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemTier"
           },
           "usageStatus": {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemUsageStatus"
@@ -142720,6 +142850,9 @@
           "cacheReason": {
             "type": "string"
           },
+          "pprState": {
+            "type": "string"
+          },
           "clientIp": {
             "type": "string"
           },
@@ -143348,6 +143481,7 @@
           "pathType",
           "pathTypeVariant",
           "piiRedactionApplied",
+          "pprState",
           "privatelinkDnsName",
           "privatelinkEndpointId",
           "privatelinkIpAddress",
@@ -143601,6 +143735,9 @@
             "type": "string"
           },
           "cacheReason": {
+            "type": "string"
+          },
+          "pprState": {
             "type": "string"
           },
           "clientIp": {
@@ -144269,6 +144406,9 @@
           "cacheReason": {
             "type": "string"
           },
+          "pprState": {
+            "type": "string"
+          },
           "clientIp": {
             "type": "string"
           },
@@ -144897,6 +145037,7 @@
           "pathType",
           "pathTypeVariant",
           "piiRedactionApplied",
+          "pprState",
           "privatelinkDnsName",
           "privatelinkEndpointId",
           "privatelinkIpAddress",
@@ -145150,6 +145291,9 @@
             "type": "string"
           },
           "cacheReason": {
+            "type": "string"
+          },
+          "pprState": {
             "type": "string"
           },
           "clientIp": {
@@ -152779,12 +152923,6 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
-          "workflowRunData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AclAction"
-            }
-          },
           "aliasProject": {
             "type": "array",
             "items": {
@@ -153272,6 +153410,12 @@
             }
           },
           "webAnalytics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "workflowRunData": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -154297,7 +154441,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal ID of the Vercel App backing this principal."
+          },
+          "clientId": {
+            "type": "string",
+            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
           }
         }
       },
@@ -155503,7 +155652,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal ID of the Vercel App backing this principal."
+          },
+          "clientId": {
+            "type": "string",
+            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
           }
         }
       },
@@ -156810,7 +156964,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal ID of the Vercel App backing this principal."
+          },
+          "clientId": {
+            "type": "string",
+            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
           }
         }
       },
@@ -158004,7 +158163,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal ID of the Vercel App backing this principal."
+          },
+          "clientId": {
+            "type": "string",
+            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
           }
         }
       },
@@ -160574,7 +160738,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal ID of the Vercel App backing this principal."
+          },
+          "clientId": {
+            "type": "string",
+            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
           }
         }
       },
@@ -169524,12 +169693,6 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
-          "workflowRunData": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AclAction"
-            }
-          },
           "aliasProject": {
             "type": "array",
             "items": {
@@ -170017,6 +170180,12 @@
             }
           },
           "webAnalytics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "workflowRunData": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -174521,7 +174690,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal ID of the Vercel App backing this principal."
+          },
+          "clientId": {
+            "type": "string",
+            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
           }
         }
       },
@@ -176181,7 +176355,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal ID of the Vercel App backing this principal."
+          },
+          "clientId": {
+            "type": "string",
+            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
           }
         }
       },
@@ -176742,7 +176921,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal ID of the Vercel App backing this principal."
+          },
+          "clientId": {
+            "type": "string",
+            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
           }
         }
       },
@@ -177323,7 +177507,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal ID of the Vercel App backing this principal."
+          },
+          "clientId": {
+            "type": "string",
+            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
           }
         }
       },
@@ -177884,7 +178073,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal ID of the Vercel App backing this principal."
+          },
+          "clientId": {
+            "type": "string",
+            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
           }
         }
       },
@@ -178505,7 +178699,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal ID of the Vercel App backing this principal."
+          },
+          "clientId": {
+            "type": "string",
+            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
           }
         }
       },
@@ -181337,7 +181536,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal ID of the Vercel App backing this principal."
+          },
+          "clientId": {
+            "type": "string",
+            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
           }
         }
       },
@@ -181984,6 +182188,9 @@
         "properties": {
           "src": {
             "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemSrc"
+          },
+          "tierRequirement": {
+            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemTierRequirement"
           },
           "has": {
             "type": "array",
@@ -183293,7 +183500,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal ID of the Vercel App backing this principal."
+          },
+          "clientId": {
+            "type": "string",
+            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
           }
         }
       },
@@ -183941,6 +184153,9 @@
           "src": {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemSrc"
           },
+          "tierRequirement": {
+            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemTierRequirement"
+          },
           "has": {
             "type": "array",
             "items": {
@@ -184217,7 +184432,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal ID of the Vercel App backing this principal."
+          },
+          "clientId": {
+            "type": "string",
+            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
           }
         }
       },
@@ -186830,7 +187050,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal ID of the Vercel App backing this principal."
+          },
+          "clientId": {
+            "type": "string",
+            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
           }
         }
       },
@@ -188892,7 +189117,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal ID of the Vercel App backing this principal."
+          },
+          "clientId": {
+            "type": "string",
+            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
           }
         }
       },
@@ -189950,7 +190180,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal ID of the Vercel App backing this principal."
+          },
+          "clientId": {
+            "type": "string",
+            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
           }
         }
       },
@@ -190517,7 +190752,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal ID of the Vercel App backing this principal."
+          },
+          "clientId": {
+            "type": "string",
+            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
           }
         }
       },
@@ -195129,6 +195369,7 @@
           "global-config-transfer-out",
           "global-config-updated",
           "instant-rollback-created",
+          "integration-configuration-credential-revoked",
           "integration-configuration-credential-rotated",
           "integration-configuration-owner-changed",
           "integration-configuration-scope-change-confirmed",
@@ -196564,6 +196805,10 @@
             {
               "value": "instant-rollback-created",
               "name": "InstantRollbackCreated"
+            },
+            {
+              "value": "integration-configuration-credential-revoked",
+              "name": "IntegrationConfigurationCredentialRevoked"
             },
             {
               "value": "integration-configuration-credential-rotated",
@@ -198537,6 +198782,7 @@
           "global-config-transfer-out",
           "global-config-updated",
           "instant-rollback-created",
+          "integration-configuration-credential-revoked",
           "integration-configuration-credential-rotated",
           "integration-configuration-owner-changed",
           "integration-configuration-scope-change-confirmed",
@@ -199972,6 +200218,10 @@
             {
               "value": "instant-rollback-created",
               "name": "InstantRollbackCreated"
+            },
+            {
+              "value": "integration-configuration-credential-revoked",
+              "name": "IntegrationConfigurationCredentialRevoked"
             },
             {
               "value": "integration-configuration-credential-rotated",
@@ -201954,6 +202204,7 @@
           "global-config-transfer-out",
           "global-config-updated",
           "instant-rollback-created",
+          "integration-configuration-credential-revoked",
           "integration-configuration-credential-rotated",
           "integration-configuration-owner-changed",
           "integration-configuration-scope-change-confirmed",
@@ -203388,6 +203639,10 @@
             {
               "value": "instant-rollback-created",
               "name": "InstantRollbackCreated"
+            },
+            {
+              "value": "integration-configuration-credential-revoked",
+              "name": "IntegrationConfigurationCredentialRevoked"
             },
             {
               "value": "integration-configuration-credential-rotated",
@@ -227800,6 +228055,22 @@
           ]
         }
       },
+      "RevokeInstallationCredential200ResponseRevoked": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
+      "RevokeInstallationCredential200ResponseAlreadyRevoked": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
       "GetIntegrationResource200ResponseStatus": {
         "enum": [
           "error",
@@ -230291,6 +230562,28 @@
         "type": "boolean",
         "additionalProperties": false
       },
+      "CreateProject200ResponseTier": {
+        "enum": [
+          "advanced",
+          "critical"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateProject200ResponseTier",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "advanced",
+              "name": "Advanced"
+            },
+            {
+              "value": "critical",
+              "name": "Critical"
+            }
+          ]
+        }
+      },
       "CreateProject200ResponseV0": {
         "enum": [
           false,
@@ -230914,6 +231207,28 @@
         ],
         "type": "boolean",
         "additionalProperties": false
+      },
+      "GetProject200ResponseTier": {
+        "enum": [
+          "advanced",
+          "critical"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetProject200ResponseTier",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "advanced",
+              "name": "Advanced"
+            },
+            {
+              "value": "critical",
+              "name": "Critical"
+            }
+          ]
+        }
       },
       "GetProject200ResponseV0": {
         "enum": [
@@ -231971,6 +232286,28 @@
         "type": "boolean",
         "additionalProperties": false
       },
+      "UpdateProject200ResponseTier": {
+        "enum": [
+          "advanced",
+          "critical"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateProject200ResponseTier",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "advanced",
+              "name": "Advanced"
+            },
+            {
+              "value": "critical",
+              "name": "Critical"
+            }
+          ]
+        }
+      },
       "UpdateProject200ResponseV0": {
         "enum": [
           false,
@@ -232594,6 +232931,28 @@
         ],
         "type": "boolean",
         "additionalProperties": false
+      },
+      "UploadProjectAvatar200ResponseTier": {
+        "enum": [
+          "advanced",
+          "critical"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UploadProjectAvatar200ResponseTier",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "advanced",
+              "name": "Advanced"
+            },
+            {
+              "value": "critical",
+              "name": "Critical"
+            }
+          ]
+        }
       },
       "UploadProjectAvatar200ResponseV0": {
         "enum": [
@@ -233800,6 +234159,28 @@
         ],
         "type": "boolean",
         "additionalProperties": false
+      },
+      "UpdateMicrofrontends200ResponseTier": {
+        "enum": [
+          "advanced",
+          "critical"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdateMicrofrontends200ResponseTier",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "advanced",
+              "name": "Advanced"
+            },
+            {
+              "value": "critical",
+              "name": "Critical"
+            }
+          ]
+        }
       },
       "UpdateMicrofrontends200ResponseV0": {
         "enum": [
@@ -255297,6 +255678,28 @@
         "type": "boolean",
         "additionalProperties": false
       },
+      "GetMicrofrontendsInGroup200ResponseProjectsItemTier": {
+        "enum": [
+          "advanced",
+          "critical"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetMicrofrontendsInGroup200ResponseProjectsItemTier",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "advanced",
+              "name": "Advanced"
+            },
+            {
+              "value": "critical",
+              "name": "Critical"
+            }
+          ]
+        }
+      },
       "GetMicrofrontendsInGroup200ResponseProjectsItemV0": {
         "enum": [
           false,
@@ -269656,6 +270059,28 @@
         "type": "boolean",
         "additionalProperties": false
       },
+      "GetProjects200ResponseBranch1ValueItemTier": {
+        "enum": [
+          "advanced",
+          "critical"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetProjects200ResponseBranch1ValueItemTier",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "advanced",
+              "name": "Advanced"
+            },
+            {
+              "value": "critical",
+              "name": "Critical"
+            }
+          ]
+        }
+      },
       "CreateProjectEnv201ResponseCreatedBranch2ValueItemType": {
         "enum": [
           "encrypted",
@@ -272059,6 +272484,28 @@
         "type": "boolean",
         "additionalProperties": false
       },
+      "GetProjects200ResponseOneOf2ProjectsItemTier": {
+        "enum": [
+          "advanced",
+          "critical"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetProjects200ResponseOneOf2ProjectsItemTier",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "advanced",
+              "name": "Advanced"
+            },
+            {
+              "value": "critical",
+              "name": "Critical"
+            }
+          ]
+        }
+      },
       "GetProjects200ResponseOneOf3ProjectsItemAppliedCve55182Migration": {
         "enum": [
           false,
@@ -272650,6 +273097,28 @@
         ],
         "type": "boolean",
         "additionalProperties": false
+      },
+      "GetProjects200ResponseOneOf3ProjectsItemTier": {
+        "enum": [
+          "advanced",
+          "critical"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetProjects200ResponseOneOf3ProjectsItemTier",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "advanced",
+              "name": "Advanced"
+            },
+            {
+              "value": "critical",
+              "name": "Critical"
+            }
+          ]
+        }
       },
       "GetProjects200ResponseOneOf3ProjectsItemV0": {
         "enum": [
@@ -308454,6 +308923,28 @@
         "additionalProperties": false,
         "description": "Whether to propagate individual deployment failures to the consolidated status."
       },
+      "GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemTierRequirement": {
+        "enum": [
+          "advanced",
+          "critical"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemTierRequirement",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "advanced",
+              "name": "Advanced"
+            },
+            {
+              "value": "critical",
+              "name": "Critical"
+            }
+          ]
+        }
+      },
       "GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemHandle": {
         "enum": [
           "finalize",
@@ -312186,6 +312677,28 @@
         "type": "boolean",
         "additionalProperties": false,
         "description": "Whether to propagate individual deployment failures to the consolidated status."
+      },
+      "GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemTierRequirement": {
+        "enum": [
+          "advanced",
+          "critical"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemTierRequirement",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "advanced",
+              "name": "Advanced"
+            },
+            {
+              "value": "critical",
+              "name": "Critical"
+            }
+          ]
+        }
       },
       "GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemHandle": {
         "enum": [

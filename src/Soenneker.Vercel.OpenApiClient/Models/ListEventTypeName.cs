@@ -1039,6 +1039,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         InstantRollbackCreated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "integration-configuration-credential-revoked")]
+        #pragma warning disable CS1591
+        IntegrationConfigurationCredentialRevoked,
+        #pragma warning restore CS1591
         [EnumMember(Value = "integration-configuration-credential-rotated")]
         #pragma warning disable CS1591
         IntegrationConfigurationCredentialRotated,

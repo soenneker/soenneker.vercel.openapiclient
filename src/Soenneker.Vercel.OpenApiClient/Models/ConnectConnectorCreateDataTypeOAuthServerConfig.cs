@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Authorization server metadata. Values override discovered metadata.
+    /// Authorization server metadata. Values override discovered metadata. Empty known string fields remove their stored overrides.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConnectConnectorCreateDataTypeOAuthServerConfig : IAdditionalDataHolder, IParsable

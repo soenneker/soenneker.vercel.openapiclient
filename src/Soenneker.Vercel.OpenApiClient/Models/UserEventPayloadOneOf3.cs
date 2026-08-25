@@ -49,6 +49,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get; set; }
 #endif
+        /// <summary>The slug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Slug { get; set; }
+#nullable restore
+#else
+        public string Slug { get; set; }
+#endif
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +95,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "slug", n => { Slug = n.GetStringValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
             };
         }
@@ -102,6 +111,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("slug", Slug);
             writer.WriteStringValue("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }

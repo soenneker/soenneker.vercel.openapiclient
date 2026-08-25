@@ -64060,6 +64060,108 @@
         }
       }
     },
+    "/v1/installations/{integrationConfigurationId}/credentials/revoke": {
+      "post": {
+        "description": "Retires a superseded installation credential, so a partner can complete a rotation it started with `POST /credentials/rotate` — the leaked credential stops working without the customer having to reinstall. Authenticated by a live installation credential plus the integration's client secret. The credential to retire is named in the body rather than being the one that authenticates, so the ordinary flow is: rotate, store the replacement, then authenticate with the replacement and revoke the old one. Refuses to retire an installation's last live credential. Rotation exists so remediation is not customer-visible; revoking the only credential would undo that and leave the install needing a reinstall.",
+        "operationId": "revoke-installation-credential",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Revoke Installation Credential",
+        "tags": [
+          "marketplace"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "revoked": {
+                      "type": "boolean",
+                      "enum": [
+                        false,
+                        true
+                      ]
+                    },
+                    "already_revoked": {
+                      "type": "boolean",
+                      "enum": [
+                        false,
+                        true
+                      ]
+                    }
+                  },
+                  "required": [
+                    "already_revoked",
+                    "revoked"
+                  ],
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "409": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "integrationConfigurationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "token",
+                  "client_secret"
+                ],
+                "properties": {
+                  "token": {
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "client_secret": {
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "client_id": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/installations/{integrationConfigurationId}/events": {
       "post": {
         "description": "Partner notifies Vercel of any changes made to an Installation or a Resource. Vercel is expected to use `list-resources` and other read APIs to get the new state.\u003cbr/\u003e \u003cbr/\u003e `resource.updated` event should be dispatched when any state of a resource linked to Vercel is modified by the partner.\u003cbr/\u003e `installation.updated` event should be dispatched when an installation's billing plan is changed via the provider instead of Vercel.\u003cbr/\u003e \u003cbr/\u003e Resource update use cases: \u003cbr/\u003e \u003cbr/\u003e - The user renames a database in the partner’s application. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource in Vercel’s datastores.\u003cbr/\u003e - A resource has been suspended due to a lack of use. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource's status in Vercel's datastores.\u003cbr/\u003e",
@@ -75996,7 +76098,12 @@
                                           "app": {
                                             "properties": {
                                               "id": {
-                                                "type": "string"
+                                                "type": "string",
+                                                "description": "The internal ID of the Vercel App backing this principal."
+                                              },
+                                              "clientId": {
+                                                "type": "string",
+                                                "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
                                               }
                                             },
                                             "required": [
@@ -76075,7 +76182,12 @@
                                   "app": {
                                     "properties": {
                                       "id": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "description": "The internal ID of the Vercel App backing this principal."
+                                      },
+                                      "clientId": {
+                                        "type": "string",
+                                        "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
                                       }
                                     },
                                     "required": [
@@ -81077,12 +81189,6 @@
                                 },
                                 "type": "array"
                               },
-                              "workflowRunData": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
                               "aliasProject": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
@@ -81570,6 +81676,12 @@
                                 "type": "array"
                               },
                               "webAnalytics": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "workflowRunData": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
                                 },
@@ -82688,7 +82800,11 @@
                             "description": "Project shape. `null` on a rule list clears the project's override for that rule type (fall back to team for every env); omitting is equivalent. Setting `deploymentPolicy` itself to `null` clears every override at once. Kept structurally distinct from {@link TeamDeploymentPolicy} so the two storage locations don't share a type by accident."
                           },
                           "tier": {
-                            "type": "string"
+                            "type": "string",
+                            "enum": [
+                              "advanced",
+                              "critical"
+                            ]
                           },
                           "usageStatus": {
                             "properties": {
@@ -90666,7 +90782,12 @@
                                           "app": {
                                             "properties": {
                                               "id": {
-                                                "type": "string"
+                                                "type": "string",
+                                                "description": "The internal ID of the Vercel App backing this principal."
+                                              },
+                                              "clientId": {
+                                                "type": "string",
+                                                "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
                                               }
                                             },
                                             "required": [
@@ -90745,7 +90866,12 @@
                                   "app": {
                                     "properties": {
                                       "id": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "description": "The internal ID of the Vercel App backing this principal."
+                                      },
+                                      "clientId": {
+                                        "type": "string",
+                                        "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
                                       }
                                     },
                                     "required": [
@@ -94010,6 +94136,13 @@
                                         }
                                       ]
                                     },
+                                    "tierRequirement": {
+                                      "type": "string",
+                                      "enum": [
+                                        "advanced",
+                                        "critical"
+                                      ]
+                                    },
                                     "has": {
                                       "items": {
                                         "properties": {
@@ -94658,7 +94791,11 @@
                             "type": "object"
                           },
                           "tier": {
-                            "type": "string"
+                            "type": "string",
+                            "enum": [
+                              "advanced",
+                              "critical"
+                            ]
                           },
                           "abuse": {
                             "properties": {
@@ -95378,7 +95515,12 @@
                                               "app": {
                                                 "properties": {
                                                   "id": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "The internal ID of the Vercel App backing this principal."
+                                                  },
+                                                  "clientId": {
+                                                    "type": "string",
+                                                    "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
                                                   }
                                                 },
                                                 "required": [
@@ -95457,7 +95599,12 @@
                                       "app": {
                                         "properties": {
                                           "id": {
-                                            "type": "string"
+                                            "type": "string",
+                                            "description": "The internal ID of the Vercel App backing this principal."
+                                          },
+                                          "clientId": {
+                                            "type": "string",
+                                            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
                                           }
                                         },
                                         "required": [
@@ -98722,6 +98869,13 @@
                                             }
                                           ]
                                         },
+                                        "tierRequirement": {
+                                          "type": "string",
+                                          "enum": [
+                                            "advanced",
+                                            "critical"
+                                          ]
+                                        },
                                         "has": {
                                           "items": {
                                             "properties": {
@@ -99370,7 +99524,11 @@
                                 "type": "object"
                               },
                               "tier": {
-                                "type": "string"
+                                "type": "string",
+                                "enum": [
+                                  "advanced",
+                                  "critical"
+                                ]
                               },
                               "abuse": {
                                 "properties": {
@@ -100125,7 +100283,12 @@
                                               "app": {
                                                 "properties": {
                                                   "id": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "The internal ID of the Vercel App backing this principal."
+                                                  },
+                                                  "clientId": {
+                                                    "type": "string",
+                                                    "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
                                                   }
                                                 },
                                                 "required": [
@@ -100204,7 +100367,12 @@
                                       "app": {
                                         "properties": {
                                           "id": {
-                                            "type": "string"
+                                            "type": "string",
+                                            "description": "The internal ID of the Vercel App backing this principal."
+                                          },
+                                          "clientId": {
+                                            "type": "string",
+                                            "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
                                           }
                                         },
                                         "required": [
@@ -105206,12 +105374,6 @@
                                     },
                                     "type": "array"
                                   },
-                                  "workflowRunData": {
-                                    "items": {
-                                      "$ref": "#/components/schemas/ACLAction"
-                                    },
-                                    "type": "array"
-                                  },
                                   "aliasProject": {
                                     "items": {
                                       "$ref": "#/components/schemas/ACLAction"
@@ -105699,6 +105861,12 @@
                                     "type": "array"
                                   },
                                   "webAnalytics": {
+                                    "items": {
+                                      "$ref": "#/components/schemas/ACLAction"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "workflowRunData": {
                                     "items": {
                                       "$ref": "#/components/schemas/ACLAction"
                                     },
@@ -106806,7 +106974,11 @@
                                 "description": "Project shape. `null` on a rule list clears the project's override for that rule type (fall back to team for every env); omitting is equivalent. Setting `deploymentPolicy` itself to `null` clears every override at once. Kept structurally distinct from {@link TeamDeploymentPolicy} so the two storage locations don't share a type by accident."
                               },
                               "tier": {
-                                "type": "string"
+                                "type": "string",
+                                "enum": [
+                                  "advanced",
+                                  "critical"
+                                ]
                               },
                               "usageStatus": {
                                 "properties": {
@@ -108288,7 +108460,12 @@
                                     "app": {
                                       "properties": {
                                         "id": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "description": "The internal ID of the Vercel App backing this principal."
+                                        },
+                                        "clientId": {
+                                          "type": "string",
+                                          "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
                                         }
                                       },
                                       "required": [
@@ -108367,7 +108544,12 @@
                             "app": {
                               "properties": {
                                 "id": {
-                                  "type": "string"
+                                  "type": "string",
+                                  "description": "The internal ID of the Vercel App backing this principal."
+                                },
+                                "clientId": {
+                                  "type": "string",
+                                  "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
                                 }
                               },
                               "required": [
@@ -113369,12 +113551,6 @@
                           },
                           "type": "array"
                         },
-                        "workflowRunData": {
-                          "items": {
-                            "$ref": "#/components/schemas/ACLAction"
-                          },
-                          "type": "array"
-                        },
                         "aliasProject": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -113862,6 +114038,12 @@
                           "type": "array"
                         },
                         "webAnalytics": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "workflowRunData": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -114969,7 +115151,11 @@
                       "description": "Project shape. `null` on a rule list clears the project's override for that rule type (fall back to team for every env); omitting is equivalent. Setting `deploymentPolicy` itself to `null` clears every override at once. Kept structurally distinct from {@link TeamDeploymentPolicy} so the two storage locations don't share a type by accident."
                     },
                     "tier": {
-                      "type": "string"
+                      "type": "string",
+                      "enum": [
+                        "advanced",
+                        "critical"
+                      ]
                     },
                     "usageStatus": {
                       "properties": {
@@ -116648,7 +116834,12 @@
                                     "app": {
                                       "properties": {
                                         "id": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "description": "The internal ID of the Vercel App backing this principal."
+                                        },
+                                        "clientId": {
+                                          "type": "string",
+                                          "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
                                         }
                                       },
                                       "required": [
@@ -116727,7 +116918,12 @@
                             "app": {
                               "properties": {
                                 "id": {
-                                  "type": "string"
+                                  "type": "string",
+                                  "description": "The internal ID of the Vercel App backing this principal."
+                                },
+                                "clientId": {
+                                  "type": "string",
+                                  "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
                                 }
                               },
                               "required": [
@@ -121727,12 +121923,6 @@
                           },
                           "type": "array"
                         },
-                        "workflowRunData": {
-                          "items": {
-                            "$ref": "#/components/schemas/ACLAction"
-                          },
-                          "type": "array"
-                        },
                         "aliasProject": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -122220,6 +122410,12 @@
                           "type": "array"
                         },
                         "webAnalytics": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "workflowRunData": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -123327,7 +123523,11 @@
                       "description": "Project shape. `null` on a rule list clears the project's override for that rule type (fall back to team for every env); omitting is equivalent. Setting `deploymentPolicy` itself to `null` clears every override at once. Kept structurally distinct from {@link TeamDeploymentPolicy} so the two storage locations don't share a type by accident."
                     },
                     "tier": {
-                      "type": "string"
+                      "type": "string",
+                      "enum": [
+                        "advanced",
+                        "critical"
+                      ]
                     },
                     "usageStatus": {
                       "properties": {
@@ -124336,7 +124536,12 @@
                                     "app": {
                                       "properties": {
                                         "id": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "description": "The internal ID of the Vercel App backing this principal."
+                                        },
+                                        "clientId": {
+                                          "type": "string",
+                                          "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
                                         }
                                       },
                                       "required": [
@@ -124415,7 +124620,12 @@
                             "app": {
                               "properties": {
                                 "id": {
-                                  "type": "string"
+                                  "type": "string",
+                                  "description": "The internal ID of the Vercel App backing this principal."
+                                },
+                                "clientId": {
+                                  "type": "string",
+                                  "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
                                 }
                               },
                               "required": [
@@ -129408,12 +129618,6 @@
                           },
                           "type": "array"
                         },
-                        "workflowRunData": {
-                          "items": {
-                            "$ref": "#/components/schemas/ACLAction"
-                          },
-                          "type": "array"
-                        },
                         "aliasProject": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -129901,6 +130105,12 @@
                           "type": "array"
                         },
                         "webAnalytics": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "workflowRunData": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -131008,7 +131218,11 @@
                       "description": "Project shape. `null` on a rule list clears the project's override for that rule type (fall back to team for every env); omitting is equivalent. Setting `deploymentPolicy` itself to `null` clears every override at once. Kept structurally distinct from {@link TeamDeploymentPolicy} so the two storage locations don't share a type by accident."
                     },
                     "tier": {
-                      "type": "string"
+                      "type": "string",
+                      "enum": [
+                        "advanced",
+                        "critical"
+                      ]
                     },
                     "usageStatus": {
                       "properties": {
@@ -133280,7 +133494,12 @@
                                     "app": {
                                       "properties": {
                                         "id": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "description": "The internal ID of the Vercel App backing this principal."
+                                        },
+                                        "clientId": {
+                                          "type": "string",
+                                          "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
                                         }
                                       },
                                       "required": [
@@ -133359,7 +133578,12 @@
                             "app": {
                               "properties": {
                                 "id": {
-                                  "type": "string"
+                                  "type": "string",
+                                  "description": "The internal ID of the Vercel App backing this principal."
+                                },
+                                "clientId": {
+                                  "type": "string",
+                                  "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
                                 }
                               },
                               "required": [
@@ -138361,12 +138585,6 @@
                           },
                           "type": "array"
                         },
-                        "workflowRunData": {
-                          "items": {
-                            "$ref": "#/components/schemas/ACLAction"
-                          },
-                          "type": "array"
-                        },
                         "aliasProject": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -138854,6 +139072,12 @@
                           "type": "array"
                         },
                         "webAnalytics": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "workflowRunData": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -139961,7 +140185,11 @@
                       "description": "Project shape. `null` on a rule list clears the project's override for that rule type (fall back to team for every env); omitting is equivalent. Setting `deploymentPolicy` itself to `null` clears every override at once. Kept structurally distinct from {@link TeamDeploymentPolicy} so the two storage locations don't share a type by accident."
                     },
                     "tier": {
-                      "type": "string"
+                      "type": "string",
+                      "enum": [
+                        "advanced",
+                        "critical"
+                      ]
                     },
                     "usageStatus": {
                       "properties": {
@@ -153733,7 +153961,12 @@
                                     "app": {
                                       "properties": {
                                         "id": {
-                                          "type": "string"
+                                          "type": "string",
+                                          "description": "The internal ID of the Vercel App backing this principal."
+                                        },
+                                        "clientId": {
+                                          "type": "string",
+                                          "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
                                         }
                                       },
                                       "required": [
@@ -153812,7 +154045,12 @@
                             "app": {
                               "properties": {
                                 "id": {
-                                  "type": "string"
+                                  "type": "string",
+                                  "description": "The internal ID of the Vercel App backing this principal."
+                                },
+                                "clientId": {
+                                  "type": "string",
+                                  "description": "The protocol-facing OAuth client ID. This may differ from {@link id} when Client ID Metadata Documents (CIMD) are used."
                                 }
                               },
                               "required": [
@@ -158814,12 +159052,6 @@
                           },
                           "type": "array"
                         },
-                        "workflowRunData": {
-                          "items": {
-                            "$ref": "#/components/schemas/ACLAction"
-                          },
-                          "type": "array"
-                        },
                         "aliasProject": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -159307,6 +159539,12 @@
                           "type": "array"
                         },
                         "webAnalytics": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "workflowRunData": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -160414,7 +160652,11 @@
                       "description": "Project shape. `null` on a rule list clears the project's override for that rule type (fall back to team for every env); omitting is equivalent. Setting `deploymentPolicy` itself to `null` clears every override at once. Kept structurally distinct from {@link TeamDeploymentPolicy} so the two storage locations don't share a type by accident."
                     },
                     "tier": {
-                      "type": "string"
+                      "type": "string",
+                      "enum": [
+                        "advanced",
+                        "critical"
+                      ]
                     },
                     "usageStatus": {
                       "properties": {
@@ -184539,6 +184781,9 @@
                                   "properties": {
                                     "maxDelayHours": {
                                       "type": "number"
+                                    },
+                                    "customRotationWarning": {
+                                      "type": "string"
                                     }
                                   },
                                   "required": [
@@ -184701,6 +184946,9 @@
                                       "properties": {
                                         "maxDelayHours": {
                                           "type": "number"
+                                        },
+                                        "customRotationWarning": {
+                                          "type": "string"
                                         }
                                       },
                                       "required": [
@@ -187984,6 +188232,9 @@
                                           "properties": {
                                             "maxDelayHours": {
                                               "type": "number"
+                                            },
+                                            "customRotationWarning": {
+                                              "type": "string"
                                             }
                                           },
                                           "required": [
@@ -190236,8 +190487,10 @@
                 "properties": {
                   "avatar": {
                     "type": "string",
-                    "format": "regex",
-                    "description": "The hash value of an uploaded image."
+                    "maxLength": 40,
+                    "pattern": "^[0-9a-f]+$",
+                    "description": "The hash value of an uploaded image, or `null` to clear the avatar.",
+                    "nullable": true
                   },
                   "description": {
                     "type": "string",
@@ -195269,6 +195522,9 @@
                               "cacheReason": {
                                 "type": "string"
                               },
+                              "pprState": {
+                                "type": "string"
+                              },
                               "clientIp": {
                                 "type": "string"
                               },
@@ -195938,6 +196194,9 @@
                               "cacheReason": {
                                 "type": "string"
                               },
+                              "pprState": {
+                                "type": "string"
+                              },
                               "clientIp": {
                                 "type": "string"
                               },
@@ -196560,6 +196819,7 @@
                               "pathType",
                               "pathTypeVariant",
                               "piiRedactionApplied",
+                              "pprState",
                               "privatelinkDnsName",
                               "privatelinkEndpointId",
                               "privatelinkIpAddress",
@@ -197074,6 +197334,9 @@
                               "cacheReason": {
                                 "type": "string"
                               },
+                              "pprState": {
+                                "type": "string"
+                              },
                               "clientIp": {
                                 "type": "string"
                               },
@@ -197743,6 +198006,9 @@
                               "cacheReason": {
                                 "type": "string"
                               },
+                              "pprState": {
+                                "type": "string"
+                              },
                               "clientIp": {
                                 "type": "string"
                               },
@@ -198365,6 +198631,7 @@
                               "pathType",
                               "pathTypeVariant",
                               "piiRedactionApplied",
+                              "pprState",
                               "privatelinkDnsName",
                               "privatelinkEndpointId",
                               "privatelinkIpAddress",
@@ -198845,6 +199112,9 @@
                             "cacheReason": {
                               "type": "string"
                             },
+                            "pprState": {
+                              "type": "string"
+                            },
                             "clientIp": {
                               "type": "string"
                             },
@@ -199467,6 +199737,7 @@
                             "pathType",
                             "pathTypeVariant",
                             "piiRedactionApplied",
+                            "pprState",
                             "privatelinkDnsName",
                             "privatelinkEndpointId",
                             "privatelinkIpAddress",
@@ -199895,6 +200166,9 @@
                             "cacheReason": {
                               "type": "string"
                             },
+                            "pprState": {
+                              "type": "string"
+                            },
                             "clientIp": {
                               "type": "string"
                             },
@@ -200517,6 +200791,7 @@
                             "pathType",
                             "pathTypeVariant",
                             "piiRedactionApplied",
+                            "pprState",
                             "privatelinkDnsName",
                             "privatelinkEndpointId",
                             "privatelinkIpAddress",
@@ -206864,7 +207139,7 @@
                 "description": "Authorization server base URL used for discovery."
               },
               "serverConfig": {
-                "description": "Authorization server metadata. Values override discovered metadata.",
+                "description": "Authorization server metadata. Values override discovered metadata. Empty known string fields remove their stored overrides.",
                 "type": "object",
                 "properties": {
                   "issuer": {
@@ -207121,7 +207396,7 @@
               },
               "responseType": {
                 "type": "string",
-                "description": "OAuth authorization response type. Defaults to code. Other provider-supported values are accepted."
+                "description": "OAuth authorization response type. Defaults to code. Other provider-supported values are accepted. An empty string clears the configured type."
               },
               "pkceRequired": {
                 "type": "boolean",
@@ -207129,7 +207404,7 @@
               },
               "codeChallengeMethod": {
                 "type": "string",
-                "description": "PKCE code challenge method. Supported values are S256 and plain. Vercel prefers S256 when the provider supports it."
+                "description": "PKCE code challenge method. Supported values are S256 and plain. Vercel prefers S256 when the provider supports it. An empty string clears the configured method."
               },
               "userAuthorization": {
                 "description": "User authorization grant settings.",
@@ -207203,7 +207478,7 @@
               },
               "defaultAudience": {
                 "type": "string",
-                "description": "Default audience used when a token request omits one."
+                "description": "Default audience used when a token request omits one. An empty string clears the default."
               },
               "defaultTokenExpiresIn": {
                 "type": "number",
@@ -207269,7 +207544,7 @@
                 "properties": {
                   "type": {
                     "type": "string",
-                    "description": "OAuth client assertion type. Defaults to urn:ietf:params:oauth:client-assertion-type:jwt-bearer."
+                    "description": "OAuth client assertion type. Defaults to urn:ietf:params:oauth:client-assertion-type:jwt-bearer. An empty string clears the configured type."
                   },
                   "ttl": {
                     "type": "number",
@@ -209679,6 +209954,7 @@
               "global-config-transfer-out",
               "global-config-updated",
               "instant-rollback-created",
+              "integration-configuration-credential-revoked",
               "integration-configuration-credential-rotated",
               "integration-configuration-owner-changed",
               "integration-configuration-scope-change-confirmed",
@@ -210438,6 +210714,9 @@
                   "name": {
                     "type": "string"
                   },
+                  "slug": {
+                    "type": "string"
+                  },
                   "state": {
                     "type": "string"
                   },
@@ -210453,6 +210732,7 @@
                   "id",
                   "name",
                   "projectId",
+                  "slug",
                   "state"
                 ],
                 "type": "object",
@@ -233405,6 +233685,7 @@
               "global-config-transfer-out",
               "global-config-updated",
               "instant-rollback-created",
+              "integration-configuration-credential-revoked",
               "integration-configuration-credential-rotated",
               "integration-configuration-owner-changed",
               "integration-configuration-scope-change-confirmed",
@@ -234117,6 +234398,7 @@
                 "global-config-transfer-out",
                 "global-config-updated",
                 "instant-rollback-created",
+                "integration-configuration-credential-revoked",
                 "integration-configuration-credential-rotated",
                 "integration-configuration-owner-changed",
                 "integration-configuration-scope-change-confirmed",

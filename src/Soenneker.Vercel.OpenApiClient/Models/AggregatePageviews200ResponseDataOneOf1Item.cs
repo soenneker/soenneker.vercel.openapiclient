@@ -966,6 +966,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string PiiRedactionApplied { get; set; }
 #endif
+        /// <summary>The pprState property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PprState { get; set; }
+#nullable restore
+#else
+        public string PprState { get; set; }
+#endif
         /// <summary>The privatelinkDnsName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1904,6 +1912,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "pathType", n => { PathType = n.GetStringValue(); } },
                 { "pathTypeVariant", n => { PathTypeVariant = n.GetStringValue(); } },
                 { "piiRedactionApplied", n => { PiiRedactionApplied = n.GetStringValue(); } },
+                { "pprState", n => { PprState = n.GetStringValue(); } },
                 { "privatelinkDnsName", n => { PrivatelinkDnsName = n.GetStringValue(); } },
                 { "privatelinkEndpointId", n => { PrivatelinkEndpointId = n.GetStringValue(); } },
                 { "privatelinkIpAddress", n => { PrivatelinkIpAddress = n.GetStringValue(); } },
@@ -2132,6 +2141,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("pathType", PathType);
             writer.WriteStringValue("pathTypeVariant", PathTypeVariant);
             writer.WriteStringValue("piiRedactionApplied", PiiRedactionApplied);
+            writer.WriteStringValue("pprState", PprState);
             writer.WriteStringValue("privatelinkDnsName", PrivatelinkDnsName);
             writer.WriteStringValue("privatelinkEndpointId", PrivatelinkEndpointId);
             writer.WriteStringValue("privatelinkIpAddress", PrivatelinkIpAddress);

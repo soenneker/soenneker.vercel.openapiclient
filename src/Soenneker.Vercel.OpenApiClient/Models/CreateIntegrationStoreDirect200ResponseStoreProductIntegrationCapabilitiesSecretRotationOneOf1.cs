@@ -14,6 +14,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The customRotationWarning property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomRotationWarning { get; set; }
+#nullable restore
+#else
+        public string CustomRotationWarning { get; set; }
+#endif
         /// <summary>The maxDelayHours property</summary>
         public double? MaxDelayHours { get; set; }
         /// <summary>
@@ -41,6 +49,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "customRotationWarning", n => { CustomRotationWarning = n.GetStringValue(); } },
                 { "maxDelayHours", n => { MaxDelayHours = n.GetDoubleValue(); } },
             };
         }
@@ -51,6 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("customRotationWarning", CustomRotationWarning);
             writer.WriteDoubleValue("maxDelayHours", MaxDelayHours);
             writer.WriteAdditionalData(AdditionalData);
         }

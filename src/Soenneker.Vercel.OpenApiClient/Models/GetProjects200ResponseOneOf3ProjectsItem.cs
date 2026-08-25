@@ -531,13 +531,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemTargets Targets { get; set; }
 #endif
         /// <summary>The tier property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Tier { get; set; }
-#nullable restore
-#else
-        public string Tier { get; set; }
-#endif
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemTier? Tier { get; set; }
         /// <summary>The tracing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -713,7 +707,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "ssoProtection", n => { SsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemSsoProtection>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemSsoProtection.CreateFromDiscriminatorValue); } },
                 { "staticIps", n => { StaticIps = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemStaticIps>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemStaticIps.CreateFromDiscriminatorValue); } },
                 { "targets", n => { Targets = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemTargets>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemTargets.CreateFromDiscriminatorValue); } },
-                { "tier", n => { Tier = n.GetStringValue(); } },
+                { "tier", n => { Tier = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemTier>(); } },
                 { "tracing", n => { Tracing = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemTracing>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemTracing.CreateFromDiscriminatorValue); } },
                 { "transferCompletedAt", n => { TransferCompletedAt = n.GetDoubleValue(); } },
                 { "transferStartedAt", n => { TransferStartedAt = n.GetDoubleValue(); } },
@@ -819,7 +813,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemSsoProtection>("ssoProtection", SsoProtection);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemStaticIps>("staticIps", StaticIps);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemTargets>("targets", Targets);
-            writer.WriteStringValue("tier", Tier);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemTier>("tier", Tier);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemTracing>("tracing", Tracing);
             writer.WriteDoubleValue("transferCompletedAt", TransferCompletedAt);
             writer.WriteStringValue("transferredFromAccountId", TransferredFromAccountId);
