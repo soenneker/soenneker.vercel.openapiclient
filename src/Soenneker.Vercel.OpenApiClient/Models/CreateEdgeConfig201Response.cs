@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// An Edge Config
+    /// A Global Config
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateEdgeConfig201Response : IAdditionalDataHolder, IParsable
@@ -17,7 +17,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The createdAt property</summary>
         public double? CreatedAt { get; set; }
-        /// <summary>The ID of the user who created the Edge Config, optional because it is not always set.</summary>
+        /// <summary>The ID of the user who created the Global Config, optional because it is not always set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedBy { get; set; }
@@ -71,7 +71,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The sizeInBytes property</summary>
         public double? SizeInBytes { get; set; }
-        /// <summary>Name for the Edge Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).</summary>
+        /// <summary>Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get; set; }
@@ -79,9 +79,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Slug { get; set; }
 #endif
-        /// <summary>Timestamp of when the Edge Config was synced to DynamoDB initially. It is only set when syncing the entire Edge Config, not when updating.</summary>
+        /// <summary>Timestamp of when the Global Config was synced to DynamoDB initially. It is only set when syncing the entire Global Config, not when updating.</summary>
         public double? SyncedToDynamoAt { get; set; }
-        /// <summary>Keeps track of the current state of the Edge Config while it gets transferred.</summary>
+        /// <summary>Keeps track of the current state of the Global Config while it gets transferred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateEdgeConfig201ResponseTransfer? Transfer { get; set; }

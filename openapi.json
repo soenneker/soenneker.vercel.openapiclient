@@ -12214,6 +12214,595 @@
         }
       }
     },
+    "/v1/connect/token/{connector}": {
+      "post": {
+        "description": "Get an access token for a connector identified by the path parameter and scoped to the requester.",
+        "operationId": "getConnectorToken",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Get a Connect token",
+        "tags": [
+          "connect"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "token": {
+                      "type": "string"
+                    },
+                    "tokenId": {
+                      "type": "string"
+                    },
+                    "expiresAt": {
+                      "type": "number"
+                    },
+                    "connector": {
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "uid": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "type",
+                        "uid"
+                      ],
+                      "type": "object"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "installationId": {
+                      "type": "string"
+                    },
+                    "tenantId": {
+                      "type": "string"
+                    },
+                    "externalSubject": {
+                      "type": "string"
+                    },
+                    "authorizationId": {
+                      "type": "string",
+                      "description": "Stable id correlating all tokens (including refreshes) back to the original authorization."
+                    },
+                    "tokenGroupId": {
+                      "type": "string",
+                      "description": "Stable id that groups all tokens with the same parameters across refreshes."
+                    },
+                    "claims": {
+                      "additionalProperties": true,
+                      "type": "object",
+                      "description": "Claims extracted from the provider's tokens per the connector's `ForwardedClaims` allow-list. Currently sourced from the OIDC id_token only."
+                    },
+                    "metadata": {
+                      "additionalProperties": true,
+                      "type": "object",
+                      "description": "Driver-specific metadata (e.g., botUserId for Slack)."
+                    }
+                  },
+                  "required": [
+                    "connector",
+                    "expiresAt",
+                    "token",
+                    "tokenId"
+                  ],
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          },
+          "422": {
+            "description": ""
+          },
+          "429": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "connector",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "subject": {
+                    "anyOf": [
+                      {
+                        "title": "type:app",
+                        "type": "object",
+                        "required": [
+                          "type"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "app"
+                            ]
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      {
+                        "title": "type:user",
+                        "type": "object",
+                        "required": [
+                          "type"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "user"
+                            ]
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "issuer": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      {
+                        "title": "type:jwt-bearer",
+                        "type": "object",
+                        "required": [
+                          "type"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "jwt-bearer"
+                            ]
+                          },
+                          "sub": {
+                            "type": "string"
+                          },
+                          "iss": {
+                            "type": "string"
+                          },
+                          "aud": {
+                            "type": "string"
+                          },
+                          "additionalClaims": {
+                            "type": "object",
+                            "additionalProperties": true
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      {
+                        "title": "type:token",
+                        "type": "object",
+                        "required": [
+                          "type",
+                          "token"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "token"
+                            ]
+                          },
+                          "token": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      {
+                        "title": "type:other",
+                        "type": "object",
+                        "required": [
+                          "type"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          }
+                        },
+                        "not": {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "token"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "type"
+                          ]
+                        },
+                        "additionalProperties": true
+                      }
+                    ]
+                  },
+                  "installationId": {
+                    "type": "string"
+                  },
+                  "audience": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "scopes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "resources": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "authorizationDetails": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": true
+                    }
+                  },
+                  "validityBufferMs": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/connect/authorize/{connector}": {
+      "post": {
+        "description": "Create an authorization request for a connector and return the URL and verifier details needed to complete the flow.",
+        "operationId": "createConnectorAuthorizationRequest",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Create a Connect authorization request",
+        "tags": [
+          "connect"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "url": {
+                      "type": "string"
+                    },
+                    "request": {
+                      "type": "string"
+                    },
+                    "verifier": {
+                      "type": "string"
+                    },
+                    "deviceCode": {
+                      "type": "string"
+                    },
+                    "expiresAt": {
+                      "type": "number"
+                    },
+                    "connector": {
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Client id (e.g. `scl_…`)."
+                        },
+                        "uid": {
+                          "type": "string",
+                          "description": "Client uid (e.g. `salesforce/my-org`)."
+                        },
+                        "type": {
+                          "type": "string",
+                          "description": "Client type (e.g. `oauth`, `salesforce`)."
+                        },
+                        "service": {
+                          "type": "string",
+                          "description": "Resolved service id when known (e.g. `salesforce`), following the `stored.service ?? typeDef.service ?? stored.type` convention."
+                        },
+                        "serviceName": {
+                          "type": "string",
+                          "description": "Curated display name of the resolved service (e.g. \"Salesforce\"), present when the service is a known service. Suited for end-user surfaces like \"Sign in with {serviceName}\"."
+                        },
+                        "displayName": {
+                          "type": "string",
+                          "description": "Provider-facing display name when the connector type exposes one, falling back to the stored connector name."
+                        },
+                        "name": {
+                          "type": "string",
+                          "description": "The connector's own name: the operator-given client name, falling back to the client type's name for legacy rows without one."
+                        }
+                      },
+                      "required": [
+                        "displayName",
+                        "id",
+                        "name",
+                        "type",
+                        "uid"
+                      ],
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "connector",
+                    "expiresAt",
+                    "request",
+                    "url",
+                    "verifier"
+                  ],
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "connector",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "subject": {
+                    "anyOf": [
+                      {
+                        "title": "type:app",
+                        "type": "object",
+                        "required": [
+                          "type"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "app"
+                            ]
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      {
+                        "title": "type:user",
+                        "type": "object",
+                        "required": [
+                          "type"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "user"
+                            ]
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "issuer": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      {
+                        "title": "type:jwt-bearer",
+                        "type": "object",
+                        "required": [
+                          "type"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "jwt-bearer"
+                            ]
+                          },
+                          "sub": {
+                            "type": "string"
+                          },
+                          "iss": {
+                            "type": "string"
+                          },
+                          "aud": {
+                            "type": "string"
+                          },
+                          "additionalClaims": {
+                            "type": "object",
+                            "additionalProperties": true
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      {
+                        "title": "type:token",
+                        "type": "object",
+                        "required": [
+                          "type",
+                          "token"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "token"
+                            ]
+                          },
+                          "token": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      {
+                        "title": "type:other",
+                        "type": "object",
+                        "required": [
+                          "type"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          }
+                        },
+                        "not": {
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "token"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "type"
+                          ]
+                        },
+                        "additionalProperties": true
+                      }
+                    ]
+                  },
+                  "installationId": {
+                    "type": "string"
+                  },
+                  "audience": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "scopes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "resources": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "authorizationDetails": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": true
+                    }
+                  },
+                  "validityBufferMs": {
+                    "type": "number"
+                  },
+                  "returnUrl": {
+                    "type": "string"
+                  },
+                  "webhook": {
+                    "type": "string"
+                  },
+                  "prompt": {
+                    "type": "string"
+                  },
+                  "deviceCode": {
+                    "type": "boolean"
+                  },
+                  "expiresInMs": {
+                    "type": "number"
+                  },
+                  "additionalParams": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v3/deployments/{idOrUrl}/events": {
       "get": {
         "description": "Get the build logs of a deployment by deployment ID and build ID. It can work as an infinite stream of logs or as a JSON endpoint depending on the input parameters.",
@@ -41257,6 +41846,16 @@
                             "email": "demo@example.com"
                           }
                         },
+                        "echMode": {
+                          "type": "string",
+                          "enum": [
+                            "auto",
+                            "disabled",
+                            "enabled"
+                          ],
+                          "description": "Whether the domain is enrolled in Encrypted Client Hello. `auto` leaves the decision to Vercel, `enabled` always enrolls, and `disabled` never enrolls and opts out of automatic enrollment.",
+                          "example": "auto"
+                        },
                         "name": {
                           "type": "string",
                           "description": "The domain name.",
@@ -41320,6 +41919,7 @@
                         "boughtAt",
                         "createdAt",
                         "creator",
+                        "echMode",
                         "expiresAt",
                         "id",
                         "intendedNameservers",
@@ -41705,6 +42305,16 @@
                             "email": "demo@example.com"
                           }
                         },
+                        "echMode": {
+                          "type": "string",
+                          "enum": [
+                            "auto",
+                            "disabled",
+                            "enabled"
+                          ],
+                          "description": "Whether the domain is enrolled in Encrypted Client Hello. `auto` leaves the decision to Vercel, `enabled` always enrolls, and `disabled` never enrolls and opts out of automatic enrollment.",
+                          "example": "auto"
+                        },
                         "name": {
                           "type": "string",
                           "description": "The domain name.",
@@ -41768,6 +42378,7 @@
                         "boughtAt",
                         "createdAt",
                         "creator",
+                        "echMode",
                         "expiresAt",
                         "id",
                         "intendedNameservers",
@@ -41952,6 +42563,16 @@
                               "email": "demo@example.com"
                             }
                           },
+                          "echMode": {
+                            "type": "string",
+                            "enum": [
+                              "auto",
+                              "disabled",
+                              "enabled"
+                            ],
+                            "description": "Whether the domain is enrolled in Encrypted Client Hello. `auto` leaves the decision to Vercel, `enabled` always enrolls, and `disabled` never enrolls and opts out of automatic enrollment.",
+                            "example": "auto"
+                          },
                           "name": {
                             "type": "string",
                             "description": "The domain name.",
@@ -42015,6 +42636,7 @@
                           "boughtAt",
                           "createdAt",
                           "creator",
+                          "echMode",
                           "expiresAt",
                           "id",
                           "intendedNameservers",
@@ -42223,6 +42845,16 @@
                             "email": "demo@example.com"
                           }
                         },
+                        "echMode": {
+                          "type": "string",
+                          "enum": [
+                            "auto",
+                            "disabled",
+                            "enabled"
+                          ],
+                          "description": "Whether the domain is enrolled in Encrypted Client Hello. `auto` leaves the decision to Vercel, `enabled` always enrolls, and `disabled` never enrolls and opts out of automatic enrollment.",
+                          "example": "auto"
+                        },
                         "name": {
                           "type": "string",
                           "description": "The domain name.",
@@ -42286,6 +42918,7 @@
                         "boughtAt",
                         "createdAt",
                         "creator",
+                        "echMode",
                         "expiresAt",
                         "id",
                         "intendedNameservers",
@@ -42382,7 +43015,7 @@
                         "example": "example.com"
                       },
                       "cdnEnabled": {
-                        "description": "Whether the domain has the Vercel Edge Network enabled or not.",
+                        "description": "Whether the domain has the Vercel CDN enabled or not.",
                         "type": "boolean",
                         "example": true
                       },
@@ -42505,8 +43138,19 @@
                             false,
                             true
                           ]
+                        },
+                        "echMode": {
+                          "type": "string",
+                          "enum": [
+                            "auto",
+                            "disabled",
+                            "enabled"
+                          ]
                         }
                       },
+                      "required": [
+                        "echMode"
+                      ],
                       "type": "object"
                     }
                   ]
@@ -42519,6 +43163,9 @@
           },
           "401": {
             "description": "The request is not authorized."
+          },
+          "402": {
+            "description": ""
           },
           "403": {
             "description": "You do not have permission to access this resource."
@@ -42597,6 +43244,15 @@
                       "zone": {
                         "description": "Specifies whether this is a DNS zone that intends to use Vercel's nameservers.",
                         "type": "boolean"
+                      },
+                      "echMode": {
+                        "description": "Encrypted Client Hello enrollment. 'auto' leaves it to Vercel, 'enabled' always enrolls, 'disabled' never enrolls and opts out of automatic enrollment.",
+                        "type": "string",
+                        "enum": [
+                          "auto",
+                          "enabled",
+                          "disabled"
+                        ]
                       }
                     }
                   },
@@ -50674,14 +51330,14 @@
                     },
                     "createdBy": {
                       "type": "string",
-                      "description": "The ID of the user who created the Edge Config, optional because it is not always set."
+                      "description": "The ID of the user who created the Global Config, optional because it is not always set."
                     },
                     "ownerId": {
                       "type": "string"
                     },
                     "slug": {
                       "type": "string",
-                      "description": "Name for the Edge Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores)."
+                      "description": "Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores)."
                     },
                     "updatedAt": {
                       "type": "number"
@@ -50752,14 +51408,14 @@
                         "startedAt"
                       ],
                       "type": "object",
-                      "description": "Keeps track of the current state of the Edge Config while it gets transferred."
+                      "description": "Keeps track of the current state of the Global Config while it gets transferred."
                     },
                     "schema": {
                       "type": "object"
                     },
                     "syncedToDynamoAt": {
                       "type": "number",
-                      "description": "Timestamp of when the Edge Config was synced to DynamoDB initially. It is only set when syncing the entire Edge Config, not when updating."
+                      "description": "Timestamp of when the Global Config was synced to DynamoDB initially. It is only set when syncing the entire Global Config, not when updating."
                     },
                     "sizeInBytes": {
                       "type": "number"
@@ -50845,14 +51501,14 @@
                     },
                     "createdBy": {
                       "type": "string",
-                      "description": "The ID of the user who created the Edge Config, optional because it is not always set."
+                      "description": "The ID of the user who created the Global Config, optional because it is not always set."
                     },
                     "ownerId": {
                       "type": "string"
                     },
                     "slug": {
                       "type": "string",
-                      "description": "Name for the Edge Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores)."
+                      "description": "Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores)."
                     },
                     "updatedAt": {
                       "type": "number"
@@ -50923,14 +51579,14 @@
                         "startedAt"
                       ],
                       "type": "object",
-                      "description": "Keeps track of the current state of the Edge Config while it gets transferred."
+                      "description": "Keeps track of the current state of the Global Config while it gets transferred."
                     },
                     "schema": {
                       "type": "object"
                     },
                     "syncedToDynamoAt": {
                       "type": "number",
-                      "description": "Timestamp of when the Edge Config was synced to DynamoDB initially. It is only set when syncing the entire Edge Config, not when updating."
+                      "description": "Timestamp of when the Global Config was synced to DynamoDB initially. It is only set when syncing the entire Global Config, not when updating."
                     },
                     "sizeInBytes": {
                       "type": "number"
@@ -50950,7 +51606,7 @@
                     "updatedAt"
                   ],
                   "type": "object",
-                  "description": "An Edge Config"
+                  "description": "A Global Config"
                 }
               }
             }
@@ -51044,14 +51700,14 @@
                     },
                     "createdBy": {
                       "type": "string",
-                      "description": "The ID of the user who created the Edge Config, optional because it is not always set."
+                      "description": "The ID of the user who created the Global Config, optional because it is not always set."
                     },
                     "ownerId": {
                       "type": "string"
                     },
                     "slug": {
                       "type": "string",
-                      "description": "Name for the Edge Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores)."
+                      "description": "Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores)."
                     },
                     "updatedAt": {
                       "type": "number"
@@ -51122,14 +51778,14 @@
                         "startedAt"
                       ],
                       "type": "object",
-                      "description": "Keeps track of the current state of the Edge Config while it gets transferred."
+                      "description": "Keeps track of the current state of the Global Config while it gets transferred."
                     },
                     "schema": {
                       "type": "object"
                     },
                     "syncedToDynamoAt": {
                       "type": "number",
-                      "description": "Timestamp of when the Edge Config was synced to DynamoDB initially. It is only set when syncing the entire Edge Config, not when updating."
+                      "description": "Timestamp of when the Global Config was synced to DynamoDB initially. It is only set when syncing the entire Global Config, not when updating."
                     },
                     "sizeInBytes": {
                       "type": "number"
@@ -51226,14 +51882,14 @@
                     },
                     "createdBy": {
                       "type": "string",
-                      "description": "The ID of the user who created the Edge Config, optional because it is not always set."
+                      "description": "The ID of the user who created the Global Config, optional because it is not always set."
                     },
                     "ownerId": {
                       "type": "string"
                     },
                     "slug": {
                       "type": "string",
-                      "description": "Name for the Edge Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores)."
+                      "description": "Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores)."
                     },
                     "updatedAt": {
                       "type": "number"
@@ -51304,14 +51960,14 @@
                         "startedAt"
                       ],
                       "type": "object",
-                      "description": "Keeps track of the current state of the Edge Config while it gets transferred."
+                      "description": "Keeps track of the current state of the Global Config while it gets transferred."
                     },
                     "schema": {
                       "type": "object"
                     },
                     "syncedToDynamoAt": {
                       "type": "number",
-                      "description": "Timestamp of when the Edge Config was synced to DynamoDB initially. It is only set when syncing the entire Edge Config, not when updating."
+                      "description": "Timestamp of when the Global Config was synced to DynamoDB initially. It is only set when syncing the entire Global Config, not when updating."
                     },
                     "sizeInBytes": {
                       "type": "number"
@@ -51331,7 +51987,7 @@
                     "updatedAt"
                   ],
                   "type": "object",
-                  "description": "An Edge Config"
+                  "description": "A Global Config"
                 }
               }
             }
@@ -52452,7 +53108,7 @@
                           "properties": {
                             "slug": {
                               "type": "string",
-                              "description": "Name for the Edge Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores)."
+                              "description": "Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores)."
                             },
                             "updatedAt": {
                               "type": "number"
@@ -52544,7 +53200,7 @@
                         "metadata"
                       ],
                       "type": "object",
-                      "description": "The object the API responds with when requesting an Edge Config backup"
+                      "description": "The object the API responds with when requesting a Global Config backup"
                     },
                     {
                       "properties": {
@@ -52583,7 +53239,7 @@
                           "properties": {
                             "slug": {
                               "type": "string",
-                              "description": "Name for the Edge Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores)."
+                              "description": "Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores)."
                             },
                             "updatedAt": {
                               "type": "number"
@@ -59724,7 +60380,7 @@
                               },
                               "labels": {
                                 "type": "array",
-                                "maxItems": 128,
+                                "maxItems": 256,
                                 "items": {
                                   "type": "object",
                                   "additionalProperties": false,
@@ -74107,7 +74763,7 @@
     },
     "/v1/kms/issuers/{issuerId}": {
       "get": {
-        "description": "Retrieve a single KMS issuer by its ID.",
+        "description": "Retrieve a single KMS issuer by its ID. Accepts either a team bearer token (existing path) or an OIDC token authorized by one of the issuer's policies (e.g. a connex-grant token). The OIDC path returns the issuer without policies, since a policy token only proves signing access, not management access.",
         "operationId": "getKmsIssuer",
         "security": [
           {
@@ -108027,19 +108683,19 @@
           },
           {
             "name": "edgeConfigId",
-            "description": "Filter results by connected Edge Config ID",
+            "description": "Filter results by connected Global Config ID",
             "in": "query",
             "schema": {
-              "description": "Filter results by connected Edge Config ID",
+              "description": "Filter results by connected Global Config ID",
               "type": "string"
             }
           },
           {
             "name": "edgeConfigTokenId",
-            "description": "Filter results by connected Edge Config Token ID",
+            "description": "Filter results by connected Global Config Token ID",
             "in": "query",
             "schema": {
-              "description": "Filter results by connected Edge Config Token ID",
+              "description": "Filter results by connected Global Config Token ID",
               "type": "string"
             }
           },
@@ -164908,6 +165564,17 @@
             }
           },
           {
+            "name": "deleteOrphanSnapshots",
+            "description": "When true, snapshots of the deleted sandbox that are not referenced by any other sandbox are also deleted asynchronously. Defaults to false.",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "description": "When true, snapshots of the deleted sandbox that are not referenced by any other sandbox are also deleted asynchronously. Defaults to false."
+            }
+          },
+          {
             "description": "The Team identifier to perform the request on behalf of.",
             "in": "query",
             "name": "teamId",
@@ -209862,6 +210529,7 @@
               "domain-custom-ns-change",
               "domain-delegated",
               "domain-delete",
+              "domain-ech-change",
               "domain-move-in",
               "domain-move-out",
               "domain-move-out-request-sent",
@@ -210294,6 +210962,8 @@
               "user-emu-account-archived",
               "user-emu-account-deleted",
               "user-emu-account-recovered",
+              "user-emu-account-update-opted-in",
+              "user-emu-account-update-opted-out",
               "user-emu-recovery-email-sent",
               "user-emu-recovery-initiated",
               "user-emu-toggled",
@@ -217340,6 +218010,36 @@
                 },
                 "required": [
                   "domain"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "domain": {
+                    "type": "string"
+                  },
+                  "echMode": {
+                    "type": "string",
+                    "enum": [
+                      "auto",
+                      "disabled",
+                      "enabled"
+                    ]
+                  },
+                  "previousEchMode": {
+                    "type": "string",
+                    "enum": [
+                      "auto",
+                      "disabled",
+                      "enabled"
+                    ]
+                  }
+                },
+                "required": [
+                  "domain",
+                  "echMode",
+                  "previousEchMode"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -231270,6 +231970,34 @@
               },
               {
                 "properties": {
+                  "teamName": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "teamName"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "teamId": {
+                    "type": "string"
+                  },
+                  "teamName": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "teamId",
+                  "teamName"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "actorId": {
                     "type": "string"
                   },
@@ -233593,6 +234321,7 @@
               "domain-custom-ns-change",
               "domain-delegated",
               "domain-delete",
+              "domain-ech-change",
               "domain-move-in",
               "domain-move-out",
               "domain-move-out-request-sent",
@@ -234025,6 +234754,8 @@
               "user-emu-account-archived",
               "user-emu-account-deleted",
               "user-emu-account-recovered",
+              "user-emu-account-update-opted-in",
+              "user-emu-account-update-opted-out",
               "user-emu-recovery-email-sent",
               "user-emu-recovery-initiated",
               "user-emu-toggled",
@@ -234306,6 +235037,7 @@
                 "domain-custom-ns-change",
                 "domain-delegated",
                 "domain-delete",
+                "domain-ech-change",
                 "domain-move-in",
                 "domain-move-out",
                 "domain-move-out-request-sent",
@@ -234738,6 +235470,8 @@
                 "user-emu-account-archived",
                 "user-emu-account-deleted",
                 "user-emu-account-recovered",
+                "user-emu-account-update-opted-in",
+                "user-emu-account-update-opted-out",
                 "user-emu-recovery-email-sent",
                 "user-emu-recovery-initiated",
                 "user-emu-toggled",
@@ -236104,7 +236838,7 @@
           },
           "tokenValue": {
             "type": "string",
-            "description": "Cleartext value of the Edge Config token, when the project has an Edge Config connection."
+            "description": "Cleartext value of the Global Config token, when the project has a Global Config connection."
           }
         },
         "required": [

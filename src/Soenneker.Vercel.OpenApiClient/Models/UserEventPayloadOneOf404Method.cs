@@ -8,21 +8,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UserEventPayloadOneOf404Method
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "passkey")]
+        [EnumMember(Value = "email-otp")]
         #pragma warning disable CS1591
-        Passkey,
+        EmailOtp,
         #pragma warning restore CS1591
-        [EnumMember(Value = "self_serve_recovery")]
+        [EnumMember(Value = "recovery-code")]
         #pragma warning disable CS1591
-        SelfServeRecovery,
+        RecoveryCode,
         #pragma warning restore CS1591
         [EnumMember(Value = "totp")]
         #pragma warning disable CS1591
         Totp,
         #pragma warning restore CS1591
-        [EnumMember(Value = "user_disabled")]
+        [EnumMember(Value = "webauthn")]
         #pragma warning disable CS1591
-        UserDisabled,
+        Webauthn,
         #pragma warning restore CS1591
     }
 }

@@ -15,48 +15,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Deployment whose outcome caused a system-initiated elastic resize.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DeploymentId { get; set; }
-#nullable restore
-#else
-        public string DeploymentId { get; set; }
-#endif
-        /// <summary>The isSystemInitiated property</summary>
-        public bool? IsSystemInitiated { get; set; }
-        /// <summary>The nextBuildMachineSelection property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? NextBuildMachineSelection { get; set; }
-#nullable restore
-#else
-        public string NextBuildMachineSelection { get; set; }
-#endif
-        /// <summary>The nextBuildMachineType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? NextBuildMachineType { get; set; }
-#nullable restore
-#else
-        public string NextBuildMachineType { get; set; }
-#endif
-        /// <summary>The previousBuildMachineSelection property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PreviousBuildMachineSelection { get; set; }
-#nullable restore
-#else
-        public string PreviousBuildMachineSelection { get; set; }
-#endif
-        /// <summary>The previousBuildMachineType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PreviousBuildMachineType { get; set; }
-#nullable restore
-#else
-        public string PreviousBuildMachineType { get; set; }
-#endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,14 +31,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get; set; }
 #endif
-        /// <summary>For system-initiated (elastic) changes, why the build machine was upgraded/downgraded. Stored as the raw reason code (see `ElasticChangeReason` in `@api/build-machines-types`) and rendered as a human-readable clause in the activity/audit log.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Reason { get; set; }
-#nullable restore
-#else
-        public string Reason { get; set; }
-#endif
+        /// <summary>The sourceFilesOutsideRootDirectory property</summary>
+        public bool? SourceFilesOutsideRootDirectory { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf237"/> and sets the default values.
         /// </summary>
@@ -106,15 +58,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
-                { "isSystemInitiated", n => { IsSystemInitiated = n.GetBoolValue(); } },
-                { "nextBuildMachineSelection", n => { NextBuildMachineSelection = n.GetStringValue(); } },
-                { "nextBuildMachineType", n => { NextBuildMachineType = n.GetStringValue(); } },
-                { "previousBuildMachineSelection", n => { PreviousBuildMachineSelection = n.GetStringValue(); } },
-                { "previousBuildMachineType", n => { PreviousBuildMachineType = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "sourceFilesOutsideRootDirectory", n => { SourceFilesOutsideRootDirectory = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -124,15 +70,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("deploymentId", DeploymentId);
-            writer.WriteBoolValue("isSystemInitiated", IsSystemInitiated);
-            writer.WriteStringValue("nextBuildMachineSelection", NextBuildMachineSelection);
-            writer.WriteStringValue("nextBuildMachineType", NextBuildMachineType);
-            writer.WriteStringValue("previousBuildMachineSelection", PreviousBuildMachineSelection);
-            writer.WriteStringValue("previousBuildMachineType", PreviousBuildMachineType);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("reason", Reason);
+            writer.WriteBoolValue("sourceFilesOutsideRootDirectory", SourceFilesOutsideRootDirectory);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

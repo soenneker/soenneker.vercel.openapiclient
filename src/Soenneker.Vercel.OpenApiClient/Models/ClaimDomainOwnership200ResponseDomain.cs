@@ -34,6 +34,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> CustomNameservers { get; set; }
 #endif
+        /// <summary>Whether the domain is enrolled in Encrypted Client Hello. `auto` leaves the decision to Vercel, `enabled` always enrolls, and `disabled` never enrolls and opts out of automatic enrollment.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.ClaimDomainOwnership200ResponseDomainEchMode? EchMode { get; set; }
         /// <summary>Timestamp in milliseconds at which the domain is set to expire. null if not bought with Vercel.</summary>
         public double? ExpiresAt { get; set; }
         /// <summary>The unique identifier of the domain.</summary>
@@ -123,6 +125,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "creator", n => { Creator = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ClaimDomainOwnership200ResponseDomainCreator>(global::Soenneker.Vercel.OpenApiClient.Models.ClaimDomainOwnership200ResponseDomainCreator.CreateFromDiscriminatorValue); } },
                 { "customNameservers", n => { CustomNameservers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "echMode", n => { EchMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ClaimDomainOwnership200ResponseDomainEchMode>(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "intendedNameservers", n => { IntendedNameservers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -148,6 +151,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ClaimDomainOwnership200ResponseDomainCreator>("creator", Creator);
             writer.WriteCollectionOfPrimitiveValues<string>("customNameservers", CustomNameservers);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ClaimDomainOwnership200ResponseDomainEchMode>("echMode", EchMode);
             writer.WriteDoubleValue("expiresAt", ExpiresAt);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("intendedNameservers", IntendedNameservers);

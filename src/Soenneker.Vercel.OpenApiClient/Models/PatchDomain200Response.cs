@@ -22,6 +22,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> CustomNameservers { get; set; }
 #endif
+        /// <summary>The echMode property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchDomain200ResponseEchMode? EchMode { get; set; }
         /// <summary>The moved property</summary>
         public bool? Moved { get; set; }
         /// <summary>The renew property</summary>
@@ -62,6 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "customNameservers", n => { CustomNameservers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "echMode", n => { EchMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchDomain200ResponseEchMode>(); } },
                 { "moved", n => { Moved = n.GetBoolValue(); } },
                 { "renew", n => { Renew = n.GetBoolValue(); } },
                 { "token", n => { Token = n.GetStringValue(); } },
@@ -76,6 +79,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("customNameservers", CustomNameservers);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchDomain200ResponseEchMode>("echMode", EchMode);
             writer.WriteBoolValue("moved", Moved);
             writer.WriteBoolValue("renew", Renew);
             writer.WriteStringValue("token", Token);

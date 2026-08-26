@@ -31,13 +31,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string IssuerName { get; set; }
 #endif
-        /// <summary>The keyId property</summary>
+        /// <summary>The managedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeyId { get; set; }
+        public string? ManagedBy { get; set; }
 #nullable restore
 #else
-        public string KeyId { get; set; }
+        public string ManagedBy { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf178"/> and sets the default values.
@@ -66,7 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "issuerId", n => { IssuerId = n.GetStringValue(); } },
                 { "issuerName", n => { IssuerName = n.GetStringValue(); } },
-                { "keyId", n => { KeyId = n.GetStringValue(); } },
+                { "managedBy", n => { ManagedBy = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("issuerId", IssuerId);
             writer.WriteStringValue("issuerName", IssuerName);
-            writer.WriteStringValue("keyId", KeyId);
+            writer.WriteStringValue("managedBy", ManagedBy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

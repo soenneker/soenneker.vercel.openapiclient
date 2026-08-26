@@ -2,8 +2,10 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Vercel.OpenApiClient.V1.Connect.Authorize;
 using Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors;
 using Soenneker.Vercel.OpenApiClient.V1.Connect.Networks;
+using Soenneker.Vercel.OpenApiClient.V1.Connect.Token;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -16,6 +18,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConnectRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The authorize property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Connect.Authorize.AuthorizeRequestBuilder Authorize
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Connect.Authorize.AuthorizeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The connectors property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.ConnectorsRequestBuilder Connectors
         {
@@ -25,6 +32,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect
         public global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.NetworksRequestBuilder Networks
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Connect.Networks.NetworksRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The token property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Connect.Token.TokenRequestBuilder Token
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Connect.Token.TokenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Connect.ConnectRequestBuilder"/> and sets the default values.

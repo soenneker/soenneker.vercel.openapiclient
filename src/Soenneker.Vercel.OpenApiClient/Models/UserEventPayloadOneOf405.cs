@@ -15,10 +15,38 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Absent on events predating the field; those were all logins.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405Context? Context { get; set; }
-        /// <summary>The remaining property</summary>
-        public double? Remaining { get; set; }
+        /// <summary>The allowedMethods property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405AllowedMethodsItem?>? AllowedMethods { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405AllowedMethodsItem?> AllowedMethods { get; set; }
+#endif
+        /// <summary>The firstFactor property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FirstFactor { get; set; }
+#nullable restore
+#else
+        public string FirstFactor { get; set; }
+#endif
+        /// <summary>The flowId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FlowId { get; set; }
+#nullable restore
+#else
+        public string FlowId { get; set; }
+#endif
+        /// <summary>The loginSessionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LoginSessionId { get; set; }
+#nullable restore
+#else
+        public string LoginSessionId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405"/> and sets the default values.
         /// </summary>
@@ -44,8 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "context", n => { Context = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405Context>(); } },
-                { "remaining", n => { Remaining = n.GetDoubleValue(); } },
+                { "allowedMethods", n => { AllowedMethods = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405AllowedMethodsItem>()?.AsList(); } },
+                { "firstFactor", n => { FirstFactor = n.GetStringValue(); } },
+                { "flowId", n => { FlowId = n.GetStringValue(); } },
+                { "loginSessionId", n => { LoginSessionId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,8 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405Context>("context", Context);
-            writer.WriteDoubleValue("remaining", Remaining);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf405AllowedMethodsItem>("allowedMethods", AllowedMethods);
+            writer.WriteStringValue("firstFactor", FirstFactor);
+            writer.WriteStringValue("flowId", FlowId);
+            writer.WriteStringValue("loginSessionId", LoginSessionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

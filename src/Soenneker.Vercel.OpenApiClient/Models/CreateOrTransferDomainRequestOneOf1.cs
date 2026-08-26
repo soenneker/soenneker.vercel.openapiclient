@@ -13,7 +13,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateOrTransferDomainRequestOneOf1 : IParsable
     {
-        /// <summary>Whether the domain has the Vercel Edge Network enabled or not.</summary>
+        /// <summary>Whether the domain has the Vercel CDN enabled or not.</summary>
         public bool? CdnEnabled { get; set; }
         /// <summary>The domain operation to perform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

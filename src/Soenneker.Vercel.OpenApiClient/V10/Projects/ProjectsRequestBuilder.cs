@@ -113,7 +113,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsBuildQueueConfigurationParameter? BuildQueueConfiguration { get; set; }
             [QueryParameter("deprecated")]
             public bool? Deprecated { get; set; }
-            /// <summary>Filter results by connected Edge Config ID</summary>
+            /// <summary>Filter results by connected Global Config ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("edgeConfigId")]
@@ -123,7 +123,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             [QueryParameter("edgeConfigId")]
             public string EdgeConfigId { get; set; }
 #endif
-            /// <summary>Filter results by connected Edge Config Token ID</summary>
+            /// <summary>Filter results by connected Global Config Token ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("edgeConfigTokenId")]

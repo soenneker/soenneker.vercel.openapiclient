@@ -671,6 +671,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         DomainDelete,
         #pragma warning restore CS1591
+        [EnumMember(Value = "domain-ech-change")]
+        #pragma warning disable CS1591
+        DomainEchChange,
+        #pragma warning restore CS1591
         [EnumMember(Value = "domain-move-in")]
         #pragma warning disable CS1591
         DomainMoveIn,
@@ -2398,6 +2402,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "user-emu-account-recovered")]
         #pragma warning disable CS1591
         UserEmuAccountRecovered,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "user-emu-account-update-opted-in")]
+        #pragma warning disable CS1591
+        UserEmuAccountUpdateOptedIn,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "user-emu-account-update-opted-out")]
+        #pragma warning disable CS1591
+        UserEmuAccountUpdateOptedOut,
         #pragma warning restore CS1591
         [EnumMember(Value = "user-emu-recovery-email-sent")]
         #pragma warning disable CS1591

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Keeps track of the current state of the Edge Config while it gets transferred.
+    /// Keeps track of the current state of the Global Config while it gets transferred.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetEdgeConfigs200ResponseTransfer : IAdditionalDataHolder, IParsable

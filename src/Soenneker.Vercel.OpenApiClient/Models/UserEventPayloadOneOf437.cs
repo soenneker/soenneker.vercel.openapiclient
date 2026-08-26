@@ -15,9 +15,27 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Unix epoch milliseconds. Absent when the token never expires.</summary>
-        public double? ExpiresAt { get; set; }
-        /// <summary>The geolocation property</summary>
+        /// <summary>optional since entries prior to 2025-10-13 do not contain app information</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437App? App { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437App App { get; set; }
+#endif
+        /// <summary>the app&apos;s name at the time the event was published (it could have changed since then)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AppName { get; set; }
+#nullable restore
+#else
+        public string AppName { get; set; }
+#endif
+        /// <summary>access_token TTL</summary>
+        public double? AtTTL { get; set; }
+        /// <summary>The authMethod property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437AuthMethod? AuthMethod { get; set; }
+        /// <summary>optional since entries prior to 2026-04-23 do not contain this field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437Geolocation? Geolocation { get; set; }
@@ -25,9 +43,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437Geolocation Geolocation { get; set; }
 #endif
-        /// <summary>Whether the token was issued with RFC 9396 authorization details.</summary>
-        public bool? HasAuthorizationDetails { get; set; }
-        /// <summary>The ip property</summary>
+        /// <summary>The grantType property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437GrantType? GrantType { get; set; }
+        /// <summary>optional since entries prior to 2025-10-13 do not contain this field</summary>
+        public bool? IncludesRefreshToken { get; set; }
+        /// <summary>optional since entries prior to 2026-04-23 do not contain this field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ip { get; set; }
@@ -35,71 +55,77 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Ip { get; set; }
 #endif
-        /// <summary>How the token was issued. Always `&apos;manual&apos;` for explicit PAT creation.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437Origin? Origin { get; set; }
-        /// <summary>Present when `scope` is `&apos;project&apos;`.</summary>
+        /// <summary>OIDC issuer (`iss`) of the token that authenticated the request. Present for OIDC-authenticated flows: the token-exchange grant, or `client_credentials` with the `oidc_token` client-authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? IssuerUrl { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string IssuerUrl { get; set; }
 #endif
-        /// <summary>Present when `scope` is `&apos;project&apos;`.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437ProjectScope? ProjectScope { get; set; }
-        /// <summary>The reqId property</summary>
+        /// <summary>`sub` claim of the OIDC token. Present for OIDC-authenticated flows (see {@link issuerUrl}).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReqId { get; set; }
+        public string? OidcSubject { get; set; }
 #nullable restore
 #else
-        public string ReqId { get; set; }
+        public string OidcSubject { get; set; }
 #endif
-        /// <summary>The reqUrl property</summary>
+        /// <summary>ID of the OIDC-exchange policy that authorized a token-exchange grant. Absent for the `client_credentials` + `oidc_token` flow, which matches an app `oidcProviders` entry rather than a policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReqUrl { get; set; }
+        public string? PolicyId { get; set; }
 #nullable restore
 #else
-        public string ReqUrl { get; set; }
+        public string PolicyId { get; set; }
 #endif
-        /// <summary>Scope of the token: - `&apos;user&apos;`: full-account token (not tied to any team). - `&apos;team&apos;`: scoped to a single team. - `&apos;project&apos;`: scoped to a single project within a team.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437Scope? Scope { get; set; }
-        /// <summary>Present when `scope` is `&apos;team&apos;` or `&apos;project&apos;`.</summary>
+        /// <summary>optional since entries prior to 2025-10-13 do not contain this field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamId { get; set; }
+        public string? PublicId { get; set; }
 #nullable restore
 #else
-        public string TeamId { get; set; }
+        public string PublicId { get; set; }
 #endif
-        /// <summary>Present when `scope` is `&apos;team&apos;` or `&apos;project&apos;`.</summary>
+        /// <summary>optional; only present when a refresh token was issued (offline_access).</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.VcrRefreshTokenPrefix? RefreshTokenPrefix { get; set; }
+        /// <summary>optional; only present when a refresh token was issued (offline_access).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamSlug { get; set; }
+        public string? RefreshTokenPublicId { get; set; }
 #nullable restore
 #else
-        public string TeamSlug { get; set; }
+        public string RefreshTokenPublicId { get; set; }
 #endif
-        /// <summary>The token&apos;s public ID.</summary>
+        /// <summary>optional; only present when a refresh token was issued (offline_access).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TokenId { get; set; }
+        public string? RefreshTokenSuffix { get; set; }
 #nullable restore
 #else
-        public string TokenId { get; set; }
+        public string RefreshTokenSuffix { get; set; }
 #endif
-        /// <summary>User-supplied name of the token.</summary>
+        /// <summary>refresh_token TTL</summary>
+        public double? RtTTL { get; set; }
+        /// <summary>The scope property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TokenName { get; set; }
+        public string? Scope { get; set; }
 #nullable restore
 #else
-        public string TokenName { get; set; }
+        public string Scope { get; set; }
 #endif
-        /// <summary>The token prefix used when showing a safe checksum-style fingerprint.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.VcpTokenPrefix? TokenPrefix { get; set; }
-        /// <summary>The token checksum suffix.</summary>
+        /// <summary>optional since entries prior to 2025-10-13 do not contain this field</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SessionId { get; set; }
+#nullable restore
+#else
+        public string SessionId { get; set; }
+#endif
+        /// <summary>optional since entries prior to 2026-04-23 do not contain this field</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.VcaTokenPrefix? TokenPrefix { get; set; }
+        /// <summary>optional since entries prior to 2026-04-23 do not contain this field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TokenSuffix { get; set; }
@@ -107,7 +133,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string TokenSuffix { get; set; }
 #endif
-        /// <summary>The userAgent property</summary>
+        /// <summary>optional since entries prior to 2026-04-23 do not contain this field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserAgent { get; set; }
@@ -140,21 +166,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
+                { "app", n => { App = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437App>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437App.CreateFromDiscriminatorValue); } },
+                { "appName", n => { AppName = n.GetStringValue(); } },
+                { "atTTL", n => { AtTTL = n.GetDoubleValue(); } },
+                { "authMethod", n => { AuthMethod = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437AuthMethod>(); } },
                 { "geolocation", n => { Geolocation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437Geolocation>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437Geolocation.CreateFromDiscriminatorValue); } },
-                { "hasAuthorizationDetails", n => { HasAuthorizationDetails = n.GetBoolValue(); } },
+                { "grantType", n => { GrantType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437GrantType>(); } },
+                { "includesRefreshToken", n => { IncludesRefreshToken = n.GetBoolValue(); } },
                 { "ip", n => { Ip = n.GetStringValue(); } },
-                { "origin", n => { Origin = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437Origin>(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectScope", n => { ProjectScope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437ProjectScope>(); } },
-                { "reqId", n => { ReqId = n.GetStringValue(); } },
-                { "reqUrl", n => { ReqUrl = n.GetStringValue(); } },
-                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437Scope>(); } },
-                { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "teamSlug", n => { TeamSlug = n.GetStringValue(); } },
-                { "tokenId", n => { TokenId = n.GetStringValue(); } },
-                { "tokenName", n => { TokenName = n.GetStringValue(); } },
-                { "tokenPrefix", n => { TokenPrefix = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcpTokenPrefix>(); } },
+                { "issuerUrl", n => { IssuerUrl = n.GetStringValue(); } },
+                { "oidcSubject", n => { OidcSubject = n.GetStringValue(); } },
+                { "policyId", n => { PolicyId = n.GetStringValue(); } },
+                { "publicId", n => { PublicId = n.GetStringValue(); } },
+                { "refreshTokenPrefix", n => { RefreshTokenPrefix = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrRefreshTokenPrefix>(); } },
+                { "refreshTokenPublicId", n => { RefreshTokenPublicId = n.GetStringValue(); } },
+                { "refreshTokenSuffix", n => { RefreshTokenSuffix = n.GetStringValue(); } },
+                { "rtTTL", n => { RtTTL = n.GetDoubleValue(); } },
+                { "scope", n => { Scope = n.GetStringValue(); } },
+                { "sessionId", n => { SessionId = n.GetStringValue(); } },
+                { "tokenPrefix", n => { TokenPrefix = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcaTokenPrefix>(); } },
                 { "tokenSuffix", n => { TokenSuffix = n.GetStringValue(); } },
                 { "userAgent", n => { UserAgent = n.GetStringValue(); } },
             };
@@ -166,21 +196,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("expiresAt", ExpiresAt);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437App>("app", App);
+            writer.WriteStringValue("appName", AppName);
+            writer.WriteDoubleValue("atTTL", AtTTL);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437AuthMethod>("authMethod", AuthMethod);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437Geolocation>("geolocation", Geolocation);
-            writer.WriteBoolValue("hasAuthorizationDetails", HasAuthorizationDetails);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437GrantType>("grantType", GrantType);
+            writer.WriteBoolValue("includesRefreshToken", IncludesRefreshToken);
             writer.WriteStringValue("ip", Ip);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437Origin>("origin", Origin);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437ProjectScope>("projectScope", ProjectScope);
-            writer.WriteStringValue("reqId", ReqId);
-            writer.WriteStringValue("reqUrl", ReqUrl);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf437Scope>("scope", Scope);
-            writer.WriteStringValue("teamId", TeamId);
-            writer.WriteStringValue("teamSlug", TeamSlug);
-            writer.WriteStringValue("tokenId", TokenId);
-            writer.WriteStringValue("tokenName", TokenName);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcpTokenPrefix>("tokenPrefix", TokenPrefix);
+            writer.WriteStringValue("issuerUrl", IssuerUrl);
+            writer.WriteStringValue("oidcSubject", OidcSubject);
+            writer.WriteStringValue("policyId", PolicyId);
+            writer.WriteStringValue("publicId", PublicId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcrRefreshTokenPrefix>("refreshTokenPrefix", RefreshTokenPrefix);
+            writer.WriteStringValue("refreshTokenPublicId", RefreshTokenPublicId);
+            writer.WriteStringValue("refreshTokenSuffix", RefreshTokenSuffix);
+            writer.WriteDoubleValue("rtTTL", RtTTL);
+            writer.WriteStringValue("scope", Scope);
+            writer.WriteStringValue("sessionId", SessionId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VcaTokenPrefix>("tokenPrefix", TokenPrefix);
             writer.WriteStringValue("tokenSuffix", TokenSuffix);
             writer.WriteStringValue("userAgent", UserAgent);
             writer.WriteAdditionalData(AdditionalData);

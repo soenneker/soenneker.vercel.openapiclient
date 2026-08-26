@@ -75,7 +75,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>Cleartext value of the Edge Config token, when the project has an Edge Config connection.</summary>
+        /// <summary>Cleartext value of the Global Config token, when the project has a Global Config connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TokenValue { get; set; }

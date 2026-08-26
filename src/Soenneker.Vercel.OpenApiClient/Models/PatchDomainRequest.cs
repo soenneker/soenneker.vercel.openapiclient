@@ -31,6 +31,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Destination { get; set; }
 #endif
+        /// <summary>Encrypted Client Hello enrollment. &apos;auto&apos; leaves it to Vercel, &apos;enabled&apos; always enrolls, &apos;disabled&apos; never enrolls and opts out of automatic enrollment.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequestEchMode? EchMode { get; set; }
         /// <summary>The op property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +73,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "customNameservers", n => { CustomNameservers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "destination", n => { Destination = n.GetStringValue(); } },
+                { "echMode", n => { EchMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequestEchMode>(); } },
                 { "op", n => { Op = n.GetStringValue(); } },
                 { "renew", n => { Renew = n.GetBoolValue(); } },
                 { "zone", n => { Zone = n.GetBoolValue(); } },
@@ -85,6 +88,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("customNameservers", CustomNameservers);
             writer.WriteStringValue("destination", Destination);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequestEchMode>("echMode", EchMode);
             writer.WriteStringValue("op", Op);
             writer.WriteBoolValue("renew", Renew);
             writer.WriteBoolValue("zone", Zone);

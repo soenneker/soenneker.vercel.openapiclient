@@ -28,7 +28,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/sandboxes/{name}{?projectId*,resume*,slug*,teamId*}", pathParameters)
+        public WithNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/sandboxes/{name}{?deleteOrphanSnapshots*,projectId*,resume*,slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/sandboxes/{name}{?projectId*,resume*,slug*,teamId*}", rawUrl)
+        public WithNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/sandboxes/{name}{?deleteOrphanSnapshots*,projectId*,resume*,slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>
@@ -170,6 +170,9 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithNameItemRequestBuilderDeleteQueryParameters 
         {
+            /// <summary>When true, snapshots of the deleted sandbox that are not referenced by any other sandbox are also deleted asynchronously. Defaults to false.</summary>
+            [QueryParameter("deleteOrphanSnapshots")]
+            public bool? DeleteOrphanSnapshots { get; set; }
             /// <summary>The project ID that owns the named sandbox. When provided, takes precedence over OIDC project context.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
