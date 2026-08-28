@@ -16334,6 +16334,75 @@
                           },
                           "type": "array"
                         },
+                        "atproto": {
+                          "oneOf": [
+                            {
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "enum": [
+                                    false
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "enabled"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "enum": [
+                                    true
+                                  ]
+                                },
+                                "subscription": {
+                                  "properties": {
+                                    "collections": {
+                                      "items": {
+                                        "type": "string"
+                                      },
+                                      "type": "array"
+                                    },
+                                    "dids": {
+                                      "items": {
+                                        "type": "string"
+                                      },
+                                      "type": "array"
+                                    },
+                                    "kinds": {
+                                      "items": {
+                                        "type": "string",
+                                        "enum": [
+                                          "account",
+                                          "commit",
+                                          "identity",
+                                          "sync"
+                                        ]
+                                      },
+                                      "type": "array"
+                                    },
+                                    "path": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "collections",
+                                    "path"
+                                  ],
+                                  "type": "object"
+                                }
+                              },
+                              "required": [
+                                "enabled",
+                                "subscription"
+                              ],
+                              "type": "object"
+                            }
+                          ]
+                        },
                         "functions": {
                           "nullable": true,
                           "additionalProperties": {
@@ -24408,6 +24477,75 @@
                           },
                           "type": "array"
                         },
+                        "atproto": {
+                          "oneOf": [
+                            {
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "enum": [
+                                    false
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "enabled"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "enum": [
+                                    true
+                                  ]
+                                },
+                                "subscription": {
+                                  "properties": {
+                                    "collections": {
+                                      "items": {
+                                        "type": "string"
+                                      },
+                                      "type": "array"
+                                    },
+                                    "dids": {
+                                      "items": {
+                                        "type": "string"
+                                      },
+                                      "type": "array"
+                                    },
+                                    "kinds": {
+                                      "items": {
+                                        "type": "string",
+                                        "enum": [
+                                          "account",
+                                          "commit",
+                                          "identity",
+                                          "sync"
+                                        ]
+                                      },
+                                      "type": "array"
+                                    },
+                                    "path": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "collections",
+                                    "path"
+                                  ],
+                                  "type": "object"
+                                }
+                              },
+                              "required": [
+                                "enabled",
+                                "subscription"
+                              ],
+                              "type": "object"
+                            }
+                          ]
+                        },
                         "functions": {
                           "nullable": true,
                           "additionalProperties": {
@@ -31626,6 +31764,75 @@
                         "type": "object"
                       },
                       "type": "array"
+                    },
+                    "atproto": {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "enabled": {
+                              "type": "boolean",
+                              "enum": [
+                                false
+                              ]
+                            }
+                          },
+                          "required": [
+                            "enabled"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "properties": {
+                            "enabled": {
+                              "type": "boolean",
+                              "enum": [
+                                true
+                              ]
+                            },
+                            "subscription": {
+                              "properties": {
+                                "collections": {
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "type": "array"
+                                },
+                                "dids": {
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "type": "array"
+                                },
+                                "kinds": {
+                                  "items": {
+                                    "type": "string",
+                                    "enum": [
+                                      "account",
+                                      "commit",
+                                      "identity",
+                                      "sync"
+                                    ]
+                                  },
+                                  "type": "array"
+                                },
+                                "path": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "collections",
+                                "path"
+                              ],
+                              "type": "object"
+                            }
+                          },
+                          "required": [
+                            "enabled",
+                            "subscription"
+                          ],
+                          "type": "object"
+                        }
+                      ]
                     },
                     "functions": {
                       "nullable": true,
@@ -43164,9 +43371,6 @@
           "401": {
             "description": "The request is not authorized."
           },
-          "402": {
-            "description": ""
-          },
           "403": {
             "description": "You do not have permission to access this resource."
           },
@@ -43246,11 +43450,10 @@
                         "type": "boolean"
                       },
                       "echMode": {
-                        "description": "Encrypted Client Hello enrollment. 'auto' leaves it to Vercel, 'enabled' always enrolls, 'disabled' never enrolls and opts out of automatic enrollment.",
+                        "description": "Encrypted Client Hello enrollment. 'auto' leaves it to Vercel, 'disabled' never enrolls and opts out of automatic enrollment.",
                         "type": "string",
                         "enum": [
                           "auto",
-                          "enabled",
                           "disabled"
                         ]
                       }
@@ -73824,6 +74027,14 @@
                             },
                             "jwk": {
                               "properties": {
+                                "n": {
+                                  "type": "string",
+                                  "description": "RSA JWK \"n\" (Modulus) Parameter"
+                                },
+                                "e": {
+                                  "type": "string",
+                                  "description": "RSA JWK \"e\" (Exponent) Parameter"
+                                },
                                 "kty": {
                                   "type": "string",
                                   "description": "JWK \"kty\" (Key Type) Parameter"
@@ -73839,14 +74050,6 @@
                                 "y": {
                                   "type": "string",
                                   "description": "EC JWK \"y\" (Y Coordinate) Parameter"
-                                },
-                                "e": {
-                                  "type": "string",
-                                  "description": "RSA JWK \"e\" (Exponent) Parameter"
-                                },
-                                "n": {
-                                  "type": "string",
-                                  "description": "RSA JWK \"n\" (Modulus) Parameter"
                                 },
                                 "alg": {
                                   "type": "string",
@@ -178326,7 +178529,7 @@
                     "additionalProperties": false
                   },
                   {
-                    "description": "Add a named condition",
+                    "description": "Reorder a ruleset",
                     "type": "object",
                     "properties": {
                       "action": {
@@ -178339,6 +178542,31 @@
                         "type": "string"
                       },
                       "value": {
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "id",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "description": "Add a named condition",
+                    "type": "object",
+                    "properties": {
+                      "action": {
+                        "type": "string",
+                        "enum": [
+                          "rules.priority"
+                        ]
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "object",
                         "properties": {
                           "name": {
                             "type": "string",
@@ -178479,8 +178707,7 @@
                           "active",
                           "conditionGroup"
                         ],
-                        "additionalProperties": false,
-                        "nullable": true
+                        "additionalProperties": false
                       }
                     },
                     "required": [
@@ -178496,7 +178723,7 @@
                       "action": {
                         "type": "string",
                         "enum": [
-                          "rules.priority"
+                          "crs.update"
                         ]
                       },
                       "id": {
@@ -178661,14 +178888,14 @@
                       "action": {
                         "type": "string",
                         "enum": [
-                          "crs.update"
+                          "crs.disable"
                         ]
                       },
                       "id": {
-                        "type": "string"
+                        "nullable": true
                       },
                       "value": {
-                        "type": "string"
+                        "nullable": true
                       }
                     },
                     "required": [
@@ -178684,7 +178911,7 @@
                       "action": {
                         "type": "string",
                         "enum": [
-                          "crs.disable"
+                          "ip.insert"
                         ]
                       },
                       "id": {
@@ -178692,6 +178919,7 @@
                         "nullable": true
                       },
                       "value": {
+                        "type": "object",
                         "properties": {
                           "action": {
                             "type": "string",
@@ -178706,8 +178934,7 @@
                         "required": [
                           "action"
                         ],
-                        "additionalProperties": false,
-                        "nullable": true
+                        "additionalProperties": false
                       }
                     },
                     "required": [
@@ -178724,12 +178951,12 @@
                       "action": {
                         "type": "string",
                         "enum": [
-                          "ip.insert"
+                          "ip.update"
                         ]
                       },
                       "id": {
-                        "maxLength": 180,
-                        "nullable": true
+                        "type": "string",
+                        "maxLength": 180
                       },
                       "value": {
                         "type": "string"
@@ -178748,14 +178975,14 @@
                       "action": {
                         "type": "string",
                         "enum": [
-                          "ip.update"
+                          "ip.remove"
                         ]
                       },
                       "id": {
                         "type": "string"
                       },
                       "value": {
-                        "type": "boolean"
+                        "nullable": true
                       }
                     },
                     "required": [
@@ -178771,13 +178998,14 @@
                       "action": {
                         "type": "string",
                         "enum": [
-                          "ip.remove"
+                          "managedRules.update"
                         ]
                       },
                       "id": {
                         "type": "string"
                       },
                       "value": {
+                        "type": "object",
                         "properties": {
                           "name": {
                             "type": "string",
@@ -179043,8 +179271,7 @@
                           "conditionGroup",
                           "action"
                         ],
-                        "additionalProperties": false,
-                        "nullable": true
+                        "additionalProperties": false
                       }
                     },
                     "required": [
@@ -179058,10 +179285,7 @@
                     "type": "object",
                     "properties": {
                       "action": {
-                        "type": "string",
-                        "enum": [
-                          "managedRules.update"
-                        ]
+                        "type": "string"
                       },
                       "id": {
                         "type": "string"
@@ -196495,6 +196719,9 @@
                               "notificationUrl": {
                                 "type": "string"
                               },
+                              "queueRegion": {
+                                "type": "string"
+                              },
                               "sandboxSessionId": {
                                 "type": "string"
                               },
@@ -197167,6 +197394,9 @@
                               "notificationUrl": {
                                 "type": "string"
                               },
+                              "queueRegion": {
+                                "type": "string"
+                              },
                               "sandboxSessionId": {
                                 "type": "string"
                               },
@@ -197509,6 +197739,7 @@
                               "pullRequestNumber",
                               "pullRequestState",
                               "queueName",
+                              "queueRegion",
                               "quotaEntityId",
                               "quotaEntityType",
                               "quotaRequested",
@@ -198307,6 +198538,9 @@
                               "notificationUrl": {
                                 "type": "string"
                               },
+                              "queueRegion": {
+                                "type": "string"
+                              },
                               "sandboxSessionId": {
                                 "type": "string"
                               },
@@ -198979,6 +199213,9 @@
                               "notificationUrl": {
                                 "type": "string"
                               },
+                              "queueRegion": {
+                                "type": "string"
+                              },
                               "sandboxSessionId": {
                                 "type": "string"
                               },
@@ -199321,6 +199558,7 @@
                               "pullRequestNumber",
                               "pullRequestState",
                               "queueName",
+                              "queueRegion",
                               "quotaEntityId",
                               "quotaEntityType",
                               "quotaRequested",
@@ -200085,6 +200323,9 @@
                             "notificationUrl": {
                               "type": "string"
                             },
+                            "queueRegion": {
+                              "type": "string"
+                            },
                             "sandboxSessionId": {
                               "type": "string"
                             },
@@ -200427,6 +200668,7 @@
                             "pullRequestNumber",
                             "pullRequestState",
                             "queueName",
+                            "queueRegion",
                             "quotaEntityId",
                             "quotaEntityType",
                             "quotaRequested",
@@ -201139,6 +201381,9 @@
                             "notificationUrl": {
                               "type": "string"
                             },
+                            "queueRegion": {
+                              "type": "string"
+                            },
                             "sandboxSessionId": {
                               "type": "string"
                             },
@@ -201481,6 +201726,7 @@
                             "pullRequestNumber",
                             "pullRequestState",
                             "queueName",
+                            "queueRegion",
                             "quotaEntityId",
                             "quotaEntityType",
                             "quotaRequested",
@@ -211076,13 +211322,13 @@
               "avatar": {
                 "type": "string"
               },
-              "uid": {
-                "type": "string"
-              },
               "email": {
                 "type": "string"
               },
               "username": {
+                "type": "string"
+              },
+              "uid": {
                 "type": "string"
               }
             },
@@ -214301,10 +214547,10 @@
                 "properties": {
                   "team": {
                     "properties": {
-                      "id": {
+                      "name": {
                         "type": "string"
                       },
-                      "name": {
+                      "id": {
                         "type": "string"
                       }
                     },
@@ -214362,10 +214608,10 @@
                 "properties": {
                   "team": {
                     "properties": {
-                      "id": {
+                      "name": {
                         "type": "string"
                       },
-                      "name": {
+                      "id": {
                         "type": "string"
                       }
                     },
@@ -214430,10 +214676,10 @@
                 "properties": {
                   "team": {
                     "properties": {
-                      "id": {
+                      "name": {
                         "type": "string"
                       },
-                      "name": {
+                      "id": {
                         "type": "string"
                       }
                     },
@@ -214484,10 +214730,10 @@
                 "properties": {
                   "team": {
                     "properties": {
-                      "id": {
+                      "name": {
                         "type": "string"
                       },
-                      "name": {
+                      "id": {
                         "type": "string"
                       }
                     },
@@ -217552,10 +217798,10 @@
                 "properties": {
                   "deployment": {
                     "properties": {
-                      "id": {
+                      "name": {
                         "type": "string"
                       },
-                      "name": {
+                      "id": {
                         "type": "string"
                       },
                       "meta": {
@@ -219568,6 +219814,7 @@
                     "type": "string",
                     "enum": [
                       "bitbucket",
+                      "cursor-origin",
                       "github",
                       "gitlab"
                     ]
@@ -220256,11 +220503,11 @@
                       },
                       "resourceConfig": {
                         "properties": {
-                          "nodeType": {
-                            "type": "string"
-                          },
                           "concurrentBuilds": {
                             "type": "number"
+                          },
+                          "nodeType": {
+                            "type": "string"
                           },
                           "elasticConcurrencyEnabled": {
                             "type": "boolean",
@@ -226223,10 +226470,10 @@
                 "properties": {
                   "team": {
                     "properties": {
-                      "id": {
+                      "name": {
                         "type": "string"
                       },
-                      "name": {
+                      "id": {
                         "type": "string"
                       }
                     },
@@ -228014,6 +228261,10 @@
                   "projectId": {
                     "type": "string"
                   },
+                  "projectName": {
+                    "type": "string",
+                    "description": "Display name for Activity links. Optional for events stored before it was published."
+                  },
                   "reasonCode": {
                     "type": "string",
                     "enum": [
@@ -228916,6 +229167,10 @@
                 "properties": {
                   "projectId": {
                     "type": "string"
+                  },
+                  "projectName": {
+                    "type": "string",
+                    "description": "Display name for Activity links. Optional for events stored before it was published."
                   },
                   "reasonCode": {
                     "type": "string",
@@ -229965,6 +230220,213 @@
                     "description": "Represents a budget for tracking and notifying teams on their spending."
                   },
                   "webhookUrl": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "budget"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "budget": {
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "fixed"
+                        ],
+                        "description": "The budget type"
+                      },
+                      "fixedBudget": {
+                        "type": "number",
+                        "description": "Budget amount (USD / dollars)"
+                      },
+                      "previousSpend": {
+                        "items": {
+                          "type": "number"
+                        },
+                        "type": "array",
+                        "description": "Array of the last 3 months of spend data"
+                      },
+                      "notifiedAt": {
+                        "items": {
+                          "type": "number"
+                        },
+                        "type": "array",
+                        "description": "Array of 50, 75, 100 to keep track of notifications sent out"
+                      },
+                      "webhookId": {
+                        "type": "string",
+                        "description": "Webhook id that corresponds to a webhook in Cosmos webhook collection"
+                      },
+                      "webhookNotified": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ],
+                        "description": "Keep track if the webhook has been called for the month"
+                      },
+                      "createdAt": {
+                        "type": "number",
+                        "description": "Date time when budget is created"
+                      },
+                      "updatedAt": {
+                        "type": "number",
+                        "description": "Date time when budget is updated last"
+                      },
+                      "isActive": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ],
+                        "description": "Is the budget currently active for a customer"
+                      },
+                      "pauseProjects": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ],
+                        "description": "Should all projects be paused if budget is exceeded"
+                      },
+                      "pricingPlan": {
+                        "type": "string",
+                        "enum": [
+                          "flex",
+                          "legacy",
+                          "platform",
+                          "plus",
+                          "unbundled"
+                        ],
+                        "description": "The acive pricing plan the team is billed with"
+                      },
+                      "teamId": {
+                        "type": "string",
+                        "description": "Partition key"
+                      },
+                      "id": {
+                        "type": "string",
+                        "description": "Sort key that needs to be unique per teamId"
+                      }
+                    },
+                    "required": [
+                      "createdAt",
+                      "fixedBudget",
+                      "id",
+                      "isActive",
+                      "notifiedAt",
+                      "previousSpend",
+                      "teamId",
+                      "type"
+                    ],
+                    "type": "object",
+                    "description": "Represents a budget for tracking and notifying teams on their spending."
+                  },
+                  "prevBudget": {
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "fixed"
+                        ],
+                        "description": "The budget type"
+                      },
+                      "fixedBudget": {
+                        "type": "number",
+                        "description": "Budget amount (USD / dollars)"
+                      },
+                      "previousSpend": {
+                        "items": {
+                          "type": "number"
+                        },
+                        "type": "array",
+                        "description": "Array of the last 3 months of spend data"
+                      },
+                      "notifiedAt": {
+                        "items": {
+                          "type": "number"
+                        },
+                        "type": "array",
+                        "description": "Array of 50, 75, 100 to keep track of notifications sent out"
+                      },
+                      "webhookId": {
+                        "type": "string",
+                        "description": "Webhook id that corresponds to a webhook in Cosmos webhook collection"
+                      },
+                      "webhookNotified": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ],
+                        "description": "Keep track if the webhook has been called for the month"
+                      },
+                      "createdAt": {
+                        "type": "number",
+                        "description": "Date time when budget is created"
+                      },
+                      "updatedAt": {
+                        "type": "number",
+                        "description": "Date time when budget is updated last"
+                      },
+                      "isActive": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ],
+                        "description": "Is the budget currently active for a customer"
+                      },
+                      "pauseProjects": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ],
+                        "description": "Should all projects be paused if budget is exceeded"
+                      },
+                      "pricingPlan": {
+                        "type": "string",
+                        "enum": [
+                          "flex",
+                          "legacy",
+                          "platform",
+                          "plus",
+                          "unbundled"
+                        ],
+                        "description": "The acive pricing plan the team is billed with"
+                      },
+                      "teamId": {
+                        "type": "string",
+                        "description": "Partition key"
+                      },
+                      "id": {
+                        "type": "string",
+                        "description": "Sort key that needs to be unique per teamId"
+                      }
+                    },
+                    "required": [
+                      "createdAt",
+                      "fixedBudget",
+                      "id",
+                      "isActive",
+                      "notifiedAt",
+                      "previousSpend",
+                      "teamId",
+                      "type"
+                    ],
+                    "type": "object",
+                    "description": "Represents a budget for tracking and notifying teams on their spending."
+                  },
+                  "webhookUrl": {
+                    "type": "string"
+                  },
+                  "prevWebhookUrl": {
                     "type": "string"
                   }
                 },
@@ -232802,10 +233264,10 @@
                 "properties": {
                   "team": {
                     "properties": {
-                      "id": {
+                      "name": {
                         "type": "string"
                       },
-                      "name": {
+                      "id": {
                         "type": "string"
                       }
                     },
@@ -232865,10 +233327,10 @@
                 "properties": {
                   "team": {
                     "properties": {
-                      "id": {
+                      "name": {
                         "type": "string"
                       },
-                      "name": {
+                      "id": {
                         "type": "string"
                       }
                     },
@@ -232919,10 +233381,10 @@
                 "properties": {
                   "team": {
                     "properties": {
-                      "id": {
+                      "name": {
                         "type": "string"
                       },
-                      "name": {
+                      "id": {
                         "type": "string"
                       }
                     },
@@ -239747,12 +240209,12 @@
           },
           "resourceConfig": {
             "properties": {
-              "nodeType": {
-                "type": "string",
-                "description": "An object containing infomation related to the amount of platform resources may be allocated to the User account."
-              },
               "concurrentBuilds": {
                 "type": "number",
+                "description": "An object containing infomation related to the amount of platform resources may be allocated to the User account."
+              },
+              "nodeType": {
+                "type": "string",
                 "description": "An object containing infomation related to the amount of platform resources may be allocated to the User account."
               },
               "elasticConcurrencyEnabled": {

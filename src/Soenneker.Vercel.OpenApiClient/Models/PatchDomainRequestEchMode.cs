@@ -3,17 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>Encrypted Client Hello enrollment. &apos;auto&apos; leaves it to Vercel, &apos;enabled&apos; always enrolls, &apos;disabled&apos; never enrolls and opts out of automatic enrollment.</summary>
+    /// <summary>Encrypted Client Hello enrollment. &apos;auto&apos; leaves it to Vercel, &apos;disabled&apos; never enrolls and opts out of automatic enrollment.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PatchDomainRequestEchMode
     {
         [EnumMember(Value = "auto")]
         #pragma warning disable CS1591
         Auto,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "enabled")]
-        #pragma warning disable CS1591
-        Enabled,
         #pragma warning restore CS1591
         [EnumMember(Value = "disabled")]
         #pragma warning disable CS1591

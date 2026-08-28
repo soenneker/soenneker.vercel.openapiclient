@@ -59,6 +59,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The alwaysRefuseToBuild property</summary>
         public bool? AlwaysRefuseToBuild { get; set; }
+        /// <summary>The atproto property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseAtproto? Atproto { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseAtproto Atproto { get; set; }
+#endif
         /// <summary>Attribution metadata for the deployment, linking commit author to git and Vercel users. Only populated when the `enable-deployment-attribution` flag is enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -567,6 +575,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "aliasFinal", n => { AliasFinal = n.GetStringValue(); } },
                 { "aliasWarning", n => { AliasWarning = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseAliasWarning>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseAliasWarning.CreateFromDiscriminatorValue); } },
                 { "alwaysRefuseToBuild", n => { AlwaysRefuseToBuild = n.GetBoolValue(); } },
+                { "atproto", n => { Atproto = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseAtproto>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseAtproto.CreateFromDiscriminatorValue); } },
                 { "attribution", n => { Attribution = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseAttribution>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseAttribution.CreateFromDiscriminatorValue); } },
                 { "autoAssignCustomDomains", n => { AutoAssignCustomDomains = n.GetBoolValue(); } },
                 { "automaticAliases", n => { AutomaticAliases = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -668,6 +677,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("aliasFinal", AliasFinal);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseAliasWarning>("aliasWarning", AliasWarning);
             writer.WriteBoolValue("alwaysRefuseToBuild", AlwaysRefuseToBuild);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseAtproto>("atproto", Atproto);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseAttribution>("attribution", Attribution);
             writer.WriteBoolValue("autoAssignCustomDomains", AutoAssignCustomDomains);
             writer.WriteCollectionOfPrimitiveValues<string>("automaticAliases", AutomaticAliases);

@@ -15,40 +15,32 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The eventId property</summary>
+        /// <summary>The amount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventId { get; set; }
+        public string? Amount { get; set; }
 #nullable restore
 #else
-        public string EventId { get; set; }
+        public string Amount { get; set; }
 #endif
-        /// <summary>The occurredAt property</summary>
-        public double? OccurredAt { get; set; }
-        /// <summary>The sessionId property</summary>
+        /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionId { get; set; }
+        public string? Currency { get; set; }
 #nullable restore
 #else
-        public string SessionId { get; set; }
+        public string Currency { get; set; }
 #endif
-        /// <summary>Currently emitted session kinds: chat, investigation.</summary>
+        /// <summary>The expiresAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionKind { get; set; }
+        public string? ExpiresAt { get; set; }
 #nullable restore
 #else
-        public string SessionKind { get; set; }
+        public string ExpiresAt { get; set; }
 #endif
-        /// <summary>Currently emitted surfaces: dashboard, internal, slack, automation, github.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Surface { get; set; }
-#nullable restore
-#else
-        public string Surface { get; set; }
-#endif
+        /// <summary>The trialCreditsIssuedAt property</summary>
+        public double? TrialCreditsIssuedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf348"/> and sets the default values.
         /// </summary>
@@ -74,11 +66,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "eventId", n => { EventId = n.GetStringValue(); } },
-                { "occurredAt", n => { OccurredAt = n.GetDoubleValue(); } },
-                { "sessionId", n => { SessionId = n.GetStringValue(); } },
-                { "sessionKind", n => { SessionKind = n.GetStringValue(); } },
-                { "surface", n => { Surface = n.GetStringValue(); } },
+                { "amount", n => { Amount = n.GetStringValue(); } },
+                { "currency", n => { Currency = n.GetStringValue(); } },
+                { "expiresAt", n => { ExpiresAt = n.GetStringValue(); } },
+                { "trialCreditsIssuedAt", n => { TrialCreditsIssuedAt = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -88,11 +79,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("eventId", EventId);
-            writer.WriteDoubleValue("occurredAt", OccurredAt);
-            writer.WriteStringValue("sessionId", SessionId);
-            writer.WriteStringValue("sessionKind", SessionKind);
-            writer.WriteStringValue("surface", Surface);
+            writer.WriteStringValue("amount", Amount);
+            writer.WriteStringValue("currency", Currency);
+            writer.WriteStringValue("expiresAt", ExpiresAt);
+            writer.WriteDoubleValue("trialCreditsIssuedAt", TrialCreditsIssuedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

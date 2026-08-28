@@ -1150,6 +1150,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string QueueName { get; set; }
 #endif
+        /// <summary>The queueRegion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? QueueRegion { get; set; }
+#nullable restore
+#else
+        public string QueueRegion { get; set; }
+#endif
         /// <summary>The quotaEntityId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1933,6 +1941,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "pullRequestNumber", n => { PullRequestNumber = n.GetStringValue(); } },
                 { "pullRequestState", n => { PullRequestState = n.GetStringValue(); } },
                 { "queueName", n => { QueueName = n.GetStringValue(); } },
+                { "queueRegion", n => { QueueRegion = n.GetStringValue(); } },
                 { "quotaEntityId", n => { QuotaEntityId = n.GetStringValue(); } },
                 { "quotaEntityType", n => { QuotaEntityType = n.GetStringValue(); } },
                 { "quotaRequested", n => { QuotaRequested = n.GetStringValue(); } },
@@ -2161,6 +2170,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("pullRequestNumber", PullRequestNumber);
             writer.WriteStringValue("pullRequestState", PullRequestState);
             writer.WriteStringValue("queueName", QueueName);
+            writer.WriteStringValue("queueRegion", QueueRegion);
             writer.WriteStringValue("quotaEntityId", QuotaEntityId);
             writer.WriteStringValue("quotaEntityType", QuotaEntityType);
             writer.WriteStringValue("quotaRequested", QuotaRequested);

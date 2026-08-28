@@ -31,7 +31,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Destination { get; set; }
 #endif
-        /// <summary>Encrypted Client Hello enrollment. &apos;auto&apos; leaves it to Vercel, &apos;enabled&apos; always enrolls, &apos;disabled&apos; never enrolls and opts out of automatic enrollment.</summary>
+        /// <summary>Encrypted Client Hello enrollment. &apos;auto&apos; leaves it to Vercel, &apos;disabled&apos; never enrolls and opts out of automatic enrollment.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.PatchDomainRequestEchMode? EchMode { get; set; }
         /// <summary>The op property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
