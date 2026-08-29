@@ -31,6 +31,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string HobbyPolicySlackThreadTs { get; set; }
 #endif
+        /// <summary>Tracks the last time the 100% `warningThresholdsV2` crossing was reported for this owner. This is separate so a recent lower warning does not suppress the full-allocation warning. It also starts the team-wide 24-hour grace period before a soft pause.</summary>
+        public double? HobbyWarningV2At100SlackSentAt { get; set; }
         /// <summary>Tracks the last time a `warningThresholdsV2` crossing was reported for this owner. Hobby has no billing period, so this re-arms on the same rolling window the service already uses for Hobby alerts.</summary>
         public double? HobbyWarningV2SlackSentAt { get; set; }
         /// <summary>Tracks the last time we attempted to send an increased on-demand email. This check is to limit the number of attempts per day.</summary>
@@ -71,6 +73,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "hobbyPauseNoticeSlackSentAt", n => { HobbyPauseNoticeSlackSentAt = n.GetDoubleValue(); } },
                 { "hobbyPolicyNoticeSlackSentAt", n => { HobbyPolicyNoticeSlackSentAt = n.GetDoubleValue(); } },
                 { "hobbyPolicySlackThreadTs", n => { HobbyPolicySlackThreadTs = n.GetStringValue(); } },
+                { "hobbyWarningV2At100SlackSentAt", n => { HobbyWarningV2At100SlackSentAt = n.GetDoubleValue(); } },
                 { "hobbyWarningV2SlackSentAt", n => { HobbyWarningV2SlackSentAt = n.GetDoubleValue(); } },
                 { "increasedOnDemandEmailAttemptedAt", n => { IncreasedOnDemandEmailAttemptedAt = n.GetDoubleValue(); } },
                 { "increasedOnDemandEmailSentAt", n => { IncreasedOnDemandEmailSentAt = n.GetDoubleValue(); } },
@@ -90,6 +93,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("hobbyPauseNoticeSlackSentAt", HobbyPauseNoticeSlackSentAt);
             writer.WriteDoubleValue("hobbyPolicyNoticeSlackSentAt", HobbyPolicyNoticeSlackSentAt);
             writer.WriteStringValue("hobbyPolicySlackThreadTs", HobbyPolicySlackThreadTs);
+            writer.WriteDoubleValue("hobbyWarningV2At100SlackSentAt", HobbyWarningV2At100SlackSentAt);
             writer.WriteDoubleValue("hobbyWarningV2SlackSentAt", HobbyWarningV2SlackSentAt);
             writer.WriteDoubleValue("increasedOnDemandEmailAttemptedAt", IncreasedOnDemandEmailAttemptedAt);
             writer.WriteDoubleValue("increasedOnDemandEmailSentAt", IncreasedOnDemandEmailSentAt);

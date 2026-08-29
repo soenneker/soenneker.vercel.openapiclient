@@ -7,6 +7,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum NamedSandboxFailoverRegionsItem
     {
+        [EnumMember(Value = "arn1")]
+        #pragma warning disable CS1591
+        Arn1,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "bom1")]
+        #pragma warning disable CS1591
+        Bom1,
+        #pragma warning restore CS1591
         [EnumMember(Value = "cdg1")]
         #pragma warning disable CS1591
         Cdg1,
@@ -15,13 +23,65 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Cle1,
         #pragma warning restore CS1591
+        [EnumMember(Value = "cpt1")]
+        #pragma warning disable CS1591
+        Cpt1,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dub1")]
+        #pragma warning disable CS1591
+        Dub1,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "fra1")]
+        #pragma warning disable CS1591
+        Fra1,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "gru1")]
+        #pragma warning disable CS1591
+        Gru1,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hkg1")]
+        #pragma warning disable CS1591
+        Hkg1,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hnd1")]
+        #pragma warning disable CS1591
+        Hnd1,
+        #pragma warning restore CS1591
         [EnumMember(Value = "iad1")]
         #pragma warning disable CS1591
         Iad1,
         #pragma warning restore CS1591
+        [EnumMember(Value = "icn1")]
+        #pragma warning disable CS1591
+        Icn1,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "kix1")]
+        #pragma warning disable CS1591
+        Kix1,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "lhr1")]
+        #pragma warning disable CS1591
+        Lhr1,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "pdx1")]
+        #pragma warning disable CS1591
+        Pdx1,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sfo1")]
         #pragma warning disable CS1591
         Sfo1,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sin1")]
+        #pragma warning disable CS1591
+        Sin1,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "syd1")]
+        #pragma warning disable CS1591
+        Syd1,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "yul1")]
+        #pragma warning disable CS1591
+        Yul1,
         #pragma warning restore CS1591
     }
 }

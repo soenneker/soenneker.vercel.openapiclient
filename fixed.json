@@ -2402,6 +2402,9 @@
           "404": {
             "description": "404 response"
           },
+          "409": {
+            "description": "409 response"
+          },
           "410": {
             "description": "410 response"
           },
@@ -57009,11 +57012,15 @@
       },
       "AuthUserAccountUpdateContext": {
         "required": [
+          "canOptOut",
           "managedTeams",
           "verifiedEmuDomains"
         ],
         "type": "object",
         "properties": {
+          "canOptOut": {
+            "$ref": "#/components/schemas/AuthUserAccountUpdateContextCanOptOut"
+          },
           "organization": {
             "$ref": "#/components/schemas/AuthUserAccountUpdateContextOrganization"
           },
@@ -63806,6 +63813,10 @@
           "hobbyWarningV2SlackSentAt": {
             "type": "number",
             "description": "Tracks the last time a \u0060warningThresholdsV2\u0060 crossing was reported for this owner. Hobby has no billing period, so this re-arms on the same rolling window the service already uses for Hobby alerts."
+          },
+          "hobbyWarningV2At100SlackSentAt": {
+            "type": "number",
+            "description": "Tracks the last time the 100% \u0060warningThresholdsV2\u0060 crossing was reported for this owner. This is separate so a recent lower warning does not suppress the full-allocation warning. It also starts the team-wide 24-hour grace period before a soft pause."
           },
           "hobbyPauseNoticeSlackSentAt": {
             "type": "number",
@@ -72185,7 +72196,6 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "maxLength": 8192,
               "type": "string"
             }
           }
@@ -72208,7 +72218,6 @@
             "minItems": 1,
             "type": "array",
             "items": {
-              "maxLength": 8192,
               "type": "string"
             }
           }
@@ -79829,7 +79838,7 @@
             "$ref": "#/components/schemas/CreateSandboxesV2RequestRegion"
           },
           "failoverRegions": {
-            "maxItems": 4,
+            "maxItems": 19,
             "uniqueItems": true,
             "type": "array",
             "items": {
@@ -80039,7 +80048,7 @@
             "$ref": "#/components/schemas/UpdateSandboxRequestRegion"
           },
           "failoverRegions": {
-            "maxItems": 4,
+            "maxItems": 19,
             "uniqueItems": true,
             "type": "array",
             "items": {
@@ -80416,7 +80425,7 @@
             "$ref": "#/components/schemas/CreateSandboxesByNameForkV2RequestRegion"
           },
           "failoverRegions": {
-            "maxItems": 4,
+            "maxItems": 19,
             "uniqueItems": true,
             "type": "array",
             "items": {
@@ -80524,7 +80533,7 @@
             "$ref": "#/components/schemas/CreateSandboxesV3RequestRegion"
           },
           "failoverRegions": {
-            "maxItems": 4,
+            "maxItems": 19,
             "uniqueItems": true,
             "type": "array",
             "items": {
@@ -80649,7 +80658,7 @@
             "$ref": "#/components/schemas/CreateSandboxesByNameForkV3RequestRegion"
           },
           "failoverRegions": {
-            "maxItems": 4,
+            "maxItems": 19,
             "uniqueItems": true,
             "type": "array",
             "items": {
@@ -80757,7 +80766,7 @@
             "$ref": "#/components/schemas/CreateSandboxesV4RequestRegion"
           },
           "failoverRegions": {
-            "maxItems": 4,
+            "maxItems": 19,
             "uniqueItems": true,
             "type": "array",
             "items": {
@@ -117562,7 +117571,7 @@
             "$ref": "#/components/schemas/CreateProjectRequestSandboxRegion"
           },
           "failoverRegions": {
-            "maxItems": 4,
+            "maxItems": 19,
             "uniqueItems": true,
             "type": "array",
             "items": {
@@ -123880,7 +123889,7 @@
             "$ref": "#/components/schemas/UpdateProjectRequestSandboxRegion"
           },
           "failoverRegions": {
-            "maxItems": 4,
+            "maxItems": 19,
             "uniqueItems": true,
             "type": "array",
             "items": {
@@ -172574,6 +172583,7 @@
         "required": [
           "effectiveBehavior",
           "orbPriceId",
+          "pricingSource",
           "productId"
         ],
         "type": "object",
@@ -172584,6 +172594,9 @@
           "orbPriceId": {
             "type": "string",
             "description": "The Orb price ID for the subscription item being modified."
+          },
+          "pricingSource": {
+            "$ref": "#/components/schemas/BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputPricingSource"
           },
           "productId": {
             "type": "string",
@@ -195243,6 +195256,7 @@
           "linear",
           "linq",
           "microsoft-entra",
+          "microsoft-teams",
           "oauth",
           "photon",
           "salesforce",
@@ -195285,6 +195299,10 @@
             {
               "value": "microsoft-entra",
               "name": "MicrosoftEntra"
+            },
+            {
+              "value": "microsoft-teams",
+              "name": "MicrosoftTeams"
             },
             {
               "value": "oauth",
@@ -206389,10 +206407,25 @@
       },
       "NamedSandboxFailoverRegionsItem": {
         "enum": [
+          "arn1",
+          "bom1",
           "cdg1",
           "cle1",
+          "cpt1",
+          "dub1",
+          "fra1",
+          "gru1",
+          "hkg1",
+          "hnd1",
           "iad1",
-          "sfo1"
+          "icn1",
+          "kix1",
+          "lhr1",
+          "pdx1",
+          "sfo1",
+          "sin1",
+          "syd1",
+          "yul1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -206403,6 +206436,14 @@
           "modelAsString": false,
           "values": [
             {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
               "value": "cdg1",
               "name": "Cdg1"
             },
@@ -206411,12 +206452,64 @@
               "name": "Cle1"
             },
             {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
               "value": "iad1",
               "name": "Iad1"
             },
             {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
               "value": "sfo1",
               "name": "Sfo1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
             }
           ]
         }
@@ -218096,6 +218189,15 @@
         ],
         "type": "boolean",
         "additionalProperties": false
+      },
+      "AuthUserAccountUpdateContextCanOptOut": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false,
+        "description": "Whether this user can cancel their optional Account Update flow."
       },
       "UserEventPayloadOneOf13BudgetRefreshPeriod": {
         "enum": [
@@ -235429,7 +235531,22 @@
           "iad1",
           "sfo1",
           "cle1",
-          "cdg1"
+          "cdg1",
+          "fra1",
+          "arn1",
+          "sin1",
+          "pdx1",
+          "lhr1",
+          "icn1",
+          "bom1",
+          "cpt1",
+          "dub1",
+          "gru1",
+          "hkg1",
+          "syd1",
+          "yul1",
+          "hnd1",
+          "kix1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -235454,6 +235571,66 @@
             {
               "value": "cdg1",
               "name": "Cdg1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
             }
           ]
         }
@@ -235463,7 +235640,22 @@
           "iad1",
           "sfo1",
           "cle1",
-          "cdg1"
+          "cdg1",
+          "fra1",
+          "arn1",
+          "sin1",
+          "pdx1",
+          "lhr1",
+          "icn1",
+          "bom1",
+          "cpt1",
+          "dub1",
+          "gru1",
+          "hkg1",
+          "syd1",
+          "yul1",
+          "hnd1",
+          "kix1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -235486,6 +235678,66 @@
             {
               "value": "cdg1",
               "name": "Cdg1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
             }
           ]
         }
@@ -235495,7 +235747,22 @@
           "iad1",
           "sfo1",
           "cle1",
-          "cdg1"
+          "cdg1",
+          "fra1",
+          "arn1",
+          "sin1",
+          "pdx1",
+          "lhr1",
+          "icn1",
+          "bom1",
+          "cpt1",
+          "dub1",
+          "gru1",
+          "hkg1",
+          "syd1",
+          "yul1",
+          "hnd1",
+          "kix1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -235520,6 +235787,66 @@
             {
               "value": "cdg1",
               "name": "Cdg1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
             }
           ]
         }
@@ -235571,7 +235898,22 @@
           "iad1",
           "sfo1",
           "cle1",
-          "cdg1"
+          "cdg1",
+          "fra1",
+          "arn1",
+          "sin1",
+          "pdx1",
+          "lhr1",
+          "icn1",
+          "bom1",
+          "cpt1",
+          "dub1",
+          "gru1",
+          "hkg1",
+          "syd1",
+          "yul1",
+          "hnd1",
+          "kix1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -235596,6 +235938,66 @@
             {
               "value": "cdg1",
               "name": "Cdg1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
             }
           ]
         }
@@ -235605,7 +236007,22 @@
           "iad1",
           "sfo1",
           "cle1",
-          "cdg1"
+          "cdg1",
+          "fra1",
+          "arn1",
+          "sin1",
+          "pdx1",
+          "lhr1",
+          "icn1",
+          "bom1",
+          "cpt1",
+          "dub1",
+          "gru1",
+          "hkg1",
+          "syd1",
+          "yul1",
+          "hnd1",
+          "kix1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -235628,6 +236045,66 @@
             {
               "value": "cdg1",
               "name": "Cdg1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
             }
           ]
         }
@@ -235684,7 +236161,22 @@
           "iad1",
           "sfo1",
           "cle1",
-          "cdg1"
+          "cdg1",
+          "fra1",
+          "arn1",
+          "sin1",
+          "pdx1",
+          "lhr1",
+          "icn1",
+          "bom1",
+          "cpt1",
+          "dub1",
+          "gru1",
+          "hkg1",
+          "syd1",
+          "yul1",
+          "hnd1",
+          "kix1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -235709,6 +236201,66 @@
             {
               "value": "cdg1",
               "name": "Cdg1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
             }
           ]
         }
@@ -235718,7 +236270,22 @@
           "iad1",
           "sfo1",
           "cle1",
-          "cdg1"
+          "cdg1",
+          "fra1",
+          "arn1",
+          "sin1",
+          "pdx1",
+          "lhr1",
+          "icn1",
+          "bom1",
+          "cpt1",
+          "dub1",
+          "gru1",
+          "hkg1",
+          "syd1",
+          "yul1",
+          "hnd1",
+          "kix1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -235741,6 +236308,66 @@
             {
               "value": "cdg1",
               "name": "Cdg1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
             }
           ]
         }
@@ -235750,7 +236377,22 @@
           "iad1",
           "sfo1",
           "cle1",
-          "cdg1"
+          "cdg1",
+          "fra1",
+          "arn1",
+          "sin1",
+          "pdx1",
+          "lhr1",
+          "icn1",
+          "bom1",
+          "cpt1",
+          "dub1",
+          "gru1",
+          "hkg1",
+          "syd1",
+          "yul1",
+          "hnd1",
+          "kix1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -235775,6 +236417,66 @@
             {
               "value": "cdg1",
               "name": "Cdg1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
             }
           ]
         }
@@ -235784,7 +236486,22 @@
           "iad1",
           "sfo1",
           "cle1",
-          "cdg1"
+          "cdg1",
+          "fra1",
+          "arn1",
+          "sin1",
+          "pdx1",
+          "lhr1",
+          "icn1",
+          "bom1",
+          "cpt1",
+          "dub1",
+          "gru1",
+          "hkg1",
+          "syd1",
+          "yul1",
+          "hnd1",
+          "kix1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -235807,6 +236524,66 @@
             {
               "value": "cdg1",
               "name": "Cdg1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
             }
           ]
         }
@@ -235816,7 +236593,22 @@
           "iad1",
           "sfo1",
           "cle1",
-          "cdg1"
+          "cdg1",
+          "fra1",
+          "arn1",
+          "sin1",
+          "pdx1",
+          "lhr1",
+          "icn1",
+          "bom1",
+          "cpt1",
+          "dub1",
+          "gru1",
+          "hkg1",
+          "syd1",
+          "yul1",
+          "hnd1",
+          "kix1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -235841,6 +236633,66 @@
             {
               "value": "cdg1",
               "name": "Cdg1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
             }
           ]
         }
@@ -235850,7 +236702,22 @@
           "iad1",
           "sfo1",
           "cle1",
-          "cdg1"
+          "cdg1",
+          "fra1",
+          "arn1",
+          "sin1",
+          "pdx1",
+          "lhr1",
+          "icn1",
+          "bom1",
+          "cpt1",
+          "dub1",
+          "gru1",
+          "hkg1",
+          "syd1",
+          "yul1",
+          "hnd1",
+          "kix1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -235873,6 +236740,66 @@
             {
               "value": "cdg1",
               "name": "Cdg1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
             }
           ]
         }
@@ -235882,7 +236809,22 @@
           "iad1",
           "sfo1",
           "cle1",
-          "cdg1"
+          "cdg1",
+          "fra1",
+          "arn1",
+          "sin1",
+          "pdx1",
+          "lhr1",
+          "icn1",
+          "bom1",
+          "cpt1",
+          "dub1",
+          "gru1",
+          "hkg1",
+          "syd1",
+          "yul1",
+          "hnd1",
+          "kix1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -235907,6 +236849,66 @@
             {
               "value": "cdg1",
               "name": "Cdg1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
             }
           ]
         }
@@ -235916,7 +236918,22 @@
           "iad1",
           "sfo1",
           "cle1",
-          "cdg1"
+          "cdg1",
+          "fra1",
+          "arn1",
+          "sin1",
+          "pdx1",
+          "lhr1",
+          "icn1",
+          "bom1",
+          "cpt1",
+          "dub1",
+          "gru1",
+          "hkg1",
+          "syd1",
+          "yul1",
+          "hnd1",
+          "kix1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -235939,6 +236956,66 @@
             {
               "value": "cdg1",
               "name": "Cdg1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
             }
           ]
         }
@@ -257575,7 +258652,22 @@
           "iad1",
           "sfo1",
           "cle1",
-          "cdg1"
+          "cdg1",
+          "fra1",
+          "arn1",
+          "sin1",
+          "pdx1",
+          "lhr1",
+          "icn1",
+          "bom1",
+          "cpt1",
+          "dub1",
+          "gru1",
+          "hkg1",
+          "syd1",
+          "yul1",
+          "hnd1",
+          "kix1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -257600,6 +258692,66 @@
             {
               "value": "cdg1",
               "name": "Cdg1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
             }
           ]
         }
@@ -257609,7 +258761,22 @@
           "iad1",
           "sfo1",
           "cle1",
-          "cdg1"
+          "cdg1",
+          "fra1",
+          "arn1",
+          "sin1",
+          "pdx1",
+          "lhr1",
+          "icn1",
+          "bom1",
+          "cpt1",
+          "dub1",
+          "gru1",
+          "hkg1",
+          "syd1",
+          "yul1",
+          "hnd1",
+          "kix1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -257632,6 +258799,66 @@
             {
               "value": "cdg1",
               "name": "Cdg1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
             }
           ]
         }
@@ -258834,10 +260061,25 @@
       },
       "CreateProject200ResponseSandboxRegion": {
         "enum": [
+          "arn1",
+          "bom1",
           "cdg1",
           "cle1",
+          "cpt1",
+          "dub1",
+          "fra1",
+          "gru1",
+          "hkg1",
+          "hnd1",
           "iad1",
-          "sfo1"
+          "icn1",
+          "kix1",
+          "lhr1",
+          "pdx1",
+          "sfo1",
+          "sin1",
+          "syd1",
+          "yul1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -258846,6 +260088,14 @@
           "modelAsString": false,
           "values": [
             {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
               "value": "cdg1",
               "name": "Cdg1"
             },
@@ -258854,22 +260104,89 @@
               "name": "Cle1"
             },
             {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
               "value": "iad1",
               "name": "Iad1"
             },
             {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
               "value": "sfo1",
               "name": "Sfo1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
             }
           ]
         }
       },
       "CreateProject200ResponseSandboxFailoverRegionsItem": {
         "enum": [
+          "arn1",
+          "bom1",
           "cdg1",
           "cle1",
+          "cpt1",
+          "dub1",
+          "fra1",
+          "gru1",
+          "hkg1",
+          "hnd1",
           "iad1",
-          "sfo1"
+          "icn1",
+          "kix1",
+          "lhr1",
+          "pdx1",
+          "sfo1",
+          "sin1",
+          "syd1",
+          "yul1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -258878,6 +260195,14 @@
           "modelAsString": false,
           "values": [
             {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
               "value": "cdg1",
               "name": "Cdg1"
             },
@@ -258886,12 +260211,64 @@
               "name": "Cle1"
             },
             {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
               "value": "iad1",
               "name": "Iad1"
             },
             {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
               "value": "sfo1",
               "name": "Sfo1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
             }
           ]
         }
@@ -260789,10 +262166,25 @@
       },
       "GetProject200ResponseSandboxRegion": {
         "enum": [
+          "arn1",
+          "bom1",
           "cdg1",
           "cle1",
+          "cpt1",
+          "dub1",
+          "fra1",
+          "gru1",
+          "hkg1",
+          "hnd1",
           "iad1",
-          "sfo1"
+          "icn1",
+          "kix1",
+          "lhr1",
+          "pdx1",
+          "sfo1",
+          "sin1",
+          "syd1",
+          "yul1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -260801,6 +262193,14 @@
           "modelAsString": false,
           "values": [
             {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
               "value": "cdg1",
               "name": "Cdg1"
             },
@@ -260809,22 +262209,89 @@
               "name": "Cle1"
             },
             {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
               "value": "iad1",
               "name": "Iad1"
             },
             {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
               "value": "sfo1",
               "name": "Sfo1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
             }
           ]
         }
       },
       "GetProject200ResponseSandboxFailoverRegionsItem": {
         "enum": [
+          "arn1",
+          "bom1",
           "cdg1",
           "cle1",
+          "cpt1",
+          "dub1",
+          "fra1",
+          "gru1",
+          "hkg1",
+          "hnd1",
           "iad1",
-          "sfo1"
+          "icn1",
+          "kix1",
+          "lhr1",
+          "pdx1",
+          "sfo1",
+          "sin1",
+          "syd1",
+          "yul1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -260833,6 +262300,14 @@
           "modelAsString": false,
           "values": [
             {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
               "value": "cdg1",
               "name": "Cdg1"
             },
@@ -260841,12 +262316,64 @@
               "name": "Cle1"
             },
             {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
               "value": "iad1",
               "name": "Iad1"
             },
             {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
               "value": "sfo1",
               "name": "Sfo1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
             }
           ]
         }
@@ -261951,7 +263478,22 @@
           "iad1",
           "sfo1",
           "cle1",
-          "cdg1"
+          "cdg1",
+          "fra1",
+          "arn1",
+          "sin1",
+          "pdx1",
+          "lhr1",
+          "icn1",
+          "bom1",
+          "cpt1",
+          "dub1",
+          "gru1",
+          "hkg1",
+          "syd1",
+          "yul1",
+          "hnd1",
+          "kix1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -261976,6 +263518,66 @@
             {
               "value": "cdg1",
               "name": "Cdg1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
             }
           ]
         }
@@ -261985,7 +263587,22 @@
           "iad1",
           "sfo1",
           "cle1",
-          "cdg1"
+          "cdg1",
+          "fra1",
+          "arn1",
+          "sin1",
+          "pdx1",
+          "lhr1",
+          "icn1",
+          "bom1",
+          "cpt1",
+          "dub1",
+          "gru1",
+          "hkg1",
+          "syd1",
+          "yul1",
+          "hnd1",
+          "kix1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -262008,6 +263625,66 @@
             {
               "value": "cdg1",
               "name": "Cdg1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
             }
           ]
         }
@@ -263156,10 +264833,25 @@
       },
       "UpdateProject200ResponseSandboxRegion": {
         "enum": [
+          "arn1",
+          "bom1",
           "cdg1",
           "cle1",
+          "cpt1",
+          "dub1",
+          "fra1",
+          "gru1",
+          "hkg1",
+          "hnd1",
           "iad1",
-          "sfo1"
+          "icn1",
+          "kix1",
+          "lhr1",
+          "pdx1",
+          "sfo1",
+          "sin1",
+          "syd1",
+          "yul1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -263168,6 +264860,14 @@
           "modelAsString": false,
           "values": [
             {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
               "value": "cdg1",
               "name": "Cdg1"
             },
@@ -263176,22 +264876,89 @@
               "name": "Cle1"
             },
             {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
               "value": "iad1",
               "name": "Iad1"
             },
             {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
               "value": "sfo1",
               "name": "Sfo1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
             }
           ]
         }
       },
       "UpdateProject200ResponseSandboxFailoverRegionsItem": {
         "enum": [
+          "arn1",
+          "bom1",
           "cdg1",
           "cle1",
+          "cpt1",
+          "dub1",
+          "fra1",
+          "gru1",
+          "hkg1",
+          "hnd1",
           "iad1",
-          "sfo1"
+          "icn1",
+          "kix1",
+          "lhr1",
+          "pdx1",
+          "sfo1",
+          "sin1",
+          "syd1",
+          "yul1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -263200,6 +264967,14 @@
           "modelAsString": false,
           "values": [
             {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
               "value": "cdg1",
               "name": "Cdg1"
             },
@@ -263208,12 +264983,64 @@
               "name": "Cle1"
             },
             {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
               "value": "iad1",
               "name": "Iad1"
             },
             {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
               "value": "sfo1",
               "name": "Sfo1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
             }
           ]
         }
@@ -265093,10 +266920,25 @@
       },
       "UploadProjectAvatar200ResponseSandboxRegion": {
         "enum": [
+          "arn1",
+          "bom1",
           "cdg1",
           "cle1",
+          "cpt1",
+          "dub1",
+          "fra1",
+          "gru1",
+          "hkg1",
+          "hnd1",
           "iad1",
-          "sfo1"
+          "icn1",
+          "kix1",
+          "lhr1",
+          "pdx1",
+          "sfo1",
+          "sin1",
+          "syd1",
+          "yul1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -265105,6 +266947,14 @@
           "modelAsString": false,
           "values": [
             {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
               "value": "cdg1",
               "name": "Cdg1"
             },
@@ -265113,22 +266963,89 @@
               "name": "Cle1"
             },
             {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
               "value": "iad1",
               "name": "Iad1"
             },
             {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
               "value": "sfo1",
               "name": "Sfo1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
             }
           ]
         }
       },
       "UploadProjectAvatar200ResponseSandboxFailoverRegionsItem": {
         "enum": [
+          "arn1",
+          "bom1",
           "cdg1",
           "cle1",
+          "cpt1",
+          "dub1",
+          "fra1",
+          "gru1",
+          "hkg1",
+          "hnd1",
           "iad1",
-          "sfo1"
+          "icn1",
+          "kix1",
+          "lhr1",
+          "pdx1",
+          "sfo1",
+          "sin1",
+          "syd1",
+          "yul1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -265137,6 +267054,14 @@
           "modelAsString": false,
           "values": [
             {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
               "value": "cdg1",
               "name": "Cdg1"
             },
@@ -265145,12 +267070,64 @@
               "name": "Cle1"
             },
             {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
               "value": "iad1",
               "name": "Iad1"
             },
             {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
               "value": "sfo1",
               "name": "Sfo1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
             }
           ]
         }
@@ -268033,10 +270010,25 @@
       },
       "UpdateMicrofrontends200ResponseSandboxRegion": {
         "enum": [
+          "arn1",
+          "bom1",
           "cdg1",
           "cle1",
+          "cpt1",
+          "dub1",
+          "fra1",
+          "gru1",
+          "hkg1",
+          "hnd1",
           "iad1",
-          "sfo1"
+          "icn1",
+          "kix1",
+          "lhr1",
+          "pdx1",
+          "sfo1",
+          "sin1",
+          "syd1",
+          "yul1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -268045,6 +270037,14 @@
           "modelAsString": false,
           "values": [
             {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
               "value": "cdg1",
               "name": "Cdg1"
             },
@@ -268053,22 +270053,89 @@
               "name": "Cle1"
             },
             {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
               "value": "iad1",
               "name": "Iad1"
             },
             {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
               "value": "sfo1",
               "name": "Sfo1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
             }
           ]
         }
       },
       "UpdateMicrofrontends200ResponseSandboxFailoverRegionsItem": {
         "enum": [
+          "arn1",
+          "bom1",
           "cdg1",
           "cle1",
+          "cpt1",
+          "dub1",
+          "fra1",
+          "gru1",
+          "hkg1",
+          "hnd1",
           "iad1",
-          "sfo1"
+          "icn1",
+          "kix1",
+          "lhr1",
+          "pdx1",
+          "sfo1",
+          "sin1",
+          "syd1",
+          "yul1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -268077,6 +270144,14 @@
           "modelAsString": false,
           "values": [
             {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
               "value": "cdg1",
               "name": "Cdg1"
             },
@@ -268085,12 +270160,64 @@
               "name": "Cle1"
             },
             {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
               "value": "iad1",
               "name": "Iad1"
             },
             {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
               "value": "sfo1",
               "name": "Sfo1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
             }
           ]
         }
@@ -280125,10 +282252,25 @@
       },
       "GetMicrofrontendsInGroup200ResponseProjectsItemSandboxRegion": {
         "enum": [
+          "arn1",
+          "bom1",
           "cdg1",
           "cle1",
+          "cpt1",
+          "dub1",
+          "fra1",
+          "gru1",
+          "hkg1",
+          "hnd1",
           "iad1",
-          "sfo1"
+          "icn1",
+          "kix1",
+          "lhr1",
+          "pdx1",
+          "sfo1",
+          "sin1",
+          "syd1",
+          "yul1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -280137,6 +282279,14 @@
           "modelAsString": false,
           "values": [
             {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
               "value": "cdg1",
               "name": "Cdg1"
             },
@@ -280145,22 +282295,89 @@
               "name": "Cle1"
             },
             {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
               "value": "iad1",
               "name": "Iad1"
             },
             {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
               "value": "sfo1",
               "name": "Sfo1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
             }
           ]
         }
       },
       "GetMicrofrontendsInGroup200ResponseProjectsItemSandboxFailoverRegionsItem": {
         "enum": [
+          "arn1",
+          "bom1",
           "cdg1",
           "cle1",
+          "cpt1",
+          "dub1",
+          "fra1",
+          "gru1",
+          "hkg1",
+          "hnd1",
           "iad1",
-          "sfo1"
+          "icn1",
+          "kix1",
+          "lhr1",
+          "pdx1",
+          "sfo1",
+          "sin1",
+          "syd1",
+          "yul1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -280169,6 +282386,14 @@
           "modelAsString": false,
           "values": [
             {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
               "value": "cdg1",
               "name": "Cdg1"
             },
@@ -280177,12 +282402,64 @@
               "name": "Cle1"
             },
             {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
               "value": "iad1",
               "name": "Iad1"
             },
             {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
               "value": "sfo1",
               "name": "Sfo1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
             }
           ]
         }
@@ -296594,10 +298871,25 @@
       },
       "GetProjects200ResponseOneOf3ProjectsItemSandboxRegion": {
         "enum": [
+          "arn1",
+          "bom1",
           "cdg1",
           "cle1",
+          "cpt1",
+          "dub1",
+          "fra1",
+          "gru1",
+          "hkg1",
+          "hnd1",
           "iad1",
-          "sfo1"
+          "icn1",
+          "kix1",
+          "lhr1",
+          "pdx1",
+          "sfo1",
+          "sin1",
+          "syd1",
+          "yul1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -296606,6 +298898,14 @@
           "modelAsString": false,
           "values": [
             {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
               "value": "cdg1",
               "name": "Cdg1"
             },
@@ -296614,22 +298914,89 @@
               "name": "Cle1"
             },
             {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
               "value": "iad1",
               "name": "Iad1"
             },
             {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
               "value": "sfo1",
               "name": "Sfo1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
             }
           ]
         }
       },
       "GetProjects200ResponseOneOf3ProjectsItemSandboxFailoverRegionsItem": {
         "enum": [
+          "arn1",
+          "bom1",
           "cdg1",
           "cle1",
+          "cpt1",
+          "dub1",
+          "fra1",
+          "gru1",
+          "hkg1",
+          "hnd1",
           "iad1",
-          "sfo1"
+          "icn1",
+          "kix1",
+          "lhr1",
+          "pdx1",
+          "sfo1",
+          "sin1",
+          "syd1",
+          "yul1"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -296638,6 +299005,14 @@
           "modelAsString": false,
           "values": [
             {
+              "value": "arn1",
+              "name": "Arn1"
+            },
+            {
+              "value": "bom1",
+              "name": "Bom1"
+            },
+            {
               "value": "cdg1",
               "name": "Cdg1"
             },
@@ -296646,12 +299021,64 @@
               "name": "Cle1"
             },
             {
+              "value": "cpt1",
+              "name": "Cpt1"
+            },
+            {
+              "value": "dub1",
+              "name": "Dub1"
+            },
+            {
+              "value": "fra1",
+              "name": "Fra1"
+            },
+            {
+              "value": "gru1",
+              "name": "Gru1"
+            },
+            {
+              "value": "hkg1",
+              "name": "Hkg1"
+            },
+            {
+              "value": "hnd1",
+              "name": "Hnd1"
+            },
+            {
               "value": "iad1",
               "name": "Iad1"
             },
             {
+              "value": "icn1",
+              "name": "Icn1"
+            },
+            {
+              "value": "kix1",
+              "name": "Kix1"
+            },
+            {
+              "value": "lhr1",
+              "name": "Lhr1"
+            },
+            {
+              "value": "pdx1",
+              "name": "Pdx1"
+            },
+            {
               "value": "sfo1",
               "name": "Sfo1"
+            },
+            {
+              "value": "sin1",
+              "name": "Sin1"
+            },
+            {
+              "value": "syd1",
+              "name": "Syd1"
+            },
+            {
+              "value": "yul1",
+              "name": "Yul1"
             }
           ]
         }
@@ -299328,6 +301755,29 @@
             {
               "value": "immediate",
               "name": "Immediate"
+            }
+          ]
+        }
+      },
+      "BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputPricingSource": {
+        "enum": [
+          "copper",
+          "orb"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The source used as the authoritative price for this intent.",
+        "x-ms-enum": {
+          "name": "BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputPricingSource",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "copper",
+              "name": "Copper"
+            },
+            {
+              "value": "orb",
+              "name": "Orb"
             }
           ]
         }

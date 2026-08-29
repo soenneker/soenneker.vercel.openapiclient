@@ -15,6 +15,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether this user can cancel their optional Account Update flow.</summary>
+        public bool? CanOptOut { get; set; }
         /// <summary>The managedTeams property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "canOptOut", n => { CanOptOut = n.GetBoolValue(); } },
                 { "managedTeams", n => { ManagedTeams = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextManagedTeamsItem>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextManagedTeamsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "organization", n => { Organization = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization>(global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization.CreateFromDiscriminatorValue); } },
                 { "verifiedEmuDomains", n => { VerifiedEmuDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -76,6 +79,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("canOptOut", CanOptOut);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextManagedTeamsItem>("managedTeams", ManagedTeams);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserAccountUpdateContextOrganization>("organization", Organization);
             writer.WriteCollectionOfPrimitiveValues<string>("verifiedEmuDomains", VerifiedEmuDomains);

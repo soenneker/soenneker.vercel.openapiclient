@@ -49,6 +49,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string PendingSubscriptionChangeId { get; set; }
 #endif
+        /// <summary>The source used as the authoritative price for this intent.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputPricingSource? PricingSource { get; set; }
         /// <summary>The product ID associated with this intent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +89,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputMetadata>(global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputMetadata.CreateFromDiscriminatorValue); } },
                 { "orbPriceId", n => { OrbPriceId = n.GetStringValue(); } },
                 { "pendingSubscriptionChangeId", n => { PendingSubscriptionChangeId = n.GetStringValue(); } },
+                { "pricingSource", n => { PricingSource = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputPricingSource>(); } },
                 { "productId", n => { ProductId = n.GetStringValue(); } },
             };
         }
@@ -102,6 +105,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputMetadata>("metadata", Metadata);
             writer.WriteStringValue("orbPriceId", OrbPriceId);
             writer.WriteStringValue("pendingSubscriptionChangeId", PendingSubscriptionChangeId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputPricingSource>("pricingSource", PricingSource);
             writer.WriteStringValue("productId", ProductId);
             writer.WriteAdditionalData(AdditionalData);
         }
