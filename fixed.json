@@ -2523,7 +2523,6 @@
             "name": "diff",
             "in": "query",
             "schema": {
-              "type": "object",
               "oneOf": [
                 {
                   "type": "boolean"
@@ -18186,7 +18185,6 @@
             "name": "diff",
             "in": "query",
             "schema": {
-              "type": "object",
               "oneOf": [
                 {
                   "type": "boolean"
@@ -22922,7 +22920,6 @@
             "in": "query",
             "description": "Filter sandboxes by tag. Format: \\\u0022key:value\\\u0022. Only one tag filter is supported at a time.",
             "schema": {
-              "type": "object",
               "anyOf": [
                 {
                   "type": "string"
@@ -31211,8 +31208,7 @@
                     "$ref": "#/components/schemas/AggregatePageviewsByParameterItemAnyOf1"
                   },
                   {
-                    "pattern": "^(flags)(/([0-9A-Za-z_]\u002B|\u0027([^\u0027]|\u0027\u0027)*\u0027))\u002B$",
-                    "type": "object"
+                    "pattern": "^(flags)(/([0-9A-Za-z_]\u002B|\u0027([^\u0027]|\u0027\u0027)*\u0027))\u002B$"
                   }
                 ]
               },
@@ -31372,8 +31368,7 @@
                     "$ref": "#/components/schemas/AggregateEventsByParameterItemAnyOf1"
                   },
                   {
-                    "pattern": "^(flags|eventData)(/([0-9A-Za-z_]\u002B|\u0027([^\u0027]|\u0027\u0027)*\u0027))\u002B$",
-                    "type": "object"
+                    "pattern": "^(flags|eventData)(/([0-9A-Za-z_]\u002B|\u0027([^\u0027]|\u0027\u0027)*\u0027))\u002B$"
                   }
                 ]
               },
@@ -32164,7 +32159,6 @@
             "description": "Get only aliases of the given domain name",
             "schema": {
               "maxItems": 20,
-              "type": "object",
               "oneOf": [
                 {
                   "type": "array",
@@ -100187,7 +100181,6 @@
         ]
       },
       "GetTeams200ResponseTeamsItem": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/Team"
@@ -100380,7 +100373,6 @@
         }
       },
       "ListAliases200ResponseAliasesItemProtectionBypassAdditionalProperties": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/ListAliases200ResponseAliasesItemProtectionBypassAdditionalPropertiesOneOf1"
@@ -100417,7 +100409,6 @@
         }
       },
       "ListAliases200ResponseAliasesItemMicrofrontendsApplications": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/ListAliases200ResponseAliasesItemMicrofrontendsApplicationsOneOf1"
@@ -100431,7 +100422,6 @@
         ]
       },
       "GetDeployments200ResponseDeploymentsItemAliasAssigned": {
-        "type": "object",
         "oneOf": [
           {
             "type": "number"
