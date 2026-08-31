@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Description>A Vercel .NET client generated from their OpenAPI schema, updated daily</Description>
+        <Description>Kiota-generated client for the Vercel REST API</Description>
         <Version Condition="'$(BUILD_VERSION)' == ''">4.0.0</Version>
         <Version Condition="'$(BUILD_VERSION)' != ''">$(BUILD_VERSION)</Version>
         <AssemblyName>Soenneker.Vercel.OpenApiClient</AssemblyName>
