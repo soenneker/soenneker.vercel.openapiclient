@@ -64,6 +64,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayBudgetManager,
         #pragma warning restore CS1591
+        [EnumMember(Value = "AiGatewayTranscriptsManager")]
+        #pragma warning disable CS1591
+        AiGatewayTranscriptsManager,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AiGatewayTranscriptsViewer")]
+        #pragma warning disable CS1591
+        AiGatewayTranscriptsViewer,
+        #pragma warning restore CS1591
         [EnumMember(Value = "V0Builder")]
         #pragma warning disable CS1591
         V0Builder,

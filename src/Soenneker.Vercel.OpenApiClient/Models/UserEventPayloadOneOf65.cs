@@ -14,7 +14,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class UserEventPayloadOneOf65 : IAdditionalDataHolder, IParsable
     {
         /// <summary>The action property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.ResumePlanAction? Action { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelPlanAction? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The data property</summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ResumePlanAction>(); } },
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelPlanAction>(); } },
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf65Data>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf65Data.CreateFromDiscriminatorValue); } },
                 { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
             };
@@ -70,7 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ResumePlanAction>("action", Action);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelPlanAction>("action", Action);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf65Data>("data", Data);
             writer.WriteStringValue("subscriptionId", SubscriptionId);
             writer.WriteAdditionalData(AdditionalData);

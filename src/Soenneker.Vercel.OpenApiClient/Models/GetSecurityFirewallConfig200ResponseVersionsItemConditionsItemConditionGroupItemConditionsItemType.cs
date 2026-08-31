@@ -128,6 +128,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         TargetPath,
         #pragma warning restore CS1591
+        [EnumMember(Value = "traffic_source")]
+        #pragma warning disable CS1591
+        TrafficSource,
+        #pragma warning restore CS1591
         [EnumMember(Value = "trusted_source")]
         #pragma warning disable CS1591
         TrustedSource,

@@ -48,14 +48,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The date at which the Network was created, represented as a UNIX timestamp since EPOCH.</summary>
         public double? CreatedAt { get; set; }
-        /// <summary>The single contiguous CIDR block from which all egress (NAT gateway) IP addresses are allocated. Present only for networks created with the egress CIDR block feature enabled. Customers can allowlist this range instead of individual egress IPs so it keeps working when AZs are added.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EgressCidrBlock { get; set; }
-#nullable restore
-#else
-        public string EgressCidrBlock { get; set; }
-#endif
         /// <summary>The egressIpAddresses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,14 +104,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Region { get; set; }
 #endif
-        /// <summary>The BYOIP egress (NAT gateway) IP addresses pre-allocated for this network from the region&apos;s egress IPAM pool. Present in regions that have an egress pool. Customers can allowlist these addresses before egress is switched over to them, since they are reserved ahead of the switch.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? ReservedEgressIpAddresses { get; set; }
-#nullable restore
-#else
-        public List<string> ReservedEgressIpAddresses { get; set; }
-#endif
         /// <summary>The status of the Network.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.NetworkStatus? Status { get; set; }
         /// <summary>The unique identifier of the Team that owns the Network.</summary>
@@ -168,7 +152,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "awsRegion", n => { AwsRegion = n.GetStringValue(); } },
                 { "cidr", n => { Cidr = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
-                { "egressCidrBlock", n => { EgressCidrBlock = n.GetStringValue(); } },
                 { "egressIpAddresses", n => { EgressIpAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "hostedZones", n => { HostedZones = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones>(global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -176,7 +159,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "peeringConnections", n => { PeeringConnections = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkPeeringConnections>(global::Soenneker.Vercel.OpenApiClient.Models.NetworkPeeringConnections.CreateFromDiscriminatorValue); } },
                 { "projects", n => { Projects = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkProjects>(global::Soenneker.Vercel.OpenApiClient.Models.NetworkProjects.CreateFromDiscriminatorValue); } },
                 { "region", n => { Region = n.GetStringValue(); } },
-                { "reservedEgressIpAddresses", n => { ReservedEgressIpAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkStatus>(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
                 { "vpcId", n => { VpcId = n.GetStringValue(); } },
@@ -194,7 +176,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("awsRegion", AwsRegion);
             writer.WriteStringValue("cidr", Cidr);
             writer.WriteDoubleValue("createdAt", CreatedAt);
-            writer.WriteStringValue("egressCidrBlock", EgressCidrBlock);
             writer.WriteCollectionOfPrimitiveValues<string>("egressIpAddresses", EgressIpAddresses);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkHostedZones>("hostedZones", HostedZones);
             writer.WriteStringValue("id", Id);
@@ -202,7 +183,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkPeeringConnections>("peeringConnections", PeeringConnections);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkProjects>("projects", Projects);
             writer.WriteStringValue("region", Region);
-            writer.WriteCollectionOfPrimitiveValues<string>("reservedEgressIpAddresses", ReservedEgressIpAddresses);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkStatus>("status", Status);
             writer.WriteStringValue("teamId", TeamId);
             writer.WriteStringValue("vpcId", VpcId);

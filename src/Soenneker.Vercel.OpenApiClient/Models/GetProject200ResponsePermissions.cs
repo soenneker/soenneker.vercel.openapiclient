@@ -118,6 +118,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewaySettings { get; set; }
 #endif
+        /// <summary>The aiGatewayTranscripts property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayTranscripts { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayTranscripts { get; set; }
+#endif
+        /// <summary>The aiGatewayTranscriptsSettings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? AiGatewayTranscriptsSettings { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AiGatewayTranscriptsSettings { get; set; }
+#endif
         /// <summary>The aiGatewayUsage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2268,6 +2284,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "aiGatewayPrivateModels", n => { AiGatewayPrivateModels = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "aiGatewayRules", n => { AiGatewayRules = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "aiGatewaySettings", n => { AiGatewaySettings = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
+                { "aiGatewayTranscripts", n => { AiGatewayTranscripts = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
+                { "aiGatewayTranscriptsSettings", n => { AiGatewayTranscriptsSettings = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "aiGatewayUsage", n => { AiGatewayUsage = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "aiGatewayVirtualModelConfigs", n => { AiGatewayVirtualModelConfigs = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "alertRules", n => { AlertRules = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
@@ -2554,6 +2572,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewayPrivateModels", AiGatewayPrivateModels);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewayRules", AiGatewayRules);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewaySettings", AiGatewaySettings);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewayTranscripts", AiGatewayTranscripts);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewayTranscriptsSettings", AiGatewayTranscriptsSettings);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewayUsage", AiGatewayUsage);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("aiGatewayVirtualModelConfigs", AiGatewayVirtualModelConfigs);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("alertRules", AlertRules);

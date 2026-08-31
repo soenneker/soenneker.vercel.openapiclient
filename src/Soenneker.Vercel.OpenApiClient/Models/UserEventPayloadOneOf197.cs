@@ -15,37 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The directoryGroupId property</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DirectoryGroupId { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public string DirectoryGroupId { get; set; }
-#endif
-        /// <summary>The directoryId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DirectoryId { get; set; }
-#nullable restore
-#else
-        public string DirectoryId { get; set; }
-#endif
-        /// <summary>The groupName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GroupName { get; set; }
-#nullable restore
-#else
-        public string GroupName { get; set; }
-#endif
-        /// <summary>The next property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf197Next? Next { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf197Next Next { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,6 +30,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string OrganizationId { get; set; }
+#endif
+        /// <summary>The rootTeamId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RootTeamId { get; set; }
+#nullable restore
+#else
+        public string RootTeamId { get; set; }
+#endif
+        /// <summary>The slug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Slug { get; set; }
+#nullable restore
+#else
+        public string Slug { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf197"/> and sets the default values.
@@ -80,11 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "directoryGroupId", n => { DirectoryGroupId = n.GetStringValue(); } },
-                { "directoryId", n => { DirectoryId = n.GetStringValue(); } },
-                { "groupName", n => { GroupName = n.GetStringValue(); } },
-                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf197Next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf197Next.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
+                { "rootTeamId", n => { RootTeamId = n.GetStringValue(); } },
+                { "slug", n => { Slug = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -94,11 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("directoryGroupId", DirectoryGroupId);
-            writer.WriteStringValue("directoryId", DirectoryId);
-            writer.WriteStringValue("groupName", GroupName);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf197Next>("next", Next);
+            writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organizationId", OrganizationId);
+            writer.WriteStringValue("rootTeamId", RootTeamId);
+            writer.WriteStringValue("slug", Slug);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

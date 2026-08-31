@@ -15,16 +15,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The configChangeCount property</summary>
-        public double? ConfigChangeCount { get; set; }
-        /// <summary>The configChanges property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155ConfigChangesItemProperty>? ConfigChanges { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155ConfigChangesItemProperty> ConfigChanges { get; set; }
-#endif
         /// <summary>The configVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,8 +48,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configChangeCount", n => { ConfigChangeCount = n.GetDoubleValue(); } },
-                { "configChanges", n => { ConfigChanges = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155ConfigChangesItemProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155ConfigChangesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "configVersion", n => { ConfigVersion = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155.UserEventPayloadOneOf155_configVersion>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155.UserEventPayloadOneOf155_configVersion.CreateFromDiscriminatorValue); } },
             };
         }
@@ -70,8 +58,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("configChangeCount", ConfigChangeCount);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155ConfigChangesItemProperty>("configChanges", ConfigChanges);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf155.UserEventPayloadOneOf155_configVersion>("configVersion", ConfigVersion);
             writer.WriteAdditionalData(AdditionalData);
         }

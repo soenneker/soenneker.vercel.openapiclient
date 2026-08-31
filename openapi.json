@@ -45,6 +45,8 @@
                           "AiGatewayBudgetManager",
                           "AiGatewayCredits",
                           "AiGatewaySettings",
+                          "AiGatewayTranscriptsManager",
+                          "AiGatewayTranscriptsViewer",
                           "ConnectorManager",
                           "CreateProject",
                           "EnvVariableManager",
@@ -16465,6 +16467,20 @@
                                   }
                                 ]
                               },
+                              "affinity": {
+                                "properties": {
+                                  "mode": {
+                                    "type": "string",
+                                    "enum": [
+                                      "strict"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "mode"
+                                ],
+                                "type": "object"
+                              },
                               "maxConcurrency": {
                                 "type": "number"
                               },
@@ -17453,6 +17469,20 @@
                                                     }
                                                   ]
                                                 },
+                                                "affinity": {
+                                                  "properties": {
+                                                    "mode": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                        "strict"
+                                                      ]
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "mode"
+                                                  ],
+                                                  "type": "object"
+                                                },
                                                 "maxConcurrency": {
                                                   "type": "number"
                                                 },
@@ -17964,6 +17994,20 @@
                                                     }
                                                   ]
                                                 },
+                                                "affinity": {
+                                                  "properties": {
+                                                    "mode": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                        "strict"
+                                                      ]
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "mode"
+                                                  ],
+                                                  "type": "object"
+                                                },
                                                 "maxConcurrency": {
                                                   "type": "number"
                                                 },
@@ -18310,6 +18354,20 @@
                                               ]
                                             }
                                           ]
+                                        },
+                                        "affinity": {
+                                          "properties": {
+                                            "mode": {
+                                              "type": "string",
+                                              "enum": [
+                                                "strict"
+                                              ]
+                                            }
+                                          },
+                                          "required": [
+                                            "mode"
+                                          ],
+                                          "type": "object"
                                         },
                                         "maxConcurrency": {
                                           "type": "number"
@@ -24608,6 +24666,20 @@
                                   }
                                 ]
                               },
+                              "affinity": {
+                                "properties": {
+                                  "mode": {
+                                    "type": "string",
+                                    "enum": [
+                                      "strict"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "mode"
+                                ],
+                                "type": "object"
+                              },
                               "maxConcurrency": {
                                 "type": "number"
                               },
@@ -25596,6 +25668,20 @@
                                                     }
                                                   ]
                                                 },
+                                                "affinity": {
+                                                  "properties": {
+                                                    "mode": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                        "strict"
+                                                      ]
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "mode"
+                                                  ],
+                                                  "type": "object"
+                                                },
                                                 "maxConcurrency": {
                                                   "type": "number"
                                                 },
@@ -26107,6 +26193,20 @@
                                                     }
                                                   ]
                                                 },
+                                                "affinity": {
+                                                  "properties": {
+                                                    "mode": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                        "strict"
+                                                      ]
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "mode"
+                                                  ],
+                                                  "type": "object"
+                                                },
                                                 "maxConcurrency": {
                                                   "type": "number"
                                                 },
@@ -26453,6 +26553,20 @@
                                               ]
                                             }
                                           ]
+                                        },
+                                        "affinity": {
+                                          "properties": {
+                                            "mode": {
+                                              "type": "string",
+                                              "enum": [
+                                                "strict"
+                                              ]
+                                            }
+                                          },
+                                          "required": [
+                                            "mode"
+                                          ],
+                                          "type": "object"
                                         },
                                         "maxConcurrency": {
                                           "type": "number"
@@ -31896,6 +32010,20 @@
                               }
                             ]
                           },
+                          "affinity": {
+                            "properties": {
+                              "mode": {
+                                "type": "string",
+                                "enum": [
+                                  "strict"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "mode"
+                            ],
+                            "type": "object"
+                          },
                           "maxConcurrency": {
                             "type": "number"
                           },
@@ -32884,6 +33012,20 @@
                                                 }
                                               ]
                                             },
+                                            "affinity": {
+                                              "properties": {
+                                                "mode": {
+                                                  "type": "string",
+                                                  "enum": [
+                                                    "strict"
+                                                  ]
+                                                }
+                                              },
+                                              "required": [
+                                                "mode"
+                                              ],
+                                              "type": "object"
+                                            },
                                             "maxConcurrency": {
                                               "type": "number"
                                             },
@@ -33395,6 +33537,20 @@
                                                 }
                                               ]
                                             },
+                                            "affinity": {
+                                              "properties": {
+                                                "mode": {
+                                                  "type": "string",
+                                                  "enum": [
+                                                    "strict"
+                                                  ]
+                                                }
+                                              },
+                                              "required": [
+                                                "mode"
+                                              ],
+                                              "type": "object"
+                                            },
                                             "maxConcurrency": {
                                               "type": "number"
                                             },
@@ -33741,6 +33897,20 @@
                                           ]
                                         }
                                       ]
+                                    },
+                                    "affinity": {
+                                      "properties": {
+                                        "mode": {
+                                          "type": "string",
+                                          "enum": [
+                                            "strict"
+                                          ]
+                                        }
+                                      },
+                                      "required": [
+                                        "mode"
+                                      ],
+                                      "type": "object"
                                     },
                                     "maxConcurrency": {
                                       "type": "number"
@@ -79251,9 +79421,6 @@
                                   "createdAt": {
                                     "type": "number"
                                   },
-                                  "updatedAt": {
-                                    "type": "number"
-                                  },
                                   "org": {
                                     "type": "string"
                                   },
@@ -79298,6 +79465,9 @@
                                   },
                                   "gitCredentialId": {
                                     "type": "string"
+                                  },
+                                  "updatedAt": {
+                                    "type": "number"
                                   },
                                   "sourceless": {
                                     "type": "boolean",
@@ -80947,6 +81117,504 @@
                           },
                           "permissions": {
                             "properties": {
+                              "aliasProject": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "aliasProtectionBypass": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "bulkRedirects": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "buildMachine": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "connectConfigurationLink": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "dataCacheNamespace": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "deployment": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "deploymentBuildLogs": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "deploymentCheck": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "deploymentCheckPreview": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "deploymentCheckReRunFromProductionBranch": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "deploymentProductionGit": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "deploymentV0": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "deploymentPreview": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "deploymentPrivate": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "deploymentPromote": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "deploymentRollback": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "edgeCacheNamespace": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "environments": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "job": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "logs": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "logsPreset": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "observabilityData": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "onDemandBuild": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "onDemandConcurrency": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "optionsAllowlist": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "passwordProtection": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "privateLinkEndpoint": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "productionAliasProtectionBypass": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "productionShareableLink": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "project": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectAccessGroup": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectAnalyticsSampling": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectAnalyticsUsage": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectCheck": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectCheckRun": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectDeploymentExpiration": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectDeploymentHook": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectDeploymentProtectionStrict": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectDomain": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectDomainCheckConfig": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectDomainMove": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectDomainVerify": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectEvent": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectEnvVars": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectEnvVarsProduction": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectEnvVarsUnownedByIntegration": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectFlags": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectFlagsProduction": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectFlagsSdkKey": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectFromV0": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectId": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectIntegrationConfiguration": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectLink": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectMember": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectMonitoring": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectOIDCToken": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectPermissions": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectProductionBranch": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectProtectionBypass": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectRollingRelease": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectRoutes": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectSupportCase": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectSupportCaseComment": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectTier": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectTransfer": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectTransferOut": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "projectUsage": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "pageIntegrity": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "seawallConfig": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "securityPlusConfiguration": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "shareableLink": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "shareableLinkStrict": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "sharedEnvVarConnection": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "skewProtection": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "analytics": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "trustedIps": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "trustedSources": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "v0Chat": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "vercelAuth": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "vercelRun": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "webAnalytics": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "workflowRunData": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
                               "oauth2Connection": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
@@ -81062,6 +81730,18 @@
                                 "type": "array"
                               },
                               "aiGatewaySettings": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "aiGatewayTranscripts": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
+                              "aiGatewayTranscriptsSettings": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
                                 },
@@ -82106,504 +82786,6 @@
                                 "type": "array"
                               },
                               "webhook-event": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "aliasProject": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "aliasProtectionBypass": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "bulkRedirects": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "buildMachine": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "connectConfigurationLink": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "dataCacheNamespace": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "deployment": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "deploymentBuildLogs": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "deploymentCheck": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "deploymentCheckPreview": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "deploymentCheckReRunFromProductionBranch": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "deploymentProductionGit": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "deploymentV0": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "deploymentPreview": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "deploymentPrivate": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "deploymentPromote": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "deploymentRollback": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "edgeCacheNamespace": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "environments": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "job": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "logs": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "logsPreset": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "observabilityData": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "onDemandBuild": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "onDemandConcurrency": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "optionsAllowlist": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "passwordProtection": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "privateLinkEndpoint": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "productionAliasProtectionBypass": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "productionShareableLink": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "project": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectAccessGroup": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectAnalyticsSampling": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectAnalyticsUsage": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectCheck": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectCheckRun": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectDeploymentExpiration": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectDeploymentHook": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectDeploymentProtectionStrict": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectDomain": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectDomainCheckConfig": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectDomainMove": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectDomainVerify": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectEvent": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectEnvVars": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectEnvVarsProduction": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectEnvVarsUnownedByIntegration": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectFlags": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectFlagsProduction": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectFlagsSdkKey": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectFromV0": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectId": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectIntegrationConfiguration": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectLink": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectMember": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectMonitoring": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectOIDCToken": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectPermissions": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectProductionBranch": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectProtectionBypass": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectRollingRelease": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectRoutes": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectSupportCase": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectSupportCaseComment": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectTier": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectTransfer": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectTransferOut": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "projectUsage": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "pageIntegrity": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "seawallConfig": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "securityPlusConfiguration": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "shareableLink": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "shareableLinkStrict": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "sharedEnvVarConnection": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "skewProtection": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "analytics": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "trustedIps": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "trustedSources": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "v0Chat": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "vercelAuth": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "vercelRun": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "webAnalytics": {
-                                "items": {
-                                  "$ref": "#/components/schemas/ACLAction"
-                                },
-                                "type": "array"
-                              },
-                              "workflowRunData": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
                                 },
@@ -105282,6 +105464,18 @@
                                     },
                                     "type": "array"
                                   },
+                                  "aiGatewayTranscripts": {
+                                    "items": {
+                                      "$ref": "#/components/schemas/ACLAction"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "aiGatewayTranscriptsSettings": {
+                                    "items": {
+                                      "$ref": "#/components/schemas/ACLAction"
+                                    },
+                                    "type": "array"
+                                  },
                                   "aiGatewayUsage": {
                                     "items": {
                                       "$ref": "#/components/schemas/ACLAction"
@@ -113484,6 +113678,18 @@
                           "type": "array"
                         },
                         "aiGatewaySettings": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "aiGatewayTranscripts": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "aiGatewayTranscriptsSettings": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -121921,6 +122127,18 @@
                           },
                           "type": "array"
                         },
+                        "aiGatewayTranscripts": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "aiGatewayTranscriptsSettings": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "aiGatewayUsage": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -129641,6 +129859,18 @@
                           "type": "array"
                         },
                         "aiGatewaySettings": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "aiGatewayTranscripts": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "aiGatewayTranscriptsSettings": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -138668,6 +138898,18 @@
                           "type": "array"
                         },
                         "aiGatewaySettings": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "aiGatewayTranscripts": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "aiGatewayTranscriptsSettings": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -159170,6 +159412,18 @@
                           },
                           "type": "array"
                         },
+                        "aiGatewayTranscripts": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "aiGatewayTranscriptsSettings": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "aiGatewayUsage": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -171768,6 +172022,7 @@
                                                   "server_action",
                                                   "shared_condition",
                                                   "target_path",
+                                                  "traffic_source",
                                                   "trusted_source",
                                                   "user_agent"
                                                 ]
@@ -172029,6 +172284,7 @@
                                                   "server_action",
                                                   "shared_condition",
                                                   "target_path",
+                                                  "traffic_source",
                                                   "trusted_source",
                                                   "user_agent"
                                                 ]
@@ -172335,6 +172591,7 @@
                                                   "server_action",
                                                   "shared_condition",
                                                   "target_path",
+                                                  "traffic_source",
                                                   "trusted_source",
                                                   "user_agent"
                                                 ]
@@ -172703,6 +172960,7 @@
                                               "server_action",
                                               "shared_condition",
                                               "target_path",
+                                              "traffic_source",
                                               "trusted_source",
                                               "user_agent"
                                             ]
@@ -173345,6 +173603,7 @@
                                                   "server_action",
                                                   "shared_condition",
                                                   "target_path",
+                                                  "traffic_source",
                                                   "trusted_source",
                                                   "user_agent"
                                                 ]
@@ -173606,6 +173865,7 @@
                                                   "server_action",
                                                   "shared_condition",
                                                   "target_path",
+                                                  "traffic_source",
                                                   "trusted_source",
                                                   "user_agent"
                                                 ]
@@ -173912,6 +174172,7 @@
                                                   "server_action",
                                                   "shared_condition",
                                                   "target_path",
+                                                  "traffic_source",
                                                   "trusted_source",
                                                   "user_agent"
                                                 ]
@@ -174280,6 +174541,7 @@
                                               "server_action",
                                               "shared_condition",
                                               "target_path",
+                                              "traffic_source",
                                               "trusted_source",
                                               "user_agent"
                                             ]
@@ -174922,6 +175184,7 @@
                                                     "server_action",
                                                     "shared_condition",
                                                     "target_path",
+                                                    "traffic_source",
                                                     "trusted_source",
                                                     "user_agent"
                                                   ]
@@ -175183,6 +175446,7 @@
                                                     "server_action",
                                                     "shared_condition",
                                                     "target_path",
+                                                    "traffic_source",
                                                     "trusted_source",
                                                     "user_agent"
                                                   ]
@@ -175489,6 +175753,7 @@
                                                     "server_action",
                                                     "shared_condition",
                                                     "target_path",
+                                                    "traffic_source",
                                                     "trusted_source",
                                                     "user_agent"
                                                   ]
@@ -175857,6 +176122,7 @@
                                                 "server_action",
                                                 "shared_condition",
                                                 "target_path",
+                                                "traffic_source",
                                                 "trusted_source",
                                                 "user_agent"
                                               ]
@@ -176560,6 +176826,7 @@
                                                   "server_action",
                                                   "shared_condition",
                                                   "target_path",
+                                                  "traffic_source",
                                                   "trusted_source",
                                                   "user_agent"
                                                 ]
@@ -176821,6 +177088,7 @@
                                                   "server_action",
                                                   "shared_condition",
                                                   "target_path",
+                                                  "traffic_source",
                                                   "trusted_source",
                                                   "user_agent"
                                                 ]
@@ -177127,6 +177395,7 @@
                                                   "server_action",
                                                   "shared_condition",
                                                   "target_path",
+                                                  "traffic_source",
                                                   "trusted_source",
                                                   "user_agent"
                                                 ]
@@ -177495,6 +177764,7 @@
                                               "server_action",
                                               "shared_condition",
                                               "target_path",
+                                              "traffic_source",
                                               "trusted_source",
                                               "user_agent"
                                             ]
@@ -178152,6 +178422,7 @@
                                         "bot_status",
                                         "bot_protection",
                                         "shared_condition",
+                                        "traffic_source",
                                         "ruleset"
                                       ],
                                       "description": "[Parameter](https://vercel.com/docs/security/vercel-waf/rule-configuration#parameters) from the incoming traffic."
@@ -178428,6 +178699,7 @@
                                             "bot_status",
                                             "bot_protection",
                                             "shared_condition",
+                                            "traffic_source",
                                             "ruleset"
                                           ]
                                         },
@@ -178773,6 +179045,7 @@
                                           "bot_status",
                                           "bot_protection",
                                           "shared_condition",
+                                          "traffic_source",
                                           "ruleset"
                                         ]
                                       },
@@ -178960,6 +179233,7 @@
                                           "bot_status",
                                           "bot_protection",
                                           "shared_condition",
+                                          "traffic_source",
                                           "ruleset"
                                         ]
                                       },
@@ -179195,6 +179469,7 @@
                                           "bot_status",
                                           "bot_protection",
                                           "shared_condition",
+                                          "traffic_source",
                                           "ruleset"
                                         ]
                                       },
@@ -179359,6 +179634,7 @@
                                           "bot_status",
                                           "bot_protection",
                                           "shared_condition",
+                                          "traffic_source",
                                           "ruleset"
                                         ]
                                       },
@@ -179634,6 +179910,7 @@
                                           "bot_status",
                                           "bot_protection",
                                           "shared_condition",
+                                          "traffic_source",
                                           "ruleset"
                                         ]
                                       },
@@ -179920,6 +180197,7 @@
                                           "bot_status",
                                           "bot_protection",
                                           "shared_condition",
+                                          "traffic_source",
                                           "ruleset"
                                         ]
                                       },
@@ -180905,6 +181183,7 @@
                                               "server_action",
                                               "shared_condition",
                                               "target_path",
+                                              "traffic_source",
                                               "trusted_source",
                                               "user_agent"
                                             ]
@@ -181166,6 +181445,7 @@
                                               "server_action",
                                               "shared_condition",
                                               "target_path",
+                                              "traffic_source",
                                               "trusted_source",
                                               "user_agent"
                                             ]
@@ -181472,6 +181752,7 @@
                                               "server_action",
                                               "shared_condition",
                                               "target_path",
+                                              "traffic_source",
                                               "trusted_source",
                                               "user_agent"
                                             ]
@@ -181840,6 +182121,7 @@
                                           "server_action",
                                           "shared_condition",
                                           "target_path",
+                                          "traffic_source",
                                           "trusted_source",
                                           "user_agent"
                                         ]
@@ -182606,6 +182888,7 @@
                                               "server_action",
                                               "shared_condition",
                                               "target_path",
+                                              "traffic_source",
                                               "trusted_source",
                                               "user_agent"
                                             ]
@@ -182867,6 +183150,7 @@
                                               "server_action",
                                               "shared_condition",
                                               "target_path",
+                                              "traffic_source",
                                               "trusted_source",
                                               "user_agent"
                                             ]
@@ -183173,6 +183457,7 @@
                                               "server_action",
                                               "shared_condition",
                                               "target_path",
+                                              "traffic_source",
                                               "trusted_source",
                                               "user_agent"
                                             ]
@@ -183541,6 +183826,7 @@
                                           "server_action",
                                           "shared_condition",
                                           "target_path",
+                                          "traffic_source",
                                           "trusted_source",
                                           "user_agent"
                                         ]
@@ -184746,6 +185032,9 @@
             "description": "You do not have permission to access this resource."
           },
           "404": {
+            "description": ""
+          },
+          "408": {
             "description": ""
           },
           "410": {
@@ -190585,6 +190874,8 @@
                                 "AiGatewayBudgetManager",
                                 "AiGatewayCredits",
                                 "AiGatewaySettings",
+                                "AiGatewayTranscriptsManager",
+                                "AiGatewayTranscriptsViewer",
                                 "ConnectorManager",
                                 "CreateProject",
                                 "EnvVariableManager",
@@ -191658,6 +191949,8 @@
                         "AiGatewayCredits",
                         "AiGatewayApiKeyOwnedBySelf",
                         "AiGatewayBudgetManager",
+                        "AiGatewayTranscriptsManager",
+                        "AiGatewayTranscriptsViewer",
                         "V0Builder",
                         "V0Chatter",
                         "V0Viewer"
@@ -208035,17 +208328,6 @@
             },
             "type": "array"
           },
-          "reservedEgressIpAddresses": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "description": "The BYOIP egress (NAT gateway) IP addresses pre-allocated for this network from the region's egress IPAM pool. Present in regions that have an egress pool. Customers can allowlist these addresses before egress is switched over to them, since they are reserved ahead of the switch."
-          },
-          "egressCidrBlock": {
-            "type": "string",
-            "description": "The single contiguous CIDR block from which all egress (NAT gateway) IP addresses are allocated. Present only for networks created with the egress CIDR block feature enabled. Customers can allowlist this range instead of individual egress IPs so it keeps working when AZs are added."
-          },
           "hostedZones": {
             "properties": {
               "count": {
@@ -211217,6 +211499,7 @@
               "ai-gateway-byok-credential-updated",
               "ai-gateway-credits-purchased",
               "ai-gateway-guardrails-updated",
+              "ai-gateway-inference-regions-updated",
               "ai-gateway-model-allowlist-models-updated",
               "ai-gateway-model-allowlist-toggled",
               "ai-gateway-private-model-created",
@@ -213094,6 +213377,21 @@
                   "policiesAdded",
                   "policiesModified",
                   "policiesRemoved"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "regions": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "regions"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -221624,6 +221922,8 @@
                                   "AiGatewayBudgetManager",
                                   "AiGatewayCredits",
                                   "AiGatewaySettings",
+                                  "AiGatewayTranscriptsManager",
+                                  "AiGatewayTranscriptsViewer",
                                   "ConnectorManager",
                                   "CreateProject",
                                   "EnvVariableManager",
@@ -232300,6 +232600,8 @@
                         "AiGatewayBudgetManager",
                         "AiGatewayCredits",
                         "AiGatewaySettings",
+                        "AiGatewayTranscriptsManager",
+                        "AiGatewayTranscriptsViewer",
                         "ConnectorManager",
                         "CreateProject",
                         "EnvVariableManager",
@@ -232325,6 +232627,8 @@
                         "AiGatewayBudgetManager",
                         "AiGatewayCredits",
                         "AiGatewaySettings",
+                        "AiGatewayTranscriptsManager",
+                        "AiGatewayTranscriptsViewer",
                         "ConnectorManager",
                         "CreateProject",
                         "EnvVariableManager",
@@ -235229,6 +235533,7 @@
               "ai-gateway-byok-credential-updated",
               "ai-gateway-credits-purchased",
               "ai-gateway-guardrails-updated",
+              "ai-gateway-inference-regions-updated",
               "ai-gateway-model-allowlist-models-updated",
               "ai-gateway-model-allowlist-toggled",
               "ai-gateway-private-model-created",
@@ -235945,6 +236250,7 @@
                 "ai-gateway-byok-credential-updated",
                 "ai-gateway-credits-purchased",
                 "ai-gateway-guardrails-updated",
+                "ai-gateway-inference-regions-updated",
                 "ai-gateway-model-allowlist-models-updated",
                 "ai-gateway-model-allowlist-toggled",
                 "ai-gateway-private-model-created",
@@ -238890,6 +239196,8 @@
                 "AiGatewayBudgetManager",
                 "AiGatewayCredits",
                 "AiGatewaySettings",
+                "AiGatewayTranscriptsManager",
+                "AiGatewayTranscriptsViewer",
                 "ConnectorManager",
                 "CreateProject",
                 "EnvVariableManager",
@@ -239161,6 +239469,8 @@
                     "AiGatewayBudgetManager",
                     "AiGatewayCredits",
                     "AiGatewaySettings",
+                    "AiGatewayTranscriptsManager",
+                    "AiGatewayTranscriptsViewer",
                     "ConnectorManager",
                     "CreateProject",
                     "EnvVariableManager",
@@ -239948,6 +240258,8 @@
                     "AiGatewayBudgetManager",
                     "AiGatewayCredits",
                     "AiGatewaySettings",
+                    "AiGatewayTranscriptsManager",
+                    "AiGatewayTranscriptsViewer",
                     "ConnectorManager",
                     "CreateProject",
                     "EnvVariableManager",
@@ -240301,6 +240613,8 @@
                     "AiGatewayBudgetManager",
                     "AiGatewayCredits",
                     "AiGatewaySettings",
+                    "AiGatewayTranscriptsManager",
+                    "AiGatewayTranscriptsViewer",
                     "ConnectorManager",
                     "CreateProject",
                     "EnvVariableManager",

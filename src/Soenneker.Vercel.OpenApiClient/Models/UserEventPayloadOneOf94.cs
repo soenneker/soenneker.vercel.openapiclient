@@ -15,14 +15,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The metricName property</summary>
+        /// <summary>The prevPurchasedAmount property</summary>
+        public double? PrevPurchasedAmount { get; set; }
+        /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MetricName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94Project? Project { get; set; }
 #nullable restore
 #else
-        public string MetricName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94Project Project { get; set; }
 #endif
+        /// <summary>The purchasedAmount property</summary>
+        public double? PurchasedAmount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94"/> and sets the default values.
         /// </summary>
@@ -48,7 +52,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "metricName", n => { MetricName = n.GetStringValue(); } },
+                { "prevPurchasedAmount", n => { PrevPurchasedAmount = n.GetDoubleValue(); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94Project.CreateFromDiscriminatorValue); } },
+                { "purchasedAmount", n => { PurchasedAmount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -58,7 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("metricName", MetricName);
+            writer.WriteDoubleValue("prevPurchasedAmount", PrevPurchasedAmount);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94Project>("project", Project);
+            writer.WriteDoubleValue("purchasedAmount", PurchasedAmount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

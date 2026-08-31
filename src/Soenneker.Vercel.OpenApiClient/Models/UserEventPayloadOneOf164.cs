@@ -47,22 +47,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string IntegrationSlug { get; set; }
 #endif
-        /// <summary>The newOwner property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf164NewOwner? NewOwner { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf164NewOwner NewOwner { get; set; }
-#endif
-        /// <summary>The userId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserId { get; set; }
-#nullable restore
-#else
-        public string UserId { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf164"/> and sets the default values.
         /// </summary>
@@ -92,8 +76,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
                 { "integrationName", n => { IntegrationName = n.GetStringValue(); } },
                 { "integrationSlug", n => { IntegrationSlug = n.GetStringValue(); } },
-                { "newOwner", n => { NewOwner = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf164NewOwner>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf164NewOwner.CreateFromDiscriminatorValue); } },
-                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -107,8 +89,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("integrationId", IntegrationId);
             writer.WriteStringValue("integrationName", IntegrationName);
             writer.WriteStringValue("integrationSlug", IntegrationSlug);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf164NewOwner>("newOwner", NewOwner);
-            writer.WriteStringValue("userId", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
