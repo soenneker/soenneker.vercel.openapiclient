@@ -2424,7 +2424,7 @@
               "example": "VERCEL",
               "maxLength": 50
             },
-            "name": "'x-Artifact-Client-Ci'"
+            "name": "x-artifact-client-ci"
           },
           {
             "in": "header",
@@ -2436,7 +2436,7 @@
               "minimum": 0,
               "maximum": 1
             },
-            "name": "'x-Artifact-Client-Interactive'"
+            "name": "x-artifact-client-interactive"
           },
           {
             "description": "The Team identifier to perform the request on behalf of.",
@@ -2661,12 +2661,12 @@
           {
             "in": "header",
             "description": "The artifact size in bytes",
-            "required": false,
+            "required": true,
             "schema": {
               "description": "The artifact size in bytes",
               "type": "number"
             },
-            "name": "'content-Length'"
+            "name": "Content-Length"
           },
           {
             "in": "header",
@@ -2677,7 +2677,7 @@
               "description": "The time taken to generate the uploaded artifact in milliseconds.",
               "example": 400
             },
-            "name": "'x-Artifact-Duration'"
+            "name": "x-artifact-duration"
           },
           {
             "in": "header",
@@ -2689,7 +2689,7 @@
               "example": "VERCEL",
               "maxLength": 50
             },
-            "name": "'x-Artifact-Client-Ci'"
+            "name": "x-artifact-client-ci"
           },
           {
             "in": "header",
@@ -2702,7 +2702,7 @@
               "minimum": 0,
               "maximum": 1
             },
-            "name": "'x-Artifact-Client-Interactive'"
+            "name": "x-artifact-client-interactive"
           },
           {
             "in": "header",
@@ -2714,7 +2714,7 @@
               "example": "Tc0BmHvJYMIYJ62/zx87YqO0Flxk+5Ovip25NY825CQ=",
               "maxLength": 600
             },
-            "name": "'x-Artifact-Tag'"
+            "name": "x-artifact-tag"
           },
           {
             "in": "header",
@@ -2725,7 +2725,7 @@
               "description": "The SHA of the source control revision that generated this artifact.",
               "maxLength": 200
             },
-            "name": "'x-Artifact-Sha'"
+            "name": "x-artifact-sha"
           },
           {
             "in": "header",
@@ -2736,7 +2736,7 @@
               "description": "A hash representing uncommitted changes in the working directory when this artifact was generated.",
               "maxLength": 200
             },
-            "name": "'x-Artifact-Dirty-Hash'"
+            "name": "x-artifact-dirty-hash"
           },
           {
             "name": "hash",
@@ -2835,7 +2835,7 @@
               "example": "VERCEL",
               "maxLength": 50
             },
-            "name": "'x-Artifact-Client-Ci'"
+            "name": "x-artifact-client-ci"
           },
           {
             "in": "header",
@@ -2847,7 +2847,7 @@
               "minimum": 0,
               "maximum": 1
             },
-            "name": "'x-Artifact-Client-Interactive'"
+            "name": "x-artifact-client-interactive"
           },
           {
             "name": "hash",
@@ -12908,6 +12908,9 @@
                                   },
                                   "readyState": {
                                     "type": "string"
+                                  },
+                                  "serviceName": {
+                                    "type": "string"
                                   }
                                 },
                                 "required": [
@@ -13072,6 +13075,9 @@
                               },
                               "readyState": {
                                 "type": "string"
+                              },
+                              "serviceName": {
+                                "type": "string"
                               }
                             },
                             "required": [
@@ -13169,6 +13175,9 @@
                                         "type": "string"
                                       },
                                       "readyState": {
+                                        "type": "string"
+                                      },
+                                      "serviceName": {
                                         "type": "string"
                                       }
                                     },
@@ -13333,6 +13342,9 @@
                                     "type": "string"
                                   },
                                   "readyState": {
+                                    "type": "string"
+                                  },
+                                  "serviceName": {
                                     "type": "string"
                                   }
                                 },
@@ -13510,6 +13522,9 @@
                                 },
                                 "readyState": {
                                   "type": "string"
+                                },
+                                "serviceName": {
+                                  "type": "string"
                                 }
                               },
                               "required": [
@@ -13674,6 +13689,9 @@
                             },
                             "readyState": {
                               "type": "string"
+                            },
+                            "serviceName": {
+                              "type": "string"
                             }
                           },
                           "required": [
@@ -13771,6 +13789,9 @@
                                       "type": "string"
                                     },
                                     "readyState": {
+                                      "type": "string"
+                                    },
+                                    "serviceName": {
                                       "type": "string"
                                     }
                                   },
@@ -13935,6 +13956,9 @@
                                   "type": "string"
                                 },
                                 "readyState": {
+                                  "type": "string"
+                                },
+                                "serviceName": {
                                   "type": "string"
                                 }
                               },
@@ -54666,7 +54690,7 @@
             }
           },
           {
-            "name": "'exclude-ids'",
+            "name": "exclude-ids",
             "description": "Filter SharedEnvVariables based on comma separated ids",
             "in": "query",
             "schema": {
@@ -54686,7 +54710,7 @@
             }
           },
           {
-            "name": "'exclude-projectId'",
+            "name": "exclude-projectId",
             "description": "Filter SharedEnvVariables that belong to a project",
             "in": "query",
             "schema": {
@@ -168159,7 +168183,7 @@
               "description": "The target directory where the tarball contents will be extracted. If not specified, files are extracted to the sandbox home directory.",
               "example": "/home/vercel-sandbox"
             },
-            "name": "'x-Cwd'"
+            "name": "x-cwd"
           },
           {
             "name": "sessionId",
@@ -185707,7 +185731,7 @@
             }
           },
           {
-            "name": "'skip-metadata'",
+            "name": "skip-metadata",
             "in": "query",
             "required": false,
             "schema": {
@@ -185715,7 +185739,7 @@
             }
           },
           {
-            "name": "'include-guides'",
+            "name": "include-guides",
             "in": "query",
             "required": false,
             "schema": {
@@ -193350,6 +193374,9 @@
           },
           "410": {
             "description": ""
+          },
+          "503": {
+            "description": ""
           }
         },
         "parameters": [
@@ -193769,7 +193796,7 @@
               "description": "The file size in bytes",
               "type": "number"
             },
-            "name": "'content-Length'"
+            "name": "Content-Length"
           },
           {
             "in": "header",
@@ -193779,7 +193806,7 @@
               "description": "The file SHA1 used to check the integrity",
               "maxLength": 40
             },
-            "name": "'x-Vercel-Digest'"
+            "name": "x-vercel-digest"
           },
           {
             "in": "header",
@@ -193790,7 +193817,7 @@
               "maxLength": 40,
               "deprecated": true
             },
-            "name": "'x-Now-Digest'"
+            "name": "x-now-digest"
           },
           {
             "in": "header",
@@ -193800,7 +193827,7 @@
               "deprecated": true,
               "description": "The file size as an alternative to `Content-Length`"
             },
-            "name": "'x-Now-Size'"
+            "name": "x-now-size"
           },
           {
             "description": "The Team identifier to perform the request on behalf of.",
@@ -211551,6 +211578,7 @@
               "authorize-git-deployment",
               "auto-expose-system-envs",
               "avatar",
+              "billing-settings-updated",
               "bulk-redirects-settings-updated",
               "bulk-redirects-version-promoted",
               "bulk-redirects-version-restored",
@@ -212872,6 +212900,12 @@
                           "none",
                           "weekly"
                         ]
+                      },
+                      "alertThresholds": {
+                        "items": {
+                          "type": "number"
+                        },
+                        "type": "array"
                       }
                     },
                     "required": [
@@ -212960,6 +212994,12 @@
                           "none",
                           "weekly"
                         ]
+                      },
+                      "alertThresholds": {
+                        "items": {
+                          "type": "number"
+                        },
+                        "type": "array"
                       }
                     },
                     "required": [
@@ -213087,6 +213127,12 @@
                           "none",
                           "weekly"
                         ]
+                      },
+                      "alertThresholds": {
+                        "items": {
+                          "type": "number"
+                        },
+                        "type": "array"
                       }
                     },
                     "required": [
@@ -213152,6 +213198,12 @@
                           "none",
                           "weekly"
                         ]
+                      },
+                      "alertThresholds": {
+                        "items": {
+                          "type": "number"
+                        },
+                        "type": "array"
                       }
                     },
                     "required": [
@@ -214910,6 +214962,29 @@
                 },
                 "required": [
                   "paymentMethodId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "changedFields": {
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "address",
+                        "email",
+                        "language",
+                        "name",
+                        "purchaseOrder",
+                        "tax"
+                      ]
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "changedFields"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -223524,6 +223599,32 @@
                             "type": "object"
                           },
                           "tracing": {
+                            "properties": {
+                              "updatedAt": {
+                                "type": "number"
+                              },
+                              "blockedFrom": {
+                                "type": "number"
+                              },
+                              "blockedUntil": {
+                                "type": "number"
+                              },
+                              "blockReason": {
+                                "type": "string",
+                                "enum": [
+                                  "admin_override",
+                                  "hard_blocked",
+                                  "limits_exceeded"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "blockReason",
+                              "updatedAt"
+                            ],
+                            "type": "object"
+                          },
+                          "sandboxStorage": {
                             "properties": {
                               "updatedAt": {
                                 "type": "number"
@@ -235585,6 +235686,7 @@
               "authorize-git-deployment",
               "auto-expose-system-envs",
               "avatar",
+              "billing-settings-updated",
               "bulk-redirects-settings-updated",
               "bulk-redirects-version-promoted",
               "bulk-redirects-version-restored",
@@ -236302,6 +236404,7 @@
                 "authorize-git-deployment",
                 "auto-expose-system-envs",
                 "avatar",
+                "billing-settings-updated",
                 "bulk-redirects-settings-updated",
                 "bulk-redirects-version-promoted",
                 "bulk-redirects-version-restored",

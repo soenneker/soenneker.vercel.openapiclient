@@ -15,21 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The planSlug property</summary>
+        /// <summary>The changedFields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlanSlug { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64ChangedFieldsItem?>? ChangedFields { get; set; }
 #nullable restore
 #else
-        public string PlanSlug { get; set; }
-#endif
-        /// <summary>The subscriptionId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SubscriptionId { get; set; }
-#nullable restore
-#else
-        public string SubscriptionId { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64ChangedFieldsItem?> ChangedFields { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64"/> and sets the default values.
@@ -56,8 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "planSlug", n => { PlanSlug = n.GetStringValue(); } },
-                { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
+                { "changedFields", n => { ChangedFields = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64ChangedFieldsItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,8 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("planSlug", PlanSlug);
-            writer.WriteStringValue("subscriptionId", SubscriptionId);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64ChangedFieldsItem>("changedFields", ChangedFields);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

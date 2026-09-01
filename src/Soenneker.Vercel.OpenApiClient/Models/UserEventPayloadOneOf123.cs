@@ -23,8 +23,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Domain { get; set; }
 #endif
-        /// <summary>The zone property</summary>
-        public bool? Zone { get; set; }
+        /// <summary>The echMode property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf123EchMode? EchMode { get; set; }
+        /// <summary>The previousEchMode property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf123PreviousEchMode? PreviousEchMode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf123"/> and sets the default values.
         /// </summary>
@@ -51,7 +53,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "domain", n => { Domain = n.GetStringValue(); } },
-                { "zone", n => { Zone = n.GetBoolValue(); } },
+                { "echMode", n => { EchMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf123EchMode>(); } },
+                { "previousEchMode", n => { PreviousEchMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf123PreviousEchMode>(); } },
             };
         }
         /// <summary>
@@ -62,7 +65,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("domain", Domain);
-            writer.WriteBoolValue("zone", Zone);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf123EchMode>("echMode", EchMode);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf123PreviousEchMode>("previousEchMode", PreviousEchMode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

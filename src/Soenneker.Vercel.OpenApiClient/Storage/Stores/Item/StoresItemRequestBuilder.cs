@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.Storage.Stores.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StoresItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/stores/{id}{?%27include%2Dguides%27*,%27skip%2Dmetadata%27*}", pathParameters)
+        public StoresItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/stores/{id}{?include%2Dguides*,skip%2Dmetadata*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Vercel.OpenApiClient.Storage.Stores.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StoresItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/stores/{id}{?%27include%2Dguides%27*,%27skip%2Dmetadata%27*}", rawUrl)
+        public StoresItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/stores/{id}{?include%2Dguides*,skip%2Dmetadata*}", rawUrl)
         {
         }
         /// <summary>
@@ -82,9 +82,9 @@ namespace Soenneker.Vercel.OpenApiClient.Storage.Stores.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StoresItemRequestBuilderGetQueryParameters 
         {
-            [QueryParameter("%27include%2Dguides%27")]
+            [QueryParameter("include%2Dguides")]
             public bool? IncludeGuides { get; set; }
-            [QueryParameter("%27skip%2Dmetadata%27")]
+            [QueryParameter("skip%2Dmetadata")]
             public bool? SkipMetadata { get; set; }
         }
     }

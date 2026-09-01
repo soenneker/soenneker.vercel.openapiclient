@@ -15,6 +15,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The alertThresholds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<double?>? AlertThresholds { get; set; }
+#nullable restore
+#else
+        public List<double?> AlertThresholds { get; set; }
+#endif
         /// <summary>Spend cap, in dollars.</summary>
         public double? LimitAmount { get; set; }
         /// <summary>The refreshPeriod property</summary>
@@ -44,6 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "alertThresholds", n => { AlertThresholds = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "limitAmount", n => { LimitAmount = n.GetDoubleValue(); } },
                 { "refreshPeriod", n => { RefreshPeriod = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18BudgetRefreshPeriod>(); } },
             };
@@ -55,6 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<double?>("alertThresholds", AlertThresholds);
             writer.WriteDoubleValue("limitAmount", LimitAmount);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18BudgetRefreshPeriod>("refreshPeriod", RefreshPeriod);
             writer.WriteAdditionalData(AdditionalData);

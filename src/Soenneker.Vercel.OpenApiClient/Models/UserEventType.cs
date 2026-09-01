@@ -351,6 +351,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Avatar,
         #pragma warning restore CS1591
+        [EnumMember(Value = "billing-settings-updated")]
+        #pragma warning disable CS1591
+        BillingSettingsUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "bulk-redirects-settings-updated")]
         #pragma warning disable CS1591
         BulkRedirectsSettingsUpdated,

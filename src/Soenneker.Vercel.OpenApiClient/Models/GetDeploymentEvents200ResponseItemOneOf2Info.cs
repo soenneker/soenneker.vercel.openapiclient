@@ -46,6 +46,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ReadyState { get; set; }
 #endif
+        /// <summary>The serviceName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ServiceName { get; set; }
+#nullable restore
+#else
+        public string ServiceName { get; set; }
+#endif
         /// <summary>The step property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,6 +99,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "readyState", n => { ReadyState = n.GetStringValue(); } },
+                { "serviceName", n => { ServiceName = n.GetStringValue(); } },
                 { "step", n => { Step = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -106,6 +115,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("path", Path);
             writer.WriteStringValue("readyState", ReadyState);
+            writer.WriteStringValue("serviceName", ServiceName);
             writer.WriteStringValue("step", Step);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
