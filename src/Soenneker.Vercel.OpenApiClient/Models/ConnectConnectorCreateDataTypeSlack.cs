@@ -60,6 +60,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackExtrasProperty Extras { get; set; }
 #endif
+        /// <summary>Global and message shortcuts configured for the Slack app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackShortcutsItem>? Shortcuts { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackShortcutsItem> Shortcuts { get; set; }
+#endif
         /// <summary>Slack request signing secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +83,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlackTeam SlackTeam { get; set; }
+#endif
+        /// <summary>Slash commands configured for the managed Slack app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlashCommandsItem>? SlashCommands { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlashCommandsItem> SlashCommands { get; set; }
 #endif
         /// <summary>OAuth scopes requested for Slack user tokens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,8 +132,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "clientId", n => { ClientId = n.GetStringValue(); } },
                 { "clientSecret", n => { ClientSecret = n.GetStringValue(); } },
                 { "extras", n => { Extras = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackExtrasProperty>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackExtrasProperty.CreateFromDiscriminatorValue); } },
+                { "shortcuts", n => { Shortcuts = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackShortcutsItem>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackShortcutsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "signingSecret", n => { SigningSecret = n.GetStringValue(); } },
                 { "slackTeam", n => { SlackTeam = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlackTeam>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlackTeam.CreateFromDiscriminatorValue); } },
+                { "slashCommands", n => { SlashCommands = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlashCommandsItem>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlashCommandsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userScopes", n => { UserScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "verificationToken", n => { VerificationToken = n.GetStringValue(); } },
             };
@@ -135,8 +153,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("clientId", ClientId);
             writer.WriteStringValue("clientSecret", ClientSecret);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackExtrasProperty>("extras", Extras);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackShortcutsItem>("shortcuts", Shortcuts);
             writer.WriteStringValue("signingSecret", SigningSecret);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlackTeam>("slackTeam", SlackTeam);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeSlackSlashCommandsItem>("slashCommands", SlashCommands);
             writer.WriteCollectionOfPrimitiveValues<string>("userScopes", UserScopes);
             writer.WriteStringValue("verificationToken", VerificationToken);
         }

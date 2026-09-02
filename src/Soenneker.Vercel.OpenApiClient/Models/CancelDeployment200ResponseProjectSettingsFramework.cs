@@ -84,6 +84,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Express,
         #pragma warning restore CS1591
+        [EnumMember(Value = "factory-eve")]
+        #pragma warning disable CS1591
+        FactoryEve,
+        #pragma warning restore CS1591
         [EnumMember(Value = "fastapi")]
         #pragma warning disable CS1591
         Fastapi,

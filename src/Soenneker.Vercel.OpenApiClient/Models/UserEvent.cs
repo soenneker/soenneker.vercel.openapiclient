@@ -65,6 +65,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string PrincipalId { get; set; }
 #endif
+        /// <summary>The requestId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RequestId { get; set; }
+#nullable restore
+#else
+        public string RequestId { get; set; }
+#endif
+        /// <summary>The ID of the session that the principal&apos;s token belongs to, when it belongs to one.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SessionId { get; set; }
+#nullable restore
+#else
+        public string SessionId { get; set; }
+#endif
         /// <summary>The human-readable text of the Event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,6 +88,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string Text { get; set; }
+#endif
+        /// <summary>The public ID of the token that the principal authenticated with, when the request behind this event carried one.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TokenId { get; set; }
+#nullable restore
+#else
+        public string TokenId { get; set; }
 #endif
         /// <summary>The type of the event.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventType? Type { get; set; }
@@ -139,7 +163,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayload>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayload.CreateFromDiscriminatorValue); } },
                 { "principal", n => { Principal = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPrincipal>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPrincipal.CreateFromDiscriminatorValue); } },
                 { "principalId", n => { PrincipalId = n.GetStringValue(); } },
+                { "requestId", n => { RequestId = n.GetStringValue(); } },
+                { "sessionId", n => { SessionId = n.GetStringValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
+                { "tokenId", n => { TokenId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventType>(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventUser>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventUser.CreateFromDiscriminatorValue); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
@@ -161,7 +188,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayload>("payload", Payload);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPrincipal>("principal", Principal);
             writer.WriteStringValue("principalId", PrincipalId);
+            writer.WriteStringValue("requestId", RequestId);
+            writer.WriteStringValue("sessionId", SessionId);
             writer.WriteStringValue("text", Text);
+            writer.WriteStringValue("tokenId", TokenId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventUser>("user", User);
             writer.WriteStringValue("userId", UserId);

@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.Models;
 using Soenneker.Vercel.OpenApiClient.V2.Aliases;
+using Soenneker.Vercel.OpenApiClient.V2.Connect;
 using Soenneker.Vercel.OpenApiClient.V2.Deployments;
 using Soenneker.Vercel.OpenApiClient.V2.Domains;
 using Soenneker.Vercel.OpenApiClient.V2.Files;
@@ -32,6 +33,11 @@ namespace Soenneker.Vercel.OpenApiClient.V2
         public global::Soenneker.Vercel.OpenApiClient.V2.Aliases.AliasesRequestBuilder Aliases
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V2.Aliases.AliasesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The connect property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V2.Connect.ConnectRequestBuilder Connect
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V2.Connect.ConnectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The deployments property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V2.Deployments.DeploymentsRequestBuilder Deployments

@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.Models;
+using Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,18 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConnectorsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v1.connect.connectors.item collection</summary>
+        /// <param name="position">Stable connector ID or URL-encoded team-scoped UID. Examples: `scl_abc123` or `slack%2Fmy-bot`.</param>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.WithConnectorItemRequestBuilder"/></returns>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.WithConnectorItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("connector", position);
+                return new global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.WithConnectorItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.ConnectorsRequestBuilder"/> and sets the default values.
         /// </summary>
