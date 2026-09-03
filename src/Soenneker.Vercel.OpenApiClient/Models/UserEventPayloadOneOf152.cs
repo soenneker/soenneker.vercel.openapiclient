@@ -15,29 +15,53 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The newEnvVar property</summary>
+        /// <summary>The envId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152NewEnvVar? NewEnvVar { get; set; }
+        public string? EnvId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152NewEnvVar NewEnvVar { get; set; }
+        public string EnvId { get; set; }
 #endif
-        /// <summary>The oldEnvVar property</summary>
+        /// <summary>The envKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152OldEnvVar? OldEnvVar { get; set; }
+        public string? EnvKey { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152OldEnvVar OldEnvVar { get; set; }
+        public string EnvKey { get; set; }
 #endif
-        /// <summary>The updateDiff property</summary>
+        /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152UpdateDiff? UpdateDiff { get; set; }
+        public string? OrganizationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152UpdateDiff UpdateDiff { get; set; }
+        public string OrganizationId { get; set; }
+#endif
+        /// <summary>The provider property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Provider { get; set; }
+#nullable restore
+#else
+        public string Provider { get; set; }
+#endif
+        /// <summary>The repository property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Repository { get; set; }
+#nullable restore
+#else
+        public string Repository { get; set; }
+#endif
+        /// <summary>The target property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152TargetItem?>? Target { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152TargetItem?> Target { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152"/> and sets the default values.
@@ -64,9 +88,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "newEnvVar", n => { NewEnvVar = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152NewEnvVar>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152NewEnvVar.CreateFromDiscriminatorValue); } },
-                { "oldEnvVar", n => { OldEnvVar = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152OldEnvVar>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152OldEnvVar.CreateFromDiscriminatorValue); } },
-                { "updateDiff", n => { UpdateDiff = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152UpdateDiff>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152UpdateDiff.CreateFromDiscriminatorValue); } },
+                { "envId", n => { EnvId = n.GetStringValue(); } },
+                { "envKey", n => { EnvKey = n.GetStringValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
+                { "provider", n => { Provider = n.GetStringValue(); } },
+                { "repository", n => { Repository = n.GetStringValue(); } },
+                { "target", n => { Target = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152TargetItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -76,9 +103,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152NewEnvVar>("newEnvVar", NewEnvVar);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152OldEnvVar>("oldEnvVar", OldEnvVar);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152UpdateDiff>("updateDiff", UpdateDiff);
+            writer.WriteStringValue("envId", EnvId);
+            writer.WriteStringValue("envKey", EnvKey);
+            writer.WriteStringValue("organizationId", OrganizationId);
+            writer.WriteStringValue("provider", Provider);
+            writer.WriteStringValue("repository", Repository);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152TargetItem>("target", Target);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

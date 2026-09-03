@@ -33,6 +33,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string CurrentSessionId { get; set; }
 #endif
+        /// <summary>The unique drive ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
         /// <summary>The maximum drive size in bytes.</summary>
         public double? MaxSizeBytes { get; set; }
         /// <summary>The unique drive name within the project.</summary>
@@ -89,6 +97,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "currentSandboxName", n => { CurrentSandboxName = n.GetStringValue(); } },
                 { "currentSessionId", n => { CurrentSessionId = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "maxSizeBytes", n => { MaxSizeBytes = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
@@ -106,6 +115,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteStringValue("currentSandboxName", CurrentSandboxName);
             writer.WriteStringValue("currentSessionId", CurrentSessionId);
+            writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("maxSizeBytes", MaxSizeBytes);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("projectId", ProjectId);

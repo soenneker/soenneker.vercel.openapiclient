@@ -31,6 +31,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string DirectoryId { get; set; }
 #endif
+        /// <summary>The groupName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GroupName { get; set; }
+#nullable restore
+#else
+        public string GroupName { get; set; }
+#endif
+        /// <summary>The next property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf200Next? Next { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf200Next Next { get; set; }
+#endif
         /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +82,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "directoryGroupId", n => { DirectoryGroupId = n.GetStringValue(); } },
                 { "directoryId", n => { DirectoryId = n.GetStringValue(); } },
+                { "groupName", n => { GroupName = n.GetStringValue(); } },
+                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf200Next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf200Next.CreateFromDiscriminatorValue); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
             };
         }
@@ -78,6 +96,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("directoryGroupId", DirectoryGroupId);
             writer.WriteStringValue("directoryId", DirectoryId);
+            writer.WriteStringValue("groupName", GroupName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf200Next>("next", Next);
             writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteAdditionalData(AdditionalData);
         }

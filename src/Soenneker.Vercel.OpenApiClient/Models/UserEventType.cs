@@ -2015,6 +2015,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         SharedEnvVariableRead,
         #pragma warning restore CS1591
+        [EnumMember(Value = "shared-env-variable-repo-link")]
+        #pragma warning disable CS1591
+        SharedEnvVariableRepoLink,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "shared-env-variable-repo-unlink")]
+        #pragma warning disable CS1591
+        SharedEnvVariableRepoUnlink,
+        #pragma warning restore CS1591
         [EnumMember(Value = "shared-env-variable-update")]
         #pragma warning disable CS1591
         SharedEnvVariableUpdate,
@@ -2134,6 +2142,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "storage-view-secret")]
         #pragma warning disable CS1591
         StorageViewSecret,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "strict-connectors")]
+        #pragma warning disable CS1591
+        StrictConnectors,
         #pragma warning restore CS1591
         [EnumMember(Value = "strict-deployment-protection-settings")]
         #pragma warning disable CS1591

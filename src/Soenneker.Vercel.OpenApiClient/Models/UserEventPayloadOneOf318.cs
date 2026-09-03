@@ -15,37 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The alias property</summary>
+        /// <summary>The connectionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Alias { get; set; }
+        public string? ConnectionId { get; set; }
 #nullable restore
 #else
-        public string Alias { get; set; }
+        public string ConnectionId { get; set; }
 #endif
-        /// <summary>The projectId property</summary>
+        /// <summary>The connectionType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? ConnectionType { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
-#endif
-        /// <summary>The sandboxId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SandboxId { get; set; }
-#nullable restore
-#else
-        public string SandboxId { get; set; }
-#endif
-        /// <summary>The sandboxName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SandboxName { get; set; }
-#nullable restore
-#else
-        public string SandboxName { get; set; }
+        public string ConnectionType { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf318"/> and sets the default values.
@@ -72,10 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alias", n => { Alias = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "sandboxId", n => { SandboxId = n.GetStringValue(); } },
-                { "sandboxName", n => { SandboxName = n.GetStringValue(); } },
+                { "connectionId", n => { ConnectionId = n.GetStringValue(); } },
+                { "connectionType", n => { ConnectionType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,10 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("alias", Alias);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("sandboxId", SandboxId);
-            writer.WriteStringValue("sandboxName", SandboxName);
+            writer.WriteStringValue("connectionId", ConnectionId);
+            writer.WriteStringValue("connectionType", ConnectionType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

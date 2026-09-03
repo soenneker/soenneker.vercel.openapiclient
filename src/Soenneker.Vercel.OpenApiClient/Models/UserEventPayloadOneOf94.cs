@@ -75,6 +75,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
+        /// <summary>The projectName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectName { get; set; }
+#nullable restore
+#else
+        public string ProjectName { get; set; }
+#endif
         /// <summary>The subjectType property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94SubjectType? SubjectType { get; set; }
         /// <summary>The tokenCount property</summary>
@@ -117,6 +125,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "importedTokenCount", n => { ImportedTokenCount = n.GetDoubleValue(); } },
                 { "installationId", n => { InstallationId = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
                 { "subjectType", n => { SubjectType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94SubjectType>(); } },
                 { "tokenCount", n => { TokenCount = n.GetDoubleValue(); } },
                 { "tokensDeleted", n => { TokensDeleted = n.GetDoubleValue(); } },
@@ -139,6 +148,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("importedTokenCount", ImportedTokenCount);
             writer.WriteStringValue("installationId", InstallationId);
             writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf94SubjectType>("subjectType", SubjectType);
             writer.WriteDoubleValue("tokenCount", TokenCount);
             writer.WriteDoubleValue("tokensDeleted", TokensDeleted);

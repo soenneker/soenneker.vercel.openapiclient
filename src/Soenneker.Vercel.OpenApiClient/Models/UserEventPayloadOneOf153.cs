@@ -15,31 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The expiresAt property</summary>
-        public double? ExpiresAt { get; set; }
-        /// <summary>The projectId property</summary>
+        /// <summary>The newEnvVar property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153NewEnvVar? NewEnvVar { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153NewEnvVar NewEnvVar { get; set; }
 #endif
-        /// <summary>The scope property</summary>
+        /// <summary>The oldEnvVar property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Scope { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153OldEnvVar? OldEnvVar { get; set; }
 #nullable restore
 #else
-        public string Scope { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153OldEnvVar OldEnvVar { get; set; }
 #endif
-        /// <summary>The source property</summary>
+        /// <summary>The updateDiff property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Source { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153UpdateDiff? UpdateDiff { get; set; }
 #nullable restore
 #else
-        public string Source { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153UpdateDiff UpdateDiff { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153"/> and sets the default values.
@@ -66,10 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "scope", n => { Scope = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetStringValue(); } },
+                { "newEnvVar", n => { NewEnvVar = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153NewEnvVar>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153NewEnvVar.CreateFromDiscriminatorValue); } },
+                { "oldEnvVar", n => { OldEnvVar = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153OldEnvVar>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153OldEnvVar.CreateFromDiscriminatorValue); } },
+                { "updateDiff", n => { UpdateDiff = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153UpdateDiff>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153UpdateDiff.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -79,10 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("expiresAt", ExpiresAt);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("scope", Scope);
-            writer.WriteStringValue("source", Source);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153NewEnvVar>("newEnvVar", NewEnvVar);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153OldEnvVar>("oldEnvVar", OldEnvVar);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf153UpdateDiff>("updateDiff", UpdateDiff);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

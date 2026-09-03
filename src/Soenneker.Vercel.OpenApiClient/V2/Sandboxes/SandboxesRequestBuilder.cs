@@ -53,7 +53,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SandboxesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/sandboxes{?cursor*,limit*,namePrefix*,project*,slug*,sortBy*,sortOrder*,status*,tags*,teamId*}", pathParameters)
+        public SandboxesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/sandboxes{?slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -61,26 +61,8 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SandboxesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/sandboxes{?cursor*,limit*,namePrefix*,project*,slug*,sortBy*,sortOrder*,status*,tags*,teamId*}", rawUrl)
+        public SandboxesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/sandboxes{?slug*,teamId*}", rawUrl)
         {
-        }
-        /// <summary>
-        /// Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix or status.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxes200Response"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxes200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxes200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxes200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxes200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown.
@@ -101,25 +83,6 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix or status.
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder.SandboxesRequestBuilderGetQueryParameters>> requestConfiguration = default)
-        {
-#endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
-            return requestInfo;
         }
         /// <summary>
         /// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown.
@@ -151,85 +114,6 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes
         public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.SandboxesRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix or status.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SandboxesRequestBuilderGetQueryParameters 
-        {
-            /// <summary>Opaque pagination cursor from a previous response.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("cursor")]
-            public string? Cursor { get; set; }
-#nullable restore
-#else
-            [QueryParameter("cursor")]
-            public string Cursor { get; set; }
-#endif
-            /// <summary>Maximum number of named sandboxes to return in the response. Used for pagination.</summary>
-            [QueryParameter("limit")]
-            public double? Limit { get; set; }
-            /// <summary>Filter named sandboxes whose name starts with this prefix. Only valid when sortBy=name.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("namePrefix")]
-            public string? NamePrefix { get; set; }
-#nullable restore
-#else
-            [QueryParameter("namePrefix")]
-            public string NamePrefix { get; set; }
-#endif
-            /// <summary>The unique identifier or name of the project to list named sandboxes for.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("project")]
-            public string? Project { get; set; }
-#nullable restore
-#else
-            [QueryParameter("project")]
-            public string Project { get; set; }
-#endif
-            /// <summary>The Team slug to perform the request on behalf of.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("slug")]
-            public string? Slug { get; set; }
-#nullable restore
-#else
-            [QueryParameter("slug")]
-            public string Slug { get; set; }
-#endif
-            /// <summary>Field to sort by.</summary>
-            [QueryParameter("sortBy")]
-            public global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxesSortByParameter? SortBy { get; set; }
-            /// <summary>Sort direction. Defaults to desc.</summary>
-            [QueryParameter("sortOrder")]
-            public global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxesSortOrderParameter? SortOrder { get; set; }
-            /// <summary>Filter named sandboxes by status. Only valid when sortBy is createdAt.</summary>
-            [QueryParameter("status")]
-            public global::Soenneker.Vercel.OpenApiClient.Models.ListSandboxesStatusParameter? Status { get; set; }
-            /// <summary>Filter sandboxes by tag. Format: \&quot;key:value\&quot;. Only one tag filter is supported at a time.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("tags")]
-            public string? Tags { get; set; }
-#nullable restore
-#else
-            [QueryParameter("tags")]
-            public string Tags { get; set; }
-#endif
-            /// <summary>The Team identifier to perform the request on behalf of.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("teamId")]
-            public string? TeamId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("teamId")]
-            public string TeamId { get; set; }
-#endif
         }
         /// <summary>
         /// Creates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown.

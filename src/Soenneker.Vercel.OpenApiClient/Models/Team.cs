@@ -261,6 +261,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string StagingPrefix { get; set; }
 #endif
+        /// <summary>When enabled, creating and managing connectors requires Owner role or the ConnectorManager permission.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictConnectors? StrictConnectors { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictConnectors StrictConnectors { get; set; }
+#endif
         /// <summary>When enabled, deployment protection settings require stricter permissions (owner-only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -354,6 +362,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "sensitiveEnvironmentVariablePolicy", n => { SensitiveEnvironmentVariablePolicy = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSensitiveEnvironmentVariablePolicy>(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "stagingPrefix", n => { StagingPrefix = n.GetStringValue(); } },
+                { "strictConnectors", n => { StrictConnectors = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictConnectors>(global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictConnectors.CreateFromDiscriminatorValue); } },
                 { "strictDeploymentProtectionSettings", n => { StrictDeploymentProtectionSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictDeploymentProtectionSettings>(global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictDeploymentProtectionSettings.CreateFromDiscriminatorValue); } },
                 { "strictPasswordProtectionSettings", n => { StrictPasswordProtectionSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictPasswordProtectionSettings>(global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictPasswordProtectionSettings.CreateFromDiscriminatorValue); } },
                 { "strictShareableLinks", n => { StrictShareableLinks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictShareableLinks>(global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictShareableLinks.CreateFromDiscriminatorValue); } },
@@ -409,6 +418,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamSensitiveEnvironmentVariablePolicy>("sensitiveEnvironmentVariablePolicy", SensitiveEnvironmentVariablePolicy);
             writer.WriteStringValue("slug", Slug);
             writer.WriteStringValue("stagingPrefix", StagingPrefix);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictConnectors>("strictConnectors", StrictConnectors);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictDeploymentProtectionSettings>("strictDeploymentProtectionSettings", StrictDeploymentProtectionSettings);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictPasswordProtectionSettings>("strictPasswordProtectionSettings", StrictPasswordProtectionSettings);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamStrictShareableLinks>("strictShareableLinks", StrictShareableLinks);
