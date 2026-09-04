@@ -151,12 +151,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("teamId")]
             public string? TeamId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
         /// <summary>
@@ -167,12 +171,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item.Transfer
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("teamId")]
             public string? TeamId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

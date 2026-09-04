@@ -674,6 +674,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf167NewOwner.UserEventPayloadOneOf167NewOwner_importFlowGitNamespace CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf167NewOwner.UserEventPayloadOneOf167NewOwner_importFlowGitNamespace();
                 if(parseNode.GetDoubleValue() is double doubleValue)
                 {
@@ -734,6 +735,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf167NewOwner.UserEventPayloadOneOf167NewOwner_importFlowGitNamespaceId CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf167NewOwner.UserEventPayloadOneOf167NewOwner_importFlowGitNamespaceId();
                 if(parseNode.GetDoubleValue() is double doubleValue)
                 {

@@ -206,6 +206,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             public static global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseGitSource.CreateDeployment200ResponseGitSource_projectId CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseGitSource.CreateDeployment200ResponseGitSource_projectId();
                 if(parseNode.GetDoubleValue() is double doubleValue)
                 {
@@ -266,6 +267,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             public static global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseGitSource.CreateDeployment200ResponseGitSource_repoId CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseGitSource.CreateDeployment200ResponseGitSource_repoId();
                 if(parseNode.GetDoubleValue() is double doubleValue)
                 {

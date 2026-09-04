@@ -65,7 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Redirect { get; set; }
 #endif
         /// <summary>The redirectStatusCode property</summary>
-        public double? RedirectStatusCode { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseRedirectStatusCode? RedirectStatusCode { get; set; }
         /// <summary>The updatedAt property</summary>
         public double? UpdatedAt { get; set; }
         /// <summary>A list of verification challenges, one of which must be completed to verify the domain for use on the project. After the challenge is complete `POST /projects/:idOrName/domains/:domain/verify` to verify the domain. Possible challenges: - If `verification.type = TXT` the `verification.domain` will be checked for a TXT record matching `verification.value`.</summary>
@@ -110,7 +110,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "redirect", n => { Redirect = n.GetStringValue(); } },
-                { "redirectStatusCode", n => { RedirectStatusCode = n.GetDoubleValue(); } },
+                { "redirectStatusCode", n => { RedirectStatusCode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseRedirectStatusCode>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "verification", n => { Verification = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseVerificationItem>(global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseVerificationItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "verified", n => { Verified = n.GetBoolValue(); } },
@@ -130,7 +130,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("redirect", Redirect);
-            writer.WriteDoubleValue("redirectStatusCode", RedirectStatusCode);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseRedirectStatusCode>("redirectStatusCode", RedirectStatusCode);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AddProjectDomain200ResponseVerificationItem>("verification", Verification);
             writer.WriteBoolValue("verified", Verified);

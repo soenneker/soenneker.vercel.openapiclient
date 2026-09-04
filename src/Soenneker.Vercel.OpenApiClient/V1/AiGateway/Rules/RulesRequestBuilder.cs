@@ -197,12 +197,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.Rules
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("ruleId")]
             public string? RuleId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("ruleId")]
             public string RuleId { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>The Team slug to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -231,8 +235,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.Rules
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RulesRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("includeDisabled")]
             public global::Soenneker.Vercel.OpenApiClient.Models.ListAiGatewayRulesIncludeDisabledParameter? IncludeDisabled { get; set; }
+            #pragma warning restore CS1591
             /// <summary>The Team slug to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

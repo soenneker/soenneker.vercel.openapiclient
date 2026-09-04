@@ -88,6 +88,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             public static global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseItemViewer.GitNamespaces200ResponseItemViewer_role CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.Models.GitNamespaces200ResponseItemViewer.GitNamespaces200ResponseItemViewer_role();
                 if(parseNode.GetDoubleValue() is double doubleValue)
                 {

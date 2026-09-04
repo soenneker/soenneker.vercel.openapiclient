@@ -13,6 +13,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetConfigurations200ResponseOneOf1Item : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Historical parent installation from which acceptedPolicies were inherited. This is immutable provenance, not current authorization or relationship truth.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AcceptedPoliciesInheritedFromInstallationId { get; set; }
+#nullable restore
+#else
+        public string AcceptedPoliciesInheritedFromInstallationId { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A timestamp that tells you when the configuration was installed successfully</summary>
@@ -136,6 +144,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "acceptedPoliciesInheritedFromInstallationId", n => { AcceptedPoliciesInheritedFromInstallationId = n.GetStringValue(); } },
                 { "completedAt", n => { CompletedAt = n.GetDoubleValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "customerDeleteRequestedAt", n => { CustomerDeleteRequestedAt = n.GetDoubleValue(); } },
@@ -166,6 +175,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("acceptedPoliciesInheritedFromInstallationId", AcceptedPoliciesInheritedFromInstallationId);
             writer.WriteDoubleValue("completedAt", CompletedAt);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteDoubleValue("customerDeleteRequestedAt", CustomerDeleteRequestedAt);

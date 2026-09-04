@@ -96,8 +96,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.GitNamespaces
             [QueryParameter("host")]
             public string Host { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("provider")]
             public global::Soenneker.Vercel.OpenApiClient.Models.GitNamespacesProviderParameter? Provider { get; set; }
+            #pragma warning restore CS1591
             /// <summary>When true, includes the viewer object for each namespace.</summary>
             [QueryParameter("viewerMetadata")]
             public bool? ViewerMetadata { get; set; }

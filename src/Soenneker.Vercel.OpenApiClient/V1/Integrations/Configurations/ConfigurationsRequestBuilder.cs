@@ -85,8 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConfigurationsRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("installationType")]
             public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationsInstallationTypeParameter? InstallationType { get; set; }
+            #pragma warning restore CS1591
             /// <summary>ID of the integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,8 +119,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.Configurations
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("view")]
             public global::Soenneker.Vercel.OpenApiClient.Models.GetConfigurationsViewParameter? View { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

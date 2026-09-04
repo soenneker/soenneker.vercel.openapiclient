@@ -160,6 +160,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             public static global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4ReposItem.SearchRepo200ResponseOneOf4ReposItem_id CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4ReposItem.SearchRepo200ResponseOneOf4ReposItem_id();
                 if(parseNode.GetDoubleValue() is double doubleValue)
                 {

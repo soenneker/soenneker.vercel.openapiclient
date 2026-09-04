@@ -111,8 +111,10 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             /// <summary>Filter results by build queue configuration. SKIP_NAMESPACE_QUEUE includes projects without a configuration set.</summary>
             [QueryParameter("buildQueueConfiguration")]
             public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectsBuildQueueConfigurationParameter? BuildQueueConfiguration { get; set; }
+            #pragma warning disable CS1591
             [QueryParameter("deprecated")]
             public bool? Deprecated { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Filter results by connected Global Config ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

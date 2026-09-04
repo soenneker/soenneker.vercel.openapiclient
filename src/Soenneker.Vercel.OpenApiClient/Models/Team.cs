@@ -136,9 +136,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Whether toolbar is enabled on production deployments</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamEnableProductionFeedback? EnableProductionFeedback { get; set; }
         /// <summary>Indicates if IP addresses should be accessible in observability (o11y) tooling</summary>
-        public bool? HideIpAddresses { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddresses? HideIpAddresses { get; set; }
         /// <summary>Indicates if IP addresses should be accessible in log drains</summary>
-        public bool? HideIpAddressesInLogDrains { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddressesInLogDrains? HideIpAddressesInLogDrains { get; set; }
         /// <summary>The Team&apos;s unique identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -341,8 +341,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "emailDomain", n => { EmailDomain = n.GetStringValue(); } },
                 { "enablePreviewFeedback", n => { EnablePreviewFeedback = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamEnablePreviewFeedback>(); } },
                 { "enableProductionFeedback", n => { EnableProductionFeedback = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamEnableProductionFeedback>(); } },
-                { "hideIpAddresses", n => { HideIpAddresses = n.GetBoolValue(); } },
-                { "hideIpAddressesInLogDrains", n => { HideIpAddressesInLogDrains = n.GetBoolValue(); } },
+                { "hideIpAddresses", n => { HideIpAddresses = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddresses>(); } },
+                { "hideIpAddressesInLogDrains", n => { HideIpAddressesInLogDrains = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddressesInLogDrains>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "integrationTokensInvalidatedAt", n => { IntegrationTokensInvalidatedAt = n.GetDoubleValue(); } },
                 { "inviteCode", n => { InviteCode = n.GetStringValue(); } },
@@ -397,8 +397,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("emailDomain", EmailDomain);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamEnablePreviewFeedback>("enablePreviewFeedback", EnablePreviewFeedback);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamEnableProductionFeedback>("enableProductionFeedback", EnableProductionFeedback);
-            writer.WriteBoolValue("hideIpAddresses", HideIpAddresses);
-            writer.WriteBoolValue("hideIpAddressesInLogDrains", HideIpAddressesInLogDrains);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddresses>("hideIpAddresses", HideIpAddresses);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamHideIpAddressesInLogDrains>("hideIpAddressesInLogDrains", HideIpAddressesInLogDrains);
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("integrationTokensInvalidatedAt", IntegrationTokensInvalidatedAt);
             writer.WriteStringValue("inviteCode", InviteCode);

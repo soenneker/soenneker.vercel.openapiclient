@@ -119,7 +119,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string InspectorUrl { get; set; }
 #endif
         /// <summary>Deployment can be used for instant rollback</summary>
-        public bool? IsRollbackCandidate { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemIsRollbackCandidate? IsRollbackCandidate { get; set; }
         /// <summary>The manualProvisioning property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -268,7 +268,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
                 { "expiration", n => { Expiration = n.GetDoubleValue(); } },
                 { "inspectorUrl", n => { InspectorUrl = n.GetStringValue(); } },
-                { "isRollbackCandidate", n => { IsRollbackCandidate = n.GetBoolValue(); } },
+                { "isRollbackCandidate", n => { IsRollbackCandidate = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemIsRollbackCandidate>(); } },
                 { "manualProvisioning", n => { ManualProvisioning = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemManualProvisioning>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemManualProvisioning.CreateFromDiscriminatorValue); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemMeta>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemMeta.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -319,7 +319,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("errorMessage", ErrorMessage);
             writer.WriteDoubleValue("expiration", Expiration);
             writer.WriteStringValue("inspectorUrl", InspectorUrl);
-            writer.WriteBoolValue("isRollbackCandidate", IsRollbackCandidate);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemIsRollbackCandidate>("isRollbackCandidate", IsRollbackCandidate);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemManualProvisioning>("manualProvisioning", ManualProvisioning);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemMeta>("meta", Meta);
             writer.WriteStringValue("name", Name);

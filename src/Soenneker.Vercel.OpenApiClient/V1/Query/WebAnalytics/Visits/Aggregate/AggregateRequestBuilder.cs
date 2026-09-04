@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Query.WebAnalytics.Visits.Aggregate
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AggregateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/query/web-analytics/visits/aggregate?by={by}&projectId={projectId}&since={since}&until={until}{&filter*,limit*,slug*,teamId*}", pathParameters)
+        public AggregateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/query/web-analytics/visits/aggregate?projectId={projectId}&since={since}&until={until}{&filter*,limit*,slug*,teamId*,by*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Query.WebAnalytics.Visits.Aggregate
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AggregateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/query/web-analytics/visits/aggregate?by={by}&projectId={projectId}&since={since}&until={until}{&filter*,limit*,slug*,teamId*}", rawUrl)
+        public AggregateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/query/web-analytics/visits/aggregate?projectId={projectId}&since={since}&until={until}{&filter*,limit*,slug*,teamId*,by*}", rawUrl)
         {
         }
         /// <summary>
@@ -119,8 +119,15 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Query.WebAnalytics.Visits.Aggregate
             public string ProjectId { get; set; }
 #endif
             /// <summary>Timestamp in milliseconds, or a valid Date string.Selects data from (including) this date and time.Will be adjusted according to the desired time granularity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("since")]
-            public double? Since { get; set; }
+            public string? Since { get; set; }
+#nullable restore
+#else
+            [QueryParameter("since")]
+            public string Since { get; set; }
+#endif
             /// <summary>The Team slug to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,8 +149,15 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Query.WebAnalytics.Visits.Aggregate
             public string TeamId { get; set; }
 #endif
             /// <summary>Timestamp in milliseconds, or a valid Date string.Selects data until (including) this date.Will be adjusted according to the desired time granularity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("until")]
-            public double? Until { get; set; }
+            public string? Until { get; set; }
+#nullable restore
+#else
+            [QueryParameter("until")]
+            public string Until { get; set; }
+#endif
         }
     }
 }

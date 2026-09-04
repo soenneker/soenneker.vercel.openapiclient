@@ -12,7 +12,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class GetOrCreateDriveRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Maximum drive size in bytes. Defaults to 100 GiB when omitted.</summary>
+        /// <summary>Maximum drive size in bytes. Defaults to 1 TiB when omitted. The maximum quota is 16 TiB. Request a quota above 16 TiB at https://vercel.com/help.</summary>
         public int? MaxSizeBytes { get; set; }
         /// <summary>The project ID or name to associate the drive with. Required unless using a Vercel OIDC token scoped to a project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

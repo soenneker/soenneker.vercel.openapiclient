@@ -10,7 +10,6 @@ using Soenneker.Vercel.OpenApiClient.Aliases;
 using Soenneker.Vercel.OpenApiClient.ApiKeys;
 using Soenneker.Vercel.OpenApiClient.Domains;
 using Soenneker.Vercel.OpenApiClient.Projects;
-using Soenneker.Vercel.OpenApiClient.Sandboxes;
 using Soenneker.Vercel.OpenApiClient.SpeedInsights;
 using Soenneker.Vercel.OpenApiClient.Storage;
 using Soenneker.Vercel.OpenApiClient.V10;
@@ -58,11 +57,6 @@ namespace Soenneker.Vercel.OpenApiClient
         public global::Soenneker.Vercel.OpenApiClient.Projects.ProjectsRequestBuilder Projects
         {
             get => new global::Soenneker.Vercel.OpenApiClient.Projects.ProjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The sandboxes property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Sandboxes.SandboxesRequestBuilder Sandboxes
-        {
-            get => new global::Soenneker.Vercel.OpenApiClient.Sandboxes.SandboxesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The speedInsights property</summary>
         public global::Soenneker.Vercel.OpenApiClient.SpeedInsights.SpeedInsightsRequestBuilder SpeedInsights

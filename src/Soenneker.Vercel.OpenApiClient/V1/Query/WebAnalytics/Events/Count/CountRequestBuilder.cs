@@ -106,8 +106,15 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Query.WebAnalytics.Events.Count
             public string ProjectId { get; set; }
 #endif
             /// <summary>Timestamp in milliseconds, or a valid Date string.Selects data from (including) this date and time.Will be adjusted according to the desired time granularity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("since")]
-            public double? Since { get; set; }
+            public string? Since { get; set; }
+#nullable restore
+#else
+            [QueryParameter("since")]
+            public string Since { get; set; }
+#endif
             /// <summary>The Team slug to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,8 +136,15 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Query.WebAnalytics.Events.Count
             public string TeamId { get; set; }
 #endif
             /// <summary>Timestamp in milliseconds, or a valid Date string.Selects data until (including) this date.Will be adjusted according to the desired time granularity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("until")]
-            public double? Until { get; set; }
+            public string? Until { get; set; }
+#nullable restore
+#else
+            [QueryParameter("until")]
+            public string Until { get; set; }
+#endif
         }
     }
 }

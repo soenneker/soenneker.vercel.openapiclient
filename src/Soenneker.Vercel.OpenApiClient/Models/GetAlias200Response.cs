@@ -85,7 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Redirect { get; set; }
 #endif
         /// <summary>Status code to be used on redirect</summary>
-        public double? RedirectStatusCode { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseRedirectStatusCode? RedirectStatusCode { get; set; }
         /// <summary>The unique identifier of the alias</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -132,7 +132,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "protectionBypass", n => { ProtectionBypass = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseProtectionBypass>(global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseProtectionBypass.CreateFromDiscriminatorValue); } },
                 { "redirect", n => { Redirect = n.GetStringValue(); } },
-                { "redirectStatusCode", n => { RedirectStatusCode = n.GetDoubleValue(); } },
+                { "redirectStatusCode", n => { RedirectStatusCode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseRedirectStatusCode>(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
             };
@@ -155,7 +155,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseProtectionBypass>("protectionBypass", ProtectionBypass);
             writer.WriteStringValue("redirect", Redirect);
-            writer.WriteDoubleValue("redirectStatusCode", RedirectStatusCode);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetAlias200ResponseRedirectStatusCode>("redirectStatusCode", RedirectStatusCode);
             writer.WriteStringValue("uid", Uid);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

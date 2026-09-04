@@ -55,7 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Redirect { get; set; }
 #endif
         /// <summary>The redirectStatusCode property</summary>
-        public double? RedirectStatusCode { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAliasItemRedirectStatusCode? RedirectStatusCode { get; set; }
         /// <summary>The target property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAliasItemTarget? Target { get; set; }
         /// <summary>
@@ -91,7 +91,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "environment", n => { Environment = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAliasItemEnvironment>(); } },
                 { "gitBranch", n => { GitBranch = n.GetStringValue(); } },
                 { "redirect", n => { Redirect = n.GetStringValue(); } },
-                { "redirectStatusCode", n => { RedirectStatusCode = n.GetDoubleValue(); } },
+                { "redirectStatusCode", n => { RedirectStatusCode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAliasItemRedirectStatusCode>(); } },
                 { "target", n => { Target = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAliasItemTarget>(); } },
             };
         }
@@ -110,7 +110,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAliasItemEnvironment>("environment", Environment);
             writer.WriteStringValue("gitBranch", GitBranch);
             writer.WriteStringValue("redirect", Redirect);
-            writer.WriteDoubleValue("redirectStatusCode", RedirectStatusCode);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAliasItemRedirectStatusCode>("redirectStatusCode", RedirectStatusCode);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemAliasItemTarget>("target", Target);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -140,8 +140,10 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Projects.Item.Checks
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ChecksRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("blocks")]
             public global::Soenneker.Vercel.OpenApiClient.Models.ListProjectChecksBlocksParameter? Blocks { get; set; }
+            #pragma warning restore CS1591
             /// <summary>The Team slug to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

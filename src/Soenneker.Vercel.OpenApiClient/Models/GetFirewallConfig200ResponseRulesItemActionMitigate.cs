@@ -25,7 +25,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bypassSystem property</summary>
-        public bool? BypassSystem { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseRulesItemActionMitigateBypassSystem? BypassSystem { get; set; }
         /// <summary>The logHeaders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,7 +77,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseRulesItemActionMitigateAction>(); } },
                 { "actionDuration", n => { ActionDuration = n.GetStringValue(); } },
-                { "bypassSystem", n => { BypassSystem = n.GetBoolValue(); } },
+                { "bypassSystem", n => { BypassSystem = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseRulesItemActionMitigateBypassSystem>(); } },
                 { "logHeaders", n => { LogHeaders = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseRulesItemActionMitigateLogHeaders>(global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseRulesItemActionMitigateLogHeaders.CreateFromDiscriminatorValue); } },
                 { "rateLimit", n => { RateLimit = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseRulesItemActionMitigateRateLimit>(global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseRulesItemActionMitigateRateLimit.CreateFromDiscriminatorValue); } },
                 { "redirect", n => { Redirect = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseRulesItemActionMitigateRedirect>(global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseRulesItemActionMitigateRedirect.CreateFromDiscriminatorValue); } },
@@ -92,7 +92,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseRulesItemActionMitigateAction>("action", Action);
             writer.WriteStringValue("actionDuration", ActionDuration);
-            writer.WriteBoolValue("bypassSystem", BypassSystem);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseRulesItemActionMitigateBypassSystem>("bypassSystem", BypassSystem);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseRulesItemActionMitigateLogHeaders>("logHeaders", LogHeaders);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseRulesItemActionMitigateRateLimit>("rateLimit", RateLimit);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetFirewallConfig200ResponseRulesItemActionMitigateRedirect>("redirect", Redirect);

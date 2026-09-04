@@ -115,6 +115,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             public static global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemAttributionGitUser.GetDeployments200ResponseDeploymentsItemAttributionGitUser_id CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetDeployments200ResponseDeploymentsItemAttributionGitUser.GetDeployments200ResponseDeploymentsItemAttributionGitUser_id();
                 if(parseNode.GetDoubleValue() is double doubleValue)
                 {

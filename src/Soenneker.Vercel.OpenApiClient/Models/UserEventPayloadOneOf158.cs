@@ -99,6 +99,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158.UserEventPayloadOneOf158_configVersion CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158.UserEventPayloadOneOf158_configVersion();
                 if(parseNode.GetDoubleValue() is double doubleValue)
                 {

@@ -201,9 +201,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The enableExternalRewriteCaching property</summary>
         public bool? EnableExternalRewriteCaching { get; set; }
         /// <summary>The enablePreviewFeedback property</summary>
-        public bool? EnablePreviewFeedback { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemEnablePreviewFeedback? EnablePreviewFeedback { get; set; }
         /// <summary>The enableProductionFeedback property</summary>
-        public bool? EnableProductionFeedback { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemEnableProductionFeedback? EnableProductionFeedback { get; set; }
         /// <summary>The env property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -653,8 +653,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "dismissedToasts", n => { DismissedToasts = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemDismissedToastsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemDismissedToastsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "enableAffectedProjectsDeployments", n => { EnableAffectedProjectsDeployments = n.GetBoolValue(); } },
                 { "enableExternalRewriteCaching", n => { EnableExternalRewriteCaching = n.GetBoolValue(); } },
-                { "enablePreviewFeedback", n => { EnablePreviewFeedback = n.GetBoolValue(); } },
-                { "enableProductionFeedback", n => { EnableProductionFeedback = n.GetBoolValue(); } },
+                { "enablePreviewFeedback", n => { EnablePreviewFeedback = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemEnablePreviewFeedback>(); } },
+                { "enableProductionFeedback", n => { EnableProductionFeedback = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemEnableProductionFeedback>(); } },
                 { "env", n => { Env = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemEnvItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemEnvItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemExpiration>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemExpiration.CreateFromDiscriminatorValue); } },
                 { "features", n => { Features = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemFeatures>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemFeatures.CreateFromDiscriminatorValue); } },
@@ -759,8 +759,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemDismissedToastsItem>("dismissedToasts", DismissedToasts);
             writer.WriteBoolValue("enableAffectedProjectsDeployments", EnableAffectedProjectsDeployments);
             writer.WriteBoolValue("enableExternalRewriteCaching", EnableExternalRewriteCaching);
-            writer.WriteBoolValue("enablePreviewFeedback", EnablePreviewFeedback);
-            writer.WriteBoolValue("enableProductionFeedback", EnableProductionFeedback);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemEnablePreviewFeedback>("enablePreviewFeedback", EnablePreviewFeedback);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemEnableProductionFeedback>("enableProductionFeedback", EnableProductionFeedback);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemEnvItem>("env", Env);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemExpiration>("expiration", Expiration);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf3ProjectsItemFeatures>("features", Features);

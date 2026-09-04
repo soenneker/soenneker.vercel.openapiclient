@@ -87,21 +87,29 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.Integration.Item.Produc
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("integrationConfigurationId")]
             public string? IntegrationConfigurationId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("integrationConfigurationId")]
             public string IntegrationConfigurationId { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("metadata")]
             public string? Metadata { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("metadata")]
             public string Metadata { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>The Team slug to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,8 +121,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Integrations.Integration.Item.Produc
             [QueryParameter("slug")]
             public string Slug { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("source")]
             public global::Soenneker.Vercel.OpenApiClient.Models.GetBillingPlansSourceParameter? Source { get; set; }
+            #pragma warning restore CS1591
             /// <summary>The Team identifier to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

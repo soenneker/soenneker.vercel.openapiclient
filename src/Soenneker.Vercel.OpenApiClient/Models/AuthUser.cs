@@ -299,6 +299,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             public static global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespace CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespace();
                 if(parseNode.GetDoubleValue() is double doubleValue)
                 {
@@ -359,6 +360,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             public static global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespaceId CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.Models.AuthUser.AuthUser_importFlowGitNamespaceId();
                 if(parseNode.GetDoubleValue() is double doubleValue)
                 {

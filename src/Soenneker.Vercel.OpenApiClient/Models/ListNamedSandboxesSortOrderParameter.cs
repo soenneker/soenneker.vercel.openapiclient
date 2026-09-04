@@ -5,7 +5,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>Sort direction. Defaults to desc.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum GetSandboxesSortOrderParameter
+    public enum ListNamedSandboxesSortOrderParameter
     {
         [EnumMember(Value = "asc")]
         #pragma warning disable CS1591

@@ -88,6 +88,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             public static global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4GitAccount.SearchRepo200ResponseOneOf4GitAccount_namespaceId CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.Models.SearchRepo200ResponseOneOf4GitAccount.SearchRepo200ResponseOneOf4GitAccount_namespaceId();
                 if(parseNode.GetDoubleValue() is double doubleValue)
                 {

@@ -39,7 +39,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Redirect { get; set; }
 #endif
         /// <summary>Status code for domain redirect</summary>
-        public int? RedirectStatusCode { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.MoveProjectDomainRequestRedirectStatusCode? RedirectStatusCode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.MoveProjectDomainRequest"/> and sets the default values.
         /// </summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "gitBranch", n => { GitBranch = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "redirect", n => { Redirect = n.GetStringValue(); } },
-                { "redirectStatusCode", n => { RedirectStatusCode = n.GetIntValue(); } },
+                { "redirectStatusCode", n => { RedirectStatusCode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.MoveProjectDomainRequestRedirectStatusCode>(); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("gitBranch", GitBranch);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("redirect", Redirect);
-            writer.WriteIntValue("redirectStatusCode", RedirectStatusCode);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.MoveProjectDomainRequestRedirectStatusCode>("redirectStatusCode", RedirectStatusCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

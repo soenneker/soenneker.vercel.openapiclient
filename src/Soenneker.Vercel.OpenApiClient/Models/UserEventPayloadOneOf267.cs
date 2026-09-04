@@ -32,7 +32,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string ProjectName { get; set; }
 #endif
         /// <summary>The requireVerifiedCommits property</summary>
-        public bool? RequireVerifiedCommits { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf267RequireVerifiedCommits? RequireVerifiedCommits { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf267"/> and sets the default values.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "requireVerifiedCommits", n => { RequireVerifiedCommits = n.GetBoolValue(); } },
+                { "requireVerifiedCommits", n => { RequireVerifiedCommits = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf267RequireVerifiedCommits>(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteBoolValue("requireVerifiedCommits", RequireVerifiedCommits);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf267RequireVerifiedCommits>("requireVerifiedCommits", RequireVerifiedCommits);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

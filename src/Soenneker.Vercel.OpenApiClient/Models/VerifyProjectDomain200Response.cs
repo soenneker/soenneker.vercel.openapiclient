@@ -65,7 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Redirect { get; set; }
 #endif
         /// <summary>The redirectStatusCode property</summary>
-        public double? RedirectStatusCode { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.VerifyProjectDomain200ResponseRedirectStatusCode? RedirectStatusCode { get; set; }
         /// <summary>The updatedAt property</summary>
         public double? UpdatedAt { get; set; }
         /// <summary>`true` if the domain is verified for use with the project. If `false` it will not be used as an alias on this project until the challenge in `verification` is completed.</summary>
@@ -102,7 +102,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "redirect", n => { Redirect = n.GetStringValue(); } },
-                { "redirectStatusCode", n => { RedirectStatusCode = n.GetDoubleValue(); } },
+                { "redirectStatusCode", n => { RedirectStatusCode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VerifyProjectDomain200ResponseRedirectStatusCode>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "verified", n => { Verified = n.GetBoolValue(); } },
             };
@@ -121,7 +121,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("redirect", Redirect);
-            writer.WriteDoubleValue("redirectStatusCode", RedirectStatusCode);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.VerifyProjectDomain200ResponseRedirectStatusCode>("redirectStatusCode", RedirectStatusCode);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteBoolValue("verified", Verified);
             writer.WriteAdditionalData(AdditionalData);

@@ -95,8 +95,10 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Item.Item.Item.Tags.List
             [QueryParameter("last")]
             public string Last { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("n")]
             public int? N { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

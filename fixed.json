@@ -19495,6 +19495,18 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "413": {
+            "description": "413 response"
+          },
+          "422": {
+            "description": "422 response"
+          },
+          "500": {
+            "description": "500 response"
+          },
+          "503": {
+            "description": "503 response"
           }
         },
         "security": []
@@ -24551,10 +24563,14 @@
         ]
       }
     },
-    "/sandboxes": {
+    "/v2/sandboxes": {
       "get": {
-        "description": "",
-        "operationId": "GetSandboxes",
+        "tags": [
+          "sandboxes"
+        ],
+        "summary": "List sandboxes",
+        "description": "Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix or status.",
+        "operationId": "ListNamedSandboxes",
         "parameters": [
           {
             "name": "project",
@@ -24584,7 +24600,7 @@
             "in": "query",
             "description": "Field to sort by.",
             "schema": {
-              "$ref": "#/components/schemas/GetSandboxesSortByParameter"
+              "$ref": "#/components/schemas/ListNamedSandboxesSortByParameter"
             }
           },
           {
@@ -24610,7 +24626,7 @@
             "in": "query",
             "description": "Sort direction. Defaults to desc.",
             "schema": {
-              "$ref": "#/components/schemas/GetSandboxesSortOrderParameter"
+              "$ref": "#/components/schemas/ListNamedSandboxesSortOrderParameter"
             }
           },
           {
@@ -24618,7 +24634,7 @@
             "in": "query",
             "description": "Filter named sandboxes by status. Only valid when sortBy is createdAt.",
             "schema": {
-              "$ref": "#/components/schemas/GetSandboxesStatusParameter"
+              "$ref": "#/components/schemas/ListNamedSandboxesStatusParameter"
             }
           },
           {
@@ -24639,6 +24655,24 @@
               ],
               "description": "Filter sandboxes by tag. Format: \\\u0022key:value\\\u0022. Only one tag filter is supported at a time."
             }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
           }
         ],
         "responses": {
@@ -24647,7 +24681,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetSandboxes200Response"
+                  "$ref": "#/components/schemas/ListNamedSandboxes200Response"
                 }
               }
             }
@@ -24671,10 +24705,12 @@
             "description": "429 response"
           }
         },
-        "security": []
-      }
-    },
-    "/v2/sandboxes": {
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      },
       "post": {
         "tags": [
           "sandboxes"
@@ -38824,7 +38860,7 @@
           "maxSizeBytes": {
             "type": "number",
             "description": "The maximum drive size in bytes.",
-            "example": 107374182400
+            "example": 1099511627776
           },
           "region": {
             "type": "string",
@@ -78915,6 +78951,10 @@
           },
           "installationType": {
             "$ref": "#/components/schemas/GetConfiguration200ResponseInstallationType"
+          },
+          "acceptedPoliciesInheritedFromInstallationId": {
+            "type": "string",
+            "description": "Historical parent installation from which acceptedPolicies were inherited. This is immutable provenance, not current authorization or relationship truth."
           }
         }
       },
@@ -84189,7 +84229,7 @@
           }
         }
       },
-      "GetSandboxes200Response": {
+      "ListNamedSandboxes200Response": {
         "required": [
           "pagination",
           "sandboxes"
@@ -84203,7 +84243,7 @@
             }
           },
           "pagination": {
-            "$ref": "#/components/schemas/GetSandboxes200ResponsePagination"
+            "$ref": "#/components/schemas/ListNamedSandboxes200ResponsePagination"
           }
         }
       },
@@ -84347,7 +84387,7 @@
           },
           "maxSizeBytes": {
             "type": "integer",
-            "description": "Maximum drive size in bytes. Defaults to 100 GiB when omitted."
+            "description": "Maximum drive size in bytes. Defaults to 1 TiB when omitted. The maximum quota is 16 TiB. Request a quota above 16 TiB at https://vercel.com/help."
           },
           "region": {
             "$ref": "#/components/schemas/GetOrCreateDriveRequestRegion"
@@ -84482,6 +84522,9 @@
               "$ref": "#/components/schemas/UpdateSandboxRequestFailoverRegionsItem"
             },
             "description": "The regions the sandbox falls back to when it cannot be created in \u0060region\u0060."
+          },
+          "mounts": {
+            "$ref": "#/components/schemas/UpdateSandboxRequestMounts"
           },
           "env": {
             "$ref": "#/components/schemas/UpdateSandboxRequestEnv"
@@ -101060,12 +101103,43 @@
                   "forwardURL": {
                     "type": "string",
                     "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment."
+                  },
+                  "response": {
+                    "required": [
+                      "statusCode"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "statusCode": {
+                        "maximum": 599,
+                        "minimum": 200,
+                        "type": "integer",
+                        "description": "HTTP status code returned to the sandbox."
+                      },
+                      "headers": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
+                        },
+                        "description": "HTTP response headers. Framing and hop-by-hop headers are managed by the proxy and cannot be set."
+                      },
+                      "body": {
+                        "type": "string",
+                        "description": "UTF-8 response body. Requires \u0060contentType\u0060."
+                      },
+                      "contentType": {
+                        "type": "string",
+                        "description": "Value of the \u0060Content-Type\u0060 response header. Required when \u0060body\u0060 is set."
+                      }
+                    },
+                    "additionalProperties": false,
+                    "description": "Answer matching requests from the proxy with this response instead of forwarding them to the origin. Combine with a \u0060match\u0060 on an earlier rule to allow one sub-path and reject the rest of a domain."
                   }
                 },
                 "additionalProperties": false
               }
             },
-            "description": "A rule applied to requests matching a domain in the network policy. Only one of \u0060transform\u0060 or \u0060forwardURL\u0060 can be specified per rule."
+            "description": "A rule applied to requests matching a domain in the network policy. Only one of \u0060transform\u0060, \u0060forwardURL\u0060, or \u0060response\u0060 can be specified per rule."
           }
         ],
         "properties": {
@@ -101336,12 +101410,43 @@
                   "forwardURL": {
                     "type": "string",
                     "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment."
+                  },
+                  "response": {
+                    "required": [
+                      "statusCode"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "statusCode": {
+                        "maximum": 599,
+                        "minimum": 200,
+                        "type": "integer",
+                        "description": "HTTP status code returned to the sandbox."
+                      },
+                      "headers": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
+                        },
+                        "description": "HTTP response headers. Framing and hop-by-hop headers are managed by the proxy and cannot be set."
+                      },
+                      "body": {
+                        "type": "string",
+                        "description": "UTF-8 response body. Requires \u0060contentType\u0060."
+                      },
+                      "contentType": {
+                        "type": "string",
+                        "description": "Value of the \u0060Content-Type\u0060 response header. Required when \u0060body\u0060 is set."
+                      }
+                    },
+                    "additionalProperties": false,
+                    "description": "Answer matching requests from the proxy with this response instead of forwarding them to the origin. Combine with a \u0060match\u0060 on an earlier rule to allow one sub-path and reject the rest of a domain."
                   }
                 },
                 "additionalProperties": false
               }
             },
-            "description": "A rule applied to requests matching a domain in the network policy. Only one of \u0060transform\u0060 or \u0060forwardURL\u0060 can be specified per rule."
+            "description": "A rule applied to requests matching a domain in the network policy. Only one of \u0060transform\u0060, \u0060forwardURL\u0060, or \u0060response\u0060 can be specified per rule."
           }
         ],
         "properties": {
@@ -101542,12 +101647,43 @@
                   "forwardURL": {
                     "type": "string",
                     "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment."
+                  },
+                  "response": {
+                    "required": [
+                      "statusCode"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "statusCode": {
+                        "maximum": 599,
+                        "minimum": 200,
+                        "type": "integer",
+                        "description": "HTTP status code returned to the sandbox."
+                      },
+                      "headers": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
+                        },
+                        "description": "HTTP response headers. Framing and hop-by-hop headers are managed by the proxy and cannot be set."
+                      },
+                      "body": {
+                        "type": "string",
+                        "description": "UTF-8 response body. Requires \u0060contentType\u0060."
+                      },
+                      "contentType": {
+                        "type": "string",
+                        "description": "Value of the \u0060Content-Type\u0060 response header. Required when \u0060body\u0060 is set."
+                      }
+                    },
+                    "additionalProperties": false,
+                    "description": "Answer matching requests from the proxy with this response instead of forwarding them to the origin. Combine with a \u0060match\u0060 on an earlier rule to allow one sub-path and reject the rest of a domain."
                   }
                 },
                 "additionalProperties": false
               }
             },
-            "description": "A rule applied to requests matching a domain in the network policy. Only one of \u0060transform\u0060 or \u0060forwardURL\u0060 can be specified per rule."
+            "description": "A rule applied to requests matching a domain in the network policy. Only one of \u0060transform\u0060, \u0060forwardURL\u0060, or \u0060response\u0060 can be specified per rule."
           }
         ],
         "properties": {
@@ -101716,12 +101852,43 @@
                   "forwardURL": {
                     "type": "string",
                     "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment."
+                  },
+                  "response": {
+                    "required": [
+                      "statusCode"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "statusCode": {
+                        "maximum": 599,
+                        "minimum": 200,
+                        "type": "integer",
+                        "description": "HTTP status code returned to the sandbox."
+                      },
+                      "headers": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
+                        },
+                        "description": "HTTP response headers. Framing and hop-by-hop headers are managed by the proxy and cannot be set."
+                      },
+                      "body": {
+                        "type": "string",
+                        "description": "UTF-8 response body. Requires \u0060contentType\u0060."
+                      },
+                      "contentType": {
+                        "type": "string",
+                        "description": "Value of the \u0060Content-Type\u0060 response header. Required when \u0060body\u0060 is set."
+                      }
+                    },
+                    "additionalProperties": false,
+                    "description": "Answer matching requests from the proxy with this response instead of forwarding them to the origin. Combine with a \u0060match\u0060 on an earlier rule to allow one sub-path and reject the rest of a domain."
                   }
                 },
                 "additionalProperties": false
               }
             },
-            "description": "A rule applied to requests matching a domain in the network policy. Only one of \u0060transform\u0060 or \u0060forwardURL\u0060 can be specified per rule."
+            "description": "A rule applied to requests matching a domain in the network policy. Only one of \u0060transform\u0060, \u0060forwardURL\u0060, or \u0060response\u0060 can be specified per rule."
           }
         ],
         "properties": {
@@ -101908,12 +102075,43 @@
                   "forwardURL": {
                     "type": "string",
                     "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment."
+                  },
+                  "response": {
+                    "required": [
+                      "statusCode"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "statusCode": {
+                        "maximum": 599,
+                        "minimum": 200,
+                        "type": "integer",
+                        "description": "HTTP status code returned to the sandbox."
+                      },
+                      "headers": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
+                        },
+                        "description": "HTTP response headers. Framing and hop-by-hop headers are managed by the proxy and cannot be set."
+                      },
+                      "body": {
+                        "type": "string",
+                        "description": "UTF-8 response body. Requires \u0060contentType\u0060."
+                      },
+                      "contentType": {
+                        "type": "string",
+                        "description": "Value of the \u0060Content-Type\u0060 response header. Required when \u0060body\u0060 is set."
+                      }
+                    },
+                    "additionalProperties": false,
+                    "description": "Answer matching requests from the proxy with this response instead of forwarding them to the origin. Combine with a \u0060match\u0060 on an earlier rule to allow one sub-path and reject the rest of a domain."
                   }
                 },
                 "additionalProperties": false
               }
             },
-            "description": "A rule applied to requests matching a domain in the network policy. Only one of \u0060transform\u0060 or \u0060forwardURL\u0060 can be specified per rule."
+            "description": "A rule applied to requests matching a domain in the network policy. Only one of \u0060transform\u0060, \u0060forwardURL\u0060, or \u0060response\u0060 can be specified per rule."
           }
         ],
         "properties": {
@@ -102117,12 +102315,43 @@
                   "forwardURL": {
                     "type": "string",
                     "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment."
+                  },
+                  "response": {
+                    "required": [
+                      "statusCode"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "statusCode": {
+                        "maximum": 599,
+                        "minimum": 200,
+                        "type": "integer",
+                        "description": "HTTP status code returned to the sandbox."
+                      },
+                      "headers": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
+                        },
+                        "description": "HTTP response headers. Framing and hop-by-hop headers are managed by the proxy and cannot be set."
+                      },
+                      "body": {
+                        "type": "string",
+                        "description": "UTF-8 response body. Requires \u0060contentType\u0060."
+                      },
+                      "contentType": {
+                        "type": "string",
+                        "description": "Value of the \u0060Content-Type\u0060 response header. Required when \u0060body\u0060 is set."
+                      }
+                    },
+                    "additionalProperties": false,
+                    "description": "Answer matching requests from the proxy with this response instead of forwarding them to the origin. Combine with a \u0060match\u0060 on an earlier rule to allow one sub-path and reject the rest of a domain."
                   }
                 },
                 "additionalProperties": false
               }
             },
-            "description": "A rule applied to requests matching a domain in the network policy. Only one of \u0060transform\u0060 or \u0060forwardURL\u0060 can be specified per rule."
+            "description": "A rule applied to requests matching a domain in the network policy. Only one of \u0060transform\u0060, \u0060forwardURL\u0060, or \u0060response\u0060 can be specified per rule."
           }
         ],
         "properties": {
@@ -102322,12 +102551,43 @@
                   "forwardURL": {
                     "type": "string",
                     "description": "HTTP/1.1 proxy URL to forward traffic to. Must not include username, password, query string, or fragment."
+                  },
+                  "response": {
+                    "required": [
+                      "statusCode"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "statusCode": {
+                        "maximum": 599,
+                        "minimum": 200,
+                        "type": "integer",
+                        "description": "HTTP status code returned to the sandbox."
+                      },
+                      "headers": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
+                        },
+                        "description": "HTTP response headers. Framing and hop-by-hop headers are managed by the proxy and cannot be set."
+                      },
+                      "body": {
+                        "type": "string",
+                        "description": "UTF-8 response body. Requires \u0060contentType\u0060."
+                      },
+                      "contentType": {
+                        "type": "string",
+                        "description": "Value of the \u0060Content-Type\u0060 response header. Required when \u0060body\u0060 is set."
+                      }
+                    },
+                    "additionalProperties": false,
+                    "description": "Answer matching requests from the proxy with this response instead of forwarding them to the origin. Combine with a \u0060match\u0060 on an earlier rule to allow one sub-path and reject the rest of a domain."
                   }
                 },
                 "additionalProperties": false
               }
             },
-            "description": "A rule applied to requests matching a domain in the network policy. Only one of \u0060transform\u0060 or \u0060forwardURL\u0060 can be specified per rule."
+            "description": "A rule applied to requests matching a domain in the network policy. Only one of \u0060transform\u0060, \u0060forwardURL\u0060, or \u0060response\u0060 can be specified per rule."
           }
         ],
         "properties": {
@@ -138997,7 +139257,7 @@
           }
         }
       },
-      "GetSandboxes200ResponsePagination": {
+      "ListNamedSandboxes200ResponsePagination": {
         "required": [
           "count",
           "next"
@@ -139276,6 +139536,14 @@
             "$ref": "#/components/schemas/UpdateSandboxRequestNetworkPolicySubnets"
           }
         }
+      },
+      "UpdateSandboxRequestMounts": {
+        "maxProperties": 4,
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/UpdateSandboxRequestMountsAdditionalProperties"
+        },
+        "description": "Drives to mount to the sandbox at the provided path. Replaces the current mounts; an empty object removes them all. Changes take effect when the next session starts."
       },
       "UpdateSandboxRequestEnv": {
         "type": "object",
@@ -145971,6 +146239,10 @@
           },
           "installationType": {
             "$ref": "#/components/schemas/GetConfigurations200ResponseOneOf1ItemInstallationType"
+          },
+          "acceptedPoliciesInheritedFromInstallationId": {
+            "type": "string",
+            "description": "Historical parent installation from which acceptedPolicies were inherited. This is immutable provenance, not current authorization or relationship truth."
           }
         },
         "description": "The list of configurations for the authenticated user"
@@ -146100,6 +146372,10 @@
           },
           "installationType": {
             "$ref": "#/components/schemas/GetConfigurations200ResponseOneOf2ItemInstallationType"
+          },
+          "acceptedPoliciesInheritedFromInstallationId": {
+            "type": "string",
+            "description": "Historical parent installation from which acceptedPolicies were inherited. This is immutable provenance, not current authorization or relationship truth."
           }
         }
       },
@@ -167644,6 +167920,24 @@
             "items": {
               "type": "string"
             }
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateSandboxRequestMountsAdditionalProperties": {
+        "required": [
+          "drive"
+        ],
+        "type": "object",
+        "properties": {
+          "drive": {
+            "maxLength": 64,
+            "pattern": "^[a-zA-Z0-9_-]\u002B$",
+            "type": "string",
+            "description": "Name of the drive to mount. The drive must already exist."
+          },
+          "mode": {
+            "$ref": "#/components/schemas/UpdateSandboxRequestMountsAdditionalPropertiesMode"
           }
         },
         "additionalProperties": false
@@ -235229,6 +235523,7 @@
           "import-recommended-integrations",
           "marketplace",
           "oauth",
+          "organization",
           "resource-claims",
           "v0"
         ],
@@ -235267,6 +235562,10 @@
             {
               "value": "oauth",
               "name": "OAuth"
+            },
+            {
+              "value": "organization",
+              "name": "Organization"
             },
             {
               "value": "resource-claims",
@@ -242825,7 +243124,8 @@
           "cli",
           "oauth",
           "backoffice",
-          "import-recommended-integrations"
+          "import-recommended-integrations",
+          "organization"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -242870,6 +243170,10 @@
             {
               "value": "import-recommended-integrations",
               "name": "ImportRecommendedIntegrations"
+            },
+            {
+              "value": "organization",
+              "name": "Organization"
             }
           ]
         }
@@ -280444,6 +280748,7 @@
           "import-recommended-integrations",
           "marketplace",
           "oauth",
+          "organization",
           "resource-claims",
           "v0"
         ],
@@ -280482,6 +280787,10 @@
             {
               "value": "oauth",
               "name": "OAuth"
+            },
+            {
+              "value": "organization",
+              "name": "Organization"
             },
             {
               "value": "resource-claims",
@@ -280616,6 +280925,7 @@
           "import-recommended-integrations",
           "marketplace",
           "oauth",
+          "organization",
           "resource-claims",
           "v0"
         ],
@@ -280654,6 +280964,10 @@
             {
               "value": "oauth",
               "name": "OAuth"
+            },
+            {
+              "value": "organization",
+              "name": "Organization"
             },
             {
               "value": "resource-claims",
@@ -296129,6 +296443,29 @@
         "description": "Mount the drive read-only or read-write.",
         "x-ms-enum": {
           "name": "CreateSandboxesV2RequestMountsAdditionalPropertiesMode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "read-only",
+              "name": "ReadOnlyValue"
+            },
+            {
+              "value": "read-write",
+              "name": "ReadWrite"
+            }
+          ]
+        }
+      },
+      "UpdateSandboxRequestMountsAdditionalPropertiesMode": {
+        "enum": [
+          "read-only",
+          "read-write"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Mount the drive read-only or read-write.",
+        "x-ms-enum": {
+          "name": "UpdateSandboxRequestMountsAdditionalPropertiesMode",
           "modelAsString": false,
           "values": [
             {
@@ -331951,7 +332288,8 @@
           "cli",
           "oauth",
           "backoffice",
-          "import-recommended-integrations"
+          "import-recommended-integrations",
+          "organization"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -331994,6 +332332,10 @@
             {
               "value": "import-recommended-integrations",
               "name": "ImportRecommendedIntegrations"
+            },
+            {
+              "value": "organization",
+              "name": "Organization"
             }
           ]
         }
@@ -332383,7 +332725,7 @@
           ]
         }
       },
-      "GetSandboxesSortByParameter": {
+      "ListNamedSandboxesSortByParameter": {
         "enum": [
           "createdAt",
           "name",
@@ -332394,7 +332736,7 @@
         "additionalProperties": false,
         "description": "Field to sort by.",
         "x-ms-enum": {
-          "name": "GetSandboxesSortByParameter",
+          "name": "ListNamedSandboxesSortByParameter",
           "modelAsString": false,
           "values": [
             {
@@ -332416,7 +332758,7 @@
           ]
         }
       },
-      "GetSandboxesSortOrderParameter": {
+      "ListNamedSandboxesSortOrderParameter": {
         "enum": [
           "asc",
           "desc"
@@ -332425,7 +332767,7 @@
         "additionalProperties": false,
         "description": "Sort direction. Defaults to desc.",
         "x-ms-enum": {
-          "name": "GetSandboxesSortOrderParameter",
+          "name": "ListNamedSandboxesSortOrderParameter",
           "modelAsString": false,
           "values": [
             {
@@ -332439,7 +332781,7 @@
           ]
         }
       },
-      "GetSandboxesStatusParameter": {
+      "ListNamedSandboxesStatusParameter": {
         "enum": [
           "running",
           "stopping",
@@ -332449,7 +332791,7 @@
         "additionalProperties": false,
         "description": "Filter named sandboxes by status. Only valid when sortBy is createdAt.",
         "x-ms-enum": {
-          "name": "GetSandboxesStatusParameter",
+          "name": "ListNamedSandboxesStatusParameter",
           "modelAsString": false,
           "values": [
             {

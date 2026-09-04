@@ -86,10 +86,14 @@ namespace Soenneker.Vercel.OpenApiClient.V3.Deployments.Item.Events
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventsRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("builds")]
             public double? Builds { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("delimiter")]
             public double? Delimiter { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Order of the returned events based on the timestamp.</summary>
             [QueryParameter("direction")]
             public global::Soenneker.Vercel.OpenApiClient.Models.GetDeploymentEventsDirectionParameter? Direction { get; set; }
@@ -123,8 +127,15 @@ namespace Soenneker.Vercel.OpenApiClient.V3.Deployments.Item.Events
             public string Slug { get; set; }
 #endif
             /// <summary>HTTP status code range to filter events by.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("statusCode")]
-            public double? StatusCode { get; set; }
+            public string? StatusCode { get; set; }
+#nullable restore
+#else
+            [QueryParameter("statusCode")]
+            public string StatusCode { get; set; }
+#endif
             /// <summary>The Team identifier to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

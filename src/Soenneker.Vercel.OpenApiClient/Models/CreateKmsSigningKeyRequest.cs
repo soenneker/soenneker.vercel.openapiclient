@@ -102,6 +102,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             public static global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKeyRequest.CreateKmsSigningKeyRequest_revokePreviousAt CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsSigningKeyRequest.CreateKmsSigningKeyRequest_revokePreviousAt();
                 if(parseNode.GetDoubleValue() is double doubleValue)
                 {

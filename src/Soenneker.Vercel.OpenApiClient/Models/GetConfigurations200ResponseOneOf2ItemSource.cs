@@ -35,6 +35,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         OAuth,
         #pragma warning restore CS1591
+        [EnumMember(Value = "organization")]
+        #pragma warning disable CS1591
+        Organization,
+        #pragma warning restore CS1591
         [EnumMember(Value = "resource-claims")]
         #pragma warning disable CS1591
         ResourceClaims,

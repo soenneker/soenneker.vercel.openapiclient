@@ -82,10 +82,14 @@ namespace Soenneker.Vercel.OpenApiClient.Storage.Stores.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StoresItemRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("include%2Dguides")]
             public bool? IncludeGuides { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("skip%2Dmetadata")]
             public bool? SkipMetadata { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

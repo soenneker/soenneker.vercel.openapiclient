@@ -86,6 +86,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueOneOf5.UpdateProjectRequestDismissedToastsItemValueOneOf5_currentValue CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueOneOf5.UpdateProjectRequestDismissedToastsItemValueOneOf5_currentValue();
                 if(parseNode.GetBoolValue() is bool booleanValue)
                 {
@@ -156,6 +157,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueOneOf5.UpdateProjectRequestDismissedToastsItemValueOneOf5_previousValue CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestDismissedToastsItemValueOneOf5.UpdateProjectRequestDismissedToastsItemValueOneOf5_previousValue();
                 if(parseNode.GetBoolValue() is bool booleanValue)
                 {

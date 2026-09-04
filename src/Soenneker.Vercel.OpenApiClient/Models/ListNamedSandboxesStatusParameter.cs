@@ -3,25 +3,21 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>Field to sort by.</summary>
+    /// <summary>Filter named sandboxes by status. Only valid when sortBy is createdAt.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum GetSandboxesSortByParameter
+    public enum ListNamedSandboxesStatusParameter
     {
-        [EnumMember(Value = "createdAt")]
+        [EnumMember(Value = "running")]
         #pragma warning disable CS1591
-        CreatedAt,
+        Running,
         #pragma warning restore CS1591
-        [EnumMember(Value = "name")]
+        [EnumMember(Value = "stopping")]
         #pragma warning disable CS1591
-        Name,
+        Stopping,
         #pragma warning restore CS1591
-        [EnumMember(Value = "statusUpdatedAt")]
+        [EnumMember(Value = "stopped")]
         #pragma warning disable CS1591
-        StatusUpdatedAt,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "currentSnapshotId")]
-        #pragma warning disable CS1591
-        CurrentSnapshotId,
+        Stopped,
         #pragma warning restore CS1591
     }
 }
