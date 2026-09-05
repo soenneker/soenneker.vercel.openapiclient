@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.Models;
+using Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item;
 using Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.List;
 using System.Collections.Generic;
 using System.IO;
@@ -23,12 +24,24 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.List.ListRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v1.aiGateway.virtualModelConfigs.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder"/></returns>
+        public global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("vmcSlug", position);
+                return new global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VirtualModelConfigsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/ai-gateway/virtual-model-configs{?ownerId*,slug*,teamId*}", pathParameters)
+        public VirtualModelConfigsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/ai-gateway/virtual-model-configs{?cursor*,limit*,ownerId*,slug*,teamId*,virtualModelSlug*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +49,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VirtualModelConfigsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/ai-gateway/virtual-model-configs{?ownerId*,slug*,teamId*}", rawUrl)
+        public VirtualModelConfigsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/ai-gateway/virtual-model-configs{?cursor*,limit*,ownerId*,slug*,teamId*,virtualModelSlug*}", rawUrl)
         {
         }
         /// <summary>
@@ -59,20 +72,20 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs
         /// <summary>
         /// Get a virtual model config
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetAiGatewayVirtualModelConfig200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetAiGatewayVirtualModelConfig200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GetAiGatewayVirtualModelConfig200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetAiGatewayVirtualModelConfig200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetAiGatewayVirtualModelConfig200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update a virtual model config
@@ -143,7 +156,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.VirtualModelConfigsRequestBuilder.VirtualModelConfigsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/v1/ai-gateway/virtual-model-configs?virtualModelSlug={virtualModelSlug}{&ownerId*,slug*,teamId*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -254,6 +267,23 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VirtualModelConfigsRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("cursor")]
+            public string? Cursor { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("cursor")]
+            public string Cursor { get; set; }
+            #pragma warning restore CS1591
+#endif
+            #pragma warning disable CS1591
+            [QueryParameter("limit")]
+            public int? Limit { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591

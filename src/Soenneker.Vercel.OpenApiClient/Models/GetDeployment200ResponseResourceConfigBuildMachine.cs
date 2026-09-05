@@ -25,6 +25,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? Memory { get; set; }
         /// <summary>Machine type which was purchased/selected for this build. `basic` is the 2vCPU tier, recorded on the deployment so the build pipeline can detect a basic build without consulting the project.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseResourceConfigBuildMachinePurchaseType? PurchaseType { get; set; }
+        /// <summary>The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseResourceConfigBuildMachineSelectionSource? SelectionSource { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseResourceConfigBuildMachine"/> and sets the default values.
         /// </summary>
@@ -55,6 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "machineSelectionType", n => { MachineSelectionType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseResourceConfigBuildMachineMachineSelectionType>(); } },
                 { "memory", n => { Memory = n.GetDoubleValue(); } },
                 { "purchaseType", n => { PurchaseType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseResourceConfigBuildMachinePurchaseType>(); } },
+                { "selectionSource", n => { SelectionSource = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseResourceConfigBuildMachineSelectionSource>(); } },
             };
         }
         /// <summary>
@@ -69,6 +72,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseResourceConfigBuildMachineMachineSelectionType>("machineSelectionType", MachineSelectionType);
             writer.WriteDoubleValue("memory", Memory);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseResourceConfigBuildMachinePurchaseType>("purchaseType", PurchaseType);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseResourceConfigBuildMachineSelectionSource>("selectionSource", SelectionSource);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

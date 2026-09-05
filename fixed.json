@@ -1026,7 +1026,21 @@
           {
             "name": "virtualModelSlug",
             "in": "query",
-            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
             "schema": {
               "type": "string"
             }
@@ -1056,7 +1070,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AiGatewayVirtualModelConfig"
+                  "$ref": "#/components/schemas/GetAiGatewayVirtualModelConfig200Response"
                 }
               }
             }
@@ -1297,6 +1311,235 @@
           },
           "403": {
             "description": "You do not have permission to access this resource."
+          },
+          "410": {
+            "description": "410 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
+    "/v1/ai-gateway/virtual-model-configs/{vmcSlug}": {
+      "get": {
+        "tags": [
+          "api-ai-gateway"
+        ],
+        "summary": "Get virtual model config",
+        "description": "Get a virtual model config by path slug",
+        "operationId": "GetAiGatewayVirtualModelConfigBySlug",
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "vmcSlug",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayVirtualModelConfig"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "api-ai-gateway"
+        ],
+        "summary": "Update virtual model config",
+        "description": "Update a virtual model config by path slug",
+        "operationId": "UpdateAiGatewayVirtualModelConfigBySlug",
+        "parameters": [
+          {
+            "name": "vmcSlug",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayVirtualModelConfig"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "api-ai-gateway"
+        ],
+        "summary": "Delete virtual model config",
+        "description": "Delete a virtual model config by path slug (soft delete)",
+        "operationId": "DeleteAiGatewayVirtualModelConfigBySlug",
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "vmcSlug",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteAiGatewayVirtualModelConfigBySlug204ResponseSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
           },
           "410": {
             "description": "410 response"
@@ -45774,6 +46017,18 @@
       },
       "UserEventPayloadOneOf20": {
         "required": [
+          "enabled"
+        ],
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf20Enabled"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf21": {
+        "required": [
           "amount",
           "purchaseIntentId"
         ],
@@ -45784,18 +46039,6 @@
           },
           "purchaseIntentId": {
             "type": "string"
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf21": {
-        "required": [
-          "enabled"
-        ],
-        "type": "object",
-        "properties": {
-          "enabled": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf21Enabled"
           }
         },
         "description": "The payload of the event, if requested."
@@ -71768,7 +72011,175 @@
           }
         }
       },
+      "GetAiGatewayVirtualModelConfig200Response": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfig"
+          },
+          {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigList"
+          }
+        ],
+        "properties": {
+          "ownerId": {
+            "type": "string",
+            "description": "Team (owner) that owns this VMC."
+          },
+          "virtualModelSlug": {
+            "type": "string",
+            "description": "Client-facing alias used as the model slug in Gateway calls."
+          },
+          "displayName": {
+            "type": "string",
+            "description": "Human-readable name for UI."
+          },
+          "description": {
+            "type": "string",
+            "description": "Optional description for UI."
+          },
+          "deleted": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigDeleted"
+          },
+          "status": {
+            "type": "string",
+            "description": "UI lifecycle status: draft, active, or archived."
+          },
+          "visibility": {
+            "type": "string",
+            "description": "Visibility in listings: public, internal, or stealth."
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "User id that last updated this VMC."
+          },
+          "kind": {
+            "type": "string",
+            "description": "VMC kind: alias, relay, or router."
+          },
+          "baseUrl": {
+            "type": "string",
+            "description": "For kind=relay: URL the gateway forwards requests to as a transparent proxy."
+          },
+          "instanceId": {
+            "type": "string",
+            "description": "The concrete model-provider instance this VMC resolves to."
+          },
+          "providerOrder": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Ordered list of providers to try as fallbacks on failure."
+          },
+          "providerOnly": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Restrict routing to only these providers."
+          },
+          "providerOptions": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigProviderOptionsProperty"
+          },
+          "inferenceRegion": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigInferenceRegion"
+          },
+          "modelSlug": {
+            "type": "string",
+            "description": "Canonical model slug this VMC maps to (e.g. \u0022creator/model\u0022). Not used by kind=router."
+          },
+          "models": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "For kind=router: ordered candidates, model slugs or router references. Otherwise: fallback models."
+          },
+          "selector": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigSelector"
+          },
+          "requires": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "For kind=router: capability tags a candidate must have."
+          },
+          "byokCredentialIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "BYOK credential IDs allowed for this VMC."
+          },
+          "observabilityTags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Observability tags attached to requests through this VMC."
+          },
+          "sort": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigSort"
+          },
+          "has": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AiGatewayVirtualModelConfigHasItem"
+            },
+            "description": "Limit providers to those with these features."
+          },
+          "caching": {
+            "$ref": "#/components/schemas/AutoCaching"
+          },
+          "serviceTier": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigServiceTier"
+          },
+          "providerTimeouts": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigProviderTimeouts"
+          },
+          "zeroDataRetention": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigZeroDataRetention"
+          },
+          "hipaaCompliant": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigHipaaCompliant"
+          },
+          "disallowPromptTraining": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigDisallowPromptTraining"
+          },
+          "speed": {
+            "$ref": "#/components/schemas/FastSpeed"
+          },
+          "allowFallbackFromFast": {
+            "$ref": "#/components/schemas/AiGatewayVirtualModelConfigAllowFallbackFromFast"
+          },
+          "createdAt": {
+            "type": "number",
+            "description": "Creation timestamp (epoch ms)."
+          },
+          "updatedAt": {
+            "type": "number",
+            "description": "Last update timestamp (epoch ms)."
+          },
+          "virtualModelConfigs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AiGatewayVirtualModelConfig"
+            },
+            "description": "The page of VMCs."
+          },
+          "cursor": {
+            "type": "string",
+            "description": "Cursor for the next page, or null when no more pages remain.",
+            "nullable": true
+          }
+        }
+      },
       "DeleteAiGatewayVirtualModelConfig204Response": {
+        "type": "object"
+      },
+      "DeleteAiGatewayVirtualModelConfigBySlug204Response": {
         "type": "object"
       },
       "DeleteAiGatewayRule204Response": {
@@ -93432,6 +93843,9 @@
         }
       },
       "DeleteAiGatewayVirtualModelConfig204ResponseSchema": {
+        "type": "object"
+      },
+      "DeleteAiGatewayVirtualModelConfigBySlug204ResponseSchema": {
         "type": "object"
       },
       "DeleteAiGatewayRule204ResponseSchema": {
@@ -152596,6 +153010,9 @@
           "machineSelectionType": {
             "$ref": "#/components/schemas/GetDeployment200ResponseResourceConfigBuildMachineMachineSelectionType"
           },
+          "selectionSource": {
+            "$ref": "#/components/schemas/GetDeployment200ResponseResourceConfigBuildMachineSelectionSource"
+          },
           "cores": {
             "type": "number",
             "description": "Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive."
@@ -153398,6 +153815,9 @@
           "machineSelectionType": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseResourceConfigBuildMachineMachineSelectionType"
           },
+          "selectionSource": {
+            "$ref": "#/components/schemas/CreateDeployment200ResponseResourceConfigBuildMachineSelectionSource"
+          },
           "cores": {
             "type": "number",
             "description": "Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive."
@@ -154199,6 +154619,9 @@
           },
           "machineSelectionType": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseResourceConfigBuildMachineMachineSelectionType"
+          },
+          "selectionSource": {
+            "$ref": "#/components/schemas/CancelDeployment200ResponseResourceConfigBuildMachineSelectionSource"
           },
           "cores": {
             "type": "number",
@@ -201500,6 +201923,7 @@
           "ai-gateway-byok-credential-updated",
           "ai-gateway-credits-purchased",
           "ai-gateway-guardrails-updated",
+          "ai-gateway-hipaa-compliance-toggled",
           "ai-gateway-inference-regions-updated",
           "ai-gateway-model-allowlist-models-updated",
           "ai-gateway-model-allowlist-toggled",
@@ -201509,6 +201933,7 @@
           "ai-gateway-private-provider-created",
           "ai-gateway-private-provider-deleted",
           "ai-gateway-private-provider-updated",
+          "ai-gateway-prompt-training-opt-out-toggled",
           "ai-gateway-provider-allowlist-providers-updated",
           "ai-gateway-provider-allowlist-toggled",
           "ai-gateway-rule-created",
@@ -201524,6 +201949,7 @@
           "ai-gateway-virtual-model-config-created",
           "ai-gateway-virtual-model-config-restored",
           "ai-gateway-virtual-model-config-updated",
+          "ai-gateway-zero-data-retention-toggled",
           "ai-omniagent",
           "alert-investigation-project-allowlist-updated",
           "alert-rule-created",
@@ -202274,6 +202700,10 @@
               "name": "AiGatewayGuardrailsUpdated"
             },
             {
+              "value": "ai-gateway-hipaa-compliance-toggled",
+              "name": "AiGatewayHipaaComplianceToggled"
+            },
+            {
               "value": "ai-gateway-inference-regions-updated",
               "name": "AiGatewayInferenceRegionsUpdated"
             },
@@ -202308,6 +202738,10 @@
             {
               "value": "ai-gateway-private-provider-updated",
               "name": "AiGatewayPrivateProviderUpdated"
+            },
+            {
+              "value": "ai-gateway-prompt-training-opt-out-toggled",
+              "name": "AiGatewayPromptTrainingOptOutToggled"
             },
             {
               "value": "ai-gateway-provider-allowlist-providers-updated",
@@ -202368,6 +202802,10 @@
             {
               "value": "ai-gateway-virtual-model-config-updated",
               "name": "AiGatewayVirtualModelConfigUpdated"
+            },
+            {
+              "value": "ai-gateway-zero-data-retention-toggled",
+              "name": "AiGatewayZeroDataRetentionToggled"
             },
             {
               "value": "ai-omniagent",
@@ -204953,6 +205391,7 @@
           "ai-gateway-byok-credential-updated",
           "ai-gateway-credits-purchased",
           "ai-gateway-guardrails-updated",
+          "ai-gateway-hipaa-compliance-toggled",
           "ai-gateway-inference-regions-updated",
           "ai-gateway-model-allowlist-models-updated",
           "ai-gateway-model-allowlist-toggled",
@@ -204962,6 +205401,7 @@
           "ai-gateway-private-provider-created",
           "ai-gateway-private-provider-deleted",
           "ai-gateway-private-provider-updated",
+          "ai-gateway-prompt-training-opt-out-toggled",
           "ai-gateway-provider-allowlist-providers-updated",
           "ai-gateway-provider-allowlist-toggled",
           "ai-gateway-rule-created",
@@ -204977,6 +205417,7 @@
           "ai-gateway-virtual-model-config-created",
           "ai-gateway-virtual-model-config-restored",
           "ai-gateway-virtual-model-config-updated",
+          "ai-gateway-zero-data-retention-toggled",
           "ai-omniagent",
           "alert-investigation-project-allowlist-updated",
           "alert-rule-created",
@@ -205727,6 +206168,10 @@
               "name": "AiGatewayGuardrailsUpdated"
             },
             {
+              "value": "ai-gateway-hipaa-compliance-toggled",
+              "name": "AiGatewayHipaaComplianceToggled"
+            },
+            {
               "value": "ai-gateway-inference-regions-updated",
               "name": "AiGatewayInferenceRegionsUpdated"
             },
@@ -205761,6 +206206,10 @@
             {
               "value": "ai-gateway-private-provider-updated",
               "name": "AiGatewayPrivateProviderUpdated"
+            },
+            {
+              "value": "ai-gateway-prompt-training-opt-out-toggled",
+              "name": "AiGatewayPromptTrainingOptOutToggled"
             },
             {
               "value": "ai-gateway-provider-allowlist-providers-updated",
@@ -205821,6 +206270,10 @@
             {
               "value": "ai-gateway-virtual-model-config-updated",
               "name": "AiGatewayVirtualModelConfigUpdated"
+            },
+            {
+              "value": "ai-gateway-zero-data-retention-toggled",
+              "name": "AiGatewayZeroDataRetentionToggled"
             },
             {
               "value": "ai-omniagent",
@@ -208415,6 +208868,7 @@
           "ai-gateway-byok-credential-updated",
           "ai-gateway-credits-purchased",
           "ai-gateway-guardrails-updated",
+          "ai-gateway-hipaa-compliance-toggled",
           "ai-gateway-inference-regions-updated",
           "ai-gateway-model-allowlist-models-updated",
           "ai-gateway-model-allowlist-toggled",
@@ -208424,6 +208878,7 @@
           "ai-gateway-private-provider-created",
           "ai-gateway-private-provider-deleted",
           "ai-gateway-private-provider-updated",
+          "ai-gateway-prompt-training-opt-out-toggled",
           "ai-gateway-provider-allowlist-providers-updated",
           "ai-gateway-provider-allowlist-toggled",
           "ai-gateway-rule-created",
@@ -208439,6 +208894,7 @@
           "ai-gateway-virtual-model-config-created",
           "ai-gateway-virtual-model-config-restored",
           "ai-gateway-virtual-model-config-updated",
+          "ai-gateway-zero-data-retention-toggled",
           "ai-omniagent",
           "alert-investigation-project-allowlist-updated",
           "alert-rule-created",
@@ -209188,6 +209644,10 @@
               "name": "AiGatewayGuardrailsUpdated"
             },
             {
+              "value": "ai-gateway-hipaa-compliance-toggled",
+              "name": "AiGatewayHipaaComplianceToggled"
+            },
+            {
               "value": "ai-gateway-inference-regions-updated",
               "name": "AiGatewayInferenceRegionsUpdated"
             },
@@ -209222,6 +209682,10 @@
             {
               "value": "ai-gateway-private-provider-updated",
               "name": "AiGatewayPrivateProviderUpdated"
+            },
+            {
+              "value": "ai-gateway-prompt-training-opt-out-toggled",
+              "name": "AiGatewayPromptTrainingOptOutToggled"
             },
             {
               "value": "ai-gateway-provider-allowlist-providers-updated",
@@ -209282,6 +209746,10 @@
             {
               "value": "ai-gateway-virtual-model-config-updated",
               "name": "AiGatewayVirtualModelConfigUpdated"
+            },
+            {
+              "value": "ai-gateway-zero-data-retention-toggled",
+              "name": "AiGatewayZeroDataRetentionToggled"
             },
             {
               "value": "ai-omniagent",
@@ -214177,7 +214645,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf21Enabled": {
+      "UserEventPayloadOneOf20Enabled": {
         "enum": [
           false,
           true
@@ -285089,6 +285557,39 @@
           ]
         }
       },
+      "GetDeployment200ResponseResourceConfigBuildMachineSelectionSource": {
+        "enum": [
+          "elastic-algorithm",
+          "plan-default",
+          "project-setting",
+          "team-setting"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.",
+        "x-ms-enum": {
+          "name": "GetDeployment200ResponseResourceConfigBuildMachineSelectionSource",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "elastic-algorithm",
+              "name": "ElasticAlgorithm"
+            },
+            {
+              "value": "plan-default",
+              "name": "PlanDefault"
+            },
+            {
+              "value": "project-setting",
+              "name": "ProjectSetting"
+            },
+            {
+              "value": "team-setting",
+              "name": "TeamSetting"
+            }
+          ]
+        }
+      },
       "GetDeployment200ResponseProjectSettingsSpeedInsightsHasData": {
         "enum": [
           false,
@@ -285678,6 +286179,39 @@
           ]
         }
       },
+      "CreateDeployment200ResponseResourceConfigBuildMachineSelectionSource": {
+        "enum": [
+          "elastic-algorithm",
+          "plan-default",
+          "project-setting",
+          "team-setting"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.",
+        "x-ms-enum": {
+          "name": "CreateDeployment200ResponseResourceConfigBuildMachineSelectionSource",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "elastic-algorithm",
+              "name": "ElasticAlgorithm"
+            },
+            {
+              "value": "plan-default",
+              "name": "PlanDefault"
+            },
+            {
+              "value": "project-setting",
+              "name": "ProjectSetting"
+            },
+            {
+              "value": "team-setting",
+              "name": "TeamSetting"
+            }
+          ]
+        }
+      },
       "CreateDeployment200ResponseProjectSettingsSpeedInsightsHasData": {
         "enum": [
           false,
@@ -286245,6 +286779,39 @@
             {
               "value": "fixed",
               "name": "FixedValue"
+            }
+          ]
+        }
+      },
+      "CancelDeployment200ResponseResourceConfigBuildMachineSelectionSource": {
+        "enum": [
+          "elastic-algorithm",
+          "plan-default",
+          "project-setting",
+          "team-setting"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.",
+        "x-ms-enum": {
+          "name": "CancelDeployment200ResponseResourceConfigBuildMachineSelectionSource",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "elastic-algorithm",
+              "name": "ElasticAlgorithm"
+            },
+            {
+              "value": "plan-default",
+              "name": "PlanDefault"
+            },
+            {
+              "value": "project-setting",
+              "name": "ProjectSetting"
+            },
+            {
+              "value": "team-setting",
+              "name": "TeamSetting"
             }
           ]
         }

@@ -15,8 +15,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
+        /// <summary>The amount property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Amount { get; set; }
+#nullable restore
+#else
+        public string Amount { get; set; }
+#endif
+        /// <summary>The purchaseIntentId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PurchaseIntentId { get; set; }
+#nullable restore
+#else
+        public string PurchaseIntentId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf21"/> and sets the default values.
         /// </summary>
@@ -42,7 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "amount", n => { Amount = n.GetStringValue(); } },
+                { "purchaseIntentId", n => { PurchaseIntentId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -52,7 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("amount", Amount);
+            writer.WriteStringValue("purchaseIntentId", PurchaseIntentId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

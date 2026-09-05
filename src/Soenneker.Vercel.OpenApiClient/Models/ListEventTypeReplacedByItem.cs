@@ -143,6 +143,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayGuardrailsUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-hipaa-compliance-toggled")]
+        #pragma warning disable CS1591
+        AiGatewayHipaaComplianceToggled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-inference-regions-updated")]
         #pragma warning disable CS1591
         AiGatewayInferenceRegionsUpdated,
@@ -178,6 +182,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "ai-gateway-private-provider-updated")]
         #pragma warning disable CS1591
         AiGatewayPrivateProviderUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-prompt-training-opt-out-toggled")]
+        #pragma warning disable CS1591
+        AiGatewayPromptTrainingOptOutToggled,
         #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-provider-allowlist-providers-updated")]
         #pragma warning disable CS1591
@@ -238,6 +246,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "ai-gateway-virtual-model-config-updated")]
         #pragma warning disable CS1591
         AiGatewayVirtualModelConfigUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-zero-data-retention-toggled")]
+        #pragma warning disable CS1591
+        AiGatewayZeroDataRetentionToggled,
         #pragma warning restore CS1591
         [EnumMember(Value = "ai-omniagent")]
         #pragma warning disable CS1591
