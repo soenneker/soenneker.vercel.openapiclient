@@ -12,7 +12,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class CreateKmsIssuerRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The signing algorithm to use for the issuer.</summary>
+        /// <summary>The signing algorithm to use for the issuer. EdDSA is not accepted for new issuers.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateKmsIssuerRequestAlgorithm? Algorithm { get; set; }
         /// <summary>A JSON Schema used to validate the resolved token claims when signing tokens for this issuer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

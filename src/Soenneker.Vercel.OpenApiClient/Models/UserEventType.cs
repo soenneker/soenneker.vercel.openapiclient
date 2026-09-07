@@ -135,6 +135,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayByokCredentialUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-byok-model-mappings-updated")]
+        #pragma warning disable CS1591
+        AiGatewayByokModelMappingsUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-credits-purchased")]
         #pragma warning disable CS1591
         AiGatewayCreditsPurchased,
@@ -238,6 +242,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "ai-gateway-virtual-model-config-created")]
         #pragma warning disable CS1591
         AiGatewayVirtualModelConfigCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-virtual-model-config-deleted")]
+        #pragma warning disable CS1591
+        AiGatewayVirtualModelConfigDeleted,
         #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-virtual-model-config-restored")]
         #pragma warning disable CS1591

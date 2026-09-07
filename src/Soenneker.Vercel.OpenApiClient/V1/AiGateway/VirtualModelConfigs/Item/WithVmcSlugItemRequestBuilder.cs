@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithVmcSlugItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/ai-gateway/virtual-model-configs/{vmcSlug}{?ownerId*,slug*,teamId*}", pathParameters)
+        public WithVmcSlugItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/ai-gateway/virtual-model-configs/{vmcSlug}{?actingIp*,actingUserAgent*,ownerId*,slug*,teamId*,updatedBy*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithVmcSlugItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/ai-gateway/virtual-model-configs/{vmcSlug}{?ownerId*,slug*,teamId*}", rawUrl)
+        public WithVmcSlugItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/ai-gateway/virtual-model-configs/{vmcSlug}{?actingIp*,actingUserAgent*,ownerId*,slug*,teamId*,updatedBy*}", rawUrl)
         {
         }
         /// <summary>
@@ -161,6 +161,32 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
+            [QueryParameter("actingIp")]
+            public string? ActingIp { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("actingIp")]
+            public string ActingIp { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("actingUserAgent")]
+            public string? ActingUserAgent { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("actingUserAgent")]
+            public string ActingUserAgent { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("ownerId")]
             public string? OwnerId { get; set; }
             #pragma warning restore CS1591
@@ -190,6 +216,19 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item
 #else
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("updatedBy")]
+            public string? UpdatedBy { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("updatedBy")]
+            public string UpdatedBy { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
         /// <summary>
