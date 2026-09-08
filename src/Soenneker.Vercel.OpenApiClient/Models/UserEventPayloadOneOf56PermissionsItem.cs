@@ -164,6 +164,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ReadColonBilling,
         #pragma warning restore CS1591
+        [EnumMember(Value = "read:connect")]
+        #pragma warning disable CS1591
+        ReadColonConnect,
+        #pragma warning restore CS1591
         [EnumMember(Value = "read:deployment")]
         #pragma warning disable CS1591
         ReadColonDeployment,

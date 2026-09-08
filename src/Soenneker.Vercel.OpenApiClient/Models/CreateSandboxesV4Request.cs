@@ -60,6 +60,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The Connect network id for the target Secure Compute private network.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NetworkId { get; set; }
+#nullable restore
+#else
+        public string NetworkId { get; set; }
+#endif
         /// <summary>The networkPolicy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,6 +161,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "keepLastSnapshots", n => { KeepLastSnapshots = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestKeepLastSnapshots>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestKeepLastSnapshots.CreateFromDiscriminatorValue); } },
                 { "mounts", n => { Mounts = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestMounts>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestMounts.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "networkId", n => { NetworkId = n.GetStringValue(); } },
                 { "networkPolicy", n => { NetworkPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestNetworkPolicy>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestNetworkPolicy.CreateFromDiscriminatorValue); } },
                 { "persistent", n => { Persistent = n.GetBoolValue(); } },
                 { "ports", n => { Ports = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
@@ -178,6 +187,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestKeepLastSnapshots>("keepLastSnapshots", KeepLastSnapshots);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestMounts>("mounts", Mounts);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("networkId", NetworkId);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV4RequestNetworkPolicy>("networkPolicy", NetworkPolicy);
             writer.WriteBoolValue("persistent", Persistent);
             writer.WriteCollectionOfPrimitiveValues<int?>("ports", Ports);

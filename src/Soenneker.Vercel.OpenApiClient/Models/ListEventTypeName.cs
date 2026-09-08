@@ -1015,6 +1015,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         FlagsTransferred,
         #pragma warning restore CS1591
+        [EnumMember(Value = "flat-rate-cdn-auto-upgrade-consent")]
+        #pragma warning disable CS1591
+        FlatRateCdnAutoUpgradeConsent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "git-integration-repo-push")]
         #pragma warning disable CS1591
         GitIntegrationRepoPush,

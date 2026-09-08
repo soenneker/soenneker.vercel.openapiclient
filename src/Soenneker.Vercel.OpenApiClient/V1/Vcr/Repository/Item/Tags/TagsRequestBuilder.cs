@@ -115,18 +115,15 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Vcr.Repository.Item.Tags
             [QueryParameter("limit")]
             public int? Limit { get; set; }
             #pragma warning restore CS1591
+            /// <summary>Project ID. Missing or empty values return HTTP 400.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("projectId")]
             public string? ProjectId { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("projectId")]
             public string ProjectId { get; set; }
-            #pragma warning restore CS1591
 #endif
             /// <summary>The Team slug to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

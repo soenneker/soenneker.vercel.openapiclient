@@ -20,7 +20,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The projectId property</summary>
+        /// <summary>Project ID. Missing or empty values return HTTP 400.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectId { get; set; }

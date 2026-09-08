@@ -85,6 +85,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The Connect network id for the target Secure Compute private network.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NetworkId { get; set; }
+#nullable restore
+#else
+        public string NetworkId { get; set; }
+#endif
         /// <summary>Network policy configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -175,6 +183,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "memory", n => { Memory = n.GetDoubleValue(); } },
                 { "mounts", n => { Mounts = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxMountsProperty>(global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxMountsProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "networkId", n => { NetworkId = n.GetStringValue(); } },
                 { "networkPolicy", n => { NetworkPolicy = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicy>(global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicy.CreateFromDiscriminatorValue); } },
                 { "persistent", n => { Persistent = n.GetBoolValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
@@ -210,6 +219,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("memory", Memory);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxMountsProperty>("mounts", Mounts);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("networkId", NetworkId);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxNetworkPolicy>("networkPolicy", NetworkPolicy);
             writer.WriteBoolValue("persistent", Persistent);
             writer.WriteStringValue("region", Region);

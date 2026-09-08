@@ -8,29 +8,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UserEventPayloadOneOf361Enabled
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "default")]
+        [EnumMember(Value = "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
         #pragma warning disable CS1591
-        DefaultValue,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "default-force")]
-        #pragma warning disable CS1591
-        DefaultForce,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "off")]
-        #pragma warning disable CS1591
-        Off,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "off-force")]
-        #pragma warning disable CS1591
-        OffForce,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "on")]
-        #pragma warning disable CS1591
-        On,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "on-force")]
-        #pragma warning disable CS1591
-        OnForce,
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
         #pragma warning restore CS1591
     }
 }

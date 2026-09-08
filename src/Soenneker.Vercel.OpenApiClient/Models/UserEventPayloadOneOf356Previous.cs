@@ -8,25 +8,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UserEventPayloadOneOf356Previous
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "basic")]
+        [EnumMember(Value = "auto-approval")]
         #pragma warning disable CS1591
-        Basic,
+        AutoApproval,
         #pragma warning restore CS1591
-        [EnumMember(Value = "elastic")]
+        [EnumMember(Value = "block")]
         #pragma warning disable CS1591
-        Elastic,
+        Block,
         #pragma warning restore CS1591
-        [EnumMember(Value = "enhanced")]
+        [EnumMember(Value = "manual-approval")]
         #pragma warning disable CS1591
-        Enhanced,
+        ManualApproval,
         #pragma warning restore CS1591
-        [EnumMember(Value = "standard")]
+        [EnumMember(Value = "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
         #pragma warning disable CS1591
-        Standard,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "turbo")]
-        #pragma warning disable CS1591
-        Turbo,
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
         #pragma warning restore CS1591
     }
 }
