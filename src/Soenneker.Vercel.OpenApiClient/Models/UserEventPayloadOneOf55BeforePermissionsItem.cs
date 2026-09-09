@@ -40,6 +40,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ReadWriteColonAlerts,
         #pragma warning restore CS1591
+        [EnumMember(Value = "read-write:automations")]
+        #pragma warning disable CS1591
+        ReadWriteColonAutomations,
+        #pragma warning restore CS1591
         [EnumMember(Value = "read-write:billing")]
         #pragma warning disable CS1591
         ReadWriteColonBilling,
@@ -159,6 +163,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "read:alerts")]
         #pragma warning disable CS1591
         ReadColonAlerts,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "read:automations")]
+        #pragma warning disable CS1591
+        ReadColonAutomations,
         #pragma warning restore CS1591
         [EnumMember(Value = "read:billing")]
         #pragma warning disable CS1591

@@ -246,6 +246,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> AuditLog { get; set; }
 #endif
+        /// <summary>The automation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? Automation { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> Automation { get; set; }
+#endif
         /// <summary>The billingAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2308,6 +2316,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "apiKeyAiGateway", n => { ApiKeyAiGateway = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "apiKeyOwnedBySelf", n => { ApiKeyOwnedBySelf = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "auditLog", n => { AuditLog = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
+                { "automation", n => { Automation = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "billingAddress", n => { BillingAddress = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "billingInformation", n => { BillingInformation = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "billingInvoice", n => { BillingInvoice = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
@@ -2597,6 +2606,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("apiKeyAiGateway", ApiKeyAiGateway);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("apiKeyOwnedBySelf", ApiKeyOwnedBySelf);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("auditLog", AuditLog);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("automation", Automation);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("billingAddress", BillingAddress);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("billingInformation", BillingInformation);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("billingInvoice", BillingInvoice);

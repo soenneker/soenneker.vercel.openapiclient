@@ -17,10 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The environments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProjectsMetadataItemDeploymentsActionsItemEnvironmentsItem?>? Environments { get; set; }
+        public List<string>? Environments { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProjectsMetadataItemDeploymentsActionsItemEnvironmentsItem?> Environments { get; set; }
+        public List<string> Environments { get; set; }
 #endif
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "environments", n => { Environments = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProjectsMetadataItemDeploymentsActionsItemEnvironmentsItem>()?.AsList(); } },
+                { "environments", n => { Environments = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreProjectsMetadataItemDeploymentsActionsItemEnvironmentsItem>("environments", Environments);
+            writer.WriteCollectionOfPrimitiveValues<string>("environments", Environments);
             writer.WriteStringValue("slug", Slug);
             writer.WriteAdditionalData(AdditionalData);
         }

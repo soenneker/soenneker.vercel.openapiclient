@@ -766,6 +766,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string IsRequestZdr { get; set; }
 #endif
+        /// <summary>The isStreaming property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IsStreaming { get; set; }
+#nullable restore
+#else
+        public string IsStreaming { get; set; }
+#endif
         /// <summary>The keyId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1891,6 +1899,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "isPrefetchRequest", n => { IsPrefetchRequest = n.GetStringValue(); } },
                 { "isPrivateModel", n => { IsPrivateModel = n.GetStringValue(); } },
                 { "isRequestZdr", n => { IsRequestZdr = n.GetStringValue(); } },
+                { "isStreaming", n => { IsStreaming = n.GetStringValue(); } },
                 { "isrAction", n => { IsrAction = n.GetStringValue(); } },
                 { "isrCacheRegion", n => { IsrCacheRegion = n.GetStringValue(); } },
                 { "keyId", n => { KeyId = n.GetStringValue(); } },
@@ -2122,6 +2131,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("isrAction", IsrAction);
             writer.WriteStringValue("isrCacheRegion", IsrCacheRegion);
             writer.WriteStringValue("isRequestZdr", IsRequestZdr);
+            writer.WriteStringValue("isStreaming", IsStreaming);
             writer.WriteStringValue("keyId", KeyId);
             writer.WriteStringValue("keyName", KeyName);
             writer.WriteStringValue("marketCostCurrency", MarketCostCurrency);

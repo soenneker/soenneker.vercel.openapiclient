@@ -124330,6 +124330,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "automation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "billingAddress": {
             "type": "array",
             "items": {
@@ -127392,6 +127398,12 @@
             }
           },
           "auditLog": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "automation": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -130739,6 +130751,12 @@
               "$ref": "#/components/schemas/AclAction"
             }
           },
+          "automation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
           "billingAddress": {
             "type": "array",
             "items": {
@@ -133780,6 +133798,12 @@
             }
           },
           "auditLog": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "automation": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -138033,6 +138057,12 @@
             }
           },
           "auditLog": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "automation": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -143190,6 +143220,9 @@
           "isPrivateModel": {
             "type": "string"
           },
+          "isStreaming": {
+            "type": "string"
+          },
           "isRequestZdr": {
             "type": "string"
           },
@@ -143877,6 +143910,9 @@
             "type": "string"
           },
           "isPrivateModel": {
+            "type": "string"
+          },
+          "isStreaming": {
             "type": "string"
           },
           "isRequestZdr": {
@@ -149499,6 +149535,9 @@
           "isPrivateModel": {
             "type": "string"
           },
+          "isStreaming": {
+            "type": "string"
+          },
           "isRequestZdr": {
             "type": "string"
           },
@@ -149842,6 +149881,7 @@
           "isPrefetchRequest",
           "isPrivateModel",
           "isRequestZdr",
+          "isStreaming",
           "isrAction",
           "isrCacheRegion",
           "keyId",
@@ -150388,6 +150428,9 @@
             "type": "string"
           },
           "isPrivateModel": {
+            "type": "string"
+          },
+          "isStreaming": {
             "type": "string"
           },
           "isRequestZdr": {
@@ -151062,6 +151105,9 @@
           "isPrivateModel": {
             "type": "string"
           },
+          "isStreaming": {
+            "type": "string"
+          },
           "isRequestZdr": {
             "type": "string"
           },
@@ -151405,6 +151451,7 @@
           "isPrefetchRequest",
           "isPrivateModel",
           "isRequestZdr",
+          "isStreaming",
           "isrAction",
           "isrCacheRegion",
           "keyId",
@@ -151951,6 +151998,9 @@
             "type": "string"
           },
           "isPrivateModel": {
+            "type": "string"
+          },
+          "isStreaming": {
             "type": "string"
           },
           "isRequestZdr": {
@@ -158996,6 +159046,12 @@
             }
           },
           "auditLog": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "automation": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -175310,6 +175366,12 @@
             }
           },
           "auditLog": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            }
+          },
+          "automation": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -195641,7 +195703,7 @@
           "environments": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetStorageStoresById200ResponseStoreProjectsMetadataItemDeploymentsActionsItemEnvironmentsItem"
+              "type": "string"
             }
           }
         }
@@ -195659,7 +195721,7 @@
           "environments": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CreateStorageStoresBlob200ResponseStoreProjectsMetadataItemDeploymentsActionsItemEnvironmentsItem"
+              "type": "string"
             }
           }
         }
@@ -195677,7 +195739,7 @@
           "environments": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CreateIntegrationStoreDirect200ResponseStoreProjectsMetadataItemDeploymentsActionsItemEnvironmentsItem"
+              "type": "string"
             }
           }
         }
@@ -215044,6 +215106,7 @@
           "read-write:ai-gateway-rules",
           "read-write:ai-gateway-virtual-model-configs",
           "read-write:alerts",
+          "read-write:automations",
           "read-write:billing",
           "read-write:blob",
           "read-write:connect",
@@ -215074,6 +215137,7 @@
           "read:ai-gateway-rules",
           "read:ai-gateway-virtual-model-configs",
           "read:alerts",
+          "read:automations",
           "read:billing",
           "read:connect",
           "read:deployment",
@@ -215138,6 +215202,10 @@
             {
               "value": "read-write:alerts",
               "name": "ReadWriteColonAlerts"
+            },
+            {
+              "value": "read-write:automations",
+              "name": "ReadWriteColonAutomations"
             },
             {
               "value": "read-write:billing",
@@ -215258,6 +215326,10 @@
             {
               "value": "read:alerts",
               "name": "ReadColonAlerts"
+            },
+            {
+              "value": "read:automations",
+              "name": "ReadColonAutomations"
             },
             {
               "value": "read:billing",
@@ -215393,6 +215465,7 @@
           "read-write:ai-gateway-rules",
           "read-write:ai-gateway-virtual-model-configs",
           "read-write:alerts",
+          "read-write:automations",
           "read-write:billing",
           "read-write:blob",
           "read-write:connect",
@@ -215423,6 +215496,7 @@
           "read:ai-gateway-rules",
           "read:ai-gateway-virtual-model-configs",
           "read:alerts",
+          "read:automations",
           "read:billing",
           "read:connect",
           "read:deployment",
@@ -215487,6 +215561,10 @@
             {
               "value": "read-write:alerts",
               "name": "ReadWriteColonAlerts"
+            },
+            {
+              "value": "read-write:automations",
+              "name": "ReadWriteColonAutomations"
             },
             {
               "value": "read-write:billing",
@@ -215607,6 +215685,10 @@
             {
               "value": "read:alerts",
               "name": "ReadColonAlerts"
+            },
+            {
+              "value": "read:automations",
+              "name": "ReadColonAutomations"
             },
             {
               "value": "read:billing",
@@ -215709,6 +215791,7 @@
           "read-write:ai-gateway-rules",
           "read-write:ai-gateway-virtual-model-configs",
           "read-write:alerts",
+          "read-write:automations",
           "read-write:billing",
           "read-write:blob",
           "read-write:connect",
@@ -215739,6 +215822,7 @@
           "read:ai-gateway-rules",
           "read:ai-gateway-virtual-model-configs",
           "read:alerts",
+          "read:automations",
           "read:billing",
           "read:connect",
           "read:deployment",
@@ -215798,6 +215882,10 @@
             {
               "value": "read-write:alerts",
               "name": "ReadWriteColonAlerts"
+            },
+            {
+              "value": "read-write:automations",
+              "name": "ReadWriteColonAutomations"
             },
             {
               "value": "read-write:billing",
@@ -215918,6 +216006,10 @@
             {
               "value": "read:alerts",
               "name": "ReadColonAlerts"
+            },
+            {
+              "value": "read:automations",
+              "name": "ReadColonAutomations"
             },
             {
               "value": "read:billing",
@@ -224985,6 +225077,7 @@
           "read-write:ai-gateway-rules",
           "read-write:ai-gateway-virtual-model-configs",
           "read-write:alerts",
+          "read-write:automations",
           "read-write:billing",
           "read-write:blob",
           "read-write:connect",
@@ -225015,6 +225108,7 @@
           "read:ai-gateway-rules",
           "read:ai-gateway-virtual-model-configs",
           "read:alerts",
+          "read:automations",
           "read:billing",
           "read:connect",
           "read:deployment",
@@ -225074,6 +225168,10 @@
             {
               "value": "read-write:alerts",
               "name": "ReadWriteColonAlerts"
+            },
+            {
+              "value": "read-write:automations",
+              "name": "ReadWriteColonAutomations"
             },
             {
               "value": "read-write:billing",
@@ -225194,6 +225292,10 @@
             {
               "value": "read:alerts",
               "name": "ReadColonAlerts"
+            },
+            {
+              "value": "read:automations",
+              "name": "ReadColonAutomations"
             },
             {
               "value": "read:billing",
@@ -225292,6 +225394,7 @@
           "read-write:ai-gateway-rules",
           "read-write:ai-gateway-virtual-model-configs",
           "read-write:alerts",
+          "read-write:automations",
           "read-write:billing",
           "read-write:blob",
           "read-write:connect",
@@ -225322,6 +225425,7 @@
           "read:ai-gateway-rules",
           "read:ai-gateway-virtual-model-configs",
           "read:alerts",
+          "read:automations",
           "read:billing",
           "read:connect",
           "read:deployment",
@@ -225381,6 +225485,10 @@
             {
               "value": "read-write:alerts",
               "name": "ReadWriteColonAlerts"
+            },
+            {
+              "value": "read-write:automations",
+              "name": "ReadWriteColonAutomations"
             },
             {
               "value": "read-write:billing",
@@ -225501,6 +225609,10 @@
             {
               "value": "read:alerts",
               "name": "ReadColonAlerts"
+            },
+            {
+              "value": "read:automations",
+              "name": "ReadColonAutomations"
             },
             {
               "value": "read:billing",
@@ -328957,87 +329069,6 @@
         ],
         "type": "boolean",
         "additionalProperties": false
-      },
-      "GetStorageStoresById200ResponseStoreProjectsMetadataItemDeploymentsActionsItemEnvironmentsItem": {
-        "enum": [
-          "development",
-          "preview",
-          "production"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetStorageStoresById200ResponseStoreProjectsMetadataItemDeploymentsActionsItemEnvironmentsItem",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "development",
-              "name": "Development"
-            },
-            {
-              "value": "preview",
-              "name": "Preview"
-            },
-            {
-              "value": "production",
-              "name": "Production"
-            }
-          ]
-        }
-      },
-      "CreateStorageStoresBlob200ResponseStoreProjectsMetadataItemDeploymentsActionsItemEnvironmentsItem": {
-        "enum": [
-          "development",
-          "preview",
-          "production"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "CreateStorageStoresBlob200ResponseStoreProjectsMetadataItemDeploymentsActionsItemEnvironmentsItem",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "development",
-              "name": "Development"
-            },
-            {
-              "value": "preview",
-              "name": "Preview"
-            },
-            {
-              "value": "production",
-              "name": "Production"
-            }
-          ]
-        }
-      },
-      "CreateIntegrationStoreDirect200ResponseStoreProjectsMetadataItemDeploymentsActionsItemEnvironmentsItem": {
-        "enum": [
-          "development",
-          "preview",
-          "production"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "CreateIntegrationStoreDirect200ResponseStoreProjectsMetadataItemDeploymentsActionsItemEnvironmentsItem",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "development",
-              "name": "Development"
-            },
-            {
-              "value": "preview",
-              "name": "Preview"
-            },
-            {
-              "value": "production",
-              "name": "Production"
-            }
-          ]
-        }
       },
       "CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilitiesProvisioning": {
         "enum": [

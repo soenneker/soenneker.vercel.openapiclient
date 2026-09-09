@@ -84126,6 +84126,12 @@
                                 },
                                 "type": "array"
                               },
+                              "automation": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array"
+                              },
                               "billingAddress": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
@@ -108096,6 +108102,12 @@
                                     },
                                     "type": "array"
                                   },
+                                  "automation": {
+                                    "items": {
+                                      "$ref": "#/components/schemas/ACLAction"
+                                    },
+                                    "type": "array"
+                                  },
                                   "billingAddress": {
                                     "items": {
                                       "$ref": "#/components/schemas/ACLAction"
@@ -116391,6 +116403,12 @@
                           "type": "array"
                         },
                         "auditLog": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "automation": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -124922,6 +124940,12 @@
                           },
                           "type": "array"
                         },
+                        "automation": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
                         "billingAddress": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -132735,6 +132759,12 @@
                           "type": "array"
                         },
                         "auditLog": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "automation": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -141859,6 +141889,12 @@
                           "type": "array"
                         },
                         "auditLog": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "automation": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -162450,6 +162486,12 @@
                           "type": "array"
                         },
                         "auditLog": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array"
+                        },
+                        "automation": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -188795,12 +188837,7 @@
                                         },
                                         "environments": {
                                           "items": {
-                                            "type": "string",
-                                            "enum": [
-                                              "development",
-                                              "preview",
-                                              "production"
-                                            ]
+                                            "type": "string"
                                           },
                                           "type": "array"
                                         }
@@ -189120,12 +189157,7 @@
                                         },
                                         "environments": {
                                           "items": {
-                                            "type": "string",
-                                            "enum": [
-                                              "development",
-                                              "preview",
-                                              "production"
-                                            ]
+                                            "type": "string"
                                           },
                                           "type": "array"
                                         }
@@ -189608,12 +189640,7 @@
                                         },
                                         "environments": {
                                           "items": {
-                                            "type": "string",
-                                            "enum": [
-                                              "development",
-                                              "preview",
-                                              "production"
-                                            ]
+                                            "type": "string"
                                           },
                                           "type": "array"
                                         }
@@ -200835,6 +200862,9 @@
                               "isPrivateModel": {
                                 "type": "string"
                               },
+                              "isStreaming": {
+                                "type": "string"
+                              },
                               "isRequestZdr": {
                                 "type": "string"
                               },
@@ -201510,6 +201540,9 @@
                               "isPrivateModel": {
                                 "type": "string"
                               },
+                              "isStreaming": {
+                                "type": "string"
+                              },
                               "isRequestZdr": {
                                 "type": "string"
                               },
@@ -201847,6 +201880,7 @@
                               "isPrefetchRequest",
                               "isPrivateModel",
                               "isRequestZdr",
+                              "isStreaming",
                               "isrAction",
                               "isrCacheRegion",
                               "keyId",
@@ -202657,6 +202691,9 @@
                               "isPrivateModel": {
                                 "type": "string"
                               },
+                              "isStreaming": {
+                                "type": "string"
+                              },
                               "isRequestZdr": {
                                 "type": "string"
                               },
@@ -203332,6 +203369,9 @@
                               "isPrivateModel": {
                                 "type": "string"
                               },
+                              "isStreaming": {
+                                "type": "string"
+                              },
                               "isRequestZdr": {
                                 "type": "string"
                               },
@@ -203669,6 +203709,7 @@
                               "isPrefetchRequest",
                               "isPrivateModel",
                               "isRequestZdr",
+                              "isStreaming",
                               "isrAction",
                               "isrCacheRegion",
                               "keyId",
@@ -204445,6 +204486,9 @@
                             "isPrivateModel": {
                               "type": "string"
                             },
+                            "isStreaming": {
+                              "type": "string"
+                            },
                             "isRequestZdr": {
                               "type": "string"
                             },
@@ -204782,6 +204826,7 @@
                             "isPrefetchRequest",
                             "isPrivateModel",
                             "isRequestZdr",
+                            "isStreaming",
                             "isrAction",
                             "isrCacheRegion",
                             "keyId",
@@ -205506,6 +205551,9 @@
                             "isPrivateModel": {
                               "type": "string"
                             },
+                            "isStreaming": {
+                              "type": "string"
+                            },
                             "isRequestZdr": {
                               "type": "string"
                             },
@@ -205843,6 +205891,7 @@
                             "isPrefetchRequest",
                             "isPrivateModel",
                             "isRequestZdr",
+                            "isStreaming",
                             "isrAction",
                             "isrCacheRegion",
                             "keyId",
@@ -219637,6 +219686,7 @@
                         "read-write:ai-gateway-rules",
                         "read-write:ai-gateway-virtual-model-configs",
                         "read-write:alerts",
+                        "read-write:automations",
                         "read-write:billing",
                         "read-write:blob",
                         "read-write:connect",
@@ -219667,6 +219717,7 @@
                         "read:ai-gateway-rules",
                         "read:ai-gateway-virtual-model-configs",
                         "read:alerts",
+                        "read:automations",
                         "read:billing",
                         "read:connect",
                         "read:deployment",
@@ -219749,6 +219800,7 @@
                         "read-write:ai-gateway-rules",
                         "read-write:ai-gateway-virtual-model-configs",
                         "read-write:alerts",
+                        "read-write:automations",
                         "read-write:billing",
                         "read-write:blob",
                         "read-write:connect",
@@ -219779,6 +219831,7 @@
                         "read:ai-gateway-rules",
                         "read:ai-gateway-virtual-model-configs",
                         "read:alerts",
+                        "read:automations",
                         "read:billing",
                         "read:connect",
                         "read:deployment",
@@ -219883,6 +219936,7 @@
                             "read-write:ai-gateway-rules",
                             "read-write:ai-gateway-virtual-model-configs",
                             "read-write:alerts",
+                            "read-write:automations",
                             "read-write:billing",
                             "read-write:blob",
                             "read-write:connect",
@@ -219913,6 +219967,7 @@
                             "read:ai-gateway-rules",
                             "read:ai-gateway-virtual-model-configs",
                             "read:alerts",
+                            "read:automations",
                             "read:billing",
                             "read:connect",
                             "read:deployment",
@@ -220000,6 +220055,7 @@
                             "read-write:ai-gateway-rules",
                             "read-write:ai-gateway-virtual-model-configs",
                             "read-write:alerts",
+                            "read-write:automations",
                             "read-write:billing",
                             "read-write:blob",
                             "read-write:connect",
@@ -220030,6 +220086,7 @@
                             "read:ai-gateway-rules",
                             "read:ai-gateway-virtual-model-configs",
                             "read:alerts",
+                            "read:automations",
                             "read:billing",
                             "read:connect",
                             "read:deployment",
@@ -220130,6 +220187,7 @@
                         "read-write:ai-gateway-rules",
                         "read-write:ai-gateway-virtual-model-configs",
                         "read-write:alerts",
+                        "read-write:automations",
                         "read-write:billing",
                         "read-write:blob",
                         "read-write:connect",
@@ -220160,6 +220218,7 @@
                         "read:ai-gateway-rules",
                         "read:ai-gateway-virtual-model-configs",
                         "read:alerts",
+                        "read:automations",
                         "read:billing",
                         "read:connect",
                         "read:deployment",
