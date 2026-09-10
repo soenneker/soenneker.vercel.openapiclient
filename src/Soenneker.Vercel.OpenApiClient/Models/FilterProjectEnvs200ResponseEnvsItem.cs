@@ -114,6 +114,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string LegacyValue { get; set; }
 #endif
+        /// <summary>The securityIssues property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemSecurityIssuesItem?>? SecurityIssues { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemSecurityIssuesItem?> SecurityIssues { get; set; }
+#endif
         /// <summary>This is used to identify variables that have been migrated from type secret to sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,14 +162,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>User-facing config/secret model. When set, authoritative for new code paths when the env-var-config-secret-ui flag is enabled. Legacy rows omit this field; legacy rows omit it and callers fall back to existing `type` behavior.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemVisibility? Visibility { get; set; }
-        /// <summary>The vsmValue property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? VsmValue { get; set; }
-#nullable restore
-#else
-        public string VsmValue { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItem"/> and sets the default values.
         /// </summary>
@@ -201,6 +201,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "internalContentHint", n => { InternalContentHint = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemInternalContentHint>(global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemInternalContentHint.CreateFromDiscriminatorValue); } },
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "legacyValue", n => { LegacyValue = n.GetStringValue(); } },
+                { "securityIssues", n => { SecurityIssues = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemSecurityIssuesItem>()?.AsList(); } },
                 { "sunsetSecretId", n => { SunsetSecretId = n.GetStringValue(); } },
                 { "system", n => { System = n.GetBoolValue(); } },
                 { "target", n => { Target = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemTarget>(global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemTarget.CreateFromDiscriminatorValue); } },
@@ -209,7 +210,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
                 { "visibility", n => { Visibility = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemVisibility>(); } },
-                { "vsmValue", n => { VsmValue = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -233,6 +233,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemInternalContentHint>("internalContentHint", InternalContentHint);
             writer.WriteStringValue("key", Key);
             writer.WriteStringValue("legacyValue", LegacyValue);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemSecurityIssuesItem>("securityIssues", SecurityIssues);
             writer.WriteStringValue("sunsetSecretId", SunsetSecretId);
             writer.WriteBoolValue("system", System);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemTarget>("target", Target);
@@ -241,7 +242,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("updatedBy", UpdatedBy);
             writer.WriteStringValue("value", Value);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemVisibility>("visibility", Visibility);
-            writer.WriteStringValue("vsmValue", VsmValue);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

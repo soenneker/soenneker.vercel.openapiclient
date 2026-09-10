@@ -36267,6 +36267,11 @@
             },
             "description": "The HTTPS resources the API key authenticates against."
           },
+          "instructions": {
+            "maxLength": 4000,
+            "type": "string",
+            "description": "Markdown instructions shown to each user on the authorization screen, explaining how to obtain the key they should paste."
+          },
           "appSlug": {
             "type": "string",
             "description": "GitHub App slug."
@@ -36700,6 +36705,9 @@
               "$ref": "#/components/schemas/ConnectConnectorUpdateDataTypeApiKeyToUpdateItem"
             },
             "description": "Existing API key values to update."
+          },
+          "instructions": {
+            "$ref": "#/components/schemas/ConnectConnectorUpdateDataTypeApiKeyInstructions"
           },
           "appSlug": {
             "type": "string",
@@ -37571,6 +37579,11 @@
               "format": "uri"
             },
             "description": "The HTTPS resources the API key authenticates against."
+          },
+          "instructions": {
+            "maxLength": 4000,
+            "type": "string",
+            "description": "Markdown instructions shown to each user on the authorization screen, explaining how to obtain the key they should paste."
           }
         },
         "additionalProperties": false
@@ -40785,6 +40798,9 @@
               "$ref": "#/components/schemas/ConnectConnectorUpdateDataTypeApiKeyToUpdateItem"
             },
             "description": "Existing API key values to update."
+          },
+          "instructions": {
+            "$ref": "#/components/schemas/ConnectConnectorUpdateDataTypeApiKeyInstructions"
           }
         },
         "additionalProperties": false
@@ -45351,6 +45367,19 @@
           }
         ],
         "description": "The timestamp when the API key value expires in milliseconds."
+      },
+      "ConnectConnectorUpdateDataTypeApiKeyInstructions": {
+        "type": "object",
+        "anyOf": [
+          {
+            "maxLength": 4000,
+            "type": "string"
+          },
+          {
+            "type": "string"
+          }
+        ],
+        "description": "Markdown instructions shown to each user on the authorization screen, explaining how to obtain the key they should paste."
       },
       "RegistrantFieldAnyOf1RequiredWhen": {
         "type": "object",
@@ -60607,9 +60636,6 @@
           },
           "blockedDueToOverageType": {
             "$ref": "#/components/schemas/AuthUserSoftBlockBlockedDueToOverageType"
-          },
-          "hobbyAllocationPause": {
-            "$ref": "#/components/schemas/AuthUserSoftBlockHobbyAllocationPause"
           }
         },
         "description": "When the User account has been \u0022soft blocked\u0022, this property will contain the date when the restriction was enacted, and the identifier for why.",
@@ -67511,37 +67537,6 @@
           }
         }
       },
-      "AuthUserSoftBlockHobbyAllocationPause": {
-        "required": [
-          "cohort",
-          "pausedAt",
-          "pausedUntil",
-          "triggers"
-        ],
-        "type": "object",
-        "properties": {
-          "pausedUntil": {
-            "type": "number",
-            "description": "Unix ms timestamp at which the pause is eligible to end. This is the single source of truth for when the pause ends. Never re-derive it by re-checking usage \u2014 usage keeps moving while a team is paused, and the pause duration is a fixed experiment parameter."
-          },
-          "pausedAt": {
-            "type": "number",
-            "description": "Unix ms timestamp of when the pause was applied."
-          },
-          "triggers": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AuthUserSoftBlockHobbyAllocationPauseTriggersItem"
-            },
-            "description": "Allocations that were at or over 100% when the pause was applied."
-          },
-          "cohort": {
-            "type": "string",
-            "description": "Experiment cohort the owner was assigned to when the pause fired. Free-form so cohort naming stays owned by the assignment path."
-          }
-        },
-        "description": "Present only when \u0060reason\u0060 is \u0060HOBBY_ALLOCATION_PAUSED\u0060. Makes the pause self-describing for support without a separate lookup."
-      },
       "AuthUserResourceConfigBuildEntitlements": {
         "type": "object",
         "properties": {
@@ -68186,9 +68181,6 @@
           },
           "blockedDueToOverageType": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf169NewOwnerSoftBlockBlockedDueToOverageType"
-          },
-          "hobbyAllocationPause": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf169NewOwnerSoftBlockHobbyAllocationPause"
           }
         },
         "nullable": true
@@ -69505,23 +69497,6 @@
           }
         }
       },
-      "AuthUserSoftBlockHobbyAllocationPauseTriggersItem": {
-        "required": [
-          "allocation",
-          "usage"
-        ],
-        "type": "object",
-        "properties": {
-          "allocation": {
-            "$ref": "#/components/schemas/AuthUserSoftBlockHobbyAllocationPauseTriggersItemAllocation"
-          },
-          "usage": {
-            "type": "number",
-            "description": "Usage recorded for that allocation when the pause was applied."
-          }
-        },
-        "description": "Allocations that were at or over 100% when the pause was applied."
-      },
       "ConnectConnectorUpdateDataTypeOAuthServerConfigJwksKeysItem": {
         "required": [
           "kty"
@@ -69793,37 +69768,6 @@
             }
           }
         }
-      },
-      "UserEventPayloadOneOf169NewOwnerSoftBlockHobbyAllocationPause": {
-        "required": [
-          "cohort",
-          "pausedAt",
-          "pausedUntil",
-          "triggers"
-        ],
-        "type": "object",
-        "properties": {
-          "pausedUntil": {
-            "type": "number",
-            "description": "Unix ms timestamp at which the pause is eligible to end. This is the single source of truth for when the pause ends. Never re-derive it by re-checking usage \u2014 usage keeps moving while a team is paused, and the pause duration is a fixed experiment parameter."
-          },
-          "pausedAt": {
-            "type": "number",
-            "description": "Unix ms timestamp of when the pause was applied."
-          },
-          "triggers": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf169NewOwnerSoftBlockHobbyAllocationPauseTriggersItem"
-            },
-            "description": "Allocations that were at or over 100% when the pause was applied."
-          },
-          "cohort": {
-            "type": "string",
-            "description": "Experiment cohort the owner was assigned to when the pause fired. Free-form so cohort naming stays owned by the assignment path."
-          }
-        },
-        "description": "Present only when \u0060reason\u0060 is \u0060HOBBY_ALLOCATION_PAUSED\u0060. Makes the pause self-describing for support without a separate lookup."
       },
       "UserEventPayloadOneOf169NewOwnerTeamsItemJoinedFrom": {
         "required": [
@@ -71670,23 +71614,6 @@
             "type": "string"
           }
         }
-      },
-      "UserEventPayloadOneOf169NewOwnerSoftBlockHobbyAllocationPauseTriggersItem": {
-        "required": [
-          "allocation",
-          "usage"
-        ],
-        "type": "object",
-        "properties": {
-          "allocation": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf169NewOwnerSoftBlockHobbyAllocationPauseTriggersItemAllocation"
-          },
-          "usage": {
-            "type": "number",
-            "description": "Usage recorded for that allocation when the pause was applied."
-          }
-        },
-        "description": "Allocations that were at or over 100% when the pause was applied."
       },
       "FlagEnvironmentsAdditionalPropertiesTargetsAdditionalPropertiesAdditionalProperties": {
         "type": "object",
@@ -79430,6 +79357,32 @@
             "description": "The unique identifier of the configuration",
             "example": "icfg_3bwCLgxL8qt5kjRLcv2Dit7F"
           },
+          "slug": {
+            "type": "string",
+            "description": "The slug of the integration the configuration is created for.",
+            "example": "slack"
+          },
+          "createdAt": {
+            "type": "number",
+            "description": "A timestamp that tells you when the configuration was created",
+            "example": 1558531915505
+          },
+          "updatedAt": {
+            "type": "number",
+            "description": "A timestamp that tells you when the configuration was updated.",
+            "example": 1558531915505
+          },
+          "ownerId": {
+            "type": "string",
+            "description": "The user or team ID that owns the configuration",
+            "example": "kr1PsOIzqEL5Xg6M4VZcZosf"
+          },
+          "deletedAt": {
+            "type": "number",
+            "description": "A timestamp that tells you when the configuration was deleted.",
+            "nullable": true,
+            "example": 1558531915505
+          },
           "integrationId": {
             "type": "string",
             "description": "The unique identifier of the app the configuration was created for",
@@ -79440,32 +79393,11 @@
             "description": "The ID of the user that created the configuration.",
             "example": "kr1PsOIzqEL5Xg6M4VZcZosf"
           },
-          "createdAt": {
-            "type": "number",
-            "description": "A timestamp that tells you when the configuration was created",
-            "example": 1558531915505
-          },
-          "deletedAt": {
-            "type": "number",
-            "description": "A timestamp that tells you when the configuration was deleted.",
-            "nullable": true,
-            "example": 1558531915505
-          },
-          "slug": {
-            "type": "string",
-            "description": "The slug of the integration the configuration is created for.",
-            "example": "slack"
-          },
           "teamId": {
             "type": "string",
             "description": "When the configuration was created for a team, this will show the ID of the team.",
             "nullable": true,
             "example": "team_nLlpyC6RE1qxydlFKbrxDlud"
-          },
-          "updatedAt": {
-            "type": "number",
-            "description": "A timestamp that tells you when the configuration was updated.",
-            "example": 1558531915505
           },
           "scopes": {
             "type": "array",
@@ -79477,11 +79409,6 @@
               "read:project",
               "read-write:log-drain"
             ]
-          },
-          "ownerId": {
-            "type": "string",
-            "description": "The user or team ID that owns the configuration",
-            "example": "kr1PsOIzqEL5Xg6M4VZcZosf"
           },
           "canConfigureOpenTelemetry": {
             "$ref": "#/components/schemas/GetConfiguration200ResponseCanConfigureOpenTelemetry"
@@ -83661,11 +83588,54 @@
       "FilterProjectEnvs200Response": {
         "type": "object",
         "properties": {
-          "target": {
-            "$ref": "#/components/schemas/FilterProjectEnvs200ResponseTarget"
+          "securityIssues": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FilterProjectEnvs200ResponseSecurityIssuesItem"
+            }
           },
           "type": {
             "$ref": "#/components/schemas/FilterProjectEnvs200ResponseType"
+          },
+          "value": {
+            "type": "string"
+          },
+          "edgeConfigId": {
+            "type": "string",
+            "nullable": true
+          },
+          "edgeConfigTokenId": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "number"
+          },
+          "updatedAt": {
+            "type": "number"
+          },
+          "system": {
+            "$ref": "#/components/schemas/FilterProjectEnvs200ResponseSystem"
+          },
+          "id": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "target": {
+            "$ref": "#/components/schemas/FilterProjectEnvs200ResponseTarget"
+          },
+          "gitBranch": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
           },
           "sunsetSecretId": {
             "type": "string",
@@ -83678,49 +83648,12 @@
           "decrypted": {
             "$ref": "#/components/schemas/FilterProjectEnvs200ResponseDecrypted"
           },
-          "value": {
-            "type": "string"
-          },
-          "vsmValue": {
-            "type": "string"
-          },
-          "id": {
-            "type": "string"
-          },
-          "key": {
-            "type": "string"
-          },
           "configurationId": {
             "type": "string",
             "nullable": true
           },
-          "createdAt": {
-            "type": "number"
-          },
-          "updatedAt": {
-            "type": "number"
-          },
-          "createdBy": {
-            "type": "string",
-            "nullable": true
-          },
-          "updatedBy": {
-            "type": "string",
-            "nullable": true
-          },
-          "gitBranch": {
-            "type": "string"
-          },
           "visibility": {
             "$ref": "#/components/schemas/FilterProjectEnvs200ResponseVisibility"
-          },
-          "edgeConfigId": {
-            "type": "string",
-            "nullable": true
-          },
-          "edgeConfigTokenId": {
-            "type": "string",
-            "nullable": true
           },
           "contentHint": {
             "$ref": "#/components/schemas/FilterProjectEnvs200ResponseContentHint"
@@ -83736,9 +83669,6 @@
             "items": {
               "type": "string"
             }
-          },
-          "system": {
-            "$ref": "#/components/schemas/FilterProjectEnvs200ResponseSystem"
           },
           "envs": {
             "type": "array",
@@ -120301,11 +120231,11 @@
         ],
         "type": "object",
         "properties": {
-          "level": {
-            "$ref": "#/components/schemas/GetIntegrationResource200ResponseNotificationLevel"
-          },
           "title": {
             "type": "string"
+          },
+          "level": {
+            "$ref": "#/components/schemas/GetIntegrationResource200ResponseNotificationLevel"
           },
           "message": {
             "type": "string"
@@ -136270,16 +136200,60 @@
       "FilterProjectEnvs200ResponseEnvsItem": {
         "required": [
           "key",
+          "securityIssues",
           "type",
           "value"
         ],
         "type": "object",
         "properties": {
-          "target": {
-            "$ref": "#/components/schemas/FilterProjectEnvs200ResponseEnvsItemTarget"
+          "securityIssues": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FilterProjectEnvs200ResponseEnvsItemSecurityIssuesItem"
+            }
           },
           "type": {
             "$ref": "#/components/schemas/FilterProjectEnvs200ResponseEnvsItemType"
+          },
+          "value": {
+            "type": "string"
+          },
+          "edgeConfigId": {
+            "type": "string",
+            "nullable": true
+          },
+          "edgeConfigTokenId": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "number"
+          },
+          "updatedAt": {
+            "type": "number"
+          },
+          "system": {
+            "$ref": "#/components/schemas/FilterProjectEnvs200ResponseEnvsItemSystem"
+          },
+          "id": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "target": {
+            "$ref": "#/components/schemas/FilterProjectEnvs200ResponseEnvsItemTarget"
+          },
+          "gitBranch": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "string",
+            "nullable": true
           },
           "sunsetSecretId": {
             "type": "string",
@@ -136292,49 +136266,12 @@
           "decrypted": {
             "$ref": "#/components/schemas/FilterProjectEnvs200ResponseEnvsItemDecrypted"
           },
-          "value": {
-            "type": "string"
-          },
-          "vsmValue": {
-            "type": "string"
-          },
-          "id": {
-            "type": "string"
-          },
-          "key": {
-            "type": "string"
-          },
           "configurationId": {
             "type": "string",
             "nullable": true
           },
-          "createdAt": {
-            "type": "number"
-          },
-          "updatedAt": {
-            "type": "number"
-          },
-          "createdBy": {
-            "type": "string",
-            "nullable": true
-          },
-          "updatedBy": {
-            "type": "string",
-            "nullable": true
-          },
-          "gitBranch": {
-            "type": "string"
-          },
           "visibility": {
             "$ref": "#/components/schemas/FilterProjectEnvs200ResponseEnvsItemVisibility"
-          },
-          "edgeConfigId": {
-            "type": "string",
-            "nullable": true
-          },
-          "edgeConfigTokenId": {
-            "type": "string",
-            "nullable": true
           },
           "contentHint": {
             "$ref": "#/components/schemas/FilterProjectEnvs200ResponseEnvsItemContentHint"
@@ -136350,9 +136287,6 @@
             "items": {
               "type": "string"
             }
-          },
-          "system": {
-            "$ref": "#/components/schemas/FilterProjectEnvs200ResponseEnvsItemSystem"
           }
         }
       },
@@ -145262,8 +145196,21 @@
         }
       },
       "ListSharedEnvVariable200ResponseDataItem": {
+        "required": [
+          "created",
+          "decrypted",
+          "id",
+          "key",
+          "securityIssues"
+        ],
         "type": "object",
         "properties": {
+          "securityIssues": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListSharedEnvVariable200ResponseDataItemSecurityIssuesItem"
+            }
+          },
           "created": {
             "type": "string",
             "description": "The date when the Shared Env Var was created.",
@@ -156723,11 +156670,11 @@
         ],
         "type": "object",
         "properties": {
-          "level": {
-            "$ref": "#/components/schemas/GetIntegrationResources200ResponseResourcesItemNotificationLevel"
-          },
           "title": {
             "type": "string"
+          },
+          "level": {
+            "$ref": "#/components/schemas/GetIntegrationResources200ResponseResourcesItemNotificationLevel"
           },
           "message": {
             "type": "string"
@@ -193689,9 +193636,6 @@
           "description": {
             "type": "string"
           },
-          "default": {
-            "type": "string"
-          },
           "enum": {
             "type": "array",
             "items": {
@@ -193705,6 +193649,9 @@
             "type": "number"
           },
           "pattern": {
+            "type": "string"
+          },
+          "default": {
             "type": "string"
           },
           "ui:label": {
@@ -198784,13 +198731,13 @@
           "description": {
             "type": "string"
           },
-          "default": {
-            "type": "number"
-          },
           "exclusiveMaximum": {
             "type": "number"
           },
           "exclusiveMinimum": {
+            "type": "number"
+          },
+          "default": {
             "type": "number"
           }
         }
@@ -201171,6 +201118,7 @@
       "ConnectConnectorType": {
         "enum": [
           "api-key",
+          "aws-alpha",
           "custom",
           "discord",
           "github",
@@ -201196,6 +201144,10 @@
             {
               "value": "api-key",
               "name": "ApiKey"
+            },
+            {
+              "value": "aws-alpha",
+              "name": "AwsAlpha"
             },
             {
               "value": "custom",
@@ -201329,6 +201281,7 @@
       "ConnectConnectorCreateResultType": {
         "enum": [
           "api-key",
+          "aws-alpha",
           "custom",
           "discord",
           "github",
@@ -201354,6 +201307,10 @@
             {
               "value": "api-key",
               "name": "ApiKey"
+            },
+            {
+              "value": "aws-alpha",
+              "name": "AwsAlpha"
             },
             {
               "value": "custom",
@@ -224356,7 +224313,6 @@
           "ENTERPRISE_UNPAID_INVOICE",
           "EXPOSURE_CAP_EXCEEDED",
           "FAIR_USE_LIMITS_EXCEEDED",
-          "HOBBY_ALLOCATION_PAUSED",
           "SUBSCRIPTION_CANCELED",
           "SUBSCRIPTION_EXPIRED",
           "UNPAID_INVOICE"
@@ -224390,10 +224346,6 @@
             {
               "value": "FAIR_USE_LIMITS_EXCEEDED",
               "name": "FairUseLimitsExceeded"
-            },
-            {
-              "value": "HOBBY_ALLOCATION_PAUSED",
-              "name": "HobbyAllocationPaused"
             },
             {
               "value": "SUBSCRIPTION_CANCELED",
@@ -228695,7 +228647,6 @@
           "ENTERPRISE_UNPAID_INVOICE",
           "EXPOSURE_CAP_EXCEEDED",
           "FAIR_USE_LIMITS_EXCEEDED",
-          "HOBBY_ALLOCATION_PAUSED",
           "SUBSCRIPTION_CANCELED",
           "SUBSCRIPTION_EXPIRED",
           "UNPAID_INVOICE"
@@ -228729,10 +228680,6 @@
             {
               "value": "FAIR_USE_LIMITS_EXCEEDED",
               "name": "FairUseLimitsExceeded"
-            },
-            {
-              "value": "HOBBY_ALLOCATION_PAUSED",
-              "name": "HobbyAllocationPaused"
             },
             {
               "value": "SUBSCRIPTION_CANCELED",
@@ -229837,214 +229784,6 @@
             {
               "value": "startsWith",
               "name": "StartsWith"
-            }
-          ]
-        }
-      },
-      "AuthUserSoftBlockHobbyAllocationPauseTriggersItemAllocation": {
-        "enum": [
-          "analyticsUsage",
-          "artifacts",
-          "bandwidth",
-          "blobDataTransfer",
-          "blobTotalAdvancedRequests",
-          "blobTotalAvgSizeInBytes",
-          "blobTotalGetResponseObjectSizeInBytes",
-          "blobTotalSimpleRequests",
-          "connectDataTransfer",
-          "dataCacheRead",
-          "dataCacheWrite",
-          "edgeConfigRead",
-          "edgeConfigWrite",
-          "edgeFunctionExecutionUnits",
-          "edgeMiddlewareInvocations",
-          "edgeRequest",
-          "edgeRequestAdditionalCpuDuration",
-          "elasticConcurrencyBuildSlots",
-          "fastDataTransfer",
-          "fastOriginTransfer",
-          "fluidCpuDuration",
-          "fluidDuration",
-          "functionDuration",
-          "functionInvocation",
-          "imageOptimizationCacheRead",
-          "imageOptimizationCacheWrite",
-          "imageOptimizationTransformation",
-          "logDrainsVolume",
-          "monitoringMetric",
-          "observabilityEvent",
-          "onDemandConcurrencyMinutes",
-          "runtimeCacheRead",
-          "runtimeCacheWrite",
-          "serverlessFunctionExecution",
-          "sourceImages",
-          "wafOwaspExcessBytes",
-          "wafOwaspRequests",
-          "wafRateLimitRequest",
-          "webAnalyticsEvent"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Metered allocation whose included amount was fully consumed.",
-        "x-ms-enum": {
-          "name": "AuthUserSoftBlockHobbyAllocationPauseTriggersItemAllocation",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "analyticsUsage",
-              "name": "AnalyticsUsage"
-            },
-            {
-              "value": "artifacts",
-              "name": "Artifacts"
-            },
-            {
-              "value": "bandwidth",
-              "name": "Bandwidth"
-            },
-            {
-              "value": "blobDataTransfer",
-              "name": "BlobDataTransfer"
-            },
-            {
-              "value": "blobTotalAdvancedRequests",
-              "name": "BlobTotalAdvancedRequests"
-            },
-            {
-              "value": "blobTotalAvgSizeInBytes",
-              "name": "BlobTotalAvgSizeInBytes"
-            },
-            {
-              "value": "blobTotalGetResponseObjectSizeInBytes",
-              "name": "BlobTotalGetResponseObjectSizeInBytes"
-            },
-            {
-              "value": "blobTotalSimpleRequests",
-              "name": "BlobTotalSimpleRequests"
-            },
-            {
-              "value": "connectDataTransfer",
-              "name": "ConnectDataTransfer"
-            },
-            {
-              "value": "dataCacheRead",
-              "name": "DataCacheRead"
-            },
-            {
-              "value": "dataCacheWrite",
-              "name": "DataCacheWrite"
-            },
-            {
-              "value": "edgeConfigRead",
-              "name": "EdgeConfigRead"
-            },
-            {
-              "value": "edgeConfigWrite",
-              "name": "EdgeConfigWrite"
-            },
-            {
-              "value": "edgeFunctionExecutionUnits",
-              "name": "EdgeFunctionExecutionUnits"
-            },
-            {
-              "value": "edgeMiddlewareInvocations",
-              "name": "EdgeMiddlewareInvocations"
-            },
-            {
-              "value": "edgeRequest",
-              "name": "EdgeRequest"
-            },
-            {
-              "value": "edgeRequestAdditionalCpuDuration",
-              "name": "EdgeRequestAdditionalCpuDuration"
-            },
-            {
-              "value": "elasticConcurrencyBuildSlots",
-              "name": "ElasticConcurrencyBuildSlots"
-            },
-            {
-              "value": "fastDataTransfer",
-              "name": "FastDataTransfer"
-            },
-            {
-              "value": "fastOriginTransfer",
-              "name": "FastOriginTransfer"
-            },
-            {
-              "value": "fluidCpuDuration",
-              "name": "FluidCpuDuration"
-            },
-            {
-              "value": "fluidDuration",
-              "name": "FluidDuration"
-            },
-            {
-              "value": "functionDuration",
-              "name": "FunctionDuration"
-            },
-            {
-              "value": "functionInvocation",
-              "name": "FunctionInvocation"
-            },
-            {
-              "value": "imageOptimizationCacheRead",
-              "name": "ImageOptimizationCacheRead"
-            },
-            {
-              "value": "imageOptimizationCacheWrite",
-              "name": "ImageOptimizationCacheWrite"
-            },
-            {
-              "value": "imageOptimizationTransformation",
-              "name": "ImageOptimizationTransformation"
-            },
-            {
-              "value": "logDrainsVolume",
-              "name": "LogDrainsVolume"
-            },
-            {
-              "value": "monitoringMetric",
-              "name": "MonitoringMetric"
-            },
-            {
-              "value": "observabilityEvent",
-              "name": "ObservabilityEvent"
-            },
-            {
-              "value": "onDemandConcurrencyMinutes",
-              "name": "OnDemandConcurrencyMinutes"
-            },
-            {
-              "value": "runtimeCacheRead",
-              "name": "RuntimeCacheRead"
-            },
-            {
-              "value": "runtimeCacheWrite",
-              "name": "RuntimeCacheWrite"
-            },
-            {
-              "value": "serverlessFunctionExecution",
-              "name": "ServerlessFunctionExecution"
-            },
-            {
-              "value": "sourceImages",
-              "name": "SourceImages"
-            },
-            {
-              "value": "wafOwaspExcessBytes",
-              "name": "WafOwaspExcessBytes"
-            },
-            {
-              "value": "wafOwaspRequests",
-              "name": "WafOwaspRequests"
-            },
-            {
-              "value": "wafRateLimitRequest",
-              "name": "WafRateLimitRequest"
-            },
-            {
-              "value": "webAnalyticsEvent",
-              "name": "WebAnalyticsEvent"
             }
           ]
         }
@@ -231270,214 +231009,6 @@
         ],
         "type": "boolean",
         "additionalProperties": false
-      },
-      "UserEventPayloadOneOf169NewOwnerSoftBlockHobbyAllocationPauseTriggersItemAllocation": {
-        "enum": [
-          "analyticsUsage",
-          "artifacts",
-          "bandwidth",
-          "blobDataTransfer",
-          "blobTotalAdvancedRequests",
-          "blobTotalAvgSizeInBytes",
-          "blobTotalGetResponseObjectSizeInBytes",
-          "blobTotalSimpleRequests",
-          "connectDataTransfer",
-          "dataCacheRead",
-          "dataCacheWrite",
-          "edgeConfigRead",
-          "edgeConfigWrite",
-          "edgeFunctionExecutionUnits",
-          "edgeMiddlewareInvocations",
-          "edgeRequest",
-          "edgeRequestAdditionalCpuDuration",
-          "elasticConcurrencyBuildSlots",
-          "fastDataTransfer",
-          "fastOriginTransfer",
-          "fluidCpuDuration",
-          "fluidDuration",
-          "functionDuration",
-          "functionInvocation",
-          "imageOptimizationCacheRead",
-          "imageOptimizationCacheWrite",
-          "imageOptimizationTransformation",
-          "logDrainsVolume",
-          "monitoringMetric",
-          "observabilityEvent",
-          "onDemandConcurrencyMinutes",
-          "runtimeCacheRead",
-          "runtimeCacheWrite",
-          "serverlessFunctionExecution",
-          "sourceImages",
-          "wafOwaspExcessBytes",
-          "wafOwaspRequests",
-          "wafRateLimitRequest",
-          "webAnalyticsEvent"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Metered allocation whose included amount was fully consumed.",
-        "x-ms-enum": {
-          "name": "UserEventPayloadOneOf169NewOwnerSoftBlockHobbyAllocationPauseTriggersItemAllocation",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "analyticsUsage",
-              "name": "AnalyticsUsage"
-            },
-            {
-              "value": "artifacts",
-              "name": "Artifacts"
-            },
-            {
-              "value": "bandwidth",
-              "name": "Bandwidth"
-            },
-            {
-              "value": "blobDataTransfer",
-              "name": "BlobDataTransfer"
-            },
-            {
-              "value": "blobTotalAdvancedRequests",
-              "name": "BlobTotalAdvancedRequests"
-            },
-            {
-              "value": "blobTotalAvgSizeInBytes",
-              "name": "BlobTotalAvgSizeInBytes"
-            },
-            {
-              "value": "blobTotalGetResponseObjectSizeInBytes",
-              "name": "BlobTotalGetResponseObjectSizeInBytes"
-            },
-            {
-              "value": "blobTotalSimpleRequests",
-              "name": "BlobTotalSimpleRequests"
-            },
-            {
-              "value": "connectDataTransfer",
-              "name": "ConnectDataTransfer"
-            },
-            {
-              "value": "dataCacheRead",
-              "name": "DataCacheRead"
-            },
-            {
-              "value": "dataCacheWrite",
-              "name": "DataCacheWrite"
-            },
-            {
-              "value": "edgeConfigRead",
-              "name": "EdgeConfigRead"
-            },
-            {
-              "value": "edgeConfigWrite",
-              "name": "EdgeConfigWrite"
-            },
-            {
-              "value": "edgeFunctionExecutionUnits",
-              "name": "EdgeFunctionExecutionUnits"
-            },
-            {
-              "value": "edgeMiddlewareInvocations",
-              "name": "EdgeMiddlewareInvocations"
-            },
-            {
-              "value": "edgeRequest",
-              "name": "EdgeRequest"
-            },
-            {
-              "value": "edgeRequestAdditionalCpuDuration",
-              "name": "EdgeRequestAdditionalCpuDuration"
-            },
-            {
-              "value": "elasticConcurrencyBuildSlots",
-              "name": "ElasticConcurrencyBuildSlots"
-            },
-            {
-              "value": "fastDataTransfer",
-              "name": "FastDataTransfer"
-            },
-            {
-              "value": "fastOriginTransfer",
-              "name": "FastOriginTransfer"
-            },
-            {
-              "value": "fluidCpuDuration",
-              "name": "FluidCpuDuration"
-            },
-            {
-              "value": "fluidDuration",
-              "name": "FluidDuration"
-            },
-            {
-              "value": "functionDuration",
-              "name": "FunctionDuration"
-            },
-            {
-              "value": "functionInvocation",
-              "name": "FunctionInvocation"
-            },
-            {
-              "value": "imageOptimizationCacheRead",
-              "name": "ImageOptimizationCacheRead"
-            },
-            {
-              "value": "imageOptimizationCacheWrite",
-              "name": "ImageOptimizationCacheWrite"
-            },
-            {
-              "value": "imageOptimizationTransformation",
-              "name": "ImageOptimizationTransformation"
-            },
-            {
-              "value": "logDrainsVolume",
-              "name": "LogDrainsVolume"
-            },
-            {
-              "value": "monitoringMetric",
-              "name": "MonitoringMetric"
-            },
-            {
-              "value": "observabilityEvent",
-              "name": "ObservabilityEvent"
-            },
-            {
-              "value": "onDemandConcurrencyMinutes",
-              "name": "OnDemandConcurrencyMinutes"
-            },
-            {
-              "value": "runtimeCacheRead",
-              "name": "RuntimeCacheRead"
-            },
-            {
-              "value": "runtimeCacheWrite",
-              "name": "RuntimeCacheWrite"
-            },
-            {
-              "value": "serverlessFunctionExecution",
-              "name": "ServerlessFunctionExecution"
-            },
-            {
-              "value": "sourceImages",
-              "name": "SourceImages"
-            },
-            {
-              "value": "wafOwaspExcessBytes",
-              "name": "WafOwaspExcessBytes"
-            },
-            {
-              "value": "wafOwaspRequests",
-              "name": "WafOwaspRequests"
-            },
-            {
-              "value": "wafRateLimitRequest",
-              "name": "WafRateLimitRequest"
-            },
-            {
-              "value": "webAnalyticsEvent",
-              "name": "WebAnalyticsEvent"
-            }
-          ]
-        }
       },
       "FlagEnvironmentsAdditionalPropertiesRulesItemConditionsItemCmpOptionsIgnoreCase": {
         "enum": [
@@ -238561,7 +238092,8 @@
       "CreateProject200ResponseTier": {
         "enum": [
           "advanced",
-          "critical"
+          "critical",
+          "priority"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -238576,6 +238108,10 @@
             {
               "value": "critical",
               "name": "Critical"
+            },
+            {
+              "value": "priority",
+              "name": "Priority"
             }
           ]
         }
@@ -239212,7 +238748,8 @@
       "GetProject200ResponseTier": {
         "enum": [
           "advanced",
-          "critical"
+          "critical",
+          "priority"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -239227,6 +238764,10 @@
             {
               "value": "critical",
               "name": "Critical"
+            },
+            {
+              "value": "priority",
+              "name": "Priority"
             }
           ]
         }
@@ -240300,7 +239841,8 @@
       "UpdateProject200ResponseTier": {
         "enum": [
           "advanced",
-          "critical"
+          "critical",
+          "priority"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -240315,6 +239857,10 @@
             {
               "value": "critical",
               "name": "Critical"
+            },
+            {
+              "value": "priority",
+              "name": "Priority"
             }
           ]
         }
@@ -240951,7 +240497,8 @@
       "UploadProjectAvatar200ResponseTier": {
         "enum": [
           "advanced",
-          "critical"
+          "critical",
+          "priority"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -240966,6 +240513,10 @@
             {
               "value": "critical",
               "name": "Critical"
+            },
+            {
+              "value": "priority",
+              "name": "Priority"
             }
           ]
         }
@@ -241261,6 +240812,28 @@
         "additionalProperties": false,
         "description": "\u0060true\u0060 if the domain is verified for use with the project. If \u0060false\u0060 it will not be used as an alias on this project until the challenge in \u0060verification\u0060 is completed."
       },
+      "FilterProjectEnvs200ResponseSecurityIssuesItem": {
+        "enum": [
+          "flags-secret-needs-split",
+          "readable-secret"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "FilterProjectEnvs200ResponseSecurityIssuesItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "flags-secret-needs-split",
+              "name": "FlagsSecretNeedsSplit"
+            },
+            {
+              "value": "readable-secret",
+              "name": "ReadableSecret"
+            }
+          ]
+        }
+      },
       "FilterProjectEnvs200ResponseType": {
         "enum": [
           "encrypted",
@@ -241298,6 +240871,14 @@
           ]
         }
       },
+      "FilterProjectEnvs200ResponseSystem": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
       "FilterProjectEnvs200ResponseDecrypted": {
         "enum": [
           false,
@@ -241328,14 +240909,6 @@
             }
           ]
         }
-      },
-      "FilterProjectEnvs200ResponseSystem": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
       },
       "GetProjectEnv200ResponseDecrypted": {
         "enum": [
@@ -242184,7 +241757,8 @@
       "UpdateMicrofrontends200ResponseTier": {
         "enum": [
           "advanced",
-          "critical"
+          "critical",
+          "priority"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -242199,6 +241773,10 @@
             {
               "value": "critical",
               "name": "Critical"
+            },
+            {
+              "value": "priority",
+              "name": "Priority"
             }
           ]
         }
@@ -264980,7 +264558,8 @@
       "GetMicrofrontendsInGroup200ResponseProjectsItemTier": {
         "enum": [
           "advanced",
-          "critical"
+          "critical",
+          "priority"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -264995,6 +264574,10 @@
             {
               "value": "critical",
               "name": "Critical"
+            },
+            {
+              "value": "priority",
+              "name": "Priority"
             }
           ]
         }
@@ -275327,6 +274910,28 @@
           ]
         }
       },
+      "FilterProjectEnvs200ResponseEnvsItemSecurityIssuesItem": {
+        "enum": [
+          "flags-secret-needs-split",
+          "readable-secret"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "FilterProjectEnvs200ResponseEnvsItemSecurityIssuesItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "flags-secret-needs-split",
+              "name": "FlagsSecretNeedsSplit"
+            },
+            {
+              "value": "readable-secret",
+              "name": "ReadableSecret"
+            }
+          ]
+        }
+      },
       "FilterProjectEnvs200ResponseEnvsItemType": {
         "enum": [
           "encrypted",
@@ -275364,6 +274969,14 @@
           ]
         }
       },
+      "FilterProjectEnvs200ResponseEnvsItemSystem": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
       "FilterProjectEnvs200ResponseEnvsItemDecrypted": {
         "enum": [
           false,
@@ -275394,14 +275007,6 @@
             }
           ]
         }
-      },
-      "FilterProjectEnvs200ResponseEnvsItemSystem": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
       },
       "GetProjectEnv200ResponseContentHintType": {
         "enum": [
@@ -280468,7 +280073,8 @@
       "GetProjects200ResponseBranch1ValueItemTier": {
         "enum": [
           "advanced",
-          "critical"
+          "critical",
+          "priority"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -280483,6 +280089,10 @@
             {
               "value": "critical",
               "name": "Critical"
+            },
+            {
+              "value": "priority",
+              "name": "Priority"
             }
           ]
         }
@@ -280774,6 +280384,28 @@
             {
               "value": "zeit.world",
               "name": "ZeitWorld"
+            }
+          ]
+        }
+      },
+      "ListSharedEnvVariable200ResponseDataItemSecurityIssuesItem": {
+        "enum": [
+          "flags-secret-needs-split",
+          "readable-secret"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListSharedEnvVariable200ResponseDataItemSecurityIssuesItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "flags-secret-needs-split",
+              "name": "FlagsSecretNeedsSplit"
+            },
+            {
+              "value": "readable-secret",
+              "name": "ReadableSecret"
             }
           ]
         }
@@ -282937,7 +282569,8 @@
       "GetProjects200ResponseOneOf2ProjectsItemTier": {
         "enum": [
           "advanced",
-          "critical"
+          "critical",
+          "priority"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -282952,6 +282585,10 @@
             {
               "value": "critical",
               "name": "Critical"
+            },
+            {
+              "value": "priority",
+              "name": "Priority"
             }
           ]
         }
@@ -283556,7 +283193,8 @@
       "GetProjects200ResponseOneOf3ProjectsItemTier": {
         "enum": [
           "advanced",
-          "critical"
+          "critical",
+          "priority"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -283571,6 +283209,10 @@
             {
               "value": "critical",
               "name": "Critical"
+            },
+            {
+              "value": "priority",
+              "name": "Priority"
             }
           ]
         }
@@ -320029,7 +319671,8 @@
       "GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemTierRequirement": {
         "enum": [
           "advanced",
-          "critical"
+          "critical",
+          "priority"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -320044,6 +319687,10 @@
             {
               "value": "critical",
               "name": "Critical"
+            },
+            {
+              "value": "priority",
+              "name": "Priority"
             }
           ]
         }
@@ -323819,7 +323466,8 @@
       "GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemTierRequirement": {
         "enum": [
           "advanced",
-          "critical"
+          "critical",
+          "priority"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -323834,6 +323482,10 @@
             {
               "value": "critical",
               "name": "Critical"
+            },
+            {
+              "value": "priority",
+              "name": "Priority"
             }
           ]
         }

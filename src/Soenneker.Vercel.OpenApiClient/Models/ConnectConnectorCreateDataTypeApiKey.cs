@@ -12,6 +12,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class ConnectConnectorCreateDataTypeApiKey : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Markdown instructions shown to each user on the authorization screen, explaining how to obtain the key they should paste.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Instructions { get; set; }
+#nullable restore
+#else
+        public string Instructions { get; set; }
+#endif
         /// <summary>The HTTPS resources the API key authenticates against.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +56,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "instructions", n => { Instructions = n.GetStringValue(); } },
                 { "serviceUrls", n => { ServiceUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "subjectType", n => { SubjectType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKeySubjectType>(); } },
                 { "values", n => { Values = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKeyValuesItem>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKeyValuesItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -60,6 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("instructions", Instructions);
             writer.WriteCollectionOfPrimitiveValues<string>("serviceUrls", ServiceUrls);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKeySubjectType>("subjectType", SubjectType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeApiKeyValuesItem>("values", Values);

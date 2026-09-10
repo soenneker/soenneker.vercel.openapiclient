@@ -11,6 +11,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ApiKey,
         #pragma warning restore CS1591
+        [EnumMember(Value = "aws-alpha")]
+        #pragma warning disable CS1591
+        AwsAlpha,
+        #pragma warning restore CS1591
         [EnumMember(Value = "custom")]
         #pragma warning disable CS1591
         Custom,

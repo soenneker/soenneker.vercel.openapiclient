@@ -12,6 +12,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class ConnectConnectorUpdateDataTypeApiKey : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Markdown instructions shown to each user on the authorization screen, explaining how to obtain the key they should paste.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyInstructions? Instructions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyInstructions Instructions { get; set; }
+#endif
         /// <summary>API key values to add.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,6 +62,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "instructions", n => { Instructions = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyInstructions>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyInstructions.CreateFromDiscriminatorValue); } },
                 { "toAdd", n => { ToAdd = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToAddItem>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToAddItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "toDelete", n => { ToDelete = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "toUpdate", n => { ToUpdate = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToUpdateItem>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToUpdateItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -66,6 +75,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyInstructions>("instructions", Instructions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToAddItem>("toAdd", ToAdd);
             writer.WriteCollectionOfPrimitiveValues<string>("toDelete", ToDelete);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeApiKeyToUpdateItem>("toUpdate", ToUpdate);

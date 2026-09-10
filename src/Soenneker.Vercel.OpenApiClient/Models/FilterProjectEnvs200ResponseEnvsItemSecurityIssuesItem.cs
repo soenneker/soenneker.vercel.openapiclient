@@ -5,20 +5,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum GetProjects200ResponseBranch1ValueItemTier
+    public enum FilterProjectEnvs200ResponseEnvsItemSecurityIssuesItem
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "advanced")]
+        [EnumMember(Value = "flags-secret-needs-split")]
         #pragma warning disable CS1591
-        Advanced,
+        FlagsSecretNeedsSplit,
         #pragma warning restore CS1591
-        [EnumMember(Value = "critical")]
+        [EnumMember(Value = "readable-secret")]
         #pragma warning disable CS1591
-        Critical,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "priority")]
-        #pragma warning disable CS1591
-        Priority,
+        ReadableSecret,
         #pragma warning restore CS1591
     }
 }

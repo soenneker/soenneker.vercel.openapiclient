@@ -96,6 +96,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> ProjectId { get; set; }
 #endif
+        /// <summary>The securityIssues property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListSharedEnvVariable200ResponseDataItemSecurityIssuesItem?>? SecurityIssues { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.ListSharedEnvVariable200ResponseDataItemSecurityIssuesItem?> SecurityIssues { get; set; }
+#endif
         /// <summary>environments this env variable targets</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -163,6 +171,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "lastEditedByDisplayName", n => { LastEditedByDisplayName = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "securityIssues", n => { SecurityIssues = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ListSharedEnvVariable200ResponseDataItemSecurityIssuesItem>()?.AsList(); } },
                 { "target", n => { Target = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ListSharedEnvVariable200ResponseDataItemTargetItem>()?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListSharedEnvVariable200ResponseDataItemType>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
@@ -191,6 +200,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("lastEditedByDisplayName", LastEditedByDisplayName);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteCollectionOfPrimitiveValues<string>("projectId", ProjectId);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ListSharedEnvVariable200ResponseDataItemSecurityIssuesItem>("securityIssues", SecurityIssues);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ListSharedEnvVariable200ResponseDataItemTargetItem>("target", Target);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListSharedEnvVariable200ResponseDataItemType>("type", Type);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);

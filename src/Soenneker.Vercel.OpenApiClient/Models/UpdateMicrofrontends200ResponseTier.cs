@@ -16,5 +16,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Critical,
         #pragma warning restore CS1591
+        [EnumMember(Value = "priority")]
+        #pragma warning disable CS1591
+        Priority,
+        #pragma warning restore CS1591
     }
 }

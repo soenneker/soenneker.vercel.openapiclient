@@ -18,14 +18,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? BlockedAt { get; set; }
         /// <summary>The blockedDueToOverageType property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169NewOwnerSoftBlockBlockedDueToOverageType? BlockedDueToOverageType { get; set; }
-        /// <summary>Present only when `reason` is `HOBBY_ALLOCATION_PAUSED`. Makes the pause self-describing for support without a separate lookup.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169NewOwnerSoftBlockHobbyAllocationPause? HobbyAllocationPause { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169NewOwnerSoftBlockHobbyAllocationPause HobbyAllocationPause { get; set; }
-#endif
         /// <summary>The reason property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169NewOwnerSoftBlockReason? Reason { get; set; }
         /// <summary>
@@ -55,7 +47,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "blockedAt", n => { BlockedAt = n.GetDoubleValue(); } },
                 { "blockedDueToOverageType", n => { BlockedDueToOverageType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169NewOwnerSoftBlockBlockedDueToOverageType>(); } },
-                { "hobbyAllocationPause", n => { HobbyAllocationPause = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169NewOwnerSoftBlockHobbyAllocationPause>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169NewOwnerSoftBlockHobbyAllocationPause.CreateFromDiscriminatorValue); } },
                 { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169NewOwnerSoftBlockReason>(); } },
             };
         }
@@ -68,7 +59,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("blockedAt", BlockedAt);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169NewOwnerSoftBlockBlockedDueToOverageType>("blockedDueToOverageType", BlockedDueToOverageType);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169NewOwnerSoftBlockHobbyAllocationPause>("hobbyAllocationPause", HobbyAllocationPause);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169NewOwnerSoftBlockReason>("reason", Reason);
             writer.WriteAdditionalData(AdditionalData);
         }
