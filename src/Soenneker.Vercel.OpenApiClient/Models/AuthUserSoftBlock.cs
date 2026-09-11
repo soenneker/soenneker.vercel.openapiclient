@@ -21,6 +21,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockBlockedDueToOverageType? BlockedDueToOverageType { get; set; }
         /// <summary>The reason property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockReason? Reason { get; set; }
+        /// <summary>Since September 2026. Set only by `billing-usage-alerts` for usage plans with a `blockDurationMs`; its presence marks a pause that expires on its own.</summary>
+        public double? UnpauseAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlock"/> and sets the default values.
         /// </summary>
@@ -49,6 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "blockedAt", n => { BlockedAt = n.GetDoubleValue(); } },
                 { "blockedDueToOverageType", n => { BlockedDueToOverageType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockBlockedDueToOverageType>(); } },
                 { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockReason>(); } },
+                { "unpauseAt", n => { UnpauseAt = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -61,6 +64,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("blockedAt", BlockedAt);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockBlockedDueToOverageType>("blockedDueToOverageType", BlockedDueToOverageType);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AuthUserSoftBlockReason>("reason", Reason);
+            writer.WriteDoubleValue("unpauseAt", UnpauseAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

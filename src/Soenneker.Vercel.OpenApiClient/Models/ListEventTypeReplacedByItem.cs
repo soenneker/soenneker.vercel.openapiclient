@@ -1355,6 +1355,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         OrganizationTeamDelete,
         #pragma warning restore CS1591
+        [EnumMember(Value = "organization-team-sso-update")]
+        #pragma warning disable CS1591
+        OrganizationTeamSsoUpdate,
+        #pragma warning restore CS1591
         [EnumMember(Value = "owner-blocked")]
         #pragma warning disable CS1591
         OwnerBlocked,
@@ -1670,6 +1674,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "project-git-create-deployments-toggled")]
         #pragma warning disable CS1591
         ProjectGitCreateDeploymentsToggled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-git-credential-bound-created")]
+        #pragma warning disable CS1591
+        ProjectGitCredentialBoundCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-git-credential-bound-deleted")]
+        #pragma warning disable CS1591
+        ProjectGitCredentialBoundDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-git-credential-bound-updated")]
+        #pragma warning disable CS1591
+        ProjectGitCredentialBoundUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-git-credential-grant-created")]
+        #pragma warning disable CS1591
+        ProjectGitCredentialGrantCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-git-credential-grant-deleted")]
+        #pragma warning disable CS1591
+        ProjectGitCredentialGrantDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-git-credential-grant-updated")]
+        #pragma warning disable CS1591
+        ProjectGitCredentialGrantUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "project-git-fork-protection-updated")]
         #pragma warning disable CS1591

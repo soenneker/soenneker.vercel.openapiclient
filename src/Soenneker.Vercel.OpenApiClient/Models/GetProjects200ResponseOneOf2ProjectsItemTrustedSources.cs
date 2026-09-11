@@ -14,6 +14,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Allow same-team Vercel CI access to preview deployments built from the CI run&apos;s repository, using the deployment source rather than the current project repository link. Defaults to enabled when not stored; omitted or null Trusted Sources updates preserve the stored value.</summary>
+        public bool? EnableVercelCiSameRepository { get; set; }
         /// <summary>The oidcProviders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,6 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "enableVercelCiSameRepository", n => { EnableVercelCiSameRepository = n.GetBoolValue(); } },
                 { "oidcProviders", n => { OidcProviders = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemTrustedSourcesOidcProviders>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemTrustedSourcesOidcProviders.CreateFromDiscriminatorValue); } },
                 { "projects", n => { Projects = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemTrustedSourcesProjects>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemTrustedSourcesProjects.CreateFromDiscriminatorValue); } },
             };
@@ -66,6 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("enableVercelCiSameRepository", EnableVercelCiSameRepository);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemTrustedSourcesOidcProviders>("oidcProviders", OidcProviders);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemTrustedSourcesProjects>("projects", Projects);
             writer.WriteAdditionalData(AdditionalData);

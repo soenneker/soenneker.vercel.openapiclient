@@ -45,6 +45,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Whether callers can narrow app-token grants per request.</summary>
         public bool? SupportsRefinement { get; set; }
+        /// <summary>Whether callers can request resource-specific app tokens.</summary>
+        public bool? SupportsResources { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateResultAppTokens"/> and sets the default values.
         /// </summary>
@@ -76,6 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "supportedAuthorizationDetails", n => { SupportedAuthorizationDetails = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "supportsRefinement", n => { SupportsRefinement = n.GetBoolValue(); } },
+                { "supportsResources", n => { SupportsResources = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -91,6 +94,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedAuthorizationDetails", SupportedAuthorizationDetails);
             writer.WriteBoolValue("supportsRefinement", SupportsRefinement);
+            writer.WriteBoolValue("supportsResources", SupportsResources);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

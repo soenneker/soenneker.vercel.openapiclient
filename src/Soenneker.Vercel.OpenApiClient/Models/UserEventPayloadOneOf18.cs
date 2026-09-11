@@ -25,40 +25,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The change property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18Change? Change { get; set; }
-        /// <summary>Associates the event with a project for filtering; not rendered.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectId { get; set; }
-#nullable restore
-#else
-        public string ProjectId { get; set; }
-#endif
-        /// <summary>The projectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectName { get; set; }
-#nullable restore
-#else
-        public string ProjectName { get; set; }
-#endif
         /// <summary>The scopeType property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18ScopeType? ScopeType { get; set; }
-        /// <summary>Associates the event with a member for filtering; not rendered.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserId { get; set; }
-#nullable restore
-#else
-        public string UserId { get; set; }
-#endif
-        /// <summary>The userName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserName { get; set; }
-#nullable restore
-#else
-        public string UserName { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18"/> and sets the default values.
         /// </summary>
@@ -86,11 +54,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "budget", n => { Budget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18Budget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18Budget.CreateFromDiscriminatorValue); } },
                 { "change", n => { Change = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18Change>(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
                 { "scopeType", n => { ScopeType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18ScopeType>(); } },
-                { "userId", n => { UserId = n.GetStringValue(); } },
-                { "userName", n => { UserName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -102,11 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18Budget>("budget", Budget);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18Change>("change", Change);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf18ScopeType>("scopeType", ScopeType);
-            writer.WriteStringValue("userId", UserId);
-            writer.WriteStringValue("userName", UserName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

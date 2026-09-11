@@ -13,6 +13,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateProjectRequestTrustedSources : IParsable
     {
+        /// <summary>Allow same-team Vercel CI access to preview deployments built from the same repository as the CI run. The deployment source repository, not the current project repository link, is authoritative. Defaults to enabled when not stored. Omitting this field preserves its stored value, including when trustedSources is cleared. Set true explicitly to re-enable.</summary>
+        public bool? EnableVercelCiSameRepository { get; set; }
         /// <summary>The oidcProviders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +49,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "enableVercelCiSameRepository", n => { EnableVercelCiSameRepository = n.GetBoolValue(); } },
                 { "oidcProviders", n => { OidcProviders = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesOidcProviders>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesOidcProviders.CreateFromDiscriminatorValue); } },
                 { "projects", n => { Projects = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesProjects>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesProjects.CreateFromDiscriminatorValue); } },
             };
@@ -58,6 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("enableVercelCiSameRepository", EnableVercelCiSameRepository);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesOidcProviders>("oidcProviders", OidcProviders);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedSourcesProjects>("projects", Projects);
         }

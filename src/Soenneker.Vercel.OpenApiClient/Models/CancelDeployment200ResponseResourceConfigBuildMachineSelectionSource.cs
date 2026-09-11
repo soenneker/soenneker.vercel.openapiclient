@@ -19,6 +19,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ProjectSetting,
         #pragma warning restore CS1591
+        [EnumMember(Value = "team-entitlement")]
+        #pragma warning disable CS1591
+        TeamEntitlement,
+        #pragma warning restore CS1591
         [EnumMember(Value = "team-setting")]
         #pragma warning disable CS1591
         TeamSetting,
