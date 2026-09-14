@@ -1959,6 +1959,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ProtectedGitScopeRemoved,
         #pragma warning restore CS1591
+        [EnumMember(Value = "repository-ci-env-variable-create")]
+        #pragma warning disable CS1591
+        RepositoryCiEnvVariableCreate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "repository-ci-env-variable-delete")]
+        #pragma warning disable CS1591
+        RepositoryCiEnvVariableDelete,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "repository-ci-env-variable-update")]
+        #pragma warning disable CS1591
+        RepositoryCiEnvVariableUpdate,
+        #pragma warning restore CS1591
         [EnumMember(Value = "runtime-cache-purge-all")]
         #pragma warning disable CS1591
         RuntimeCachePurgeAll,

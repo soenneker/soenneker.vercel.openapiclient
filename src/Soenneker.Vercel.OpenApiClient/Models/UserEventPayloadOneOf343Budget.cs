@@ -49,6 +49,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The acive pricing plan the team is billed with</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf343BudgetPricingPlan? PricingPlan { get; set; }
+        /// <summary>Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf343BudgetScope? Scope { get; set; }
+        /// <summary>Project id when `scope` is `project`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScopeId { get; set; }
+#nullable restore
+#else
+        public string ScopeId { get; set; }
+#endif
         /// <summary>Partition key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,6 +114,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "pauseProjects", n => { PauseProjects = n.GetBoolValue(); } },
                 { "previousSpend", n => { PreviousSpend = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "pricingPlan", n => { PricingPlan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf343BudgetPricingPlan>(); } },
+                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf343BudgetScope>(); } },
+                { "scopeId", n => { ScopeId = n.GetStringValue(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FixedValueType>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
@@ -126,6 +138,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("pauseProjects", PauseProjects);
             writer.WriteCollectionOfPrimitiveValues<double?>("previousSpend", PreviousSpend);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf343BudgetPricingPlan>("pricingPlan", PricingPlan);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf343BudgetScope>("scope", Scope);
+            writer.WriteStringValue("scopeId", ScopeId);
             writer.WriteStringValue("teamId", TeamId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FixedValueType>("type", Type);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);

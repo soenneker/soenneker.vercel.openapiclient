@@ -121,10 +121,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The variants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.FlagVariantsItemProperty>? Variants { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.FlagVariantsItem>? Variants { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.FlagVariantsItemProperty> Variants { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.FlagVariantsItem> Variants { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.Flag"/> and sets the default values.
@@ -170,7 +170,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "typeName", n => { TypeName = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagTypeName>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
-                { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FlagVariantsItemProperty>(global::Soenneker.Vercel.OpenApiClient.Models.FlagVariantsItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FlagVariantsItem>(global::Soenneker.Vercel.OpenApiClient.Models.FlagVariantsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -199,7 +199,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagTypeName>("typeName", TypeName);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedBy", UpdatedBy);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FlagVariantsItemProperty>("variants", Variants);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.FlagVariantsItem>("variants", Variants);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
