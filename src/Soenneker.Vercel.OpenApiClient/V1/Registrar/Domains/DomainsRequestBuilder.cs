@@ -5,6 +5,8 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Availability;
 using Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Buy;
 using Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Item;
+using Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Price;
+using Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Search;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -26,6 +28,16 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains
         public global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Buy.BuyRequestBuilder Buy
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Buy.BuyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The price property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Price.PriceRequestBuilder Price
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Price.PriceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The search property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Search.SearchRequestBuilder Search
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v1.registrar.domains.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

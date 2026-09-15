@@ -7,6 +7,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetDeployment200ResponseResourceConfigBuildMachineSelectionSource
     {
+        [EnumMember(Value = "deployment-override")]
+        #pragma warning disable CS1591
+        DeploymentOverride,
+        #pragma warning restore CS1591
         [EnumMember(Value = "elastic-algorithm")]
         #pragma warning disable CS1591
         ElasticAlgorithm,

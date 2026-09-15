@@ -16786,6 +16786,7 @@
                                 "selectionSource": {
                                   "type": "string",
                                   "enum": [
+                                    "deployment-override",
                                     "elastic-algorithm",
                                     "plan-default",
                                     "project-setting",
@@ -24997,6 +24998,7 @@
                                 "selectionSource": {
                                   "type": "string",
                                   "enum": [
+                                    "deployment-override",
                                     "elastic-algorithm",
                                     "plan-default",
                                     "project-setting",
@@ -32360,6 +32362,7 @@
                             "selectionSource": {
                               "type": "string",
                               "enum": [
+                                "deployment-override",
                                 "elastic-algorithm",
                                 "plan-default",
                                 "project-setting",
@@ -40389,11 +40392,7 @@
             "required": false
           }
         ],
-        "security": [
-          {
-            "bearerToken": []
-          }
-        ],
+        "security": [],
         "responses": {
           "200": {
             "description": "A list of the TLDs supported by Vercel.",
@@ -40489,11 +40488,7 @@
             "required": false
           }
         ],
-        "security": [
-          {
-            "bearerToken": []
-          }
-        ],
+        "security": [],
         "responses": {
           "200": {
             "description": "Success",
@@ -40616,11 +40611,7 @@
             "required": false
           }
         ],
-        "security": [
-          {
-            "bearerToken": []
-          }
-        ],
+        "security": [],
         "responses": {
           "200": {
             "description": "Success",
@@ -40765,11 +40756,7 @@
             "required": false
           }
         ],
-        "security": [
-          {
-            "bearerToken": []
-          }
-        ],
+        "security": [],
         "responses": {
           "200": {
             "description": "Success",
@@ -40890,11 +40877,7 @@
             "required": false
           }
         ],
-        "security": [
-          {
-            "bearerToken": []
-          }
-        ],
+        "security": [],
         "responses": {
           "200": {
             "description": "Success",
@@ -41019,6 +41002,194 @@
         "summary": "Get price data for a domain"
       }
     },
+    "/v1/registrar/domains/price": {
+      "post": {
+        "tags": [
+          "domains-registrar"
+        ],
+        "operationId": "getBulkPrice",
+        "parameters": [
+          {
+            "name": "teamId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            },
+            "required": false
+          }
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "results"
+                  ],
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "domain",
+                          "years",
+                          "purchasePrice",
+                          "renewalPrice",
+                          "transferPrice"
+                        ],
+                        "properties": {
+                          "domain": {
+                            "$ref": "#/components/schemas/DomainName"
+                          },
+                          "years": {
+                            "type": "number"
+                          },
+                          "purchasePrice": {
+                            "anyOf": [
+                              {
+                                "type": "number",
+                                "minimum": 0.01
+                              },
+                              {
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          "renewalPrice": {
+                            "anyOf": [
+                              {
+                                "type": "number",
+                                "minimum": 0.01
+                              },
+                              {
+                                "type": "string"
+                              }
+                            ]
+                          },
+                          "transferPrice": {
+                            "anyOf": [
+                              {
+                                "type": "number",
+                                "minimum": 0.01
+                              },
+                              {
+                                "type": "string"
+                              }
+                            ]
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was something wrong with the request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/BadRequest"
+                    },
+                    {
+                      "$ref": "#/components/schemas/DomainTooShort"
+                    },
+                    {
+                      "$ref": "#/components/schemas/TldNotSupported"
+                    },
+                    {
+                      "$ref": "#/components/schemas/HttpApiDecodeError"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unauthorized"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "NotAuthorizedForScope",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotAuthorizedForScope"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "TooManyRequests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequests"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "InternalServerError",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerError"
+                }
+              }
+            }
+          }
+        },
+        "description": "Get price data for multiple domains in a single request.",
+        "summary": "Get price data for multiple domains",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "domains"
+                ],
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/components/schemas/DomainName"
+                    },
+                    "description": "an array of at most 50 item(s)",
+                    "title": "maxItems(50)",
+                    "maxItems": 50
+                  },
+                  "years": {
+                    "type": "number",
+                    "description": "The number of years to get the price for. If not provided, the minimum number of years for the TLD will be used."
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
     "/v1/registrar/domains/availability": {
       "post": {
         "tags": [
@@ -41036,11 +41207,7 @@
             "required": false
           }
         ],
-        "security": [
-          {
-            "bearerToken": []
-          }
-        ],
+        "security": [],
         "responses": {
           "200": {
             "description": "Success",
@@ -41158,6 +41325,284 @@
         }
       }
     },
+    "/v1/registrar/domains/search": {
+      "post": {
+        "tags": [
+          "domains-registrar"
+        ],
+        "operationId": "searchDomains",
+        "parameters": [
+          {
+            "name": "teamId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            },
+            "required": false
+          }
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "results"
+                  ],
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "required": [
+                              "domain",
+                              "available"
+                            ],
+                            "properties": {
+                              "domain": {
+                                "$ref": "#/components/schemas/DomainName"
+                              },
+                              "available": {
+                                "type": "boolean",
+                                "enum": [
+                                  false
+                                ],
+                                "description": "`false` means the domain is unavailable or its availability could not be confirmed."
+                              }
+                            },
+                            "additionalProperties": false
+                          },
+                          {
+                            "type": "object",
+                            "required": [
+                              "domain",
+                              "available",
+                              "years",
+                              "price",
+                              "renewalPrice",
+                              "premium"
+                            ],
+                            "properties": {
+                              "domain": {
+                                "$ref": "#/components/schemas/DomainName"
+                              },
+                              "available": {
+                                "type": "boolean",
+                                "enum": [
+                                  true
+                                ]
+                              },
+                              "years": {
+                                "type": "number"
+                              },
+                              "price": {
+                                "type": "number"
+                              },
+                              "renewalPrice": {
+                                "type": "number"
+                              },
+                              "premium": {
+                                "type": "boolean"
+                              }
+                            },
+                            "additionalProperties": false
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was something wrong with the request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpApiDecodeError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unauthorized"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "NotAuthorizedForScope",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotAuthorizedForScope"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "TooManyRequests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequests"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "InternalServerError",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerError"
+                }
+              }
+            }
+          }
+        },
+        "description": "Check registration availability for 1–200 exact domain names, such as `example.com`. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.",
+        "summary": "Check domain availability and pricing",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "domains"
+                ],
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/components/schemas/DomainName"
+                    },
+                    "description": "an array of at most 200 item(s)",
+                    "title": "maxItems(200)",
+                    "maxItems": 200
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/v1/registrar/domains/{domain}/contact-info/schema": {
+      "get": {
+        "tags": [
+          "domains-registrar"
+        ],
+        "operationId": "getContactInfoSchema",
+        "parameters": [
+          {
+            "name": "domain",
+            "in": "path",
+            "schema": {
+              "$ref": "#/components/schemas/DomainName"
+            },
+            "required": true
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            },
+            "required": false
+          }
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was something wrong with the request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/BadRequest"
+                    },
+                    {
+                      "$ref": "#/components/schemas/HttpApiDecodeError"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unauthorized"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "NotAuthorizedForScope",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotAuthorizedForScope"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "TooManyRequests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequests"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "InternalServerError",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerError"
+                }
+              }
+            }
+          }
+        },
+        "description": "Some TLDs require additional contact information. Use this endpoint to get the schema for the tld-specific contact information for a domain.",
+        "summary": "Get contact info schema"
+      }
+    },
     "/v1/registrar/domains/{domain}/auth-code": {
       "get": {
         "tags": [
@@ -41236,16 +41681,16 @@
             }
           },
           "403": {
-            "description": "NotAuthorizedForScope",
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/NotAuthorizedForScope"
+                      "$ref": "#/components/schemas/Forbidden"
                     },
                     {
-                      "$ref": "#/components/schemas/Forbidden"
+                      "$ref": "#/components/schemas/NotAuthorizedForScope"
                     }
                   ]
                 }
@@ -41399,6 +41844,9 @@
                       "$ref": "#/components/schemas/DomainNotAvailable"
                     },
                     {
+                      "$ref": "#/components/schemas/EmojiTldNotSupported"
+                    },
+                    {
                       "$ref": "#/components/schemas/LanguageCodeRequired"
                     },
                     {
@@ -41423,16 +41871,16 @@
             }
           },
           "403": {
-            "description": "NotAuthorizedForScope",
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/NotAuthorizedForScope"
+                      "$ref": "#/components/schemas/Forbidden"
                     },
                     {
-                      "$ref": "#/components/schemas/Forbidden"
+                      "$ref": "#/components/schemas/NotAuthorizedForScope"
                     }
                   ]
                 }
@@ -41657,6 +42105,9 @@
                       "$ref": "#/components/schemas/DomainNotAvailable"
                     },
                     {
+                      "$ref": "#/components/schemas/EmojiTldNotSupported"
+                    },
+                    {
                       "$ref": "#/components/schemas/LanguageCodeRequired"
                     },
                     {
@@ -41681,16 +42132,16 @@
             }
           },
           "403": {
-            "description": "NotAuthorizedForScope",
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/NotAuthorizedForScope"
+                      "$ref": "#/components/schemas/Forbidden"
                     },
                     {
-                      "$ref": "#/components/schemas/Forbidden"
+                      "$ref": "#/components/schemas/NotAuthorizedForScope"
                     }
                   ]
                 }
@@ -41955,16 +42406,16 @@
             }
           },
           "403": {
-            "description": "NotAuthorizedForScope",
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/NotAuthorizedForScope"
+                      "$ref": "#/components/schemas/Forbidden"
                     },
                     {
-                      "$ref": "#/components/schemas/Forbidden"
+                      "$ref": "#/components/schemas/NotAuthorizedForScope"
                     }
                   ]
                 }
@@ -42169,16 +42620,16 @@
             }
           },
           "403": {
-            "description": "NotAuthorizedForScope",
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/NotAuthorizedForScope"
+                      "$ref": "#/components/schemas/Forbidden"
                     },
                     {
-                      "$ref": "#/components/schemas/Forbidden"
+                      "$ref": "#/components/schemas/NotAuthorizedForScope"
                     }
                   ]
                 }
@@ -42340,16 +42791,16 @@
             }
           },
           "403": {
-            "description": "NotAuthorizedForScope",
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/NotAuthorizedForScope"
+                      "$ref": "#/components/schemas/Forbidden"
                     },
                     {
-                      "$ref": "#/components/schemas/Forbidden"
+                      "$ref": "#/components/schemas/NotAuthorizedForScope"
                     }
                   ]
                 }
@@ -42537,16 +42988,16 @@
             }
           },
           "403": {
-            "description": "NotAuthorizedForScope",
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/NotAuthorizedForScope"
+                      "$ref": "#/components/schemas/Forbidden"
                     },
                     {
-                      "$ref": "#/components/schemas/Forbidden"
+                      "$ref": "#/components/schemas/NotAuthorizedForScope"
                     }
                   ]
                 }
@@ -42669,16 +43120,16 @@
             }
           },
           "403": {
-            "description": "NotAuthorizedForScope",
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/NotAuthorizedForScope"
+                      "$ref": "#/components/schemas/Forbidden"
                     },
                     {
-                      "$ref": "#/components/schemas/Forbidden"
+                      "$ref": "#/components/schemas/NotAuthorizedForScope"
                     }
                   ]
                 }
@@ -42821,16 +43272,16 @@
             }
           },
           "403": {
-            "description": "NotAuthorizedForScope",
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/NotAuthorizedForScope"
+                      "$ref": "#/components/schemas/Forbidden"
                     },
                     {
-                      "$ref": "#/components/schemas/Forbidden"
+                      "$ref": "#/components/schemas/NotAuthorizedForScope"
                     }
                   ]
                 }
@@ -42870,110 +43321,6 @@
         },
         "description": "Get the registrant contact verification status for a domain. Use this after purchasing a domain to determine whether the contact has been verified. Note that a bought_too_recently error will be returned if the domain was bought less than 30 minutes before the request.",
         "summary": "Get contact verification status for a domain"
-      }
-    },
-    "/v1/registrar/domains/{domain}/contact-info/schema": {
-      "get": {
-        "tags": [
-          "domains-registrar"
-        ],
-        "operationId": "getContactInfoSchema",
-        "parameters": [
-          {
-            "name": "domain",
-            "in": "path",
-            "schema": {
-              "$ref": "#/components/schemas/DomainName"
-            },
-            "required": true
-          },
-          {
-            "name": "teamId",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
-            },
-            "required": false
-          }
-        ],
-        "security": [
-          {
-            "bearerToken": []
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "There was something wrong with the request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "anyOf": [
-                    {
-                      "$ref": "#/components/schemas/BadRequest"
-                    },
-                    {
-                      "$ref": "#/components/schemas/HttpApiDecodeError"
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Unauthorized"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "NotAuthorizedForScope",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotAuthorizedForScope"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "TooManyRequests",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TooManyRequests"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "InternalServerError",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InternalServerError"
-                }
-              }
-            }
-          }
-        },
-        "description": "Some TLDs require additional contact information. Use this endpoint to get the schema for the tld-specific contact information for a domain.",
-        "summary": "Get contact info schema"
       }
     },
     "/v1/registrar/orders/{orderId}": {
@@ -76561,7 +76908,7 @@
     },
     "/v1/kms/issuers/{issuerId}/sign/message": {
       "post": {
-        "description": "Sign a raw message with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign.",
+        "description": "Sign a raw message with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. The response `signature` is standard-base64 of the raw signature over the decoded message bytes. `keyId` and `algorithm` identify the signing key in the issuer's JWKS.",
         "operationId": "signKmsMessage",
         "security": [
           {
@@ -76580,121 +76927,21 @@
                 "schema": {
                   "properties": {
                     "signature": {
-                      "properties": {
-                        "payload": {
-                          "type": "string"
-                        },
-                        "signature": {
-                          "type": "string"
-                        },
-                        "header": {
-                          "properties": {
-                            "alg": {
-                              "type": "string",
-                              "description": "JWS \"alg\" (Algorithm) Header Parameter"
-                            },
-                            "b64": {
-                              "type": "boolean",
-                              "enum": [
-                                false,
-                                true
-                              ],
-                              "description": "This JWS Extension Header Parameter modifies the JWS Payload representation and the JWS Signing Input computation as per {@link https://www.rfc-editor.org/rfc/rfc7797 RFC7797}."
-                            },
-                            "crit": {
-                              "items": {
-                                "type": "string"
-                              },
-                              "type": "array",
-                              "description": "JWS \"crit\" (Critical) Header Parameter"
-                            },
-                            "kid": {
-                              "type": "string",
-                              "description": "\"kid\" (Key ID) Header Parameter"
-                            },
-                            "x5t": {
-                              "type": "string",
-                              "description": "\"x5t\" (X.509 Certificate SHA-1 Thumbprint) Header Parameter"
-                            },
-                            "x5c": {
-                              "items": {
-                                "type": "string"
-                              },
-                              "type": "array",
-                              "description": "\"x5c\" (X.509 Certificate Chain) Header Parameter"
-                            },
-                            "x5u": {
-                              "type": "string",
-                              "description": "\"x5u\" (X.509 URL) Header Parameter"
-                            },
-                            "jku": {
-                              "type": "string",
-                              "description": "\"jku\" (JWK Set URL) Header Parameter"
-                            },
-                            "jwk": {
-                              "properties": {
-                                "n": {
-                                  "type": "string",
-                                  "description": "RSA JWK \"n\" (Modulus) Parameter"
-                                },
-                                "e": {
-                                  "type": "string",
-                                  "description": "RSA JWK \"e\" (Exponent) Parameter"
-                                },
-                                "kty": {
-                                  "type": "string",
-                                  "description": "JWK \"kty\" (Key Type) Parameter"
-                                },
-                                "crv": {
-                                  "type": "string",
-                                  "description": "- EC JWK \"crv\" (Curve) Parameter - OKP JWK \"crv\" (The Subtype of Key Pair) Parameter"
-                                },
-                                "x": {
-                                  "type": "string",
-                                  "description": "- EC JWK \"x\" (X Coordinate) Parameter - OKP JWK \"x\" (The public key) Parameter"
-                                },
-                                "y": {
-                                  "type": "string",
-                                  "description": "EC JWK \"y\" (Y Coordinate) Parameter"
-                                },
-                                "alg": {
-                                  "type": "string",
-                                  "description": "JWK \"alg\" (Algorithm) Parameter"
-                                },
-                                "pub": {
-                                  "type": "string",
-                                  "description": "AKP JWK \"pub\" (Public Key) Parameter"
-                                }
-                              },
-                              "type": "object",
-                              "description": "\"jwk\" (JSON Web Key) Header Parameter"
-                            },
-                            "typ": {
-                              "type": "string",
-                              "description": "\"typ\" (Type) Header Parameter"
-                            },
-                            "cty": {
-                              "type": "string",
-                              "description": "\"cty\" (Content Type) Header Parameter"
-                            }
-                          },
-                          "type": "object",
-                          "description": "The \"header\" member MUST be present and contain the value JWS Unprotected Header when the JWS Unprotected Header value is non- empty; otherwise, it MUST be absent. This value is represented as an unencoded JSON object, rather than as a string. These Header Parameter values are not integrity protected."
-                        },
-                        "protected": {
-                          "type": "string",
-                          "description": "The \"protected\" member MUST be present and contain the value BASE64URL(UTF8(JWS Protected Header)) when the JWS Protected Header value is non-empty; otherwise, it MUST be absent. These Header Parameter values are integrity protected."
-                        }
-                      },
-                      "required": [
-                        "payload",
-                        "signature"
-                      ],
-                      "type": "object",
-                      "description": "Flattened JWS JSON Serialization Syntax token. Payload is returned as an empty string when JWS Unencoded Payload ({@link https://www.rfc-editor.org/rfc/rfc7797 RFC7797}) is used."
+                      "type": "string",
+                      "description": "Standard-base64 encoding of the raw signature over the decoded message bytes."
+                    },
+                    "keyId": {
+                      "type": "string",
+                      "description": "Key id of the signing key. Matches the JWKS `kid` so verifiers can select the key after rotation without trial-verifying every published key."
+                    },
+                    "algorithm": {
+                      "type": "string",
+                      "description": "Algorithm of the signing key."
                     }
                   },
                   "required": [
+                    "algorithm",
+                    "keyId",
                     "signature"
                   ],
                   "type": "object"
@@ -120183,7 +120430,7 @@
             "description": ""
           },
           "428": {
-            "description": "Owner does not have protection add-on"
+            "description": ""
           },
           "429": {
             "description": ""
@@ -136573,7 +136820,7 @@
             "description": ""
           },
           "428": {
-            "description": "Owner does not have protection add-on"
+            "description": ""
           },
           "429": {
             "description": ""
@@ -195840,7 +196087,7 @@
             "description": ""
           },
           "428": {
-            "description": "Owner does not have protection add-on"
+            "description": ""
           }
         },
         "x-vercel-cli": {
@@ -212315,6 +212562,14 @@
             "type": "number",
             "description": "Time when this connector started requiring reinstallation because an installation-affecting app-token grant changed."
           },
+          "knownStale": {
+            "type": "boolean",
+            "enum": [
+              false,
+              true
+            ],
+            "description": "Whether the connector is known to have been edited since the app package it publishes to the provider was last built, so that package no longer matches it. Absent when it was not computed, or when the connector type publishes no such package. Derived on every read rather than marked at edit time, so reverting an edit clears it. Only reported by connector types that publish a package a user has to re-publish by hand — Microsoft Teams today."
+          },
           "createdBy": {
             "oneOf": [
               {
@@ -212801,6 +213056,14 @@
           "reinstallAt": {
             "type": "number",
             "description": "Time when this connector started requiring reinstallation because an installation-affecting app-token grant changed."
+          },
+          "knownStale": {
+            "type": "boolean",
+            "enum": [
+              false,
+              true
+            ],
+            "description": "Whether the connector is known to have been edited since the app package it publishes to the provider was last built, so that package no longer matches it. Absent when it was not computed, or when the connector type publishes no such package. Derived on every read rather than marked at edit time, so reverting an edit clears it. Only reported by connector types that publish a package a user has to re-publish by hand — Microsoft Teams today."
           },
           "createdBy": {
             "oneOf": [
@@ -216347,6 +216610,280 @@
         },
         "additionalProperties": false
       },
+      "RegistrantField": {
+        "anyOf": [
+          {
+            "type": "object",
+            "required": [
+              "description",
+              "required",
+              "type"
+            ],
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "required": {
+                "type": "boolean"
+              },
+              "label": {
+                "type": "string"
+              },
+              "validation": {
+                "type": "string"
+              },
+              "required_when": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "object",
+                    "required": [
+                      "value_in"
+                    ],
+                    "properties": {
+                      "value_in": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "string"
+                ]
+              },
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "value",
+                    "label"
+                  ],
+                  "properties": {
+                    "value": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "fields": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "fields": {
+                "type": "object",
+                "properties": {}
+              }
+            },
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "required": [
+              "description",
+              "required",
+              "type",
+              "options"
+            ],
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "required": {
+                "type": "boolean"
+              },
+              "label": {
+                "type": "string"
+              },
+              "validation": {
+                "type": "string"
+              },
+              "required_when": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "object",
+                    "required": [
+                      "value_in"
+                    ],
+                    "properties": {
+                      "value_in": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "enum"
+                ]
+              },
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "value",
+                    "label"
+                  ],
+                  "properties": {
+                    "value": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "fields": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "fields": {
+                "type": "object",
+                "properties": {}
+              }
+            },
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "required": [
+              "description",
+              "required",
+              "type"
+            ],
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "required": {
+                "type": "boolean"
+              },
+              "label": {
+                "type": "string"
+              },
+              "validation": {
+                "type": "string"
+              },
+              "required_when": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "object",
+                    "required": [
+                      "value_in"
+                    ],
+                    "properties": {
+                      "value_in": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "acknowledgement"
+                ]
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "required": [
+              "description",
+              "required",
+              "type"
+            ],
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "required": {
+                "type": "boolean"
+              },
+              "label": {
+                "type": "string"
+              },
+              "validation": {
+                "type": "string"
+              },
+              "required_when": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "object",
+                    "required": [
+                      "value_in"
+                    ],
+                    "properties": {
+                      "value_in": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "notice"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        ],
+        "description": "Schema definition for registrant fields."
+      },
+      "NonEmptyTrimmedString": {
+        "type": "string",
+        "description": "a non empty string",
+        "title": "nonEmptyString",
+        "pattern": "^\\S[\\s\\S]*\\S$|^\\S$|^$",
+        "minLength": 1
+      },
       "DomainNotRegistered": {
         "type": "object",
         "required": [
@@ -216373,32 +216910,6 @@
         },
         "additionalProperties": false,
         "description": "The domain is not registered with Vercel."
-      },
-      "Forbidden": {
-        "type": "object",
-        "required": [
-          "status",
-          "code",
-          "message"
-        ],
-        "properties": {
-          "status": {
-            "type": "number",
-            "enum": [
-              403
-            ]
-          },
-          "code": {
-            "type": "string",
-            "enum": [
-              "forbidden"
-            ]
-          },
-          "message": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
       },
       "DomainNotFound": {
         "type": "object",
@@ -216454,12 +216965,31 @@
         "additionalProperties": false,
         "description": "The domain cannot be transfered out until the specified date."
       },
-      "NonEmptyTrimmedString": {
-        "type": "string",
-        "description": "a non empty string",
-        "title": "nonEmptyString",
-        "pattern": "^\\S[\\s\\S]*\\S$|^\\S$|^$",
-        "minLength": 1
+      "Forbidden": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "number",
+            "enum": [
+              403
+            ]
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "forbidden"
+            ]
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
       },
       "EmailAddress": {
         "type": "string",
@@ -216508,6 +217038,33 @@
         },
         "additionalProperties": false,
         "description": "A language code is required for punycode domains."
+      },
+      "EmojiTldNotSupported": {
+        "type": "object",
+        "required": [
+          "status",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "number",
+            "enum": [
+              400
+            ]
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "emoji_tld_not_supported"
+            ]
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The TLD does not support emoji domain names."
       },
       "DomainNotAvailable": {
         "type": "object",
@@ -216882,273 +217439,6 @@
         },
         "additionalProperties": false,
         "description": "The domain was bought too recently to determine verification status."
-      },
-      "RegistrantField": {
-        "anyOf": [
-          {
-            "type": "object",
-            "required": [
-              "description",
-              "required",
-              "type"
-            ],
-            "properties": {
-              "description": {
-                "type": "string"
-              },
-              "required": {
-                "type": "boolean"
-              },
-              "label": {
-                "type": "string"
-              },
-              "validation": {
-                "type": "string"
-              },
-              "required_when": {
-                "anyOf": [
-                  {
-                    "type": "string"
-                  },
-                  {
-                    "type": "object",
-                    "required": [
-                      "value_in"
-                    ],
-                    "properties": {
-                      "value_in": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "additionalProperties": false
-                  }
-                ]
-              },
-              "type": {
-                "type": "string",
-                "enum": [
-                  "string"
-                ]
-              },
-              "options": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "required": [
-                    "value",
-                    "label"
-                  ],
-                  "properties": {
-                    "value": {
-                      "type": "string"
-                    },
-                    "label": {
-                      "type": "string"
-                    },
-                    "fields": {
-                      "type": "object",
-                      "properties": {}
-                    }
-                  },
-                  "additionalProperties": false
-                }
-              },
-              "fields": {
-                "type": "object",
-                "properties": {}
-              }
-            },
-            "additionalProperties": false
-          },
-          {
-            "type": "object",
-            "required": [
-              "description",
-              "required",
-              "type",
-              "options"
-            ],
-            "properties": {
-              "description": {
-                "type": "string"
-              },
-              "required": {
-                "type": "boolean"
-              },
-              "label": {
-                "type": "string"
-              },
-              "validation": {
-                "type": "string"
-              },
-              "required_when": {
-                "anyOf": [
-                  {
-                    "type": "string"
-                  },
-                  {
-                    "type": "object",
-                    "required": [
-                      "value_in"
-                    ],
-                    "properties": {
-                      "value_in": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "additionalProperties": false
-                  }
-                ]
-              },
-              "type": {
-                "type": "string",
-                "enum": [
-                  "enum"
-                ]
-              },
-              "options": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "required": [
-                    "value",
-                    "label"
-                  ],
-                  "properties": {
-                    "value": {
-                      "type": "string"
-                    },
-                    "label": {
-                      "type": "string"
-                    },
-                    "fields": {
-                      "type": "object",
-                      "properties": {}
-                    }
-                  },
-                  "additionalProperties": false
-                }
-              },
-              "fields": {
-                "type": "object",
-                "properties": {}
-              }
-            },
-            "additionalProperties": false
-          },
-          {
-            "type": "object",
-            "required": [
-              "description",
-              "required",
-              "type"
-            ],
-            "properties": {
-              "description": {
-                "type": "string"
-              },
-              "required": {
-                "type": "boolean"
-              },
-              "label": {
-                "type": "string"
-              },
-              "validation": {
-                "type": "string"
-              },
-              "required_when": {
-                "anyOf": [
-                  {
-                    "type": "string"
-                  },
-                  {
-                    "type": "object",
-                    "required": [
-                      "value_in"
-                    ],
-                    "properties": {
-                      "value_in": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "additionalProperties": false
-                  }
-                ]
-              },
-              "type": {
-                "type": "string",
-                "enum": [
-                  "acknowledgement"
-                ]
-              },
-              "value": {
-                "type": "string"
-              }
-            },
-            "additionalProperties": false
-          },
-          {
-            "type": "object",
-            "required": [
-              "description",
-              "required",
-              "type"
-            ],
-            "properties": {
-              "description": {
-                "type": "string"
-              },
-              "required": {
-                "type": "boolean"
-              },
-              "label": {
-                "type": "string"
-              },
-              "validation": {
-                "type": "string"
-              },
-              "required_when": {
-                "anyOf": [
-                  {
-                    "type": "string"
-                  },
-                  {
-                    "type": "object",
-                    "required": [
-                      "value_in"
-                    ],
-                    "properties": {
-                      "value_in": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "additionalProperties": false
-                  }
-                ]
-              },
-              "type": {
-                "type": "string",
-                "enum": [
-                  "notice"
-                ]
-              }
-            },
-            "additionalProperties": false
-          }
-        ],
-        "description": "Schema definition for registrant fields."
       },
       "GlobalConfigItemValue": {
         "nullable": true,
@@ -217648,6 +217938,7 @@
               "organization-delete",
               "organization-dsync-group-delete",
               "organization-dsync-group-upsert",
+              "organization-emu-updated",
               "organization-slug-update",
               "organization-team-add",
               "organization-team-create",
@@ -231755,6 +232046,61 @@
                   "organizationId": {
                     "type": "string"
                   },
+                  "previousEnabled": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
+                    ]
+                  },
+                  "enabled": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
+                    ]
+                  },
+                  "enforcedTeamIds": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "unenforcedTeamIds": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "trigger": {
+                    "type": "string",
+                    "enum": [
+                      "directory_sync_updated",
+                      "domain_deleted",
+                      "domain_verified",
+                      "saml_updated",
+                      "team_attached",
+                      "team_participation_updated",
+                      "toggle"
+                    ]
+                  }
+                },
+                "required": [
+                  "enabled",
+                  "enforcedTeamIds",
+                  "organizationId",
+                  "previousEnabled",
+                  "trigger",
+                  "unenforcedTeamIds"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "organizationId": {
+                    "type": "string"
+                  },
                   "slug": {
                     "type": "string"
                   }
@@ -235367,6 +235713,13 @@
                           "prod_deployment_urls_and_all_previews"
                         ]
                       }
+                    ]
+                  },
+                  "passwordChanged": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
                     ]
                   }
                 },
@@ -242231,6 +242584,7 @@
               "organization-delete",
               "organization-dsync-group-delete",
               "organization-dsync-group-upsert",
+              "organization-emu-updated",
               "organization-slug-update",
               "organization-team-add",
               "organization-team-create",
@@ -242968,6 +243322,7 @@
                 "organization-delete",
                 "organization-dsync-group-delete",
                 "organization-dsync-group-upsert",
+                "organization-emu-updated",
                 "organization-slug-update",
                 "organization-team-add",
                 "organization-team-create",

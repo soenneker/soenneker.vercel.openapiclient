@@ -123,6 +123,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Whether the connector is known to have been edited since the app package it publishes to the provider was last built, so that package no longer matches it. Absent when it was not computed, or when the connector type publishes no such package. Derived on every read rather than marked at edit time, so reverting an edit clears it. Only reported by connector types that publish a package a user has to re-publish by hand — Microsoft Teams today.</summary>
+        public bool? KnownStale { get; set; }
         /// <summary>Managed connector metadata exposed without leaking the manager connector or installation identifiers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -289,6 +291,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "icon", n => { Icon = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "knownStale", n => { KnownStale = n.GetBoolValue(); } },
                 { "managed", n => { Managed = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorManaged>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorManaged.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "redirectUri", n => { RedirectUri = n.GetStringValue(); } },
@@ -334,6 +337,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("events", Events);
             writer.WriteStringValue("icon", Icon);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("knownStale", KnownStale);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorManaged>("managed", Managed);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("redirectUri", RedirectUri);

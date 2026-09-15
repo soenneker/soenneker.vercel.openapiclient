@@ -14,13 +14,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Flattened JWS JSON Serialization Syntax token. Payload is returned as an empty string when JWS Unencoded Payload ({@link https://www.rfc-editor.org/rfc/rfc7797 RFC7797}) is used.</summary>
+        /// <summary>Algorithm of the signing key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.SignKmsMessage200ResponseSignature? Signature { get; set; }
+        public string? Algorithm { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.SignKmsMessage200ResponseSignature Signature { get; set; }
+        public string Algorithm { get; set; }
+#endif
+        /// <summary>Key id of the signing key. Matches the JWKS `kid` so verifiers can select the key after rotation without trial-verifying every published key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? KeyId { get; set; }
+#nullable restore
+#else
+        public string KeyId { get; set; }
+#endif
+        /// <summary>Standard-base64 encoding of the raw signature over the decoded message bytes.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Signature { get; set; }
+#nullable restore
+#else
+        public string Signature { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SignKmsMessage200Response"/> and sets the default values.
@@ -47,7 +63,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "signature", n => { Signature = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SignKmsMessage200ResponseSignature>(global::Soenneker.Vercel.OpenApiClient.Models.SignKmsMessage200ResponseSignature.CreateFromDiscriminatorValue); } },
+                { "algorithm", n => { Algorithm = n.GetStringValue(); } },
+                { "keyId", n => { KeyId = n.GetStringValue(); } },
+                { "signature", n => { Signature = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +75,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.SignKmsMessage200ResponseSignature>("signature", Signature);
+            writer.WriteStringValue("algorithm", Algorithm);
+            writer.WriteStringValue("keyId", KeyId);
+            writer.WriteStringValue("signature", Signature);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
