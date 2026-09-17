@@ -12,6 +12,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class CreateDeploymentRequest : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Selects a custom build machine for this deployment without changing project settings.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.TurboBuildMachine? BuildMachine { get; set; }
         /// <summary>The slug or ID of a custom environment to deploy to, overriding the default target environment. When omitted, the deployment targets the environment inferred from the branch (production or preview).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,6 +130,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "buildMachine", n => { BuildMachine = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TurboBuildMachine>(); } },
                 { "customEnvironmentSlugOrId", n => { CustomEnvironmentSlugOrId = n.GetStringValue(); } },
                 { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
                 { "files", n => { Files = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItem>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -150,6 +153,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TurboBuildMachine>("buildMachine", BuildMachine);
             writer.WriteStringValue("customEnvironmentSlugOrId", CustomEnvironmentSlugOrId);
             writer.WriteStringValue("deploymentId", DeploymentId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentRequestFilesItem>("files", Files);

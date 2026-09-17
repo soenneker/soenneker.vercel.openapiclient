@@ -13,85 +13,39 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf229 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Okta user id.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ActorId { get; set; }
-#nullable restore
-#else
-        public string ActorId { get; set; }
-#endif
-        /// <summary>The actorName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ActorName { get; set; }
-#nullable restore
-#else
-        public string ActorName { get; set; }
-#endif
-        /// <summary>The actorType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType? ActorType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether the plan change was system-initiated rather than human-initiated.</summary>
-        public bool? Automated { get; set; }
-        /// <summary>The isDowngrade property</summary>
-        public bool? IsDowngrade { get; set; }
-        /// <summary>The isReactivate property</summary>
-        public bool? IsReactivate { get; set; }
-        /// <summary>The isTrialUpgrade property</summary>
-        public bool? IsTrialUpgrade { get; set; }
-        /// <summary>The plan property</summary>
+        /// <summary>The next property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Plan { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229Next? Next { get; set; }
 #nullable restore
 #else
-        public string Plan { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229Next Next { get; set; }
 #endif
-        /// <summary>The prevPlan property</summary>
+        /// <summary>The previous property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrevPlan { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229Previous? Previous { get; set; }
 #nullable restore
 #else
-        public string PrevPlan { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229Previous Previous { get; set; }
 #endif
-        /// <summary>The priorPlan property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PriorPlan { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string PriorPlan { get; set; }
+        public string ProjectId { get; set; }
 #endif
-        /// <summary>Why the plan changed. For downgrades, this is a {@link DowngradeReason} from `@api/pubsub-types` (e.g. `user_downgrade`, `trial_expired`).</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public string Reason { get; set; }
-#endif
-        /// <summary>The removedMemberCount property</summary>
-        public double? RemovedMemberCount { get; set; }
-        /// <summary>The removedUsers property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229RemovedUsersProperty? RemovedUsers { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229RemovedUsersProperty RemovedUsers { get; set; }
-#endif
-        /// <summary>The timestamp property</summary>
-        public double? Timestamp { get; set; }
-        /// <summary>The userAgent property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserAgent { get; set; }
-#nullable restore
-#else
-        public string UserAgent { get; set; }
+        public string ProjectName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229"/> and sets the default values.
@@ -118,21 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actorId", n => { ActorId = n.GetStringValue(); } },
-                { "actorName", n => { ActorName = n.GetStringValue(); } },
-                { "actorType", n => { ActorType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>(); } },
-                { "automated", n => { Automated = n.GetBoolValue(); } },
-                { "isDowngrade", n => { IsDowngrade = n.GetBoolValue(); } },
-                { "isReactivate", n => { IsReactivate = n.GetBoolValue(); } },
-                { "isTrialUpgrade", n => { IsTrialUpgrade = n.GetBoolValue(); } },
-                { "plan", n => { Plan = n.GetStringValue(); } },
-                { "prevPlan", n => { PrevPlan = n.GetStringValue(); } },
-                { "priorPlan", n => { PriorPlan = n.GetStringValue(); } },
-                { "reason", n => { Reason = n.GetStringValue(); } },
-                { "removedMemberCount", n => { RemovedMemberCount = n.GetDoubleValue(); } },
-                { "removedUsers", n => { RemovedUsers = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229RemovedUsersProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229RemovedUsersProperty.CreateFromDiscriminatorValue); } },
-                { "timestamp", n => { Timestamp = n.GetDoubleValue(); } },
-                { "userAgent", n => { UserAgent = n.GetStringValue(); } },
+                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229Next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229Next.CreateFromDiscriminatorValue); } },
+                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229Previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229Previous.CreateFromDiscriminatorValue); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -142,21 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("actorId", ActorId);
-            writer.WriteStringValue("actorName", ActorName);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AdminActorType>("actorType", ActorType);
-            writer.WriteBoolValue("automated", Automated);
-            writer.WriteBoolValue("isDowngrade", IsDowngrade);
-            writer.WriteBoolValue("isReactivate", IsReactivate);
-            writer.WriteBoolValue("isTrialUpgrade", IsTrialUpgrade);
-            writer.WriteStringValue("plan", Plan);
-            writer.WriteStringValue("prevPlan", PrevPlan);
-            writer.WriteStringValue("priorPlan", PriorPlan);
-            writer.WriteStringValue("reason", Reason);
-            writer.WriteDoubleValue("removedMemberCount", RemovedMemberCount);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229RemovedUsersProperty>("removedUsers", RemovedUsers);
-            writer.WriteDoubleValue("timestamp", Timestamp);
-            writer.WriteStringValue("userAgent", UserAgent);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229Next>("next", Next);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf229Previous>("previous", Previous);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

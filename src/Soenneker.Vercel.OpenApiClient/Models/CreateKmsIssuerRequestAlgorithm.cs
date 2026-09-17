@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>The signing algorithm to use for the issuer. EdDSA is not accepted for new issuers.</summary>
+    /// <summary>The signing algorithm to use for the issuer.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreateKmsIssuerRequestAlgorithm
     {

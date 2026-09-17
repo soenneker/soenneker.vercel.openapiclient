@@ -15,29 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The current property</summary>
+        /// <summary>The previewDeploymentSuffix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf234Current? Current { get; set; }
+        public string? PreviewDeploymentSuffix { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf234Current Current { get; set; }
+        public string PreviewDeploymentSuffix { get; set; }
 #endif
-        /// <summary>The prev property</summary>
+        /// <summary>The previousPreviewDeploymentSuffix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf234Prev? Prev { get; set; }
+        public string? PreviousPreviewDeploymentSuffix { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf234Prev Prev { get; set; }
-#endif
-        /// <summary>The projectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectName { get; set; }
-#nullable restore
-#else
-        public string ProjectName { get; set; }
+        public string PreviousPreviewDeploymentSuffix { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf234"/> and sets the default values.
@@ -64,9 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "current", n => { Current = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf234Current>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf234Current.CreateFromDiscriminatorValue); } },
-                { "prev", n => { Prev = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf234Prev>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf234Prev.CreateFromDiscriminatorValue); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "previewDeploymentSuffix", n => { PreviewDeploymentSuffix = n.GetStringValue(); } },
+                { "previousPreviewDeploymentSuffix", n => { PreviousPreviewDeploymentSuffix = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf234Current>("current", Current);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf234Prev>("prev", Prev);
-            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("previewDeploymentSuffix", PreviewDeploymentSuffix);
+            writer.WriteStringValue("previousPreviewDeploymentSuffix", PreviousPreviewDeploymentSuffix);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

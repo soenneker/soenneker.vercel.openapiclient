@@ -68,16 +68,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityRulesets Rulesets { get; set; }
 #endif
-        /// <summary>The securityPlus property</summary>
-        public bool? SecurityPlus { get; set; }
-        /// <summary>The securityPlusMetadata property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecuritySecurityPlusMetadata? SecurityPlusMetadata { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecuritySecurityPlusMetadata SecurityPlusMetadata { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurity"/> and sets the default values.
         /// </summary>
@@ -118,8 +108,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "managedRules", n => { ManagedRules = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityManagedRules>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityManagedRules.CreateFromDiscriminatorValue); } },
                 { "pageIntegrityEnabled", n => { PageIntegrityEnabled = n.GetBoolValue(); } },
                 { "rulesets", n => { Rulesets = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityRulesets>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityRulesets.CreateFromDiscriminatorValue); } },
-                { "securityPlus", n => { SecurityPlus = n.GetBoolValue(); } },
-                { "securityPlusMetadata", n => { SecurityPlusMetadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecuritySecurityPlusMetadata>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecuritySecurityPlusMetadata.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -144,8 +132,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityManagedRules>("managedRules", ManagedRules);
             writer.WriteBoolValue("pageIntegrityEnabled", PageIntegrityEnabled);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecurityRulesets>("rulesets", Rulesets);
-            writer.WriteBoolValue("securityPlus", SecurityPlus);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemSecuritySecurityPlusMetadata>("securityPlusMetadata", SecurityPlusMetadata);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

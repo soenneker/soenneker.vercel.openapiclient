@@ -712,6 +712,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string InferenceScope { get; set; }
 #endif
+        /// <summary>The invokeSource property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InvokeSource { get; set; }
+#nullable restore
+#else
+        public string InvokeSource { get; set; }
+#endif
         /// <summary>The isAdditionalRequest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1392,6 +1400,94 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string SandboxSessionId { get; set; }
 #endif
+        /// <summary>The scheduleEventType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScheduleEventType { get; set; }
+#nullable restore
+#else
+        public string ScheduleEventType { get; set; }
+#endif
+        /// <summary>The scheduleExecutionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScheduleExecutionId { get; set; }
+#nullable restore
+#else
+        public string ScheduleExecutionId { get; set; }
+#endif
+        /// <summary>The scheduleExpressionType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScheduleExpressionType { get; set; }
+#nullable restore
+#else
+        public string ScheduleExpressionType { get; set; }
+#endif
+        /// <summary>The scheduleId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScheduleId { get; set; }
+#nullable restore
+#else
+        public string ScheduleId { get; set; }
+#endif
+        /// <summary>The scheduleName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScheduleName { get; set; }
+#nullable restore
+#else
+        public string ScheduleName { get; set; }
+#endif
+        /// <summary>The scheduleNamespace property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScheduleNamespace { get; set; }
+#nullable restore
+#else
+        public string ScheduleNamespace { get; set; }
+#endif
+        /// <summary>The scheduleSource property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScheduleSource { get; set; }
+#nullable restore
+#else
+        public string ScheduleSource { get; set; }
+#endif
+        /// <summary>The scheduleTarget property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScheduleTarget { get; set; }
+#nullable restore
+#else
+        public string ScheduleTarget { get; set; }
+#endif
+        /// <summary>The scheduleTargetType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScheduleTargetType { get; set; }
+#nullable restore
+#else
+        public string ScheduleTargetType { get; set; }
+#endif
+        /// <summary>The scheduleTimezone property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScheduleTimezone { get; set; }
+#nullable restore
+#else
+        public string ScheduleTimezone { get; set; }
+#endif
+        /// <summary>The scheduleTrack property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScheduleTrack { get; set; }
+#nullable restore
+#else
+        public string ScheduleTrack { get; set; }
+#endif
         /// <summary>The sdkKeyEnvironment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1439,6 +1535,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string SessionId { get; set; }
+#endif
+        /// <summary>The singleAtInput property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SingleAtInput { get; set; }
+#nullable restore
+#else
+        public string SingleAtInput { get; set; }
+#endif
+        /// <summary>The singleAtResolution property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SingleAtResolution { get; set; }
+#nullable restore
+#else
+        public string SingleAtResolution { get; set; }
 #endif
         /// <summary>The skewProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1899,6 +2011,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "inferenceGeoRegion", n => { InferenceGeoRegion = n.GetStringValue(); } },
                 { "inferenceProviderRegion", n => { InferenceProviderRegion = n.GetStringValue(); } },
                 { "inferenceScope", n => { InferenceScope = n.GetStringValue(); } },
+                { "invokeSource", n => { InvokeSource = n.GetStringValue(); } },
                 { "isAdditionalRequest", n => { IsAdditionalRequest = n.GetStringValue(); } },
                 { "isByok", n => { IsByok = n.GetStringValue(); } },
                 { "isPrefetchRequest", n => { IsPrefetchRequest = n.GetStringValue(); } },
@@ -1984,12 +2097,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "runtime", n => { Runtime = n.GetStringValue(); } },
                 { "sandboxName", n => { SandboxName = n.GetStringValue(); } },
                 { "sandboxSessionId", n => { SandboxSessionId = n.GetStringValue(); } },
+                { "scheduleEventType", n => { ScheduleEventType = n.GetStringValue(); } },
+                { "scheduleExecutionId", n => { ScheduleExecutionId = n.GetStringValue(); } },
+                { "scheduleExpressionType", n => { ScheduleExpressionType = n.GetStringValue(); } },
+                { "scheduleId", n => { ScheduleId = n.GetStringValue(); } },
+                { "scheduleName", n => { ScheduleName = n.GetStringValue(); } },
+                { "scheduleNamespace", n => { ScheduleNamespace = n.GetStringValue(); } },
+                { "scheduleSource", n => { ScheduleSource = n.GetStringValue(); } },
+                { "scheduleTarget", n => { ScheduleTarget = n.GetStringValue(); } },
+                { "scheduleTargetType", n => { ScheduleTargetType = n.GetStringValue(); } },
+                { "scheduleTimezone", n => { ScheduleTimezone = n.GetStringValue(); } },
+                { "scheduleTrack", n => { ScheduleTrack = n.GetStringValue(); } },
                 { "sdkKeyEnvironment", n => { SdkKeyEnvironment = n.GetStringValue(); } },
                 { "sdkKeyId", n => { SdkKeyId = n.GetStringValue(); } },
                 { "servedSpeed", n => { ServedSpeed = n.GetStringValue(); } },
                 { "serverActionName", n => { ServerActionName = n.GetStringValue(); } },
                 { "service", n => { Service = n.GetStringValue(); } },
                 { "sessionId", n => { SessionId = n.GetStringValue(); } },
+                { "singleAtInput", n => { SingleAtInput = n.GetStringValue(); } },
+                { "singleAtResolution", n => { SingleAtResolution = n.GetStringValue(); } },
                 { "skewProtection", n => { SkewProtection = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "sourceImage", n => { SourceImage = n.GetStringValue(); } },
@@ -2131,6 +2257,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("inferenceGeoRegion", InferenceGeoRegion);
             writer.WriteStringValue("inferenceProviderRegion", InferenceProviderRegion);
             writer.WriteStringValue("inferenceScope", InferenceScope);
+            writer.WriteStringValue("invokeSource", InvokeSource);
             writer.WriteStringValue("isAdditionalRequest", IsAdditionalRequest);
             writer.WriteStringValue("isByok", IsByok);
             writer.WriteStringValue("isPrefetchRequest", IsPrefetchRequest);
@@ -2216,12 +2343,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("runtime", Runtime);
             writer.WriteStringValue("sandboxName", SandboxName);
             writer.WriteStringValue("sandboxSessionId", SandboxSessionId);
+            writer.WriteStringValue("scheduleEventType", ScheduleEventType);
+            writer.WriteStringValue("scheduleExecutionId", ScheduleExecutionId);
+            writer.WriteStringValue("scheduleExpressionType", ScheduleExpressionType);
+            writer.WriteStringValue("scheduleId", ScheduleId);
+            writer.WriteStringValue("scheduleName", ScheduleName);
+            writer.WriteStringValue("scheduleNamespace", ScheduleNamespace);
+            writer.WriteStringValue("scheduleSource", ScheduleSource);
+            writer.WriteStringValue("scheduleTarget", ScheduleTarget);
+            writer.WriteStringValue("scheduleTargetType", ScheduleTargetType);
+            writer.WriteStringValue("scheduleTimezone", ScheduleTimezone);
+            writer.WriteStringValue("scheduleTrack", ScheduleTrack);
             writer.WriteStringValue("sdkKeyEnvironment", SdkKeyEnvironment);
             writer.WriteStringValue("sdkKeyId", SdkKeyId);
             writer.WriteStringValue("servedSpeed", ServedSpeed);
             writer.WriteStringValue("serverActionName", ServerActionName);
             writer.WriteStringValue("service", Service);
             writer.WriteStringValue("sessionId", SessionId);
+            writer.WriteStringValue("singleAtInput", SingleAtInput);
+            writer.WriteStringValue("singleAtResolution", SingleAtResolution);
             writer.WriteStringValue("skewProtection", SkewProtection);
             writer.WriteStringValue("source", Source);
             writer.WriteStringValue("sourceImage", SourceImage);

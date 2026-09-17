@@ -15,13 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The failoverRegions property</summary>
+        /// <summary>The deploymentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FailoverRegions { get; set; }
+        public string? DeploymentId { get; set; }
 #nullable restore
 #else
-        public List<string> FailoverRegions { get; set; }
+        public string DeploymentId { get; set; }
+#endif
+        /// <summary>The projectAccountId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectAccountId { get; set; }
+#nullable restore
+#else
+        public string ProjectAccountId { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,13 +47,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get; set; }
 #endif
-        /// <summary>The region property</summary>
+        /// <summary>Description of why a project was rolled back, and by whom. Note that lastAliasRequest contains the from/to details of the rollback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf306RollbackDescription? RollbackDescription { get; set; }
 #nullable restore
 #else
-        public string Region { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf306RollbackDescription RollbackDescription { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf306"/> and sets the default values.
@@ -72,10 +80,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "failoverRegions", n => { FailoverRegions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
+                { "projectAccountId", n => { ProjectAccountId = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetStringValue(); } },
+                { "rollbackDescription", n => { RollbackDescription = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf306RollbackDescription>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf306RollbackDescription.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -85,10 +94,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("failoverRegions", FailoverRegions);
+            writer.WriteStringValue("deploymentId", DeploymentId);
+            writer.WriteStringValue("projectAccountId", ProjectAccountId);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("region", Region);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf306RollbackDescription>("rollbackDescription", RollbackDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,16 +13,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf325 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The alias property</summary>
+        /// <summary>The addedProjects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Alias { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf325AddedProjectsItem>? AddedProjects { get; set; }
 #nullable restore
 #else
-        public string Alias { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf325AddedProjectsItem> AddedProjects { get; set; }
 #endif
+        /// <summary>The addedProviders property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AddedProviders { get; set; }
+#nullable restore
+#else
+        public List<string> AddedProviders { get; set; }
+#endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The enableVercelCiSameRepository property</summary>
+        public bool? EnableVercelCiSameRepository { get; set; }
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,21 +41,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>The sandboxId property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SandboxId { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public string SandboxId { get; set; }
+        public string ProjectName { get; set; }
 #endif
-        /// <summary>The sandboxName property</summary>
+        /// <summary>The removedProjects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SandboxName { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf325RemovedProjectsItem>? RemovedProjects { get; set; }
 #nullable restore
 #else
-        public string SandboxName { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf325RemovedProjectsItem> RemovedProjects { get; set; }
+#endif
+        /// <summary>The removedProviders property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? RemovedProviders { get; set; }
+#nullable restore
+#else
+        public List<string> RemovedProviders { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf325"/> and sets the default values.
@@ -72,10 +90,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alias", n => { Alias = n.GetStringValue(); } },
+                { "addedProjects", n => { AddedProjects = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf325AddedProjectsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf325AddedProjectsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "addedProviders", n => { AddedProviders = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "enableVercelCiSameRepository", n => { EnableVercelCiSameRepository = n.GetBoolValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "sandboxId", n => { SandboxId = n.GetStringValue(); } },
-                { "sandboxName", n => { SandboxName = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "removedProjects", n => { RemovedProjects = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf325RemovedProjectsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf325RemovedProjectsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "removedProviders", n => { RemovedProviders = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -85,10 +106,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("alias", Alias);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf325AddedProjectsItem>("addedProjects", AddedProjects);
+            writer.WriteCollectionOfPrimitiveValues<string>("addedProviders", AddedProviders);
+            writer.WriteBoolValue("enableVercelCiSameRepository", EnableVercelCiSameRepository);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("sandboxId", SandboxId);
-            writer.WriteStringValue("sandboxName", SandboxName);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf325RemovedProjectsItem>("removedProjects", RemovedProjects);
+            writer.WriteCollectionOfPrimitiveValues<string>("removedProviders", RemovedProviders);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

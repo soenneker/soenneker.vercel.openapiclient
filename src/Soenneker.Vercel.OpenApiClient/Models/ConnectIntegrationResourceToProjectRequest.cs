@@ -17,10 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The envVarEnvironments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectIntegrationResourceToProjectRequestEnvVarEnvironmentsItem?>? EnvVarEnvironments { get; set; }
+        public List<string>? EnvVarEnvironments { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectIntegrationResourceToProjectRequestEnvVarEnvironmentsItem?> EnvVarEnvironments { get; set; }
+        public List<string> EnvVarEnvironments { get; set; }
 #endif
         /// <summary>The makeEnvVarsSensitive property</summary>
         public bool? MakeEnvVarsSensitive { get; set; }
@@ -57,7 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "envVarEnvironments", n => { EnvVarEnvironments = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectIntegrationResourceToProjectRequestEnvVarEnvironmentsItem>()?.AsList(); } },
+                { "envVarEnvironments", n => { EnvVarEnvironments = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "makeEnvVarsSensitive", n => { MakeEnvVarsSensitive = n.GetBoolValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
             };
@@ -69,7 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectIntegrationResourceToProjectRequestEnvVarEnvironmentsItem>("envVarEnvironments", EnvVarEnvironments);
+            writer.WriteCollectionOfPrimitiveValues<string>("envVarEnvironments", EnvVarEnvironments);
             writer.WriteBoolValue("makeEnvVarsSensitive", MakeEnvVarsSensitive);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteAdditionalData(AdditionalData);

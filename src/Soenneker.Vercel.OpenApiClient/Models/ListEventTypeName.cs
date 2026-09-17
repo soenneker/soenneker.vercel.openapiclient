@@ -1339,6 +1339,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         OrganizationDsyncGroupUpsert,
         #pragma warning restore CS1591
+        [EnumMember(Value = "organization-emu-team-updated")]
+        #pragma warning disable CS1591
+        OrganizationEmuTeamUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "organization-emu-updated")]
         #pragma warning disable CS1591
         OrganizationEmuUpdated,
@@ -1346,6 +1350,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "organization-slug-update")]
         #pragma warning disable CS1591
         OrganizationSlugUpdate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "organization-sso-enforced")]
+        #pragma warning disable CS1591
+        OrganizationSsoEnforced,
         #pragma warning restore CS1591
         [EnumMember(Value = "organization-team-add")]
         #pragma warning disable CS1591
@@ -1362,6 +1370,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "organization-team-sso-update")]
         #pragma warning disable CS1591
         OrganizationTeamSsoUpdate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "organization-update-account-flow-dismissed")]
+        #pragma warning disable CS1591
+        OrganizationUpdateAccountFlowDismissed,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "organization-update-account-flow-triggered")]
+        #pragma warning disable CS1591
+        OrganizationUpdateAccountFlowTriggered,
         #pragma warning restore CS1591
         [EnumMember(Value = "owner-blocked")]
         #pragma warning disable CS1591
@@ -1566,6 +1582,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "project-custom-environment-deleted")]
         #pragma warning disable CS1591
         ProjectCustomEnvironmentDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "project-custom-environment-schedules-default-updated")]
+        #pragma warning disable CS1591
+        ProjectCustomEnvironmentSchedulesDefaultUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "project-custom-environment-updated")]
         #pragma warning disable CS1591
@@ -2002,6 +2022,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "sandbox-drive-deleted")]
         #pragma warning disable CS1591
         SandboxDriveDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sandbox-signed-commit-identity-configured")]
+        #pragma warning disable CS1591
+        SandboxSignedCommitIdentityConfigured,
         #pragma warning restore CS1591
         [EnumMember(Value = "sandbox-snapshot-regions-updated")]
         #pragma warning disable CS1591

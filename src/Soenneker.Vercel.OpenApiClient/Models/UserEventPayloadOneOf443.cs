@@ -15,22 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The chatId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ChatId { get; set; }
-#nullable restore
-#else
-        public string ChatId { get; set; }
-#endif
-        /// <summary>The chatTitle property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ChatTitle { get; set; }
-#nullable restore
-#else
-        public string ChatTitle { get; set; }
-#endif
+        /// <summary>The nextProjectCount property</summary>
+        public double? NextProjectCount { get; set; }
+        /// <summary>The previousProjectCount property</summary>
+        public double? PreviousProjectCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf443"/> and sets the default values.
         /// </summary>
@@ -56,8 +44,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "chatId", n => { ChatId = n.GetStringValue(); } },
-                { "chatTitle", n => { ChatTitle = n.GetStringValue(); } },
+                { "nextProjectCount", n => { NextProjectCount = n.GetDoubleValue(); } },
+                { "previousProjectCount", n => { PreviousProjectCount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +55,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("chatId", ChatId);
-            writer.WriteStringValue("chatTitle", ChatTitle);
+            writer.WriteDoubleValue("nextProjectCount", NextProjectCount);
+            writer.WriteDoubleValue("previousProjectCount", PreviousProjectCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

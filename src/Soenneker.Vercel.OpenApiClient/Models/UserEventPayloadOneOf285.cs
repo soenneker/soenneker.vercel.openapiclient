@@ -31,13 +31,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Domain { get; set; }
 #endif
-        /// <summary>The prevConfiguredBy property</summary>
+        /// <summary>The gitBranch property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrevConfiguredBy { get; set; }
+        public string? GitBranch { get; set; }
 #nullable restore
 #else
-        public string PrevConfiguredBy { get; set; }
+        public string GitBranch { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,6 +55,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get; set; }
 #endif
+        /// <summary>The redirect property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Redirect { get; set; }
+#nullable restore
+#else
+        public string Redirect { get; set; }
+#endif
+        /// <summary>The redirectStatusCode property</summary>
+        public double? RedirectStatusCode { get; set; }
         /// <summary>The target property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,9 +100,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "configuredBy", n => { ConfiguredBy = n.GetStringValue(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
-                { "prevConfiguredBy", n => { PrevConfiguredBy = n.GetStringValue(); } },
+                { "gitBranch", n => { GitBranch = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "redirect", n => { Redirect = n.GetStringValue(); } },
+                { "redirectStatusCode", n => { RedirectStatusCode = n.GetDoubleValue(); } },
                 { "target", n => { Target = n.GetStringValue(); } },
             };
         }
@@ -105,9 +117,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("configuredBy", ConfiguredBy);
             writer.WriteStringValue("domain", Domain);
-            writer.WriteStringValue("prevConfiguredBy", PrevConfiguredBy);
+            writer.WriteStringValue("gitBranch", GitBranch);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("redirect", Redirect);
+            writer.WriteDoubleValue("redirectStatusCode", RedirectStatusCode);
             writer.WriteStringValue("target", Target);
             writer.WriteAdditionalData(AdditionalData);
         }

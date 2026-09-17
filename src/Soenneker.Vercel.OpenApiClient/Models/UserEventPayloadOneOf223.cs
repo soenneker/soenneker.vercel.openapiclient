@@ -15,21 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The justification property</summary>
+        /// <summary>The headerName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Justification { get; set; }
+        public string? HeaderName { get; set; }
 #nullable restore
 #else
-        public string Justification { get; set; }
-#endif
-        /// <summary>The pattern property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Pattern { get; set; }
-#nullable restore
-#else
-        public string Pattern { get; set; }
+        public string HeaderName { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,14 +31,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectName { get; set; }
-#nullable restore
-#else
-        public string ProjectName { get; set; }
-#endif
+        /// <summary>The type property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.HeaderType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf223"/> and sets the default values.
         /// </summary>
@@ -72,10 +58,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "justification", n => { Justification = n.GetStringValue(); } },
-                { "pattern", n => { Pattern = n.GetStringValue(); } },
+                { "headerName", n => { HeaderName = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.HeaderType>(); } },
             };
         }
         /// <summary>
@@ -85,10 +70,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("justification", Justification);
-            writer.WriteStringValue("pattern", Pattern);
+            writer.WriteStringValue("headerName", HeaderName);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.HeaderType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,90 +13,36 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf359 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>The access property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359Access? Access { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The elevatedScopeCount property</summary>
-        public double? ElevatedScopeCount { get; set; }
-        /// <summary>Requested Vercel scopes that are not included in the baseline token.</summary>
+        /// <summary>The computeUnitsMax property</summary>
+        public double? ComputeUnitsMax { get; set; }
+        /// <summary>The computeUnitsMin property</summary>
+        public double? ComputeUnitsMin { get; set; }
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ElevatedScopes { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public List<string> ElevatedScopes { get; set; }
+        public string Id { get; set; }
 #endif
-        /// <summary>The eventId property</summary>
+        /// <summary>The locked property</summary>
+        public bool? Locked { get; set; }
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventId { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public string EventId { get; set; }
+        public string Name { get; set; }
 #endif
-        /// <summary>The githubScopeCount property</summary>
-        public double? GithubScopeCount { get; set; }
-        /// <summary>External GitHub scopes requested by the plan; these are not Vercel token scopes.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? GithubScopes { get; set; }
-#nullable restore
-#else
-        public List<string> GithubScopes { get; set; }
-#endif
-        /// <summary>The mergedScopeCount property</summary>
-        public double? MergedScopeCount { get; set; }
-        /// <summary>Baseline plus elevated Vercel scopes used when minting scoped tokens.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? MergedScopes { get; set; }
-#nullable restore
-#else
-        public List<string> MergedScopes { get; set; }
-#endif
-        /// <summary>The occurredAt property</summary>
-        public double? OccurredAt { get; set; }
-        /// <summary>The planId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PlanId { get; set; }
-#nullable restore
-#else
-        public string PlanId { get; set; }
-#endif
-        /// <summary>The requestedScopeCount property</summary>
-        public double? RequestedScopeCount { get; set; }
-        /// <summary>Scopes requested by the model-authored plan.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? RequestedScopes { get; set; }
-#nullable restore
-#else
-        public List<string> RequestedScopes { get; set; }
-#endif
-        /// <summary>The sessionId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SessionId { get; set; }
-#nullable restore
-#else
-        public string SessionId { get; set; }
-#endif
-        /// <summary>Currently emitted session kinds: chat, investigation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SessionKind { get; set; }
-#nullable restore
-#else
-        public string SessionKind { get; set; }
-#endif
-        /// <summary>Currently emitted surfaces: dashboard, internal, slack, automation, github.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Surface { get; set; }
-#nullable restore
-#else
-        public string Surface { get; set; }
-#endif
+        /// <summary>The suspendTimeoutSeconds property</summary>
+        public double? SuspendTimeoutSeconds { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359Type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359"/> and sets the default values.
         /// </summary>
@@ -122,20 +68,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "elevatedScopeCount", n => { ElevatedScopeCount = n.GetDoubleValue(); } },
-                { "elevatedScopes", n => { ElevatedScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "eventId", n => { EventId = n.GetStringValue(); } },
-                { "githubScopeCount", n => { GithubScopeCount = n.GetDoubleValue(); } },
-                { "githubScopes", n => { GithubScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "mergedScopeCount", n => { MergedScopeCount = n.GetDoubleValue(); } },
-                { "mergedScopes", n => { MergedScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "occurredAt", n => { OccurredAt = n.GetDoubleValue(); } },
-                { "planId", n => { PlanId = n.GetStringValue(); } },
-                { "requestedScopeCount", n => { RequestedScopeCount = n.GetDoubleValue(); } },
-                { "requestedScopes", n => { RequestedScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "sessionId", n => { SessionId = n.GetStringValue(); } },
-                { "sessionKind", n => { SessionKind = n.GetStringValue(); } },
-                { "surface", n => { Surface = n.GetStringValue(); } },
+                { "access", n => { Access = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359Access>(); } },
+                { "computeUnitsMax", n => { ComputeUnitsMax = n.GetDoubleValue(); } },
+                { "computeUnitsMin", n => { ComputeUnitsMin = n.GetDoubleValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "locked", n => { Locked = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "suspendTimeoutSeconds", n => { SuspendTimeoutSeconds = n.GetDoubleValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359Type>(); } },
             };
         }
         /// <summary>
@@ -145,20 +85,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("elevatedScopeCount", ElevatedScopeCount);
-            writer.WriteCollectionOfPrimitiveValues<string>("elevatedScopes", ElevatedScopes);
-            writer.WriteStringValue("eventId", EventId);
-            writer.WriteDoubleValue("githubScopeCount", GithubScopeCount);
-            writer.WriteCollectionOfPrimitiveValues<string>("githubScopes", GithubScopes);
-            writer.WriteDoubleValue("mergedScopeCount", MergedScopeCount);
-            writer.WriteCollectionOfPrimitiveValues<string>("mergedScopes", MergedScopes);
-            writer.WriteDoubleValue("occurredAt", OccurredAt);
-            writer.WriteStringValue("planId", PlanId);
-            writer.WriteDoubleValue("requestedScopeCount", RequestedScopeCount);
-            writer.WriteCollectionOfPrimitiveValues<string>("requestedScopes", RequestedScopes);
-            writer.WriteStringValue("sessionId", SessionId);
-            writer.WriteStringValue("sessionKind", SessionKind);
-            writer.WriteStringValue("surface", Surface);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359Access>("access", Access);
+            writer.WriteDoubleValue("computeUnitsMax", ComputeUnitsMax);
+            writer.WriteDoubleValue("computeUnitsMin", ComputeUnitsMin);
+            writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("locked", Locked);
+            writer.WriteStringValue("name", Name);
+            writer.WriteDoubleValue("suspendTimeoutSeconds", SuspendTimeoutSeconds);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359Type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

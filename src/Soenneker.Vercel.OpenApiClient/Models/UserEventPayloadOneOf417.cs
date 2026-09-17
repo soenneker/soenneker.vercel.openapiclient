@@ -15,23 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The method property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Method? Method { get; set; }
-        /// <summary>The next property</summary>
+        /// <summary>The teamId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Next? Next { get; set; }
+        public string? TeamId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Next Next { get; set; }
+        public string TeamId { get; set; }
 #endif
-        /// <summary>The previous property</summary>
+        /// <summary>The teamName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Previous? Previous { get; set; }
+        public string? TeamName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Previous Previous { get; set; }
+        public string TeamName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417"/> and sets the default values.
@@ -58,9 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "method", n => { Method = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Method>(); } },
-                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Next.CreateFromDiscriminatorValue); } },
-                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Previous.CreateFromDiscriminatorValue); } },
+                { "teamId", n => { TeamId = n.GetStringValue(); } },
+                { "teamName", n => { TeamName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -70,9 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Method>("method", Method);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Next>("next", Next);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf417Previous>("previous", Previous);
+            writer.WriteStringValue("teamId", TeamId);
+            writer.WriteStringValue("teamName", TeamName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

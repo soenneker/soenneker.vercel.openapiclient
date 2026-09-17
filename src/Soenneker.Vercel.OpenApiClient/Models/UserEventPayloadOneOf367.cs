@@ -15,14 +15,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The emailDomain property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EmailDomain { get; set; }
-#nullable restore
-#else
-        public string EmailDomain { get; set; }
-#endif
+        /// <summary>The isSystemInitiated property</summary>
+        public bool? IsSystemInitiated { get; set; }
+        /// <summary>The next property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf367Next? Next { get; set; }
+        /// <summary>The previous property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf367Previous? Previous { get; set; }
+        /// <summary>The reason property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf367Reason? Reason { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf367"/> and sets the default values.
         /// </summary>
@@ -48,7 +48,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "emailDomain", n => { EmailDomain = n.GetStringValue(); } },
+                { "isSystemInitiated", n => { IsSystemInitiated = n.GetBoolValue(); } },
+                { "next", n => { Next = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf367Next>(); } },
+                { "previous", n => { Previous = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf367Previous>(); } },
+                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf367Reason>(); } },
             };
         }
         /// <summary>
@@ -58,7 +61,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("emailDomain", EmailDomain);
+            writer.WriteBoolValue("isSystemInitiated", IsSystemInitiated);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf367Next>("next", Next);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf367Previous>("previous", Previous);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf367Reason>("reason", Reason);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

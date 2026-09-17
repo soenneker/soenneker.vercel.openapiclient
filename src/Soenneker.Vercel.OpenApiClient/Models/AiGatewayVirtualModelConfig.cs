@@ -37,6 +37,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.AutoCaching? Caching { get; set; }
         /// <summary>Creation timestamp (epoch ms).</summary>
         public double? CreatedAt { get; set; }
+        /// <summary>User or app id that created this VMC.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedBy { get; set; }
+#nullable restore
+#else
+        public string CreatedBy { get; set; }
+#endif
         /// <summary>Whether this VMC is soft-deleted.</summary>
         public bool? Deleted { get; set; }
         /// <summary>Optional description for UI.</summary>
@@ -181,7 +189,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Last update timestamp (epoch ms).</summary>
         public double? UpdatedAt { get; set; }
-        /// <summary>User id that last updated this VMC.</summary>
+        /// <summary>User or app id that last updated this VMC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedBy { get; set; }
@@ -237,6 +245,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "byokCredentialIds", n => { ByokCredentialIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "caching", n => { Caching = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AutoCaching>(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
+                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "deleted", n => { Deleted = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "disallowPromptTraining", n => { DisallowPromptTraining = n.GetBoolValue(); } },
@@ -279,6 +288,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("byokCredentialIds", ByokCredentialIds);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AutoCaching>("caching", Caching);
             writer.WriteDoubleValue("createdAt", CreatedAt);
+            writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteBoolValue("deleted", Deleted);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("disallowPromptTraining", DisallowPromptTraining);

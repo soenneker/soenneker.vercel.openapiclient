@@ -15,29 +15,45 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The configuration property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf438Configuration? Configuration { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf438Configuration Configuration { get; set; }
+        public string ProjectId { get; set; }
 #endif
-        /// <summary>The peering property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf438Peering? Peering { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf438Peering Peering { get; set; }
+        public string ProjectName { get; set; }
 #endif
-        /// <summary>The team property</summary>
+        /// <summary>The repositoryName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf438Team? Team { get; set; }
+        public string? RepositoryName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf438Team Team { get; set; }
+        public string RepositoryName { get; set; }
+#endif
+        /// <summary>The sharedWithTeamId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SharedWithTeamId { get; set; }
+#nullable restore
+#else
+        public string SharedWithTeamId { get; set; }
+#endif
+        /// <summary>The sharedWithTeamSlug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SharedWithTeamSlug { get; set; }
+#nullable restore
+#else
+        public string SharedWithTeamSlug { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf438"/> and sets the default values.
@@ -64,9 +80,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf438Configuration>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf438Configuration.CreateFromDiscriminatorValue); } },
-                { "peering", n => { Peering = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf438Peering>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf438Peering.CreateFromDiscriminatorValue); } },
-                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf438Team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf438Team.CreateFromDiscriminatorValue); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "repositoryName", n => { RepositoryName = n.GetStringValue(); } },
+                { "sharedWithTeamId", n => { SharedWithTeamId = n.GetStringValue(); } },
+                { "sharedWithTeamSlug", n => { SharedWithTeamSlug = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +94,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf438Configuration>("configuration", Configuration);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf438Peering>("peering", Peering);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf438Team>("team", Team);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("repositoryName", RepositoryName);
+            writer.WriteStringValue("sharedWithTeamId", SharedWithTeamId);
+            writer.WriteStringValue("sharedWithTeamSlug", SharedWithTeamSlug);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

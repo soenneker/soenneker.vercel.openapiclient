@@ -15,21 +15,23 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The deploymentId property</summary>
+        /// <summary>The oldPasswordProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeploymentId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301OldPasswordProtection? OldPasswordProtection { get; set; }
 #nullable restore
 #else
-        public string DeploymentId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301OldPasswordProtection OldPasswordProtection { get; set; }
 #endif
-        /// <summary>The projectAccountId property</summary>
+        /// <summary>The passwordChanged property</summary>
+        public bool? PasswordChanged { get; set; }
+        /// <summary>The passwordProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectAccountId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301PasswordProtection? PasswordProtection { get; set; }
 #nullable restore
 #else
-        public string ProjectAccountId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301PasswordProtection PasswordProtection { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,14 +48,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string ProjectName { get; set; }
-#endif
-        /// <summary>Description of why a project was rolled back, and by whom. Note that lastAliasRequest contains the from/to details of the rollback.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301RollbackDescription? RollbackDescription { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301RollbackDescription RollbackDescription { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301"/> and sets the default values.
@@ -80,11 +74,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
-                { "projectAccountId", n => { ProjectAccountId = n.GetStringValue(); } },
+                { "oldPasswordProtection", n => { OldPasswordProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301OldPasswordProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301OldPasswordProtection.CreateFromDiscriminatorValue); } },
+                { "passwordChanged", n => { PasswordChanged = n.GetBoolValue(); } },
+                { "passwordProtection", n => { PasswordProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301PasswordProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301PasswordProtection.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "rollbackDescription", n => { RollbackDescription = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301RollbackDescription>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301RollbackDescription.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -94,11 +88,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("deploymentId", DeploymentId);
-            writer.WriteStringValue("projectAccountId", ProjectAccountId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301OldPasswordProtection>("oldPasswordProtection", OldPasswordProtection);
+            writer.WriteBoolValue("passwordChanged", PasswordChanged);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301PasswordProtection>("passwordProtection", PasswordProtection);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf301RollbackDescription>("rollbackDescription", RollbackDescription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

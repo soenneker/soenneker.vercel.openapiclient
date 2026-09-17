@@ -15,53 +15,53 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The newProjectId property</summary>
+        /// <summary>The configuredBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewProjectId { get; set; }
+        public string? ConfiguredBy { get; set; }
 #nullable restore
 #else
-        public string NewProjectId { get; set; }
+        public string ConfiguredBy { get; set; }
 #endif
-        /// <summary>The newProjectName property</summary>
+        /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewProjectName { get; set; }
+        public string? Domain { get; set; }
 #nullable restore
 #else
-        public string NewProjectName { get; set; }
+        public string Domain { get; set; }
 #endif
-        /// <summary>The originAccountName property</summary>
+        /// <summary>The prevConfiguredBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginAccountName { get; set; }
+        public string? PrevConfiguredBy { get; set; }
 #nullable restore
 #else
-        public string OriginAccountName { get; set; }
+        public string PrevConfiguredBy { get; set; }
 #endif
-        /// <summary>The previousProjectId property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousProjectId { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string PreviousProjectId { get; set; }
+        public string ProjectId { get; set; }
 #endif
-        /// <summary>The previousProjectName property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousProjectName { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public string PreviousProjectName { get; set; }
+        public string ProjectName { get; set; }
 #endif
-        /// <summary>The transferId property</summary>
+        /// <summary>The target property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransferId { get; set; }
+        public string? Target { get; set; }
 #nullable restore
 #else
-        public string TransferId { get; set; }
+        public string Target { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf290"/> and sets the default values.
@@ -88,12 +88,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "newProjectId", n => { NewProjectId = n.GetStringValue(); } },
-                { "newProjectName", n => { NewProjectName = n.GetStringValue(); } },
-                { "originAccountName", n => { OriginAccountName = n.GetStringValue(); } },
-                { "previousProjectId", n => { PreviousProjectId = n.GetStringValue(); } },
-                { "previousProjectName", n => { PreviousProjectName = n.GetStringValue(); } },
-                { "transferId", n => { TransferId = n.GetStringValue(); } },
+                { "configuredBy", n => { ConfiguredBy = n.GetStringValue(); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
+                { "prevConfiguredBy", n => { PrevConfiguredBy = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "target", n => { Target = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -103,12 +103,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("newProjectId", NewProjectId);
-            writer.WriteStringValue("newProjectName", NewProjectName);
-            writer.WriteStringValue("originAccountName", OriginAccountName);
-            writer.WriteStringValue("previousProjectId", PreviousProjectId);
-            writer.WriteStringValue("previousProjectName", PreviousProjectName);
-            writer.WriteStringValue("transferId", TransferId);
+            writer.WriteStringValue("configuredBy", ConfiguredBy);
+            writer.WriteStringValue("domain", Domain);
+            writer.WriteStringValue("prevConfiguredBy", PrevConfiguredBy);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("target", Target);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

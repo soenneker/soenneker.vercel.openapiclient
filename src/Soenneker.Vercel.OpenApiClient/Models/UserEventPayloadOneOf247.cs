@@ -15,47 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Deployment whose outcome caused a system-initiated elastic resize.</summary>
+        /// <summary>The next property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeploymentId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf247NextProperty? Next { get; set; }
 #nullable restore
 #else
-        public string DeploymentId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf247NextProperty Next { get; set; }
 #endif
-        /// <summary>The isSystemInitiated property</summary>
-        public bool? IsSystemInitiated { get; set; }
-        /// <summary>The nextBuildMachineSelection property</summary>
+        /// <summary>The previous property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextBuildMachineSelection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf247PreviousProperty? Previous { get; set; }
 #nullable restore
 #else
-        public string NextBuildMachineSelection { get; set; }
-#endif
-        /// <summary>The nextBuildMachineType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? NextBuildMachineType { get; set; }
-#nullable restore
-#else
-        public string NextBuildMachineType { get; set; }
-#endif
-        /// <summary>The previousBuildMachineSelection property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PreviousBuildMachineSelection { get; set; }
-#nullable restore
-#else
-        public string PreviousBuildMachineSelection { get; set; }
-#endif
-        /// <summary>The previousBuildMachineType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PreviousBuildMachineType { get; set; }
-#nullable restore
-#else
-        public string PreviousBuildMachineType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf247PreviousProperty Previous { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,14 +46,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string ProjectName { get; set; }
-#endif
-        /// <summary>For system-initiated (elastic) changes, why the build machine was upgraded/downgraded. Stored as the raw reason code (see `ElasticChangeReason` in `@api/build-machines-types`) and rendered as a human-readable clause in the activity/audit log.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Reason { get; set; }
-#nullable restore
-#else
-        public string Reason { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf247"/> and sets the default values.
@@ -106,15 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
-                { "isSystemInitiated", n => { IsSystemInitiated = n.GetBoolValue(); } },
-                { "nextBuildMachineSelection", n => { NextBuildMachineSelection = n.GetStringValue(); } },
-                { "nextBuildMachineType", n => { NextBuildMachineType = n.GetStringValue(); } },
-                { "previousBuildMachineSelection", n => { PreviousBuildMachineSelection = n.GetStringValue(); } },
-                { "previousBuildMachineType", n => { PreviousBuildMachineType = n.GetStringValue(); } },
+                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf247NextProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf247NextProperty.CreateFromDiscriminatorValue); } },
+                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf247PreviousProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf247PreviousProperty.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "reason", n => { Reason = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -124,15 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("deploymentId", DeploymentId);
-            writer.WriteBoolValue("isSystemInitiated", IsSystemInitiated);
-            writer.WriteStringValue("nextBuildMachineSelection", NextBuildMachineSelection);
-            writer.WriteStringValue("nextBuildMachineType", NextBuildMachineType);
-            writer.WriteStringValue("previousBuildMachineSelection", PreviousBuildMachineSelection);
-            writer.WriteStringValue("previousBuildMachineType", PreviousBuildMachineType);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf247NextProperty>("next", Next);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf247PreviousProperty>("previous", Previous);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("reason", Reason);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

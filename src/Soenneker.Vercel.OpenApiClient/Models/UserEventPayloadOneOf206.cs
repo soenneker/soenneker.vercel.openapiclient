@@ -15,15 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
-        /// <summary>The enforcedTeamIds property</summary>
+        /// <summary>The directoryGroupId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EnforcedTeamIds { get; set; }
+        public string? DirectoryGroupId { get; set; }
 #nullable restore
 #else
-        public List<string> EnforcedTeamIds { get; set; }
+        public string DirectoryGroupId { get; set; }
+#endif
+        /// <summary>The directoryId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DirectoryId { get; set; }
+#nullable restore
+#else
+        public string DirectoryId { get; set; }
 #endif
         /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,18 +38,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string OrganizationId { get; set; }
-#endif
-        /// <summary>The previousEnabled property</summary>
-        public bool? PreviousEnabled { get; set; }
-        /// <summary>The trigger property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf206Trigger? Trigger { get; set; }
-        /// <summary>The unenforcedTeamIds property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? UnenforcedTeamIds { get; set; }
-#nullable restore
-#else
-        public List<string> UnenforcedTeamIds { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf206"/> and sets the default values.
@@ -70,12 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "enforcedTeamIds", n => { EnforcedTeamIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "directoryGroupId", n => { DirectoryGroupId = n.GetStringValue(); } },
+                { "directoryId", n => { DirectoryId = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "previousEnabled", n => { PreviousEnabled = n.GetBoolValue(); } },
-                { "trigger", n => { Trigger = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf206Trigger>(); } },
-                { "unenforcedTeamIds", n => { UnenforcedTeamIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -85,12 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteCollectionOfPrimitiveValues<string>("enforcedTeamIds", EnforcedTeamIds);
+            writer.WriteStringValue("directoryGroupId", DirectoryGroupId);
+            writer.WriteStringValue("directoryId", DirectoryId);
             writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteBoolValue("previousEnabled", PreviousEnabled);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf206Trigger>("trigger", Trigger);
-            writer.WriteCollectionOfPrimitiveValues<string>("unenforcedTeamIds", UnenforcedTeamIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

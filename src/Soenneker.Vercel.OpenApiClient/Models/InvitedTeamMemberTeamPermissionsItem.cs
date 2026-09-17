@@ -7,10 +7,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum InvitedTeamMemberTeamPermissionsItem
     {
-        [EnumMember(Value = "AiGatewayApiKeyOwnedBySelf")]
-        #pragma warning disable CS1591
-        AiGatewayApiKeyOwnedBySelf,
-        #pragma warning restore CS1591
         [EnumMember(Value = "AiGatewayBudgetManager")]
         #pragma warning disable CS1591
         AiGatewayBudgetManager,
@@ -30,6 +26,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "AiGatewayTranscriptsViewer")]
         #pragma warning disable CS1591
         AiGatewayTranscriptsViewer,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AiGatewayUser")]
+        #pragma warning disable CS1591
+        AiGatewayUser,
         #pragma warning restore CS1591
         [EnumMember(Value = "ConnectorManager")]
         #pragma warning disable CS1591

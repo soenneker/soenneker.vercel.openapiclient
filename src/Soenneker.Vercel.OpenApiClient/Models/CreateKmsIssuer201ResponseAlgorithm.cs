@@ -20,10 +20,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Es512,
         #pragma warning restore CS1591
-        [EnumMember(Value = "EdDSA")]
-        #pragma warning disable CS1591
-        EdDsa,
-        #pragma warning restore CS1591
         [EnumMember(Value = "PS256")]
         #pragma warning disable CS1591
         Ps256,

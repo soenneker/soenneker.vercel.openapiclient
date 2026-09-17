@@ -301,7 +301,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemTargets Targets { get; set; }
 #endif
         /// <summary>The tier property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemTier? Tier { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.PriorityTier? Tier { get; set; }
         /// <summary>The transferCompletedAt property</summary>
         public double? TransferCompletedAt { get; set; }
         /// <summary>The transferredFromAccountId property</summary>
@@ -412,7 +412,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "speedInsights", n => { SpeedInsights = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemSpeedInsights>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemSpeedInsights.CreateFromDiscriminatorValue); } },
                 { "ssoProtection", n => { SsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemSsoProtection>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemSsoProtection.CreateFromDiscriminatorValue); } },
                 { "targets", n => { Targets = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemTargets>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemTargets.CreateFromDiscriminatorValue); } },
-                { "tier", n => { Tier = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemTier>(); } },
+                { "tier", n => { Tier = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PriorityTier>(); } },
                 { "transferCompletedAt", n => { TransferCompletedAt = n.GetDoubleValue(); } },
                 { "transferStartedAt", n => { TransferStartedAt = n.GetDoubleValue(); } },
                 { "transferToAccountId", n => { TransferToAccountId = n.GetStringValue(); } },
@@ -476,7 +476,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemSpeedInsights>("speedInsights", SpeedInsights);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemSsoProtection>("ssoProtection", SsoProtection);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemTargets>("targets", Targets);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemTier>("tier", Tier);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PriorityTier>("tier", Tier);
             writer.WriteDoubleValue("transferCompletedAt", TransferCompletedAt);
             writer.WriteStringValue("transferredFromAccountId", TransferredFromAccountId);
             writer.WriteDoubleValue("transferStartedAt", TransferStartedAt);

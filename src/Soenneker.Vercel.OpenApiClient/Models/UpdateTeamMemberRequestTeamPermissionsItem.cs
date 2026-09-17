@@ -56,9 +56,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayCredits,
         #pragma warning restore CS1591
-        [EnumMember(Value = "AiGatewayApiKeyOwnedBySelf")]
+        [EnumMember(Value = "AiGatewayUser")]
         #pragma warning disable CS1591
-        AiGatewayApiKeyOwnedBySelf,
+        AiGatewayUser,
         #pragma warning restore CS1591
         [EnumMember(Value = "AiGatewayBudgetManager")]
         #pragma warning disable CS1591

@@ -15,21 +15,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Automatic code review settings</summary>
+        /// <summary>The originTeamId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356Next? Next { get; set; }
+        public string? OriginTeamId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356Next Next { get; set; }
+        public string OriginTeamId { get; set; }
 #endif
-        /// <summary>Automatic code review settings</summary>
+        /// <summary>The originTeamName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356Previous? Previous { get; set; }
+        public string? OriginTeamName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356Previous Previous { get; set; }
+        public string OriginTeamName { get; set; }
+#endif
+        /// <summary>The store property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356Store? Store { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356Store Store { get; set; }
+#endif
+        /// <summary>The transferRequestCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TransferRequestCode { get; set; }
+#nullable restore
+#else
+        public string TransferRequestCode { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356"/> and sets the default values.
@@ -56,8 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356Next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356Next.CreateFromDiscriminatorValue); } },
-                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356Previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356Previous.CreateFromDiscriminatorValue); } },
+                { "originTeamId", n => { OriginTeamId = n.GetStringValue(); } },
+                { "originTeamName", n => { OriginTeamName = n.GetStringValue(); } },
+                { "store", n => { Store = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356Store>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356Store.CreateFromDiscriminatorValue); } },
+                { "transferRequestCode", n => { TransferRequestCode = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356Next>("next", Next);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356Previous>("previous", Previous);
+            writer.WriteStringValue("originTeamId", OriginTeamId);
+            writer.WriteStringValue("originTeamName", OriginTeamName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf356Store>("store", Store);
+            writer.WriteStringValue("transferRequestCode", TransferRequestCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

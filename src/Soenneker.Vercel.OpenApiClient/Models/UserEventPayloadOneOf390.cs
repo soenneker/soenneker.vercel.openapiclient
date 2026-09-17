@@ -15,14 +15,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents configuration for remote caching</summary>
+        /// <summary>The convertedFromTrial property</summary>
+        public bool? ConvertedFromTrial { get; set; }
+        /// <summary>The invoiceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf390RemoteCaching? RemoteCaching { get; set; }
+        public string? InvoiceId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf390RemoteCaching RemoteCaching { get; set; }
+        public string InvoiceId { get; set; }
 #endif
+        /// <summary>The plan property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf390Plan? Plan { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf390"/> and sets the default values.
         /// </summary>
@@ -48,7 +52,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "remoteCaching", n => { RemoteCaching = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf390RemoteCaching>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf390RemoteCaching.CreateFromDiscriminatorValue); } },
+                { "convertedFromTrial", n => { ConvertedFromTrial = n.GetBoolValue(); } },
+                { "invoiceId", n => { InvoiceId = n.GetStringValue(); } },
+                { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf390Plan>(); } },
             };
         }
         /// <summary>
@@ -58,7 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf390RemoteCaching>("remoteCaching", RemoteCaching);
+            writer.WriteBoolValue("convertedFromTrial", ConvertedFromTrial);
+            writer.WriteStringValue("invoiceId", InvoiceId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf390Plan>("plan", Plan);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
