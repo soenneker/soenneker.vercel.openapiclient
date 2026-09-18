@@ -15,8 +15,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The provider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf193Provider? Provider { get; set; }
+        /// <summary>The integrationName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IntegrationName { get; set; }
+#nullable restore
+#else
+        public string IntegrationName { get; set; }
+#endif
+        /// <summary>The logDrainUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LogDrainUrl { get; set; }
+#nullable restore
+#else
+        public string LogDrainUrl { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf193"/> and sets the default values.
         /// </summary>
@@ -42,7 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf193Provider>(); } },
+                { "integrationName", n => { IntegrationName = n.GetStringValue(); } },
+                { "logDrainUrl", n => { LogDrainUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -52,7 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf193Provider>("provider", Provider);
+            writer.WriteStringValue("integrationName", IntegrationName);
+            writer.WriteStringValue("logDrainUrl", LogDrainUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

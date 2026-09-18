@@ -15,45 +15,63 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The algorithm property</summary>
+        /// <summary>The configurationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Algorithm { get; set; }
+        public string? ConfigurationId { get; set; }
 #nullable restore
 #else
-        public string Algorithm { get; set; }
+        public string ConfigurationId { get; set; }
 #endif
-        /// <summary>The issuerId property</summary>
+        /// <summary>The errorCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerId { get; set; }
+        public string? ErrorCode { get; set; }
 #nullable restore
 #else
-        public string IssuerId { get; set; }
+        public string ErrorCode { get; set; }
 #endif
-        /// <summary>The issuerName property</summary>
+        /// <summary>The integrationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerName { get; set; }
+        public string? IntegrationId { get; set; }
 #nullable restore
 #else
-        public string IssuerName { get; set; }
+        public string IntegrationId { get; set; }
 #endif
-        /// <summary>The managedBy property</summary>
+        /// <summary>The integrationProductSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedBy { get; set; }
+        public string? IntegrationProductSlug { get; set; }
 #nullable restore
 #else
-        public string ManagedBy { get; set; }
+        public string IntegrationProductSlug { get; set; }
 #endif
-        /// <summary>The origin property</summary>
+        /// <summary>The integrationSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Origin { get; set; }
+        public string? IntegrationSlug { get; set; }
 #nullable restore
 #else
-        public string Origin { get; set; }
+        public string IntegrationSlug { get; set; }
+#endif
+        /// <summary>The key property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Key { get; set; }
+#nullable restore
+#else
+        public string Key { get; set; }
+#endif
+        /// <summary>The requestKind property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetKeyDataRequestKind? RequestKind { get; set; }
+        /// <summary>The resourceId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ResourceId { get; set; }
+#nullable restore
+#else
+        public string ResourceId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf185"/> and sets the default values.
@@ -80,11 +98,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "algorithm", n => { Algorithm = n.GetStringValue(); } },
-                { "issuerId", n => { IssuerId = n.GetStringValue(); } },
-                { "issuerName", n => { IssuerName = n.GetStringValue(); } },
-                { "managedBy", n => { ManagedBy = n.GetStringValue(); } },
-                { "origin", n => { Origin = n.GetStringValue(); } },
+                { "configurationId", n => { ConfigurationId = n.GetStringValue(); } },
+                { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
+                { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
+                { "integrationProductSlug", n => { IntegrationProductSlug = n.GetStringValue(); } },
+                { "integrationSlug", n => { IntegrationSlug = n.GetStringValue(); } },
+                { "key", n => { Key = n.GetStringValue(); } },
+                { "requestKind", n => { RequestKind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetKeyDataRequestKind>(); } },
+                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -94,11 +115,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("algorithm", Algorithm);
-            writer.WriteStringValue("issuerId", IssuerId);
-            writer.WriteStringValue("issuerName", IssuerName);
-            writer.WriteStringValue("managedBy", ManagedBy);
-            writer.WriteStringValue("origin", Origin);
+            writer.WriteStringValue("configurationId", ConfigurationId);
+            writer.WriteStringValue("errorCode", ErrorCode);
+            writer.WriteStringValue("integrationId", IntegrationId);
+            writer.WriteStringValue("integrationProductSlug", IntegrationProductSlug);
+            writer.WriteStringValue("integrationSlug", IntegrationSlug);
+            writer.WriteStringValue("key", Key);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetKeyDataRequestKind>("requestKind", RequestKind);
+            writer.WriteStringValue("resourceId", ResourceId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

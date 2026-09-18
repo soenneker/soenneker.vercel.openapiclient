@@ -15,6 +15,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>CPU architecture required to restore the snapshot.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.SnapshotArchitecture? Architecture { get; set; }
         /// <summary>The time when the snapshot was created, in milliseconds since the epoch.</summary>
         public double? CreatedAt { get; set; }
         /// <summary>The method used to create the snapshot.</summary>
@@ -94,6 +96,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "architecture", n => { Architecture = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SnapshotArchitecture>(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "creationMethod", n => { CreationMethod = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SnapshotCreationMethod>(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
@@ -115,6 +118,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SnapshotArchitecture>("architecture", Architecture);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SnapshotCreationMethod>("creationMethod", CreationMethod);
             writer.WriteDoubleValue("expiresAt", ExpiresAt);

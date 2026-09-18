@@ -15,6 +15,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>CPU architecture of the sandbox. This value does not change.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxArchitecture? Architecture { get; set; }
         /// <summary>The time when the named sandbox was created, in milliseconds since the epoch.</summary>
         public double? CreatedAt { get; set; }
         /// <summary>Current session ID the sandbox is pointing to.</summary>
@@ -172,6 +174,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "architecture", n => { Architecture = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxArchitecture>(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "currentSessionId", n => { CurrentSessionId = n.GetStringValue(); } },
                 { "currentSnapshotId", n => { CurrentSnapshotId = n.GetStringValue(); } },
@@ -208,6 +211,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxArchitecture>("architecture", Architecture);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteStringValue("currentSessionId", CurrentSessionId);
             writer.WriteStringValue("currentSnapshotId", CurrentSnapshotId);

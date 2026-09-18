@@ -163,15 +163,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderTimeouts ProviderTimeouts { get; set; }
 #endif
-        /// <summary>For kind=router: capability tags a candidate must have.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Requires { get; set; }
-#nullable restore
-#else
-        public List<string> Requires { get; set; }
-#endif
-        /// <summary>For kind=router: how to order candidates.</summary>
+        /// <summary>For kind=router: how to order candidates. Absent means declared order.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelector? Selector { get; set; }
         /// <summary>Service tier for providers that support it.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigServiceTier? ServiceTier { get; set; }
@@ -263,7 +255,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "providerOptions", n => { ProviderOptions = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderOptionsProperty>(global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderOptionsProperty.CreateFromDiscriminatorValue); } },
                 { "providerOrder", n => { ProviderOrder = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "providerTimeouts", n => { ProviderTimeouts = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderTimeouts>(global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderTimeouts.CreateFromDiscriminatorValue); } },
-                { "requires", n => { Requires = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "selector", n => { Selector = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelector>(); } },
                 { "serviceTier", n => { ServiceTier = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigServiceTier>(); } },
                 { "sort", n => { Sort = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSort>(); } },
@@ -306,7 +297,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderOptionsProperty>("providerOptions", ProviderOptions);
             writer.WriteCollectionOfPrimitiveValues<string>("providerOrder", ProviderOrder);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderTimeouts>("providerTimeouts", ProviderTimeouts);
-            writer.WriteCollectionOfPrimitiveValues<string>("requires", Requires);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelector>("selector", Selector);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigServiceTier>("serviceTier", ServiceTier);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSort>("sort", Sort);

@@ -623,6 +623,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         DeploymentPolicyBlocked,
         #pragma warning restore CS1591
+        [EnumMember(Value = "deployment-protection-access-requests")]
+        #pragma warning disable CS1591
+        DeploymentProtectionAccessRequests,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deployment-undeleted")]
         #pragma warning disable CS1591
         DeploymentUndeleted,
@@ -1323,6 +1327,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         OidcPolicyUsedToObtainAppToken,
         #pragma warning restore CS1591
+        [EnumMember(Value = "organization-avatar-update")]
+        #pragma warning disable CS1591
+        OrganizationAvatarUpdate,
+        #pragma warning restore CS1591
         [EnumMember(Value = "organization-create")]
         #pragma warning disable CS1591
         OrganizationCreate,
@@ -1338,6 +1346,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "organization-dsync-group-upsert")]
         #pragma warning disable CS1591
         OrganizationDsyncGroupUpsert,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "organization-emu-domains-merged")]
+        #pragma warning disable CS1591
+        OrganizationEmuDomainsMerged,
         #pragma warning restore CS1591
         [EnumMember(Value = "organization-emu-team-updated")]
         #pragma warning disable CS1591

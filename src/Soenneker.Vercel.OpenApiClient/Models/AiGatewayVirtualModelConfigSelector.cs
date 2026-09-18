@@ -3,17 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>For kind=router: how to order candidates.</summary>
+    /// <summary>For kind=router: how to order candidates. Absent means declared order.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AiGatewayVirtualModelConfigSelector
     {
         [EnumMember(Value = "cost")]
         #pragma warning disable CS1591
         Cost,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "priority")]
-        #pragma warning disable CS1591
-        Priority,
         #pragma warning restore CS1591
         [EnumMember(Value = "tps")]
         #pragma warning disable CS1591

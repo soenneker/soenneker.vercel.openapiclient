@@ -22,6 +22,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string BuildCommand { get; set; }
 #endif
+        /// <summary>Buildpack runtime slug (e.g. &quot;ruby&quot;).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Buildpack { get; set; }
+#nullable restore
+#else
+        public string Buildpack { get; set; }
+#endif
         /// <summary>The bundle property</summary>
         public bool? Bundle { get; set; }
         /// <summary>The bunVersion property</summary>
@@ -188,6 +196,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "buildCommand", n => { BuildCommand = n.GetStringValue(); } },
+                { "buildpack", n => { Buildpack = n.GetStringValue(); } },
                 { "bunVersion", n => { BunVersion = n.GetStringValue(); } },
                 { "bundle", n => { Bundle = n.GetBoolValue(); } },
                 { "debug", n => { Debug = n.GetBoolValue(); } },
@@ -220,6 +229,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("buildCommand", BuildCommand);
+            writer.WriteStringValue("buildpack", Buildpack);
             writer.WriteBoolValue("bundle", Bundle);
             writer.WriteStringValue("bunVersion", BunVersion);
             writer.WriteBoolValue("debug", Debug);

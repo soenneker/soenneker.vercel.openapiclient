@@ -111,6 +111,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Target { get; set; }
 #endif
+        /// <summary>Trigger-specific credentials (e.g. webhook signing secret). Validated and encrypted against the trigger type definition.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerDataProperty? TriggerData { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerDataProperty TriggerData { get; set; }
+#endif
         /// <summary>Initial trigger destination. Requires triggers to be enabled and a projectId here or at the top level. Connector responses expose the resulting set as triggerDestinations. Replace the complete set with PATCH /v1/connect/connectors/{connector}/trigger-destinations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,6 +129,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Whether the triggers are enabled for this connector.</summary>
         public bool? Triggers { get; set; }
+        /// <summary>Trigger driver type. Resolved automatically from the service or known service registry when not provided. Only set when using the newly decoupled triggers resolution flow.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TriggerType { get; set; }
+#nullable restore
+#else
+        public string TriggerType { get; set; }
+#endif
         /// <summary>Connector implementation type for full configuration. Known types: api-key, discord, github, linear, linq, microsoft-entra, oauth, photon, salesforce, sendblue, slack, snowflake, snowflake-wif. Optional when service and connectionMethod select the type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,7 +190,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "service", n => { Service = n.GetStringValue(); } },
                 { "target", n => { Target = n.GetStringValue(); } },
+                { "triggerData", n => { TriggerData = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerDataProperty>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerDataProperty.CreateFromDiscriminatorValue); } },
                 { "triggerDestination", n => { TriggerDestination = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerDestination>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerDestination.CreateFromDiscriminatorValue); } },
+                { "triggerType", n => { TriggerType = n.GetStringValue(); } },
                 { "triggers", n => { Triggers = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
@@ -199,8 +217,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("service", Service);
             writer.WriteStringValue("target", Target);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerDataProperty>("triggerData", TriggerData);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerDestination>("triggerDestination", TriggerDestination);
             writer.WriteBoolValue("triggers", Triggers);
+            writer.WriteStringValue("triggerType", TriggerType);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("uid", Uid);
             writer.WriteAdditionalData(AdditionalData);

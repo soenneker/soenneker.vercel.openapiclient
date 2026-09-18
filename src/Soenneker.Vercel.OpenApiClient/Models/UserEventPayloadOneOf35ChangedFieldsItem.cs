@@ -76,10 +76,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ProviderTimeouts,
         #pragma warning restore CS1591
-        [EnumMember(Value = "requires")]
-        #pragma warning disable CS1591
-        Requires,
-        #pragma warning restore CS1591
         [EnumMember(Value = "selector")]
         #pragma warning disable CS1591
         Selector,

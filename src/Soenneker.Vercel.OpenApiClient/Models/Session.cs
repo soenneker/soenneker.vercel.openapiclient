@@ -19,6 +19,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? ActiveCpuDurationMs { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>CPU architecture of the sandbox.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.SessionArchitecture? Architecture { get; set; }
         /// <summary>The time when the sandbox was created, in milliseconds since the epoch.</summary>
         public double? CreatedAt { get; set; }
         /// <summary>The working directory of the sandbox.</summary>
@@ -142,6 +144,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "abortedAt", n => { AbortedAt = n.GetDoubleValue(); } },
                 { "activeCpuDurationMs", n => { ActiveCpuDurationMs = n.GetDoubleValue(); } },
+                { "architecture", n => { Architecture = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SessionArchitecture>(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "cwd", n => { Cwd = n.GetStringValue(); } },
                 { "duration", n => { Duration = n.GetDoubleValue(); } },
@@ -174,6 +177,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("abortedAt", AbortedAt);
             writer.WriteDoubleValue("activeCpuDurationMs", ActiveCpuDurationMs);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SessionArchitecture>("architecture", Architecture);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteStringValue("cwd", Cwd);
             writer.WriteDoubleValue("duration", Duration);

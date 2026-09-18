@@ -1942,6 +1942,9 @@
           "410": {
             "description": ""
           },
+          "429": {
+            "description": ""
+          },
           "500": {
             "description": ""
           }
@@ -2271,6 +2274,9 @@
             "description": ""
           },
           "410": {
+            "description": ""
+          },
+          "429": {
             "description": ""
           },
           "500": {
@@ -17041,6 +17047,39 @@
                           ],
                           "type": "object"
                         },
+                        "duration": {
+                          "properties": {
+                            "endTime": {
+                              "type": "number",
+                              "description": "Unix timestamp in milliseconds when the build container exited."
+                            },
+                            "endTimeCapped": {
+                              "type": "number",
+                              "description": "Build-container exit Unix timestamp in milliseconds, capped at 45 minutes after `startTime`."
+                            },
+                            "startTime": {
+                              "type": "number",
+                              "description": "Unix timestamp in milliseconds when the deployment entered BUILDING."
+                            },
+                            "timeForBilling": {
+                              "type": "number",
+                              "description": "Billable build-container duration in milliseconds, capped at 45 minutes, rounded up to a whole minute, with a one-minute minimum."
+                            },
+                            "timeToContainerExit": {
+                              "type": "number",
+                              "description": "Milliseconds from entering BUILDING until the build container exited, without the billing cap."
+                            },
+                            "timeToContainerExitCapped": {
+                              "type": "number",
+                              "description": "Build-container duration in milliseconds, capped at 45 minutes and without billing rounding."
+                            },
+                            "timeToReady": {
+                              "type": "number",
+                              "description": "Milliseconds from entering BUILDING until the deployment reached its current ready state."
+                            }
+                          },
+                          "type": "object"
+                        },
                         "errorCode": {
                           "type": "string"
                         },
@@ -17081,6 +17120,7 @@
                       },
                       "required": [
                         "aliasAssigned",
+                        "duration",
                         "id",
                         "readyState"
                       ],
@@ -17806,6 +17846,39 @@
                           "type": "number",
                           "description": "A number containing the date when the deployment was deleted at milliseconds",
                           "example": 1540257589405
+                        },
+                        "duration": {
+                          "properties": {
+                            "endTime": {
+                              "type": "number",
+                              "description": "Unix timestamp in milliseconds when the build container exited."
+                            },
+                            "endTimeCapped": {
+                              "type": "number",
+                              "description": "Build-container exit Unix timestamp in milliseconds, capped at 45 minutes after `startTime`."
+                            },
+                            "startTime": {
+                              "type": "number",
+                              "description": "Unix timestamp in milliseconds when the deployment entered BUILDING."
+                            },
+                            "timeForBilling": {
+                              "type": "number",
+                              "description": "Billable build-container duration in milliseconds, capped at 45 minutes, rounded up to a whole minute, with a one-minute minimum."
+                            },
+                            "timeToContainerExit": {
+                              "type": "number",
+                              "description": "Milliseconds from entering BUILDING until the build container exited, without the billing cap."
+                            },
+                            "timeToContainerExitCapped": {
+                              "type": "number",
+                              "description": "Build-container duration in milliseconds, capped at 45 minutes and without billing rounding."
+                            },
+                            "timeToReady": {
+                              "type": "number",
+                              "description": "Milliseconds from entering BUILDING until the deployment reached its current ready state."
+                            }
+                          },
+                          "type": "object"
                         },
                         "env": {
                           "items": {
@@ -20570,6 +20643,10 @@
                                           "buildCommand": {
                                             "type": "string"
                                           },
+                                          "buildpack": {
+                                            "type": "string",
+                                            "description": "Buildpack runtime slug (e.g. \"ruby\")."
+                                          },
                                           "bundle": {
                                             "type": "boolean",
                                             "enum": [
@@ -21139,6 +21216,10 @@
                                         "properties": {
                                           "buildCommand": {
                                             "type": "string"
+                                          },
+                                          "buildpack": {
+                                            "type": "string",
+                                            "description": "Buildpack runtime slug (e.g. \"ruby\")."
                                           },
                                           "bundle": {
                                             "type": "boolean",
@@ -23666,6 +23747,7 @@
                         "createdAt",
                         "createdIn",
                         "creator",
+                        "duration",
                         "env",
                         "id",
                         "inspectorUrl",
@@ -24032,6 +24114,40 @@
                           "description": "A number containing the date when the deployment was deleted at milliseconds",
                           "example": 1540257589405
                         },
+                        "duration": {
+                          "properties": {
+                            "endTime": {
+                              "type": "number",
+                              "description": "Unix timestamp in milliseconds when the build container exited."
+                            },
+                            "endTimeCapped": {
+                              "type": "number",
+                              "description": "Build-container exit Unix timestamp in milliseconds, capped at 45 minutes after `startTime`."
+                            },
+                            "startTime": {
+                              "type": "number",
+                              "description": "Unix timestamp in milliseconds when the deployment entered BUILDING."
+                            },
+                            "timeForBilling": {
+                              "type": "number",
+                              "description": "Billable build-container duration in milliseconds, capped at 45 minutes, rounded up to a whole minute, with a one-minute minimum."
+                            },
+                            "timeToContainerExit": {
+                              "type": "number",
+                              "description": "Milliseconds from entering BUILDING until the build container exited, without the billing cap."
+                            },
+                            "timeToContainerExitCapped": {
+                              "type": "number",
+                              "description": "Build-container duration in milliseconds, capped at 45 minutes and without billing rounding."
+                            },
+                            "timeToReady": {
+                              "type": "number",
+                              "description": "Milliseconds from entering BUILDING until the deployment reached its current ready state."
+                            }
+                          },
+                          "type": "object",
+                          "description": "Build timestamps, elapsed durations, and billing measurements. The object is always present, but fields are omitted when their source timestamps are unavailable, such as for running or legacy deployments."
+                        },
                         "errorCode": {
                           "type": "string"
                         },
@@ -25091,6 +25207,7 @@
                         "buildingAt",
                         "createdAt",
                         "creator",
+                        "duration",
                         "id",
                         "meta",
                         "name",
@@ -25253,6 +25370,39 @@
                           ],
                           "type": "object"
                         },
+                        "duration": {
+                          "properties": {
+                            "endTime": {
+                              "type": "number",
+                              "description": "Unix timestamp in milliseconds when the build container exited."
+                            },
+                            "endTimeCapped": {
+                              "type": "number",
+                              "description": "Build-container exit Unix timestamp in milliseconds, capped at 45 minutes after `startTime`."
+                            },
+                            "startTime": {
+                              "type": "number",
+                              "description": "Unix timestamp in milliseconds when the deployment entered BUILDING."
+                            },
+                            "timeForBilling": {
+                              "type": "number",
+                              "description": "Billable build-container duration in milliseconds, capped at 45 minutes, rounded up to a whole minute, with a one-minute minimum."
+                            },
+                            "timeToContainerExit": {
+                              "type": "number",
+                              "description": "Milliseconds from entering BUILDING until the build container exited, without the billing cap."
+                            },
+                            "timeToContainerExitCapped": {
+                              "type": "number",
+                              "description": "Build-container duration in milliseconds, capped at 45 minutes and without billing rounding."
+                            },
+                            "timeToReady": {
+                              "type": "number",
+                              "description": "Milliseconds from entering BUILDING until the deployment reached its current ready state."
+                            }
+                          },
+                          "type": "object"
+                        },
                         "errorCode": {
                           "type": "string"
                         },
@@ -25293,6 +25443,7 @@
                       },
                       "required": [
                         "aliasAssigned",
+                        "duration",
                         "id",
                         "readyState"
                       ],
@@ -26018,6 +26169,39 @@
                           "type": "number",
                           "description": "A number containing the date when the deployment was deleted at milliseconds",
                           "example": 1540257589405
+                        },
+                        "duration": {
+                          "properties": {
+                            "endTime": {
+                              "type": "number",
+                              "description": "Unix timestamp in milliseconds when the build container exited."
+                            },
+                            "endTimeCapped": {
+                              "type": "number",
+                              "description": "Build-container exit Unix timestamp in milliseconds, capped at 45 minutes after `startTime`."
+                            },
+                            "startTime": {
+                              "type": "number",
+                              "description": "Unix timestamp in milliseconds when the deployment entered BUILDING."
+                            },
+                            "timeForBilling": {
+                              "type": "number",
+                              "description": "Billable build-container duration in milliseconds, capped at 45 minutes, rounded up to a whole minute, with a one-minute minimum."
+                            },
+                            "timeToContainerExit": {
+                              "type": "number",
+                              "description": "Milliseconds from entering BUILDING until the build container exited, without the billing cap."
+                            },
+                            "timeToContainerExitCapped": {
+                              "type": "number",
+                              "description": "Build-container duration in milliseconds, capped at 45 minutes and without billing rounding."
+                            },
+                            "timeToReady": {
+                              "type": "number",
+                              "description": "Milliseconds from entering BUILDING until the deployment reached its current ready state."
+                            }
+                          },
+                          "type": "object"
                         },
                         "env": {
                           "items": {
@@ -28782,6 +28966,10 @@
                                           "buildCommand": {
                                             "type": "string"
                                           },
+                                          "buildpack": {
+                                            "type": "string",
+                                            "description": "Buildpack runtime slug (e.g. \"ruby\")."
+                                          },
                                           "bundle": {
                                             "type": "boolean",
                                             "enum": [
@@ -29351,6 +29539,10 @@
                                         "properties": {
                                           "buildCommand": {
                                             "type": "string"
+                                          },
+                                          "buildpack": {
+                                            "type": "string",
+                                            "description": "Buildpack runtime slug (e.g. \"ruby\")."
                                           },
                                           "bundle": {
                                             "type": "boolean",
@@ -31878,6 +32070,7 @@
                         "createdAt",
                         "createdIn",
                         "creator",
+                        "duration",
                         "env",
                         "id",
                         "inspectorUrl",
@@ -33389,6 +33582,39 @@
                       "type": "number",
                       "description": "A number containing the date when the deployment was deleted at milliseconds",
                       "example": 1540257589405
+                    },
+                    "duration": {
+                      "properties": {
+                        "endTime": {
+                          "type": "number",
+                          "description": "Unix timestamp in milliseconds when the build container exited."
+                        },
+                        "endTimeCapped": {
+                          "type": "number",
+                          "description": "Build-container exit Unix timestamp in milliseconds, capped at 45 minutes after `startTime`."
+                        },
+                        "startTime": {
+                          "type": "number",
+                          "description": "Unix timestamp in milliseconds when the deployment entered BUILDING."
+                        },
+                        "timeForBilling": {
+                          "type": "number",
+                          "description": "Billable build-container duration in milliseconds, capped at 45 minutes, rounded up to a whole minute, with a one-minute minimum."
+                        },
+                        "timeToContainerExit": {
+                          "type": "number",
+                          "description": "Milliseconds from entering BUILDING until the build container exited, without the billing cap."
+                        },
+                        "timeToContainerExitCapped": {
+                          "type": "number",
+                          "description": "Build-container duration in milliseconds, capped at 45 minutes and without billing rounding."
+                        },
+                        "timeToReady": {
+                          "type": "number",
+                          "description": "Milliseconds from entering BUILDING until the deployment reached its current ready state."
+                        }
+                      },
+                      "type": "object"
                     },
                     "env": {
                       "items": {
@@ -36153,6 +36379,10 @@
                                       "buildCommand": {
                                         "type": "string"
                                       },
+                                      "buildpack": {
+                                        "type": "string",
+                                        "description": "Buildpack runtime slug (e.g. \"ruby\")."
+                                      },
                                       "bundle": {
                                         "type": "boolean",
                                         "enum": [
@@ -36722,6 +36952,10 @@
                                     "properties": {
                                       "buildCommand": {
                                         "type": "string"
+                                      },
+                                      "buildpack": {
+                                        "type": "string",
+                                        "description": "Buildpack runtime slug (e.g. \"ruby\")."
                                       },
                                       "bundle": {
                                         "type": "boolean",
@@ -39249,6 +39483,7 @@
                     "createdAt",
                     "createdIn",
                     "creator",
+                    "duration",
                     "env",
                     "id",
                     "inspectorUrl",
@@ -195717,6 +195952,7 @@
                   },
                   "required": [
                     "bitbucket",
+                    "confirmed",
                     "github",
                     "gitlab",
                     "teamName",
@@ -196511,6 +196747,9 @@
           },
           "403": {
             "description": "You do not have permission to access this resource.\nNot authorized to update the team. Must be an OWNER."
+          },
+          "409": {
+            "description": ""
           },
           "410": {
             "description": ""
@@ -212819,22 +213058,14 @@
             "type": "object",
             "description": "Per-request provider timeouts in ms, keyed by provider slug for BYOK credentials."
           },
-          "requires": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "description": "For kind=router: capability tags a candidate must have."
-          },
           "selector": {
             "type": "string",
             "enum": [
               "cost",
-              "priority",
               "tps",
               "ttft"
             ],
-            "description": "For kind=router: how to order candidates."
+            "description": "For kind=router: how to order candidates. Absent means declared order."
           },
           "serviceTier": {
             "type": "string",
@@ -215376,6 +215607,15 @@
           "triggers": {
             "description": "Whether the triggers are enabled for this connector.",
             "type": "boolean"
+          },
+          "triggerType": {
+            "type": "string",
+            "description": "Trigger driver type. Resolved automatically from the service or known service registry when not provided. Only set when using the newly decoupled triggers resolution flow."
+          },
+          "triggerData": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Trigger-specific credentials (e.g. webhook signing secret). Validated and encrypted against the trigger type definition."
           },
           "triggerDestination": {
             "description": "Initial trigger destination. Requires triggers to be enabled and a projectId here or at the top level. Connector responses expose the resulting set as triggerDestinations. Replace the complete set with PATCH /v1/connect/connectors/{connector}/trigger-destinations.",
@@ -219619,7 +219859,6 @@
                         "providerOptions",
                         "providerOrder",
                         "providerTimeouts",
-                        "requires",
                         "selector",
                         "serviceTier",
                         "sort",
@@ -224914,6 +225153,65 @@
                   "ruleName",
                   "ruleProvenance",
                   "source"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "mode": {
+                    "nullable": true,
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      null
+                    ]
+                  },
+                  "previousMode": {
+                    "nullable": true,
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      null
+                    ]
+                  },
+                  "scope": {
+                    "type": "string",
+                    "enum": [
+                      "organization"
+                    ]
+                  }
+                },
+                "required": [
+                  "mode",
+                  "previousMode",
+                  "scope"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "mode": {
+                    "type": "string",
+                    "enum": [
+                      "all",
+                      "email-domain",
+                      "none"
+                    ]
+                  },
+                  "previousMode": {
+                    "type": "string",
+                    "enum": [
+                      "all",
+                      "email-domain",
+                      "none"
+                    ]
+                  }
+                },
+                "required": [
+                  "mode",
+                  "previousMode"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -231792,6 +232090,23 @@
               },
               {
                 "properties": {
+                  "avatar": {
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "organizationId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "avatar",
+                  "organizationId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "name": {
                     "type": "string"
                   },
@@ -231892,6 +232207,48 @@
                   "directoryGroupId",
                   "directoryId",
                   "organizationId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "copiedDomains": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "enabledOrganizationEmu": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
+                    ]
+                  },
+                  "enabledTeamIds": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "organizationId": {
+                    "type": "string"
+                  },
+                  "teamId": {
+                    "type": "string"
+                  },
+                  "teamSlug": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "copiedDomains",
+                  "enabledOrganizationEmu",
+                  "enabledTeamIds",
+                  "organizationId",
+                  "teamId",
+                  "teamSlug"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -236366,6 +236723,12 @@
                   "projectName": {
                     "type": "string"
                   },
+                  "scope": {
+                    "type": "string",
+                    "enum": [
+                      "organization"
+                    ]
+                  },
                   "ssoProtection": {
                     "nullable": true,
                     "oneOf": [
@@ -238743,6 +239106,28 @@
                   "by",
                   "slug",
                   "teamId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "enabled": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
+                    ]
+                  },
+                  "scope": {
+                    "type": "string",
+                    "enum": [
+                      "organization"
+                    ]
+                  }
+                },
+                "required": [
+                  "enabled"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -242551,6 +242936,7 @@
               "deployment-creation-blocked",
               "deployment-delete",
               "deployment-policy-blocked",
+              "deployment-protection-access-requests",
               "deployment-undeleted",
               "disabled-integration-installation-removed",
               "disconnect-bitbucket-app",
@@ -242726,10 +243112,12 @@
               "oidc-policy-deleted",
               "oidc-policy-updated",
               "oidc-policy-used-to-obtain-app-token",
+              "organization-avatar-update",
               "organization-create",
               "organization-delete",
               "organization-dsync-group-delete",
               "organization-dsync-group-upsert",
+              "organization-emu-domains-merged",
               "organization-emu-team-updated",
               "organization-emu-updated",
               "organization-slug-update",
@@ -243456,6 +243844,7 @@
               "deployment-creation-blocked",
               "deployment-delete",
               "deployment-policy-blocked",
+              "deployment-protection-access-requests",
               "deployment-undeleted",
               "disabled-integration-installation-removed",
               "disconnect-bitbucket-app",
@@ -243631,10 +244020,12 @@
               "oidc-policy-deleted",
               "oidc-policy-updated",
               "oidc-policy-used-to-obtain-app-token",
+              "organization-avatar-update",
               "organization-create",
               "organization-delete",
               "organization-dsync-group-delete",
               "organization-dsync-group-upsert",
+              "organization-emu-domains-merged",
               "organization-emu-team-updated",
               "organization-emu-updated",
               "organization-slug-update",
@@ -244149,6 +244540,7 @@
                 "deployment-creation-blocked",
                 "deployment-delete",
                 "deployment-policy-blocked",
+                "deployment-protection-access-requests",
                 "deployment-undeleted",
                 "disabled-integration-installation-removed",
                 "disconnect-bitbucket-app",
@@ -244324,10 +244716,12 @@
                 "oidc-policy-deleted",
                 "oidc-policy-updated",
                 "oidc-policy-used-to-obtain-app-token",
+                "organization-avatar-update",
                 "organization-create",
                 "organization-delete",
                 "organization-dsync-group-delete",
                 "organization-dsync-group-upsert",
+                "organization-emu-domains-merged",
                 "organization-emu-team-updated",
                 "organization-emu-updated",
                 "organization-slug-update",
@@ -246238,6 +246632,14 @@
       },
       "NamedSandbox": {
         "properties": {
+          "architecture": {
+            "type": "string",
+            "enum": [
+              "amd64",
+              "arm64"
+            ],
+            "description": "CPU architecture of the sandbox. This value does not change."
+          },
           "createdAt": {
             "type": "number",
             "description": "The time when the named sandbox was created, in milliseconds since the epoch.",
@@ -246632,6 +247034,14 @@
             "description": "The amount of CPU time the sandbox consumed, if available, in milliseconds. This value is only available once the sandbox is stopped, and only if it stopped successfully.",
             "example": 42
           },
+          "architecture": {
+            "type": "string",
+            "enum": [
+              "amd64",
+              "arm64"
+            ],
+            "description": "CPU architecture of the sandbox."
+          },
           "createdAt": {
             "type": "number",
             "description": "The time when the sandbox was created, in milliseconds since the epoch.",
@@ -246840,6 +247250,14 @@
       },
       "Snapshot": {
         "properties": {
+          "architecture": {
+            "type": "string",
+            "enum": [
+              "amd64",
+              "arm64"
+            ],
+            "description": "CPU architecture required to restore the snapshot."
+          },
           "createdAt": {
             "type": "number",
             "description": "The time when the snapshot was created, in milliseconds since the epoch.",

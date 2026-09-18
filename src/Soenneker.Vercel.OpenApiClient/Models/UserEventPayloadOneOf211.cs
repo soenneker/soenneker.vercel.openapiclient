@@ -15,8 +15,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enforced property</summary>
-        public bool? Enforced { get; set; }
+        /// <summary>The enabled property</summary>
+        public bool? Enabled { get; set; }
+        /// <summary>The enforcedTeamIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? EnforcedTeamIds { get; set; }
+#nullable restore
+#else
+        public List<string> EnforcedTeamIds { get; set; }
+#endif
         /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,16 +33,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
-        /// <summary>The organizationSlug property</summary>
+        /// <summary>The previousEnabled property</summary>
+        public bool? PreviousEnabled { get; set; }
+        /// <summary>The trigger property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf211Trigger? Trigger { get; set; }
+        /// <summary>The unenforcedTeamIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationSlug { get; set; }
+        public List<string>? UnenforcedTeamIds { get; set; }
 #nullable restore
 #else
-        public string OrganizationSlug { get; set; }
+        public List<string> UnenforcedTeamIds { get; set; }
 #endif
-        /// <summary>The previousEnforced property</summary>
-        public bool? PreviousEnforced { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf211"/> and sets the default values.
         /// </summary>
@@ -60,10 +70,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enforced", n => { Enforced = n.GetBoolValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "enforcedTeamIds", n => { EnforcedTeamIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "organizationSlug", n => { OrganizationSlug = n.GetStringValue(); } },
-                { "previousEnforced", n => { PreviousEnforced = n.GetBoolValue(); } },
+                { "previousEnabled", n => { PreviousEnabled = n.GetBoolValue(); } },
+                { "trigger", n => { Trigger = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf211Trigger>(); } },
+                { "unenforcedTeamIds", n => { UnenforcedTeamIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -73,10 +85,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("enforced", Enforced);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteCollectionOfPrimitiveValues<string>("enforcedTeamIds", EnforcedTeamIds);
             writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteStringValue("organizationSlug", OrganizationSlug);
-            writer.WriteBoolValue("previousEnforced", PreviousEnforced);
+            writer.WriteBoolValue("previousEnabled", PreviousEnabled);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf211Trigger>("trigger", Trigger);
+            writer.WriteCollectionOfPrimitiveValues<string>("unenforcedTeamIds", UnenforcedTeamIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

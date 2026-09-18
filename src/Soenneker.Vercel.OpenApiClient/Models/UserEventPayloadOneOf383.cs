@@ -15,6 +15,32 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether the removal was system-initiated rather than human-initiated.</summary>
+        public bool? Automated { get; set; }
+        /// <summary>The bitbucketUsername property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BitbucketUsername { get; set; }
+#nullable restore
+#else
+        public string BitbucketUsername { get; set; }
+#endif
+        /// <summary>The deletedUid property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeletedUid { get; set; }
+#nullable restore
+#else
+        public string DeletedUid { get; set; }
+#endif
+        /// <summary>The deletedUser property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383DeletedUser? DeletedUser { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383DeletedUser DeletedUser { get; set; }
+#endif
         /// <summary>The directoryType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,94 +49,36 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string DirectoryType { get; set; }
 #endif
-        /// <summary>The origin property</summary>
+        /// <summary>The githubUsername property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Origin { get; set; }
+        public string? GithubUsername { get; set; }
 #nullable restore
 #else
-        public string Origin { get; set; }
+        public string GithubUsername { get; set; }
 #endif
-        /// <summary>The previousRole property</summary>
+        /// <summary>The gitlabUsername property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousRole { get; set; }
+        public string? GitlabUsername { get; set; }
 #nullable restore
 #else
-        public string PreviousRole { get; set; }
+        public string GitlabUsername { get; set; }
 #endif
-        /// <summary>The previousTeamPermissions property</summary>
+        /// <summary>The newPlan property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383NewPlan? NewPlan { get; set; }
+        /// <summary>The previousPlan property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383PreviousPlan? PreviousPlan { get; set; }
+        /// <summary>Why the member was removed. When removed due to a plan downgrade, this is a {@link DowngradeReason} from `@api/pubsub-types` (e.g. `trial_expired`, `user_downgrade`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383PreviousTeamPermissionsItem?>? PreviousTeamPermissions { get; set; }
+        public string? Reason { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383PreviousTeamPermissionsItem?> PreviousTeamPermissions { get; set; }
-#endif
-        /// <summary>The previousTeamRoles property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383PreviousTeamRolesItem?>? PreviousTeamRoles { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383PreviousTeamRolesItem?> PreviousTeamRoles { get; set; }
+        public string Reason { get; set; }
 #endif
         /// <summary>The role property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Role { get; set; }
-#nullable restore
-#else
-        public string Role { get; set; }
-#endif
-        /// <summary>The ssoType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SsoType { get; set; }
-#nullable restore
-#else
-        public string SsoType { get; set; }
-#endif
-        /// <summary>The teamPermissions property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383TeamPermissionsItem?>? TeamPermissions { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383TeamPermissionsItem?> TeamPermissions { get; set; }
-#endif
-        /// <summary>The teamRoles property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383TeamRolesItem?>? TeamRoles { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383TeamRolesItem?> TeamRoles { get; set; }
-#endif
-        /// <summary>The teamSlug property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TeamSlug { get; set; }
-#nullable restore
-#else
-        public string TeamSlug { get; set; }
-#endif
-        /// <summary>The updatedUid property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UpdatedUid { get; set; }
-#nullable restore
-#else
-        public string UpdatedUid { get; set; }
-#endif
-        /// <summary>The updatedUser property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383UpdatedUser? UpdatedUser { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383UpdatedUser UpdatedUser { get; set; }
-#endif
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383Role? Role { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383"/> and sets the default values.
         /// </summary>
@@ -136,18 +104,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "automated", n => { Automated = n.GetBoolValue(); } },
+                { "bitbucketUsername", n => { BitbucketUsername = n.GetStringValue(); } },
+                { "deletedUid", n => { DeletedUid = n.GetStringValue(); } },
+                { "deletedUser", n => { DeletedUser = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383DeletedUser>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383DeletedUser.CreateFromDiscriminatorValue); } },
                 { "directoryType", n => { DirectoryType = n.GetStringValue(); } },
-                { "origin", n => { Origin = n.GetStringValue(); } },
-                { "previousRole", n => { PreviousRole = n.GetStringValue(); } },
-                { "previousTeamPermissions", n => { PreviousTeamPermissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383PreviousTeamPermissionsItem>()?.AsList(); } },
-                { "previousTeamRoles", n => { PreviousTeamRoles = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383PreviousTeamRolesItem>()?.AsList(); } },
-                { "role", n => { Role = n.GetStringValue(); } },
-                { "ssoType", n => { SsoType = n.GetStringValue(); } },
-                { "teamPermissions", n => { TeamPermissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383TeamPermissionsItem>()?.AsList(); } },
-                { "teamRoles", n => { TeamRoles = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383TeamRolesItem>()?.AsList(); } },
-                { "teamSlug", n => { TeamSlug = n.GetStringValue(); } },
-                { "updatedUid", n => { UpdatedUid = n.GetStringValue(); } },
-                { "updatedUser", n => { UpdatedUser = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383UpdatedUser>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383UpdatedUser.CreateFromDiscriminatorValue); } },
+                { "githubUsername", n => { GithubUsername = n.GetStringValue(); } },
+                { "gitlabUsername", n => { GitlabUsername = n.GetStringValue(); } },
+                { "newPlan", n => { NewPlan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383NewPlan>(); } },
+                { "previousPlan", n => { PreviousPlan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383PreviousPlan>(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383Role>(); } },
             };
         }
         /// <summary>
@@ -157,18 +124,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("automated", Automated);
+            writer.WriteStringValue("bitbucketUsername", BitbucketUsername);
+            writer.WriteStringValue("deletedUid", DeletedUid);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383DeletedUser>("deletedUser", DeletedUser);
             writer.WriteStringValue("directoryType", DirectoryType);
-            writer.WriteStringValue("origin", Origin);
-            writer.WriteStringValue("previousRole", PreviousRole);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383PreviousTeamPermissionsItem>("previousTeamPermissions", PreviousTeamPermissions);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383PreviousTeamRolesItem>("previousTeamRoles", PreviousTeamRoles);
-            writer.WriteStringValue("role", Role);
-            writer.WriteStringValue("ssoType", SsoType);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383TeamPermissionsItem>("teamPermissions", TeamPermissions);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383TeamRolesItem>("teamRoles", TeamRoles);
-            writer.WriteStringValue("teamSlug", TeamSlug);
-            writer.WriteStringValue("updatedUid", UpdatedUid);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383UpdatedUser>("updatedUser", UpdatedUser);
+            writer.WriteStringValue("githubUsername", GithubUsername);
+            writer.WriteStringValue("gitlabUsername", GitlabUsername);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383NewPlan>("newPlan", NewPlan);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383PreviousPlan>("previousPlan", PreviousPlan);
+            writer.WriteStringValue("reason", Reason);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf383Role>("role", Role);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

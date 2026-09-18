@@ -195,6 +195,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>A number containing the date when the deployment was deleted at milliseconds</summary>
         public double? DeletedAt { get; set; }
+        /// <summary>The duration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseDuration? Duration { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseDuration Duration { get; set; }
+#endif
         /// <summary>The env property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -601,6 +609,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "customEnvironment", n => { CustomEnvironment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseCustomEnvironment>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseCustomEnvironment.CreateFromDiscriminatorValue); } },
                 { "defaultRoute", n => { DefaultRoute = n.GetStringValue(); } },
                 { "deletedAt", n => { DeletedAt = n.GetDoubleValue(); } },
+                { "duration", n => { Duration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseDuration>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseDuration.CreateFromDiscriminatorValue); } },
                 { "env", n => { Env = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
                 { "errorLink", n => { ErrorLink = n.GetStringValue(); } },
@@ -703,6 +712,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseCustomEnvironment>("customEnvironment", CustomEnvironment);
             writer.WriteStringValue("defaultRoute", DefaultRoute);
             writer.WriteDoubleValue("deletedAt", DeletedAt);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseDuration>("duration", Duration);
             writer.WriteCollectionOfPrimitiveValues<string>("env", Env);
             writer.WriteStringValue("errorCode", ErrorCode);
             writer.WriteStringValue("errorLink", ErrorLink);
