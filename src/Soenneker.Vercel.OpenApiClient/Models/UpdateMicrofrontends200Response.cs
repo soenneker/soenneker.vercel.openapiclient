@@ -396,7 +396,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The paused property</summary>
         public bool? Paused { get; set; }
-        /// <summary>The permissions property</summary>
+        /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponsePermissions? Permissions { get; set; }

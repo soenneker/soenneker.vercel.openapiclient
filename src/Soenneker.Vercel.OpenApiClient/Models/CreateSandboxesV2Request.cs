@@ -12,6 +12,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class CreateSandboxesV2Request : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>CPU architecture. Inherits a snapshot or single image manifest when omitted. Image indexes default to amd64. Must match the source. ARM64 creation requires API v3 or v4 without runtime and team access.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestArchitecture? Architecture { get; set; }
         /// <summary>Default environment variables for the sandbox. These are inherited by all commands unless overridden.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,6 +159,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "architecture", n => { Architecture = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestArchitecture>(); } },
                 { "env", n => { Env = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestEnv>(global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestEnv.CreateFromDiscriminatorValue); } },
                 { "failoverRegions", n => { FailoverRegions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestFailoverRegionsItem>()?.AsList(); } },
                 { "image", n => { Image = n.GetStringValue(); } },
@@ -184,6 +187,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestArchitecture>("architecture", Architecture);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestEnv>("env", Env);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateSandboxesV2RequestFailoverRegionsItem>("failoverRegions", FailoverRegions);
             writer.WriteStringValue("image", Image);

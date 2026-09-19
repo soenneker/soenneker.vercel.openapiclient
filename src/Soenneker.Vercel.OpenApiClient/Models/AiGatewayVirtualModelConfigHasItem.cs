@@ -11,6 +11,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ImplicitCaching,
         #pragma warning restore CS1591
+        [EnumMember(Value = "reasoning")]
+        #pragma warning disable CS1591
+        Reasoning,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "tool-use")]
+        #pragma warning disable CS1591
+        ToolUse,
+        #pragma warning restore CS1591
         [EnumMember(Value = "vision")]
         #pragma warning disable CS1591
         Vision,
