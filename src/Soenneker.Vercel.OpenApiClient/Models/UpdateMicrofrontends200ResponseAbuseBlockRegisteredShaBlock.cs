@@ -8,44 +8,28 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Vercel
+    /// Since September 2026. Set on the live `abuse.block` only, by the consumer that auto-registers this project&apos;s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project&apos;s current SHA, or it would disable another block&apos;s row.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserEventPayloadOneOf107JobOneOf8HeadInfo : IAdditionalDataHolder, IParsable
+    public partial class UpdateMicrofrontends200ResponseAbuseBlockRegisteredShaBlock : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The commitMetadata property</summary>
+        /// <summary>The createdAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf107JobOneOf8HeadInfoCommitMetadata? CommitMetadata { get; set; }
+        public string? CreatedAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf107JobOneOf8HeadInfoCommitMetadata CommitMetadata { get; set; }
+        public string CreatedAt { get; set; }
 #endif
-        /// <summary>The org property</summary>
+        /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Org { get; set; }
+        public string? CreatedBy { get; set; }
 #nullable restore
 #else
-        public string Org { get; set; }
-#endif
-        /// <summary>The ref property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Ref { get; set; }
-#nullable restore
-#else
-        public string Ref { get; set; }
-#endif
-        /// <summary>The repo property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Repo { get; set; }
-#nullable restore
-#else
-        public string Repo { get; set; }
+        public string CreatedBy { get; set; }
 #endif
         /// <summary>The sha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,21 +40,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public string Sha { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf107JobOneOf8HeadInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseAbuseBlockRegisteredShaBlock"/> and sets the default values.
         /// </summary>
-        public UserEventPayloadOneOf107JobOneOf8HeadInfo()
+        public UpdateMicrofrontends200ResponseAbuseBlockRegisteredShaBlock()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf107JobOneOf8HeadInfo"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseAbuseBlockRegisteredShaBlock"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf107JobOneOf8HeadInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseAbuseBlockRegisteredShaBlock CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf107JobOneOf8HeadInfo();
+            return new global::Soenneker.Vercel.OpenApiClient.Models.UpdateMicrofrontends200ResponseAbuseBlockRegisteredShaBlock();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,10 +64,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "commitMetadata", n => { CommitMetadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf107JobOneOf8HeadInfoCommitMetadata>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf107JobOneOf8HeadInfoCommitMetadata.CreateFromDiscriminatorValue); } },
-                { "org", n => { Org = n.GetStringValue(); } },
-                { "ref", n => { Ref = n.GetStringValue(); } },
-                { "repo", n => { Repo = n.GetStringValue(); } },
+                { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
+                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "sha", n => { Sha = n.GetStringValue(); } },
             };
         }
@@ -94,10 +76,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf107JobOneOf8HeadInfoCommitMetadata>("commitMetadata", CommitMetadata);
-            writer.WriteStringValue("org", Org);
-            writer.WriteStringValue("ref", Ref);
-            writer.WriteStringValue("repo", Repo);
+            writer.WriteStringValue("createdAt", CreatedAt);
+            writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteStringValue("sha", Sha);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -34,7 +34,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Search
         {
         }
         /// <summary>
-        /// Check registration availability for 1–200 exact domain names, such as `example.com`. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.
+        /// Start domain research here. Get registration availability and pricing for 1–200 exact domain names. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SearchDomains200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -67,7 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Search
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.SearchDomains200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.SearchDomains200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Check registration availability for 1–200 exact domain names, such as `example.com`. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.
+        /// Start domain research here. Get registration availability and pricing for 1–200 exact domain names. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -98,7 +98,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Search
             return new global::Soenneker.Vercel.OpenApiClient.V1.Registrar.Domains.Search.SearchRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Check registration availability for 1–200 exact domain names, such as `example.com`. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.
+        /// Start domain research here. Get registration availability and pricing for 1–200 exact domain names. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SearchRequestBuilderPostQueryParameters 

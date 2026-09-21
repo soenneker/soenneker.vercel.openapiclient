@@ -54,6 +54,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Reason { get; set; }
 #endif
+        /// <summary>Since September 2026. Set on the live `abuse.block` only, by the consumer that auto-registers this project&apos;s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project&apos;s current SHA, or it would disable another block&apos;s row.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemAbuseBlockRegisteredShaBlock? RegisteredShaBlock { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemAbuseBlockRegisteredShaBlock RegisteredShaBlock { get; set; }
+#endif
         /// <summary>The statusCode property</summary>
         public double? StatusCode { get; set; }
         /// <summary>
@@ -89,6 +97,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "ineligibleForAppeal", n => { IneligibleForAppeal = n.GetBoolValue(); } },
                 { "isCascading", n => { IsCascading = n.GetBoolValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
+                { "registeredShaBlock", n => { RegisteredShaBlock = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemAbuseBlockRegisteredShaBlock>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemAbuseBlockRegisteredShaBlock.CreateFromDiscriminatorValue); } },
                 { "statusCode", n => { StatusCode = n.GetDoubleValue(); } },
             };
         }
@@ -107,6 +116,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("ineligibleForAppeal", IneligibleForAppeal);
             writer.WriteBoolValue("isCascading", IsCascading);
             writer.WriteStringValue("reason", Reason);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemAbuseBlockRegisteredShaBlock>("registeredShaBlock", RegisteredShaBlock);
             writer.WriteDoubleValue("statusCode", StatusCode);
             writer.WriteAdditionalData(AdditionalData);
         }

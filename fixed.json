@@ -42,6 +42,9 @@
                 "summary": "Access group name",
                 "value": "My Access Group"
               }
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -91,7 +94,15 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "read",
+            "get"
+          ]
+        }
       },
       "post": {
         "tags": [
@@ -448,7 +459,14 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "list"
+          ]
+        }
       },
       "post": {
         "tags": [
@@ -2173,7 +2191,8 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-speakeasy-test": false
       },
       "get": {
         "tags": [
@@ -2556,6 +2575,13 @@
           {
             "bearerToken": []
           }
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl -N --request GET \\\n  --url \u0027https://api.vercel.com/v1/billing/charges?teamId=\u003Cteam\u003E\u0026from=\u003Cfrom_date\u003E\u0026to=\u003Cto_date\u003E\u0027 \\\n  --header \u0027Authorization: Bearer \u003Ctoken\u003E\u0027 \\\n  --header \u0027Accept-Encoding: gzip\u0027 \\\n  --compressed\n"
+          }
         ]
       }
     },
@@ -2707,6 +2733,13 @@
         "security": [
           {
             "bearerToken": []
+          }
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "curl",
+            "label": "cURL",
+            "source": "curl --request POST \\\n  --url \u0027https://api.vercel.com/v1/billing/buy?teamId=\u003Cteam\u003E\u0027 \\\n  --header \u0027Authorization: Bearer \u003Ctoken\u003E\u0027 \\\n  --header \u0027Content-Type: application/json\u0027 \\\n  --data \u0027{\u0022item\u0022:{\u0022type\u0022:\u0022credits\u0022,\u0022creditType\u0022:\u0022v0\u0022,\u0022amount\u0022:100}}\u0027\n"
           }
         ]
       }
@@ -7220,7 +7253,15 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "inspect",
+            "get"
+          ]
+        }
       },
       "delete": {
         "tags": [
@@ -7407,7 +7448,11 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false
+        }
       }
     },
     "/v12/deployments/{id}/cancel": {
@@ -7428,6 +7473,9 @@
               "type": "string",
               "description": "The unique identifier of the deployment.",
               "example": "dpl_5WJWYSyB7BpgTj3EuwF37WMRBXBtPQ2iTMJHJBJyRfd"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -7480,7 +7528,11 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false
+        }
       }
     },
     "/v5/domains/{domain}/records": {
@@ -7499,6 +7551,9 @@
             "schema": {
               "type": "string",
               "example": "example.com"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -7581,7 +7636,15 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "ls",
+            "list"
+          ]
+        }
       }
     },
     "/v2/domains/{domain}/records": {
@@ -7602,6 +7665,9 @@
               "type": "string",
               "description": "The domain used to create the DNS record.",
               "example": "example.com"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -7670,7 +7736,17 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "bodyArguments": [
+            "name",
+            "type",
+            "value"
+          ]
+        },
+        "x-speakeasy-test": false
       }
     },
     "/v1/domains/records/{recordId}": {
@@ -7691,6 +7767,9 @@
               "type": "string",
               "description": "The id of the DNS record",
               "example": "rec_2qn7pzrx89yxy34vezpd31y9"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -7759,7 +7838,11 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false
+        }
       }
     },
     "/domains/{domain}/records": {
@@ -7877,6 +7960,9 @@
             "schema": {
               "type": "string",
               "example": "example.com"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -7886,6 +7972,9 @@
             "schema": {
               "type": "string",
               "example": "rec_V0fra8eEgQwEpFhYG2vTzC3K"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -7938,7 +8027,104 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false
+        }
+      }
+    },
+    "/v1/registrar/domains/search": {
+      "post": {
+        "tags": [
+          "domains-registrar"
+        ],
+        "summary": "Get Domain Availability and Pricing",
+        "description": "Start domain research here. Get registration availability and pricing for 1\u2013200 exact domain names. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.",
+        "operationId": "SearchDomains",
+        "parameters": [
+          {
+            "name": "teamId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchDomainsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchDomains200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "There was something wrong with the request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpApiDecodeError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unauthorized"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "NotAuthorizedForScope",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotAuthorizedForScope"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "TooManyRequests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TooManyRequests"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "InternalServerError",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalServerError"
+                }
+              }
+            }
+          }
+        },
+        "security": []
       }
     },
     "/v1/registrar/tlds/supported": {
@@ -8544,99 +8730,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/GetBulkAvailability200Response"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "There was something wrong with the request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpApiDecodeError"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Unauthorized"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "NotAuthorizedForScope",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotAuthorizedForScope"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "TooManyRequests",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TooManyRequests"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "InternalServerError",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InternalServerError"
-                }
-              }
-            }
-          }
-        },
-        "security": []
-      }
-    },
-    "/v1/registrar/domains/search": {
-      "post": {
-        "tags": [
-          "domains-registrar"
-        ],
-        "summary": "Check domain availability and pricing",
-        "description": "Check registration availability for 1\u2013200 exact domain names, such as \u0060example.com\u0060. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.",
-        "operationId": "SearchDomains",
-        "parameters": [
-          {
-            "name": "teamId",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SearchDomainsRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SearchDomains200Response"
                 }
               }
             }
@@ -10206,6 +10299,9 @@
               "type": "string",
               "description": "The name of the domain.",
               "example": "example.com"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -10258,7 +10354,11 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false
+        }
       }
     },
     "/v5/domains": {
@@ -10350,7 +10450,15 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "ls",
+            "list"
+          ]
+        }
       }
     },
     "/v7/domains": {
@@ -10427,7 +10535,14 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "bodyArguments": [
+            "name"
+          ]
+        }
       }
     },
     "/v3/domains/{domain}": {
@@ -10513,7 +10628,8 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-speakeasy-test": false
       }
     },
     "/v6/domains/{domain}": {
@@ -10534,6 +10650,9 @@
               "type": "string",
               "description": "The name of the domain.",
               "example": "example.com"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -10589,7 +10708,11 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false
+        }
       }
     },
     "/v1/log-drains/{id}": {
@@ -13044,7 +13167,11 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false
+        }
       },
       "get": {
         "tags": [
@@ -13171,7 +13298,15 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "ls",
+            "list"
+          ]
+        }
       },
       "patch": {
         "tags": [
@@ -13240,7 +13375,11 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false
+        }
       },
       "delete": {
         "tags": [
@@ -13309,7 +13448,11 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false
+        }
       }
     },
     "/v1/env/{id}": {
@@ -13329,6 +13472,9 @@
             "schema": {
               "type": "string",
               "description": "The unique ID for the Shared Environment Variable to get the decrypted value."
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -13378,7 +13524,11 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false
+        }
       }
     },
     "/v1/env/{id}/unlink/{projectId}": {
@@ -13604,7 +13754,14 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "events"
+          ]
+        }
       }
     },
     "/v1/events/types": {
@@ -17401,7 +17558,8 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-speakeasy-test": false
       }
     },
     "/v1/integrations/configuration/{id}": {
@@ -19075,7 +19233,8 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-speakeasy-name-override": "createInstallationIntegrationConfiguration"
       }
     },
     "/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId}": {
@@ -19145,7 +19304,8 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-speakeasy-name-override": "updateInstallationIntegrationConfiguration"
       },
       "delete": {
         "tags": [
@@ -19204,7 +19364,8 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-speakeasy-name-override": "deleteInstallationIntegrationConfiguration"
       }
     },
     "/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config": {
@@ -20140,7 +20301,8 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-speakeasy-test": false
       },
       "post": {
         "tags": [
@@ -21166,7 +21328,15 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "ls",
+            "list"
+          ]
+        }
       }
     },
     "/v1/projects/traces": {
@@ -21338,7 +21508,14 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "bodyArguments": [
+            "name"
+          ]
+        }
       }
     },
     "/v1/projects/{idOrName}/token": {
@@ -21513,6 +21690,9 @@
               "type": "string",
               "description": "The unique project identifier or the project name",
               "example": "prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -21562,7 +21742,15 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "inspect",
+            "get"
+          ]
+        }
       },
       "patch": {
         "tags": [
@@ -21581,6 +21769,9 @@
               "type": "string",
               "description": "The unique project identifier or the project name",
               "example": "prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -21655,7 +21846,22 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "rename"
+          ],
+          "bodyArguments": [
+            "name"
+          ]
+        },
+        "x-speakeasy-usage-example": {
+          "title": "Update an existing project",
+          "description": "Update the fields of a project using either its name or id.",
+          "position": 2
+        }
       },
       "delete": {
         "tags": [
@@ -21674,6 +21880,9 @@
               "type": "string",
               "description": "The unique project identifier or the project name",
               "example": "prj_12HKQaOmR5t5Uy6vdcQsNIiZgHGB"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -21719,7 +21928,11 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false
+        }
       }
     },
     "/v1/projects/{idOrName}/avatar": {
@@ -23025,6 +23238,9 @@
               "type": "string",
               "description": "The unique project identifier or the project name",
               "example": "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -23123,7 +23339,16 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "ls",
+            "list"
+          ]
+        },
+        "x-speakeasy-test": false
       },
       "post": {
         "tags": [
@@ -23142,6 +23367,9 @@
               "type": "string",
               "description": "The unique project identifier or the project name",
               "example": "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -23226,7 +23454,11 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false
+        }
       }
     },
     "/v1/projects/{idOrName}/env/{id}": {
@@ -23247,6 +23479,9 @@
               "type": "string",
               "description": "The unique project identifier or the project name",
               "example": "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -23257,6 +23492,9 @@
             "schema": {
               "type": "string",
               "description": "The unique ID for the environment variable to get the decrypted value."
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -23306,7 +23544,11 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false
+        }
       }
     },
     "/v9/projects/{idOrName}/env/{id}": {
@@ -23327,6 +23569,9 @@
               "type": "string",
               "description": "The unique project identifier or the project name",
               "example": "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -23338,6 +23583,9 @@
               "type": "string",
               "description": "The unique environment variable identifier",
               "example": "XMbOEya1gUUO1ir4"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -23403,7 +23651,11 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false
+        }
       },
       "patch": {
         "tags": [
@@ -23422,6 +23674,9 @@
               "type": "string",
               "description": "The unique project identifier or the project name",
               "example": "prj_XLKmu1DyR1eY7zq8UgeRKbA7yVLA"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -23433,6 +23688,9 @@
               "type": "string",
               "description": "The unique environment variable identifier",
               "example": "XMbOEya1gUUO1ir4"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -23504,7 +23762,12 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false
+        },
+        "x-speakeasy-test": false
       }
     },
     "/v1/projects/{idOrName}/env": {
@@ -26122,6 +26385,9 @@
           "410": {
             "description": "410 response"
           },
+          "422": {
+            "description": "422 response"
+          },
           "429": {
             "description": "The concurrency limit has been exceeded."
           },
@@ -28495,7 +28761,8 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-speakeasy-test": false
       }
     },
     "/v1/security/firewall/bypass": {
@@ -29346,6 +29613,9 @@
             "schema": {
               "type": "string",
               "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -29389,7 +29659,15 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "members"
+          ]
+        },
+        "x-speakeasy-test": false
       }
     },
     "/v2/teams/{teamId}/members": {
@@ -29409,6 +29687,9 @@
             "schema": {
               "type": "string",
               "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -29461,7 +29742,14 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "invite"
+          ]
+        }
       }
     },
     "/v1/teams/{teamId}/request": {
@@ -29852,6 +30140,9 @@
             "schema": {
               "type": "string",
               "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           }
         ],
@@ -29886,7 +30177,14 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "get"
+          ]
+        }
       },
       "patch": {
         "tags": [
@@ -29904,6 +30202,9 @@
             "schema": {
               "type": "string",
               "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -29963,7 +30264,14 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "update"
+          ]
+        }
       }
     },
     "/v2/teams": {
@@ -30037,7 +30345,14 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "list"
+          ]
+        }
       }
     },
     "/v1/teams": {
@@ -30092,7 +30407,14 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "create"
+          ]
+        }
       }
     },
     "/v1/teams/{teamId}/dsync-roles": {
@@ -30621,7 +30943,14 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "list"
+          ]
+        }
       }
     },
     "/v3/user/tokens": {
@@ -30848,7 +31177,12 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false
+        },
+        "x-speakeasy-test": false
       }
     },
     "/v1/user": {
@@ -34306,7 +34640,14 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "for-deployment"
+          ]
+        }
       },
       "post": {
         "tags": [
@@ -34537,7 +34878,14 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "list"
+          ]
+        }
       }
     },
     "/v4/aliases/{idOrAlias}": {
@@ -34831,6 +35179,9 @@
             "schema": {
               "type": "string",
               "description": "The cert id"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -34883,7 +35234,11 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false
+        }
       },
       "delete": {
         "tags": [
@@ -34901,6 +35256,9 @@
             "schema": {
               "type": "string",
               "description": "The cert id to remove"
+            },
+            "x-vercel-cli": {
+              "kind": "argument"
             }
           },
           {
@@ -34953,7 +35311,11 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false
+        }
       }
     },
     "/v8/certs": {
@@ -35090,7 +35452,17 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "issue"
+          ],
+          "bodyArguments": [
+            "cns"
+          ]
+        }
       },
       "put": {
         "tags": [
@@ -35159,7 +35531,14 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "add"
+          ]
+        }
       }
     },
     "/v6/deployments/{id}/files": {
@@ -35524,7 +35903,15 @@
           {
             "bearerToken": []
           }
-        ]
+        ],
+        "x-vercel-cli": {
+          "supportedSubcommands": true,
+          "supportedProduction": false,
+          "aliases": [
+            "ls",
+            "list"
+          ]
+        }
       }
     }
   },
@@ -67706,6 +68093,9 @@
         ],
         "type": "object",
         "properties": {
+          "commitMetadata": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf107JobOneOf8HeadInfoCommitMetadata"
+          },
           "org": {
             "type": "string"
           },
@@ -68826,6 +69216,9 @@
               "$ref": "#/components/schemas/UserEventPayloadOneOf174NewOwnerAbuseHistoryItem"
             },
             "description": "(scanner history). Since November 2021. First element is newest."
+          },
+          "registeredShaBlock": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf174NewOwnerAbuseRegisteredShaBlock"
           },
           "scanner": {
             "type": "string",
@@ -70288,6 +70681,25 @@
           }
         }
       },
+      "UserEventPayloadOneOf107JobOneOf8HeadInfoCommitMetadata": {
+        "required": [
+          "author",
+          "committer",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "author": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf107JobOneOf8HeadInfoCommitMetadataAuthor"
+          },
+          "committer": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf107JobOneOf8HeadInfoCommitMetadataCommitter"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
       "AiGatewayVirtualModelConfigInferenceRegionProvidersAdditionalProperties": {
         "type": "object",
         "properties": {
@@ -70598,6 +71010,26 @@
           }
         },
         "description": "(scanner history). Since November 2021. First element is newest."
+      },
+      "UserEventPayloadOneOf174NewOwnerAbuseRegisteredShaBlock": {
+        "required": [
+          "createdAt",
+          "createdBy",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Since September 2026. The git SHA a non-cascading hard block of this owner auto-registered in the lineage blocklist, so unblocking can disable the row that block created. Lives on the owner rather than a project block because this registration path runs only when the block did not cascade, leaving the owner\u0027s single project unblocked and with no block record to carry it. Absent means the block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must clear only what is named here."
       },
       "UserEventPayloadOneOf174NewOwnerAbuseScheduledBlock": {
         "required": [
@@ -72486,6 +72918,44 @@
         "type": "object",
         "properties": {
           "en": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf107JobOneOf8HeadInfoCommitMetadataAuthor": {
+        "required": [
+          "date",
+          "email",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf107JobOneOf8HeadInfoCommitMetadataCommitter": {
+        "required": [
+          "date",
+          "email",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "name": {
             "type": "string"
           }
         }
@@ -76421,6 +76891,41 @@
       "RemoveRecord200Response": {
         "type": "object"
       },
+      "SearchDomainsRequest": {
+        "required": [
+          "domains"
+        ],
+        "type": "object",
+        "properties": {
+          "domains": {
+            "title": "maxItems(200)",
+            "maxItems": 200,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "A valid domain name"
+            },
+            "description": "an array of at most 200 item(s)"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SearchDomains200Response": {
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SearchDomains200ResponseResultsItem"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
       "GetSupportedTlds200Response": {
         "type": "array",
         "items": {
@@ -76683,41 +77188,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/GetBulkAvailability200ResponseResultsItem"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "SearchDomainsRequest": {
-        "required": [
-          "domains"
-        ],
-        "type": "object",
-        "properties": {
-          "domains": {
-            "title": "maxItems(200)",
-            "maxItems": 200,
-            "minItems": 1,
-            "type": "array",
-            "items": {
-              "type": "string",
-              "description": "A valid domain name"
-            },
-            "description": "an array of at most 200 item(s)"
-          }
-        },
-        "additionalProperties": false
-      },
-      "SearchDomains200Response": {
-        "required": [
-          "results"
-        ],
-        "type": "object",
-        "properties": {
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SearchDomains200ResponseResultsItem"
             }
           }
         },
@@ -116020,6 +116490,9 @@
           "slug": {
             "type": "string"
           },
+          "commitMetadata": {
+            "$ref": "#/components/schemas/GetDeployment200ResponseGitSourceCommitMetadata"
+          },
           "repoPushedAt": {
             "type": "number"
           },
@@ -117263,6 +117736,9 @@
           "slug": {
             "type": "string"
           },
+          "commitMetadata": {
+            "$ref": "#/components/schemas/CreateDeployment200ResponseGitSourceCommitMetadata"
+          },
           "repoPushedAt": {
             "type": "number"
           },
@@ -118268,6 +118744,9 @@
           "slug": {
             "type": "string"
           },
+          "commitMetadata": {
+            "$ref": "#/components/schemas/CancelDeployment200ResponseGitSourceCommitMetadata"
+          },
           "repoPushedAt": {
             "type": "number"
           },
@@ -118931,6 +119410,34 @@
         "additionalProperties": false,
         "nullable": true
       },
+      "SearchDomains200ResponseResultsItem": {
+        "required": [
+          "domain",
+          "available"
+        ],
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "description": "A valid domain name"
+          },
+          "available": {
+            "$ref": "#/components/schemas/SearchDomains200ResponseResultsItemAvailable"
+          },
+          "years": {
+            "type": "number"
+          },
+          "price": {
+            "type": "number"
+          },
+          "renewalPrice": {
+            "type": "number"
+          },
+          "premium": {
+            "type": "boolean"
+          }
+        }
+      },
       "GetTld200ResponseSupportedLanguageCodes": {
         "type": "object",
         "additionalProperties": {
@@ -118983,34 +119490,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "SearchDomains200ResponseResultsItem": {
-        "required": [
-          "domain",
-          "available"
-        ],
-        "type": "object",
-        "properties": {
-          "domain": {
-            "type": "string",
-            "description": "A valid domain name"
-          },
-          "available": {
-            "$ref": "#/components/schemas/SearchDomains200ResponseResultsItemAvailable"
-          },
-          "years": {
-            "type": "number"
-          },
-          "price": {
-            "type": "number"
-          },
-          "renewalPrice": {
-            "type": "number"
-          },
-          "premium": {
-            "type": "boolean"
-          }
-        }
       },
       "BuySingleDomainRequestContactInformation": {
         "required": [
@@ -156963,6 +157442,25 @@
           }
         }
       },
+      "GetDeployment200ResponseGitSourceCommitMetadata": {
+        "required": [
+          "author",
+          "committer",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "author": {
+            "$ref": "#/components/schemas/GetDeployment200ResponseGitSourceCommitMetadataAuthor"
+          },
+          "committer": {
+            "$ref": "#/components/schemas/GetDeployment200ResponseGitSourceCommitMetadataCommitter"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
       "GetDeployment200ResponseImagesLocalPatternsItem": {
         "type": "object",
         "properties": {
@@ -157768,6 +158266,25 @@
           }
         }
       },
+      "CreateDeployment200ResponseGitSourceCommitMetadata": {
+        "required": [
+          "author",
+          "committer",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "author": {
+            "$ref": "#/components/schemas/CreateDeployment200ResponseGitSourceCommitMetadataAuthor"
+          },
+          "committer": {
+            "$ref": "#/components/schemas/CreateDeployment200ResponseGitSourceCommitMetadataCommitter"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
       "CreateDeployment200ResponseImagesLocalPatternsItem": {
         "type": "object",
         "properties": {
@@ -158570,6 +159087,25 @@
           },
           "supportsCancellation": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseFunctionsAdditionalPropertiesSupportsCancellation"
+          }
+        }
+      },
+      "CancelDeployment200ResponseGitSourceCommitMetadata": {
+        "required": [
+          "author",
+          "committer",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "author": {
+            "$ref": "#/components/schemas/CancelDeployment200ResponseGitSourceCommitMetadataAuthor"
+          },
+          "committer": {
+            "$ref": "#/components/schemas/CancelDeployment200ResponseGitSourceCommitMetadataCommitter"
+          },
+          "message": {
+            "type": "string"
           }
         }
       },
@@ -164760,6 +165296,9 @@
           "reason": {
             "type": "string"
           },
+          "registeredShaBlock": {
+            "$ref": "#/components/schemas/CreateProject200ResponseAbuseBlockRegisteredShaBlock"
+          },
           "statusCode": {
             "type": "number"
           }
@@ -164795,6 +165334,9 @@
           },
           "reason": {
             "type": "string"
+          },
+          "registeredShaBlock": {
+            "$ref": "#/components/schemas/CreateProject200ResponseAbuseBlockHistoryItemRegisteredShaBlock"
           },
           "statusCode": {
             "type": "number"
@@ -165944,6 +166486,9 @@
           "reason": {
             "type": "string"
           },
+          "registeredShaBlock": {
+            "$ref": "#/components/schemas/GetProject200ResponseAbuseBlockRegisteredShaBlock"
+          },
           "statusCode": {
             "type": "number"
           }
@@ -165979,6 +166524,9 @@
           },
           "reason": {
             "type": "string"
+          },
+          "registeredShaBlock": {
+            "$ref": "#/components/schemas/GetProject200ResponseAbuseBlockHistoryItemRegisteredShaBlock"
           },
           "statusCode": {
             "type": "number"
@@ -167253,6 +167801,9 @@
           "reason": {
             "type": "string"
           },
+          "registeredShaBlock": {
+            "$ref": "#/components/schemas/UpdateProject200ResponseAbuseBlockRegisteredShaBlock"
+          },
           "statusCode": {
             "type": "number"
           }
@@ -167288,6 +167839,9 @@
           },
           "reason": {
             "type": "string"
+          },
+          "registeredShaBlock": {
+            "$ref": "#/components/schemas/UpdateProject200ResponseAbuseBlockHistoryItemRegisteredShaBlock"
           },
           "statusCode": {
             "type": "number"
@@ -168437,6 +168991,9 @@
           "reason": {
             "type": "string"
           },
+          "registeredShaBlock": {
+            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseBlockRegisteredShaBlock"
+          },
           "statusCode": {
             "type": "number"
           }
@@ -168472,6 +169029,9 @@
           },
           "reason": {
             "type": "string"
+          },
+          "registeredShaBlock": {
+            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseBlockHistoryItemRegisteredShaBlock"
           },
           "statusCode": {
             "type": "number"
@@ -170997,6 +171557,9 @@
           "reason": {
             "type": "string"
           },
+          "registeredShaBlock": {
+            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseBlockRegisteredShaBlock"
+          },
           "statusCode": {
             "type": "number"
           }
@@ -171032,6 +171595,9 @@
           },
           "reason": {
             "type": "string"
+          },
+          "registeredShaBlock": {
+            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseBlockHistoryItemRegisteredShaBlock"
           },
           "statusCode": {
             "type": "number"
@@ -182877,6 +183443,44 @@
           }
         }
       },
+      "GetDeployment200ResponseGitSourceCommitMetadataAuthor": {
+        "required": [
+          "date",
+          "email",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "GetDeployment200ResponseGitSourceCommitMetadataCommitter": {
+        "required": [
+          "date",
+          "email",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
       "GetDeployment200ResponseRoutesItemLocaleRedirect": {
         "type": "object",
         "additionalProperties": {
@@ -183358,6 +183962,44 @@
           }
         }
       },
+      "CreateDeployment200ResponseGitSourceCommitMetadataAuthor": {
+        "required": [
+          "date",
+          "email",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateDeployment200ResponseGitSourceCommitMetadataCommitter": {
+        "required": [
+          "date",
+          "email",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
       "CreateDeployment200ResponseRoutesItemLocaleRedirect": {
         "type": "object",
         "additionalProperties": {
@@ -183836,6 +184478,44 @@
           },
           "type": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseFunctionsAdditionalPropertiesExperimentalTriggersItemType"
+          }
+        }
+      },
+      "CancelDeployment200ResponseGitSourceCommitMetadataAuthor": {
+        "required": [
+          "date",
+          "email",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "CancelDeployment200ResponseGitSourceCommitMetadataCommitter": {
+        "required": [
+          "date",
+          "email",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
           }
         }
       },
@@ -185368,6 +186048,9 @@
           "reason": {
             "type": "string"
           },
+          "registeredShaBlock": {
+            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockRegisteredShaBlock"
+          },
           "statusCode": {
             "type": "number"
           }
@@ -185403,6 +186086,9 @@
           },
           "reason": {
             "type": "string"
+          },
+          "registeredShaBlock": {
+            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemRegisteredShaBlock"
           },
           "statusCode": {
             "type": "number"
@@ -187013,6 +187699,46 @@
           }
         }
       },
+      "CreateProject200ResponseAbuseBlockRegisteredShaBlock": {
+        "required": [
+          "createdAt",
+          "createdBy",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
+      },
+      "CreateProject200ResponseAbuseBlockHistoryItemRegisteredShaBlock": {
+        "required": [
+          "createdAt",
+          "createdBy",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
+      },
       "CreateProject200ResponseAbuseBlockHistoryItemRoute": {
         "type": "object",
         "properties": {
@@ -187578,6 +188304,46 @@
             "type": "string"
           }
         }
+      },
+      "GetProject200ResponseAbuseBlockRegisteredShaBlock": {
+        "required": [
+          "createdAt",
+          "createdBy",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
+      },
+      "GetProject200ResponseAbuseBlockHistoryItemRegisteredShaBlock": {
+        "required": [
+          "createdAt",
+          "createdBy",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
       },
       "GetProject200ResponseAbuseBlockHistoryItemRoute": {
         "type": "object",
@@ -188165,6 +188931,46 @@
         },
         "additionalProperties": false
       },
+      "UpdateProject200ResponseAbuseBlockRegisteredShaBlock": {
+        "required": [
+          "createdAt",
+          "createdBy",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
+      },
+      "UpdateProject200ResponseAbuseBlockHistoryItemRegisteredShaBlock": {
+        "required": [
+          "createdAt",
+          "createdBy",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
+      },
       "UpdateProject200ResponseAbuseBlockHistoryItemRoute": {
         "type": "object",
         "properties": {
@@ -188730,6 +189536,46 @@
             "type": "string"
           }
         }
+      },
+      "UploadProjectAvatar200ResponseAbuseBlockRegisteredShaBlock": {
+        "required": [
+          "createdAt",
+          "createdBy",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
+      },
+      "UploadProjectAvatar200ResponseAbuseBlockHistoryItemRegisteredShaBlock": {
+        "required": [
+          "createdAt",
+          "createdBy",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
       },
       "UploadProjectAvatar200ResponseAbuseBlockHistoryItemRoute": {
         "type": "object",
@@ -189356,6 +190202,46 @@
           }
         },
         "description": "The checks to evaluate. An empty array means nothing is evaluated."
+      },
+      "UpdateMicrofrontends200ResponseAbuseBlockRegisteredShaBlock": {
+        "required": [
+          "createdAt",
+          "createdBy",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
+      },
+      "UpdateMicrofrontends200ResponseAbuseBlockHistoryItemRegisteredShaBlock": {
+        "required": [
+          "createdAt",
+          "createdBy",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
       },
       "UpdateMicrofrontends200ResponseAbuseBlockHistoryItemRoute": {
         "type": "object",
@@ -192199,6 +193085,9 @@
           "reason": {
             "type": "string"
           },
+          "registeredShaBlock": {
+            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseBlockRegisteredShaBlock"
+          },
           "statusCode": {
             "type": "number"
           }
@@ -192234,6 +193123,9 @@
           },
           "reason": {
             "type": "string"
+          },
+          "registeredShaBlock": {
+            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemRegisteredShaBlock"
           },
           "statusCode": {
             "type": "number"
@@ -194148,6 +195040,9 @@
           "reason": {
             "type": "string"
           },
+          "registeredShaBlock": {
+            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseBlockRegisteredShaBlock"
+          },
           "statusCode": {
             "type": "number"
           }
@@ -194183,6 +195078,9 @@
           },
           "reason": {
             "type": "string"
+          },
+          "registeredShaBlock": {
+            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRegisteredShaBlock"
           },
           "statusCode": {
             "type": "number"
@@ -195065,6 +195963,9 @@
           "reason": {
             "type": "string"
           },
+          "registeredShaBlock": {
+            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseBlockRegisteredShaBlock"
+          },
           "statusCode": {
             "type": "number"
           }
@@ -195100,6 +196001,9 @@
           },
           "reason": {
             "type": "string"
+          },
+          "registeredShaBlock": {
+            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRegisteredShaBlock"
           },
           "statusCode": {
             "type": "number"
@@ -197696,6 +198600,46 @@
           "type": "string"
         }
       },
+      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockRegisteredShaBlock": {
+        "required": [
+          "createdAt",
+          "createdBy",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
+      },
+      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemRegisteredShaBlock": {
+        "required": [
+          "createdAt",
+          "createdBy",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
+      },
       "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemRoute": {
         "type": "object",
         "properties": {
@@ -199763,6 +200707,46 @@
           }
         }
       },
+      "GetProjects200ResponseBranch1ValueItemAbuseBlockRegisteredShaBlock": {
+        "required": [
+          "createdAt",
+          "createdBy",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
+      },
+      "GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemRegisteredShaBlock": {
+        "required": [
+          "createdAt",
+          "createdBy",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
+      },
       "GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemRoute": {
         "type": "object",
         "properties": {
@@ -200826,6 +201810,46 @@
           }
         }
       },
+      "GetProjects200ResponseOneOf2ProjectsItemAbuseBlockRegisteredShaBlock": {
+        "required": [
+          "createdAt",
+          "createdBy",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
+      },
+      "GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRegisteredShaBlock": {
+        "required": [
+          "createdAt",
+          "createdBy",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
+      },
       "GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRoute": {
         "type": "object",
         "properties": {
@@ -201397,6 +202421,46 @@
             "type": "string"
           }
         }
+      },
+      "GetProjects200ResponseOneOf3ProjectsItemAbuseBlockRegisteredShaBlock": {
+        "required": [
+          "createdAt",
+          "createdBy",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
+      },
+      "GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRegisteredShaBlock": {
+        "required": [
+          "createdAt",
+          "createdBy",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        },
+        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
       },
       "GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRoute": {
         "type": "object",

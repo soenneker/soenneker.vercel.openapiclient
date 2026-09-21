@@ -58,6 +58,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174NewOwnerAbuseHistoryItem> History { get; set; }
 #endif
+        /// <summary>Since September 2026. The git SHA a non-cascading hard block of this owner auto-registered in the lineage blocklist, so unblocking can disable the row that block created. Lives on the owner rather than a project block because this registration path runs only when the block did not cascade, leaving the owner&apos;s single project unblocked and with no block record to carry it. Absent means the block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must clear only what is named here.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174NewOwnerAbuseRegisteredShaBlock? RegisteredShaBlock { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174NewOwnerAbuseRegisteredShaBlock RegisteredShaBlock { get; set; }
+#endif
         /// <summary>The removedPhoneNumbers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +132,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "gitLineageBlocks", n => { GitLineageBlocks = n.GetDoubleValue(); } },
                 { "gitLineageBlocksDry", n => { GitLineageBlocksDry = n.GetDoubleValue(); } },
                 { "history", n => { History = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174NewOwnerAbuseHistoryItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174NewOwnerAbuseHistoryItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "registeredShaBlock", n => { RegisteredShaBlock = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174NewOwnerAbuseRegisteredShaBlock>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174NewOwnerAbuseRegisteredShaBlock.CreateFromDiscriminatorValue); } },
                 { "removedPhoneNumbers", n => { RemovedPhoneNumbers = n.GetStringValue(); } },
                 { "scanner", n => { Scanner = n.GetStringValue(); } },
                 { "scheduledBlock", n => { ScheduledBlock = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174NewOwnerAbuseScheduledBlock>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174NewOwnerAbuseScheduledBlock.CreateFromDiscriminatorValue); } },
@@ -145,6 +154,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("gitLineageBlocks", GitLineageBlocks);
             writer.WriteDoubleValue("gitLineageBlocksDry", GitLineageBlocksDry);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174NewOwnerAbuseHistoryItem>("history", History);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174NewOwnerAbuseRegisteredShaBlock>("registeredShaBlock", RegisteredShaBlock);
             writer.WriteStringValue("removedPhoneNumbers", RemovedPhoneNumbers);
             writer.WriteStringValue("scanner", Scanner);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174NewOwnerAbuseScheduledBlock>("scheduledBlock", ScheduledBlock);
