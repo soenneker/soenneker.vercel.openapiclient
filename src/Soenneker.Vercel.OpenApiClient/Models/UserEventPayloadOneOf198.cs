@@ -15,14 +15,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The periods property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf198PeriodsItem>? Periods { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf198PeriodsItem> Periods { get; set; }
-#endif
+        /// <summary>The invoiceCollection property</summary>
+        public bool? InvoiceCollection { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf198"/> and sets the default values.
         /// </summary>
@@ -48,7 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "periods", n => { Periods = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf198PeriodsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf198PeriodsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "invoiceCollection", n => { InvoiceCollection = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -58,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf198PeriodsItem>("periods", Periods);
+            writer.WriteBoolValue("invoiceCollection", InvoiceCollection);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

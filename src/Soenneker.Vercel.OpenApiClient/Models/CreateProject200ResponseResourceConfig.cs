@@ -18,6 +18,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? BuildMachineElasticLastUpdated { get; set; }
         /// <summary>The buildMachineElasticReason property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseResourceConfigBuildMachineElasticReason? BuildMachineElasticReason { get; set; }
+        /// <summary>The buildMachineElasticTransition property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseResourceConfigBuildMachineElasticTransition? BuildMachineElasticTransition { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseResourceConfigBuildMachineElasticTransition BuildMachineElasticTransition { get; set; }
+#endif
         /// <summary>The buildMachineSelection property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseResourceConfigBuildMachineSelection? BuildMachineSelection { get; set; }
         /// <summary>The buildMachineType property</summary>
@@ -79,6 +87,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "buildMachineElasticLastUpdated", n => { BuildMachineElasticLastUpdated = n.GetDoubleValue(); } },
                 { "buildMachineElasticReason", n => { BuildMachineElasticReason = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseResourceConfigBuildMachineElasticReason>(); } },
+                { "buildMachineElasticTransition", n => { BuildMachineElasticTransition = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseResourceConfigBuildMachineElasticTransition>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseResourceConfigBuildMachineElasticTransition.CreateFromDiscriminatorValue); } },
                 { "buildMachineSelection", n => { BuildMachineSelection = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseResourceConfigBuildMachineSelection>(); } },
                 { "buildMachineType", n => { BuildMachineType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseResourceConfigBuildMachineType>(); } },
                 { "buildQueue", n => { BuildQueue = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseResourceConfigBuildQueue>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseResourceConfigBuildQueue.CreateFromDiscriminatorValue); } },
@@ -101,6 +110,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("buildMachineElasticLastUpdated", BuildMachineElasticLastUpdated);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseResourceConfigBuildMachineElasticReason>("buildMachineElasticReason", BuildMachineElasticReason);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseResourceConfigBuildMachineElasticTransition>("buildMachineElasticTransition", BuildMachineElasticTransition);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseResourceConfigBuildMachineSelection>("buildMachineSelection", BuildMachineSelection);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseResourceConfigBuildMachineType>("buildMachineType", BuildMachineType);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseResourceConfigBuildQueue>("buildQueue", BuildQueue);

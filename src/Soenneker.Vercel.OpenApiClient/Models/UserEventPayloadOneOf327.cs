@@ -15,21 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The next property</summary>
+        /// <summary>The oldSsoProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Next? Next { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327OldSsoProtection? OldSsoProtection { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Next Next { get; set; }
-#endif
-        /// <summary>The previous property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Previous? Previous { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Previous Previous { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327OldSsoProtection OldSsoProtection { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,6 +38,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string ProjectName { get; set; }
+#endif
+        /// <summary>The scope property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.OrganizationScope? Scope { get; set; }
+        /// <summary>The ssoProtection property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327SsoProtection? SsoProtection { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327SsoProtection SsoProtection { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327"/> and sets the default values.
@@ -72,10 +74,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Next.CreateFromDiscriminatorValue); } },
-                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Previous.CreateFromDiscriminatorValue); } },
+                { "oldSsoProtection", n => { OldSsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327OldSsoProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327OldSsoProtection.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationScope>(); } },
+                { "ssoProtection", n => { SsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327SsoProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327SsoProtection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -85,10 +88,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Next>("next", Next);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327Previous>("previous", Previous);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327OldSsoProtection>("oldSsoProtection", OldSsoProtection);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationScope>("scope", Scope);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf327SsoProtection>("ssoProtection", SsoProtection);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

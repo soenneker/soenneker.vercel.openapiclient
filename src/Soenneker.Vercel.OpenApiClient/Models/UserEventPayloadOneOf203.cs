@@ -23,14 +23,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Group Group { get; set; }
 #endif
-        /// <summary>The prev property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Prev? Prev { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Prev Prev { get; set; }
-#endif
         /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +57,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "group", n => { Group = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Group>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Group.CreateFromDiscriminatorValue); } },
-                { "prev", n => { Prev = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Prev>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Prev.CreateFromDiscriminatorValue); } },
                 { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Project.CreateFromDiscriminatorValue); } },
             };
         }
@@ -77,7 +68,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Group>("group", Group);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Prev>("prev", Prev);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf203Project>("project", Project);
             writer.WriteAdditionalData(AdditionalData);
         }

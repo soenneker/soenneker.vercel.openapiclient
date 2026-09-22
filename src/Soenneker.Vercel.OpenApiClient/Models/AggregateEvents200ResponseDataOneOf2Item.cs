@@ -14,6 +14,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The affinityOutcome property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AffinityOutcome { get; set; }
+#nullable restore
+#else
+        public string AffinityOutcome { get; set; }
+#endif
         /// <summary>The aiGatewayModelId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -301,6 +309,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string ClientJa4Digest { get; set; }
+#endif
+        /// <summary>The clientSessionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientSessionId { get; set; }
+#nullable restore
+#else
+        public string ClientSessionId { get; set; }
 #endif
         /// <summary>The clientUserAgent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1919,6 +1935,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "affinityOutcome", n => { AffinityOutcome = n.GetStringValue(); } },
                 { "aiGatewayModelId", n => { AiGatewayModelId = n.GetStringValue(); } },
                 { "aiModel", n => { AiModel = n.GetStringValue(); } },
                 { "aiModelType", n => { AiModelType = n.GetStringValue(); } },
@@ -1955,6 +1972,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "clientIp", n => { ClientIp = n.GetStringValue(); } },
                 { "clientIpCountry", n => { ClientIpCountry = n.GetStringValue(); } },
                 { "clientJa4Digest", n => { ClientJa4Digest = n.GetStringValue(); } },
+                { "clientSessionId", n => { ClientSessionId = n.GetStringValue(); } },
                 { "clientUserAgent", n => { ClientUserAgent = n.GetStringValue(); } },
                 { "codingAgent", n => { CodingAgent = n.GetStringValue(); } },
                 { "commitSha", n => { CommitSha = n.GetStringValue(); } },
@@ -2163,6 +2181,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("affinityOutcome", AffinityOutcome);
             writer.WriteStringValue("aiGatewayModelId", AiGatewayModelId);
             writer.WriteStringValue("aiModel", AiModel);
             writer.WriteStringValue("aiModelType", AiModelType);
@@ -2199,6 +2218,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("clientIp", ClientIp);
             writer.WriteStringValue("clientIpCountry", ClientIpCountry);
             writer.WriteStringValue("clientJa4Digest", ClientJa4Digest);
+            writer.WriteStringValue("clientSessionId", ClientSessionId);
             writer.WriteStringValue("clientUserAgent", ClientUserAgent);
             writer.WriteStringValue("codingAgent", CodingAgent);
             writer.WriteStringValue("commitSha", CommitSha);

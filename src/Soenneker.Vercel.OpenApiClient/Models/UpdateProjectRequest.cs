@@ -40,7 +40,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string CommandForIgnoringBuildStep { get; set; }
 #endif
-        /// <summary>The list of connections from project environment to Secure Compute network</summary>
+        /// <summary>The list of connections from project environments to dedicated Secure Compute networks. Shared networks must be managed through the shared-connect-links endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestConnectConfigurationsItem>? ConnectConfigurations { get; set; }

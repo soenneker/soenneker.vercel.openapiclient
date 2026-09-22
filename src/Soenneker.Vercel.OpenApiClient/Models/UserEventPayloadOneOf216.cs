@@ -15,8 +15,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The mode property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216Mode? Mode { get; set; }
+        /// <summary>The enforced property</summary>
+        public bool? Enforced { get; set; }
         /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,24 +25,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
-        /// <summary>The previousMode property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216PreviousMode? PreviousMode { get; set; }
-        /// <summary>The teamId property</summary>
+        /// <summary>The organizationSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamId { get; set; }
+        public string? OrganizationSlug { get; set; }
 #nullable restore
 #else
-        public string TeamId { get; set; }
+        public string OrganizationSlug { get; set; }
 #endif
-        /// <summary>The teamName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TeamName { get; set; }
-#nullable restore
-#else
-        public string TeamName { get; set; }
-#endif
+        /// <summary>The previousEnforced property</summary>
+        public bool? PreviousEnforced { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216"/> and sets the default values.
         /// </summary>
@@ -68,11 +60,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216Mode>(); } },
+                { "enforced", n => { Enforced = n.GetBoolValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "previousMode", n => { PreviousMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216PreviousMode>(); } },
-                { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "teamName", n => { TeamName = n.GetStringValue(); } },
+                { "organizationSlug", n => { OrganizationSlug = n.GetStringValue(); } },
+                { "previousEnforced", n => { PreviousEnforced = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -82,11 +73,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216Mode>("mode", Mode);
+            writer.WriteBoolValue("enforced", Enforced);
             writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216PreviousMode>("previousMode", PreviousMode);
-            writer.WriteStringValue("teamId", TeamId);
-            writer.WriteStringValue("teamName", TeamName);
+            writer.WriteStringValue("organizationSlug", OrganizationSlug);
+            writer.WriteBoolValue("previousEnforced", PreviousEnforced);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

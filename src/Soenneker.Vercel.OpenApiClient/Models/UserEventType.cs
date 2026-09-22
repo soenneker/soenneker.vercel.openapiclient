@@ -1215,6 +1215,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ManualDeploymentPromotionCreated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "marketplace-auto-card-collection-updated")]
+        #pragma warning disable CS1591
+        MarketplaceAutoCardCollectionUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "marketplace-billing-collection-updated")]
+        #pragma warning disable CS1591
+        MarketplaceBillingCollectionUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "marketplace-flex-commit-opt-in")]
         #pragma warning disable CS1591
         MarketplaceFlexCommitOptIn,
