@@ -80,6 +80,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string LastEditedByDisplayName { get; set; }
 #endif
+        /// <summary>The lastEditedByPrincipal property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListSharedEnvVariable200ResponseDataItemLastEditedByPrincipal? LastEditedByPrincipal { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.ListSharedEnvVariable200ResponseDataItemLastEditedByPrincipal LastEditedByPrincipal { get; set; }
+#endif
         /// <summary>The unique identifier of the owner (team) the Shared Env Var was created for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -169,6 +177,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "lastEditedByDisplayName", n => { LastEditedByDisplayName = n.GetStringValue(); } },
+                { "lastEditedByPrincipal", n => { LastEditedByPrincipal = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListSharedEnvVariable200ResponseDataItemLastEditedByPrincipal>(global::Soenneker.Vercel.OpenApiClient.Models.ListSharedEnvVariable200ResponseDataItemLastEditedByPrincipal.CreateFromDiscriminatorValue); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "securityIssues", n => { SecurityIssues = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ListSharedEnvVariable200ResponseDataItemSecurityIssuesItem>()?.AsList(); } },
@@ -198,6 +207,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("key", Key);
             writer.WriteStringValue("lastEditedByDisplayName", LastEditedByDisplayName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListSharedEnvVariable200ResponseDataItemLastEditedByPrincipal>("lastEditedByPrincipal", LastEditedByPrincipal);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteCollectionOfPrimitiveValues<string>("projectId", ProjectId);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.ListSharedEnvVariable200ResponseDataItemSecurityIssuesItem>("securityIssues", SecurityIssues);

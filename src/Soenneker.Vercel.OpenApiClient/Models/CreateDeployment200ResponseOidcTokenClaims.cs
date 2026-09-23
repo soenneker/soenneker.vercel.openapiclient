@@ -30,6 +30,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string CustomEnvironmentId { get; set; }
 #endif
+        /// <summary>The deployment_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeploymentId { get; set; }
+#nullable restore
+#else
+        public string DeploymentId { get; set; }
+#endif
         /// <summary>The environment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -137,6 +145,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "aud", n => { Aud = n.GetStringValue(); } },
                 { "custom_environment_id", n => { CustomEnvironmentId = n.GetStringValue(); } },
+                { "deployment_id", n => { DeploymentId = n.GetStringValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "iss", n => { Iss = n.GetStringValue(); } },
                 { "mfe_group_ids", n => { MfeGroupIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -158,6 +167,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("aud", Aud);
             writer.WriteStringValue("custom_environment_id", CustomEnvironmentId);
+            writer.WriteStringValue("deployment_id", DeploymentId);
             writer.WriteStringValue("environment", Environment);
             writer.WriteStringValue("iss", Iss);
             writer.WriteCollectionOfPrimitiveValues<string>("mfe_group_ids", MfeGroupIds);

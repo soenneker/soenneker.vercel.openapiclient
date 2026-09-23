@@ -15,8 +15,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enforced property</summary>
-        public bool? Enforced { get; set; }
         /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,16 +23,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
-        /// <summary>The organizationSlug property</summary>
+        /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationSlug { get; set; }
+        public string? Slug { get; set; }
 #nullable restore
 #else
-        public string OrganizationSlug { get; set; }
+        public string Slug { get; set; }
 #endif
-        /// <summary>The previousEnforced property</summary>
-        public bool? PreviousEnforced { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216"/> and sets the default values.
         /// </summary>
@@ -60,10 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enforced", n => { Enforced = n.GetBoolValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "organizationSlug", n => { OrganizationSlug = n.GetStringValue(); } },
-                { "previousEnforced", n => { PreviousEnforced = n.GetBoolValue(); } },
+                { "slug", n => { Slug = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -73,10 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("enforced", Enforced);
             writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteStringValue("organizationSlug", OrganizationSlug);
-            writer.WriteBoolValue("previousEnforced", PreviousEnforced);
+            writer.WriteStringValue("slug", Slug);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

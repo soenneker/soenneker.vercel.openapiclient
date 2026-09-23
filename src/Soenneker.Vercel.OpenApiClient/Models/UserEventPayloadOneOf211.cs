@@ -15,23 +15,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The copiedDomains property</summary>
+        /// <summary>The directoryGroupId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CopiedDomains { get; set; }
+        public string? DirectoryGroupId { get; set; }
 #nullable restore
 #else
-        public List<string> CopiedDomains { get; set; }
+        public string DirectoryGroupId { get; set; }
 #endif
-        /// <summary>The enabledOrganizationEmu property</summary>
-        public bool? EnabledOrganizationEmu { get; set; }
-        /// <summary>The enabledTeamIds property</summary>
+        /// <summary>The directoryId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EnabledTeamIds { get; set; }
+        public string? DirectoryId { get; set; }
 #nullable restore
 #else
-        public List<string> EnabledTeamIds { get; set; }
+        public string DirectoryId { get; set; }
+#endif
+        /// <summary>The groupName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GroupName { get; set; }
+#nullable restore
+#else
+        public string GroupName { get; set; }
+#endif
+        /// <summary>The next property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf211Next? Next { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf211Next Next { get; set; }
 #endif
         /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,22 +54,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string OrganizationId { get; set; }
-#endif
-        /// <summary>The teamId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TeamId { get; set; }
-#nullable restore
-#else
-        public string TeamId { get; set; }
-#endif
-        /// <summary>The teamSlug property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TeamSlug { get; set; }
-#nullable restore
-#else
-        public string TeamSlug { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf211"/> and sets the default values.
@@ -82,12 +80,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "copiedDomains", n => { CopiedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "enabledOrganizationEmu", n => { EnabledOrganizationEmu = n.GetBoolValue(); } },
-                { "enabledTeamIds", n => { EnabledTeamIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "directoryGroupId", n => { DirectoryGroupId = n.GetStringValue(); } },
+                { "directoryId", n => { DirectoryId = n.GetStringValue(); } },
+                { "groupName", n => { GroupName = n.GetStringValue(); } },
+                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf211Next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf211Next.CreateFromDiscriminatorValue); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "teamSlug", n => { TeamSlug = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -97,12 +94,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("copiedDomains", CopiedDomains);
-            writer.WriteBoolValue("enabledOrganizationEmu", EnabledOrganizationEmu);
-            writer.WriteCollectionOfPrimitiveValues<string>("enabledTeamIds", EnabledTeamIds);
+            writer.WriteStringValue("directoryGroupId", DirectoryGroupId);
+            writer.WriteStringValue("directoryId", DirectoryId);
+            writer.WriteStringValue("groupName", GroupName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf211Next>("next", Next);
             writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteStringValue("teamId", TeamId);
-            writer.WriteStringValue("teamSlug", TeamSlug);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

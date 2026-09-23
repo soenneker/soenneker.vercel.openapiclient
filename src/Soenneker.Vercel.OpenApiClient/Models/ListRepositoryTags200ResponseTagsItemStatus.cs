@@ -8,6 +8,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum ListRepositoryTags200ResponseTagsItemStatus
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "errored")]
+        #pragma warning disable CS1591
+        Errored,
+        #pragma warning restore CS1591
         [EnumMember(Value = "preparing")]
         #pragma warning disable CS1591
         Preparing,

@@ -63,6 +63,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValue();
+            if("GlobalConfigItemValueBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GlobalConfigItemValueBranch1 = new global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch1();
+            }
+            else if("GlobalConfigItemValueBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GlobalConfigItemValueBranch2 = new global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch2();
+            }
+            else if("GlobalConfigItemValueBranch4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GlobalConfigItemValueBranch4 = new global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueBranch4();
+            }
+            else if("GlobalConfigItemValueWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GlobalConfigItemValueWrapper = new global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigItemValueWrapper();
+            }
             return result;
         }
         /// <summary>

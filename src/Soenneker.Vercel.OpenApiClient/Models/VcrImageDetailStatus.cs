@@ -7,6 +7,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum VcrImageDetailStatus
     {
+        [EnumMember(Value = "errored")]
+        #pragma warning disable CS1591
+        Errored,
+        #pragma warning restore CS1591
         [EnumMember(Value = "preparing")]
         #pragma warning disable CS1591
         Preparing,

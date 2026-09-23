@@ -15,21 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The envId property</summary>
+        /// <summary>The changedFields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnvId { get; set; }
+        public List<string>? ChangedFields { get; set; }
 #nullable restore
 #else
-        public string EnvId { get; set; }
+        public List<string> ChangedFields { get; set; }
 #endif
-        /// <summary>The envKey property</summary>
+        /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnvKey { get; set; }
+        public string? Key { get; set; }
 #nullable restore
 #else
-        public string EnvKey { get; set; }
+        public string Key { get; set; }
 #endif
         /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,14 +55,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Repository { get; set; }
 #endif
-        /// <summary>The target property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158TargetItem?>? Target { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158TargetItem?> Target { get; set; }
-#endif
+        /// <summary>The visibility property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158Visibility? Visibility { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158"/> and sets the default values.
         /// </summary>
@@ -88,12 +82,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "envId", n => { EnvId = n.GetStringValue(); } },
-                { "envKey", n => { EnvKey = n.GetStringValue(); } },
+                { "changedFields", n => { ChangedFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "key", n => { Key = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
                 { "repository", n => { Repository = n.GetStringValue(); } },
-                { "target", n => { Target = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158TargetItem>()?.AsList(); } },
+                { "visibility", n => { Visibility = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158Visibility>(); } },
             };
         }
         /// <summary>
@@ -103,12 +97,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("envId", EnvId);
-            writer.WriteStringValue("envKey", EnvKey);
+            writer.WriteCollectionOfPrimitiveValues<string>("changedFields", ChangedFields);
+            writer.WriteStringValue("key", Key);
             writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("provider", Provider);
             writer.WriteStringValue("repository", Repository);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158TargetItem>("target", Target);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf158Visibility>("visibility", Visibility);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

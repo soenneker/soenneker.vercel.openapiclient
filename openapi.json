@@ -19574,6 +19574,9 @@
                             "custom_environment_id": {
                               "type": "string"
                             },
+                            "deployment_id": {
+                              "type": "string"
+                            },
                             "environment": {
                               "type": "string"
                             },
@@ -25183,6 +25186,9 @@
                             "custom_environment_id": {
                               "type": "string"
                             },
+                            "deployment_id": {
+                              "type": "string"
+                            },
                             "environment": {
                               "type": "string"
                             },
@@ -28099,6 +28105,9 @@
                               "type": "string"
                             },
                             "custom_environment_id": {
+                              "type": "string"
+                            },
+                            "deployment_id": {
                               "type": "string"
                             },
                             "environment": {
@@ -35614,6 +35623,9 @@
                           "type": "string"
                         },
                         "custom_environment_id": {
+                          "type": "string"
+                        },
+                        "deployment_id": {
                           "type": "string"
                         },
                         "environment": {
@@ -57891,6 +57903,66 @@
                             "type": "string",
                             "description": "The last editor full name or username."
                           },
+                          "lastEditedByPrincipal": {
+                            "oneOf": [
+                              {
+                                "properties": {
+                                  "avatar": {
+                                    "type": "string"
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "user"
+                                    ]
+                                  },
+                                  "username": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "type",
+                                  "username"
+                                ],
+                                "type": "object",
+                                "description": "The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user."
+                              },
+                              {
+                                "properties": {
+                                  "avatar": {
+                                    "type": "string"
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "app"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "name",
+                                  "type"
+                                ],
+                                "type": "object",
+                                "description": "The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user."
+                              }
+                            ]
+                          },
                           "ownerId": {
                             "nullable": true,
                             "type": "string",
@@ -58287,6 +58359,66 @@
                             "type": "string",
                             "description": "The last editor full name or username."
                           },
+                          "lastEditedByPrincipal": {
+                            "oneOf": [
+                              {
+                                "properties": {
+                                  "avatar": {
+                                    "type": "string"
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "user"
+                                    ]
+                                  },
+                                  "username": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "type",
+                                  "username"
+                                ],
+                                "type": "object",
+                                "description": "The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user."
+                              },
+                              {
+                                "properties": {
+                                  "avatar": {
+                                    "type": "string"
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "app"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "name",
+                                  "type"
+                                ],
+                                "type": "object",
+                                "description": "The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user."
+                              }
+                            ]
+                          },
                           "ownerId": {
                             "nullable": true,
                             "type": "string",
@@ -58676,6 +58808,66 @@
                           "lastEditedByDisplayName": {
                             "type": "string",
                             "description": "The last editor full name or username."
+                          },
+                          "lastEditedByPrincipal": {
+                            "oneOf": [
+                              {
+                                "properties": {
+                                  "avatar": {
+                                    "type": "string"
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "user"
+                                    ]
+                                  },
+                                  "username": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "type",
+                                  "username"
+                                ],
+                                "type": "object",
+                                "description": "The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user."
+                              },
+                              {
+                                "properties": {
+                                  "avatar": {
+                                    "type": "string"
+                                  },
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "app"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "name",
+                                  "type"
+                                ],
+                                "type": "object",
+                                "description": "The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user."
+                              }
+                            ]
                           },
                           "ownerId": {
                             "nullable": true,
@@ -59195,6 +59387,66 @@
                     "lastEditedByDisplayName": {
                       "type": "string",
                       "description": "The last editor full name or username."
+                    },
+                    "lastEditedByPrincipal": {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "avatar": {
+                              "type": "string"
+                            },
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "nullable": true,
+                              "type": "string"
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "user"
+                              ]
+                            },
+                            "username": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "type",
+                            "username"
+                          ],
+                          "type": "object",
+                          "description": "The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user."
+                        },
+                        {
+                          "properties": {
+                            "avatar": {
+                              "type": "string"
+                            },
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "app"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "name",
+                            "type"
+                          ],
+                          "type": "object",
+                          "description": "The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user."
+                        }
+                      ]
                     },
                     "ownerId": {
                       "nullable": true,
@@ -81789,6 +82041,9 @@
                                         "custom_environment_id": {
                                           "type": "string"
                                         },
+                                        "deployment_id": {
+                                          "type": "string"
+                                        },
                                         "environment": {
                                           "type": "string"
                                         },
@@ -84244,6 +84499,9 @@
                                       "type": "string"
                                     },
                                     "custom_environment_id": {
+                                      "type": "string"
+                                    },
+                                    "deployment_id": {
                                       "type": "string"
                                     },
                                     "environment": {
@@ -88560,6 +88818,9 @@
                                       "type": "string"
                                     },
                                     "custom_environment_id": {
+                                      "type": "string"
+                                    },
+                                    "deployment_id": {
                                       "type": "string"
                                     },
                                     "environment": {
@@ -97010,6 +97271,9 @@
                                         "custom_environment_id": {
                                           "type": "string"
                                         },
+                                        "deployment_id": {
+                                          "type": "string"
+                                        },
                                         "environment": {
                                           "type": "string"
                                         },
@@ -98476,6 +98740,9 @@
                                       "type": "string"
                                     },
                                     "custom_environment_id": {
+                                      "type": "string"
+                                    },
+                                    "deployment_id": {
                                       "type": "string"
                                     },
                                     "environment": {
@@ -100642,6 +100909,9 @@
                                     "custom_environment_id": {
                                       "type": "string"
                                     },
+                                    "deployment_id": {
+                                      "type": "string"
+                                    },
                                     "environment": {
                                       "type": "string"
                                     },
@@ -101898,6 +102168,9 @@
                                               "type": "string"
                                             },
                                             "custom_environment_id": {
+                                              "type": "string"
+                                            },
+                                            "deployment_id": {
                                               "type": "string"
                                             },
                                             "environment": {
@@ -103366,6 +103639,9 @@
                                           "type": "string"
                                         },
                                         "custom_environment_id": {
+                                          "type": "string"
+                                        },
+                                        "deployment_id": {
                                           "type": "string"
                                         },
                                         "environment": {
@@ -105532,6 +105808,9 @@
                                         "custom_environment_id": {
                                           "type": "string"
                                         },
+                                        "deployment_id": {
+                                          "type": "string"
+                                        },
                                         "environment": {
                                           "type": "string"
                                         },
@@ -106795,6 +107074,9 @@
                                               "type": "string"
                                             },
                                             "custom_environment_id": {
+                                              "type": "string"
+                                            },
+                                            "deployment_id": {
                                               "type": "string"
                                             },
                                             "environment": {
@@ -109252,6 +109534,9 @@
                                           "type": "string"
                                         },
                                         "custom_environment_id": {
+                                          "type": "string"
+                                        },
+                                        "deployment_id": {
                                           "type": "string"
                                         },
                                         "environment": {
@@ -113559,6 +113844,9 @@
                                         "custom_environment_id": {
                                           "type": "string"
                                         },
+                                        "deployment_id": {
+                                          "type": "string"
+                                        },
                                         "environment": {
                                           "type": "string"
                                         },
@@ -115469,6 +115757,9 @@
                                     "type": "string"
                                   },
                                   "custom_environment_id": {
+                                    "type": "string"
+                                  },
+                                  "deployment_id": {
                                     "type": "string"
                                   },
                                   "environment": {
@@ -117926,6 +118217,9 @@
                                 "type": "string"
                               },
                               "custom_environment_id": {
+                                "type": "string"
+                              },
+                              "deployment_id": {
                                 "type": "string"
                               },
                               "environment": {
@@ -122233,6 +122527,9 @@
                               "custom_environment_id": {
                                 "type": "string"
                               },
+                              "deployment_id": {
+                                "type": "string"
+                              },
                               "environment": {
                                 "type": "string"
                               },
@@ -124390,6 +124687,9 @@
                                     "type": "string"
                                   },
                                   "custom_environment_id": {
+                                    "type": "string"
+                                  },
+                                  "deployment_id": {
                                     "type": "string"
                                   },
                                   "environment": {
@@ -126880,6 +127180,9 @@
                               "custom_environment_id": {
                                 "type": "string"
                               },
+                              "deployment_id": {
+                                "type": "string"
+                              },
                               "environment": {
                                 "type": "string"
                               },
@@ -131185,6 +131488,9 @@
                               "custom_environment_id": {
                                 "type": "string"
                               },
+                              "deployment_id": {
+                                "type": "string"
+                              },
                               "environment": {
                                 "type": "string"
                               },
@@ -132650,6 +132956,9 @@
                                     "type": "string"
                                   },
                                   "custom_environment_id": {
+                                    "type": "string"
+                                  },
+                                  "deployment_id": {
                                     "type": "string"
                                   },
                                   "environment": {
@@ -135100,6 +135409,9 @@
                               "custom_environment_id": {
                                 "type": "string"
                               },
+                              "deployment_id": {
+                                "type": "string"
+                              },
                               "environment": {
                                 "type": "string"
                               },
@@ -139405,6 +139717,9 @@
                               "custom_environment_id": {
                                 "type": "string"
                               },
+                              "deployment_id": {
+                                "type": "string"
+                              },
                               "environment": {
                                 "type": "string"
                               },
@@ -140010,9 +140325,6 @@
             "description": ""
           },
           "428": {
-            "description": ""
-          },
-          "429": {
             "description": ""
           }
         },
@@ -142195,6 +142507,9 @@
                                     "type": "string"
                                   },
                                   "custom_environment_id": {
+                                    "type": "string"
+                                  },
+                                  "deployment_id": {
                                     "type": "string"
                                   },
                                   "environment": {
@@ -144654,6 +144969,9 @@
                               "custom_environment_id": {
                                 "type": "string"
                               },
+                              "deployment_id": {
+                                "type": "string"
+                              },
                               "environment": {
                                 "type": "string"
                               },
@@ -148957,6 +149275,9 @@
                                 "type": "string"
                               },
                               "custom_environment_id": {
+                                "type": "string"
+                              },
+                              "deployment_id": {
                                 "type": "string"
                               },
                               "environment": {
@@ -163214,6 +163535,9 @@
                                   "custom_environment_id": {
                                     "type": "string"
                                   },
+                                  "deployment_id": {
+                                    "type": "string"
+                                  },
                                   "environment": {
                                     "type": "string"
                                   },
@@ -165669,6 +165993,9 @@
                                 "type": "string"
                               },
                               "custom_environment_id": {
+                                "type": "string"
+                              },
+                              "deployment_id": {
                                 "type": "string"
                               },
                               "environment": {
@@ -169976,6 +170303,9 @@
                               "custom_environment_id": {
                                 "type": "string"
                               },
+                              "deployment_id": {
+                                "type": "string"
+                              },
                               "environment": {
                                 "type": "string"
                               },
@@ -172078,7 +172408,7 @@
     },
     "/v2/sandboxes/drives": {
       "get": {
-        "description": "Retrieves a paginated list of drives belonging to a specific project. Drives are in private beta. Register your interest to get access: https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta",
+        "description": "Retrieves a paginated list of drives belonging to a specific project.",
         "operationId": "listDrives",
         "security": [
           {
@@ -172247,7 +172577,7 @@
     },
     "/v2/sandboxes/drives/{name}": {
       "post": {
-        "description": "Gets an existing drive by project and name, or creates it when it does not exist. Drives are in private beta. Register your interest to get access: https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta",
+        "description": "Gets an existing drive by project and name, or creates it when it does not exist.",
         "operationId": "getOrCreateDrive",
         "security": [
           {
@@ -172403,7 +172733,7 @@
         }
       },
       "delete": {
-        "description": "Deletes a drive by project and name. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion. Drives are in private beta. Register your interest to get access: https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta",
+        "description": "Deletes a drive by project and name. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion.",
         "operationId": "deleteDrive",
         "security": [
           {
@@ -201012,9 +201342,6 @@
           "404": {
             "description": ""
           },
-          "409": {
-            "description": ""
-          },
           "410": {
             "description": ""
           }
@@ -203210,6 +203537,7 @@
                             "nullable": true,
                             "type": "string",
                             "enum": [
+                              "errored",
                               "preparing",
                               "ready",
                               "unoptimized",
@@ -225709,6 +226037,164 @@
               },
               {
                 "properties": {
+                  "oldPasswordProtection": {
+                    "nullable": true,
+                    "properties": {
+                      "deploymentType": {
+                        "type": "string",
+                        "enum": [
+                          "all",
+                          "all_except_custom_domains",
+                          "preview",
+                          "prod_deployment_urls_and_all_previews"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "deploymentType"
+                    ],
+                    "type": "object"
+                  },
+                  "passwordChanged": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
+                    ]
+                  },
+                  "passwordProtection": {
+                    "nullable": true,
+                    "properties": {
+                      "deploymentType": {
+                        "type": "string",
+                        "enum": [
+                          "all",
+                          "all_except_custom_domains",
+                          "preview",
+                          "prod_deployment_urls_and_all_previews"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "deploymentType"
+                    ],
+                    "type": "object"
+                  },
+                  "scope": {
+                    "type": "string",
+                    "enum": [
+                      "team"
+                    ]
+                  }
+                },
+                "required": [
+                  "oldPasswordProtection",
+                  "passwordProtection",
+                  "scope"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "oldSsoProtection": {
+                    "nullable": true,
+                    "properties": {
+                      "april2026SecurityIncidentMigrationAppliedFrom": {
+                        "nullable": true,
+                        "type": "string",
+                        "enum": [
+                          "all",
+                          "all_except_custom_domains",
+                          "preview",
+                          "prod_deployment_urls_and_all_previews",
+                          null
+                        ]
+                      },
+                      "cve55182MigrationAppliedFrom": {
+                        "nullable": true,
+                        "type": "string",
+                        "enum": [
+                          "all",
+                          "all_except_custom_domains",
+                          "preview",
+                          "prod_deployment_urls_and_all_previews",
+                          null
+                        ]
+                      },
+                      "deploymentType": {
+                        "type": "string",
+                        "enum": [
+                          "all",
+                          "all_except_custom_domains",
+                          "preview",
+                          "prod_deployment_urls_and_all_previews"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "deploymentType"
+                    ],
+                    "type": "object"
+                  },
+                  "scope": {
+                    "type": "string",
+                    "enum": [
+                      "organization",
+                      "team"
+                    ]
+                  },
+                  "ssoProtection": {
+                    "nullable": true,
+                    "properties": {
+                      "april2026SecurityIncidentMigrationAppliedFrom": {
+                        "nullable": true,
+                        "type": "string",
+                        "enum": [
+                          "all",
+                          "all_except_custom_domains",
+                          "preview",
+                          "prod_deployment_urls_and_all_previews",
+                          null
+                        ]
+                      },
+                      "cve55182MigrationAppliedFrom": {
+                        "nullable": true,
+                        "type": "string",
+                        "enum": [
+                          "all",
+                          "all_except_custom_domains",
+                          "preview",
+                          "prod_deployment_urls_and_all_previews",
+                          null
+                        ]
+                      },
+                      "deploymentType": {
+                        "type": "string",
+                        "enum": [
+                          "all",
+                          "all_except_custom_domains",
+                          "preview",
+                          "prod_deployment_urls_and_all_previews"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "deploymentType"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "oldSsoProtection",
+                  "scope",
+                  "ssoProtection"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "hookName": {
                     "type": "string"
                   },
@@ -229931,6 +230417,66 @@
                     "type": "string",
                     "description": "The last editor full name or username."
                   },
+                  "lastEditedByPrincipal": {
+                    "oneOf": [
+                      {
+                        "properties": {
+                          "avatar": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "nullable": true,
+                            "type": "string"
+                          },
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "user"
+                            ]
+                          },
+                          "username": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "type",
+                          "username"
+                        ],
+                        "type": "object",
+                        "description": "The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user."
+                      },
+                      {
+                        "properties": {
+                          "avatar": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "app"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "name",
+                          "type"
+                        ],
+                        "type": "object",
+                        "description": "The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user."
+                      }
+                    ]
+                  },
                   "ownerId": {
                     "nullable": true,
                     "type": "string",
@@ -230115,6 +230661,66 @@
                         "type": "string",
                         "description": "The last editor full name or username."
                       },
+                      "lastEditedByPrincipal": {
+                        "oneOf": [
+                          {
+                            "properties": {
+                              "avatar": {
+                                "type": "string"
+                              },
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "user"
+                                ]
+                              },
+                              "username": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "type",
+                              "username"
+                            ],
+                            "type": "object",
+                            "description": "The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user."
+                          },
+                          {
+                            "properties": {
+                              "avatar": {
+                                "type": "string"
+                              },
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "app"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "name",
+                              "type"
+                            ],
+                            "type": "object",
+                            "description": "The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user."
+                          }
+                        ]
+                      },
                       "ownerId": {
                         "nullable": true,
                         "type": "string",
@@ -230246,6 +230852,66 @@
                       "lastEditedByDisplayName": {
                         "type": "string",
                         "description": "The last editor full name or username."
+                      },
+                      "lastEditedByPrincipal": {
+                        "oneOf": [
+                          {
+                            "properties": {
+                              "avatar": {
+                                "type": "string"
+                              },
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "user"
+                                ]
+                              },
+                              "username": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "type",
+                              "username"
+                            ],
+                            "type": "object",
+                            "description": "The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user."
+                          },
+                          {
+                            "properties": {
+                              "avatar": {
+                                "type": "string"
+                              },
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "app"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "name",
+                              "type"
+                            ],
+                            "type": "object",
+                            "description": "The principal that last edited this env var, when the editor id resolves to a known user or app. Lets clients render the right avatar instead of assuming every editor is a user."
+                          }
+                        ]
                       },
                       "ownerId": {
                         "nullable": true,
@@ -235776,9 +236442,11 @@
                       "directory_sync_updated",
                       "domain_deleted",
                       "domain_verified",
+                      "organization_deleted",
                       "saml_updated",
                       "team_attached",
                       "team_participation_updated",
+                      "team_removed",
                       "toggle"
                     ]
                   },
@@ -240214,12 +240882,6 @@
                   },
                   "projectName": {
                     "type": "string"
-                  },
-                  "scope": {
-                    "type": "string",
-                    "enum": [
-                      "organization"
-                    ]
                   },
                   "ssoProtection": {
                     "nullable": true,
@@ -246416,6 +247078,8 @@
               "custom-suffix-enable",
               "custom-suffix-pending",
               "custom-suffix-ready",
+              "default-password-protection",
+              "default-sso-protection",
               "deploy-hook-created",
               "deploy-hook-deduped",
               "deploy-hook-deleted",
@@ -247326,6 +247990,8 @@
               "custom-suffix-enable",
               "custom-suffix-pending",
               "custom-suffix-ready",
+              "default-password-protection",
+              "default-sso-protection",
               "deploy-hook-created",
               "deploy-hook-deduped",
               "deploy-hook-deleted",
@@ -248024,6 +248690,8 @@
                 "custom-suffix-enable",
                 "custom-suffix-pending",
                 "custom-suffix-ready",
+                "default-password-protection",
+                "default-sso-protection",
                 "deploy-hook-created",
                 "deploy-hook-deduped",
                 "deploy-hook-deleted",
@@ -253619,6 +254287,7 @@
             "nullable": true,
             "type": "string",
             "enum": [
+              "errored",
               "preparing",
               "ready",
               "unoptimized",
@@ -253746,6 +254415,7 @@
             "nullable": true,
             "type": "string",
             "enum": [
+              "errored",
               "preparing",
               "ready",
               "unoptimized",
@@ -254101,6 +254771,7 @@
             "nullable": true,
             "type": "string",
             "enum": [
+              "errored",
               "preparing",
               "ready",
               "unoptimized",

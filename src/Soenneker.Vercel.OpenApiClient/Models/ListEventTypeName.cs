@@ -575,6 +575,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         CustomSuffixReady,
         #pragma warning restore CS1591
+        [EnumMember(Value = "default-password-protection")]
+        #pragma warning disable CS1591
+        DefaultPasswordProtection,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "default-sso-protection")]
+        #pragma warning disable CS1591
+        DefaultSsoProtection,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deploy-hook-created")]
         #pragma warning disable CS1591
         DeployHookCreated,
