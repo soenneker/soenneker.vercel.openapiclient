@@ -20,6 +20,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestBillingPlan BillingPlan { get; set; }
 #endif
+        /// <summary>Custom claims embedded in the resource tokens Vercel mints for this resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaims? CustomClaims { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaims CustomClaims { get; set; }
+#endif
         /// <summary>The extras property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,6 +99,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "billingPlan", n => { BillingPlan = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestBillingPlan>(global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestBillingPlan.CreateFromDiscriminatorValue); } },
+                { "customClaims", n => { CustomClaims = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaims>(global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaims.CreateFromDiscriminatorValue); } },
                 { "extras", n => { Extras = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestExtras>(global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestExtras.CreateFromDiscriminatorValue); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestMetadata>(global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -109,6 +118,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestBillingPlan>("billingPlan", BillingPlan);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaims>("customClaims", CustomClaims);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestExtras>("extras", Extras);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);

@@ -111,7 +111,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Target { get; set; }
 #endif
-        /// <summary>Trigger-specific credentials (e.g. webhook signing secret). Validated and encrypted against the trigger type definition.</summary>
+        /// <summary>Trigger configuration, validated and encrypted by the trigger driver. An empty object applies driver defaults.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerDataProperty? TriggerData { get; set; }

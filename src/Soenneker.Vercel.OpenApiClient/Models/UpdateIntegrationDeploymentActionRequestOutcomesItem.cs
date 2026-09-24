@@ -14,6 +14,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemClaimRulesItem>? ClaimRules { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemClaimRulesItem> ClaimRules { get; set; }
+#endif
         /// <summary>The kind property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,10 +33,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The secrets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf1SecretsItem>? Secrets { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemSecretsItem>? Secrets { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf1SecretsItem> Secrets { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemSecretsItem> Secrets { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItem"/> and sets the default values.
@@ -55,8 +63,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "claimRules", n => { ClaimRules = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemClaimRulesItem>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemClaimRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "kind", n => { Kind = n.GetStringValue(); } },
-                { "secrets", n => { Secrets = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf1SecretsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf1SecretsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "secrets", n => { Secrets = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemSecretsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemSecretsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -66,8 +75,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemClaimRulesItem>("claimRules", ClaimRules);
             writer.WriteStringValue("kind", Kind);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemOneOf1SecretsItem>("secrets", Secrets);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateIntegrationDeploymentActionRequestOutcomesItemSecretsItem>("secrets", Secrets);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,17 +8,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum UserEventPayloadOneOf4Action
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "added")]
+        [EnumMember(Value = "created")]
         #pragma warning disable CS1591
-        Added,
+        Created,
         #pragma warning restore CS1591
         [EnumMember(Value = "deleted")]
         #pragma warning disable CS1591
         Deleted,
         #pragma warning restore CS1591
-        [EnumMember(Value = "rotated")]
+        [EnumMember(Value = "transitioned")]
         #pragma warning disable CS1591
-        Rotated,
+        Transitioned,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "updated")]
+        #pragma warning disable CS1591
+        Updated,
         #pragma warning restore CS1591
     }
 }

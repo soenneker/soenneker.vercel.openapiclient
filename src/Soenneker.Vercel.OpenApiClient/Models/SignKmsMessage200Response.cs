@@ -22,6 +22,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Algorithm { get; set; }
 #endif
+        /// <summary>SHA-256 fingerprint of the signing key&apos;s public key (`SHA256:&lt;base64&gt;`).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Fingerprint { get; set; }
+#nullable restore
+#else
+        public string Fingerprint { get; set; }
+#endif
         /// <summary>Key id of the signing key. Matches the JWKS `kid` so verifiers can select the key after rotation without trial-verifying every published key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +72,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "algorithm", n => { Algorithm = n.GetStringValue(); } },
+                { "fingerprint", n => { Fingerprint = n.GetStringValue(); } },
                 { "keyId", n => { KeyId = n.GetStringValue(); } },
                 { "signature", n => { Signature = n.GetStringValue(); } },
             };
@@ -76,6 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("algorithm", Algorithm);
+            writer.WriteStringValue("fingerprint", Fingerprint);
             writer.WriteStringValue("keyId", KeyId);
             writer.WriteStringValue("signature", Signature);
             writer.WriteAdditionalData(AdditionalData);

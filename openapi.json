@@ -16911,6 +16911,9 @@
           "403": {
             "description": "You do not have permission to access this resource."
           },
+          "404": {
+            "description": ""
+          },
           "410": {
             "description": ""
           }
@@ -17006,6 +17009,76 @@
                             "secrets"
                           ],
                           "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "kind": {
+                              "type": "string"
+                            },
+                            "claimRules": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "required": [
+                                  "claims"
+                                ],
+                                "properties": {
+                                  "when": {
+                                    "type": "object",
+                                    "properties": {
+                                      "role": {
+                                        "type": "array",
+                                        "minItems": 1,
+                                        "maxItems": 32,
+                                        "items": {
+                                          "type": "string",
+                                          "maxLength": 32
+                                        },
+                                        "description": "Applies only when the token is minted for one of these roles."
+                                      },
+                                      "environment": {
+                                        "type": "array",
+                                        "minItems": 1,
+                                        "maxItems": 32,
+                                        "items": {
+                                          "type": "string"
+                                        },
+                                        "description": "Applies only when the token is minted for one of these environments: `production`, `preview`, `development`, or a custom environment slug. A custom environment also matches `preview`."
+                                      }
+                                    },
+                                    "additionalProperties": false
+                                  },
+                                  "claims": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                      "nullable": true,
+                                      "oneOf": [
+                                        {
+                                          "type": "string"
+                                        },
+                                        {
+                                          "type": "number"
+                                        },
+                                        {
+                                          "type": "boolean"
+                                        }
+                                      ]
+                                    },
+                                    "description": "Claims to set (string, number, or boolean), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed."
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
+                              "description": "Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones."
+                            }
+                          },
+                          "required": [
+                            "kind",
+                            "claimRules"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Claim rules applied after the resource’s own rules when this deployment mints a resource token. Reserved claims cannot be set."
                         }
                       ]
                     }
@@ -18841,6 +18914,9 @@
                                 "repo": {
                                   "type": "string"
                                 },
+                                "repoId": {
+                                  "type": "string"
+                                },
                                 "repoPushedAt": {
                                   "type": "number"
                                 },
@@ -18855,6 +18931,7 @@
                                 }
                               },
                               "required": [
+                                "repoId",
                                 "sha",
                                 "type"
                               ],
@@ -19146,6 +19223,9 @@
                                   "type": "string"
                                 },
                                 "repo": {
+                                  "type": "string"
+                                },
+                                "repoId": {
                                   "type": "string"
                                 },
                                 "repoPushedAt": {
@@ -20005,9 +20085,10 @@
                                   "enum": [
                                     "basic",
                                     "enhanced",
+                                    "none",
                                     "standard"
                                   ],
-                                  "description": "The default plan type for the build machine — what the customer is *paying* for on their plan. For most customers, this is standard, but some customers have an entitlement for enhanced builds."
+                                  "description": "The build machine tier included with the customer's plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type."
                                 },
                                 "machineSelectionType": {
                                   "type": "string",
@@ -24697,6 +24778,9 @@
                                 "repo": {
                                   "type": "string"
                                 },
+                                "repoId": {
+                                  "type": "string"
+                                },
                                 "repoPushedAt": {
                                   "type": "number"
                                 },
@@ -24711,6 +24795,7 @@
                                 }
                               },
                               "required": [
+                                "repoId",
                                 "sha",
                                 "type"
                               ],
@@ -25002,6 +25087,9 @@
                                   "type": "string"
                                 },
                                 "repo": {
+                                  "type": "string"
+                                },
+                                "repoId": {
                                   "type": "string"
                                 },
                                 "repoPushedAt": {
@@ -27374,6 +27462,9 @@
                                 "repo": {
                                   "type": "string"
                                 },
+                                "repoId": {
+                                  "type": "string"
+                                },
                                 "repoPushedAt": {
                                   "type": "number"
                                 },
@@ -27388,6 +27479,7 @@
                                 }
                               },
                               "required": [
+                                "repoId",
                                 "sha",
                                 "type"
                               ],
@@ -27679,6 +27771,9 @@
                                   "type": "string"
                                 },
                                 "repo": {
+                                  "type": "string"
+                                },
+                                "repoId": {
                                   "type": "string"
                                 },
                                 "repoPushedAt": {
@@ -28538,9 +28633,10 @@
                                   "enum": [
                                     "basic",
                                     "enhanced",
+                                    "none",
                                     "standard"
                                   ],
-                                  "description": "The default plan type for the build machine — what the customer is *paying* for on their plan. For most customers, this is standard, but some customers have an entitlement for enhanced builds."
+                                  "description": "The build machine tier included with the customer's plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type."
                                 },
                                 "machineSelectionType": {
                                   "type": "string",
@@ -32711,6 +32807,11 @@
                             ],
                             "type": "string"
                           },
+                          "repoId": {
+                            "description": "The stable Vercel Git repository ID.",
+                            "type": "string",
+                            "example": 123456789
+                          },
                           "sha": {
                             "type": "string",
                             "example": "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0"
@@ -32718,7 +32819,8 @@
                         },
                         "required": [
                           "type",
-                          "sha"
+                          "sha",
+                          "repoId"
                         ],
                         "type": "object"
                       },
@@ -34892,6 +34994,9 @@
                             "repo": {
                               "type": "string"
                             },
+                            "repoId": {
+                              "type": "string"
+                            },
                             "repoPushedAt": {
                               "type": "number"
                             },
@@ -34906,6 +35011,7 @@
                             }
                           },
                           "required": [
+                            "repoId",
                             "sha",
                             "type"
                           ],
@@ -35197,6 +35303,9 @@
                               "type": "string"
                             },
                             "repo": {
+                              "type": "string"
+                            },
+                            "repoId": {
                               "type": "string"
                             },
                             "repoPushedAt": {
@@ -36056,9 +36165,10 @@
                               "enum": [
                                 "basic",
                                 "enhanced",
+                                "none",
                                 "standard"
                               ],
-                              "description": "The default plan type for the build machine — what the customer is *paying* for on their plan. For most customers, this is standard, but some customers have an entitlement for enhanced builds."
+                              "description": "The build machine tier included with the customer's plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type."
                             },
                             "machineSelectionType": {
                               "type": "string",
@@ -68433,6 +68543,12 @@
                 },
                 {
                   "type": "number"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "number"
                 }
               ]
             }
@@ -69753,6 +69869,70 @@
                       "type": "string",
                       "description": "The ID of the billing plan the resource is subscribed to, if applicable"
                     },
+                    "customClaims": {
+                      "properties": {
+                        "claimRules": {
+                          "items": {
+                            "properties": {
+                              "claims": {
+                                "additionalProperties": {
+                                  "nullable": true,
+                                  "oneOf": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "number"
+                                    },
+                                    {
+                                      "type": "boolean",
+                                      "enum": [
+                                        false,
+                                        true
+                                      ]
+                                    }
+                                  ]
+                                },
+                                "type": "object"
+                              },
+                              "when": {
+                                "properties": {
+                                  "environment": {
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "role": {
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            },
+                            "required": [
+                              "claims"
+                            ],
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "defaultRole": {
+                          "type": "string"
+                        },
+                        "roles": {
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object",
+                      "description": "The roles and claim rules Vercel resolves into the resource tokens it mints for this resource"
+                    },
                     "id": {
                       "type": "string",
                       "description": "The ID provided by the 3rd party provider for the given resource"
@@ -70246,6 +70426,83 @@
                       },
                       "additionalProperties": false
                     }
+                  },
+                  "customClaims": {
+                    "type": "object",
+                    "properties": {
+                      "roles": {
+                        "type": "array",
+                        "maxItems": 32,
+                        "items": {
+                          "type": "string",
+                          "maxLength": 32
+                        },
+                        "description": "Roles a deployment may request when minting a token. The selected role becomes the `sub` claim."
+                      },
+                      "defaultRole": {
+                        "type": "string",
+                        "maxLength": 32,
+                        "description": "Role used when the deployment does not request one. Required when `roles` is set."
+                      },
+                      "claimRules": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "claims"
+                          ],
+                          "properties": {
+                            "when": {
+                              "type": "object",
+                              "properties": {
+                                "role": {
+                                  "type": "array",
+                                  "minItems": 1,
+                                  "maxItems": 32,
+                                  "items": {
+                                    "type": "string",
+                                    "maxLength": 32
+                                  },
+                                  "description": "Applies only when the token is minted for one of these roles."
+                                },
+                                "environment": {
+                                  "type": "array",
+                                  "minItems": 1,
+                                  "maxItems": 32,
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "description": "Applies only when the token is minted for one of these environments: `production`, `preview`, `development`, or a custom environment slug. A custom environment also matches `preview`."
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "claims": {
+                              "type": "object",
+                              "additionalProperties": {
+                                "nullable": true,
+                                "oneOf": [
+                                  {
+                                    "type": "string"
+                                  },
+                                  {
+                                    "type": "number"
+                                  },
+                                  {
+                                    "type": "boolean"
+                                  }
+                                ]
+                              },
+                              "description": "Claims to set (string, number, or boolean), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed."
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "description": "Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones."
+                      }
+                    },
+                    "additionalProperties": false,
+                    "description": "Custom claims embedded in the resource tokens Vercel mints for this resource."
                   }
                 },
                 "additionalProperties": false
@@ -70565,6 +70822,83 @@
                         "additionalProperties": false
                       }
                     ]
+                  },
+                  "customClaims": {
+                    "type": "object",
+                    "properties": {
+                      "roles": {
+                        "type": "array",
+                        "maxItems": 32,
+                        "items": {
+                          "type": "string",
+                          "maxLength": 32
+                        },
+                        "description": "Roles a deployment may request when minting a token. The selected role becomes the `sub` claim."
+                      },
+                      "defaultRole": {
+                        "type": "string",
+                        "maxLength": 32,
+                        "description": "Role used when the deployment does not request one. Required when `roles` is set."
+                      },
+                      "claimRules": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "claims"
+                          ],
+                          "properties": {
+                            "when": {
+                              "type": "object",
+                              "properties": {
+                                "role": {
+                                  "type": "array",
+                                  "minItems": 1,
+                                  "maxItems": 32,
+                                  "items": {
+                                    "type": "string",
+                                    "maxLength": 32
+                                  },
+                                  "description": "Applies only when the token is minted for one of these roles."
+                                },
+                                "environment": {
+                                  "type": "array",
+                                  "minItems": 1,
+                                  "maxItems": 32,
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "description": "Applies only when the token is minted for one of these environments: `production`, `preview`, `development`, or a custom environment slug. A custom environment also matches `preview`."
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "claims": {
+                              "type": "object",
+                              "additionalProperties": {
+                                "nullable": true,
+                                "oneOf": [
+                                  {
+                                    "type": "string"
+                                  },
+                                  {
+                                    "type": "number"
+                                  },
+                                  {
+                                    "type": "boolean"
+                                  }
+                                ]
+                              },
+                              "description": "Claims to set (string, number, or boolean), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed."
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "description": "Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones."
+                      }
+                    },
+                    "additionalProperties": false,
+                    "description": "Custom claims embedded in the resource tokens Vercel mints for this resource."
                   }
                 },
                 "additionalProperties": false
@@ -77603,7 +77937,7 @@
     },
     "/v1/kms/issuers/{issuerId}/sign/message": {
       "post": {
-        "description": "Sign a raw message with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. The response `signature` is standard-base64 of the raw signature over the decoded message bytes. `keyId` and `algorithm` identify the signing key in the issuer's JWKS.",
+        "description": "Sign a raw message with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. The response `signature` is standard-base64 of the raw signature over the decoded message bytes. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer's JWKS.",
         "operationId": "signKmsMessage",
         "security": [
           {
@@ -77625,6 +77959,10 @@
                       "type": "string",
                       "description": "Algorithm of the signing key."
                     },
+                    "fingerprint": {
+                      "type": "string",
+                      "description": "SHA-256 fingerprint of the signing key's public key (`SHA256:\u003cbase64\u003e`)."
+                    },
                     "keyId": {
                       "type": "string",
                       "description": "Key id of the signing key. Matches the JWKS `kid` so verifiers can select the key after rotation without trial-verifying every published key."
@@ -77636,6 +77974,7 @@
                   },
                   "required": [
                     "algorithm",
+                    "fingerprint",
                     "keyId",
                     "signature"
                   ],
@@ -77696,7 +78035,7 @@
     },
     "/v1/kms/issuers/{issuerId}/sign/token": {
       "post": {
-        "description": "Sign a JWT with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign.",
+        "description": "Sign a JWT with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer's JWKS.",
         "operationId": "signKmsToken",
         "security": [
           {
@@ -77714,11 +78053,27 @@
               "application/json": {
                 "schema": {
                   "properties": {
+                    "algorithm": {
+                      "type": "string",
+                      "description": "Algorithm of the signing key."
+                    },
+                    "fingerprint": {
+                      "type": "string",
+                      "description": "SHA-256 fingerprint of the signing key's public key (`SHA256:\u003cbase64\u003e`)."
+                    },
+                    "keyId": {
+                      "type": "string",
+                      "description": "Key id of the signing key. Matches the JWKS `kid` so verifiers can select the key after rotation without trial-verifying every published key."
+                    },
                     "token": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "Compact JWT signed by the issuer's active signing key."
                     }
                   },
                   "required": [
+                    "algorithm",
+                    "fingerprint",
+                    "keyId",
                     "token"
                   ],
                   "type": "object"
@@ -78017,6 +78372,7 @@
                                 "createdAt",
                                 "issuerId",
                                 "keyId",
+                                "publicKeyFingerprint",
                                 "status",
                                 "updatedAt"
                               ],
@@ -78355,6 +78711,7 @@
                           "createdAt",
                           "issuerId",
                           "keyId",
+                          "publicKeyFingerprint",
                           "status",
                           "updatedAt"
                         ],
@@ -78649,6 +79006,7 @@
                     "createdAt",
                     "issuerId",
                     "keyId",
+                    "publicKeyFingerprint",
                     "status",
                     "updatedAt"
                   ],
@@ -78863,6 +79221,7 @@
                     "createdAt",
                     "issuerId",
                     "keyId",
+                    "publicKeyFingerprint",
                     "status",
                     "updatedAt"
                   ],
@@ -79180,6 +79539,7 @@
                           "createdAt",
                           "issuerId",
                           "keyId",
+                          "publicKeyFingerprint",
                           "status",
                           "updatedAt"
                         ],
@@ -79499,6 +79859,7 @@
                           "createdAt",
                           "issuerId",
                           "keyId",
+                          "publicKeyFingerprint",
                           "status",
                           "updatedAt"
                         ],
@@ -79803,6 +80164,7 @@
                           "createdAt",
                           "issuerId",
                           "keyId",
+                          "publicKeyFingerprint",
                           "status",
                           "updatedAt"
                         ],
@@ -205356,7 +205718,13 @@
                         {
                           "items": {
                             "properties": {
+                              "affinityDisplacedProvider": {
+                                "type": "string"
+                              },
                               "affinityOutcome": {
+                                "type": "string"
+                              },
+                              "affinityPinnedProvider": {
                                 "type": "string"
                               },
                               "aiGatewayModelId": {
@@ -205468,6 +205836,9 @@
                                 "type": "string"
                               },
                               "clientSessionId": {
+                                "type": "string"
+                              },
+                              "clientSessionIdSource": {
                                 "type": "string"
                               },
                               "clientUserAgent": {
@@ -206082,7 +206453,13 @@
                         {
                           "items": {
                             "properties": {
+                              "affinityDisplacedProvider": {
+                                "type": "string"
+                              },
                               "affinityOutcome": {
+                                "type": "string"
+                              },
+                              "affinityPinnedProvider": {
                                 "type": "string"
                               },
                               "aiGatewayModelId": {
@@ -206194,6 +206571,9 @@
                                 "type": "string"
                               },
                               "clientSessionId": {
+                                "type": "string"
+                              },
+                              "clientSessionIdSource": {
                                 "type": "string"
                               },
                               "clientUserAgent": {
@@ -206795,7 +207175,9 @@
                               }
                             },
                             "required": [
+                              "affinityDisplacedProvider",
                               "affinityOutcome",
+                              "affinityPinnedProvider",
                               "aiGatewayModelId",
                               "aiModel",
                               "aiModelType",
@@ -206833,6 +207215,7 @@
                               "clientIpCountry",
                               "clientJa4Digest",
                               "clientSessionId",
+                              "clientSessionIdSource",
                               "clientUserAgent",
                               "codingAgent",
                               "commitSha",
@@ -207298,7 +207681,13 @@
                         {
                           "items": {
                             "properties": {
+                              "affinityDisplacedProvider": {
+                                "type": "string"
+                              },
                               "affinityOutcome": {
+                                "type": "string"
+                              },
+                              "affinityPinnedProvider": {
                                 "type": "string"
                               },
                               "aiGatewayModelId": {
@@ -207410,6 +207799,9 @@
                                 "type": "string"
                               },
                               "clientSessionId": {
+                                "type": "string"
+                              },
+                              "clientSessionIdSource": {
                                 "type": "string"
                               },
                               "clientUserAgent": {
@@ -208024,7 +208416,13 @@
                         {
                           "items": {
                             "properties": {
+                              "affinityDisplacedProvider": {
+                                "type": "string"
+                              },
                               "affinityOutcome": {
+                                "type": "string"
+                              },
+                              "affinityPinnedProvider": {
                                 "type": "string"
                               },
                               "aiGatewayModelId": {
@@ -208136,6 +208534,9 @@
                                 "type": "string"
                               },
                               "clientSessionId": {
+                                "type": "string"
+                              },
+                              "clientSessionIdSource": {
                                 "type": "string"
                               },
                               "clientUserAgent": {
@@ -208737,7 +209138,9 @@
                               }
                             },
                             "required": [
+                              "affinityDisplacedProvider",
                               "affinityOutcome",
+                              "affinityPinnedProvider",
                               "aiGatewayModelId",
                               "aiModel",
                               "aiModelType",
@@ -208775,6 +209178,7 @@
                               "clientIpCountry",
                               "clientJa4Digest",
                               "clientSessionId",
+                              "clientSessionIdSource",
                               "clientUserAgent",
                               "codingAgent",
                               "commitSha",
@@ -209243,7 +209647,13 @@
                       "oneOf": [
                         {
                           "properties": {
+                            "affinityDisplacedProvider": {
+                              "type": "string"
+                            },
                             "affinityOutcome": {
+                              "type": "string"
+                            },
+                            "affinityPinnedProvider": {
                               "type": "string"
                             },
                             "aiGatewayModelId": {
@@ -209355,6 +209765,9 @@
                               "type": "string"
                             },
                             "clientSessionId": {
+                              "type": "string"
+                            },
+                            "clientSessionIdSource": {
                               "type": "string"
                             },
                             "clientUserAgent": {
@@ -209956,7 +210369,9 @@
                             }
                           },
                           "required": [
+                            "affinityDisplacedProvider",
                             "affinityOutcome",
+                            "affinityPinnedProvider",
                             "aiGatewayModelId",
                             "aiModel",
                             "aiModelType",
@@ -209994,6 +210409,7 @@
                             "clientIpCountry",
                             "clientJa4Digest",
                             "clientSessionId",
+                            "clientSessionIdSource",
                             "clientUserAgent",
                             "codingAgent",
                             "commitSha",
@@ -210375,7 +210791,13 @@
                       "oneOf": [
                         {
                           "properties": {
+                            "affinityDisplacedProvider": {
+                              "type": "string"
+                            },
                             "affinityOutcome": {
+                              "type": "string"
+                            },
+                            "affinityPinnedProvider": {
                               "type": "string"
                             },
                             "aiGatewayModelId": {
@@ -210487,6 +210909,9 @@
                               "type": "string"
                             },
                             "clientSessionId": {
+                              "type": "string"
+                            },
+                            "clientSessionIdSource": {
                               "type": "string"
                             },
                             "clientUserAgent": {
@@ -211088,7 +211513,9 @@
                             }
                           },
                           "required": [
+                            "affinityDisplacedProvider",
                             "affinityOutcome",
+                            "affinityPinnedProvider",
                             "aiGatewayModelId",
                             "aiModel",
                             "aiModelType",
@@ -211126,6 +211553,7 @@
                             "clientIpCountry",
                             "clientJa4Digest",
                             "clientSessionId",
+                            "clientSessionIdSource",
                             "clientUserAgent",
                             "codingAgent",
                             "commitSha",
@@ -219348,7 +219776,7 @@
           "triggerData": {
             "type": "object",
             "additionalProperties": true,
-            "description": "Trigger-specific credentials (e.g. webhook signing secret). Validated and encrypted against the trigger type definition."
+            "description": "Trigger configuration, validated and encrypted by the trigger driver. An empty object applies driver defaults."
           },
           "triggerDestination": {
             "description": "Initial trigger destination. Requires triggers to be enabled and a projectId here or at the top level. Connector responses expose the resulting set as triggerDestinations. Replace the complete set with PATCH /v1/connect/connectors/{connector}/trigger-destinations.",
@@ -220598,6 +221026,11 @@
           "triggers": {
             "description": "Whether the triggers are enabled for this connector.",
             "type": "boolean"
+          },
+          "triggerData": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Trigger configuration, validated and encrypted by the trigger driver. An empty object applies driver defaults."
           },
           "events": {
             "type": "array",
@@ -222358,6 +222791,30 @@
           "payload": {
             "oneOf": [
               {
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "enabled": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
+                    ]
+                  },
+                  "slackConfigured": {
+                    "type": "boolean",
+                    "enum": [
+                      false,
+                      true
+                    ]
+                  }
+                },
+                "required": [
+                  "enabled",
+                  "slackConfigured"
+                ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
               },
@@ -228440,6 +228897,9 @@
                           "repo": {
                             "type": "string"
                           },
+                          "repoId": {
+                            "type": "string"
+                          },
                           "repoPushedAt": {
                             "nullable": true,
                             "type": "number"
@@ -228487,6 +228947,7 @@
                           "provider",
                           "ref",
                           "repo",
+                          "repoId",
                           "sha",
                           "type"
                         ],
@@ -242073,124 +242534,13 @@
                       "budgetItem"
                     ],
                     "type": "object"
-                  }
-                },
-                "required": [
-                  "budget"
-                ],
-                "type": "object",
-                "description": "The payload of the event, if requested."
-              },
-              {
-                "properties": {
-                  "budget": {
-                    "properties": {
-                      "createdAt": {
-                        "type": "number",
-                        "description": "Date time when budget is created"
-                      },
-                      "fixedBudget": {
-                        "type": "number",
-                        "description": "Budget amount (USD / dollars)"
-                      },
-                      "id": {
-                        "type": "string",
-                        "description": "Sort key that needs to be unique per teamId"
-                      },
-                      "isActive": {
-                        "type": "boolean",
-                        "enum": [
-                          false,
-                          true
-                        ],
-                        "description": "Is the budget currently active for a customer"
-                      },
-                      "notifiedAt": {
-                        "items": {
-                          "type": "number"
-                        },
-                        "type": "array",
-                        "description": "Array of 50, 75, 100 to keep track of notifications sent out"
-                      },
-                      "pauseProjects": {
-                        "type": "boolean",
-                        "enum": [
-                          false,
-                          true
-                        ],
-                        "description": "Should all projects be paused if budget is exceeded"
-                      },
-                      "previousSpend": {
-                        "items": {
-                          "type": "number"
-                        },
-                        "type": "array",
-                        "description": "Array of the last 3 months of spend data"
-                      },
-                      "pricingPlan": {
-                        "type": "string",
-                        "enum": [
-                          "flex",
-                          "legacy",
-                          "platform",
-                          "plus",
-                          "unbundled"
-                        ],
-                        "description": "The acive pricing plan the team is billed with"
-                      },
-                      "scope": {
-                        "type": "string",
-                        "enum": [
-                          "organization",
-                          "project",
-                          "team"
-                        ],
-                        "description": "Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team)."
-                      },
-                      "scopeId": {
-                        "type": "string",
-                        "description": "Project id when `scope` is `project`."
-                      },
-                      "teamId": {
-                        "type": "string",
-                        "description": "Partition key"
-                      },
-                      "type": {
-                        "type": "string",
-                        "enum": [
-                          "fixed"
-                        ],
-                        "description": "The budget type"
-                      },
-                      "updatedAt": {
-                        "type": "number",
-                        "description": "Date time when budget is updated last"
-                      },
-                      "webhookId": {
-                        "type": "string",
-                        "description": "Webhook id that corresponds to a webhook in Cosmos webhook collection"
-                      },
-                      "webhookNotified": {
-                        "type": "boolean",
-                        "enum": [
-                          false,
-                          true
-                        ],
-                        "description": "Keep track if the webhook has been called for the month"
-                      }
-                    },
-                    "required": [
-                      "createdAt",
-                      "fixedBudget",
-                      "id",
-                      "isActive",
-                      "notifiedAt",
-                      "previousSpend",
-                      "teamId",
-                      "type"
-                    ],
-                    "type": "object",
-                    "description": "Represents a budget for tracking and notifying teams on their spending."
+                  },
+                  "projectId": {
+                    "type": "string",
+                    "description": "Stored for project budgets. Same value as `budget.scopeId`."
+                  },
+                  "projectName": {
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -242310,7 +242660,139 @@
                     "type": "object",
                     "description": "Represents a budget for tracking and notifying teams on their spending."
                   },
+                  "projectId": {
+                    "type": "string",
+                    "description": "Stored for project budgets. Same value as `budget.scopeId`."
+                  },
+                  "projectName": {
+                    "type": "string"
+                  },
                   "webhookUrl": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "budget"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "budget": {
+                    "properties": {
+                      "createdAt": {
+                        "type": "number",
+                        "description": "Date time when budget is created"
+                      },
+                      "fixedBudget": {
+                        "type": "number",
+                        "description": "Budget amount (USD / dollars)"
+                      },
+                      "id": {
+                        "type": "string",
+                        "description": "Sort key that needs to be unique per teamId"
+                      },
+                      "isActive": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ],
+                        "description": "Is the budget currently active for a customer"
+                      },
+                      "notifiedAt": {
+                        "items": {
+                          "type": "number"
+                        },
+                        "type": "array",
+                        "description": "Array of 50, 75, 100 to keep track of notifications sent out"
+                      },
+                      "pauseProjects": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ],
+                        "description": "Should all projects be paused if budget is exceeded"
+                      },
+                      "previousSpend": {
+                        "items": {
+                          "type": "number"
+                        },
+                        "type": "array",
+                        "description": "Array of the last 3 months of spend data"
+                      },
+                      "pricingPlan": {
+                        "type": "string",
+                        "enum": [
+                          "flex",
+                          "legacy",
+                          "platform",
+                          "plus",
+                          "unbundled"
+                        ],
+                        "description": "The acive pricing plan the team is billed with"
+                      },
+                      "scope": {
+                        "type": "string",
+                        "enum": [
+                          "organization",
+                          "project",
+                          "team"
+                        ],
+                        "description": "Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team)."
+                      },
+                      "scopeId": {
+                        "type": "string",
+                        "description": "Project id when `scope` is `project`."
+                      },
+                      "teamId": {
+                        "type": "string",
+                        "description": "Partition key"
+                      },
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "fixed"
+                        ],
+                        "description": "The budget type"
+                      },
+                      "updatedAt": {
+                        "type": "number",
+                        "description": "Date time when budget is updated last"
+                      },
+                      "webhookId": {
+                        "type": "string",
+                        "description": "Webhook id that corresponds to a webhook in Cosmos webhook collection"
+                      },
+                      "webhookNotified": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ],
+                        "description": "Keep track if the webhook has been called for the month"
+                      }
+                    },
+                    "required": [
+                      "createdAt",
+                      "fixedBudget",
+                      "id",
+                      "isActive",
+                      "notifiedAt",
+                      "previousSpend",
+                      "teamId",
+                      "type"
+                    ],
+                    "type": "object",
+                    "description": "Represents a budget for tracking and notifying teams on their spending."
+                  },
+                  "projectId": {
+                    "type": "string",
+                    "description": "Stored for project budgets. Same value as `budget.scopeId`."
+                  },
+                  "projectName": {
                     "type": "string"
                   }
                 },
@@ -242543,6 +243025,14 @@
                   "prevWebhookUrl": {
                     "type": "string"
                   },
+                  "projectId": {
+                    "type": "string",
+                    "description": "Stored for project budgets. Same value as `budget.scopeId`."
+                  },
+                  "projectName": {
+                    "type": "string",
+                    "description": "Injected at read time from `payload.projectId`."
+                  },
                   "webhookUrl": {
                     "type": "string"
                   }
@@ -242555,6 +243045,12 @@
               },
               {
                 "properties": {
+                  "projectId": {
+                    "type": "string"
+                  },
+                  "projectName": {
+                    "type": "string"
+                  },
                   "webhookUrl": {
                     "type": "string"
                   }
@@ -246975,6 +247471,7 @@
               "ai-gateway-inference-regions-updated",
               "ai-gateway-model-allowlist-models-updated",
               "ai-gateway-model-allowlist-toggled",
+              "ai-gateway-model-catalog-alert-settings-updated",
               "ai-gateway-private-model-created",
               "ai-gateway-private-model-deleted",
               "ai-gateway-private-model-updated",
@@ -247887,6 +248384,7 @@
               "ai-gateway-inference-regions-updated",
               "ai-gateway-model-allowlist-models-updated",
               "ai-gateway-model-allowlist-toggled",
+              "ai-gateway-model-catalog-alert-settings-updated",
               "ai-gateway-private-model-created",
               "ai-gateway-private-model-deleted",
               "ai-gateway-private-model-updated",
@@ -248587,6 +249085,7 @@
                 "ai-gateway-inference-regions-updated",
                 "ai-gateway-model-allowlist-models-updated",
                 "ai-gateway-model-allowlist-toggled",
+                "ai-gateway-model-catalog-alert-settings-updated",
                 "ai-gateway-private-model-created",
                 "ai-gateway-private-model-deleted",
                 "ai-gateway-private-model-updated",

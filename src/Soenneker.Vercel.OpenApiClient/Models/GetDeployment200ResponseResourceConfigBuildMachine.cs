@@ -17,7 +17,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive.</summary>
         public double? Cores { get; set; }
-        /// <summary>The default plan type for the build machine — what the customer is *paying* for on their plan. For most customers, this is standard, but some customers have an entitlement for enhanced builds.</summary>
+        /// <summary>The build machine tier included with the customer&apos;s plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseResourceConfigBuildMachineDefaultPurchaseType? DefaultPurchaseType { get; set; }
         /// <summary>Whether the build ran on a fixed or elastic machine. Used to drive billing for the build.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseResourceConfigBuildMachineMachineSelectionType? MachineSelectionType { get; set; }

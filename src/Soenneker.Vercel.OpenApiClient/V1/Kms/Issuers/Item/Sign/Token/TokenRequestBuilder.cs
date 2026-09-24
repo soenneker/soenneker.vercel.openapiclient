@@ -34,7 +34,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Kms.Issuers.Item.Sign.Token
         {
         }
         /// <summary>
-        /// Sign a JWT with a KMS issuer&apos;s active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer&apos;s policies decide which workloads are allowed to sign.
+        /// Sign a JWT with a KMS issuer&apos;s active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer&apos;s policies decide which workloads are allowed to sign. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer&apos;s JWKS.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SignKmsToken200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Kms.Issuers.Item.Sign.Token
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.SignKmsToken200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.SignKmsToken200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sign a JWT with a KMS issuer&apos;s active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer&apos;s policies decide which workloads are allowed to sign.
+        /// Sign a JWT with a KMS issuer&apos;s active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer&apos;s policies decide which workloads are allowed to sign. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer&apos;s JWKS.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

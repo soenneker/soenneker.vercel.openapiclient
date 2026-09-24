@@ -34,7 +34,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Kms.Issuers.Item.Sign.Message
         {
         }
         /// <summary>
-        /// Sign a raw message with a KMS issuer&apos;s active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer&apos;s policies decide which workloads are allowed to sign. The response `signature` is standard-base64 of the raw signature over the decoded message bytes. `keyId` and `algorithm` identify the signing key in the issuer&apos;s JWKS.
+        /// Sign a raw message with a KMS issuer&apos;s active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer&apos;s policies decide which workloads are allowed to sign. The response `signature` is standard-base64 of the raw signature over the decoded message bytes. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer&apos;s JWKS.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.SignKmsMessage200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Kms.Issuers.Item.Sign.Message
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.SignKmsMessage200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.SignKmsMessage200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sign a raw message with a KMS issuer&apos;s active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer&apos;s policies decide which workloads are allowed to sign. The response `signature` is standard-base64 of the raw signature over the decoded message bytes. `keyId` and `algorithm` identify the signing key in the issuer&apos;s JWKS.
+        /// Sign a raw message with a KMS issuer&apos;s active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer&apos;s policies decide which workloads are allowed to sign. The response `signature` is standard-base64 of the raw signature over the decoded message bytes. `keyId`, `algorithm`, and `fingerprint` identify the signing key in the issuer&apos;s JWKS.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

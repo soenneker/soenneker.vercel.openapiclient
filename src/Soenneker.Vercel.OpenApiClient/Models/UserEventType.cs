@@ -163,6 +163,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiGatewayModelAllowlistToggled,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-model-catalog-alert-settings-updated")]
+        #pragma warning disable CS1591
+        AiGatewayModelCatalogAlertSettingsUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-private-model-created")]
         #pragma warning disable CS1591
         AiGatewayPrivateModelCreated,

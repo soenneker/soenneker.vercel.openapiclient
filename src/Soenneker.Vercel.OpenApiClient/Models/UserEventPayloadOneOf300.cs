@@ -23,14 +23,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf300Project Project { get; set; }
 #endif
-        /// <summary>The removedMembership property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf300RemovedMembership? RemovedMembership { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf300RemovedMembership RemovedMembership { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf300"/> and sets the default values.
         /// </summary>
@@ -57,7 +49,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf300Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf300Project.CreateFromDiscriminatorValue); } },
-                { "removedMembership", n => { RemovedMembership = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf300RemovedMembership>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf300RemovedMembership.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +59,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf300Project>("project", Project);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf300RemovedMembership>("removedMembership", RemovedMembership);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Trigger-specific credentials (e.g. webhook signing secret). Validated and encrypted against the trigger type definition.
+    /// Trigger configuration, validated and encrypted by the trigger driver. An empty object applies driver defaults.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConnectCreateConnectorRequestTriggerDataProperty : IAdditionalDataHolder, IParsable

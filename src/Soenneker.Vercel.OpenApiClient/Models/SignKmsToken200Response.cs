@@ -14,7 +14,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The token property</summary>
+        /// <summary>Algorithm of the signing key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Algorithm { get; set; }
+#nullable restore
+#else
+        public string Algorithm { get; set; }
+#endif
+        /// <summary>SHA-256 fingerprint of the signing key&apos;s public key (`SHA256:&lt;base64&gt;`).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Fingerprint { get; set; }
+#nullable restore
+#else
+        public string Fingerprint { get; set; }
+#endif
+        /// <summary>Key id of the signing key. Matches the JWKS `kid` so verifiers can select the key after rotation without trial-verifying every published key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? KeyId { get; set; }
+#nullable restore
+#else
+        public string KeyId { get; set; }
+#endif
+        /// <summary>Compact JWT signed by the issuer&apos;s active signing key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Token { get; set; }
@@ -47,6 +71,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "algorithm", n => { Algorithm = n.GetStringValue(); } },
+                { "fingerprint", n => { Fingerprint = n.GetStringValue(); } },
+                { "keyId", n => { KeyId = n.GetStringValue(); } },
                 { "token", n => { Token = n.GetStringValue(); } },
             };
         }
@@ -57,6 +84,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("algorithm", Algorithm);
+            writer.WriteStringValue("fingerprint", Fingerprint);
+            writer.WriteStringValue("keyId", KeyId);
             writer.WriteStringValue("token", Token);
             writer.WriteAdditionalData(AdditionalData);
         }

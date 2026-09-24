@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>The default plan type for the build machine — what the customer is *paying* for on their plan. For most customers, this is standard, but some customers have an entitlement for enhanced builds.</summary>
+    /// <summary>The build machine tier included with the customer&apos;s plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreateDeployment200ResponseResourceConfigBuildMachineDefaultPurchaseType
     {
@@ -14,6 +14,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "enhanced")]
         #pragma warning disable CS1591
         Enhanced,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "none")]
+        #pragma warning disable CS1591
+        None,
         #pragma warning restore CS1591
         [EnumMember(Value = "standard")]
         #pragma warning disable CS1591

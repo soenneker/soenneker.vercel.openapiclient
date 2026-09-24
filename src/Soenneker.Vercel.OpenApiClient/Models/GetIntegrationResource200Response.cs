@@ -22,6 +22,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string BillingPlanId { get; set; }
 #endif
+        /// <summary>The roles and claim rules Vercel resolves into the resource tokens it mints for this resource</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseCustomClaims? CustomClaims { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseCustomClaims CustomClaims { get; set; }
+#endif
         /// <summary>The ID provided by the 3rd party provider for the given resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,6 +114,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "billingPlanId", n => { BillingPlanId = n.GetStringValue(); } },
+                { "customClaims", n => { CustomClaims = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseCustomClaims>(global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseCustomClaims.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "internalId", n => { InternalId = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseMetadata>(global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseMetadata.CreateFromDiscriminatorValue); } },
@@ -124,6 +133,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("billingPlanId", BillingPlanId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseCustomClaims>("customClaims", CustomClaims);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("internalId", InternalId);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetIntegrationResource200ResponseMetadata>("metadata", Metadata);
