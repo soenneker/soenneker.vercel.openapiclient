@@ -27,6 +27,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Github,
         #pragma warning restore CS1591
+        [EnumMember(Value = "google-dpop")]
+        #pragma warning disable CS1591
+        GoogleDpop,
+        #pragma warning restore CS1591
         [EnumMember(Value = "linear")]
         #pragma warning disable CS1591
         Linear,

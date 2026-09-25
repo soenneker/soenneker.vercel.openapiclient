@@ -29,6 +29,7 @@ using Soenneker.Vercel.OpenApiClient.V1.Storage;
 using Soenneker.Vercel.OpenApiClient.V1.Teams;
 using Soenneker.Vercel.OpenApiClient.V1.User;
 using Soenneker.Vercel.OpenApiClient.V1.Vcr;
+using Soenneker.Vercel.OpenApiClient.V1.VercelCi;
 using Soenneker.Vercel.OpenApiClient.V1.Webhooks;
 using System.Collections.Generic;
 using System.IO;
@@ -176,6 +177,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1
         public global::Soenneker.Vercel.OpenApiClient.V1.Vcr.VcrRequestBuilder Vcr
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Vcr.VcrRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The vercelCi property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.VercelCi.VercelCiRequestBuilder VercelCi
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.VercelCi.VercelCiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The webhooks property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Webhooks.WebhooksRequestBuilder Webhooks

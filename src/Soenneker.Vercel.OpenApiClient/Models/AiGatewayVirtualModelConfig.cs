@@ -99,13 +99,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Kind { get; set; }
 #endif
-        /// <summary>For kind=router: ordered candidates, model slugs or router references. Otherwise: fallback models.</summary>
+        /// <summary>For kind=router: ordered candidates (slugs or references, bare or with member attributes). Otherwise: fallback models.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Models { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigModelsItem>? Models { get; set; }
 #nullable restore
 #else
-        public List<string> Models { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigModelsItem> Models { get; set; }
 #endif
         /// <summary>Canonical model slug this VMC maps to (e.g. &quot;creator/model&quot;). Not used by kind=router.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -165,6 +165,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>For kind=router: how to order candidates. Absent means declared order.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelector? Selector { get; set; }
+        /// <summary>For kind=router: option slices keyed by selector name; each selector owns its slice&apos;s shape.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptions? SelectorOptions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptions SelectorOptions { get; set; }
+#endif
         /// <summary>Service tier for providers that support it.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigServiceTier? ServiceTier { get; set; }
         /// <summary>Rank eligible providers by an attribute.</summary>
@@ -248,7 +256,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "instanceId", n => { InstanceId = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetStringValue(); } },
                 { "modelSlug", n => { ModelSlug = n.GetStringValue(); } },
-                { "models", n => { Models = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "models", n => { Models = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigModelsItem>(global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigModelsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "observabilityTags", n => { ObservabilityTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "providerOnly", n => { ProviderOnly = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -256,6 +264,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "providerOrder", n => { ProviderOrder = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "providerTimeouts", n => { ProviderTimeouts = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderTimeouts>(global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderTimeouts.CreateFromDiscriminatorValue); } },
                 { "selector", n => { Selector = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelector>(); } },
+                { "selectorOptions", n => { SelectorOptions = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptions>(global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptions.CreateFromDiscriminatorValue); } },
                 { "serviceTier", n => { ServiceTier = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigServiceTier>(); } },
                 { "sort", n => { Sort = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSort>(); } },
                 { "speed", n => { Speed = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FastSpeed>(); } },
@@ -289,7 +298,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigInferenceRegion>("inferenceRegion", InferenceRegion);
             writer.WriteStringValue("instanceId", InstanceId);
             writer.WriteStringValue("kind", Kind);
-            writer.WriteCollectionOfPrimitiveValues<string>("models", Models);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigModelsItem>("models", Models);
             writer.WriteStringValue("modelSlug", ModelSlug);
             writer.WriteCollectionOfPrimitiveValues<string>("observabilityTags", ObservabilityTags);
             writer.WriteStringValue("ownerId", OwnerId);
@@ -298,6 +307,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("providerOrder", ProviderOrder);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigProviderTimeouts>("providerTimeouts", ProviderTimeouts);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelector>("selector", Selector);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSelectorOptions>("selectorOptions", SelectorOptions);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigServiceTier>("serviceTier", ServiceTier);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigSort>("sort", Sort);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FastSpeed>("speed", Speed);

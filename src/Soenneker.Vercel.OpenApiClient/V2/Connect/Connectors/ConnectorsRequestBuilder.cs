@@ -55,6 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Connect.Connectors
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 409 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 410 status code</exception>
         /// <exception cref="global::Soenneker.Vercel.OpenApiClient.Models.ConnectError">When receiving a 422 status code</exception>
@@ -73,6 +74,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Connect.Connectors
                 { "400", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
                 { "410", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Vercel.OpenApiClient.Models.ConnectError.CreateFromDiscriminatorValue },

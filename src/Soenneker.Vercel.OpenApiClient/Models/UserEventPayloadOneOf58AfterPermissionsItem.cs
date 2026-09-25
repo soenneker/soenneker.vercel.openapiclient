@@ -96,6 +96,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ReadWriteColonKms,
         #pragma warning restore CS1591
+        [EnumMember(Value = "read-write:messageboard")]
+        #pragma warning disable CS1591
+        ReadWriteColonMessageboard,
+        #pragma warning restore CS1591
         [EnumMember(Value = "read-write:project")]
         #pragma warning disable CS1591
         ReadWriteColonProject,
@@ -207,6 +211,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "read:kms")]
         #pragma warning disable CS1591
         ReadColonKms,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "read:messageboard")]
+        #pragma warning disable CS1591
+        ReadColonMessageboard,
         #pragma warning restore CS1591
         [EnumMember(Value = "read:monitoring")]
         #pragma warning disable CS1591

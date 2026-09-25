@@ -16,6 +16,7 @@ using Soenneker.Vercel.OpenApiClient.V2.Projects;
 using Soenneker.Vercel.OpenApiClient.V2.Sandboxes;
 using Soenneker.Vercel.OpenApiClient.V2.Teams;
 using Soenneker.Vercel.OpenApiClient.V2.User;
+using Soenneker.Vercel.OpenApiClient.V2.VercelCi;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -83,6 +84,11 @@ namespace Soenneker.Vercel.OpenApiClient.V2
         public global::Soenneker.Vercel.OpenApiClient.V2.User.UserRequestBuilder User
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V2.User.UserRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The vercelCi property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V2.VercelCi.VercelCiRequestBuilder VercelCi
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V2.VercelCi.VercelCiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v2.item collection</summary>
         /// <param name="position">Single Docker repository team slug component.</param>

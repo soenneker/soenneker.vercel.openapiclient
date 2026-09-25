@@ -80,6 +80,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Selector,
         #pragma warning restore CS1591
+        [EnumMember(Value = "selectorOptions")]
+        #pragma warning disable CS1591
+        SelectorOptions,
+        #pragma warning restore CS1591
         [EnumMember(Value = "serviceTier")]
         #pragma warning disable CS1591
         ServiceTier,

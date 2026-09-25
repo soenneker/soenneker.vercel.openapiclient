@@ -38,7 +38,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? CustomEnvironmentsPerProject { get; set; }
         /// <summary>The maximum number of edge configs an account can create.</summary>
         public double? EdgeConfigs { get; set; }
-        /// <summary>The maximum size in kilobytes of an Edge Config. Only specified if a custom limit is set.</summary>
+        /// <summary>The maximum size in kilobytes of a Global Config. Only specified if a custom limit is set.</summary>
         public double? EdgeConfigSize { get; set; }
         /// <summary>Whether every build for this team / user has elastic concurrency enabled automatically.</summary>
         public bool? ElasticConcurrencyEnabled { get; set; }
