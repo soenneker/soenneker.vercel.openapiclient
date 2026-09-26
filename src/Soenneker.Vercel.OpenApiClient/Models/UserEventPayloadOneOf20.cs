@@ -15,49 +15,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Spend budget on an AI Gateway API key, as surfaced in activity messages. Defined locally (rather than imported from `@api/pubsub-types`) because `@api/pubsub-types` already depends on `@api/events`; importing it here would create a circular dependency. Must stay structurally aligned with `APIKeyBudget` in `@api/pubsub-types/event-payloads/api-keys`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Budget? Budget { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Budget Budget { get; set; }
-#endif
         /// <summary>The change property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Change? Change { get; set; }
-        /// <summary>Associates the event with a project for filtering; not rendered.</summary>
+        /// <summary>The commitment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Commitment? Commitment { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Commitment Commitment { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The previous property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Previous? Previous { get; set; }
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Previous Previous { get; set; }
 #endif
-        /// <summary>The scopeType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20ScopeType? ScopeType { get; set; }
-        /// <summary>Associates the event with a member for filtering; not rendered.</summary>
+        /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Settings? Settings { get; set; }
 #nullable restore
 #else
-        public string UserId { get; set; }
-#endif
-        /// <summary>The userName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserName { get; set; }
-#nullable restore
-#else
-        public string UserName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Settings Settings { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20"/> and sets the default values.
@@ -84,13 +66,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "budget", n => { Budget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Budget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Budget.CreateFromDiscriminatorValue); } },
                 { "change", n => { Change = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Change>(); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "scopeType", n => { ScopeType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20ScopeType>(); } },
-                { "userId", n => { UserId = n.GetStringValue(); } },
-                { "userName", n => { UserName = n.GetStringValue(); } },
+                { "commitment", n => { Commitment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Commitment>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Commitment.CreateFromDiscriminatorValue); } },
+                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Previous.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Settings>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Settings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -100,13 +79,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Budget>("budget", Budget);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Change>("change", Change);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20ScopeType>("scopeType", ScopeType);
-            writer.WriteStringValue("userId", UserId);
-            writer.WriteStringValue("userName", UserName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Commitment>("commitment", Commitment);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Previous>("previous", Previous);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Settings>("settings", Settings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

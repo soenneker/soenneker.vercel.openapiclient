@@ -99,7 +99,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Kind { get; set; }
 #endif
-        /// <summary>For kind=router: ordered candidates (slugs or references, bare or with member attributes). Otherwise: fallback models.</summary>
+        /// <summary>For kind=router: ordered candidates, bare slugs/references or `{ slug, ...attributes }`. For kind=alias: ordered fallback model slugs, optionally led by one conditional `{ model, when }` entry, used when the primary model&apos;s answers match `when`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigModelsItem>? Models { get; set; }

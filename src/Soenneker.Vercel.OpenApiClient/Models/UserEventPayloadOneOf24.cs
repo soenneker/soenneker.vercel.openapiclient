@@ -13,23 +13,39 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf24 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>The added property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Added { get; set; }
+#nullable restore
+#else
+        public List<string> Added { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>The changed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Amount { get; set; }
+        public List<string>? Changed { get; set; }
 #nullable restore
 #else
-        public string Amount { get; set; }
+        public List<string> Changed { get; set; }
 #endif
-        /// <summary>The purchaseIntentId property</summary>
+        /// <summary>The credential property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PurchaseIntentId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24Credential? Credential { get; set; }
 #nullable restore
 #else
-        public string PurchaseIntentId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24Credential Credential { get; set; }
+#endif
+        /// <summary>The removed property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Removed { get; set; }
+#nullable restore
+#else
+        public List<string> Removed { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24"/> and sets the default values.
@@ -56,8 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetStringValue(); } },
-                { "purchaseIntentId", n => { PurchaseIntentId = n.GetStringValue(); } },
+                { "added", n => { Added = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "changed", n => { Changed = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "credential", n => { Credential = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24Credential>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24Credential.CreateFromDiscriminatorValue); } },
+                { "removed", n => { Removed = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,8 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("amount", Amount);
-            writer.WriteStringValue("purchaseIntentId", PurchaseIntentId);
+            writer.WriteCollectionOfPrimitiveValues<string>("added", Added);
+            writer.WriteCollectionOfPrimitiveValues<string>("changed", Changed);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24Credential>("credential", Credential);
+            writer.WriteCollectionOfPrimitiveValues<string>("removed", Removed);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

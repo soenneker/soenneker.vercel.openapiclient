@@ -15,14 +15,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The projectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectName { get; set; }
-#nullable restore
-#else
-        public string ProjectName { get; set; }
-#endif
         /// <summary>Present on new events only. Equivalent to &quot;stripe&quot; when absent.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12Provider? Provider { get; set; }
         /// <summary>Present on new events only. Equivalent to `stripeAccount` when absent.</summary>
@@ -33,14 +25,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProviderAccount { get; set; }
 #endif
-        /// <summary>The resourceId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ResourceId { get; set; }
-#nullable restore
-#else
-        public string ResourceId { get; set; }
-#endif
         /// <summary>Present when `provider` is &quot;stripe&quot;. Equivalent to `providerAccount`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +32,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string StripeAccount { get; set; }
+#endif
+        /// <summary>Present when `provider` is &quot;stripe&quot;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StripeOrganisation { get; set; }
+#nullable restore
+#else
+        public string StripeOrganisation { get; set; }
+#endif
+        /// <summary>The teamId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TeamId { get; set; }
+#nullable restore
+#else
+        public string TeamId { get; set; }
+#endif
+        /// <summary>The teamSlug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TeamSlug { get; set; }
+#nullable restore
+#else
+        public string TeamSlug { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12"/> and sets the default values.
@@ -74,11 +82,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12Provider>(); } },
                 { "providerAccount", n => { ProviderAccount = n.GetStringValue(); } },
-                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
                 { "stripeAccount", n => { StripeAccount = n.GetStringValue(); } },
+                { "stripeOrganisation", n => { StripeOrganisation = n.GetStringValue(); } },
+                { "teamId", n => { TeamId = n.GetStringValue(); } },
+                { "teamSlug", n => { TeamSlug = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -88,11 +97,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("projectName", ProjectName);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf12Provider>("provider", Provider);
             writer.WriteStringValue("providerAccount", ProviderAccount);
-            writer.WriteStringValue("resourceId", ResourceId);
             writer.WriteStringValue("stripeAccount", StripeAccount);
+            writer.WriteStringValue("stripeOrganisation", StripeOrganisation);
+            writer.WriteStringValue("teamId", TeamId);
+            writer.WriteStringValue("teamSlug", TeamSlug);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

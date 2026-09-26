@@ -15,8 +15,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fromPlan property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf14FromPlan? FromPlan { get; set; }
+        /// <summary>The projectName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectName { get; set; }
+#nullable restore
+#else
+        public string ProjectName { get; set; }
+#endif
         /// <summary>Present on new events only. Equivalent to &quot;stripe&quot; when absent.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf14Provider? Provider { get; set; }
         /// <summary>Present on new events only. Equivalent to `stripeAccount` when absent.</summary>
@@ -43,24 +49,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string StripeAccount { get; set; }
 #endif
-        /// <summary>Present when `provider` is &quot;stripe&quot;.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StripeOrganisation { get; set; }
-#nullable restore
-#else
-        public string StripeOrganisation { get; set; }
-#endif
-        /// <summary>The teamId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TeamId { get; set; }
-#nullable restore
-#else
-        public string TeamId { get; set; }
-#endif
-        /// <summary>The toPlan property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf14ToPlan? ToPlan { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf14"/> and sets the default values.
         /// </summary>
@@ -86,14 +74,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fromPlan", n => { FromPlan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf14FromPlan>(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf14Provider>(); } },
                 { "providerAccount", n => { ProviderAccount = n.GetStringValue(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
                 { "stripeAccount", n => { StripeAccount = n.GetStringValue(); } },
-                { "stripeOrganisation", n => { StripeOrganisation = n.GetStringValue(); } },
-                { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "toPlan", n => { ToPlan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf14ToPlan>(); } },
             };
         }
         /// <summary>
@@ -103,14 +88,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf14FromPlan>("fromPlan", FromPlan);
+            writer.WriteStringValue("projectName", ProjectName);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf14Provider>("provider", Provider);
             writer.WriteStringValue("providerAccount", ProviderAccount);
             writer.WriteStringValue("resourceId", ResourceId);
             writer.WriteStringValue("stripeAccount", StripeAccount);
-            writer.WriteStringValue("stripeOrganisation", StripeOrganisation);
-            writer.WriteStringValue("teamId", TeamId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf14ToPlan>("toPlan", ToPlan);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

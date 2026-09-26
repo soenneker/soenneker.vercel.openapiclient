@@ -1243,6 +1243,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         MarketplaceIntegrationAllowlistUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-created")]
+        #pragma warning disable CS1591
+        MessageboardCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-private-created")]
+        #pragma warning disable CS1591
+        MessageboardPrivateCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-private-space-created")]
+        #pragma warning disable CS1591
+        MessageboardPrivateSpaceCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-space-created")]
+        #pragma warning disable CS1591
+        MessageboardSpaceCreated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "microfrontend-group-added")]
         #pragma warning disable CS1591
         MicrofrontendGroupAdded,

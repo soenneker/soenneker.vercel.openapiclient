@@ -8,15 +8,15 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// For kind=router: ordered candidates (slugs or references, bare or with member attributes). Otherwise: fallback models.
+    /// For kind=router: ordered candidates, bare slugs/references or `{ slug, ...attributes }`. For kind=alias: ordered fallback model slugs, optionally led by one conditional `{ model, when }` entry, used when the primary model&apos;s answers match `when`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AiGatewayVirtualModelConfigModelsItemOneOf2 : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Highest task level the member handles, in [0, 1]. Read by the capability selector.</summary>
-        public double? Capability { get; set; }
+        /// <summary>Highest task level the member handles, in [0, 1]. Read by the intelligence selector.</summary>
+        public double? Intelligence { get; set; }
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,7 +50,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "capability", n => { Capability = n.GetDoubleValue(); } },
+                { "intelligence", n => { Intelligence = n.GetDoubleValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
             };
         }
@@ -61,7 +61,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("capability", Capability);
+            writer.WriteDoubleValue("intelligence", Intelligence);
             writer.WriteStringValue("slug", Slug);
             writer.WriteAdditionalData(AdditionalData);
         }

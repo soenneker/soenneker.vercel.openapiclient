@@ -14999,6 +14999,9 @@
           },
           "501": {
             "description": ""
+          },
+          "504": {
+            "description": ""
           }
         },
         "parameters": [
@@ -115110,14 +115113,7 @@
                               },
                               "duration": {
                                 "items": {
-                                  "oneOf": [
-                                    {
-                                      "type": "number"
-                                    },
-                                    {
-                                      "type": "number"
-                                    }
-                                  ]
+                                  "type": "number"
                                 },
                                 "maxItems": 2,
                                 "minItems": 2,
@@ -115125,14 +115121,7 @@
                               },
                               "endTime": {
                                 "items": {
-                                  "oneOf": [
-                                    {
-                                      "type": "number"
-                                    },
-                                    {
-                                      "type": "number"
-                                    }
-                                  ]
+                                  "type": "number"
                                 },
                                 "maxItems": 2,
                                 "minItems": 2,
@@ -115150,14 +115139,7 @@
                                     },
                                     "timestamp": {
                                       "items": {
-                                        "oneOf": [
-                                          {
-                                            "type": "number"
-                                          },
-                                          {
-                                            "type": "number"
-                                          }
-                                        ]
+                                        "type": "number"
                                       },
                                       "maxItems": 2,
                                       "minItems": 2,
@@ -115211,14 +115193,7 @@
                               },
                               "startTime": {
                                 "items": {
-                                  "oneOf": [
-                                    {
-                                      "type": "number"
-                                    },
-                                    {
-                                      "type": "number"
-                                    }
-                                  ]
+                                  "type": "number"
                                 },
                                 "maxItems": 2,
                                 "minItems": 2,
@@ -218649,6 +218624,99 @@
   },
   "components": {
     "schemas": {
+      "AiGatewayEvaluationFallbackCondition": {
+        "oneOf": [
+          {
+            "properties": {
+              "confidenceBelow": {
+                "type": "number"
+              },
+              "question": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "confidenceBelow",
+              "question"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "probabilityBetween": {
+                "items": {
+                  "type": "number"
+                },
+                "maxItems": 2,
+                "minItems": 2,
+                "type": "array"
+              },
+              "question": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "probabilityBetween",
+              "question"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "any": {
+                "items": {
+                  "$ref": "#/components/schemas/AiGatewayEvaluationFallbackCondition"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "any"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "all": {
+                "items": {
+                  "$ref": "#/components/schemas/AiGatewayEvaluationFallbackCondition"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "all"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "atLeast": {
+                "properties": {
+                  "conditions": {
+                    "items": {
+                      "$ref": "#/components/schemas/AiGatewayEvaluationFallbackCondition"
+                    },
+                    "type": "array"
+                  },
+                  "count": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "conditions",
+                  "count"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "atLeast"
+            ],
+            "type": "object"
+          }
+        ]
+      },
       "AiGatewayProviderOptionBag": {
         "additionalProperties": true,
         "type": "object",
@@ -218725,6 +218793,7 @@
               "enum": [
                 "implicit-caching",
                 "reasoning",
+                "structured-output",
                 "tool-use",
                 "vision"
               ],
@@ -218808,9 +218877,9 @@
                 },
                 {
                   "properties": {
-                    "capability": {
+                    "intelligence": {
                       "type": "number",
-                      "description": "Highest task level the member handles, in [0, 1]. Read by the capability selector."
+                      "description": "Highest task level the member handles, in [0, 1]. Read by the intelligence selector."
                     },
                     "slug": {
                       "type": "string"
@@ -218820,12 +218889,28 @@
                     "slug"
                   ],
                   "type": "object",
-                  "description": "For kind=router: ordered candidates (slugs or references, bare or with member attributes). Otherwise: fallback models."
+                  "description": "For kind=router: ordered candidates, bare slugs/references or `{ slug, ...attributes }`. For kind=alias: ordered fallback model slugs, optionally led by one conditional `{ model, when }` entry, used when the primary model's answers match `when`."
+                },
+                {
+                  "properties": {
+                    "model": {
+                      "type": "string"
+                    },
+                    "when": {
+                      "$ref": "#/components/schemas/AiGatewayEvaluationFallbackCondition"
+                    }
+                  },
+                  "required": [
+                    "model",
+                    "when"
+                  ],
+                  "type": "object",
+                  "description": "For kind=router: ordered candidates, bare slugs/references or `{ slug, ...attributes }`. For kind=alias: ordered fallback model slugs, optionally led by one conditional `{ model, when }` entry, used when the primary model's answers match `when`."
                 }
               ]
             },
             "type": "array",
-            "description": "For kind=router: ordered candidates (slugs or references, bare or with member attributes). Otherwise: fallback models."
+            "description": "For kind=router: ordered candidates, bare slugs/references or `{ slug, ...attributes }`. For kind=alias: ordered fallback model slugs, optionally led by one conditional `{ model, when }` entry, used when the primary model's answers match `when`."
           },
           "modelSlug": {
             "type": "string",
@@ -219564,6 +219649,10 @@
             "type": "string",
             "description": "Best-effort identifier of the third-party service this connector represents, independent of `type`. Examples: `'slack'`, `'mcp.linear.app'`, and `'auth.example.com'`. Always present in API responses."
           },
+          "serviceIcon": {
+            "type": "string",
+            "description": "Provider logo from the known-service registry, matched by `service`. Often an SVG data URL. Absent when the service is not in the registry."
+          },
           "supportedSubjectTypes": {
             "items": {
               "type": "string"
@@ -220061,6 +220150,10 @@
           "service": {
             "type": "string",
             "description": "Best-effort identifier of the third-party service this connector represents, independent of `type`. Examples: `'slack'`, `'mcp.linear.app'`, and `'auth.example.com'`. Always present in API responses."
+          },
+          "serviceIcon": {
+            "type": "string",
+            "description": "Provider logo from the known-service registry, matched by `service`. Often an SVG data URL. Absent when the service is not in the registry."
           },
           "supportedSubjectTypes": {
             "items": {
@@ -224646,6 +224739,42 @@
               },
               {
                 "properties": {
+                  "boardId": {
+                    "type": "string"
+                  },
+                  "operationId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "boardId",
+                  "operationId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "boardId": {
+                    "type": "string"
+                  },
+                  "operationId": {
+                    "type": "string"
+                  },
+                  "spaceId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "boardId",
+                  "operationId",
+                  "spaceId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "provider": {
                     "type": "string",
                     "enum": [
@@ -228705,14 +228834,7 @@
                           "jobPairs": {
                             "items": {
                               "items": {
-                                "oneOf": [
-                                  {
-                                    "type": "string"
-                                  },
-                                  {
-                                    "type": "string"
-                                  }
-                                ]
+                                "type": "string"
                               },
                               "maxItems": 2,
                               "minItems": 2,
@@ -228797,14 +228919,7 @@
                           "skippedJobPairs": {
                             "items": {
                               "items": {
-                                "oneOf": [
-                                  {
-                                    "type": "string"
-                                  },
-                                  {
-                                    "type": "string"
-                                  }
-                                ]
+                                "type": "string"
                               },
                               "maxItems": 2,
                               "minItems": 2,
@@ -229174,14 +229289,7 @@
                           "jobPairs": {
                             "items": {
                               "items": {
-                                "oneOf": [
-                                  {
-                                    "type": "string"
-                                  },
-                                  {
-                                    "type": "string"
-                                  }
-                                ]
+                                "type": "string"
                               },
                               "maxItems": 2,
                               "minItems": 2,
@@ -229251,14 +229359,7 @@
                           "skippedJobPairs": {
                             "items": {
                               "items": {
-                                "oneOf": [
-                                  {
-                                    "type": "string"
-                                  },
-                                  {
-                                    "type": "string"
-                                  }
-                                ]
+                                "type": "string"
                               },
                               "maxItems": 2,
                               "minItems": 2,
@@ -229517,14 +229618,7 @@
                           "jobPairs": {
                             "items": {
                               "items": {
-                                "oneOf": [
-                                  {
-                                    "type": "string"
-                                  },
-                                  {
-                                    "type": "string"
-                                  }
-                                ]
+                                "type": "string"
                               },
                               "maxItems": 2,
                               "minItems": 2,
@@ -229599,14 +229693,7 @@
                           "skippedJobPairs": {
                             "items": {
                               "items": {
-                                "oneOf": [
-                                  {
-                                    "type": "string"
-                                  },
-                                  {
-                                    "type": "string"
-                                  }
-                                ]
+                                "type": "string"
                               },
                               "maxItems": 2,
                               "minItems": 2,
@@ -229995,14 +230082,7 @@
                           "jobPairs": {
                             "items": {
                               "items": {
-                                "oneOf": [
-                                  {
-                                    "type": "string"
-                                  },
-                                  {
-                                    "type": "string"
-                                  }
-                                ]
+                                "type": "string"
                               },
                               "maxItems": 2,
                               "minItems": 2,
@@ -230109,14 +230189,7 @@
                           "skippedJobPairs": {
                             "items": {
                               "items": {
-                                "oneOf": [
-                                  {
-                                    "type": "string"
-                                  },
-                                  {
-                                    "type": "string"
-                                  }
-                                ]
+                                "type": "string"
                               },
                               "maxItems": 2,
                               "minItems": 2,
@@ -230508,14 +230581,7 @@
                           "jobPairs": {
                             "items": {
                               "items": {
-                                "oneOf": [
-                                  {
-                                    "type": "string"
-                                  },
-                                  {
-                                    "type": "string"
-                                  }
-                                ]
+                                "type": "string"
                               },
                               "maxItems": 2,
                               "minItems": 2,
@@ -230594,14 +230660,7 @@
                           "skippedJobPairs": {
                             "items": {
                               "items": {
-                                "oneOf": [
-                                  {
-                                    "type": "string"
-                                  },
-                                  {
-                                    "type": "string"
-                                  }
-                                ]
+                                "type": "string"
                               },
                               "maxItems": 2,
                               "minItems": 2,
@@ -230826,14 +230885,7 @@
                           "jobPairs": {
                             "items": {
                               "items": {
-                                "oneOf": [
-                                  {
-                                    "type": "string"
-                                  },
-                                  {
-                                    "type": "string"
-                                  }
-                                ]
+                                "type": "string"
                               },
                               "maxItems": 2,
                               "minItems": 2,
@@ -230912,14 +230964,7 @@
                           "skippedJobPairs": {
                             "items": {
                               "items": {
-                                "oneOf": [
-                                  {
-                                    "type": "string"
-                                  },
-                                  {
-                                    "type": "string"
-                                  }
-                                ]
+                                "type": "string"
                               },
                               "maxItems": 2,
                               "minItems": 2,
@@ -237528,51 +237573,47 @@
                     "oneOf": [
                       {
                         "items": {
-                          "oneOf": [
-                            {
-                              "properties": {
-                                "legacy": {
-                                  "type": "boolean",
-                                  "enum": [
-                                    false,
-                                    true
-                                  ]
-                                },
-                                "origin": {
-                                  "type": "string",
-                                  "enum": [
-                                    "apple",
-                                    "bitbucket",
-                                    "chatgpt",
-                                    "email",
-                                    "emu-recovery",
-                                    "github",
-                                    "gitlab",
-                                    "google",
-                                    "invite",
-                                    "magic-link",
-                                    "otp",
-                                    "otp-link",
-                                    "saml",
-                                    "webauthn"
-                                  ]
-                                },
-                                "ssoType": {
-                                  "type": "string"
-                                },
-                                "teamId": {
-                                  "type": "string"
-                                },
-                                "username": {
-                                  "type": "string"
-                                }
-                              },
-                              "required": [
-                                "origin"
-                              ],
-                              "type": "object"
+                          "properties": {
+                            "legacy": {
+                              "type": "boolean",
+                              "enum": [
+                                false,
+                                true
+                              ]
+                            },
+                            "origin": {
+                              "type": "string",
+                              "enum": [
+                                "apple",
+                                "bitbucket",
+                                "chatgpt",
+                                "email",
+                                "emu-recovery",
+                                "github",
+                                "gitlab",
+                                "google",
+                                "invite",
+                                "magic-link",
+                                "otp",
+                                "otp-link",
+                                "saml",
+                                "webauthn"
+                              ]
+                            },
+                            "ssoType": {
+                              "type": "string"
+                            },
+                            "teamId": {
+                              "type": "string"
+                            },
+                            "username": {
+                              "type": "string"
                             }
-                          ]
+                          },
+                          "required": [
+                            "origin"
+                          ],
+                          "type": "object"
                         },
                         "maxItems": 1,
                         "minItems": 1,
@@ -243781,46 +243822,42 @@
                   },
                   "factors": {
                     "items": {
-                      "oneOf": [
-                        {
-                          "properties": {
-                            "legacy": {
-                              "type": "boolean",
-                              "enum": [
-                                false,
-                                true
-                              ]
-                            },
-                            "origin": {
-                              "type": "string",
-                              "enum": [
-                                "apple",
-                                "bitbucket",
-                                "chatgpt",
-                                "email",
-                                "github",
-                                "gitlab",
-                                "google",
-                                "otp",
-                                "saml"
-                              ]
-                            },
-                            "ssoType": {
-                              "type": "string"
-                            },
-                            "teamId": {
-                              "type": "string"
-                            },
-                            "username": {
-                              "type": "string"
-                            }
-                          },
-                          "required": [
-                            "origin"
-                          ],
-                          "type": "object"
+                      "properties": {
+                        "legacy": {
+                          "type": "boolean",
+                          "enum": [
+                            false,
+                            true
+                          ]
+                        },
+                        "origin": {
+                          "type": "string",
+                          "enum": [
+                            "apple",
+                            "bitbucket",
+                            "chatgpt",
+                            "email",
+                            "github",
+                            "gitlab",
+                            "google",
+                            "otp",
+                            "saml"
+                          ]
+                        },
+                        "ssoType": {
+                          "type": "string"
+                        },
+                        "teamId": {
+                          "type": "string"
+                        },
+                        "username": {
+                          "type": "string"
                         }
-                      ]
+                      },
+                      "required": [
+                        "origin"
+                      ],
+                      "type": "object"
                     },
                     "maxItems": 1,
                     "minItems": 1,
@@ -249425,6 +249462,10 @@
               "marketplace-billing-collection-updated",
               "marketplace-flex-commit-opt-in",
               "marketplace-integration-allowlist-updated",
+              "messageboard-created",
+              "messageboard-private-created",
+              "messageboard-private-space-created",
+              "messageboard-space-created",
               "microfrontend-group-added",
               "microfrontend-group-deleted",
               "microfrontend-group-updated",
@@ -250338,6 +250379,10 @@
               "marketplace-billing-collection-updated",
               "marketplace-flex-commit-opt-in",
               "marketplace-integration-allowlist-updated",
+              "messageboard-created",
+              "messageboard-private-created",
+              "messageboard-private-space-created",
+              "messageboard-space-created",
               "microfrontend-group-added",
               "microfrontend-group-deleted",
               "microfrontend-group-updated",
@@ -251039,6 +251084,10 @@
                 "marketplace-billing-collection-updated",
                 "marketplace-flex-commit-opt-in",
                 "marketplace-integration-allowlist-updated",
+                "messageboard-created",
+                "messageboard-private-created",
+                "messageboard-private-space-created",
+                "messageboard-space-created",
                 "microfrontend-group-added",
                 "microfrontend-group-deleted",
                 "microfrontend-group-updated",

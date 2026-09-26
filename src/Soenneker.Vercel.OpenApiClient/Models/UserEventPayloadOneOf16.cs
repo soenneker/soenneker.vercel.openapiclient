@@ -15,14 +15,52 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The apiKey property</summary>
+        /// <summary>The fromPlan property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16FromPlan? FromPlan { get; set; }
+        /// <summary>Present on new events only. Equivalent to &quot;stripe&quot; when absent.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16Provider? Provider { get; set; }
+        /// <summary>Present on new events only. Equivalent to `stripeAccount` when absent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16ApiKey? ApiKey { get; set; }
+        public string? ProviderAccount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16ApiKey ApiKey { get; set; }
+        public string ProviderAccount { get; set; }
 #endif
+        /// <summary>The resourceId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ResourceId { get; set; }
+#nullable restore
+#else
+        public string ResourceId { get; set; }
+#endif
+        /// <summary>Present when `provider` is &quot;stripe&quot;. Equivalent to `providerAccount`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StripeAccount { get; set; }
+#nullable restore
+#else
+        public string StripeAccount { get; set; }
+#endif
+        /// <summary>Present when `provider` is &quot;stripe&quot;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StripeOrganisation { get; set; }
+#nullable restore
+#else
+        public string StripeOrganisation { get; set; }
+#endif
+        /// <summary>The teamId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TeamId { get; set; }
+#nullable restore
+#else
+        public string TeamId { get; set; }
+#endif
+        /// <summary>The toPlan property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16ToPlan? ToPlan { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16"/> and sets the default values.
         /// </summary>
@@ -48,7 +86,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "apiKey", n => { ApiKey = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16ApiKey>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16ApiKey.CreateFromDiscriminatorValue); } },
+                { "fromPlan", n => { FromPlan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16FromPlan>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16Provider>(); } },
+                { "providerAccount", n => { ProviderAccount = n.GetStringValue(); } },
+                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
+                { "stripeAccount", n => { StripeAccount = n.GetStringValue(); } },
+                { "stripeOrganisation", n => { StripeOrganisation = n.GetStringValue(); } },
+                { "teamId", n => { TeamId = n.GetStringValue(); } },
+                { "toPlan", n => { ToPlan = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16ToPlan>(); } },
             };
         }
         /// <summary>
@@ -58,7 +103,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16ApiKey>("apiKey", ApiKey);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16FromPlan>("fromPlan", FromPlan);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16Provider>("provider", Provider);
+            writer.WriteStringValue("providerAccount", ProviderAccount);
+            writer.WriteStringValue("resourceId", ResourceId);
+            writer.WriteStringValue("stripeAccount", StripeAccount);
+            writer.WriteStringValue("stripeOrganisation", StripeOrganisation);
+            writer.WriteStringValue("teamId", TeamId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf16ToPlan>("toPlan", ToPlan);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,6 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Reasoning,
         #pragma warning restore CS1591
+        [EnumMember(Value = "structured-output")]
+        #pragma warning disable CS1591
+        StructuredOutput,
+        #pragma warning restore CS1591
         [EnumMember(Value = "tool-use")]
         #pragma warning disable CS1591
         ToolUse,

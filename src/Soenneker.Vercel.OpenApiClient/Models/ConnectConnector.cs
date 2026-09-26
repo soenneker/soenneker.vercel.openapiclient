@@ -159,6 +159,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Service { get; set; }
 #endif
+        /// <summary>Provider logo from the known-service registry, matched by `service`. Often an SVG data URL. Absent when the service is not in the registry.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ServiceIcon { get; set; }
+#nullable restore
+#else
+        public string ServiceIcon { get; set; }
+#endif
         /// <summary>Token subject types supported by the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -297,6 +305,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "redirectUri", n => { RedirectUri = n.GetStringValue(); } },
                 { "reinstallAt", n => { ReinstallAt = n.GetDoubleValue(); } },
                 { "service", n => { Service = n.GetStringValue(); } },
+                { "serviceIcon", n => { ServiceIcon = n.GetStringValue(); } },
                 { "supportedSubjectTypes", n => { SupportedSubjectTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "supportsIcon", n => { SupportsIcon = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorSupportsIcon>(); } },
                 { "supportsInstallation", n => { SupportsInstallation = n.GetBoolValue(); } },
@@ -343,6 +352,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("redirectUri", RedirectUri);
             writer.WriteDoubleValue("reinstallAt", ReinstallAt);
             writer.WriteStringValue("service", Service);
+            writer.WriteStringValue("serviceIcon", ServiceIcon);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedSubjectTypes", SupportedSubjectTypes);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorSupportsIcon>("supportsIcon", SupportsIcon);
             writer.WriteBoolValue("supportsInstallation", SupportsInstallation);
