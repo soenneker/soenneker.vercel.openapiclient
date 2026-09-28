@@ -12,6 +12,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class PatchTeamRequestDefaultExpirationSettings : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Required when increasing any retention setting for a High cohort team after retention reduce and before metering. Confirms team-wide storage billing.</summary>
+        public bool? AcknowledgeStorageBilling { get; set; }
         /// <summary>The time period to keep non-production deployments for</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpiration? Expiration { get; set; }
         /// <summary>The time period to keep canceled deployments for</summary>
@@ -20,6 +22,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationErrored? ExpirationErrored { get; set; }
         /// <summary>The time period to keep production deployments for</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationProduction? ExpirationProduction { get; set; }
+        /// <summary>When true, opts the team out of the upcoming deployment-storage retention reduce (Medium/High cohorts). Does not change expiration settings.</summary>
+        public bool? KeepCurrentRetention { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,10 +42,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "acknowledgeStorageBilling", n => { AcknowledgeStorageBilling = n.GetBoolValue(); } },
                 { "expiration", n => { Expiration = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpiration>(); } },
                 { "expirationCanceled", n => { ExpirationCanceled = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationCanceled>(); } },
                 { "expirationErrored", n => { ExpirationErrored = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationErrored>(); } },
                 { "expirationProduction", n => { ExpirationProduction = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationProduction>(); } },
+                { "keepCurrentRetention", n => { KeepCurrentRetention = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -51,10 +57,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("acknowledgeStorageBilling", AcknowledgeStorageBilling);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpiration>("expiration", Expiration);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationCanceled>("expirationCanceled", ExpirationCanceled);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationErrored>("expirationErrored", ExpirationErrored);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationProduction>("expirationProduction", ExpirationProduction);
+            writer.WriteBoolValue("keepCurrentRetention", KeepCurrentRetention);
         }
     }
 }

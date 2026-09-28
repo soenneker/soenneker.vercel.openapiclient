@@ -39,6 +39,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AdminPlanUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "admin-preview-deployment-suffix-clear")]
+        #pragma warning disable CS1591
+        AdminPreviewDeploymentSuffixClear,
+        #pragma warning restore CS1591
         [EnumMember(Value = "admin-secondary-email-added")]
         #pragma warning disable CS1591
         AdminSecondaryEmailAdded,
@@ -2350,6 +2354,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "team-deployment-policy-updated")]
         #pragma warning disable CS1591
         TeamDeploymentPolicyUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "team-deployment-storage-high-retention-opt-in")]
+        #pragma warning disable CS1591
+        TeamDeploymentStorageHighRetentionOptIn,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "team-deployment-storage-retention-opt-out")]
+        #pragma warning disable CS1591
+        TeamDeploymentStorageRetentionOptOut,
         #pragma warning restore CS1591
         [EnumMember(Value = "team-domain-verification-created")]
         #pragma warning disable CS1591

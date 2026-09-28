@@ -23,6 +23,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputChangedResourcesItem> ChangedResources { get; set; }
 #endif
+        /// <summary>The Orb customer&apos;s timezone when the intent was created. Omitted for legacy intents.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomerTimezone { get; set; }
+#nullable restore
+#else
+        public string CustomerTimezone { get; set; }
+#endif
         /// <summary>When the subscription change should take effect.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputEffectiveBehavior? EffectiveBehavior { get; set; }
         /// <summary>Optional metadata associated with the intent to update the Orb subscription with.</summary>
@@ -59,6 +67,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProductId { get; set; }
 #endif
+        /// <summary>The canonical reference-product billing period at intent creation. Omitted for historical intents.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputReferenceBillingPeriod? ReferenceBillingPeriod { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputReferenceBillingPeriod ReferenceBillingPeriod { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutput"/> and sets the default values.
         /// </summary>
@@ -85,12 +101,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "changedResources", n => { ChangedResources = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputChangedResourcesItem>(global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputChangedResourcesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "customerTimezone", n => { CustomerTimezone = n.GetStringValue(); } },
                 { "effectiveBehavior", n => { EffectiveBehavior = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputEffectiveBehavior>(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputMetadata>(global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputMetadata.CreateFromDiscriminatorValue); } },
                 { "orbPriceId", n => { OrbPriceId = n.GetStringValue(); } },
                 { "pendingSubscriptionChangeId", n => { PendingSubscriptionChangeId = n.GetStringValue(); } },
                 { "pricingSource", n => { PricingSource = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputPricingSource>(); } },
                 { "productId", n => { ProductId = n.GetStringValue(); } },
+                { "referenceBillingPeriod", n => { ReferenceBillingPeriod = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputReferenceBillingPeriod>(global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputReferenceBillingPeriod.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -101,12 +119,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputChangedResourcesItem>("changedResources", ChangedResources);
+            writer.WriteStringValue("customerTimezone", CustomerTimezone);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputEffectiveBehavior>("effectiveBehavior", EffectiveBehavior);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputMetadata>("metadata", Metadata);
             writer.WriteStringValue("orbPriceId", OrbPriceId);
             writer.WriteStringValue("pendingSubscriptionChangeId", PendingSubscriptionChangeId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputPricingSource>("pricingSource", PricingSource);
             writer.WriteStringValue("productId", ProductId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.BuyCredits200ResponseOrbSubscriptionIntentConfigurationOutputReferenceBillingPeriod>("referenceBillingPeriod", ReferenceBillingPeriod);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

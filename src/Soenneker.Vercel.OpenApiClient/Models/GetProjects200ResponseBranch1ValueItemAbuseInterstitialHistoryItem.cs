@@ -50,6 +50,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Reason { get; set; }
 #endif
+        /// <summary>Plain thread ID, recorded separately from `caseId`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ThreadId { get; set; }
+#nullable restore
+#else
+        public string ThreadId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemAbuseInterstitialHistoryItem"/> and sets the default values.
         /// </summary>
@@ -81,6 +89,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "comment", n => { Comment = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
+                { "threadId", n => { ThreadId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -96,6 +105,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("comment", Comment);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteStringValue("reason", Reason);
+            writer.WriteStringValue("threadId", ThreadId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

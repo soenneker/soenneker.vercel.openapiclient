@@ -53,7 +53,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.NamedSandboxFailoverRegionsItem?> FailoverRegions { get; set; }
 #endif
-        /// <summary>Digest-pinned reference of the container image the sandbox was created from, when it was created from an image (&quot;{repository}@{manifestDigest}&quot;).</summary>
+        /// <summary>Owner-qualified, digest-pinned reference of the container image the sandbox was created from (&quot;{team}/{project}/{repository}@{manifestDigest}&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Image { get; set; }

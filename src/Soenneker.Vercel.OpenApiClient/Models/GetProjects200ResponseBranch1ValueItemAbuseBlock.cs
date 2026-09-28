@@ -64,6 +64,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The statusCode property</summary>
         public double? StatusCode { get; set; }
+        /// <summary>Plain thread ID, recorded separately from `caseId`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ThreadId { get; set; }
+#nullable restore
+#else
+        public string ThreadId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemAbuseBlock"/> and sets the default values.
         /// </summary>
@@ -99,6 +107,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "registeredShaBlock", n => { RegisteredShaBlock = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemAbuseBlockRegisteredShaBlock>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemAbuseBlockRegisteredShaBlock.CreateFromDiscriminatorValue); } },
                 { "statusCode", n => { StatusCode = n.GetDoubleValue(); } },
+                { "threadId", n => { ThreadId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -118,6 +127,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("reason", Reason);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseBranch1ValueItemAbuseBlockRegisteredShaBlock>("registeredShaBlock", RegisteredShaBlock);
             writer.WriteDoubleValue("statusCode", StatusCode);
+            writer.WriteStringValue("threadId", ThreadId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

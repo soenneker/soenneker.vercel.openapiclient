@@ -160,6 +160,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Rust { get; set; }
 #endif
+        /// <summary>Set when this build produces a function for schedule entrypoints.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigScheduleFunction? ScheduleFunction { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigScheduleFunction ScheduleFunction { get; set; }
+#endif
         /// <summary>Owning service name; scopes per-function config such as the v2beta consumer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -217,6 +225,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "outputDirectory", n => { OutputDirectory = n.GetStringValue(); } },
                 { "projectSettings", n => { ProjectSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigProjectSettings>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigProjectSettings.CreateFromDiscriminatorValue); } },
                 { "rust", n => { Rust = n.GetStringValue(); } },
+                { "scheduleFunction", n => { ScheduleFunction = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigScheduleFunction>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigScheduleFunction.CreateFromDiscriminatorValue); } },
                 { "serviceName", n => { ServiceName = n.GetStringValue(); } },
                 { "zeroConfig", n => { ZeroConfig = n.GetBoolValue(); } },
             };
@@ -250,6 +259,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("outputDirectory", OutputDirectory);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigProjectSettings>("projectSettings", ProjectSettings);
             writer.WriteStringValue("rust", Rust);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigScheduleFunction>("scheduleFunction", ScheduleFunction);
             writer.WriteStringValue("serviceName", ServiceName);
             writer.WriteBoolValue("zeroConfig", ZeroConfig);
             writer.WriteAdditionalData(AdditionalData);

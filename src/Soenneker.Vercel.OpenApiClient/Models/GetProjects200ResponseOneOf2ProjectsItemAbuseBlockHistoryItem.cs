@@ -72,6 +72,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The statusCode property</summary>
         public double? StatusCode { get; set; }
+        /// <summary>Plain thread ID, recorded separately from `caseId`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ThreadId { get; set; }
+#nullable restore
+#else
+        public string ThreadId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItem"/> and sets the default values.
         /// </summary>
@@ -108,6 +116,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "registeredShaBlock", n => { RegisteredShaBlock = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRegisteredShaBlock>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRegisteredShaBlock.CreateFromDiscriminatorValue); } },
                 { "route", n => { Route = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRoute>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRoute.CreateFromDiscriminatorValue); } },
                 { "statusCode", n => { StatusCode = n.GetDoubleValue(); } },
+                { "threadId", n => { ThreadId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -128,6 +137,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRegisteredShaBlock>("registeredShaBlock", RegisteredShaBlock);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRoute>("route", Route);
             writer.WriteDoubleValue("statusCode", StatusCode);
+            writer.WriteStringValue("threadId", ThreadId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
