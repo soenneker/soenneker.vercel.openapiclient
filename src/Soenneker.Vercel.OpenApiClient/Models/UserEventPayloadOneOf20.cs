@@ -15,32 +15,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The change property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Change? Change { get; set; }
-        /// <summary>The commitment property</summary>
+        /// <summary>The apiKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Commitment? Commitment { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20ApiKey? ApiKey { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Commitment Commitment { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20ApiKey ApiKey { get; set; }
 #endif
-        /// <summary>The previous property</summary>
+        /// <summary>Spend budget on an AI Gateway API key, as surfaced in activity messages. Defined locally (rather than imported from `@api/pubsub-types`) because `@api/pubsub-types` already depends on `@api/events`; importing it here would create a circular dependency. Must stay structurally aligned with `APIKeyBudget` in `@api/pubsub-types/event-payloads/api-keys`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Previous? Previous { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Budget? Budget { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Previous Previous { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Budget Budget { get; set; }
 #endif
-        /// <summary>The settings property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Settings? Settings { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Settings Settings { get; set; }
-#endif
+        /// <summary>True when the key was created to bypass all of the team&apos;s restrictions (the ZDR-only model restriction and the provider/model allowlist).</summary>
+        public bool? BypassAll { get; set; }
+        /// <summary>True when the key was created with a ZDR exemption.</summary>
+        public bool? ZdrExemption { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20"/> and sets the default values.
         /// </summary>
@@ -66,10 +60,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "change", n => { Change = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Change>(); } },
-                { "commitment", n => { Commitment = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Commitment>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Commitment.CreateFromDiscriminatorValue); } },
-                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Previous.CreateFromDiscriminatorValue); } },
-                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Settings>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Settings.CreateFromDiscriminatorValue); } },
+                { "apiKey", n => { ApiKey = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20ApiKey>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20ApiKey.CreateFromDiscriminatorValue); } },
+                { "budget", n => { Budget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Budget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Budget.CreateFromDiscriminatorValue); } },
+                { "bypassAll", n => { BypassAll = n.GetBoolValue(); } },
+                { "zdrExemption", n => { ZdrExemption = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -79,10 +73,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Change>("change", Change);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Commitment>("commitment", Commitment);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Previous>("previous", Previous);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Settings>("settings", Settings);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20ApiKey>("apiKey", ApiKey);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf20Budget>("budget", Budget);
+            writer.WriteBoolValue("bypassAll", BypassAll);
+            writer.WriteBoolValue("zdrExemption", ZdrExemption);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

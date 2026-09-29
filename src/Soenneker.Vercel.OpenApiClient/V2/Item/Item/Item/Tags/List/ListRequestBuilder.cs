@@ -34,7 +34,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Item.Item.Item.Tags.List
         {
         }
         /// <summary>
-        /// GET /v2/:teamSlug/:projectSlug/:repositoryName/tags/list List the tags in a repository.
+        /// GET /v2/:teamSlug/:projectSlug/:repositoryName/tags/list List the tags in a repository. The `last` parameter accepts the opaque cursor from a previous response&apos;s `Link` header. Unparseable cursors return HTTP 400 with code `invalid_cursor`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetByTeamSlugByProjectSlugByRepositoryNameTagsList200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Item.Item.Item.Tags.List
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetByTeamSlugByProjectSlugByRepositoryNameTagsList200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetByTeamSlugByProjectSlugByRepositoryNameTagsList200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET /v2/:teamSlug/:projectSlug/:repositoryName/tags/list List the tags in a repository.
+        /// GET /v2/:teamSlug/:projectSlug/:repositoryName/tags/list List the tags in a repository. The `last` parameter accepts the opaque cursor from a previous response&apos;s `Link` header. Unparseable cursors return HTTP 400 with code `invalid_cursor`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Item.Item.Item.Tags.List
             return new global::Soenneker.Vercel.OpenApiClient.V2.Item.Item.Item.Tags.List.ListRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// GET /v2/:teamSlug/:projectSlug/:repositoryName/tags/list List the tags in a repository.
+        /// GET /v2/:teamSlug/:projectSlug/:repositoryName/tags/list List the tags in a repository. The `last` parameter accepts the opaque cursor from a previous response&apos;s `Link` header. Unparseable cursors return HTTP 400 with code `invalid_cursor`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ListRequestBuilderGetQueryParameters 

@@ -13,40 +13,20 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf24 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The added property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Added { get; set; }
-#nullable restore
-#else
-        public List<string> Added { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The changed property</summary>
+        /// <summary>Spend budget on an AI Gateway API key, as surfaced in activity messages. Defined locally (rather than imported from `@api/pubsub-types`) because `@api/pubsub-types` already depends on `@api/events`; importing it here would create a circular dependency. Must stay structurally aligned with `APIKeyBudget` in `@api/pubsub-types/event-payloads/api-keys`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Changed { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24Budget? Budget { get; set; }
 #nullable restore
 #else
-        public List<string> Changed { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24Budget Budget { get; set; }
 #endif
-        /// <summary>The credential property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24Credential? Credential { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24Credential Credential { get; set; }
-#endif
-        /// <summary>The removed property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Removed { get; set; }
-#nullable restore
-#else
-        public List<string> Removed { get; set; }
-#endif
+        /// <summary>The change property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24Change? Change { get; set; }
+        /// <summary>The scopeType property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24ScopeType? ScopeType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24"/> and sets the default values.
         /// </summary>
@@ -72,10 +52,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "added", n => { Added = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "changed", n => { Changed = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "credential", n => { Credential = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24Credential>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24Credential.CreateFromDiscriminatorValue); } },
-                { "removed", n => { Removed = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "budget", n => { Budget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24Budget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24Budget.CreateFromDiscriminatorValue); } },
+                { "change", n => { Change = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24Change>(); } },
+                { "scopeType", n => { ScopeType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24ScopeType>(); } },
             };
         }
         /// <summary>
@@ -85,10 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("added", Added);
-            writer.WriteCollectionOfPrimitiveValues<string>("changed", Changed);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24Credential>("credential", Credential);
-            writer.WriteCollectionOfPrimitiveValues<string>("removed", Removed);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24Budget>("budget", Budget);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24Change>("change", Change);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf24ScopeType>("scopeType", ScopeType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

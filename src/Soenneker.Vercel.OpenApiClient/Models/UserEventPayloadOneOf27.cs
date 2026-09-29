@@ -23,6 +23,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The changed property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Changed { get; set; }
+#nullable restore
+#else
+        public List<string> Changed { get; set; }
+#endif
+        /// <summary>The credential property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27Credential? Credential { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27Credential Credential { get; set; }
+#endif
         /// <summary>The removed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +73,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "added", n => { Added = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "changed", n => { Changed = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "credential", n => { Credential = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27Credential>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27Credential.CreateFromDiscriminatorValue); } },
                 { "removed", n => { Removed = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -68,6 +86,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("added", Added);
+            writer.WriteCollectionOfPrimitiveValues<string>("changed", Changed);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf27Credential>("credential", Credential);
             writer.WriteCollectionOfPrimitiveValues<string>("removed", Removed);
             writer.WriteAdditionalData(AdditionalData);
         }

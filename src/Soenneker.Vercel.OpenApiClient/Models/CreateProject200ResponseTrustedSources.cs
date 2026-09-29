@@ -14,7 +14,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Allow same-team Vercel CI access to preview deployments built from the CI run&apos;s repository, using the deployment source rather than the current project repository link. Defaults to enabled when not stored; omitted or null Trusted Sources updates preserve the stored value.</summary>
+        /// <summary>Allow same-team Vercel CI access to preview and production deployments built from the CI run&apos;s repository, using the deployment source rather than the current project repository link. Defaults to enabled when not stored; omitted or null Trusted Sources updates preserve the stored value.</summary>
         public bool? EnableVercelCiSameRepository { get; set; }
         /// <summary>The oidcProviders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

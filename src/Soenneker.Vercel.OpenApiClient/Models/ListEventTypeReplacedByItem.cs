@@ -107,6 +107,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AiCodeReview,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-access-policy-created")]
+        #pragma warning disable CS1591
+        AiGatewayAccessPolicyCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-access-policy-deleted")]
+        #pragma warning disable CS1591
+        AiGatewayAccessPolicyDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-access-policy-member-added")]
+        #pragma warning disable CS1591
+        AiGatewayAccessPolicyMemberAdded,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-access-policy-member-removed")]
+        #pragma warning disable CS1591
+        AiGatewayAccessPolicyMemberRemoved,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai-gateway-access-policy-updated")]
+        #pragma warning disable CS1591
+        AiGatewayAccessPolicyUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai-gateway-api-key-created")]
         #pragma warning disable CS1591
         AiGatewayApiKeyCreated,

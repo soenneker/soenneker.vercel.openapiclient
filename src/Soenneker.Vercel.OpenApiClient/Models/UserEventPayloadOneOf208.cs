@@ -15,22 +15,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The group property</summary>
+        /// <summary>The allowedIntegrationCount property</summary>
+        public double? AllowedIntegrationCount { get; set; }
+        /// <summary>The allowedIntegrationIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf208Group? Group { get; set; }
+        public List<string>? AllowedIntegrationIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf208Group Group { get; set; }
+        public List<string> AllowedIntegrationIds { get; set; }
 #endif
-        /// <summary>The project property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf208Project? Project { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf208Project Project { get; set; }
-#endif
+        /// <summary>The enabled property</summary>
+        public bool? Enabled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf208"/> and sets the default values.
         /// </summary>
@@ -56,8 +52,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "group", n => { Group = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf208Group>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf208Group.CreateFromDiscriminatorValue); } },
-                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf208Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf208Project.CreateFromDiscriminatorValue); } },
+                { "allowedIntegrationCount", n => { AllowedIntegrationCount = n.GetDoubleValue(); } },
+                { "allowedIntegrationIds", n => { AllowedIntegrationIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf208Group>("group", Group);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf208Project>("project", Project);
+            writer.WriteDoubleValue("allowedIntegrationCount", AllowedIntegrationCount);
+            writer.WriteCollectionOfPrimitiveValues<string>("allowedIntegrationIds", AllowedIntegrationIds);
+            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

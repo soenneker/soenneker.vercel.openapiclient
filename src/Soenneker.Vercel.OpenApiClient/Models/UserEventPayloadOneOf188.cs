@@ -23,14 +23,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ConfigurationId { get; set; }
 #endif
-        /// <summary>The errorCode property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ErrorCode { get; set; }
-#nullable restore
-#else
-        public string ErrorCode { get; set; }
-#endif
         /// <summary>The integrationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,13 +31,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string IntegrationId { get; set; }
 #endif
-        /// <summary>The integrationProductSlug property</summary>
+        /// <summary>The integrationName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationProductSlug { get; set; }
+        public string? IntegrationName { get; set; }
 #nullable restore
 #else
-        public string IntegrationProductSlug { get; set; }
+        public string IntegrationName { get; set; }
 #endif
         /// <summary>The integrationSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,31 +47,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string IntegrationSlug { get; set; }
 #endif
-        /// <summary>The pattern property</summary>
+        /// <summary>The ownerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Pattern { get; set; }
+        public string? OwnerId { get; set; }
 #nullable restore
 #else
-        public string Pattern { get; set; }
+        public string OwnerId { get; set; }
 #endif
-        /// <summary>The requestKind property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.ListKeysRequestKind? RequestKind { get; set; }
-        /// <summary>The resourceId property</summary>
+        /// <summary>The projectIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf188ProjectIds? ProjectIds { get; set; }
 #nullable restore
 #else
-        public string ResourceId { get; set; }
-#endif
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf188ProjectIds ProjectIds { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf188"/> and sets the default values.
@@ -107,14 +89,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "configurationId", n => { ConfigurationId = n.GetStringValue(); } },
-                { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
                 { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
-                { "integrationProductSlug", n => { IntegrationProductSlug = n.GetStringValue(); } },
+                { "integrationName", n => { IntegrationName = n.GetStringValue(); } },
                 { "integrationSlug", n => { IntegrationSlug = n.GetStringValue(); } },
-                { "pattern", n => { Pattern = n.GetStringValue(); } },
-                { "requestKind", n => { RequestKind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListKeysRequestKind>(); } },
-                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
+                { "projectIds", n => { ProjectIds = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf188ProjectIds>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf188ProjectIds.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -125,14 +104,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("configurationId", ConfigurationId);
-            writer.WriteStringValue("errorCode", ErrorCode);
             writer.WriteStringValue("integrationId", IntegrationId);
-            writer.WriteStringValue("integrationProductSlug", IntegrationProductSlug);
+            writer.WriteStringValue("integrationName", IntegrationName);
             writer.WriteStringValue("integrationSlug", IntegrationSlug);
-            writer.WriteStringValue("pattern", Pattern);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListKeysRequestKind>("requestKind", RequestKind);
-            writer.WriteStringValue("resourceId", ResourceId);
-            writer.WriteStringValue("type", Type);
+            writer.WriteStringValue("ownerId", OwnerId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf188ProjectIds>("projectIds", ProjectIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

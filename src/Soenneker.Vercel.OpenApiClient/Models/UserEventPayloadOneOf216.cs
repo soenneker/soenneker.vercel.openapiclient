@@ -15,23 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The copiedDomains property</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CopiedDomains { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public List<string> CopiedDomains { get; set; }
-#endif
-        /// <summary>The enabledOrganizationEmu property</summary>
-        public bool? EnabledOrganizationEmu { get; set; }
-        /// <summary>The enabledTeamIds property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? EnabledTeamIds { get; set; }
-#nullable restore
-#else
-        public List<string> EnabledTeamIds { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,21 +31,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
-        /// <summary>The teamId property</summary>
+        /// <summary>The rootTeamId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamId { get; set; }
+        public string? RootTeamId { get; set; }
 #nullable restore
 #else
-        public string TeamId { get; set; }
+        public string RootTeamId { get; set; }
 #endif
-        /// <summary>The teamSlug property</summary>
+        /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamSlug { get; set; }
+        public string? Slug { get; set; }
 #nullable restore
 #else
-        public string TeamSlug { get; set; }
+        public string Slug { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216"/> and sets the default values.
@@ -82,12 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "copiedDomains", n => { CopiedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "enabledOrganizationEmu", n => { EnabledOrganizationEmu = n.GetBoolValue(); } },
-                { "enabledTeamIds", n => { EnabledTeamIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "teamSlug", n => { TeamSlug = n.GetStringValue(); } },
+                { "rootTeamId", n => { RootTeamId = n.GetStringValue(); } },
+                { "slug", n => { Slug = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -97,12 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("copiedDomains", CopiedDomains);
-            writer.WriteBoolValue("enabledOrganizationEmu", EnabledOrganizationEmu);
-            writer.WriteCollectionOfPrimitiveValues<string>("enabledTeamIds", EnabledTeamIds);
+            writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteStringValue("teamId", TeamId);
-            writer.WriteStringValue("teamSlug", TeamSlug);
+            writer.WriteStringValue("rootTeamId", RootTeamId);
+            writer.WriteStringValue("slug", Slug);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

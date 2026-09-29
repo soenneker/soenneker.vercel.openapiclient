@@ -7,92 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf10"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf3"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf4"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf5"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf6"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf7"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf8"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf9"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserEventPayloadOneOf112Job : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class UserEventPayloadOneOf112Job : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The deployHook property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf1? UserEventPayloadOneOf112JobOneOf1 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobDeployHook? DeployHook { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf1 UserEventPayloadOneOf112JobOneOf1 { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobDeployHook DeployHook { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf10"/></summary>
+        /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf10? UserEventPayloadOneOf112JobOneOf10 { get; set; }
+        public string? State { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf10 UserEventPayloadOneOf112JobOneOf10 { get; set; }
+        public string State { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf2? UserEventPayloadOneOf112JobOneOf2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf2 UserEventPayloadOneOf112JobOneOf2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf3? UserEventPayloadOneOf112JobOneOf3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf3 UserEventPayloadOneOf112JobOneOf3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf4? UserEventPayloadOneOf112JobOneOf4 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf4 UserEventPayloadOneOf112JobOneOf4 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf5"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf5? UserEventPayloadOneOf112JobOneOf5 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf5 UserEventPayloadOneOf112JobOneOf5 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf6"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf6? UserEventPayloadOneOf112JobOneOf6 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf6 UserEventPayloadOneOf112JobOneOf6 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf7"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf7? UserEventPayloadOneOf112JobOneOf7 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf7 UserEventPayloadOneOf112JobOneOf7 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf8"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf8? UserEventPayloadOneOf112JobOneOf8 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf8 UserEventPayloadOneOf112JobOneOf8 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf9"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf9? UserEventPayloadOneOf112JobOneOf9 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf9 UserEventPayloadOneOf112JobOneOf9 { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112Job"/> and sets the default values.
+        /// </summary>
+        public UserEventPayloadOneOf112Job()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -101,49 +45,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112Job CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112Job();
-            if("UserEventPayloadOneOf112JobOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UserEventPayloadOneOf112JobOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf1();
-            }
-            else if("UserEventPayloadOneOf112JobOneOf10".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UserEventPayloadOneOf112JobOneOf10 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf10();
-            }
-            else if("UserEventPayloadOneOf112JobOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UserEventPayloadOneOf112JobOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf2();
-            }
-            else if("UserEventPayloadOneOf112JobOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UserEventPayloadOneOf112JobOneOf3 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf3();
-            }
-            else if("UserEventPayloadOneOf112JobOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UserEventPayloadOneOf112JobOneOf4 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf4();
-            }
-            else if("UserEventPayloadOneOf112JobOneOf5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UserEventPayloadOneOf112JobOneOf5 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf5();
-            }
-            else if("UserEventPayloadOneOf112JobOneOf6".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UserEventPayloadOneOf112JobOneOf6 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf6();
-            }
-            else if("UserEventPayloadOneOf112JobOneOf7".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UserEventPayloadOneOf112JobOneOf7 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf7();
-            }
-            else if("UserEventPayloadOneOf112JobOneOf8".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UserEventPayloadOneOf112JobOneOf8 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf8();
-            }
-            else if("UserEventPayloadOneOf112JobOneOf9".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UserEventPayloadOneOf112JobOneOf9 = new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf9();
-            }
-            return result;
+            return new global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112Job();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -151,47 +53,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(UserEventPayloadOneOf112JobOneOf1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return UserEventPayloadOneOf112JobOneOf1.GetFieldDeserializers();
-            }
-            else if(UserEventPayloadOneOf112JobOneOf10 != null)
-            {
-                return UserEventPayloadOneOf112JobOneOf10.GetFieldDeserializers();
-            }
-            else if(UserEventPayloadOneOf112JobOneOf2 != null)
-            {
-                return UserEventPayloadOneOf112JobOneOf2.GetFieldDeserializers();
-            }
-            else if(UserEventPayloadOneOf112JobOneOf3 != null)
-            {
-                return UserEventPayloadOneOf112JobOneOf3.GetFieldDeserializers();
-            }
-            else if(UserEventPayloadOneOf112JobOneOf4 != null)
-            {
-                return UserEventPayloadOneOf112JobOneOf4.GetFieldDeserializers();
-            }
-            else if(UserEventPayloadOneOf112JobOneOf5 != null)
-            {
-                return UserEventPayloadOneOf112JobOneOf5.GetFieldDeserializers();
-            }
-            else if(UserEventPayloadOneOf112JobOneOf6 != null)
-            {
-                return UserEventPayloadOneOf112JobOneOf6.GetFieldDeserializers();
-            }
-            else if(UserEventPayloadOneOf112JobOneOf7 != null)
-            {
-                return UserEventPayloadOneOf112JobOneOf7.GetFieldDeserializers();
-            }
-            else if(UserEventPayloadOneOf112JobOneOf8 != null)
-            {
-                return UserEventPayloadOneOf112JobOneOf8.GetFieldDeserializers();
-            }
-            else if(UserEventPayloadOneOf112JobOneOf9 != null)
-            {
-                return UserEventPayloadOneOf112JobOneOf9.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "deployHook", n => { DeployHook = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobDeployHook>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobDeployHook.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -200,46 +66,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(UserEventPayloadOneOf112JobOneOf1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf1>(null, UserEventPayloadOneOf112JobOneOf1);
-            }
-            else if(UserEventPayloadOneOf112JobOneOf10 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf10>(null, UserEventPayloadOneOf112JobOneOf10);
-            }
-            else if(UserEventPayloadOneOf112JobOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf2>(null, UserEventPayloadOneOf112JobOneOf2);
-            }
-            else if(UserEventPayloadOneOf112JobOneOf3 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf3>(null, UserEventPayloadOneOf112JobOneOf3);
-            }
-            else if(UserEventPayloadOneOf112JobOneOf4 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf4>(null, UserEventPayloadOneOf112JobOneOf4);
-            }
-            else if(UserEventPayloadOneOf112JobOneOf5 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf5>(null, UserEventPayloadOneOf112JobOneOf5);
-            }
-            else if(UserEventPayloadOneOf112JobOneOf6 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf6>(null, UserEventPayloadOneOf112JobOneOf6);
-            }
-            else if(UserEventPayloadOneOf112JobOneOf7 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf7>(null, UserEventPayloadOneOf112JobOneOf7);
-            }
-            else if(UserEventPayloadOneOf112JobOneOf8 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf8>(null, UserEventPayloadOneOf112JobOneOf8);
-            }
-            else if(UserEventPayloadOneOf112JobOneOf9 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobOneOf9>(null, UserEventPayloadOneOf112JobOneOf9);
-            }
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf112JobDeployHook>("deployHook", DeployHook);
+            writer.WriteStringValue("state", State);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

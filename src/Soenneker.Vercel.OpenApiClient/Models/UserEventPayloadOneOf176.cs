@@ -13,88 +13,40 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf176 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Stable account id on `provider`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ActorAccountId { get; set; }
-#nullable restore
-#else
-        public string ActorAccountId { get; set; }
-#endif
-        /// <summary>Display name only. Logins are mutable; join on `actorAccountId`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ActorLogin { get; set; }
-#nullable restore
-#else
-        public string ActorLogin { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Branch actually pushed to, or the requested one if blocked.</summary>
+        /// <summary>The newOwnerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationBranch { get; set; }
+        public string? NewOwnerId { get; set; }
 #nullable restore
 #else
-        public string DestinationBranch { get; set; }
+        public string NewOwnerId { get; set; }
 #endif
-        /// <summary>&quot;owner/name&quot;, or the raw request value if blocked before it resolved.</summary>
+        /// <summary>The previousOwnerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationRepo { get; set; }
+        public string? PreviousOwnerId { get; set; }
 #nullable restore
 #else
-        public string DestinationRepo { get; set; }
+        public string PreviousOwnerId { get; set; }
 #endif
-        /// <summary>Sanitized code, never a raw error message.</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FailureCode { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string FailureCode { get; set; }
+        public string ProjectId { get; set; }
 #endif
-        /// <summary>Mirrors `PushFailureStage` in `@api/git-push-repo`.</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176FailureStage? FailureStage { get; set; }
-        /// <summary>Set only when an App installation token was minted (GitHub only).</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstallationId { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public string InstallationId { get; set; }
+        public string ProjectName { get; set; }
 #endif
-        /// <summary>The outcome property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176Outcome? Outcome { get; set; }
-        /// <summary>The provider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176Provider? Provider { get; set; }
-        /// <summary>The resultCommitSha property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ResultCommitSha { get; set; }
-#nullable restore
-#else
-        public string ResultCommitSha { get; set; }
-#endif
-        /// <summary>The sourceCommitSha property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SourceCommitSha { get; set; }
-#nullable restore
-#else
-        public string SourceCommitSha { get; set; }
-#endif
-        /// <summary>Source repository, &quot;owner/name&quot;. Null when the pushed content was generated in-request (push-files-to-repo) rather than copied from a repository.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SourceRepo { get; set; }
-#nullable restore
-#else
-        public string SourceRepo { get; set; }
-#endif
-        /// <summary>The usedAppToken property</summary>
-        public bool? UsedAppToken { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176"/> and sets the default values.
         /// </summary>
@@ -120,19 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actorAccountId", n => { ActorAccountId = n.GetStringValue(); } },
-                { "actorLogin", n => { ActorLogin = n.GetStringValue(); } },
-                { "destinationBranch", n => { DestinationBranch = n.GetStringValue(); } },
-                { "destinationRepo", n => { DestinationRepo = n.GetStringValue(); } },
-                { "failureCode", n => { FailureCode = n.GetStringValue(); } },
-                { "failureStage", n => { FailureStage = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176FailureStage>(); } },
-                { "installationId", n => { InstallationId = n.GetStringValue(); } },
-                { "outcome", n => { Outcome = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176Outcome>(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176Provider>(); } },
-                { "resultCommitSha", n => { ResultCommitSha = n.GetStringValue(); } },
-                { "sourceCommitSha", n => { SourceCommitSha = n.GetStringValue(); } },
-                { "sourceRepo", n => { SourceRepo = n.GetStringValue(); } },
-                { "usedAppToken", n => { UsedAppToken = n.GetBoolValue(); } },
+                { "newOwnerId", n => { NewOwnerId = n.GetStringValue(); } },
+                { "previousOwnerId", n => { PreviousOwnerId = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -142,19 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("actorAccountId", ActorAccountId);
-            writer.WriteStringValue("actorLogin", ActorLogin);
-            writer.WriteStringValue("destinationBranch", DestinationBranch);
-            writer.WriteStringValue("destinationRepo", DestinationRepo);
-            writer.WriteStringValue("failureCode", FailureCode);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176FailureStage>("failureStage", FailureStage);
-            writer.WriteStringValue("installationId", InstallationId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176Outcome>("outcome", Outcome);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf176Provider>("provider", Provider);
-            writer.WriteStringValue("resultCommitSha", ResultCommitSha);
-            writer.WriteStringValue("sourceCommitSha", SourceCommitSha);
-            writer.WriteStringValue("sourceRepo", SourceRepo);
-            writer.WriteBoolValue("usedAppToken", UsedAppToken);
+            writer.WriteStringValue("newOwnerId", NewOwnerId);
+            writer.WriteStringValue("previousOwnerId", PreviousOwnerId);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
