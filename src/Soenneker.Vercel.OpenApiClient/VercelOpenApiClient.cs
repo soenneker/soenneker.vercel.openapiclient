@@ -6,6 +6,7 @@ using Microsoft.Kiota.Serialization.Form;
 using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
+using Soenneker.Vercel.OpenApiClient.AiGateway;
 using Soenneker.Vercel.OpenApiClient.Aliases;
 using Soenneker.Vercel.OpenApiClient.ApiKeys;
 using Soenneker.Vercel.OpenApiClient.Domains;
@@ -38,6 +39,11 @@ namespace Soenneker.Vercel.OpenApiClient
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VercelOpenApiClient : BaseRequestBuilder
     {
+        /// <summary>The aiGateway property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.AiGateway.AiGatewayRequestBuilder AiGateway
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.AiGateway.AiGatewayRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The aliases property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Aliases.AliasesRequestBuilder Aliases
         {

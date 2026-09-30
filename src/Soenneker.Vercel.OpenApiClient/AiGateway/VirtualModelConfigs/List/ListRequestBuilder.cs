@@ -9,28 +9,28 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.List
+namespace Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.List
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\ai-gateway\virtual-model-configs\list
+    /// Builds and executes requests for operations under \ai-gateway\virtual-model-configs\list
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.List.ListRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.List.ListRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/ai-gateway/virtual-model-configs/list{?cursor*,limit*,ownerId*,slug*,teamId*}", pathParameters)
+        public ListRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/virtual-model-configs/list{?cursor*,limit*,ownerId*,slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.List.ListRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.List.ListRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/ai-gateway/virtual-model-configs/list{?cursor*,limit*,ownerId*,slug*,teamId*}", rawUrl)
+        public ListRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/virtual-model-configs/list{?cursor*,limit*,ownerId*,slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>
@@ -41,11 +41,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.List
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigList?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.List.ListRequestBuilder.ListRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigList?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.List.ListRequestBuilder.ListRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigList> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.List.ListRequestBuilder.ListRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigList> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.List.ListRequestBuilder.ListRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -58,11 +58,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.List
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.List.ListRequestBuilder.ListRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.List.ListRequestBuilder.ListRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.List.ListRequestBuilder.ListRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.List.ListRequestBuilder.ListRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -73,11 +73,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.List
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.List.ListRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.List.ListRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.List.ListRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.List.ListRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.List.ListRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.List.ListRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List virtual model configs. With `ownerId`, returns all of that team&apos;s VMCs. Without it, pages through VMCs across all teams (newest-first, `limit`/`cursor`).

@@ -35,7 +35,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>When `true`, interactions with the Team **must** be done with an authentication token that has been authenticated with the Team&apos;s SAML Single Sign-On provider.</summary>
         public bool? Enforced { get; set; }
-        /// <summary>When &quot;Directory Sync&quot; is configured, this object contains a mapping of which Directory Group (by ID) should be assigned to which Vercel Team &quot;role&quot;.</summary>
+        /// <summary>When &quot;Directory Sync&quot; is configured, this object contains a mapping of which Directory Group (by ID) should be assigned to which Vercel Team roles and permissions, or an access group. Bare team roles are deprecated in favor of DirectorySyncRolesMapping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamSamlRolesProperty? Roles { get; set; }

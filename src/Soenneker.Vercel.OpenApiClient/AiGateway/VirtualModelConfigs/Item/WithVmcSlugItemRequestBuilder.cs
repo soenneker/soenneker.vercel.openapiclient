@@ -9,28 +9,28 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item
+namespace Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\ai-gateway\virtual-model-configs\{vmcSlug}
+    /// Builds and executes requests for operations under \ai-gateway\virtual-model-configs\{vmcSlug}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithVmcSlugItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithVmcSlugItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/ai-gateway/virtual-model-configs/{vmcSlug}{?actingIp*,actingUserAgent*,ownerId*,slug*,teamId*,updatedBy*}", pathParameters)
+        public WithVmcSlugItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/virtual-model-configs/{vmcSlug}{?actingIp*,actingUserAgent*,ownerId*,slug*,teamId*,updatedBy*}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithVmcSlugItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/ai-gateway/virtual-model-configs/{vmcSlug}{?actingIp*,actingUserAgent*,ownerId*,slug*,teamId*,updatedBy*}", rawUrl)
+        public WithVmcSlugItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/virtual-model-configs/{vmcSlug}{?actingIp*,actingUserAgent*,ownerId*,slug*,teamId*,updatedBy*}", rawUrl)
         {
         }
         /// <summary>
@@ -40,11 +40,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -58,11 +58,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -76,11 +76,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig?> PatchAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig?> PatchAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig> PatchAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfig> PatchAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPatchRequestInformation(requestConfiguration);
@@ -93,11 +93,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
@@ -112,11 +112,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -131,11 +131,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder.WithVmcSlugItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
@@ -146,11 +146,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.Item.WithVmcSlugItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Delete a virtual model config by path slug (soft delete)

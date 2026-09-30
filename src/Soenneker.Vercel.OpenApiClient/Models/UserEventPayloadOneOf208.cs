@@ -27,6 +27,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
+        /// <summary>The resourceOnlyIntegrationCount property</summary>
+        public double? ResourceOnlyIntegrationCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf208"/> and sets the default values.
         /// </summary>
@@ -55,6 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "allowedIntegrationCount", n => { AllowedIntegrationCount = n.GetDoubleValue(); } },
                 { "allowedIntegrationIds", n => { AllowedIntegrationIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "resourceOnlyIntegrationCount", n => { ResourceOnlyIntegrationCount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -67,6 +70,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("allowedIntegrationCount", AllowedIntegrationCount);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedIntegrationIds", AllowedIntegrationIds);
             writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteDoubleValue("resourceOnlyIntegrationCount", ResourceOnlyIntegrationCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -30,6 +30,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? MaxAllowedTeams { get; set; }
         /// <summary>The mcp property</summary>
         public bool? Mcp { get; set; }
+        /// <summary>The mcpConfiguration property</summary>
+        public bool? McpConfiguration { get; set; }
         /// <summary>The mcpReadonly property</summary>
         public bool? McpReadonly { get; set; }
         /// <summary>The nativeImportResource property</summary>
@@ -89,6 +91,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "importResource", n => { ImportResource = n.GetBoolValue(); } },
                 { "maxAllowedTeams", n => { MaxAllowedTeams = n.GetDoubleValue(); } },
                 { "mcp", n => { Mcp = n.GetBoolValue(); } },
+                { "mcpConfiguration", n => { McpConfiguration = n.GetBoolValue(); } },
                 { "mcpReadonly", n => { McpReadonly = n.GetBoolValue(); } },
                 { "nativeImportResource", n => { NativeImportResource = n.GetBoolValue(); } },
                 { "provisioning", n => { Provisioning = n.GetBoolValue(); } },
@@ -116,6 +119,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("importResource", ImportResource);
             writer.WriteDoubleValue("maxAllowedTeams", MaxAllowedTeams);
             writer.WriteBoolValue("mcp", Mcp);
+            writer.WriteBoolValue("mcpConfiguration", McpConfiguration);
             writer.WriteBoolValue("mcpReadonly", McpReadonly);
             writer.WriteBoolValue("nativeImportResource", NativeImportResource);
             writer.WriteBoolValue("provisioning", Provisioning);

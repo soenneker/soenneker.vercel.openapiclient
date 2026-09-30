@@ -992,10 +992,10 @@
         ]
       }
     },
-    "/v1/ai-gateway/virtual-model-configs": {
+    "/ai-gateway/virtual-model-configs": {
       "post": {
         "tags": [
-          "api-ai-gateway"
+          "ai-gateway"
         ],
         "summary": "Create virtual model config",
         "description": "Create a virtual model config (VMC)",
@@ -1064,7 +1064,7 @@
       },
       "get": {
         "tags": [
-          "api-ai-gateway"
+          "ai-gateway"
         ],
         "summary": "Get virtual model config",
         "description": "Get a virtual model config",
@@ -1156,7 +1156,7 @@
       },
       "patch": {
         "tags": [
-          "api-ai-gateway"
+          "ai-gateway"
         ],
         "summary": "Update virtual model config",
         "description": "Update a virtual model config",
@@ -1222,7 +1222,7 @@
       },
       "delete": {
         "tags": [
-          "api-ai-gateway"
+          "ai-gateway"
         ],
         "summary": "Delete virtual model config",
         "description": "Delete a virtual model config (soft delete)",
@@ -1320,10 +1320,10 @@
         ]
       }
     },
-    "/v1/ai-gateway/virtual-model-configs/list": {
+    "/ai-gateway/virtual-model-configs/list": {
       "get": {
         "tags": [
-          "api-ai-gateway"
+          "ai-gateway"
         ],
         "summary": "List virtual model configs",
         "description": "List virtual model configs. With \u0060ownerId\u0060, returns all of that team\u0027s VMCs. Without it, pages through VMCs across all teams (newest-first, \u0060limit\u0060/\u0060cursor\u0060).",
@@ -1407,10 +1407,10 @@
         ]
       }
     },
-    "/v1/ai-gateway/virtual-model-configs/{vmcSlug}": {
+    "/ai-gateway/virtual-model-configs/{vmcSlug}": {
       "get": {
         "tags": [
-          "api-ai-gateway"
+          "ai-gateway"
         ],
         "summary": "Get virtual model config",
         "description": "Get a virtual model config by path slug",
@@ -1488,7 +1488,7 @@
       },
       "patch": {
         "tags": [
-          "api-ai-gateway"
+          "ai-gateway"
         ],
         "summary": "Update virtual model config",
         "description": "Update a virtual model config by path slug",
@@ -1562,7 +1562,7 @@
       },
       "delete": {
         "tags": [
-          "api-ai-gateway"
+          "ai-gateway"
         ],
         "summary": "Delete virtual model config",
         "description": "Delete a virtual model config by path slug (soft delete)",
@@ -1660,7 +1660,7 @@
         ]
       }
     },
-    "/v1/ai-gateway/rules": {
+    "/ai-gateway/rules": {
       "post": {
         "tags": [
           "ai-gateway"
@@ -1905,6 +1905,447 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
+    "/ai-gateway/budgets/list": {
+      "get": {
+        "tags": [
+          "ai-gateway"
+        ],
+        "summary": "List AI Gateway budgets",
+        "description": "List the team\u0027s AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope.",
+        "operationId": "ListAiGatewayBudgets",
+        "parameters": [
+          {
+            "name": "scopeType",
+            "in": "query",
+            "description": "Restrict the list to a single budget scope.",
+            "schema": {
+              "$ref": "#/components/schemas/ListAiGatewayBudgetsScopeTypeParameter"
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayBudgetList"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
+    "/ai-gateway/budgets": {
+      "put": {
+        "tags": [
+          "ai-gateway"
+        ],
+        "summary": "Upsert AI Gateway budget",
+        "description": "Create or update a team-, project-, or user-scope AI Gateway budget.",
+        "operationId": "UpsertAiGatewayBudget",
+        "parameters": [
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpsertAiGatewayBudgetRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayBudget"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "ai-gateway"
+        ],
+        "summary": "Archive AI Gateway budget",
+        "description": "Archive a team-, project-, or user-scope AI Gateway budget.",
+        "operationId": "ArchiveAiGatewayBudget",
+        "parameters": [
+          {
+            "name": "scopeType",
+            "in": "query",
+            "description": "The budget scope to archive.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/ArchiveAiGatewayBudgetScopeTypeParameter"
+            }
+          },
+          {
+            "name": "projectId",
+            "in": "query",
+            "description": "Required when scopeType is \u0022project\u0022.",
+            "schema": {
+              "type": "string",
+              "description": "Required when scopeType is \u0022project\u0022."
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "description": "Required when scopeType is \u0022user\u0022.",
+            "schema": {
+              "type": "string",
+              "description": "Required when scopeType is \u0022user\u0022."
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayBudget"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
+    "/ai-gateway/budgets/defaults/list": {
+      "get": {
+        "tags": [
+          "ai-gateway"
+        ],
+        "summary": "List AI Gateway budget defaults",
+        "description": "List the team\u0027s AI Gateway budget defaults as a flat per-scope list (one row per team/project/api-key/user scope with a default set). An empty list is a normal state for the dashboard.",
+        "operationId": "ListAiGatewayBudgetDefaults",
+        "parameters": [
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayBudgetDefaultList"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 response"
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
+    "/ai-gateway/budgets/defaults": {
+      "put": {
+        "tags": [
+          "ai-gateway"
+        ],
+        "summary": "Upsert AI Gateway budget default",
+        "description": "Create or update an AI Gateway budget default for one scope. Team-level authority only (owners/admins).",
+        "operationId": "UpsertAiGatewayBudgetDefault",
+        "parameters": [
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpsertAiGatewayBudgetDefaultRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiGatewayBudgetDefault"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          },
+          "500": {
+            "description": "500 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "ai-gateway"
+        ],
+        "summary": "Archive AI Gateway budget default",
+        "description": "Delete an AI Gateway budget default for one scope. Team-level authority only (owners/admins).",
+        "operationId": "ArchiveAiGatewayBudgetDefault",
+        "parameters": [
+          {
+            "name": "scopeType",
+            "in": "query",
+            "description": "The budget default scope to delete.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/ArchiveAiGatewayBudgetDefaultScopeTypeParameter"
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 response"
           },
           "400": {
             "description": "One of the provided values in the request query is invalid."
@@ -26648,7 +27089,7 @@
           "sandboxes"
         ],
         "summary": "Get a named sandbox",
-        "description": "Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox is stopped and resume is true, a new sandbox will be created from the most recent snapshot.",
+        "description": "Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox is stopped and resume is true, a new sandbox will be created from the most recent snapshot. Returns 404 if the named sandbox or its configuration no longer exists.",
         "operationId": "GetNamedSandbox",
         "parameters": [
           {
@@ -26879,7 +27320,7 @@
           "sandboxes"
         ],
         "summary": "Delete a sandbox",
-        "description": "Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first. This operation deletes all sandbox entities with the given name and the named sandbox metadata.",
+        "description": "Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first. This operation deletes all sandbox entities with the given name and the named sandbox metadata. Returns 404 if the sandbox does not exist or was deleted by a concurrent request.",
         "operationId": "DeleteSandbox",
         "parameters": [
           {
@@ -34269,6 +34710,122 @@
         ]
       }
     },
+    "/v2/vercel-ci/branches": {
+      "get": {
+        "tags": [
+          "vercel-ci"
+        ],
+        "summary": "List Vercel CI branch suggestions for a team",
+        "description": "List branches",
+        "operationId": "ListVercelCiBranches",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "maxLength": 100,
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "maximum": 50,
+              "minimum": 1,
+              "type": "number"
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully listed Vercel CI branch suggestions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListVercelCiBranches200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListVercelCiBranches401Response"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "You do not have permission to access this resource.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListVercelCiBranches403Response"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          },
+          "429": {
+            "description": "429 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListVercelCiBranches429Response"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListVercelCiBranches500Response"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "503 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
     "/v1/vercel-ci/invocations/{invocationId}/attempts": {
       "get": {
         "tags": [
@@ -38778,6 +39335,139 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AiGatewayRule"
+            }
+          }
+        }
+      },
+      "AiGatewayBudget": {
+        "required": [
+          "active",
+          "archived",
+          "createdAt",
+          "currentByokSpend",
+          "currentSpend",
+          "includeByokInQuota",
+          "limitAmount",
+          "quotaEntityId",
+          "refreshPeriod",
+          "scopeId",
+          "scopeType",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "active": {
+            "$ref": "#/components/schemas/AiGatewayBudgetActive"
+          },
+          "alertThresholds": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "archived": {
+            "$ref": "#/components/schemas/AiGatewayBudgetArchived"
+          },
+          "createdAt": {
+            "type": "number"
+          },
+          "currentByokSpend": {
+            "type": "number"
+          },
+          "currentSpend": {
+            "type": "number"
+          },
+          "includeByokInQuota": {
+            "$ref": "#/components/schemas/AiGatewayBudgetIncludeByokInQuota"
+          },
+          "limitAmount": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "quotaEntityId": {
+            "type": "string"
+          },
+          "refreshPeriod": {
+            "$ref": "#/components/schemas/AiGatewayBudgetRefreshPeriod"
+          },
+          "scopeId": {
+            "type": "string",
+            "description": "The native Vercel id of the scoped entity. Team/project ids already carry their prefix, so this equals \u0060quotaEntityId\u0060 (\u0060team_\u2026\u0060 / \u0060prj_\u2026\u0060); for the api-key scope it is the api key id (the \u0060api_key_id_\u0060 prefix stripped)."
+          },
+          "scopeType": {
+            "$ref": "#/components/schemas/AiGatewayBudgetScopeType"
+          },
+          "source": {
+            "$ref": "#/components/schemas/DefaultValueSource"
+          },
+          "updatedAt": {
+            "type": "number"
+          }
+        }
+      },
+      "AiGatewayBudgetList": {
+        "required": [
+          "budgets"
+        ],
+        "type": "object",
+        "properties": {
+          "budgets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AiGatewayBudget"
+            }
+          }
+        }
+      },
+      "AiGatewayBudgetDefault": {
+        "required": [
+          "active",
+          "createdAt",
+          "limitAmount",
+          "refreshPeriod",
+          "scopeType",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "active": {
+            "$ref": "#/components/schemas/AiGatewayBudgetDefaultActive"
+          },
+          "alertThresholds": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "createdAt": {
+            "type": "number"
+          },
+          "limitAmount": {
+            "type": "number"
+          },
+          "refreshPeriod": {
+            "$ref": "#/components/schemas/AiGatewayBudgetDefaultRefreshPeriod"
+          },
+          "scopeType": {
+            "$ref": "#/components/schemas/AiGatewayBudgetDefaultScopeType"
+          },
+          "updatedAt": {
+            "type": "number"
+          }
+        }
+      },
+      "AiGatewayBudgetDefaultList": {
+        "required": [
+          "defaults"
+        ],
+        "type": "object",
+        "properties": {
+          "defaults": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AiGatewayBudgetDefault"
             }
           }
         }
@@ -47140,6 +47830,9 @@
               "type": "string"
             }
           },
+          "resourceOnlyIntegrationCount": {
+            "type": "number"
+          },
           "enablePolyrepoBranchRouting": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf210EnablePolyrepoBranchRouting"
           },
@@ -48448,12 +49141,27 @@
             "$ref": "#/components/schemas/TeamSamlRolesAdditionalPropertiesOneOf1"
           },
           {
+            "$ref": "#/components/schemas/TeamSamlRolesAdditionalPropertiesOneOf2"
+          },
+          {
             "$ref": "#/components/schemas/TeamSamlRolesAdditionalPropertiesWrapper"
           }
         ],
         "properties": {
           "accessGroupId": {
             "type": "string"
+          },
+          "teamPermissions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamSamlRolesAdditionalPropertiesOneOf2TeamPermissionsItem"
+            }
+          },
+          "teamRoles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamSamlRolesAdditionalPropertiesOneOf2TeamRolesItem"
+            }
           },
           "value": {
             "$ref": "#/components/schemas/TeamSamlRolesAdditionalPropertiesWrapperValue"
@@ -53858,6 +54566,9 @@
           },
           "enabled": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf208Enabled"
+          },
+          "resourceOnlyIntegrationCount": {
+            "type": "number"
           }
         },
         "description": "The payload of the event, if requested."
@@ -60611,7 +61322,28 @@
             "type": "string"
           }
         },
-        "description": "When \u0022Directory Sync\u0022 is configured, this object contains a mapping of which Directory Group (by ID) should be assigned to which Vercel Team \u0022role\u0022."
+        "description": "When \u0022Directory Sync\u0022 is configured, this object contains a mapping of which Directory Group (by ID) should be assigned to which Vercel Team roles and permissions, or an access group. Bare team roles are deprecated in favor of DirectorySyncRolesMapping."
+      },
+      "TeamSamlRolesAdditionalPropertiesOneOf2": {
+        "required": [
+          "teamRoles"
+        ],
+        "type": "object",
+        "properties": {
+          "teamPermissions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamSamlRolesAdditionalPropertiesOneOf2TeamPermissionsItem"
+            }
+          },
+          "teamRoles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamSamlRolesAdditionalPropertiesOneOf2TeamRolesItem"
+            }
+          }
+        },
+        "description": "When \u0022Directory Sync\u0022 is configured, this object contains a mapping of which Directory Group (by ID) should be assigned to which Vercel Team roles and permissions, or an access group. Bare team roles are deprecated in favor of DirectorySyncRolesMapping."
       },
       "AuthTokenScopesItemOneOf1": {
         "required": [
@@ -61459,12 +62191,27 @@
             "$ref": "#/components/schemas/UserEventPayloadOneOf415NextAdditionalPropertiesOneOf1"
           },
           {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf415NextAdditionalPropertiesOneOf2"
+          },
+          {
             "$ref": "#/components/schemas/UserEventPayloadOneOf415NextAdditionalPropertiesWrapper"
           }
         ],
         "properties": {
           "accessGroupId": {
             "type": "string"
+          },
+          "teamPermissions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserEventPayloadOneOf415NextAdditionalPropertiesOneOf2TeamPermissionsItem"
+            }
+          },
+          "teamRoles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserEventPayloadOneOf415NextAdditionalPropertiesOneOf2TeamRolesItem"
+            }
           },
           "value": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf415NextAdditionalPropertiesWrapperValue"
@@ -61478,12 +62225,27 @@
             "$ref": "#/components/schemas/UserEventPayloadOneOf415PreviousAdditionalPropertiesOneOf1"
           },
           {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf415PreviousAdditionalPropertiesOneOf2"
+          },
+          {
             "$ref": "#/components/schemas/UserEventPayloadOneOf415PreviousAdditionalPropertiesWrapper"
           }
         ],
         "properties": {
           "accessGroupId": {
             "type": "string"
+          },
+          "teamPermissions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserEventPayloadOneOf415PreviousAdditionalPropertiesOneOf2TeamPermissionsItem"
+            }
+          },
+          "teamRoles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserEventPayloadOneOf415PreviousAdditionalPropertiesOneOf2TeamRolesItem"
+            }
           },
           "value": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf415PreviousAdditionalPropertiesWrapperValue"
@@ -63390,6 +64152,26 @@
           }
         }
       },
+      "UserEventPayloadOneOf415NextAdditionalPropertiesOneOf2": {
+        "required": [
+          "teamRoles"
+        ],
+        "type": "object",
+        "properties": {
+          "teamPermissions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserEventPayloadOneOf415NextAdditionalPropertiesOneOf2TeamPermissionsItem"
+            }
+          },
+          "teamRoles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserEventPayloadOneOf415NextAdditionalPropertiesOneOf2TeamRolesItem"
+            }
+          }
+        }
+      },
       "UserEventPayloadOneOf415PreviousAdditionalPropertiesOneOf1": {
         "required": [
           "accessGroupId"
@@ -63398,6 +64180,26 @@
         "properties": {
           "accessGroupId": {
             "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf415PreviousAdditionalPropertiesOneOf2": {
+        "required": [
+          "teamRoles"
+        ],
+        "type": "object",
+        "properties": {
+          "teamPermissions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserEventPayloadOneOf415PreviousAdditionalPropertiesOneOf2TeamPermissionsItem"
+            }
+          },
+          "teamRoles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserEventPayloadOneOf415PreviousAdditionalPropertiesOneOf2TeamRolesItem"
+            }
           }
         }
       },
@@ -64192,6 +64994,9 @@
       "TeamDefaultProjectJobs": {
         "type": "object",
         "properties": {
+          "flag-definitions-present": {
+            "$ref": "#/components/schemas/TeamDefaultProjectJobsFlagDefinitionsPresent"
+          },
           "lint": {
             "$ref": "#/components/schemas/TeamDefaultProjectJobsLint"
           },
@@ -64942,6 +65747,20 @@
             },
             "description": "OAuth grant types supported by the server."
           },
+          "authorization_grant_profiles_supported": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Supported authorization grant profiles. urn:ietf:params:oauth:grant-profile:id-jag advertises XAA resource support."
+          },
+          "identity_chaining_requested_token_types_supported": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Token types supported for identity chaining. urn:ietf:params:oauth:token-type:id-jag advertises XAA IdP support."
+          },
           "response_modes_supported": {
             "type": "array",
             "items": {
@@ -65547,6 +66366,20 @@
               "type": "string"
             },
             "description": "OAuth grant types supported by the server."
+          },
+          "authorization_grant_profiles_supported": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Supported authorization grant profiles. urn:ietf:params:oauth:grant-profile:id-jag advertises XAA resource support."
+          },
+          "identity_chaining_requested_token_types_supported": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Token types supported for identity chaining. urn:ietf:params:oauth:token-type:id-jag advertises XAA IdP support."
           },
           "response_modes_supported": {
             "type": "array",
@@ -71872,6 +72705,22 @@
         },
         "nullable": true
       },
+      "TeamDefaultProjectJobsFlagDefinitionsPresent": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Default job configuration applied to new projects created in this team."
+          }
+        },
+        "description": "Default job configuration applied to new projects created in this team."
+      },
       "TeamDefaultProjectJobsLint": {
         "required": [
           "targets"
@@ -72135,7 +72984,7 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/TeamSamlRolesAdditionalProperties"
         },
-        "description": "When \u0022Directory Sync\u0022 is configured, this object contains a mapping of which Directory Group (by ID) should be assigned to which Vercel Team \u0022role\u0022."
+        "description": "When \u0022Directory Sync\u0022 is configured, this object contains a mapping of which Directory Group (by ID) should be assigned to which Vercel Team roles and permissions, or an access group. Bare team roles are deprecated in favor of DirectorySyncRolesMapping."
       },
       "TeamLimitedMembershipEntitlementsItem": {
         "required": [
@@ -77135,6 +77984,72 @@
       "DeleteAiGatewayRule204Response": {
         "type": "object"
       },
+      "UpsertAiGatewayBudgetRequest": {
+        "required": [
+          "scopeType",
+          "limitAmount"
+        ],
+        "type": "object",
+        "properties": {
+          "scopeType": {
+            "$ref": "#/components/schemas/UpsertAiGatewayBudgetRequestScopeType"
+          },
+          "projectId": {
+            "type": "string",
+            "description": "Required when scopeType is \u0022project\u0022."
+          },
+          "userId": {
+            "type": "string",
+            "description": "Required when scopeType is \u0022user\u0022."
+          },
+          "limitAmount": {
+            "minimum": 1,
+            "type": "number",
+            "description": "Budget limit in dollars."
+          },
+          "refreshPeriod": {
+            "$ref": "#/components/schemas/UpsertAiGatewayBudgetRequestRefreshPeriod"
+          },
+          "includeByokInQuota": {
+            "type": "boolean",
+            "description": "Whether BYOK usage counts toward this budget."
+          },
+          "alertThresholds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpsertAiGatewayBudgetRequestAlertThresholdsItem"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpsertAiGatewayBudgetDefaultRequest": {
+        "required": [
+          "scopeType",
+          "limitAmount"
+        ],
+        "type": "object",
+        "properties": {
+          "scopeType": {
+            "$ref": "#/components/schemas/UpsertAiGatewayBudgetDefaultRequestScopeType"
+          },
+          "limitAmount": {
+            "minimum": 1,
+            "type": "number",
+            "description": "Default budget limit in dollars."
+          },
+          "refreshPeriod": {
+            "$ref": "#/components/schemas/UpsertAiGatewayBudgetDefaultRequestRefreshPeriod"
+          },
+          "alertThresholds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpsertAiGatewayBudgetDefaultRequestAlertThresholdsItem"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
       "RecordEventsRequest": {
         "type": "array",
         "items": {
@@ -77626,10 +78541,17 @@
       },
       "ListProjectChecks200Response": {
         "required": [
+          "availableNativeChecks",
           "checks"
         ],
         "type": "object",
         "properties": {
+          "availableNativeChecks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "checks": {
             "type": "array",
             "items": {
@@ -92297,6 +93219,64 @@
         "properties": {
           "error": {
             "$ref": "#/components/schemas/ListVercelCiInvocations500ResponseError"
+          }
+        }
+      },
+      "ListVercelCiBranches200Response": {
+        "required": [
+          "branches"
+        ],
+        "type": "object",
+        "properties": {
+          "branches": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListVercelCiBranches200ResponseBranchesItem"
+            }
+          }
+        }
+      },
+      "ListVercelCiBranches401Response": {
+        "required": [
+          "error"
+        ],
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ListVercelCiBranches401ResponseError"
+          }
+        }
+      },
+      "ListVercelCiBranches403Response": {
+        "required": [
+          "error"
+        ],
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ListVercelCiBranches403ResponseError"
+          }
+        }
+      },
+      "ListVercelCiBranches429Response": {
+        "required": [
+          "error"
+        ],
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ListVercelCiBranches429ResponseError"
+          }
+        }
+      },
+      "ListVercelCiBranches500Response": {
+        "required": [
+          "error"
+        ],
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ListVercelCiBranches500ResponseError"
           }
         }
       },
@@ -118997,7 +119977,7 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/TeamSamlRolesAdditionalProperties"
         },
-        "description": "When \u0022Directory Sync\u0022 is configured, this object contains a mapping of which Directory Group (by ID) should be assigned to which Vercel Team \u0022role\u0022."
+        "description": "When \u0022Directory Sync\u0022 is configured, this object contains a mapping of which Directory Group (by ID) should be assigned to which Vercel Team roles and permissions, or an access group. Bare team roles are deprecated in favor of DirectorySyncRolesMapping."
       },
       "ConnectConnectorCreateDataTypeOAuthJwtBearerAdditionalClaimsProperty": {
         "type": "object",
@@ -130366,6 +131346,9 @@
       "CreateProject200ResponseJobs": {
         "type": "object",
         "properties": {
+          "flag-definitions-present": {
+            "$ref": "#/components/schemas/CreateProject200ResponseJobsFlagDefinitionsPresent"
+          },
           "lint": {
             "$ref": "#/components/schemas/CreateProject200ResponseJobsLint"
           },
@@ -133780,6 +134763,9 @@
       "GetProject200ResponseJobs": {
         "type": "object",
         "properties": {
+          "flag-definitions-present": {
+            "$ref": "#/components/schemas/GetProject200ResponseJobsFlagDefinitionsPresent"
+          },
           "lint": {
             "$ref": "#/components/schemas/GetProject200ResponseJobsLint"
           },
@@ -137476,6 +138462,9 @@
       "UpdateProject200ResponseJobs": {
         "type": "object",
         "properties": {
+          "flag-definitions-present": {
+            "$ref": "#/components/schemas/UpdateProject200ResponseJobsFlagDefinitionsPresent"
+          },
           "lint": {
             "$ref": "#/components/schemas/UpdateProject200ResponseJobsLint"
           },
@@ -140869,6 +141858,9 @@
       "UploadProjectAvatar200ResponseJobs": {
         "type": "object",
         "properties": {
+          "flag-definitions-present": {
+            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseJobsFlagDefinitionsPresent"
+          },
           "lint": {
             "$ref": "#/components/schemas/UploadProjectAvatar200ResponseJobsLint"
           },
@@ -145473,6 +146465,9 @@
       "UpdateMicrofrontends200ResponseJobs": {
         "type": "object",
         "properties": {
+          "flag-definitions-present": {
+            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseJobsFlagDefinitionsPresent"
+          },
           "lint": {
             "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseJobsLint"
           },
@@ -151228,6 +152223,89 @@
         }
       },
       "ListVercelCiInvocations500ResponseError": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "ListVercelCiBranches200ResponseBranchesItem": {
+        "required": [
+          "name",
+          "count"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "count": {
+            "type": "number"
+          }
+        }
+      },
+      "ListVercelCiBranches401ResponseError": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "ListVercelCiBranches403ResponseError": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "ListVercelCiBranches429ResponseError": {
+        "required": [
+          "code",
+          "name",
+          "message",
+          "limit"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "number"
+          }
+        }
+      },
+      "ListVercelCiBranches500ResponseError": {
         "required": [
           "code",
           "message"
@@ -164243,6 +165321,9 @@
       "GetMicrofrontendsInGroup200ResponseProjectsItemJobs": {
         "type": "object",
         "properties": {
+          "flag-definitions-present": {
+            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemJobsFlagDefinitionsPresent"
+          },
           "lint": {
             "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemJobsLint"
           },
@@ -168304,6 +169385,20 @@
           }
         }
       },
+      "CreateProject200ResponseJobsFlagDefinitionsPresent": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "CreateProject200ResponseJobsLint": {
         "required": [
           "targets"
@@ -169556,6 +170651,20 @@
         "properties": {
           "action": {
             "$ref": "#/components/schemas/BlockLegalCwcAction"
+          }
+        }
+      },
+      "GetProject200ResponseJobsFlagDefinitionsPresent": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -170935,6 +172044,20 @@
           }
         }
       },
+      "UpdateProject200ResponseJobsFlagDefinitionsPresent": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "UpdateProject200ResponseJobsLint": {
         "required": [
           "targets"
@@ -172175,6 +173298,20 @@
         "properties": {
           "action": {
             "$ref": "#/components/schemas/BlockLegalCwcAction"
+          }
+        }
+      },
+      "UploadProjectAvatar200ResponseJobsFlagDefinitionsPresent": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -174794,6 +175931,20 @@
         "properties": {
           "action": {
             "$ref": "#/components/schemas/BlockLegalCwcAction"
+          }
+        }
+      },
+      "UpdateMicrofrontends200ResponseJobsFlagDefinitionsPresent": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -182503,6 +183654,9 @@
       "GetProjects200ResponseOneOf3ProjectsItemJobs": {
         "type": "object",
         "properties": {
+          "flag-definitions-present": {
+            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemJobsFlagDefinitionsPresent"
+          },
           "lint": {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemJobsLint"
           },
@@ -190404,6 +191558,20 @@
         "properties": {
           "action": {
             "$ref": "#/components/schemas/BlockLegalCwcAction"
+          }
+        }
+      },
+      "GetMicrofrontendsInGroup200ResponseProjectsItemJobsFlagDefinitionsPresent": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -200664,6 +201832,20 @@
           }
         }
       },
+      "GetProjects200ResponseOneOf3ProjectsItemJobsFlagDefinitionsPresent": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "GetProjects200ResponseOneOf3ProjectsItemJobsLint": {
         "required": [
           "targets"
@@ -204910,6 +206092,9 @@
           },
           "mcp": {
             "$ref": "#/components/schemas/CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilitiesMcp"
+          },
+          "mcpConfiguration": {
+            "$ref": "#/components/schemas/CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilitiesMcpConfiguration"
           },
           "mcpReadonly": {
             "$ref": "#/components/schemas/CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilitiesMcpReadonly"
@@ -210469,6 +211654,184 @@
             {
               "value": "rewrite",
               "name": "Rewrite"
+            }
+          ]
+        }
+      },
+      "AiGatewayBudgetActive": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
+      "AiGatewayBudgetArchived": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
+      "AiGatewayBudgetIncludeByokInQuota": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
+      "AiGatewayBudgetRefreshPeriod": {
+        "enum": [
+          "daily",
+          "monthly",
+          "none",
+          "weekly"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "AiGatewayBudgetRefreshPeriod",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "daily",
+              "name": "Daily"
+            },
+            {
+              "value": "monthly",
+              "name": "Monthly"
+            },
+            {
+              "value": "none",
+              "name": "None"
+            },
+            {
+              "value": "weekly",
+              "name": "Weekly"
+            }
+          ]
+        }
+      },
+      "AiGatewayBudgetScopeType": {
+        "enum": [
+          "api-key",
+          "project",
+          "team",
+          "user"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "AiGatewayBudgetScopeType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "api-key",
+              "name": "ApiKey"
+            },
+            {
+              "value": "project",
+              "name": "Project"
+            },
+            {
+              "value": "team",
+              "name": "Team"
+            },
+            {
+              "value": "user",
+              "name": "User"
+            }
+          ]
+        }
+      },
+      "DefaultValueSource": {
+        "enum": [
+          "default"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Set when the row is inherited from the team\u0027s budget default.",
+        "x-ms-enum": {
+          "name": "DefaultValueSource",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "default",
+              "name": "DefaultValue"
+            }
+          ]
+        }
+      },
+      "AiGatewayBudgetDefaultActive": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
+      "AiGatewayBudgetDefaultRefreshPeriod": {
+        "enum": [
+          "daily",
+          "monthly",
+          "none",
+          "weekly"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "AiGatewayBudgetDefaultRefreshPeriod",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "daily",
+              "name": "Daily"
+            },
+            {
+              "value": "monthly",
+              "name": "Monthly"
+            },
+            {
+              "value": "none",
+              "name": "None"
+            },
+            {
+              "value": "weekly",
+              "name": "Weekly"
+            }
+          ]
+        }
+      },
+      "AiGatewayBudgetDefaultScopeType": {
+        "enum": [
+          "api-key",
+          "project",
+          "team",
+          "user"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "AiGatewayBudgetDefaultScopeType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "api-key",
+              "name": "ApiKey"
+            },
+            {
+              "value": "project",
+              "name": "Project"
+            },
+            {
+              "value": "team",
+              "name": "Team"
+            },
+            {
+              "value": "user",
+              "name": "User"
             }
           ]
         }
@@ -230970,6 +232333,83 @@
           ]
         }
       },
+      "TeamSamlRolesAdditionalPropertiesOneOf2TeamPermissionsItem": {
+        "enum": [
+          "AiGatewayBudgetManager",
+          "AiGatewayCredits",
+          "AiGatewaySettings",
+          "AiGatewayTranscriptsManager",
+          "AiGatewayTranscriptsViewer",
+          "AiGatewayUser",
+          "ConnectorManager",
+          "CreateProject",
+          "EnvVariableManager",
+          "EnvironmentManager",
+          "FullProductionDeployment",
+          "IntegrationManager",
+          "OrgAdmin",
+          "OrgViewer",
+          "UsageViewer",
+          "V0Builder",
+          "V0Chatter",
+          "V0Viewer",
+          "WorkflowDecryptor"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "TeamSamlRolesAdditionalPropertiesOneOf2TeamRolesItem": {
+        "enum": [
+          "BILLING",
+          "CONTRIBUTOR",
+          "DEVELOPER",
+          "MEMBER",
+          "OWNER",
+          "SECURITY",
+          "VIEWER",
+          "VIEWER_FOR_PLUS"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "TeamSamlRolesAdditionalPropertiesOneOf2TeamRolesItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "BILLING",
+              "name": "Billing"
+            },
+            {
+              "value": "CONTRIBUTOR",
+              "name": "Contributor"
+            },
+            {
+              "value": "DEVELOPER",
+              "name": "Developer"
+            },
+            {
+              "value": "MEMBER",
+              "name": "Member"
+            },
+            {
+              "value": "OWNER",
+              "name": "Owner"
+            },
+            {
+              "value": "SECURITY",
+              "name": "Security"
+            },
+            {
+              "value": "VIEWER",
+              "name": "Viewer"
+            },
+            {
+              "value": "VIEWER_FOR_PLUS",
+              "name": "ViewerForPlus"
+            }
+          ]
+        }
+      },
       "AuthTokenScopesItemOneOf1Origin": {
         "enum": [
           "app",
@@ -233796,6 +235236,160 @@
             {
               "value": "prod_deployment_urls_and_all_previews",
               "name": "ProdDeploymentUrlsAndAllPreviews"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf415NextAdditionalPropertiesOneOf2TeamPermissionsItem": {
+        "enum": [
+          "AiGatewayBudgetManager",
+          "AiGatewayCredits",
+          "AiGatewaySettings",
+          "AiGatewayTranscriptsManager",
+          "AiGatewayTranscriptsViewer",
+          "AiGatewayUser",
+          "ConnectorManager",
+          "CreateProject",
+          "EnvVariableManager",
+          "EnvironmentManager",
+          "FullProductionDeployment",
+          "IntegrationManager",
+          "OrgAdmin",
+          "OrgViewer",
+          "UsageViewer",
+          "V0Builder",
+          "V0Chatter",
+          "V0Viewer",
+          "WorkflowDecryptor"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "UserEventPayloadOneOf415NextAdditionalPropertiesOneOf2TeamRolesItem": {
+        "enum": [
+          "BILLING",
+          "CONTRIBUTOR",
+          "DEVELOPER",
+          "MEMBER",
+          "OWNER",
+          "SECURITY",
+          "VIEWER",
+          "VIEWER_FOR_PLUS"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf415NextAdditionalPropertiesOneOf2TeamRolesItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "BILLING",
+              "name": "Billing"
+            },
+            {
+              "value": "CONTRIBUTOR",
+              "name": "Contributor"
+            },
+            {
+              "value": "DEVELOPER",
+              "name": "Developer"
+            },
+            {
+              "value": "MEMBER",
+              "name": "Member"
+            },
+            {
+              "value": "OWNER",
+              "name": "Owner"
+            },
+            {
+              "value": "SECURITY",
+              "name": "Security"
+            },
+            {
+              "value": "VIEWER",
+              "name": "Viewer"
+            },
+            {
+              "value": "VIEWER_FOR_PLUS",
+              "name": "ViewerForPlus"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf415PreviousAdditionalPropertiesOneOf2TeamPermissionsItem": {
+        "enum": [
+          "AiGatewayBudgetManager",
+          "AiGatewayCredits",
+          "AiGatewaySettings",
+          "AiGatewayTranscriptsManager",
+          "AiGatewayTranscriptsViewer",
+          "AiGatewayUser",
+          "ConnectorManager",
+          "CreateProject",
+          "EnvVariableManager",
+          "EnvironmentManager",
+          "FullProductionDeployment",
+          "IntegrationManager",
+          "OrgAdmin",
+          "OrgViewer",
+          "UsageViewer",
+          "V0Builder",
+          "V0Chatter",
+          "V0Viewer",
+          "WorkflowDecryptor"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "UserEventPayloadOneOf415PreviousAdditionalPropertiesOneOf2TeamRolesItem": {
+        "enum": [
+          "BILLING",
+          "CONTRIBUTOR",
+          "DEVELOPER",
+          "MEMBER",
+          "OWNER",
+          "SECURITY",
+          "VIEWER",
+          "VIEWER_FOR_PLUS"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf415PreviousAdditionalPropertiesOneOf2TeamRolesItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "BILLING",
+              "name": "Billing"
+            },
+            {
+              "value": "CONTRIBUTOR",
+              "name": "Contributor"
+            },
+            {
+              "value": "DEVELOPER",
+              "name": "Developer"
+            },
+            {
+              "value": "MEMBER",
+              "name": "Member"
+            },
+            {
+              "value": "OWNER",
+              "name": "Owner"
+            },
+            {
+              "value": "SECURITY",
+              "name": "Security"
+            },
+            {
+              "value": "VIEWER",
+              "name": "Viewer"
+            },
+            {
+              "value": "VIEWER_FOR_PLUS",
+              "name": "ViewerForPlus"
             }
           ]
         }
@@ -242589,6 +244183,147 @@
             }
           ]
         }
+      },
+      "UpsertAiGatewayBudgetRequestScopeType": {
+        "enum": [
+          "team",
+          "project",
+          "user"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpsertAiGatewayBudgetRequestScopeType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "team",
+              "name": "Team"
+            },
+            {
+              "value": "project",
+              "name": "Project"
+            },
+            {
+              "value": "user",
+              "name": "User"
+            }
+          ]
+        }
+      },
+      "UpsertAiGatewayBudgetRequestRefreshPeriod": {
+        "enum": [
+          "daily",
+          "weekly",
+          "monthly",
+          "none"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpsertAiGatewayBudgetRequestRefreshPeriod",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "daily",
+              "name": "Daily"
+            },
+            {
+              "value": "weekly",
+              "name": "Weekly"
+            },
+            {
+              "value": "monthly",
+              "name": "Monthly"
+            },
+            {
+              "value": "none",
+              "name": "None"
+            }
+          ]
+        }
+      },
+      "UpsertAiGatewayBudgetRequestAlertThresholdsItem": {
+        "enum": [
+          50,
+          75,
+          100
+        ],
+        "type": "number",
+        "additionalProperties": false
+      },
+      "UpsertAiGatewayBudgetDefaultRequestScopeType": {
+        "enum": [
+          "team",
+          "project",
+          "api-key",
+          "user"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpsertAiGatewayBudgetDefaultRequestScopeType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "team",
+              "name": "Team"
+            },
+            {
+              "value": "project",
+              "name": "Project"
+            },
+            {
+              "value": "api-key",
+              "name": "ApiKey"
+            },
+            {
+              "value": "user",
+              "name": "User"
+            }
+          ]
+        }
+      },
+      "UpsertAiGatewayBudgetDefaultRequestRefreshPeriod": {
+        "enum": [
+          "daily",
+          "weekly",
+          "monthly",
+          "none"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpsertAiGatewayBudgetDefaultRequestRefreshPeriod",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "daily",
+              "name": "Daily"
+            },
+            {
+              "value": "weekly",
+              "name": "Weekly"
+            },
+            {
+              "value": "monthly",
+              "name": "Monthly"
+            },
+            {
+              "value": "none",
+              "name": "None"
+            }
+          ]
+        }
+      },
+      "UpsertAiGatewayBudgetDefaultRequestAlertThresholdsItem": {
+        "enum": [
+          50,
+          75,
+          100
+        ],
+        "type": "number",
+        "additionalProperties": false
       },
       "UsdBillingCurrency": {
         "enum": [
@@ -340760,6 +342495,14 @@
         "type": "boolean",
         "additionalProperties": false
       },
+      "CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilitiesMcpConfiguration": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
       "CreateIntegrationStoreDirect200ResponseStoreProductIntegrationCapabilitiesMcpReadonly": {
         "enum": [
           false,
@@ -344386,6 +346129,100 @@
             {
               "value": "false",
               "name": "FalseValue"
+            }
+          ]
+        }
+      },
+      "ListAiGatewayBudgetsScopeTypeParameter": {
+        "enum": [
+          "team",
+          "project",
+          "user",
+          "api-key"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Restrict the list to a single budget scope.",
+        "x-ms-enum": {
+          "name": "ListAiGatewayBudgetsScopeTypeParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "team",
+              "name": "Team"
+            },
+            {
+              "value": "project",
+              "name": "Project"
+            },
+            {
+              "value": "user",
+              "name": "User"
+            },
+            {
+              "value": "api-key",
+              "name": "ApiKey"
+            }
+          ]
+        }
+      },
+      "ArchiveAiGatewayBudgetScopeTypeParameter": {
+        "enum": [
+          "team",
+          "project",
+          "user"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The budget scope to archive.",
+        "x-ms-enum": {
+          "name": "ArchiveAiGatewayBudgetScopeTypeParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "team",
+              "name": "Team"
+            },
+            {
+              "value": "project",
+              "name": "Project"
+            },
+            {
+              "value": "user",
+              "name": "User"
+            }
+          ]
+        }
+      },
+      "ArchiveAiGatewayBudgetDefaultScopeTypeParameter": {
+        "enum": [
+          "team",
+          "project",
+          "api-key",
+          "user"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The budget default scope to delete.",
+        "x-ms-enum": {
+          "name": "ArchiveAiGatewayBudgetDefaultScopeTypeParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "team",
+              "name": "Team"
+            },
+            {
+              "value": "project",
+              "name": "Project"
+            },
+            {
+              "value": "api-key",
+              "name": "ApiKey"
+            },
+            {
+              "value": "user",
+              "name": "User"
             }
           ]
         }

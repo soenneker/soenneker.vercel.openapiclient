@@ -3,7 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.V1.AccessGroups;
-using Soenneker.Vercel.OpenApiClient.V1.AiGateway;
 using Soenneker.Vercel.OpenApiClient.V1.Billing;
 using Soenneker.Vercel.OpenApiClient.V1.BulkRedirects;
 using Soenneker.Vercel.OpenApiClient.V1.Connect;
@@ -47,11 +46,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1
         public global::Soenneker.Vercel.OpenApiClient.V1.AccessGroups.AccessGroupsRequestBuilder AccessGroups
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.AccessGroups.AccessGroupsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The aiGateway property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.AiGatewayRequestBuilder AiGateway
-        {
-            get => new global::Soenneker.Vercel.OpenApiClient.V1.AiGateway.AiGatewayRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The billing property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Billing.BillingRequestBuilder Billing

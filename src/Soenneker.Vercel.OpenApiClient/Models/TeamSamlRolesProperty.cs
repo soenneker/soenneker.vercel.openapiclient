@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// When &quot;Directory Sync&quot; is configured, this object contains a mapping of which Directory Group (by ID) should be assigned to which Vercel Team &quot;role&quot;.
+    /// When &quot;Directory Sync&quot; is configured, this object contains a mapping of which Directory Group (by ID) should be assigned to which Vercel Team roles and permissions, or an access group. Bare team roles are deprecated in favor of DirectorySyncRolesMapping.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TeamSamlRolesProperty : IAdditionalDataHolder, IParsable

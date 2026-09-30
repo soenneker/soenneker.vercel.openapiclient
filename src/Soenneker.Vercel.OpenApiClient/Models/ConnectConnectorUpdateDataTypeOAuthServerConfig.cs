@@ -31,6 +31,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string AuthorizationEndpoint { get; set; }
 #endif
+        /// <summary>Supported authorization grant profiles. urn:ietf:params:oauth:grant-profile:id-jag advertises XAA resource support.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AuthorizationGrantProfilesSupported { get; set; }
+#nullable restore
+#else
+        public List<string> AuthorizationGrantProfilesSupported { get; set; }
+#endif
         /// <summary>Whether authorization requests can use the claims parameter.</summary>
         public bool? ClaimsParameterSupported { get; set; }
         /// <summary>Claims that the authorization server can return.</summary>
@@ -82,6 +90,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public List<string> GrantTypesSupported { get; set; }
+#endif
+        /// <summary>Token types supported for identity chaining. urn:ietf:params:oauth:token-type:id-jag advertises XAA IdP support.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? IdentityChainingRequestedTokenTypesSupported { get; set; }
+#nullable restore
+#else
+        public List<string> IdentityChainingRequestedTokenTypesSupported { get; set; }
 #endif
         /// <summary>Key management algorithms supported for encrypted ID tokens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -292,6 +308,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "authorization_details_types_supported", n => { AuthorizationDetailsTypesSupported = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "authorization_endpoint", n => { AuthorizationEndpoint = n.GetStringValue(); } },
+                { "authorization_grant_profiles_supported", n => { AuthorizationGrantProfilesSupported = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "claim_types_supported", n => { ClaimTypesSupported = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "claims_parameter_supported", n => { ClaimsParameterSupported = n.GetBoolValue(); } },
                 { "claims_supported", n => { ClaimsSupported = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -303,6 +320,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "id_token_encryption_alg_values_supported", n => { IdTokenEncryptionAlgValuesSupported = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id_token_encryption_enc_values_supported", n => { IdTokenEncryptionEncValuesSupported = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id_token_signing_alg_values_supported", n => { IdTokenSigningAlgValuesSupported = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "identity_chaining_requested_token_types_supported", n => { IdentityChainingRequestedTokenTypesSupported = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "introspection_endpoint", n => { IntrospectionEndpoint = n.GetStringValue(); } },
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
                 { "jwks", n => { Jwks = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthServerConfigJwks>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeOAuthServerConfigJwks.CreateFromDiscriminatorValue); } },
@@ -336,6 +354,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("authorization_details_types_supported", AuthorizationDetailsTypesSupported);
             writer.WriteStringValue("authorization_endpoint", AuthorizationEndpoint);
+            writer.WriteCollectionOfPrimitiveValues<string>("authorization_grant_profiles_supported", AuthorizationGrantProfilesSupported);
             writer.WriteBoolValue("claims_parameter_supported", ClaimsParameterSupported);
             writer.WriteCollectionOfPrimitiveValues<string>("claims_supported", ClaimsSupported);
             writer.WriteCollectionOfPrimitiveValues<string>("claim_types_supported", ClaimTypesSupported);
@@ -344,6 +363,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("device_authorization_endpoint", DeviceAuthorizationEndpoint);
             writer.WriteStringValue("end_session_endpoint", EndSessionEndpoint);
             writer.WriteCollectionOfPrimitiveValues<string>("grant_types_supported", GrantTypesSupported);
+            writer.WriteCollectionOfPrimitiveValues<string>("identity_chaining_requested_token_types_supported", IdentityChainingRequestedTokenTypesSupported);
             writer.WriteCollectionOfPrimitiveValues<string>("id_token_encryption_alg_values_supported", IdTokenEncryptionAlgValuesSupported);
             writer.WriteCollectionOfPrimitiveValues<string>("id_token_encryption_enc_values_supported", IdTokenEncryptionEncValuesSupported);
             writer.WriteCollectionOfPrimitiveValues<string>("id_token_signing_alg_values_supported", IdTokenSigningAlgValuesSupported);

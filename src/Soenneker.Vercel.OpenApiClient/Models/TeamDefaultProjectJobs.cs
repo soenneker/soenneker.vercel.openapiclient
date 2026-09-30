@@ -18,6 +18,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Default job configuration applied to new projects created in this team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsFlagDefinitionsPresent? FlagDefinitionsPresent { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsFlagDefinitionsPresent FlagDefinitionsPresent { get; set; }
+#endif
+        /// <summary>Default job configuration applied to new projects created in this team.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsLint? Lint { get; set; }
 #nullable restore
 #else
@@ -64,6 +72,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "flag-definitions-present", n => { FlagDefinitionsPresent = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsFlagDefinitionsPresent>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsFlagDefinitionsPresent.CreateFromDiscriminatorValue); } },
                 { "lint", n => { Lint = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsLint>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsLint.CreateFromDiscriminatorValue); } },
                 { "mfe-config-present", n => { MfeConfigPresent = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsMfeConfigPresent>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsMfeConfigPresent.CreateFromDiscriminatorValue); } },
                 { "typecheck", n => { Typecheck = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsTypecheck>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsTypecheck.CreateFromDiscriminatorValue); } },
@@ -76,6 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsFlagDefinitionsPresent>("flag-definitions-present", FlagDefinitionsPresent);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsLint>("lint", Lint);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsMfeConfigPresent>("mfe-config-present", MfeConfigPresent);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultProjectJobsTypecheck>("typecheck", Typecheck);
