@@ -69,6 +69,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The last time the drive was updated, in milliseconds since the epoch.</summary>
         public double? UpdatedAt { get; set; }
+        /// <summary>Whether this drive is managed by v0 on the customer&apos;s behalf.</summary>
+        public bool? V0 { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.Drive"/> and sets the default values.
         /// </summary>
@@ -103,6 +105,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
+                { "v0", n => { V0 = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -121,6 +124,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("region", Region);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
+            writer.WriteBoolValue("v0", V0);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

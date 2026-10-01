@@ -15752,9 +15752,6 @@
           },
           "429": {
             "description": ""
-          },
-          "504": {
-            "description": ""
           }
         },
         "parameters": [
@@ -56646,121 +56643,83 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "createdAt": {
-                      "type": "number"
-                    },
-                    "createdBy": {
-                      "type": "string",
-                      "description": "The ID of the user who created the Global Config, optional because it is not always set."
-                    },
-                    "deletedAt": {
-                      "nullable": true,
-                      "type": "number"
-                    },
-                    "digest": {
-                      "type": "string"
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "ownerId": {
-                      "type": "string"
-                    },
-                    "purpose": {
-                      "oneOf": [
-                        {
-                          "properties": {
-                            "projectId": {
-                              "type": "string"
-                            },
-                            "type": {
-                              "type": "string",
-                              "enum": [
-                                "flags"
-                              ]
-                            }
-                          },
-                          "required": [
-                            "projectId",
-                            "type"
-                          ],
-                          "type": "object"
-                        },
-                        {
-                          "properties": {
-                            "resourceId": {
-                              "type": "string"
-                            },
-                            "type": {
-                              "type": "string",
-                              "enum": [
-                                "experimentation"
-                              ]
-                            }
-                          },
-                          "required": [
-                            "resourceId",
-                            "type"
-                          ],
-                          "type": "object"
-                        }
-                      ]
-                    },
-                    "schema": {
-                      "type": "object"
-                    },
-                    "slug": {
-                      "type": "string",
-                      "description": "Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores)."
-                    },
-                    "syncedToDynamoAt": {
-                      "type": "number",
-                      "description": "Timestamp of when the Global Config was synced to DynamoDB initially. It is only set when syncing the entire Global Config, not when updating."
-                    },
-                    "transfer": {
-                      "properties": {
-                        "doneAt": {
-                          "nullable": true,
-                          "type": "number"
-                        },
-                        "fromAccountId": {
-                          "type": "string"
-                        },
-                        "startedAt": {
-                          "type": "number"
-                        }
+                  "type": "array",
+                  "description": "List of all global configs.",
+                  "items": {
+                    "properties": {
+                      "id": {
+                        "type": "string"
                       },
-                      "required": [
-                        "doneAt",
-                        "fromAccountId",
-                        "startedAt"
-                      ],
-                      "type": "object",
-                      "description": "Keeps track of the current state of the Global Config while it gets transferred."
+                      "createdAt": {
+                        "type": "number"
+                      },
+                      "ownerId": {
+                        "type": "string"
+                      },
+                      "slug": {
+                        "type": "string",
+                        "description": "Name for the Global Config. Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores)."
+                      },
+                      "updatedAt": {
+                        "type": "number"
+                      },
+                      "digest": {
+                        "type": "string"
+                      },
+                      "transfer": {
+                        "properties": {
+                          "fromAccountId": {
+                            "type": "string"
+                          },
+                          "startedAt": {
+                            "type": "number"
+                          },
+                          "doneAt": {
+                            "nullable": true,
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "fromAccountId",
+                          "startedAt",
+                          "doneAt"
+                        ],
+                        "type": "object",
+                        "description": "Keeps track of the current state of the Global Config while it gets transferred."
+                      },
+                      "schema": {
+                        "type": "object"
+                      },
+                      "purpose": {
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "flags"
+                            ]
+                          },
+                          "projectId": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "projectId"
+                        ],
+                        "type": "object"
+                      },
+                      "sizeInBytes": {
+                        "type": "number"
+                      },
+                      "itemCount": {
+                        "type": "number"
+                      }
                     },
-                    "updatedAt": {
-                      "type": "number"
-                    },
-                    "itemCount": {
-                      "type": "number"
-                    },
-                    "sizeInBytes": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "createdAt",
-                    "digest",
-                    "id",
-                    "itemCount",
-                    "ownerId",
-                    "sizeInBytes",
-                    "slug",
-                    "updatedAt"
-                  ],
-                  "type": "object",
-                  "description": "List of all global configs."
+                    "required": [
+                      "sizeInBytes",
+                      "itemCount"
+                    ]
+                  }
                 }
               }
             }
@@ -56999,7 +56958,8 @@
                 }
               }
             }
-          }
+          },
+          "required": true
         }
       }
     },
@@ -57390,7 +57350,8 @@
                 }
               }
             }
-          }
+          },
+          "required": true
         }
       },
       "delete": {
@@ -57648,21 +57609,20 @@
                             },
                             "value": {},
                             "description": {
-                              "oneOf": [
-                                {
-                                  "type": "string",
-                                  "maxLength": 512
-                                },
-                                {
-                                  "type": "string"
-                                }
-                              ]
+                              "type": "string",
+                              "maxLength": 512,
+                              "nullable": true
                             }
                           },
                           "anyOf": [
                             {
                               "properties": {
-                                "operation": {}
+                                "operation": {
+                                  "type": "string",
+                                  "enum": [
+                                    "create"
+                                  ]
+                                }
                               },
                               "required": [
                                 "operation",
@@ -57701,19 +57661,19 @@
                               ]
                             },
                             {
+                              "type": "object",
                               "properties": {
-                                "operation": {}
+                                "operation": {
+                                  "type": "string",
+                                  "enum": [
+                                    "delete"
+                                  ]
+                                }
                               },
                               "required": [
                                 "operation",
                                 "key"
-                              ],
-                              "not": {
-                                "required": [
-                                  "value",
-                                  "description"
-                                ]
-                              }
+                              ]
                             }
                           ]
                         }
@@ -57895,7 +57855,8 @@
                 }
               }
             }
-          }
+          },
+          "required": true
         }
       },
       "delete": {
@@ -57989,6 +57950,9 @@
                 }
               }
             }
+          },
+          "204": {
+            "description": "The Global Config item does not exist."
           },
           "400": {
             "description": "One of the provided values in the request query is invalid."
@@ -58217,7 +58181,8 @@
                 ]
               }
             }
-          }
+          },
+          "required": true
         }
       }
     },
@@ -58403,7 +58368,8 @@
                 }
               }
             }
-          }
+          },
+          "required": true
         }
       }
     },
@@ -58695,7 +58661,8 @@
               "example": "my-team-url-slug"
             }
           }
-        ]
+        ],
+        "x-speakeasy-test": false
       }
     },
     "/v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}/restore": {
@@ -58806,7 +58773,8 @@
               "example": "my-team-url-slug"
             }
           }
-        ]
+        ],
+        "x-speakeasy-test": false
       }
     },
     "/v1/global-config/{edgeConfigId}/backups": {
@@ -82728,6 +82696,10 @@
                             "properties": {
                               "block": {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -82804,6 +82776,10 @@
                                   "oneOf": [
                                     {
                                       "properties": {
+                                        "abuseAgentRunId": {
+                                          "type": "string",
+                                          "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                        },
                                         "action": {
                                           "type": "string",
                                           "enum": [
@@ -82877,6 +82853,10 @@
                                     },
                                     {
                                       "properties": {
+                                        "abuseAgentRunId": {
+                                          "type": "string",
+                                          "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                        },
                                         "action": {
                                           "type": "string",
                                           "enum": [
@@ -82922,6 +82902,10 @@
                                     },
                                     {
                                       "properties": {
+                                        "abuseAgentRunId": {
+                                          "type": "string",
+                                          "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                        },
                                         "action": {
                                           "type": "string",
                                           "enum": [
@@ -83086,6 +83070,10 @@
                                     },
                                     {
                                       "properties": {
+                                        "abuseAgentRunId": {
+                                          "type": "string",
+                                          "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                        },
                                         "action": {
                                           "type": "string",
                                           "enum": [
@@ -98053,6 +98041,10 @@
                             "properties": {
                               "block": {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -98129,6 +98121,10 @@
                                   "oneOf": [
                                     {
                                       "properties": {
+                                        "abuseAgentRunId": {
+                                          "type": "string",
+                                          "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                        },
                                         "action": {
                                           "type": "string",
                                           "enum": [
@@ -98202,6 +98198,10 @@
                                     },
                                     {
                                       "properties": {
+                                        "abuseAgentRunId": {
+                                          "type": "string",
+                                          "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                        },
                                         "action": {
                                           "type": "string",
                                           "enum": [
@@ -98247,6 +98247,10 @@
                                     },
                                     {
                                       "properties": {
+                                        "abuseAgentRunId": {
+                                          "type": "string",
+                                          "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                        },
                                         "action": {
                                           "type": "string",
                                           "enum": [
@@ -98411,6 +98415,10 @@
                                     },
                                     {
                                       "properties": {
+                                        "abuseAgentRunId": {
+                                          "type": "string",
+                                          "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                        },
                                         "action": {
                                           "type": "string",
                                           "enum": [
@@ -102976,6 +102984,10 @@
                                 "properties": {
                                   "block": {
                                     "properties": {
+                                      "abuseAgentRunId": {
+                                        "type": "string",
+                                        "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                      },
                                       "action": {
                                         "type": "string",
                                         "enum": [
@@ -103052,6 +103064,10 @@
                                       "oneOf": [
                                         {
                                           "properties": {
+                                            "abuseAgentRunId": {
+                                              "type": "string",
+                                              "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                            },
                                             "action": {
                                               "type": "string",
                                               "enum": [
@@ -103125,6 +103141,10 @@
                                         },
                                         {
                                           "properties": {
+                                            "abuseAgentRunId": {
+                                              "type": "string",
+                                              "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                            },
                                             "action": {
                                               "type": "string",
                                               "enum": [
@@ -103170,6 +103190,10 @@
                                         },
                                         {
                                           "properties": {
+                                            "abuseAgentRunId": {
+                                              "type": "string",
+                                              "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                            },
                                             "action": {
                                               "type": "string",
                                               "enum": [
@@ -103334,6 +103358,10 @@
                                         },
                                         {
                                           "properties": {
+                                            "abuseAgentRunId": {
+                                              "type": "string",
+                                              "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                            },
                                             "action": {
                                               "type": "string",
                                               "enum": [
@@ -107906,6 +107934,10 @@
                                 "properties": {
                                   "block": {
                                     "properties": {
+                                      "abuseAgentRunId": {
+                                        "type": "string",
+                                        "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                      },
                                       "action": {
                                         "type": "string",
                                         "enum": [
@@ -107982,6 +108014,10 @@
                                       "oneOf": [
                                         {
                                           "properties": {
+                                            "abuseAgentRunId": {
+                                              "type": "string",
+                                              "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                            },
                                             "action": {
                                               "type": "string",
                                               "enum": [
@@ -108055,6 +108091,10 @@
                                         },
                                         {
                                           "properties": {
+                                            "abuseAgentRunId": {
+                                              "type": "string",
+                                              "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                            },
                                             "action": {
                                               "type": "string",
                                               "enum": [
@@ -108100,6 +108140,10 @@
                                         },
                                         {
                                           "properties": {
+                                            "abuseAgentRunId": {
+                                              "type": "string",
+                                              "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                            },
                                             "action": {
                                               "type": "string",
                                               "enum": [
@@ -108264,6 +108308,10 @@
                                         },
                                         {
                                           "properties": {
+                                            "abuseAgentRunId": {
+                                              "type": "string",
+                                              "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                            },
                                             "action": {
                                               "type": "string",
                                               "enum": [
@@ -116623,6 +116671,10 @@
                       "properties": {
                         "block": {
                           "properties": {
+                            "abuseAgentRunId": {
+                              "type": "string",
+                              "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                            },
                             "action": {
                               "type": "string",
                               "enum": [
@@ -116699,6 +116751,10 @@
                             "oneOf": [
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -116772,6 +116828,10 @@
                               },
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -116817,6 +116877,10 @@
                               },
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -116981,6 +117045,10 @@
                               },
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -125615,6 +125683,10 @@
                       "properties": {
                         "block": {
                           "properties": {
+                            "abuseAgentRunId": {
+                              "type": "string",
+                              "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                            },
                             "action": {
                               "type": "string",
                               "enum": [
@@ -125691,6 +125763,10 @@
                             "oneOf": [
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -125764,6 +125840,10 @@
                               },
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -125809,6 +125889,10 @@
                               },
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -125973,6 +126057,10 @@
                               },
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -133946,6 +134034,10 @@
                       "properties": {
                         "block": {
                           "properties": {
+                            "abuseAgentRunId": {
+                              "type": "string",
+                              "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                            },
                             "action": {
                               "type": "string",
                               "enum": [
@@ -134022,6 +134114,10 @@
                             "oneOf": [
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -134095,6 +134191,10 @@
                               },
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -134140,6 +134240,10 @@
                               },
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -134304,6 +134408,10 @@
                               },
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -143559,6 +143667,10 @@
                       "properties": {
                         "block": {
                           "properties": {
+                            "abuseAgentRunId": {
+                              "type": "string",
+                              "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                            },
                             "action": {
                               "type": "string",
                               "enum": [
@@ -143635,6 +143747,10 @@
                             "oneOf": [
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -143708,6 +143824,10 @@
                               },
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -143753,6 +143873,10 @@
                               },
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -143917,6 +144041,10 @@
                               },
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -155215,33 +155343,8 @@
                         "id": {
                           "type": "string"
                         },
-                        "internalContentHint": {
-                          "nullable": true,
-                          "properties": {
-                            "encryptedValue": {
-                              "type": "string",
-                              "description": "Contains the `value` of the env variable, encrypted with a special key to make decryption possible in the subscriber Lambda."
-                            },
-                            "type": {
-                              "type": "string",
-                              "enum": [
-                                "flags-secret"
-                              ]
-                            }
-                          },
-                          "required": [
-                            "encryptedValue",
-                            "type"
-                          ],
-                          "type": "object",
-                          "description": "Similar to `contentHints`, but should not be exposed to the user."
-                        },
                         "key": {
                           "type": "string"
-                        },
-                        "legacyValue": {
-                          "type": "string",
-                          "description": "Legacy now-encryption ciphertext, present after migration swaps value/vsmValue"
                         },
                         "securityIssues": {
                           "items": {
@@ -155697,33 +155800,8 @@
                               "id": {
                                 "type": "string"
                               },
-                              "internalContentHint": {
-                                "nullable": true,
-                                "properties": {
-                                  "encryptedValue": {
-                                    "type": "string",
-                                    "description": "Contains the `value` of the env variable, encrypted with a special key to make decryption possible in the subscriber Lambda."
-                                  },
-                                  "type": {
-                                    "type": "string",
-                                    "enum": [
-                                      "flags-secret"
-                                    ]
-                                  }
-                                },
-                                "required": [
-                                  "encryptedValue",
-                                  "type"
-                                ],
-                                "type": "object",
-                                "description": "Similar to `contentHints`, but should not be exposed to the user."
-                              },
                               "key": {
                                 "type": "string"
-                              },
-                              "legacyValue": {
-                                "type": "string",
-                                "description": "Legacy now-encryption ciphertext, present after migration swaps value/vsmValue"
                               },
                               "securityIssues": {
                                 "items": {
@@ -156191,33 +156269,8 @@
                               "id": {
                                 "type": "string"
                               },
-                              "internalContentHint": {
-                                "nullable": true,
-                                "properties": {
-                                  "encryptedValue": {
-                                    "type": "string",
-                                    "description": "Contains the `value` of the env variable, encrypted with a special key to make decryption possible in the subscriber Lambda."
-                                  },
-                                  "type": {
-                                    "type": "string",
-                                    "enum": [
-                                      "flags-secret"
-                                    ]
-                                  }
-                                },
-                                "required": [
-                                  "encryptedValue",
-                                  "type"
-                                ],
-                                "type": "object",
-                                "description": "Similar to `contentHints`, but should not be exposed to the user."
-                              },
                               "key": {
                                 "type": "string"
-                              },
-                              "legacyValue": {
-                                "type": "string",
-                                "description": "Legacy now-encryption ciphertext, present after migration swaps value/vsmValue"
                               },
                               "securityIssues": {
                                 "items": {
@@ -158132,33 +158185,8 @@
                         "id": {
                           "type": "string"
                         },
-                        "internalContentHint": {
-                          "nullable": true,
-                          "properties": {
-                            "encryptedValue": {
-                              "type": "string",
-                              "description": "Contains the `value` of the env variable, encrypted with a special key to make decryption possible in the subscriber Lambda."
-                            },
-                            "type": {
-                              "type": "string",
-                              "enum": [
-                                "flags-secret"
-                              ]
-                            }
-                          },
-                          "required": [
-                            "encryptedValue",
-                            "type"
-                          ],
-                          "type": "object",
-                          "description": "Similar to `contentHints`, but should not be exposed to the user."
-                        },
                         "key": {
                           "type": "string"
-                        },
-                        "legacyValue": {
-                          "type": "string",
-                          "description": "Legacy now-encryption ciphertext, present after migration swaps value/vsmValue"
                         },
                         "sunsetSecretId": {
                           "type": "string",
@@ -158588,6 +158616,439 @@
                         "id": {
                           "type": "string"
                         },
+                        "key": {
+                          "type": "string"
+                        },
+                        "sunsetSecretId": {
+                          "type": "string",
+                          "description": "This is used to identify variables that have been migrated from type secret to sensitive."
+                        },
+                        "target": {
+                          "oneOf": [
+                            {
+                              "items": {
+                                "type": "string",
+                                "enum": [
+                                  "production",
+                                  "preview",
+                                  "development"
+                                ]
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "type": "string",
+                              "enum": [
+                                "production",
+                                "preview",
+                                "development"
+                              ]
+                            }
+                          ]
+                        },
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "encrypted",
+                            "plain",
+                            "secret",
+                            "sensitive",
+                            "system"
+                          ]
+                        },
+                        "updatedAt": {
+                          "type": "number"
+                        },
+                        "updatedBy": {
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        },
+                        "visibility": {
+                          "type": "string",
+                          "enum": [
+                            "config",
+                            "secret"
+                          ],
+                          "description": "User-facing config/secret model. When set, authoritative for new code paths. Legacy rows omit this field and callers fall back to existing `type` behavior."
+                        }
+                      },
+                      "required": [
+                        "decrypted",
+                        "key",
+                        "type",
+                        "value"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "comment": {
+                          "type": "string"
+                        },
+                        "configurationId": {
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "contentHint": {
+                          "nullable": true,
+                          "oneOf": [
+                            {
+                              "properties": {
+                                "storeId": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "redis-url"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "storeId",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "storeId": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "redis-rest-api-url"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "storeId",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "storeId": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "redis-rest-api-token"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "storeId",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "storeId": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "redis-rest-api-read-only-token"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "storeId",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "storeId": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "blob-read-write-token"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "storeId",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "storeId": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "blob-store-id"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "storeId",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "storeId": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "blob-webhook-public-key"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "storeId",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "storeId": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "postgres-url"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "storeId",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "storeId": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "postgres-url-non-pooling"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "storeId",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "storeId": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "postgres-prisma-url"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "storeId",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "storeId": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "postgres-user"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "storeId",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "storeId": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "postgres-host"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "storeId",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "storeId": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "postgres-password"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "storeId",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "storeId": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "postgres-database"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "storeId",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "storeId": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "postgres-url-no-ssl"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "storeId",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "integrationConfigurationId": {
+                                  "type": "string"
+                                },
+                                "integrationId": {
+                                  "type": "string"
+                                },
+                                "integrationProductId": {
+                                  "type": "string"
+                                },
+                                "storeId": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "integration-store-secret"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "integrationConfigurationId",
+                                "integrationId",
+                                "integrationProductId",
+                                "storeId",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "properties": {
+                                "projectId": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "flags-connection-string"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "projectId",
+                                "type"
+                              ],
+                              "type": "object"
+                            }
+                          ]
+                        },
+                        "createdAt": {
+                          "type": "number"
+                        },
+                        "createdBy": {
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "customEnvironmentIds": {
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "decrypted": {
+                          "type": "boolean",
+                          "enum": [
+                            false,
+                            true
+                          ]
+                        },
+                        "edgeConfigId": {
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "edgeConfigTokenId": {
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "gitBranch": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        },
                         "internalContentHint": {
                           "nullable": true,
                           "properties": {
@@ -158624,12 +159085,7 @@
                           "oneOf": [
                             {
                               "items": {
-                                "type": "string",
-                                "enum": [
-                                  "production",
-                                  "preview",
-                                  "development"
-                                ]
+                                "type": "string"
                               },
                               "type": "array"
                             },
@@ -164695,6 +165151,10 @@
                       "properties": {
                         "block": {
                           "properties": {
+                            "abuseAgentRunId": {
+                              "type": "string",
+                              "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                            },
                             "action": {
                               "type": "string",
                               "enum": [
@@ -164771,6 +165231,10 @@
                             "oneOf": [
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -164844,6 +165308,10 @@
                               },
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -164889,6 +165357,10 @@
                               },
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -165053,6 +165525,10 @@
                               },
                               {
                                 "properties": {
+                                  "abuseAgentRunId": {
+                                    "type": "string",
+                                    "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                  },
                                   "action": {
                                     "type": "string",
                                     "enum": [
@@ -195228,7 +195704,7 @@
     },
     "/v1/security/firewall/events": {
       "get": {
-        "description": "Retrieve firewall actions for a project Rule names are resolved against the project's *current* active firewall configuration and the team's active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. System rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always report `null`.",
+        "description": "Retrieve firewall actions for a project Rule names are resolved against the project's *current* active firewall configuration and the team's active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. System rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always report `null`. Filters (`ip`, `isActive`, `action`, `actionType`, `ruleKind`, `ruleId`, `hosts`) are ANDed across params and ORed within a repeated param. They are applied to the policies before `limit`/`cursor`, so pages only count matching policies. A policy with no matching requests yields no action row, so a page can hold fewer than `limit` actions; only `pagination.next` signals the end. A `cursor` is only valid with the filters it was issued for.",
         "operationId": "getSecurityFirewallEvents",
         "security": [
           {
@@ -195301,10 +195777,278 @@
                         "type": "object"
                       },
                       "type": "array"
+                    },
+                    "pagination": {
+                      "properties": {
+                        "hasMore": {
+                          "type": "boolean",
+                          "enum": [
+                            false,
+                            true
+                          ]
+                        },
+                        "next": {
+                          "nullable": true,
+                          "type": "string",
+                          "description": "Pass as `cursor` to fetch the next page; null when there are no more."
+                        }
+                      },
+                      "required": [
+                        "hasMore",
+                        "next"
+                      ],
+                      "type": "object"
                     }
                   },
                   "required": [
-                    "actions"
+                    "actions",
+                    "pagination"
+                  ],
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "408": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          },
+          "500": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "startTime:desc",
+                "startTime:asc"
+              ]
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 5000
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "startTimestamp",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "endTimestamp",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "hosts",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 10000
+            }
+          },
+          {
+            "name": "ip",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "maxLength": 45
+              },
+              "maxItems": 100
+            }
+          },
+          {
+            "name": "isActive",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "action",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "deny",
+                  "challenge",
+                  "log",
+                  "rate_limit",
+                  "bypass"
+                ]
+              },
+              "maxItems": 5
+            }
+          },
+          {
+            "name": "actionType",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "system-action",
+                  "customer-action"
+                ]
+              },
+              "maxItems": 2
+            }
+          },
+          {
+            "name": "ruleKind",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "system",
+                "custom"
+              ]
+            }
+          },
+          {
+            "name": "ruleId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "maxLength": 128
+              },
+              "maxItems": 100
+            }
+          },
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "description": "The Team slug to perform the request on behalf of.",
+            "in": "query",
+            "name": "slug",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ]
+      }
+    },
+    "/v1/security/firewall/events/summary": {
+      "get": {
+        "description": "Aggregate counts over the firewall actions matched by the same filters as `GET /v1/security/firewall/events`, without fetching any rows. Counts are of policies (mitigations), including ones that matched no requests.",
+        "operationId": "getSecurityFirewallEventsSummary",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Read Firewall Actions Summary by Project",
+        "tags": [
+          "security"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "blockingIps": {
+                      "type": "number"
+                    },
+                    "byAction": {
+                      "additionalProperties": {
+                        "type": "number"
+                      },
+                      "type": "object"
+                    },
+                    "byActionType": {
+                      "additionalProperties": {
+                        "type": "number"
+                      },
+                      "type": "object"
+                    },
+                    "challengingIps": {
+                      "type": "number"
+                    },
+                    "other": {
+                      "type": "number"
+                    },
+                    "total": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "blockingIps",
+                    "byAction",
+                    "byActionType",
+                    "challengingIps",
+                    "other",
+                    "total"
                   ],
                   "type": "object"
                 }
@@ -195363,7 +196107,89 @@
             "in": "query",
             "required": false,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "maxLength": 10000
+            }
+          },
+          {
+            "name": "ip",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "maxLength": 45
+              },
+              "maxItems": 100
+            }
+          },
+          {
+            "name": "isActive",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "action",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "deny",
+                  "challenge",
+                  "log",
+                  "rate_limit",
+                  "bypass"
+                ]
+              },
+              "maxItems": 5
+            }
+          },
+          {
+            "name": "actionType",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "system-action",
+                  "customer-action"
+                ]
+              },
+              "maxItems": 2
+            }
+          },
+          {
+            "name": "ruleKind",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "system",
+                "custom"
+              ]
+            }
+          },
+          {
+            "name": "ruleId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "maxLength": 128
+              },
+              "maxItems": 100
             }
           },
           {
@@ -221725,7 +222551,6 @@
               "custom",
               "discord",
               "github",
-              "google-dpop",
               "linear",
               "linq",
               "microsoft-entra",
@@ -222227,7 +223052,6 @@
               "custom",
               "discord",
               "github",
-              "google-dpop",
               "linear",
               "linq",
               "microsoft-entra",
@@ -223561,7 +224385,7 @@
           },
           "triggerType": {
             "type": "string",
-            "description": "Trigger driver type. Resolved automatically from the service or known service registry when not provided. Only set when using the newly decoupled triggers resolution flow."
+            "description": "Trigger driver type. Resolved automatically from the known service connection method when not provided. Only set when using the newly decoupled triggers resolution flow."
           },
           "triggerData": {
             "type": "object",
@@ -228651,6 +229475,7 @@
                         "read-write:project-flags-non-production",
                         "read-write:project-flags-production",
                         "read-write:project-protection-bypass",
+                        "read-write:project-trusted-sources",
                         "read-write:remote-cache",
                         "read-write:sandbox",
                         "read-write:schedule",
@@ -228678,6 +229503,7 @@
                         "read:project-env-vars-non-production",
                         "read:project-env-vars-production",
                         "read:project-flags",
+                        "read:project-trusted-sources",
                         "read:remote-cache",
                         "read:sandbox",
                         "read:schedule",
@@ -228770,6 +229596,7 @@
                         "read-write:project-flags-non-production",
                         "read-write:project-flags-production",
                         "read-write:project-protection-bypass",
+                        "read-write:project-trusted-sources",
                         "read-write:remote-cache",
                         "read-write:sandbox",
                         "read-write:schedule",
@@ -228797,6 +229624,7 @@
                         "read:project-env-vars-non-production",
                         "read:project-env-vars-production",
                         "read:project-flags",
+                        "read:project-trusted-sources",
                         "read:remote-cache",
                         "read:sandbox",
                         "read:schedule",
@@ -228869,6 +229697,7 @@
                             "read-write:project-flags-non-production",
                             "read-write:project-flags-production",
                             "read-write:project-protection-bypass",
+                            "read-write:project-trusted-sources",
                             "read-write:remote-cache",
                             "read-write:sandbox",
                             "read-write:schedule",
@@ -228896,6 +229725,7 @@
                             "read:project-env-vars-non-production",
                             "read:project-env-vars-production",
                             "read:project-flags",
+                            "read:project-trusted-sources",
                             "read:remote-cache",
                             "read:sandbox",
                             "read:schedule",
@@ -228999,6 +229829,7 @@
                             "read-write:project-flags-non-production",
                             "read-write:project-flags-production",
                             "read-write:project-protection-bypass",
+                            "read-write:project-trusted-sources",
                             "read-write:remote-cache",
                             "read-write:sandbox",
                             "read-write:schedule",
@@ -229026,6 +229857,7 @@
                             "read:project-env-vars-non-production",
                             "read:project-env-vars-production",
                             "read:project-flags",
+                            "read:project-trusted-sources",
                             "read:remote-cache",
                             "read:sandbox",
                             "read:schedule",
@@ -229139,6 +229971,7 @@
                         "read-write:project-flags-non-production",
                         "read-write:project-flags-production",
                         "read-write:project-protection-bypass",
+                        "read-write:project-trusted-sources",
                         "read-write:remote-cache",
                         "read-write:sandbox",
                         "read-write:schedule",
@@ -229166,6 +229999,7 @@
                         "read:project-env-vars-non-production",
                         "read:project-env-vars-production",
                         "read:project-flags",
+                        "read:project-trusted-sources",
                         "read:remote-cache",
                         "read:sandbox",
                         "read:schedule",
@@ -235637,6 +236471,28 @@
               },
               {
                 "properties": {
+                  "consumerProjectId": {
+                    "type": "string"
+                  },
+                  "consumerProjectName": {
+                    "type": "string"
+                  },
+                  "projectId": {
+                    "type": "string"
+                  },
+                  "projectName": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "consumerProjectId",
+                  "projectId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "newOwnerId": {
                     "type": "string"
                   },
@@ -235858,6 +236714,10 @@
                           "blockHistory": {
                             "items": {
                               "properties": {
+                                "abuseAgentRunId": {
+                                  "type": "string",
+                                  "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
+                                },
                                 "action": {
                                   "type": "string",
                                   "enum": [
@@ -240630,21 +241490,18 @@
                   },
                   "next": {
                     "properties": {
-                      "default": {
-                        "type": "string",
-                        "enum": [
-                          "BILLING",
-                          "CONTRIBUTOR",
-                          "DEVELOPER",
-                          "MEMBER",
-                          "OWNER",
-                          "SECURITY",
-                          "VIEWER",
-                          "VIEWER_FOR_PLUS"
-                        ]
+                      "organizationPermissions": {
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "OrgAdmin",
+                            "OrgViewer"
+                          ]
+                        },
+                        "type": "array"
                       },
-                      "roles": {
-                        "additionalProperties": {
+                      "teamRoles": {
+                        "items": {
                           "type": "string",
                           "enum": [
                             "BILLING",
@@ -240657,11 +241514,40 @@
                             "VIEWER_FOR_PLUS"
                           ]
                         },
+                        "type": "array"
+                      },
+                      "teams": {
+                        "additionalProperties": {
+                          "properties": {
+                            "teamRoles": {
+                              "items": {
+                                "type": "string",
+                                "enum": [
+                                  "BILLING",
+                                  "CONTRIBUTOR",
+                                  "DEVELOPER",
+                                  "MEMBER",
+                                  "OWNER",
+                                  "SECURITY",
+                                  "VIEWER",
+                                  "VIEWER_FOR_PLUS"
+                                ]
+                              },
+                              "type": "array"
+                            }
+                          },
+                          "required": [
+                            "teamRoles"
+                          ],
+                          "type": "object"
+                        },
                         "type": "object"
                       }
                     },
                     "required": [
-                      "roles"
+                      "organizationPermissions",
+                      "teamRoles",
+                      "teams"
                     ],
                     "type": "object"
                   },
@@ -251689,6 +252575,8 @@
               "flag-deleted",
               "flag-unarchived",
               "flag-updated",
+              "flags-connection-created",
+              "flags-connection-deleted",
               "flags-explorer-subscription",
               "flags-sdk-key",
               "flags-sdk-key-added",
@@ -252614,6 +253502,8 @@
               "flag-deleted",
               "flag-unarchived",
               "flag-updated",
+              "flags-connection-created",
+              "flags-connection-deleted",
               "flags-explorer-subscription",
               "flags-sdk-key",
               "flags-sdk-key-added",
@@ -253327,6 +254217,8 @@
                 "flag-deleted",
                 "flag-unarchived",
                 "flag-updated",
+                "flags-connection-created",
+                "flags-connection-deleted",
                 "flags-explorer-subscription",
                 "flags-sdk-key",
                 "flags-sdk-key-added",
@@ -255602,6 +256494,14 @@
             "description": "The time when the named sandbox was last updated, in milliseconds since the epoch.",
             "example": 1750344501629
           },
+          "v0": {
+            "type": "boolean",
+            "enum": [
+              false,
+              true
+            ],
+            "description": "Whether this sandbox is managed by v0 on the customer's behalf."
+          },
           "vcpus": {
             "type": "number",
             "description": "Number of virtual CPUs allocated.",
@@ -255874,6 +256774,14 @@
             "description": "The last time the sandbox was updated, in milliseconds since the epoch.",
             "example": 1750344501629
           },
+          "v0": {
+            "type": "boolean",
+            "enum": [
+              false,
+              true
+            ],
+            "description": "Whether this sandbox is managed by v0 on the customer's behalf."
+          },
           "vcpus": {
             "type": "number",
             "description": "Number of vCPUs allocated to this sandbox.",
@@ -255944,6 +256852,14 @@
             "type": "number",
             "description": "The last time the drive was updated, in milliseconds since the epoch.",
             "example": 1750344501629
+          },
+          "v0": {
+            "type": "boolean",
+            "enum": [
+              false,
+              true
+            ],
+            "description": "Whether this drive is managed by v0 on the customer's behalf."
           }
         },
         "required": [
@@ -256042,6 +256958,14 @@
             "type": "number",
             "description": "The last time the snapshot was updated, in milliseconds since the epoch.",
             "example": 1750344501629
+          },
+          "v0": {
+            "type": "boolean",
+            "enum": [
+              false,
+              true
+            ],
+            "description": "Whether this snapshot is managed by v0 on the customer's behalf."
           }
         },
         "required": [

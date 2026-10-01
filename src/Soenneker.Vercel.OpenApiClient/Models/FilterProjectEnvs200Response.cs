@@ -100,14 +100,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Similar to `contentHints`, but should not be exposed to the user.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseInternalContentHint? InternalContentHint { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseInternalContentHint InternalContentHint { get; set; }
-#endif
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,14 +107,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string Key { get; set; }
-#endif
-        /// <summary>Legacy now-encryption ciphertext, present after migration swaps value/vsmValue</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LegacyValue { get; set; }
-#nullable restore
-#else
-        public string LegacyValue { get; set; }
 #endif
         /// <summary>This object contains information related to the pagination of the current request, including the necessary parameters to get the next or previous page of data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -218,9 +202,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "gitBranch", n => { GitBranch = n.GetStringValue(); } },
                 { "hiddenProductionEnvCount", n => { HiddenProductionEnvCount = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "internalContentHint", n => { InternalContentHint = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseInternalContentHint>(global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseInternalContentHint.CreateFromDiscriminatorValue); } },
                 { "key", n => { Key = n.GetStringValue(); } },
-                { "legacyValue", n => { LegacyValue = n.GetStringValue(); } },
                 { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Pagination>(global::Soenneker.Vercel.OpenApiClient.Models.Pagination.CreateFromDiscriminatorValue); } },
                 { "securityIssues", n => { SecurityIssues = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseSecurityIssuesItem>()?.AsList(); } },
                 { "sunsetSecretId", n => { SunsetSecretId = n.GetStringValue(); } },
@@ -253,9 +235,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("gitBranch", GitBranch);
             writer.WriteDoubleValue("hiddenProductionEnvCount", HiddenProductionEnvCount);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseInternalContentHint>("internalContentHint", InternalContentHint);
             writer.WriteStringValue("key", Key);
-            writer.WriteStringValue("legacyValue", LegacyValue);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Pagination>("pagination", Pagination);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseSecurityIssuesItem>("securityIssues", SecurityIssues);
             writer.WriteStringValue("sunsetSecretId", SunsetSecretId);

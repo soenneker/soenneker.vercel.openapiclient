@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.Models;
+using Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events.Summary;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,12 +18,17 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EventsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The summary property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events.Summary.SummaryRequestBuilder Summary
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events.Summary.SummaryRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events.EventsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/events?projectId={projectId}{&endTimestamp*,hosts*,slug*,startTimestamp*,teamId*}", pathParameters)
+        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/events?projectId={projectId}{&action*,actionType*,cursor*,endTimestamp*,hosts*,ip*,isActive*,limit*,ruleId*,ruleKind*,slug*,sort*,startTimestamp*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +36,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/events?projectId={projectId}{&endTimestamp*,hosts*,slug*,startTimestamp*,teamId*}", rawUrl)
+        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/events?projectId={projectId}{&action*,actionType*,cursor*,endTimestamp*,hosts*,ip*,isActive*,limit*,ruleId*,ruleKind*,slug*,sort*,startTimestamp*,teamId*}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieve firewall actions for a project Rule names are resolved against the project&apos;s *current* active firewall configuration and the team&apos;s active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. System rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always report `null`.
+        /// Retrieve firewall actions for a project Rule names are resolved against the project&apos;s *current* active firewall configuration and the team&apos;s active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. System rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always report `null`. Filters (`ip`, `isActive`, `action`, `actionType`, `ruleKind`, `ruleId`, `hosts`) are ANDed across params and ORed within a repeated param. They are applied to the policies before `limit`/`cursor`, so pages only count matching policies. A policy with no matching requests yields no action row, so a page can hold fewer than `limit` actions; only `pagination.next` signals the end. A `cursor` is only valid with the filters it was issued for.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEvents200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEvents200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEvents200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve firewall actions for a project Rule names are resolved against the project&apos;s *current* active firewall configuration and the team&apos;s active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. System rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always report `null`.
+        /// Retrieve firewall actions for a project Rule names are resolved against the project&apos;s *current* active firewall configuration and the team&apos;s active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. System rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always report `null`. Filters (`ip`, `isActive`, `action`, `actionType`, `ruleKind`, `ruleId`, `hosts`) are ANDed across params and ORed within a repeated param. They are applied to the policies before `limit`/`cursor`, so pages only count matching policies. A policy with no matching requests yields no action row, so a page can hold fewer than `limit` actions; only `pagination.next` signals the end. A `cursor` is only valid with the filters it was issued for.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,11 +86,50 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events
             return new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events.EventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve firewall actions for a project Rule names are resolved against the project&apos;s *current* active firewall configuration and the team&apos;s active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. System rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always report `null`.
+        /// Retrieve firewall actions for a project Rule names are resolved against the project&apos;s *current* active firewall configuration and the team&apos;s active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. System rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always report `null`. Filters (`ip`, `isActive`, `action`, `actionType`, `ruleKind`, `ruleId`, `hosts`) are ANDed across params and ORed within a repeated param. They are applied to the policies before `limit`/`cursor`, so pages only count matching policies. A policy with no matching requests yields no action row, so a page can hold fewer than `limit` actions; only `pagination.next` signals the end. A `cursor` is only valid with the filters it was issued for.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventsRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("action")]
+            public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEventsActionParameterItem[]? Action { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("action")]
+            public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEventsActionParameterItem[] Action { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("actionType")]
+            public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEventsActionTypeParameterItem[]? ActionType { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("actionType")]
+            public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEventsActionTypeParameterItem[] ActionType { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("cursor")]
+            public string? Cursor { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("cursor")]
+            public string Cursor { get; set; }
+            #pragma warning restore CS1591
+#endif
             #pragma warning disable CS1591
             [QueryParameter("endTimestamp")]
             public double? EndTimestamp { get; set; }
@@ -105,6 +150,27 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
+            [QueryParameter("ip")]
+            public string[]? Ip { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ip")]
+            public string[] Ip { get; set; }
+            #pragma warning restore CS1591
+#endif
+            #pragma warning disable CS1591
+            [QueryParameter("isActive")]
+            public bool? IsActive { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
+            [QueryParameter("limit")]
+            public double? Limit { get; set; }
+            #pragma warning restore CS1591
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("projectId")]
             public string? ProjectId { get; set; }
             #pragma warning restore CS1591
@@ -115,6 +181,23 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events
             public string ProjectId { get; set; }
             #pragma warning restore CS1591
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("ruleId")]
+            public string[]? RuleId { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("ruleId")]
+            public string[] RuleId { get; set; }
+            #pragma warning restore CS1591
+#endif
+            #pragma warning disable CS1591
+            [QueryParameter("ruleKind")]
+            public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEventsRuleKindParameter? RuleKind { get; set; }
+            #pragma warning restore CS1591
             /// <summary>The Team slug to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,6 +208,10 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Events
             [QueryParameter("slug")]
             public string Slug { get; set; }
 #endif
+            #pragma warning disable CS1591
+            [QueryParameter("sort")]
+            public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEventsSortParameter? Sort { get; set; }
+            #pragma warning restore CS1591
             #pragma warning disable CS1591
             [QueryParameter("startTimestamp")]
             public double? StartTimestamp { get; set; }

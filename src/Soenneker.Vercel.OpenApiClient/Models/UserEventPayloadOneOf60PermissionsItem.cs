@@ -132,6 +132,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ReadWriteColonProjectProtectionBypass,
         #pragma warning restore CS1591
+        [EnumMember(Value = "read-write:project-trusted-sources")]
+        #pragma warning disable CS1591
+        ReadWriteColonProjectTrustedSources,
+        #pragma warning restore CS1591
         [EnumMember(Value = "read-write:remote-cache")]
         #pragma warning disable CS1591
         ReadWriteColonRemoteCache,
@@ -239,6 +243,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "read:project-flags")]
         #pragma warning disable CS1591
         ReadColonProjectFlags,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "read:project-trusted-sources")]
+        #pragma warning disable CS1591
+        ReadColonProjectTrustedSources,
         #pragma warning restore CS1591
         [EnumMember(Value = "read:remote-cache")]
         #pragma warning disable CS1591

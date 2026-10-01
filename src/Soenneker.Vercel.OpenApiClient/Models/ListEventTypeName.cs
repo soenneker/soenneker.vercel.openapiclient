@@ -1023,6 +1023,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         FlagUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "flags-connection-created")]
+        #pragma warning disable CS1591
+        FlagsConnectionCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "flags-connection-deleted")]
+        #pragma warning disable CS1591
+        FlagsConnectionDeleted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "flags-explorer-subscription")]
         #pragma warning disable CS1591
         FlagsExplorerSubscription,

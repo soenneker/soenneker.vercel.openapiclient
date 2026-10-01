@@ -129,7 +129,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Whether the triggers are enabled for this connector.</summary>
         public bool? Triggers { get; set; }
-        /// <summary>Trigger driver type. Resolved automatically from the service or known service registry when not provided. Only set when using the newly decoupled triggers resolution flow.</summary>
+        /// <summary>Trigger driver type. Resolved automatically from the known service connection method when not provided. Only set when using the newly decoupled triggers resolution flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TriggerType { get; set; }

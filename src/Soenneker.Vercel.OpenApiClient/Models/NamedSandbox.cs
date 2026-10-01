@@ -147,6 +147,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? TotalIngressBytes { get; set; }
         /// <summary>The time when the named sandbox was last updated, in milliseconds since the epoch.</summary>
         public double? UpdatedAt { get; set; }
+        /// <summary>Whether this sandbox is managed by v0 on the customer&apos;s behalf.</summary>
+        public bool? V0 { get; set; }
         /// <summary>Number of virtual CPUs allocated.</summary>
         public double? Vcpus { get; set; }
         /// <summary>
@@ -201,6 +203,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "totalEgressBytes", n => { TotalEgressBytes = n.GetDoubleValue(); } },
                 { "totalIngressBytes", n => { TotalIngressBytes = n.GetDoubleValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
+                { "v0", n => { V0 = n.GetBoolValue(); } },
                 { "vcpus", n => { Vcpus = n.GetDoubleValue(); } },
             };
         }
@@ -238,6 +241,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("totalEgressBytes", TotalEgressBytes);
             writer.WriteDoubleValue("totalIngressBytes", TotalIngressBytes);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
+            writer.WriteBoolValue("v0", V0);
             writer.WriteDoubleValue("vcpus", Vcpus);
             writer.WriteAdditionalData(AdditionalData);
         }

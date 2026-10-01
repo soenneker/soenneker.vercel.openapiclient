@@ -90,14 +90,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Similar to `contentHints`, but should not be exposed to the user.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemInternalContentHint? InternalContentHint { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemInternalContentHint InternalContentHint { get; set; }
-#endif
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,14 +97,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string Key { get; set; }
-#endif
-        /// <summary>Legacy now-encryption ciphertext, present after migration swaps value/vsmValue</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LegacyValue { get; set; }
-#nullable restore
-#else
-        public string LegacyValue { get; set; }
 #endif
         /// <summary>The securityIssues property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -198,9 +182,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "edgeConfigTokenId", n => { EdgeConfigTokenId = n.GetStringValue(); } },
                 { "gitBranch", n => { GitBranch = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "internalContentHint", n => { InternalContentHint = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemInternalContentHint>(global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemInternalContentHint.CreateFromDiscriminatorValue); } },
                 { "key", n => { Key = n.GetStringValue(); } },
-                { "legacyValue", n => { LegacyValue = n.GetStringValue(); } },
                 { "securityIssues", n => { SecurityIssues = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemSecurityIssuesItem>()?.AsList(); } },
                 { "sunsetSecretId", n => { SunsetSecretId = n.GetStringValue(); } },
                 { "system", n => { System = n.GetBoolValue(); } },
@@ -230,9 +212,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("edgeConfigTokenId", EdgeConfigTokenId);
             writer.WriteStringValue("gitBranch", GitBranch);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemInternalContentHint>("internalContentHint", InternalContentHint);
             writer.WriteStringValue("key", Key);
-            writer.WriteStringValue("legacyValue", LegacyValue);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.FilterProjectEnvs200ResponseEnvsItemSecurityIssuesItem>("securityIssues", SecurityIssues);
             writer.WriteStringValue("sunsetSecretId", SunsetSecretId);
             writer.WriteBoolValue("system", System);

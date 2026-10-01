@@ -71,6 +71,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.SnapshotStatus? Status { get; set; }
         /// <summary>The last time the snapshot was updated, in milliseconds since the epoch.</summary>
         public double? UpdatedAt { get; set; }
+        /// <summary>Whether this snapshot is managed by v0 on the customer&apos;s behalf.</summary>
+        public bool? V0 { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.Snapshot"/> and sets the default values.
         /// </summary>
@@ -109,6 +111,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "sourceSessionId", n => { SourceSessionId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SnapshotStatus>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
+                { "v0", n => { V0 = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -131,6 +134,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("sourceSessionId", SourceSessionId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.SnapshotStatus>("status", Status);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
+            writer.WriteBoolValue("v0", V0);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

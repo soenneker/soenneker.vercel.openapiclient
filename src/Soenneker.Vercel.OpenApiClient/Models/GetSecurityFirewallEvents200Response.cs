@@ -22,6 +22,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The pagination property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEvents200ResponsePagination? Pagination { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEvents200ResponsePagination Pagination { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEvents200Response"/> and sets the default values.
         /// </summary>
@@ -48,6 +56,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEvents200ResponseActionsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEvents200ResponseActionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEvents200ResponsePagination>(global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEvents200ResponsePagination.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEvents200ResponseActionsItem>("actions", Actions);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetSecurityFirewallEvents200ResponsePagination>("pagination", Pagination);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

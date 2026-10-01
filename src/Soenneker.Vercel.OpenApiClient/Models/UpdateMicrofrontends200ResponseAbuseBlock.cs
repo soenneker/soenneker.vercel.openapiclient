@@ -12,6 +12,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class UpdateMicrofrontends200ResponseAbuseBlock : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AbuseAgentRunId { get; set; }
+#nullable restore
+#else
+        public string AbuseAgentRunId { get; set; }
+#endif
         /// <summary>The action property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.BlockedAction? Action { get; set; }
         /// <summary>The actor property</summary>
@@ -97,6 +105,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "abuseAgentRunId", n => { AbuseAgentRunId = n.GetStringValue(); } },
                 { "action", n => { Action = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BlockedAction>(); } },
                 { "actor", n => { Actor = n.GetStringValue(); } },
                 { "caseId", n => { CaseId = n.GetStringValue(); } },
@@ -117,6 +126,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("abuseAgentRunId", AbuseAgentRunId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.BlockedAction>("action", Action);
             writer.WriteStringValue("actor", Actor);
             writer.WriteStringValue("caseId", CaseId);
