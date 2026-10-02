@@ -25,8 +25,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string CreatedBy { get; set; }
 #endif
-        /// <summary>The deletedAt property</summary>
-        public double? DeletedAt { get; set; }
         /// <summary>The digest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,22 +51,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string OwnerId { get; set; }
 #endif
-        /// <summary>The purpose property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateEdgeConfig201ResponsePurpose? Purpose { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateEdgeConfig201ResponsePurpose Purpose { get; set; }
-#endif
-        /// <summary>The schema property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateEdgeConfig201ResponseSchema? Schema { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateEdgeConfig201ResponseSchema Schema { get; set; }
-#endif
         /// <summary>The sizeInBytes property</summary>
         public double? SizeInBytes { get; set; }
         /// <summary>Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).</summary>
@@ -78,16 +60,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string Slug { get; set; }
-#endif
-        /// <summary>Timestamp of when the Global Config was synced to DynamoDB initially. It is only set when syncing the entire Global Config, not when updating.</summary>
-        public double? SyncedToDynamoAt { get; set; }
-        /// <summary>Keeps track of the current state of the Global Config while it gets transferred.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateEdgeConfig201ResponseTransfer? Transfer { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.CreateEdgeConfig201ResponseTransfer Transfer { get; set; }
 #endif
         /// <summary>The updatedAt property</summary>
         public double? UpdatedAt { get; set; }
@@ -118,17 +90,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
-                { "deletedAt", n => { DeletedAt = n.GetDoubleValue(); } },
                 { "digest", n => { Digest = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "itemCount", n => { ItemCount = n.GetDoubleValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "purpose", n => { Purpose = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateEdgeConfig201ResponsePurpose>(global::Soenneker.Vercel.OpenApiClient.Models.CreateEdgeConfig201ResponsePurpose.CreateFromDiscriminatorValue); } },
-                { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateEdgeConfig201ResponseSchema>(global::Soenneker.Vercel.OpenApiClient.Models.CreateEdgeConfig201ResponseSchema.CreateFromDiscriminatorValue); } },
                 { "sizeInBytes", n => { SizeInBytes = n.GetDoubleValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "syncedToDynamoAt", n => { SyncedToDynamoAt = n.GetDoubleValue(); } },
-                { "transfer", n => { Transfer = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateEdgeConfig201ResponseTransfer>(global::Soenneker.Vercel.OpenApiClient.Models.CreateEdgeConfig201ResponseTransfer.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
             };
         }
@@ -141,17 +108,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteStringValue("createdBy", CreatedBy);
-            writer.WriteDoubleValue("deletedAt", DeletedAt);
             writer.WriteStringValue("digest", Digest);
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("itemCount", ItemCount);
             writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateEdgeConfig201ResponsePurpose>("purpose", Purpose);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateEdgeConfig201ResponseSchema>("schema", Schema);
             writer.WriteDoubleValue("sizeInBytes", SizeInBytes);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteDoubleValue("syncedToDynamoAt", SyncedToDynamoAt);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateEdgeConfig201ResponseTransfer>("transfer", Transfer);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

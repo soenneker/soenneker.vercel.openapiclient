@@ -7,15 +7,24 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// A Global Config
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class GetEdgeConfigs200ResponseSchemaItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The createdAt property</summary>
         public double? CreatedAt { get; set; }
+        /// <summary>The ID of the user who created the Global Config, optional because it is not always set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedBy { get; set; }
+#nullable restore
+#else
+        public string CreatedBy { get; set; }
+#endif
         /// <summary>The digest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,39 +51,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string OwnerId { get; set; }
 #endif
-        /// <summary>The purpose property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigs200ResponseItemPurpose? Purpose { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigs200ResponseItemPurpose Purpose { get; set; }
-#endif
-        /// <summary>The schema property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigs200ResponseItemSchema? Schema { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigs200ResponseItemSchema Schema { get; set; }
-#endif
         /// <summary>The sizeInBytes property</summary>
         public double? SizeInBytes { get; set; }
-        /// <summary>Name for the Global Config. Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).</summary>
+        /// <summary>Name for the Global Config Names are not unique. Must start with an alphabetic character and can contain only alphanumeric characters and underscores).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get; set; }
 #nullable restore
 #else
         public string Slug { get; set; }
-#endif
-        /// <summary>Keeps track of the current state of the Global Config while it gets transferred.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigs200ResponseItemTransfer? Transfer { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigs200ResponseItemTransfer Transfer { get; set; }
 #endif
         /// <summary>The updatedAt property</summary>
         public double? UpdatedAt { get; set; }
@@ -104,15 +89,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
+                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "digest", n => { Digest = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "itemCount", n => { ItemCount = n.GetDoubleValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "purpose", n => { Purpose = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigs200ResponseItemPurpose>(global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigs200ResponseItemPurpose.CreateFromDiscriminatorValue); } },
-                { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigs200ResponseItemSchema>(global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigs200ResponseItemSchema.CreateFromDiscriminatorValue); } },
                 { "sizeInBytes", n => { SizeInBytes = n.GetDoubleValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "transfer", n => { Transfer = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigs200ResponseItemTransfer>(global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigs200ResponseItemTransfer.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
             };
         }
@@ -124,15 +107,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("createdAt", CreatedAt);
+            writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteStringValue("digest", Digest);
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("itemCount", ItemCount);
             writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigs200ResponseItemPurpose>("purpose", Purpose);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigs200ResponseItemSchema>("schema", Schema);
             writer.WriteDoubleValue("sizeInBytes", SizeInBytes);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigs200ResponseItemTransfer>("transfer", Transfer);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

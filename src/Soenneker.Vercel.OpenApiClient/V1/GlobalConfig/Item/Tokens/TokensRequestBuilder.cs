@@ -55,20 +55,21 @@ namespace Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Tokens
         /// <summary>
         /// Returns all tokens of a Global Config.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigToken"/></returns>
+        /// <returns>A List&lt;global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigToken&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigToken?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Tokens.TokensRequestBuilder.TokensRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigToken>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Tokens.TokensRequestBuilder.TokensRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigToken> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Tokens.TokensRequestBuilder.TokensRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigToken>> GetAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.GlobalConfig.Item.Tokens.TokensRequestBuilder.TokensRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigToken>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigToken.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigToken>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GlobalConfigToken.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return collectionResult?.AsList();
         }
         /// <summary>
         /// Deletes one or more tokens of an existing Global Config.

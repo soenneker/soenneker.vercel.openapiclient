@@ -9,37 +9,47 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetEdgeConfigs200ResponseItemPurpose : IAdditionalDataHolder, IParsable
+    public partial class ListCheckRuns200ResponseRunsItemExpectationRef : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The projectId property</summary>
+        /// <summary>The invocationAttempt property</summary>
+        public double? InvocationAttempt { get; set; }
+        /// <summary>The invocationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? InvocationId { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string InvocationId { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.FlagsType? Type { get; set; }
+        /// <summary>The jobDefinitionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? JobDefinitionId { get; set; }
+#nullable restore
+#else
+        public string JobDefinitionId { get; set; }
+#endif
+        /// <summary>The jobRunAttempt property</summary>
+        public double? JobRunAttempt { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigs200ResponseItemPurpose"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListCheckRuns200ResponseRunsItemExpectationRef"/> and sets the default values.
         /// </summary>
-        public GetEdgeConfigs200ResponseItemPurpose()
+        public ListCheckRuns200ResponseRunsItemExpectationRef()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigs200ResponseItemPurpose"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListCheckRuns200ResponseRunsItemExpectationRef"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigs200ResponseItemPurpose CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Vercel.OpenApiClient.Models.ListCheckRuns200ResponseRunsItemExpectationRef CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigs200ResponseItemPurpose();
+            return new global::Soenneker.Vercel.OpenApiClient.Models.ListCheckRuns200ResponseRunsItemExpectationRef();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,8 +59,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagsType>(); } },
+                { "invocationAttempt", n => { InvocationAttempt = n.GetDoubleValue(); } },
+                { "invocationId", n => { InvocationId = n.GetStringValue(); } },
+                { "jobDefinitionId", n => { JobDefinitionId = n.GetStringValue(); } },
+                { "jobRunAttempt", n => { JobRunAttempt = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -60,8 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagsType>("type", Type);
+            writer.WriteDoubleValue("invocationAttempt", InvocationAttempt);
+            writer.WriteStringValue("invocationId", InvocationId);
+            writer.WriteStringValue("jobDefinitionId", JobDefinitionId);
+            writer.WriteDoubleValue("jobRunAttempt", JobRunAttempt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

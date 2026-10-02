@@ -46,6 +46,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string DeploymentId { get; set; }
 #endif
+        /// <summary>The expectationRef property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseExpectationRef? ExpectationRef { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseExpectationRef ExpectationRef { get; set; }
+#endif
+        /// <summary>Latest aggregate revision applied to this check run.</summary>
+        public double? ExpectationRevision { get; set; }
         /// <summary>The externalId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -158,6 +168,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "conclusionText", n => { ConclusionText = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
+                { "expectationRef", n => { ExpectationRef = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseExpectationRef>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseExpectationRef.CreateFromDiscriminatorValue); } },
+                { "expectationRevision", n => { ExpectationRevision = n.GetDoubleValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
                 { "externalUrl", n => { ExternalUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -187,6 +199,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("conclusionText", ConclusionText);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteStringValue("deploymentId", DeploymentId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateDeploymentCheckRun200ResponseExpectationRef>("expectationRef", ExpectationRef);
+            writer.WriteDoubleValue("expectationRevision", ExpectationRevision);
             writer.WriteStringValue("externalId", ExternalId);
             writer.WriteStringValue("externalUrl", ExternalUrl);
             writer.WriteStringValue("id", Id);
