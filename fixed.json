@@ -40453,6 +40453,10 @@
             "type": "string",
             "description": "Default audience used when a token request omits one. An empty string clears the default."
           },
+          "defaultResource": {
+            "type": "string",
+            "description": "Default RFC 8707 resource sent on authorization and token requests when a token request omits one. An empty string clears the default."
+          },
           "defaultTokenExpiresIn": {
             "minimum": 60,
             "type": "number",
@@ -40897,6 +40901,10 @@
           "defaultAudience": {
             "type": "string",
             "description": "Default audience used when a token request omits one. An empty string clears the default."
+          },
+          "defaultResource": {
+            "type": "string",
+            "description": "Default RFC 8707 resource sent on authorization and token requests when a token request omits one. An empty string clears the default."
           },
           "defaultTokenExpiresIn": {
             "minimum": 60,
@@ -43430,6 +43438,9 @@
             "description": "The ID of the user who created the Team.",
             "example": "R6efeCJQ2HKXywuasPDc0fOWB"
           },
+          "defaultContinuousUsageKind": {
+            "$ref": "#/components/schemas/TeamDefaultContinuousUsageKind"
+          },
           "defaultDeploymentProtection": {
             "$ref": "#/components/schemas/TeamDefaultDeploymentProtection"
           },
@@ -44699,6 +44710,10 @@
             "type": "string",
             "description": "Default audience used when a token request omits one. An empty string clears the default."
           },
+          "defaultResource": {
+            "type": "string",
+            "description": "Default RFC 8707 resource sent on authorization and token requests when a token request omits one. An empty string clears the default."
+          },
           "defaultTokenExpiresIn": {
             "minimum": 60,
             "type": "number",
@@ -45181,6 +45196,10 @@
           "defaultAudience": {
             "type": "string",
             "description": "Default audience used when a token request omits one. An empty string clears the default."
+          },
+          "defaultResource": {
+            "type": "string",
+            "description": "Default RFC 8707 resource sent on authorization and token requests when a token request omits one. An empty string clears the default."
           },
           "defaultTokenExpiresIn": {
             "minimum": 60,
@@ -65091,7 +65110,7 @@
             "description": "When the customer chose \u0022keep my retention\u0022 before reduce day."
           }
         },
-        "description": "Phase 2 Pro deployment-storage pricing rollout cohort and milestones. Absent when the team is not in a Phase 2 Pro cohort."
+        "description": "Pro deployment-storage pricing rollout cohort and milestones. Absent when the team has not been placed in a rollout cohort yet."
       },
       "TeamIpBucketsItem": {
         "required": [
@@ -84588,9 +84607,6 @@
         ],
         "type": "object",
         "properties": {
-          "abuse": {
-            "$ref": "#/components/schemas/CreateProject200ResponseAbuse"
-          },
           "accountId": {
             "type": "string"
           },
@@ -84986,9 +85002,6 @@
         ],
         "type": "object",
         "properties": {
-          "abuse": {
-            "$ref": "#/components/schemas/GetProject200ResponseAbuse"
-          },
           "accountId": {
             "type": "string"
           },
@@ -85547,9 +85560,6 @@
         ],
         "type": "object",
         "properties": {
-          "abuse": {
-            "$ref": "#/components/schemas/UpdateProject200ResponseAbuse"
-          },
           "accountId": {
             "type": "string"
           },
@@ -85898,9 +85908,6 @@
         ],
         "type": "object",
         "properties": {
-          "abuse": {
-            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuse"
-          },
           "accountId": {
             "type": "string"
           },
@@ -87692,9 +87699,6 @@
         ],
         "type": "object",
         "properties": {
-          "abuse": {
-            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuse"
-          },
           "accountId": {
             "type": "string"
           },
@@ -110229,6 +110233,9 @@
             "description": "The ID of the user who created the Team.",
             "example": "R6efeCJQ2HKXywuasPDc0fOWB"
           },
+          "defaultContinuousUsageKind": {
+            "$ref": "#/components/schemas/TeamDefaultContinuousUsageKind"
+          },
           "defaultDeploymentProtection": {
             "$ref": "#/components/schemas/TeamDefaultDeploymentProtection"
           },
@@ -126850,9 +126857,6 @@
         ],
         "type": "object",
         "properties": {
-          "abuse": {
-            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuse"
-          },
           "accountId": {
             "type": "string"
           },
@@ -128052,45 +128056,6 @@
         },
         "additionalProperties": false,
         "description": "Specifies resource override configuration for the project"
-      },
-      "CreateProject200ResponseAbuse": {
-        "required": [
-          "history",
-          "updatedAt"
-        ],
-        "type": "object",
-        "properties": {
-          "block": {
-            "$ref": "#/components/schemas/CreateProject200ResponseAbuseBlock"
-          },
-          "blockHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CreateProject200ResponseAbuseBlockHistoryItem"
-            }
-          },
-          "history": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CreateProject200ResponseAbuseHistoryItem"
-            }
-          },
-          "interstitial": {
-            "$ref": "#/components/schemas/CreateProject200ResponseAbuseInterstitial"
-          },
-          "interstitialHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CreateProject200ResponseAbuseInterstitialHistoryItem"
-            }
-          },
-          "scanner": {
-            "type": "string"
-          },
-          "updatedAt": {
-            "type": "number"
-          }
-        }
       },
       "CreateProject200ResponseAliasItem": {
         "required": [
@@ -131446,45 +131411,6 @@
           },
           "id": {
             "type": "string"
-          }
-        }
-      },
-      "GetProject200ResponseAbuse": {
-        "required": [
-          "history",
-          "updatedAt"
-        ],
-        "type": "object",
-        "properties": {
-          "block": {
-            "$ref": "#/components/schemas/GetProject200ResponseAbuseBlock"
-          },
-          "blockHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetProject200ResponseAbuseBlockHistoryItem"
-            }
-          },
-          "history": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetProject200ResponseAbuseHistoryItem"
-            }
-          },
-          "interstitial": {
-            "$ref": "#/components/schemas/GetProject200ResponseAbuseInterstitial"
-          },
-          "interstitialHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetProject200ResponseAbuseInterstitialHistoryItem"
-            }
-          },
-          "scanner": {
-            "type": "string"
-          },
-          "updatedAt": {
-            "type": "number"
           }
         }
       },
@@ -135169,45 +135095,6 @@
         },
         "additionalProperties": false
       },
-      "UpdateProject200ResponseAbuse": {
-        "required": [
-          "history",
-          "updatedAt"
-        ],
-        "type": "object",
-        "properties": {
-          "block": {
-            "$ref": "#/components/schemas/UpdateProject200ResponseAbuseBlock"
-          },
-          "blockHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UpdateProject200ResponseAbuseBlockHistoryItem"
-            }
-          },
-          "history": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UpdateProject200ResponseAbuseHistoryItem"
-            }
-          },
-          "interstitial": {
-            "$ref": "#/components/schemas/UpdateProject200ResponseAbuseInterstitial"
-          },
-          "interstitialHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UpdateProject200ResponseAbuseInterstitialHistoryItem"
-            }
-          },
-          "scanner": {
-            "type": "string"
-          },
-          "updatedAt": {
-            "type": "number"
-          }
-        }
-      },
       "UpdateProject200ResponseAliasItem": {
         "required": [
           "deployment",
@@ -138562,45 +138449,6 @@
           },
           "id": {
             "type": "string"
-          }
-        }
-      },
-      "UploadProjectAvatar200ResponseAbuse": {
-        "required": [
-          "history",
-          "updatedAt"
-        ],
-        "type": "object",
-        "properties": {
-          "block": {
-            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseBlock"
-          },
-          "blockHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseBlockHistoryItem"
-            }
-          },
-          "history": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseHistoryItem"
-            }
-          },
-          "interstitial": {
-            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseInterstitial"
-          },
-          "interstitialHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseInterstitialHistoryItem"
-            }
-          },
-          "scanner": {
-            "type": "string"
-          },
-          "updatedAt": {
-            "type": "number"
           }
         }
       },
@@ -143145,45 +142993,6 @@
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/UpdateProjectProtectionBypass200ResponseProtectionBypassAdditionalProperties"
-        }
-      },
-      "UpdateMicrofrontends200ResponseAbuse": {
-        "required": [
-          "history",
-          "updatedAt"
-        ],
-        "type": "object",
-        "properties": {
-          "block": {
-            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseBlock"
-          },
-          "blockHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseBlockHistoryItem"
-            }
-          },
-          "history": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseHistoryItem"
-            }
-          },
-          "interstitial": {
-            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseInterstitial"
-          },
-          "interstitialHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseInterstitialHistoryItem"
-            }
-          },
-          "scanner": {
-            "type": "string"
-          },
-          "updatedAt": {
-            "type": "number"
-          }
         }
       },
       "UpdateMicrofrontends200ResponseAliasItem": {
@@ -149169,11 +148978,11 @@
           },
           "keepCurrentRetention": {
             "type": "boolean",
-            "description": "When true, opts the team out of the upcoming deployment-storage retention reduce (Medium/High cohorts). Does not change expiration settings. High cohort also requires acknowledgeStorageBilling; metering starts on reduce day."
+            "description": "When true, opts a Pro team out of the upcoming deployment-storage retention reduce. Does not change expiration settings. Unmetered teams also require acknowledgeStorageBilling."
           },
           "acknowledgeStorageBilling": {
             "type": "boolean",
-            "description": "Required for High cohort keepCurrentRetention (deferred billing), and when increasing any retention setting for a High cohort team after retention reduce and before metering."
+            "description": "Required with keepCurrentRetention for unmetered Pro teams; acknowledges that keeping current retention will incur storage billing on a later date."
           }
         },
         "additionalProperties": false
@@ -151763,9 +151572,6 @@
         ],
         "type": "object",
         "properties": {
-          "abuse": {
-            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuse"
-          },
           "accountId": {
             "type": "string"
           },
@@ -154798,9 +154604,6 @@
         ],
         "type": "object",
         "properties": {
-          "abuse": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuse"
-          },
           "accountId": {
             "type": "string"
           },
@@ -155000,9 +154803,6 @@
         ],
         "type": "object",
         "properties": {
-          "abuse": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuse"
-          },
           "accountId": {
             "type": "string"
           },
@@ -162144,45 +161944,6 @@
       "ReplaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfigRequestDataAdditionalProperties": {
         "type": "object"
       },
-      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuse": {
-        "required": [
-          "history",
-          "updatedAt"
-        ],
-        "type": "object",
-        "properties": {
-          "block": {
-            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlock"
-          },
-          "blockHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItem"
-            }
-          },
-          "history": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseHistoryItem"
-            }
-          },
-          "interstitial": {
-            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseInterstitial"
-          },
-          "interstitialHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseInterstitialHistoryItem"
-            }
-          },
-          "scanner": {
-            "type": "string"
-          },
-          "updatedAt": {
-            "type": "number"
-          }
-        }
-      },
       "GetMicrofrontendsInGroup200ResponseProjectsItemAliasItem": {
         "required": [
           "deployment",
@@ -166177,163 +165938,6 @@
           }
         }
       },
-      "CreateProject200ResponseAbuseBlock": {
-        "required": [
-          "action",
-          "createdAt",
-          "reason",
-          "statusCode"
-        ],
-        "type": "object",
-        "properties": {
-          "abuseAgentRunId": {
-            "type": "string",
-            "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
-          },
-          "action": {
-            "$ref": "#/components/schemas/BlockedAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "ineligibleForAppeal": {
-            "$ref": "#/components/schemas/CreateProject200ResponseAbuseBlockIneligibleForAppeal"
-          },
-          "isCascading": {
-            "$ref": "#/components/schemas/CreateProject200ResponseAbuseBlockIsCascading"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "registeredShaBlock": {
-            "$ref": "#/components/schemas/CreateProject200ResponseAbuseBlockRegisteredShaBlock"
-          },
-          "statusCode": {
-            "type": "number"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          }
-        }
-      },
-      "CreateProject200ResponseAbuseBlockHistoryItem": {
-        "required": [
-          "action",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "abuseAgentRunId": {
-            "type": "string",
-            "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
-          },
-          "action": {
-            "$ref": "#/components/schemas/CreateProject200ResponseAbuseBlockHistoryItemAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "ineligibleForAppeal": {
-            "$ref": "#/components/schemas/CreateProject200ResponseAbuseBlockHistoryItemIneligibleForAppeal"
-          },
-          "isCascading": {
-            "$ref": "#/components/schemas/CreateProject200ResponseAbuseBlockHistoryItemIsCascading"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "registeredShaBlock": {
-            "$ref": "#/components/schemas/CreateProject200ResponseAbuseBlockHistoryItemRegisteredShaBlock"
-          },
-          "statusCode": {
-            "type": "number"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          },
-          "route": {
-            "$ref": "#/components/schemas/CreateProject200ResponseAbuseBlockHistoryItemRoute"
-          }
-        }
-      },
-      "CreateProject200ResponseAbuseHistoryItem": {
-        "required": [
-          "at",
-          "by",
-          "byId",
-          "reason",
-          "scanner"
-        ],
-        "type": "object",
-        "properties": {
-          "at": {
-            "type": "number"
-          },
-          "by": {
-            "type": "string"
-          },
-          "byId": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "scanner": {
-            "type": "string"
-          }
-        }
-      },
-      "CreateProject200ResponseAbuseInterstitialHistoryItem": {
-        "required": [
-          "action",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "action": {
-            "$ref": "#/components/schemas/CreateProject200ResponseAbuseInterstitialHistoryItemAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          }
-        }
-      },
       "CreateProject200ResponseAliasItemDeployment": {
         "required": [
           "createdAt",
@@ -167440,163 +167044,6 @@
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/CreateProject200ResponseTrustedSourcesProjectsAdditionalProperties"
-        }
-      },
-      "GetProject200ResponseAbuseBlock": {
-        "required": [
-          "action",
-          "createdAt",
-          "reason",
-          "statusCode"
-        ],
-        "type": "object",
-        "properties": {
-          "abuseAgentRunId": {
-            "type": "string",
-            "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
-          },
-          "action": {
-            "$ref": "#/components/schemas/BlockedAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "ineligibleForAppeal": {
-            "$ref": "#/components/schemas/GetProject200ResponseAbuseBlockIneligibleForAppeal"
-          },
-          "isCascading": {
-            "$ref": "#/components/schemas/GetProject200ResponseAbuseBlockIsCascading"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "registeredShaBlock": {
-            "$ref": "#/components/schemas/GetProject200ResponseAbuseBlockRegisteredShaBlock"
-          },
-          "statusCode": {
-            "type": "number"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          }
-        }
-      },
-      "GetProject200ResponseAbuseBlockHistoryItem": {
-        "required": [
-          "action",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "abuseAgentRunId": {
-            "type": "string",
-            "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
-          },
-          "action": {
-            "$ref": "#/components/schemas/GetProject200ResponseAbuseBlockHistoryItemAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "ineligibleForAppeal": {
-            "$ref": "#/components/schemas/GetProject200ResponseAbuseBlockHistoryItemIneligibleForAppeal"
-          },
-          "isCascading": {
-            "$ref": "#/components/schemas/GetProject200ResponseAbuseBlockHistoryItemIsCascading"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "registeredShaBlock": {
-            "$ref": "#/components/schemas/GetProject200ResponseAbuseBlockHistoryItemRegisteredShaBlock"
-          },
-          "statusCode": {
-            "type": "number"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          },
-          "route": {
-            "$ref": "#/components/schemas/GetProject200ResponseAbuseBlockHistoryItemRoute"
-          }
-        }
-      },
-      "GetProject200ResponseAbuseHistoryItem": {
-        "required": [
-          "at",
-          "by",
-          "byId",
-          "reason",
-          "scanner"
-        ],
-        "type": "object",
-        "properties": {
-          "at": {
-            "type": "number"
-          },
-          "by": {
-            "type": "string"
-          },
-          "byId": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "scanner": {
-            "type": "string"
-          }
-        }
-      },
-      "GetProject200ResponseAbuseInterstitialHistoryItem": {
-        "required": [
-          "action",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "action": {
-            "$ref": "#/components/schemas/GetProject200ResponseAbuseInterstitialHistoryItemAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          }
         }
       },
       "GetProject200ResponseAliasItemDeployment": {
@@ -168852,163 +168299,6 @@
         },
         "additionalProperties": false
       },
-      "UpdateProject200ResponseAbuseBlock": {
-        "required": [
-          "action",
-          "createdAt",
-          "reason",
-          "statusCode"
-        ],
-        "type": "object",
-        "properties": {
-          "abuseAgentRunId": {
-            "type": "string",
-            "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
-          },
-          "action": {
-            "$ref": "#/components/schemas/BlockedAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "ineligibleForAppeal": {
-            "$ref": "#/components/schemas/UpdateProject200ResponseAbuseBlockIneligibleForAppeal"
-          },
-          "isCascading": {
-            "$ref": "#/components/schemas/UpdateProject200ResponseAbuseBlockIsCascading"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "registeredShaBlock": {
-            "$ref": "#/components/schemas/UpdateProject200ResponseAbuseBlockRegisteredShaBlock"
-          },
-          "statusCode": {
-            "type": "number"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          }
-        }
-      },
-      "UpdateProject200ResponseAbuseBlockHistoryItem": {
-        "required": [
-          "action",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "abuseAgentRunId": {
-            "type": "string",
-            "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
-          },
-          "action": {
-            "$ref": "#/components/schemas/UpdateProject200ResponseAbuseBlockHistoryItemAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "ineligibleForAppeal": {
-            "$ref": "#/components/schemas/UpdateProject200ResponseAbuseBlockHistoryItemIneligibleForAppeal"
-          },
-          "isCascading": {
-            "$ref": "#/components/schemas/UpdateProject200ResponseAbuseBlockHistoryItemIsCascading"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "registeredShaBlock": {
-            "$ref": "#/components/schemas/UpdateProject200ResponseAbuseBlockHistoryItemRegisteredShaBlock"
-          },
-          "statusCode": {
-            "type": "number"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          },
-          "route": {
-            "$ref": "#/components/schemas/UpdateProject200ResponseAbuseBlockHistoryItemRoute"
-          }
-        }
-      },
-      "UpdateProject200ResponseAbuseHistoryItem": {
-        "required": [
-          "at",
-          "by",
-          "byId",
-          "reason",
-          "scanner"
-        ],
-        "type": "object",
-        "properties": {
-          "at": {
-            "type": "number"
-          },
-          "by": {
-            "type": "string"
-          },
-          "byId": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "scanner": {
-            "type": "string"
-          }
-        }
-      },
-      "UpdateProject200ResponseAbuseInterstitialHistoryItem": {
-        "required": [
-          "action",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "action": {
-            "$ref": "#/components/schemas/UpdateProject200ResponseAbuseInterstitialHistoryItemAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          }
-        }
-      },
       "UpdateProject200ResponseAliasItemDeployment": {
         "required": [
           "createdAt",
@@ -170115,163 +169405,6 @@
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/UpdateProject200ResponseTrustedSourcesProjectsAdditionalProperties"
-        }
-      },
-      "UploadProjectAvatar200ResponseAbuseBlock": {
-        "required": [
-          "action",
-          "createdAt",
-          "reason",
-          "statusCode"
-        ],
-        "type": "object",
-        "properties": {
-          "abuseAgentRunId": {
-            "type": "string",
-            "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
-          },
-          "action": {
-            "$ref": "#/components/schemas/BlockedAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "ineligibleForAppeal": {
-            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseBlockIneligibleForAppeal"
-          },
-          "isCascading": {
-            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseBlockIsCascading"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "registeredShaBlock": {
-            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseBlockRegisteredShaBlock"
-          },
-          "statusCode": {
-            "type": "number"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          }
-        }
-      },
-      "UploadProjectAvatar200ResponseAbuseBlockHistoryItem": {
-        "required": [
-          "action",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "abuseAgentRunId": {
-            "type": "string",
-            "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
-          },
-          "action": {
-            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseBlockHistoryItemAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "ineligibleForAppeal": {
-            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseBlockHistoryItemIneligibleForAppeal"
-          },
-          "isCascading": {
-            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseBlockHistoryItemIsCascading"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "registeredShaBlock": {
-            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseBlockHistoryItemRegisteredShaBlock"
-          },
-          "statusCode": {
-            "type": "number"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          },
-          "route": {
-            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseBlockHistoryItemRoute"
-          }
-        }
-      },
-      "UploadProjectAvatar200ResponseAbuseHistoryItem": {
-        "required": [
-          "at",
-          "by",
-          "byId",
-          "reason",
-          "scanner"
-        ],
-        "type": "object",
-        "properties": {
-          "at": {
-            "type": "number"
-          },
-          "by": {
-            "type": "string"
-          },
-          "byId": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "scanner": {
-            "type": "string"
-          }
-        }
-      },
-      "UploadProjectAvatar200ResponseAbuseInterstitialHistoryItem": {
-        "required": [
-          "action",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "action": {
-            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseInterstitialHistoryItemAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          }
         }
       },
       "UploadProjectAvatar200ResponseAliasItemDeployment": {
@@ -172737,163 +171870,6 @@
           "note": {
             "type": "string",
             "description": "Optional note about the bypass to be displayed in the UI"
-          }
-        }
-      },
-      "UpdateMicrofrontends200ResponseAbuseBlock": {
-        "required": [
-          "action",
-          "createdAt",
-          "reason",
-          "statusCode"
-        ],
-        "type": "object",
-        "properties": {
-          "abuseAgentRunId": {
-            "type": "string",
-            "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
-          },
-          "action": {
-            "$ref": "#/components/schemas/BlockedAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "ineligibleForAppeal": {
-            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseBlockIneligibleForAppeal"
-          },
-          "isCascading": {
-            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseBlockIsCascading"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "registeredShaBlock": {
-            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseBlockRegisteredShaBlock"
-          },
-          "statusCode": {
-            "type": "number"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          }
-        }
-      },
-      "UpdateMicrofrontends200ResponseAbuseBlockHistoryItem": {
-        "required": [
-          "action",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "abuseAgentRunId": {
-            "type": "string",
-            "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
-          },
-          "action": {
-            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseBlockHistoryItemAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "ineligibleForAppeal": {
-            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseBlockHistoryItemIneligibleForAppeal"
-          },
-          "isCascading": {
-            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseBlockHistoryItemIsCascading"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "registeredShaBlock": {
-            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseBlockHistoryItemRegisteredShaBlock"
-          },
-          "statusCode": {
-            "type": "number"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          },
-          "route": {
-            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseBlockHistoryItemRoute"
-          }
-        }
-      },
-      "UpdateMicrofrontends200ResponseAbuseHistoryItem": {
-        "required": [
-          "at",
-          "by",
-          "byId",
-          "reason",
-          "scanner"
-        ],
-        "type": "object",
-        "properties": {
-          "at": {
-            "type": "number"
-          },
-          "by": {
-            "type": "string"
-          },
-          "byId": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "scanner": {
-            "type": "string"
-          }
-        }
-      },
-      "UpdateMicrofrontends200ResponseAbuseInterstitialHistoryItem": {
-        "required": [
-          "action",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "action": {
-            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseInterstitialHistoryItemAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
           }
         }
       },
@@ -177538,45 +176514,6 @@
         },
         "description": "A map of environments to override values for the secret, used for setting different values across deployments in production, preview, and development environments. Note: the same value will be used for all deployments in the given environment."
       },
-      "GetProjects200ResponseBranch1ValueItemAbuse": {
-        "required": [
-          "history",
-          "updatedAt"
-        ],
-        "type": "object",
-        "properties": {
-          "block": {
-            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseBlock"
-          },
-          "blockHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItem"
-            }
-          },
-          "history": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseHistoryItem"
-            }
-          },
-          "interstitial": {
-            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseInterstitial"
-          },
-          "interstitialHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseInterstitialHistoryItem"
-            }
-          },
-          "scanner": {
-            "type": "string"
-          },
-          "updatedAt": {
-            "type": "number"
-          }
-        }
-      },
       "GetProjects200ResponseBranch1ValueItemAliasItem": {
         "required": [
           "deployment",
@@ -179668,45 +178605,6 @@
         },
         "description": "The route definition from @vercel/routing-utils."
       },
-      "GetProjects200ResponseOneOf2ProjectsItemAbuse": {
-        "required": [
-          "history",
-          "updatedAt"
-        ],
-        "type": "object",
-        "properties": {
-          "block": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseBlock"
-          },
-          "blockHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItem"
-            }
-          },
-          "history": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseHistoryItem"
-            }
-          },
-          "interstitial": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseInterstitial"
-          },
-          "interstitialHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseInterstitialHistoryItem"
-            }
-          },
-          "scanner": {
-            "type": "string"
-          },
-          "updatedAt": {
-            "type": "number"
-          }
-        }
-      },
       "GetProjects200ResponseOneOf2ProjectsItemAliasItem": {
         "required": [
           "deployment",
@@ -180496,45 +179394,6 @@
           },
           "id": {
             "type": "string"
-          }
-        }
-      },
-      "GetProjects200ResponseOneOf3ProjectsItemAbuse": {
-        "required": [
-          "history",
-          "updatedAt"
-        ],
-        "type": "object",
-        "properties": {
-          "block": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseBlock"
-          },
-          "blockHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItem"
-            }
-          },
-          "history": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseHistoryItem"
-            }
-          },
-          "interstitial": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseInterstitial"
-          },
-          "interstitialHistory": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseInterstitialHistoryItem"
-            }
-          },
-          "scanner": {
-            "type": "string"
-          },
-          "updatedAt": {
-            "type": "number"
           }
         }
       },
@@ -188393,163 +187252,6 @@
           }
         }
       },
-      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlock": {
-        "required": [
-          "action",
-          "createdAt",
-          "reason",
-          "statusCode"
-        ],
-        "type": "object",
-        "properties": {
-          "abuseAgentRunId": {
-            "type": "string",
-            "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
-          },
-          "action": {
-            "$ref": "#/components/schemas/BlockedAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "ineligibleForAppeal": {
-            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockIneligibleForAppeal"
-          },
-          "isCascading": {
-            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockIsCascading"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "registeredShaBlock": {
-            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockRegisteredShaBlock"
-          },
-          "statusCode": {
-            "type": "number"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          }
-        }
-      },
-      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItem": {
-        "required": [
-          "action",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "abuseAgentRunId": {
-            "type": "string",
-            "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
-          },
-          "action": {
-            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "ineligibleForAppeal": {
-            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemIneligibleForAppeal"
-          },
-          "isCascading": {
-            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemIsCascading"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "registeredShaBlock": {
-            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemRegisteredShaBlock"
-          },
-          "statusCode": {
-            "type": "number"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          },
-          "route": {
-            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemRoute"
-          }
-        }
-      },
-      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseHistoryItem": {
-        "required": [
-          "at",
-          "by",
-          "byId",
-          "reason",
-          "scanner"
-        ],
-        "type": "object",
-        "properties": {
-          "at": {
-            "type": "number"
-          },
-          "by": {
-            "type": "string"
-          },
-          "byId": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "scanner": {
-            "type": "string"
-          }
-        }
-      },
-      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseInterstitialHistoryItem": {
-        "required": [
-          "action",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "action": {
-            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseInterstitialHistoryItemAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          }
-        }
-      },
       "GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemDeployment": {
         "required": [
           "createdAt",
@@ -190152,69 +188854,6 @@
           }
         }
       },
-      "CreateProject200ResponseAbuseBlockRegisteredShaBlock": {
-        "required": [
-          "createdAt",
-          "createdBy",
-          "sha"
-        ],
-        "type": "object",
-        "properties": {
-          "createdAt": {
-            "type": "string"
-          },
-          "createdBy": {
-            "type": "string"
-          },
-          "sha": {
-            "type": "string"
-          }
-        },
-        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
-      },
-      "CreateProject200ResponseAbuseBlockHistoryItemRegisteredShaBlock": {
-        "required": [
-          "createdAt",
-          "createdBy",
-          "sha"
-        ],
-        "type": "object",
-        "properties": {
-          "createdAt": {
-            "type": "string"
-          },
-          "createdBy": {
-            "type": "string"
-          },
-          "sha": {
-            "type": "string"
-          }
-        },
-        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
-      },
-      "CreateProject200ResponseAbuseBlockHistoryItemRoute": {
-        "type": "object",
-        "properties": {
-          "expiry": {
-            "type": "number"
-          },
-          "src": {
-            "type": "string"
-          },
-          "status": {
-            "type": "number"
-          },
-          "has": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CreateProject200ResponseAbuseBlockHistoryItemRouteHasItem"
-            }
-          },
-          "mitigate": {
-            "$ref": "#/components/schemas/CreateProject200ResponseAbuseBlockHistoryItemRouteMitigate"
-          }
-        }
-      },
       "CreateProject200ResponseAliasItemDeploymentAliasError": {
         "required": [
           "code",
@@ -190761,69 +189400,6 @@
           },
           "label": {
             "type": "string"
-          }
-        }
-      },
-      "GetProject200ResponseAbuseBlockRegisteredShaBlock": {
-        "required": [
-          "createdAt",
-          "createdBy",
-          "sha"
-        ],
-        "type": "object",
-        "properties": {
-          "createdAt": {
-            "type": "string"
-          },
-          "createdBy": {
-            "type": "string"
-          },
-          "sha": {
-            "type": "string"
-          }
-        },
-        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
-      },
-      "GetProject200ResponseAbuseBlockHistoryItemRegisteredShaBlock": {
-        "required": [
-          "createdAt",
-          "createdBy",
-          "sha"
-        ],
-        "type": "object",
-        "properties": {
-          "createdAt": {
-            "type": "string"
-          },
-          "createdBy": {
-            "type": "string"
-          },
-          "sha": {
-            "type": "string"
-          }
-        },
-        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
-      },
-      "GetProject200ResponseAbuseBlockHistoryItemRoute": {
-        "type": "object",
-        "properties": {
-          "expiry": {
-            "type": "number"
-          },
-          "src": {
-            "type": "string"
-          },
-          "status": {
-            "type": "number"
-          },
-          "has": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetProject200ResponseAbuseBlockHistoryItemRouteHasItem"
-            }
-          },
-          "mitigate": {
-            "$ref": "#/components/schemas/GetProject200ResponseAbuseBlockHistoryItemRouteMitigate"
           }
         }
       },
@@ -191396,69 +189972,6 @@
         },
         "additionalProperties": false
       },
-      "UpdateProject200ResponseAbuseBlockRegisteredShaBlock": {
-        "required": [
-          "createdAt",
-          "createdBy",
-          "sha"
-        ],
-        "type": "object",
-        "properties": {
-          "createdAt": {
-            "type": "string"
-          },
-          "createdBy": {
-            "type": "string"
-          },
-          "sha": {
-            "type": "string"
-          }
-        },
-        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
-      },
-      "UpdateProject200ResponseAbuseBlockHistoryItemRegisteredShaBlock": {
-        "required": [
-          "createdAt",
-          "createdBy",
-          "sha"
-        ],
-        "type": "object",
-        "properties": {
-          "createdAt": {
-            "type": "string"
-          },
-          "createdBy": {
-            "type": "string"
-          },
-          "sha": {
-            "type": "string"
-          }
-        },
-        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
-      },
-      "UpdateProject200ResponseAbuseBlockHistoryItemRoute": {
-        "type": "object",
-        "properties": {
-          "expiry": {
-            "type": "number"
-          },
-          "src": {
-            "type": "string"
-          },
-          "status": {
-            "type": "number"
-          },
-          "has": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UpdateProject200ResponseAbuseBlockHistoryItemRouteHasItem"
-            }
-          },
-          "mitigate": {
-            "$ref": "#/components/schemas/UpdateProject200ResponseAbuseBlockHistoryItemRouteMitigate"
-          }
-        }
-      },
       "UpdateProject200ResponseAliasItemDeploymentAliasError": {
         "required": [
           "code",
@@ -192005,69 +190518,6 @@
           },
           "label": {
             "type": "string"
-          }
-        }
-      },
-      "UploadProjectAvatar200ResponseAbuseBlockRegisteredShaBlock": {
-        "required": [
-          "createdAt",
-          "createdBy",
-          "sha"
-        ],
-        "type": "object",
-        "properties": {
-          "createdAt": {
-            "type": "string"
-          },
-          "createdBy": {
-            "type": "string"
-          },
-          "sha": {
-            "type": "string"
-          }
-        },
-        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
-      },
-      "UploadProjectAvatar200ResponseAbuseBlockHistoryItemRegisteredShaBlock": {
-        "required": [
-          "createdAt",
-          "createdBy",
-          "sha"
-        ],
-        "type": "object",
-        "properties": {
-          "createdAt": {
-            "type": "string"
-          },
-          "createdBy": {
-            "type": "string"
-          },
-          "sha": {
-            "type": "string"
-          }
-        },
-        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
-      },
-      "UploadProjectAvatar200ResponseAbuseBlockHistoryItemRoute": {
-        "type": "object",
-        "properties": {
-          "expiry": {
-            "type": "number"
-          },
-          "src": {
-            "type": "string"
-          },
-          "status": {
-            "type": "number"
-          },
-          "has": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseBlockHistoryItemRouteHasItem"
-            }
-          },
-          "mitigate": {
-            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseBlockHistoryItemRouteMitigate"
           }
         }
       },
@@ -192679,69 +191129,6 @@
           }
         },
         "description": "The checks to evaluate. An empty array means nothing is evaluated."
-      },
-      "UpdateMicrofrontends200ResponseAbuseBlockRegisteredShaBlock": {
-        "required": [
-          "createdAt",
-          "createdBy",
-          "sha"
-        ],
-        "type": "object",
-        "properties": {
-          "createdAt": {
-            "type": "string"
-          },
-          "createdBy": {
-            "type": "string"
-          },
-          "sha": {
-            "type": "string"
-          }
-        },
-        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
-      },
-      "UpdateMicrofrontends200ResponseAbuseBlockHistoryItemRegisteredShaBlock": {
-        "required": [
-          "createdAt",
-          "createdBy",
-          "sha"
-        ],
-        "type": "object",
-        "properties": {
-          "createdAt": {
-            "type": "string"
-          },
-          "createdBy": {
-            "type": "string"
-          },
-          "sha": {
-            "type": "string"
-          }
-        },
-        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
-      },
-      "UpdateMicrofrontends200ResponseAbuseBlockHistoryItemRoute": {
-        "type": "object",
-        "properties": {
-          "expiry": {
-            "type": "number"
-          },
-          "src": {
-            "type": "string"
-          },
-          "status": {
-            "type": "number"
-          },
-          "has": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseBlockHistoryItemRouteHasItem"
-            }
-          },
-          "mitigate": {
-            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseBlockHistoryItemRouteMitigate"
-          }
-        }
       },
       "UpdateMicrofrontends200ResponseAliasItemDeploymentAliasError": {
         "required": [
@@ -195723,163 +194110,6 @@
           }
         }
       },
-      "GetProjects200ResponseBranch1ValueItemAbuseBlock": {
-        "required": [
-          "action",
-          "createdAt",
-          "reason",
-          "statusCode"
-        ],
-        "type": "object",
-        "properties": {
-          "abuseAgentRunId": {
-            "type": "string",
-            "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
-          },
-          "action": {
-            "$ref": "#/components/schemas/BlockedAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "ineligibleForAppeal": {
-            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseBlockIneligibleForAppeal"
-          },
-          "isCascading": {
-            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseBlockIsCascading"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "registeredShaBlock": {
-            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseBlockRegisteredShaBlock"
-          },
-          "statusCode": {
-            "type": "number"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          }
-        }
-      },
-      "GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItem": {
-        "required": [
-          "action",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "abuseAgentRunId": {
-            "type": "string",
-            "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
-          },
-          "action": {
-            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "ineligibleForAppeal": {
-            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemIneligibleForAppeal"
-          },
-          "isCascading": {
-            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemIsCascading"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "registeredShaBlock": {
-            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemRegisteredShaBlock"
-          },
-          "statusCode": {
-            "type": "number"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          },
-          "route": {
-            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemRoute"
-          }
-        }
-      },
-      "GetProjects200ResponseBranch1ValueItemAbuseHistoryItem": {
-        "required": [
-          "at",
-          "by",
-          "byId",
-          "reason",
-          "scanner"
-        ],
-        "type": "object",
-        "properties": {
-          "at": {
-            "type": "number"
-          },
-          "by": {
-            "type": "string"
-          },
-          "byId": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "scanner": {
-            "type": "string"
-          }
-        }
-      },
-      "GetProjects200ResponseBranch1ValueItemAbuseInterstitialHistoryItem": {
-        "required": [
-          "action",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "action": {
-            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseInterstitialHistoryItemAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          }
-        }
-      },
       "GetProjects200ResponseBranch1ValueItemAliasItemDeployment": {
         "required": [
           "createdAt",
@@ -197723,163 +195953,6 @@
           }
         }
       },
-      "GetProjects200ResponseOneOf2ProjectsItemAbuseBlock": {
-        "required": [
-          "action",
-          "createdAt",
-          "reason",
-          "statusCode"
-        ],
-        "type": "object",
-        "properties": {
-          "abuseAgentRunId": {
-            "type": "string",
-            "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
-          },
-          "action": {
-            "$ref": "#/components/schemas/BlockedAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "ineligibleForAppeal": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseBlockIneligibleForAppeal"
-          },
-          "isCascading": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseBlockIsCascading"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "registeredShaBlock": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseBlockRegisteredShaBlock"
-          },
-          "statusCode": {
-            "type": "number"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          }
-        }
-      },
-      "GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItem": {
-        "required": [
-          "action",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "abuseAgentRunId": {
-            "type": "string",
-            "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
-          },
-          "action": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "ineligibleForAppeal": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemIneligibleForAppeal"
-          },
-          "isCascading": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemIsCascading"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "registeredShaBlock": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRegisteredShaBlock"
-          },
-          "statusCode": {
-            "type": "number"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          },
-          "route": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRoute"
-          }
-        }
-      },
-      "GetProjects200ResponseOneOf2ProjectsItemAbuseHistoryItem": {
-        "required": [
-          "at",
-          "by",
-          "byId",
-          "reason",
-          "scanner"
-        ],
-        "type": "object",
-        "properties": {
-          "at": {
-            "type": "number"
-          },
-          "by": {
-            "type": "string"
-          },
-          "byId": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "scanner": {
-            "type": "string"
-          }
-        }
-      },
-      "GetProjects200ResponseOneOf2ProjectsItemAbuseInterstitialHistoryItem": {
-        "required": [
-          "action",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "action": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseInterstitialHistoryItemAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          }
-        }
-      },
       "GetProjects200ResponseOneOf2ProjectsItemAliasItemDeployment": {
         "required": [
           "createdAt",
@@ -198686,163 +196759,6 @@
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemTrustedSourcesProjectsAdditionalProperties"
-        }
-      },
-      "GetProjects200ResponseOneOf3ProjectsItemAbuseBlock": {
-        "required": [
-          "action",
-          "createdAt",
-          "reason",
-          "statusCode"
-        ],
-        "type": "object",
-        "properties": {
-          "abuseAgentRunId": {
-            "type": "string",
-            "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
-          },
-          "action": {
-            "$ref": "#/components/schemas/BlockedAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "ineligibleForAppeal": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseBlockIneligibleForAppeal"
-          },
-          "isCascading": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseBlockIsCascading"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "registeredShaBlock": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseBlockRegisteredShaBlock"
-          },
-          "statusCode": {
-            "type": "number"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          }
-        }
-      },
-      "GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItem": {
-        "required": [
-          "action",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "abuseAgentRunId": {
-            "type": "string",
-            "description": "Since October 2026. The abuse agent run whose verdict led to this block. Absent on blocks made before the field existed, even agent-led ones."
-          },
-          "action": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "ineligibleForAppeal": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemIneligibleForAppeal"
-          },
-          "isCascading": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemIsCascading"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "registeredShaBlock": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRegisteredShaBlock"
-          },
-          "statusCode": {
-            "type": "number"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          },
-          "route": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRoute"
-          }
-        }
-      },
-      "GetProjects200ResponseOneOf3ProjectsItemAbuseHistoryItem": {
-        "required": [
-          "at",
-          "by",
-          "byId",
-          "reason",
-          "scanner"
-        ],
-        "type": "object",
-        "properties": {
-          "at": {
-            "type": "number"
-          },
-          "by": {
-            "type": "string"
-          },
-          "byId": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "scanner": {
-            "type": "string"
-          }
-        }
-      },
-      "GetProjects200ResponseOneOf3ProjectsItemAbuseInterstitialHistoryItem": {
-        "required": [
-          "action",
-          "createdAt"
-        ],
-        "type": "object",
-        "properties": {
-          "action": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseInterstitialHistoryItemAction"
-          },
-          "actor": {
-            "type": "string"
-          },
-          "caseId": {
-            "type": "string"
-          },
-          "comment": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "number"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "threadId": {
-            "type": "string",
-            "description": "Plain thread ID, recorded separately from \u0060caseId\u0060."
-          }
         }
       },
       "GetProjects200ResponseOneOf3ProjectsItemAliasItemDeployment": {
@@ -201529,69 +199445,6 @@
           "type": "string"
         }
       },
-      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockRegisteredShaBlock": {
-        "required": [
-          "createdAt",
-          "createdBy",
-          "sha"
-        ],
-        "type": "object",
-        "properties": {
-          "createdAt": {
-            "type": "string"
-          },
-          "createdBy": {
-            "type": "string"
-          },
-          "sha": {
-            "type": "string"
-          }
-        },
-        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
-      },
-      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemRegisteredShaBlock": {
-        "required": [
-          "createdAt",
-          "createdBy",
-          "sha"
-        ],
-        "type": "object",
-        "properties": {
-          "createdAt": {
-            "type": "string"
-          },
-          "createdBy": {
-            "type": "string"
-          },
-          "sha": {
-            "type": "string"
-          }
-        },
-        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
-      },
-      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemRoute": {
-        "type": "object",
-        "properties": {
-          "expiry": {
-            "type": "number"
-          },
-          "src": {
-            "type": "string"
-          },
-          "status": {
-            "type": "number"
-          },
-          "has": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemRouteHasItem"
-            }
-          },
-          "mitigate": {
-            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemRouteMitigate"
-          }
-        }
-      },
       "GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemDeploymentAliasError": {
         "required": [
           "code",
@@ -202298,35 +200151,6 @@
       "GetProjectTrace200ResponseTraceSpansItemEventsItemAttributes": {
         "type": "object"
       },
-      "CreateProject200ResponseAbuseBlockHistoryItemRouteHasItem": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "key": {
-            "$ref": "#/components/schemas/XVercelIpCountryKey"
-          },
-          "type": {
-            "$ref": "#/components/schemas/CreateProject200ResponseAbuseBlockHistoryItemRouteHasItemType"
-          },
-          "value": {
-            "$ref": "#/components/schemas/CreateProject200ResponseAbuseBlockHistoryItemRouteHasItemValue"
-          }
-        }
-      },
-      "CreateProject200ResponseAbuseBlockHistoryItemRouteMitigate": {
-        "required": [
-          "action"
-        ],
-        "type": "object",
-        "properties": {
-          "action": {
-            "$ref": "#/components/schemas/BlockLegalCwcAction"
-          }
-        }
-      },
       "CreateProject200ResponseSecurityRulesetsAdditionalPropertiesRateLimit": {
         "required": [
           "algo",
@@ -202385,35 +200209,6 @@
           }
         },
         "description": "Optional overrides for the default same-env-by-slug matching. Provide explicit rules to allow cross-env access or presets. An empty array denies all access and is only allowed for the current project."
-      },
-      "GetProject200ResponseAbuseBlockHistoryItemRouteHasItem": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "key": {
-            "$ref": "#/components/schemas/XVercelIpCountryKey"
-          },
-          "type": {
-            "$ref": "#/components/schemas/GetProject200ResponseAbuseBlockHistoryItemRouteHasItemType"
-          },
-          "value": {
-            "$ref": "#/components/schemas/GetProject200ResponseAbuseBlockHistoryItemRouteHasItemValue"
-          }
-        }
-      },
-      "GetProject200ResponseAbuseBlockHistoryItemRouteMitigate": {
-        "required": [
-          "action"
-        ],
-        "type": "object",
-        "properties": {
-          "action": {
-            "$ref": "#/components/schemas/BlockLegalCwcAction"
-          }
-        }
       },
       "GetProject200ResponseSecurityRulesetsAdditionalPropertiesRateLimit": {
         "required": [
@@ -202490,35 +200285,6 @@
         },
         "additionalProperties": false
       },
-      "UpdateProject200ResponseAbuseBlockHistoryItemRouteHasItem": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "key": {
-            "$ref": "#/components/schemas/XVercelIpCountryKey"
-          },
-          "type": {
-            "$ref": "#/components/schemas/UpdateProject200ResponseAbuseBlockHistoryItemRouteHasItemType"
-          },
-          "value": {
-            "$ref": "#/components/schemas/UpdateProject200ResponseAbuseBlockHistoryItemRouteHasItemValue"
-          }
-        }
-      },
-      "UpdateProject200ResponseAbuseBlockHistoryItemRouteMitigate": {
-        "required": [
-          "action"
-        ],
-        "type": "object",
-        "properties": {
-          "action": {
-            "$ref": "#/components/schemas/BlockLegalCwcAction"
-          }
-        }
-      },
       "UpdateProject200ResponseSecurityRulesetsAdditionalPropertiesRateLimit": {
         "required": [
           "algo",
@@ -202578,35 +200344,6 @@
         },
         "description": "Optional overrides for the default same-env-by-slug matching. Provide explicit rules to allow cross-env access or presets. An empty array denies all access and is only allowed for the current project."
       },
-      "UploadProjectAvatar200ResponseAbuseBlockHistoryItemRouteHasItem": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "key": {
-            "$ref": "#/components/schemas/XVercelIpCountryKey"
-          },
-          "type": {
-            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseBlockHistoryItemRouteHasItemType"
-          },
-          "value": {
-            "$ref": "#/components/schemas/UploadProjectAvatar200ResponseAbuseBlockHistoryItemRouteHasItemValue"
-          }
-        }
-      },
-      "UploadProjectAvatar200ResponseAbuseBlockHistoryItemRouteMitigate": {
-        "required": [
-          "action"
-        ],
-        "type": "object",
-        "properties": {
-          "action": {
-            "$ref": "#/components/schemas/BlockLegalCwcAction"
-          }
-        }
-      },
       "UploadProjectAvatar200ResponseSecurityRulesetsAdditionalPropertiesRateLimit": {
         "required": [
           "algo",
@@ -202665,35 +200402,6 @@
           }
         },
         "description": "Optional overrides for the default same-env-by-slug matching. Provide explicit rules to allow cross-env access or presets. An empty array denies all access and is only allowed for the current project."
-      },
-      "UpdateMicrofrontends200ResponseAbuseBlockHistoryItemRouteHasItem": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "key": {
-            "$ref": "#/components/schemas/XVercelIpCountryKey"
-          },
-          "type": {
-            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseBlockHistoryItemRouteHasItemType"
-          },
-          "value": {
-            "$ref": "#/components/schemas/UpdateMicrofrontends200ResponseAbuseBlockHistoryItemRouteHasItemValue"
-          }
-        }
-      },
-      "UpdateMicrofrontends200ResponseAbuseBlockHistoryItemRouteMitigate": {
-        "required": [
-          "action"
-        ],
-        "type": "object",
-        "properties": {
-          "action": {
-            "$ref": "#/components/schemas/BlockLegalCwcAction"
-          }
-        }
       },
       "UpdateMicrofrontends200ResponseSecurityRulesetsAdditionalPropertiesRateLimit": {
         "required": [
@@ -203702,69 +201410,6 @@
           },
           "conclusion": {
             "$ref": "#/components/schemas/GetVercelCiInvocationTree200ResponseJobsItemTasksItemRunCompletedConclusion"
-          }
-        }
-      },
-      "GetProjects200ResponseBranch1ValueItemAbuseBlockRegisteredShaBlock": {
-        "required": [
-          "createdAt",
-          "createdBy",
-          "sha"
-        ],
-        "type": "object",
-        "properties": {
-          "createdAt": {
-            "type": "string"
-          },
-          "createdBy": {
-            "type": "string"
-          },
-          "sha": {
-            "type": "string"
-          }
-        },
-        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
-      },
-      "GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemRegisteredShaBlock": {
-        "required": [
-          "createdAt",
-          "createdBy",
-          "sha"
-        ],
-        "type": "object",
-        "properties": {
-          "createdAt": {
-            "type": "string"
-          },
-          "createdBy": {
-            "type": "string"
-          },
-          "sha": {
-            "type": "string"
-          }
-        },
-        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
-      },
-      "GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemRoute": {
-        "type": "object",
-        "properties": {
-          "expiry": {
-            "type": "number"
-          },
-          "src": {
-            "type": "string"
-          },
-          "status": {
-            "type": "number"
-          },
-          "has": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemRouteHasItem"
-            }
-          },
-          "mitigate": {
-            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemRouteMitigate"
           }
         }
       },
@@ -204817,69 +202462,6 @@
           }
         }
       },
-      "GetProjects200ResponseOneOf2ProjectsItemAbuseBlockRegisteredShaBlock": {
-        "required": [
-          "createdAt",
-          "createdBy",
-          "sha"
-        ],
-        "type": "object",
-        "properties": {
-          "createdAt": {
-            "type": "string"
-          },
-          "createdBy": {
-            "type": "string"
-          },
-          "sha": {
-            "type": "string"
-          }
-        },
-        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
-      },
-      "GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRegisteredShaBlock": {
-        "required": [
-          "createdAt",
-          "createdBy",
-          "sha"
-        ],
-        "type": "object",
-        "properties": {
-          "createdAt": {
-            "type": "string"
-          },
-          "createdBy": {
-            "type": "string"
-          },
-          "sha": {
-            "type": "string"
-          }
-        },
-        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
-      },
-      "GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRoute": {
-        "type": "object",
-        "properties": {
-          "expiry": {
-            "type": "number"
-          },
-          "src": {
-            "type": "string"
-          },
-          "status": {
-            "type": "number"
-          },
-          "has": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRouteHasItem"
-            }
-          },
-          "mitigate": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRouteMitigate"
-          }
-        }
-      },
       "GetProjects200ResponseOneOf2ProjectsItemAliasItemDeploymentAliasError": {
         "required": [
           "code",
@@ -205432,69 +203014,6 @@
           },
           "label": {
             "type": "string"
-          }
-        }
-      },
-      "GetProjects200ResponseOneOf3ProjectsItemAbuseBlockRegisteredShaBlock": {
-        "required": [
-          "createdAt",
-          "createdBy",
-          "sha"
-        ],
-        "type": "object",
-        "properties": {
-          "createdAt": {
-            "type": "string"
-          },
-          "createdBy": {
-            "type": "string"
-          },
-          "sha": {
-            "type": "string"
-          }
-        },
-        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
-      },
-      "GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRegisteredShaBlock": {
-        "required": [
-          "createdAt",
-          "createdBy",
-          "sha"
-        ],
-        "type": "object",
-        "properties": {
-          "createdAt": {
-            "type": "string"
-          },
-          "createdBy": {
-            "type": "string"
-          },
-          "sha": {
-            "type": "string"
-          }
-        },
-        "description": "Since September 2026. Set on the live \u0060abuse.block\u0060 only, by the consumer that auto-registers this project\u0027s production git SHA in the lineage blocklist, so unblocking can disable the row this block created. Absent means this block registered nothing, which includes the case where registration was skipped because the SHA already belonged to an earlier block. Unblock must therefore clear only what is named here, never the project\u0027s current SHA, or it would disable another block\u0027s row."
-      },
-      "GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRoute": {
-        "type": "object",
-        "properties": {
-          "expiry": {
-            "type": "number"
-          },
-          "src": {
-            "type": "string"
-          },
-          "status": {
-            "type": "number"
-          },
-          "has": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRouteHasItem"
-            }
-          },
-          "mitigate": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRouteMitigate"
           }
         }
       },
@@ -206898,35 +204417,6 @@
           }
         }
       },
-      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemRouteHasItem": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "key": {
-            "$ref": "#/components/schemas/XVercelIpCountryKey"
-          },
-          "type": {
-            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemRouteHasItemType"
-          },
-          "value": {
-            "$ref": "#/components/schemas/GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemRouteHasItemValue"
-          }
-        }
-      },
-      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemRouteMitigate": {
-        "required": [
-          "action"
-        ],
-        "type": "object",
-        "properties": {
-          "action": {
-            "$ref": "#/components/schemas/BlockLegalCwcAction"
-          }
-        }
-      },
       "GetMicrofrontendsInGroup200ResponseProjectsItemSecurityRulesetsAdditionalPropertiesRateLimit": {
         "required": [
           "algo",
@@ -206989,17 +204479,6 @@
         },
         "description": "Optional overrides for the default same-env-by-slug matching. Provide explicit rules to allow cross-env access or presets. An empty array denies all access and is only allowed for the current project."
       },
-      "CreateProject200ResponseAbuseBlockHistoryItemRouteHasItemValue": {
-        "required": [
-          "eq"
-        ],
-        "type": "object",
-        "properties": {
-          "eq": {
-            "type": "string"
-          }
-        }
-      },
       "CreateProject200ResponseTrustedSourcesProjectsAdditionalPropertiesCustomAllowItemFrom": {
         "type": "object",
         "properties": {
@@ -207027,17 +204506,6 @@
               "type": "string"
             },
             "description": "System environment slugs (\u0060production\u0060, \u0060preview\u0060) and/or custom environment slugs defined on the referenced project."
-          }
-        }
-      },
-      "GetProject200ResponseAbuseBlockHistoryItemRouteHasItemValue": {
-        "required": [
-          "eq"
-        ],
-        "type": "object",
-        "properties": {
-          "eq": {
-            "type": "string"
           }
         }
       },
@@ -207071,17 +204539,6 @@
           }
         }
       },
-      "UpdateProject200ResponseAbuseBlockHistoryItemRouteHasItemValue": {
-        "required": [
-          "eq"
-        ],
-        "type": "object",
-        "properties": {
-          "eq": {
-            "type": "string"
-          }
-        }
-      },
       "UpdateProject200ResponseTrustedSourcesProjectsAdditionalPropertiesCustomAllowItemFrom": {
         "type": "object",
         "properties": {
@@ -207112,17 +204569,6 @@
           }
         }
       },
-      "UploadProjectAvatar200ResponseAbuseBlockHistoryItemRouteHasItemValue": {
-        "required": [
-          "eq"
-        ],
-        "type": "object",
-        "properties": {
-          "eq": {
-            "type": "string"
-          }
-        }
-      },
       "UploadProjectAvatar200ResponseTrustedSourcesProjectsAdditionalPropertiesCustomAllowItemFrom": {
         "type": "object",
         "properties": {
@@ -207150,17 +204596,6 @@
               "type": "string"
             },
             "description": "System environment slugs (\u0060production\u0060, \u0060preview\u0060) and/or custom environment slugs defined on the referenced project."
-          }
-        }
-      },
-      "UpdateMicrofrontends200ResponseAbuseBlockHistoryItemRouteHasItemValue": {
-        "required": [
-          "eq"
-        ],
-        "type": "object",
-        "properties": {
-          "eq": {
-            "type": "string"
           }
         }
       },
@@ -207868,35 +205303,6 @@
           }
         }
       },
-      "GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemRouteHasItem": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "key": {
-            "$ref": "#/components/schemas/XVercelIpCountryKey"
-          },
-          "type": {
-            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemRouteHasItemType"
-          },
-          "value": {
-            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemRouteHasItemValue"
-          }
-        }
-      },
-      "GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemRouteMitigate": {
-        "required": [
-          "action"
-        ],
-        "type": "object",
-        "properties": {
-          "action": {
-            "$ref": "#/components/schemas/BlockLegalCwcAction"
-          }
-        }
-      },
       "GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemMitigateErl": {
         "required": [
           "algo",
@@ -208078,35 +205484,6 @@
           }
         }
       },
-      "GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRouteHasItem": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "key": {
-            "$ref": "#/components/schemas/XVercelIpCountryKey"
-          },
-          "type": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRouteHasItemType"
-          },
-          "value": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRouteHasItemValue"
-          }
-        }
-      },
-      "GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRouteMitigate": {
-        "required": [
-          "action"
-        ],
-        "type": "object",
-        "properties": {
-          "action": {
-            "$ref": "#/components/schemas/BlockLegalCwcAction"
-          }
-        }
-      },
       "GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMitigateErl": {
         "required": [
           "algo",
@@ -208202,35 +205579,6 @@
           }
         },
         "description": "Optional overrides for the default same-env-by-slug matching. Provide explicit rules to allow cross-env access or presets. An empty array denies all access and is only allowed for the current project."
-      },
-      "GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRouteHasItem": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "key": {
-            "$ref": "#/components/schemas/XVercelIpCountryKey"
-          },
-          "type": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRouteHasItemType"
-          },
-          "value": {
-            "$ref": "#/components/schemas/GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRouteHasItemValue"
-          }
-        }
-      },
-      "GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRouteMitigate": {
-        "required": [
-          "action"
-        ],
-        "type": "object",
-        "properties": {
-          "action": {
-            "$ref": "#/components/schemas/BlockLegalCwcAction"
-          }
-        }
       },
       "GetProjects200ResponseOneOf3ProjectsItemSecurityRulesetsAdditionalPropertiesRateLimit": {
         "required": [
@@ -208591,17 +205939,6 @@
           "$ref": "#/components/schemas/ListFlagVersions200ResponseVersionsItemDataEnvironmentsAdditionalPropertiesTargetsAdditionalPropertiesAdditionalProperties"
         }
       },
-      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemRouteHasItemValue": {
-        "required": [
-          "eq"
-        ],
-        "type": "object",
-        "properties": {
-          "eq": {
-            "type": "string"
-          }
-        }
-      },
       "GetMicrofrontendsInGroup200ResponseProjectsItemTrustedSourcesProjectsAdditionalPropertiesCustomAllowItemFrom": {
         "type": "object",
         "properties": {
@@ -208696,17 +206033,6 @@
           }
         }
       },
-      "GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemRouteHasItemValue": {
-        "required": [
-          "eq"
-        ],
-        "type": "object",
-        "properties": {
-          "eq": {
-            "type": "string"
-          }
-        }
-      },
       "GetProjects200ResponseBranch1ValueItemTrustedSourcesProjectsAdditionalPropertiesCustomAllowItemFrom": {
         "type": "object",
         "properties": {
@@ -208737,17 +206063,6 @@
           }
         }
       },
-      "GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRouteHasItemValue": {
-        "required": [
-          "eq"
-        ],
-        "type": "object",
-        "properties": {
-          "eq": {
-            "type": "string"
-          }
-        }
-      },
       "GetProjects200ResponseOneOf2ProjectsItemTrustedSourcesProjectsAdditionalPropertiesCustomAllowItemFrom": {
         "type": "object",
         "properties": {
@@ -208775,17 +206090,6 @@
               "type": "string"
             },
             "description": "System environment slugs (\u0060production\u0060, \u0060preview\u0060) and/or custom environment slugs defined on the referenced project."
-          }
-        }
-      },
-      "GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRouteHasItemValue": {
-        "required": [
-          "eq"
-        ],
-        "type": "object",
-        "properties": {
-          "eq": {
-            "type": "string"
           }
         }
       },
@@ -222085,6 +219389,29 @@
           ]
         }
       },
+      "TeamDefaultContinuousUsageKind": {
+        "enum": [
+          "metered",
+          "unmetered"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Default continuous-usage billing kind for projects under this team. Absent means projects stay unmetered.",
+        "x-ms-enum": {
+          "name": "TeamDefaultContinuousUsageKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "metered",
+              "name": "Metered"
+            },
+            {
+              "value": "unmetered",
+              "name": "Unmetered"
+            }
+          ]
+        }
+      },
       "TeamDisableRepositoryDispatchEvents": {
         "enum": [
           false,
@@ -232966,9 +230293,13 @@
       },
       "TeamDeploymentStorageRolloutCohort": {
         "enum": [
+          "already_metered",
+          "extreme",
           "high",
           "low",
-          "medium"
+          "medium",
+          "medium_plus",
+          "metered_opt_in"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -232976,6 +230307,14 @@
           "name": "TeamDeploymentStorageRolloutCohort",
           "modelAsString": false,
           "values": [
+            {
+              "value": "already_metered",
+              "name": "AlreadyMetered"
+            },
+            {
+              "value": "extreme",
+              "name": "Extreme"
+            },
             {
               "value": "high",
               "name": "High"
@@ -232987,15 +230326,23 @@
             {
               "value": "medium",
               "name": "Medium"
+            },
+            {
+              "value": "medium_plus",
+              "name": "MediumPlus"
+            },
+            {
+              "value": "metered_opt_in",
+              "name": "MeteredOptIn"
             }
           ]
         }
       },
       "TeamDeploymentStorageRolloutMeterReason": {
         "enum": [
-          "high_retention_opt_in",
           "low_scheduled",
-          "medium_scheduled"
+          "medium_scheduled",
+          "retention_opt_out"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -233004,16 +230351,16 @@
           "modelAsString": false,
           "values": [
             {
-              "value": "high_retention_opt_in",
-              "name": "HighRetentionOptIn"
-            },
-            {
               "value": "low_scheduled",
               "name": "LowScheduled"
             },
             {
               "value": "medium_scheduled",
               "name": "MediumScheduled"
+            },
+            {
+              "value": "retention_opt_out",
+              "name": "RetentionOptOut"
             }
           ]
         }
@@ -273876,14 +271223,6 @@
           ]
         }
       },
-      "CreateProject200ResponseAbuseInterstitial": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
       "CreateProject200ResponseAliasItemConfiguredBy": {
         "enum": [
           "A",
@@ -275987,14 +273326,6 @@
       },
       "CreateProject200ResponseWebAnalyticsHasData": {
         "enum": [
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetProject200ResponseAbuseInterstitial": {
-        "enum": [
-          false,
           true
         ],
         "type": "boolean",
@@ -278670,14 +276001,6 @@
           ]
         }
       },
-      "UpdateProject200ResponseAbuseInterstitial": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
       "UpdateProject200ResponseAliasItemConfiguredBy": {
         "enum": [
           "A",
@@ -280763,14 +278086,6 @@
       },
       "UpdateProject200ResponseWebAnalyticsHasData": {
         "enum": [
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "UploadProjectAvatar200ResponseAbuseInterstitial": {
-        "enum": [
-          false,
           true
         ],
         "type": "boolean",
@@ -283890,14 +281205,6 @@
             }
           ]
         }
-      },
-      "UpdateMicrofrontends200ResponseAbuseInterstitial": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
       },
       "UpdateMicrofrontends200ResponseAliasItemConfiguredBy": {
         "enum": [
@@ -296468,14 +293775,6 @@
           ]
         }
       },
-      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseInterstitial": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
       "GetMicrofrontendsInGroup200ResponseProjectsItemAliasItemConfiguredBy": {
         "enum": [
           "A",
@@ -298882,119 +296181,6 @@
           ]
         }
       },
-      "BlockedAction": {
-        "enum": [
-          "blocked"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "BlockedAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "blocked",
-              "name": "Blocked"
-            }
-          ]
-        }
-      },
-      "CreateProject200ResponseAbuseBlockIneligibleForAppeal": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "CreateProject200ResponseAbuseBlockIsCascading": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "CreateProject200ResponseAbuseBlockHistoryItemAction": {
-        "enum": [
-          "blocked",
-          "unblocked",
-          "route-blocked",
-          "route-unblocked"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "CreateProject200ResponseAbuseBlockHistoryItemAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "blocked",
-              "name": "Blocked"
-            },
-            {
-              "value": "unblocked",
-              "name": "Unblocked"
-            },
-            {
-              "value": "route-blocked",
-              "name": "RouteBlocked"
-            },
-            {
-              "value": "route-unblocked",
-              "name": "RouteUnblocked"
-            }
-          ]
-        }
-      },
-      "CreateProject200ResponseAbuseBlockHistoryItemIneligibleForAppeal": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "CreateProject200ResponseAbuseBlockHistoryItemIsCascading": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "CreateProject200ResponseAbuseInterstitialHistoryItemAction": {
-        "enum": [
-          "add-deployment-interstitial",
-          "add-project-interstitial",
-          "remove-deployment-interstitial",
-          "remove-project-interstitial"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "CreateProject200ResponseAbuseInterstitialHistoryItemAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "add-deployment-interstitial",
-              "name": "AddDeploymentInterstitial"
-            },
-            {
-              "value": "add-project-interstitial",
-              "name": "AddProjectInterstitial"
-            },
-            {
-              "value": "remove-deployment-interstitial",
-              "name": "RemoveDeploymentInterstitial"
-            },
-            {
-              "value": "remove-project-interstitial",
-              "name": "RemoveProjectInterstitial"
-            }
-          ]
-        }
-      },
       "CreateProject200ResponseAliasItemDeploymentChecksConclusion": {
         "enum": [
           "canceled",
@@ -299984,102 +297170,6 @@
             {
               "value": "production",
               "name": "Production"
-            }
-          ]
-        }
-      },
-      "GetProject200ResponseAbuseBlockIneligibleForAppeal": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetProject200ResponseAbuseBlockIsCascading": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetProject200ResponseAbuseBlockHistoryItemAction": {
-        "enum": [
-          "blocked",
-          "unblocked",
-          "route-blocked",
-          "route-unblocked"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetProject200ResponseAbuseBlockHistoryItemAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "blocked",
-              "name": "Blocked"
-            },
-            {
-              "value": "unblocked",
-              "name": "Unblocked"
-            },
-            {
-              "value": "route-blocked",
-              "name": "RouteBlocked"
-            },
-            {
-              "value": "route-unblocked",
-              "name": "RouteUnblocked"
-            }
-          ]
-        }
-      },
-      "GetProject200ResponseAbuseBlockHistoryItemIneligibleForAppeal": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetProject200ResponseAbuseBlockHistoryItemIsCascading": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetProject200ResponseAbuseInterstitialHistoryItemAction": {
-        "enum": [
-          "add-deployment-interstitial",
-          "add-project-interstitial",
-          "remove-deployment-interstitial",
-          "remove-project-interstitial"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetProject200ResponseAbuseInterstitialHistoryItemAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "add-deployment-interstitial",
-              "name": "AddDeploymentInterstitial"
-            },
-            {
-              "value": "add-project-interstitial",
-              "name": "AddProjectInterstitial"
-            },
-            {
-              "value": "remove-deployment-interstitial",
-              "name": "RemoveDeploymentInterstitial"
-            },
-            {
-              "value": "remove-project-interstitial",
-              "name": "RemoveProjectInterstitial"
             }
           ]
         }
@@ -301115,102 +298205,6 @@
           ]
         }
       },
-      "UpdateProject200ResponseAbuseBlockIneligibleForAppeal": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "UpdateProject200ResponseAbuseBlockIsCascading": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "UpdateProject200ResponseAbuseBlockHistoryItemAction": {
-        "enum": [
-          "blocked",
-          "unblocked",
-          "route-blocked",
-          "route-unblocked"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "UpdateProject200ResponseAbuseBlockHistoryItemAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "blocked",
-              "name": "Blocked"
-            },
-            {
-              "value": "unblocked",
-              "name": "Unblocked"
-            },
-            {
-              "value": "route-blocked",
-              "name": "RouteBlocked"
-            },
-            {
-              "value": "route-unblocked",
-              "name": "RouteUnblocked"
-            }
-          ]
-        }
-      },
-      "UpdateProject200ResponseAbuseBlockHistoryItemIneligibleForAppeal": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "UpdateProject200ResponseAbuseBlockHistoryItemIsCascading": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "UpdateProject200ResponseAbuseInterstitialHistoryItemAction": {
-        "enum": [
-          "add-deployment-interstitial",
-          "add-project-interstitial",
-          "remove-deployment-interstitial",
-          "remove-project-interstitial"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "UpdateProject200ResponseAbuseInterstitialHistoryItemAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "add-deployment-interstitial",
-              "name": "AddDeploymentInterstitial"
-            },
-            {
-              "value": "add-project-interstitial",
-              "name": "AddProjectInterstitial"
-            },
-            {
-              "value": "remove-deployment-interstitial",
-              "name": "RemoveDeploymentInterstitial"
-            },
-            {
-              "value": "remove-project-interstitial",
-              "name": "RemoveProjectInterstitial"
-            }
-          ]
-        }
-      },
       "UpdateProject200ResponseAliasItemDeploymentChecksConclusion": {
         "enum": [
           "canceled",
@@ -302148,102 +299142,6 @@
             {
               "value": "production",
               "name": "Production"
-            }
-          ]
-        }
-      },
-      "UploadProjectAvatar200ResponseAbuseBlockIneligibleForAppeal": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "UploadProjectAvatar200ResponseAbuseBlockIsCascading": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "UploadProjectAvatar200ResponseAbuseBlockHistoryItemAction": {
-        "enum": [
-          "blocked",
-          "unblocked",
-          "route-blocked",
-          "route-unblocked"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "UploadProjectAvatar200ResponseAbuseBlockHistoryItemAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "blocked",
-              "name": "Blocked"
-            },
-            {
-              "value": "unblocked",
-              "name": "Unblocked"
-            },
-            {
-              "value": "route-blocked",
-              "name": "RouteBlocked"
-            },
-            {
-              "value": "route-unblocked",
-              "name": "RouteUnblocked"
-            }
-          ]
-        }
-      },
-      "UploadProjectAvatar200ResponseAbuseBlockHistoryItemIneligibleForAppeal": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "UploadProjectAvatar200ResponseAbuseBlockHistoryItemIsCascading": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "UploadProjectAvatar200ResponseAbuseInterstitialHistoryItemAction": {
-        "enum": [
-          "add-deployment-interstitial",
-          "add-project-interstitial",
-          "remove-deployment-interstitial",
-          "remove-project-interstitial"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "UploadProjectAvatar200ResponseAbuseInterstitialHistoryItemAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "add-deployment-interstitial",
-              "name": "AddDeploymentInterstitial"
-            },
-            {
-              "value": "add-project-interstitial",
-              "name": "AddProjectInterstitial"
-            },
-            {
-              "value": "remove-deployment-interstitial",
-              "name": "RemoveDeploymentInterstitial"
-            },
-            {
-              "value": "remove-project-interstitial",
-              "name": "RemoveProjectInterstitial"
             }
           ]
         }
@@ -304886,102 +301784,6 @@
         "type": "boolean",
         "additionalProperties": false,
         "description": "When there was only one bypass, it was automatically set as an env var on deployments. With multiple bypasses, there is always one bypass that is selected as the default, and gets set as an env var on deployments. As this is a new field, undefined means that the bypass is the env var. If there are any automation bypasses, exactly one must be the env var."
-      },
-      "UpdateMicrofrontends200ResponseAbuseBlockIneligibleForAppeal": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "UpdateMicrofrontends200ResponseAbuseBlockIsCascading": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "UpdateMicrofrontends200ResponseAbuseBlockHistoryItemAction": {
-        "enum": [
-          "blocked",
-          "unblocked",
-          "route-blocked",
-          "route-unblocked"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "UpdateMicrofrontends200ResponseAbuseBlockHistoryItemAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "blocked",
-              "name": "Blocked"
-            },
-            {
-              "value": "unblocked",
-              "name": "Unblocked"
-            },
-            {
-              "value": "route-blocked",
-              "name": "RouteBlocked"
-            },
-            {
-              "value": "route-unblocked",
-              "name": "RouteUnblocked"
-            }
-          ]
-        }
-      },
-      "UpdateMicrofrontends200ResponseAbuseBlockHistoryItemIneligibleForAppeal": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "UpdateMicrofrontends200ResponseAbuseBlockHistoryItemIsCascading": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "UpdateMicrofrontends200ResponseAbuseInterstitialHistoryItemAction": {
-        "enum": [
-          "add-deployment-interstitial",
-          "add-project-interstitial",
-          "remove-deployment-interstitial",
-          "remove-project-interstitial"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "UpdateMicrofrontends200ResponseAbuseInterstitialHistoryItemAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "add-deployment-interstitial",
-              "name": "AddDeploymentInterstitial"
-            },
-            {
-              "value": "add-project-interstitial",
-              "name": "AddProjectInterstitial"
-            },
-            {
-              "value": "remove-deployment-interstitial",
-              "name": "RemoveDeploymentInterstitial"
-            },
-            {
-              "value": "remove-project-interstitial",
-              "name": "RemoveProjectInterstitial"
-            }
-          ]
-        }
       },
       "UpdateMicrofrontends200ResponseAliasItemDeploymentChecksConclusion": {
         "enum": [
@@ -310188,14 +306990,6 @@
           ]
         }
       },
-      "GetProjects200ResponseBranch1ValueItemAbuseInterstitial": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
       "GetProjects200ResponseBranch1ValueItemAliasItemConfiguredBy": {
         "enum": [
           "A",
@@ -312442,14 +309236,6 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "GetProjects200ResponseOneOf2ProjectsItemAbuseInterstitial": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
       "GetProjects200ResponseOneOf2ProjectsItemAliasItemConfiguredBy": {
         "enum": [
           "A",
@@ -313417,14 +310203,6 @@
       },
       "GetProjects200ResponseOneOf2ProjectsItemWebAnalyticsHasData": {
         "enum": [
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetProjects200ResponseOneOf3ProjectsItemAbuseInterstitial": {
-        "enum": [
-          false,
           true
         ],
         "type": "boolean",
@@ -320130,102 +316908,6 @@
             {
               "value": "enabled",
               "name": "Enabled"
-            }
-          ]
-        }
-      },
-      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockIneligibleForAppeal": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockIsCascading": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemAction": {
-        "enum": [
-          "blocked",
-          "unblocked",
-          "route-blocked",
-          "route-unblocked"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "blocked",
-              "name": "Blocked"
-            },
-            {
-              "value": "unblocked",
-              "name": "Unblocked"
-            },
-            {
-              "value": "route-blocked",
-              "name": "RouteBlocked"
-            },
-            {
-              "value": "route-unblocked",
-              "name": "RouteUnblocked"
-            }
-          ]
-        }
-      },
-      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemIneligibleForAppeal": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemIsCascading": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseInterstitialHistoryItemAction": {
-        "enum": [
-          "add-deployment-interstitial",
-          "add-project-interstitial",
-          "remove-deployment-interstitial",
-          "remove-project-interstitial"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseInterstitialHistoryItemAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "add-deployment-interstitial",
-              "name": "AddDeploymentInterstitial"
-            },
-            {
-              "value": "add-project-interstitial",
-              "name": "AddProjectInterstitial"
-            },
-            {
-              "value": "remove-deployment-interstitial",
-              "name": "RemoveDeploymentInterstitial"
-            },
-            {
-              "value": "remove-project-interstitial",
-              "name": "RemoveProjectInterstitial"
             }
           ]
         }
@@ -327947,102 +324629,6 @@
           ]
         }
       },
-      "GetProjects200ResponseBranch1ValueItemAbuseBlockIneligibleForAppeal": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetProjects200ResponseBranch1ValueItemAbuseBlockIsCascading": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemAction": {
-        "enum": [
-          "blocked",
-          "unblocked",
-          "route-blocked",
-          "route-unblocked"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "blocked",
-              "name": "Blocked"
-            },
-            {
-              "value": "unblocked",
-              "name": "Unblocked"
-            },
-            {
-              "value": "route-blocked",
-              "name": "RouteBlocked"
-            },
-            {
-              "value": "route-unblocked",
-              "name": "RouteUnblocked"
-            }
-          ]
-        }
-      },
-      "GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemIneligibleForAppeal": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemIsCascading": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetProjects200ResponseBranch1ValueItemAbuseInterstitialHistoryItemAction": {
-        "enum": [
-          "add-deployment-interstitial",
-          "add-project-interstitial",
-          "remove-deployment-interstitial",
-          "remove-project-interstitial"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetProjects200ResponseBranch1ValueItemAbuseInterstitialHistoryItemAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "add-deployment-interstitial",
-              "name": "AddDeploymentInterstitial"
-            },
-            {
-              "value": "add-project-interstitial",
-              "name": "AddProjectInterstitial"
-            },
-            {
-              "value": "remove-deployment-interstitial",
-              "name": "RemoveDeploymentInterstitial"
-            },
-            {
-              "value": "remove-project-interstitial",
-              "name": "RemoveProjectInterstitial"
-            }
-          ]
-        }
-      },
       "GetProjects200ResponseBranch1ValueItemAliasItemDeploymentChecksConclusion": {
         "enum": [
           "canceled",
@@ -331754,102 +328340,6 @@
           ]
         }
       },
-      "GetProjects200ResponseOneOf2ProjectsItemAbuseBlockIneligibleForAppeal": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetProjects200ResponseOneOf2ProjectsItemAbuseBlockIsCascading": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemAction": {
-        "enum": [
-          "blocked",
-          "unblocked",
-          "route-blocked",
-          "route-unblocked"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "blocked",
-              "name": "Blocked"
-            },
-            {
-              "value": "unblocked",
-              "name": "Unblocked"
-            },
-            {
-              "value": "route-blocked",
-              "name": "RouteBlocked"
-            },
-            {
-              "value": "route-unblocked",
-              "name": "RouteUnblocked"
-            }
-          ]
-        }
-      },
-      "GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemIneligibleForAppeal": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemIsCascading": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetProjects200ResponseOneOf2ProjectsItemAbuseInterstitialHistoryItemAction": {
-        "enum": [
-          "add-deployment-interstitial",
-          "add-project-interstitial",
-          "remove-deployment-interstitial",
-          "remove-project-interstitial"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetProjects200ResponseOneOf2ProjectsItemAbuseInterstitialHistoryItemAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "add-deployment-interstitial",
-              "name": "AddDeploymentInterstitial"
-            },
-            {
-              "value": "add-project-interstitial",
-              "name": "AddProjectInterstitial"
-            },
-            {
-              "value": "remove-deployment-interstitial",
-              "name": "RemoveDeploymentInterstitial"
-            },
-            {
-              "value": "remove-project-interstitial",
-              "name": "RemoveProjectInterstitial"
-            }
-          ]
-        }
-      },
       "GetProjects200ResponseOneOf2ProjectsItemAliasItemDeploymentChecksConclusion": {
         "enum": [
           "canceled",
@@ -332567,102 +329057,6 @@
         ],
         "type": "boolean",
         "additionalProperties": false
-      },
-      "GetProjects200ResponseOneOf3ProjectsItemAbuseBlockIneligibleForAppeal": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetProjects200ResponseOneOf3ProjectsItemAbuseBlockIsCascading": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemAction": {
-        "enum": [
-          "blocked",
-          "unblocked",
-          "route-blocked",
-          "route-unblocked"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "blocked",
-              "name": "Blocked"
-            },
-            {
-              "value": "unblocked",
-              "name": "Unblocked"
-            },
-            {
-              "value": "route-blocked",
-              "name": "RouteBlocked"
-            },
-            {
-              "value": "route-unblocked",
-              "name": "RouteUnblocked"
-            }
-          ]
-        }
-      },
-      "GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemIneligibleForAppeal": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemIsCascading": {
-        "enum": [
-          false,
-          true
-        ],
-        "type": "boolean",
-        "additionalProperties": false
-      },
-      "GetProjects200ResponseOneOf3ProjectsItemAbuseInterstitialHistoryItemAction": {
-        "enum": [
-          "add-deployment-interstitial",
-          "add-project-interstitial",
-          "remove-deployment-interstitial",
-          "remove-project-interstitial"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetProjects200ResponseOneOf3ProjectsItemAbuseInterstitialHistoryItemAction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "add-deployment-interstitial",
-              "name": "AddDeploymentInterstitial"
-            },
-            {
-              "value": "add-project-interstitial",
-              "name": "AddProjectInterstitial"
-            },
-            {
-              "value": "remove-deployment-interstitial",
-              "name": "RemoveDeploymentInterstitial"
-            },
-            {
-              "value": "remove-project-interstitial",
-              "name": "RemoveProjectInterstitial"
-            }
-          ]
-        }
       },
       "GetProjects200ResponseOneOf3ProjectsItemAliasItemDeploymentChecksConclusion": {
         "enum": [
@@ -334904,28 +331298,6 @@
           ]
         }
       },
-      "CreateProject200ResponseAbuseBlockHistoryItemRouteHasItemType": {
-        "enum": [
-          "header",
-          "host"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "CreateProject200ResponseAbuseBlockHistoryItemRouteHasItemType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "header",
-              "name": "Header"
-            },
-            {
-              "value": "host",
-              "name": "Host"
-            }
-          ]
-        }
-      },
       "CreateProject200ResponseSecurityRulesetsAdditionalPropertiesRateLimitAlgo": {
         "enum": [
           "fixed_window",
@@ -334955,28 +331327,6 @@
         ],
         "type": "boolean",
         "additionalProperties": false
-      },
-      "GetProject200ResponseAbuseBlockHistoryItemRouteHasItemType": {
-        "enum": [
-          "header",
-          "host"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetProject200ResponseAbuseBlockHistoryItemRouteHasItemType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "header",
-              "name": "Header"
-            },
-            {
-              "value": "host",
-              "name": "Host"
-            }
-          ]
-        }
       },
       "GetProject200ResponseSecurityRulesetsAdditionalPropertiesRateLimitAlgo": {
         "enum": [
@@ -335008,28 +331358,6 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UpdateProject200ResponseAbuseBlockHistoryItemRouteHasItemType": {
-        "enum": [
-          "header",
-          "host"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "UpdateProject200ResponseAbuseBlockHistoryItemRouteHasItemType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "header",
-              "name": "Header"
-            },
-            {
-              "value": "host",
-              "name": "Host"
-            }
-          ]
-        }
-      },
       "UpdateProject200ResponseSecurityRulesetsAdditionalPropertiesRateLimitAlgo": {
         "enum": [
           "fixed_window",
@@ -335060,28 +331388,6 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UploadProjectAvatar200ResponseAbuseBlockHistoryItemRouteHasItemType": {
-        "enum": [
-          "header",
-          "host"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "UploadProjectAvatar200ResponseAbuseBlockHistoryItemRouteHasItemType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "header",
-              "name": "Header"
-            },
-            {
-              "value": "host",
-              "name": "Host"
-            }
-          ]
-        }
-      },
       "UploadProjectAvatar200ResponseSecurityRulesetsAdditionalPropertiesRateLimitAlgo": {
         "enum": [
           "fixed_window",
@@ -335111,28 +331417,6 @@
         ],
         "type": "boolean",
         "additionalProperties": false
-      },
-      "UpdateMicrofrontends200ResponseAbuseBlockHistoryItemRouteHasItemType": {
-        "enum": [
-          "header",
-          "host"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "UpdateMicrofrontends200ResponseAbuseBlockHistoryItemRouteHasItemType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "header",
-              "name": "Header"
-            },
-            {
-              "value": "host",
-              "name": "Host"
-            }
-          ]
-        }
       },
       "UpdateMicrofrontends200ResponseSecurityRulesetsAdditionalPropertiesRateLimitAlgo": {
         "enum": [
@@ -340370,28 +336654,6 @@
           ]
         }
       },
-      "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemRouteHasItemType": {
-        "enum": [
-          "header",
-          "host"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemRouteHasItemType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "header",
-              "name": "Header"
-            },
-            {
-              "value": "host",
-              "name": "Host"
-            }
-          ]
-        }
-      },
       "GetMicrofrontendsInGroup200ResponseProjectsItemSecurityRulesetsAdditionalPropertiesRateLimitAction": {
         "enum": [
           "challenge",
@@ -340873,28 +337135,6 @@
           ]
         }
       },
-      "GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemRouteHasItemType": {
-        "enum": [
-          "header",
-          "host"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetProjects200ResponseBranch1ValueItemAbuseBlockHistoryItemRouteHasItemType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "header",
-              "name": "Header"
-            },
-            {
-              "value": "host",
-              "name": "Host"
-            }
-          ]
-        }
-      },
       "GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemMitigateErlAlgo": {
         "enum": [
           "fixed_window",
@@ -340977,28 +337217,6 @@
           ]
         }
       },
-      "GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRouteHasItemType": {
-        "enum": [
-          "header",
-          "host"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetProjects200ResponseOneOf2ProjectsItemAbuseBlockHistoryItemRouteHasItemType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "header",
-              "name": "Header"
-            },
-            {
-              "value": "host",
-              "name": "Host"
-            }
-          ]
-        }
-      },
       "GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMitigateErlAlgo": {
         "enum": [
           "fixed_window",
@@ -341050,28 +337268,6 @@
         ],
         "type": "boolean",
         "additionalProperties": false
-      },
-      "GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRouteHasItemType": {
-        "enum": [
-          "header",
-          "host"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "GetProjects200ResponseOneOf3ProjectsItemAbuseBlockHistoryItemRouteHasItemType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "header",
-              "name": "Header"
-            },
-            {
-              "value": "host",
-              "name": "Host"
-            }
-          ]
-        }
       },
       "GetProjects200ResponseOneOf3ProjectsItemSecurityRulesetsAdditionalPropertiesRateLimitAlgo": {
         "enum": [

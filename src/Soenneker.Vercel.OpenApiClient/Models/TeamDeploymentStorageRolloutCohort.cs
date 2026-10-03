@@ -8,6 +8,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum TeamDeploymentStorageRolloutCohort
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "already_metered")]
+        #pragma warning disable CS1591
+        AlreadyMetered,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "extreme")]
+        #pragma warning disable CS1591
+        Extreme,
+        #pragma warning restore CS1591
         [EnumMember(Value = "high")]
         #pragma warning disable CS1591
         High,
@@ -19,6 +27,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "medium")]
         #pragma warning disable CS1591
         Medium,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "medium_plus")]
+        #pragma warning disable CS1591
+        MediumPlus,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "metered_opt_in")]
+        #pragma warning disable CS1591
+        MeteredOptIn,
         #pragma warning restore CS1591
     }
 }

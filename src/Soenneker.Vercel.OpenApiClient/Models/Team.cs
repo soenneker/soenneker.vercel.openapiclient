@@ -53,6 +53,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string CreatorId { get; set; }
 #endif
+        /// <summary>Default continuous-usage billing kind for projects under this team. Absent means projects stay unmetered.</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultContinuousUsageKind? DefaultContinuousUsageKind { get; set; }
         /// <summary>Default deployment protection for this team null indicates protection is disabled</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,7 +103,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentPolicy DeploymentPolicy { get; set; }
 #endif
-        /// <summary>Phase 2 Pro deployment-storage pricing rollout cohort and milestones. Absent when the team is not in a Phase 2 Pro cohort.</summary>
+        /// <summary>Pro deployment-storage pricing rollout cohort and milestones. Absent when the team has not been placed in a rollout cohort yet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamDeploymentStorageRollout? DeploymentStorageRollout { get; set; }
@@ -335,6 +337,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "connect", n => { Connect = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamConnect>(global::Soenneker.Vercel.OpenApiClient.Models.TeamConnect.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "creatorId", n => { CreatorId = n.GetStringValue(); } },
+                { "defaultContinuousUsageKind", n => { DefaultContinuousUsageKind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultContinuousUsageKind>(); } },
                 { "defaultDeploymentProtection", n => { DefaultDeploymentProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtection>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtection.CreateFromDiscriminatorValue); } },
                 { "defaultExpirationSettings", n => { DefaultExpirationSettings = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultExpirationSettings>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultExpirationSettings.CreateFromDiscriminatorValue); } },
                 { "defaultPassport", n => { DefaultPassport = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultPassport>(global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultPassport.CreateFromDiscriminatorValue); } },
@@ -392,6 +395,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamConnect>("connect", Connect);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteStringValue("creatorId", CreatorId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultContinuousUsageKind>("defaultContinuousUsageKind", DefaultContinuousUsageKind);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtection>("defaultDeploymentProtection", DefaultDeploymentProtection);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultExpirationSettings>("defaultExpirationSettings", DefaultExpirationSettings);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultPassport>("defaultPassport", DefaultPassport);

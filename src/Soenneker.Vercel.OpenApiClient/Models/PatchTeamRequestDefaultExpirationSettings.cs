@@ -12,7 +12,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class PatchTeamRequestDefaultExpirationSettings : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Required for High cohort keepCurrentRetention (deferred billing), and when increasing any retention setting for a High cohort team after retention reduce and before metering.</summary>
+        /// <summary>Required with keepCurrentRetention for unmetered Pro teams; acknowledges that keeping current retention will incur storage billing on a later date.</summary>
         public bool? AcknowledgeStorageBilling { get; set; }
         /// <summary>The time period to keep non-production deployments for</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpiration? Expiration { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationErrored? ExpirationErrored { get; set; }
         /// <summary>The time period to keep production deployments for</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.PatchTeamRequestDefaultExpirationSettingsExpirationProduction? ExpirationProduction { get; set; }
-        /// <summary>When true, opts the team out of the upcoming deployment-storage retention reduce (Medium/High cohorts). Does not change expiration settings. High cohort also requires acknowledgeStorageBilling; metering starts on reduce day.</summary>
+        /// <summary>When true, opts a Pro team out of the upcoming deployment-storage retention reduce. Does not change expiration settings. Unmetered teams also require acknowledgeStorageBilling.</summary>
         public bool? KeepCurrentRetention { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -12,14 +12,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class UploadProjectAvatar200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The abuse property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseAbuse? Abuse { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseAbuse Abuse { get; set; }
-#endif
         /// <summary>The accountId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -623,7 +615,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "abuse", n => { Abuse = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseAbuse>(global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseAbuse.CreateFromDiscriminatorValue); } },
                 { "accountId", n => { AccountId = n.GetStringValue(); } },
                 { "alias", n => { Alias = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseAliasItem>(global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseAliasItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "analytics", n => { Analytics = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseAnalytics>(global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseAnalytics.CreateFromDiscriminatorValue); } },
@@ -729,7 +720,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseAbuse>("abuse", Abuse);
             writer.WriteStringValue("accountId", AccountId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseAliasItem>("alias", Alias);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UploadProjectAvatar200ResponseAnalytics>("analytics", Analytics);

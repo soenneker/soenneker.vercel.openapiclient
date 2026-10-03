@@ -3,18 +3,17 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>Default continuous-usage billing kind for projects under this team. Absent means projects stay unmetered.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public enum GetMicrofrontendsInGroup200ResponseProjectsItemAbuseBlockHistoryItemRouteHasItemType
-    #pragma warning restore CS1591
+    public enum TeamDefaultContinuousUsageKind
     {
-        [EnumMember(Value = "header")]
+        [EnumMember(Value = "metered")]
         #pragma warning disable CS1591
-        Header,
+        Metered,
         #pragma warning restore CS1591
-        [EnumMember(Value = "host")]
+        [EnumMember(Value = "unmetered")]
         #pragma warning disable CS1591
-        Host,
+        Unmetered,
         #pragma warning restore CS1591
     }
 }

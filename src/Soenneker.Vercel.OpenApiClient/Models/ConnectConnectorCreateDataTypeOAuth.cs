@@ -76,6 +76,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string DefaultAudience { get; set; }
 #endif
+        /// <summary>Default RFC 8707 resource sent on authorization and token requests when a token request omits one. An empty string clears the default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DefaultResource { get; set; }
+#nullable restore
+#else
+        public string DefaultResource { get; set; }
+#endif
         /// <summary>Default token lifetime in seconds to use when the token response omits expires_in.</summary>
         public double? DefaultTokenExpiresIn { get; set; }
         /// <summary>Allow-list of extra claims to propagate, keyed by source (idToken). Only claims named here and present in that source are exposed.</summary>
@@ -170,6 +178,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "clientSecret", n => { ClientSecret = n.GetStringValue(); } },
                 { "codeChallengeMethod", n => { CodeChallengeMethod = n.GetStringValue(); } },
                 { "defaultAudience", n => { DefaultAudience = n.GetStringValue(); } },
+                { "defaultResource", n => { DefaultResource = n.GetStringValue(); } },
                 { "defaultTokenExpiresIn", n => { DefaultTokenExpiresIn = n.GetDoubleValue(); } },
                 { "forwardedClaims", n => { ForwardedClaims = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeOAuthForwardedClaims>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeOAuthForwardedClaims.CreateFromDiscriminatorValue); } },
                 { "jwtBearer", n => { JwtBearer = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeOAuthJwtBearer>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeOAuthJwtBearer.CreateFromDiscriminatorValue); } },
@@ -197,6 +206,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("clientSecret", ClientSecret);
             writer.WriteStringValue("codeChallengeMethod", CodeChallengeMethod);
             writer.WriteStringValue("defaultAudience", DefaultAudience);
+            writer.WriteStringValue("defaultResource", DefaultResource);
             writer.WriteDoubleValue("defaultTokenExpiresIn", DefaultTokenExpiresIn);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeOAuthForwardedClaims>("forwardedClaims", ForwardedClaims);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateDataTypeOAuthJwtBearer>("jwtBearer", JwtBearer);

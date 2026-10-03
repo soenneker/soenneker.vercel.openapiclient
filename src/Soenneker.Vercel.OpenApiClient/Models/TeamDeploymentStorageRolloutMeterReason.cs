@@ -8,10 +8,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum TeamDeploymentStorageRolloutMeterReason
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "high_retention_opt_in")]
-        #pragma warning disable CS1591
-        HighRetentionOptIn,
-        #pragma warning restore CS1591
         [EnumMember(Value = "low_scheduled")]
         #pragma warning disable CS1591
         LowScheduled,
@@ -19,6 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "medium_scheduled")]
         #pragma warning disable CS1591
         MediumScheduled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "retention_opt_out")]
+        #pragma warning disable CS1591
+        RetentionOptOut,
         #pragma warning restore CS1591
     }
 }
