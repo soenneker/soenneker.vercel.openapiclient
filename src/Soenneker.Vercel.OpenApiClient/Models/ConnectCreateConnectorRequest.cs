@@ -111,14 +111,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Target { get; set; }
 #endif
-        /// <summary>Trigger configuration, validated and encrypted by the trigger driver. An empty object applies driver defaults.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerDataProperty? TriggerData { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerDataProperty TriggerData { get; set; }
-#endif
         /// <summary>Initial trigger destination. Requires triggers to be enabled and a projectId here or at the top level. Connector responses expose the resulting set as triggerDestinations. Replace the complete set with PATCH /v1/connect/connectors/{connector}/trigger-destinations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -126,6 +118,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerDestination TriggerDestination { get; set; }
+#endif
+        /// <summary>Additional registration inputs, validated by the trigger driver. Requires triggers: true. Shared verification credentials are read from triggerData.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerRegistrationInputProperty? TriggerRegistrationInput { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerRegistrationInputProperty TriggerRegistrationInput { get; set; }
 #endif
         /// <summary>Whether the triggers are enabled for this connector.</summary>
         public bool? Triggers { get; set; }
@@ -136,6 +136,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string TriggerType { get; set; }
+#endif
+        /// <summary>Plaintext verification inputs, validated by the trigger driver and encrypted into stored triggerData. An empty object makes no changes.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerVerificationInputProperty? TriggerVerificationInput { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerVerificationInputProperty TriggerVerificationInput { get; set; }
 #endif
         /// <summary>Connector implementation type for full configuration. Known types: api-key, discord, github, linear, linq, microsoft-entra, oauth, photon, salesforce, sendblue, slack, snowflake, snowflake-wif. Optional when service and connectionMethod select the type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -190,9 +198,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "service", n => { Service = n.GetStringValue(); } },
                 { "target", n => { Target = n.GetStringValue(); } },
-                { "triggerData", n => { TriggerData = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerDataProperty>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerDataProperty.CreateFromDiscriminatorValue); } },
                 { "triggerDestination", n => { TriggerDestination = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerDestination>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerDestination.CreateFromDiscriminatorValue); } },
+                { "triggerRegistrationInput", n => { TriggerRegistrationInput = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerRegistrationInputProperty>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerRegistrationInputProperty.CreateFromDiscriminatorValue); } },
                 { "triggerType", n => { TriggerType = n.GetStringValue(); } },
+                { "triggerVerificationInput", n => { TriggerVerificationInput = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerVerificationInputProperty>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerVerificationInputProperty.CreateFromDiscriminatorValue); } },
                 { "triggers", n => { Triggers = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
@@ -217,10 +226,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("service", Service);
             writer.WriteStringValue("target", Target);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerDataProperty>("triggerData", TriggerData);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerDestination>("triggerDestination", TriggerDestination);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerRegistrationInputProperty>("triggerRegistrationInput", TriggerRegistrationInput);
             writer.WriteBoolValue("triggers", Triggers);
             writer.WriteStringValue("triggerType", TriggerType);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectCreateConnectorRequestTriggerVerificationInputProperty>("triggerVerificationInput", TriggerVerificationInput);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("uid", Uid);
             writer.WriteAdditionalData(AdditionalData);

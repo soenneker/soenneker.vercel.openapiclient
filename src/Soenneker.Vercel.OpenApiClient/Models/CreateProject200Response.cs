@@ -60,6 +60,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Avatar { get; set; }
 #endif
+        /// <summary>The avatarDarkMode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AvatarDarkMode { get; set; }
+#nullable restore
+#else
+        public string AvatarDarkMode { get; set; }
+#endif
         /// <summary>The blobs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -623,6 +631,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "autoAssignCustomDomainsUpdatedBy", n => { AutoAssignCustomDomainsUpdatedBy = n.GetStringValue(); } },
                 { "autoExposeSystemEnvs", n => { AutoExposeSystemEnvs = n.GetBoolValue(); } },
                 { "avatar", n => { Avatar = n.GetStringValue(); } },
+                { "avatarDarkMode", n => { AvatarDarkMode = n.GetStringValue(); } },
                 { "blobs", n => { Blobs = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseBlobs>(global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseBlobs.CreateFromDiscriminatorValue); } },
                 { "buildCommand", n => { BuildCommand = n.GetStringValue(); } },
                 { "commandForIgnoringBuildStep", n => { CommandForIgnoringBuildStep = n.GetStringValue(); } },
@@ -728,6 +737,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("autoAssignCustomDomainsUpdatedBy", AutoAssignCustomDomainsUpdatedBy);
             writer.WriteBoolValue("autoExposeSystemEnvs", AutoExposeSystemEnvs);
             writer.WriteStringValue("avatar", Avatar);
+            writer.WriteStringValue("avatarDarkMode", AvatarDarkMode);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponseBlobs>("blobs", Blobs);
             writer.WriteStringValue("buildCommand", BuildCommand);
             writer.WriteStringValue("commandForIgnoringBuildStep", CommandForIgnoringBuildStep);

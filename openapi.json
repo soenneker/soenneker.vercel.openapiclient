@@ -8376,10 +8376,20 @@
                     "type": "object",
                     "oneOf": [
                       {
+                        "additionalProperties": false,
                         "properties": {
                           "kind": {
                             "type": "string",
                             "default": "integration"
+                          },
+                          "integrationId": {
+                            "type": "string"
+                          },
+                          "integrationConfigurationId": {
+                            "type": "string"
+                          },
+                          "resourceId": {
+                            "type": "string"
                           },
                           "externalResourceId": {
                             "type": "string"
@@ -9321,6 +9331,20 @@
                                           },
                                           {
                                             "properties": {
+                                              "kind": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "deployment"
+                                                ]
+                                              }
+                                            },
+                                            "required": [
+                                              "kind"
+                                            ],
+                                            "type": "object"
+                                          },
+                                          {
+                                            "properties": {
                                               "job": {
                                                 "type": "string"
                                               },
@@ -9927,6 +9951,20 @@
                                           },
                                           {
                                             "properties": {
+                                              "kind": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "deployment"
+                                                ]
+                                              }
+                                            },
+                                            "required": [
+                                              "kind"
+                                            ],
+                                            "type": "object"
+                                          },
+                                          {
+                                            "properties": {
                                               "job": {
                                                 "type": "string"
                                               },
@@ -10507,6 +10545,20 @@
                                           "type": "string",
                                           "enum": [
                                             "invocation"
+                                          ]
+                                        }
+                                      },
+                                      "required": [
+                                        "kind"
+                                      ],
+                                      "type": "object"
+                                    },
+                                    {
+                                      "properties": {
+                                        "kind": {
+                                          "type": "string",
+                                          "enum": [
+                                            "deployment"
                                           ]
                                         }
                                       },
@@ -11118,6 +11170,20 @@
                                     },
                                     {
                                       "properties": {
+                                        "kind": {
+                                          "type": "string",
+                                          "enum": [
+                                            "deployment"
+                                          ]
+                                        }
+                                      },
+                                      "required": [
+                                        "kind"
+                                      ],
+                                      "type": "object"
+                                    },
+                                    {
+                                      "properties": {
                                         "job": {
                                           "type": "string"
                                         },
@@ -11701,6 +11767,20 @@
                                           "type": "string",
                                           "enum": [
                                             "invocation"
+                                          ]
+                                        }
+                                      },
+                                      "required": [
+                                        "kind"
+                                      ],
+                                      "type": "object"
+                                    },
+                                    {
+                                      "properties": {
+                                        "kind": {
+                                          "type": "string",
+                                          "enum": [
+                                            "deployment"
                                           ]
                                         }
                                       },
@@ -15202,6 +15282,16 @@
               }
             }
           },
+          "500": {
+            "description": "An internal error occurred.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectError"
+                }
+              }
+            }
+          },
           "501": {
             "description": ""
           },
@@ -15402,6 +15492,81 @@
           },
           "required": true
         }
+      }
+    },
+    "/v1/connect/connectors/{connector}/managed/eject": {
+      "post": {
+        "description": "Disconnect a managed connector from its provider-side manager.",
+        "operationId": "ejectManagedConnector",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Eject a managed connector",
+        "tags": [
+          "connect"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectConnector"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "409": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          },
+          "422": {
+            "description": ""
+          },
+          "501": {
+            "description": ""
+          },
+          "504": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "connector",
+            "description": "Stable connector ID or URL-encoded team-scoped UID.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Stable connector ID or URL-encoded team-scoped UID."
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ]
       }
     },
     "/v2/connect/connectors/{connector}/projects": {
@@ -83334,6 +83499,10 @@
                             "nullable": true,
                             "type": "string"
                           },
+                          "avatarDarkMode": {
+                            "nullable": true,
+                            "type": "string"
+                          },
                           "blobs": {
                             "properties": {
                               "isDefaultApp": {
@@ -106661,6 +106830,10 @@
                                 "nullable": true,
                                 "type": "string"
                               },
+                              "avatarDarkMode": {
+                                "nullable": true,
+                                "type": "string"
+                              },
                               "blobs": {
                                 "properties": {
                                   "isDefaultApp": {
@@ -114758,6 +114931,10 @@
                       ]
                     },
                     "avatar": {
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "avatarDarkMode": {
                       "nullable": true,
                       "type": "string"
                     },
@@ -123136,6 +123313,10 @@
                       "nullable": true,
                       "type": "string"
                     },
+                    "avatarDarkMode": {
+                      "nullable": true,
+                      "type": "string"
+                    },
                     "blobs": {
                       "properties": {
                         "isDefaultApp": {
@@ -130847,6 +131028,10 @@
                       ]
                     },
                     "avatar": {
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "avatarDarkMode": {
                       "nullable": true,
                       "type": "string"
                     },
@@ -139843,6 +140028,10 @@
                       ]
                     },
                     "avatar": {
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "avatarDarkMode": {
                       "nullable": true,
                       "type": "string"
                     },
@@ -160693,6 +160882,10 @@
                       "nullable": true,
                       "type": "string"
                     },
+                    "avatarDarkMode": {
+                      "nullable": true,
+                      "type": "string"
+                    },
                     "blobs": {
                       "properties": {
                         "isDefaultApp": {
@@ -169648,7 +169841,7 @@
                   },
                   "maxSizeBytes": {
                     "type": "integer",
-                    "description": "Maximum drive size in bytes. Defaults to 1 TiB when omitted (1 GiB for Hobby). The maximum quota is 16 TiB. Request a quota above 16 TiB at https://vercel.com/help."
+                    "description": "Maximum drive size in bytes. Must be a multiple of 4096 bytes. Defaults to 1 TiB when omitted (1 GiB for Hobby). The maximum quota is 16 TiB. Request a quota above 16 TiB at https://vercel.com/help."
                   },
                   "region": {
                     "type": "string",
@@ -204572,6 +204765,9 @@
                                     "name": {
                                       "type": "string"
                                     },
+                                    "packageDirectory": {
+                                      "type": "string"
+                                    },
                                     "operation": {
                                       "anyOf": [
                                         {
@@ -204748,6 +204944,28 @@
                                       "required": [
                                         "completedAt",
                                         "conclusion"
+                                      ]
+                                    },
+                                    "deploymentBinding": {
+                                      "type": "object",
+                                      "properties": {
+                                        "deploymentId": {
+                                          "type": "string"
+                                        },
+                                        "deploymentCreatedAt": {
+                                          "type": "number"
+                                        },
+                                        "eventAt": {
+                                          "type": "number"
+                                        },
+                                        "readyState": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "deploymentId",
+                                        "deploymentCreatedAt",
+                                        "eventAt"
                                       ]
                                     }
                                   },
@@ -206912,6 +207130,9 @@
                           "name": {
                             "type": "string"
                           },
+                          "packageDirectory": {
+                            "type": "string"
+                          },
                           "operation": {
                             "anyOf": [
                               {
@@ -207312,6 +207533,28 @@
                             "required": [
                               "completedAt",
                               "conclusion"
+                            ]
+                          },
+                          "deploymentBinding": {
+                            "type": "object",
+                            "properties": {
+                              "deploymentId": {
+                                "type": "string"
+                              },
+                              "deploymentCreatedAt": {
+                                "type": "number"
+                              },
+                              "eventAt": {
+                                "type": "number"
+                              },
+                              "readyState": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "deploymentId",
+                              "deploymentCreatedAt",
+                              "eventAt"
                             ]
                           }
                         },
@@ -216955,6 +217198,14 @@
             ],
             "description": "Whether the connector supports an installation flow."
           },
+          "supportsManagedEjection": {
+            "type": "boolean",
+            "enum": [
+              false,
+              true
+            ],
+            "description": "Whether this managed connector can disconnect from its manager."
+          },
           "supportsRevocation": {
             "type": "boolean",
             "enum": [
@@ -217455,6 +217706,14 @@
               true
             ],
             "description": "Whether the connector supports an installation flow."
+          },
+          "supportsManagedEjection": {
+            "type": "boolean",
+            "enum": [
+              false,
+              true
+            ],
+            "description": "Whether this managed connector can disconnect from its manager."
           },
           "supportsRevocation": {
             "type": "boolean",
@@ -218834,10 +219093,15 @@
             "type": "string",
             "description": "Trigger driver type. Resolved automatically from the known service connection method when not provided. Only set when using the newly decoupled triggers resolution flow."
           },
-          "triggerData": {
+          "triggerVerificationInput": {
             "type": "object",
             "additionalProperties": true,
-            "description": "Trigger configuration, validated and encrypted by the trigger driver. An empty object applies driver defaults."
+            "description": "Plaintext verification inputs, validated by the trigger driver and encrypted into stored triggerData. An empty object makes no changes."
+          },
+          "triggerRegistrationInput": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Additional registration inputs, validated by the trigger driver. Requires triggers: true. Shared verification credentials are read from triggerData."
           },
           "triggerDestination": {
             "description": "Initial trigger destination. Requires triggers to be enabled and a projectId here or at the top level. Connector responses expose the resulting set as triggerDestinations. Replace the complete set with PATCH /v1/connect/connectors/{connector}/trigger-destinations.",
@@ -220106,10 +220370,15 @@
             "description": "Whether the triggers are enabled for this connector.",
             "type": "boolean"
           },
-          "triggerData": {
+          "triggerVerificationInput": {
             "type": "object",
             "additionalProperties": true,
-            "description": "Trigger configuration, validated and encrypted by the trigger driver. An empty object applies driver defaults."
+            "description": "Plaintext verification inputs, validated by the trigger driver and encrypted into stored triggerData. An empty object makes no changes."
+          },
+          "triggerRegistrationInput": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Additional registration inputs, validated by the trigger driver. Requires triggers: true. Shared verification credentials are read from triggerData."
           },
           "events": {
             "type": "array",
@@ -224690,6 +224959,22 @@
                   "invoiceId",
                   "newInvoiceId",
                   "settlementMethod"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "paymentMethodId": {
+                    "type": "string"
+                  },
+                  "subscriptionId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "paymentMethodId",
+                  "subscriptionId"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -244395,6 +244680,7 @@
               "v0-chat-ai-usage",
               "v0-chat-created",
               "v0-chat-message-sent",
+              "v0-migration-payment-confirmed",
               "vcr-image-deleted",
               "vcr-image-pushed",
               "vcr-repository-created",
@@ -245322,6 +245608,7 @@
               "v0-chat-ai-usage",
               "v0-chat-created",
               "v0-chat-message-sent",
+              "v0-migration-payment-confirmed",
               "vcr-image-deleted",
               "vcr-image-pushed",
               "vcr-repository-created",
@@ -246037,6 +246324,7 @@
                 "v0-chat-ai-usage",
                 "v0-chat-created",
                 "v0-chat-message-sent",
+                "v0-migration-payment-confirmed",
                 "vcr-image-deleted",
                 "vcr-image-pushed",
                 "vcr-repository-created",

@@ -61,16 +61,24 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Trigger configuration, validated and encrypted by the trigger driver. An empty object applies driver defaults.</summary>
+        /// <summary>Additional registration inputs, validated by the trigger driver. Requires triggers: true. Shared verification credentials are read from triggerData.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerDataProperty? TriggerData { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerRegistrationInputProperty? TriggerRegistrationInput { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerDataProperty TriggerData { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerRegistrationInputProperty TriggerRegistrationInput { get; set; }
 #endif
         /// <summary>Whether the triggers are enabled for this connector.</summary>
         public bool? Triggers { get; set; }
+        /// <summary>Plaintext verification inputs, validated by the trigger driver and encrypted into stored triggerData. An empty object makes no changes.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerVerificationInputProperty? TriggerVerificationInput { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerVerificationInputProperty TriggerVerificationInput { get; set; }
+#endif
         /// <summary>Full team-scoped UID, such as `slack/my-bot`. It cannot contain whitespace, `%`, `#`, control characters, or Vercel-owned namespaces. Changing it breaks callers that use the old UID. The stable connector ID does not change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,7 +111,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "icon", n => { Icon = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "triggerData", n => { TriggerData = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerDataProperty>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerDataProperty.CreateFromDiscriminatorValue); } },
+                { "triggerRegistrationInput", n => { TriggerRegistrationInput = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerRegistrationInputProperty>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerRegistrationInputProperty.CreateFromDiscriminatorValue); } },
+                { "triggerVerificationInput", n => { TriggerVerificationInput = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerVerificationInputProperty>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerVerificationInputProperty.CreateFromDiscriminatorValue); } },
                 { "triggers", n => { Triggers = n.GetBoolValue(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
             };
@@ -121,8 +130,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("events", Events);
             writer.WriteStringValue("icon", Icon);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerDataProperty>("triggerData", TriggerData);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerRegistrationInputProperty>("triggerRegistrationInput", TriggerRegistrationInput);
             writer.WriteBoolValue("triggers", Triggers);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectUpdateConnectorRequestTriggerVerificationInputProperty>("triggerVerificationInput", TriggerVerificationInput);
             writer.WriteStringValue("uid", Uid);
         }
     }

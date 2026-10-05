@@ -26,6 +26,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The createdAt property</summary>
         public double? CreatedAt { get; set; }
+        /// <summary>The deploymentBinding property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseJobsItemTasksItemRunDeploymentBinding? DeploymentBinding { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseJobsItemTasksItemRunDeploymentBinding DeploymentBinding { get; set; }
+#endif
         /// <summary>The invocationAttempt property</summary>
         public double? InvocationAttempt { get; set; }
         /// <summary>The invocationId property</summary>
@@ -90,6 +98,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "attempt", n => { Attempt = n.GetDoubleValue(); } },
                 { "completed", n => { Completed = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseJobsItemTasksItemRunCompleted>(global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseJobsItemTasksItemRunCompleted.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
+                { "deploymentBinding", n => { DeploymentBinding = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseJobsItemTasksItemRunDeploymentBinding>(global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseJobsItemTasksItemRunDeploymentBinding.CreateFromDiscriminatorValue); } },
                 { "invocationAttempt", n => { InvocationAttempt = n.GetDoubleValue(); } },
                 { "invocationId", n => { InvocationId = n.GetStringValue(); } },
                 { "jobDefinitionId", n => { JobDefinitionId = n.GetStringValue(); } },
@@ -108,6 +117,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("attempt", Attempt);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseJobsItemTasksItemRunCompleted>("completed", Completed);
             writer.WriteDoubleValue("createdAt", CreatedAt);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseJobsItemTasksItemRunDeploymentBinding>("deploymentBinding", DeploymentBinding);
             writer.WriteDoubleValue("invocationAttempt", InvocationAttempt);
             writer.WriteStringValue("invocationId", InvocationId);
             writer.WriteStringValue("jobDefinitionId", JobDefinitionId);

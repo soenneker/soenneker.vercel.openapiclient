@@ -60,6 +60,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseJobsItemTasksItemDefinitionOperation Operation { get; set; }
 #endif
+        /// <summary>The packageDirectory property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PackageDirectory { get; set; }
+#nullable restore
+#else
+        public string PackageDirectory { get; set; }
+#endif
         /// <summary>The taskDefinitionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,6 +109,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "jobRunAttempt", n => { JobRunAttempt = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "operation", n => { Operation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseJobsItemTasksItemDefinitionOperation>(global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseJobsItemTasksItemDefinitionOperation.CreateFromDiscriminatorValue); } },
+                { "packageDirectory", n => { PackageDirectory = n.GetStringValue(); } },
                 { "taskDefinitionId", n => { TaskDefinitionId = n.GetStringValue(); } },
             };
         }
@@ -119,6 +128,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("jobRunAttempt", JobRunAttempt);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetVercelCiInvocationTree200ResponseJobsItemTasksItemDefinitionOperation>("operation", Operation);
+            writer.WriteStringValue("packageDirectory", PackageDirectory);
             writer.WriteStringValue("taskDefinitionId", TaskDefinitionId);
             writer.WriteAdditionalData(AdditionalData);
         }

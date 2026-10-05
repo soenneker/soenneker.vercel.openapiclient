@@ -179,6 +179,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateResultSupportsIcon? SupportsIcon { get; set; }
         /// <summary>Whether the connector supports an installation flow.</summary>
         public bool? SupportsInstallation { get; set; }
+        /// <summary>Whether this managed connector can disconnect from its manager.</summary>
+        public bool? SupportsManagedEjection { get; set; }
         /// <summary>Whether Connect can revoke tokens for this connector.</summary>
         public bool? SupportsRevocation { get; set; }
         /// <summary>Whether this connector type supports trigger webhooks. Derived from the type definition; indicates that `triggers` and `triggerDestinations` may be meaningful for this connector.</summary>
@@ -309,6 +311,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "supportedSubjectTypes", n => { SupportedSubjectTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "supportsIcon", n => { SupportsIcon = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateResultSupportsIcon>(); } },
                 { "supportsInstallation", n => { SupportsInstallation = n.GetBoolValue(); } },
+                { "supportsManagedEjection", n => { SupportsManagedEjection = n.GetBoolValue(); } },
                 { "supportsRevocation", n => { SupportsRevocation = n.GetBoolValue(); } },
                 { "supportsTriggers", n => { SupportsTriggers = n.GetBoolValue(); } },
                 { "target", n => { Target = n.GetStringValue(); } },
@@ -356,6 +359,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("supportedSubjectTypes", SupportedSubjectTypes);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorCreateResultSupportsIcon>("supportsIcon", SupportsIcon);
             writer.WriteBoolValue("supportsInstallation", SupportsInstallation);
+            writer.WriteBoolValue("supportsManagedEjection", SupportsManagedEjection);
             writer.WriteBoolValue("supportsRevocation", SupportsRevocation);
             writer.WriteBoolValue("supportsTriggers", SupportsTriggers);
             writer.WriteStringValue("target", Target);

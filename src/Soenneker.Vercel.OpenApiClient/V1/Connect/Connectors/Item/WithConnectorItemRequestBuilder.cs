@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.Models;
+using Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.Managed;
 using Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.Projects;
 using Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.TriggerDestinations;
 using System.Collections.Generic;
@@ -19,6 +20,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithConnectorItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The managed property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.Managed.ManagedRequestBuilder Managed
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.Managed.ManagedRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The projects property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Connect.Connectors.Item.Projects.ProjectsRequestBuilder Projects
         {

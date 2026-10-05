@@ -2719,6 +2719,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         V0ChatMessageSent,
         #pragma warning restore CS1591
+        [EnumMember(Value = "v0-migration-payment-confirmed")]
+        #pragma warning disable CS1591
+        V0MigrationPaymentConfirmed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "vcr-image-deleted")]
         #pragma warning disable CS1591
         VcrImageDeleted,

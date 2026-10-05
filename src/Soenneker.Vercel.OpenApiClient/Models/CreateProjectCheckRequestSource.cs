@@ -30,6 +30,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ExternalResourceId { get; set; }
 #endif
+        /// <summary>The integrationConfigurationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IntegrationConfigurationId { get; set; }
+#nullable restore
+#else
+        public string IntegrationConfigurationId { get; set; }
+#endif
+        /// <summary>The integrationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IntegrationId { get; set; }
+#nullable restore
+#else
+        public string IntegrationId { get; set; }
+#endif
         /// <summary>The kind property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,6 +56,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The provider property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GithubProvider? Provider { get; set; }
+        /// <summary>The resourceId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ResourceId { get; set; }
+#nullable restore
+#else
+        public string ResourceId { get; set; }
+#endif
         /// <summary>The webhookId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,8 +100,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "externalCheckName", n => { ExternalCheckName = n.GetStringValue(); } },
                 { "externalResourceId", n => { ExternalResourceId = n.GetStringValue(); } },
+                { "integrationConfigurationId", n => { IntegrationConfigurationId = n.GetStringValue(); } },
+                { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GithubProvider>(); } },
+                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
                 { "webhookId", n => { WebhookId = n.GetStringValue(); } },
             };
         }
@@ -90,8 +117,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("externalCheckName", ExternalCheckName);
             writer.WriteStringValue("externalResourceId", ExternalResourceId);
+            writer.WriteStringValue("integrationConfigurationId", IntegrationConfigurationId);
+            writer.WriteStringValue("integrationId", IntegrationId);
             writer.WriteStringValue("kind", Kind);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GithubProvider>("provider", Provider);
+            writer.WriteStringValue("resourceId", ResourceId);
             writer.WriteStringValue("webhookId", WebhookId);
             writer.WriteAdditionalData(AdditionalData);
         }

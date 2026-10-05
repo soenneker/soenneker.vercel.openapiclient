@@ -15,24 +15,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The oldSsoProtection property</summary>
+        /// <summary>The oldPasswordProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110OldSsoProtection? OldSsoProtection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110OldPasswordProtection? OldPasswordProtection { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110OldSsoProtection OldSsoProtection { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110OldPasswordProtection OldPasswordProtection { get; set; }
+#endif
+        /// <summary>The passwordChanged property</summary>
+        public bool? PasswordChanged { get; set; }
+        /// <summary>The passwordProtection property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110PasswordProtection? PasswordProtection { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110PasswordProtection PasswordProtection { get; set; }
 #endif
         /// <summary>The scope property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110Scope? Scope { get; set; }
-        /// <summary>The ssoProtection property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110SsoProtection? SsoProtection { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110SsoProtection SsoProtection { get; set; }
-#endif
+        public global::Soenneker.Vercel.OpenApiClient.Models.TeamScope? Scope { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110"/> and sets the default values.
         /// </summary>
@@ -58,9 +60,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "oldSsoProtection", n => { OldSsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110OldSsoProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110OldSsoProtection.CreateFromDiscriminatorValue); } },
-                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110Scope>(); } },
-                { "ssoProtection", n => { SsoProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110SsoProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110SsoProtection.CreateFromDiscriminatorValue); } },
+                { "oldPasswordProtection", n => { OldPasswordProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110OldPasswordProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110OldPasswordProtection.CreateFromDiscriminatorValue); } },
+                { "passwordChanged", n => { PasswordChanged = n.GetBoolValue(); } },
+                { "passwordProtection", n => { PasswordProtection = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110PasswordProtection>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110PasswordProtection.CreateFromDiscriminatorValue); } },
+                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamScope>(); } },
             };
         }
         /// <summary>
@@ -70,9 +73,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110OldSsoProtection>("oldSsoProtection", OldSsoProtection);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110Scope>("scope", Scope);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110SsoProtection>("ssoProtection", SsoProtection);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110OldPasswordProtection>("oldPasswordProtection", OldPasswordProtection);
+            writer.WriteBoolValue("passwordChanged", PasswordChanged);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf110PasswordProtection>("passwordProtection", PasswordProtection);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamScope>("scope", Scope);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
