@@ -33,8 +33,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Seconds of ingest lag to allow for: the query&apos;s upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.</summary>
         public double? IngestWatermarkSeconds { get; set; }
-        /// <summary>Minimum number of requests required in the window before the check can fail. Below this, the check is inconclusive rather than failing, so low-traffic stages don&apos;t gate on noise. Defaults to `100` when omitted.</summary>
-        public double? MinSampleSize { get; set; }
+        /// <summary>A run fails only when the canary&apos;s error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.</summary>
+        public double? SignificanceLevel { get; set; }
         /// <summary>The metric this check evaluates.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.ErrorRate5XxType? Type { get; set; }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "excludePaths", n => { ExcludePaths = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "excludeStatusCodes", n => { ExcludeStatusCodes = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "ingestWatermarkSeconds", n => { IngestWatermarkSeconds = n.GetDoubleValue(); } },
-                { "minSampleSize", n => { MinSampleSize = n.GetDoubleValue(); } },
+                { "significanceLevel", n => { SignificanceLevel = n.GetDoubleValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ErrorRate5XxType>(); } },
             };
         }
@@ -79,7 +79,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("excludePaths", ExcludePaths);
             writer.WriteCollectionOfPrimitiveValues<double?>("excludeStatusCodes", ExcludeStatusCodes);
             writer.WriteDoubleValue("ingestWatermarkSeconds", IngestWatermarkSeconds);
-            writer.WriteDoubleValue("minSampleSize", MinSampleSize);
+            writer.WriteDoubleValue("significanceLevel", SignificanceLevel);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ErrorRate5XxType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

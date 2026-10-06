@@ -1611,6 +1611,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ProjectAutomationBypass,
         #pragma warning restore CS1591
+        [EnumMember(Value = "project-avatar-dark-mode-update")]
+        #pragma warning disable CS1591
+        ProjectAvatarDarkModeUpdate,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project-avatar-update")]
         #pragma warning disable CS1591
         ProjectAvatarUpdate,

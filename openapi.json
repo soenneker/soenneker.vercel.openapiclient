@@ -9203,6 +9203,29 @@
                                 },
                                 "type": "array"
                               },
+                              "taskSummary": {
+                                "properties": {
+                                  "failed": {
+                                    "type": "number"
+                                  },
+                                  "pending": {
+                                    "type": "number"
+                                  },
+                                  "succeeded": {
+                                    "type": "number"
+                                  },
+                                  "total": {
+                                    "type": "number"
+                                  }
+                                },
+                                "required": [
+                                  "failed",
+                                  "pending",
+                                  "succeeded",
+                                  "total"
+                                ],
+                                "type": "object"
+                              },
                               "timeout": {
                                 "type": "number"
                               },
@@ -9540,6 +9563,29 @@
                                   "type": "string"
                                 },
                                 "type": "array"
+                              },
+                              "taskSummary": {
+                                "properties": {
+                                  "failed": {
+                                    "type": "number"
+                                  },
+                                  "pending": {
+                                    "type": "number"
+                                  },
+                                  "succeeded": {
+                                    "type": "number"
+                                  },
+                                  "total": {
+                                    "type": "number"
+                                  }
+                                },
+                                "required": [
+                                  "failed",
+                                  "pending",
+                                  "succeeded",
+                                  "total"
+                                ],
+                                "type": "object"
                               },
                               "timeout": {
                                 "type": "number"
@@ -9823,6 +9869,29 @@
                                 },
                                 "type": "array"
                               },
+                              "taskSummary": {
+                                "properties": {
+                                  "failed": {
+                                    "type": "number"
+                                  },
+                                  "pending": {
+                                    "type": "number"
+                                  },
+                                  "succeeded": {
+                                    "type": "number"
+                                  },
+                                  "total": {
+                                    "type": "number"
+                                  }
+                                },
+                                "required": [
+                                  "failed",
+                                  "pending",
+                                  "succeeded",
+                                  "total"
+                                ],
+                                "type": "object"
+                              },
                               "timeout": {
                                 "type": "number"
                               },
@@ -10161,6 +10230,29 @@
                                 },
                                 "type": "array"
                               },
+                              "taskSummary": {
+                                "properties": {
+                                  "failed": {
+                                    "type": "number"
+                                  },
+                                  "pending": {
+                                    "type": "number"
+                                  },
+                                  "succeeded": {
+                                    "type": "number"
+                                  },
+                                  "total": {
+                                    "type": "number"
+                                  }
+                                },
+                                "required": [
+                                  "failed",
+                                  "pending",
+                                  "succeeded",
+                                  "total"
+                                ],
+                                "type": "object"
+                              },
                               "timeout": {
                                 "type": "number"
                               },
@@ -10426,6 +10518,29 @@
                             "type": "string"
                           },
                           "type": "array"
+                        },
+                        "taskSummary": {
+                          "properties": {
+                            "failed": {
+                              "type": "number"
+                            },
+                            "pending": {
+                              "type": "number"
+                            },
+                            "succeeded": {
+                              "type": "number"
+                            },
+                            "total": {
+                              "type": "number"
+                            }
+                          },
+                          "required": [
+                            "failed",
+                            "pending",
+                            "succeeded",
+                            "total"
+                          ],
+                          "type": "object"
                         },
                         "timeout": {
                           "type": "number"
@@ -10764,6 +10879,29 @@
                             "type": "string"
                           },
                           "type": "array"
+                        },
+                        "taskSummary": {
+                          "properties": {
+                            "failed": {
+                              "type": "number"
+                            },
+                            "pending": {
+                              "type": "number"
+                            },
+                            "succeeded": {
+                              "type": "number"
+                            },
+                            "total": {
+                              "type": "number"
+                            }
+                          },
+                          "required": [
+                            "failed",
+                            "pending",
+                            "succeeded",
+                            "total"
+                          ],
+                          "type": "object"
                         },
                         "timeout": {
                           "type": "number"
@@ -11042,6 +11180,29 @@
                           },
                           "type": "array"
                         },
+                        "taskSummary": {
+                          "properties": {
+                            "failed": {
+                              "type": "number"
+                            },
+                            "pending": {
+                              "type": "number"
+                            },
+                            "succeeded": {
+                              "type": "number"
+                            },
+                            "total": {
+                              "type": "number"
+                            }
+                          },
+                          "required": [
+                            "failed",
+                            "pending",
+                            "succeeded",
+                            "total"
+                          ],
+                          "type": "object"
+                        },
                         "timeout": {
                           "type": "number"
                         },
@@ -11379,6 +11540,29 @@
                             "type": "string"
                           },
                           "type": "array"
+                        },
+                        "taskSummary": {
+                          "properties": {
+                            "failed": {
+                              "type": "number"
+                            },
+                            "pending": {
+                              "type": "number"
+                            },
+                            "succeeded": {
+                              "type": "number"
+                            },
+                            "total": {
+                              "type": "number"
+                            }
+                          },
+                          "required": [
+                            "failed",
+                            "pending",
+                            "succeeded",
+                            "total"
+                          ],
+                          "type": "object"
                         },
                         "timeout": {
                           "type": "number"
@@ -11649,6 +11833,29 @@
                           },
                           "type": "array"
                         },
+                        "taskSummary": {
+                          "properties": {
+                            "failed": {
+                              "type": "number"
+                            },
+                            "pending": {
+                              "type": "number"
+                            },
+                            "succeeded": {
+                              "type": "number"
+                            },
+                            "total": {
+                              "type": "number"
+                            }
+                          },
+                          "required": [
+                            "failed",
+                            "pending",
+                            "succeeded",
+                            "total"
+                          ],
+                          "type": "object"
+                        },
                         "timeout": {
                           "type": "number"
                         },
@@ -11986,6 +12193,29 @@
                             "type": "string"
                           },
                           "type": "array"
+                        },
+                        "taskSummary": {
+                          "properties": {
+                            "failed": {
+                              "type": "number"
+                            },
+                            "pending": {
+                              "type": "number"
+                            },
+                            "succeeded": {
+                              "type": "number"
+                            },
+                            "total": {
+                              "type": "number"
+                            }
+                          },
+                          "required": [
+                            "failed",
+                            "pending",
+                            "succeeded",
+                            "total"
+                          ],
+                          "type": "object"
                         },
                         "timeout": {
                           "type": "number"
@@ -89121,10 +89351,10 @@
                                           "description": "Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.",
                                           "example": 30
                                         },
-                                        "minSampleSize": {
+                                        "significanceLevel": {
                                           "type": "number",
-                                          "description": "Minimum number of requests required in the window before the check can fail. Below this, the check is inconclusive rather than failing, so low-traffic stages don't gate on noise. Defaults to `100` when omitted.",
-                                          "example": 100
+                                          "description": "A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.",
+                                          "example": 0.05
                                         },
                                         "type": {
                                           "type": "string",
@@ -100493,10 +100723,10 @@
                                           "description": "Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.",
                                           "example": 30
                                         },
-                                        "minSampleSize": {
+                                        "significanceLevel": {
                                           "type": "number",
-                                          "description": "Minimum number of requests required in the window before the check can fail. Below this, the check is inconclusive rather than failing, so low-traffic stages don't gate on noise. Defaults to `100` when omitted.",
-                                          "example": 100
+                                          "description": "A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.",
+                                          "example": 0.05
                                         },
                                         "type": {
                                           "type": "string",
@@ -104799,10 +105029,10 @@
                                               "description": "Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.",
                                               "example": 30
                                             },
-                                            "minSampleSize": {
+                                            "significanceLevel": {
                                               "type": "number",
-                                              "description": "Minimum number of requests required in the window before the check can fail. Below this, the check is inconclusive rather than failing, so low-traffic stages don't gate on noise. Defaults to `100` when omitted.",
-                                              "example": 100
+                                              "description": "A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.",
+                                              "example": 0.05
                                             },
                                             "type": {
                                               "type": "string",
@@ -112452,10 +112682,10 @@
                                               "description": "Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.",
                                               "example": 30
                                             },
-                                            "minSampleSize": {
+                                            "significanceLevel": {
                                               "type": "number",
-                                              "description": "Minimum number of requests required in the window before the check can fail. Below this, the check is inconclusive rather than failing, so low-traffic stages don't gate on noise. Defaults to `100` when omitted.",
-                                              "example": 100
+                                              "description": "A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.",
+                                              "example": 0.05
                                             },
                                             "type": {
                                               "type": "string",
@@ -120556,10 +120786,10 @@
                                     "description": "Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.",
                                     "example": 30
                                   },
-                                  "minSampleSize": {
+                                  "significanceLevel": {
                                     "type": "number",
-                                    "description": "Minimum number of requests required in the window before the check can fail. Below this, the check is inconclusive rather than failing, so low-traffic stages don't gate on noise. Defaults to `100` when omitted.",
-                                    "example": 100
+                                    "description": "A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.",
+                                    "example": 0.05
                                   },
                                   "type": {
                                     "type": "string",
@@ -128966,10 +129196,10 @@
                                     "description": "Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.",
                                     "example": 30
                                   },
-                                  "minSampleSize": {
+                                  "significanceLevel": {
                                     "type": "number",
-                                    "description": "Minimum number of requests required in the window before the check can fail. Below this, the check is inconclusive rather than failing, so low-traffic stages don't gate on noise. Defaults to `100` when omitted.",
-                                    "example": 100
+                                    "description": "A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.",
+                                    "example": 0.05
                                   },
                                   "type": {
                                     "type": "string",
@@ -136644,10 +136874,10 @@
                                     "description": "Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.",
                                     "example": 30
                                   },
-                                  "minSampleSize": {
+                                  "significanceLevel": {
                                     "type": "number",
-                                    "description": "Minimum number of requests required in the window before the check can fail. Below this, the check is inconclusive rather than failing, so low-traffic stages don't gate on noise. Defaults to `100` when omitted.",
-                                    "example": 100
+                                    "description": "A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.",
+                                    "example": 0.05
                                   },
                                   "type": {
                                     "type": "string",
@@ -145653,10 +145883,10 @@
                                     "description": "Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.",
                                     "example": 30
                                   },
-                                  "minSampleSize": {
+                                  "significanceLevel": {
                                     "type": "number",
-                                    "description": "Minimum number of requests required in the window before the check can fail. Below this, the check is inconclusive rather than failing, so low-traffic stages don't gate on noise. Defaults to `100` when omitted.",
-                                    "example": 100
+                                    "description": "A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.",
+                                    "example": 0.05
                                   },
                                   "type": {
                                     "type": "string",
@@ -156964,10 +157194,10 @@
                                     "description": "Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.",
                                     "example": 30
                                   },
-                                  "minSampleSize": {
+                                  "significanceLevel": {
                                     "type": "number",
-                                    "description": "Minimum number of requests required in the window before the check can fail. Below this, the check is inconclusive rather than failing, so low-traffic stages don't gate on noise. Defaults to `100` when omitted.",
-                                    "example": 100
+                                    "description": "A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.",
+                                    "example": 0.05
                                   },
                                   "type": {
                                     "type": "string",
@@ -166504,10 +166734,10 @@
                                     "description": "Seconds of ingest lag to allow for: the query's upper bound is `now() - this value`, so the check never reads a window that is still filling. Defaults to `30` when omitted.",
                                     "example": 30
                                   },
-                                  "minSampleSize": {
+                                  "significanceLevel": {
                                     "type": "number",
-                                    "description": "Minimum number of requests required in the window before the check can fail. Below this, the check is inconclusive rather than failing, so low-traffic stages don't gate on noise. Defaults to `100` when omitted.",
-                                    "example": 100
+                                    "description": "A run fails only when the canary's error rate is higher and its one-sided Fisher p-value is below this significance level. Defaults to `0.05`; lower values require stronger evidence.",
+                                    "example": 0.05
                                   },
                                   "type": {
                                     "type": "string",
@@ -235077,6 +235307,26 @@
               },
               {
                 "properties": {
+                  "avatarDarkMode": {
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "projectId": {
+                    "type": "string"
+                  },
+                  "projectName": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "projectId",
+                  "projectName"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "enableAffectedProjectsDeployments": {
                     "type": "boolean",
                     "enum": [
@@ -244403,6 +244653,7 @@
               "project-analytics-enabled",
               "project-auto-assign-custom-production-domains-updated",
               "project-automation-bypass",
+              "project-avatar-dark-mode-update",
               "project-avatar-update",
               "project-build-command-updated",
               "project-build-logs-and-source-protection-updated",
@@ -245331,6 +245582,7 @@
               "project-analytics-enabled",
               "project-auto-assign-custom-production-domains-updated",
               "project-automation-bypass",
+              "project-avatar-dark-mode-update",
               "project-avatar-update",
               "project-build-command-updated",
               "project-build-logs-and-source-protection-updated",
@@ -246047,6 +246299,7 @@
                 "project-analytics-enabled",
                 "project-auto-assign-custom-production-domains-updated",
                 "project-automation-bypass",
+                "project-avatar-dark-mode-update",
                 "project-avatar-update",
                 "project-build-command-updated",
                 "project-build-logs-and-source-protection-updated",

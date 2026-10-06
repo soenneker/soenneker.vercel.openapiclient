@@ -132,6 +132,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> Targets { get; set; }
 #endif
+        /// <summary>The taskSummary property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun200ResponseTaskSummary? TaskSummary { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun200ResponseTaskSummary TaskSummary { get; set; }
+#endif
         /// <summary>The timeout property</summary>
         public double? Timeout { get; set; }
         /// <summary>The updatedAt property</summary>
@@ -181,6 +189,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "source", n => { Source = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun200ResponseSource>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun200ResponseSource.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun200ResponseStatus>(); } },
                 { "targets", n => { Targets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "taskSummary", n => { TaskSummary = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun200ResponseTaskSummary>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun200ResponseTaskSummary.CreateFromDiscriminatorValue); } },
                 { "timeout", n => { Timeout = n.GetDoubleValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
             };
@@ -212,6 +221,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun200ResponseSource>("source", Source);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun200ResponseStatus>("status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("targets", Targets);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeploymentCheckRun200ResponseTaskSummary>("taskSummary", TaskSummary);
             writer.WriteDoubleValue("timeout", Timeout);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
