@@ -23,30 +23,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The ownerName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OwnerName { get; set; }
-#nullable restore
-#else
-        public string OwnerName { get; set; }
-#endif
-        /// <summary>The teamId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TeamId { get; set; }
-#nullable restore
-#else
-        public string TeamId { get; set; }
-#endif
-        /// <summary>The userId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserId { get; set; }
-#nullable restore
-#else
-        public string UserId { get; set; }
-#endif
+        /// <summary>The zone property</summary>
+        public bool? Zone { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf132"/> and sets the default values.
         /// </summary>
@@ -73,9 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "ownerName", n => { OwnerName = n.GetStringValue(); } },
-                { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "zone", n => { Zone = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -86,9 +62,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("ownerName", OwnerName);
-            writer.WriteStringValue("teamId", TeamId);
-            writer.WriteStringValue("userId", UserId);
+            writer.WriteBoolValue("zone", Zone);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,21 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The previousRule property</summary>
+        /// <summary>The edgeConfig property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160PreviousRule? PreviousRule { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160EdgeConfig? EdgeConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160PreviousRule PreviousRule { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160EdgeConfig EdgeConfig { get; set; }
 #endif
-        /// <summary>The team property</summary>
+        /// <summary>The fromAccount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160Team? Team { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160FromAccount? FromAccount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160Team Team { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160FromAccount FromAccount { get; set; }
+#endif
+        /// <summary>The toAccount property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160ToAccount? ToAccount { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160ToAccount ToAccount { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160"/> and sets the default values.
@@ -56,8 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "previousRule", n => { PreviousRule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160PreviousRule>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160PreviousRule.CreateFromDiscriminatorValue); } },
-                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160Team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160Team.CreateFromDiscriminatorValue); } },
+                { "edgeConfig", n => { EdgeConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160EdgeConfig>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160EdgeConfig.CreateFromDiscriminatorValue); } },
+                { "fromAccount", n => { FromAccount = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160FromAccount>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160FromAccount.CreateFromDiscriminatorValue); } },
+                { "toAccount", n => { ToAccount = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160ToAccount>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160ToAccount.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160PreviousRule>("previousRule", PreviousRule);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160Team>("team", Team);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160EdgeConfig>("edgeConfig", EdgeConfig);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160FromAccount>("fromAccount", FromAccount);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf160ToAccount>("toAccount", ToAccount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -122,6 +122,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemSource Source { get; set; }
 #endif
+        /// <summary>The startedAt property</summary>
+        public double? StartedAt { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemStatus? Status { get; set; }
         /// <summary>The targets property</summary>
@@ -187,6 +189,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "requires", n => { Requires = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemRequires>(); } },
                 { "source", n => { Source = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemSource>(global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemSource.CreateFromDiscriminatorValue); } },
+                { "startedAt", n => { StartedAt = n.GetDoubleValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemStatus>(); } },
                 { "targets", n => { Targets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "taskSummary", n => { TaskSummary = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemTaskSummary>(global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemTaskSummary.CreateFromDiscriminatorValue); } },
@@ -219,6 +222,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemRequires>("requires", Requires);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemSource>("source", Source);
+            writer.WriteDoubleValue("startedAt", StartedAt);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemStatus>("status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("targets", Targets);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemTaskSummary>("taskSummary", TaskSummary);

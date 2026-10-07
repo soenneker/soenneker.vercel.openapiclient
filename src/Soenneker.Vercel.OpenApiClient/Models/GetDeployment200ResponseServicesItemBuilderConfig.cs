@@ -40,6 +40,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string BunVersion { get; set; }
 #endif
+        /// <summary>Set when this build produces the named daemon.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseServicesItemBuilderConfigDaemon? Daemon { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseServicesItemBuilderConfigDaemon Daemon { get; set; }
+#endif
         /// <summary>The debug property</summary>
         public bool? Debug { get; set; }
         /// <summary>The devCommand property</summary>
@@ -207,6 +215,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "buildpack", n => { Buildpack = n.GetStringValue(); } },
                 { "bunVersion", n => { BunVersion = n.GetStringValue(); } },
                 { "bundle", n => { Bundle = n.GetBoolValue(); } },
+                { "daemon", n => { Daemon = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseServicesItemBuilderConfigDaemon>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseServicesItemBuilderConfigDaemon.CreateFromDiscriminatorValue); } },
                 { "debug", n => { Debug = n.GetBoolValue(); } },
                 { "devCommand", n => { DevCommand = n.GetStringValue(); } },
                 { "excludeFiles", n => { ExcludeFiles = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseServicesItemBuilderConfigExcludeFiles>(global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseServicesItemBuilderConfigExcludeFiles.CreateFromDiscriminatorValue); } },
@@ -241,6 +250,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("buildpack", Buildpack);
             writer.WriteBoolValue("bundle", Bundle);
             writer.WriteStringValue("bunVersion", BunVersion);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseServicesItemBuilderConfigDaemon>("daemon", Daemon);
             writer.WriteBoolValue("debug", Debug);
             writer.WriteStringValue("devCommand", DevCommand);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDeployment200ResponseServicesItemBuilderConfigExcludeFiles>("excludeFiles", ExcludeFiles);

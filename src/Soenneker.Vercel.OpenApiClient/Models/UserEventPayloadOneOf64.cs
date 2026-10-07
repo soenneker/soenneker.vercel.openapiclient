@@ -31,22 +31,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string AppName { get; set; }
 #endif
-        /// <summary>The permissions property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64PermissionsItem?>? Permissions { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64PermissionsItem?> Permissions { get; set; }
-#endif
-        /// <summary>The resources property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64Resources? Resources { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64Resources Resources { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64"/> and sets the default values.
         /// </summary>
@@ -74,8 +58,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "appId", n => { AppId = n.GetStringValue(); } },
                 { "appName", n => { AppName = n.GetStringValue(); } },
-                { "permissions", n => { Permissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64PermissionsItem>()?.AsList(); } },
-                { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64Resources>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64Resources.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,8 +69,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("appId", AppId);
             writer.WriteStringValue("appName", AppName);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64PermissionsItem>("permissions", Permissions);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf64Resources>("resources", Resources);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

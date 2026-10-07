@@ -15,45 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The gitlabEmail property</summary>
+        /// <summary>The configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitlabEmail { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100Configuration? Configuration { get; set; }
 #nullable restore
 #else
-        public string GitlabEmail { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100Configuration Configuration { get; set; }
 #endif
-        /// <summary>The gitlabLogin property</summary>
+        /// <summary>The newName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitlabLogin { get; set; }
+        public string? NewName { get; set; }
 #nullable restore
 #else
-        public string GitlabLogin { get; set; }
+        public string NewName { get; set; }
 #endif
-        /// <summary>The gitlabName property</summary>
+        /// <summary>The team property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GitlabName { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100Team? Team { get; set; }
 #nullable restore
 #else
-        public string GitlabName { get; set; }
-#endif
-        /// <summary>The zeitAccount property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ZeitAccount { get; set; }
-#nullable restore
-#else
-        public string ZeitAccount { get; set; }
-#endif
-        /// <summary>The zeitAccountType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ZeitAccountType { get; set; }
-#nullable restore
-#else
-        public string ZeitAccountType { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100Team Team { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100"/> and sets the default values.
@@ -80,11 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "gitlabEmail", n => { GitlabEmail = n.GetStringValue(); } },
-                { "gitlabLogin", n => { GitlabLogin = n.GetStringValue(); } },
-                { "gitlabName", n => { GitlabName = n.GetStringValue(); } },
-                { "zeitAccount", n => { ZeitAccount = n.GetStringValue(); } },
-                { "zeitAccountType", n => { ZeitAccountType = n.GetStringValue(); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100Configuration>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100Configuration.CreateFromDiscriminatorValue); } },
+                { "newName", n => { NewName = n.GetStringValue(); } },
+                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100Team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100Team.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -94,11 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("gitlabEmail", GitlabEmail);
-            writer.WriteStringValue("gitlabLogin", GitlabLogin);
-            writer.WriteStringValue("gitlabName", GitlabName);
-            writer.WriteStringValue("zeitAccount", ZeitAccount);
-            writer.WriteStringValue("zeitAccountType", ZeitAccountType);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100Configuration>("configuration", Configuration);
+            writer.WriteStringValue("newName", NewName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf100Team>("team", Team);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

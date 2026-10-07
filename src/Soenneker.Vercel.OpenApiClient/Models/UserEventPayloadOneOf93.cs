@@ -15,31 +15,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The buildsEnabled property</summary>
-        public bool? BuildsEnabled { get; set; }
-        /// <summary>The configuration property</summary>
+        /// <summary>The gitOwnerName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Configuration? Configuration { get; set; }
+        public string? GitOwnerName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Configuration Configuration { get; set; }
+        public string GitOwnerName { get; set; }
 #endif
-        /// <summary>The project property</summary>
+        /// <summary>The gitRepositoryName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Project? Project { get; set; }
+        public string? GitRepositoryName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Project Project { get; set; }
+        public string GitRepositoryName { get; set; }
 #endif
-        /// <summary>The team property</summary>
+        /// <summary>The next property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Team? Team { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Next? Next { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Team Team { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Next Next { get; set; }
+#endif
+        /// <summary>The previous property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Previous? Previous { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Previous Previous { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93"/> and sets the default values.
@@ -66,10 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "buildsEnabled", n => { BuildsEnabled = n.GetBoolValue(); } },
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Configuration>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Configuration.CreateFromDiscriminatorValue); } },
-                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Project.CreateFromDiscriminatorValue); } },
-                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Team.CreateFromDiscriminatorValue); } },
+                { "gitOwnerName", n => { GitOwnerName = n.GetStringValue(); } },
+                { "gitRepositoryName", n => { GitRepositoryName = n.GetStringValue(); } },
+                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Next.CreateFromDiscriminatorValue); } },
+                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Previous.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -79,10 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("buildsEnabled", BuildsEnabled);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Configuration>("configuration", Configuration);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Project>("project", Project);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Team>("team", Team);
+            writer.WriteStringValue("gitOwnerName", GitOwnerName);
+            writer.WriteStringValue("gitRepositoryName", GitRepositoryName);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Next>("next", Next);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf93Previous>("previous", Previous);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

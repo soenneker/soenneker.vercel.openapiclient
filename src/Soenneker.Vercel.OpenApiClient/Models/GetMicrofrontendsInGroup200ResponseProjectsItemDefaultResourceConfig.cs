@@ -38,6 +38,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigBuildQueue BuildQueue { get; set; }
 #endif
+        /// <summary>Internal assignment, intentionally excluded from API input/output schemas.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigElasticBuildMachine? ElasticBuildMachine { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigElasticBuildMachine ElasticBuildMachine { get; set; }
+#endif
         /// <summary>The elasticConcurrencyEnabled property</summary>
         public bool? ElasticConcurrencyEnabled { get; set; }
         /// <summary>The enableFunctionsBeta property</summary>
@@ -91,6 +99,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "buildMachineSelection", n => { BuildMachineSelection = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigBuildMachineSelection>(); } },
                 { "buildMachineType", n => { BuildMachineType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigBuildMachineType>(); } },
                 { "buildQueue", n => { BuildQueue = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigBuildQueue>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigBuildQueue.CreateFromDiscriminatorValue); } },
+                { "elasticBuildMachine", n => { ElasticBuildMachine = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigElasticBuildMachine>(global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigElasticBuildMachine.CreateFromDiscriminatorValue); } },
                 { "elasticConcurrencyEnabled", n => { ElasticConcurrencyEnabled = n.GetBoolValue(); } },
                 { "enableFunctionsBeta", n => { EnableFunctionsBeta = n.GetBoolValue(); } },
                 { "fluid", n => { Fluid = n.GetBoolValue(); } },
@@ -114,6 +123,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigBuildMachineSelection>("buildMachineSelection", BuildMachineSelection);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigBuildMachineType>("buildMachineType", BuildMachineType);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigBuildQueue>("buildQueue", BuildQueue);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigElasticBuildMachine>("elasticBuildMachine", ElasticBuildMachine);
             writer.WriteBoolValue("elasticConcurrencyEnabled", ElasticConcurrencyEnabled);
             writer.WriteBoolValue("enableFunctionsBeta", EnableFunctionsBeta);
             writer.WriteBoolValue("fluid", Fluid);

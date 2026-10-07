@@ -15,29 +15,17 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The cn property</summary>
+        /// <summary>The bulkRedirectsLimit property</summary>
+        public double? BulkRedirectsLimit { get; set; }
+        /// <summary>The prevBulkRedirectsLimit property</summary>
+        public double? PrevBulkRedirectsLimit { get; set; }
+        /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cn { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84Project? Project { get; set; }
 #nullable restore
 #else
-        public string Cn { get; set; }
-#endif
-        /// <summary>The cns property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Cns { get; set; }
-#nullable restore
-#else
-        public List<string> Cns { get; set; }
-#endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84Project Project { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84"/> and sets the default values.
@@ -64,9 +52,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cn", n => { Cn = n.GetStringValue(); } },
-                { "cns", n => { Cns = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "bulkRedirectsLimit", n => { BulkRedirectsLimit = n.GetDoubleValue(); } },
+                { "prevBulkRedirectsLimit", n => { PrevBulkRedirectsLimit = n.GetDoubleValue(); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84Project.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,9 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("cn", Cn);
-            writer.WriteCollectionOfPrimitiveValues<string>("cns", Cns);
-            writer.WriteStringValue("id", Id);
+            writer.WriteDoubleValue("bulkRedirectsLimit", BulkRedirectsLimit);
+            writer.WriteDoubleValue("prevBulkRedirectsLimit", PrevBulkRedirectsLimit);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf84Project>("project", Project);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

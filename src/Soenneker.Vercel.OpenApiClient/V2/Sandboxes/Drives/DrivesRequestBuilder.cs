@@ -19,15 +19,15 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives
     public partial class DrivesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v2.sandboxes.drives.item collection</summary>
-        /// <param name="position">Name for the drive. Must be unique per project and URL-safe (alphanumeric, hyphens, underscores).</param>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.WithNameItemRequestBuilder"/></returns>
-        public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.WithNameItemRequestBuilder this[string position]
+        /// <param name="position">The drive name or ID.</param>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.NameOrItemRequestBuilder"/></returns>
+        public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.NameOrItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("name", position);
-                return new global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.WithNameItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("nameOr%2Did", position);
+                return new global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Drives.Item.NameOrItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

@@ -15,31 +15,23 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents a budget for tracking and notifying teams on their spending.</summary>
+        /// <summary>The analyticsId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368Budget? Budget { get; set; }
+        public string? AnalyticsId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368Budget Budget { get; set; }
+        public string AnalyticsId { get; set; }
 #endif
-        /// <summary>Represents a budget for tracking and notifying teams on their spending.</summary>
+        /// <summary>The previous property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368PrevBudget? PrevBudget { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368Previous? Previous { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368PrevBudget PrevBudget { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368Previous Previous { get; set; }
 #endif
-        /// <summary>The prevWebhookUrl property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PrevWebhookUrl { get; set; }
-#nullable restore
-#else
-        public string PrevWebhookUrl { get; set; }
-#endif
-        /// <summary>Stored for project budgets. Same value as `budget.scopeId`.</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectId { get; set; }
@@ -47,7 +39,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>Injected at read time from `payload.projectId`.</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectName { get; set; }
@@ -55,14 +47,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get; set; }
 #endif
-        /// <summary>The webhookUrl property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WebhookUrl { get; set; }
-#nullable restore
-#else
-        public string WebhookUrl { get; set; }
-#endif
+        /// <summary>The sampleRatePercent property</summary>
+        public double? SampleRatePercent { get; set; }
+        /// <summary>The spendLimitInDollars property</summary>
+        public double? SpendLimitInDollars { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368"/> and sets the default values.
         /// </summary>
@@ -88,12 +76,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "budget", n => { Budget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368Budget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368Budget.CreateFromDiscriminatorValue); } },
-                { "prevBudget", n => { PrevBudget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368PrevBudget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368PrevBudget.CreateFromDiscriminatorValue); } },
-                { "prevWebhookUrl", n => { PrevWebhookUrl = n.GetStringValue(); } },
+                { "analyticsId", n => { AnalyticsId = n.GetStringValue(); } },
+                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368Previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368Previous.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "webhookUrl", n => { WebhookUrl = n.GetStringValue(); } },
+                { "sampleRatePercent", n => { SampleRatePercent = n.GetDoubleValue(); } },
+                { "spendLimitInDollars", n => { SpendLimitInDollars = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -103,12 +91,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368Budget>("budget", Budget);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368PrevBudget>("prevBudget", PrevBudget);
-            writer.WriteStringValue("prevWebhookUrl", PrevWebhookUrl);
+            writer.WriteStringValue("analyticsId", AnalyticsId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf368Previous>("previous", Previous);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("webhookUrl", WebhookUrl);
+            writer.WriteDoubleValue("sampleRatePercent", SampleRatePercent);
+            writer.WriteDoubleValue("spendLimitInDollars", SpendLimitInDollars);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,21 +15,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The teamId property</summary>
+        /// <summary>The deletedAt property</summary>
+        public double? DeletedAt { get; set; }
+        /// <summary>The username property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamId { get; set; }
+        public string? Username { get; set; }
 #nullable restore
 #else
-        public string TeamId { get; set; }
-#endif
-        /// <summary>The teamName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TeamName { get; set; }
-#nullable restore
-#else
-        public string TeamName { get; set; }
+        public string Username { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf435"/> and sets the default values.
@@ -56,8 +50,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "teamName", n => { TeamName = n.GetStringValue(); } },
+                { "deletedAt", n => { DeletedAt = n.GetDoubleValue(); } },
+                { "username", n => { Username = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +61,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("teamId", TeamId);
-            writer.WriteStringValue("teamName", TeamName);
+            writer.WriteDoubleValue("deletedAt", DeletedAt);
+            writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

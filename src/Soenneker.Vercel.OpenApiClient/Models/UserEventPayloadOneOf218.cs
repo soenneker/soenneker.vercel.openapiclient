@@ -15,37 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The group property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218Group? Group { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218Group Group { get; set; }
 #endif
-        /// <summary>The organizationId property</summary>
+        /// <summary>The prev property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218Prev? Prev { get; set; }
 #nullable restore
 #else
-        public string OrganizationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218Prev Prev { get; set; }
 #endif
-        /// <summary>The rootTeamId property</summary>
+        /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootTeamId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218Project? Project { get; set; }
 #nullable restore
 #else
-        public string RootTeamId { get; set; }
-#endif
-        /// <summary>The slug property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Slug { get; set; }
-#nullable restore
-#else
-        public string Slug { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218Project Project { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218"/> and sets the default values.
@@ -72,10 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "rootTeamId", n => { RootTeamId = n.GetStringValue(); } },
-                { "slug", n => { Slug = n.GetStringValue(); } },
+                { "group", n => { Group = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218Group>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218Group.CreateFromDiscriminatorValue); } },
+                { "prev", n => { Prev = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218Prev>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218Prev.CreateFromDiscriminatorValue); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218Project.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -85,10 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteStringValue("rootTeamId", RootTeamId);
-            writer.WriteStringValue("slug", Slug);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218Group>("group", Group);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218Prev>("prev", Prev);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf218Project>("project", Project);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

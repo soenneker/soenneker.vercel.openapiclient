@@ -15,29 +15,53 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The budget property</summary>
+        /// <summary>The bitbucketEmail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf365Budget? Budget { get; set; }
+        public string? BitbucketEmail { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf365Budget Budget { get; set; }
+        public string BitbucketEmail { get; set; }
 #endif
-        /// <summary>Stored for project budgets. Same value as `budget.scopeId`.</summary>
+        /// <summary>The bitbucketLogin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? BitbucketLogin { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string BitbucketLogin { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The bitbucketName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public string? BitbucketName { get; set; }
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public string BitbucketName { get; set; }
+#endif
+        /// <summary>The email property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Email { get; set; }
+#nullable restore
+#else
+        public string Email { get; set; }
+#endif
+        /// <summary>The zeitAccount property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ZeitAccount { get; set; }
+#nullable restore
+#else
+        public string ZeitAccount { get; set; }
+#endif
+        /// <summary>The zeitAccountType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ZeitAccountType { get; set; }
+#nullable restore
+#else
+        public string ZeitAccountType { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf365"/> and sets the default values.
@@ -64,9 +88,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "budget", n => { Budget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf365Budget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf365Budget.CreateFromDiscriminatorValue); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "bitbucketEmail", n => { BitbucketEmail = n.GetStringValue(); } },
+                { "bitbucketLogin", n => { BitbucketLogin = n.GetStringValue(); } },
+                { "bitbucketName", n => { BitbucketName = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "zeitAccount", n => { ZeitAccount = n.GetStringValue(); } },
+                { "zeitAccountType", n => { ZeitAccountType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +103,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf365Budget>("budget", Budget);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("bitbucketEmail", BitbucketEmail);
+            writer.WriteStringValue("bitbucketLogin", BitbucketLogin);
+            writer.WriteStringValue("bitbucketName", BitbucketName);
+            writer.WriteStringValue("email", Email);
+            writer.WriteStringValue("zeitAccount", ZeitAccount);
+            writer.WriteStringValue("zeitAccountType", ZeitAccountType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

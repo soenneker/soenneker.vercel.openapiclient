@@ -51,6 +51,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The ID of the source drive when this drive is a fork.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ParentDriveId { get; set; }
+#nullable restore
+#else
+        public string ParentDriveId { get; set; }
+#endif
         /// <summary>The project that owns the drive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +74,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string Region { get; set; }
+#endif
+        /// <summary>The ID of the original drive at the root of this fork.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RootDriveId { get; set; }
+#nullable restore
+#else
+        public string RootDriveId { get; set; }
 #endif
         /// <summary>The last time the drive was updated, in milliseconds since the epoch.</summary>
         public double? UpdatedAt { get; set; }
@@ -102,8 +118,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "maxSizeBytes", n => { MaxSizeBytes = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "parentDriveId", n => { ParentDriveId = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
+                { "rootDriveId", n => { RootDriveId = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "v0", n => { V0 = n.GetBoolValue(); } },
             };
@@ -121,8 +139,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("maxSizeBytes", MaxSizeBytes);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("parentDriveId", ParentDriveId);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("region", Region);
+            writer.WriteStringValue("rootDriveId", RootDriveId);
             writer.WriteDoubleValue("updatedAt", UpdatedAt);
             writer.WriteBoolValue("v0", V0);
             writer.WriteAdditionalData(AdditionalData);

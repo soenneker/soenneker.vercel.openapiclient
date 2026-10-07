@@ -1287,9 +1287,25 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         MessageboardPrivateSpaceCreated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-private-space-updated")]
+        #pragma warning disable CS1591
+        MessageboardPrivateSpaceUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-schema-registered")]
+        #pragma warning disable CS1591
+        MessageboardSchemaRegistered,
+        #pragma warning restore CS1591
         [EnumMember(Value = "messageboard-space-created")]
         #pragma warning disable CS1591
         MessageboardSpaceCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-space-updated")]
+        #pragma warning disable CS1591
+        MessageboardSpaceUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-visibility-updated")]
+        #pragma warning disable CS1591
+        MessageboardVisibilityUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "microfrontend-group-added")]
         #pragma warning disable CS1591
@@ -2726,6 +2742,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "v0-migration-payment-confirmed")]
         #pragma warning disable CS1591
         V0MigrationPaymentConfirmed,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "v0-migration-subscription-completed")]
+        #pragma warning disable CS1591
+        V0MigrationSubscriptionCompleted,
         #pragma warning restore CS1591
         [EnumMember(Value = "vcr-image-deleted")]
         #pragma warning disable CS1591

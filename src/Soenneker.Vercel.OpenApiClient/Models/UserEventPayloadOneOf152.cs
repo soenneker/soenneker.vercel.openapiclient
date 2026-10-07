@@ -15,29 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The edgeConfigDigest property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeConfigDigest { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public string EdgeConfigDigest { get; set; }
+        public string ProjectId { get; set; }
 #endif
-        /// <summary>The edgeConfigId property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeConfigId { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public string EdgeConfigId { get; set; }
+        public string ProjectName { get; set; }
 #endif
-        /// <summary>The edgeConfigSlug property</summary>
+        /// <summary>The srcImages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeConfigSlug { get; set; }
+        public List<string>? SrcImages { get; set; }
 #nullable restore
 #else
-        public string EdgeConfigSlug { get; set; }
+        public List<string> SrcImages { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf152"/> and sets the default values.
@@ -64,9 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "edgeConfigDigest", n => { EdgeConfigDigest = n.GetStringValue(); } },
-                { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
-                { "edgeConfigSlug", n => { EdgeConfigSlug = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "srcImages", n => { SrcImages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -76,9 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("edgeConfigDigest", EdgeConfigDigest);
-            writer.WriteStringValue("edgeConfigId", EdgeConfigId);
-            writer.WriteStringValue("edgeConfigSlug", EdgeConfigSlug);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteCollectionOfPrimitiveValues<string>("srcImages", SrcImages);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

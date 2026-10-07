@@ -15,29 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The newTeam property</summary>
+        /// <summary>The job property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117NewTeam? NewTeam { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117Job? Job { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117NewTeam NewTeam { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117Job Job { get; set; }
 #endif
-        /// <summary>The oldTeam property</summary>
+        /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117OldTeam? OldTeam { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117Project? Project { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117OldTeam OldTeam { get; set; }
-#endif
-        /// <summary>The url property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Url { get; set; }
-#nullable restore
-#else
-        public string Url { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117Project Project { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117"/> and sets the default values.
@@ -64,9 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "newTeam", n => { NewTeam = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117NewTeam>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117NewTeam.CreateFromDiscriminatorValue); } },
-                { "oldTeam", n => { OldTeam = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117OldTeam>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117OldTeam.CreateFromDiscriminatorValue); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                { "job", n => { Job = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117Job>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117Job.CreateFromDiscriminatorValue); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117Project.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,9 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117NewTeam>("newTeam", NewTeam);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117OldTeam>("oldTeam", OldTeam);
-            writer.WriteStringValue("url", Url);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117Job>("job", Job);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf117Project>("project", Project);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

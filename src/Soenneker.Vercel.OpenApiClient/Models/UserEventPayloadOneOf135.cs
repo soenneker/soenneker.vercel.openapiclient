@@ -15,29 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The customNameservers property</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CustomNameservers { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public List<string> CustomNameservers { get; set; }
+        public string Name { get; set; }
 #endif
-        /// <summary>The domain property</summary>
+        /// <summary>The newTeam property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf135NewTeam? NewTeam { get; set; }
 #nullable restore
 #else
-        public string Domain { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf135NewTeam NewTeam { get; set; }
 #endif
-        /// <summary>The prevCustomNameservers property</summary>
+        /// <summary>The oldTeam property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PrevCustomNameservers { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf135OldTeam? OldTeam { get; set; }
 #nullable restore
 #else
-        public List<string> PrevCustomNameservers { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf135OldTeam OldTeam { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf135"/> and sets the default values.
@@ -64,9 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "customNameservers", n => { CustomNameservers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "domain", n => { Domain = n.GetStringValue(); } },
-                { "prevCustomNameservers", n => { PrevCustomNameservers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "newTeam", n => { NewTeam = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf135NewTeam>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf135NewTeam.CreateFromDiscriminatorValue); } },
+                { "oldTeam", n => { OldTeam = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf135OldTeam>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf135OldTeam.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,9 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("customNameservers", CustomNameservers);
-            writer.WriteStringValue("domain", Domain);
-            writer.WriteCollectionOfPrimitiveValues<string>("prevCustomNameservers", PrevCustomNameservers);
+            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf135NewTeam>("newTeam", NewTeam);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf135OldTeam>("oldTeam", OldTeam);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

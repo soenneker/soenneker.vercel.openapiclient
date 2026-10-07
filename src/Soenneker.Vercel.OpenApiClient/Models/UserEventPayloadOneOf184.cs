@@ -15,54 +15,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The configurationId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ConfigurationId { get; set; }
-#nullable restore
-#else
-        public string ConfigurationId { get; set; }
-#endif
-        /// <summary>The integrationId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IntegrationId { get; set; }
-#nullable restore
-#else
-        public string IntegrationId { get; set; }
-#endif
-        /// <summary>The integrationName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IntegrationName { get; set; }
-#nullable restore
-#else
-        public string IntegrationName { get; set; }
-#endif
-        /// <summary>The integrationSlug property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IntegrationSlug { get; set; }
-#nullable restore
-#else
-        public string IntegrationSlug { get; set; }
-#endif
-        /// <summary>The newOwner property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184NewOwner? NewOwner { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184NewOwner NewOwner { get; set; }
-#endif
-        /// <summary>The userId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserId { get; set; }
-#nullable restore
-#else
-        public string UserId { get; set; }
-#endif
+        /// <summary>The source property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184Source? Source { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184"/> and sets the default values.
         /// </summary>
@@ -88,12 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configurationId", n => { ConfigurationId = n.GetStringValue(); } },
-                { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
-                { "integrationName", n => { IntegrationName = n.GetStringValue(); } },
-                { "integrationSlug", n => { IntegrationSlug = n.GetStringValue(); } },
-                { "newOwner", n => { NewOwner = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184NewOwner>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184NewOwner.CreateFromDiscriminatorValue); } },
-                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184Source>(); } },
             };
         }
         /// <summary>
@@ -103,12 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("configurationId", ConfigurationId);
-            writer.WriteStringValue("integrationId", IntegrationId);
-            writer.WriteStringValue("integrationName", IntegrationName);
-            writer.WriteStringValue("integrationSlug", IntegrationSlug);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184NewOwner>("newOwner", NewOwner);
-            writer.WriteStringValue("userId", UserId);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf184Source>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

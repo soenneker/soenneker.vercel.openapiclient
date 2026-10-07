@@ -15,45 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The directoryGroupId property</summary>
+        /// <summary>The alertId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DirectoryGroupId { get; set; }
+        public string? AlertId { get; set; }
 #nullable restore
 #else
-        public string DirectoryGroupId { get; set; }
+        public string AlertId { get; set; }
 #endif
-        /// <summary>The directoryId property</summary>
+        /// <summary>The alertName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DirectoryId { get; set; }
+        public string? AlertName { get; set; }
 #nullable restore
 #else
-        public string DirectoryId { get; set; }
-#endif
-        /// <summary>The groupName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GroupName { get; set; }
-#nullable restore
-#else
-        public string GroupName { get; set; }
-#endif
-        /// <summary>The next property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219Next? Next { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219Next Next { get; set; }
-#endif
-        /// <summary>The organizationId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OrganizationId { get; set; }
-#nullable restore
-#else
-        public string OrganizationId { get; set; }
+        public string AlertName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219"/> and sets the default values.
@@ -80,11 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "directoryGroupId", n => { DirectoryGroupId = n.GetStringValue(); } },
-                { "directoryId", n => { DirectoryId = n.GetStringValue(); } },
-                { "groupName", n => { GroupName = n.GetStringValue(); } },
-                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219Next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219Next.CreateFromDiscriminatorValue); } },
-                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
+                { "alertId", n => { AlertId = n.GetStringValue(); } },
+                { "alertName", n => { AlertName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -94,11 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("directoryGroupId", DirectoryGroupId);
-            writer.WriteStringValue("directoryId", DirectoryId);
-            writer.WriteStringValue("groupName", GroupName);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf219Next>("next", Next);
-            writer.WriteStringValue("organizationId", OrganizationId);
+            writer.WriteStringValue("alertId", AlertId);
+            writer.WriteStringValue("alertName", AlertName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

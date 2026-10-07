@@ -16,9 +16,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The enabled property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf390Enabled? Enabled { get; set; }
-        /// <summary>The environment property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf390Environment? Environment { get; set; }
+        public bool? Enabled { get; set; }
+        /// <summary>The scope property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.OrganizationScope? Scope { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf390"/> and sets the default values.
         /// </summary>
@@ -44,8 +44,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enabled", n => { Enabled = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf390Enabled>(); } },
-                { "environment", n => { Environment = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf390Environment>(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationScope>(); } },
             };
         }
         /// <summary>
@@ -55,8 +55,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf390Enabled>("enabled", Enabled);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf390Environment>("environment", Environment);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.OrganizationScope>("scope", Scope);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

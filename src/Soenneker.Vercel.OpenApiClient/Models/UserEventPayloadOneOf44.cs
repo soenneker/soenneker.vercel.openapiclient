@@ -13,27 +13,23 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf44 : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The accessGroup property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44AccessGroup? AccessGroup { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44AccessGroup AccessGroup { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The next_role property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44NextRole? NextRole { get; set; }
-        /// <summary>The previous_role property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44PreviousRole? PreviousRole { get; set; }
-        /// <summary>The project property</summary>
+        /// <summary>The changedFields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44Project? Project { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44ChangedFieldsItem?>? ChangedFields { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44Project Project { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44ChangedFieldsItem?> ChangedFields { get; set; }
+#endif
+        /// <summary>The virtualModelConfig property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44VirtualModelConfig? VirtualModelConfig { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44VirtualModelConfig VirtualModelConfig { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44"/> and sets the default values.
@@ -60,10 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accessGroup", n => { AccessGroup = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44AccessGroup>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44AccessGroup.CreateFromDiscriminatorValue); } },
-                { "next_role", n => { NextRole = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44NextRole>(); } },
-                { "previous_role", n => { PreviousRole = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44PreviousRole>(); } },
-                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44Project.CreateFromDiscriminatorValue); } },
+                { "changedFields", n => { ChangedFields = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44ChangedFieldsItem>()?.AsList(); } },
+                { "virtualModelConfig", n => { VirtualModelConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44VirtualModelConfig>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44VirtualModelConfig.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -73,10 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44AccessGroup>("accessGroup", AccessGroup);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44NextRole>("next_role", NextRole);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44PreviousRole>("previous_role", PreviousRole);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44Project>("project", Project);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44ChangedFieldsItem>("changedFields", ChangedFields);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf44VirtualModelConfig>("virtualModelConfig", VirtualModelConfig);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

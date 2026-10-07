@@ -15,29 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85Project? Project { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85Project Project { get; set; }
 #endif
-        /// <summary>The newTeam property</summary>
+        /// <summary>The versionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85NewTeam? NewTeam { get; set; }
+        public string? VersionId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85NewTeam NewTeam { get; set; }
-#endif
-        /// <summary>The oldTeam property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85OldTeam? OldTeam { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85OldTeam OldTeam { get; set; }
+        public string VersionId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85"/> and sets the default values.
@@ -64,9 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "newTeam", n => { NewTeam = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85NewTeam>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85NewTeam.CreateFromDiscriminatorValue); } },
-                { "oldTeam", n => { OldTeam = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85OldTeam>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85OldTeam.CreateFromDiscriminatorValue); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85Project.CreateFromDiscriminatorValue); } },
+                { "versionId", n => { VersionId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85NewTeam>("newTeam", NewTeam);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85OldTeam>("oldTeam", OldTeam);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf85Project>("project", Project);
+            writer.WriteStringValue("versionId", VersionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

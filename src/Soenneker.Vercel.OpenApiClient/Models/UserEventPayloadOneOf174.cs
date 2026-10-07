@@ -15,18 +15,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The configChangeCount property</summary>
-        public double? ConfigChangeCount { get; set; }
-        /// <summary>The configChanges property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174ConfigChangesItemProperty>? ConfigChanges { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174ConfigChangesItemProperty> ConfigChanges { get; set; }
-#endif
-        /// <summary>The configVersion property</summary>
-        public double? ConfigVersion { get; set; }
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,16 +23,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The scope property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public string? Scope { get; set; }
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public string Scope { get; set; }
 #endif
-        /// <summary>The restore property</summary>
-        public bool? Restore { get; set; }
+        /// <summary>The source property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Source { get; set; }
+#nullable restore
+#else
+        public string Source { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174"/> and sets the default values.
         /// </summary>
@@ -70,12 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configChangeCount", n => { ConfigChangeCount = n.GetDoubleValue(); } },
-                { "configChanges", n => { ConfigChanges = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174ConfigChangesItemProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174ConfigChangesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "configVersion", n => { ConfigVersion = n.GetDoubleValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "restore", n => { Restore = n.GetBoolValue(); } },
+                { "scope", n => { Scope = n.GetStringValue(); } },
+                { "source", n => { Source = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,12 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("configChangeCount", ConfigChangeCount);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf174ConfigChangesItemProperty>("configChanges", ConfigChanges);
-            writer.WriteDoubleValue("configVersion", ConfigVersion);
             writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteBoolValue("restore", Restore);
+            writer.WriteStringValue("scope", Scope);
+            writer.WriteStringValue("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

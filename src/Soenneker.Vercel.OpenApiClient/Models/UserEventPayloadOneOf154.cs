@@ -15,29 +15,29 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The edgeConfigId property</summary>
+        /// <summary>The path property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeConfigId { get; set; }
+        public string? Path { get; set; }
 #nullable restore
 #else
-        public string EdgeConfigId { get; set; }
+        public string Path { get; set; }
 #endif
-        /// <summary>The edgeConfigSchema property</summary>
+        /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154EdgeConfigSchemaProperty? EdgeConfigSchema { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154EdgeConfigSchemaProperty EdgeConfigSchema { get; set; }
+        public string ProjectId { get; set; }
 #endif
-        /// <summary>The edgeConfigSlug property</summary>
+        /// <summary>The projectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeConfigSlug { get; set; }
+        public string? ProjectName { get; set; }
 #nullable restore
 #else
-        public string EdgeConfigSlug { get; set; }
+        public string ProjectName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154"/> and sets the default values.
@@ -64,9 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "edgeConfigId", n => { EdgeConfigId = n.GetStringValue(); } },
-                { "edgeConfigSchema", n => { EdgeConfigSchema = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154EdgeConfigSchemaProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154EdgeConfigSchemaProperty.CreateFromDiscriminatorValue); } },
-                { "edgeConfigSlug", n => { EdgeConfigSlug = n.GetStringValue(); } },
+                { "path", n => { Path = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("edgeConfigId", EdgeConfigId);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf154EdgeConfigSchemaProperty>("edgeConfigSchema", EdgeConfigSchema);
-            writer.WriteStringValue("edgeConfigSlug", EdgeConfigSlug);
+            writer.WriteStringValue("path", Path);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

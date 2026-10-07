@@ -15,48 +15,30 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The changedFields property</summary>
+        /// <summary>The nextRule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ChangedFields { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165NextRule? NextRule { get; set; }
 #nullable restore
 #else
-        public List<string> ChangedFields { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165NextRule NextRule { get; set; }
 #endif
-        /// <summary>The key property</summary>
+        /// <summary>The previousRule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165PreviousRule? PreviousRule { get; set; }
 #nullable restore
 #else
-        public string Key { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165PreviousRule PreviousRule { get; set; }
 #endif
-        /// <summary>The organizationId property</summary>
+        /// <summary>The team property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165Team? Team { get; set; }
 #nullable restore
 #else
-        public string OrganizationId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165Team Team { get; set; }
 #endif
-        /// <summary>The provider property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Provider { get; set; }
-#nullable restore
-#else
-        public string Provider { get; set; }
-#endif
-        /// <summary>The repository property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Repository { get; set; }
-#nullable restore
-#else
-        public string Repository { get; set; }
-#endif
-        /// <summary>The visibility property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165Visibility? Visibility { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165"/> and sets the default values.
         /// </summary>
@@ -82,12 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "changedFields", n => { ChangedFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "key", n => { Key = n.GetStringValue(); } },
-                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetStringValue(); } },
-                { "repository", n => { Repository = n.GetStringValue(); } },
-                { "visibility", n => { Visibility = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165Visibility>(); } },
+                { "nextRule", n => { NextRule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165NextRule>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165NextRule.CreateFromDiscriminatorValue); } },
+                { "previousRule", n => { PreviousRule = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165PreviousRule>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165PreviousRule.CreateFromDiscriminatorValue); } },
+                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165Team>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165Team.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -97,12 +76,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("changedFields", ChangedFields);
-            writer.WriteStringValue("key", Key);
-            writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteStringValue("provider", Provider);
-            writer.WriteStringValue("repository", Repository);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165Visibility>("visibility", Visibility);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165NextRule>("nextRule", NextRule);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165PreviousRule>("previousRule", PreviousRule);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf165Team>("team", Team);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

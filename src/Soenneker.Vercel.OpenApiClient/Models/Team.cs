@@ -175,6 +175,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamIpBucketsItem> IpBuckets { get; set; }
 #endif
+        /// <summary>Property indicating that this Team data contains full information. Limited Team data has `limited: true`.</summary>
+        public bool? Limited { get; set; }
         /// <summary>The membership of the authenticated User in relation to the Team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -359,6 +361,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "integrationTokensInvalidatedAt", n => { IntegrationTokensInvalidatedAt = n.GetDoubleValue(); } },
                 { "inviteCode", n => { InviteCode = n.GetStringValue(); } },
                 { "ipBuckets", n => { IpBuckets = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamIpBucketsItem>(global::Soenneker.Vercel.OpenApiClient.Models.TeamIpBucketsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "limited", n => { Limited = n.GetBoolValue(); } },
                 { "membership", n => { Membership = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamMembership>(global::Soenneker.Vercel.OpenApiClient.Models.TeamMembership.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nsnbConfig", n => { NsnbConfig = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamNsnbConfig>(global::Soenneker.Vercel.OpenApiClient.Models.TeamNsnbConfig.CreateFromDiscriminatorValue); } },
@@ -417,6 +420,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("integrationTokensInvalidatedAt", IntegrationTokensInvalidatedAt);
             writer.WriteStringValue("inviteCode", InviteCode);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamIpBucketsItem>("ipBuckets", IpBuckets);
+            writer.WriteBoolValue("limited", Limited);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamMembership>("membership", Membership);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamNsnbConfig>("nsnbConfig", NsnbConfig);

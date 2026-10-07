@@ -15,30 +15,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The destinationId property</summary>
+        /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationId { get; set; }
+        public string? Domain { get; set; }
 #nullable restore
 #else
-        public string DestinationId { get; set; }
+        public string Domain { get; set; }
 #endif
-        /// <summary>The destinationName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DestinationName { get; set; }
-#nullable restore
-#else
-        public string DestinationName { get; set; }
-#endif
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
+        /// <summary>The echMode property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141EchMode? EchMode { get; set; }
+        /// <summary>The previousEchMode property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141PreviousEchMode? PreviousEchMode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141"/> and sets the default values.
         /// </summary>
@@ -64,9 +52,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "destinationId", n => { DestinationId = n.GetStringValue(); } },
-                { "destinationName", n => { DestinationName = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
+                { "echMode", n => { EchMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141EchMode>(); } },
+                { "previousEchMode", n => { PreviousEchMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141PreviousEchMode>(); } },
             };
         }
         /// <summary>
@@ -76,9 +64,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("destinationId", DestinationId);
-            writer.WriteStringValue("destinationName", DestinationName);
-            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("domain", Domain);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141EchMode>("echMode", EchMode);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf141PreviousEchMode>("previousEchMode", PreviousEchMode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

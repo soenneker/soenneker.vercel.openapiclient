@@ -15,37 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The documentId property</summary>
+        /// <summary>The dst property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentId { get; set; }
+        public string? Dst { get; set; }
 #nullable restore
 #else
-        public string DocumentId { get; set; }
+        public string Dst { get; set; }
 #endif
-        /// <summary>The fingerprint property</summary>
+        /// <summary>The src property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Fingerprint { get; set; }
+        public string? Src { get; set; }
 #nullable restore
 #else
-        public string Fingerprint { get; set; }
-#endif
-        /// <summary>The slug property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Slug { get; set; }
-#nullable restore
-#else
-        public string Slug { get; set; }
-#endif
-        /// <summary>The title property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Title { get; set; }
-#nullable restore
-#else
-        public string Title { get; set; }
+        public string Src { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf90"/> and sets the default values.
@@ -72,10 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "documentId", n => { DocumentId = n.GetStringValue(); } },
-                { "fingerprint", n => { Fingerprint = n.GetStringValue(); } },
-                { "slug", n => { Slug = n.GetStringValue(); } },
-                { "title", n => { Title = n.GetStringValue(); } },
+                { "dst", n => { Dst = n.GetStringValue(); } },
+                { "src", n => { Src = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,10 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("documentId", DocumentId);
-            writer.WriteStringValue("fingerprint", Fingerprint);
-            writer.WriteStringValue("slug", Slug);
-            writer.WriteStringValue("title", Title);
+            writer.WriteStringValue("dst", Dst);
+            writer.WriteStringValue("src", Src);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

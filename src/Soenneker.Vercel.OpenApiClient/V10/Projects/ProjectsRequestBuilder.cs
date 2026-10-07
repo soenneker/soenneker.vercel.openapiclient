@@ -35,7 +35,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v10/projects{?buildMachineTypes*,buildQueueConfiguration*,deprecated*,edgeConfigId*,edgeConfigTokenId*,elasticConcurrencyEnabled*,excludeRepos*,from*,gitForkProtection*,limit*,repo*,repoId*,repoUrl*,search*,slug*,staticIpsEnabled*,teamId*}", pathParameters)
+        public ProjectsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v10/projects{?buildMachineTypes*,buildQueueConfiguration*,deprecated*,edgeConfigId*,edgeConfigTokenId*,elasticConcurrencyEnabled*,excludeRepos*,from*,gitForkProtection*,limit*,repo*,repoId*,repoUrl*,search*,since*,slug*,staticIpsEnabled*,teamId*,until*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v10/projects{?buildMachineTypes*,buildQueueConfiguration*,deprecated*,edgeConfigId*,edgeConfigTokenId*,elasticConcurrencyEnabled*,excludeRepos*,from*,gitForkProtection*,limit*,repo*,repoId*,repoUrl*,search*,slug*,staticIpsEnabled*,teamId*}", rawUrl)
+        public ProjectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v10/projects{?buildMachineTypes*,buildQueueConfiguration*,deprecated*,edgeConfigId*,edgeConfigTokenId*,elasticConcurrencyEnabled*,excludeRepos*,from*,gitForkProtection*,limit*,repo*,repoId*,repoUrl*,search*,since*,slug*,staticIpsEnabled*,teamId*,until*}", rawUrl)
         {
         }
         /// <summary>
@@ -211,6 +211,9 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
+            /// <summary>Query only projects updated after this JavaScript timestamp.</summary>
+            [QueryParameter("since")]
+            public double? Since { get; set; }
             /// <summary>The Team slug to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -234,6 +237,9 @@ namespace Soenneker.Vercel.OpenApiClient.V10.Projects
             [QueryParameter("teamId")]
             public string TeamId { get; set; }
 #endif
+            /// <summary>Query only projects updated before this JavaScript timestamp.</summary>
+            [QueryParameter("until")]
+            public double? Until { get; set; }
         }
     }
 }

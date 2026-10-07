@@ -15,18 +15,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The prevPurchasedAmount property</summary>
-        public double? PrevPurchasedAmount { get; set; }
-        /// <summary>The project property</summary>
+        /// <summary>The gitlabLogin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf105Project? Project { get; set; }
+        public string? GitlabLogin { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf105Project Project { get; set; }
+        public string GitlabLogin { get; set; }
 #endif
-        /// <summary>The purchasedAmount property</summary>
-        public double? PurchasedAmount { get; set; }
+        /// <summary>The gitlabUserId property</summary>
+        public double? GitlabUserId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf105"/> and sets the default values.
         /// </summary>
@@ -52,9 +50,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "prevPurchasedAmount", n => { PrevPurchasedAmount = n.GetDoubleValue(); } },
-                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf105Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf105Project.CreateFromDiscriminatorValue); } },
-                { "purchasedAmount", n => { PurchasedAmount = n.GetDoubleValue(); } },
+                { "gitlabLogin", n => { GitlabLogin = n.GetStringValue(); } },
+                { "gitlabUserId", n => { GitlabUserId = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -64,9 +61,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("prevPurchasedAmount", PrevPurchasedAmount);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf105Project>("project", Project);
-            writer.WriteDoubleValue("purchasedAmount", PurchasedAmount);
+            writer.WriteStringValue("gitlabLogin", GitlabLogin);
+            writer.WriteDoubleValue("gitlabUserId", GitlabUserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

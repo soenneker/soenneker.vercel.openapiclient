@@ -15,21 +15,47 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The projectId property</summary>
+        /// <summary>The enablePolyrepoBranchRouting property</summary>
+        public bool? EnablePolyrepoBranchRouting { get; set; }
+        /// <summary>The fallbackEnvironment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? FallbackEnvironment { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string FallbackEnvironment { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public string Id { get; set; }
+#endif
+        /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>The prev property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216Prev? Prev { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216Prev Prev { get; set; }
+#endif
+        /// <summary>The slug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Slug { get; set; }
+#nullable restore
+#else
+        public string Slug { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216"/> and sets the default values.
@@ -56,8 +82,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "enablePolyrepoBranchRouting", n => { EnablePolyrepoBranchRouting = n.GetBoolValue(); } },
+                { "fallbackEnvironment", n => { FallbackEnvironment = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "prev", n => { Prev = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216Prev>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216Prev.CreateFromDiscriminatorValue); } },
+                { "slug", n => { Slug = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +97,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteBoolValue("enablePolyrepoBranchRouting", EnablePolyrepoBranchRouting);
+            writer.WriteStringValue("fallbackEnvironment", FallbackEnvironment);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf216Prev>("prev", Prev);
+            writer.WriteStringValue("slug", Slug);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,37 +15,37 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents a budget for tracking and notifying teams on their spending.</summary>
+        /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf366Budget? Budget { get; set; }
+        public string? Email { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf366Budget Budget { get; set; }
+        public string Email { get; set; }
 #endif
-        /// <summary>Stored for project budgets. Same value as `budget.scopeId`.</summary>
+        /// <summary>The githubLogin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? GithubLogin { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string GithubLogin { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The zeitAccount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public string? ZeitAccount { get; set; }
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public string ZeitAccount { get; set; }
 #endif
-        /// <summary>The webhookUrl property</summary>
+        /// <summary>The zeitAccountType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebhookUrl { get; set; }
+        public string? ZeitAccountType { get; set; }
 #nullable restore
 #else
-        public string WebhookUrl { get; set; }
+        public string ZeitAccountType { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf366"/> and sets the default values.
@@ -72,10 +72,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "budget", n => { Budget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf366Budget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf366Budget.CreateFromDiscriminatorValue); } },
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "webhookUrl", n => { WebhookUrl = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "githubLogin", n => { GithubLogin = n.GetStringValue(); } },
+                { "zeitAccount", n => { ZeitAccount = n.GetStringValue(); } },
+                { "zeitAccountType", n => { ZeitAccountType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,10 +85,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf366Budget>("budget", Budget);
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteStringValue("webhookUrl", WebhookUrl);
+            writer.WriteStringValue("email", Email);
+            writer.WriteStringValue("githubLogin", GithubLogin);
+            writer.WriteStringValue("zeitAccount", ZeitAccount);
+            writer.WriteStringValue("zeitAccountType", ZeitAccountType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

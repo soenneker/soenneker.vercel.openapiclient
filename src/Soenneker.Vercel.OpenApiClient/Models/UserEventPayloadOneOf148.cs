@@ -15,30 +15,24 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The projectId property</summary>
+        /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? Currency { get; set; }
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string Currency { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectName { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public string ProjectName { get; set; }
+        public string Name { get; set; }
 #endif
-        /// <summary>The srcImages property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? SrcImages { get; set; }
-#nullable restore
-#else
-        public List<string> SrcImages { get; set; }
-#endif
+        /// <summary>The price property</summary>
+        public double? Price { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf148"/> and sets the default values.
         /// </summary>
@@ -64,9 +58,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "projectId", n => { ProjectId = n.GetStringValue(); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "srcImages", n => { SrcImages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "currency", n => { Currency = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "price", n => { Price = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +70,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("projectId", ProjectId);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteCollectionOfPrimitiveValues<string>("srcImages", SrcImages);
+            writer.WriteStringValue("currency", Currency);
+            writer.WriteStringValue("name", Name);
+            writer.WriteDoubleValue("price", Price);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

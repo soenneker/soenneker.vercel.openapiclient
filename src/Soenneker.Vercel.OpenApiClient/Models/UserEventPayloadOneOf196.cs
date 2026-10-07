@@ -15,6 +15,32 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The commands property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf196CommandsItem>? Commands { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf196CommandsItem> Commands { get; set; }
+#endif
+        /// <summary>The configurationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConfigurationId { get; set; }
+#nullable restore
+#else
+        public string ConfigurationId { get; set; }
+#endif
+        /// <summary>The errorCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ErrorCode { get; set; }
+#nullable restore
+#else
+        public string ErrorCode { get; set; }
+#endif
+        /// <summary>The errorIndex property</summary>
+        public double? ErrorIndex { get; set; }
         /// <summary>The integrationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,13 +49,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string IntegrationId { get; set; }
 #endif
-        /// <summary>The integrationName property</summary>
+        /// <summary>The integrationProductSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationName { get; set; }
+        public string? IntegrationProductSlug { get; set; }
 #nullable restore
 #else
-        public string IntegrationName { get; set; }
+        public string IntegrationProductSlug { get; set; }
 #endif
         /// <summary>The integrationSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,6 +64,18 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string IntegrationSlug { get; set; }
+#endif
+        /// <summary>The readonly property</summary>
+        public bool? Readonly { get; set; }
+        /// <summary>The requestKind property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.RawCommandsRequestKind? RequestKind { get; set; }
+        /// <summary>The resourceId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ResourceId { get; set; }
+#nullable restore
+#else
+        public string ResourceId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf196"/> and sets the default values.
@@ -64,9 +102,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "commands", n => { Commands = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf196CommandsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf196CommandsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "configurationId", n => { ConfigurationId = n.GetStringValue(); } },
+                { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
+                { "errorIndex", n => { ErrorIndex = n.GetDoubleValue(); } },
                 { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
-                { "integrationName", n => { IntegrationName = n.GetStringValue(); } },
+                { "integrationProductSlug", n => { IntegrationProductSlug = n.GetStringValue(); } },
                 { "integrationSlug", n => { IntegrationSlug = n.GetStringValue(); } },
+                { "readonly", n => { Readonly = n.GetBoolValue(); } },
+                { "requestKind", n => { RequestKind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.RawCommandsRequestKind>(); } },
+                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +121,16 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf196CommandsItem>("commands", Commands);
+            writer.WriteStringValue("configurationId", ConfigurationId);
+            writer.WriteStringValue("errorCode", ErrorCode);
+            writer.WriteDoubleValue("errorIndex", ErrorIndex);
             writer.WriteStringValue("integrationId", IntegrationId);
-            writer.WriteStringValue("integrationName", IntegrationName);
+            writer.WriteStringValue("integrationProductSlug", IntegrationProductSlug);
             writer.WriteStringValue("integrationSlug", IntegrationSlug);
+            writer.WriteBoolValue("readonly", Readonly);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.RawCommandsRequestKind>("requestKind", RequestKind);
+            writer.WriteStringValue("resourceId", ResourceId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
