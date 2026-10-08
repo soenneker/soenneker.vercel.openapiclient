@@ -38,6 +38,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseResourceConfigBuildQueue BuildQueue { get; set; }
 #endif
+        /// <summary>Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseResourceConfigElasticBuildMachine? ElasticBuildMachine { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseResourceConfigElasticBuildMachine ElasticBuildMachine { get; set; }
+#endif
         /// <summary>The elasticConcurrencyEnabled property</summary>
         public bool? ElasticConcurrencyEnabled { get; set; }
         /// <summary>The enableFunctionsBeta property</summary>
@@ -91,6 +99,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "buildMachineSelection", n => { BuildMachineSelection = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseResourceConfigBuildMachineSelection>(); } },
                 { "buildMachineType", n => { BuildMachineType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseResourceConfigBuildMachineType>(); } },
                 { "buildQueue", n => { BuildQueue = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseResourceConfigBuildQueue>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseResourceConfigBuildQueue.CreateFromDiscriminatorValue); } },
+                { "elasticBuildMachine", n => { ElasticBuildMachine = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseResourceConfigElasticBuildMachine>(global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseResourceConfigElasticBuildMachine.CreateFromDiscriminatorValue); } },
                 { "elasticConcurrencyEnabled", n => { ElasticConcurrencyEnabled = n.GetBoolValue(); } },
                 { "enableFunctionsBeta", n => { EnableFunctionsBeta = n.GetBoolValue(); } },
                 { "fluid", n => { Fluid = n.GetBoolValue(); } },
@@ -114,6 +123,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseResourceConfigBuildMachineSelection>("buildMachineSelection", BuildMachineSelection);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseResourceConfigBuildMachineType>("buildMachineType", BuildMachineType);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseResourceConfigBuildQueue>("buildQueue", BuildQueue);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponseResourceConfigElasticBuildMachine>("elasticBuildMachine", ElasticBuildMachine);
             writer.WriteBoolValue("elasticConcurrencyEnabled", ElasticConcurrencyEnabled);
             writer.WriteBoolValue("enableFunctionsBeta", EnableFunctionsBeta);
             writer.WriteBoolValue("fluid", Fluid);

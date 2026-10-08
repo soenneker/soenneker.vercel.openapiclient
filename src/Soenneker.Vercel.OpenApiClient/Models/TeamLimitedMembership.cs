@@ -39,6 +39,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipJoinedFrom JoinedFrom { get; set; }
 #endif
+        /// <summary>The organizationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
+#endif
         /// <summary>The role property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipRole? Role { get; set; }
         /// <summary>The teamId property</summary>
@@ -104,6 +112,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "entitlements", n => { Entitlements = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipEntitlementsItem>(global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipEntitlementsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "joinedFrom", n => { JoinedFrom = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipJoinedFrom>(global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipJoinedFrom.CreateFromDiscriminatorValue); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "role", n => { Role = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipRole>(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
                 { "teamPermissions", n => { TeamPermissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipTeamPermissionsItem>()?.AsList(); } },
@@ -124,6 +133,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipEntitlementsItem>("entitlements", Entitlements);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipJoinedFrom>("joinedFrom", JoinedFrom);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipRole>("role", Role);
             writer.WriteStringValue("teamId", TeamId);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamLimitedMembershipTeamPermissionsItem>("teamPermissions", TeamPermissions);

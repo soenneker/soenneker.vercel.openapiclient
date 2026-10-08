@@ -38,7 +38,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigBuildQueue BuildQueue { get; set; }
 #endif
-        /// <summary>Internal assignment, intentionally excluded from API input/output schemas.</summary>
+        /// <summary>Server-owned Elastic assignment; responses may fall back to the legacy label. Not accepted as input. Memory is measured in MiB.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.GetMicrofrontendsInGroup200ResponseProjectsItemDefaultResourceConfigElasticBuildMachine? ElasticBuildMachine { get; set; }

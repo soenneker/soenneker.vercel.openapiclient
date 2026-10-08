@@ -1423,6 +1423,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         OrganizationDelete,
         #pragma warning restore CS1591
+        [EnumMember(Value = "organization-dsync-delete")]
+        #pragma warning disable CS1591
+        OrganizationDsyncDelete,
+        #pragma warning restore CS1591
         [EnumMember(Value = "organization-dsync-group-delete")]
         #pragma warning disable CS1591
         OrganizationDsyncGroupDelete,

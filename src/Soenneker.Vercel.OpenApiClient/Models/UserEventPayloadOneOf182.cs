@@ -15,21 +15,21 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The newOwnerId property</summary>
+        /// <summary>The consumerProjectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewOwnerId { get; set; }
+        public string? ConsumerProjectId { get; set; }
 #nullable restore
 #else
-        public string NewOwnerId { get; set; }
+        public string ConsumerProjectId { get; set; }
 #endif
-        /// <summary>The previousOwnerId property</summary>
+        /// <summary>The consumerProjectName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousOwnerId { get; set; }
+        public string? ConsumerProjectName { get; set; }
 #nullable restore
 #else
-        public string PreviousOwnerId { get; set; }
+        public string ConsumerProjectName { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,8 +72,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "newOwnerId", n => { NewOwnerId = n.GetStringValue(); } },
-                { "previousOwnerId", n => { PreviousOwnerId = n.GetStringValue(); } },
+                { "consumerProjectId", n => { ConsumerProjectId = n.GetStringValue(); } },
+                { "consumerProjectName", n => { ConsumerProjectName = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
@@ -85,8 +85,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("newOwnerId", NewOwnerId);
-            writer.WriteStringValue("previousOwnerId", PreviousOwnerId);
+            writer.WriteStringValue("consumerProjectId", ConsumerProjectId);
+            writer.WriteStringValue("consumerProjectName", ConsumerProjectName);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteAdditionalData(AdditionalData);

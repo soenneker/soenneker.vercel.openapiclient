@@ -23,6 +23,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? IpBypass { get; set; }
         /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
         public double? RateLimit { get; set; }
+        /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
+        public double? SecurityLists { get; set; }
+        /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
+        public double? TeamLevelConditions { get; set; }
+        /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
+        public double? TeamLevelRules { get; set; }
+        /// <summary>An object containing infomation related to the amount of platform resources may be allocated to the User account.</summary>
+        public double? TeamLevelRulesets { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AuthUserResourceConfigSecurity"/> and sets the default values.
         /// </summary>
@@ -52,6 +60,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "ipBlocks", n => { IpBlocks = n.GetDoubleValue(); } },
                 { "ipBypass", n => { IpBypass = n.GetDoubleValue(); } },
                 { "rateLimit", n => { RateLimit = n.GetDoubleValue(); } },
+                { "securityLists", n => { SecurityLists = n.GetDoubleValue(); } },
+                { "teamLevelConditions", n => { TeamLevelConditions = n.GetDoubleValue(); } },
+                { "teamLevelRules", n => { TeamLevelRules = n.GetDoubleValue(); } },
+                { "teamLevelRulesets", n => { TeamLevelRulesets = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -65,6 +77,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("ipBlocks", IpBlocks);
             writer.WriteDoubleValue("ipBypass", IpBypass);
             writer.WriteDoubleValue("rateLimit", RateLimit);
+            writer.WriteDoubleValue("securityLists", SecurityLists);
+            writer.WriteDoubleValue("teamLevelConditions", TeamLevelConditions);
+            writer.WriteDoubleValue("teamLevelRules", TeamLevelRules);
+            writer.WriteDoubleValue("teamLevelRulesets", TeamLevelRulesets);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

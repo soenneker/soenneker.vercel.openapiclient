@@ -7,28 +7,124 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.Flag"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UpdateFlag200Response : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class UpdateFlag200Response : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.Flag"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The createdAt property</summary>
+        public double? CreatedAt { get; set; }
+        /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.Flag? Flag { get; set; }
+        public string? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.Flag Flag { get; set; }
+        public string CreatedBy { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1"/></summary>
+        /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1? UpdateFlag200ResponseOneOf1 { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1 UpdateFlag200ResponseOneOf1 { get; set; }
+        public string Description { get; set; }
 #endif
+        /// <summary>The environments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseEnvironments? Environments { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseEnvironments Environments { get; set; }
+#endif
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
+        /// <summary>The kind property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseKind? Kind { get; set; }
+        /// <summary>The maintainerIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? MaintainerIds { get; set; }
+#nullable restore
+#else
+        public List<string> MaintainerIds { get; set; }
+#endif
+        /// <summary>The ownerId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OwnerId { get; set; }
+#nullable restore
+#else
+        public string OwnerId { get; set; }
+#endif
+        /// <summary>The permanent property</summary>
+        public bool? Permanent { get; set; }
+        /// <summary>The projectId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get; set; }
+#nullable restore
+#else
+        public string ProjectId { get; set; }
+#endif
+        /// <summary>The revision property</summary>
+        public double? Revision { get; set; }
+        /// <summary>The seed property</summary>
+        public double? Seed { get; set; }
+        /// <summary>The slug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Slug { get; set; }
+#nullable restore
+#else
+        public string Slug { get; set; }
+#endif
+        /// <summary>The state property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseState? State { get; set; }
+        /// <summary>The tags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Tags { get; set; }
+#nullable restore
+#else
+        public List<string> Tags { get; set; }
+#endif
+        /// <summary>The typeName property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.FlagTypeName? TypeName { get; set; }
+        /// <summary>The updatedAt property</summary>
+        public double? UpdatedAt { get; set; }
+        /// <summary>The updatedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UpdatedBy { get; set; }
+#nullable restore
+#else
+        public string UpdatedBy { get; set; }
+#endif
+        /// <summary>The variants property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseVariantsItem>? Variants { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseVariantsItem> Variants { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200Response"/> and sets the default values.
+        /// </summary>
+        public UpdateFlag200Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,17 +133,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public static global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200Response();
-            if("Flag".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.Flag = new global::Soenneker.Vercel.OpenApiClient.Models.Flag();
-            }
-            else if("UpdateFlag200ResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UpdateFlag200ResponseOneOf1 = new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1();
-            }
-            return result;
+            return new global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200Response();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,15 +141,28 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(Flag != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return Flag.GetFieldDeserializers();
-            }
-            else if(UpdateFlag200ResponseOneOf1 != null)
-            {
-                return UpdateFlag200ResponseOneOf1.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
+                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "environments", n => { Environments = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseEnvironments>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseEnvironments.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseKind>(); } },
+                { "maintainerIds", n => { MaintainerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
+                { "permanent", n => { Permanent = n.GetBoolValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "revision", n => { Revision = n.GetDoubleValue(); } },
+                { "seed", n => { Seed = n.GetDoubleValue(); } },
+                { "slug", n => { Slug = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseState>(); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "typeName", n => { TypeName = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagTypeName>(); } },
+                { "updatedAt", n => { UpdatedAt = n.GetDoubleValue(); } },
+                { "updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
+                { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseVariantsItem>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseVariantsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -72,14 +171,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(Flag != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.Flag>(null, Flag);
-            }
-            else if(UpdateFlag200ResponseOneOf1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseOneOf1>(null, UpdateFlag200ResponseOneOf1);
-            }
+            writer.WriteDoubleValue("createdAt", CreatedAt);
+            writer.WriteStringValue("createdBy", CreatedBy);
+            writer.WriteStringValue("description", Description);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseEnvironments>("environments", Environments);
+            writer.WriteStringValue("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseKind>("kind", Kind);
+            writer.WriteCollectionOfPrimitiveValues<string>("maintainerIds", MaintainerIds);
+            writer.WriteStringValue("ownerId", OwnerId);
+            writer.WriteBoolValue("permanent", Permanent);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteDoubleValue("revision", Revision);
+            writer.WriteDoubleValue("seed", Seed);
+            writer.WriteStringValue("slug", Slug);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseState>("state", State);
+            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.FlagTypeName>("typeName", TypeName);
+            writer.WriteDoubleValue("updatedAt", UpdatedAt);
+            writer.WriteStringValue("updatedBy", UpdatedBy);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateFlag200ResponseVariantsItem>("variants", Variants);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }
