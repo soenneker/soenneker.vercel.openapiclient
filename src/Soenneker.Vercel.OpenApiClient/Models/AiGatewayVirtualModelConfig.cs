@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Public response shape for virtual model configs. Used so OpenAPI generation can avoid ElectroDB&apos;s recursive EntityItem types.
+    /// Active and archived router configurations owned by the authenticated team.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AiGatewayVirtualModelConfig : IAdditionalDataHolder, IParsable

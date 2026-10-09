@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.Models;
 using Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.Kill;
 using Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.Logs;
+using Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.Stdin;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -28,6 +29,11 @@ namespace Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item
         public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.Logs.LogsRequestBuilder Logs
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.Logs.LogsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The stdin property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.Stdin.StdinRequestBuilder Stdin
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.Stdin.StdinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V2.Sandboxes.Sessions.Item.Cmd.Item.WithCmdItemRequestBuilder"/> and sets the default values.

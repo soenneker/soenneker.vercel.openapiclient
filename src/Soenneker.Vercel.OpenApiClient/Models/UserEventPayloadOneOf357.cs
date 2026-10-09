@@ -15,15 +15,53 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The instances property</summary>
-        public double? Instances { get; set; }
-        /// <summary>The url property</summary>
+        /// <summary>The driveName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? DriveName { get; set; }
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string DriveName { get; set; }
+#endif
+        /// <summary>The projectId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get; set; }
+#nullable restore
+#else
+        public string ProjectId { get; set; }
+#endif
+        /// <summary>The projectName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectName { get; set; }
+#nullable restore
+#else
+        public string ProjectName { get; set; }
+#endif
+        /// <summary>The region property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Region { get; set; }
+#nullable restore
+#else
+        public string Region { get; set; }
+#endif
+        /// <summary>The snapshotId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SnapshotId { get; set; }
+#nullable restore
+#else
+        public string SnapshotId { get; set; }
+#endif
+        /// <summary>The snapshotName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SnapshotName { get; set; }
+#nullable restore
+#else
+        public string SnapshotName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf357"/> and sets the default values.
@@ -50,8 +88,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "instances", n => { Instances = n.GetDoubleValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                { "driveName", n => { DriveName = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "region", n => { Region = n.GetStringValue(); } },
+                { "snapshotId", n => { SnapshotId = n.GetStringValue(); } },
+                { "snapshotName", n => { SnapshotName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,8 +103,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("instances", Instances);
-            writer.WriteStringValue("url", Url);
+            writer.WriteStringValue("driveName", DriveName);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("region", Region);
+            writer.WriteStringValue("snapshotId", SnapshotId);
+            writer.WriteStringValue("snapshotName", SnapshotName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,18 +17,26 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The partnerCalls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseOneOf1PartnerCallsItem>? PartnerCalls { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponsePartnerCallsItem>? PartnerCalls { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseOneOf1PartnerCallsItem> PartnerCalls { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponsePartnerCallsItem> PartnerCalls { get; set; }
+#endif
+        /// <summary>The projectName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectName { get; set; }
+#nullable restore
+#else
+        public string ProjectName { get; set; }
 #endif
         /// <summary>The resourceTransferErrors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseOneOf1ResourceTransferErrorsItem>? ResourceTransferErrors { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseResourceTransferErrorsItem>? ResourceTransferErrors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseOneOf1ResourceTransferErrorsItem> ResourceTransferErrors { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseResourceTransferErrorsItem> ResourceTransferErrors { get; set; }
 #endif
         /// <summary>The transferredStoreIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,8 +71,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "partnerCalls", n => { PartnerCalls = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseOneOf1PartnerCallsItem>(global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseOneOf1PartnerCallsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "resourceTransferErrors", n => { ResourceTransferErrors = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseOneOf1ResourceTransferErrorsItem>(global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseOneOf1ResourceTransferErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "partnerCalls", n => { PartnerCalls = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponsePartnerCallsItem>(global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponsePartnerCallsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "resourceTransferErrors", n => { ResourceTransferErrors = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseResourceTransferErrorsItem>(global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseResourceTransferErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "transferredStoreIds", n => { TransferredStoreIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -75,8 +84,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseOneOf1PartnerCallsItem>("partnerCalls", PartnerCalls);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseOneOf1ResourceTransferErrorsItem>("resourceTransferErrors", ResourceTransferErrors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponsePartnerCallsItem>("partnerCalls", PartnerCalls);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.AcceptProjectTransferRequest202ResponseResourceTransferErrorsItem>("resourceTransferErrors", ResourceTransferErrors);
             writer.WriteCollectionOfPrimitiveValues<string>("transferredStoreIds", TransferredStoreIds);
             writer.WriteAdditionalData(AdditionalData);
         }

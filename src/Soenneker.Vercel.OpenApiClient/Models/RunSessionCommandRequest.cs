@@ -20,6 +20,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> Args { get; set; }
 #endif
+        /// <summary>If true, keeps the command stdin open so it can be written to with the stdin endpoint while the command runs. When false, the command reads from an empty stdin.</summary>
+        public bool? AttachStdin { get; set; }
         /// <summary>The executable or shell command to run. This is the program name without arguments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +59,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// </summary>
         public RunSessionCommandRequest()
         {
+            AttachStdin = false;
             Logs = false;
             Sudo = false;
             Wait = false;
@@ -80,6 +83,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "args", n => { Args = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "attachStdin", n => { AttachStdin = n.GetBoolValue(); } },
                 { "command", n => { Command = n.GetStringValue(); } },
                 { "cwd", n => { Cwd = n.GetStringValue(); } },
                 { "env", n => { Env = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommandRequestEnv>(global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommandRequestEnv.CreateFromDiscriminatorValue); } },
@@ -97,6 +101,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("args", Args);
+            writer.WriteBoolValue("attachStdin", AttachStdin);
             writer.WriteStringValue("command", Command);
             writer.WriteStringValue("cwd", Cwd);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.RunSessionCommandRequestEnv>("env", Env);

@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V3.User.Tokens.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTokenItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/user/tokens/{tokenId}", pathParameters)
+        public WithTokenItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/user/tokens/{tokenId}{?logoutSource*,reason*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Vercel.OpenApiClient.V3.User.Tokens.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTokenItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/user/tokens/{tokenId}", rawUrl)
+        public WithTokenItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/user/tokens/{tokenId}{?logoutSource*,reason*}", rawUrl)
         {
         }
         /// <summary>
@@ -41,11 +41,11 @@ namespace Soenneker.Vercel.OpenApiClient.V3.User.Tokens.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteAuthToken200Response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteAuthToken200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.User.Tokens.Item.WithTokenItemRequestBuilder.WithTokenItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteAuthToken200Response> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteAuthToken200Response> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.User.Tokens.Item.WithTokenItemRequestBuilder.WithTokenItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -58,11 +58,11 @@ namespace Soenneker.Vercel.OpenApiClient.V3.User.Tokens.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.User.Tokens.Item.WithTokenItemRequestBuilder.WithTokenItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V3.User.Tokens.Item.WithTokenItemRequestBuilder.WithTokenItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
@@ -78,6 +78,19 @@ namespace Soenneker.Vercel.OpenApiClient.V3.User.Tokens.Item
         public global::Soenneker.Vercel.OpenApiClient.V3.User.Tokens.Item.WithTokenItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Vercel.OpenApiClient.V3.User.Tokens.Item.WithTokenItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Invalidate an authentication token, such that it will no longer be valid for future HTTP requests.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithTokenItemRequestBuilderDeleteQueryParameters 
+        {
+            /// <summary>The product the caller is logging out of. Only applies when reason is logout and tokenId is current.</summary>
+            [QueryParameter("logoutSource")]
+            public global::Soenneker.Vercel.OpenApiClient.Models.DeleteAuthTokenLogoutSourceParameter? LogoutSource { get; set; }
+            /// <summary>Identifies an explicit logout for the deletion event. Only applies when tokenId is current.</summary>
+            [QueryParameter("reason")]
+            public global::Soenneker.Vercel.OpenApiClient.Models.LogoutReason? Reason { get; set; }
         }
     }
 }

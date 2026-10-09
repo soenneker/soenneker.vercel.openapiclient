@@ -71,5 +71,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         SnowflakeWif,
         #pragma warning restore CS1591
+        [EnumMember(Value = "stripe-api-key")]
+        #pragma warning disable CS1591
+        StripeApiKey,
+        #pragma warning restore CS1591
     }
 }

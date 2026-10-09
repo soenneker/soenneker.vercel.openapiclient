@@ -43,6 +43,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AdminPreviewDeploymentSuffixClear,
         #pragma warning restore CS1591
+        [EnumMember(Value = "admin-saml-idp-material-deleted")]
+        #pragma warning disable CS1591
+        AdminSamlIdpMaterialDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "admin-saml-idp-material-set")]
+        #pragma warning disable CS1591
+        AdminSamlIdpMaterialSet,
+        #pragma warning restore CS1591
         [EnumMember(Value = "admin-secondary-email-added")]
         #pragma warning disable CS1591
         AdminSecondaryEmailAdded,
@@ -2127,6 +2135,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         SandboxDriveDeleted,
         #pragma warning restore CS1591
+        [EnumMember(Value = "sandbox-drive-snapshot-created")]
+        #pragma warning disable CS1591
+        SandboxDriveSnapshotCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sandbox-drive-snapshot-deleted")]
+        #pragma warning disable CS1591
+        SandboxDriveSnapshotDeleted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sandbox-signed-commit-identity-configured")]
         #pragma warning disable CS1591
         SandboxSignedCommitIdentityConfigured,
@@ -2822,6 +2838,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "vercel-app-uninstalled")]
         #pragma warning disable CS1591
         VercelAppUninstalled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "vercel-ci-repository-settings-updated")]
+        #pragma warning disable CS1591
+        VercelCiRepositorySettingsUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "vercel-toolbar")]
         #pragma warning disable CS1591

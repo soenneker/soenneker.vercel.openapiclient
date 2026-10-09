@@ -15,25 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The decision property</summary>
+        /// <summary>The mfa property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf455Decision? Decision { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf455Mfa? Mfa { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf455Decision Decision { get; set; }
-#endif
-        /// <summary>The outcome property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf455Outcome? Outcome { get; set; }
-        /// <summary>The provider property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.GoogleProvider? Provider { get; set; }
-        /// <summary>The providerSubjectId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProviderSubjectId { get; set; }
-#nullable restore
-#else
-        public string ProviderSubjectId { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf455Mfa Mfa { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf455"/> and sets the default values.
@@ -60,10 +48,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "decision", n => { Decision = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf455Decision>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf455Decision.CreateFromDiscriminatorValue); } },
-                { "outcome", n => { Outcome = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf455Outcome>(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GoogleProvider>(); } },
-                { "providerSubjectId", n => { ProviderSubjectId = n.GetStringValue(); } },
+                { "mfa", n => { Mfa = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf455Mfa>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf455Mfa.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -73,10 +58,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf455Decision>("decision", Decision);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf455Outcome>("outcome", Outcome);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GoogleProvider>("provider", Provider);
-            writer.WriteStringValue("providerSubjectId", ProviderSubjectId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf455Mfa>("mfa", Mfa);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
