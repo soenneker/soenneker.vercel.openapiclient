@@ -1443,6 +1443,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         OrganizationDsyncGroupUpsert,
         #pragma warning restore CS1591
+        [EnumMember(Value = "organization-dsync-sync-start")]
+        #pragma warning disable CS1591
+        OrganizationDsyncSyncStart,
+        #pragma warning restore CS1591
         [EnumMember(Value = "organization-emu-domains-merged")]
         #pragma warning disable CS1591
         OrganizationEmuDomainsMerged,

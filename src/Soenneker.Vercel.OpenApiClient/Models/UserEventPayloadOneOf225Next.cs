@@ -17,10 +17,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The organizationPermissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf225NextOrganizationPermissionsItem?>? OrganizationPermissions { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.OrgAdminItem?>? OrganizationPermissions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf225NextOrganizationPermissionsItem?> OrganizationPermissions { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.OrgAdminItem?> OrganizationPermissions { get; set; }
 #endif
         /// <summary>The teamRoles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "organizationPermissions", n => { OrganizationPermissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf225NextOrganizationPermissionsItem>()?.AsList(); } },
+                { "organizationPermissions", n => { OrganizationPermissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.OrgAdminItem>()?.AsList(); } },
                 { "teamRoles", n => { TeamRoles = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf225NextTeamRolesItem>()?.AsList(); } },
                 { "teams", n => { Teams = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf225NextTeamsProperty>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf225NextTeamsProperty.CreateFromDiscriminatorValue); } },
             };
@@ -75,7 +75,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf225NextOrganizationPermissionsItem>("organizationPermissions", OrganizationPermissions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.OrgAdminItem>("organizationPermissions", OrganizationPermissions);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf225NextTeamRolesItem>("teamRoles", TeamRoles);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf225NextTeamsProperty>("teams", Teams);
             writer.WriteAdditionalData(AdditionalData);

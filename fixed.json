@@ -70181,7 +70181,7 @@
           "organizationPermissions": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf225NextOrganizationPermissionsItem"
+              "$ref": "#/components/schemas/OrgAdminItem"
             }
           },
           "teamRoles": {
@@ -216332,6 +216332,7 @@
           "organization-dsync-delete",
           "organization-dsync-group-delete",
           "organization-dsync-group-upsert",
+          "organization-dsync-sync-start",
           "organization-emu-domains-merged",
           "organization-emu-team-updated",
           "organization-emu-updated",
@@ -218137,6 +218138,10 @@
             {
               "value": "organization-dsync-group-upsert",
               "name": "OrganizationDsyncGroupUpsert"
+            },
+            {
+              "value": "organization-dsync-sync-start",
+              "name": "OrganizationDsyncSyncStart"
             },
             {
               "value": "organization-emu-domains-merged",
@@ -220084,6 +220089,7 @@
           "organization-dsync-delete",
           "organization-dsync-group-delete",
           "organization-dsync-group-upsert",
+          "organization-dsync-sync-start",
           "organization-emu-domains-merged",
           "organization-emu-team-updated",
           "organization-emu-updated",
@@ -221889,6 +221895,10 @@
             {
               "value": "organization-dsync-group-upsert",
               "name": "OrganizationDsyncGroupUpsert"
+            },
+            {
+              "value": "organization-dsync-sync-start",
+              "name": "OrganizationDsyncSyncStart"
             },
             {
               "value": "organization-emu-domains-merged",
@@ -223698,6 +223708,7 @@
           "organization-dsync-delete",
           "organization-dsync-group-delete",
           "organization-dsync-group-upsert",
+          "organization-dsync-sync-start",
           "organization-emu-domains-merged",
           "organization-emu-team-updated",
           "organization-emu-updated",
@@ -225502,6 +225513,10 @@
             {
               "value": "organization-dsync-group-upsert",
               "name": "OrganizationDsyncGroupUpsert"
+            },
+            {
+              "value": "organization-dsync-sync-start",
+              "name": "OrganizationDsyncSyncStart"
             },
             {
               "value": "organization-emu-domains-merged",
@@ -241361,10 +241376,9 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf225NextOrganizationPermissionsItem": {
+      "OrgAdminItem": {
         "enum": [
-          "OrgAdmin",
-          "OrgViewer"
+          "OrgAdmin"
         ],
         "type": "string",
         "additionalProperties": false
