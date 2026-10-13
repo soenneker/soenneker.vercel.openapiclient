@@ -7,13 +7,16 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
+    /// <summary>
+    /// Password protection settings returned without the secret password hash.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CreateProject200ResponsePasswordProtection : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The deploymentType property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponsePasswordProtectionDeploymentType? DeploymentType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponsePasswordProtection"/> and sets the default values.
         /// </summary>
@@ -39,6 +42,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "deploymentType", n => { DeploymentType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponsePasswordProtectionDeploymentType>(); } },
             };
         }
         /// <summary>
@@ -48,6 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateProject200ResponsePasswordProtectionDeploymentType>("deploymentType", DeploymentType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

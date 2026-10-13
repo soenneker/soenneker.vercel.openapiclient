@@ -51,6 +51,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         AdminSamlIdpMaterialSet,
         #pragma warning restore CS1591
+        [EnumMember(Value = "admin-saml-sp-signing-key-created")]
+        #pragma warning disable CS1591
+        AdminSamlSpSigningKeyCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "admin-saml-sp-signing-key-updated")]
+        #pragma warning disable CS1591
+        AdminSamlSpSigningKeyUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "admin-secondary-email-added")]
         #pragma warning disable CS1591
         AdminSecondaryEmailAdded,

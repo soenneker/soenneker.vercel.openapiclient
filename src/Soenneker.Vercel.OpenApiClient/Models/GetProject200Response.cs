@@ -394,7 +394,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponsePassport Passport { get; set; }
 #endif
-        /// <summary>The passwordProtection property</summary>
+        /// <summary>Password protection settings returned without the secret password hash.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProject200ResponsePasswordProtection? PasswordProtection { get; set; }
