@@ -15,6 +15,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The createdByParentTeamId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedByParentTeamId { get; set; }
+#nullable restore
+#else
+        public string CreatedByParentTeamId { get; set; }
+#endif
         /// <summary>Unix epoch milliseconds. Absent when the token never expires.</summary>
         public double? ExpiresAt { get; set; }
         /// <summary>The geolocation property</summary>
@@ -73,6 +81,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Scope of the token: - `&apos;user&apos;`: full-account token (not tied to any team). - `&apos;team&apos;`: scoped to a single team. - `&apos;project&apos;`: scoped to a single project within a team.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf488Scope? Scope { get; set; }
+        /// <summary>The source property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.V0Source? Source { get; set; }
         /// <summary>Present when `scope` is `&apos;team&apos;` or `&apos;project&apos;`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,6 +158,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "createdByParentTeamId", n => { CreatedByParentTeamId = n.GetStringValue(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDoubleValue(); } },
                 { "geolocation", n => { Geolocation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf488Geolocation>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf488Geolocation.CreateFromDiscriminatorValue); } },
                 { "hasAuthorizationDetails", n => { HasAuthorizationDetails = n.GetBoolValue(); } },
@@ -159,6 +170,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "reqId", n => { ReqId = n.GetStringValue(); } },
                 { "reqUrl", n => { ReqUrl = n.GetStringValue(); } },
                 { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf488Scope>(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.V0Source>(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
                 { "teamSlug", n => { TeamSlug = n.GetStringValue(); } },
                 { "tokenId", n => { TokenId = n.GetStringValue(); } },
@@ -175,6 +187,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("createdByParentTeamId", CreatedByParentTeamId);
             writer.WriteDoubleValue("expiresAt", ExpiresAt);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf488Geolocation>("geolocation", Geolocation);
             writer.WriteBoolValue("hasAuthorizationDetails", HasAuthorizationDetails);
@@ -186,6 +199,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("reqId", ReqId);
             writer.WriteStringValue("reqUrl", ReqUrl);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf488Scope>("scope", Scope);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.V0Source>("source", Source);
             writer.WriteStringValue("teamId", TeamId);
             writer.WriteStringValue("teamSlug", TeamSlug);
             writer.WriteStringValue("tokenId", TokenId);

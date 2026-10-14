@@ -23,8 +23,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Specify if the Trusted IPs will apply to every Deployment Target or just Preview</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedIpsDeploymentType? DeploymentType { get; set; }
-        /// <summary>exclusive: ip match is enough to bypass deployment protection (regardless of other settings). additional: ip must match + any other protection should be also provided (password, vercel auth, shareable link, automation bypass header, automation bypass query param)</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedIpsProtectionMode? ProtectionMode { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,7 +43,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "addresses", n => { Addresses = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedIpsAddressesItem>(global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedIpsAddressesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deploymentType", n => { DeploymentType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedIpsDeploymentType>(); } },
-                { "protectionMode", n => { ProtectionMode = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedIpsProtectionMode>(); } },
             };
         }
         /// <summary>
@@ -57,7 +54,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedIpsAddressesItem>("addresses", Addresses);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedIpsDeploymentType>("deploymentType", DeploymentType);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectRequestTrustedIpsProtectionMode>("protectionMode", ProtectionMode);
         }
     }
 }

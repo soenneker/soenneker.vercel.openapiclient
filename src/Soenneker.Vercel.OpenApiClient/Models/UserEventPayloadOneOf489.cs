@@ -23,6 +23,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The createdByParentTeamId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedByParentTeamId { get; set; }
+#nullable restore
+#else
+        public string CreatedByParentTeamId { get; set; }
+#endif
         /// <summary>The expired property</summary>
         public bool? Expired { get; set; }
         /// <summary>The geolocation property</summary>
@@ -67,6 +75,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The revoked property</summary>
         public bool? Revoked { get; set; }
+        /// <summary>The scope property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf489Scope? Scope { get; set; }
+        /// <summary>The source property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.V0Source? Source { get; set; }
         /// <summary>The teamId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -133,6 +145,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actorTokenId", n => { ActorTokenId = n.GetStringValue(); } },
+                { "createdByParentTeamId", n => { CreatedByParentTeamId = n.GetStringValue(); } },
                 { "expired", n => { Expired = n.GetBoolValue(); } },
                 { "geolocation", n => { Geolocation = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf489Geolocation>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf489Geolocation.CreateFromDiscriminatorValue); } },
                 { "ip", n => { Ip = n.GetStringValue(); } },
@@ -143,6 +156,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "reqId", n => { ReqId = n.GetStringValue(); } },
                 { "reqUrl", n => { ReqUrl = n.GetStringValue(); } },
                 { "revoked", n => { Revoked = n.GetBoolValue(); } },
+                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf489Scope>(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.V0Source>(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
                 { "tokenId", n => { TokenId = n.GetStringValue(); } },
                 { "tokenName", n => { TokenName = n.GetStringValue(); } },
@@ -158,6 +173,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actorTokenId", ActorTokenId);
+            writer.WriteStringValue("createdByParentTeamId", CreatedByParentTeamId);
             writer.WriteBoolValue("expired", Expired);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf489Geolocation>("geolocation", Geolocation);
             writer.WriteStringValue("ip", Ip);
@@ -168,6 +184,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("reqId", ReqId);
             writer.WriteStringValue("reqUrl", ReqUrl);
             writer.WriteBoolValue("revoked", Revoked);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf489Scope>("scope", Scope);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.V0Source>("source", Source);
             writer.WriteStringValue("teamId", TeamId);
             writer.WriteStringValue("tokenId", TokenId);
             writer.WriteStringValue("tokenName", TokenName);

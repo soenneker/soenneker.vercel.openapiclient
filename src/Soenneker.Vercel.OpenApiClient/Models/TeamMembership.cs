@@ -31,6 +31,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<global::Soenneker.Vercel.OpenApiClient.Models.TeamMembershipEntitlementsItem> Entitlements { get; set; }
 #endif
+        /// <summary>The isOrgBackingTeamMembership property</summary>
+        public bool? IsOrgBackingTeamMembership { get; set; }
         /// <summary>The joinedFrom property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,6 +113,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "created", n => { Created = n.GetDoubleValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "entitlements", n => { Entitlements = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamMembershipEntitlementsItem>(global::Soenneker.Vercel.OpenApiClient.Models.TeamMembershipEntitlementsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "isOrgBackingTeamMembership", n => { IsOrgBackingTeamMembership = n.GetBoolValue(); } },
                 { "joinedFrom", n => { JoinedFrom = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamMembershipJoinedFrom>(global::Soenneker.Vercel.OpenApiClient.Models.TeamMembershipJoinedFrom.CreateFromDiscriminatorValue); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "role", n => { Role = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamMembershipRole>(); } },
@@ -132,6 +135,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteDoubleValue("created", Created);
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.TeamMembershipEntitlementsItem>("entitlements", Entitlements);
+            writer.WriteBoolValue("isOrgBackingTeamMembership", IsOrgBackingTeamMembership);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamMembershipJoinedFrom>("joinedFrom", JoinedFrom);
             writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TeamMembershipRole>("role", Role);

@@ -6421,6 +6421,9 @@
               }
             }
           },
+          "503": {
+            "description": "503 response"
+          },
           "504": {
             "description": "504 response"
           }
@@ -27804,9 +27807,6 @@
           "404": {
             "description": "404 response"
           },
-          "409": {
-            "description": "409 response"
-          },
           "410": {
             "description": "410 response"
           },
@@ -27814,16 +27814,10 @@
             "description": "422 response"
           },
           "429": {
-            "description": "The concurrency limit has been exceeded."
+            "description": "429 response"
           },
           "500": {
             "description": "500 response"
-          },
-          "502": {
-            "description": "502 response"
-          },
-          "503": {
-            "description": "503 response"
           }
         },
         "security": [
@@ -50415,6 +50409,9 @@
           "policy": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf486Policy"
           },
+          "createdByParentTeamId": {
+            "type": "string"
+          },
           "hasAuthorizationDetails": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf488HasAuthorizationDetails"
           },
@@ -54034,6 +54031,9 @@
             "$ref": "#/components/schemas/UserEventPayloadOneOf123Deployment"
           },
           "deploymentId": {
+            "type": "string"
+          },
+          "projectId": {
             "type": "string"
           },
           "url": {
@@ -62603,6 +62603,9 @@
         ],
         "type": "object",
         "properties": {
+          "createdByParentTeamId": {
+            "type": "string"
+          },
           "expiresAt": {
             "type": "number",
             "description": "Unix epoch milliseconds. Absent when the token never expires."
@@ -62639,6 +62642,9 @@
           },
           "scope": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf488Scope"
+          },
+          "source": {
+            "$ref": "#/components/schemas/V0Source"
           },
           "teamId": {
             "type": "string",
@@ -62682,6 +62688,9 @@
             "type": "string",
             "description": "The token\u0027s public ID."
           },
+          "createdByParentTeamId": {
+            "type": "string"
+          },
           "expired": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf489Expired"
           },
@@ -62712,6 +62721,12 @@
           },
           "revoked": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf489Revoked"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf489Scope"
+          },
+          "source": {
+            "$ref": "#/components/schemas/V0Source"
           },
           "teamId": {
             "type": "string"
@@ -66876,6 +66891,9 @@
               "$ref": "#/components/schemas/TeamMembershipEntitlementsItem"
             }
           },
+          "isOrgBackingTeamMembership": {
+            "$ref": "#/components/schemas/TeamMembershipIsOrgBackingTeamMembership"
+          },
           "joinedFrom": {
             "$ref": "#/components/schemas/TeamMembershipJoinedFrom"
           },
@@ -67087,6 +67105,9 @@
             "items": {
               "$ref": "#/components/schemas/TeamLimitedMembershipEntitlementsItem"
             }
+          },
+          "isOrgBackingTeamMembership": {
+            "$ref": "#/components/schemas/TeamLimitedMembershipIsOrgBackingTeamMembership"
           },
           "joinedFrom": {
             "$ref": "#/components/schemas/TeamLimitedMembershipJoinedFrom"
@@ -137933,8 +137954,7 @@
       "UpdateProjectRequestTrustedIps": {
         "required": [
           "deploymentType",
-          "addresses",
-          "protectionMode"
+          "addresses"
         ],
         "type": "object",
         "properties": {
@@ -137947,9 +137967,6 @@
             "items": {
               "$ref": "#/components/schemas/UpdateProjectRequestTrustedIpsAddressesItem"
             }
-          },
-          "protectionMode": {
-            "$ref": "#/components/schemas/UpdateProjectRequestTrustedIpsProtectionMode"
           }
         },
         "additionalProperties": false,
@@ -236341,6 +236358,23 @@
           ]
         }
       },
+      "V0Source": {
+        "enum": [
+          "v0"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "V0Source",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "v0",
+              "name": "V0"
+            }
+          ]
+        }
+      },
       "VcpTokenPrefix": {
         "enum": [
           "vcp_"
@@ -236518,6 +236552,33 @@
         ],
         "type": "boolean",
         "additionalProperties": false
+      },
+      "UserEventPayloadOneOf489Scope": {
+        "enum": [
+          "project",
+          "team",
+          "user"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf489Scope",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "project",
+              "name": "Project"
+            },
+            {
+              "value": "team",
+              "name": "Team"
+            },
+            {
+              "value": "user",
+              "name": "User"
+            }
+          ]
+        }
       },
       "AppType": {
         "enum": [
@@ -239982,6 +240043,14 @@
         "type": "boolean",
         "additionalProperties": false
       },
+      "TeamMembershipIsOrgBackingTeamMembership": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
       "TeamMembershipRole": {
         "enum": [
           "BILLING",
@@ -240226,6 +240295,14 @@
       },
       "TeamLimitedMembershipConfirmed": {
         "enum": [
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
+      "TeamLimitedMembershipIsOrgBackingTeamMembership": {
+        "enum": [
+          false,
           true
         ],
         "type": "boolean",
@@ -286498,29 +286575,6 @@
             {
               "value": "all_except_custom_domains",
               "name": "AllExceptCustomDomains"
-            }
-          ]
-        }
-      },
-      "UpdateProjectRequestTrustedIpsProtectionMode": {
-        "enum": [
-          "exclusive",
-          "additional"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "exclusive: ip match is enough to bypass deployment protection (regardless of other settings). additional: ip must match \u002B any other protection should be also provided (password, vercel auth, shareable link, automation bypass header, automation bypass query param)",
-        "x-ms-enum": {
-          "name": "UpdateProjectRequestTrustedIpsProtectionMode",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "exclusive",
-              "name": "Exclusive"
-            },
-            {
-              "value": "additional",
-              "name": "Additional"
             }
           ]
         }
