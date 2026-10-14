@@ -47,22 +47,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Region { get; set; }
 #endif
-        /// <summary>The snapshotId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SnapshotId { get; set; }
-#nullable restore
-#else
-        public string SnapshotId { get; set; }
-#endif
-        /// <summary>The snapshotName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SnapshotName { get; set; }
-#nullable restore
-#else
-        public string SnapshotName { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf359"/> and sets the default values.
         /// </summary>
@@ -92,8 +76,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
-                { "snapshotId", n => { SnapshotId = n.GetStringValue(); } },
-                { "snapshotName", n => { SnapshotName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -107,8 +89,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteStringValue("region", Region);
-            writer.WriteStringValue("snapshotId", SnapshotId);
-            writer.WriteStringValue("snapshotName", SnapshotName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

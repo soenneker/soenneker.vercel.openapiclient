@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.List
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/virtual-model-configs/list{?cursor*,limit*,ownerId*,slug*,teamId*}", pathParameters)
+        public ListRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/virtual-model-configs/list{?cursor*,includeArchived*,limit*,ownerId*,slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.List
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/virtual-model-configs/list{?cursor*,limit*,ownerId*,slug*,teamId*}", rawUrl)
+        public ListRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/virtual-model-configs/list{?cursor*,includeArchived*,limit*,ownerId*,slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>
-        /// List virtual model configs. With `ownerId`, returns all of that team&apos;s VMCs. Without it, pages through VMCs across all teams (newest-first, `limit`/`cursor`).
+        /// List virtual model configs. For a team, returns all of its VMCs, or with `limit` or `cursor` one page ordered by `virtualModelSlug`. Across teams, pages newest-first. `includeArchived=false` omits archived VMCs.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.List
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigList>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayVirtualModelConfigList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List virtual model configs. With `ownerId`, returns all of that team&apos;s VMCs. Without it, pages through VMCs across all teams (newest-first, `limit`/`cursor`).
+        /// List virtual model configs. For a team, returns all of its VMCs, or with `limit` or `cursor` one page ordered by `virtualModelSlug`. Across teams, pages newest-first. `includeArchived=false` omits archived VMCs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.List
             return new global::Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.List.ListRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List virtual model configs. With `ownerId`, returns all of that team&apos;s VMCs. Without it, pages through VMCs across all teams (newest-first, `limit`/`cursor`).
+        /// List virtual model configs. For a team, returns all of its VMCs, or with `limit` or `cursor` one page ordered by `virtualModelSlug`. Across teams, pages newest-first. `includeArchived=false` omits archived VMCs.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ListRequestBuilderGetQueryParameters 
@@ -98,6 +98,10 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.VirtualModelConfigs.List
             public string Cursor { get; set; }
             #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
+            [QueryParameter("includeArchived")]
+            public global::Soenneker.Vercel.OpenApiClient.Models.ListAiGatewayVirtualModelConfigsIncludeArchivedParameter? IncludeArchived { get; set; }
+            #pragma warning restore CS1591
             #pragma warning disable CS1591
             [QueryParameter("limit")]
             public int? Limit { get; set; }

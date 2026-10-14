@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Replica counts by region.
+    /// Instance counts by region.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CancelDeployment200ResponseServicesItemBuilderConfigDaemonReplicas : IAdditionalDataHolder, IParsable

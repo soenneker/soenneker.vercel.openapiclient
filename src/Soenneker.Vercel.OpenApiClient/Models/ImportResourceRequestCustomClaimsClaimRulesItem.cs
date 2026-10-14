@@ -12,7 +12,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class ImportResourceRequestCustomClaimsClaimRulesItem : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Claims to set (string, number, or boolean), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.</summary>
+        /// <summary>Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.ImportResourceRequestCustomClaimsClaimRulesItemClaims? Claims { get; set; }

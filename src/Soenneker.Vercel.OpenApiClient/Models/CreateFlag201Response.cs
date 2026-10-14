@@ -80,6 +80,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? Revision { get; set; }
         /// <summary>The seed property</summary>
         public double? Seed { get; set; }
+        /// <summary>The seenInProduction property</summary>
+        public bool? SeenInProduction { get; set; }
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,6 +157,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "revision", n => { Revision = n.GetDoubleValue(); } },
                 { "seed", n => { Seed = n.GetDoubleValue(); } },
+                { "seenInProduction", n => { SeenInProduction = n.GetBoolValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseState>(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -183,6 +186,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteDoubleValue("revision", Revision);
             writer.WriteDoubleValue("seed", Seed);
+            writer.WriteBoolValue("seenInProduction", SeenInProduction);
             writer.WriteStringValue("slug", Slug);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateFlag201ResponseState>("state", State);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);

@@ -31,6 +31,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Entrypoint { get; set; }
 #endif
+        /// <summary>Instance counts by region.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonInstances? Instances { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonInstances Instances { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,7 +47,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Replica counts by region.</summary>
+        /// <summary>Instance counts by region.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonReplicas? Replicas { get; set; }
@@ -63,6 +71,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Root { get; set; }
 #endif
+        /// <summary>The terminationGracePeriodSeconds property</summary>
+        public double? TerminationGracePeriodSeconds { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemon"/> and sets the default values.
         /// </summary>
@@ -90,10 +100,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "command", n => { Command = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "entrypoint", n => { Entrypoint = n.GetStringValue(); } },
+                { "instances", n => { Instances = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonInstances>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonInstances.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "replicas", n => { Replicas = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonReplicas>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonReplicas.CreateFromDiscriminatorValue); } },
                 { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonResources>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonResources.CreateFromDiscriminatorValue); } },
                 { "root", n => { Root = n.GetStringValue(); } },
+                { "terminationGracePeriodSeconds", n => { TerminationGracePeriodSeconds = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -105,10 +117,12 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("command", Command);
             writer.WriteStringValue("entrypoint", Entrypoint);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonInstances>("instances", Instances);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonReplicas>("replicas", Replicas);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonResources>("resources", Resources);
             writer.WriteStringValue("root", Root);
+            writer.WriteDoubleValue("terminationGracePeriodSeconds", TerminationGracePeriodSeconds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

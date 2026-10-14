@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Rules
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/rules{?includeDisabled*,slug*,teamId*}", pathParameters)
+        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/rules{?cursor*,includeDisabled*,limit*,slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Rules
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/rules{?includeDisabled*,slug*,teamId*}", rawUrl)
+        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/rules{?cursor*,includeDisabled*,limit*,slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Rules
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the authenticated team&apos;s routing rules
+        /// List the authenticated team&apos;s routing rules, oldest first. Without `limit` or `cursor`, returns every rule. With either, returns one page and a `nextCursor` for the next page (null on the last page). Paging reads and sorts the team&apos;s rules server-side, which is fine at current rule counts.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayRuleList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Rules
             return requestInfo;
         }
         /// <summary>
-        /// List the authenticated team&apos;s routing rules
+        /// List the authenticated team&apos;s routing rules, oldest first. Without `limit` or `cursor`, returns every rule. With either, returns one page and a `nextCursor` for the next page (null on the last page). Paging reads and sorts the team&apos;s rules server-side, which is fine at current rule counts.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -230,15 +230,28 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Rules
 #endif
         }
         /// <summary>
-        /// List the authenticated team&apos;s routing rules
+        /// List the authenticated team&apos;s routing rules, oldest first. Without `limit` or `cursor`, returns every rule. With either, returns one page and a `nextCursor` for the next page (null on the last page). Paging reads and sorts the team&apos;s rules server-side, which is fine at current rule counts.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RulesRequestBuilderGetQueryParameters 
         {
+            /// <summary>Opaque cursor returned by a prior call as nextCursor.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cursor")]
+            public string? Cursor { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cursor")]
+            public string Cursor { get; set; }
+#endif
             #pragma warning disable CS1591
             [QueryParameter("includeDisabled")]
             public global::Soenneker.Vercel.OpenApiClient.Models.ListAiGatewayRulesIncludeDisabledParameter? IncludeDisabled { get; set; }
             #pragma warning restore CS1591
+            /// <summary>Maximum number of rules to return (capped at 200). Enables pagination.</summary>
+            [QueryParameter("limit")]
+            public int? Limit { get; set; }
             /// <summary>The Team slug to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

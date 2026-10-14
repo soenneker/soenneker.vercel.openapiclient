@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.List
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/budgets/list{?scopeType*,slug*,teamId*}", pathParameters)
+        public ListRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/budgets/list{?cursor*,includeDefaultCovered*,limit*,scopeType*,slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.List
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/budgets/list{?scopeType*,slug*,teamId*}", rawUrl)
+        public ListRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ai-gateway/budgets/list{?cursor*,includeDefaultCovered*,limit*,scopeType*,slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>
-        /// List the team&apos;s AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope.
+        /// List the team&apos;s AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor` (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge server-side: the gateway meter list it joins has no cursor.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.List
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetList>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.AiGatewayBudgetList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the team&apos;s AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope.
+        /// List the team&apos;s AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor` (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge server-side: the gateway meter list it joins has no cursor.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,11 +80,27 @@ namespace Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.List
             return new global::Soenneker.Vercel.OpenApiClient.AiGateway.Budgets.List.ListRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the team&apos;s AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope.
+        /// List the team&apos;s AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor` (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge server-side: the gateway meter list it joins has no cursor.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ListRequestBuilderGetQueryParameters 
         {
+            /// <summary>Opaque cursor returned by a prior call as nextCursor.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cursor")]
+            public string? Cursor { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cursor")]
+            public string Cursor { get; set; }
+#endif
+            /// <summary>Whether to include rows inherited from a budget default (`source: &quot;default&quot;`). Defaults to true.</summary>
+            [QueryParameter("includeDefaultCovered")]
+            public global::Soenneker.Vercel.OpenApiClient.Models.ListAiGatewayBudgetsIncludeDefaultCoveredParameter? IncludeDefaultCovered { get; set; }
+            /// <summary>Maximum number of budgets to return (capped at 200). Enables pagination.</summary>
+            [QueryParameter("limit")]
+            public int? Limit { get; set; }
             /// <summary>Restrict the list to a single budget scope.</summary>
             [QueryParameter("scopeType")]
             public global::Soenneker.Vercel.OpenApiClient.Models.ListAiGatewayBudgetsScopeTypeParameter? ScopeType { get; set; }
