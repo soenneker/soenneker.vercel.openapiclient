@@ -5687,6 +5687,9 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "500": {
+            "description": "500 response"
           }
         },
         "security": [
@@ -5927,6 +5930,9 @@
           },
           "410": {
             "description": "410 response"
+          },
+          "500": {
+            "description": "500 response"
           }
         },
         "security": [
@@ -30537,6 +30543,253 @@
         ]
       }
     },
+    "/v1/security/firewall/bypass/rules": {
+      "get": {
+        "tags": [
+          "security"
+        ],
+        "summary": "Get conditional firewall bypasses",
+        "description": "Retrieve conditional firewall bypass rules for a project.",
+        "operationId": "GetConditionalBypass",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          },
+          {
+            "name": "domain",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "maxLength": 512,
+              "type": "string"
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetConditionalBypass200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "security"
+        ],
+        "summary": "Create conditional firewall bypass",
+        "description": "Create a conditional firewall bypass rule for a project domain.",
+        "operationId": "CreateConditionalBypass",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConditionalBypassRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateConditionalBypass200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "409": {
+            "description": "409 response"
+          },
+          "410": {
+            "description": "410 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "security"
+        ],
+        "summary": "Delete conditional firewall bypass",
+        "description": "Delete a conditional firewall bypass rule from a project domain.",
+        "operationId": "DeleteConditionalBypass",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          },
+          {
+            "name": "domain",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteConditionalBypass200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
     "/v1/security/firewall/events": {
       "get": {
         "tags": [
@@ -32212,7 +32465,7 @@
           "teams"
         ],
         "summary": "Delete a Team",
-        "description": "Delete a team under your account. You need to send a \u0060DELETE\u0060 request with the desired team \u0060id\u0060. An optional array of reasons for deletion may also be sent.",
+        "description": "Delete a team under your account. You need to send a \u0060DELETE\u0060 request with the desired team \u0060id\u0060. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization.",
         "operationId": "DeleteTeam",
         "parameters": [
           {
@@ -48669,6 +48922,9 @@
           },
           {
             "$ref": "#/components/schemas/UserEventPayloadOneOf491"
+          },
+          {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf492"
           }
         ],
         "properties": {
@@ -50128,9 +50384,6 @@
           "storeType": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf382StoreType"
           },
-          "transferRequestCode": {
-            "type": "string"
-          },
           "computeUnitsMax": {
             "type": "number"
           },
@@ -50512,16 +50765,16 @@
             "description": "optional since entries prior to 2026-04-23 do not contain this field"
           },
           "policy": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf487Policy"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf488Policy"
           },
           "createdByParentTeamId": {
             "type": "string"
           },
           "hasAuthorizationDetails": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489HasAuthorizationDetails"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490HasAuthorizationDetails"
           },
           "projectScope": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489ProjectScope"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490ProjectScope"
           },
           "reqId": {
             "type": "string"
@@ -50542,16 +50795,16 @@
             "description": "The token\u0027s public ID."
           },
           "expired": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf490Expired"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf491Expired"
           },
           "leaked": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf490Leaked"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf491Leaked"
           },
           "logoutSource": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf490LogoutSource"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf491LogoutSource"
           },
           "revoked": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf490Revoked"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf491Revoked"
           },
           "tokenType": {
             "type": "string"
@@ -60422,16 +60675,12 @@
       },
       "UserEventPayloadOneOf383": {
         "required": [
-          "store",
-          "transferRequestCode"
+          "store"
         ],
         "type": "object",
         "properties": {
           "store": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf383Store"
-          },
-          "transferRequestCode": {
-            "type": "string"
           }
         },
         "description": "The payload of the event, if requested."
@@ -60440,16 +60689,12 @@
         "required": [
           "destinationTeamId",
           "destinationTeamName",
-          "store",
-          "transferRequestCode"
+          "store"
         ],
         "type": "object",
         "properties": {
           "store": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf384Store"
-          },
-          "transferRequestCode": {
-            "type": "string"
           },
           "destinationTeamId": {
             "type": "string"
@@ -60464,16 +60709,12 @@
         "required": [
           "originTeamId",
           "originTeamName",
-          "store",
-          "transferRequestCode"
+          "store"
         ],
         "type": "object",
         "properties": {
           "store": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf385Store"
-          },
-          "transferRequestCode": {
-            "type": "string"
           },
           "originTeamId": {
             "type": "string"
@@ -62667,14 +62908,15 @@
       },
       "UserEventPayloadOneOf487": {
         "required": [
-          "policy"
+          "domain",
+          "projectId"
         ],
         "type": "object",
         "properties": {
-          "policy": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf487Policy"
+          "domain": {
+            "type": "string"
           },
-          "appName": {
+          "projectId": {
             "type": "string"
           }
         },
@@ -62682,16 +62924,12 @@
       },
       "UserEventPayloadOneOf488": {
         "required": [
-          "after",
-          "before"
+          "policy"
         ],
         "type": "object",
         "properties": {
-          "after": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf488After"
-          },
-          "before": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf488Before"
+          "policy": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf488Policy"
           },
           "appName": {
             "type": "string"
@@ -62700,6 +62938,25 @@
         "description": "The payload of the event, if requested."
       },
       "UserEventPayloadOneOf489": {
+        "required": [
+          "after",
+          "before"
+        ],
+        "type": "object",
+        "properties": {
+          "after": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf489After"
+          },
+          "before": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf489Before"
+          },
+          "appName": {
+            "type": "string"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf490": {
         "required": [
           "origin",
           "scope",
@@ -62716,17 +62973,17 @@
             "description": "Unix epoch milliseconds. Absent when the token never expires."
           },
           "geolocation": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489Geolocation"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490Geolocation"
           },
           "hasAuthorizationDetails": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489HasAuthorizationDetails"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490HasAuthorizationDetails"
           },
           "ip": {
             "type": "string",
             "nullable": true
           },
           "origin": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489Origin"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490Origin"
           },
           "projectId": {
             "type": "string",
@@ -62737,7 +62994,7 @@
             "description": "Present when \u0060scope\u0060 is \u0060\u0027project\u0027\u0060."
           },
           "projectScope": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489ProjectScope"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490ProjectScope"
           },
           "reqId": {
             "type": "string"
@@ -62746,7 +63003,7 @@
             "type": "string"
           },
           "scope": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489Scope"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490Scope"
           },
           "source": {
             "$ref": "#/components/schemas/V0Source"
@@ -62780,7 +63037,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf490": {
+      "UserEventPayloadOneOf491": {
         "required": [
           "actorTokenId",
           "tokenId",
@@ -62797,23 +63054,23 @@
             "type": "string"
           },
           "expired": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf490Expired"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf491Expired"
           },
           "geolocation": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf490Geolocation"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf491Geolocation"
           },
           "ip": {
             "type": "string",
             "nullable": true
           },
           "leaked": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf490Leaked"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf491Leaked"
           },
           "logoutSource": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf490LogoutSource"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf491LogoutSource"
           },
           "origin": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf490Origin"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf491Origin"
           },
           "reason": {
             "$ref": "#/components/schemas/LogoutReason"
@@ -62825,10 +63082,10 @@
             "type": "string"
           },
           "revoked": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf490Revoked"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf491Revoked"
           },
           "scope": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf490Scope"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf491Scope"
           },
           "source": {
             "$ref": "#/components/schemas/V0Source"
@@ -62851,7 +63108,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf491": {
+      "UserEventPayloadOneOf492": {
         "required": [
           "actorTokenId",
           "deletedCount"
@@ -62866,7 +63123,7 @@
             "type": "number"
           },
           "geolocation": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf491Geolocation"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf492Geolocation"
           },
           "ip": {
             "type": "string",
@@ -73058,7 +73315,7 @@
         "description": "optional since entries prior to 2026-04-23 do not contain this field",
         "nullable": true
       },
-      "UserEventPayloadOneOf487Policy": {
+      "UserEventPayloadOneOf488Policy": {
         "required": [
           "claims",
           "clientId",
@@ -73076,7 +73333,7 @@
           "claims": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf487PolicyClaimsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf488PolicyClaimsItem"
             },
             "description": "Claim matchers an OIDC token must satisfy to use the policy."
           },
@@ -73106,7 +73363,7 @@
             "type": "string"
           },
           "resources": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf487PolicyResources"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf488PolicyResources"
           },
           "teamId": {
             "type": "string"
@@ -73118,7 +73375,7 @@
         },
         "description": "A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints\u0027 public response shape."
       },
-      "UserEventPayloadOneOf488After": {
+      "UserEventPayloadOneOf489After": {
         "required": [
           "claims",
           "clientId",
@@ -73136,7 +73393,7 @@
           "claims": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf488AfterClaimsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf489AfterClaimsItem"
             },
             "description": "Claim matchers an OIDC token must satisfy to use the policy."
           },
@@ -73166,7 +73423,7 @@
             "type": "string"
           },
           "resources": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf488AfterResources"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf489AfterResources"
           },
           "teamId": {
             "type": "string"
@@ -73178,7 +73435,7 @@
         },
         "description": "A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints\u0027 public response shape."
       },
-      "UserEventPayloadOneOf488Before": {
+      "UserEventPayloadOneOf489Before": {
         "required": [
           "claims",
           "clientId",
@@ -73196,7 +73453,7 @@
           "claims": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf488BeforeClaimsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf489BeforeClaimsItem"
             },
             "description": "Claim matchers an OIDC token must satisfy to use the policy."
           },
@@ -73226,7 +73483,7 @@
             "type": "string"
           },
           "resources": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf488BeforeResources"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf489BeforeResources"
           },
           "teamId": {
             "type": "string"
@@ -73237,27 +73494,6 @@
           }
         },
         "description": "A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints\u0027 public response shape."
-      },
-      "UserEventPayloadOneOf489Geolocation": {
-        "required": [
-          "country"
-        ],
-        "type": "object",
-        "properties": {
-          "city": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489GeolocationCity"
-          },
-          "country": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489GeolocationCountry"
-          },
-          "most_specific_subdivision": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489GeolocationMostSpecificSubdivision"
-          },
-          "regionName": {
-            "type": "string"
-          }
-        },
-        "nullable": true
       },
       "UserEventPayloadOneOf490Geolocation": {
         "required": [
@@ -73294,6 +73530,27 @@
           },
           "most_specific_subdivision": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf491GeolocationMostSpecificSubdivision"
+          },
+          "regionName": {
+            "type": "string"
+          }
+        },
+        "nullable": true
+      },
+      "UserEventPayloadOneOf492Geolocation": {
+        "required": [
+          "country"
+        ],
+        "type": "object",
+        "properties": {
+          "city": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf492GeolocationCity"
+          },
+          "country": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf492GeolocationCountry"
+          },
+          "most_specific_subdivision": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf492GeolocationMostSpecificSubdivision"
           },
           "regionName": {
             "type": "string"
@@ -75715,7 +75972,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf487PolicyClaimsItem": {
+      "UserEventPayloadOneOf488PolicyClaimsItem": {
         "required": [
           "name",
           "values"
@@ -75728,13 +75985,13 @@
           "values": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf487PolicyClaimsItemValuesItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf488PolicyClaimsItemValuesItem"
             }
           }
         },
         "description": "Claim matchers an OIDC token must satisfy to use the policy."
       },
-      "UserEventPayloadOneOf487PolicyResources": {
+      "UserEventPayloadOneOf488PolicyResources": {
         "required": [
           "projectIds"
         ],
@@ -75750,7 +76007,7 @@
         "description": "Resource boundary, or \u0060null\u0060 when the policy has none.",
         "nullable": true
       },
-      "UserEventPayloadOneOf488AfterClaimsItem": {
+      "UserEventPayloadOneOf489AfterClaimsItem": {
         "required": [
           "name",
           "values"
@@ -75763,13 +76020,13 @@
           "values": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf488AfterClaimsItemValuesItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf489AfterClaimsItemValuesItem"
             }
           }
         },
         "description": "Claim matchers an OIDC token must satisfy to use the policy."
       },
-      "UserEventPayloadOneOf488AfterResources": {
+      "UserEventPayloadOneOf489AfterResources": {
         "required": [
           "projectIds"
         ],
@@ -75785,7 +76042,7 @@
         "description": "Resource boundary, or \u0060null\u0060 when the policy has none.",
         "nullable": true
       },
-      "UserEventPayloadOneOf488BeforeClaimsItem": {
+      "UserEventPayloadOneOf489BeforeClaimsItem": {
         "required": [
           "name",
           "values"
@@ -75798,13 +76055,13 @@
           "values": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf488BeforeClaimsItemValuesItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf489BeforeClaimsItemValuesItem"
             }
           }
         },
         "description": "Claim matchers an OIDC token must satisfy to use the policy."
       },
-      "UserEventPayloadOneOf488BeforeResources": {
+      "UserEventPayloadOneOf489BeforeResources": {
         "required": [
           "projectIds"
         ],
@@ -75819,39 +76076,6 @@
         },
         "description": "Resource boundary, or \u0060null\u0060 when the policy has none.",
         "nullable": true
-      },
-      "UserEventPayloadOneOf489GeolocationCity": {
-        "required": [
-          "names"
-        ],
-        "type": "object",
-        "properties": {
-          "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489GeolocationCityNames"
-          }
-        }
-      },
-      "UserEventPayloadOneOf489GeolocationCountry": {
-        "required": [
-          "names"
-        ],
-        "type": "object",
-        "properties": {
-          "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489GeolocationCountryNames"
-          }
-        }
-      },
-      "UserEventPayloadOneOf489GeolocationMostSpecificSubdivision": {
-        "required": [
-          "names"
-        ],
-        "type": "object",
-        "properties": {
-          "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489GeolocationMostSpecificSubdivisionNames"
-          }
-        }
       },
       "UserEventPayloadOneOf490GeolocationCity": {
         "required": [
@@ -75916,6 +76140,39 @@
         "properties": {
           "names": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf491GeolocationMostSpecificSubdivisionNames"
+          }
+        }
+      },
+      "UserEventPayloadOneOf492GeolocationCity": {
+        "required": [
+          "names"
+        ],
+        "type": "object",
+        "properties": {
+          "names": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf492GeolocationCityNames"
+          }
+        }
+      },
+      "UserEventPayloadOneOf492GeolocationCountry": {
+        "required": [
+          "names"
+        ],
+        "type": "object",
+        "properties": {
+          "names": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf492GeolocationCountryNames"
+          }
+        }
+      },
+      "UserEventPayloadOneOf492GeolocationMostSpecificSubdivision": {
+        "required": [
+          "names"
+        ],
+        "type": "object",
+        "properties": {
+          "names": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf492GeolocationMostSpecificSubdivisionNames"
           }
         }
       },
@@ -76537,7 +76794,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf487PolicyClaimsItemValuesItem": {
+      "UserEventPayloadOneOf488PolicyClaimsItemValuesItem": {
         "required": [
           "value",
           "wildcards"
@@ -76548,11 +76805,11 @@
             "type": "string"
           },
           "wildcards": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf487PolicyClaimsItemValuesItemWildcards"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf488PolicyClaimsItemValuesItemWildcards"
           }
         }
       },
-      "UserEventPayloadOneOf488AfterClaimsItemValuesItem": {
+      "UserEventPayloadOneOf489AfterClaimsItemValuesItem": {
         "required": [
           "value",
           "wildcards"
@@ -76563,11 +76820,11 @@
             "type": "string"
           },
           "wildcards": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf488AfterClaimsItemValuesItemWildcards"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf489AfterClaimsItemValuesItemWildcards"
           }
         }
       },
-      "UserEventPayloadOneOf488BeforeClaimsItemValuesItem": {
+      "UserEventPayloadOneOf489BeforeClaimsItemValuesItem": {
         "required": [
           "value",
           "wildcards"
@@ -76578,40 +76835,7 @@
             "type": "string"
           },
           "wildcards": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf488BeforeClaimsItemValuesItemWildcards"
-          }
-        }
-      },
-      "UserEventPayloadOneOf489GeolocationCityNames": {
-        "required": [
-          "en"
-        ],
-        "type": "object",
-        "properties": {
-          "en": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf489GeolocationCountryNames": {
-        "required": [
-          "en"
-        ],
-        "type": "object",
-        "properties": {
-          "en": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf489GeolocationMostSpecificSubdivisionNames": {
-        "required": [
-          "en"
-        ],
-        "type": "object",
-        "properties": {
-          "en": {
-            "type": "string"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf489BeforeClaimsItemValuesItemWildcards"
           }
         }
       },
@@ -76671,6 +76895,39 @@
         }
       },
       "UserEventPayloadOneOf491GeolocationMostSpecificSubdivisionNames": {
+        "required": [
+          "en"
+        ],
+        "type": "object",
+        "properties": {
+          "en": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf492GeolocationCityNames": {
+        "required": [
+          "en"
+        ],
+        "type": "object",
+        "properties": {
+          "en": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf492GeolocationCountryNames": {
+        "required": [
+          "en"
+        ],
+        "type": "object",
+        "properties": {
+          "en": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf492GeolocationMostSpecificSubdivisionNames": {
         "required": [
           "en"
         ],
@@ -92013,6 +92270,70 @@
           }
         }
       },
+      "GetConditionalBypass200Response": {
+        "required": [
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetConditionalBypass200ResponseResultItem"
+            }
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/GetConditionalBypass200ResponsePagination"
+          }
+        }
+      },
+      "CreateConditionalBypassRequest": {
+        "required": [
+          "domain",
+          "conditionGroup"
+        ],
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string"
+          },
+          "conditionGroup": {
+            "maxItems": 25,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateConditionalBypassRequestConditionGroupItem"
+            }
+          },
+          "note": {
+            "maxLength": 500,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateConditionalBypass200Response": {
+        "required": [
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "result": {
+            "$ref": "#/components/schemas/CreateConditionalBypass200ResponseResult"
+          }
+        }
+      },
+      "DeleteConditionalBypass200Response": {
+        "required": [
+          "ok"
+        ],
+        "type": "object",
+        "properties": {
+          "ok": {
+            "$ref": "#/components/schemas/DeleteConditionalBypass200ResponseOk"
+          }
+        }
+      },
       "GetSecurityFirewallEvents200Response": {
         "required": [
           "actions",
@@ -99173,6 +99494,17 @@
           }
         }
       },
+      "GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseHasItemValueBranch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
       "GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemSrcBranch1": {
         "required": [
           "value"
@@ -101403,6 +101735,17 @@
         }
       },
       "GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemMissingItemValueBranch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemResponseHasItemValueBranch1": {
         "required": [
           "value"
         ],
@@ -111999,6 +112342,40 @@
           }
         }
       },
+      "GetConditionalBypass200ResponseResultItemConditionsItemValue": {
+        "type": "object",
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "CreateConditionalBypass200ResponseResultConditionGroupItemConditionsItemValue": {
+        "type": "object",
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        ]
+      },
       "GenerateFirewallRule200ResponseRuleConditionGroupItemConditionsItemValue": {
         "type": "object",
         "oneOf": [
@@ -112837,6 +113214,64 @@
             "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemMitigateLogHeadersOneOf2"
           }
         ]
+      },
+      "GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemResponseHasItemValue": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemResponseHasItemValueBranch1"
+          },
+          {
+            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemResponseHasItemValueOneOf2"
+          }
+        ],
+        "properties": {
+          "value": {
+            "type": "string"
+          },
+          "eq": {
+            "type": "string"
+          },
+          "gt": {
+            "type": "number"
+          },
+          "gte": {
+            "type": "number"
+          },
+          "inc": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "list": {
+            "type": "string"
+          },
+          "lt": {
+            "type": "number"
+          },
+          "lte": {
+            "type": "number"
+          },
+          "neq": {
+            "type": "string"
+          },
+          "ninc": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "pre": {
+            "type": "string"
+          },
+          "re": {
+            "type": "string"
+          },
+          "suf": {
+            "type": "string"
+          }
+        }
       },
       "GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemSrc": {
         "type": "object",
@@ -117639,6 +118074,64 @@
           }
         ]
       },
+      "GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseHasItemValue": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseHasItemValueBranch1"
+          },
+          {
+            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseHasItemValueOneOf2"
+          }
+        ],
+        "properties": {
+          "value": {
+            "type": "string"
+          },
+          "eq": {
+            "type": "string"
+          },
+          "gt": {
+            "type": "number"
+          },
+          "gte": {
+            "type": "number"
+          },
+          "inc": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "list": {
+            "type": "string"
+          },
+          "lt": {
+            "type": "number"
+          },
+          "lte": {
+            "type": "number"
+          },
+          "neq": {
+            "type": "string"
+          },
+          "ninc": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "pre": {
+            "type": "string"
+          },
+          "re": {
+            "type": "string"
+          },
+          "suf": {
+            "type": "string"
+          }
+        }
+      },
       "GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemSrc": {
         "type": "object",
         "oneOf": [
@@ -118589,6 +119082,53 @@
         }
       },
       "GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemMissingItemValueOneOf2": {
+        "type": "object",
+        "properties": {
+          "eq": {
+            "type": "string"
+          },
+          "gt": {
+            "type": "number"
+          },
+          "gte": {
+            "type": "number"
+          },
+          "inc": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "list": {
+            "type": "string"
+          },
+          "lt": {
+            "type": "number"
+          },
+          "lte": {
+            "type": "number"
+          },
+          "neq": {
+            "type": "string"
+          },
+          "ninc": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "pre": {
+            "type": "string"
+          },
+          "re": {
+            "type": "string"
+          },
+          "suf": {
+            "type": "string"
+          }
+        }
+      },
+      "GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemResponseHasItemValueOneOf2": {
         "type": "object",
         "properties": {
           "eq": {
@@ -119587,6 +120127,53 @@
         }
       },
       "GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMissingItemValueOneOf2": {
+        "type": "object",
+        "properties": {
+          "eq": {
+            "type": "string"
+          },
+          "gt": {
+            "type": "number"
+          },
+          "gte": {
+            "type": "number"
+          },
+          "inc": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "list": {
+            "type": "string"
+          },
+          "lt": {
+            "type": "number"
+          },
+          "lte": {
+            "type": "number"
+          },
+          "neq": {
+            "type": "string"
+          },
+          "ninc": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "pre": {
+            "type": "string"
+          },
+          "re": {
+            "type": "string"
+          },
+          "suf": {
+            "type": "string"
+          }
+        }
+      },
+      "GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseHasItemValueOneOf2": {
         "type": "object",
         "properties": {
           "eq": {
@@ -154846,6 +155433,89 @@
           }
         }
       },
+      "GetConditionalBypass200ResponseResultItem": {
+        "required": [
+          "conditions"
+        ],
+        "type": "object",
+        "properties": {
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetConditionalBypass200ResponseResultItemConditionsItem"
+            }
+          }
+        }
+      },
+      "GetConditionalBypass200ResponsePagination": {
+        "required": [
+          "next"
+        ],
+        "type": "object",
+        "properties": {
+          "next": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "CreateConditionalBypassRequestConditionGroupItem": {
+        "required": [
+          "conditions"
+        ],
+        "type": "object",
+        "properties": {
+          "conditions": {
+            "maxItems": 65,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateConditionalBypassRequestConditionGroupItemConditionsItem"
+            }
+          }
+        }
+      },
+      "CreateConditionalBypass200ResponseResult": {
+        "required": [
+          "condition",
+          "conditionGroup",
+          "createdAt",
+          "domain",
+          "id",
+          "projectId",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "condition": {
+            "type": "string"
+          },
+          "conditionGroup": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateConditionalBypass200ResponseResultConditionGroupItem"
+            }
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          }
+        }
+      },
       "GetSecurityFirewallEvents200ResponseActionsItem": {
         "required": [
           "action",
@@ -183469,6 +184139,66 @@
       "CreateSecurityFirewallConfigByConfigVersionActivate200ResponseRulesItemValidationErrors": {
         "type": "object"
       },
+      "GetConditionalBypass200ResponseResultItemConditionsItem": {
+        "required": [
+          "op",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "neg": {
+            "$ref": "#/components/schemas/GetConditionalBypass200ResponseResultItemConditionsItemNeg"
+          },
+          "op": {
+            "$ref": "#/components/schemas/GetConditionalBypass200ResponseResultItemConditionsItemOp"
+          },
+          "type": {
+            "$ref": "#/components/schemas/GetConditionalBypass200ResponseResultItemConditionsItemType"
+          },
+          "value": {
+            "$ref": "#/components/schemas/GetConditionalBypass200ResponseResultItemConditionsItemValue"
+          }
+        }
+      },
+      "CreateConditionalBypassRequestConditionGroupItemConditionsItem": {
+        "required": [
+          "type",
+          "op"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/CreateConditionalBypassRequestConditionGroupItemConditionsItemType"
+          },
+          "op": {
+            "$ref": "#/components/schemas/CreateConditionalBypassRequestConditionGroupItemConditionsItemOp"
+          },
+          "value": {
+            "maxLength": 500,
+            "type": "string"
+          },
+          "key": {
+            "$ref": "#/components/schemas/UserAgentKey"
+          }
+        }
+      },
+      "CreateConditionalBypass200ResponseResultConditionGroupItem": {
+        "required": [
+          "conditions"
+        ],
+        "type": "object",
+        "properties": {
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateConditionalBypass200ResponseResultConditionGroupItemConditionsItem"
+            }
+          }
+        }
+      },
       "GenerateFirewallRule200ResponseRuleAction": {
         "type": "object",
         "properties": {
@@ -202670,6 +203400,30 @@
           }
         }
       },
+      "CreateConditionalBypass200ResponseResultConditionGroupItemConditionsItem": {
+        "required": [
+          "op",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "neg": {
+            "$ref": "#/components/schemas/CreateConditionalBypass200ResponseResultConditionGroupItemConditionsItemNeg"
+          },
+          "op": {
+            "$ref": "#/components/schemas/CreateConditionalBypass200ResponseResultConditionGroupItemConditionsItemOp"
+          },
+          "type": {
+            "$ref": "#/components/schemas/CreateConditionalBypass200ResponseResultConditionGroupItemConditionsItemType"
+          },
+          "value": {
+            "$ref": "#/components/schemas/CreateConditionalBypass200ResponseResultConditionGroupItemConditionsItemValue"
+          }
+        }
+      },
       "GenerateFirewallRule200ResponseRuleActionMitigate": {
         "required": [
           "action"
@@ -203899,6 +204653,12 @@
           },
           "mitigate": {
             "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemMitigate"
+          },
+          "response_has": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemResponseHasItem"
+            }
           },
           "src": {
             "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemSrc"
@@ -205663,6 +206423,12 @@
           },
           "mitigate": {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMitigate"
+          },
+          "response_has": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseHasItem"
+            }
           },
           "src": {
             "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemSrc"
@@ -211177,6 +211943,23 @@
           }
         }
       },
+      "GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemResponseHasItem": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ResponseStatusType"
+          },
+          "value": {
+            "$ref": "#/components/schemas/GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemResponseHasItemValue"
+          }
+        }
+      },
       "GetProjects200ResponseBranch1ValueItemSecurityFirewallRoutesItemTransformsItem": {
         "required": [
           "args",
@@ -212115,6 +212898,23 @@
           },
           "ttl": {
             "type": "number"
+          }
+        }
+      },
+      "GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseHasItem": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ResponseStatusType"
+          },
+          "value": {
+            "$ref": "#/components/schemas/GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseHasItemValue"
           }
         }
       },
@@ -217684,6 +218484,8 @@
           "experiment-updated",
           "firewall-bypass-created",
           "firewall-bypass-deleted",
+          "firewall-conditional-bypass-created",
+          "firewall-conditional-bypass-deleted",
           "firewall-config-modified",
           "firewall-config-promoted",
           "firewall-config-removed",
@@ -219156,6 +219958,14 @@
             {
               "value": "firewall-bypass-deleted",
               "name": "FirewallBypassDeleted"
+            },
+            {
+              "value": "firewall-conditional-bypass-created",
+              "name": "FirewallConditionalBypassCreated"
+            },
+            {
+              "value": "firewall-conditional-bypass-deleted",
+              "name": "FirewallConditionalBypassDeleted"
             },
             {
               "value": "firewall-config-modified",
@@ -221451,6 +222261,8 @@
           "experiment-updated",
           "firewall-bypass-created",
           "firewall-bypass-deleted",
+          "firewall-conditional-bypass-created",
+          "firewall-conditional-bypass-deleted",
           "firewall-config-modified",
           "firewall-config-promoted",
           "firewall-config-removed",
@@ -222923,6 +223735,14 @@
             {
               "value": "firewall-bypass-deleted",
               "name": "FirewallBypassDeleted"
+            },
+            {
+              "value": "firewall-conditional-bypass-created",
+              "name": "FirewallConditionalBypassCreated"
+            },
+            {
+              "value": "firewall-conditional-bypass-deleted",
+              "name": "FirewallConditionalBypassDeleted"
             },
             {
               "value": "firewall-config-modified",
@@ -225080,6 +225900,8 @@
           "experiment-updated",
           "firewall-bypass-created",
           "firewall-bypass-deleted",
+          "firewall-conditional-bypass-created",
+          "firewall-conditional-bypass-deleted",
           "firewall-config-modified",
           "firewall-config-promoted",
           "firewall-config-removed",
@@ -226551,6 +227373,14 @@
             {
               "value": "firewall-bypass-deleted",
               "name": "FirewallBypassDeleted"
+            },
+            {
+              "value": "firewall-conditional-bypass-created",
+              "name": "FirewallConditionalBypassCreated"
+            },
+            {
+              "value": "firewall-conditional-bypass-deleted",
+              "name": "FirewallConditionalBypassDeleted"
             },
             {
               "value": "firewall-config-modified",
@@ -231358,6 +232188,7 @@
           "manage:speed-insights",
           "manage:web-analytics",
           "read-write:ai-gateway-api-key",
+          "read-write:ai-gateway-budgets",
           "read-write:ai-gateway-guardrails",
           "read-write:ai-gateway-private-models",
           "read-write:ai-gateway-rules",
@@ -231384,6 +232215,7 @@
           "read-write:project-env-vars-production",
           "read-write:project-flags-non-production",
           "read-write:project-flags-production",
+          "read-write:project-members",
           "read-write:project-protection-bypass",
           "read-write:project-trusted-sources",
           "read-write:remote-cache",
@@ -231392,11 +232224,13 @@
           "read-write:team-members",
           "read-write:vcr",
           "read:access-group",
+          "read:ai-gateway-budgets",
           "read:ai-gateway-guardrails",
           "read:ai-gateway-private-models",
           "read:ai-gateway-rules",
           "read:ai-gateway-virtual-model-configs",
           "read:alerts",
+          "read:audit-log",
           "read:automations",
           "read:billing",
           "read:connect",
@@ -231413,6 +232247,7 @@
           "read:project-env-vars-non-production",
           "read:project-env-vars-production",
           "read:project-flags",
+          "read:project-members",
           "read:project-trusted-sources",
           "read:remote-cache",
           "read:sandbox",
@@ -231446,6 +232281,10 @@
             {
               "value": "read-write:ai-gateway-api-key",
               "name": "ReadWriteColonAiGatewayApiKey"
+            },
+            {
+              "value": "read-write:ai-gateway-budgets",
+              "name": "ReadWriteColonAiGatewayBudgets"
             },
             {
               "value": "read-write:ai-gateway-guardrails",
@@ -231552,6 +232391,10 @@
               "name": "ReadWriteColonProjectFlagsProduction"
             },
             {
+              "value": "read-write:project-members",
+              "name": "ReadWriteColonProjectMembers"
+            },
+            {
               "value": "read-write:project-protection-bypass",
               "name": "ReadWriteColonProjectProtectionBypass"
             },
@@ -231584,6 +232427,10 @@
               "name": "ReadColonAccessGroup"
             },
             {
+              "value": "read:ai-gateway-budgets",
+              "name": "ReadColonAiGatewayBudgets"
+            },
+            {
               "value": "read:ai-gateway-guardrails",
               "name": "ReadColonAiGatewayGuardrails"
             },
@@ -231602,6 +232449,10 @@
             {
               "value": "read:alerts",
               "name": "ReadColonAlerts"
+            },
+            {
+              "value": "read:audit-log",
+              "name": "ReadColonAuditLog"
             },
             {
               "value": "read:automations",
@@ -231666,6 +232517,10 @@
             {
               "value": "read:project-flags",
               "name": "ReadColonProjectFlags"
+            },
+            {
+              "value": "read:project-members",
+              "name": "ReadColonProjectMembers"
             },
             {
               "value": "read:project-trusted-sources",
@@ -231752,6 +232607,7 @@
           "manage:speed-insights",
           "manage:web-analytics",
           "read-write:ai-gateway-api-key",
+          "read-write:ai-gateway-budgets",
           "read-write:ai-gateway-guardrails",
           "read-write:ai-gateway-private-models",
           "read-write:ai-gateway-rules",
@@ -231778,6 +232634,7 @@
           "read-write:project-env-vars-production",
           "read-write:project-flags-non-production",
           "read-write:project-flags-production",
+          "read-write:project-members",
           "read-write:project-protection-bypass",
           "read-write:project-trusted-sources",
           "read-write:remote-cache",
@@ -231786,11 +232643,13 @@
           "read-write:team-members",
           "read-write:vcr",
           "read:access-group",
+          "read:ai-gateway-budgets",
           "read:ai-gateway-guardrails",
           "read:ai-gateway-private-models",
           "read:ai-gateway-rules",
           "read:ai-gateway-virtual-model-configs",
           "read:alerts",
+          "read:audit-log",
           "read:automations",
           "read:billing",
           "read:connect",
@@ -231807,6 +232666,7 @@
           "read:project-env-vars-non-production",
           "read:project-env-vars-production",
           "read:project-flags",
+          "read:project-members",
           "read:project-trusted-sources",
           "read:remote-cache",
           "read:sandbox",
@@ -231840,6 +232700,10 @@
             {
               "value": "read-write:ai-gateway-api-key",
               "name": "ReadWriteColonAiGatewayApiKey"
+            },
+            {
+              "value": "read-write:ai-gateway-budgets",
+              "name": "ReadWriteColonAiGatewayBudgets"
             },
             {
               "value": "read-write:ai-gateway-guardrails",
@@ -231946,6 +232810,10 @@
               "name": "ReadWriteColonProjectFlagsProduction"
             },
             {
+              "value": "read-write:project-members",
+              "name": "ReadWriteColonProjectMembers"
+            },
+            {
               "value": "read-write:project-protection-bypass",
               "name": "ReadWriteColonProjectProtectionBypass"
             },
@@ -231978,6 +232846,10 @@
               "name": "ReadColonAccessGroup"
             },
             {
+              "value": "read:ai-gateway-budgets",
+              "name": "ReadColonAiGatewayBudgets"
+            },
+            {
               "value": "read:ai-gateway-guardrails",
               "name": "ReadColonAiGatewayGuardrails"
             },
@@ -231996,6 +232868,10 @@
             {
               "value": "read:alerts",
               "name": "ReadColonAlerts"
+            },
+            {
+              "value": "read:audit-log",
+              "name": "ReadColonAuditLog"
             },
             {
               "value": "read:automations",
@@ -232060,6 +232936,10 @@
             {
               "value": "read:project-flags",
               "name": "ReadColonProjectFlags"
+            },
+            {
+              "value": "read:project-members",
+              "name": "ReadColonProjectMembers"
             },
             {
               "value": "read:project-trusted-sources",
@@ -232145,6 +233025,7 @@
           "manage:speed-insights",
           "manage:web-analytics",
           "read-write:ai-gateway-api-key",
+          "read-write:ai-gateway-budgets",
           "read-write:ai-gateway-guardrails",
           "read-write:ai-gateway-private-models",
           "read-write:ai-gateway-rules",
@@ -232171,6 +233052,7 @@
           "read-write:project-env-vars-production",
           "read-write:project-flags-non-production",
           "read-write:project-flags-production",
+          "read-write:project-members",
           "read-write:project-protection-bypass",
           "read-write:project-trusted-sources",
           "read-write:remote-cache",
@@ -232179,11 +233061,13 @@
           "read-write:team-members",
           "read-write:vcr",
           "read:access-group",
+          "read:ai-gateway-budgets",
           "read:ai-gateway-guardrails",
           "read:ai-gateway-private-models",
           "read:ai-gateway-rules",
           "read:ai-gateway-virtual-model-configs",
           "read:alerts",
+          "read:audit-log",
           "read:automations",
           "read:billing",
           "read:connect",
@@ -232200,6 +233084,7 @@
           "read:project-env-vars-non-production",
           "read:project-env-vars-production",
           "read:project-flags",
+          "read:project-members",
           "read:project-trusted-sources",
           "read:remote-cache",
           "read:sandbox",
@@ -232228,6 +233113,10 @@
             {
               "value": "read-write:ai-gateway-api-key",
               "name": "ReadWriteColonAiGatewayApiKey"
+            },
+            {
+              "value": "read-write:ai-gateway-budgets",
+              "name": "ReadWriteColonAiGatewayBudgets"
             },
             {
               "value": "read-write:ai-gateway-guardrails",
@@ -232334,6 +233223,10 @@
               "name": "ReadWriteColonProjectFlagsProduction"
             },
             {
+              "value": "read-write:project-members",
+              "name": "ReadWriteColonProjectMembers"
+            },
+            {
               "value": "read-write:project-protection-bypass",
               "name": "ReadWriteColonProjectProtectionBypass"
             },
@@ -232366,6 +233259,10 @@
               "name": "ReadColonAccessGroup"
             },
             {
+              "value": "read:ai-gateway-budgets",
+              "name": "ReadColonAiGatewayBudgets"
+            },
+            {
               "value": "read:ai-gateway-guardrails",
               "name": "ReadColonAiGatewayGuardrails"
             },
@@ -232384,6 +233281,10 @@
             {
               "value": "read:alerts",
               "name": "ReadColonAlerts"
+            },
+            {
+              "value": "read:audit-log",
+              "name": "ReadColonAuditLog"
             },
             {
               "value": "read:automations",
@@ -232448,6 +233349,10 @@
             {
               "value": "read:project-flags",
               "name": "ReadColonProjectFlags"
+            },
+            {
+              "value": "read:project-members",
+              "name": "ReadColonProjectMembers"
             },
             {
               "value": "read:project-trusted-sources",
@@ -236463,7 +237368,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf489HasAuthorizationDetails": {
+      "UserEventPayloadOneOf490HasAuthorizationDetails": {
         "enum": [
           false,
           true
@@ -236472,7 +237377,7 @@
         "additionalProperties": false,
         "description": "Whether the token was issued with RFC 9396 authorization details."
       },
-      "UserEventPayloadOneOf489Origin": {
+      "UserEventPayloadOneOf490Origin": {
         "enum": [
           "app",
           "apple",
@@ -236496,7 +237401,7 @@
         "additionalProperties": false,
         "description": "How the token was issued. Always \u0060\u0027manual\u0027\u0060 for explicit PAT creation.",
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf489Origin",
+          "name": "UserEventPayloadOneOf490Origin",
           "modelAsString": false,
           "values": [
             {
@@ -236570,7 +237475,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf489ProjectScope": {
+      "UserEventPayloadOneOf490ProjectScope": {
         "enum": [
           "account",
           "project-only"
@@ -236579,7 +237484,7 @@
         "additionalProperties": false,
         "description": "Present when \u0060scope\u0060 is \u0060\u0027project\u0027\u0060.",
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf489ProjectScope",
+          "name": "UserEventPayloadOneOf490ProjectScope",
           "modelAsString": false,
           "values": [
             {
@@ -236593,7 +237498,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf489Scope": {
+      "UserEventPayloadOneOf490Scope": {
         "enum": [
           "project",
           "team",
@@ -236603,7 +237508,7 @@
         "additionalProperties": false,
         "description": "Scope of the token: - \u0060\u0027user\u0027\u0060: full-account token (not tied to any team). - \u0060\u0027team\u0027\u0060: scoped to a single team. - \u0060\u0027project\u0027\u0060: scoped to a single project within a team.",
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf489Scope",
+          "name": "UserEventPayloadOneOf490Scope",
           "modelAsString": false,
           "values": [
             {
@@ -236656,7 +237561,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf490Expired": {
+      "UserEventPayloadOneOf491Expired": {
         "enum": [
           false,
           true
@@ -236664,7 +237569,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf490Leaked": {
+      "UserEventPayloadOneOf491Leaked": {
         "enum": [
           false,
           true
@@ -236672,7 +237577,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf490LogoutSource": {
+      "UserEventPayloadOneOf491LogoutSource": {
         "enum": [
           "v0",
           "vercel"
@@ -236680,7 +237585,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf490LogoutSource",
+          "name": "UserEventPayloadOneOf491LogoutSource",
           "modelAsString": false,
           "values": [
             {
@@ -236694,7 +237599,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf490Origin": {
+      "UserEventPayloadOneOf491Origin": {
         "enum": [
           "app",
           "apple",
@@ -236717,7 +237622,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf490Origin",
+          "name": "UserEventPayloadOneOf491Origin",
           "modelAsString": false,
           "values": [
             {
@@ -236808,7 +237713,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf490Revoked": {
+      "UserEventPayloadOneOf491Revoked": {
         "enum": [
           false,
           true
@@ -236816,7 +237721,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf490Scope": {
+      "UserEventPayloadOneOf491Scope": {
         "enum": [
           "project",
           "team",
@@ -236825,7 +237730,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf490Scope",
+          "name": "UserEventPayloadOneOf491Scope",
           "modelAsString": false,
           "values": [
             {
@@ -241480,6 +242385,7 @@
           "manage:speed-insights",
           "manage:web-analytics",
           "read-write:ai-gateway-api-key",
+          "read-write:ai-gateway-budgets",
           "read-write:ai-gateway-guardrails",
           "read-write:ai-gateway-private-models",
           "read-write:ai-gateway-rules",
@@ -241506,6 +242412,7 @@
           "read-write:project-env-vars-production",
           "read-write:project-flags-non-production",
           "read-write:project-flags-production",
+          "read-write:project-members",
           "read-write:project-protection-bypass",
           "read-write:project-trusted-sources",
           "read-write:remote-cache",
@@ -241514,11 +242421,13 @@
           "read-write:team-members",
           "read-write:vcr",
           "read:access-group",
+          "read:ai-gateway-budgets",
           "read:ai-gateway-guardrails",
           "read:ai-gateway-private-models",
           "read:ai-gateway-rules",
           "read:ai-gateway-virtual-model-configs",
           "read:alerts",
+          "read:audit-log",
           "read:automations",
           "read:billing",
           "read:connect",
@@ -241535,6 +242444,7 @@
           "read:project-env-vars-non-production",
           "read:project-env-vars-production",
           "read:project-flags",
+          "read:project-members",
           "read:project-trusted-sources",
           "read:remote-cache",
           "read:sandbox",
@@ -241563,6 +242473,10 @@
             {
               "value": "read-write:ai-gateway-api-key",
               "name": "ReadWriteColonAiGatewayApiKey"
+            },
+            {
+              "value": "read-write:ai-gateway-budgets",
+              "name": "ReadWriteColonAiGatewayBudgets"
             },
             {
               "value": "read-write:ai-gateway-guardrails",
@@ -241669,6 +242583,10 @@
               "name": "ReadWriteColonProjectFlagsProduction"
             },
             {
+              "value": "read-write:project-members",
+              "name": "ReadWriteColonProjectMembers"
+            },
+            {
               "value": "read-write:project-protection-bypass",
               "name": "ReadWriteColonProjectProtectionBypass"
             },
@@ -241701,6 +242619,10 @@
               "name": "ReadColonAccessGroup"
             },
             {
+              "value": "read:ai-gateway-budgets",
+              "name": "ReadColonAiGatewayBudgets"
+            },
+            {
               "value": "read:ai-gateway-guardrails",
               "name": "ReadColonAiGatewayGuardrails"
             },
@@ -241719,6 +242641,10 @@
             {
               "value": "read:alerts",
               "name": "ReadColonAlerts"
+            },
+            {
+              "value": "read:audit-log",
+              "name": "ReadColonAuditLog"
             },
             {
               "value": "read:automations",
@@ -241783,6 +242709,10 @@
             {
               "value": "read:project-flags",
               "name": "ReadColonProjectFlags"
+            },
+            {
+              "value": "read:project-members",
+              "name": "ReadColonProjectMembers"
             },
             {
               "value": "read:project-trusted-sources",
@@ -241832,6 +242762,7 @@
           "manage:speed-insights",
           "manage:web-analytics",
           "read-write:ai-gateway-api-key",
+          "read-write:ai-gateway-budgets",
           "read-write:ai-gateway-guardrails",
           "read-write:ai-gateway-private-models",
           "read-write:ai-gateway-rules",
@@ -241858,6 +242789,7 @@
           "read-write:project-env-vars-production",
           "read-write:project-flags-non-production",
           "read-write:project-flags-production",
+          "read-write:project-members",
           "read-write:project-protection-bypass",
           "read-write:project-trusted-sources",
           "read-write:remote-cache",
@@ -241866,11 +242798,13 @@
           "read-write:team-members",
           "read-write:vcr",
           "read:access-group",
+          "read:ai-gateway-budgets",
           "read:ai-gateway-guardrails",
           "read:ai-gateway-private-models",
           "read:ai-gateway-rules",
           "read:ai-gateway-virtual-model-configs",
           "read:alerts",
+          "read:audit-log",
           "read:automations",
           "read:billing",
           "read:connect",
@@ -241887,6 +242821,7 @@
           "read:project-env-vars-non-production",
           "read:project-env-vars-production",
           "read:project-flags",
+          "read:project-members",
           "read:project-trusted-sources",
           "read:remote-cache",
           "read:sandbox",
@@ -241915,6 +242850,10 @@
             {
               "value": "read-write:ai-gateway-api-key",
               "name": "ReadWriteColonAiGatewayApiKey"
+            },
+            {
+              "value": "read-write:ai-gateway-budgets",
+              "name": "ReadWriteColonAiGatewayBudgets"
             },
             {
               "value": "read-write:ai-gateway-guardrails",
@@ -242021,6 +242960,10 @@
               "name": "ReadWriteColonProjectFlagsProduction"
             },
             {
+              "value": "read-write:project-members",
+              "name": "ReadWriteColonProjectMembers"
+            },
+            {
               "value": "read-write:project-protection-bypass",
               "name": "ReadWriteColonProjectProtectionBypass"
             },
@@ -242053,6 +242996,10 @@
               "name": "ReadColonAccessGroup"
             },
             {
+              "value": "read:ai-gateway-budgets",
+              "name": "ReadColonAiGatewayBudgets"
+            },
+            {
               "value": "read:ai-gateway-guardrails",
               "name": "ReadColonAiGatewayGuardrails"
             },
@@ -242071,6 +243018,10 @@
             {
               "value": "read:alerts",
               "name": "ReadColonAlerts"
+            },
+            {
+              "value": "read:audit-log",
+              "name": "ReadColonAuditLog"
             },
             {
               "value": "read:automations",
@@ -242135,6 +243086,10 @@
             {
               "value": "read:project-flags",
               "name": "ReadColonProjectFlags"
+            },
+            {
+              "value": "read:project-members",
+              "name": "ReadColonProjectMembers"
             },
             {
               "value": "read:project-trusted-sources",
@@ -246475,7 +247430,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf487PolicyClaimsItemValuesItemWildcards": {
+      "UserEventPayloadOneOf488PolicyClaimsItemValuesItemWildcards": {
         "enum": [
           false,
           true
@@ -246483,7 +247438,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf488AfterClaimsItemValuesItemWildcards": {
+      "UserEventPayloadOneOf489AfterClaimsItemValuesItemWildcards": {
         "enum": [
           false,
           true
@@ -246491,7 +247446,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf488BeforeClaimsItemValuesItemWildcards": {
+      "UserEventPayloadOneOf489BeforeClaimsItemValuesItemWildcards": {
         "enum": [
           false,
           true
@@ -259868,6 +260823,14 @@
         "additionalProperties": false
       },
       "RemoveBypassIp200ResponseOk": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
+      "DeleteConditionalBypass200ResponseOk": {
         "enum": [
           false,
           true
@@ -318806,6 +319769,364 @@
         "type": "boolean",
         "additionalProperties": false
       },
+      "GetConditionalBypass200ResponseResultItemConditionsItemNeg": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
+      "GetConditionalBypass200ResponseResultItemConditionsItemOp": {
+        "enum": [
+          "eq",
+          "ex",
+          "gt",
+          "gte",
+          "inc",
+          "list",
+          "lt",
+          "lte",
+          "neq",
+          "nex",
+          "ninc",
+          "pre",
+          "re",
+          "sub",
+          "suf"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetConditionalBypass200ResponseResultItemConditionsItemOp",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "eq",
+              "name": "Eq"
+            },
+            {
+              "value": "ex",
+              "name": "Ex"
+            },
+            {
+              "value": "gt",
+              "name": "Gt"
+            },
+            {
+              "value": "gte",
+              "name": "Gte"
+            },
+            {
+              "value": "inc",
+              "name": "Inc"
+            },
+            {
+              "value": "list",
+              "name": "List"
+            },
+            {
+              "value": "lt",
+              "name": "Lt"
+            },
+            {
+              "value": "lte",
+              "name": "Lte"
+            },
+            {
+              "value": "neq",
+              "name": "Neq"
+            },
+            {
+              "value": "nex",
+              "name": "Nex"
+            },
+            {
+              "value": "ninc",
+              "name": "Ninc"
+            },
+            {
+              "value": "pre",
+              "name": "Pre"
+            },
+            {
+              "value": "re",
+              "name": "Re"
+            },
+            {
+              "value": "sub",
+              "name": "Sub"
+            },
+            {
+              "value": "suf",
+              "name": "Suf"
+            }
+          ]
+        }
+      },
+      "GetConditionalBypass200ResponseResultItemConditionsItemType": {
+        "enum": [
+          "bot_category",
+          "bot_name",
+          "bot_protection",
+          "bot_status",
+          "cookie",
+          "domain_environment",
+          "environment",
+          "geo_as_number",
+          "geo_city",
+          "geo_continent",
+          "geo_country",
+          "geo_country_region",
+          "header",
+          "host",
+          "ip_address",
+          "ja3_digest",
+          "ja4_digest",
+          "method",
+          "path",
+          "protocol",
+          "query",
+          "rate_limit_api_id",
+          "raw_path",
+          "region",
+          "response_code",
+          "route",
+          "ruleset",
+          "scheme",
+          "server_action",
+          "shared_condition",
+          "target_path",
+          "traffic_source",
+          "trusted_source",
+          "user_agent"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetConditionalBypass200ResponseResultItemConditionsItemType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "bot_category",
+              "name": "BotCategory"
+            },
+            {
+              "value": "bot_name",
+              "name": "BotName"
+            },
+            {
+              "value": "bot_protection",
+              "name": "BotProtection"
+            },
+            {
+              "value": "bot_status",
+              "name": "BotStatus"
+            },
+            {
+              "value": "cookie",
+              "name": "Cookie"
+            },
+            {
+              "value": "domain_environment",
+              "name": "DomainEnvironment"
+            },
+            {
+              "value": "environment",
+              "name": "Environment"
+            },
+            {
+              "value": "geo_as_number",
+              "name": "GeoAsNumber"
+            },
+            {
+              "value": "geo_city",
+              "name": "GeoCity"
+            },
+            {
+              "value": "geo_continent",
+              "name": "GeoContinent"
+            },
+            {
+              "value": "geo_country",
+              "name": "GeoCountry"
+            },
+            {
+              "value": "geo_country_region",
+              "name": "GeoCountryRegion"
+            },
+            {
+              "value": "header",
+              "name": "Header"
+            },
+            {
+              "value": "host",
+              "name": "Host"
+            },
+            {
+              "value": "ip_address",
+              "name": "IpAddress"
+            },
+            {
+              "value": "ja3_digest",
+              "name": "Ja3Digest"
+            },
+            {
+              "value": "ja4_digest",
+              "name": "Ja4Digest"
+            },
+            {
+              "value": "method",
+              "name": "Method"
+            },
+            {
+              "value": "path",
+              "name": "Path"
+            },
+            {
+              "value": "protocol",
+              "name": "Protocol"
+            },
+            {
+              "value": "query",
+              "name": "Query"
+            },
+            {
+              "value": "rate_limit_api_id",
+              "name": "RateLimitApiId"
+            },
+            {
+              "value": "raw_path",
+              "name": "RawPath"
+            },
+            {
+              "value": "region",
+              "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
+            },
+            {
+              "value": "route",
+              "name": "Route"
+            },
+            {
+              "value": "ruleset",
+              "name": "Ruleset"
+            },
+            {
+              "value": "scheme",
+              "name": "Scheme"
+            },
+            {
+              "value": "server_action",
+              "name": "ServerAction"
+            },
+            {
+              "value": "shared_condition",
+              "name": "SharedCondition"
+            },
+            {
+              "value": "target_path",
+              "name": "TargetPath"
+            },
+            {
+              "value": "traffic_source",
+              "name": "TrafficSource"
+            },
+            {
+              "value": "trusted_source",
+              "name": "TrustedSource"
+            },
+            {
+              "value": "user_agent",
+              "name": "UserAgent"
+            }
+          ]
+        }
+      },
+      "CreateConditionalBypassRequestConditionGroupItemConditionsItemType": {
+        "enum": [
+          "user_agent",
+          "path",
+          "header"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateConditionalBypassRequestConditionGroupItemConditionsItemType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "user_agent",
+              "name": "UserAgent"
+            },
+            {
+              "value": "path",
+              "name": "Path"
+            },
+            {
+              "value": "header",
+              "name": "Header"
+            }
+          ]
+        }
+      },
+      "CreateConditionalBypassRequestConditionGroupItemConditionsItemOp": {
+        "enum": [
+          "eq",
+          "pre",
+          "suf",
+          "sub",
+          "ex"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateConditionalBypassRequestConditionGroupItemConditionsItemOp",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "eq",
+              "name": "Eq"
+            },
+            {
+              "value": "pre",
+              "name": "Pre"
+            },
+            {
+              "value": "suf",
+              "name": "Suf"
+            },
+            {
+              "value": "sub",
+              "name": "Sub"
+            },
+            {
+              "value": "ex",
+              "name": "Ex"
+            }
+          ]
+        }
+      },
+      "UserAgentKey": {
+        "enum": [
+          "user-agent"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserAgentKey",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "user-agent",
+              "name": "UserAgent"
+            }
+          ]
+        }
+      },
       "GetStorageStoresById200ResponseStoreProjectsMetadataItemFramework": {
         "enum": [
           "actix-web",
@@ -337082,7 +338403,8 @@
           "bot_protection",
           "shared_condition",
           "traffic_source",
-          "ruleset"
+          "ruleset",
+          "response_code"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -337218,6 +338540,10 @@
             {
               "value": "ruleset",
               "name": "Ruleset"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             }
           ]
         }
@@ -337889,7 +339215,8 @@
           "bot_protection",
           "shared_condition",
           "traffic_source",
-          "ruleset"
+          "ruleset",
+          "response_code"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -338024,6 +339351,10 @@
             {
               "value": "ruleset",
               "name": "Ruleset"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             }
           ]
         }
@@ -338263,6 +339594,7 @@
           "rate_limit_api_id",
           "raw_path",
           "region",
+          "response_code",
           "route",
           "ruleset",
           "scheme",
@@ -338374,6 +339706,10 @@
             {
               "value": "region",
               "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             },
             {
               "value": "route",
@@ -338592,6 +339928,7 @@
           "rate_limit_api_id",
           "raw_path",
           "region",
+          "response_code",
           "route",
           "ruleset",
           "scheme",
@@ -338703,6 +340040,10 @@
             {
               "value": "region",
               "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             },
             {
               "value": "route",
@@ -338864,6 +340205,7 @@
           "rate_limit_api_id",
           "raw_path",
           "region",
+          "response_code",
           "route",
           "ruleset",
           "scheme",
@@ -338975,6 +340317,10 @@
             {
               "value": "region",
               "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             },
             {
               "value": "route",
@@ -339193,6 +340539,7 @@
           "rate_limit_api_id",
           "raw_path",
           "region",
+          "response_code",
           "route",
           "ruleset",
           "scheme",
@@ -339304,6 +340651,287 @@
             {
               "value": "region",
               "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
+            },
+            {
+              "value": "route",
+              "name": "Route"
+            },
+            {
+              "value": "ruleset",
+              "name": "Ruleset"
+            },
+            {
+              "value": "scheme",
+              "name": "Scheme"
+            },
+            {
+              "value": "server_action",
+              "name": "ServerAction"
+            },
+            {
+              "value": "shared_condition",
+              "name": "SharedCondition"
+            },
+            {
+              "value": "target_path",
+              "name": "TargetPath"
+            },
+            {
+              "value": "traffic_source",
+              "name": "TrafficSource"
+            },
+            {
+              "value": "trusted_source",
+              "name": "TrustedSource"
+            },
+            {
+              "value": "user_agent",
+              "name": "UserAgent"
+            }
+          ]
+        }
+      },
+      "CreateConditionalBypass200ResponseResultConditionGroupItemConditionsItemNeg": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
+      "CreateConditionalBypass200ResponseResultConditionGroupItemConditionsItemOp": {
+        "enum": [
+          "eq",
+          "ex",
+          "gt",
+          "gte",
+          "inc",
+          "list",
+          "lt",
+          "lte",
+          "neq",
+          "nex",
+          "ninc",
+          "pre",
+          "re",
+          "sub",
+          "suf"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateConditionalBypass200ResponseResultConditionGroupItemConditionsItemOp",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "eq",
+              "name": "Eq"
+            },
+            {
+              "value": "ex",
+              "name": "Ex"
+            },
+            {
+              "value": "gt",
+              "name": "Gt"
+            },
+            {
+              "value": "gte",
+              "name": "Gte"
+            },
+            {
+              "value": "inc",
+              "name": "Inc"
+            },
+            {
+              "value": "list",
+              "name": "List"
+            },
+            {
+              "value": "lt",
+              "name": "Lt"
+            },
+            {
+              "value": "lte",
+              "name": "Lte"
+            },
+            {
+              "value": "neq",
+              "name": "Neq"
+            },
+            {
+              "value": "nex",
+              "name": "Nex"
+            },
+            {
+              "value": "ninc",
+              "name": "Ninc"
+            },
+            {
+              "value": "pre",
+              "name": "Pre"
+            },
+            {
+              "value": "re",
+              "name": "Re"
+            },
+            {
+              "value": "sub",
+              "name": "Sub"
+            },
+            {
+              "value": "suf",
+              "name": "Suf"
+            }
+          ]
+        }
+      },
+      "CreateConditionalBypass200ResponseResultConditionGroupItemConditionsItemType": {
+        "enum": [
+          "bot_category",
+          "bot_name",
+          "bot_protection",
+          "bot_status",
+          "cookie",
+          "domain_environment",
+          "environment",
+          "geo_as_number",
+          "geo_city",
+          "geo_continent",
+          "geo_country",
+          "geo_country_region",
+          "header",
+          "host",
+          "ip_address",
+          "ja3_digest",
+          "ja4_digest",
+          "method",
+          "path",
+          "protocol",
+          "query",
+          "rate_limit_api_id",
+          "raw_path",
+          "region",
+          "response_code",
+          "route",
+          "ruleset",
+          "scheme",
+          "server_action",
+          "shared_condition",
+          "target_path",
+          "traffic_source",
+          "trusted_source",
+          "user_agent"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateConditionalBypass200ResponseResultConditionGroupItemConditionsItemType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "bot_category",
+              "name": "BotCategory"
+            },
+            {
+              "value": "bot_name",
+              "name": "BotName"
+            },
+            {
+              "value": "bot_protection",
+              "name": "BotProtection"
+            },
+            {
+              "value": "bot_status",
+              "name": "BotStatus"
+            },
+            {
+              "value": "cookie",
+              "name": "Cookie"
+            },
+            {
+              "value": "domain_environment",
+              "name": "DomainEnvironment"
+            },
+            {
+              "value": "environment",
+              "name": "Environment"
+            },
+            {
+              "value": "geo_as_number",
+              "name": "GeoAsNumber"
+            },
+            {
+              "value": "geo_city",
+              "name": "GeoCity"
+            },
+            {
+              "value": "geo_continent",
+              "name": "GeoContinent"
+            },
+            {
+              "value": "geo_country",
+              "name": "GeoCountry"
+            },
+            {
+              "value": "geo_country_region",
+              "name": "GeoCountryRegion"
+            },
+            {
+              "value": "header",
+              "name": "Header"
+            },
+            {
+              "value": "host",
+              "name": "Host"
+            },
+            {
+              "value": "ip_address",
+              "name": "IpAddress"
+            },
+            {
+              "value": "ja3_digest",
+              "name": "Ja3Digest"
+            },
+            {
+              "value": "ja4_digest",
+              "name": "Ja4Digest"
+            },
+            {
+              "value": "method",
+              "name": "Method"
+            },
+            {
+              "value": "path",
+              "name": "Path"
+            },
+            {
+              "value": "protocol",
+              "name": "Protocol"
+            },
+            {
+              "value": "query",
+              "name": "Query"
+            },
+            {
+              "value": "rate_limit_api_id",
+              "name": "RateLimitApiId"
+            },
+            {
+              "value": "raw_path",
+              "name": "RawPath"
+            },
+            {
+              "value": "region",
+              "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             },
             {
               "value": "route",
@@ -340490,6 +342118,7 @@
           "rate_limit_api_id",
           "raw_path",
           "region",
+          "response_code",
           "route",
           "ruleset",
           "scheme",
@@ -340601,6 +342230,10 @@
             {
               "value": "region",
               "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             },
             {
               "value": "route",
@@ -340819,6 +342452,7 @@
           "rate_limit_api_id",
           "raw_path",
           "region",
+          "response_code",
           "route",
           "ruleset",
           "scheme",
@@ -340930,6 +342564,10 @@
             {
               "value": "region",
               "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             },
             {
               "value": "route",
@@ -341148,6 +342786,7 @@
           "rate_limit_api_id",
           "raw_path",
           "region",
+          "response_code",
           "route",
           "ruleset",
           "scheme",
@@ -341259,6 +342898,10 @@
             {
               "value": "region",
               "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             },
             {
               "value": "route",
@@ -341389,7 +343032,8 @@
           "bot_protection",
           "shared_condition",
           "traffic_source",
-          "ruleset"
+          "ruleset",
+          "response_code"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -341524,6 +343168,10 @@
             {
               "value": "ruleset",
               "name": "Ruleset"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             }
           ]
         }
@@ -341763,6 +343411,7 @@
           "rate_limit_api_id",
           "raw_path",
           "region",
+          "response_code",
           "route",
           "ruleset",
           "scheme",
@@ -341874,6 +343523,10 @@
             {
               "value": "region",
               "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             },
             {
               "value": "route",
@@ -342092,6 +343745,7 @@
           "rate_limit_api_id",
           "raw_path",
           "region",
+          "response_code",
           "route",
           "ruleset",
           "scheme",
@@ -342203,6 +343857,10 @@
             {
               "value": "region",
               "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             },
             {
               "value": "route",
@@ -342421,6 +344079,7 @@
           "rate_limit_api_id",
           "raw_path",
           "region",
+          "response_code",
           "route",
           "ruleset",
           "scheme",
@@ -342532,6 +344191,10 @@
             {
               "value": "region",
               "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             },
             {
               "value": "route",
@@ -346807,6 +348470,7 @@
           "rate_limit_api_id",
           "raw_path",
           "region",
+          "response_code",
           "route",
           "ruleset",
           "scheme",
@@ -346918,6 +348582,10 @@
             {
               "value": "region",
               "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             },
             {
               "value": "route",
@@ -347136,6 +348804,7 @@
           "rate_limit_api_id",
           "raw_path",
           "region",
+          "response_code",
           "route",
           "ruleset",
           "scheme",
@@ -347247,6 +348916,10 @@
             {
               "value": "region",
               "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             },
             {
               "value": "route",
@@ -347408,6 +349081,7 @@
           "rate_limit_api_id",
           "raw_path",
           "region",
+          "response_code",
           "route",
           "ruleset",
           "scheme",
@@ -347519,6 +349193,10 @@
             {
               "value": "region",
               "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             },
             {
               "value": "route",
@@ -347737,6 +349415,7 @@
           "rate_limit_api_id",
           "raw_path",
           "region",
+          "response_code",
           "route",
           "ruleset",
           "scheme",
@@ -347848,6 +349527,10 @@
             {
               "value": "region",
               "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             },
             {
               "value": "route",
@@ -348009,6 +349692,7 @@
           "rate_limit_api_id",
           "raw_path",
           "region",
+          "response_code",
           "route",
           "ruleset",
           "scheme",
@@ -348120,6 +349804,10 @@
             {
               "value": "region",
               "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             },
             {
               "value": "route",
@@ -348338,6 +350026,7 @@
           "rate_limit_api_id",
           "raw_path",
           "region",
+          "response_code",
           "route",
           "ruleset",
           "scheme",
@@ -348449,6 +350138,10 @@
             {
               "value": "region",
               "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             },
             {
               "value": "route",
@@ -348610,6 +350303,7 @@
           "rate_limit_api_id",
           "raw_path",
           "region",
+          "response_code",
           "route",
           "ruleset",
           "scheme",
@@ -348721,6 +350415,10 @@
             {
               "value": "region",
               "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             },
             {
               "value": "route",
@@ -348939,6 +350637,7 @@
           "rate_limit_api_id",
           "raw_path",
           "region",
+          "response_code",
           "route",
           "ruleset",
           "scheme",
@@ -349050,6 +350749,10 @@
             {
               "value": "region",
               "name": "Region"
+            },
+            {
+              "value": "response_code",
+              "name": "ResponseCode"
             },
             {
               "value": "route",
@@ -349629,6 +351332,23 @@
             {
               "value": "redirect",
               "name": "Redirect"
+            }
+          ]
+        }
+      },
+      "ResponseStatusType": {
+        "enum": [
+          "response_status"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ResponseStatusType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "response_status",
+              "name": "ResponseStatus"
             }
           ]
         }

@@ -20,6 +20,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ReadWriteColonAiGatewayApiKey,
         #pragma warning restore CS1591
+        [EnumMember(Value = "read-write:ai-gateway-budgets")]
+        #pragma warning disable CS1591
+        ReadWriteColonAiGatewayBudgets,
+        #pragma warning restore CS1591
         [EnumMember(Value = "read-write:ai-gateway-guardrails")]
         #pragma warning disable CS1591
         ReadWriteColonAiGatewayGuardrails,
@@ -124,6 +128,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ReadWriteColonProjectFlagsProduction,
         #pragma warning restore CS1591
+        [EnumMember(Value = "read-write:project-members")]
+        #pragma warning disable CS1591
+        ReadWriteColonProjectMembers,
+        #pragma warning restore CS1591
         [EnumMember(Value = "read-write:project-protection-bypass")]
         #pragma warning disable CS1591
         ReadWriteColonProjectProtectionBypass,
@@ -156,6 +164,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ReadColonAccessGroup,
         #pragma warning restore CS1591
+        [EnumMember(Value = "read:ai-gateway-budgets")]
+        #pragma warning disable CS1591
+        ReadColonAiGatewayBudgets,
+        #pragma warning restore CS1591
         [EnumMember(Value = "read:ai-gateway-guardrails")]
         #pragma warning disable CS1591
         ReadColonAiGatewayGuardrails,
@@ -175,6 +187,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "read:alerts")]
         #pragma warning disable CS1591
         ReadColonAlerts,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "read:audit-log")]
+        #pragma warning disable CS1591
+        ReadColonAuditLog,
         #pragma warning restore CS1591
         [EnumMember(Value = "read:automations")]
         #pragma warning disable CS1591
@@ -239,6 +255,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "read:project-flags")]
         #pragma warning disable CS1591
         ReadColonProjectFlags,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "read:project-members")]
+        #pragma warning disable CS1591
+        ReadColonProjectMembers,
         #pragma warning restore CS1591
         [EnumMember(Value = "read:project-trusted-sources")]
         #pragma warning disable CS1591

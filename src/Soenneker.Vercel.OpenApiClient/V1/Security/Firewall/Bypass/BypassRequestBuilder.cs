@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.Models;
+using Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Bypass.Rules;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Bypass
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BypassRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The rules property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Bypass.Rules.RulesRequestBuilder Rules
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Bypass.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Bypass.BypassRequestBuilder"/> and sets the default values.
         /// </summary>

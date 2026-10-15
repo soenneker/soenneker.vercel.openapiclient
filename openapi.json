@@ -4459,7 +4459,7 @@
           {
             "lang": "curl",
             "label": "cURL",
-            "source": "curl -N --request GET \\\n  --url 'https://api.vercel.com/v1/billing/charges?teamId=\u003cteam\u003e\u0026from=\u003cfrom_date\u003e\u0026to=\u003cto_date\u003e' \\\n  --header 'Authorization: Bearer \u003ctoken\u003e' \\\n  --header 'Accept-Encoding: gzip' \\\n  --compressed\n"
+            "source": "curl -N --request GET \\\n  --url 'https://api.vercel.com/v1/billing/charges?teamId=<team>&from=<from_date>&to=<to_date>' \\\n  --header 'Authorization: Bearer <token>' \\\n  --header 'Accept-Encoding: gzip' \\\n  --compressed\n"
           }
         ]
       }
@@ -6415,7 +6415,7 @@
           {
             "lang": "curl",
             "label": "cURL",
-            "source": "curl --request POST \\\n  --url 'https://api.vercel.com/v1/billing/buy?teamId=\u003cteam\u003e' \\\n  --header 'Authorization: Bearer \u003ctoken\u003e' \\\n  --header 'Content-Type: application/json' \\\n  --data '{\"item\":{\"type\":\"credits\",\"creditType\":\"v0\",\"amount\":100}}'\n"
+            "source": "curl --request POST \\\n  --url 'https://api.vercel.com/v1/billing/buy?teamId=<team>' \\\n  --header 'Authorization: Bearer <token>' \\\n  --header 'Content-Type: application/json' \\\n  --data '{\"item\":{\"type\":\"credits\",\"creditType\":\"v0\",\"amount\":100}}'\n"
           }
         ]
       }
@@ -14573,6 +14573,9 @@
           },
           "410": {
             "description": ""
+          },
+          "500": {
+            "description": ""
           }
         },
         "parameters": [
@@ -14837,6 +14840,9 @@
             "description": ""
           },
           "410": {
+            "description": ""
+          },
+          "500": {
             "description": ""
           }
         },
@@ -19017,7 +19023,7 @@
                             "staging",
                             null
                           ],
-                          "description": "If defined, either `staging` if a staging alias in the format `\u003cproject\u003e.\u003cteam\u003e.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
+                          "description": "If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
                           "example": null
                         }
                       },
@@ -25902,7 +25908,7 @@
                             "staging",
                             null
                           ],
-                          "description": "If defined, either `staging` if a staging alias in the format `\u003cproject\u003e.\u003cteam\u003e.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
+                          "description": "If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
                           "example": null
                         },
                         "team": {
@@ -27476,7 +27482,7 @@
                             "staging",
                             null
                           ],
-                          "description": "If defined, either `staging` if a staging alias in the format `\u003cproject\u003e.\u003cteam\u003e.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
+                          "description": "If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
                           "example": null
                         },
                         "team": {
@@ -27787,7 +27793,7 @@
                             "staging",
                             null
                           ],
-                          "description": "If defined, either `staging` if a staging alias in the format `\u003cproject\u003e.\u003cteam\u003e.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
+                          "description": "If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
                           "example": null
                         }
                       },
@@ -34672,7 +34678,7 @@
                             "staging",
                             null
                           ],
-                          "description": "If defined, either `staging` if a staging alias in the format `\u003cproject\u003e.\u003cteam\u003e.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
+                          "description": "If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
                           "example": null
                         },
                         "team": {
@@ -35516,7 +35522,7 @@
                     "type": "object"
                   },
                   "target": {
-                    "description": "Either not defined, `staging`, `production`, or a custom environment identifier. If `staging`, a staging alias in the format `\u003cproject\u003e-\u003cteam\u003e.vercel.app` will be assigned. If `production`, any aliases defined in `alias` will be assigned. If omitted, the target will be `preview`.",
+                    "description": "Either not defined, `staging`, `production`, or a custom environment identifier. If `staging`, a staging alias in the format `<project>-<team>.vercel.app` will be assigned. If `production`, any aliases defined in `alias` will be assigned. If omitted, the target will be `preview`.",
                     "type": "string",
                     "example": "production"
                   },
@@ -42426,7 +42432,7 @@
                         "staging",
                         null
                       ],
-                      "description": "If defined, either `staging` if a staging alias in the format `\u003cproject\u003e.\u003cteam\u003e.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
+                      "description": "If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
                       "example": null
                     },
                     "team": {
@@ -70037,7 +70043,7 @@
                           },
                           "partialKeyValue": {
                             "type": "string",
-                            "description": "Partially-masked representation of the SDK key value, safe to display in UIs. The value is the `vf_\u003ctype\u003e_` prefix followed by the first 3 characters of the secret portion and a fixed 8-character `*` mask (e.g. `vf_server_abc********`)."
+                            "description": "Partially-masked representation of the SDK key value, safe to display in UIs. The value is the `vf_<type>_` prefix followed by the first 3 characters of the secret portion and a fixed 8-character `*` mask (e.g. `vf_server_abc********`)."
                           },
                           "projectId": {
                             "type": "string"
@@ -71776,7 +71782,7 @@
     },
     "/v1/installations/{integrationConfigurationId}/events": {
       "post": {
-        "description": "Partner notifies Vercel of any changes made to an Installation or a Resource. Vercel is expected to use `list-resources` and other read APIs to get the new state.\u003cbr/\u003e \u003cbr/\u003e `resource.updated` event should be dispatched when any state of a resource linked to Vercel is modified by the partner.\u003cbr/\u003e `installation.updated` event should be dispatched when an installation's billing plan is changed via the provider instead of Vercel.\u003cbr/\u003e \u003cbr/\u003e Resource update use cases: \u003cbr/\u003e \u003cbr/\u003e - The user renames a database in the partner’s application. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource in Vercel’s datastores.\u003cbr/\u003e - A resource has been suspended due to a lack of use. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource's status in Vercel's datastores.\u003cbr/\u003e",
+        "description": "Partner notifies Vercel of any changes made to an Installation or a Resource. Vercel is expected to use `list-resources` and other read APIs to get the new state.<br/> <br/> `resource.updated` event should be dispatched when any state of a resource linked to Vercel is modified by the partner.<br/> `installation.updated` event should be dispatched when an installation's billing plan is changed via the provider instead of Vercel.<br/> <br/> Resource update use cases: <br/> <br/> - The user renames a database in the partner’s application. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource in Vercel’s datastores.<br/> - A resource has been suspended due to a lack of use. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource's status in Vercel's datastores.<br/>",
         "operationId": "create-event",
         "security": [
           {
@@ -73201,7 +73207,7 @@
     },
     "/v1/installations/{integrationConfigurationId}/billing": {
       "post": {
-        "description": "Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. \u003cbr/\u003e Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.",
+        "description": "Sends the billing and usage data. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.",
         "operationId": "submit-billing-data",
         "security": [
           {
@@ -73251,7 +73257,7 @@
                   "timestamp": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "Server time of your integration, used to determine the most recent data for race conditions \u0026 updates. Only the latest usage data for a given day, week, and month will be kept."
+                    "description": "Server time of your integration, used to determine the most recent data for race conditions & updates. Only the latest usage data for a given day, week, and month will be kept."
                   },
                   "eod": {
                     "type": "string",
@@ -73524,7 +73530,7 @@
     },
     "/v1/installations/{integrationConfigurationId}/billing/invoices": {
       "post": {
-        "description": "This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.\u003cbr/\u003e \u003cbr/\u003e Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. \u003cbr/\u003e There are several limitations to the invoice submission:\u003cbr/\u003e \u003cbr/\u003e 1. A resource can only be billed once per the billing period and the billing plan.\u003cbr/\u003e 2. The billing plan used to bill the resource must have been active for this resource during the billing period.\u003cbr/\u003e 3. The billing plan used must be a subscription plan.\u003cbr/\u003e 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.\u003cbr/\u003e 5. If provided, `externalId` must be unique for the installation.\u003cbr/\u003e",
+        "description": "This endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period.<br/> <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. <br/> There are several limitations to the invoice submission:<br/> <br/> 1. A resource can only be billed once per the billing period and the billing plan.<br/> 2. The billing plan used to bill the resource must have been active for this resource during the billing period.<br/> 3. The billing plan used must be a subscription plan.<br/> 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data.<br/> 5. If provided, `externalId` must be unique for the installation.<br/>",
         "operationId": "submit-invoice",
         "security": [
           {
@@ -73769,7 +73775,7 @@
     },
     "/v1/installations/{integrationConfigurationId}/billing/finalize": {
       "post": {
-        "description": "This endpoint allows the partner to mark an installation as finalized. This means you will not send any more invoices for the installation. Use this after a customer has requested uninstall and you have sent any remaining invoices. This will allow the uninstall process to proceed immediately after all invoices have been paid. \u003cbr/\u003e Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.",
+        "description": "This endpoint allows the partner to mark an installation as finalized. This means you will not send any more invoices for the installation. Use this after a customer has requested uninstall and you have sent any remaining invoices. This will allow the uninstall process to proceed immediately after all invoices have been paid. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.",
         "operationId": "finalize-installation",
         "security": [
           {
@@ -73814,7 +73820,7 @@
     },
     "/v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}": {
       "get": {
-        "description": "Get Invoice details and status for a given invoice ID.\u003cbr/\u003e \u003cbr/\u003e See [Billing Events with Webhooks documentation](https://vercel.com/docs/integrations/create-integration/marketplace-api#working-with-billing-events-through-webhooks) on how to receive invoice events. This endpoint is used to retrieve the invoice details.",
+        "description": "Get Invoice details and status for a given invoice ID.<br/> <br/> See [Billing Events with Webhooks documentation](https://vercel.com/docs/integrations/create-integration/marketplace-api#working-with-billing-events-through-webhooks) on how to receive invoice events. This endpoint is used to retrieve the invoice details.",
         "operationId": "get-invoice",
         "security": [
           {
@@ -74170,7 +74176,7 @@
     },
     "/v1/installations/{integrationConfigurationId}/billing/balance": {
       "post": {
-        "description": "Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. \u003cbr/\u003e Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.",
+        "description": "Sends the prepayment balances. The partner should do this at least once a day and ideally once per hour. <br/> Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.",
         "operationId": "submit-prepayment-balances",
         "security": [
           {
@@ -74220,7 +74226,7 @@
                   "timestamp": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "Server time of your integration, used to determine the most recent data for race conditions \u0026 updates. Only the latest usage data for a given day, week, and month will be kept."
+                    "description": "Server time of your integration, used to determine the most recent data for race conditions & updates. Only the latest usage data for a given day, week, and month will be kept."
                   },
                   "balances": {
                     "type": "array",
@@ -74265,7 +74271,7 @@
     },
     "/v1/installations/{integrationConfigurationId}/products/{integrationProductIdOrSlug}/resources/{resourceId}/secrets": {
       "put": {
-        "description": "This endpoint is deprecated and replaced with the endpoint [Update Resource Secrets](#update-resource-secrets). \u003cbr/\u003e This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.\u003cbr/\u003e \u003cbr/\u003e Use cases for this endpoint:\u003cbr/\u003e \u003cbr/\u003e - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.\u003cbr/\u003e",
+        "description": "This endpoint is deprecated and replaced with the endpoint [Update Resource Secrets](#update-resource-secrets). <br/> This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>",
         "operationId": "update-resource-secrets",
         "security": [
           {
@@ -74393,7 +74399,7 @@
     },
     "/v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets": {
       "put": {
-        "description": "This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.\u003cbr/\u003e \u003cbr/\u003e Use cases for this endpoint:\u003cbr/\u003e \u003cbr/\u003e - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.\u003cbr/\u003e",
+        "description": "This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets.<br/> <br/> Use cases for this endpoint:<br/> <br/> - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.<br/>",
         "operationId": "update-resource-secrets-by-id",
         "security": [
           {
@@ -80264,7 +80270,7 @@
                     },
                     "fingerprint": {
                       "type": "string",
-                      "description": "SHA-256 fingerprint of the signing key's public key (`SHA256:\u003cbase64\u003e`)."
+                      "description": "SHA-256 fingerprint of the signing key's public key (`SHA256:<base64>`)."
                     },
                     "keyId": {
                       "type": "string",
@@ -80362,7 +80368,7 @@
                     },
                     "fingerprint": {
                       "type": "string",
-                      "description": "SHA-256 fingerprint of the signing key's public key (`SHA256:\u003cbase64\u003e`)."
+                      "description": "SHA-256 fingerprint of the signing key's public key (`SHA256:<base64>`)."
                     },
                     "keyId": {
                       "type": "string",
@@ -86156,7 +86162,7 @@
                                   false,
                                   true
                                 ],
-                                "description": "Whether the project requires commits to be signed \u0026 verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
+                                "description": "Whether the project requires commits to be signed & verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
                               }
                             },
                             "required": [
@@ -91724,7 +91730,7 @@
                                 "properties": {
                                   "assetPrefix": {
                                     "type": "string",
-                                    "description": "The name of the asset prefix to use instead of the auto-generated name. The asset prefix is used to prefix all paths to static assets, such as JS, CSS, or images that are served by a specific application. It is necessary to ensure there are no conflicts with other applications on the same domain. An auto-generated asset prefix of the form `vc-ap-\u003chash\u003e` is used when this field is not provided. When this field is provided, `/${assetPrefix}/:path*` must also be added to the list of paths in the `routing` field. Changing the asset prefix after a microfrontend application has already been deployed is not a forwards and backwards compatible change, and the asset prefix should be added to the `routing` field and deployed before setting the `assetPrefix` field. The default value is the auto-generated asset prefix of the form `vc-ap-\u003chash\u003e`. See https://vercel.com/docs/microfrontends/path-routing#asset-prefix."
+                                    "description": "The name of the asset prefix to use instead of the auto-generated name. The asset prefix is used to prefix all paths to static assets, such as JS, CSS, or images that are served by a specific application. It is necessary to ensure there are no conflicts with other applications on the same domain. An auto-generated asset prefix of the form `vc-ap-<hash>` is used when this field is not provided. When this field is provided, `/${assetPrefix}/:path*` must also be added to the list of paths in the `routing` field. Changing the asset prefix after a microfrontend application has already been deployed is not a forwards and backwards compatible change, and the asset prefix should be added to the `routing` field and deployed before setting the `assetPrefix` field. The default value is the auto-generated asset prefix of the form `vc-ap-<hash>`. See https://vercel.com/docs/microfrontends/path-routing#asset-prefix."
                                   },
                                   "development": {
                                     "properties": {
@@ -91965,7 +91971,7 @@
                                 "properties": {
                                   "assetPrefix": {
                                     "type": "string",
-                                    "description": "The name of the asset prefix to use instead of the auto-generated name. The asset prefix is used to prefix all paths to static assets, such as JS, CSS, or images that are served by a specific application. It is necessary to ensure there are no conflicts with other applications on the same domain. An auto-generated asset prefix of the form `vc-ap-\u003chash\u003e` is used when this field is not provided. When this field is provided, `/${assetPrefix}/:path*` must also be added to the list of paths in the `routing` field. Changing the asset prefix after a microfrontend application has already been deployed is not a forwards and backwards compatible change, and the asset prefix should be added to the `routing` field and deployed before setting the `assetPrefix` field. The default value is the auto-generated asset prefix of the form `vc-ap-\u003chash\u003e`. See https://vercel.com/docs/microfrontends/path-routing#asset-prefix."
+                                    "description": "The name of the asset prefix to use instead of the auto-generated name. The asset prefix is used to prefix all paths to static assets, such as JS, CSS, or images that are served by a specific application. It is necessary to ensure there are no conflicts with other applications on the same domain. An auto-generated asset prefix of the form `vc-ap-<hash>` is used when this field is not provided. When this field is provided, `/${assetPrefix}/:path*` must also be added to the list of paths in the `routing` field. Changing the asset prefix after a microfrontend application has already been deployed is not a forwards and backwards compatible change, and the asset prefix should be added to the `routing` field and deployed before setting the `assetPrefix` field. The default value is the auto-generated asset prefix of the form `vc-ap-<hash>`. See https://vercel.com/docs/microfrontends/path-routing#asset-prefix."
                                   },
                                   "development": {
                                     "properties": {
@@ -92561,7 +92567,7 @@
                   },
                   "aggregation": {
                     "type": "string",
-                    "description": "Aggregation function to apply. Some aggregations require a dimension: use \u003cagg\u003e/\u003cdimension\u003e, for example unique/visitor_id."
+                    "description": "Aggregation function to apply. Some aggregations require a dimension: use <agg>/<dimension>, for example unique/visitor_id."
                   },
                   "groupBy": {
                     "type": "array",
@@ -100018,7 +100024,7 @@
                                   false,
                                   true
                                 ],
-                                "description": "Whether the project requires commits to be signed \u0026 verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
+                                "description": "Whether the project requires commits to be signed & verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
                               }
                             },
                             "required": [
@@ -101878,6 +101884,80 @@
                                         "rule_id"
                                       ],
                                       "type": "object"
+                                    },
+                                    "response_has": {
+                                      "items": {
+                                        "properties": {
+                                          "key": {
+                                            "type": "string"
+                                          },
+                                          "type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "response_status"
+                                            ]
+                                          },
+                                          "value": {
+                                            "oneOf": [
+                                              {
+                                                "type": "string"
+                                              },
+                                              {
+                                                "properties": {
+                                                  "eq": {
+                                                    "type": "string"
+                                                  },
+                                                  "gt": {
+                                                    "type": "number"
+                                                  },
+                                                  "gte": {
+                                                    "type": "number"
+                                                  },
+                                                  "inc": {
+                                                    "items": {
+                                                      "type": "string"
+                                                    },
+                                                    "type": "array"
+                                                  },
+                                                  "list": {
+                                                    "type": "string"
+                                                  },
+                                                  "lt": {
+                                                    "type": "number"
+                                                  },
+                                                  "lte": {
+                                                    "type": "number"
+                                                  },
+                                                  "neq": {
+                                                    "type": "string"
+                                                  },
+                                                  "ninc": {
+                                                    "items": {
+                                                      "type": "string"
+                                                    },
+                                                    "type": "array"
+                                                  },
+                                                  "pre": {
+                                                    "type": "string"
+                                                  },
+                                                  "re": {
+                                                    "type": "string"
+                                                  },
+                                                  "suf": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "type": "object"
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "required": [
+                                          "type"
+                                        ],
+                                        "type": "object"
+                                      },
+                                      "type": "array"
                                     },
                                     "src": {
                                       "oneOf": [
@@ -104350,7 +104430,7 @@
                                       false,
                                       true
                                     ],
-                                    "description": "Whether the project requires commits to be signed \u0026 verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
+                                    "description": "Whether the project requires commits to be signed & verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
                                   }
                                 },
                                 "required": [
@@ -106210,6 +106290,80 @@
                                             "rule_id"
                                           ],
                                           "type": "object"
+                                        },
+                                        "response_has": {
+                                          "items": {
+                                            "properties": {
+                                              "key": {
+                                                "type": "string"
+                                              },
+                                              "type": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "response_status"
+                                                ]
+                                              },
+                                              "value": {
+                                                "oneOf": [
+                                                  {
+                                                    "type": "string"
+                                                  },
+                                                  {
+                                                    "properties": {
+                                                      "eq": {
+                                                        "type": "string"
+                                                      },
+                                                      "gt": {
+                                                        "type": "number"
+                                                      },
+                                                      "gte": {
+                                                        "type": "number"
+                                                      },
+                                                      "inc": {
+                                                        "items": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": "array"
+                                                      },
+                                                      "list": {
+                                                        "type": "string"
+                                                      },
+                                                      "lt": {
+                                                        "type": "number"
+                                                      },
+                                                      "lte": {
+                                                        "type": "number"
+                                                      },
+                                                      "neq": {
+                                                        "type": "string"
+                                                      },
+                                                      "ninc": {
+                                                        "items": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": "array"
+                                                      },
+                                                      "pre": {
+                                                        "type": "string"
+                                                      },
+                                                      "re": {
+                                                        "type": "string"
+                                                      },
+                                                      "suf": {
+                                                        "type": "string"
+                                                      }
+                                                    },
+                                                    "type": "object"
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            "required": [
+                                              "type"
+                                            ],
+                                            "type": "object"
+                                          },
+                                          "type": "array"
                                         },
                                         "src": {
                                           "oneOf": [
@@ -109606,7 +109760,7 @@
                                       false,
                                       true
                                     ],
-                                    "description": "Whether the project requires commits to be signed \u0026 verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
+                                    "description": "Whether the project requires commits to be signed & verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
                                   }
                                 },
                                 "required": [
@@ -117797,7 +117951,7 @@
                             false,
                             true
                           ],
-                          "description": "Whether the project requires commits to be signed \u0026 verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
+                          "description": "Whether the project requires commits to be signed & verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
                         }
                       },
                       "required": [
@@ -123834,7 +123988,7 @@
             "schema": {
               "description": "The project ID or name",
               "type": "string",
-              "example": "my-project, \u003cprj_id\u003e",
+              "example": "my-project, <prj_id>",
               "maxLength": 150
             }
           },
@@ -126241,7 +126395,7 @@
                             false,
                             true
                           ],
-                          "description": "Whether the project requires commits to be signed \u0026 verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
+                          "description": "Whether the project requires commits to be signed & verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
                         }
                       },
                       "required": [
@@ -134019,7 +134173,7 @@
                             false,
                             true
                           ],
-                          "description": "Whether the project requires commits to be signed \u0026 verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
+                          "description": "Whether the project requires commits to be signed & verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
                         }
                       },
                       "required": [
@@ -143086,7 +143240,7 @@
                             false,
                             true
                           ],
-                          "description": "Whether the project requires commits to be signed \u0026 verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
+                          "description": "Whether the project requires commits to be signed & verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
                         }
                       },
                       "required": [
@@ -150844,7 +150998,7 @@
                             false,
                             true
                           ],
-                          "description": "Whether the project requires commits to be signed \u0026 verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
+                          "description": "Whether the project requires commits to be signed & verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
                         }
                       },
                       "required": [
@@ -166366,7 +166520,7 @@
                                   "targetPercentage"
                                 ],
                                 "type": "object",
-                                "description": "A stage object configured for a rolling release once a new deployment is triggered the first stage will be read in the proxy for first time visitors, and if a RNG \u003c targetPercentage then it will serve the new deployment. Upon approval the next stage will be read, etc."
+                                "description": "A stage object configured for a rolling release once a new deployment is triggered the first stage will be read in the proxy for first time visitors, and if a RNG < targetPercentage then it will serve the new deployment. Upon approval the next stage will be read, etc."
                               },
                               "type": "array"
                             }
@@ -166587,7 +166741,7 @@
                                 "staging",
                                 null
                               ],
-                              "description": "If defined, either `staging` if a staging alias in the format `\u003cproject\u003e.\u003cteam\u003e.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
+                              "description": "If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
                               "example": null
                             },
                             "url": {
@@ -166680,7 +166834,7 @@
                                 "staging",
                                 null
                               ],
-                              "description": "If defined, either `staging` if a staging alias in the format `\u003cproject\u003e.\u003cteam\u003e.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
+                              "description": "If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
                               "example": null
                             },
                             "url": {
@@ -167171,7 +167325,7 @@
                                 "staging",
                                 null
                               ],
-                              "description": "If defined, either `staging` if a staging alias in the format `\u003cproject\u003e.\u003cteam\u003e.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
+                              "description": "If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
                               "example": null
                             },
                             "url": {
@@ -167264,7 +167418,7 @@
                                 "staging",
                                 null
                               ],
-                              "description": "If defined, either `staging` if a staging alias in the format `\u003cproject\u003e.\u003cteam\u003e.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
+                              "description": "If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
                               "example": null
                             },
                             "url": {
@@ -167766,7 +167920,7 @@
                                 "staging",
                                 null
                               ],
-                              "description": "If defined, either `staging` if a staging alias in the format `\u003cproject\u003e.\u003cteam\u003e.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
+                              "description": "If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
                               "example": null
                             },
                             "url": {
@@ -167859,7 +168013,7 @@
                                 "staging",
                                 null
                               ],
-                              "description": "If defined, either `staging` if a staging alias in the format `\u003cproject\u003e.\u003cteam\u003e.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
+                              "description": "If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
                               "example": null
                             },
                             "url": {
@@ -168359,7 +168513,7 @@
                                 "staging",
                                 null
                               ],
-                              "description": "If defined, either `staging` if a staging alias in the format `\u003cproject\u003e.\u003cteam\u003e.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
+                              "description": "If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
                               "example": null
                             },
                             "url": {
@@ -168452,7 +168606,7 @@
                                 "staging",
                                 null
                               ],
-                              "description": "If defined, either `staging` if a staging alias in the format `\u003cproject\u003e.\u003cteam\u003e.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
+                              "description": "If defined, either `staging` if a staging alias in the format `<project>.<team>.now.sh` was assigned upon creation, or `production` if the aliases from `alias` were assigned. `null` value indicates the \"preview\" deployment.",
                               "example": null
                             },
                             "url": {
@@ -168793,7 +168947,7 @@
     },
     "/projects/{idOrName}/transfer-request": {
       "post": {
-        "description": "Initiates a project transfer request from one team to another. \u003cbr/\u003e Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. \u003cbr/\u003e Users can also accept the project transfer request using the claim URL: `https://vercel.com/claim-deployment?code=\u003ccode\u003e\u0026returnUrl=\u003creturnUrl\u003e`. \u003cbr/\u003e The `code` parameter specifies the project transfer request code generated using this endpoint. \u003cbr/\u003e The `returnUrl` parameter redirects users to a specific page of the application if the claim URL is invalid or expired.",
+        "description": "Initiates a project transfer request from one team to another. <br/> Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. <br/> Users can also accept the project transfer request using the claim URL: `https://vercel.com/claim-deployment?code=<code>&returnUrl=<returnUrl>`. <br/> The `code` parameter specifies the project transfer request code generated using this endpoint. <br/> The `returnUrl` parameter redirects users to a specific page of the application if the claim URL is invalid or expired.",
         "operationId": "createProjectTransferRequest",
         "security": [
           {
@@ -168895,7 +169049,7 @@
     },
     "/projects/transfer-request/{code}": {
       "put": {
-        "description": "Accept a project transfer request initated by another team. \u003cbr/\u003e The `code` is generated using the `POST /projects/:idOrName/transfer-request` endpoint.",
+        "description": "Accept a project transfer request initated by another team. <br/> The `code` is generated using the `POST /projects/:idOrName/transfer-request` endpoint.",
         "operationId": "acceptProjectTransferRequest",
         "security": [
           {
@@ -171743,7 +171897,7 @@
                             false,
                             true
                           ],
-                          "description": "Whether the project requires commits to be signed \u0026 verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
+                          "description": "Whether the project requires commits to be signed & verified before deployments will be created. - `true`: require verified commits for this project (explicit override of the team setting). - `false`: do not require verified commits (explicit override of the team setting). - absent: inherit from `team.requireVerifiedCommits`."
                         }
                       },
                       "required": [
@@ -186669,6 +186823,7 @@
                                               "rate_limit_api_id",
                                               "raw_path",
                                               "region",
+                                              "response_code",
                                               "route",
                                               "ruleset",
                                               "scheme",
@@ -187427,6 +187582,7 @@
                                                   "rate_limit_api_id",
                                                   "raw_path",
                                                   "region",
+                                                  "response_code",
                                                   "route",
                                                   "ruleset",
                                                   "scheme",
@@ -187689,6 +187845,7 @@
                                                   "rate_limit_api_id",
                                                   "raw_path",
                                                   "region",
+                                                  "response_code",
                                                   "route",
                                                   "ruleset",
                                                   "scheme",
@@ -187845,6 +188002,7 @@
                                                   "rate_limit_api_id",
                                                   "raw_path",
                                                   "region",
+                                                  "response_code",
                                                   "route",
                                                   "ruleset",
                                                   "scheme",
@@ -188250,6 +188408,7 @@
                                               "rate_limit_api_id",
                                               "raw_path",
                                               "region",
+                                              "response_code",
                                               "route",
                                               "ruleset",
                                               "scheme",
@@ -189008,6 +189167,7 @@
                                                   "rate_limit_api_id",
                                                   "raw_path",
                                                   "region",
+                                                  "response_code",
                                                   "route",
                                                   "ruleset",
                                                   "scheme",
@@ -189270,6 +189430,7 @@
                                                   "rate_limit_api_id",
                                                   "raw_path",
                                                   "region",
+                                                  "response_code",
                                                   "route",
                                                   "ruleset",
                                                   "scheme",
@@ -189426,6 +189587,7 @@
                                                   "rate_limit_api_id",
                                                   "raw_path",
                                                   "region",
+                                                  "response_code",
                                                   "route",
                                                   "ruleset",
                                                   "scheme",
@@ -189831,6 +189993,7 @@
                                                 "rate_limit_api_id",
                                                 "raw_path",
                                                 "region",
+                                                "response_code",
                                                 "route",
                                                 "ruleset",
                                                 "scheme",
@@ -190589,6 +190752,7 @@
                                                     "rate_limit_api_id",
                                                     "raw_path",
                                                     "region",
+                                                    "response_code",
                                                     "route",
                                                     "ruleset",
                                                     "scheme",
@@ -190851,6 +191015,7 @@
                                                     "rate_limit_api_id",
                                                     "raw_path",
                                                     "region",
+                                                    "response_code",
                                                     "route",
                                                     "ruleset",
                                                     "scheme",
@@ -191007,6 +191172,7 @@
                                                     "rate_limit_api_id",
                                                     "raw_path",
                                                     "region",
+                                                    "response_code",
                                                     "route",
                                                     "ruleset",
                                                     "scheme",
@@ -191461,6 +191627,7 @@
                                               "rate_limit_api_id",
                                               "raw_path",
                                               "region",
+                                              "response_code",
                                               "route",
                                               "ruleset",
                                               "scheme",
@@ -192231,6 +192398,7 @@
                                                   "rate_limit_api_id",
                                                   "raw_path",
                                                   "region",
+                                                  "response_code",
                                                   "route",
                                                   "ruleset",
                                                   "scheme",
@@ -192493,6 +192661,7 @@
                                                   "rate_limit_api_id",
                                                   "raw_path",
                                                   "region",
+                                                  "response_code",
                                                   "route",
                                                   "ruleset",
                                                   "scheme",
@@ -192649,6 +192818,7 @@
                                                   "rate_limit_api_id",
                                                   "raw_path",
                                                   "region",
+                                                  "response_code",
                                                   "route",
                                                   "ruleset",
                                                   "scheme",
@@ -193337,7 +193507,8 @@
                                         "bot_protection",
                                         "shared_condition",
                                         "traffic_source",
-                                        "ruleset"
+                                        "ruleset",
+                                        "response_code"
                                       ],
                                       "description": "[Parameter](https://vercel.com/docs/security/vercel-waf/rule-configuration#parameters) from the incoming traffic."
                                     },
@@ -193613,7 +193784,8 @@
                                             "bot_protection",
                                             "shared_condition",
                                             "traffic_source",
-                                            "ruleset"
+                                            "ruleset",
+                                            "response_code"
                                           ]
                                         },
                                         "op": {
@@ -193959,7 +194131,8 @@
                                           "bot_protection",
                                           "shared_condition",
                                           "traffic_source",
-                                          "ruleset"
+                                          "ruleset",
+                                          "response_code"
                                         ]
                                       },
                                       "op": {
@@ -194147,7 +194320,8 @@
                                           "bot_protection",
                                           "shared_condition",
                                           "traffic_source",
-                                          "ruleset"
+                                          "ruleset",
+                                          "response_code"
                                         ]
                                       },
                                       "op": {
@@ -194383,7 +194557,8 @@
                                           "bot_protection",
                                           "shared_condition",
                                           "traffic_source",
-                                          "ruleset"
+                                          "ruleset",
+                                          "response_code"
                                         ]
                                       },
                                       "op": {
@@ -194548,7 +194723,8 @@
                                           "bot_protection",
                                           "shared_condition",
                                           "traffic_source",
-                                          "ruleset"
+                                          "ruleset",
+                                          "response_code"
                                         ]
                                       },
                                       "op": {
@@ -194824,7 +195000,8 @@
                                           "bot_protection",
                                           "shared_condition",
                                           "traffic_source",
-                                          "ruleset"
+                                          "ruleset",
+                                          "response_code"
                                         ]
                                       },
                                       "op": {
@@ -195111,7 +195288,8 @@
                                           "bot_protection",
                                           "shared_condition",
                                           "traffic_source",
-                                          "ruleset"
+                                          "ruleset",
+                                          "response_code"
                                         ]
                                       },
                                       "op": {
@@ -195817,6 +195995,7 @@
                                           "rate_limit_api_id",
                                           "raw_path",
                                           "region",
+                                          "response_code",
                                           "route",
                                           "ruleset",
                                           "scheme",
@@ -196587,6 +196766,7 @@
                                               "rate_limit_api_id",
                                               "raw_path",
                                               "region",
+                                              "response_code",
                                               "route",
                                               "ruleset",
                                               "scheme",
@@ -196849,6 +197029,7 @@
                                               "rate_limit_api_id",
                                               "raw_path",
                                               "region",
+                                              "response_code",
                                               "route",
                                               "ruleset",
                                               "scheme",
@@ -197005,6 +197186,7 @@
                                               "rate_limit_api_id",
                                               "raw_path",
                                               "region",
+                                              "response_code",
                                               "route",
                                               "ruleset",
                                               "scheme",
@@ -197534,6 +197716,7 @@
                                           "rate_limit_api_id",
                                           "raw_path",
                                           "region",
+                                          "response_code",
                                           "route",
                                           "ruleset",
                                           "scheme",
@@ -198292,6 +198475,7 @@
                                               "rate_limit_api_id",
                                               "raw_path",
                                               "region",
+                                              "response_code",
                                               "route",
                                               "ruleset",
                                               "scheme",
@@ -198554,6 +198738,7 @@
                                               "rate_limit_api_id",
                                               "raw_path",
                                               "region",
+                                              "response_code",
                                               "route",
                                               "ruleset",
                                               "scheme",
@@ -198710,6 +198895,7 @@
                                               "rate_limit_api_id",
                                               "raw_path",
                                               "region",
+                                              "response_code",
                                               "route",
                                               "ruleset",
                                               "scheme",
@@ -199857,6 +200043,846 @@
             }
           }
         }
+      }
+    },
+    "/v1/security/firewall/bypass/rules": {
+      "get": {
+        "description": "Retrieve conditional firewall bypass rules for a project.",
+        "operationId": "getConditionalBypass",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Get conditional firewall bypasses",
+        "tags": [
+          "security"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "result": {
+                          "items": {
+                            "properties": {
+                              "conditions": {
+                                "items": {
+                                  "properties": {
+                                    "key": {
+                                      "type": "string"
+                                    },
+                                    "neg": {
+                                      "type": "boolean",
+                                      "enum": [
+                                        false,
+                                        true
+                                      ]
+                                    },
+                                    "op": {
+                                      "type": "string",
+                                      "enum": [
+                                        "eq",
+                                        "ex",
+                                        "gt",
+                                        "gte",
+                                        "inc",
+                                        "list",
+                                        "lt",
+                                        "lte",
+                                        "neq",
+                                        "nex",
+                                        "ninc",
+                                        "pre",
+                                        "re",
+                                        "sub",
+                                        "suf"
+                                      ]
+                                    },
+                                    "type": {
+                                      "type": "string",
+                                      "enum": [
+                                        "bot_category",
+                                        "bot_name",
+                                        "bot_protection",
+                                        "bot_status",
+                                        "cookie",
+                                        "domain_environment",
+                                        "environment",
+                                        "geo_as_number",
+                                        "geo_city",
+                                        "geo_continent",
+                                        "geo_country",
+                                        "geo_country_region",
+                                        "header",
+                                        "host",
+                                        "ip_address",
+                                        "ja3_digest",
+                                        "ja4_digest",
+                                        "method",
+                                        "path",
+                                        "protocol",
+                                        "query",
+                                        "rate_limit_api_id",
+                                        "raw_path",
+                                        "region",
+                                        "response_code",
+                                        "route",
+                                        "ruleset",
+                                        "scheme",
+                                        "server_action",
+                                        "shared_condition",
+                                        "target_path",
+                                        "traffic_source",
+                                        "trusted_source",
+                                        "user_agent"
+                                      ]
+                                    },
+                                    "value": {
+                                      "oneOf": [
+                                        {
+                                          "type": "string"
+                                        },
+                                        {
+                                          "type": "number"
+                                        },
+                                        {
+                                          "items": {
+                                            "type": "string"
+                                          },
+                                          "type": "array"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "op",
+                                    "type"
+                                  ],
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              }
+                            },
+                            "required": [
+                              "conditions"
+                            ],
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "required": [
+                        "result"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "pagination": {
+                          "properties": {
+                            "next": {
+                              "nullable": true,
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "next"
+                          ],
+                          "type": "object"
+                        },
+                        "result": {
+                          "items": {
+                            "properties": {
+                              "conditionGroup": {
+                                "items": {
+                                  "properties": {
+                                    "conditions": {
+                                      "items": {
+                                        "properties": {
+                                          "key": {
+                                            "type": "string"
+                                          },
+                                          "neg": {
+                                            "type": "boolean",
+                                            "enum": [
+                                              false,
+                                              true
+                                            ]
+                                          },
+                                          "op": {
+                                            "type": "string",
+                                            "enum": [
+                                              "eq",
+                                              "ex",
+                                              "gt",
+                                              "gte",
+                                              "inc",
+                                              "list",
+                                              "lt",
+                                              "lte",
+                                              "neq",
+                                              "nex",
+                                              "ninc",
+                                              "pre",
+                                              "re",
+                                              "sub",
+                                              "suf"
+                                            ]
+                                          },
+                                          "type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "bot_category",
+                                              "bot_name",
+                                              "bot_protection",
+                                              "bot_status",
+                                              "cookie",
+                                              "domain_environment",
+                                              "environment",
+                                              "geo_as_number",
+                                              "geo_city",
+                                              "geo_continent",
+                                              "geo_country",
+                                              "geo_country_region",
+                                              "header",
+                                              "host",
+                                              "ip_address",
+                                              "ja3_digest",
+                                              "ja4_digest",
+                                              "method",
+                                              "path",
+                                              "protocol",
+                                              "query",
+                                              "rate_limit_api_id",
+                                              "raw_path",
+                                              "region",
+                                              "response_code",
+                                              "route",
+                                              "ruleset",
+                                              "scheme",
+                                              "server_action",
+                                              "shared_condition",
+                                              "target_path",
+                                              "traffic_source",
+                                              "trusted_source",
+                                              "user_agent"
+                                            ]
+                                          },
+                                          "value": {
+                                            "oneOf": [
+                                              {
+                                                "type": "string"
+                                              },
+                                              {
+                                                "type": "number"
+                                              },
+                                              {
+                                                "items": {
+                                                  "type": "string"
+                                                },
+                                                "type": "array"
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "required": [
+                                          "op",
+                                          "type"
+                                        ],
+                                        "type": "object"
+                                      },
+                                      "type": "array"
+                                    }
+                                  },
+                                  "required": [
+                                    "conditions"
+                                  ],
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "domain": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "conditionGroup",
+                              "domain"
+                            ],
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "required": [
+                        "pagination",
+                        "result"
+                      ],
+                      "type": "object"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          },
+          {
+            "name": "domain",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 100
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 512
+            }
+          },
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          }
+        ]
+      },
+      "post": {
+        "description": "Create a conditional firewall bypass rule for a project domain.",
+        "operationId": "createConditionalBypass",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Create conditional firewall bypass",
+        "tags": [
+          "security"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "result": {
+                      "properties": {
+                        "condition": {
+                          "type": "string"
+                        },
+                        "conditionGroup": {
+                          "items": {
+                            "properties": {
+                              "conditions": {
+                                "items": {
+                                  "properties": {
+                                    "key": {
+                                      "type": "string"
+                                    },
+                                    "neg": {
+                                      "type": "boolean",
+                                      "enum": [
+                                        false,
+                                        true
+                                      ]
+                                    },
+                                    "op": {
+                                      "type": "string",
+                                      "enum": [
+                                        "eq",
+                                        "ex",
+                                        "gt",
+                                        "gte",
+                                        "inc",
+                                        "list",
+                                        "lt",
+                                        "lte",
+                                        "neq",
+                                        "nex",
+                                        "ninc",
+                                        "pre",
+                                        "re",
+                                        "sub",
+                                        "suf"
+                                      ]
+                                    },
+                                    "type": {
+                                      "type": "string",
+                                      "enum": [
+                                        "bot_category",
+                                        "bot_name",
+                                        "bot_protection",
+                                        "bot_status",
+                                        "cookie",
+                                        "domain_environment",
+                                        "environment",
+                                        "geo_as_number",
+                                        "geo_city",
+                                        "geo_continent",
+                                        "geo_country",
+                                        "geo_country_region",
+                                        "header",
+                                        "host",
+                                        "ip_address",
+                                        "ja3_digest",
+                                        "ja4_digest",
+                                        "method",
+                                        "path",
+                                        "protocol",
+                                        "query",
+                                        "rate_limit_api_id",
+                                        "raw_path",
+                                        "region",
+                                        "response_code",
+                                        "route",
+                                        "ruleset",
+                                        "scheme",
+                                        "server_action",
+                                        "shared_condition",
+                                        "target_path",
+                                        "traffic_source",
+                                        "trusted_source",
+                                        "user_agent"
+                                      ]
+                                    },
+                                    "value": {
+                                      "oneOf": [
+                                        {
+                                          "type": "string"
+                                        },
+                                        {
+                                          "type": "number"
+                                        },
+                                        {
+                                          "items": {
+                                            "type": "string"
+                                          },
+                                          "type": "array"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "op",
+                                    "type"
+                                  ],
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              }
+                            },
+                            "required": [
+                              "conditions"
+                            ],
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "createdAt": {
+                          "type": "string"
+                        },
+                        "domain": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        },
+                        "projectId": {
+                          "type": "string"
+                        },
+                        "updatedAt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "condition",
+                        "conditionGroup",
+                        "createdAt",
+                        "domain",
+                        "id",
+                        "projectId",
+                        "updatedAt"
+                      ],
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "result"
+                  ],
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "409": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          },
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "domain",
+                  "conditionGroup"
+                ],
+                "properties": {
+                  "domain": {
+                    "type": "string"
+                  },
+                  "conditionGroup": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 25,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "conditions"
+                      ],
+                      "properties": {
+                        "conditions": {
+                          "type": "array",
+                          "minItems": 1,
+                          "maxItems": 65,
+                          "items": {
+                            "oneOf": [
+                              {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [
+                                  "type",
+                                  "op",
+                                  "value"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "user_agent"
+                                    ]
+                                  },
+                                  "op": {
+                                    "type": "string",
+                                    "enum": [
+                                      "eq",
+                                      "pre",
+                                      "suf",
+                                      "sub"
+                                    ]
+                                  },
+                                  "value": {
+                                    "type": "string",
+                                    "maxLength": 500
+                                  },
+                                  "key": {
+                                    "type": "string",
+                                    "enum": [
+                                      "user-agent"
+                                    ]
+                                  }
+                                }
+                              },
+                              {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [
+                                  "type",
+                                  "op",
+                                  "value"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "path"
+                                    ]
+                                  },
+                                  "op": {
+                                    "type": "string",
+                                    "enum": [
+                                      "eq",
+                                      "pre",
+                                      "suf",
+                                      "sub"
+                                    ]
+                                  },
+                                  "value": {
+                                    "type": "string",
+                                    "maxLength": 500
+                                  }
+                                }
+                              },
+                              {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [
+                                  "type",
+                                  "op",
+                                  "key",
+                                  "value"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "header"
+                                    ]
+                                  },
+                                  "op": {
+                                    "type": "string",
+                                    "enum": [
+                                      "eq",
+                                      "pre",
+                                      "suf",
+                                      "sub"
+                                    ]
+                                  },
+                                  "key": {
+                                    "type": "string",
+                                    "maxLength": 128,
+                                    "pattern": "^[!#$%&'*+.^_`|~0-9A-Za-z-]+$"
+                                  },
+                                  "value": {
+                                    "type": "string",
+                                    "maxLength": 500
+                                  }
+                                }
+                              },
+                              {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [
+                                  "type",
+                                  "op",
+                                  "key"
+                                ],
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "header"
+                                    ]
+                                  },
+                                  "op": {
+                                    "type": "string",
+                                    "enum": [
+                                      "ex"
+                                    ]
+                                  },
+                                  "key": {
+                                    "type": "string",
+                                    "maxLength": 128,
+                                    "pattern": "^[!#$%&'*+.^_`|~0-9A-Za-z-]+$"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "note": {
+                    "type": "string",
+                    "maxLength": 500
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete a conditional firewall bypass rule from a project domain.",
+        "operationId": "deleteConditionalBypass",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Delete conditional firewall bypass",
+        "tags": [
+          "security"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "ok": {
+                      "type": "boolean",
+                      "enum": [
+                        false,
+                        true
+                      ]
+                    }
+                  },
+                  "required": [
+                    "ok"
+                  ],
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          },
+          {
+            "name": "domain",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          }
+        ]
       }
     },
     "/v1/security/firewall/events": {
@@ -208580,7 +209606,7 @@
     },
     "/v1/teams/{teamId}": {
       "delete": {
-        "description": "Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent.",
+        "description": "Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization.",
         "operationId": "deleteTeam",
         "security": [
           {
@@ -211621,7 +212647,7 @@
         ]
       },
       "put": {
-        "description": "PUT /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid?digest=\u003cdigest\u003e Complete the blob upload. This may include a final chunk of data in the request body (monolithic upload) or just finalize a previous chunked upload.",
+        "description": "PUT /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid?digest=<digest> Complete the blob upload. This may include a final chunk of data in the request body (monolithic upload) or just finalize a previous chunked upload.",
         "operationId": "replaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid",
         "security": [],
         "summary": "Complete a blob upload",
@@ -211735,7 +212761,7 @@
     },
     "/v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/": {
       "post": {
-        "description": "POST /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/[?mount=\u003cdigest\u003e\u0026from=\u003crepo\u003e] Initiate a blob upload. Returns a UUID in the Location header that the client uses for subsequent PATCH (chunk) and PUT (complete) requests.",
+        "description": "POST /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/[?mount=<digest>&from=<repo>] Initiate a blob upload. Returns a UUID in the Location header that the client uses for subsequent PATCH (chunk) and PUT (complete) requests.",
         "operationId": "createByTeamSlugByProjectSlugByRepositoryNameBlobsUploads",
         "security": [],
         "summary": "Start a blob upload",
@@ -219781,7 +220807,7 @@
         "parameters": [
           {
             "name": "invocation",
-            "description": "Invocation attempts to search, as \\\"\u003cinvocationId\u003e:\u003cattempt\u003e\\\" (at most 50).",
+            "description": "Invocation attempts to search, as \\\"<invocationId>:<attempt>\\\" (at most 50).",
             "in": "query",
             "required": true,
             "schema": {
@@ -219793,7 +220819,7 @@
               "minItems": 1,
               "maxItems": 50,
               "uniqueItems": true,
-              "description": "Invocation attempts to search, as \\\"\u003cinvocationId\u003e:\u003cattempt\u003e\\\" (at most 50)."
+              "description": "Invocation attempts to search, as \\\"<invocationId>:<attempt>\\\" (at most 50)."
             }
           },
           {
@@ -220844,7 +221870,7 @@
                     "pattern": "^(flags)(/([0-9A-Za-z_]+|'([^']|'')*'))+$"
                   }
                 ],
-                "errorMessage": "`by` items should be equal to one of the allowed values \"hour, day, week, month, year, country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm, flags\", or a JSON dimension key such as \"flags/\u003cname\u003e\""
+                "errorMessage": "`by` items should be equal to one of the allowed values \"hour, day, week, month, year, country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm, flags\", or a JSON dimension key such as \"flags/<name>\""
               }
             }
           },
@@ -220900,11 +221926,11 @@
           },
           {
             "name": "filter",
-            "description": "OData-compliant filter. Encode the value when sending it in a URL.\n\nAllows filtering on one or multiple dimensions. By default, filters for production environment only.\n\nSupported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm.\n\nJSON dimensions filtered by key: flags/\u003cname\u003e, for example flags/beta_banner eq 'true'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.\n\nSupported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.",
+            "description": "OData-compliant filter. Encode the value when sending it in a URL.\n\nAllows filtering on one or multiple dimensions. By default, filters for production environment only.\n\nSupported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm.\n\nJSON dimensions filtered by key: flags/<name>, for example flags/beta_banner eq 'true'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.\n\nSupported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.",
             "in": "query",
             "required": false,
             "schema": {
-              "description": "OData-compliant filter. Encode the value when sending it in a URL.\n\nAllows filtering on one or multiple dimensions. By default, filters for production environment only.\n\nSupported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm.\n\nJSON dimensions filtered by key: flags/\u003cname\u003e, for example flags/beta_banner eq 'true'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.\n\nSupported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.",
+              "description": "OData-compliant filter. Encode the value when sending it in a URL.\n\nAllows filtering on one or multiple dimensions. By default, filters for production environment only.\n\nSupported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm.\n\nJSON dimensions filtered by key: flags/<name>, for example flags/beta_banner eq 'true'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.\n\nSupported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.",
               "example": "requestPath eq '/docs'",
               "type": "string",
               "maxLength": 2048
@@ -221272,7 +222298,7 @@
                     "pattern": "^(flags|eventData)(/([0-9A-Za-z_]+|'([^']|'')*'))+$"
                   }
                 ],
-                "errorMessage": "`by` items should be equal to one of the allowed values \"hour, day, week, month, year, country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm, eventName, flags, eventData\", or a JSON dimension key such as \"flags/\u003cname\u003e, eventData/\u003cproperty\u003e\""
+                "errorMessage": "`by` items should be equal to one of the allowed values \"hour, day, week, month, year, country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm, eventName, flags, eventData\", or a JSON dimension key such as \"flags/<name>, eventData/<property>\""
               }
             }
           },
@@ -221328,11 +222354,11 @@
           },
           {
             "name": "filter",
-            "description": "OData-compliant filter. Encode the value when sending it in a URL.\n\nAllows filtering on one or multiple dimensions. By default, filters for production environment only.\n\nSupported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm, eventName.\n\nJSON dimensions filtered by key: flags/\u003cname\u003e, eventData/\u003cproperty\u003e, for example eventData/plan eq 'pro'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.\n\nSupported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.",
+            "description": "OData-compliant filter. Encode the value when sending it in a URL.\n\nAllows filtering on one or multiple dimensions. By default, filters for production environment only.\n\nSupported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm, eventName.\n\nJSON dimensions filtered by key: flags/<name>, eventData/<property>, for example eventData/plan eq 'pro'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.\n\nSupported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.",
             "in": "query",
             "required": false,
             "schema": {
-              "description": "OData-compliant filter. Encode the value when sending it in a URL.\n\nAllows filtering on one or multiple dimensions. By default, filters for production environment only.\n\nSupported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm, eventName.\n\nJSON dimensions filtered by key: flags/\u003cname\u003e, eventData/\u003cproperty\u003e, for example eventData/plan eq 'pro'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.\n\nSupported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.",
+              "description": "OData-compliant filter. Encode the value when sending it in a URL.\n\nAllows filtering on one or multiple dimensions. By default, filters for production environment only.\n\nSupported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm, eventName.\n\nJSON dimensions filtered by key: flags/<name>, eventData/<property>, for example eventData/plan eq 'pro'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.\n\nSupported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.",
               "example": "eventData/plan eq 'pro'",
               "type": "string",
               "maxLength": 2048
@@ -221585,11 +222611,11 @@
           },
           {
             "name": "filter",
-            "description": "OData-compliant filter. Encode the value when sending it in a URL.\n\nAllows filtering on one or multiple dimensions.\n\nSupported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm.\n\nJSON dimensions filtered by key: flags/\u003cname\u003e, for example flags/beta_banner eq 'true'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.\n\nSupported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.",
+            "description": "OData-compliant filter. Encode the value when sending it in a URL.\n\nAllows filtering on one or multiple dimensions.\n\nSupported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm.\n\nJSON dimensions filtered by key: flags/<name>, for example flags/beta_banner eq 'true'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.\n\nSupported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.",
             "in": "query",
             "required": false,
             "schema": {
-              "description": "OData-compliant filter. Encode the value when sending it in a URL.\n\nAllows filtering on one or multiple dimensions.\n\nSupported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm.\n\nJSON dimensions filtered by key: flags/\u003cname\u003e, for example flags/beta_banner eq 'true'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.\n\nSupported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.",
+              "description": "OData-compliant filter. Encode the value when sending it in a URL.\n\nAllows filtering on one or multiple dimensions.\n\nSupported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm.\n\nJSON dimensions filtered by key: flags/<name>, for example flags/beta_banner eq 'true'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.\n\nSupported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.",
               "example": "route eq '/home'",
               "type": "string",
               "maxLength": 2048
@@ -221850,11 +222876,11 @@
           },
           {
             "name": "filter",
-            "description": "OData-compliant filter. Encode the value when sending it in a URL.\n\nAllows filtering on one or multiple dimensions.\n\nSupported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm, eventName.\n\nJSON dimensions filtered by key: flags/\u003cname\u003e, eventData/\u003cproperty\u003e, for example eventData/plan eq 'pro'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.\n\nSupported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.",
+            "description": "OData-compliant filter. Encode the value when sending it in a URL.\n\nAllows filtering on one or multiple dimensions.\n\nSupported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm, eventName.\n\nJSON dimensions filtered by key: flags/<name>, eventData/<property>, for example eventData/plan eq 'pro'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.\n\nSupported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.",
             "in": "query",
             "required": false,
             "schema": {
-              "description": "OData-compliant filter. Encode the value when sending it in a URL.\n\nAllows filtering on one or multiple dimensions.\n\nSupported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm, eventName.\n\nJSON dimensions filtered by key: flags/\u003cname\u003e, eventData/\u003cproperty\u003e, for example eventData/plan eq 'pro'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.\n\nSupported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.",
+              "description": "OData-compliant filter. Encode the value when sending it in a URL.\n\nAllows filtering on one or multiple dimensions.\n\nSupported dimensions: country, deviceType, environment, requestPath, referrerHostname, osName, browserName, route, utmSource, utmMedium, utmCampaign, utmContent, utmTerm, eventName.\n\nJSON dimensions filtered by key: flags/<name>, eventData/<property>, for example eventData/plan eq 'pro'. Wrap keys containing characters other than letters, digits, and underscores in single quotes, for example flags/'my-flag' eq 'true'.\n\nSupported operations include eq, ne, in, and logical operators and, or, not with parentheses. Functions such as startswith are supported by the OData parser.",
               "example": "eventName eq 'signup'",
               "type": "string",
               "maxLength": 2048
@@ -224917,7 +225943,7 @@
     },
     "/aliases/{id}/protection-bypass": {
       "patch": {
-        "description": "Update the protection bypass for the alias or deployment URL (used for user access \u0026 comment access for deployments). Used as shareable links and user scoped access for Vercel Authentication and also to allow external (logged in) people to comment on previews for Preview Comments (next-live-mode).",
+        "description": "Update the protection bypass for the alias or deployment URL (used for user access & comment access for deployments). Used as shareable links and user scoped access for Vercel Authentication and also to allow external (logged in) people to comment on previews for Preview Comments (next-live-mode).",
         "operationId": "patchUrlProtectionBypass",
         "security": [
           {
@@ -235380,6 +236406,7 @@
                         "manage:speed-insights",
                         "manage:web-analytics",
                         "read-write:ai-gateway-api-key",
+                        "read-write:ai-gateway-budgets",
                         "read-write:ai-gateway-guardrails",
                         "read-write:ai-gateway-private-models",
                         "read-write:ai-gateway-rules",
@@ -235406,6 +236433,7 @@
                         "read-write:project-env-vars-production",
                         "read-write:project-flags-non-production",
                         "read-write:project-flags-production",
+                        "read-write:project-members",
                         "read-write:project-protection-bypass",
                         "read-write:project-trusted-sources",
                         "read-write:remote-cache",
@@ -235414,11 +236442,13 @@
                         "read-write:team-members",
                         "read-write:vcr",
                         "read:access-group",
+                        "read:ai-gateway-budgets",
                         "read:ai-gateway-guardrails",
                         "read:ai-gateway-private-models",
                         "read:ai-gateway-rules",
                         "read:ai-gateway-virtual-model-configs",
                         "read:alerts",
+                        "read:audit-log",
                         "read:automations",
                         "read:billing",
                         "read:connect",
@@ -235435,6 +236465,7 @@
                         "read:project-env-vars-non-production",
                         "read:project-env-vars-production",
                         "read:project-flags",
+                        "read:project-members",
                         "read:project-trusted-sources",
                         "read:remote-cache",
                         "read:sandbox",
@@ -235501,6 +236532,7 @@
                         "manage:speed-insights",
                         "manage:web-analytics",
                         "read-write:ai-gateway-api-key",
+                        "read-write:ai-gateway-budgets",
                         "read-write:ai-gateway-guardrails",
                         "read-write:ai-gateway-private-models",
                         "read-write:ai-gateway-rules",
@@ -235527,6 +236559,7 @@
                         "read-write:project-env-vars-production",
                         "read-write:project-flags-non-production",
                         "read-write:project-flags-production",
+                        "read-write:project-members",
                         "read-write:project-protection-bypass",
                         "read-write:project-trusted-sources",
                         "read-write:remote-cache",
@@ -235535,11 +236568,13 @@
                         "read-write:team-members",
                         "read-write:vcr",
                         "read:access-group",
+                        "read:ai-gateway-budgets",
                         "read:ai-gateway-guardrails",
                         "read:ai-gateway-private-models",
                         "read:ai-gateway-rules",
                         "read:ai-gateway-virtual-model-configs",
                         "read:alerts",
+                        "read:audit-log",
                         "read:automations",
                         "read:billing",
                         "read:connect",
@@ -235556,6 +236591,7 @@
                         "read:project-env-vars-non-production",
                         "read:project-env-vars-production",
                         "read:project-flags",
+                        "read:project-members",
                         "read:project-trusted-sources",
                         "read:remote-cache",
                         "read:sandbox",
@@ -235602,6 +236638,7 @@
                             "manage:speed-insights",
                             "manage:web-analytics",
                             "read-write:ai-gateway-api-key",
+                            "read-write:ai-gateway-budgets",
                             "read-write:ai-gateway-guardrails",
                             "read-write:ai-gateway-private-models",
                             "read-write:ai-gateway-rules",
@@ -235628,6 +236665,7 @@
                             "read-write:project-env-vars-production",
                             "read-write:project-flags-non-production",
                             "read-write:project-flags-production",
+                            "read-write:project-members",
                             "read-write:project-protection-bypass",
                             "read-write:project-trusted-sources",
                             "read-write:remote-cache",
@@ -235636,11 +236674,13 @@
                             "read-write:team-members",
                             "read-write:vcr",
                             "read:access-group",
+                            "read:ai-gateway-budgets",
                             "read:ai-gateway-guardrails",
                             "read:ai-gateway-private-models",
                             "read:ai-gateway-rules",
                             "read:ai-gateway-virtual-model-configs",
                             "read:alerts",
+                            "read:audit-log",
                             "read:automations",
                             "read:billing",
                             "read:connect",
@@ -235657,6 +236697,7 @@
                             "read:project-env-vars-non-production",
                             "read:project-env-vars-production",
                             "read:project-flags",
+                            "read:project-members",
                             "read:project-trusted-sources",
                             "read:remote-cache",
                             "read:sandbox",
@@ -235734,6 +236775,7 @@
                             "manage:speed-insights",
                             "manage:web-analytics",
                             "read-write:ai-gateway-api-key",
+                            "read-write:ai-gateway-budgets",
                             "read-write:ai-gateway-guardrails",
                             "read-write:ai-gateway-private-models",
                             "read-write:ai-gateway-rules",
@@ -235760,6 +236802,7 @@
                             "read-write:project-env-vars-production",
                             "read-write:project-flags-non-production",
                             "read-write:project-flags-production",
+                            "read-write:project-members",
                             "read-write:project-protection-bypass",
                             "read-write:project-trusted-sources",
                             "read-write:remote-cache",
@@ -235768,11 +236811,13 @@
                             "read-write:team-members",
                             "read-write:vcr",
                             "read:access-group",
+                            "read:ai-gateway-budgets",
                             "read:ai-gateway-guardrails",
                             "read:ai-gateway-private-models",
                             "read:ai-gateway-rules",
                             "read:ai-gateway-virtual-model-configs",
                             "read:alerts",
+                            "read:audit-log",
                             "read:automations",
                             "read:billing",
                             "read:connect",
@@ -235789,6 +236834,7 @@
                             "read:project-env-vars-non-production",
                             "read:project-env-vars-production",
                             "read:project-flags",
+                            "read:project-members",
                             "read:project-trusted-sources",
                             "read:remote-cache",
                             "read:sandbox",
@@ -235876,6 +236922,7 @@
                         "manage:speed-insights",
                         "manage:web-analytics",
                         "read-write:ai-gateway-api-key",
+                        "read-write:ai-gateway-budgets",
                         "read-write:ai-gateway-guardrails",
                         "read-write:ai-gateway-private-models",
                         "read-write:ai-gateway-rules",
@@ -235902,6 +236949,7 @@
                         "read-write:project-env-vars-production",
                         "read-write:project-flags-non-production",
                         "read-write:project-flags-production",
+                        "read-write:project-members",
                         "read-write:project-protection-bypass",
                         "read-write:project-trusted-sources",
                         "read-write:remote-cache",
@@ -235910,11 +236958,13 @@
                         "read-write:team-members",
                         "read-write:vcr",
                         "read:access-group",
+                        "read:ai-gateway-budgets",
                         "read:ai-gateway-guardrails",
                         "read:ai-gateway-private-models",
                         "read:ai-gateway-rules",
                         "read:ai-gateway-virtual-model-configs",
                         "read:alerts",
+                        "read:audit-log",
                         "read:automations",
                         "read:billing",
                         "read:connect",
@@ -235931,6 +236981,7 @@
                         "read:project-env-vars-non-production",
                         "read:project-env-vars-production",
                         "read:project-flags",
+                        "read:project-members",
                         "read:project-trusted-sources",
                         "read:remote-cache",
                         "read:sandbox",
@@ -251127,14 +252178,10 @@
                       "type"
                     ],
                     "type": "object"
-                  },
-                  "transferRequestCode": {
-                    "type": "string"
                   }
                 },
                 "required": [
-                  "store",
-                  "transferRequestCode"
+                  "store"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -251165,9 +252212,6 @@
                       "type"
                     ],
                     "type": "object"
-                  },
-                  "transferRequestCode": {
-                    "type": "string"
                   },
                   "destinationTeamId": {
                     "type": "string"
@@ -251179,8 +252223,7 @@
                 "required": [
                   "destinationTeamId",
                   "destinationTeamName",
-                  "store",
-                  "transferRequestCode"
+                  "store"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -251212,9 +252255,6 @@
                     ],
                     "type": "object"
                   },
-                  "transferRequestCode": {
-                    "type": "string"
-                  },
                   "originTeamId": {
                     "type": "string"
                   },
@@ -251225,8 +252265,7 @@
                 "required": [
                   "originTeamId",
                   "originTeamName",
-                  "store",
-                  "transferRequestCode"
+                  "store"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -254683,6 +255722,22 @@
               },
               {
                 "properties": {
+                  "domain": {
+                    "type": "string"
+                  },
+                  "projectId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "domain",
+                  "projectId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "policy": {
                     "properties": {
                       "claims": {
@@ -255871,6 +256926,8 @@
               "experiment-updated",
               "firewall-bypass-created",
               "firewall-bypass-deleted",
+              "firewall-conditional-bypass-created",
+              "firewall-conditional-bypass-deleted",
               "firewall-config-modified",
               "firewall-config-promoted",
               "firewall-config-removed",
@@ -256814,6 +257871,8 @@
               "experiment-updated",
               "firewall-bypass-created",
               "firewall-bypass-deleted",
+              "firewall-conditional-bypass-created",
+              "firewall-conditional-bypass-deleted",
               "firewall-config-modified",
               "firewall-config-promoted",
               "firewall-config-removed",
@@ -257545,6 +258604,8 @@
                 "experiment-updated",
                 "firewall-bypass-created",
                 "firewall-bypass-deleted",
+                "firewall-conditional-bypass-created",
+                "firewall-conditional-bypass-deleted",
                 "firewall-config-modified",
                 "firewall-config-promoted",
                 "firewall-config-removed",
@@ -259363,7 +260424,7 @@
           },
           "partialKeyValue": {
             "type": "string",
-            "description": "Partially-masked representation of the SDK key value, safe to display in UIs. The value is the `vf_\u003ctype\u003e_` prefix followed by the first 3 characters of the secret portion and a fixed 8-character `*` mask (e.g. `vf_server_abc********`)."
+            "description": "Partially-masked representation of the SDK key value, safe to display in UIs. The value is the `vf_<type>_` prefix followed by the first 3 characters of the secret portion and a fixed 8-character `*` mask (e.g. `vf_server_abc********`)."
           },
           "projectId": {
             "type": "string"
@@ -263833,10 +264894,7 @@
       },
       "VercelBaseError": {
         "type": "object",
-        "required": [
-          "code",
-          "message"
-        ],
+        "required": ["code","message"],
         "properties": {
           "code": {
             "type": "string"
@@ -263848,9 +264906,7 @@
       },
       "VercelForbiddenError": {
         "type": "object",
-        "required": [
-          "error"
-        ],
+        "required": ["error"],
         "properties": {
           "error": {
             "allOf": [
@@ -263859,9 +264915,7 @@
               },
               {
                 "type": "object",
-                "required": [
-                  "code"
-                ],
+                "required": ["code"],
                 "properties": {
                   "code": {
                     "type": "string"
@@ -263874,9 +264928,7 @@
       },
       "VercelNotFoundError": {
         "type": "object",
-        "required": [
-          "error"
-        ],
+        "required": ["error"],
         "properties": {
           "error": {
             "allOf": [
@@ -263885,9 +264937,7 @@
               },
               {
                 "type": "object",
-                "required": [
-                  "code"
-                ],
+                "required": ["code"],
                 "properties": {
                   "code": {
                     "type": "string"
@@ -263903,9 +264953,7 @@
       },
       "VercelBadRequestError": {
         "type": "object",
-        "required": [
-          "error"
-        ],
+        "required": ["error"],
         "properties": {
           "error": {
             "allOf": [
@@ -263914,9 +264962,7 @@
               },
               {
                 "type": "object",
-                "required": [
-                  "code"
-                ],
+                "required": ["code"],
                 "properties": {
                   "code": {
                     "type": "string"
@@ -263932,9 +264978,7 @@
       },
       "VercelRateLimitError": {
         "type": "object",
-        "required": [
-          "error"
-        ],
+        "required": ["error"],
         "properties": {
           "error": {
             "allOf": [
@@ -263943,9 +264987,7 @@
               },
               {
                 "type": "object",
-                "required": [
-                  "code"
-                ],
+                "required": ["code"],
                 "properties": {
                   "code": {
                     "type": "string"
@@ -263961,12 +265003,7 @@
       },
       "RateLimitNotice": {
         "type": "object",
-        "required": [
-          "remaining",
-          "reset",
-          "resetMs",
-          "total"
-        ],
+        "required": ["remaining","reset","resetMs","total"],
         "properties": {
           "remaining": {
             "type": "integer",

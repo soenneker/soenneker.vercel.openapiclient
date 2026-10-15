@@ -104,6 +104,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Region,
         #pragma warning restore CS1591
+        [EnumMember(Value = "response_code")]
+        #pragma warning disable CS1591
+        ResponseCode,
+        #pragma warning restore CS1591
         [EnumMember(Value = "route")]
         #pragma warning disable CS1591
         Route,

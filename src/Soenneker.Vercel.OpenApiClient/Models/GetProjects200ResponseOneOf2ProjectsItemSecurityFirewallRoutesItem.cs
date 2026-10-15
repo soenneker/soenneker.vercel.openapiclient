@@ -48,6 +48,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMitigate Mitigate { get; set; }
 #endif
+        /// <summary>The response_has property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseHasItem>? ResponseHas { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseHasItem> ResponseHas { get; set; }
+#endif
         /// <summary>The src property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,6 +106,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "has", n => { Has = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemHasItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemHasItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "missing", n => { Missing = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMissingItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMissingItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mitigate", n => { Mitigate = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMitigate>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMitigate.CreateFromDiscriminatorValue); } },
+                { "response_has", n => { ResponseHas = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseHasItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseHasItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "src", n => { Src = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemSrc>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemSrc.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetDoubleValue(); } },
                 { "tierRequirement", n => { TierRequirement = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PriorityTierRequirement>(); } },
@@ -116,6 +125,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemHasItem>("has", Has);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMissingItem>("missing", Missing);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemMitigate>("mitigate", Mitigate);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemResponseHasItem>("response_has", ResponseHas);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjects200ResponseOneOf2ProjectsItemSecurityFirewallRoutesItemSrc>("src", Src);
             writer.WriteDoubleValue("status", Status);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.PriorityTierRequirement>("tierRequirement", TierRequirement);

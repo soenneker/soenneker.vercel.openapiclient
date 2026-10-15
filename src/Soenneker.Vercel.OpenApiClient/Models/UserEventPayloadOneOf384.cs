@@ -39,14 +39,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf384Store Store { get; set; }
 #endif
-        /// <summary>The transferRequestCode property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TransferRequestCode { get; set; }
-#nullable restore
-#else
-        public string TransferRequestCode { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf384"/> and sets the default values.
         /// </summary>
@@ -75,7 +67,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "destinationTeamId", n => { DestinationTeamId = n.GetStringValue(); } },
                 { "destinationTeamName", n => { DestinationTeamName = n.GetStringValue(); } },
                 { "store", n => { Store = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf384Store>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf384Store.CreateFromDiscriminatorValue); } },
-                { "transferRequestCode", n => { TransferRequestCode = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -88,7 +79,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("destinationTeamId", DestinationTeamId);
             writer.WriteStringValue("destinationTeamName", DestinationTeamName);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf384Store>("store", Store);
-            writer.WriteStringValue("transferRequestCode", TransferRequestCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -995,6 +995,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         FirewallBypassDeleted,
         #pragma warning restore CS1591
+        [EnumMember(Value = "firewall-conditional-bypass-created")]
+        #pragma warning disable CS1591
+        FirewallConditionalBypassCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "firewall-conditional-bypass-deleted")]
+        #pragma warning disable CS1591
+        FirewallConditionalBypassDeleted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "firewall-config-modified")]
         #pragma warning disable CS1591
         FirewallConfigModified,
