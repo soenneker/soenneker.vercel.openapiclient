@@ -39,6 +39,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Value24X,
         #pragma warning restore CS1591
+        [EnumMember(Value = "26.x")]
+        #pragma warning disable CS1591
+        Value26X,
+        #pragma warning restore CS1591
         [EnumMember(Value = "8.10.x")]
         #pragma warning disable CS1591
         Value810X,

@@ -15,13 +15,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive.</summary>
+        /// <summary>Build cores. Deployment creation sets the requested value; dispatch replaces it with the cores assigned by routing.</summary>
         public double? Cores { get; set; }
         /// <summary>The build machine tier included with the customer&apos;s plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineDefaultPurchaseType? DefaultPurchaseType { get; set; }
         /// <summary>Whether the build ran on a fixed or elastic machine. Used to drive billing for the build.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachineMachineSelectionType? MachineSelectionType { get; set; }
-        /// <summary>Memory, in MiB, the build machine ran with. Set at dispatch time once the build lands on a hive.</summary>
+        /// <summary>Build memory, in MiB. Deployment creation sets the requested value; dispatch replaces it with the memory assigned by routing.</summary>
         public double? Memory { get; set; }
         /// <summary>Machine type which was purchased/selected for this build. `basic` is the 2vCPU tier, recorded on the deployment so the build pipeline can detect a basic build without consulting the project.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseResourceConfigBuildMachinePurchaseType? PurchaseType { get; set; }

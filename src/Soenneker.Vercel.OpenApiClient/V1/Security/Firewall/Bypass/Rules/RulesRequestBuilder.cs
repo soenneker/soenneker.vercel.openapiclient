@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Bypass.Rules
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/bypass/rules?projectId={projectId}{&domain*,limit*,offset*,slug*,teamId*}", pathParameters)
+        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/bypass/rules?projectId={projectId}{&domain*,slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,26 +30,25 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Bypass.Rules
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/bypass/rules?projectId={projectId}{&domain*,limit*,offset*,slug*,teamId*}", rawUrl)
+        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/security/firewall/bypass/rules?projectId={projectId}{&domain*,slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>
         /// Delete a conditional firewall bypass rule from a project domain.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.DeleteConditionalBypass200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteConditionalBypass200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Bypass.Rules.RulesRequestBuilder.RulesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Bypass.Rules.RulesRequestBuilder.RulesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Vercel.OpenApiClient.Models.DeleteConditionalBypass200Response> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Bypass.Rules.RulesRequestBuilder.RulesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<global::Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Bypass.Rules.RulesRequestBuilder.RulesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.DeleteConditionalBypass200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.DeleteConditionalBypass200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve conditional firewall bypass rules for a project.
@@ -231,23 +230,6 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Security.Firewall.Bypass.Rules
             #pragma warning disable CS1591
             [QueryParameter("domain")]
             public string Domain { get; set; }
-            #pragma warning restore CS1591
-#endif
-            #pragma warning disable CS1591
-            [QueryParameter("limit")]
-            public double? Limit { get; set; }
-            #pragma warning restore CS1591
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            #pragma warning disable CS1591
-            [QueryParameter("offset")]
-            public string? Offset { get; set; }
-            #pragma warning restore CS1591
-#nullable restore
-#else
-            #pragma warning disable CS1591
-            [QueryParameter("offset")]
-            public string Offset { get; set; }
             #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

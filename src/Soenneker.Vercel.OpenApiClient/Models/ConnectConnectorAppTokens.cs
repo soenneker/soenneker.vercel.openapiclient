@@ -17,6 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether one app token can be used across installations.</summary>
         public bool? CrossInstallation { get; set; }
+        /// <summary>The isStaticCredential property</summary>
+        public bool? IsStaticCredential { get; set; }
         /// <summary>Link to the page on the service where this connector&apos;s app-level permissions are declared and granted, when the service has one and it differs from `clientUrl`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,6 +75,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "crossInstallation", n => { CrossInstallation = n.GetBoolValue(); } },
+                { "isStaticCredential", n => { IsStaticCredential = n.GetBoolValue(); } },
                 { "permissionsUrl", n => { PermissionsUrl = n.GetStringValue(); } },
                 { "requiresReinstallation", n => { RequiresReinstallation = n.GetBoolValue(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -89,6 +92,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("crossInstallation", CrossInstallation);
+            writer.WriteBoolValue("isStaticCredential", IsStaticCredential);
             writer.WriteStringValue("permissionsUrl", PermissionsUrl);
             writer.WriteBoolValue("requiresReinstallation", RequiresReinstallation);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);

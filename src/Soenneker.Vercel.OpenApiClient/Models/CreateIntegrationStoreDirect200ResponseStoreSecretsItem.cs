@@ -26,6 +26,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The nonSensitive property</summary>
+        public bool? NonSensitive { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CreateIntegrationStoreDirect200ResponseStoreSecretsItem"/> and sets the default values.
         /// </summary>
@@ -54,6 +56,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "frameworkPublishable", n => { FrameworkPublishable = n.GetBoolValue(); } },
                 { "length", n => { Length = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "nonSensitive", n => { NonSensitive = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -66,6 +69,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("frameworkPublishable", FrameworkPublishable);
             writer.WriteDoubleValue("length", Length);
             writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("nonSensitive", NonSensitive);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

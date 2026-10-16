@@ -9,11 +9,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UpdateProjectCheckRequest : IAdditionalDataHolder, IParsable
+    public partial class UpdateProjectCheckRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The blocks property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheckRequestBlocks? Blocks { get; set; }
         /// <summary>The isRerequestable property</summary>
@@ -43,7 +41,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// </summary>
         public UpdateProjectCheckRequest()
         {
-            AdditionalData = new Dictionary<string, object>();
             Timeout = 300;
         }
         /// <summary>
@@ -85,7 +82,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UpdateProjectCheckRequestRequires>("requires", Requires);
             writer.WriteCollectionOfPrimitiveValues<string>("targets", Targets);
             writer.WriteDoubleValue("timeout", Timeout);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

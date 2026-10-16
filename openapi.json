@@ -9096,6 +9096,7 @@
           "content": {
             "application/json": {
               "schema": {
+                "additionalProperties": false,
                 "properties": {
                   "name": {
                     "type": "string"
@@ -21432,6 +21433,7 @@
                             "20.x",
                             "22.x",
                             "24.x",
+                            "26.x",
                             "8.10.x"
                           ],
                           "description": "If set it overrides the `projectSettings.nodeVersion` for this deployment."
@@ -21744,6 +21746,7 @@
                                 "20.x",
                                 "22.x",
                                 "24.x",
+                                "26.x",
                                 "8.10.x"
                               ]
                             },
@@ -21868,7 +21871,7 @@
                               "properties": {
                                 "cores": {
                                   "type": "number",
-                                  "description": "Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive."
+                                  "description": "Build cores. Deployment creation sets the requested value; dispatch replaces it with the cores assigned by routing."
                                 },
                                 "defaultPurchaseType": {
                                   "type": "string",
@@ -21890,7 +21893,7 @@
                                 },
                                 "memory": {
                                   "type": "number",
-                                  "description": "Memory, in MiB, the build machine ran with. Set at dispatch time once the build lands on a hive."
+                                  "description": "Build memory, in MiB. Deployment creation sets the requested value; dispatch replaces it with the memory assigned by routing."
                                 },
                                 "purchaseType": {
                                   "type": "string",
@@ -27274,6 +27277,7 @@
                             "20.x",
                             "22.x",
                             "24.x",
+                            "26.x",
                             "8.10.x"
                           ],
                           "description": "If set it overrides the `projectSettings.nodeVersion` for this deployment."
@@ -30202,6 +30206,7 @@
                             "20.x",
                             "22.x",
                             "24.x",
+                            "26.x",
                             "8.10.x"
                           ],
                           "description": "If set it overrides the `projectSettings.nodeVersion` for this deployment."
@@ -30514,6 +30519,7 @@
                                 "20.x",
                                 "22.x",
                                 "24.x",
+                                "26.x",
                                 "8.10.x"
                               ]
                             },
@@ -30638,7 +30644,7 @@
                               "properties": {
                                 "cores": {
                                   "type": "number",
-                                  "description": "Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive."
+                                  "description": "Build cores. Deployment creation sets the requested value; dispatch replaces it with the cores assigned by routing."
                                 },
                                 "defaultPurchaseType": {
                                   "type": "string",
@@ -30660,7 +30666,7 @@
                                 },
                                 "memory": {
                                   "type": "number",
-                                  "description": "Memory, in MiB, the build machine ran with. Set at dispatch time once the build lands on a hive."
+                                  "description": "Build memory, in MiB. Deployment creation sets the requested value; dispatch replaces it with the memory assigned by routing."
                                 },
                                 "purchaseType": {
                                   "type": "string",
@@ -35479,6 +35485,7 @@
                       "nodeVersion": {
                         "description": "Override the Node.js version that should be used for this deployment",
                         "enum": [
+                          "26.x",
                           "24.x",
                           "22.x",
                           "20.x",
@@ -37956,6 +37963,7 @@
                         "20.x",
                         "22.x",
                         "24.x",
+                        "26.x",
                         "8.10.x"
                       ],
                       "description": "If set it overrides the `projectSettings.nodeVersion` for this deployment."
@@ -38268,6 +38276,7 @@
                             "20.x",
                             "22.x",
                             "24.x",
+                            "26.x",
                             "8.10.x"
                           ]
                         },
@@ -38392,7 +38401,7 @@
                           "properties": {
                             "cores": {
                               "type": "number",
-                              "description": "Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive."
+                              "description": "Build cores. Deployment creation sets the requested value; dispatch replaces it with the cores assigned by routing."
                             },
                             "defaultPurchaseType": {
                               "type": "string",
@@ -38414,7 +38423,7 @@
                             },
                             "memory": {
                               "type": "number",
-                              "description": "Memory, in MiB, the build machine ran with. Set at dispatch time once the build lands on a hive."
+                              "description": "Build memory, in MiB. Deployment creation sets the requested value; dispatch replaces it with the memory assigned by routing."
                             },
                             "purchaseType": {
                               "type": "string",
@@ -59562,7 +59571,7 @@
     },
     "/v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}": {
       "get": {
-        "description": "Retrieves a specific version of a Global Config from backup storage.",
+        "description": "Retrieves a specific version of a Global Config from backup storage. The `user` field is only included when the caller can list team members.",
         "operationId": "getEdgeConfigBackup",
         "security": [
           {
@@ -59674,7 +59683,8 @@
                             "id",
                             "username"
                           ],
-                          "type": "object"
+                          "type": "object",
+                          "description": "Omitted when the caller cannot list team members."
                         }
                       },
                       "required": [
@@ -87603,6 +87613,7 @@
                               "20.x",
                               "22.x",
                               "24.x",
+                              "26.x",
                               "8.10.x"
                             ]
                           },
@@ -101202,6 +101213,7 @@
                               "20.x",
                               "22.x",
                               "24.x",
+                              "26.x",
                               "8.10.x"
                             ]
                           },
@@ -105608,6 +105620,7 @@
                                   "20.x",
                                   "22.x",
                                   "24.x",
+                                  "26.x",
                                   "8.10.x"
                                 ]
                               },
@@ -111201,6 +111214,7 @@
                                   "20.x",
                                   "22.x",
                                   "24.x",
+                                  "26.x",
                                   "8.10.x"
                                 ]
                               },
@@ -119392,6 +119406,7 @@
                         "20.x",
                         "22.x",
                         "24.x",
+                        "26.x",
                         "8.10.x"
                       ]
                     },
@@ -127869,6 +127884,7 @@
                         "20.x",
                         "22.x",
                         "24.x",
+                        "26.x",
                         "8.10.x"
                       ]
                     },
@@ -135614,6 +135630,7 @@
                         "20.x",
                         "22.x",
                         "24.x",
+                        "26.x",
                         "8.10.x"
                       ]
                     },
@@ -139815,6 +139832,7 @@
                   },
                   "nodeVersion": {
                     "enum": [
+                      "26.x",
                       "24.x",
                       "22.x",
                       "20.x",
@@ -144681,6 +144699,7 @@
                         "20.x",
                         "22.x",
                         "24.x",
+                        "26.x",
                         "8.10.x"
                       ]
                     },
@@ -152439,6 +152458,7 @@
                         "20.x",
                         "22.x",
                         "24.x",
+                        "26.x",
                         "8.10.x"
                       ]
                     },
@@ -173338,6 +173358,7 @@
                         "20.x",
                         "22.x",
                         "24.x",
+                        "26.x",
                         "8.10.x"
                       ]
                     },
@@ -177787,7 +177808,7 @@
     },
     "/v2/sandboxes": {
       "get": {
-        "description": "Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix or status.",
+        "description": "Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix or status. Overdue sessions for running and stopping sandboxes are recovered before returning the page, so an entry may no longer match its queried status after recovery.",
         "operationId": "listNamedSandboxes",
         "security": [
           {
@@ -200067,362 +200088,6 @@
                   "oneOf": [
                     {
                       "properties": {
-                        "result": {
-                          "items": {
-                            "properties": {
-                              "conditions": {
-                                "items": {
-                                  "properties": {
-                                    "key": {
-                                      "type": "string"
-                                    },
-                                    "neg": {
-                                      "type": "boolean",
-                                      "enum": [
-                                        false,
-                                        true
-                                      ]
-                                    },
-                                    "op": {
-                                      "type": "string",
-                                      "enum": [
-                                        "eq",
-                                        "ex",
-                                        "gt",
-                                        "gte",
-                                        "inc",
-                                        "list",
-                                        "lt",
-                                        "lte",
-                                        "neq",
-                                        "nex",
-                                        "ninc",
-                                        "pre",
-                                        "re",
-                                        "sub",
-                                        "suf"
-                                      ]
-                                    },
-                                    "type": {
-                                      "type": "string",
-                                      "enum": [
-                                        "bot_category",
-                                        "bot_name",
-                                        "bot_protection",
-                                        "bot_status",
-                                        "cookie",
-                                        "domain_environment",
-                                        "environment",
-                                        "geo_as_number",
-                                        "geo_city",
-                                        "geo_continent",
-                                        "geo_country",
-                                        "geo_country_region",
-                                        "header",
-                                        "host",
-                                        "ip_address",
-                                        "ja3_digest",
-                                        "ja4_digest",
-                                        "method",
-                                        "path",
-                                        "protocol",
-                                        "query",
-                                        "rate_limit_api_id",
-                                        "raw_path",
-                                        "region",
-                                        "response_code",
-                                        "route",
-                                        "ruleset",
-                                        "scheme",
-                                        "server_action",
-                                        "shared_condition",
-                                        "target_path",
-                                        "traffic_source",
-                                        "trusted_source",
-                                        "user_agent"
-                                      ]
-                                    },
-                                    "value": {
-                                      "oneOf": [
-                                        {
-                                          "type": "string"
-                                        },
-                                        {
-                                          "type": "number"
-                                        },
-                                        {
-                                          "items": {
-                                            "type": "string"
-                                          },
-                                          "type": "array"
-                                        }
-                                      ]
-                                    }
-                                  },
-                                  "required": [
-                                    "op",
-                                    "type"
-                                  ],
-                                  "type": "object"
-                                },
-                                "type": "array"
-                              }
-                            },
-                            "required": [
-                              "conditions"
-                            ],
-                            "type": "object"
-                          },
-                          "type": "array"
-                        }
-                      },
-                      "required": [
-                        "result"
-                      ],
-                      "type": "object"
-                    },
-                    {
-                      "properties": {
-                        "pagination": {
-                          "properties": {
-                            "next": {
-                              "nullable": true,
-                              "type": "string"
-                            }
-                          },
-                          "required": [
-                            "next"
-                          ],
-                          "type": "object"
-                        },
-                        "result": {
-                          "items": {
-                            "properties": {
-                              "conditionGroup": {
-                                "items": {
-                                  "properties": {
-                                    "conditions": {
-                                      "items": {
-                                        "properties": {
-                                          "key": {
-                                            "type": "string"
-                                          },
-                                          "neg": {
-                                            "type": "boolean",
-                                            "enum": [
-                                              false,
-                                              true
-                                            ]
-                                          },
-                                          "op": {
-                                            "type": "string",
-                                            "enum": [
-                                              "eq",
-                                              "ex",
-                                              "gt",
-                                              "gte",
-                                              "inc",
-                                              "list",
-                                              "lt",
-                                              "lte",
-                                              "neq",
-                                              "nex",
-                                              "ninc",
-                                              "pre",
-                                              "re",
-                                              "sub",
-                                              "suf"
-                                            ]
-                                          },
-                                          "type": {
-                                            "type": "string",
-                                            "enum": [
-                                              "bot_category",
-                                              "bot_name",
-                                              "bot_protection",
-                                              "bot_status",
-                                              "cookie",
-                                              "domain_environment",
-                                              "environment",
-                                              "geo_as_number",
-                                              "geo_city",
-                                              "geo_continent",
-                                              "geo_country",
-                                              "geo_country_region",
-                                              "header",
-                                              "host",
-                                              "ip_address",
-                                              "ja3_digest",
-                                              "ja4_digest",
-                                              "method",
-                                              "path",
-                                              "protocol",
-                                              "query",
-                                              "rate_limit_api_id",
-                                              "raw_path",
-                                              "region",
-                                              "response_code",
-                                              "route",
-                                              "ruleset",
-                                              "scheme",
-                                              "server_action",
-                                              "shared_condition",
-                                              "target_path",
-                                              "traffic_source",
-                                              "trusted_source",
-                                              "user_agent"
-                                            ]
-                                          },
-                                          "value": {
-                                            "oneOf": [
-                                              {
-                                                "type": "string"
-                                              },
-                                              {
-                                                "type": "number"
-                                              },
-                                              {
-                                                "items": {
-                                                  "type": "string"
-                                                },
-                                                "type": "array"
-                                              }
-                                            ]
-                                          }
-                                        },
-                                        "required": [
-                                          "op",
-                                          "type"
-                                        ],
-                                        "type": "object"
-                                      },
-                                      "type": "array"
-                                    }
-                                  },
-                                  "required": [
-                                    "conditions"
-                                  ],
-                                  "type": "object"
-                                },
-                                "type": "array"
-                              },
-                              "domain": {
-                                "type": "string"
-                              }
-                            },
-                            "required": [
-                              "conditionGroup",
-                              "domain"
-                            ],
-                            "type": "object"
-                          },
-                          "type": "array"
-                        }
-                      },
-                      "required": [
-                        "pagination",
-                        "result"
-                      ],
-                      "type": "object"
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "One of the provided values in the request query is invalid."
-          },
-          "401": {
-            "description": "The request is not authorized."
-          },
-          "403": {
-            "description": "You do not have permission to access this resource."
-          },
-          "404": {
-            "description": ""
-          },
-          "410": {
-            "description": ""
-          }
-        },
-        "parameters": [
-          {
-            "name": "projectId",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "slug",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "example": "my-team-url-slug"
-            }
-          },
-          {
-            "name": "domain",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "number",
-              "minimum": 1,
-              "maximum": 100
-            }
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "maxLength": 512
-            }
-          },
-          {
-            "description": "The Team identifier to perform the request on behalf of.",
-            "in": "query",
-            "name": "teamId",
-            "schema": {
-              "type": "string",
-              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
-            }
-          }
-        ]
-      },
-      "post": {
-        "description": "Create a conditional firewall bypass rule for a project domain.",
-        "operationId": "createConditionalBypass",
-        "security": [
-          {
-            "bearerToken": []
-          }
-        ],
-        "summary": "Create conditional firewall bypass",
-        "tags": [
-          "security"
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "result": {
-                      "properties": {
                         "condition": {
                           "type": "string"
                         },
@@ -200563,10 +200228,376 @@
                         "updatedAt"
                       ],
                       "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "rules": {
+                          "items": {
+                            "properties": {
+                              "condition": {
+                                "type": "string"
+                              },
+                              "conditionGroup": {
+                                "items": {
+                                  "properties": {
+                                    "conditions": {
+                                      "items": {
+                                        "properties": {
+                                          "key": {
+                                            "type": "string"
+                                          },
+                                          "neg": {
+                                            "type": "boolean",
+                                            "enum": [
+                                              false,
+                                              true
+                                            ]
+                                          },
+                                          "op": {
+                                            "type": "string",
+                                            "enum": [
+                                              "eq",
+                                              "ex",
+                                              "gt",
+                                              "gte",
+                                              "inc",
+                                              "list",
+                                              "lt",
+                                              "lte",
+                                              "neq",
+                                              "nex",
+                                              "ninc",
+                                              "pre",
+                                              "re",
+                                              "sub",
+                                              "suf"
+                                            ]
+                                          },
+                                          "type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "bot_category",
+                                              "bot_name",
+                                              "bot_protection",
+                                              "bot_status",
+                                              "cookie",
+                                              "domain_environment",
+                                              "environment",
+                                              "geo_as_number",
+                                              "geo_city",
+                                              "geo_continent",
+                                              "geo_country",
+                                              "geo_country_region",
+                                              "header",
+                                              "host",
+                                              "ip_address",
+                                              "ja3_digest",
+                                              "ja4_digest",
+                                              "method",
+                                              "path",
+                                              "protocol",
+                                              "query",
+                                              "rate_limit_api_id",
+                                              "raw_path",
+                                              "region",
+                                              "response_code",
+                                              "route",
+                                              "ruleset",
+                                              "scheme",
+                                              "server_action",
+                                              "shared_condition",
+                                              "target_path",
+                                              "traffic_source",
+                                              "trusted_source",
+                                              "user_agent"
+                                            ]
+                                          },
+                                          "value": {
+                                            "oneOf": [
+                                              {
+                                                "type": "string"
+                                              },
+                                              {
+                                                "type": "number"
+                                              },
+                                              {
+                                                "items": {
+                                                  "type": "string"
+                                                },
+                                                "type": "array"
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "required": [
+                                          "op",
+                                          "type"
+                                        ],
+                                        "type": "object"
+                                      },
+                                      "type": "array"
+                                    }
+                                  },
+                                  "required": [
+                                    "conditions"
+                                  ],
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "createdAt": {
+                                "type": "string"
+                              },
+                              "domain": {
+                                "type": "string"
+                              },
+                              "id": {
+                                "type": "string"
+                              },
+                              "note": {
+                                "type": "string"
+                              },
+                              "projectId": {
+                                "type": "string"
+                              },
+                              "updatedAt": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "condition",
+                              "conditionGroup",
+                              "createdAt",
+                              "domain",
+                              "id",
+                              "projectId",
+                              "updatedAt"
+                            ],
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "required": [
+                        "rules"
+                      ],
+                      "type": "object"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": ""
+          },
+          "410": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          },
+          {
+            "name": "domain",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The Team identifier to perform the request on behalf of.",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          }
+        ]
+      },
+      "post": {
+        "description": "Create a conditional firewall bypass rule for a project domain.",
+        "operationId": "createConditionalBypass",
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ],
+        "summary": "Create conditional firewall bypass",
+        "tags": [
+          "security"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "condition": {
+                      "type": "string"
+                    },
+                    "conditionGroup": {
+                      "items": {
+                        "properties": {
+                          "conditions": {
+                            "items": {
+                              "properties": {
+                                "key": {
+                                  "type": "string"
+                                },
+                                "neg": {
+                                  "type": "boolean",
+                                  "enum": [
+                                    false,
+                                    true
+                                  ]
+                                },
+                                "op": {
+                                  "type": "string",
+                                  "enum": [
+                                    "eq",
+                                    "ex",
+                                    "gt",
+                                    "gte",
+                                    "inc",
+                                    "list",
+                                    "lt",
+                                    "lte",
+                                    "neq",
+                                    "nex",
+                                    "ninc",
+                                    "pre",
+                                    "re",
+                                    "sub",
+                                    "suf"
+                                  ]
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": [
+                                    "bot_category",
+                                    "bot_name",
+                                    "bot_protection",
+                                    "bot_status",
+                                    "cookie",
+                                    "domain_environment",
+                                    "environment",
+                                    "geo_as_number",
+                                    "geo_city",
+                                    "geo_continent",
+                                    "geo_country",
+                                    "geo_country_region",
+                                    "header",
+                                    "host",
+                                    "ip_address",
+                                    "ja3_digest",
+                                    "ja4_digest",
+                                    "method",
+                                    "path",
+                                    "protocol",
+                                    "query",
+                                    "rate_limit_api_id",
+                                    "raw_path",
+                                    "region",
+                                    "response_code",
+                                    "route",
+                                    "ruleset",
+                                    "scheme",
+                                    "server_action",
+                                    "shared_condition",
+                                    "target_path",
+                                    "traffic_source",
+                                    "trusted_source",
+                                    "user_agent"
+                                  ]
+                                },
+                                "value": {
+                                  "oneOf": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "number"
+                                    },
+                                    {
+                                      "items": {
+                                        "type": "string"
+                                      },
+                                      "type": "array"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "op",
+                                "type"
+                              ],
+                              "type": "object"
+                            },
+                            "type": "array"
+                          }
+                        },
+                        "required": [
+                          "conditions"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "domain": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "note": {
+                      "type": "string"
+                    },
+                    "projectId": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
                     }
                   },
                   "required": [
-                    "result"
+                    "condition",
+                    "conditionGroup",
+                    "createdAt",
+                    "domain",
+                    "id",
+                    "projectId",
+                    "updatedAt"
                   ],
                   "type": "object"
                 }
@@ -200809,24 +200840,15 @@
           "security"
         ],
         "responses": {
-          "200": {
+          "204": {
             "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "ok": {
-                      "type": "boolean",
-                      "enum": [
-                        false,
-                        true
-                      ]
-                    }
-                  },
-                  "required": [
-                    "ok"
-                  ],
-                  "type": "object"
+                  "type": "string",
+                  "enum": [
+                    ""
+                  ]
                 }
               }
             }
@@ -206669,6 +206691,13 @@
                               },
                               "name": {
                                 "type": "string"
+                              },
+                              "nonSensitive": {
+                                "type": "boolean",
+                                "enum": [
+                                  false,
+                                  true
+                                ]
                               }
                             },
                             "required": [
@@ -227455,6 +227484,7 @@
                                   "20.x",
                                   "22.x",
                                   "24.x",
+                                  "26.x",
                                   "8.10.x"
                                 ]
                               },
@@ -229075,6 +229105,13 @@
                 ],
                 "description": "Whether one app token can be used across installations."
               },
+              "isStaticCredential": {
+                "type": "boolean",
+                "enum": [
+                  false,
+                  true
+                ]
+              },
               "permissionsUrl": {
                 "type": "string",
                 "description": "Link to the page on the service where this connector's app-level permissions are declared and granted, when the service has one and it differs from `clientUrl`."
@@ -229120,6 +229157,7 @@
             },
             "required": [
               "crossInstallation",
+              "isStaticCredential",
               "supportsRefinement"
             ],
             "type": "object",
@@ -229462,6 +229500,13 @@
                 ],
                 "description": "Whether one user token can be used across installations."
               },
+              "isStaticCredential": {
+                "type": "boolean",
+                "enum": [
+                  false,
+                  true
+                ]
+              },
               "manualCredentialInput": {
                 "type": "boolean",
                 "enum": [
@@ -229503,6 +229548,7 @@
             },
             "required": [
               "crossInstallation",
+              "isStaticCredential",
               "supportsRefinement"
             ],
             "type": "object",
@@ -229583,6 +229629,13 @@
                 ],
                 "description": "Whether one app token can be used across installations."
               },
+              "isStaticCredential": {
+                "type": "boolean",
+                "enum": [
+                  false,
+                  true
+                ]
+              },
               "permissionsUrl": {
                 "type": "string",
                 "description": "Link to the page on the service where this connector's app-level permissions are declared and granted, when the service has one and it differs from `clientUrl`."
@@ -229628,6 +229681,7 @@
             },
             "required": [
               "crossInstallation",
+              "isStaticCredential",
               "supportsRefinement"
             ],
             "type": "object",
@@ -229974,6 +230028,13 @@
                 ],
                 "description": "Whether one user token can be used across installations."
               },
+              "isStaticCredential": {
+                "type": "boolean",
+                "enum": [
+                  false,
+                  true
+                ]
+              },
               "manualCredentialInput": {
                 "type": "boolean",
                 "enum": [
@@ -230015,6 +230076,7 @@
             },
             "required": [
               "crossInstallation",
+              "isStaticCredential",
               "supportsRefinement"
             ],
             "type": "object",
@@ -235870,8 +235932,7 @@
                   }
                 },
                 "required": [
-                  "accessGroup",
-                  "author"
+                  "accessGroup"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -236405,6 +236466,7 @@
                         "*",
                         "manage:speed-insights",
                         "manage:web-analytics",
+                        "read-write:access-group",
                         "read-write:ai-gateway-api-key",
                         "read-write:ai-gateway-budgets",
                         "read-write:ai-gateway-guardrails",
@@ -236531,6 +236593,7 @@
                         "*",
                         "manage:speed-insights",
                         "manage:web-analytics",
+                        "read-write:access-group",
                         "read-write:ai-gateway-api-key",
                         "read-write:ai-gateway-budgets",
                         "read-write:ai-gateway-guardrails",
@@ -236637,6 +236700,7 @@
                           "enum": [
                             "manage:speed-insights",
                             "manage:web-analytics",
+                            "read-write:access-group",
                             "read-write:ai-gateway-api-key",
                             "read-write:ai-gateway-budgets",
                             "read-write:ai-gateway-guardrails",
@@ -236774,6 +236838,7 @@
                           "enum": [
                             "manage:speed-insights",
                             "manage:web-analytics",
+                            "read-write:access-group",
                             "read-write:ai-gateway-api-key",
                             "read-write:ai-gateway-budgets",
                             "read-write:ai-gateway-guardrails",
@@ -236921,6 +236986,7 @@
                       "enum": [
                         "manage:speed-insights",
                         "manage:web-analytics",
+                        "read-write:access-group",
                         "read-write:ai-gateway-api-key",
                         "read-write:ai-gateway-budgets",
                         "read-write:ai-gateway-guardrails",
@@ -247091,6 +247157,58 @@
                       "awsServiceName": {
                         "type": "string"
                       },
+                      "configurationId": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "privateDnsNames": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "vercelRegion": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "awsServiceName",
+                      "configurationId",
+                      "id",
+                      "name",
+                      "vercelRegion"
+                    ],
+                    "type": "object"
+                  },
+                  "networkName": {
+                    "type": "string"
+                  },
+                  "scope": {
+                    "type": "string",
+                    "enum": [
+                      "network"
+                    ]
+                  }
+                },
+                "required": [
+                  "endpoint",
+                  "scope"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "endpoint": {
+                    "properties": {
+                      "awsServiceName": {
+                        "type": "string"
+                      },
                       "id": {
                         "type": "string"
                       },
@@ -247121,6 +247239,12 @@
                   },
                   "projectName": {
                     "type": "string"
+                  },
+                  "scope": {
+                    "type": "string",
+                    "enum": [
+                      "project"
+                    ]
                   }
                 },
                 "required": [
@@ -247151,11 +247275,103 @@
                   },
                   "projectName": {
                     "type": "string"
+                  },
+                  "scope": {
+                    "type": "string",
+                    "enum": [
+                      "project"
+                    ]
                   }
                 },
                 "required": [
                   "privateLinkEndpoint",
                   "projectId"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
+                  "current": {
+                    "properties": {
+                      "awsServiceName": {
+                        "type": "string"
+                      },
+                      "configurationId": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "privateDnsNames": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "vercelRegion": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "awsServiceName",
+                      "configurationId",
+                      "id",
+                      "name",
+                      "vercelRegion"
+                    ],
+                    "type": "object"
+                  },
+                  "networkName": {
+                    "type": "string"
+                  },
+                  "prev": {
+                    "properties": {
+                      "awsServiceName": {
+                        "type": "string"
+                      },
+                      "configurationId": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "privateDnsNames": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "vercelRegion": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "awsServiceName",
+                      "configurationId",
+                      "id",
+                      "name",
+                      "vercelRegion"
+                    ],
+                    "type": "object"
+                  },
+                  "scope": {
+                    "type": "string",
+                    "enum": [
+                      "network"
+                    ]
+                  }
+                },
+                "required": [
+                  "current",
+                  "prev",
+                  "scope"
                 ],
                 "type": "object",
                 "description": "The payload of the event, if requested."
@@ -247230,6 +247446,12 @@
                   },
                   "projectName": {
                     "type": "string"
+                  },
+                  "scope": {
+                    "type": "string",
+                    "enum": [
+                      "project"
+                    ]
                   }
                 },
                 "required": [
@@ -247296,6 +247518,12 @@
                   },
                   "projectName": {
                     "type": "string"
+                  },
+                  "scope": {
+                    "type": "string",
+                    "enum": [
+                      "project"
+                    ]
                   }
                 },
                 "required": [

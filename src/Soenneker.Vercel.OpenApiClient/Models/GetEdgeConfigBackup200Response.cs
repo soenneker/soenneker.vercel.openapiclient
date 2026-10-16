@@ -40,7 +40,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigBackup200ResponseMetadata Metadata { get; set; }
 #endif
-        /// <summary>The user property</summary>
+        /// <summary>Omitted when the caller cannot list team members.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.GetEdgeConfigBackup200ResponseUser? User { get; set; }

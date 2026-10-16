@@ -20,6 +20,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ManageColonWebAnalytics,
         #pragma warning restore CS1591
+        [EnumMember(Value = "read-write:access-group")]
+        #pragma warning disable CS1591
+        ReadWriteColonAccessGroup,
+        #pragma warning restore CS1591
         [EnumMember(Value = "read-write:ai-gateway-api-key")]
         #pragma warning disable CS1591
         ReadWriteColonAiGatewayApiKey,

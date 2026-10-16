@@ -17,6 +17,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether one user token can be used across installations.</summary>
         public bool? CrossInstallation { get; set; }
+        /// <summary>The isStaticCredential property</summary>
+        public bool? IsStaticCredential { get; set; }
         /// <summary>User authorization is completed by the Connect consent screen submitting a credential instead of an OAuth redirect.</summary>
         public bool? ManualCredentialInput { get; set; }
         /// <summary>Known allowed user-level scopes. For Slack this is the user scope set configured on the app; for OAuth it is the connector&apos;s enabled `userAuthorization.scopes` configuration.</summary>
@@ -65,6 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "crossInstallation", n => { CrossInstallation = n.GetBoolValue(); } },
+                { "isStaticCredential", n => { IsStaticCredential = n.GetBoolValue(); } },
                 { "manualCredentialInput", n => { ManualCredentialInput = n.GetBoolValue(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "supportedAuthorizationDetails", n => { SupportedAuthorizationDetails = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -80,6 +83,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("crossInstallation", CrossInstallation);
+            writer.WriteBoolValue("isStaticCredential", IsStaticCredential);
             writer.WriteBoolValue("manualCredentialInput", ManualCredentialInput);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedAuthorizationDetails", SupportedAuthorizationDetails);

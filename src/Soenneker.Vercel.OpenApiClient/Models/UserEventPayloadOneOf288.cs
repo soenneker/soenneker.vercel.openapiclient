@@ -31,6 +31,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string CustomEnvironmentSlug { get; set; }
 #endif
+        /// <summary>The enableSchedulesByDefault property</summary>
+        public bool? EnableSchedulesByDefault { get; set; }
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,6 +76,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "customEnvironmentId", n => { CustomEnvironmentId = n.GetStringValue(); } },
                 { "customEnvironmentSlug", n => { CustomEnvironmentSlug = n.GetStringValue(); } },
+                { "enableSchedulesByDefault", n => { EnableSchedulesByDefault = n.GetBoolValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
             };
@@ -87,6 +90,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("customEnvironmentId", CustomEnvironmentId);
             writer.WriteStringValue("customEnvironmentSlug", CustomEnvironmentSlug);
+            writer.WriteBoolValue("enableSchedulesByDefault", EnableSchedulesByDefault);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteAdditionalData(AdditionalData);

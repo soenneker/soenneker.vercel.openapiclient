@@ -14,21 +14,77 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The pagination property</summary>
+        /// <summary>The condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponsePagination? Pagination { get; set; }
+        public string? Condition { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponsePagination Pagination { get; set; }
+        public string Condition { get; set; }
 #endif
-        /// <summary>The result property</summary>
+        /// <summary>The conditionGroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseResultItem>? Result { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseConditionGroupItem>? ConditionGroup { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseResultItem> Result { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseConditionGroupItem> ConditionGroup { get; set; }
+#endif
+        /// <summary>The createdAt property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedAt { get; set; }
+#nullable restore
+#else
+        public string CreatedAt { get; set; }
+#endif
+        /// <summary>The domain property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Domain { get; set; }
+#nullable restore
+#else
+        public string Domain { get; set; }
+#endif
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
+        /// <summary>The note property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Note { get; set; }
+#nullable restore
+#else
+        public string Note { get; set; }
+#endif
+        /// <summary>The projectId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get; set; }
+#nullable restore
+#else
+        public string ProjectId { get; set; }
+#endif
+        /// <summary>The rules property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseRulesItem>? Rules { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseRulesItem> Rules { get; set; }
+#endif
+        /// <summary>The updatedAt property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UpdatedAt { get; set; }
+#nullable restore
+#else
+        public string UpdatedAt { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200Response"/> and sets the default values.
@@ -55,8 +111,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponsePagination>(global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponsePagination.CreateFromDiscriminatorValue); } },
-                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseResultItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseResultItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "condition", n => { Condition = n.GetStringValue(); } },
+                { "conditionGroup", n => { ConditionGroup = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseConditionGroupItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseConditionGroupItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "note", n => { Note = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseRulesItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "updatedAt", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +129,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponsePagination>("pagination", Pagination);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseResultItem>("result", Result);
+            writer.WriteStringValue("condition", Condition);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseConditionGroupItem>("conditionGroup", ConditionGroup);
+            writer.WriteStringValue("createdAt", CreatedAt);
+            writer.WriteStringValue("domain", Domain);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("note", Note);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetConditionalBypass200ResponseRulesItem>("rules", Rules);
+            writer.WriteStringValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

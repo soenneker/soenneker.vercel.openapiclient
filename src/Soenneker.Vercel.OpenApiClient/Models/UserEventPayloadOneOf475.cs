@@ -15,24 +15,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ciEnabled property</summary>
-        public bool? CiEnabled { get; set; }
-        /// <summary>The organizationId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OrganizationId { get; set; }
-#nullable restore
-#else
-        public string OrganizationId { get; set; }
-#endif
-        /// <summary>The repository property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Repository { get; set; }
-#nullable restore
-#else
-        public string Repository { get; set; }
-#endif
+        /// <summary>The nextProjectCount property</summary>
+        public double? NextProjectCount { get; set; }
+        /// <summary>The previousProjectCount property</summary>
+        public double? PreviousProjectCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf475"/> and sets the default values.
         /// </summary>
@@ -58,9 +44,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ciEnabled", n => { CiEnabled = n.GetBoolValue(); } },
-                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "repository", n => { Repository = n.GetStringValue(); } },
+                { "nextProjectCount", n => { NextProjectCount = n.GetDoubleValue(); } },
+                { "previousProjectCount", n => { PreviousProjectCount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -70,9 +55,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("ciEnabled", CiEnabled);
-            writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteStringValue("repository", Repository);
+            writer.WriteDoubleValue("nextProjectCount", NextProjectCount);
+            writer.WriteDoubleValue("previousProjectCount", PreviousProjectCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
