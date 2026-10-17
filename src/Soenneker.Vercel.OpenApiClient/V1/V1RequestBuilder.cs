@@ -21,6 +21,7 @@ using Soenneker.Vercel.OpenApiClient.V1.LogDrains;
 using Soenneker.Vercel.OpenApiClient.V1.Microfrontends;
 using Soenneker.Vercel.OpenApiClient.V1.Networking;
 using Soenneker.Vercel.OpenApiClient.V1.Observability;
+using Soenneker.Vercel.OpenApiClient.V1.Organizations;
 using Soenneker.Vercel.OpenApiClient.V1.Projects;
 using Soenneker.Vercel.OpenApiClient.V1.Query;
 using Soenneker.Vercel.OpenApiClient.V1.Registrar;
@@ -137,6 +138,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1
         public global::Soenneker.Vercel.OpenApiClient.V1.Observability.ObservabilityRequestBuilder Observability
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Observability.ObservabilityRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The organizations property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Organizations.OrganizationsRequestBuilder Organizations
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Organizations.OrganizationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The projects property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.ProjectsRequestBuilder Projects

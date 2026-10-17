@@ -15,6 +15,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The blockReason property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BlockReason { get; set; }
+#nullable restore
+#else
+        public string BlockReason { get; set; }
+#endif
         /// <summary>The cause property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +72,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "blockReason", n => { BlockReason = n.GetStringValue(); } },
                 { "cause", n => { Cause = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
@@ -76,6 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("blockReason", BlockReason);
             writer.WriteStringValue("cause", Cause);
             writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteStringValue("source", Source);

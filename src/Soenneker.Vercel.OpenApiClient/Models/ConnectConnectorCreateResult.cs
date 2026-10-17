@@ -193,7 +193,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Target { get; set; }
 #endif
-        /// <summary>Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`.</summary>
+        /// <summary>Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`. Computed routing environments are stored internally, not returned here.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Vercel.OpenApiClient.Models.ConnectTriggerDestination>? TriggerDestinations { get; set; }

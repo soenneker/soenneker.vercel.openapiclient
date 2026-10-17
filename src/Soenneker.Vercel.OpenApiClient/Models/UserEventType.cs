@@ -495,6 +495,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ConnectBitbucketApp,
         #pragma warning restore CS1591
+        [EnumMember(Value = "connect-cancel-mcp-event-subscription")]
+        #pragma warning disable CS1591
+        ConnectCancelMcpEventSubscription,
+        #pragma warning restore CS1591
         [EnumMember(Value = "connect-configuration-created")]
         #pragma warning disable CS1591
         ConnectConfigurationCreated,
@@ -522,6 +526,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "connect-create-connector")]
         #pragma warning disable CS1591
         ConnectCreateConnector,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "connect-create-mcp-event-subscription")]
+        #pragma warning disable CS1591
+        ConnectCreateMcpEventSubscription,
         #pragma warning restore CS1591
         [EnumMember(Value = "connect-delete-connector")]
         #pragma warning disable CS1591
@@ -1474,6 +1482,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "organization-emu-updated")]
         #pragma warning disable CS1591
         OrganizationEmuUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "organization-name-update")]
+        #pragma warning disable CS1591
+        OrganizationNameUpdate,
         #pragma warning restore CS1591
         [EnumMember(Value = "organization-slug-update")]
         #pragma warning disable CS1591

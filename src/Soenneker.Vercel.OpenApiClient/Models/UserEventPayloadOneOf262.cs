@@ -23,6 +23,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf262Current Current { get; set; }
 #endif
+        /// <summary>The networkName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NetworkName { get; set; }
+#nullable restore
+#else
+        public string NetworkName { get; set; }
+#endif
         /// <summary>The prev property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,16 +39,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf262Prev Prev { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectName { get; set; }
-#nullable restore
-#else
-        public string ProjectName { get; set; }
-#endif
         /// <summary>The scope property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.ProjectScope? Scope { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.NetworkScope? Scope { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf262"/> and sets the default values.
         /// </summary>
@@ -67,9 +67,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "current", n => { Current = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf262Current>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf262Current.CreateFromDiscriminatorValue); } },
+                { "networkName", n => { NetworkName = n.GetStringValue(); } },
                 { "prev", n => { Prev = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf262Prev>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf262Prev.CreateFromDiscriminatorValue); } },
-                { "projectName", n => { ProjectName = n.GetStringValue(); } },
-                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ProjectScope>(); } },
+                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkScope>(); } },
             };
         }
         /// <summary>
@@ -80,9 +80,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf262Current>("current", Current);
+            writer.WriteStringValue("networkName", NetworkName);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf262Prev>("prev", Prev);
-            writer.WriteStringValue("projectName", ProjectName);
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ProjectScope>("scope", Scope);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.NetworkScope>("scope", Scope);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
