@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Avatar;
+using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Deployments;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Domains;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Env;
@@ -34,6 +35,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Avatar.AvatarRequestBuilder Avatar
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Avatar.AvatarRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The daemons property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.DaemonsRequestBuilder Daemons
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.DaemonsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The deployments property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Deployments.DeploymentsRequestBuilder Deployments

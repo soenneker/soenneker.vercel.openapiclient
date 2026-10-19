@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>Invoice state.</summary>
+    /// <summary>Invoice state. Reports the payment state of the invoice; refund progress is reported separately via &quot;refundedTotal&quot; and &quot;pendingRefundTotal&quot;. The states &quot;refunded&quot; and &quot;refund_requested&quot; only appear when the payment state cannot be determined.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetInvoice200ResponseState
     {

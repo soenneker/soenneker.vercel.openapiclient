@@ -78,6 +78,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Memo { get; set; }
 #endif
+        /// <summary>Amount still owed on the invoice, per the payment processor. Can be positive even for states &quot;refunded&quot; or &quot;refund_requested&quot;, since a refund does not settle an unpaid remainder. A dollar-based decimal string. Absent when no payment data is available yet.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OutstandingTotal { get; set; }
+#nullable restore
+#else
+        public string OutstandingTotal { get; set; }
+#endif
         /// <summary>Moment the invoice was paid. ISO 8601 timestamp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,6 +93,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string PaidAt { get; set; }
+#endif
+        /// <summary>Total amount paid and retained: payments received minus refunds applied. A dollar-based decimal string. Absent when no payment data is available yet.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PaidTotal { get; set; }
+#nullable restore
+#else
+        public string PaidTotal { get; set; }
+#endif
+        /// <summary>Requested refund amount not yet applied by the payment processor: &quot;refundTotal&quot; minus &quot;refundedTotal&quot;. A dollar-based decimal string. Only present when a refund was requested or applied.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PendingRefundTotal { get; set; }
+#nullable restore
+#else
+        public string PendingRefundTotal { get; set; }
 #endif
         /// <summary>Subscription period for this billing cycle. ISO 8601 timestamps.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,7 +126,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string RefundedAt { get; set; }
 #endif
-        /// <summary>The reason for refund. Only applicable for states &quot;refunded&quot; or &quot;refund_request&quot;.</summary>
+        /// <summary>Total refund amount applied by the payment processor, on the same pre-tax basis as &quot;refundTotal&quot;. Counts both money returned and debt cancelled on unpaid invoices. May be lower than &quot;refundTotal&quot;, which is the requested amount. A dollar-based decimal string. Only present when a refund was requested or applied.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RefundedTotal { get; set; }
+#nullable restore
+#else
+        public string RefundedTotal { get; set; }
+#endif
+        /// <summary>The reason for refund. Only present when a refund has been requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RefundReason { get; set; }
@@ -110,7 +142,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string RefundReason { get; set; }
 #endif
-        /// <summary>Refund amount. Only applicable for states &quot;refunded&quot; or &quot;refund_request&quot;. A dollar-based decimal string.</summary>
+        /// <summary>Total refund amount requested. Only present when a refund has been requested. A dollar-based decimal string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RefundTotal { get; set; }
@@ -118,7 +150,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string RefundTotal { get; set; }
 #endif
-        /// <summary>Invoice state.</summary>
+        /// <summary>Invoice state. Reports the payment state of the invoice; refund progress is reported separately via &quot;refundedTotal&quot; and &quot;pendingRefundTotal&quot;. The states &quot;refunded&quot; and &quot;refund_requested&quot; only appear when the payment state cannot be determined.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.GetInvoice200ResponseState? State { get; set; }
         /// <summary>Whether the invoice is in the testmode (no real transaction created).</summary>
         public bool? Test { get; set; }
@@ -171,11 +203,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "invoiceNumber", n => { InvoiceNumber = n.GetStringValue(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetInvoice200ResponseItemsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetInvoice200ResponseItemsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "memo", n => { Memo = n.GetStringValue(); } },
+                { "outstandingTotal", n => { OutstandingTotal = n.GetStringValue(); } },
                 { "paidAt", n => { PaidAt = n.GetStringValue(); } },
+                { "paidTotal", n => { PaidTotal = n.GetStringValue(); } },
+                { "pendingRefundTotal", n => { PendingRefundTotal = n.GetStringValue(); } },
                 { "period", n => { Period = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetInvoice200ResponsePeriod>(global::Soenneker.Vercel.OpenApiClient.Models.GetInvoice200ResponsePeriod.CreateFromDiscriminatorValue); } },
                 { "refundReason", n => { RefundReason = n.GetStringValue(); } },
                 { "refundTotal", n => { RefundTotal = n.GetStringValue(); } },
                 { "refundedAt", n => { RefundedAt = n.GetStringValue(); } },
+                { "refundedTotal", n => { RefundedTotal = n.GetStringValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetInvoice200ResponseState>(); } },
                 { "test", n => { Test = n.GetBoolValue(); } },
                 { "total", n => { Total = n.GetStringValue(); } },
@@ -197,9 +233,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("invoiceNumber", InvoiceNumber);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetInvoice200ResponseItemsItem>("items", Items);
             writer.WriteStringValue("memo", Memo);
+            writer.WriteStringValue("outstandingTotal", OutstandingTotal);
             writer.WriteStringValue("paidAt", PaidAt);
+            writer.WriteStringValue("paidTotal", PaidTotal);
+            writer.WriteStringValue("pendingRefundTotal", PendingRefundTotal);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetInvoice200ResponsePeriod>("period", Period);
             writer.WriteStringValue("refundedAt", RefundedAt);
+            writer.WriteStringValue("refundedTotal", RefundedTotal);
             writer.WriteStringValue("refundReason", RefundReason);
             writer.WriteStringValue("refundTotal", RefundTotal);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetInvoice200ResponseState>("state", State);

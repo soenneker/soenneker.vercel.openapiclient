@@ -55,7 +55,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>Default continuous-usage billing kind for projects under this team. Absent means projects stay unmetered.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultContinuousUsageKind? DefaultContinuousUsageKind { get; set; }
-        /// <summary>Default deployment protection for this team null indicates protection is disabled</summary>
+        /// <summary>Deployment protection defaults for new projects in this team. When no Vercel Authentication default is saved, `ssoProtection` shows Standard Protection. An explicitly saved `null` remains disabled. Organization policy may override the team default during project creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Vercel.OpenApiClient.Models.TeamDefaultDeploymentProtection? DefaultDeploymentProtection { get; set; }

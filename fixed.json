@@ -7807,6 +7807,313 @@
         ]
       }
     },
+    "/v1/projects/{idOrName}/daemons": {
+      "get": {
+        "tags": [
+          "daemons"
+        ],
+        "summary": "Get project daemons",
+        "description": "Lists project daemons.",
+        "operationId": "GetProjectBoxes",
+        "parameters": [
+          {
+            "name": "idOrName",
+            "in": "path",
+            "description": "The unique project identifier or the project name",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The unique project identifier or the project name"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum daemons to return (default: 10, max: 100)",
+            "schema": {
+              "type": "string",
+              "description": "Maximum daemons to return (default: 10, max: 100)"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Pagination cursor",
+            "schema": {
+              "type": "string",
+              "description": "Pagination cursor"
+            }
+          },
+          {
+            "name": "scopeType",
+            "in": "query",
+            "description": "Filter by scope type",
+            "schema": {
+              "$ref": "#/components/schemas/GetProjectBoxesScopeTypeParameter"
+            }
+          },
+          {
+            "name": "scopeValue",
+            "in": "query",
+            "description": "Filter by scope value (requires scopeType)",
+            "schema": {
+              "type": "string",
+              "description": "Filter by scope value (requires scopeType)"
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetProjectBoxes200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
+    "/v1/projects/{idOrName}/daemons/{daemonName}/instances": {
+      "put": {
+        "tags": [
+          "daemons"
+        ],
+        "summary": "Override a project daemon\u0027s instance counts",
+        "description": "Override an existing daemon\u0027s instance counts by region. Each region in the map replaces the configured count for that region. Regions not in the map keep their configured count. An empty map removes the overrides. The daemon configuration is not changed. Missing or deleted daemons return 404. Repeating the same overrides succeeds without a storage write or reconciliation event.",
+        "operationId": "PutProjectDaemonInstances",
+        "parameters": [
+          {
+            "name": "idOrName",
+            "in": "path",
+            "description": "The unique project identifier or the project name",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The unique project identifier or the project name"
+            }
+          },
+          {
+            "name": "daemonName",
+            "in": "path",
+            "description": "The name of the daemon to scale",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-zA-Z0-9_-]\u002B$",
+              "type": "string",
+              "description": "The name of the daemon to scale"
+            }
+          },
+          {
+            "name": "target",
+            "in": "query",
+            "description": "The deployment target for the daemon configuration.",
+            "schema": {
+              "$ref": "#/components/schemas/PutProjectDaemonInstancesTargetParameter"
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PutProjectDaemonInstancesRequestRequestBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PutProjectDaemonInstances200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request body is invalid.\nOne of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "404 response"
+          },
+          "410": {
+            "description": "410 response"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
+    "/v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}/restart": {
+      "post": {
+        "tags": [
+          "daemons"
+        ],
+        "summary": "Force restart a project daemon instance",
+        "description": "Force restarts the user container of one running daemon instance. The instance\u0027s controller stops the current user container and starts a new one from the same configuration, so in-flight requests are interrupted and any state that only lives inside the container is lost. The instance keeps its ID and region. The response returns as soon as the controller accepts the restart, before the new container is running. Only production instances can be restarted. Accepts a Vercel token that can update the project, or a production project OIDC token issued for the same project. No request body or Content-Type header is required.",
+        "operationId": "RestartProjectDaemonInstance",
+        "parameters": [
+          {
+            "name": "idOrName",
+            "in": "path",
+            "description": "The unique project identifier or the project name",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The unique project identifier or the project name"
+            }
+          },
+          {
+            "name": "daemonName",
+            "in": "path",
+            "description": "The name of the daemon that owns the instance",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-zA-Z0-9_-]\u002B$",
+              "type": "string",
+              "description": "The name of the daemon that owns the instance"
+            }
+          },
+          {
+            "name": "instanceId",
+            "in": "path",
+            "description": "The ID of the daemon instance whose user container is restarted, for example \u0060dmni_01k7d0q5w3x8y9z0a1b2c3d4e5\u0060",
+            "required": true,
+            "schema": {
+              "pattern": "^dmni_[0-9a-hjkmnp-tv-z]{26}$",
+              "type": "string",
+              "description": "The ID of the daemon instance whose user container is restarted, for example \u0060dmni_01k7d0q5w3x8y9z0a1b2c3d4e5\u0060"
+            }
+          },
+          {
+            "name": "teamId",
+            "in": "query",
+            "description": "The Team identifier to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "team_1a2b3c4d5e6f7g8h9i0j1k2l"
+            }
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "The Team slug to perform the request on behalf of.",
+            "schema": {
+              "type": "string",
+              "example": "my-team-url-slug"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "The restart was accepted. The new user container starts asynchronously.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RestartProjectDaemonInstance202Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "One of the provided values in the request query is invalid."
+          },
+          "401": {
+            "description": "The request is not authorized."
+          },
+          "403": {
+            "description": "You do not have permission to access this resource."
+          },
+          "404": {
+            "description": "The daemon has no running production instance with this ID."
+          },
+          "409": {
+            "description": "The instance is still starting and cannot be restarted yet."
+          },
+          "410": {
+            "description": "410 response"
+          },
+          "500": {
+            "description": "The instance controller did not accept the restart."
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    },
     "/v3/deployments/{idOrUrl}/events": {
       "get": {
         "tags": [
@@ -28533,17 +28840,6 @@
             }
           },
           {
-            "name": "cmdId",
-            "in": "query",
-            "description": "The unique identifier of the command to stream logs for.",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "description": "The unique identifier of the command to stream logs for.",
-              "example": "cmd_abc123"
-            }
-          },
-          {
             "name": "teamId",
             "in": "query",
             "description": "The Team identifier to perform the request on behalf of.",
@@ -28828,7 +29124,7 @@
           "sandboxes"
         ],
         "summary": "Write to command stdin",
-        "description": "Writes data to the stdin of a running command, and optionally closes it. The command must have been started with \u0060attachStdin\u0060 set to true. Writes are applied in the order they are received. Send them one at a time to keep the data in order. A write returns once the command has accepted the data, and fails with a 504 after 30 seconds if the command is not reading stdin. Each write counts against the sandbox control plane rate limit, so batch small writes where possible. Set \u0060offset\u0060 to the position in stdin where \u0060data\u0060 starts to make a request safe to resend, for example after a 502 or 504: bytes the command has already received are skipped, and an offset past them fails with a 409. The response returns \u0060bytesWritten\u0060, the total written so far, and a 504 includes it in the error when the sandbox reports it. A request with no \u0060data\u0060 and no \u0060close\u0060 writes nothing and returns it. If a request with an \u0060offset\u0060 gets a response without \u0060bytesWritten\u0060, the sandbox predates offsets and ignored it, so resending that request is not safe.",
+        "description": "Writes data to the stdin of a running command, and optionally closes it. The command must have been started with \u0060attachStdin\u0060 set to true. Writes are applied in the order they are received. Send them one at a time to keep the data in order. A write returns once the command has accepted the data, and fails with a 504 after 30 seconds if the command is not reading stdin. Each write counts against the sandbox control plane rate limit, so batch small writes where possible. Set \u0060offset\u0060 to the position in stdin where \u0060data\u0060 starts to make a request safe to resend, for example after a 502 or 504: bytes the command has already received are skipped, and an offset past them fails with a 409. The response returns \u0060bytesWritten\u0060, the total written so far, and a 504 includes it in the error when the sandbox reports it. A request with no \u0060data\u0060 and no \u0060close\u0060 writes nothing and returns it.",
         "operationId": "WriteSessionCommandStdin",
         "parameters": [
           {
@@ -45630,6 +45926,7 @@
           "billing",
           "createdAt",
           "creatorId",
+          "defaultDeploymentProtection",
           "description",
           "id",
           "limited",
@@ -64664,6 +64961,22 @@
         },
         "additionalProperties": false
       },
+      "UserEventPayloadOneOf80Data": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf80DataOneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf80DataOneOf2"
+          }
+        ],
+        "properties": {
+          "reason": {
+            "$ref": "#/components/schemas/NonPaymentReason"
+          }
+        }
+      },
       "UserEventPayloadOneOf121Job": {
         "type": "object",
         "oneOf": [
@@ -65273,6 +65586,31 @@
           },
           "note": {
             "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf80DataOneOf1": {
+        "required": [
+          "planSlug"
+        ],
+        "type": "object",
+        "properties": {
+          "planSlug": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf80DataOneOf1PlanSlug"
+          },
+          "reason": {
+            "$ref": "#/components/schemas/NonPaymentReason"
+          }
+        }
+      },
+      "UserEventPayloadOneOf80DataOneOf2": {
+        "required": [
+          "planSlug"
+        ],
+        "type": "object",
+        "properties": {
+          "planSlug": {
+            "$ref": "#/components/schemas/HobbyPlanSlug"
           }
         }
       },
@@ -67804,7 +68142,7 @@
             "$ref": "#/components/schemas/TeamDefaultDeploymentProtectionSsoProtection"
           }
         },
-        "description": "Default deployment protection for this team null indicates protection is disabled"
+        "description": "Deployment protection defaults for new projects in this team. When no Vercel Authentication default is saved, \u0060ssoProtection\u0060 shows Standard Protection. An explicitly saved \u0060null\u0060 remains disabled. Organization policy may override the team default during project creation."
       },
       "TeamDefaultExpirationSettings": {
         "type": "object",
@@ -70534,20 +70872,6 @@
           }
         },
         "description": "Note that not all historical events have this field."
-      },
-      "UserEventPayloadOneOf80Data": {
-        "required": [
-          "planSlug"
-        ],
-        "type": "object",
-        "properties": {
-          "planSlug": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf80DataPlanSlug"
-          },
-          "reason": {
-            "$ref": "#/components/schemas/NonPaymentReason"
-          }
-        }
       },
       "UserEventPayloadOneOf81Data": {
         "required": [
@@ -80235,6 +80559,55 @@
           }
         }
       },
+      "GetProjectBoxes200Response": {
+        "required": [
+          "daemons",
+          "pagination"
+        ],
+        "type": "object",
+        "properties": {
+          "daemons": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItem"
+            }
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponsePagination"
+          }
+        }
+      },
+      "PutProjectDaemonInstancesRequest": {
+        "type": "object",
+        "additionalProperties": {
+          "maximum": 100,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "description": "Instance count overrides by region, for example { \\\u0022iad1\\\u0022: 1 }. Regions not in the map keep their configured count. An empty map removes the overrides."
+      },
+      "PutProjectDaemonInstances200Response": {
+        "required": [
+          "ok"
+        ],
+        "type": "object",
+        "properties": {
+          "ok": {
+            "$ref": "#/components/schemas/PutProjectDaemonInstances200ResponseOk"
+          }
+        }
+      },
+      "RestartProjectDaemonInstance202Response": {
+        "required": [
+          "ok"
+        ],
+        "type": "object",
+        "properties": {
+          "ok": {
+            "$ref": "#/components/schemas/RestartProjectDaemonInstance202ResponseOk"
+          }
+        }
+      },
       "GetDeploymentEvents200Response": {
         "type": "array",
         "items": {
@@ -85561,9 +85934,21 @@
             "type": "string",
             "description": "Additional memo for the invoice."
           },
+          "outstandingTotal": {
+            "type": "string",
+            "description": "Amount still owed on the invoice, per the payment processor. Can be positive even for states \u0022refunded\u0022 or \u0022refund_requested\u0022, since a refund does not settle an unpaid remainder. A dollar-based decimal string. Absent when no payment data is available yet."
+          },
           "paidAt": {
             "type": "string",
             "description": "Moment the invoice was paid. ISO 8601 timestamp."
+          },
+          "paidTotal": {
+            "type": "string",
+            "description": "Total amount paid and retained: payments received minus refunds applied. A dollar-based decimal string. Absent when no payment data is available yet."
+          },
+          "pendingRefundTotal": {
+            "type": "string",
+            "description": "Requested refund amount not yet applied by the payment processor: \u0022refundTotal\u0022 minus \u0022refundedTotal\u0022. A dollar-based decimal string. Only present when a refund was requested or applied."
           },
           "period": {
             "$ref": "#/components/schemas/GetInvoice200ResponsePeriod"
@@ -85572,13 +85957,17 @@
             "type": "string",
             "description": "Most recent moment the invoice was refunded. ISO 8601 timestamp."
           },
+          "refundedTotal": {
+            "type": "string",
+            "description": "Total refund amount applied by the payment processor, on the same pre-tax basis as \u0022refundTotal\u0022. Counts both money returned and debt cancelled on unpaid invoices. May be lower than \u0022refundTotal\u0022, which is the requested amount. A dollar-based decimal string. Only present when a refund was requested or applied."
+          },
           "refundReason": {
             "type": "string",
-            "description": "The reason for refund. Only applicable for states \u0022refunded\u0022 or \u0022refund_request\u0022."
+            "description": "The reason for refund. Only present when a refund has been requested."
           },
           "refundTotal": {
             "type": "string",
-            "description": "Refund amount. Only applicable for states \u0022refunded\u0022 or \u0022refund_request\u0022. A dollar-based decimal string."
+            "description": "Total refund amount requested. Only present when a refund has been requested. A dollar-based decimal string."
           },
           "state": {
             "$ref": "#/components/schemas/GetInvoice200ResponseState"
@@ -92006,19 +92395,15 @@
         "additionalProperties": false
       },
       "RunSessionCommand200XNdjsonResponse": {
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/RunSessionCommand200XNdjsonResponseOneOf1"
-          },
-          {
-            "$ref": "#/components/schemas/RunSessionCommand200XNdjsonResponseOneOf2"
-          },
-          {
-            "$ref": "#/components/schemas/RunSessionCommand200XNdjsonResponseOneOf3"
-          }
+        "required": [
+          "data",
+          "stream"
         ],
+        "type": "object",
         "properties": {
+          "data": {
+            "$ref": "#/components/schemas/RunSessionCommand200XNdjsonResponseData"
+          },
           "stream": {
             "type": "string"
           },
@@ -96924,6 +97309,28 @@
         "properties": {
           "value": {
             "$ref": "#/components/schemas/BuyCredits200ResponseOneOf2PurchaseIntentConfigurationOneOf3OptionsEffectiveDateBranch2Value"
+          }
+        }
+      },
+      "GetProjectBoxes200ResponseDaemonsItemConfigConfiguredReplicasBranch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "GetProjectBoxes200ResponseDaemonsItemConfigReplicasBranch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
           }
         }
       },
@@ -102730,6 +103137,15 @@
       "DeletePrivateLinkEndpoint204ResponseSchema": {
         "type": "object"
       },
+      "PutProjectDaemonInstancesRequestRequestBody": {
+        "type": "object",
+        "additionalProperties": {
+          "maximum": 100,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "description": "Instance count overrides by region, for example { \\\u0022iad1\\\u0022: 1 }. Regions not in the map keep their configured count. An empty map removes the overrides."
+      },
       "RemoveRecord200ResponseSchema": {
         "type": "object"
       },
@@ -103418,6 +103834,46 @@
           },
           "version": {
             "$ref": "#/components/schemas/GetRedirects200ResponseOneOf3Version"
+          }
+        }
+      },
+      "GetProjectBoxes200ResponseDaemonsItemConfigConfiguredReplicas": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemConfigConfiguredReplicasBranch1"
+          },
+          {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            },
+            "description": "Configured replicas before the overrides. Present only when overrides exist."
+          }
+        ],
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "GetProjectBoxes200ResponseDaemonsItemConfigReplicas": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemConfigReplicasBranch1"
+          },
+          {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            },
+            "description": "Configured replicas with the overrides applied."
+          }
+        ],
+        "properties": {
+          "value": {
+            "type": "number"
           }
         }
       },
@@ -111072,55 +111528,6 @@
           }
         ],
         "description": "The Connect network id for the target Secure Compute private network. Set to null to remove the sandbox from Secure Compute."
-      },
-      "RunSessionCommand200XNdjsonResponseOneOf1": {
-        "required": [
-          "data",
-          "stream"
-        ],
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/RunSessionCommand200XNdjsonResponseOneOf1Data"
-          },
-          "stream": {
-            "type": "string"
-          }
-        }
-      },
-      "RunSessionCommand200XNdjsonResponseOneOf2": {
-        "required": [
-          "command",
-          "data",
-          "stream"
-        ],
-        "type": "object",
-        "properties": {
-          "command": {
-            "$ref": "#/components/schemas/SessionCommand"
-          },
-          "data": {
-            "type": "string"
-          },
-          "stream": {
-            "type": "string"
-          }
-        }
-      },
-      "RunSessionCommand200XNdjsonResponseOneOf3": {
-        "required": [
-          "data",
-          "stream"
-        ],
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/RunSessionCommand200XNdjsonResponseOneOf3Data"
-          },
-          "stream": {
-            "type": "string"
-          }
-        }
       },
       "UpdateSessionNetworkPolicyRequestAllow": {
         "type": "object",
@@ -123775,6 +124182,59 @@
           }
         }
       },
+      "GetProjectBoxes200ResponseDaemonsItem": {
+        "required": [
+          "config",
+          "createdAt",
+          "name",
+          "replicas",
+          "scope",
+          "status",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemConfig"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "deploymentId": {
+            "type": "string",
+            "description": "The deployment whose daemons this configuration comes from. Absent for daemons managed through the daemons API."
+          },
+          "name": {
+            "type": "string"
+          },
+          "replicas": {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemReplicas"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemScope"
+          },
+          "status": {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemStatus"
+          },
+          "updatedAt": {
+            "type": "string"
+          }
+        }
+      },
+      "GetProjectBoxes200ResponsePagination": {
+        "required": [
+          "count"
+        ],
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "number"
+          },
+          "next": {
+            "type": "string"
+          }
+        }
+      },
       "UpdateIntegrationDeploymentActionRequestOutcomesItem": {
         "required": [
           "kind"
@@ -134199,6 +134659,13 @@
             },
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
+          "connexClientAccess": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
           "connexClientProject": {
             "type": "array",
             "items": {
@@ -137586,6 +138053,13 @@
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
           "connexClient": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
+          "connexClientAccess": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -141263,6 +141737,13 @@
             },
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
+          "connexClientAccess": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
           "connexClientProject": {
             "type": "array",
             "items": {
@@ -144635,6 +145116,13 @@
             },
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
+          "connexClientAccess": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
           "connexClientProject": {
             "type": "array",
             "items": {
@@ -148001,6 +148489,13 @@
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
           "connexClient": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
+          "connexClientAccess": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -152590,6 +153085,13 @@
             },
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
+          "connexClientAccess": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
           "connexClientProject": {
             "type": "array",
             "items": {
@@ -154934,6 +155436,21 @@
         "example": {
           "NODE_ENV": "production",
           "DEBUG": "true"
+        }
+      },
+      "RunSessionCommand200XNdjsonResponseData": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/SandboxStreamClosedCode"
+          },
+          "message": {
+            "$ref": "#/components/schemas/SandboxStreamWasClosedAndIsNotAcceptingCommandsMessage"
+          }
         }
       },
       "GetSessionCommandLogs200XNdjsonResponseData": {
@@ -164060,36 +164577,6 @@
           }
         }
       },
-      "RunSessionCommand200XNdjsonResponseOneOf1Data": {
-        "required": [
-          "code",
-          "message"
-        ],
-        "type": "object",
-        "properties": {
-          "code": {
-            "$ref": "#/components/schemas/SandboxStreamClosedCode"
-          },
-          "message": {
-            "$ref": "#/components/schemas/SandboxStreamWasClosedAndIsNotAcceptingCommandsMessage"
-          }
-        }
-      },
-      "RunSessionCommand200XNdjsonResponseOneOf3Data": {
-        "required": [
-          "code",
-          "message"
-        ],
-        "type": "object",
-        "properties": {
-          "code": {
-            "$ref": "#/components/schemas/SandboxStreamClosedCode"
-          },
-          "message": {
-            "$ref": "#/components/schemas/SandboxStreamWasClosedAndIsNotAcceptingCommandsMessage"
-          }
-        }
-      },
       "GetActiveAttackStatus200ResponseOneOf2AnomaliesItem": {
         "required": [
           "affectedHostMap",
@@ -166525,6 +167012,81 @@
       },
       "CreateConnectorAuthorizationRequestRequestSubjectAdditionalClaims": {
         "type": "object"
+      },
+      "GetProjectBoxes200ResponseDaemonsItemConfig": {
+        "required": [
+          "image",
+          "replicas",
+          "resources"
+        ],
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "configuredReplicas": {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemConfigConfiguredReplicas"
+          },
+          "image": {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemConfigImage"
+          },
+          "livenessProbe": {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbe"
+          },
+          "replicas": {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemConfigReplicas"
+          },
+          "resources": {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemConfigResources"
+          },
+          "terminationGracePeriodSeconds": {
+            "type": "number"
+          }
+        }
+      },
+      "GetProjectBoxes200ResponseDaemonsItemReplicas": {
+        "required": [
+          "desired",
+          "items",
+          "ready",
+          "total"
+        ],
+        "type": "object",
+        "properties": {
+          "desired": {
+            "type": "number"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemReplicasItemsItem"
+            }
+          },
+          "ready": {
+            "type": "number"
+          },
+          "total": {
+            "type": "number"
+          }
+        }
+      },
+      "GetProjectBoxes200ResponseDaemonsItemScope": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemScopeType"
+          },
+          "value": {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemScopeValue"
+          }
+        }
       },
       "UpdateIntegrationDeploymentActionRequestOutcomesItemSecretsItem": {
         "required": [
@@ -172131,6 +172693,13 @@
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
           "connexClient": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
+          "connexClientAccess": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -191050,6 +191619,13 @@
             },
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
+          "connexClientAccess": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
           "connexClientProject": {
             "type": "array",
             "items": {
@@ -194719,6 +195295,98 @@
           "value": {
             "type": "number",
             "nullable": true
+          }
+        }
+      },
+      "GetProjectBoxes200ResponseDaemonsItemConfigImage": {
+        "required": [
+          "requested",
+          "resolved"
+        ],
+        "type": "object",
+        "properties": {
+          "requested": {
+            "type": "string"
+          },
+          "resolved": {
+            "type": "string"
+          },
+          "vhs": {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemConfigImageVhs"
+          }
+        }
+      },
+      "GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbe": {
+        "required": [
+          "httpGet"
+        ],
+        "type": "object",
+        "properties": {
+          "failureThreshold": {
+            "type": "number"
+          },
+          "httpGet": {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbeHttpGet"
+          },
+          "initialDelaySeconds": {
+            "type": "number"
+          },
+          "periodSeconds": {
+            "type": "number"
+          },
+          "successThreshold": {
+            "type": "number"
+          },
+          "timeoutSeconds": {
+            "type": "number"
+          }
+        }
+      },
+      "GetProjectBoxes200ResponseDaemonsItemConfigResources": {
+        "required": [
+          "requests"
+        ],
+        "type": "object",
+        "properties": {
+          "requests": {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemConfigResourcesRequests"
+          }
+        }
+      },
+      "GetProjectBoxes200ResponseDaemonsItemReplicasItemsItem": {
+        "required": [
+          "id",
+          "region",
+          "startedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "alive": {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemReplicasItemsItemAlive"
+          },
+          "id": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "iroh": {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemReplicasItemsItemIroh"
+          },
+          "lastCheckedAt": {
+            "type": "string"
+          },
+          "memoryMiB": {
+            "type": "number"
+          },
+          "region": {
+            "type": "string"
+          },
+          "startedAt": {
+            "type": "string"
+          },
+          "stoppedAt": {
+            "type": "string"
           }
         }
       },
@@ -209285,6 +209953,80 @@
           }
         }
       },
+      "GetProjectBoxes200ResponseDaemonsItemConfigImageVhs": {
+        "required": [
+          "repositoryName"
+        ],
+        "type": "object",
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemConfigImageVhsConfig"
+          },
+          "digest": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "repositoryName": {
+            "type": "string"
+          },
+          "sizeInBytes": {
+            "type": "number"
+          }
+        }
+      },
+      "GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbeHttpGet": {
+        "required": [
+          "path",
+          "port",
+          "scheme"
+        ],
+        "type": "object",
+        "properties": {
+          "host": {
+            "type": "string"
+          },
+          "httpHeaders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbeHttpGetHttpHeadersItem"
+            }
+          },
+          "path": {
+            "type": "string"
+          },
+          "port": {
+            "type": "number"
+          },
+          "scheme": {
+            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbeHttpGetScheme"
+          }
+        }
+      },
+      "GetProjectBoxes200ResponseDaemonsItemConfigResourcesRequests": {
+        "required": [
+          "memory"
+        ],
+        "type": "object",
+        "properties": {
+          "memory": {
+            "type": "string"
+          }
+        }
+      },
+      "GetProjectBoxes200ResponseDaemonsItemReplicasItemsItemIroh": {
+        "required": [
+          "publicKeyCiphertext"
+        ],
+        "type": "object",
+        "properties": {
+          "publicKeyCiphertext": {
+            "type": "string"
+          }
+        },
+        "description": "Encrypted Iroh endpoint data for internal consumers."
+      },
       "GetDeployment200ResponseServicesItemBuilderConfigDaemon": {
         "required": [
           "entrypoint",
@@ -214946,6 +215688,41 @@
             "items": {
               "type": "string"
             }
+          }
+        }
+      },
+      "GetProjectBoxes200ResponseDaemonsItemConfigImageVhsConfig": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "entrypoint": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "workingDir": {
+            "type": "string"
+          }
+        }
+      },
+      "GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbeHttpGetHttpHeadersItem": {
+        "required": [
+          "name",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
           }
         }
       },
@@ -239597,6 +240374,62 @@
           ]
         }
       },
+      "UserEventPayloadOneOf80DataOneOf1PlanSlug": {
+        "enum": [
+          "v0_business",
+          "v0_teams"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf80DataOneOf1PlanSlug",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "v0_business",
+              "name": "V0Business"
+            },
+            {
+              "value": "v0_teams",
+              "name": "V0Teams"
+            }
+          ]
+        }
+      },
+      "NonPaymentReason": {
+        "enum": [
+          "non-payment"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "NonPaymentReason",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "non-payment",
+              "name": "NonPayment"
+            }
+          ]
+        }
+      },
+      "HobbyPlanSlug": {
+        "enum": [
+          "hobby"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "HobbyPlanSlug",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "hobby",
+              "name": "Hobby"
+            }
+          ]
+        }
+      },
       "UserEventPayloadOneOf121JobOneOf1Authorized": {
         "enum": [
           false,
@@ -244402,45 +245235,6 @@
             {
               "value": "use:ai-gateway",
               "name": "UseColonAiGateway"
-            }
-          ]
-        }
-      },
-      "UserEventPayloadOneOf80DataPlanSlug": {
-        "enum": [
-          "v0_business",
-          "v0_teams"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "UserEventPayloadOneOf80DataPlanSlug",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "v0_business",
-              "name": "V0Business"
-            },
-            {
-              "value": "v0_teams",
-              "name": "V0Teams"
-            }
-          ]
-        }
-      },
-      "NonPaymentReason": {
-        "enum": [
-          "non-payment"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "NonPaymentReason",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "non-payment",
-              "name": "NonPayment"
             }
           ]
         }
@@ -250612,6 +251406,22 @@
           ]
         }
       },
+      "PutProjectDaemonInstances200ResponseOk": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
+      "RestartProjectDaemonInstance202ResponseOk": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
       "UpdateIntegrationDeploymentActionRequestStatus": {
         "enum": [
           "running",
@@ -253896,7 +254706,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "Invoice state.",
+        "description": "Invoice state. Reports the payment state of the invoice; refund progress is reported separately via \u0022refundedTotal\u0022 and \u0022pendingRefundTotal\u0022. The states \u0022refunded\u0022 and \u0022refund_requested\u0022 only appear when the payment state cannot be determined.",
         "x-ms-enum": {
           "name": "GetInvoice200ResponseState",
           "modelAsString": false,
@@ -275896,6 +276706,33 @@
             {
               "value": "token",
               "name": "Token"
+            }
+          ]
+        }
+      },
+      "GetProjectBoxes200ResponseDaemonsItemStatus": {
+        "enum": [
+          "ready",
+          "reconciling",
+          "stopped"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetProjectBoxes200ResponseDaemonsItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ready",
+              "name": "Ready"
+            },
+            {
+              "value": "reconciling",
+              "name": "Reconciling"
+            },
+            {
+              "value": "stopped",
+              "name": "Stopped"
             }
           ]
         }
@@ -306877,6 +307714,60 @@
         "type": "boolean",
         "additionalProperties": false
       },
+      "GetProjectBoxes200ResponseDaemonsItemScopeType": {
+        "enum": [
+          "target",
+          "branch",
+          "customEnvironment"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetProjectBoxes200ResponseDaemonsItemScopeType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "target",
+              "name": "Target"
+            },
+            {
+              "value": "branch",
+              "name": "Branch"
+            },
+            {
+              "value": "customEnvironment",
+              "name": "CustomEnvironment"
+            }
+          ]
+        }
+      },
+      "GetProjectBoxes200ResponseDaemonsItemScopeValue": {
+        "enum": [
+          "development",
+          "preview",
+          "production"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetProjectBoxes200ResponseDaemonsItemScopeValue",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "development",
+              "name": "Development"
+            },
+            {
+              "value": "preview",
+              "name": "Preview"
+            },
+            {
+              "value": "production",
+              "name": "Production"
+            }
+          ]
+        }
+      },
       "GetDeployment200ResponseAtprotoSubscriptionKindsItem": {
         "enum": [
           "account",
@@ -331758,6 +332649,14 @@
           ]
         }
       },
+      "GetProjectBoxes200ResponseDaemonsItemReplicasItemsItemAlive": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
       "GetDeployment200ResponseConfigResourceConfigBuildQueueConfiguration": {
         "enum": [
           "SKIP_NAMESPACE_QUEUE",
@@ -348522,6 +349421,28 @@
           ]
         }
       },
+      "GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbeHttpGetScheme": {
+        "enum": [
+          "HTTP",
+          "HTTPS"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbeHttpGetScheme",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "HTTP",
+              "name": "Http"
+            },
+            {
+              "value": "HTTPS",
+              "name": "Https"
+            }
+          ]
+        }
+      },
       "GetDeployment200ResponseServicesItemBuilderConfigProjectSettingsAutoExposeSystemEnvs": {
         "enum": [
           false,
@@ -356478,6 +357399,57 @@
             {
               "value": "updatedAt",
               "name": "UpdatedAt"
+            }
+          ]
+        }
+      },
+      "GetProjectBoxesScopeTypeParameter": {
+        "enum": [
+          "target",
+          "branch",
+          "customEnvironment"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Filter by scope type",
+        "x-ms-enum": {
+          "name": "GetProjectBoxesScopeTypeParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "target",
+              "name": "Target"
+            },
+            {
+              "value": "branch",
+              "name": "Branch"
+            },
+            {
+              "value": "customEnvironment",
+              "name": "CustomEnvironment"
+            }
+          ]
+        }
+      },
+      "PutProjectDaemonInstancesTargetParameter": {
+        "enum": [
+          "production",
+          "preview"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The deployment target for the daemon configuration.",
+        "x-ms-enum": {
+          "name": "PutProjectDaemonInstancesTargetParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "production",
+              "name": "Production"
+            },
+            {
+              "value": "preview",
+              "name": "Preview"
             }
           ]
         }

@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Traces.TracesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v1.projects.item collection</summary>
-        /// <param name="position">The ID or name of the Project.</param>
+        /// <param name="position">The unique project identifier or the project name</param>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.IdOrNameItemRequestBuilder"/></returns>
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.IdOrNameItemRequestBuilder this[string position]
         {
