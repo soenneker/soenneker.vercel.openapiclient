@@ -40,7 +40,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item
         {
         }
         /// <summary>
-        /// Get a single organization by ID. This endpoint is in private beta. Contact your Vercel account team for access.
+        /// Get a single organization by ID or slug. This endpoint is in private beta. Contact your Vercel account team for access.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.Organization"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +78,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.Organization>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.Organization.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a single organization by ID. This endpoint is in private beta. Contact your Vercel account team for access.
+        /// Get a single organization by ID or slug. This endpoint is in private beta. Contact your Vercel account team for access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations.Item
             return new global::Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.WithOrganizationItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a single organization by ID. This endpoint is in private beta. Contact your Vercel account team for access.
+        /// Get a single organization by ID or slug. This endpoint is in private beta. Contact your Vercel account team for access.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithOrganizationItemRequestBuilderGetQueryParameters 

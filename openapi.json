@@ -9529,24 +9529,6 @@
                                           },
                                           {
                                             "properties": {
-                                              "job": {
-                                                "type": "string"
-                                              },
-                                              "kind": {
-                                                "type": "string",
-                                                "enum": [
-                                                  "job"
-                                                ]
-                                              }
-                                            },
-                                            "required": [
-                                              "job",
-                                              "kind"
-                                            ],
-                                            "type": "object"
-                                          },
-                                          {
-                                            "properties": {
                                               "failIfNoMatch": {
                                                 "type": "boolean",
                                                 "enum": [
@@ -10201,24 +10183,6 @@
                                           },
                                           {
                                             "properties": {
-                                              "job": {
-                                                "type": "string"
-                                              },
-                                              "kind": {
-                                                "type": "string",
-                                                "enum": [
-                                                  "job"
-                                                ]
-                                              }
-                                            },
-                                            "required": [
-                                              "job",
-                                              "kind"
-                                            ],
-                                            "type": "object"
-                                          },
-                                          {
-                                            "properties": {
                                               "failIfNoMatch": {
                                                 "type": "boolean",
                                                 "enum": [
@@ -10851,24 +10815,6 @@
                                         }
                                       },
                                       "required": [
-                                        "kind"
-                                      ],
-                                      "type": "object"
-                                    },
-                                    {
-                                      "properties": {
-                                        "job": {
-                                          "type": "string"
-                                        },
-                                        "kind": {
-                                          "type": "string",
-                                          "enum": [
-                                            "job"
-                                          ]
-                                        }
-                                      },
-                                      "required": [
-                                        "job",
                                         "kind"
                                       ],
                                       "type": "object"
@@ -11524,24 +11470,6 @@
                                     },
                                     {
                                       "properties": {
-                                        "job": {
-                                          "type": "string"
-                                        },
-                                        "kind": {
-                                          "type": "string",
-                                          "enum": [
-                                            "job"
-                                          ]
-                                        }
-                                      },
-                                      "required": [
-                                        "job",
-                                        "kind"
-                                      ],
-                                      "type": "object"
-                                    },
-                                    {
-                                      "properties": {
                                         "failIfNoMatch": {
                                           "type": "boolean",
                                           "enum": [
@@ -12177,24 +12105,6 @@
                                         }
                                       },
                                       "required": [
-                                        "kind"
-                                      ],
-                                      "type": "object"
-                                    },
-                                    {
-                                      "properties": {
-                                        "job": {
-                                          "type": "string"
-                                        },
-                                        "kind": {
-                                          "type": "string",
-                                          "enum": [
-                                            "job"
-                                          ]
-                                        }
-                                      },
-                                      "required": [
-                                        "job",
                                         "kind"
                                       ],
                                       "type": "object"
@@ -17300,63 +17210,6 @@
                                   },
                                   "resolved": {
                                     "type": "string"
-                                  },
-                                  "vhs": {
-                                    "oneOf": [
-                                      {
-                                        "properties": {
-                                          "config": {
-                                            "properties": {
-                                              "command": {
-                                                "items": {
-                                                  "type": "string"
-                                                },
-                                                "type": "array"
-                                              },
-                                              "entrypoint": {
-                                                "items": {
-                                                  "type": "string"
-                                                },
-                                                "type": "array"
-                                              },
-                                              "workingDir": {
-                                                "type": "string"
-                                              }
-                                            },
-                                            "type": "object"
-                                          },
-                                          "digest": {
-                                            "type": "string"
-                                          },
-                                          "path": {
-                                            "type": "string"
-                                          },
-                                          "repositoryName": {
-                                            "type": "string"
-                                          },
-                                          "sizeInBytes": {
-                                            "type": "number"
-                                          }
-                                        },
-                                        "required": [
-                                          "digest",
-                                          "path",
-                                          "repositoryName"
-                                        ],
-                                        "type": "object"
-                                      },
-                                      {
-                                        "properties": {
-                                          "repositoryName": {
-                                            "type": "string"
-                                          }
-                                        },
-                                        "required": [
-                                          "repositoryName"
-                                        ],
-                                        "type": "object"
-                                      }
-                                    ]
                                   }
                                 },
                                 "required": [
@@ -17441,8 +17294,7 @@
                                     "additionalProperties": {
                                       "type": "number"
                                     },
-                                    "type": "object",
-                                    "description": "Configured replicas with the overrides applied."
+                                    "type": "object"
                                   }
                                 ]
                               },
@@ -17506,18 +17358,6 @@
                                     },
                                     "image": {
                                       "type": "string"
-                                    },
-                                    "iroh": {
-                                      "properties": {
-                                        "publicKeyCiphertext": {
-                                          "type": "string"
-                                        }
-                                      },
-                                      "required": [
-                                        "publicKeyCiphertext"
-                                      ],
-                                      "type": "object",
-                                      "description": "Encrypted Iroh endpoint data for internal consumers."
                                     },
                                     "lastCheckedAt": {
                                       "type": "string"
@@ -20755,6 +20595,10 @@
                               "includeFiles": {
                                 "type": "string"
                               },
+                              "installCommand": {
+                                "type": "string",
+                                "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`."
+                              },
                               "maxConcurrency": {
                                 "type": "number"
                               },
@@ -23670,6 +23514,10 @@
                                                 "includeFiles": {
                                                   "type": "string"
                                                 },
+                                                "installCommand": {
+                                                  "type": "string",
+                                                  "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`."
+                                                },
                                                 "maxConcurrency": {
                                                   "type": "number"
                                                 },
@@ -23846,6 +23694,14 @@
                                                   false,
                                                   true
                                                 ]
+                                              },
+                                              "vercelFlags": {
+                                                "properties": {
+                                                  "enabledAt": {
+                                                    "type": "number"
+                                                  }
+                                                },
+                                                "type": "object"
                                               }
                                             },
                                             "type": "object"
@@ -24355,6 +24211,10 @@
                                                 "includeFiles": {
                                                   "type": "string"
                                                 },
+                                                "installCommand": {
+                                                  "type": "string",
+                                                  "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`."
+                                                },
                                                 "maxConcurrency": {
                                                   "type": "number"
                                                 },
@@ -24531,6 +24391,14 @@
                                                   false,
                                                   true
                                                 ]
+                                              },
+                                              "vercelFlags": {
+                                                "properties": {
+                                                  "enabledAt": {
+                                                    "type": "number"
+                                                  }
+                                                },
+                                                "type": "object"
                                               }
                                             },
                                             "type": "object"
@@ -24768,6 +24636,10 @@
                                         },
                                         "includeFiles": {
                                           "type": "string"
+                                        },
+                                        "installCommand": {
+                                          "type": "string",
+                                          "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`."
                                         },
                                         "maxConcurrency": {
                                           "type": "number"
@@ -29528,6 +29400,10 @@
                               "includeFiles": {
                                 "type": "string"
                               },
+                              "installCommand": {
+                                "type": "string",
+                                "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`."
+                              },
                               "maxConcurrency": {
                                 "type": "number"
                               },
@@ -32443,6 +32319,10 @@
                                                 "includeFiles": {
                                                   "type": "string"
                                                 },
+                                                "installCommand": {
+                                                  "type": "string",
+                                                  "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`."
+                                                },
                                                 "maxConcurrency": {
                                                   "type": "number"
                                                 },
@@ -32619,6 +32499,14 @@
                                                   false,
                                                   true
                                                 ]
+                                              },
+                                              "vercelFlags": {
+                                                "properties": {
+                                                  "enabledAt": {
+                                                    "type": "number"
+                                                  }
+                                                },
+                                                "type": "object"
                                               }
                                             },
                                             "type": "object"
@@ -33128,6 +33016,10 @@
                                                 "includeFiles": {
                                                   "type": "string"
                                                 },
+                                                "installCommand": {
+                                                  "type": "string",
+                                                  "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`."
+                                                },
                                                 "maxConcurrency": {
                                                   "type": "number"
                                                 },
@@ -33304,6 +33196,14 @@
                                                   false,
                                                   true
                                                 ]
+                                              },
+                                              "vercelFlags": {
+                                                "properties": {
+                                                  "enabledAt": {
+                                                    "type": "number"
+                                                  }
+                                                },
+                                                "type": "object"
                                               }
                                             },
                                             "type": "object"
@@ -33541,6 +33441,10 @@
                                         },
                                         "includeFiles": {
                                           "type": "string"
+                                        },
+                                        "installCommand": {
+                                          "type": "string",
+                                          "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`."
                                         },
                                         "maxConcurrency": {
                                           "type": "number"
@@ -37285,6 +37189,10 @@
                           "includeFiles": {
                             "type": "string"
                           },
+                          "installCommand": {
+                            "type": "string",
+                            "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`."
+                          },
                           "maxConcurrency": {
                             "type": "number"
                           },
@@ -40200,6 +40108,10 @@
                                             "includeFiles": {
                                               "type": "string"
                                             },
+                                            "installCommand": {
+                                              "type": "string",
+                                              "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`."
+                                            },
                                             "maxConcurrency": {
                                               "type": "number"
                                             },
@@ -40376,6 +40288,14 @@
                                               false,
                                               true
                                             ]
+                                          },
+                                          "vercelFlags": {
+                                            "properties": {
+                                              "enabledAt": {
+                                                "type": "number"
+                                              }
+                                            },
+                                            "type": "object"
                                           }
                                         },
                                         "type": "object"
@@ -40885,6 +40805,10 @@
                                             "includeFiles": {
                                               "type": "string"
                                             },
+                                            "installCommand": {
+                                              "type": "string",
+                                              "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`."
+                                            },
                                             "maxConcurrency": {
                                               "type": "number"
                                             },
@@ -41061,6 +40985,14 @@
                                               false,
                                               true
                                             ]
+                                          },
+                                          "vercelFlags": {
+                                            "properties": {
+                                              "enabledAt": {
+                                                "type": "number"
+                                              }
+                                            },
+                                            "type": "object"
                                           }
                                         },
                                         "type": "object"
@@ -41298,6 +41230,10 @@
                                     },
                                     "includeFiles": {
                                       "type": "string"
+                                    },
+                                    "installCommand": {
+                                      "type": "string",
+                                      "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by `@vercel/node`."
                                     },
                                     "maxConcurrency": {
                                       "type": "number"
@@ -89191,6 +89127,13 @@
                                 "type": "array",
                                 "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                               },
+                              "githubUsage": {
+                                "items": {
+                                  "$ref": "#/components/schemas/ACLAction"
+                                },
+                                "type": "array",
+                                "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                              },
                               "gitRepository": {
                                 "items": {
                                   "$ref": "#/components/schemas/ACLAction"
@@ -93708,7 +93651,7 @@
     },
     "/v1/organizations/{organizationId}": {
       "get": {
-        "description": "Get a single organization by ID. This endpoint is in private beta. Contact your Vercel account team for access.",
+        "description": "Get a single organization by ID or slug. This endpoint is in private beta. Contact your Vercel account team for access.",
         "operationId": "getOrganization",
         "security": [
           {
@@ -93749,12 +93692,12 @@
         "parameters": [
           {
             "name": "organizationId",
-            "description": "The ID of the organization to retrieve.",
+            "description": "The ID or slug of the organization to retrieve.",
             "in": "path",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "The ID of the organization to retrieve."
+              "description": "The ID or slug of the organization to retrieve."
             }
           },
           {
@@ -113417,6 +113360,13 @@
                                     "type": "array",
                                     "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                                   },
+                                  "githubUsage": {
+                                    "items": {
+                                      "$ref": "#/components/schemas/ACLAction"
+                                    },
+                                    "type": "array",
+                                    "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                                  },
                                   "gitRepository": {
                                     "items": {
                                       "$ref": "#/components/schemas/ACLAction"
@@ -121616,6 +121566,13 @@
                           "type": "array",
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
+                        "githubUsage": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
                         "gitRepository": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -125232,10 +125189,10 @@
                     "properties": {
                       "buildMachineType": {
                         "enum": [
+                          "standard",
                           "basic",
                           "enhanced",
                           "turbo",
-                          "standard",
                           "elastic"
                         ]
                       },
@@ -130095,6 +130052,13 @@
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
                         "gitCredentialGrant": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "githubUsage": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -137854,6 +137818,13 @@
                           "type": "array",
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
+                        "githubUsage": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
                         "gitRepository": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
@@ -141291,10 +141262,10 @@
                       "buildMachineType": {
                         "enum": [
                           null,
+                          "standard",
                           "basic",
                           "enhanced",
                           "turbo",
-                          "standard",
                           "elastic"
                         ]
                       },
@@ -146924,6 +146895,13 @@
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
                         "gitCredentialGrant": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "githubUsage": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -154690,6 +154668,13 @@
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
                         "gitCredentialGrant": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "githubUsage": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -175597,6 +175582,13 @@
                           "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
                         },
                         "gitCredentialGrant": {
+                          "items": {
+                            "$ref": "#/components/schemas/ACLAction"
+                          },
+                          "type": "array",
+                          "description": "Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary."
+                        },
+                        "githubUsage": {
                           "items": {
                             "$ref": "#/components/schemas/ACLAction"
                           },
@@ -237921,7 +237913,8 @@
                         "read:vcr",
                         "read:web-analytics",
                         "read:webhooks",
-                        "use:ai-gateway"
+                        "use:ai-gateway",
+                        "use:github"
                       ]
                     },
                     "type": "array"
@@ -238048,7 +238041,8 @@
                         "read:vcr",
                         "read:web-analytics",
                         "read:webhooks",
-                        "use:ai-gateway"
+                        "use:ai-gateway",
+                        "use:github"
                       ]
                     },
                     "type": "array"
@@ -257142,6 +257136,68 @@
               },
               {
                 "properties": {
+                  "next": {
+                    "properties": {
+                      "enabled": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ]
+                      },
+                      "issuerUrls": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "enabled",
+                      "issuerUrls"
+                    ],
+                    "type": "object"
+                  },
+                  "previous": {
+                    "properties": {
+                      "enabled": {
+                        "type": "boolean",
+                        "enum": [
+                          false,
+                          true
+                        ]
+                      },
+                      "issuerUrls": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "enabled",
+                      "issuerUrls"
+                    ],
+                    "type": "object"
+                  },
+                  "scope": {
+                    "type": "string",
+                    "enum": [
+                      "organization",
+                      "team"
+                    ]
+                  }
+                },
+                "required": [
+                  "next",
+                  "previous",
+                  "scope"
+                ],
+                "type": "object",
+                "description": "The payload of the event, if requested."
+              },
+              {
+                "properties": {
                   "app": {
                     "properties": {
                       "clientAuthenticationUsed": {
@@ -259057,7 +259113,8 @@
               "webhook-created",
               "webhook-deleted",
               "webhook-updated",
-              "workflow-deployment-key-accessed"
+              "workflow-deployment-key-accessed",
+              "xaa-updated"
             ],
             "description": "The type of the event.",
             "example": "login"
@@ -260005,7 +260062,8 @@
               "webhook-created",
               "webhook-deleted",
               "webhook-updated",
-              "workflow-deployment-key-accessed"
+              "workflow-deployment-key-accessed",
+              "xaa-updated"
             ],
             "description": "The name of the event type.",
             "example": "deployment-created"
@@ -260741,7 +260799,8 @@
                 "webhook-created",
                 "webhook-deleted",
                 "webhook-updated",
-                "workflow-deployment-key-accessed"
+                "workflow-deployment-key-accessed",
+                "xaa-updated"
               ],
               "description": "Event type names that supersede this deprecated event type."
             },
@@ -262327,9 +262386,6 @@
           "organizationId": {
             "type": "string"
           },
-          "ownerId": {
-            "type": "string"
-          },
           "slug": {
             "type": "string"
           },
@@ -262351,7 +262407,6 @@
           "avatar",
           "createdAt",
           "organizationId",
-          "ownerId",
           "slug",
           "teamCount",
           "teamId",

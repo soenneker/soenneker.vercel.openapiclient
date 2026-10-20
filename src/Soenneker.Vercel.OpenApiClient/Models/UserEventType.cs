@@ -2919,5 +2919,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         WorkflowDeploymentKeyAccessed,
         #pragma warning restore CS1591
+        [EnumMember(Value = "xaa-updated")]
+        #pragma warning disable CS1591
+        XaaUpdated,
+        #pragma warning restore CS1591
     }
 }

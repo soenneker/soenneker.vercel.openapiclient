@@ -312,5 +312,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         UseColonAiGateway,
         #pragma warning restore CS1591
+        [EnumMember(Value = "use:github")]
+        #pragma warning disable CS1591
+        UseColonGithub,
+        #pragma warning restore CS1591
     }
 }

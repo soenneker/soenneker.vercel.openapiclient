@@ -25,13 +25,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public List<string> Filters { get; set; }
 #endif
         /// <summary>The job property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Job { get; set; }
-#nullable restore
-#else
-        public string Job { get; set; }
-#endif
+        public global::Soenneker.Vercel.OpenApiClient.Models.TurborepoJob? Job { get; set; }
         /// <summary>The kind property</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemSourceSelectionKind? Kind { get; set; }
         /// <summary>The task property</summary>
@@ -69,7 +63,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "failIfNoMatch", n => { FailIfNoMatch = n.GetBoolValue(); } },
                 { "filters", n => { Filters = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "job", n => { Job = n.GetStringValue(); } },
+                { "job", n => { Job = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TurborepoJob>(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemSourceSelectionKind>(); } },
                 { "task", n => { Task = n.GetStringValue(); } },
             };
@@ -83,7 +77,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("failIfNoMatch", FailIfNoMatch);
             writer.WriteCollectionOfPrimitiveValues<string>("filters", Filters);
-            writer.WriteStringValue("job", Job);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.TurborepoJob>("job", Job);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.ListDeploymentCheckRuns200ResponseRunsItemSourceSelectionKind>("kind", Kind);
             writer.WriteStringValue("task", Task);
             writer.WriteAdditionalData(AdditionalData);

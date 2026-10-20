@@ -96,6 +96,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #endif
         /// <summary>The sourceFilesOutsideRootDirectory property</summary>
         public bool? SourceFilesOutsideRootDirectory { get; set; }
+        /// <summary>The vercelFlags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigProjectSettingsVercelFlags? VercelFlags { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigProjectSettingsVercelFlags VercelFlags { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigProjectSettings"/> and sets the default values.
         /// </summary>
@@ -135,6 +143,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "outputDirectory", n => { OutputDirectory = n.GetStringValue(); } },
                 { "rootDirectory", n => { RootDirectory = n.GetStringValue(); } },
                 { "sourceFilesOutsideRootDirectory", n => { SourceFilesOutsideRootDirectory = n.GetBoolValue(); } },
+                { "vercelFlags", n => { VercelFlags = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigProjectSettingsVercelFlags>(global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigProjectSettingsVercelFlags.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -158,6 +167,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("outputDirectory", OutputDirectory);
             writer.WriteStringValue("rootDirectory", RootDirectory);
             writer.WriteBoolValue("sourceFilesOutsideRootDirectory", SourceFilesOutsideRootDirectory);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CancelDeployment200ResponseServicesItemBuilderConfigProjectSettingsVercelFlags>("vercelFlags", VercelFlags);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -21604,17 +21604,17 @@
           "organizations"
         ],
         "summary": "Get an Organization",
-        "description": "Get a single organization by ID. This endpoint is in private beta. Contact your Vercel account team for access.",
+        "description": "Get a single organization by ID or slug. This endpoint is in private beta. Contact your Vercel account team for access.",
         "operationId": "GetOrganization",
         "parameters": [
           {
             "name": "organizationId",
             "in": "path",
-            "description": "The ID of the organization to retrieve.",
+            "description": "The ID or slug of the organization to retrieve.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "The ID of the organization to retrieve."
+              "description": "The ID or slug of the organization to retrieve."
             }
           },
           {
@@ -45173,7 +45173,6 @@
           "avatar",
           "createdAt",
           "organizationId",
-          "ownerId",
           "slug",
           "teamCount",
           "teamId",
@@ -45193,9 +45192,6 @@
             "description": "The organization\u0027s display name. Optional: organizations created before the name attribute existed have no stored value. New orgs always get one (provided or slug-derived) via the service layer."
           },
           "organizationId": {
-            "type": "string"
-          },
-          "ownerId": {
             "type": "string"
           },
           "slug": {
@@ -49801,6 +49797,9 @@
           },
           {
             "$ref": "#/components/schemas/UserEventPayloadOneOf495"
+          },
+          {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf496"
           }
         ],
         "properties": {
@@ -51600,13 +51599,13 @@
             "description": "access_token TTL"
           },
           "authMethod": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489AuthMethod"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490AuthMethod"
           },
           "grantType": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489GrantType"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490GrantType"
           },
           "includesRefreshToken": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489IncludesRefreshToken"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490IncludesRefreshToken"
           },
           "ip": {
             "type": "string",
@@ -51641,16 +51640,16 @@
             "description": "optional since entries prior to 2026-04-23 do not contain this field"
           },
           "policy": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf491Policy"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf492Policy"
           },
           "createdByParentTeamId": {
             "type": "string"
           },
           "hasAuthorizationDetails": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf493HasAuthorizationDetails"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf494HasAuthorizationDetails"
           },
           "projectScope": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf493ProjectScope"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf494ProjectScope"
           },
           "reqId": {
             "type": "string"
@@ -51671,16 +51670,16 @@
             "description": "The token\u0027s public ID."
           },
           "expired": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf494Expired"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf495Expired"
           },
           "leaked": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf494Leaked"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf495Leaked"
           },
           "logoutSource": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf494LogoutSource"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf495LogoutSource"
           },
           "revoked": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf494Revoked"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf495Revoked"
           },
           "tokenType": {
             "type": "string"
@@ -63769,6 +63768,26 @@
       },
       "UserEventPayloadOneOf489": {
         "required": [
+          "next",
+          "previous",
+          "scope"
+        ],
+        "type": "object",
+        "properties": {
+          "next": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf489Next"
+          },
+          "previous": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf489Previous"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf489Scope"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf490": {
+        "required": [
           "appName",
           "atTTL",
           "authMethod",
@@ -63778,7 +63797,7 @@
         "type": "object",
         "properties": {
           "app": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489App"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490App"
           },
           "appName": {
             "type": "string",
@@ -63789,16 +63808,16 @@
             "description": "access_token TTL"
           },
           "authMethod": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489AuthMethod"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490AuthMethod"
           },
           "geolocation": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489Geolocation"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490Geolocation"
           },
           "grantType": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489GrantType"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490GrantType"
           },
           "includesRefreshToken": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489IncludesRefreshToken"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490IncludesRefreshToken"
           },
           "ip": {
             "type": "string",
@@ -63857,7 +63876,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf490": {
+      "UserEventPayloadOneOf491": {
         "required": [
           "domain",
           "projectId"
@@ -63873,33 +63892,14 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf491": {
+      "UserEventPayloadOneOf492": {
         "required": [
           "policy"
         ],
         "type": "object",
         "properties": {
           "policy": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf491Policy"
-          },
-          "appName": {
-            "type": "string"
-          }
-        },
-        "description": "The payload of the event, if requested."
-      },
-      "UserEventPayloadOneOf492": {
-        "required": [
-          "after",
-          "before"
-        ],
-        "type": "object",
-        "properties": {
-          "after": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf492After"
-          },
-          "before": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf492Before"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf492Policy"
           },
           "appName": {
             "type": "string"
@@ -63908,6 +63908,25 @@
         "description": "The payload of the event, if requested."
       },
       "UserEventPayloadOneOf493": {
+        "required": [
+          "after",
+          "before"
+        ],
+        "type": "object",
+        "properties": {
+          "after": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf493After"
+          },
+          "before": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf493Before"
+          },
+          "appName": {
+            "type": "string"
+          }
+        },
+        "description": "The payload of the event, if requested."
+      },
+      "UserEventPayloadOneOf494": {
         "required": [
           "origin",
           "scope",
@@ -63924,17 +63943,17 @@
             "description": "Unix epoch milliseconds. Absent when the token never expires."
           },
           "geolocation": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf493Geolocation"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf494Geolocation"
           },
           "hasAuthorizationDetails": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf493HasAuthorizationDetails"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf494HasAuthorizationDetails"
           },
           "ip": {
             "type": "string",
             "nullable": true
           },
           "origin": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf493Origin"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf494Origin"
           },
           "projectId": {
             "type": "string",
@@ -63945,7 +63964,7 @@
             "description": "Present when \u0060scope\u0060 is \u0060\u0027project\u0027\u0060."
           },
           "projectScope": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf493ProjectScope"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf494ProjectScope"
           },
           "reqId": {
             "type": "string"
@@ -63954,7 +63973,7 @@
             "type": "string"
           },
           "scope": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf493Scope"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf494Scope"
           },
           "source": {
             "$ref": "#/components/schemas/V0Source"
@@ -63988,7 +64007,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf494": {
+      "UserEventPayloadOneOf495": {
         "required": [
           "actorTokenId",
           "tokenId",
@@ -64005,23 +64024,23 @@
             "type": "string"
           },
           "expired": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf494Expired"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf495Expired"
           },
           "geolocation": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf494Geolocation"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf495Geolocation"
           },
           "ip": {
             "type": "string",
             "nullable": true
           },
           "leaked": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf494Leaked"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf495Leaked"
           },
           "logoutSource": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf494LogoutSource"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf495LogoutSource"
           },
           "origin": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf494Origin"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf495Origin"
           },
           "reason": {
             "$ref": "#/components/schemas/LogoutReason"
@@ -64033,10 +64052,10 @@
             "type": "string"
           },
           "revoked": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf494Revoked"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf495Revoked"
           },
           "scope": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf494Scope"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf495Scope"
           },
           "source": {
             "$ref": "#/components/schemas/V0Source"
@@ -64059,7 +64078,7 @@
         },
         "description": "The payload of the event, if requested."
       },
-      "UserEventPayloadOneOf495": {
+      "UserEventPayloadOneOf496": {
         "required": [
           "actorTokenId",
           "deletedCount"
@@ -64074,7 +64093,7 @@
             "type": "number"
           },
           "geolocation": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf495Geolocation"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf496Geolocation"
           },
           "ip": {
             "type": "string",
@@ -74365,7 +74384,43 @@
           }
         }
       },
-      "UserEventPayloadOneOf489App": {
+      "UserEventPayloadOneOf489Next": {
+        "required": [
+          "enabled",
+          "issuerUrls"
+        ],
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf489NextEnabled"
+          },
+          "issuerUrls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "UserEventPayloadOneOf489Previous": {
+        "required": [
+          "enabled",
+          "issuerUrls"
+        ],
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf489PreviousEnabled"
+          },
+          "issuerUrls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "UserEventPayloadOneOf490App": {
         "required": [
           "clientAuthenticationUsed",
           "clientId",
@@ -74374,7 +74429,7 @@
         "type": "object",
         "properties": {
           "clientAuthenticationUsed": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489AppClientAuthenticationUsed"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490AppClientAuthenticationUsed"
           },
           "clientId": {
             "type": "string"
@@ -74386,20 +74441,20 @@
         },
         "description": "optional since entries prior to 2025-10-13 do not contain app information"
       },
-      "UserEventPayloadOneOf489Geolocation": {
+      "UserEventPayloadOneOf490Geolocation": {
         "required": [
           "country"
         ],
         "type": "object",
         "properties": {
           "city": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489GeolocationCity"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490GeolocationCity"
           },
           "country": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489GeolocationCountry"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490GeolocationCountry"
           },
           "most_specific_subdivision": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489GeolocationMostSpecificSubdivision"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490GeolocationMostSpecificSubdivision"
           },
           "regionName": {
             "type": "string"
@@ -74408,7 +74463,7 @@
         "description": "optional since entries prior to 2026-04-23 do not contain this field",
         "nullable": true
       },
-      "UserEventPayloadOneOf491Policy": {
+      "UserEventPayloadOneOf492Policy": {
         "required": [
           "claims",
           "clientId",
@@ -74426,7 +74481,7 @@
           "claims": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf491PolicyClaimsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf492PolicyClaimsItem"
             },
             "description": "Claim matchers an OIDC token must satisfy to use the policy."
           },
@@ -74456,7 +74511,7 @@
             "type": "string"
           },
           "resources": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf491PolicyResources"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf492PolicyResources"
           },
           "teamId": {
             "type": "string"
@@ -74468,7 +74523,7 @@
         },
         "description": "A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints\u0027 public response shape."
       },
-      "UserEventPayloadOneOf492After": {
+      "UserEventPayloadOneOf493After": {
         "required": [
           "claims",
           "clientId",
@@ -74486,7 +74541,7 @@
           "claims": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf492AfterClaimsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf493AfterClaimsItem"
             },
             "description": "Claim matchers an OIDC token must satisfy to use the policy."
           },
@@ -74516,7 +74571,7 @@
             "type": "string"
           },
           "resources": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf492AfterResources"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf493AfterResources"
           },
           "teamId": {
             "type": "string"
@@ -74528,7 +74583,7 @@
         },
         "description": "A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints\u0027 public response shape."
       },
-      "UserEventPayloadOneOf492Before": {
+      "UserEventPayloadOneOf493Before": {
         "required": [
           "claims",
           "clientId",
@@ -74546,7 +74601,7 @@
           "claims": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf492BeforeClaimsItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf493BeforeClaimsItem"
             },
             "description": "Claim matchers an OIDC token must satisfy to use the policy."
           },
@@ -74576,7 +74631,7 @@
             "type": "string"
           },
           "resources": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf492BeforeResources"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf493BeforeResources"
           },
           "teamId": {
             "type": "string"
@@ -74587,27 +74642,6 @@
           }
         },
         "description": "A full point-in-time snapshot of an OIDC exchange policy, captured on every lifecycle event so the audit trail records exactly what the policy looked like. Mirrors the management endpoints\u0027 public response shape."
-      },
-      "UserEventPayloadOneOf493Geolocation": {
-        "required": [
-          "country"
-        ],
-        "type": "object",
-        "properties": {
-          "city": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf493GeolocationCity"
-          },
-          "country": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf493GeolocationCountry"
-          },
-          "most_specific_subdivision": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf493GeolocationMostSpecificSubdivision"
-          },
-          "regionName": {
-            "type": "string"
-          }
-        },
-        "nullable": true
       },
       "UserEventPayloadOneOf494Geolocation": {
         "required": [
@@ -74644,6 +74678,27 @@
           },
           "most_specific_subdivision": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf495GeolocationMostSpecificSubdivision"
+          },
+          "regionName": {
+            "type": "string"
+          }
+        },
+        "nullable": true
+      },
+      "UserEventPayloadOneOf496Geolocation": {
+        "required": [
+          "country"
+        ],
+        "type": "object",
+        "properties": {
+          "city": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf496GeolocationCity"
+          },
+          "country": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf496GeolocationCountry"
+          },
+          "most_specific_subdivision": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf496GeolocationMostSpecificSubdivision"
           },
           "regionName": {
             "type": "string"
@@ -77018,54 +77073,54 @@
           }
         }
       },
-      "UserEventPayloadOneOf489AppClientAuthenticationUsed": {
+      "UserEventPayloadOneOf490AppClientAuthenticationUsed": {
         "required": [
           "method"
         ],
         "type": "object",
         "properties": {
           "method": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489AppClientAuthenticationUsedMethod"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490AppClientAuthenticationUsedMethod"
           },
           "secretId": {
             "type": "string"
           }
         }
       },
-      "UserEventPayloadOneOf489GeolocationCity": {
+      "UserEventPayloadOneOf490GeolocationCity": {
         "required": [
           "names"
         ],
         "type": "object",
         "properties": {
           "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489GeolocationCityNames"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490GeolocationCityNames"
           }
         }
       },
-      "UserEventPayloadOneOf489GeolocationCountry": {
+      "UserEventPayloadOneOf490GeolocationCountry": {
         "required": [
           "names"
         ],
         "type": "object",
         "properties": {
           "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489GeolocationCountryNames"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490GeolocationCountryNames"
           }
         }
       },
-      "UserEventPayloadOneOf489GeolocationMostSpecificSubdivision": {
+      "UserEventPayloadOneOf490GeolocationMostSpecificSubdivision": {
         "required": [
           "names"
         ],
         "type": "object",
         "properties": {
           "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf489GeolocationMostSpecificSubdivisionNames"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf490GeolocationMostSpecificSubdivisionNames"
           }
         }
       },
-      "UserEventPayloadOneOf491PolicyClaimsItem": {
+      "UserEventPayloadOneOf492PolicyClaimsItem": {
         "required": [
           "name",
           "values"
@@ -77078,13 +77133,13 @@
           "values": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf491PolicyClaimsItemValuesItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf492PolicyClaimsItemValuesItem"
             }
           }
         },
         "description": "Claim matchers an OIDC token must satisfy to use the policy."
       },
-      "UserEventPayloadOneOf491PolicyResources": {
+      "UserEventPayloadOneOf492PolicyResources": {
         "required": [
           "projectIds"
         ],
@@ -77100,7 +77155,7 @@
         "description": "Resource boundary, or \u0060null\u0060 when the policy has none.",
         "nullable": true
       },
-      "UserEventPayloadOneOf492AfterClaimsItem": {
+      "UserEventPayloadOneOf493AfterClaimsItem": {
         "required": [
           "name",
           "values"
@@ -77113,13 +77168,13 @@
           "values": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf492AfterClaimsItemValuesItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf493AfterClaimsItemValuesItem"
             }
           }
         },
         "description": "Claim matchers an OIDC token must satisfy to use the policy."
       },
-      "UserEventPayloadOneOf492AfterResources": {
+      "UserEventPayloadOneOf493AfterResources": {
         "required": [
           "projectIds"
         ],
@@ -77135,7 +77190,7 @@
         "description": "Resource boundary, or \u0060null\u0060 when the policy has none.",
         "nullable": true
       },
-      "UserEventPayloadOneOf492BeforeClaimsItem": {
+      "UserEventPayloadOneOf493BeforeClaimsItem": {
         "required": [
           "name",
           "values"
@@ -77148,13 +77203,13 @@
           "values": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UserEventPayloadOneOf492BeforeClaimsItemValuesItem"
+              "$ref": "#/components/schemas/UserEventPayloadOneOf493BeforeClaimsItemValuesItem"
             }
           }
         },
         "description": "Claim matchers an OIDC token must satisfy to use the policy."
       },
-      "UserEventPayloadOneOf492BeforeResources": {
+      "UserEventPayloadOneOf493BeforeResources": {
         "required": [
           "projectIds"
         ],
@@ -77169,39 +77224,6 @@
         },
         "description": "Resource boundary, or \u0060null\u0060 when the policy has none.",
         "nullable": true
-      },
-      "UserEventPayloadOneOf493GeolocationCity": {
-        "required": [
-          "names"
-        ],
-        "type": "object",
-        "properties": {
-          "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf493GeolocationCityNames"
-          }
-        }
-      },
-      "UserEventPayloadOneOf493GeolocationCountry": {
-        "required": [
-          "names"
-        ],
-        "type": "object",
-        "properties": {
-          "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf493GeolocationCountryNames"
-          }
-        }
-      },
-      "UserEventPayloadOneOf493GeolocationMostSpecificSubdivision": {
-        "required": [
-          "names"
-        ],
-        "type": "object",
-        "properties": {
-          "names": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf493GeolocationMostSpecificSubdivisionNames"
-          }
-        }
       },
       "UserEventPayloadOneOf494GeolocationCity": {
         "required": [
@@ -77266,6 +77288,39 @@
         "properties": {
           "names": {
             "$ref": "#/components/schemas/UserEventPayloadOneOf495GeolocationMostSpecificSubdivisionNames"
+          }
+        }
+      },
+      "UserEventPayloadOneOf496GeolocationCity": {
+        "required": [
+          "names"
+        ],
+        "type": "object",
+        "properties": {
+          "names": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf496GeolocationCityNames"
+          }
+        }
+      },
+      "UserEventPayloadOneOf496GeolocationCountry": {
+        "required": [
+          "names"
+        ],
+        "type": "object",
+        "properties": {
+          "names": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf496GeolocationCountryNames"
+          }
+        }
+      },
+      "UserEventPayloadOneOf496GeolocationMostSpecificSubdivision": {
+        "required": [
+          "names"
+        ],
+        "type": "object",
+        "properties": {
+          "names": {
+            "$ref": "#/components/schemas/UserEventPayloadOneOf496GeolocationMostSpecificSubdivisionNames"
           }
         }
       },
@@ -77854,7 +77909,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf489GeolocationCityNames": {
+      "UserEventPayloadOneOf490GeolocationCityNames": {
         "required": [
           "en"
         ],
@@ -77865,7 +77920,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf489GeolocationCountryNames": {
+      "UserEventPayloadOneOf490GeolocationCountryNames": {
         "required": [
           "en"
         ],
@@ -77876,7 +77931,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf489GeolocationMostSpecificSubdivisionNames": {
+      "UserEventPayloadOneOf490GeolocationMostSpecificSubdivisionNames": {
         "required": [
           "en"
         ],
@@ -77887,7 +77942,7 @@
           }
         }
       },
-      "UserEventPayloadOneOf491PolicyClaimsItemValuesItem": {
+      "UserEventPayloadOneOf492PolicyClaimsItemValuesItem": {
         "required": [
           "value",
           "wildcards"
@@ -77898,11 +77953,11 @@
             "type": "string"
           },
           "wildcards": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf491PolicyClaimsItemValuesItemWildcards"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf492PolicyClaimsItemValuesItemWildcards"
           }
         }
       },
-      "UserEventPayloadOneOf492AfterClaimsItemValuesItem": {
+      "UserEventPayloadOneOf493AfterClaimsItemValuesItem": {
         "required": [
           "value",
           "wildcards"
@@ -77913,11 +77968,11 @@
             "type": "string"
           },
           "wildcards": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf492AfterClaimsItemValuesItemWildcards"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf493AfterClaimsItemValuesItemWildcards"
           }
         }
       },
-      "UserEventPayloadOneOf492BeforeClaimsItemValuesItem": {
+      "UserEventPayloadOneOf493BeforeClaimsItemValuesItem": {
         "required": [
           "value",
           "wildcards"
@@ -77928,40 +77983,7 @@
             "type": "string"
           },
           "wildcards": {
-            "$ref": "#/components/schemas/UserEventPayloadOneOf492BeforeClaimsItemValuesItemWildcards"
-          }
-        }
-      },
-      "UserEventPayloadOneOf493GeolocationCityNames": {
-        "required": [
-          "en"
-        ],
-        "type": "object",
-        "properties": {
-          "en": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf493GeolocationCountryNames": {
-        "required": [
-          "en"
-        ],
-        "type": "object",
-        "properties": {
-          "en": {
-            "type": "string"
-          }
-        }
-      },
-      "UserEventPayloadOneOf493GeolocationMostSpecificSubdivisionNames": {
-        "required": [
-          "en"
-        ],
-        "type": "object",
-        "properties": {
-          "en": {
-            "type": "string"
+            "$ref": "#/components/schemas/UserEventPayloadOneOf493BeforeClaimsItemValuesItemWildcards"
           }
         }
       },
@@ -78021,6 +78043,39 @@
         }
       },
       "UserEventPayloadOneOf495GeolocationMostSpecificSubdivisionNames": {
+        "required": [
+          "en"
+        ],
+        "type": "object",
+        "properties": {
+          "en": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf496GeolocationCityNames": {
+        "required": [
+          "en"
+        ],
+        "type": "object",
+        "properties": {
+          "en": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf496GeolocationCountryNames": {
+        "required": [
+          "en"
+        ],
+        "type": "object",
+        "properties": {
+          "en": {
+            "type": "string"
+          }
+        }
+      },
+      "UserEventPayloadOneOf496GeolocationMostSpecificSubdivisionNames": {
         "required": [
           "en"
         ],
@@ -103867,8 +103922,7 @@
             "type": "object",
             "additionalProperties": {
               "type": "number"
-            },
-            "description": "Configured replicas with the overrides applied."
+            }
           }
         ],
         "properties": {
@@ -134960,6 +135014,13 @@
             },
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
+          "githubUsage": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
           "gitRepository": {
             "type": "array",
             "items": {
@@ -138354,6 +138415,13 @@
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
           "gitCredentialGrant": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
+          "githubUsage": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -142038,6 +142106,13 @@
             },
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
+          "githubUsage": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
           "gitRepository": {
             "type": "array",
             "items": {
@@ -145417,6 +145492,13 @@
             },
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
+          "githubUsage": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
           "gitRepository": {
             "type": "array",
             "items": {
@@ -148790,6 +148872,13 @@
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
           "gitCredentialGrant": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
+          "githubUsage": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -153380,6 +153469,13 @@
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
           "gitCredentialGrant": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
+          "githubUsage": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -166824,9 +166920,6 @@
           "kind": {
             "$ref": "#/components/schemas/CreateDeploymentCheckRun200ResponseSourceSelectionKind"
           },
-          "job": {
-            "type": "string"
-          },
           "failIfNoMatch": {
             "$ref": "#/components/schemas/CreateDeploymentCheckRun200ResponseSourceSelectionFailIfNoMatch"
           },
@@ -166835,6 +166928,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "job": {
+            "$ref": "#/components/schemas/TurborepoJob"
           },
           "task": {
             "type": "string"
@@ -166850,9 +166946,6 @@
           "kind": {
             "$ref": "#/components/schemas/GetDeploymentCheckRun200ResponseSourceSelectionKind"
           },
-          "job": {
-            "type": "string"
-          },
           "failIfNoMatch": {
             "$ref": "#/components/schemas/GetDeploymentCheckRun200ResponseSourceSelectionFailIfNoMatch"
           },
@@ -166861,6 +166954,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "job": {
+            "$ref": "#/components/schemas/TurborepoJob"
           },
           "task": {
             "type": "string"
@@ -166876,9 +166972,6 @@
           "kind": {
             "$ref": "#/components/schemas/UpdateDeploymentCheckRun200ResponseSourceSelectionKind"
           },
-          "job": {
-            "type": "string"
-          },
           "failIfNoMatch": {
             "$ref": "#/components/schemas/UpdateDeploymentCheckRun200ResponseSourceSelectionFailIfNoMatch"
           },
@@ -166887,6 +166980,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "job": {
+            "$ref": "#/components/schemas/TurborepoJob"
           },
           "task": {
             "type": "string"
@@ -167355,6 +167451,10 @@
           },
           "includeFiles": {
             "type": "string"
+          },
+          "installCommand": {
+            "type": "string",
+            "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by \u0060@vercel/node\u0060."
           },
           "maxConcurrency": {
             "type": "number"
@@ -168180,6 +168280,10 @@
           "includeFiles": {
             "type": "string"
           },
+          "installCommand": {
+            "type": "string",
+            "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by \u0060@vercel/node\u0060."
+          },
           "maxConcurrency": {
             "type": "number"
           },
@@ -169003,6 +169107,10 @@
           },
           "includeFiles": {
             "type": "string"
+          },
+          "installCommand": {
+            "type": "string",
+            "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by \u0060@vercel/node\u0060."
           },
           "maxConcurrency": {
             "type": "number"
@@ -172994,6 +173102,13 @@
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
           "gitCredentialGrant": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
+          "githubUsage": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/AclAction"
@@ -191920,6 +192035,13 @@
             },
             "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
           },
+          "githubUsage": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AclAction"
+            },
+            "description": "Requested and authorized operations when \u0060checkPermissions\u0060 is used. Legacy \u0060includePermissions\u0060 responses contain a broader, non-authoritative permission summary."
+          },
           "gitRepository": {
             "type": "array",
             "items": {
@@ -194825,9 +194947,6 @@
           "kind": {
             "$ref": "#/components/schemas/ListCheckRuns200ResponseRunsItemSourceSelectionKind"
           },
-          "job": {
-            "type": "string"
-          },
           "failIfNoMatch": {
             "$ref": "#/components/schemas/ListCheckRuns200ResponseRunsItemSourceSelectionFailIfNoMatch"
           },
@@ -194836,6 +194955,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "job": {
+            "$ref": "#/components/schemas/TurborepoJob"
           },
           "task": {
             "type": "string"
@@ -194851,9 +194973,6 @@
           "kind": {
             "$ref": "#/components/schemas/ListDeploymentCheckRuns200ResponseRunsItemSourceSelectionKind"
           },
-          "job": {
-            "type": "string"
-          },
           "failIfNoMatch": {
             "$ref": "#/components/schemas/ListDeploymentCheckRuns200ResponseRunsItemSourceSelectionFailIfNoMatch"
           },
@@ -194862,6 +194981,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "job": {
+            "$ref": "#/components/schemas/TurborepoJob"
           },
           "task": {
             "type": "string"
@@ -195310,9 +195432,6 @@
           },
           "resolved": {
             "type": "string"
-          },
-          "vhs": {
-            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemConfigImageVhs"
           }
         }
       },
@@ -195369,9 +195488,6 @@
           },
           "image": {
             "type": "string"
-          },
-          "iroh": {
-            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemReplicasItemsItemIroh"
           },
           "lastCheckedAt": {
             "type": "string"
@@ -195691,6 +195807,10 @@
           },
           "includeFiles": {
             "type": "string"
+          },
+          "installCommand": {
+            "type": "string",
+            "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by \u0060@vercel/node\u0060."
           },
           "maxConcurrency": {
             "type": "number"
@@ -196217,6 +196337,10 @@
           "includeFiles": {
             "type": "string"
           },
+          "installCommand": {
+            "type": "string",
+            "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by \u0060@vercel/node\u0060."
+          },
           "maxConcurrency": {
             "type": "number"
           },
@@ -196741,6 +196865,10 @@
           },
           "includeFiles": {
             "type": "string"
+          },
+          "installCommand": {
+            "type": "string",
+            "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by \u0060@vercel/node\u0060."
           },
           "maxConcurrency": {
             "type": "number"
@@ -209953,29 +210081,6 @@
           }
         }
       },
-      "GetProjectBoxes200ResponseDaemonsItemConfigImageVhs": {
-        "required": [
-          "repositoryName"
-        ],
-        "type": "object",
-        "properties": {
-          "config": {
-            "$ref": "#/components/schemas/GetProjectBoxes200ResponseDaemonsItemConfigImageVhsConfig"
-          },
-          "digest": {
-            "type": "string"
-          },
-          "path": {
-            "type": "string"
-          },
-          "repositoryName": {
-            "type": "string"
-          },
-          "sizeInBytes": {
-            "type": "number"
-          }
-        }
-      },
       "GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbeHttpGet": {
         "required": [
           "path",
@@ -210014,18 +210119,6 @@
             "type": "string"
           }
         }
-      },
-      "GetProjectBoxes200ResponseDaemonsItemReplicasItemsItemIroh": {
-        "required": [
-          "publicKeyCiphertext"
-        ],
-        "type": "object",
-        "properties": {
-          "publicKeyCiphertext": {
-            "type": "string"
-          }
-        },
-        "description": "Encrypted Iroh endpoint data for internal consumers."
       },
       "GetDeployment200ResponseServicesItemBuilderConfigDaemon": {
         "required": [
@@ -210129,6 +210222,9 @@
           },
           "sourceFilesOutsideRootDirectory": {
             "$ref": "#/components/schemas/GetDeployment200ResponseServicesItemBuilderConfigProjectSettingsSourceFilesOutsideRootDirectory"
+          },
+          "vercelFlags": {
+            "$ref": "#/components/schemas/GetDeployment200ResponseServicesItemBuilderConfigProjectSettingsVercelFlags"
           }
         }
       },
@@ -210318,6 +210414,9 @@
           },
           "sourceFilesOutsideRootDirectory": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseServicesItemBuilderConfigProjectSettingsSourceFilesOutsideRootDirectory"
+          },
+          "vercelFlags": {
+            "$ref": "#/components/schemas/CreateDeployment200ResponseServicesItemBuilderConfigProjectSettingsVercelFlags"
           }
         }
       },
@@ -210507,6 +210606,9 @@
           },
           "sourceFilesOutsideRootDirectory": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseServicesItemBuilderConfigProjectSettingsSourceFilesOutsideRootDirectory"
+          },
+          "vercelFlags": {
+            "$ref": "#/components/schemas/CancelDeployment200ResponseServicesItemBuilderConfigProjectSettingsVercelFlags"
           }
         }
       },
@@ -215691,26 +215793,6 @@
           }
         }
       },
-      "GetProjectBoxes200ResponseDaemonsItemConfigImageVhsConfig": {
-        "type": "object",
-        "properties": {
-          "command": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "entrypoint": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "workingDir": {
-            "type": "string"
-          }
-        }
-      },
       "GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbeHttpGetHttpHeadersItem": {
         "required": [
           "name",
@@ -215778,6 +215860,10 @@
           "includeFiles": {
             "type": "string"
           },
+          "installCommand": {
+            "type": "string",
+            "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by \u0060@vercel/node\u0060."
+          },
           "maxConcurrency": {
             "type": "number"
           },
@@ -215798,6 +215884,14 @@
           },
           "supportsCancellation": {
             "$ref": "#/components/schemas/GetDeployment200ResponseServicesItemBuilderConfigFunctionsAdditionalPropertiesSupportsCancellation"
+          }
+        }
+      },
+      "GetDeployment200ResponseServicesItemBuilderConfigProjectSettingsVercelFlags": {
+        "type": "object",
+        "properties": {
+          "enabledAt": {
+            "type": "number"
           }
         }
       },
@@ -215878,6 +215972,10 @@
           "includeFiles": {
             "type": "string"
           },
+          "installCommand": {
+            "type": "string",
+            "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by \u0060@vercel/node\u0060."
+          },
           "maxConcurrency": {
             "type": "number"
           },
@@ -215898,6 +215996,14 @@
           },
           "supportsCancellation": {
             "$ref": "#/components/schemas/CreateDeployment200ResponseServicesItemBuilderConfigFunctionsAdditionalPropertiesSupportsCancellation"
+          }
+        }
+      },
+      "CreateDeployment200ResponseServicesItemBuilderConfigProjectSettingsVercelFlags": {
+        "type": "object",
+        "properties": {
+          "enabledAt": {
+            "type": "number"
           }
         }
       },
@@ -215978,6 +216084,10 @@
           "includeFiles": {
             "type": "string"
           },
+          "installCommand": {
+            "type": "string",
+            "description": "Overrides how dependencies are installed for this function. An empty string skips the install. Only honored by \u0060@vercel/node\u0060."
+          },
           "maxConcurrency": {
             "type": "number"
           },
@@ -215998,6 +216108,14 @@
           },
           "supportsCancellation": {
             "$ref": "#/components/schemas/CancelDeployment200ResponseServicesItemBuilderConfigFunctionsAdditionalPropertiesSupportsCancellation"
+          }
+        }
+      },
+      "CancelDeployment200ResponseServicesItemBuilderConfigProjectSettingsVercelFlags": {
+        "type": "object",
+        "properties": {
+          "enabledAt": {
+            "type": "number"
           }
         }
       },
@@ -220787,7 +220905,8 @@
           "webhook-created",
           "webhook-deleted",
           "webhook-updated",
-          "workflow-deployment-key-accessed"
+          "workflow-deployment-key-accessed",
+          "xaa-updated"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -223708,6 +223827,10 @@
             {
               "value": "workflow-deployment-key-accessed",
               "name": "WorkflowDeploymentKeyAccessed"
+            },
+            {
+              "value": "xaa-updated",
+              "name": "XaaUpdated"
             }
           ]
         }
@@ -224579,7 +224702,8 @@
           "webhook-created",
           "webhook-deleted",
           "webhook-updated",
-          "workflow-deployment-key-accessed"
+          "workflow-deployment-key-accessed",
+          "xaa-updated"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -227500,6 +227624,10 @@
             {
               "value": "workflow-deployment-key-accessed",
               "name": "WorkflowDeploymentKeyAccessed"
+            },
+            {
+              "value": "xaa-updated",
+              "name": "XaaUpdated"
             }
           ]
         }
@@ -228233,7 +228361,8 @@
           "webhook-created",
           "webhook-deleted",
           "webhook-updated",
-          "workflow-deployment-key-accessed"
+          "workflow-deployment-key-accessed",
+          "xaa-updated"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -231153,6 +231282,10 @@
             {
               "value": "workflow-deployment-key-accessed",
               "name": "WorkflowDeploymentKeyAccessed"
+            },
+            {
+              "value": "xaa-updated",
+              "name": "XaaUpdated"
             }
           ]
         }
@@ -234217,7 +234350,8 @@
           "read:vcr",
           "read:web-analytics",
           "read:webhooks",
-          "use:ai-gateway"
+          "use:ai-gateway",
+          "use:github"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -234528,6 +234662,10 @@
             {
               "value": "use:ai-gateway",
               "name": "UseColonAiGateway"
+            },
+            {
+              "value": "use:github",
+              "name": "UseColonGithub"
             }
           ]
         }
@@ -234641,7 +234779,8 @@
           "read:vcr",
           "read:web-analytics",
           "read:webhooks",
-          "use:ai-gateway"
+          "use:ai-gateway",
+          "use:github"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -234952,6 +235091,10 @@
             {
               "value": "use:ai-gateway",
               "name": "UseColonAiGateway"
+            },
+            {
+              "value": "use:github",
+              "name": "UseColonGithub"
             }
           ]
         }
@@ -239206,7 +239349,29 @@
           ]
         }
       },
-      "UserEventPayloadOneOf489AuthMethod": {
+      "UserEventPayloadOneOf489Scope": {
+        "enum": [
+          "organization",
+          "team"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UserEventPayloadOneOf489Scope",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "organization",
+              "name": "Organization"
+            },
+            {
+              "value": "team",
+              "name": "Team"
+            }
+          ]
+        }
+      },
+      "UserEventPayloadOneOf490AuthMethod": {
         "enum": [
           "app",
           "apple",
@@ -239229,7 +239394,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf489AuthMethod",
+          "name": "UserEventPayloadOneOf490AuthMethod",
           "modelAsString": false,
           "values": [
             {
@@ -239303,7 +239468,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf489GrantType": {
+      "UserEventPayloadOneOf490GrantType": {
         "enum": [
           "authorization_code",
           "urn:ietf:params:oauth:grant-type:device_code",
@@ -239312,7 +239477,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf489GrantType",
+          "name": "UserEventPayloadOneOf490GrantType",
           "modelAsString": false,
           "values": [
             {
@@ -239330,7 +239495,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf489IncludesRefreshToken": {
+      "UserEventPayloadOneOf490IncludesRefreshToken": {
         "enum": [
           false,
           true
@@ -239375,7 +239540,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf493HasAuthorizationDetails": {
+      "UserEventPayloadOneOf494HasAuthorizationDetails": {
         "enum": [
           false,
           true
@@ -239384,7 +239549,7 @@
         "additionalProperties": false,
         "description": "Whether the token was issued with RFC 9396 authorization details."
       },
-      "UserEventPayloadOneOf493Origin": {
+      "UserEventPayloadOneOf494Origin": {
         "enum": [
           "app",
           "apple",
@@ -239408,7 +239573,7 @@
         "additionalProperties": false,
         "description": "How the token was issued. Always \u0060\u0027manual\u0027\u0060 for explicit PAT creation.",
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf493Origin",
+          "name": "UserEventPayloadOneOf494Origin",
           "modelAsString": false,
           "values": [
             {
@@ -239482,7 +239647,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf493ProjectScope": {
+      "UserEventPayloadOneOf494ProjectScope": {
         "enum": [
           "account",
           "project-only"
@@ -239491,7 +239656,7 @@
         "additionalProperties": false,
         "description": "Present when \u0060scope\u0060 is \u0060\u0027project\u0027\u0060.",
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf493ProjectScope",
+          "name": "UserEventPayloadOneOf494ProjectScope",
           "modelAsString": false,
           "values": [
             {
@@ -239505,7 +239670,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf493Scope": {
+      "UserEventPayloadOneOf494Scope": {
         "enum": [
           "project",
           "team",
@@ -239515,7 +239680,7 @@
         "additionalProperties": false,
         "description": "Scope of the token: - \u0060\u0027user\u0027\u0060: full-account token (not tied to any team). - \u0060\u0027team\u0027\u0060: scoped to a single team. - \u0060\u0027project\u0027\u0060: scoped to a single project within a team.",
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf493Scope",
+          "name": "UserEventPayloadOneOf494Scope",
           "modelAsString": false,
           "values": [
             {
@@ -239568,7 +239733,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf494Expired": {
+      "UserEventPayloadOneOf495Expired": {
         "enum": [
           false,
           true
@@ -239576,7 +239741,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf494Leaked": {
+      "UserEventPayloadOneOf495Leaked": {
         "enum": [
           false,
           true
@@ -239584,7 +239749,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf494LogoutSource": {
+      "UserEventPayloadOneOf495LogoutSource": {
         "enum": [
           "v0",
           "vercel"
@@ -239592,7 +239757,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf494LogoutSource",
+          "name": "UserEventPayloadOneOf495LogoutSource",
           "modelAsString": false,
           "values": [
             {
@@ -239606,7 +239771,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf494Origin": {
+      "UserEventPayloadOneOf495Origin": {
         "enum": [
           "app",
           "apple",
@@ -239629,7 +239794,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf494Origin",
+          "name": "UserEventPayloadOneOf495Origin",
           "modelAsString": false,
           "values": [
             {
@@ -239720,7 +239885,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf494Revoked": {
+      "UserEventPayloadOneOf495Revoked": {
         "enum": [
           false,
           true
@@ -239728,7 +239893,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf494Scope": {
+      "UserEventPayloadOneOf495Scope": {
         "enum": [
           "project",
           "team",
@@ -239737,7 +239902,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf494Scope",
+          "name": "UserEventPayloadOneOf495Scope",
           "modelAsString": false,
           "values": [
             {
@@ -247444,6 +247609,22 @@
           ]
         }
       },
+      "UserEventPayloadOneOf489NextEnabled": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
+      "UserEventPayloadOneOf489PreviousEnabled": {
+        "enum": [
+          false,
+          true
+        ],
+        "type": "boolean",
+        "additionalProperties": false
+      },
       "AuthTokenScopesItemOneOf1SudoOrigin": {
         "enum": [
           "email-otp",
@@ -248933,7 +249114,7 @@
           ]
         }
       },
-      "UserEventPayloadOneOf489AppClientAuthenticationUsedMethod": {
+      "UserEventPayloadOneOf490AppClientAuthenticationUsedMethod": {
         "enum": [
           "client_secret_basic",
           "client_secret_jwt",
@@ -248945,7 +249126,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "UserEventPayloadOneOf489AppClientAuthenticationUsedMethod",
+          "name": "UserEventPayloadOneOf490AppClientAuthenticationUsedMethod",
           "modelAsString": false,
           "values": [
             {
@@ -249496,7 +249677,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf491PolicyClaimsItemValuesItemWildcards": {
+      "UserEventPayloadOneOf492PolicyClaimsItemValuesItemWildcards": {
         "enum": [
           false,
           true
@@ -249504,7 +249685,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf492AfterClaimsItemValuesItemWildcards": {
+      "UserEventPayloadOneOf493AfterClaimsItemValuesItemWildcards": {
         "enum": [
           false,
           true
@@ -249512,7 +249693,7 @@
         "type": "boolean",
         "additionalProperties": false
       },
-      "UserEventPayloadOneOf492BeforeClaimsItemValuesItemWildcards": {
+      "UserEventPayloadOneOf493BeforeClaimsItemValuesItemWildcards": {
         "enum": [
           false,
           true
@@ -285143,10 +285324,10 @@
       },
       "CreateProjectRequestResourceConfigBuildMachineType": {
         "enum": [
+          "standard",
           "basic",
           "enhanced",
           "turbo",
-          "standard",
           "elastic"
         ],
         "type": "string",
@@ -285155,6 +285336,10 @@
           "name": "CreateProjectRequestResourceConfigBuildMachineType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "standard",
+              "name": "Standard"
+            },
             {
               "value": "basic",
               "name": "Basic"
@@ -285166,10 +285351,6 @@
             {
               "value": "turbo",
               "name": "Turbo"
-            },
-            {
-              "value": "standard",
-              "name": "Standard"
             },
             {
               "value": "elastic",
@@ -289559,10 +289740,10 @@
       "UpdateProjectRequestResourceConfigBuildMachineType": {
         "enum": [
           null,
+          "standard",
           "basic",
           "enhanced",
           "turbo",
-          "standard",
           "elastic"
         ],
         "type": "string",
@@ -289571,6 +289752,10 @@
           "name": "UpdateProjectRequestResourceConfigBuildMachineType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "standard",
+              "name": "Standard"
+            },
             {
               "value": "basic",
               "name": "Basic"
@@ -289582,10 +289767,6 @@
             {
               "value": "turbo",
               "name": "Turbo"
-            },
-            {
-              "value": "standard",
-              "name": "Standard"
             },
             {
               "value": "elastic",
@@ -307598,7 +307779,6 @@
         "enum": [
           "invocation",
           "deployment",
-          "job",
           "turborepo"
         ],
         "type": "string",
@@ -307616,10 +307796,6 @@
               "name": "Deployment"
             },
             {
-              "value": "job",
-              "name": "Job"
-            },
-            {
               "value": "turborepo",
               "name": "Turborepo"
             }
@@ -307634,11 +307810,17 @@
         "type": "boolean",
         "additionalProperties": false
       },
+      "TurborepoJob": {
+        "enum": [
+          "Turborepo"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
       "GetDeploymentCheckRun200ResponseSourceSelectionKind": {
         "enum": [
           "invocation",
           "deployment",
-          "job",
           "turborepo"
         ],
         "type": "string",
@@ -307654,10 +307836,6 @@
             {
               "value": "deployment",
               "name": "Deployment"
-            },
-            {
-              "value": "job",
-              "name": "Job"
             },
             {
               "value": "turborepo",
@@ -307678,7 +307856,6 @@
         "enum": [
           "invocation",
           "deployment",
-          "job",
           "turborepo"
         ],
         "type": "string",
@@ -307694,10 +307871,6 @@
             {
               "value": "deployment",
               "name": "Deployment"
-            },
-            {
-              "value": "job",
-              "name": "Job"
             },
             {
               "value": "turborepo",
@@ -332556,7 +332729,6 @@
         "enum": [
           "invocation",
           "deployment",
-          "job",
           "turborepo"
         ],
         "type": "string",
@@ -332572,10 +332744,6 @@
             {
               "value": "deployment",
               "name": "Deployment"
-            },
-            {
-              "value": "job",
-              "name": "Job"
             },
             {
               "value": "turborepo",
@@ -332596,7 +332764,6 @@
         "enum": [
           "invocation",
           "deployment",
-          "job",
           "turborepo"
         ],
         "type": "string",
@@ -332612,10 +332779,6 @@
             {
               "value": "deployment",
               "name": "Deployment"
-            },
-            {
-              "value": "job",
-              "name": "Job"
             },
             {
               "value": "turborepo",

@@ -46,14 +46,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
-        /// <summary>The ownerId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OwnerId { get; set; }
-#nullable restore
-#else
-        public string OwnerId { get; set; }
-#endif
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,7 +109,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "teamCount", n => { TeamCount = n.GetDoubleValue(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
@@ -136,7 +127,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("createdAt", CreatedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteStringValue("ownerId", OwnerId);
             writer.WriteStringValue("slug", Slug);
             writer.WriteDoubleValue("teamCount", TeamCount);
             writer.WriteStringValue("teamId", TeamId);

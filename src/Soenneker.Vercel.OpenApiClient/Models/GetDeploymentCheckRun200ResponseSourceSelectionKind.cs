@@ -16,10 +16,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Deployment,
         #pragma warning restore CS1591
-        [EnumMember(Value = "job")]
-        #pragma warning disable CS1591
-        Job,
-        #pragma warning restore CS1591
         [EnumMember(Value = "turborepo")]
         #pragma warning disable CS1591
         Turborepo,

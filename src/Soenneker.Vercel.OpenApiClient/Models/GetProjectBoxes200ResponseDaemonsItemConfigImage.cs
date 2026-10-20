@@ -30,14 +30,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Resolved { get; set; }
 #endif
-        /// <summary>The vhs property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigImageVhs? Vhs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigImageVhs Vhs { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigImage"/> and sets the default values.
         /// </summary>
@@ -65,7 +57,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "requested", n => { Requested = n.GetStringValue(); } },
                 { "resolved", n => { Resolved = n.GetStringValue(); } },
-                { "vhs", n => { Vhs = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigImageVhs>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigImageVhs.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,7 +68,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("requested", Requested);
             writer.WriteStringValue("resolved", Resolved);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigImageVhs>("vhs", Vhs);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

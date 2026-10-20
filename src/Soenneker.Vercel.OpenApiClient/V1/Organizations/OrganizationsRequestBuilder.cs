@@ -19,7 +19,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations
     public partial class OrganizationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v1.organizations.item collection</summary>
-        /// <param name="position">The ID of the organization to retrieve.</param>
+        /// <param name="position">The ID or slug of the organization to retrieve.</param>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.WithOrganizationItemRequestBuilder"/></returns>
         public global::Soenneker.Vercel.OpenApiClient.V1.Organizations.Item.WithOrganizationItemRequestBuilder this[string position]
         {

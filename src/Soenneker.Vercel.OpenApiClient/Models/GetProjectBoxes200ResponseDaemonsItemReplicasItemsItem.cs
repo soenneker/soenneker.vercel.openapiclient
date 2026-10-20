@@ -32,14 +32,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Image { get; set; }
 #endif
-        /// <summary>Encrypted Iroh endpoint data for internal consumers.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemReplicasItemsItemIroh? Iroh { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemReplicasItemsItemIroh Iroh { get; set; }
-#endif
         /// <summary>The lastCheckedAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +94,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "alive", n => { Alive = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "image", n => { Image = n.GetStringValue(); } },
-                { "iroh", n => { Iroh = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemReplicasItemsItemIroh>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemReplicasItemsItemIroh.CreateFromDiscriminatorValue); } },
                 { "lastCheckedAt", n => { LastCheckedAt = n.GetStringValue(); } },
                 { "memoryMiB", n => { MemoryMiB = n.GetDoubleValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
@@ -120,7 +111,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteBoolValue("alive", Alive);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("image", Image);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemReplicasItemsItemIroh>("iroh", Iroh);
             writer.WriteStringValue("lastCheckedAt", LastCheckedAt);
             writer.WriteDoubleValue("memoryMiB", MemoryMiB);
             writer.WriteStringValue("region", Region);

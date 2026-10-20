@@ -8,6 +8,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public enum CreateProjectRequestResourceConfigBuildMachineType
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "standard")]
+        #pragma warning disable CS1591
+        Standard,
+        #pragma warning restore CS1591
         [EnumMember(Value = "basic")]
         #pragma warning disable CS1591
         Basic,
@@ -19,10 +23,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "turbo")]
         #pragma warning disable CS1591
         Turbo,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "standard")]
-        #pragma warning disable CS1591
-        Standard,
         #pragma warning restore CS1591
         [EnumMember(Value = "elastic")]
         #pragma warning disable CS1591

@@ -12,6 +12,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
         #pragma warning restore CS1591
+        [EnumMember(Value = "standard")]
+        #pragma warning disable CS1591
+        Standard,
+        #pragma warning restore CS1591
         [EnumMember(Value = "basic")]
         #pragma warning disable CS1591
         Basic,
@@ -23,10 +27,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "turbo")]
         #pragma warning disable CS1591
         Turbo,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "standard")]
-        #pragma warning disable CS1591
-        Standard,
         #pragma warning restore CS1591
         [EnumMember(Value = "elastic")]
         #pragma warning disable CS1591
