@@ -34,7 +34,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances
         {
         }
         /// <summary>
-        /// Force restarts the user container of one running daemon instance. The instance&apos;s controller stops the current user container and starts a new one from the same configuration, so in-flight requests are interrupted and any state that only lives inside the container is lost. The instance keeps its ID and region. The response returns as soon as the controller accepts the restart, before the new container is running. Only production instances can be restarted. Accepts a Vercel token that can update the project, or a production project OIDC token issued for the same project. No request body or Content-Type header is required.
+        /// Force restart a running production daemon instance. The new container starts asynchronously after the restart is accepted.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.RestartProjectDaemonInstance202Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.RestartProjectDaemonInstance202Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.RestartProjectDaemonInstance202Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Force restarts the user container of one running daemon instance. The instance&apos;s controller stops the current user container and starts a new one from the same configuration, so in-flight requests are interrupted and any state that only lives inside the container is lost. The instance keeps its ID and region. The response returns as soon as the controller accepts the restart, before the new container is running. Only production instances can be restarted. Accepts a Vercel token that can update the project, or a production project OIDC token issued for the same project. No request body or Content-Type header is required.
+        /// Force restart a running production daemon instance. The new container starts asynchronously after the restart is accepted.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances
             return new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances.Item.Restart.RestartRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Force restarts the user container of one running daemon instance. The instance&apos;s controller stops the current user container and starts a new one from the same configuration, so in-flight requests are interrupted and any state that only lives inside the container is lost. The instance keeps its ID and region. The response returns as soon as the controller accepts the restart, before the new container is running. Only production instances can be restarted. Accepts a Vercel token that can update the project, or a production project OIDC token issued for the same project. No request body or Content-Type header is required.
+        /// Force restart a running production daemon instance. The new container starts asynchronously after the restart is accepted.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RestartRequestBuilderPostQueryParameters 

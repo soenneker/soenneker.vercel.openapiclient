@@ -38,6 +38,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string DeploymentId { get; set; }
 #endif
+        /// <summary>The instances property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstances? Instances { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstances Instances { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,14 +53,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string Name { get; set; }
-#endif
-        /// <summary>The replicas property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemReplicas? Replicas { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemReplicas Replicas { get; set; }
 #endif
         /// <summary>The scope property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,8 +100,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfig>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfig.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
                 { "deploymentId", n => { DeploymentId = n.GetStringValue(); } },
+                { "instances", n => { Instances = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstances>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstances.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "replicas", n => { Replicas = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemReplicas>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemReplicas.CreateFromDiscriminatorValue); } },
                 { "scope", n => { Scope = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScope>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScope.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemStatus>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetStringValue(); } },
@@ -117,8 +117,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfig>("config", Config);
             writer.WriteStringValue("createdAt", CreatedAt);
             writer.WriteStringValue("deploymentId", DeploymentId);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstances>("instances", Instances);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemReplicas>("replicas", Replicas);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemScope>("scope", Scope);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemStatus>("status", Status);
             writer.WriteStringValue("updatedAt", UpdatedAt);

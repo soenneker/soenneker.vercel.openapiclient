@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags;
+using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Labels;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Segments;
 using Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Settings;
@@ -22,6 +23,11 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsRequestBuilder Flags
         {
             get => new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Flags.FlagsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The labels property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Labels.LabelsRequestBuilder Labels
+        {
+            get => new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.Labels.LabelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sdkKeys property</summary>
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.FeatureFlags.SdkKeys.SdkKeysRequestBuilder SdkKeys

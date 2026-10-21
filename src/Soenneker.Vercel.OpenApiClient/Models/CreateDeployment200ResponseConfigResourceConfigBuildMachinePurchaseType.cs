@@ -7,6 +7,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreateDeployment200ResponseConfigResourceConfigBuildMachinePurchaseType
     {
+        [EnumMember(Value = "14cpu-28gb")]
+        #pragma warning disable CS1591
+        Value14Cpu28Gb,
+        #pragma warning restore CS1591
         [EnumMember(Value = "basic")]
         #pragma warning disable CS1591
         Basic,

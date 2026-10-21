@@ -7,11 +7,10 @@ using System.IO;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>
-    /// Build machine configuration recorded for this deployment&apos;s build. See {@link DeploymentBuildMachine}. Distinct from the team/user `resourceConfig.buildMachine`, which only carries `default`.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class CreateDeployment200ResponseResourceConfigBuildMachine : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -19,11 +18,11 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public double? Cores { get; set; }
         /// <summary>The build machine tier included with the customer&apos;s plan. For most customers this is standard; enhanced entitlements include enhanced, while `none` means every build is billed at its purchase type.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseResourceConfigBuildMachineDefaultPurchaseType? DefaultPurchaseType { get; set; }
-        /// <summary>Whether the build ran on a fixed or elastic machine. Used to drive billing for the build.</summary>
+        /// <summary>The build ran on an elastic machine. Drives billing.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseResourceConfigBuildMachineMachineSelectionType? MachineSelectionType { get; set; }
         /// <summary>Build memory, in MiB. Deployment creation sets the requested value; dispatch replaces it with the memory assigned by routing.</summary>
         public double? Memory { get; set; }
-        /// <summary>Machine type which was purchased/selected for this build. `basic` is the 2vCPU tier, recorded on the deployment so the build pipeline can detect a basic build without consulting the project.</summary>
+        /// <summary>Machine type purchased for this build. `basic` is the 2vCPU tier, recorded so the build pipeline can detect a basic build without consulting the project.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseResourceConfigBuildMachinePurchaseType? PurchaseType { get; set; }
         /// <summary>The setting which selected the build machine when the deployment was created. Frozen here so later project or team changes do not rewrite its history.</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseResourceConfigBuildMachineSelectionSource? SelectionSource { get; set; }

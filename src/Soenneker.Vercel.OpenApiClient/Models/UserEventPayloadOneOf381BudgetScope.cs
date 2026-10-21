@@ -11,6 +11,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         Organization,
         #pragma warning restore CS1591
+        [EnumMember(Value = "product")]
+        #pragma warning disable CS1591
+        Product,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project")]
         #pragma warning disable CS1591
         Project,

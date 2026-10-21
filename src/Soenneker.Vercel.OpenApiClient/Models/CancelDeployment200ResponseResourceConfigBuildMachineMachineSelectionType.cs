@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>Whether the build ran on a fixed or elastic machine. Used to drive billing for the build.</summary>
+    /// <summary>The build ran on an elastic machine. Drives billing.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CancelDeployment200ResponseResourceConfigBuildMachineMachineSelectionType
     {

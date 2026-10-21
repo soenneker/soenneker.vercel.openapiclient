@@ -1114,10 +1114,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MessageboardSpace { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?>? MessageboardChannel { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MessageboardSpace { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.AclAction?> MessageboardChannel { get; set; }
 #endif
         /// <summary>Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -2505,7 +2505,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "marketplaceInvoice", n => { MarketplaceInvoice = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "marketplaceSettings", n => { MarketplaceSettings = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "messageboard", n => { Messageboard = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
-                { "messageboardSpace", n => { MessageboardSpace = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
+                { "messageboardChannel", n => { MessageboardChannel = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "messageboardTask", n => { MessageboardTask = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "Monitoring", n => { Monitoring = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
                 { "monitoringAlert", n => { MonitoringAlert = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>()?.AsList(); } },
@@ -2805,7 +2805,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("marketplaceInvoice", MarketplaceInvoice);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("marketplaceSettings", MarketplaceSettings);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("messageboard", Messageboard);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("messageboardSpace", MessageboardSpace);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("messageboardChannel", MessageboardChannel);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("messageboardTask", MessageboardTask);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("Monitoring", Monitoring);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.AclAction>("monitoringAlert", MonitoringAlert);

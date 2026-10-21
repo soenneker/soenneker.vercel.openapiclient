@@ -1307,33 +1307,33 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         MarketplaceIntegrationAllowlistUpdated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-channel-created")]
+        #pragma warning disable CS1591
+        MessageboardChannelCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-channel-updated")]
+        #pragma warning disable CS1591
+        MessageboardChannelUpdated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "messageboard-created")]
         #pragma warning disable CS1591
         MessageboardCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-private-channel-created")]
+        #pragma warning disable CS1591
+        MessageboardPrivateChannelCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "messageboard-private-channel-updated")]
+        #pragma warning disable CS1591
+        MessageboardPrivateChannelUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "messageboard-private-created")]
         #pragma warning disable CS1591
         MessageboardPrivateCreated,
         #pragma warning restore CS1591
-        [EnumMember(Value = "messageboard-private-space-created")]
-        #pragma warning disable CS1591
-        MessageboardPrivateSpaceCreated,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "messageboard-private-space-updated")]
-        #pragma warning disable CS1591
-        MessageboardPrivateSpaceUpdated,
-        #pragma warning restore CS1591
         [EnumMember(Value = "messageboard-schema-registered")]
         #pragma warning disable CS1591
         MessageboardSchemaRegistered,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "messageboard-space-created")]
-        #pragma warning disable CS1591
-        MessageboardSpaceCreated,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "messageboard-space-updated")]
-        #pragma warning disable CS1591
-        MessageboardSpaceUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "messageboard-visibility-updated")]
         #pragma warning disable CS1591

@@ -22,13 +22,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public List<string> Command { get; set; }
 #endif
-        /// <summary>The configuredReplicas property</summary>
+        /// <summary>The configuredInstances property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigConfiguredReplicas? ConfiguredReplicas { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigConfiguredInstances? ConfiguredInstances { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigConfiguredReplicas ConfiguredReplicas { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigConfiguredInstances ConfiguredInstances { get; set; }
 #endif
         /// <summary>The image property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,6 +38,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigImage Image { get; set; }
 #endif
+        /// <summary>The instances property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigInstances? Instances { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigInstances Instances { get; set; }
+#endif
         /// <summary>The livenessProbe property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,14 +53,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbe LivenessProbe { get; set; }
-#endif
-        /// <summary>The replicas property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigReplicas? Replicas { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigReplicas Replicas { get; set; }
 #endif
         /// <summary>The resources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,10 +90,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "command", n => { Command = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "configuredReplicas", n => { ConfiguredReplicas = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigConfiguredReplicas>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigConfiguredReplicas.CreateFromDiscriminatorValue); } },
+                { "configuredInstances", n => { ConfiguredInstances = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigConfiguredInstances>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigConfiguredInstances.CreateFromDiscriminatorValue); } },
                 { "image", n => { Image = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigImage>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigImage.CreateFromDiscriminatorValue); } },
+                { "instances", n => { Instances = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigInstances>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigInstances.CreateFromDiscriminatorValue); } },
                 { "livenessProbe", n => { LivenessProbe = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbe>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbe.CreateFromDiscriminatorValue); } },
-                { "replicas", n => { Replicas = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigReplicas>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigReplicas.CreateFromDiscriminatorValue); } },
                 { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigResources>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigResources.CreateFromDiscriminatorValue); } },
                 { "terminationGracePeriodSeconds", n => { TerminationGracePeriodSeconds = n.GetDoubleValue(); } },
             };
@@ -106,10 +106,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("command", Command);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigConfiguredReplicas>("configuredReplicas", ConfiguredReplicas);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigConfiguredInstances>("configuredInstances", ConfiguredInstances);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigImage>("image", Image);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigInstances>("instances", Instances);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigLivenessProbe>("livenessProbe", LivenessProbe);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigReplicas>("replicas", Replicas);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemConfigResources>("resources", Resources);
             writer.WriteDoubleValue("terminationGracePeriodSeconds", TerminationGracePeriodSeconds);
             writer.WriteAdditionalData(AdditionalData);

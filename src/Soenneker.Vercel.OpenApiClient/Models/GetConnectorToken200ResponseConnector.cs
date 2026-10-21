@@ -22,6 +22,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The service property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Service { get; set; }
+#nullable restore
+#else
+        public string Service { get; set; }
+#endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +72,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "service", n => { Service = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
             };
@@ -76,6 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("service", Service);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("uid", Uid);
             writer.WriteAdditionalData(AdditionalData);

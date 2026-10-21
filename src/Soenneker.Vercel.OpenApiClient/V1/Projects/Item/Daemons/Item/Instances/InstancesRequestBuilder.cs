@@ -19,7 +19,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances
     public partial class InstancesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Vercel.OpenApiClient.v1.projects.item.daemons.item.instances.item collection</summary>
-        /// <param name="position">The ID of the daemon instance whose user container is restarted, for example `dmni_01k7d0q5w3x8y9z0a1b2c3d4e5`</param>
+        /// <param name="position">The ID of the daemon instance to restart</param>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances.Item.WithInstanceItemRequestBuilder"/></returns>
         public global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances.Item.WithInstanceItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances
         {
         }
         /// <summary>
-        /// Override an existing daemon&apos;s instance counts by region. Each region in the map replaces the configured count for that region. Regions not in the map keep their configured count. An empty map removes the overrides. The daemon configuration is not changed. Missing or deleted daemons return 404. Repeating the same overrides succeeds without a storage write or reconciliation event.
+        /// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PutProjectDaemonInstances200Response"/></returns>
         /// <param name="body">Instance count overrides by region, for example { \&quot;iad1\&quot;: 1 }. Regions not in the map keep their configured count. An empty map removes the overrides.</param>
@@ -67,7 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.PutProjectDaemonInstances200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.PutProjectDaemonInstances200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Override an existing daemon&apos;s instance counts by region. Each region in the map replaces the configured count for that region. Regions not in the map keep their configured count. An empty map removes the overrides. The daemon configuration is not changed. Missing or deleted daemons return 404. Repeating the same overrides succeeds without a storage write or reconciliation event.
+        /// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Instance count overrides by region, for example { \&quot;iad1\&quot;: 1 }. Regions not in the map keep their configured count. An empty map removes the overrides.</param>
@@ -98,7 +98,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances
             return new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.Item.Instances.InstancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Override an existing daemon&apos;s instance counts by region. Each region in the map replaces the configured count for that region. Regions not in the map keep their configured count. An empty map removes the overrides. The daemon configuration is not changed. Missing or deleted daemons return 404. Repeating the same overrides succeeds without a storage write or reconciliation event.
+        /// Override the instance counts of a daemon by region, without changing its configuration. An empty map removes the overrides.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InstancesRequestBuilderPutQueryParameters 

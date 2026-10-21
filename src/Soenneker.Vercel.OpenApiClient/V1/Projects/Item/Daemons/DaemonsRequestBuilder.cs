@@ -47,7 +47,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons
         {
         }
         /// <summary>
-        /// Lists project daemons.
+        /// List the daemons of a project.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200Response>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists project daemons.
+        /// List the daemons of a project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons
             return new global::Soenneker.Vercel.OpenApiClient.V1.Projects.Item.Daemons.DaemonsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists project daemons.
+        /// List the daemons of a project.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DaemonsRequestBuilderGetQueryParameters 

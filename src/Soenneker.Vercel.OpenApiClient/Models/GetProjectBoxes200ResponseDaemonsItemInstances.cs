@@ -9,7 +9,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetProjectBoxes200ResponseDaemonsItemReplicas : IAdditionalDataHolder, IParsable
+    public partial class GetProjectBoxes200ResponseDaemonsItemInstances : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -19,31 +19,31 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <summary>The items property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemReplicasItemsItem>? Items { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstancesItemsItem>? Items { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemReplicasItemsItem> Items { get; set; }
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstancesItemsItem> Items { get; set; }
 #endif
         /// <summary>The ready property</summary>
         public double? Ready { get; set; }
         /// <summary>The total property</summary>
         public double? Total { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemReplicas"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstances"/> and sets the default values.
         /// </summary>
-        public GetProjectBoxes200ResponseDaemonsItemReplicas()
+        public GetProjectBoxes200ResponseDaemonsItemInstances()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemReplicas"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstances"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemReplicas CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstances CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemReplicas();
+            return new global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstances();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,7 +54,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "desired", n => { Desired = n.GetDoubleValue(); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemReplicasItemsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemReplicasItemsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstancesItemsItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstancesItemsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ready", n => { Ready = n.GetDoubleValue(); } },
                 { "total", n => { Total = n.GetDoubleValue(); } },
             };
@@ -67,7 +67,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("desired", Desired);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemReplicasItemsItem>("items", Items);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetProjectBoxes200ResponseDaemonsItemInstancesItemsItem>("items", Items);
             writer.WriteDoubleValue("ready", Ready);
             writer.WriteDoubleValue("total", Total);
             writer.WriteAdditionalData(AdditionalData);

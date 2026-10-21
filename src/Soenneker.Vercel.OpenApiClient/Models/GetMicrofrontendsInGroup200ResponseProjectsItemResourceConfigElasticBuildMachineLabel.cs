@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>Machine types an elastic decision can effectively apply or persist. The algorithm may consider Basic, but Basic is normalized to standard before an elastic decision becomes effective.</summary>
+    /// <summary>Machine types elastic can assign. Widens when the elastic algorithm adds the 14 CPU tier.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetMicrofrontendsInGroup200ResponseProjectsItemResourceConfigElasticBuildMachineLabel
     {

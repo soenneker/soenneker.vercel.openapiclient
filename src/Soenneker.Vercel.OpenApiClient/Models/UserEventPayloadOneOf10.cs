@@ -23,6 +23,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string BoardId { get; set; }
 #endif
+        /// <summary>The channelId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ChannelId { get; set; }
+#nullable restore
+#else
+        public string ChannelId { get; set; }
+#endif
         /// <summary>The fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,14 +46,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string OperationId { get; set; }
-#endif
-        /// <summary>The spaceId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SpaceId { get; set; }
-#nullable restore
-#else
-        public string SpaceId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf10"/> and sets the default values.
@@ -73,9 +73,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "boardId", n => { BoardId = n.GetStringValue(); } },
+                { "channelId", n => { ChannelId = n.GetStringValue(); } },
                 { "fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "operationId", n => { OperationId = n.GetStringValue(); } },
-                { "spaceId", n => { SpaceId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -86,9 +86,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("boardId", BoardId);
+            writer.WriteStringValue("channelId", ChannelId);
             writer.WriteCollectionOfPrimitiveValues<string>("fields", Fields);
             writer.WriteStringValue("operationId", OperationId);
-            writer.WriteStringValue("spaceId", SpaceId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

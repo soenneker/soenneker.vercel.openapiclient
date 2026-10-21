@@ -3,10 +3,14 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
-    /// <summary>Machine type which was purchased/selected for this build. `basic` is the 2vCPU tier, recorded on the deployment so the build pipeline can detect a basic build without consulting the project.</summary>
+    /// <summary>Machine type purchased for this build. `basic` is the 2vCPU tier, recorded so the build pipeline can detect a basic build without consulting the project.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreateDeployment200ResponseResourceConfigBuildMachinePurchaseType
     {
+        [EnumMember(Value = "14cpu-28gb")]
+        #pragma warning disable CS1591
+        Value14Cpu28Gb,
+        #pragma warning restore CS1591
         [EnumMember(Value = "basic")]
         #pragma warning disable CS1591
         Basic,

@@ -55,6 +55,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string ProjectName { get; set; }
 #endif
+        /// <summary>Stored when activity clients can&apos;t resolve the name, as for products.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScopeName { get; set; }
+#nullable restore
+#else
+        public string ScopeName { get; set; }
+#endif
         /// <summary>The webhookUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,6 +101,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "prevWebhookUrl", n => { PrevWebhookUrl = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "scopeName", n => { ScopeName = n.GetStringValue(); } },
                 { "webhookUrl", n => { WebhookUrl = n.GetStringValue(); } },
             };
         }
@@ -108,6 +117,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("prevWebhookUrl", PrevWebhookUrl);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("scopeName", ScopeName);
             writer.WriteStringValue("webhookUrl", WebhookUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

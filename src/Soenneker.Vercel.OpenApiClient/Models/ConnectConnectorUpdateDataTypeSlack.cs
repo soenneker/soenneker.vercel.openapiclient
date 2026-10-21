@@ -12,6 +12,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     public partial class ConnectConnectorUpdateDataTypeSlack : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>App Home settings for the managed Slack app. Updates preserve omitted settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackAppHome? AppHome { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackAppHome AppHome { get; set; }
+#endif
         /// <summary>Slack app ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,6 +67,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackExtrasProperty Extras { get; set; }
+#endif
+        /// <summary>Work Object preview settings for the managed Slack app. Updates preserve omitted settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackRichPreviews? RichPreviews { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackRichPreviews RichPreviews { get; set; }
 #endif
         /// <summary>Global and message shortcuts configured for the Slack app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -126,12 +142,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "appHome", n => { AppHome = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackAppHome>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackAppHome.CreateFromDiscriminatorValue); } },
                 { "appId", n => { AppId = n.GetStringValue(); } },
                 { "appName", n => { AppName = n.GetStringValue(); } },
                 { "botScopes", n => { BotScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "clientId", n => { ClientId = n.GetStringValue(); } },
                 { "clientSecret", n => { ClientSecret = n.GetStringValue(); } },
                 { "extras", n => { Extras = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackExtrasProperty>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackExtrasProperty.CreateFromDiscriminatorValue); } },
+                { "richPreviews", n => { RichPreviews = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackRichPreviews>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackRichPreviews.CreateFromDiscriminatorValue); } },
                 { "shortcuts", n => { Shortcuts = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackShortcutsItem>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackShortcutsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "signingSecret", n => { SigningSecret = n.GetStringValue(); } },
                 { "slackTeam", n => { SlackTeam = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackSlackTeam>(global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackSlackTeam.CreateFromDiscriminatorValue); } },
@@ -147,12 +165,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackAppHome>("appHome", AppHome);
             writer.WriteStringValue("appId", AppId);
             writer.WriteStringValue("appName", AppName);
             writer.WriteCollectionOfPrimitiveValues<string>("botScopes", BotScopes);
             writer.WriteStringValue("clientId", ClientId);
             writer.WriteStringValue("clientSecret", ClientSecret);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackExtrasProperty>("extras", Extras);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackRichPreviews>("richPreviews", RichPreviews);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackShortcutsItem>("shortcuts", Shortcuts);
             writer.WriteStringValue("signingSecret", SigningSecret);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.ConnectConnectorUpdateDataTypeSlackSlackTeam>("slackTeam", SlackTeam);

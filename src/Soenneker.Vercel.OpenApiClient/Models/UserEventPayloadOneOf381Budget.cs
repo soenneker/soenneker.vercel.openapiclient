@@ -51,7 +51,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf381BudgetPricingPlan? PricingPlan { get; set; }
         /// <summary>Which budget this is. Matches Copper SDK `BudgetScope`. Omitted on events published before team/org/project scopes existed (treat as team).</summary>
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf381BudgetScope? Scope { get; set; }
-        /// <summary>Project id when `scope` is `project`.</summary>
+        /// <summary>Project id when `scope` is `project`; product id when `scope` is `product`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScopeId { get; set; }

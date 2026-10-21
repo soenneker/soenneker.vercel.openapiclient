@@ -47,7 +47,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations
         {
         }
         /// <summary>
-        /// List the organizations where the authenticated user holds the OrgAdmin or OrgViewer permission on the organization&apos;s root or backing team — the same criteria as GET /v1/organizations/:organizationId/teams. This endpoint is in private beta. Contact your Vercel account team for access.
+        /// List the organizations where the authenticated user holds the OrgAdmin or OrgViewer permission on the organization&apos;s root or backing team — the same criteria as GET /v1/organizations/:organizationId/teams. A token without user scope, such as a team SSO session, lists only the organizations where it is authenticated to at least one team of the organization: the root team, the backing team, or a child team. This endpoint is in private beta. Contact your Vercel account team for access.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.ListOrganizations200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Organizations
             return await RequestAdapter.SendAsync<global::Soenneker.Vercel.OpenApiClient.Models.Organization>(requestInfo, global::Soenneker.Vercel.OpenApiClient.Models.Organization.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the organizations where the authenticated user holds the OrgAdmin or OrgViewer permission on the organization&apos;s root or backing team — the same criteria as GET /v1/organizations/:organizationId/teams. This endpoint is in private beta. Contact your Vercel account team for access.
+        /// List the organizations where the authenticated user holds the OrgAdmin or OrgViewer permission on the organization&apos;s root or backing team — the same criteria as GET /v1/organizations/:organizationId/teams. A token without user scope, such as a team SSO session, lists only the organizations where it is authenticated to at least one team of the organization: the root team, the backing team, or a child team. This endpoint is in private beta. Contact your Vercel account team for access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

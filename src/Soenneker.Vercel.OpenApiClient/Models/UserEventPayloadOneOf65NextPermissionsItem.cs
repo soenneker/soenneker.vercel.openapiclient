@@ -168,6 +168,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         ReadWriteColonVcr,
         #pragma warning restore CS1591
+        [EnumMember(Value = "read-write:webhooks")]
+        #pragma warning disable CS1591
+        ReadWriteColonWebhooks,
+        #pragma warning restore CS1591
         [EnumMember(Value = "read:access-group")]
         #pragma warning disable CS1591
         ReadColonAccessGroup,
