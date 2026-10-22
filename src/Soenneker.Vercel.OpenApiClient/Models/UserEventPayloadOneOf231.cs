@@ -15,14 +15,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
+        /// <summary>The enabled property</summary>
+        public bool? Enabled { get; set; }
         /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +24,22 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string OrganizationId { get; set; }
+#endif
+        /// <summary>The teamId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TeamId { get; set; }
+#nullable restore
+#else
+        public string TeamId { get; set; }
+#endif
+        /// <summary>The teamSlug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TeamSlug { get; set; }
+#nullable restore
+#else
+        public string TeamSlug { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf231"/> and sets the default values.
@@ -56,8 +66,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
+                { "teamId", n => { TeamId = n.GetStringValue(); } },
+                { "teamSlug", n => { TeamSlug = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +79,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("organizationId", OrganizationId);
+            writer.WriteStringValue("teamId", TeamId);
+            writer.WriteStringValue("teamSlug", TeamSlug);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

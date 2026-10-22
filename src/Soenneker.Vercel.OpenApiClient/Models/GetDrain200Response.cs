@@ -24,6 +24,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDelivery Delivery { get; set; }
 #endif
+        /// <summary>Delivery health of a drain over the last 24 hours: `failing` when more than 5 delivery attempts and at least 1% of all attempts did not succeed, `healthy` otherwise, and `unknown` when there were no attempts or the stats could not be loaded.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryStats? DeliveryStats { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryStats DeliveryStats { get; set; }
+#endif
         /// <summary>The disabledAt property</summary>
         public double? DisabledAt { get; set; }
         /// <summary>The disabledBy property</summary>
@@ -54,30 +62,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The integrationConfigurationUri property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IntegrationConfigurationUri { get; set; }
-#nullable restore
-#else
-        public string IntegrationConfigurationUri { get; set; }
-#endif
-        /// <summary>The integrationIcon property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IntegrationIcon { get; set; }
-#nullable restore
-#else
-        public string IntegrationIcon { get; set; }
-#endif
-        /// <summary>The integrationWebsite property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IntegrationWebsite { get; set; }
-#nullable restore
-#else
-        public string IntegrationWebsite { get; set; }
-#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,14 +77,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public string OwnerId { get; set; }
-#endif
-        /// <summary>The projectAccess property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseProjectAccess? ProjectAccess { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseProjectAccess ProjectAccess { get; set; }
 #endif
         /// <summary>The projectIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -173,18 +149,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "delivery", n => { Delivery = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDelivery>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDelivery.CreateFromDiscriminatorValue); } },
+                { "deliveryStats", n => { DeliveryStats = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryStats>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryStats.CreateFromDiscriminatorValue); } },
                 { "disabledAt", n => { DisabledAt = n.GetDoubleValue(); } },
                 { "disabledBy", n => { DisabledBy = n.GetStringValue(); } },
                 { "disabledReason", n => { DisabledReason = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDisabledReason>(); } },
                 { "filterV2", n => { FilterV2 = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseFilterV2>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseFilterV2.CreateFromDiscriminatorValue); } },
                 { "firstErrorTimestamp", n => { FirstErrorTimestamp = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "integrationConfigurationUri", n => { IntegrationConfigurationUri = n.GetStringValue(); } },
-                { "integrationIcon", n => { IntegrationIcon = n.GetStringValue(); } },
-                { "integrationWebsite", n => { IntegrationWebsite = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "projectAccess", n => { ProjectAccess = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseProjectAccess>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseProjectAccess.CreateFromDiscriminatorValue); } },
                 { "projectIds", n => { ProjectIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "sampling", n => { Sampling = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseSamplingItem>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseSamplingItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "schemas", n => { Schemas = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseSchemas>(global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseSchemas.CreateFromDiscriminatorValue); } },
@@ -203,18 +176,15 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDelivery>("delivery", Delivery);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryStats>("deliveryStats", DeliveryStats);
             writer.WriteDoubleValue("disabledAt", DisabledAt);
             writer.WriteStringValue("disabledBy", DisabledBy);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDisabledReason>("disabledReason", DisabledReason);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseFilterV2>("filterV2", FilterV2);
             writer.WriteDoubleValue("firstErrorTimestamp", FirstErrorTimestamp);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("integrationConfigurationUri", IntegrationConfigurationUri);
-            writer.WriteStringValue("integrationIcon", IntegrationIcon);
-            writer.WriteStringValue("integrationWebsite", IntegrationWebsite);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseProjectAccess>("projectAccess", ProjectAccess);
             writer.WriteCollectionOfPrimitiveValues<string>("projectIds", ProjectIds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseSamplingItem>("sampling", Sampling);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseSchemas>("schemas", Schemas);

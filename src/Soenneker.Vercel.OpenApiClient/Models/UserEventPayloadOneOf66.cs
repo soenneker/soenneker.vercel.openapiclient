@@ -55,6 +55,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string InstallationId { get; set; }
 #endif
+        /// <summary>The organizationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf66"/> and sets the default values.
         /// </summary>
@@ -85,6 +93,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "appName", n => { AppName = n.GetStringValue(); } },
                 { "before", n => { Before = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf66Before>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf66Before.CreateFromDiscriminatorValue); } },
                 { "installationId", n => { InstallationId = n.GetStringValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -99,6 +108,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("appName", AppName);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf66Before>("before", Before);
             writer.WriteStringValue("installationId", InstallationId);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

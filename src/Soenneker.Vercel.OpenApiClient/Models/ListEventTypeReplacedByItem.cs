@@ -1491,6 +1491,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         #pragma warning disable CS1591
         OrganizationSlugUpdate,
         #pragma warning restore CS1591
+        [EnumMember(Value = "organization-sso-deleted")]
+        #pragma warning disable CS1591
+        OrganizationSsoDeleted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "organization-sso-enforced")]
         #pragma warning disable CS1591
         OrganizationSsoEnforced,
@@ -2310,6 +2314,10 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         [EnumMember(Value = "sso-login")]
         #pragma warning disable CS1591
         SsoLogin,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "startup-terms-accepted")]
+        #pragma warning disable CS1591
+        StartupTermsAccepted,
         #pragma warning restore CS1591
         [EnumMember(Value = "storage-accept-tos")]
         #pragma warning disable CS1591

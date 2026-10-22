@@ -13,10 +13,24 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEventPayloadOneOf430 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>The acceptanceId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AcceptanceId { get; set; }
+#nullable restore
+#else
+        public string AcceptanceId { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The deletedCount property</summary>
-        public double? DeletedCount { get; set; }
+        /// <summary>The termsVersion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TermsVersion { get; set; }
+#nullable restore
+#else
+        public string TermsVersion { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf430"/> and sets the default values.
         /// </summary>
@@ -42,7 +56,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deletedCount", n => { DeletedCount = n.GetDoubleValue(); } },
+                { "acceptanceId", n => { AcceptanceId = n.GetStringValue(); } },
+                { "termsVersion", n => { TermsVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -52,7 +67,8 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("deletedCount", DeletedCount);
+            writer.WriteStringValue("acceptanceId", AcceptanceId);
+            writer.WriteStringValue("termsVersion", TermsVersion);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

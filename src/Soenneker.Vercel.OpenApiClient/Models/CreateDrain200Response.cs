@@ -24,6 +24,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseDelivery Delivery { get; set; }
 #endif
+        /// <summary>Delivery health of a drain over the last 24 hours: `failing` when more than 5 delivery attempts and at least 1% of all attempts did not succeed, `healthy` otherwise, and `unknown` when there were no attempts or the stats could not be loaded.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseDeliveryStats? DeliveryStats { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseDeliveryStats DeliveryStats { get; set; }
+#endif
         /// <summary>The disabledAt property</summary>
         public double? DisabledAt { get; set; }
         /// <summary>The disabledBy property</summary>
@@ -173,6 +181,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "createdAt", n => { CreatedAt = n.GetDoubleValue(); } },
                 { "delivery", n => { Delivery = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseDelivery>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseDelivery.CreateFromDiscriminatorValue); } },
+                { "deliveryStats", n => { DeliveryStats = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseDeliveryStats>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseDeliveryStats.CreateFromDiscriminatorValue); } },
                 { "disabledAt", n => { DisabledAt = n.GetDoubleValue(); } },
                 { "disabledBy", n => { DisabledBy = n.GetStringValue(); } },
                 { "disabledReason", n => { DisabledReason = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseDisabledReason>(); } },
@@ -203,6 +212,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseDelivery>("delivery", Delivery);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseDeliveryStats>("deliveryStats", DeliveryStats);
             writer.WriteDoubleValue("disabledAt", DisabledAt);
             writer.WriteStringValue("disabledBy", DisabledBy);
             writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDrain200ResponseDisabledReason>("disabledReason", DisabledReason);

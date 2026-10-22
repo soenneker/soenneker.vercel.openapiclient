@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.Vercel.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliverySecretOneOf2"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseOneOf1DeliveryOneOf1SecretBranch1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf1SecretBranch1"/>, <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliverySecretOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetDrain200ResponseDeliverySecret : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf1SecretBranch1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf1SecretBranch1? GetDrain200ResponseDeliveryOneOf1SecretBranch1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf1SecretBranch1 GetDrain200ResponseDeliveryOneOf1SecretBranch1 { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliverySecretOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,14 +28,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliverySecretOneOf2 GetDrain200ResponseDeliverySecretOneOf2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseOneOf1DeliveryOneOf1SecretBranch1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseOneOf1DeliveryOneOf1SecretBranch1? GetDrain200ResponseOneOf1DeliveryOneOf1SecretBranch1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseOneOf1DeliveryOneOf1SecretBranch1 GetDrain200ResponseOneOf1DeliveryOneOf1SecretBranch1 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,13 +39,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliverySecret();
-            if("GetDrain200ResponseDeliverySecretOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("GetDrain200ResponseDeliveryOneOf1SecretBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetDrain200ResponseDeliveryOneOf1SecretBranch1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf1SecretBranch1();
+            }
+            else if("GetDrain200ResponseDeliverySecretOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GetDrain200ResponseDeliverySecretOneOf2 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliverySecretOneOf2();
-            }
-            else if("GetDrain200ResponseOneOf1DeliveryOneOf1SecretBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.GetDrain200ResponseOneOf1DeliveryOneOf1SecretBranch1 = new global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseOneOf1DeliveryOneOf1SecretBranch1();
             }
             return result;
         }
@@ -55,13 +55,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(GetDrain200ResponseDeliverySecretOneOf2 != null)
+            if(GetDrain200ResponseDeliveryOneOf1SecretBranch1 != null)
+            {
+                return GetDrain200ResponseDeliveryOneOf1SecretBranch1.GetFieldDeserializers();
+            }
+            else if(GetDrain200ResponseDeliverySecretOneOf2 != null)
             {
                 return GetDrain200ResponseDeliverySecretOneOf2.GetFieldDeserializers();
-            }
-            else if(GetDrain200ResponseOneOf1DeliveryOneOf1SecretBranch1 != null)
-            {
-                return GetDrain200ResponseOneOf1DeliveryOneOf1SecretBranch1.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +72,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(GetDrain200ResponseDeliverySecretOneOf2 != null)
+            if(GetDrain200ResponseDeliveryOneOf1SecretBranch1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliveryOneOf1SecretBranch1>(null, GetDrain200ResponseDeliveryOneOf1SecretBranch1);
+            }
+            else if(GetDrain200ResponseDeliverySecretOneOf2 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseDeliverySecretOneOf2>(null, GetDrain200ResponseDeliverySecretOneOf2);
-            }
-            else if(GetDrain200ResponseOneOf1DeliveryOneOf1SecretBranch1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.GetDrain200ResponseOneOf1DeliveryOneOf1SecretBranch1>(null, GetDrain200ResponseOneOf1DeliveryOneOf1SecretBranch1);
             }
         }
     }

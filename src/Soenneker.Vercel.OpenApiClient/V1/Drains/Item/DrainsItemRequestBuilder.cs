@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Drains.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DrainsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/drains/{id}{?slug*,teamId*}", pathParameters)
+        public DrainsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/drains/{id}{?includeDeliveryStats*,slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Drains.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DrainsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/drains/{id}{?slug*,teamId*}", rawUrl)
+        public DrainsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/drains/{id}{?includeDeliveryStats*,slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>
@@ -189,6 +189,9 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Drains.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DrainsItemRequestBuilderGetQueryParameters 
         {
+            /// <summary>Include `deliveryStats` with the delivery health of the drain over the last 24 hours.</summary>
+            [QueryParameter("includeDeliveryStats")]
+            public bool? IncludeDeliveryStats { get; set; }
             /// <summary>The Team slug to perform the request on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

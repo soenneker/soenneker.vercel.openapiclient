@@ -35,7 +35,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.LogDrains
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogDrainsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/log-drains{?includeMetadata*,projectId*,projectIdOrName*,slug*,teamId*}", pathParameters)
+        public LogDrainsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/log-drains{?includeDeliveryStats*,includeMetadata*,projectId*,projectIdOrName*,slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.LogDrains
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogDrainsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/log-drains{?includeMetadata*,projectId*,projectIdOrName*,slug*,teamId*}", rawUrl)
+        public LogDrainsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/log-drains{?includeDeliveryStats*,includeMetadata*,projectId*,projectIdOrName*,slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>
@@ -140,6 +140,9 @@ namespace Soenneker.Vercel.OpenApiClient.V1.LogDrains
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LogDrainsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Include `deliveryStats` with the delivery health of each drain over the last 24 hours.</summary>
+            [QueryParameter("includeDeliveryStats")]
+            public bool? IncludeDeliveryStats { get; set; }
             #pragma warning disable CS1591
             [QueryParameter("includeMetadata")]
             public bool? IncludeMetadata { get; set; }

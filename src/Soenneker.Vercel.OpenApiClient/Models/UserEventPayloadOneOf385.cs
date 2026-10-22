@@ -15,8 +15,62 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The storeType property</summary>
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385StoreType? StoreType { get; set; }
+        /// <summary>Represents a budget for tracking and notifying teams on their spending.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385Budget? Budget { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385Budget Budget { get; set; }
+#endif
+        /// <summary>Represents a budget for tracking and notifying teams on their spending.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385PrevBudget? PrevBudget { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385PrevBudget PrevBudget { get; set; }
+#endif
+        /// <summary>The prevWebhookUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrevWebhookUrl { get; set; }
+#nullable restore
+#else
+        public string PrevWebhookUrl { get; set; }
+#endif
+        /// <summary>Stored for project budgets. Same value as `budget.scopeId`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectId { get; set; }
+#nullable restore
+#else
+        public string ProjectId { get; set; }
+#endif
+        /// <summary>Injected at read time from `payload.projectId`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectName { get; set; }
+#nullable restore
+#else
+        public string ProjectName { get; set; }
+#endif
+        /// <summary>Stored when activity clients can&apos;t resolve the name, as for products.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScopeName { get; set; }
+#nullable restore
+#else
+        public string ScopeName { get; set; }
+#endif
+        /// <summary>The webhookUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WebhookUrl { get; set; }
+#nullable restore
+#else
+        public string WebhookUrl { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385"/> and sets the default values.
         /// </summary>
@@ -42,7 +96,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "storeType", n => { StoreType = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385StoreType>(); } },
+                { "budget", n => { Budget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385Budget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385Budget.CreateFromDiscriminatorValue); } },
+                { "prevBudget", n => { PrevBudget = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385PrevBudget>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385PrevBudget.CreateFromDiscriminatorValue); } },
+                { "prevWebhookUrl", n => { PrevWebhookUrl = n.GetStringValue(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectName", n => { ProjectName = n.GetStringValue(); } },
+                { "scopeName", n => { ScopeName = n.GetStringValue(); } },
+                { "webhookUrl", n => { WebhookUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -52,7 +112,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385StoreType>("storeType", StoreType);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385Budget>("budget", Budget);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf385PrevBudget>("prevBudget", PrevBudget);
+            writer.WriteStringValue("prevWebhookUrl", PrevWebhookUrl);
+            writer.WriteStringValue("projectId", ProjectId);
+            writer.WriteStringValue("projectName", ProjectName);
+            writer.WriteStringValue("scopeName", ScopeName);
+            writer.WriteStringValue("webhookUrl", WebhookUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

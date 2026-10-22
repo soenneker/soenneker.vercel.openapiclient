@@ -41,7 +41,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Drains
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DrainsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/drains{?includeMetadata*,projectId*,slug*,teamId*}", pathParameters)
+        public DrainsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/drains{?includeDeliveryStats*,includeMetadata*,projectId*,slug*,teamId*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Drains
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DrainsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/drains{?includeMetadata*,projectId*,slug*,teamId*}", rawUrl)
+        public DrainsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/drains{?includeDeliveryStats*,includeMetadata*,projectId*,slug*,teamId*}", rawUrl)
         {
         }
         /// <summary>
@@ -146,6 +146,9 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Drains
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DrainsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Include `deliveryStats` with the delivery health of each drain over the last 24 hours.</summary>
+            [QueryParameter("includeDeliveryStats")]
+            public bool? IncludeDeliveryStats { get; set; }
             #pragma warning disable CS1591
             [QueryParameter("includeMetadata")]
             public bool? IncludeMetadata { get; set; }

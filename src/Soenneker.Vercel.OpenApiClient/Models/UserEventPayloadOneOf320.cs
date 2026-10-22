@@ -23,13 +23,13 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320Project Project { get; set; }
 #endif
-        /// <summary>The removedMembership property</summary>
+        /// <summary>The projectMembership property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320RemovedMembership? RemovedMembership { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320ProjectMembership? ProjectMembership { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320RemovedMembership RemovedMembership { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320ProjectMembership ProjectMembership { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "project", n => { Project = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320Project>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320Project.CreateFromDiscriminatorValue); } },
-                { "removedMembership", n => { RemovedMembership = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320RemovedMembership>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320RemovedMembership.CreateFromDiscriminatorValue); } },
+                { "projectMembership", n => { ProjectMembership = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320ProjectMembership>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320ProjectMembership.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320Project>("project", Project);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320RemovedMembership>("removedMembership", RemovedMembership);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf320ProjectMembership>("projectMembership", ProjectMembership);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

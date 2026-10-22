@@ -103,14 +103,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169Target Target { get; set; }
 #endif
-        /// <summary>The updateDiff property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169UpdateDiff? UpdateDiff { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169UpdateDiff UpdateDiff { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169"/> and sets the default values.
         /// </summary>
@@ -147,7 +139,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "target", n => { Target = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169Target>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169Target.CreateFromDiscriminatorValue); } },
-                { "updateDiff", n => { UpdateDiff = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169UpdateDiff>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169UpdateDiff.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -168,7 +159,6 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             writer.WriteStringValue("projectName", ProjectName);
             writer.WriteStringValue("source", Source);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169Target>("target", Target);
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf169UpdateDiff>("updateDiff", UpdateDiff);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

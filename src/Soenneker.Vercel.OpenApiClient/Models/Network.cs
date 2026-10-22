@@ -22,7 +22,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string AwsAccountId { get; set; }
 #endif
-        /// <summary>The IDs of the AWS Availability Zones in which the network exists, if specified during creation.</summary>
+        /// <summary>The IDs of the AWS Availability Zones in which the network exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AwsAvailabilityZoneIds { get; set; }

@@ -31,6 +31,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
 #else
         public string AppName { get; set; }
 #endif
+        /// <summary>The organizationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
+#endif
         /// <summary>The permissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,6 +82,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             {
                 { "appId", n => { AppId = n.GetStringValue(); } },
                 { "appName", n => { AppName = n.GetStringValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf67PermissionsItem>()?.AsList(); } },
                 { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf67Resources>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf67Resources.CreateFromDiscriminatorValue); } },
             };
@@ -87,6 +96,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("appId", AppId);
             writer.WriteStringValue("appName", AppName);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf67PermissionsItem>("permissions", Permissions);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf67Resources>("resources", Resources);
             writer.WriteAdditionalData(AdditionalData);

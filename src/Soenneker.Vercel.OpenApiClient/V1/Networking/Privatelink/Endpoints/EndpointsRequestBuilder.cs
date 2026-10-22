@@ -66,7 +66,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Networking.Privatelink.Endpoints
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Creates a PrivateLink endpoint for a project.
+        /// Creates a PrivateLink endpoint for a project. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Vercel.OpenApiClient.Models.PrivateLinkEndpoint"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Networking.Privatelink.Endpoints
             return requestInfo;
         }
         /// <summary>
-        /// Creates a PrivateLink endpoint for a project.
+        /// Creates a PrivateLink endpoint for a project. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -173,7 +173,7 @@ namespace Soenneker.Vercel.OpenApiClient.V1.Networking.Privatelink.Endpoints
 #endif
         }
         /// <summary>
-        /// Creates a PrivateLink endpoint for a project.
+        /// Creates a PrivateLink endpoint for a project. Changes to endpoints of the same project are serialized. If another change holds them for too long, the request fails with `503 service_unavailable` and can be retried. If the change may have completed but the outcome is unknown, it fails with `409 uncertain_outcome`; read the endpoint before retrying.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EndpointsRequestBuilderPostQueryParameters 

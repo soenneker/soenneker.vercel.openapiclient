@@ -15,13 +15,23 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The mfa property</summary>
+        /// <summary>The method property</summary>
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Method? Method { get; set; }
+        /// <summary>The next property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Mfa? Mfa { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Next? Next { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Mfa Mfa { get; set; }
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Next Next { get; set; }
+#endif
+        /// <summary>The previous property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Previous? Previous { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Previous Previous { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461"/> and sets the default values.
@@ -48,7 +58,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "mfa", n => { Mfa = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Mfa>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Mfa.CreateFromDiscriminatorValue); } },
+                { "method", n => { Method = n.GetEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Method>(); } },
+                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Next>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Next.CreateFromDiscriminatorValue); } },
+                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Previous>(global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Previous.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +70,9 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Mfa>("mfa", Mfa);
+            writer.WriteEnumValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Method>("method", Method);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Next>("next", Next);
+            writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.UserEventPayloadOneOf461Previous>("previous", Previous);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

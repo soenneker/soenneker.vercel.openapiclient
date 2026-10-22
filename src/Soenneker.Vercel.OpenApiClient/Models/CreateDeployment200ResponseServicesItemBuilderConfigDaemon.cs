@@ -15,6 +15,14 @@ namespace Soenneker.Vercel.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Bindings to services in the same deployment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonBindingsItem>? Bindings { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonBindingsItem> Bindings { get; set; }
+#endif
         /// <summary>The command property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,6 +106,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "bindings", n => { Bindings = n.GetCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonBindingsItem>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonBindingsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "command", n => { Command = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "entrypoint", n => { Entrypoint = n.GetStringValue(); } },
                 { "instances", n => { Instances = n.GetObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonInstances>(global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonInstances.CreateFromDiscriminatorValue); } },
@@ -115,6 +124,7 @@ namespace Soenneker.Vercel.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonBindingsItem>("bindings", Bindings);
             writer.WriteCollectionOfPrimitiveValues<string>("command", Command);
             writer.WriteStringValue("entrypoint", Entrypoint);
             writer.WriteObjectValue<global::Soenneker.Vercel.OpenApiClient.Models.CreateDeployment200ResponseServicesItemBuilderConfigDaemonInstances>("instances", Instances);
